@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广告合规审核</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- 飞书风格顶部导航栏 -->
+    <div class="header">
+        <div class="header-left">
+            <div class="header-icon">审</div>
+            <h1>广告合规审核</h1>
+            <span class="badge-count" id="pending-count">0</span>
+        </div>
+        <div class="header-actions">
+            <button class="btn-icon" onclick="refreshRecords()" title="刷新">↻</button>
+        </div>
+    </div>
+
+    <!-- 主体布局 -->
+    <div class="main">
+        <!-- 左侧列表面板 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>待复核物料</h2>
+            </div>
+            <div class="sidebar-tabs">
+                <div class="sidebar-tab active" data-tab="pending">待处理</div>
+                <div class="sidebar-tab" data-tab="done">已处理</div>
+            </div>
+            <div class="record-list" id="record-list"></div>
+        </div>
+
+        <!-- 右侧详情区 -->
+        <div class="detail" id="detail-area">
+            <div class="detail-empty">
+                <div class="detail-empty-icon">📋</div>
+                <p>选择左侧物料查看详情</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/main.js"></script>
+</body>
+</html>
