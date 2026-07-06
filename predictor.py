@@ -246,13 +246,14 @@ def call_llm(ctx: dict, rules: list, mode: str = "标准") -> dict:
 
 输出 JSON 结构：
 {
-  "预审_风险等级": "高" | "中" | "低",
+  "预审_风险等级": "高" | "中" | "低" | "无明显风险",
   "预审_命中要点": "一句话概括最核心的合规风险",
   "预审_修改建议": "给运营人员的简明修改建议（100字以内）",
   "审核_审核意见": "完整六段式审核报告：①风险定性 ②违禁词鉴别 ③违规类型 ④法律依据 ⑤修改建议 ⑥风险定级",
   "审核_关键实体抽取": "品牌名、产品名、功效词、平台名（逗号分隔）",
   "审核_高风险词命中": "命中的违禁词或高风险词（逗号分隔，无则填'无'）",
   "审核_平台规则预检": "投放平台相关规则命中情况（一句话）",
+  "审核_备案核查结果": "MVP阶段暂未接入备案核查，仅根据运营提交字段做形式提示。",
   "审核_推荐违规类型": ["违规类型1", "违规类型2"],
   "审核_推荐风险等级": "高" | "中" | "低",
   "routing": "运营" | "法务"
@@ -287,26 +288,56 @@ routing 字段判断标准：
     return result
 
 
+def _format_matched_rules(matched_rules: list) -> str:
+    """把命中规则列表格式化为可附加到审核意见末尾的文本块"""
+    if not matched_rules:
+        return ""
+    lines = ["\n\n【命中规则明细】"]
+    for r in matched_rules:
+        lines.append(
+            f"- [{r.get('rule_id', '?')}] {r.get('title', '?')}"
+            f"（{r.get('dimension', '')}·{r.get('risk_level', '')}）"
+            f" → {r.get('judgment', '')}：{r.get('match_reason', '')}"
+        )
+    return "\n".join(lines)
+
+
 def write_back(record_id: str, llm_result: dict, routing: str, mode: str = "标准"):
-    """把审核结果回写到多维表格 ②③ 段，更新流转状态。"""
+    """
+    把审核结果回写到多维表格 ②③ 段，更新流转状态。
+    llm_result 可来自本地 LLM 或队友规则引擎（字段 key 相同）。
+    """
     now_ms = int(datetime.datetime.now().timestamp() * 1000)
+    # 规则引擎若返回 audit_time，优先使用；否则用当前时间
+    audit_ts = llm_result.get("audit_time") or now_ms
+
+    # 审核意见：若有命中规则明细，附加在末尾
+    audit_opinion = llm_result.get("审核_审核意见", "")
+    matched_rules_text = _format_matched_rules(llm_result.get("matched_rules", []))
+    if matched_rules_text:
+        audit_opinion = audit_opinion + matched_rules_text
 
     fields = {
         # ② AI预审段（运营可见）
         F_预审_风险等级:      llm_result.get("预审_风险等级", ""),
         F_预审_命中要点:      llm_result.get("预审_命中要点", ""),
         F_预审_修改建议:      llm_result.get("预审_修改建议", ""),
-        F_预审_时间:          now_ms,
+        F_预审_时间:          audit_ts,
         # ③ AI审核段（法务可见）
-        F_审核_审核模式:      mode,
-        F_审核_模式推荐理由:  "（待分配依据上线后自动填写）",
-        F_审核_审核意见:      llm_result.get("审核_审核意见", ""),
+        # resolved_mode 优先于运营点选的 mode（规则引擎 MVP 阶段统一返回"标准"）
+        F_审核_审核模式:      llm_result.get("resolved_mode", mode),
+        F_审核_模式推荐理由:  llm_result.get("mode_reason", "（待分配依据上线后自动填写）"),
+        F_审核_审核意见:      audit_opinion,
         F_审核_关键实体抽取:  llm_result.get("审核_关键实体抽取", ""),
         F_审核_高风险词命中:  llm_result.get("审核_高风险词命中", ""),
         F_审核_平台规则预检:  llm_result.get("审核_平台规则预检", ""),
+        F_审核_备案核查结果:  llm_result.get(
+            "审核_备案核查结果",
+            "MVP阶段暂未接入备案核查，仅根据运营提交字段做形式提示。"
+        ),
         F_审核_推荐违规类型:  llm_result.get("审核_推荐违规类型", []),
         F_审核_推荐风险等级:  llm_result.get("审核_推荐风险等级", ""),
-        F_审核_审核时间:      now_ms,
+        F_审核_审核时间:      audit_ts,
         # ⑤ 流转段
         F_流转_当前状态:      routing,
     }
@@ -343,6 +374,10 @@ def execute(record_id: str, mode: str):
     """
     第二步：正式审核。
     由 bot_listener 在运营确认模式后调用。
+
+    兼容两种规则引擎返回格式：
+    - 返回 list（命中规则列表）：飞书侧继续调 LLM 生成完整报告（当前占位实现）
+    - 返回 dict（含 routing 的完整审核结果）：直接使用，跳过 LLM（队友 API 接入后生效）
     """
     print(f"[predictor] 正式审核开始 record_id={record_id} mode={mode}")
 
@@ -353,14 +388,20 @@ def execute(record_id: str, mode: str):
         ctx = build_context(record_id)
 
     # 调用队友规则引擎
-    hits = call_teammate_engine(ctx, mode)
-    print(f"[predictor] 规则引擎命中 {len(hits)} 条")
+    engine_result = call_teammate_engine(ctx, mode)
 
-    # LLM 生成报告
-    llm_result = call_llm(ctx, hits, mode)
+    if isinstance(engine_result, dict) and engine_result.get("routing"):
+        # 队友引擎返回了完整结果，直接使用，跳过本地 LLM
+        print(f"[predictor] 规则引擎返回完整结果，跳过 LLM")
+        llm_result = engine_result
+        routing = _decide_routing([], llm_result.get("routing", ""))
+    else:
+        # 当前占位：引擎返回命中列表（或空列表），交给 LLM 生成报告
+        hits = engine_result if isinstance(engine_result, list) else []
+        print(f"[predictor] 规则引擎命中 {len(hits)} 条，调用 LLM 生成报告")
+        llm_result = call_llm(ctx, hits, mode)
+        routing = _decide_routing(hits, llm_result.get("routing", ""))
 
-    # 路由 + 回写
-    routing = _decide_routing(hits, llm_result.get("routing", ""))
     write_back(record_id, llm_result, routing, mode)
     print(f"[predictor] 审核完成，routing={routing}")
     return routing, llm_result
