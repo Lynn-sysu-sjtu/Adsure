@@ -50,13 +50,32 @@ def _text(raw) -> str:
     if isinstance(raw, str):
         return raw
     if isinstance(raw, list):
-        return "".join(
-            seg.get("text", "") if isinstance(seg, dict) else str(seg)
-            for seg in raw
-        )
+        # 富文本段落：每段是 {"text": "..."}
+        # 多选字段：每段是普通字符串，用顿号拼接展示
+        parts = []
+        for seg in raw:
+            if isinstance(seg, dict):
+                parts.append(seg.get("text", ""))
+            else:
+                parts.append(str(seg))
+        # 如果全是纯字符串（多选选项），用顿号拼接；富文本则直接 join
+        if all(not isinstance(seg, dict) for seg in raw):
+            return "、".join(parts)
+        return "".join(parts)
     if isinstance(raw, dict):
         return raw.get("text") or raw.get("name") or ""
     return str(raw)
+
+
+def _list(raw) -> list:
+    """飞书多选字段值 → 字符串数组（用于传给规则引擎）"""
+    if raw is None:
+        return []
+    if isinstance(raw, list):
+        return [str(seg) if not isinstance(seg, dict) else seg.get("text", "") for seg in raw]
+    if isinstance(raw, str) and raw:
+        return [raw]
+    return []
 
 
 # ── 阶段一：上下文重建 ──────────────────────────────────────
@@ -97,29 +116,32 @@ def build_context(record_id: str) -> dict:
 
     返回 dict：
     {
-        "record_id":      str,
-        "industry":       str,   # 行业领域
-        "content":        str,   # 物料内容（核心文案）
-        "supplement":     str,   # 补充背景资料
-        "urgency":        str,   # 紧急程度
-        "platform":       str,   # 投放平台（行业专属）
-        "material_type":  str,   # 物料类型（行业专属）
-        "product_category": str, # 产品品类（行业专属）
-        "extras":         dict,  # 其余行业专属字段 {展示名: 值}
+        "record_id":        str,
+        "industry":         str,   # 行业领域
+        "content":          str,   # 物料内容（核心文案）
+        "supplement":       str,   # 补充背景资料
+        "urgency":          str,   # 紧急程度
+        "platform":         str,   # 投放平台，顿号拼接文本（供 LLM prompt 使用）
+        "platform_list":    list,  # 投放平台，字符串数组（供规则引擎 API 使用）
+        "material_type":    str,   # 物料类型（行业专属）
+        "product_category": str,   # 产品品类（行业专属）
+        "extras":           dict,  # 其余行业专属字段 {展示名: 值}
     }
     """
     rec = get_record(record_id)
     fields = rec.get("fields", {})
 
-    industry = _text(fields.get(F_行业领域, ""))
-    content   = _text(fields.get(F_物料内容, ""))
+    industry   = _text(fields.get(F_行业领域, ""))
+    content    = _text(fields.get(F_物料内容, ""))
     supplement = _text(fields.get(F_补充背景资料, ""))
-    urgency   = _text(fields.get(F_紧急程度, "普通"))
+    urgency    = _text(fields.get(F_紧急程度, "普通"))
 
     # 读取行业专属字段
     industry_map = _INDUSTRY_FIELDS.get(industry, {})
-    platform       = _text(fields.get(industry_map.get("投放平台", ""), ""))
-    material_type  = _text(fields.get(industry_map.get("物料类型", ""), ""))
+    platform_raw     = fields.get(industry_map.get("投放平台", ""), "")
+    platform         = _text(platform_raw)          # 文本版，供 LLM prompt
+    platform_list    = _list(platform_raw)          # 数组版，供规则引擎 API
+    material_type    = _text(fields.get(industry_map.get("物料类型", ""), ""))
     product_category = _text(fields.get(industry_map.get("产品品类", ""), ""))
 
     # 其余行业专属字段（除了投放平台/物料类型/产品品类，已单独提取）
@@ -137,7 +159,8 @@ def build_context(record_id: str) -> dict:
         "content":          content,
         "supplement":       supplement,
         "urgency":          urgency,
-        "platform":         platform,
+        "platform":         platform,        # 文本，供 LLM prompt
+        "platform_list":    platform_list,   # 数组，供规则引擎 API
         "material_type":    material_type,
         "product_category": product_category,
         "extras":           extras,
@@ -187,14 +210,30 @@ def call_teammate_engine(ctx: dict, mode: str) -> list:
     TODO：等队友提供 HTTP API 后替换。
     当前：返回空列表，LLM 根据通用原则独立审核。
     """
-    # 示例（队友 API 就绪后取消注释）：
+    # 队友 API 就绪后取消注释，填入真实地址和 Key：
+    # from config import RULE_ENGINE_URL, RULE_ENGINE_API_KEY
     # import requests
-    # resp = requests.post("http://teammate-api/check", json={
-    #     "content": ctx["content"],
-    #     "industry": ctx["industry"],
-    #     "mode": mode,
-    # }, timeout=10)
-    # return resp.json().get("hits", [])
+    # resp = requests.post(
+    #     RULE_ENGINE_URL,
+    #     headers={"X-API-Key": RULE_ENGINE_API_KEY, "Content-Type": "application/json"},
+    #     json={
+    #         "record_id":        ctx["record_id"],
+    #         "industry":         ctx["industry"],
+    #         "content":          ctx["content"],
+    #         "platform":         ctx["platform_list"],   # 数组，如 ["抖音", "小红书"]
+    #         "material_type":    ctx["material_type"],
+    #         "product_category": ctx["product_category"],
+    #         "urgency":          ctx["urgency"],
+    #         "supplement":       ctx["supplement"],
+    #         "extras":           ctx["extras"],
+    #         "mode":             mode,
+    #     },
+    #     timeout=10,
+    # )
+    # data = resp.json()
+    # if data.get("code") != 0:
+    #     raise Exception(f"规则引擎返回错误: {data.get('msg')} (code={data.get('code')})")
+    # return data.get("data", {})
     return []
 
 
