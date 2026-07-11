@@ -13,6 +13,7 @@
 """
 
 import json
+import re
 import datetime
 from pathlib import Path
 
@@ -35,6 +36,7 @@ from fields_v4 import (
     # AI审核段
     F_审核_审核模式, F_审核_模式推荐理由, F_审核_审核意见,
     F_审核_关键实体抽取, F_审核_高风险词命中, F_审核_平台规则预检,
+    F_审核_备案核查结果,
     F_审核_推荐违规类型, F_审核_推荐风险等级, F_审核_审核时间,
     # 流转段
     F_流转_当前状态,
@@ -204,37 +206,37 @@ def recommend_mode(ctx: dict) -> str:
     return "标准"
 
 
-def call_teammate_engine(ctx: dict, mode: str) -> list:
+def call_teammate_engine(ctx: dict, mode: str):
     """
-    调用队友规则引擎，返回命中规则列表。
-    TODO：等队友提供 HTTP API 后替换。
-    当前：返回空列表，LLM 根据通用原则独立审核。
+    调用队友规则引擎。
+    - 引擎返回完整审核结果（dict with routing）时，execute() 直接使用，跳过本地 LLM。
+    - 引擎返回命中规则列表（list）时，交给本地 LLM 生成报告。
     """
-    # 队友 API 就绪后取消注释，填入真实地址和 Key：
-    # from config import RULE_ENGINE_URL, RULE_ENGINE_API_KEY
-    # import requests
-    # resp = requests.post(
-    #     RULE_ENGINE_URL,
-    #     headers={"X-API-Key": RULE_ENGINE_API_KEY, "Content-Type": "application/json"},
-    #     json={
-    #         "record_id":        ctx["record_id"],
-    #         "industry":         ctx["industry"],
-    #         "content":          ctx["content"],
-    #         "platform":         ctx["platform_list"],   # 数组，如 ["抖音", "小红书"]
-    #         "material_type":    ctx["material_type"],
-    #         "product_category": ctx["product_category"],
-    #         "urgency":          ctx["urgency"],
-    #         "supplement":       ctx["supplement"],
-    #         "extras":           ctx["extras"],
-    #         "mode":             mode,
-    #     },
-    #     timeout=10,
-    # )
-    # data = resp.json()
-    # if data.get("code") != 0:
-    #     raise Exception(f"规则引擎返回错误: {data.get('msg')} (code={data.get('code')})")
-    # return data.get("data", {})
-    return []
+    from config import RULE_ENGINE_URL, RULE_ENGINE_API_KEY
+    import requests as _requests
+
+    resp = _requests.post(
+        RULE_ENGINE_URL,
+        headers={"X-API-Key": RULE_ENGINE_API_KEY, "Content-Type": "application/json"},
+        json={
+            "record_id":        ctx["record_id"],
+            "industry":         ctx["industry"],
+            "content":          ctx["content"],
+            "platform":         ctx["platform_list"],   # 数组，如 ["抖音", "小红书"]
+            "material_type":    ctx["material_type"],
+            "product_category": ctx["product_category"],
+            "urgency":          ctx["urgency"],
+            "supplement":       ctx["supplement"],
+            "extras":           ctx["extras"],
+            "mode":             mode,
+        },
+        timeout=10,
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    if data.get("code") != 0:
+        raise Exception(f"规则引擎返回错误: {data.get('msg')} (code={data.get('code')})")
+    return data.get("data", {})
 
 
 def _decide_routing(hits: list, llm_routing: str) -> str:
@@ -341,6 +343,15 @@ def _format_matched_rules(matched_rules: list) -> str:
     return "\n".join(lines)
 
 
+def _clean_hit_points(raw: str) -> str:
+    """去掉规则引擎暴露的原始 regex:(...) 表达式，只保留字面关键词。"""
+    if not raw:
+        return raw
+    parts = [p.strip() for p in raw.split("、")]
+    cleaned = [p for p in parts if not p.startswith("regex:")]
+    return "、".join(cleaned) if cleaned else raw
+
+
 def write_back(record_id: str, llm_result: dict, routing: str, mode: str = "标准"):
     """
     把审核结果回写到多维表格 ②③ 段，更新流转状态。
@@ -359,7 +370,7 @@ def write_back(record_id: str, llm_result: dict, routing: str, mode: str = "标�
     fields = {
         # ② AI预审段（运营可见）
         F_预审_风险等级:      llm_result.get("预审_风险等级", ""),
-        F_预审_命中要点:      llm_result.get("预审_命中要点", ""),
+        F_预审_命中要点:      _clean_hit_points(llm_result.get("预审_命中要点", "")),
         F_预审_修改建议:      llm_result.get("预审_修改建议", ""),
         F_预审_时间:          audit_ts,
         # ③ AI审核段（法务可见）

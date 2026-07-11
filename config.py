@@ -1,6 +1,6 @@
 # 队友规则引擎配置（待队友提供后填入）
-RULE_ENGINE_URL     = ""   # 例：https://xxx.com/audit
-RULE_ENGINE_API_KEY = ""   # X-API-Key 值
+RULE_ENGINE_URL     = "http://124.223.111.170:8504/audit"
+RULE_ENGINE_API_KEY = "adsure_sk_cloud_Zn18HtG-UsPmPoLXPVVIIIszasXTf5PB"
 
 # LLM API 配置（Anthropic 格式中转站）
 LLM_API_KEY  = "sk-243f3fcd43154f248240e354712a0316"

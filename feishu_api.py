@@ -158,38 +158,32 @@ def get_dept_open_ids(dept_name: str) -> list:
     token = get_tenant_access_token()
     headers = {"Authorization": f"Bearer {token}"}
 
-    # 第一步：BFS 遍历部门树，找到名称匹配的 open_department_id
-    def _find_dept_id(parent_open_dept_id: str):
-        page_token = None
-        while True:
-            params = {
-                "user_id_type": "open_id",
-                "department_id_type": "open_department_id",
-                "page_size": 50,
-            }
-            if page_token:
-                params["page_token"] = page_token
-            resp = requests.get(
-                f"{BASE_URL}/contact/v3/departments/{parent_open_dept_id}/children",
-                headers=headers,
-                params=params,
-            ).json()
-            if resp.get("code") != 0:
-                print(f"[feishu_api] 遍历子部门失败: {resp.get('msg')} (code={resp.get('code')})")
-                return None
-            for dept in resp.get("data", {}).get("items", []):
-                if dept.get("name") == dept_name:
-                    return dept.get("open_department_id")
-                # 递归搜索子部门
-                found = _find_dept_id(dept.get("open_department_id", ""))
-                if found:
-                    return found
-            if not resp.get("data", {}).get("has_more"):
+    # 第一步：列出所有部门，按名称匹配（/children 接口权限受限，改用 list 接口）
+    dept_id = None
+    page_token = None
+    while True:
+        params = {
+            "user_id_type": "open_id",
+            "department_id_type": "open_department_id",
+            "page_size": 50,
+        }
+        if page_token:
+            params["page_token"] = page_token
+        resp = requests.get(
+            f"{BASE_URL}/contact/v3/departments",
+            headers=headers,
+            params=params,
+        ).json()
+        if resp.get("code") != 0:
+            print(f"[feishu_api] 列出部门失败: {resp.get('msg')} (code={resp.get('code')})")
+            break
+        for dept in resp.get("data", {}).get("items", []):
+            if dept.get("name") == dept_name:
+                dept_id = dept.get("open_department_id")
                 break
-            page_token = resp.get("data", {}).get("page_token")
-        return None
-
-    dept_id = _find_dept_id("0")  # "0" 是飞书根部门的 open_department_id
+        if dept_id or not resp.get("data", {}).get("has_more"):
+            break
+        page_token = resp.get("data", {}).get("page_token")
     if not dept_id:
         print(f"[feishu_api] 未找到部门「{dept_name}」")
         return []
@@ -198,17 +192,21 @@ def get_dept_open_ids(dept_name: str) -> list:
     open_ids = []
     page_token = None
     while True:
-        params = {"user_id_type": "open_id", "page_size": 50, "department_id_type": "open_department_id"}
+        params = {
+            "user_id_type": "open_id",
+            "department_id_type": "open_department_id",
+            "department_id": dept_id,
+            "page_size": 50,
+        }
         if page_token:
             params["page_token"] = page_token
         members_resp = requests.get(
-            f"{BASE_URL}/contact/v3/departments/{dept_id}/members",
+            f"{BASE_URL}/contact/v3/users",
             headers=headers,
             params=params,
         ).json()
         if members_resp.get("code") != 0:
-            raise Exception(f"获取部门成员失败: {members_resp.get('msg')} (code={members_resp.get('code')})\n"
-                            "请确认应用已开通权限：contact:user.base:readonly")
+            raise Exception(f"获取部门成员失败: {members_resp.get('msg')} (code={members_resp.get('code')})")
         for u in members_resp.get("data", {}).get("items", []):
             oid = u.get("open_id")
             if oid:
