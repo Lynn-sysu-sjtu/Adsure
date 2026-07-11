@@ -115,6 +115,7 @@ def _run_prepare(record_id: str, operator_open_id: Optional[str]):
         _send_mode_card(record_id, ctx, recommended_mode, operator_open_id)
     except Exception as e:
         print(f"[bot_listener] prepare 异常: {e}")
+        _on_audit_error(record_id, operator_open_id, str(e))
 
 
 def _run_execute(record_id: str, mode: str, operator_open_id: Optional[str]):
@@ -129,6 +130,7 @@ def _run_execute(record_id: str, mode: str, operator_open_id: Optional[str]):
             _notify_legal(record_id, llm_result)
     except Exception as e:
         print(f"[bot_listener] execute 异常: {e}")
+        _on_audit_error(record_id, operator_open_id, str(e))
 
 
 def _run_resubmit(record_id: str, operator_open_id: Optional[str]):
@@ -149,6 +151,42 @@ def _run_resubmit(record_id: str, operator_open_id: Optional[str]):
 
 
 # ===== 审核结果通知 =====
+
+def _on_audit_error(record_id: str, open_id: Optional[str], err_msg: str):
+    """
+    审核流程异常统一处理：
+    1. 状态回退到「运营起草」，让运营可以重新点「开启AI审核」
+    2. 若有 open_id，向运营推送失败通知卡片
+    """
+    try:
+        feishu_api.update_record(record_id, {F_流转_当前状态: "运营起草"})
+        print(f"[bot_listener] 审核失败，状态已回退为「运营起草」record_id={record_id}")
+    except Exception as e:
+        print(f"[bot_listener] 状态回退失败: {e}")
+
+    if not open_id:
+        return
+
+    # 截断错误信息，避免卡片内容过长
+    display_err = err_msg[:120] + "…" if len(err_msg) > 120 else err_msg
+
+    card = {
+        "config": {"wide_screen_mode": True},
+        "header": {
+            "title": {"tag": "plain_text", "content": "⚠️ AI审核失败，请重新提交"},
+            "template": "red",
+        },
+        "elements": [
+            {"tag": "div", "text": {"tag": "lark_md",
+                "content": f"**失败原因**\n{display_err}"}},
+            {"tag": "hr"},
+            {"tag": "note", "elements": [{"tag": "plain_text",
+                "content": "物料状态已回退为「运营起草」，你可以重新点击「开启AI审核」再次尝试"}]},
+        ],
+    }
+    _send_card_to(open_id, card)
+    print(f"[bot_listener] 审核失败通知已推送给运营 record_id={record_id}")
+
 
 def _notify_operator_result(record_id: str, llm_result: dict, open_id: Optional[str]):
     """路由→运营自改：向运营推送审核结果卡片"""
