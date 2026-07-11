@@ -51,6 +51,19 @@ def handle_card_action(data: P2CardActionTrigger) -> P2CardActionTriggerResponse
 
         # ── 步骤一：运营点「开启AI审核」──────────────────────────
         if action == "start_ai_review" and record_id:
+            # 防重：已在 AI预审中 则忽略，避免运营重复点击发出多次请求
+            try:
+                rec = feishu_api.get_record(record_id)
+                current_status = rec.get("fields", {}).get(F_流转_当前状态, "")
+                if current_status == "AI预审中":
+                    toast = CallBackToast()
+                    toast.type    = "info"
+                    toast.content = "AI审核正在进行中，请勿重复点击"
+                    resp.toast = toast
+                    return resp
+            except Exception as e:
+                print(f"[bot_listener] 防重检查异常: {e}")
+
             threading.Thread(
                 target=_run_prepare,
                 args=(record_id, operator_id),
