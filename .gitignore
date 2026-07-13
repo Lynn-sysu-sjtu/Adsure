@@ -1,0 +1,100 @@
+# =========================
+# Python cache
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Virtual environments
+# =========================
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Secrets / environment files
+# =========================
+.env
+.env.*
+!.env.example
+
+# Local secret/config files
+secrets.json
+config.local.json
+config.secret.json
+*.key
+*.pem
+*.p12
+*.crt
+
+# =========================
+# API keys / provider configs
+# =========================
+# Do not commit Feishu / DeepSeek / Zhipu / Adsure keys.
+feishu_config.json
+deepseek_config.json
+zhipu_config.json
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+log/
+runtime_logs/
+
+# =========================
+# Local reports / generated outputs
+# =========================
+reports/
+test_reports/
+.tmp/
+tmp/
+temp/
+*.tmp
+
+# =========================
+# OS / editor files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# =========================
+# Node / frontend, if later used
+# =========================
+node_modules/
+dist/
+build/
+
+# =========================
+# Streamlit / local app state
+# =========================
+.streamlit/secrets.toml
+
+# =========================
+# Large generated vector / embedding cache
+# =========================
+# 如果 vectorbase 是人工确认后需要版本管理的规则资产，就不要忽略整个 vectorbase。
+# 这里只忽略临时向量缓存文件。
+vectorbase/tmp/
+vectorbase/cache/
+*.faiss
+*.index
+
+# =========================
+# Local test payloads / scratch files
+# =========================
+*_local.json
+*_scratch.json
+*_tmp.json
+debug_*.json
