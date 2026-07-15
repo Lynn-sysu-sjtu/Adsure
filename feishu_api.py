@@ -220,7 +220,23 @@ def get_dept_open_ids(dept_name: str) -> list:
     return open_ids
 
 
-# === 测试连接 ===
+def send_card_to(open_id: str, card: dict):
+    """向指定 open_id 发送飞书互动卡片"""
+    import json as _json
+    token = get_tenant_access_token()
+    r = requests.post(
+        f"{BASE_URL}/im/v1/messages?receive_id_type=open_id",
+        headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+        json={
+            "receive_id": open_id,
+            "msg_type": "interactive",
+            "content": _json.dumps(card, ensure_ascii=False),
+        },
+        timeout=5,
+    ).json()
+    if r.get("code") != 0:
+        print(f"[feishu_api] ✗ 卡片发送失败 open_id={open_id} code={r.get('code')} msg={r.get('msg','')[:80]}")
+    return r.get("code") == 0
 if __name__ == "__main__":
     print("正在测试飞书API连接...")
     try:

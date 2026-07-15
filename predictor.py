@@ -275,11 +275,20 @@ def call_llm(ctx: dict, rules: list, mode: str = "标准") -> dict:
     """
     import anthropic
     from config import LLM_API_KEY, LLM_BASE_URL, LLM_MODEL
+    import preference_memory
 
     client = anthropic.Anthropic(api_key=LLM_API_KEY, base_url=LLM_BASE_URL)
 
     material_text = format_context_for_prompt(ctx)
     rules_text    = _format_rules_for_prompt(rules)
+
+    # Few-shot 注入：召回法务历史纠正案例
+    corrections = preference_memory.retrieve_relevant(
+        ctx["content"], industry=ctx["industry"], top_k=3
+    )
+    corrections_text = preference_memory.format_for_prompt(corrections)
+    if corrections_text:
+        print(f"[predictor] 注入 {len(corrections)} 条历史纠正案例")
 
     system_prompt = """\
 你是一名专业的广告合规审核专家，熟悉中国《广告法》《消费者权益保护法》《食品安全法》等法律法规及各平台运营规则。
@@ -304,7 +313,7 @@ routing 字段判断标准：
 - "运营"：违规类型明确、可直接改写，无需法务解释
 - "法务"：需要法律解释、存在模糊地带、或涉及重大合规风险"""
 
-    user_message = f"{material_text}\n\n{rules_text}"
+    user_message = f"{material_text}\n\n{rules_text}{corrections_text}"
 
     print(f"[predictor] 调用 LLM（模型={LLM_MODEL}）...")
     message = client.messages.create(
@@ -338,18 +347,30 @@ def _format_matched_rules(matched_rules: list) -> str:
         lines.append(
             f"- [{r.get('rule_id', '?')}] {r.get('title', '?')}"
             f"（{r.get('dimension', '')}·{r.get('risk_level', '')}）"
-            f" → {r.get('judgment', '')}：{r.get('match_reason', '')}"
+            f" → {r.get('judgment', '')}：{_clean_match_reason(r.get('match_reason', ''))}"
         )
     return "\n".join(lines)
 
 
 def _clean_hit_points(raw: str) -> str:
-    """去掉规则引擎暴露的原始 regex:(...) 表达式，只保留字面关键词。"""
+    """去掉规则引擎暴露的原始 regex:(...) 表达式，只保留字面关键词。支持顿号和逗号分隔。"""
     if not raw:
         return raw
-    parts = [p.strip() for p in raw.split("、")]
-    cleaned = [p for p in parts if not p.startswith("regex:")]
-    return "、".join(cleaned) if cleaned else raw
+    sep = next((c for c in ['、', '，', ','] if c in raw), '、')
+    parts = [p.strip() for p in raw.split(sep)]
+    cleaned = [p for p in parts if p and not p.startswith('regex:')]
+    return sep.join(cleaned) if cleaned else raw
+
+
+def _clean_match_reason(raw: str) -> str:
+    """去掉 match_reason 中的 regex:... 表达式和前置乱码字符（\ufffd 显示为 ?）。"""
+    if not raw:
+        return raw
+    # 去掉 regex: 及其之后的所有内容（规则引擎通常把正则表达式附在尾部）
+    cleaned = re.sub(r'\s*regex:.*', '', raw, flags=re.DOTALL).rstrip()
+    # 去掉前置连续乱码字符（Unicode 替换字符 \ufffd 或字面问号）
+    cleaned = re.sub(r'^[\ufffd?]+', '', cleaned).strip()
+    return cleaned if cleaned else raw
 
 
 def write_back(record_id: str, llm_result: dict, routing: str, mode: str = "标准"):
@@ -379,7 +400,7 @@ def write_back(record_id: str, llm_result: dict, routing: str, mode: str = "标�
         F_审核_模式推荐理由:  llm_result.get("mode_reason", "（待分配依据上线后自动填写）"),
         F_审核_审核意见:      audit_opinion,
         F_审核_关键实体抽取:  llm_result.get("审核_关键实体抽取", ""),
-        F_审核_高风险词命中:  llm_result.get("审核_高风险词命中", ""),
+        F_审核_高风险词命中:  _clean_hit_points(llm_result.get("审核_高风险词命中", "")),
         F_审核_平台规则预检:  llm_result.get("审核_平台规则预检", ""),
         F_审核_备案核查结果:  llm_result.get(
             "审核_备案核查结果",

@@ -22,7 +22,7 @@ from lark_oapi.event.callback.model.p2_card_action_trigger import (
 
 import feishu_api
 from config import FEISHU_APP_ID, FEISHU_APP_SECRET, WORKBENCH_URL, LEGAL_DEPT_NAME
-from fields_v4 import F_流转_当前状态
+from fields_v4 import F_流转_当前状态, F_物料内容, F_预审_风险等级, F_预审_命中要点
 
 
 # ===== 卡片按钮回调 =====
@@ -98,6 +98,19 @@ def handle_card_action(data: P2CardActionTrigger) -> P2CardActionTriggerResponse
             resp.toast = toast
             return resp
 
+        # ── 运营将 AI 结果直接升级转法务 ────────────────────────────
+        if action == "escalate_to_legal" and record_id:
+            threading.Thread(
+                target=_run_escalate,
+                args=(record_id,),
+                daemon=True,
+            ).start()
+            toast = CallBackToast()
+            toast.type    = "info"
+            toast.content = "已转交法务，等待复核…"
+            resp.toast = toast
+            return resp
+
     except Exception as e:
         print(f"[bot_listener] 回调处理异常: {e}")
 
@@ -128,6 +141,7 @@ def _run_execute(record_id: str, mode: str, operator_open_id: Optional[str]):
             _notify_operator_result(record_id, llm_result, operator_open_id)
         elif routing == "待法务复核":
             _notify_legal(record_id, llm_result)
+            _notify_operator_transferred(record_id, llm_result, operator_open_id)
     except Exception as e:
         print(f"[bot_listener] execute 异常: {e}")
         _on_audit_error(record_id, operator_open_id, str(e))
@@ -148,6 +162,24 @@ def _run_resubmit(record_id: str, operator_open_id: Optional[str]):
         print(f"[bot_listener] ✓ 重新提交卡片已发送 record_id={record_id}")
     except Exception as e:
         print(f"[bot_listener] resubmit 异常: {e}")
+
+
+def _run_escalate(record_id: str):
+    """运营将 AI 审核结果直接升级转法务：更新状态 + 通知法务"""
+    try:
+        feishu_api.update_record(record_id, {F_流转_当前状态: "待法务复核"})
+
+        # 读取已有的 AI 审核结果（预审段字段）
+        rec = feishu_api.get_record(record_id)
+        fields = rec.get("fields", {})
+        llm_result = {
+            "预审_风险等级": fields.get(F_预审_风险等级, "未知"),
+            "预审_命中要点": fields.get(F_预审_命中要点, "（无）"),
+        }
+        _notify_legal(record_id, llm_result)
+        print(f"[bot_listener] ✓ 运营主动升级转法务 record_id={record_id}")
+    except Exception as e:
+        print(f"[bot_listener] escalate 异常: {e}")
 
 
 # ===== 审核结果通知 =====
@@ -221,6 +253,9 @@ def _notify_operator_result(record_id: str, llm_result: dict, open_id: Optional[
                 {"tag": "button", "text": {"tag": "plain_text", "content": "✅ 修改完成，重新提交"},
                  "type": "primary",
                  "value": {"action": "resubmit", "record_id": record_id}},
+                {"tag": "button", "text": {"tag": "plain_text", "content": "⚖️ 转交法务复核"},
+                 "type": "default",
+                 "value": {"action": "escalate_to_legal", "record_id": record_id}},
             ]},
         ],
     }
@@ -243,6 +278,20 @@ def _notify_legal(record_id: str, llm_result: dict):
     risk   = llm_result.get("预审_风险等级", "未知")
     points = llm_result.get("预审_命中要点", "（无）")
 
+    # 取物料内容原文做预览
+    try:
+        rec = feishu_api.get_record(record_id)
+        raw_content = rec.get("fields", {}).get(F_物料内容, "")
+        # 飞书富文本字段可能是列表，展平为纯文本
+        if isinstance(raw_content, list):
+            raw_content = "".join(
+                seg.get("text", "") if isinstance(seg, dict) else str(seg)
+                for seg in raw_content
+            )
+        content_preview = (raw_content[:50] + "…") if len(raw_content) > 50 else raw_content or f"#{record_id[-8:]}"
+    except Exception:
+        content_preview = f"#{record_id[-8:]}"
+
     card = {
         "config": {"wide_screen_mode": True},
         "header": {
@@ -252,7 +301,7 @@ def _notify_legal(record_id: str, llm_result: dict):
         "elements": [
             {"tag": "div", "fields": [
                 {"is_short": True, "text": {"tag": "lark_md", "content": f"**风险等级**\n{risk}"}},
-                {"is_short": True, "text": {"tag": "lark_md", "content": f"**流水号**\n#{record_id[-8:]}"}},
+                {"is_short": True, "text": {"tag": "lark_md", "content": f"**物料内容**\n{content_preview}"}},
             ]},
             {"tag": "div", "text": {"tag": "lark_md", "content": f"**AI命中要点**\n{points}"}},
             {"tag": "hr"},
@@ -268,21 +317,47 @@ def _notify_legal(record_id: str, llm_result: dict):
     print(f"[bot_listener] ✓ 法务通知已发送给 {len(legal_ids)} 名法务成员")
 
 
+def _notify_operator_transferred(record_id: str, llm_result: dict, open_id: Optional[str]):
+    """路由→法务复核时，告知运营物料已流转到法务，等待法务裁决。"""
+    if not open_id:
+        print("[bot_listener] ⚠ 运营 open_id 为空，无法发送流转通知")
+        return
+
+    risk   = llm_result.get("预审_风险等级", "未知")
+    points = llm_result.get("预审_命中要点", "（无）")
+    bitable_url = (
+        f"https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb"
+        f"?table=tblL8R7yL1rCeU7m&view=vewMSBI3s8&record={record_id}"
+    )
+
+    card = {
+        "config": {"wide_screen_mode": True},
+        "header": {
+            "title": {"tag": "plain_text", "content": "⏳ 物料已流转至法务，等待裁决"},
+            "template": "blue",
+        },
+        "elements": [
+            {"tag": "div", "fields": [
+                {"is_short": True, "text": {"tag": "lark_md", "content": f"**AI风险等级**\n{risk}"}},
+                {"is_short": True, "text": {"tag": "lark_md", "content": "**当前状态**\n待法务复核"}},
+            ]},
+            {"tag": "div", "text": {"tag": "lark_md", "content": f"**AI命中要点**\n{points}"}},
+            {"tag": "hr"},
+            {"tag": "note", "elements": [{"tag": "plain_text",
+                "content": "AI审核完成，因存在需法律解释的风险点，已自动转交法务团队复核。法务裁决后你将收到通知。"}]},
+            {"tag": "action", "actions": [
+                {"tag": "button", "text": {"tag": "plain_text", "content": "🔍 查看物料详情"},
+                 "type": "default", "url": bitable_url},
+            ]},
+        ],
+    }
+    _send_card_to(open_id, card)
+    print(f"[bot_listener] ✓ 流转通知已推送给运营 record_id={record_id}")
+
+
 def _send_card_to(open_id: str, card: dict):
-    """向指定 open_id 发送互动卡片"""
-    try:
-        token = feishu_api.get_tenant_access_token()
-        r = requests.post(
-            "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type=open_id",
-            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
-            json={"receive_id": open_id, "msg_type": "interactive",
-                  "content": json.dumps(card, ensure_ascii=False)},
-            timeout=5,
-        ).json()
-        if r.get("code") != 0:
-            print(f"[bot_listener] ✗ 卡片发送失败 code={r.get('code')} msg={r.get('msg','')[:80]}")
-    except Exception as e:
-        print(f"[bot_listener] ✗ 卡片发送异常: {e}")
+    """向指定 open_id 发送互动卡片（委托给 feishu_api）"""
+    feishu_api.send_card_to(open_id, card)
 
 
 # ===== 模式确认卡片 =====

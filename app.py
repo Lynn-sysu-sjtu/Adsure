@@ -7,8 +7,10 @@ v4 五段字段命名:
 """
 from flask import Flask, render_template, jsonify, request
 import datetime
+import threading
 
 import feishu_api
+import preference_memory
 from fields_v4 import (
     # 运营段
     F_物料编号, F_行业领域, F_物料内容, F_提交人, F_提交时间,
@@ -180,6 +182,9 @@ def submit_review(record_id):
     if not ai_opinion or not verdict:
         return jsonify({"success": False, "message": "AI意见评价和物料裁决为必填项"}), 400
 
+    if ai_opinion == "同意有补充" and not data.get("supplement_reason", "").strip():
+        return jsonify({"success": False, "message": "同意有补充时补充意见为必填"}), 400
+
     if ai_opinion == "驳回":
         if not data.get("objection_fields"):
             return jsonify({"success": False, "message": "驳回时异议字段为必选"}), 400
@@ -234,6 +239,44 @@ def submit_review(record_id):
 
     try:
         feishu_api.update_record(record_id, update_fields)
+
+        # 规则沉淀：refine / override 触发存储纠正记录
+        if feedback_type in ("refine", "override"):
+            try:
+                rec = feishu_api.get_record(record_id)
+                f = rec.get("fields", {})
+                content_snippet = _as_text(f.get(F_物料内容, ""))[:120]
+                industry  = f.get(F_行业领域, "")
+                platform  = ""  # 行业专属，不在此处解析
+                ai_risk   = _norm_risk(f.get(F_审核_推荐风险等级, ""))
+                ai_vtypes = f.get(F_审核_推荐违规类型, [])
+                if not isinstance(ai_vtypes, list):
+                    ai_vtypes = [str(ai_vtypes)] if ai_vtypes else []
+                preference_memory.save_correction(
+                    record_id        = record_id,
+                    content_snippet  = content_snippet,
+                    industry         = industry,
+                    platform         = platform,
+                    ai_risk_level    = ai_risk,
+                    ai_violation_types = ai_vtypes,
+                    feedback_type    = feedback_type,
+                    objection_fields = data.get("objection_fields", []),
+                    correct_judgment = (data.get("correct_judgment") or "").strip(),
+                    reason           = (data.get("reject_reason") or data.get("supplement_reason") or "").strip(),
+                )
+            except Exception as me:
+                print(f"[app] 规则沉淀写入失败（非致命）: {me}")
+
+        # 仅在需要通知运营时异步推卡片（修改裁决时若关键字段未变则跳过）
+        if data.get("notify_operator", True):
+            threading.Thread(
+                target=_notify_operator_verdict,
+                args=(record_id, ai_opinion, verdict,
+                      data.get("final_suggestion", "").strip(),
+                      data.get("supplement_reason", "").strip(),
+                      data.get("reject_reason", "").strip()),
+                daemon=True,
+            ).start()
         return jsonify({
             "success": True,
             "message": "裁决已提交",
@@ -242,6 +285,107 @@ def submit_review(record_id):
         })
     except Exception as e:
         return jsonify({"success": False, "message": f"回写飞书失败: {str(e)}"}), 500
+
+
+def _notify_operator_verdict(record_id: str, ai_opinion: str, verdict: str,
+                              final_suggestion: str, supplement: str, reject_reason: str):
+    """
+    法务裁决完成后，根据 6 种组合给运营推飞书通知卡片。
+    """
+    try:
+        rec = feishu_api.get_record(record_id)
+        fields = rec.get("fields", {})
+        # 取提交人 open_id
+        submitter_raw = fields.get(F_提交人)
+        if isinstance(submitter_raw, list) and submitter_raw:
+            open_id = submitter_raw[0].get("id") or submitter_raw[0].get("open_id")
+        elif isinstance(submitter_raw, dict):
+            open_id = submitter_raw.get("id") or submitter_raw.get("open_id")
+        else:
+            open_id = None
+
+        if not open_id:
+            print(f"[app] ⚠ 提交人 open_id 为空，无法发送裁决通知 record_id={record_id}")
+            return
+
+        bitable_url = (
+            f"https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb"
+            f"?table=tblL8R7yL1rCeU7m&view=vewMSBI3s8&record={record_id}"
+        )
+        serial = str(fields.get(F_物料编号, record_id[-6:]))
+
+        # 物料内容预览（取前60字）
+        content_raw = fields.get(F_物料内容, "")
+        content_text = _as_text(content_raw)
+        preview = content_text[:60] + ("…" if len(content_text) > 60 else "")
+
+        passed = (verdict == "通过")
+        overridden = (ai_opinion == "驳回" and passed)
+
+        # 卡片颜色与标题
+        if passed:
+            template = "green"
+            title = f"✅ 物料已通过法务审核 #{serial}"
+        else:
+            template = "orange"
+            title = f"📝 物料需修改后重新提交 #{serial}"
+
+        # 正文内容块
+        elements = []
+
+        # 物料预览
+        elements.append({
+            "tag": "div",
+            "text": {"tag": "lark_md", "content": f"**物料内容**\n{preview}"},
+        })
+
+        # 不通过时给出修改意见，通过时给出简短说明
+        if not passed and final_suggestion:
+            elements.append({
+                "tag": "div",
+                "text": {"tag": "lark_md", "content": f"**修改意见**\n{final_suggestion}"},
+            })
+        elif passed:
+            elements.append({
+                "tag": "div",
+                "text": {"tag": "lark_md", "content": "物料已经过法务审核，可正常发布。"},
+            })
+
+        elements.append({"tag": "hr"})
+
+        # 通过：只需查看详情；不通过：去修改 + 重新提交
+        if passed:
+            actions = [
+                {"tag": "button",
+                 "text": {"tag": "plain_text", "content": "🔍 查看物料详情"},
+                 "type": "default", "url": bitable_url},
+            ]
+        else:
+            actions = [
+                {"tag": "button",
+                 "text": {"tag": "plain_text", "content": "✏️ 去修改物料"},
+                 "type": "default", "url": bitable_url},
+                {"tag": "button",
+                 "text": {"tag": "plain_text", "content": "✅ 修改完成，重新提交"},
+                 "type": "primary",
+                 "value": {"action": "resubmit", "record_id": record_id}},
+            ]
+        elements.append({"tag": "action", "actions": actions})
+
+        card = {
+            "config": {"wide_screen_mode": True},
+            "header": {
+                "title": {"tag": "plain_text", "content": title},
+                "template": template,
+            },
+            "elements": elements,
+        }
+
+        feishu_api.send_card_to(open_id, card)
+        print(f"[app] ✓ 裁决通知已推送给运营 record_id={record_id} verdict={verdict} ai_opinion={ai_opinion}")
+
+    except Exception as e:
+        print(f"[app] ✗ 裁决通知发送失败 record_id={record_id}: {e}")
 
 
 def _norm_risk(val):
@@ -298,5 +442,32 @@ def normalize_record(record_id, fields):
     }
 
 
+# ===== 规则库 API =====
+
+@app.route("/api/corrections")
+def list_corrections():
+    """返回全部纠正记录（法务规则库查阅）"""
+    return jsonify(preference_memory.list_all())
+
+
+@app.route("/api/corrections/<correction_id>/status", methods=["POST"])
+def update_correction_status(correction_id):
+    """切换纠正记录状态 active / paused"""
+    data = request.json or {}
+    status = data.get("status", "paused")
+    if status not in ("active", "paused"):
+        return jsonify({"success": False, "message": "status 必须为 active 或 paused"}), 400
+    ok = preference_memory.set_status(correction_id, status)
+    return jsonify({"success": ok})
+
+
+@app.route("/api/corrections/<correction_id>", methods=["DELETE"])
+def delete_correction(correction_id):
+    """永久删除一条纠正记录"""
+    ok = preference_memory.delete_correction(correction_id)
+    return jsonify({"success": ok})
+
+
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    # use_reloader=False：避免 debug 模式启动双进程，防止 stop.sh 漏杀子进程导致端口占用
+    app.run(debug=True, port=5001, use_reloader=False)
