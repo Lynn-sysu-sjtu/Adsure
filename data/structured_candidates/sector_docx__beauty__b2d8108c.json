@@ -1,0 +1,71 @@
+{
+  "case_id": "sector_docx__beauty__b2d8108c",
+  "title": "崇阳县市场监督管理局申请执行御升广盈生物科技（深圳）有限公司行政处罚案",
+  "case_number": "（2020）鄂1223行审52号",
+  "court": "崇阳县人民法院",
+  "decision_date": "2020-07-10",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "崇阳县市场监督管理局",
+  "party_name": "御升广盈生物科技（深圳）有限公司",
+  "region": "崇阳县人民法",
+  "industry": "化妆品 / 医疗美容 / 美妆",
+  "sector": "beauty",
+  "sector_cn": "美妆",
+  "violation_type": "化妆品广告使用医疗用语",
+  "case_nature": "administrative_nonlitigation_enforcement",
+  "source_lookup_priority": "P0",
+  "is_admin_penalty_candidate": true,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "beauty"
+  ],
+  "product_or_service": "温补阳气、通经活血、散寒止痛",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "化妆品医疗化宣传",
+    "涉医疗宣传",
+    "医疗用语"
+  ],
+  "illegal_claims": [
+    "温补阳气、通经活血、散寒止痛",
+    "舒肝理气、养血调经",
+    "增强肝毒的解毒功能、保护肝细胞"
+  ],
+  "facts_summary": "在化妆品包装盒内附广告宣传单，标注“温补阳气、通经活血、散寒止痛”“舒肝理气、养血调经”“增强肝毒的解毒功能、保护肝细胞”等医疗用语",
+  "legal_basis": [
+    "《广告法》第十七条、第五十八条第一款第（二）项"
+  ],
+  "penalty_result": "罚款100000元",
+  "penalty_amount": null,
+  "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告使用医疗用语，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第十七条、第五十八条第一款第（二）项。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "beauty",
+    "美妆",
+    "化妆品广告使用医疗用语",
+    "化妆品医疗化宣传",
+    "涉医疗宣传",
+    "医疗用语",
+    "温补阳气、通经活血、散寒止痛",
+    "舒肝理气、养血调经",
+    "增强肝毒的解毒功能、保护肝细胞"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2020）鄂1223行审52号 崇阳县市场监督管理局申请执行御升广盈生物科技（深圳）有限公司行政处罚案",
+  "vector_text": "【赛道】美妆。【场景】其他。【宣称】温补阳气、通经活血、散寒止痛；舒肝理气、养血调经；增强肝毒的解毒功能、保护肝细胞。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告使用医疗用语，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第十七条、第五十八条第一款第（二）项。。【依据】《广告法》第十七条、第五十八条第一款第（二）项。【结果】罚款100000元。"
+}

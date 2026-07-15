@@ -1,0 +1,12 @@
+{
+  "case_id": "offline_samples__26334151740c",
+  "title": "离线样例：化妆品医疗化宣传案",
+  "source_id": "offline_samples",
+  "source_type": "offline_sample",
+  "source_name": "离线样例数据（非真实处罚事实来源）",
+  "source_url": "https://example.com/offline/cosmetic-medical",
+  "priority": "DEMO",
+  "raw_html_path": "data/raw_html/offline_samples__26334151740c.json",
+  "raw_text_path": "data/raw_text/offline_samples__26334151740c.json",
+  "case_text": "离线样例：化妆品医疗化宣传案\n某公司在直播间宣传化妆品具有“治疗皮炎”的效果。\n监管机关认为，化妆品广告使用医疗化表述，容易使消费者误认为产品具有诊疗功效，违反广告法第二十八条。\n本材料仅用于离线流水线测试，不是真实处罚事实来源。"
+}

@@ -1,0 +1,65 @@
+{
+  "case_id": "sector_docx__beauty__b7712cbc",
+  "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+  "case_number": "（2016）粤0111民初9365号",
+  "court": "广州市白云区人民法院",
+  "decision_date": "2017-07-19",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "建德市市监局",
+  "party_name": "建德市艾氏贸易有限公司网络购物",
+  "region": "广州市白云区",
+  "industry": "化妆品 / 医疗美容 / 美妆",
+  "sector": "beauty",
+  "sector_cn": "美妆",
+  "violation_type": "化妆品虚假宣传",
+  "case_nature": "civil_dispute_with_regulatory_signal",
+  "source_lookup_priority": "P1",
+  "is_admin_penalty_candidate": false,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "beauty"
+  ],
+  "product_or_service": "防晒",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "防晒",
+    "祛斑美白"
+  ],
+  "facts_summary": "在天猫销售玫琳凯化妆品，将非特殊用途化妆品宣传具有“防晒”“祛斑美白”等特殊用途功效。建德市市监局认定构成虚假广告行为",
+  "legal_basis": [
+    "《广告法》第二十八条第二款第（二）项、第五十五条第一款"
+  ],
+  "penalty_result": "建德市市监局罚款10500元（民事诉讼判决退还货款3069.55元并三倍赔偿10551元）",
+  "penalty_amount": null,
+  "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第二十八条第二款第（二）项、第五十五条第一款。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "beauty",
+    "美妆",
+    "化妆品虚假宣传",
+    "虚假宣传",
+    "防晒",
+    "祛斑美白"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2016）粤0111民初9365号 林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+  "vector_text": "【赛道】美妆。【场景】其他。【宣称】防晒；祛斑美白。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第二十八条第二款第（二）项、第五十五条第一款。。【依据】《广告法》第二十八条第二款第（二）项、第五十五条第一款。【结果】建德市市监局罚款10500元（民事诉讼判决退还货款3069.55元并三倍赔偿10551元）。"
+}

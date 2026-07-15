@@ -1,0 +1,12 @@
+{
+  "case_id": "offline_samples__080b6ddfb48c",
+  "title": "离线样例：普通食品宣传降血糖案",
+  "source_id": "offline_samples",
+  "source_type": "offline_sample",
+  "source_name": "离线样例数据（非真实处罚事实来源）",
+  "source_url": "https://example.com/offline/food-blood-sugar",
+  "priority": "DEMO",
+  "raw_html_path": "data/raw_html/offline_samples__080b6ddfb48c.json",
+  "raw_text_path": "data/raw_text/offline_samples__080b6ddfb48c.json",
+  "case_text": "离线样例：普通食品宣传降血糖案\n某公司通过短视频广告将普通食品宣传为可以“降血糖”。\n监管机关认为，普通食品广告暗示疾病治疗或健康改善功效，容易误导消费者，违反广告法第二十八条。\n本材料仅用于离线流水线测试，不是真实处罚事实来源。"
+}

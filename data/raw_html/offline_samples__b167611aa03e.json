@@ -1,0 +1,10 @@
+{
+  "case_id": "offline_samples__b167611aa03e",
+  "source_id": "offline_samples",
+  "source_name": "离线样例数据（非真实处罚事实来源）",
+  "source_type": "offline_sample",
+  "priority": "DEMO",
+  "source_url": "https://example.com/offline/absolute-terms",
+  "fetched_at": "2026-07-05T17:37:03Z",
+  "html": "<html><body><article data-source-url=\"https://example.com/offline/absolute-terms\">\n      <h1>离线样例：某公司绝对化用语广告案</h1>\n      <p>某公司在互联网广告中宣称产品为“国家级最佳”。</p>\n      <p>监管机关认为，该广告使用绝对化用语，容易对消费者形成不当影响，违反广告法第二十八条。</p>\n      <p>本材料仅用于离线流水线测试，不是真实处罚事实来源。</p>\n    </article></body></html>"
+}

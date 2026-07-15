@@ -1,0 +1,67 @@
+{
+  "case_id": "sector_docx__game__54a80f6c",
+  "title": "刘某诉某科技公司网络服务合同纠纷案",
+  "case_number": "（2025）京0491民初7134号",
+  "court": "北京互联网法院",
+  "decision_date": "2025-05-27",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": null,
+  "party_name": "某科技公司",
+  "region": "北京互联网法",
+  "industry": "游戏",
+  "sector": "game",
+  "sector_cn": "游戏",
+  "violation_type": "游戏抽奖概率争议",
+  "case_nature": "judicial_reference_not_admin_penalty",
+  "source_lookup_priority": "P2",
+  "is_admin_penalty_candidate": false,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "game"
+  ],
+  "product_or_service": "魔法礼物",
+  "ad_channel": "APP",
+  "risk_dimensions": [
+    "游戏抽奖概率公示",
+    "概率规则透明度",
+    "消费者权益争议"
+  ],
+  "illegal_claims": [
+    "魔法礼物"
+  ],
+  "facts_summary": "玩APP“魔法礼物”抽奖活动，玩家充值约10万元后主张实际概率与公示不符。法院认定被告已按公示概率设置放回式抽奖模型，原告获得虚拟礼物整体已超过消耗钻石数量",
+  "legal_basis": [
+    "《民法典》第一百四十三条"
+  ],
+  "penalty_result": "驳回诉讼请求",
+  "penalty_amount": null,
+  "regulatory_logic": "游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏抽奖概率争议，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十三条。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "game",
+    "游戏",
+    "游戏抽奖概率争议",
+    "游戏抽奖概率公示",
+    "概率规则透明度",
+    "消费者权益争议",
+    "魔法礼物"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2025）京0491民初7134号 刘某诉某科技公司网络服务合同纠纷案",
+  "vector_text": "【赛道】游戏。【场景】APP。【宣称】魔法礼物。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏抽奖概率争议，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十三条。。【依据】《民法典》第一百四十三条。【结果】驳回诉讼请求。"
+}

@@ -1,0 +1,71 @@
+{
+  "case_id": "sector_docx__health__87d3834c",
+  "title": "宜兴市市场监督管理局申请执行宜兴市某某服务部行政处罚案",
+  "case_number": "（2025）苏0282行审17号",
+  "court": "宜兴市人民法院",
+  "decision_date": "2025-04-02",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "宜兴市市场监督管理局",
+  "party_name": "宜兴市某某服务部",
+  "region": "宜兴市人民法",
+  "industry": "保健食品 / 保健品 / 普通食品",
+  "sector": "health",
+  "sector_cn": "保健品",
+  "violation_type": "会销保健品虚假宣传",
+  "case_nature": "administrative_nonlitigation_enforcement",
+  "source_lookup_priority": "P0",
+  "is_admin_penalty_candidate": true,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "health"
+  ],
+  "product_or_service": "三七人参胶囊",
+  "ad_channel": "会销、视频宣传、视频",
+  "risk_dimensions": [
+    "保健品违规宣传",
+    "会销虚假宣传",
+    "疾病治疗功效宣传",
+    "老年人营销风险"
+  ],
+  "illegal_claims": [
+    "三七人参胶囊",
+    "四高"
+  ],
+  "facts_summary": "以会销形式针对老年人销售“三七人参胶囊”（保健食品），播放视频宣传对风湿关节痛、降血压血脂、头疼脑梗、心脑血管病、“四高”人群等有治疗效果，销售1182瓶金额235218元",
+  "legal_basis": [
+    "《反不正当竞争法》第八条第一款、第二十条第一款"
+  ],
+  "penalty_result": "罚款200000元",
+  "penalty_amount": null,
+  "regulatory_logic": "保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销保健品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《反不正当竞争法》第八条第一款、第二十条第一款。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "health",
+    "保健品",
+    "会销保健品虚假宣传",
+    "保健品违规宣传",
+    "会销虚假宣传",
+    "疾病治疗功效宣传",
+    "老年人营销风险",
+    "三七人参胶囊",
+    "四高"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2025）苏0282行审17号 宜兴市市场监督管理局申请执行宜兴市某某服务部行政处罚案",
+  "vector_text": "【赛道】保健品。【场景】会销、视频宣传、视频。【宣称】三七人参胶囊；四高。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销保健品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《反不正当竞争法》第八条第一款、第二十条第一款。。【依据】《反不正当竞争法》第八条第一款、第二十条第一款。【结果】罚款200000元。"
+}
