@@ -28,6 +28,8 @@ from fields_v4 import (
     F_法务_批注, F_法务_复核时间,
     # 流转段
     F_流转_当前状态, F_流转_反馈类型, F_流转_驳回次数,
+    # 行业专属投放平台（规则沉淀时读取）
+    F_美妆_投放平台, F_游戏_投放平台, F_保健食品_投放平台,
 )
 
 app = Flask(__name__)
@@ -247,7 +249,13 @@ def submit_review(record_id):
                 f = rec.get("fields", {})
                 content_snippet = _as_text(f.get(F_物料内容, ""))[:120]
                 industry  = f.get(F_行业领域, "")
-                platform  = ""  # 行业专属，不在此处解析
+                _platform_field = {
+                    "美妆": F_美妆_投放平台,
+                    "游戏": F_游戏_投放平台,
+                    "保健食品": F_保健食品_投放平台,
+                }
+                platform_raw = f.get(_platform_field.get(industry, ""), "")
+                platform = "、".join(platform_raw) if isinstance(platform_raw, list) else str(platform_raw or "")
                 ai_risk   = _norm_risk(f.get(F_审核_推荐风险等级, ""))
                 ai_vtypes = f.get(F_审核_推荐违规类型, [])
                 if not isinstance(ai_vtypes, list):
@@ -312,6 +320,10 @@ def _notify_operator_verdict(record_id: str, ai_opinion: str, verdict: str,
             f"https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb"
             f"?table=tblL8R7yL1rCeU7m&view=vewMSBI3s8&record={record_id}"
         )
+        kanban_url = (
+            f"https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb"
+            f"?table=tblL8R7yL1rCeU7m&view=vewEddfI3c&record={record_id}"
+        )
         serial = str(fields.get(F_物料编号, record_id[-6:]))
 
         # 物料内容预览（取前60字）
@@ -353,15 +365,21 @@ def _notify_operator_verdict(record_id: str, ai_opinion: str, verdict: str,
 
         elements.append({"tag": "hr"})
 
-        # 通过：只需查看详情；不通过：去修改 + 重新提交
+        # 通过：查看AI审核意见 + 查看详情；不通过：去修改 + 重新提交 + 查看AI审核意见
         if passed:
             actions = [
                 {"tag": "button",
-                 "text": {"tag": "plain_text", "content": "🔍 查看物料详情"},
+                 "text": {"tag": "plain_text", "content": "🔍 查看AI审核意见"},
+                 "type": "primary", "url": kanban_url},
+                {"tag": "button",
+                 "text": {"tag": "plain_text", "content": "📋 查看物料详情"},
                  "type": "default", "url": bitable_url},
             ]
         else:
             actions = [
+                {"tag": "button",
+                 "text": {"tag": "plain_text", "content": "🔍 查看AI审核意见"},
+                 "type": "default", "url": kanban_url},
                 {"tag": "button",
                  "text": {"tag": "plain_text", "content": "✏️ 去修改物料"},
                  "type": "default", "url": bitable_url},
@@ -397,6 +415,19 @@ def _norm_risk(val):
     return mapping.get(s, s)
 
 
+def _get_platform(fields, industry=None):
+    """根据行业读取对应投放平台字段，返回逗号拼接字符串"""
+    if industry is None:
+        industry = fields.get(F_行业领域, "")
+    _platform_field = {
+        "美妆": F_美妆_投放平台,
+        "游戏": F_游戏_投放平台,
+        "保健食品": F_保健食品_投放平台,
+    }
+    raw = fields.get(_platform_field.get(industry, ""), "")
+    return "、".join(raw) if isinstance(raw, list) else str(raw or "")
+
+
 def normalize_record(record_id, fields):
     """飞书 v4 原始字段 → 前端格式（兼容旧前端字段名）"""
     return {
@@ -404,6 +435,7 @@ def normalize_record(record_id, fields):
         # 运营段
         "物料编号": str(fields.get(F_物料编号, "")),  # 自动编号字段直接是字符串
         "行业领域": fields.get(F_行业领域, ""),
+        "投放平台": _get_platform(fields),
         "物料内容": _as_text(fields.get(F_物料内容)),
         "提交人": _name_of_user(fields.get(F_提交人)),
         "提交时间": _ts_to_str(fields.get(F_提交时间)),
@@ -470,4 +502,4 @@ def delete_correction(correction_id):
 
 if __name__ == "__main__":
     # use_reloader=False：避免 debug 模式启动双进程，防止 stop.sh 漏杀子进程导致端口占用
-    app.run(debug=True, port=5001, use_reloader=False)
+    app.run(host="0.0.0.0", debug=True, port=5001, use_reloader=False)

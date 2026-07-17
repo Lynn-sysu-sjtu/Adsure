@@ -87,7 +87,37 @@ function showDetail(record) {
 
     const isReviewed = record["审核状态"] === "已通过" || record["审核状态"] === "需修改";
 
+    // 紧急程度标签
+    const urgencyHtml = record["紧急程度"] && record["紧急程度"] !== "普通"
+        ? `<span style="background:#fff3cd;color:#856404;border:1px solid #ffc107;border-radius:4px;padding:2px 8px;font-size:12px;font-weight:600;">⚡ ${record["紧急程度"]}</span>`
+        : "";
+
     detail.innerHTML = `
+        <!-- 基本信息卡片 -->
+        <div class="detail-card">
+            <div class="detail-card-title"><span class="icon">📋</span>基本信息</div>
+            <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8;">
+                <tr>
+                    <td style="color:var(--text-muted);width:80px;padding:3px 0;vertical-align:top;">物料编号</td>
+                    <td style="padding:3px 0;">${record["物料编号"] || "—"}</td>
+                    <td style="color:var(--text-muted);width:80px;padding:3px 0;vertical-align:top;">行业领域</td>
+                    <td style="padding:3px 0;">${record["行业领域"] || "—"}</td>
+                </tr>
+                <tr>
+                    <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">投放平台</td>
+                    <td style="padding:3px 0;">${record["投放平台"] || "—"}</td>
+                    <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">紧急程度</td>
+                    <td style="padding:3px 0;">${urgencyHtml || record["紧急程度"] || "普通"}</td>
+                </tr>
+                <tr>
+                    <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">提交人</td>
+                    <td style="padding:3px 0;">${record["提交人"] || "—"}</td>
+                    <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">提交时间</td>
+                    <td style="padding:3px 0;">${record["提交时间"] || "—"}</td>
+                </tr>
+            </table>
+        </div>
+
         <!-- 物料内容卡片 -->
         <div class="detail-card">
             <div class="detail-card-title"><span class="icon">📄</span>物料内容</div>
@@ -98,6 +128,16 @@ function showDetail(record) {
         <div class="detail-card">
             <div class="detail-card-title"><span class="icon">🤖</span>AI审核意见</div>
             <div class="ai-opinion-box">${record["AI审核意见"]}</div>
+            ${record["关键实体抽取"] ? `
+            <div style="margin-top:10px;">
+                <div style="font-size:12px;font-weight:600;color:var(--text-muted);margin-bottom:4px;">关键实体抽取</div>
+                <div class="highlight-box">${record["关键实体抽取"]}</div>
+            </div>` : ""}
+            ${record["平台规则预检"] ? `
+            <div style="margin-top:10px;">
+                <div style="font-size:12px;font-weight:600;color:var(--text-muted);margin-bottom:4px;">平台规则预检</div>
+                <div class="highlight-box">${record["平台规则预检"]}</div>
+            </div>` : ""}
         </div>
 
         <!-- 风险信息卡片 -->
