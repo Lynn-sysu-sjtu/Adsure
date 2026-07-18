@@ -14,7 +14,17 @@ import preference_memory
 from fields_v4 import (
     # 运营段
     F_物料编号, F_行业领域, F_物料内容, F_提交人, F_提交时间,
-    F_紧急程度,
+    F_紧急程度, F_补充背景资料,
+    # 美妆专属
+    F_美妆_物料类型, F_美妆_投放平台, F_美妆_产品品类,
+    F_美妆_产品备案名称, F_美妆_物料涉及场景, F_美妆_核心宣称功效,
+    # 游戏专属
+    F_游戏_物料类型, F_游戏_投放平台, F_游戏_产品品类,
+    F_游戏_游戏名称, F_游戏_物料涉及场景, F_游戏_IP名称,
+    # 保健食品专属
+    F_保健食品_物料类型, F_保健食品_投放平台, F_保健食品_产品品类,
+    F_保健食品_物料涉及场景, F_保健食品_核心宣称功效,
+    F_保健食品_产品备案名称, F_保健食品_批准文号,
     # AI预审段
     F_预审_风险等级, F_预审_命中要点, F_预审_修改建议,
     F_预审_运营修改记录, F_预审_运营是否采纳建议,
@@ -324,6 +334,7 @@ def _notify_operator_verdict(record_id: str, ai_opinion: str, verdict: str,
             f"https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb"
             f"?table=tblL8R7yL1rCeU7m&view=vewEddfI3c&record={record_id}"
         )
+        form_url = "https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb?table=tblL8R7yL1rCeU7m&view=vew3KEItkB"
         serial = str(fields.get(F_物料编号, record_id[-6:]))
 
         # 物料内容预览（取前60字）
@@ -382,7 +393,7 @@ def _notify_operator_verdict(record_id: str, ai_opinion: str, verdict: str,
                  "type": "default", "url": kanban_url},
                 {"tag": "button",
                  "text": {"tag": "plain_text", "content": "✏️ 去修改物料"},
-                 "type": "default", "url": bitable_url},
+                 "type": "default", "url": form_url},
                 {"tag": "button",
                  "text": {"tag": "plain_text", "content": "✅ 修改完成，重新提交"},
                  "type": "primary",
@@ -467,6 +478,31 @@ def normalize_record(record_id, fields):
         "最终修改意见": _as_text(fields.get(F_法务_最终修改意见)),
         "法务批注": _as_text(fields.get(F_法务_批注)),
 
+        # 行业专属 — 美妆
+        "美妆_物料类型": fields.get(F_美妆_物料类型, ""),
+        "美妆_产品品类": fields.get(F_美妆_产品品类, ""),
+        "美妆_产品备案名称": _as_text(fields.get(F_美妆_产品备案名称)),
+        "美妆_物料涉及场景": _as_list(fields.get(F_美妆_物料涉及场景, [])),
+        "美妆_核心宣称功效": _as_text(fields.get(F_美妆_核心宣称功效)),
+
+        # 行业专属 — 游戏
+        "游戏_物料类型": fields.get(F_游戏_物料类型, ""),
+        "游戏_产品品类": fields.get(F_游戏_产品品类, ""),
+        "游戏_游戏名称": _as_text(fields.get(F_游戏_游戏名称)),
+        "游戏_物料涉及场景": _as_list(fields.get(F_游戏_物料涉及场景, [])),
+        "游戏_IP名称": _as_text(fields.get(F_游戏_IP名称)),
+
+        # 行业专属 — 保健食品
+        "保健食品_物料类型": fields.get(F_保健食品_物料类型, ""),
+        "保健食品_产品品类": fields.get(F_保健食品_产品品类, ""),
+        "保健食品_产品备案名称": _as_text(fields.get(F_保健食品_产品备案名称)),
+        "保健食品_批准文号": _as_text(fields.get(F_保健食品_批准文号)),
+        "保健食品_物料涉及场景": _as_list(fields.get(F_保健食品_物料涉及场景, [])),
+        "保健食品_核心宣称功效": _as_text(fields.get(F_保健食品_核心宣称功效)),
+
+        # 通用补充
+        "补充背景资料": _as_text(fields.get(F_补充背景资料)),
+
         # 流转段
         "审核状态": fields.get(F_流转_当前状态, ""),
         "反馈类型": fields.get(F_流转_反馈类型, ""),
@@ -498,6 +534,50 @@ def delete_correction(correction_id):
     """永久删除一条纠正记录"""
     ok = preference_memory.delete_correction(correction_id)
     return jsonify({"success": ok})
+
+
+# ===== 案例库 API =====
+
+@app.route("/api/records/<record_id>/cases")
+def get_cases(record_id):
+    """
+    代理调用案例库检索接口，返回与当前物料相关的历史处罚案例。
+    失败或超时时静默降级返回空数组，不影响主审核流程和飞书状态。
+    """
+    try:
+        from config import CASE_ENGINE_URL, CASE_ENGINE_API_KEY
+        import requests as _requests
+
+        rec = feishu_api.get_record(record_id)
+        fields = rec.get("fields", {})
+
+        industry = _as_text(fields.get(F_行业领域, ""))
+        content  = _as_text(fields.get(F_物料内容, ""))
+        _platform_field = {
+            "美妆":     F_美妆_投放平台,
+            "游戏":     F_游戏_投放平台,
+            "保健食品": F_保健食品_投放平台,
+        }
+        platform_raw = fields.get(_platform_field.get(industry, ""), "")
+        platform = platform_raw if isinstance(platform_raw, list) else ([str(platform_raw)] if platform_raw else [])
+
+        resp = _requests.post(
+            f"{CASE_ENGINE_URL}/cases/retrieve",
+            headers={"X-API-Key": CASE_ENGINE_API_KEY, "Content-Type": "application/json"},
+            json={"content": content, "industry": industry, "platform": platform, "top_k": 3},
+            timeout=8,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        if data.get("code") != 0:
+            raise Exception(f"案例库返回错误: {data.get('msg')} (code={data.get('code')})")
+
+        cases = data.get("data", {}).get("cases", [])
+        return jsonify({"cases": cases, "record_id": record_id})
+
+    except Exception as e:
+        print(f"[app] 案例库检索失败（静默降级）record_id={record_id}: {e}")
+        return jsonify({"cases": [], "record_id": record_id})
 
 
 if __name__ == "__main__":

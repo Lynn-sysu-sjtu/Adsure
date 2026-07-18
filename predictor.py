@@ -18,6 +18,7 @@ import datetime
 from pathlib import Path
 
 from feishu_api import get_record, update_record
+from ocr_preprocessor import extract_text_from_attachments
 from fields_v4 import (
     # 运营段
     F_行业领域, F_物料内容, F_补充背景资料, F_紧急程度,
@@ -135,6 +136,11 @@ def build_context(record_id: str) -> dict:
 
     industry   = _text(fields.get(F_行业领域, ""))
     content    = _text(fields.get(F_物料内容, ""))
+
+    # 若文字内容为空，尝试从图片附件 OCR 提取
+    if not content.strip():
+        content = extract_text_from_attachments(record_id, fields)
+
     supplement = _text(fields.get(F_补充背景资料, ""))
     urgency    = _text(fields.get(F_紧急程度, "普通"))
 
@@ -362,6 +368,25 @@ def _clean_hit_points(raw: str) -> str:
     return sep.join(cleaned) if cleaned else raw
 
 
+def _trim_hit_points(raw: str) -> str:
+    """
+    命中要点字段截断处理：
+    规则引擎有时把完整规则明细塞进命中要点，这里只保留第一句概括（分号前）。
+    规则明细已在 审核_审核意见 里完整展示，命中要点只需一句话。
+    """
+    if not raw:
+        return raw
+    # 取第一个分号/换行前的内容
+    for sep in ['；', '\n', ';']:
+        idx = raw.find(sep)
+        if idx > 0:
+            return raw[:idx].strip()
+    # 超过80字也截断，加省略号
+    if len(raw) > 80:
+        return raw[:80].strip() + "…"
+    return raw
+
+
 def _clean_match_reason(raw: str) -> str:
     """去掉 match_reason 中的 regex:... 表达式和前置乱码字符（\ufffd 显示为 ?）。"""
     if not raw:
@@ -382,16 +407,13 @@ def write_back(record_id: str, llm_result: dict, routing: str, mode: str = "标�
     # 规则引擎若返回 audit_time，优先使用；否则用当前时间
     audit_ts = llm_result.get("audit_time") or now_ms
 
-    # 审核意见：若有命中规则明细，附加在末尾
+    # 审核意见：规则引擎返回的 审核_审核意见 已包含命中规则明细，直接使用，不再追加
     audit_opinion = llm_result.get("审核_审核意见", "")
-    matched_rules_text = _format_matched_rules(llm_result.get("matched_rules", []))
-    if matched_rules_text:
-        audit_opinion = audit_opinion + matched_rules_text
 
     fields = {
         # ② AI预审段（运营可见）
         F_预审_风险等级:      llm_result.get("预审_风险等级", ""),
-        F_预审_命中要点:      _clean_hit_points(llm_result.get("预审_命中要点", "")),
+        F_预审_命中要点:      _trim_hit_points(_clean_hit_points(llm_result.get("预审_命中要点", ""))),
         F_预审_修改建议:      llm_result.get("预审_修改建议", ""),
         F_预审_时间:          audit_ts,
         # ③ AI审核段（法务可见）
@@ -457,6 +479,19 @@ def execute(record_id: str, mode: str):
     if ctx is None:
         print(f"[predictor] 缓存未命中，重新拉取上下文")
         ctx = build_context(record_id)
+
+    # 保底：若内容仍为空（图片物料 OCR 未完成或写回延迟），强制重跑一次
+    if not ctx["content"].strip():
+        print(f"[predictor] ⚠ content 为空，强制重跑 OCR")
+        from ocr_preprocessor import extract_text_from_attachments
+        rec = get_record(record_id)
+        fields = rec.get("fields", {})
+        ocr_text = extract_text_from_attachments(record_id, fields)
+        if ocr_text:
+            ctx["content"] = ocr_text
+            print(f"[predictor] OCR 补救成功，内容 {len(ocr_text)} 字")
+        else:
+            raise ValueError("物料内容为空：既无文字也无可识别的图片，无法审核")
 
     # 调用队友规则引擎
     engine_result = call_teammate_engine(ctx, mode)

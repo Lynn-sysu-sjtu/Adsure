@@ -2,8 +2,12 @@
 # cp config.example.py config.py
 
 # 队友规则引擎配置
-RULE_ENGINE_URL     = "http://your-engine-host/audit"
+RULE_ENGINE_URL     = "http://your-engine-host"   # 不含路径，调用时拼 /audit
 RULE_ENGINE_API_KEY = "your_rule_engine_api_key"
+
+# 案例库配置（另一位队友提供）
+CASE_ENGINE_URL     = "http://your-case-engine-host"   # 不含路径，调用时拼 /cases/retrieve
+CASE_ENGINE_API_KEY = "your_case_engine_api_key"
 
 # LLM API 配置（Anthropic 格式，支持中转站）
 LLM_API_KEY  = "your_llm_api_key"

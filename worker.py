@@ -10,9 +10,9 @@ import json
 import requests
 
 from config import BITABLE_APP_TOKEN, BITABLE_TABLE_ID
-from feishu_api import get_tenant_access_token, list_all_records, update_record
+from feishu_api import get_tenant_access_token, list_all_records, update_record, download_attachment, upload_image
 from fields_v4 import (
-    F_物料编号, F_物料内容, F_行业领域, F_提交人, F_紧急程度,
+    F_物料编号, F_物料内容, F_物料附件, F_行业领域, F_提交人, F_紧急程度,
     F_流转_当前状态,
     F_美妆_投放平台, F_游戏_投放平台, F_保健食品_投放平台,
 )
@@ -72,7 +72,24 @@ def send_review_card(record_id, fields):
     submitter = _user_name(fields.get(F_提交人))
     content   = _text_of(fields.get(F_物料内容))
     urgency   = fields.get(F_紧急程度, "普通")
-    preview   = content[:100] + ("…" if len(content) > 100 else "")
+
+    # 判断是图片物料还是文字物料
+    attachments = fields.get(F_物料附件) or []
+    if isinstance(attachments, dict):
+        attachments = [attachments]
+    image_att = next((a for a in attachments if isinstance(a, dict) and a.get("file_token")), None)
+    is_image_material = bool(image_att) and not content.strip()
+
+    # 尝试上传图片拿 img_key（失败则降级为文字提示）
+    img_key = None
+    if is_image_material and image_att:
+        try:
+            img_bytes = download_attachment(image_att["file_token"])
+            img_key = upload_image(img_bytes)
+        except Exception as e:
+            print(f"    ⚠ 图片上传失败，降级为文字提示: {e}")
+
+    preview = content[:100] + ("…" if len(content) > 100 else "") if content.strip() else None
     platform  = _text_of(fields.get(_PLATFORM_FIELD.get(industry, ""), "")) or "未填"
 
     card = {
@@ -93,10 +110,19 @@ def send_review_card(record_id, fields):
                 "tag": "div",
                 "text": {"tag": "lark_md", "content": f"**投放平台**\n{platform}"},
             },
-            {
+            # 物料预览：图片显示缩略图，文字显示前100字
+            *([
+                {"tag": "div", "text": {"tag": "lark_md", "content": "**物料预览**"}},
+                {
+                    "tag": "img",
+                    "img_key": img_key,
+                    "alt": {"tag": "plain_text", "content": "物料图片"},
+                    "mode": "crop_center",
+                },
+            ] if img_key else [{
                 "tag": "div",
-                "text": {"tag": "lark_md", "content": f"**物料内容预览**\n{preview}"},
-            },
+                "text": {"tag": "lark_md", "content": f"**物料预览**\n{preview or '（图片物料，AI审核时自动识别）'}"},
+            }]),
             {"tag": "hr"},
             {
                 "tag": "note",
@@ -115,7 +141,7 @@ def send_review_card(record_id, fields):
                         "tag": "button",
                         "text": {"tag": "plain_text", "content": "✏️ 修改物料"},
                         "type": "default",
-                        "url": f"https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb?table=tblL8R7yL1rCeU7m&view=vewMSBI3s8&record={record_id}",
+                        "url": f"https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb?table=tblL8R7yL1rCeU7m&view=vew3KEItkB",
                     },
                     {
                         "tag": "button",
@@ -151,10 +177,11 @@ def send_review_card(record_id, fields):
 # === 核心逻辑 ===
 
 def is_new_submission(fields):
-    """状态为空 + 物料内容非空 = 新提交"""
+    """状态为空 + (物料内容非空 或 有图片附件) = 新提交"""
     status  = fields.get(F_流转_当前状态, "")
     content = _text_of(fields.get(F_物料内容))
-    return (not status) and bool(content.strip())
+    has_attachment = bool(fields.get(F_物料附件))
+    return (not status) and (bool(content.strip()) or has_attachment)
 
 
 def process_record(record_id, fields):

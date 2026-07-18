@@ -74,6 +74,71 @@ function renderSidebar(records) {
     });
 }
 
+// 行业专属信息卡片
+function buildIndustryCard(record) {
+    const industry = record["行业领域"];
+    if (!industry) return "";
+
+    function val(v) {
+        if (!v || (Array.isArray(v) && v.length === 0)) return "—";
+        return Array.isArray(v) ? v.join("、") : v;
+    }
+    function row(label, value) {
+        return `<tr>
+            <td style="color:var(--text-muted);width:100px;padding:4px 0;vertical-align:top;white-space:nowrap;">${label}</td>
+            <td style="padding:4px 0;">${val(value)}</td>
+        </tr>`;
+    }
+
+    let rows = "";
+    let icon = "🏷️";
+
+    if (industry === "美妆") {
+        icon = "💄";
+        rows = [
+            row("物料类型",     record["美妆_物料类型"]),
+            row("产品品类",     record["美妆_产品品类"]),
+            row("涉及场景",     record["美妆_物料涉及场景"]),
+            row("核心宣称功效", record["美妆_核心宣称功效"]),
+            row("产品备案名称", record["美妆_产品备案名称"]),
+            row("补充背景资料", record["补充背景资料"]),
+        ].join("");
+    } else if (industry === "游戏") {
+        icon = "🎮";
+        rows = [
+            row("物料类型",     record["游戏_物料类型"]),
+            row("产品品类",     record["游戏_产品品类"]),
+            row("游戏名称",     record["游戏_游戏名称"]),
+            row("IP名称",       record["游戏_IP名称"]),
+            row("涉及场景",     record["游戏_物料涉及场景"]),
+            row("补充背景资料", record["补充背景资料"]),
+        ].join("");
+    } else if (industry === "保健食品") {
+        icon = "💊";
+        rows = [
+            row("物料类型",     record["保健食品_物料类型"]),
+            row("产品品类",     record["保健食品_产品品类"]),
+            row("涉及场景",     record["保健食品_物料涉及场景"]),
+            row("核心宣称功效", record["保健食品_核心宣称功效"]),
+            row("产品备案名称", record["保健食品_产品备案名称"]),
+            row("批准文号",     record["保健食品_批准文号"]),
+            row("补充背景资料", record["补充背景资料"]),
+        ].join("");
+    } else {
+        // 其他行业只显示补充背景资料
+        if (!record["补充背景资料"]) return "";
+        rows = row("补充背景资料", record["补充背景资料"]);
+    }
+
+    return `
+        <div class="detail-card">
+            <div class="detail-card-title"><span class="icon">${icon}</span>${industry}专属信息</div>
+            <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8;">
+                ${rows}
+            </table>
+        </div>`;
+}
+
 // 显示右侧详情
 function showDetail(record) {
     currentRecord = record;
@@ -96,11 +161,14 @@ function showDetail(record) {
         <!-- 基本信息卡片 -->
         <div class="detail-card">
             <div class="detail-card-title"><span class="icon">📋</span>基本信息</div>
-            <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8;table-layout:fixed;">
+                <colgroup>
+                    <col style="width:80px;"><col><col style="width:80px;"><col>
+                </colgroup>
                 <tr>
-                    <td style="color:var(--text-muted);width:80px;padding:3px 0;vertical-align:top;">物料编号</td>
+                    <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">物料编号</td>
                     <td style="padding:3px 0;">${record["物料编号"] || "—"}</td>
-                    <td style="color:var(--text-muted);width:80px;padding:3px 0;vertical-align:top;">行业领域</td>
+                    <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">行业领域</td>
                     <td style="padding:3px 0;">${record["行业领域"] || "—"}</td>
                 </tr>
                 <tr>
@@ -123,6 +191,8 @@ function showDetail(record) {
             <div class="detail-card-title"><span class="icon">📄</span>物料内容</div>
             <div class="content-full">${record["物料内容"]}</div>
         </div>
+
+        ${buildIndustryCard(record)}
 
         <!-- AI审核意见卡片 -->
         <div class="detail-card">
@@ -157,6 +227,12 @@ function showDetail(record) {
             </div>` : ""}
         </div>
 
+        <!-- 相关案例卡片（异步加载） -->
+        <div class="detail-card" id="cases-card">
+            <div class="detail-card-title"><span class="icon">📚</span>相关案例参考</div>
+            <div id="cases-content" style="color:var(--text-muted);font-size:13px;">加载中…</div>
+        </div>
+
         <!-- 法务操作区 -->
         <div class="review-card">
             <div class="review-card-title">✍️ 法务裁决${isReviewed ? ' <span style="font-size:13px;font-weight:normal;color:var(--text-muted);">（已裁决）</span>' : ''}</div>
@@ -169,6 +245,9 @@ function showDetail(record) {
     } else {
         setupFormLogic();
     }
+
+    // 异步加载相关案例
+    loadCases(record.id);
 }
 
 // 已裁决：渲染历史记录视图
@@ -536,6 +615,87 @@ function showSuccess(verdict, notifyOperator = true) {
     `;
     currentRecord = null;
 }
+
+// ===== 相关案例 =====
+
+async function loadCases(record_id) {
+    const container = document.getElementById("cases-content");
+    if (!container) return;
+
+    try {
+        const res = await fetch(`/api/records/${record_id}/cases`);
+        const data = await res.json();
+        const cases = data.cases || [];
+
+        if (cases.length === 0) {
+            container.innerHTML = '<span style="color:var(--text-muted);">暂无相关案例</span>';
+            return;
+        }
+
+        const riskColor = { "高": "var(--danger)", "中": "var(--warning,#e6720a)", "低": "var(--success)" };
+
+        const html = cases.map(c => {
+            const legalBasis = Array.isArray(c.legal_basis)
+                ? c.legal_basis.join("；")
+                : (c.legal_basis || "");
+            const riskDims = Array.isArray(c.risk_dimensions) && c.risk_dimensions.length
+                ? `<span style="color:var(--text-muted);font-size:12px;">${c.risk_dimensions.join("·")}</span>`
+                : "";
+            const riskLevelHtml = c.risk_level
+                ? `<span style="color:${riskColor[c.risk_level] || '#333'};font-weight:600;">${c.risk_level}风险</span> · `
+                : "";
+            const scoreHtml = typeof c.score === "number"
+                ? `<span style="color:var(--text-muted);font-size:11px;">BM25: ${c.score.toFixed(2)}</span>`
+                : "";
+            const sourceHtml = c.source_url
+                ? `<a href="${c.source_url}" target="_blank" rel="noopener noreferrer"
+                      style="font-size:11px;color:var(--primary);text-decoration:none;"
+                   >${c.source_name || "来源"}</a>`
+                : (c.source_name ? `<span style="font-size:11px;color:var(--text-muted);">${c.source_name}</span>` : "");
+            const candidateBadge = c.candidate_data
+                ? `<span style="font-size:10px;background:#fff3cd;color:#856404;border:1px solid #ffc107;border-radius:3px;padding:1px 5px;margin-left:4px;">候选数据</span>`
+                : "";
+
+            return `
+            <div style="border:1px solid var(--border);border-radius:6px;padding:12px 14px;margin-bottom:10px;">
+                <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px;">
+                    <div style="font-weight:600;font-size:13px;line-height:1.4;">
+                        ${c.title || "（无标题）"}${candidateBadge}
+                    </div>
+                    <div style="white-space:nowrap;display:flex;align-items:center;gap:6px;">
+                        ${scoreHtml}
+                        ${sourceHtml}
+                    </div>
+                </div>
+                <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px;">
+                    ${riskLevelHtml}${c.violation_type || ""}${c.violation_type && riskDims ? " · " : ""}${riskDims}
+                </div>
+                ${c.content_snippet ? `
+                <div class="highlight-box" style="margin-bottom:6px;font-size:12px;">
+                    <strong>原案例宣称：</strong>${c.content_snippet}
+                </div>` : ""}
+                ${c.ruling ? `
+                <div style="font-size:12px;margin-bottom:4px;">
+                    <strong>处理结果：</strong>${c.ruling}
+                </div>` : ""}
+                ${c.regulatory_logic ? `
+                <div style="font-size:12px;color:var(--text-secondary);margin-bottom:4px;">
+                    <strong>监管逻辑：</strong>${c.regulatory_logic}
+                </div>` : ""}
+                ${legalBasis ? `
+                <div style="font-size:11px;color:var(--text-muted);border-top:1px solid var(--border);padding-top:6px;margin-top:6px;">
+                    <strong>法律依据：</strong>${legalBasis}
+                </div>` : ""}
+            </div>`;
+        }).join("");
+
+        container.innerHTML = `<div style="font-size:12px;color:var(--text-muted);margin-bottom:8px;">共 ${cases.length} 条相关案例</div>${html}`;
+
+    } catch (e) {
+        container.innerHTML = '<span style="color:var(--text-muted);">暂无相关案例</span>';
+    }
+}
+
 
 // ===== 规则库 =====
 

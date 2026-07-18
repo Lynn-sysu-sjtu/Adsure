@@ -83,8 +83,10 @@ def retrieve_relevant(content: str, industry: str = "", top_k: int = 3) -> list:
     if not records:
         return []
 
-    same = [r for r in records if r.get("industry") == industry]
-    pool = same if len(same) >= top_k else records
+    # 严格按行业隔离，不跨行业召回，避免美妆/游戏/保健食品规则互相污染
+    pool = [r for r in records if r.get("industry") == industry]
+    if not pool:
+        return []
 
     scored = [(r, _bigram_overlap(content, r.get("content_snippet", ""))) for r in pool]
     scored.sort(key=lambda x: x[1], reverse=True)

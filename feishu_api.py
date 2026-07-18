@@ -220,6 +220,40 @@ def get_dept_open_ids(dept_name: str) -> list:
     return open_ids
 
 
+def upload_image(image_bytes: bytes) -> str:
+    """
+    把图片字节上传到飞书 IM，返回 img_key（供卡片 img 元素使用）。
+    """
+    import io
+    token = get_tenant_access_token()
+    resp = requests.post(
+        f"{BASE_URL}/im/v1/images",
+        headers={"Authorization": f"Bearer {token}"},
+        data={"image_type": "message"},
+        files={"image": ("image.png", io.BytesIO(image_bytes), "image/png")},
+        timeout=30,
+    )
+    data = resp.json()
+    if data.get("code") != 0:
+        raise Exception(f"上传图片失败: {data.get('msg')} (code={data.get('code')})")
+    return data["data"]["image_key"]
+
+
+def download_attachment(file_token: str) -> bytes:
+    """
+    下载飞书附件，返回原始字节。
+    file_token 来自附件字段 [{file_token, name, type, size}, ...]。
+    """
+    token = get_tenant_access_token()
+    resp = requests.get(
+        f"{BASE_URL}/drive/v1/medias/{file_token}/download",
+        headers={"Authorization": f"Bearer {token}"},
+        timeout=30,
+    )
+    resp.raise_for_status()
+    return resp.content
+
+
 def send_card_to(open_id: str, card: dict):
     """向指定 open_id 发送飞书互动卡片"""
     import json as _json

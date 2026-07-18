@@ -25,6 +25,17 @@ from config import FEISHU_APP_ID, FEISHU_APP_SECRET, WORKBENCH_URL, LEGAL_DEPT_N
 from fields_v4 import F_流转_当前状态, F_物料内容, F_预审_风险等级, F_预审_命中要点
 
 
+def _trim(text: str, max_len: int = 80) -> str:
+    """命中要点截断：只取第一句（分号前），超长截断。"""
+    if not text:
+        return text
+    for sep in ['；', '\n', ';']:
+        idx = text.find(sep)
+        if idx > 0:
+            return text[:idx].strip()
+    return text[:max_len].strip() + ("…" if len(text) > max_len else "")
+
+
 # ===== 卡片按钮回调 =====
 
 def handle_card_action(data: P2CardActionTrigger) -> P2CardActionTriggerResponse:
@@ -227,11 +238,15 @@ def _notify_operator_result(record_id: str, llm_result: dict, open_id: Optional[
         return
 
     risk     = llm_result.get("预审_风险等级", "未知")
-    points   = llm_result.get("预审_命中要点", "（无）")
+    points   = _trim(llm_result.get("预审_命中要点", "（无）"))
     suggest  = llm_result.get("预审_修改建议", "（无）")
     bitable_url = (
         f"https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb"
         f"?table=tblL8R7yL1rCeU7m&view=vewMSBI3s8&record={record_id}"
+    )
+    kanban_url = (
+        f"https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb"
+        f"?table=tblL8R7yL1rCeU7m&view=vewEddfI3c&record={record_id}"
     )
     risk_color = {"高": "red", "中": "orange", "低": "green"}.get(risk, "blue")
 
@@ -248,6 +263,8 @@ def _notify_operator_result(record_id: str, llm_result: dict, open_id: Optional[
             {"tag": "note", "elements": [{"tag": "plain_text",
                 "content": "请根据以上建议修改物料，修改完成后点击「重新提交」"}]},
             {"tag": "action", "actions": [
+                {"tag": "button", "text": {"tag": "plain_text", "content": "🔍 查看AI审核意见"},
+                 "type": "default", "url": kanban_url},
                 {"tag": "button", "text": {"tag": "plain_text", "content": "✏️ 去修改物料"},
                  "type": "default", "url": bitable_url},
                 {"tag": "button", "text": {"tag": "plain_text", "content": "✅ 修改完成，重新提交"},
@@ -276,7 +293,7 @@ def _notify_legal(record_id: str, llm_result: dict):
         return
 
     risk   = llm_result.get("预审_风险等级", "未知")
-    points = llm_result.get("预审_命中要点", "（无）")
+    points = _trim(llm_result.get("预审_命中要点", "（无）"))
 
     # 取物料内容原文做预览
     try:
@@ -324,10 +341,14 @@ def _notify_operator_transferred(record_id: str, llm_result: dict, open_id: Opti
         return
 
     risk   = llm_result.get("预审_风险等级", "未知")
-    points = llm_result.get("预审_命中要点", "（无）")
+    points = _trim(llm_result.get("预审_命中要点", "（无）"))
     bitable_url = (
         f"https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb"
         f"?table=tblL8R7yL1rCeU7m&view=vewMSBI3s8&record={record_id}"
+    )
+    kanban_url = (
+        f"https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb"
+        f"?table=tblL8R7yL1rCeU7m&view=vewEddfI3c&record={record_id}"
     )
 
     card = {
@@ -346,7 +367,9 @@ def _notify_operator_transferred(record_id: str, llm_result: dict, open_id: Opti
             {"tag": "note", "elements": [{"tag": "plain_text",
                 "content": "AI审核完成，因存在需法律解释的风险点，已自动转交法务团队复核。法务裁决后你将收到通知。"}]},
             {"tag": "action", "actions": [
-                {"tag": "button", "text": {"tag": "plain_text", "content": "🔍 查看物料详情"},
+                {"tag": "button", "text": {"tag": "plain_text", "content": "🔍 查看AI审核意见"},
+                 "type": "primary", "url": kanban_url},
+                {"tag": "button", "text": {"tag": "plain_text", "content": "📋 查看物料详情"},
                  "type": "default", "url": bitable_url},
             ]},
         ],
