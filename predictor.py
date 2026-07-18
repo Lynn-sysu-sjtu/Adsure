@@ -344,19 +344,6 @@ routing 字段判断标准：
     return result
 
 
-def _format_matched_rules(matched_rules: list) -> str:
-    """把命中规则列表格式化为可附加到审核意见末尾的文本块"""
-    if not matched_rules:
-        return ""
-    lines = ["\n\n【命中规则明细】"]
-    for r in matched_rules:
-        lines.append(
-            f"- [{r.get('rule_id', '?')}] {r.get('title', '?')}"
-            f"（{r.get('dimension', '')}·{r.get('risk_level', '')}）"
-            f" → {r.get('judgment', '')}：{_clean_match_reason(r.get('match_reason', ''))}"
-        )
-    return "\n".join(lines)
-
 
 def _clean_hit_points(raw: str) -> str:
     """去掉规则引擎暴露的原始 regex:(...) 表达式，只保留字面关键词。支持顿号和逗号分隔。"""
