@@ -189,7 +189,17 @@ function showDetail(record) {
         <!-- 物料内容卡片 -->
         <div class="detail-card">
             <div class="detail-card-title"><span class="icon">📄</span>物料内容</div>
-            <div class="content-full">${record["物料内容"]}</div>
+            ${(record["物料附件"] || []).length > 0 ? `
+            <div style="margin-bottom:${record["物料内容"] ? "10px" : "0"};">
+                ${(record["物料附件"] || []).map(a => `
+                <img src="/api/attachment/${a.file_token}"
+                     alt="${a.name}"
+                     loading="lazy"
+                     style="max-width:100%;max-height:260px;object-fit:contain;border-radius:6px;display:block;margin-bottom:6px;"
+                     onerror="this.style.display='none'">
+                `).join("")}
+            </div>` : ""}
+            ${record["物料内容"] ? `<div class="content-full">${record["物料内容"]}</div>` : ""}
         </div>
 
         ${buildIndustryCard(record)}

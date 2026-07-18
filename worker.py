@@ -141,7 +141,7 @@ def send_review_card(record_id, fields):
                         "tag": "button",
                         "text": {"tag": "plain_text", "content": "✏️ 修改物料"},
                         "type": "default",
-                        "url": f"https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb?table=tblL8R7yL1rCeU7m&view=vew3KEItkB",
+                        "url": f"https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb?table=tblL8R7yL1rCeU7m&view=vewMSBI3s8&record={record_id}",
                     },
                     {
                         "tag": "button",

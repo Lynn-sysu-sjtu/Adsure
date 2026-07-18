@@ -13,7 +13,7 @@ import feishu_api
 import preference_memory
 from fields_v4 import (
     # 运营段
-    F_物料编号, F_行业领域, F_物料内容, F_提交人, F_提交时间,
+    F_物料编号, F_行业领域, F_物料内容, F_物料附件, F_提交人, F_提交时间,
     F_紧急程度, F_补充背景资料,
     # 美妆专属
     F_美妆_物料类型, F_美妆_投放平台, F_美妆_产品品类,
@@ -101,10 +101,12 @@ def _run_review(record_id: str):
 # ===== 工具函数 =====
 
 def _name_of_user(raw):
-    """飞书 User 字段值 → 名字"""
+    """飞书 User 字段值 → 名字（兼容 list 和 dict 两种格式）"""
     if isinstance(raw, list) and raw:
         u = raw[0]
         return u.get("name") or u.get("en_name") or ""
+    if isinstance(raw, dict):
+        return raw.get("name") or raw.get("en_name") or ""
     if isinstance(raw, str):
         return raw
     return ""
@@ -448,8 +450,13 @@ def normalize_record(record_id, fields):
         "行业领域": fields.get(F_行业领域, ""),
         "投放平台": _get_platform(fields),
         "物料内容": _as_text(fields.get(F_物料内容)),
+        "物料附件": [
+            {"file_token": a.get("file_token"), "name": a.get("name", "")}
+            for a in _as_list(fields.get(F_物料附件))
+            if isinstance(a, dict) and a.get("file_token")
+        ],
         "提交人": _name_of_user(fields.get(F_提交人)),
-        "提交时间": _ts_to_str(fields.get(F_提交时间)),
+        "提交时间": _ts_to_str(fields.get(F_提交时间) or fields.get("创建时间")),
         "紧急程度": fields.get(F_紧急程度, ""),
 
         # AI预审段（给运营看的轻量审核）
@@ -508,6 +515,43 @@ def normalize_record(record_id, fields):
         "反馈类型": fields.get(F_流转_反馈类型, ""),
         "驳回次数": fields.get(F_流转_驳回次数, 0),
     }
+
+
+@app.route("/api/attachment/<file_token>")
+def proxy_attachment(file_token):
+    """代理下载飞书附件图片，压缩后返回，本地磁盘缓存加速"""
+    import os, io
+    from PIL import Image
+    from flask import Response
+
+    cache_dir = "/tmp/adsure_img_cache"
+    os.makedirs(cache_dir, exist_ok=True)
+    cache_path = os.path.join(cache_dir, file_token + ".thumb.jpg")
+
+    if os.path.exists(cache_path):
+        with open(cache_path, "rb") as f:
+            thumb_bytes = f.read()
+    else:
+        try:
+            img_bytes = feishu_api.download_attachment(file_token)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 404
+
+        try:
+            img = Image.open(io.BytesIO(img_bytes)).convert("RGB")
+            img.thumbnail((900, 900), Image.LANCZOS)
+            buf = io.BytesIO()
+            img.save(buf, format="JPEG", quality=75, optimize=True)
+            thumb_bytes = buf.getvalue()
+            with open(cache_path, "wb") as f:
+                f.write(thumb_bytes)
+        except Exception:
+            # Pillow 处理失败则直接返回原图
+            thumb_bytes = img_bytes
+
+    resp = Response(thumb_bytes, mimetype="image/jpeg")
+    resp.headers["Cache-Control"] = "public, max-age=86400"
+    return resp
 
 
 # ===== 规则库 API =====
