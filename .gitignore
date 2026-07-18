@@ -5,3 +5,6 @@ __pycache__/
 .env
 .DS_Store
 spreadsheet_work/node_modules
+
+# Local integration instructions may contain private endpoints or credentials.
+API调用方式说明.docx

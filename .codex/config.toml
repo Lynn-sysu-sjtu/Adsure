@@ -1,0 +1,35 @@
+# Project-scoped MCP servers for authoritative legal retrieval.
+# Keep credentials out of this file. Codex reads the bearer token from the
+# PKULAW_MCP_TOKEN environment variable when the trusted project starts.
+
+[mcp_servers.pkulaw-law-semantic]
+url = "https://apim-gateway.pkulaw.com/mcp-law-search-service"
+bearer_token_env_var = "PKULAW_MCP_TOKEN"
+enabled = true
+required = false
+startup_timeout_sec = 20
+tool_timeout_sec = 60
+
+[mcp_servers.pkulaw-law-keyword]
+url = "https://apim-gateway.pkulaw.com/mcp-law"
+bearer_token_env_var = "PKULAW_MCP_TOKEN"
+enabled = true
+required = false
+startup_timeout_sec = 20
+tool_timeout_sec = 60
+
+[mcp_servers.pkulaw-case-semantic]
+url = "https://apim-gateway.pkulaw.com/mcp-case-search-service"
+bearer_token_env_var = "PKULAW_MCP_TOKEN"
+enabled = true
+required = false
+startup_timeout_sec = 20
+tool_timeout_sec = 60
+
+[mcp_servers.pkulaw-case-keyword]
+url = "https://apim-gateway.pkulaw.com/mcp-case"
+bearer_token_env_var = "PKULAW_MCP_TOKEN"
+enabled = true
+required = false
+startup_timeout_sec = 20
+tool_timeout_sec = 60
