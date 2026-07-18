@@ -375,7 +375,20 @@ def _legal_basis_text(rule):
     return labels
 
 
-
+def _legal_authority_level_label(rule, legal_basis):
+    level = legal_basis.get("legal_level")
+    level_map = {
+        "1": "法律",
+        "2": "行政法规",
+        "3": "部门规章",
+        "4": "规范性文件/国家标准/监管指引",
+    }
+    if level is not None and str(level).strip():
+        return level_map.get(str(level).strip(), f"效力层级{level}")
+    source_type = str(legal_basis.get("source_type") or rule.get("source_type") or "").strip()
+    if source_type:
+        return source_type
+    return "规则依据"
 
 def _regex_hit_label(hit):
     pattern = str(hit).removeprefix("regex:")
@@ -452,7 +465,8 @@ def _format_legal_basis_details(matched_rules):
                 continue
             seen.add(key)
             label = "".join(part for part in [source, article] if part) or "规则原文"
-            lines.append(f"- {_rule_display_label(rule)}\n  {label}：{text}")
+            level_label = _legal_authority_level_label(rule, lb)
+            lines.append(f"- {_rule_display_label(rule)}\n  [{level_label}] {label}：{text}")
     if not lines:
         return ""
     return "【触犯法条原文】\n" + "\n".join(lines)
@@ -699,8 +713,4 @@ def audit(payload, base_dir=None):
             "audit_time": audit_timestamp,
         },
     }
-
-
-
-
 
