@@ -1,0 +1,63 @@
+{
+  "case_id": "sector_docx__game__e9a15585",
+  "title": "闻某诉广州某公司网络服务合同纠纷案",
+  "case_number": "（2025）粤0192民初19683号",
+  "court": "广州互联网法院",
+  "decision_date": "2025-09-02",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": null,
+  "party_name": "广州某公司",
+  "region": "广州互联网法",
+  "industry": "游戏",
+  "sector": "game",
+  "sector_cn": "游戏",
+  "violation_type": "游戏充值诱导消费争议",
+  "case_nature": "judicial_reference_not_admin_penalty",
+  "source_lookup_priority": "P2",
+  "is_admin_penalty_candidate": false,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "game"
+  ],
+  "product_or_service": "游戏《三国志·战棋版》",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "游戏《三国志·战棋版》玩家充值7.5万元后主张游戏内弹窗限时优惠等利用心理暗示促使其冲动消费，抽奖概率不透明"
+  ],
+  "facts_summary": "游戏《三国志·战棋版》玩家充值7.5万元后主张游戏内弹窗限时优惠等利用心理暗示促使其冲动消费，抽奖概率不透明。法院认定游戏内的充值奖励活动系正常经营行为，未违反强制性规定，原告作为成年人具有独立判断能力",
+  "legal_basis": [
+    "《民法典》第一百四十八条"
+  ],
+  "penalty_result": "驳回诉讼请求",
+  "penalty_amount": null,
+  "regulatory_logic": "游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏充值诱导消费争议，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十八条。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "game",
+    "游戏",
+    "游戏充值诱导消费争议",
+    "虚假宣传",
+    "游戏《三国志·战棋版》玩家充值7.5万元后主张游戏内弹窗限时优惠等利用心理暗示促使其冲动消费，抽奖概率不透明"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2025）粤0192民初19683号 闻某诉广州某公司网络服务合同纠纷案",
+  "vector_text": "【赛道】游戏。【场景】其他。【宣称】游戏《三国志·战棋版》玩家充值7.5万元后主张游戏内弹窗限时优惠等利用心理暗示促使其冲动消费，抽奖概率不透明。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏充值诱导消费争议，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十八条。。【依据】《民法典》第一百四十八条。【结果】驳回诉讼请求。"
+}

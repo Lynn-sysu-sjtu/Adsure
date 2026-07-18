@@ -1,0 +1,40 @@
+{
+  "case_id": "offline_samples__26334151740c",
+  "title": "离线样例：化妆品医疗化宣传案",
+  "source_type": "offline_sample",
+  "source_name": "离线样例数据（非真实处罚事实来源）",
+  "source_url": "https://example.com/offline/cosmetic-medical",
+  "publish_date": "",
+  "decision_date": "",
+  "penalty_authority": "",
+  "party_name": "某公司",
+  "region": "",
+  "industry": "",
+  "product_or_service": "",
+  "ad_channel": "",
+  "risk_dimensions": [
+    "涉医疗宣传",
+    "化妆品医疗化宣传"
+  ],
+  "illegal_claims": [
+    "治疗皮炎"
+  ],
+  "facts_summary": "离线样例：化妆品医疗化宣传案 某公司在直播间宣传化妆品具有“治疗皮炎”的效果。 监管机关认为，化妆品广告使用医疗化表述，容易使消费者误认为产品具有诊疗功效，违反广告法第二十八条。 本材料仅用于离线流水线测试，不是真实处罚事实来源。",
+  "legal_basis": [
+    "《中华人民共和国广告法》"
+  ],
+  "penalty_result": "",
+  "penalty_amount": null,
+  "regulatory_logic": "监管机关认为广告涉及医疗、治疗或疾病功效宣传，容易误导消费者。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "化妆品医疗化宣传",
+    "治疗皮炎",
+    "涉医疗宣传"
+  ],
+  "vector_text": "某公司通过广告发布宣传内容，涉及涉医疗宣传、化妆品医疗化宣传风险；主要宣称为治疗皮炎。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "notes": "",
+  "raw_text_path": "data/raw_text/offline_samples__26334151740c.json"
+}

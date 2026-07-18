@@ -1,0 +1,69 @@
+{
+  "case_id": "sector_docx__game__19894e09",
+  "title": "王越诉广州鑫晨网络科技有限公司等网络服务合同纠纷案",
+  "case_number": "（2023）粤0192民初1448号",
+  "court": "广州互联网法院",
+  "decision_date": "2023-04-12",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "广州市天河区市监局",
+  "party_name": "广州鑫晨网络科技有限公司等",
+  "region": "广州互联网法",
+  "industry": "游戏",
+  "sector": "game",
+  "sector_cn": "游戏",
+  "violation_type": "游戏广告允诺不准确",
+  "case_nature": "civil_dispute_with_regulatory_signal",
+  "source_lookup_priority": "P1",
+  "is_admin_penalty_candidate": false,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "game"
+  ],
+  "product_or_service": "游戏《赤沙龙城》",
+  "ad_channel": "抖音、视频",
+  "risk_dimensions": [
+    "游戏广告允诺不清楚",
+    "奖励承诺不准确",
+    "广告内容真实性",
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "充三元送一只狗，充六元送神兽白虎，充十元就送召唤月灵"
+  ],
+  "facts_summary": "游戏《赤沙龙城》在抖音发布短视频广告，宣传“充三元送一只狗，充六元送神兽白虎，充十元就送召唤月灵”，实际奖励为随机抽取，广告允诺未准确、清楚表示",
+  "legal_basis": [
+    "《广告法》第八条第一款、第五十九条第一款"
+  ],
+  "penalty_result": "广州市天河区市监局对广告发布者罚款20000元（民事诉讼驳回原告诉讼请求）",
+  "penalty_amount": null,
+  "regulatory_logic": "游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏广告允诺不准确，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《广告法》第八条第一款、第五十九条第一款。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "game",
+    "游戏",
+    "游戏广告允诺不准确",
+    "游戏广告允诺不清楚",
+    "奖励承诺不准确",
+    "广告内容真实性",
+    "虚假宣传",
+    "充三元送一只狗，充六元送神兽白虎，充十元就送召唤月灵"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2023）粤0192民初1448号 王越诉广州鑫晨网络科技有限公司等网络服务合同纠纷案",
+  "vector_text": "【赛道】游戏。【场景】抖音、视频。【宣称】充三元送一只狗，充六元送神兽白虎，充十元就送召唤月灵。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏广告允诺不准确，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《广告法》第八条第一款、第五十九条第一款。。【依据】《广告法》第八条第一款、第五十九条第一款。【结果】广州市天河区市监局对广告发布者罚款20000元（民事诉讼驳回原告诉讼请求）。"
+}

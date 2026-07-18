@@ -1,0 +1,65 @@
+{
+  "case_id": "sector_docx__health__abf17acb",
+  "title": "何某诉太原某公司买卖合同纠纷案",
+  "case_number": "（2025）川0114民初296号",
+  "court": "成都市新都区人民法院",
+  "decision_date": "2025-04-21",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "山西转型综合改革示范区市监局",
+  "party_name": "太原某公司",
+  "region": "成都市新都区",
+  "industry": "保健食品 / 保健品 / 普通食品",
+  "sector": "health",
+  "sector_cn": "保健品",
+  "violation_type": "保健品网络虚假宣传",
+  "case_nature": "civil_dispute_with_regulatory_signal",
+  "source_lookup_priority": "P1",
+  "is_admin_penalty_candidate": false,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "health"
+  ],
+  "product_or_service": "全国唯一批准",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "全国唯一批准",
+    "3-7天见效"
+  ],
+  "facts_summary": "通过网络宣传金枫露枫籽油对阿尔茨海默症、三高、脑中风等有调理治疗作用，使用“全国唯一批准”“3-7天见效”等极限词。山西转型综合改革示范区市监局作出行政处罚",
+  "legal_basis": [
+    "《广告法》第十八条；《消费者权益保护法》第五十五条第一款"
+  ],
+  "penalty_result": "山西转型综合改革示范区市监局罚款5220元（民事诉讼判决三倍赔偿12840元）",
+  "penalty_amount": null,
+  "regulatory_logic": "保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及保健品网络虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《广告法》第十八条；《消费者权益保护法》第五十五条第一款。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "health",
+    "保健品",
+    "保健品网络虚假宣传",
+    "虚假宣传",
+    "全国唯一批准",
+    "3-7天见效"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2025）川0114民初296号 何某诉太原某公司买卖合同纠纷案",
+  "vector_text": "【赛道】保健品。【场景】其他。【宣称】全国唯一批准；3-7天见效。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及保健品网络虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《广告法》第十八条；《消费者权益保护法》第五十五条第一款。。【依据】《广告法》第十八条；《消费者权益保护法》第五十五条第一款。【结果】山西转型综合改革示范区市监局罚款5220元（民事诉讼判决三倍赔偿12840元）。"
+}

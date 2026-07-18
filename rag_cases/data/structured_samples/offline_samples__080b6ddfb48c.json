@@ -1,0 +1,39 @@
+{
+  "case_id": "offline_samples__080b6ddfb48c",
+  "title": "离线样例：普通食品宣传降血糖案",
+  "source_type": "offline_sample",
+  "source_name": "离线样例数据（非真实处罚事实来源）",
+  "source_url": "https://example.com/offline/food-blood-sugar",
+  "publish_date": "",
+  "decision_date": "",
+  "penalty_authority": "",
+  "party_name": "某公司",
+  "region": "",
+  "industry": "",
+  "product_or_service": "",
+  "ad_channel": "",
+  "risk_dimensions": [
+    "涉医疗宣传",
+    "涉医疗宣传"
+  ],
+  "illegal_claims": [
+    "降血糖"
+  ],
+  "facts_summary": "离线样例：普通食品宣传降血糖案 某公司通过短视频广告将普通食品宣传为可以“降血糖”。 监管机关认为，普通食品广告暗示疾病治疗或健康改善功效，容易误导消费者，违反广告法第二十八条。 本材料仅用于离线流水线测试，不是真实处罚事实来源。",
+  "legal_basis": [
+    "《中华人民共和国广告法》"
+  ],
+  "penalty_result": "",
+  "penalty_amount": null,
+  "regulatory_logic": "监管机关认为广告涉及医疗、治疗或疾病功效宣传，容易误导消费者。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "涉医疗宣传",
+    "降血糖"
+  ],
+  "vector_text": "某公司通过广告发布宣传内容，涉及涉医疗宣传、涉医疗宣传风险；主要宣称为降血糖。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "notes": "",
+  "raw_text_path": "data/raw_text/offline_samples__080b6ddfb48c.json"
+}

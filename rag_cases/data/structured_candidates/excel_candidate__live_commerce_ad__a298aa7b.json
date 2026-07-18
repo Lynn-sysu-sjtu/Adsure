@@ -1,0 +1,63 @@
+{
+  "case_id": "excel_candidate__live_commerce_ad__a298aa7b",
+  "title": "宁波市市场监督管理局与宁波广发文博虫草制品科技有限公司非诉执行审查案",
+  "case_number": "（2016）浙0204行审22号",
+  "source_type": "manual_compilation_pending_source_verification",
+  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "decision_date": "2016-10-13",
+  "penalty_authority": "宁波市市场监督管理局",
+  "party_name": "宁波广发文博虫草制品科技有限公司",
+  "region": "宁波市鄞州区",
+  "court": "宁波市鄞州区人民法院",
+  "industry": "直播带货/网络营销",
+  "product_or_service": "冬虫夏草",
+  "ad_channel": "期刊",
+  "risk_dimensions": [
+    "直播带货违法广告",
+    "虚假宣传",
+    "平台广告合规"
+  ],
+  "illegal_claims": [
+    "冬虫夏草",
+    "全球独创纯天然虫草素含片",
+    "二十根不如一片",
+    "国家863研究成果",
+    "五项国家发明专利",
+    "对治疗白血病有很好疗效"
+  ],
+  "facts_summary": "在航空期刊发布广告，将蛹虫草产品宣称为“冬虫夏草”，宣称“全球独创纯天然虫草素含片”“二十根不如一片”“国家863研究成果”“五项国家发明专利”等虚假内容，并使用“对治疗白血病有很好疗效”等与药品相混淆用语",
+  "legal_basis": [
+    "《广告法》第三条、第四条、第十条、第十九条、第三十七条"
+  ],
+  "penalty_result": "罚款6652470元",
+  "penalty_amount": 6652470,
+  "regulatory_logic": "该候选案例显示，广告内容属于直播带货违法广告场景，相关宣传可能影响消费者判断，涉及《广告法》第三条、第四条、第十条、第十九条、第三十七条，需核验官方来源后确认监管认定。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "直播带货违法广告",
+    "虚假宣传",
+    "平台广告合规",
+    "期刊",
+    "冬虫夏草",
+    "全球独创纯天然虫草素含片",
+    "二十根不如一片",
+    "国家863研究成果",
+    "五项国家发明专利",
+    "对治疗白血病有很好疗效"
+  ],
+  "vector_text": "这是一起人工整理的直播带货违法广告候选案例。案件事实显示，经营者在航空期刊发布广告，将蛹虫草产品宣称为“冬虫夏草”，宣称“全球独创纯天然虫草素含片”“二十根不如一片”“国家863研究成果”“五项国家发明专利”等虚假内容，并使用“对治疗白血病有很好疗效”等与药品相混淆用语 处罚依据记载为《广告法》第三条、第四条、第十条、第十九条、第三十七条，处理结果为罚款6652470元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from Excel manual compilation; source_url pending verification.",
+    "approved_for_rag": false
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "case_id": "sector_docx__health__47adc1ea",
+  "title": "成都市青羊区市场监督管理局申请执行成都某有限公司行政处罚案",
+  "case_number": "（2024）川0105行审11号",
+  "court": "成都市青羊区人民法院",
+  "decision_date": "2024-04-03",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "成都市青羊区市场监督管理局",
+  "party_name": "成都某有限公司",
+  "region": "成都市青羊区",
+  "industry": "保健食品 / 保健品 / 普通食品",
+  "sector": "health",
+  "sector_cn": "保健品",
+  "violation_type": "食用农产品标签涉及疾病治疗功能",
+  "case_nature": "administrative_nonlitigation_enforcement",
+  "source_lookup_priority": "P0",
+  "is_admin_penalty_candidate": true,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "health"
+  ],
+  "product_or_service": "高垭口绿色鸡蛋",
+  "ad_channel": "包装标签",
+  "risk_dimensions": [
+    "普通食品疾病治疗功效宣传",
+    "食品标签违法",
+    "涉医疗宣传"
+  ],
+  "illegal_claims": [
+    "高垭口绿色鸡蛋",
+    "具有增强免疫力，延缓衰老，预防心脑血管硬化，抑制肿瘤发生和生长等作用"
+  ],
+  "facts_summary": "销售“高垭口绿色鸡蛋”（食用农产品），产品包装标签上有“具有增强免疫力，延缓衰老，预防心脑血管硬化，抑制肿瘤发生和生长等作用”等涉及疾病预防、治疗功能内容，共销售799盒，货值22212.2元",
+  "legal_basis": [
+    "《食品安全法》第七十一条第一款、第一百二十五条第一款第（二）项"
+  ],
+  "penalty_result": "没收违法所得5433.2元、罚款44424.4元",
+  "penalty_amount": null,
+  "regulatory_logic": "保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及食用农产品标签涉及疾病治疗功能，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《食品安全法》第七十一条第一款、第一百二十五条第一款第（二）项。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "health",
+    "保健品",
+    "食用农产品标签涉及疾病治疗功能",
+    "普通食品疾病治疗功效宣传",
+    "食品标签违法",
+    "涉医疗宣传",
+    "高垭口绿色鸡蛋",
+    "具有增强免疫力，延缓衰老，预防心脑血管硬化，抑制肿瘤发生和生长等作用"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2024）川0105行审11号 成都市青羊区市场监督管理局申请执行成都某有限公司行政处罚案",
+  "vector_text": "【赛道】保健品。【场景】包装标签。【宣称】高垭口绿色鸡蛋；具有增强免疫力，延缓衰老，预防心脑血管硬化，抑制肿瘤发生和生长等作用。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及食用农产品标签涉及疾病治疗功能，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《食品安全法》第七十一条第一款、第一百二十五条第一款第（二）项。。【依据】《食品安全法》第七十一条第一款、第一百二十五条第一款第（二）项。【结果】没收违法所得5433.2元、罚款44424.4元。"
+}
