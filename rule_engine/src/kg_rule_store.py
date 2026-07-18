@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """Helpers for loading and saving rule JSON files used by app_kg.py."""
 
 import copy
@@ -21,6 +21,31 @@ def _write_json(path, payload):
         fp.write("\n")
 
 
+
+def _source_index(legal_sources):
+    index = {}
+    for source in legal_sources or []:
+        if not isinstance(source, dict):
+            continue
+        source_id = source.get("id") or source.get("source_id")
+        if source_id:
+            index[source_id] = source
+    return index
+
+
+def _enrich_legal_basis(rule, source_by_id):
+    for basis in rule.get("legal_basis", []) or []:
+        if not isinstance(basis, dict):
+            continue
+        source_id = basis.get("source_id") or basis.get("source")
+        source = source_by_id.get(source_id)
+        if not source:
+            continue
+        basis.setdefault("source_name", source.get("name"))
+        basis.setdefault("source_type", source.get("type"))
+        if basis.get("legal_level") is None and source.get("legal_level") is not None:
+            basis["legal_level"] = source.get("legal_level")
+
 def _clean_rule(rule):
     clean = copy.deepcopy(rule)
     clean.pop(INTERNAL_SOURCE_FILE, None)
@@ -33,7 +58,7 @@ def load_rule_library(base_dir):
     jsonbase_dir = base_dir / JSONBASE_DIR_NAME
     json_files = sorted(p for p in jsonbase_dir.rglob("*.json") if p.is_file())
     if not json_files:
-        raise FileNotFoundError(f"未在 {jsonbase_dir} 找到任何 .json 规则文件。")
+        raise FileNotFoundError(f"No .json rule files found in {jsonbase_dir}")
 
     documents = {}
     rules = []
@@ -53,7 +78,9 @@ def load_rule_library(base_dir):
                 legal_sources.append(source)
                 source_ids.add(source_id)
 
+        source_by_id = _source_index(doc.get("legal_sources", []))
         for rule in doc.get("rules", []):
+            _enrich_legal_basis(rule, source_by_id)
             rule[INTERNAL_SOURCE_FILE] = source_name
             rules.append(rule)
 
@@ -63,7 +90,7 @@ def load_rule_library(base_dir):
 
     data = {
         "meta": {
-            "name": "审心多文件规则库",
+            "name": "瀹″績澶氭枃浠惰鍒欏簱",
             "source_dir": str(jsonbase_dir),
             "source_files": [p.relative_to(jsonbase_dir).as_posix() for p in json_files],
             "rule_count": len(rules),
@@ -90,7 +117,7 @@ def save_rule_library(library):
     rules = library["data"].get("rules", [])
     default_file = next(iter(documents), None)
     if default_file is None:
-        raise FileNotFoundError(f"未在 {jsonbase_dir} 找到可写入的源 JSON 文件。")
+        raise FileNotFoundError(f"No writable source JSON files found in {jsonbase_dir}")
 
     grouped_rules = {filename: [] for filename in documents}
     for rule in rules:
@@ -111,3 +138,4 @@ def save_rule_library(library):
         output_path = jsonbase_dir / filename
         output_path.parent.mkdir(parents=True, exist_ok=True)
         _write_json(output_path, doc)
+

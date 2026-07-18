@@ -368,12 +368,15 @@ def _fact_supplement_advice(fact_recalled):
 def _legal_basis_text(rule):
     labels = []
     for lb in rule.get("legal_basis", []):
-        source = lb.get("source_id", "")
-        article = lb.get("article", "")
-        if source or article:
-            labels.append(f"{source}{article}")
+        if not isinstance(lb, dict):
+            continue
+        source_name = _legal_source_name(lb)
+        article = str(lb.get("article") or lb.get("article_id") or "").strip()
+        if source_name and article:
+            labels.append(f"《{source_name}》{article}")
+        elif source_name:
+            labels.append(f"《{source_name}》")
     return labels
-
 
 def _legal_authority_level_label(rule, legal_basis):
     level = legal_basis.get("legal_level")
@@ -389,6 +392,32 @@ def _legal_authority_level_label(rule, legal_basis):
     if source_type:
         return source_type
     return "规则依据"
+
+
+def _clean_legal_source_name(name):
+    text = str(name or "").strip()
+    if not text:
+        return "规则依据"
+    text = text.split("_")[0].strip()
+    text = re.sub(r"（[^）]*(修正|修订)[^）]*）", "", text).strip()
+    return text or "规则依据"
+
+
+def _legal_source_name(legal_basis):
+    return _clean_legal_source_name(
+        legal_basis.get("source_name")
+        or legal_basis.get("source_title")
+        or legal_basis.get("source_full_name")
+        or legal_basis.get("source_id")
+        or legal_basis.get("source")
+    )
+
+
+def _format_legal_basis_line(level_label, source_name, article, text):
+    article_label = str(article or "").strip()
+    if article_label:
+        return f"【{level_label}】《{source_name}》{article_label}：“{text}”"
+    return f"【{level_label}】《{source_name}》：“{text}”"
 
 def _regex_hit_label(hit):
     pattern = str(hit).removeprefix("regex:")
@@ -460,17 +489,16 @@ def _format_legal_basis_details(matched_rules):
                 continue
             source = str(lb.get("source_id") or lb.get("source") or "").strip()
             article = str(lb.get("article") or lb.get("article_id") or "").strip()
-            key = (source, article, text)
+            source_name = _legal_source_name(lb)
+            level_label = _legal_authority_level_label(rule, lb)
+            key = (level_label, source_name, article, text)
             if key in seen:
                 continue
             seen.add(key)
-            label = "".join(part for part in [source, article] if part) or "规则原文"
-            level_label = _legal_authority_level_label(rule, lb)
-            lines.append(f"- {_rule_display_label(rule)}\n  [{level_label}] {label}：{text}")
+            lines.append("- " + _format_legal_basis_line(level_label, source_name, article, text))
     if not lines:
         return ""
     return "【触犯法条原文】\n" + "\n".join(lines)
-
 
 def _ensure_opinion_type_prefix(audit_opinion, opinion_type):
     opinion_type = opinion_type or "待判断"
