@@ -1,0 +1,67 @@
+{
+  "case_id": "sector_docx__game__551a4343",
+  "title": "朱某伟诉江西某某信息技术有限公司网络服务合同纠纷案",
+  "case_number": "（2023）赣1104民初2952号",
+  "court": "上饶市广信区人民法院",
+  "decision_date": "2023-07-28",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": null,
+  "party_name": "江西某某信息技术有限公司",
+  "region": "上饶市广信区",
+  "industry": "游戏",
+  "sector": "game",
+  "sector_cn": "游戏",
+  "violation_type": "游戏广告虚假宣传",
+  "case_nature": "judicial_reference_not_admin_penalty",
+  "source_lookup_priority": "P2",
+  "is_admin_penalty_candidate": false,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "game"
+  ],
+  "product_or_service": "游戏《斩魔无双》",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "广告内容真实性",
+    "虚假宣传",
+    "奖励承诺不准确"
+  ],
+  "illegal_claims": [
+    "上线送狂龙紫电、突斩、强化骷髅"
+  ],
+  "facts_summary": "游戏《斩魔无双》广告宣称“上线送狂龙紫电、突斩、强化骷髅”等高级技能，实际需充值三千元领取。玩家充值79442元后主张虚假宣传。法院认定原告多次登录游戏并充值消费，视为接受游戏设定，不构成欺诈",
+  "legal_basis": [
+    "《民法典》第一百四十八条"
+  ],
+  "penalty_result": "驳回诉讼请求",
+  "penalty_amount": null,
+  "regulatory_logic": "游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏广告虚假宣传，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十八条。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "game",
+    "游戏",
+    "游戏广告虚假宣传",
+    "广告内容真实性",
+    "虚假宣传",
+    "奖励承诺不准确",
+    "上线送狂龙紫电、突斩、强化骷髅"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2023）赣1104民初2952号 朱某伟诉江西某某信息技术有限公司网络服务合同纠纷案",
+  "vector_text": "【赛道】游戏。【场景】其他。【宣称】上线送狂龙紫电、突斩、强化骷髅。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏广告虚假宣传，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十八条。。【依据】《民法典》第一百四十八条。【结果】驳回诉讼请求。"
+}

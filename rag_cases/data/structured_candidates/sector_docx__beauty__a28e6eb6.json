@@ -1,0 +1,67 @@
+{
+  "case_id": "sector_docx__beauty__a28e6eb6",
+  "title": "毛冉冉诉广州雅新生物科技有限公司网络购物合同纠纷案",
+  "case_number": "（2018）鄂0105民初5110号",
+  "court": "武汉市汉阳区人民法院",
+  "decision_date": "2019-01-24",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": null,
+  "party_name": "广州雅新生物科技有限公司网络购物",
+  "region": "武汉市汉阳区",
+  "industry": "化妆品 / 医疗美容 / 美妆",
+  "sector": "beauty",
+  "sector_cn": "美妆",
+  "violation_type": "化妆品广告虚假宣传",
+  "case_nature": "judicial_reference_not_admin_penalty",
+  "source_lookup_priority": "P2",
+  "is_admin_penalty_candidate": false,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "beauty"
+  ],
+  "product_or_service": "露梵希360度深层美白透析原液",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "露梵希360度深层美白透析原液",
+    "美白",
+    "淡斑"
+  ],
+  "facts_summary": "在阿里巴巴销售“露梵希360度深层美白透析原液”（非特殊用途化妆品），网页和瓶身宣传“美白”“淡斑”等功效",
+  "legal_basis": [
+    "《消费者权益保护法》第五十五条第一款"
+  ],
+  "penalty_result": "退还货款850元并三倍赔偿2550元",
+  "penalty_amount": null,
+  "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《消费者权益保护法》第五十五条第一款。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "beauty",
+    "美妆",
+    "化妆品广告虚假宣传",
+    "虚假宣传",
+    "露梵希360度深层美白透析原液",
+    "美白",
+    "淡斑"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2018）鄂0105民初5110号 毛冉冉诉广州雅新生物科技有限公司网络购物合同纠纷案",
+  "vector_text": "【赛道】美妆。【场景】其他。【宣称】露梵希360度深层美白透析原液；美白；淡斑。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《消费者权益保护法》第五十五条第一款。。【依据】《消费者权益保护法》第五十五条第一款。【结果】退还货款850元并三倍赔偿2550元。"
+}

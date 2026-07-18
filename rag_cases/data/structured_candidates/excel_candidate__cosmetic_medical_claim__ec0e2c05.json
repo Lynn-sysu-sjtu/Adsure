@@ -1,0 +1,50 @@
+{
+  "case_id": "excel_candidate__cosmetic_medical_claim__ec0e2c05",
+  "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查案",
+  "case_number": "（2025）苏0282行审5号",
+  "source_type": "manual_compilation_pending_source_verification",
+  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "decision_date": "2025-01-13",
+  "penalty_authority": "宜兴市市场监督管理局",
+  "party_name": "孙某非诉行政行为",
+  "region": "宜兴市",
+  "court": "宜兴市人民法院",
+  "industry": "化妆品",
+  "product_or_service": "有效缓解：胃炎、慢性胃炎、浅表性胃炎、胃病、胃痉挛…胃黏膜增生、胃病变",
+  "ad_channel": null,
+  "risk_dimensions": [
+    "化妆品医疗化宣传",
+    "涉医疗宣传"
+  ],
+  "illegal_claims": [
+    "有效缓解：胃炎、慢性胃炎、浅表性胃炎、胃病、胃痉挛…胃黏膜增生、胃病变"
+  ],
+  "facts_summary": "美容店经营场所内广告立牌及易拉宝使用“有效缓解：胃炎、慢性胃炎、浅表性胃炎、胃病、胃痉挛…胃黏膜增生、胃病变”等医疗用语",
+  "legal_basis": [
+    "《广告法》第十七条、第五十八条第一款第（二）项"
+  ],
+  "penalty_result": "罚款10600元",
+  "penalty_amount": 10600,
+  "regulatory_logic": "该候选案例显示，广告内容属于化妆品宣称医疗作用场景，相关宣传可能影响消费者判断，涉及《广告法》第十七条、第五十八条第一款第（二）项，需核验官方来源后确认监管认定。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "化妆品宣称医疗作用",
+    "化妆品医疗化宣传",
+    "涉医疗宣传"
+  ],
+  "vector_text": "这是一起人工整理的化妆品宣称医疗作用候选案例。案件事实显示，经营者美容店经营场所内广告立牌及易拉宝使用“有效缓解：胃炎、慢性胃炎、浅表性胃炎、胃病、胃痉挛…胃黏膜增生、胃病变”等医疗用语 处罚依据记载为《广告法》第十七条、第五十八条第一款第（二）项，处理结果为罚款10600元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from Excel manual compilation; source_url pending verification.",
+    "approved_for_rag": false
+  }
+}

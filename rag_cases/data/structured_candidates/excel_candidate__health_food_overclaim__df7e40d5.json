@@ -1,0 +1,57 @@
+{
+  "case_id": "excel_candidate__health_food_overclaim__df7e40d5",
+  "title": "宁波市镇海区市场监督管理局、宁波市镇海区招宝山瑞寿食品商行非诉执行审查案",
+  "case_number": "（2019）浙0211行审74号",
+  "source_type": "manual_compilation_pending_source_verification",
+  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "decision_date": "2019-10-15",
+  "penalty_authority": "宁波市镇海区市场监督管理局",
+  "party_name": "宁波市镇海区招宝山瑞寿食品商行",
+  "region": "宁波市镇海区",
+  "court": "宁波市镇海区人民法院",
+  "industry": "保健食品",
+  "product_or_service": "欣方",
+  "ad_channel": "海报、横幅",
+  "risk_dimensions": [
+    "保健食品违规宣传",
+    "涉医疗宣传",
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "欣方",
+    "清除血液垃圾斑块，针对心脑血管疾病及症状作用明显",
+    "达到从根本上预防和血液相关的慢性病"
+  ],
+  "facts_summary": "销售“欣方”牌瑞雪胶囊（保健食品），在横幅和海报上宣传“清除血液垃圾斑块，针对心脑血管疾病及症状作用明显”“达到从根本上预防和血液相关的慢性病”等涉及疾病预防、治疗功能内容",
+  "legal_basis": [
+    "《广告法》第十八条第一款第（二）项、第五十八条第一款第（三）项"
+  ],
+  "penalty_result": "罚款100元（另就虚假广告行为罚款100000元）",
+  "penalty_amount": 100,
+  "regulatory_logic": "该候选案例显示，广告内容属于保健食品功效保证、替代药物、超批准功能宣传场景，相关宣传可能影响消费者判断，涉及《广告法》第十八条第一款第（二）项、第五十八条第一款第（三）项，需核验官方来源后确认监管认定。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "保健食品功效保证、替代药物、超批准功能宣传",
+    "保健食品违规宣传",
+    "涉医疗宣传",
+    "虚假宣传",
+    "海报",
+    "横幅",
+    "欣方"
+  ],
+  "vector_text": "这是一起人工整理的保健食品功效保证、替代药物、超批准功能宣传候选案例。案件事实显示，经营者销售“欣方”牌瑞雪胶囊（保健食品），在横幅和海报上宣传“清除血液垃圾斑块，针对心脑血管疾病及症状作用明显”“达到从根本上预防和血液相关的慢性病”等涉及疾病预防、治疗功能内容 处罚依据记载为《广告法》第十八条第一款第（二）项、第五十八条第一款第（三）项，处理结果为罚款100元（另就虚假广告行为罚款100000元）；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from Excel manual compilation; source_url pending verification.",
+    "approved_for_rag": false
+  }
+}

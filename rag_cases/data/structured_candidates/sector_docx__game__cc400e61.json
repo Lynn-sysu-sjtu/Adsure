@@ -1,0 +1,65 @@
+{
+  "case_id": "sector_docx__game__cc400e61",
+  "title": "王某诉北京某公司网络服务合同纠纷案",
+  "case_number": "（2023）京0491民初1062号",
+  "court": "北京互联网法院",
+  "decision_date": "2024-01-15",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "北京市石景山区市监局",
+  "party_name": "北京某公司",
+  "region": "北京互联网法",
+  "industry": "游戏",
+  "sector": "game",
+  "sector_cn": "游戏",
+  "violation_type": "游戏VIP权益宣传不明确",
+  "case_nature": "civil_dispute_with_regulatory_signal",
+  "source_lookup_priority": "P1",
+  "is_admin_penalty_candidate": false,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "game"
+  ],
+  "product_or_service": "专属客服",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "专属客服",
+    "专属GM服务"
+  ],
+  "facts_summary": "游戏VIP特权专区宣传vip8和vip9均享有“专属客服”，但vip8不享受“专属GM服务”。北京市石景山区市监局以虚假宣传对该公司罚款10万元。法院认定被告对vip8权益说明不明确使消费者产生误解，但误导不足以达到全部合同目的无法实现的程度",
+  "legal_basis": [
+    "《反不正当竞争法》第二十条第一款"
+  ],
+  "penalty_result": "北京市石景山区市监局罚款100000元（民事诉讼驳回原告诉讼请求）",
+  "penalty_amount": null,
+  "regulatory_logic": "游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏VIP权益宣传不明确，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《反不正当竞争法》第二十条第一款。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "game",
+    "游戏",
+    "游戏VIP权益宣传不明确",
+    "虚假宣传",
+    "专属客服",
+    "专属GM服务"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2023）京0491民初1062号 王某诉北京某公司网络服务合同纠纷案",
+  "vector_text": "【赛道】游戏。【场景】其他。【宣称】专属客服；专属GM服务。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏VIP权益宣传不明确，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《反不正当竞争法》第二十条第一款。。【依据】《反不正当竞争法》第二十条第一款。【结果】北京市石景山区市监局罚款100000元（民事诉讼驳回原告诉讼请求）。"
+}

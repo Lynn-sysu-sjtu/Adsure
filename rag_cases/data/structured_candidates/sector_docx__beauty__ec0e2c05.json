@@ -1,0 +1,71 @@
+{
+  "case_id": "sector_docx__beauty__ec0e2c05",
+  "title": "宜兴市市场监督管理局申请执行孙某行政处罚案",
+  "case_number": "（2025）苏0282行审5号",
+  "court": "宜兴市人民法院",
+  "decision_date": "2025-01-13",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "宜兴市市场监督管理局",
+  "party_name": "孙某",
+  "region": "宜兴市人民法",
+  "industry": "化妆品 / 医疗美容 / 美妆",
+  "sector": "beauty",
+  "sector_cn": "美妆",
+  "violation_type": "化妆品广告使用医疗用语",
+  "case_nature": "administrative_nonlitigation_enforcement",
+  "source_lookup_priority": "P0",
+  "is_admin_penalty_candidate": true,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "beauty"
+  ],
+  "product_or_service": "有效缓解：胃炎、慢性胃炎、浅表性胃炎、胃病、胃痉挛…胃黏膜增生、胃病变",
+  "ad_channel": "易拉宝、广告立牌",
+  "risk_dimensions": [
+    "化妆品医疗化宣传",
+    "涉医疗宣传",
+    "医疗用语"
+  ],
+  "illegal_claims": [
+    "有效缓解：胃炎、慢性胃炎、浅表性胃炎、胃病、胃痉挛…胃黏膜增生、胃病变",
+    "药汤纯天然外洗内服皆可",
+    "白发转黑、止脱生发我们最专业"
+  ],
+  "facts_summary": "美容店使用易拉宝和广告立牌宣传“有效缓解：胃炎、慢性胃炎、浅表性胃炎、胃病、胃痉挛…胃黏膜增生、胃病变”“药汤纯天然外洗内服皆可”“白发转黑、止脱生发我们最专业”等医疗用语",
+  "legal_basis": [
+    "《广告法》第十七条、第五十八条第一款第（二）项；《化妆品监督管理条例》第三十八条第一款、第六十二条第一款第（二）项"
+  ],
+  "penalty_result": "罚款10600元（含未履行进货查验罚款600元）",
+  "penalty_amount": null,
+  "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告使用医疗用语，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第十七条、第五十八条第一款第（二）项；《化妆品监督管理条例》第三十八条第一款、第六十二条第一款第（二）项。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "beauty",
+    "美妆",
+    "化妆品广告使用医疗用语",
+    "化妆品医疗化宣传",
+    "涉医疗宣传",
+    "医疗用语",
+    "有效缓解：胃炎、慢性胃炎、浅表性胃炎、胃病、胃痉挛…胃黏膜增生、胃病变",
+    "药汤纯天然外洗内服皆可",
+    "白发转黑、止脱生发我们最专业"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2025）苏0282行审5号 宜兴市市场监督管理局申请执行孙某行政处罚案",
+  "vector_text": "【赛道】美妆。【场景】易拉宝、广告立牌。【宣称】有效缓解：胃炎、慢性胃炎、浅表性胃炎、胃病、胃痉挛…胃黏膜增生、胃病变；药汤纯天然外洗内服皆可；白发转黑、止脱生发我们最专业。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告使用医疗用语，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第十七条、第五十八条第一款第（二）项；《化妆品监督管理条例》第三十八条第一款、第六十二条第一款第（二）项。。【依据】《广告法》第十七条、第五十八条第一款第（二）项；《化妆品监督管理条例》第三十八条第一款、第六十二条第一款第（二）项。【结果】罚款10600元（含未履行进货查验罚款600元）。"
+}
