@@ -1,0 +1,50 @@
+{
+  "case_id": "excel_candidate__absolute_terms__1c28d555",
+  "title": "北京假日阳光环球旅行社有限公司与北京市工商行政管理局海淀分局行政案",
+  "case_number": "（2017）京0108行初511号",
+  "source_type": "manual_compilation_pending_source_verification",
+  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "decision_date": "2017-11-23",
+  "penalty_authority": "北京假日阳光环球旅行社有限公司与北京市工商行政管理局",
+  "party_name": "海淀分局",
+  "region": "北京市海淀区",
+  "court": "北京市海淀区人民法院",
+  "industry": "一般商品或服务",
+  "product_or_service": "阳光车导专车私导第一品牌",
+  "ad_channel": "官网",
+  "risk_dimensions": [
+    "绝对化用语"
+  ],
+  "illegal_claims": [
+    "阳光车导专车私导第一品牌",
+    "阳光车导APP专车私导第一品牌为你提供最好的体验"
+  ],
+  "facts_summary": "在官网使用“阳光车导专车私导第一品牌”“阳光车导APP专车私导第一品牌为你提供最好的体验”等绝对化用语",
+  "legal_basis": [
+    "《广告法》第九条第（三）项、第五十七条第（一）项"
+  ],
+  "penalty_result": "罚款206150元",
+  "penalty_amount": 206150,
+  "regulatory_logic": "该候选案例显示，广告内容属于绝对化用语场景，相关宣传可能影响消费者判断，涉及《广告法》第九条第（三）项、第五十七条第（一）项，需核验官方来源后确认监管认定。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "绝对化用语",
+    "官网",
+    "阳光车导专车私导第一品牌"
+  ],
+  "vector_text": "这是一起人工整理的绝对化用语候选案例。案件事实显示，经营者在官网使用“阳光车导专车私导第一品牌”“阳光车导APP专车私导第一品牌为你提供最好的体验”等绝对化用语 处罚依据记载为《广告法》第九条第（三）项、第五十七条第（一）项，处理结果为罚款206150元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from Excel manual compilation; source_url pending verification.",
+    "approved_for_rag": false
+  }
+}

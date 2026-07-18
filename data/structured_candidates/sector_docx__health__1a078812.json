@@ -1,0 +1,65 @@
+{
+  "case_id": "sector_docx__health__1a078812",
+  "title": "安岳县市场监督管理局申请执行康寿源健康生活馆行政处罚案",
+  "case_number": "（2019）川2021行审14号",
+  "court": "安岳县人民法院",
+  "decision_date": "2019-09-04",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "安岳县市场监督管理局",
+  "party_name": "康寿源健康生活馆",
+  "region": "安岳县人民法",
+  "industry": "保健食品 / 保健品 / 普通食品",
+  "sector": "health",
+  "sector_cn": "保健品",
+  "violation_type": "普通食品宣传保健功能",
+  "case_nature": "civil_dispute_with_regulatory_signal",
+  "source_lookup_priority": "P1",
+  "is_admin_penalty_candidate": false,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "health"
+  ],
+  "product_or_service": "生物时代",
+  "ad_channel": "会销、视频宣传、视频",
+  "risk_dimensions": [
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "生物时代",
+    "蝉花虫草粉"
+  ],
+  "facts_summary": "以会销模式召集中老年消费者，播放视频宣传“生物时代”牛奶和“蝉花虫草粉”对便秘、胃炎、糖尿病等有改善作用，具有增强免疫力、抗癌等保健功能",
+  "legal_basis": [
+    "《广告法》第四条、第十七条、第二十八条、第五十五条"
+  ],
+  "penalty_result": "罚款30000元",
+  "penalty_amount": null,
+  "regulatory_logic": "保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及普通食品宣传保健功能，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《广告法》第四条、第十七条、第二十八条、第五十五条。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "health",
+    "保健品",
+    "普通食品宣传保健功能",
+    "虚假宣传",
+    "生物时代",
+    "蝉花虫草粉"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2019）川2021行审14号 安岳县市场监督管理局申请执行康寿源健康生活馆行政处罚案",
+  "vector_text": "【赛道】保健品。【场景】会销、视频宣传、视频。【宣称】生物时代；蝉花虫草粉。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及普通食品宣传保健功能，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《广告法》第四条、第十七条、第二十八条、第五十五条。。【依据】《广告法》第四条、第十七条、第二十八条、第五十五条。【结果】罚款30000元。"
+}

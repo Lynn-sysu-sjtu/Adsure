@@ -1,0 +1,49 @@
+{
+  "case_id": "excel_candidate__improper_citation__63ed8b56",
+  "title": "海口市市场监督管理局龙华分局与杨思宝行政处罚非诉执行审查案",
+  "case_number": "（2020）琼0105行审51号",
+  "source_type": "manual_compilation_pending_source_verification",
+  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "decision_date": "2020-03-31",
+  "penalty_authority": "海口市市场监督管理局",
+  "party_name": "杨思宝行政处罚",
+  "region": "海口市秀英区",
+  "court": "海口市秀英区人民法院",
+  "industry": "一般商品或服务",
+  "product_or_service": "中健科技",
+  "ad_channel": null,
+  "risk_dimensions": [
+    "广告引证内容不规范"
+  ],
+  "illegal_claims": [
+    "中健科技"
+  ],
+  "facts_summary": "发布“中健科技”宣传广告，使用数据、统计资料、调查结果等引证内容未标明出处",
+  "legal_basis": [
+    "《广告法》第十一条第二款、第五十九条第一款第二项"
+  ],
+  "penalty_result": "罚款10000元",
+  "penalty_amount": 10000,
+  "regulatory_logic": "该候选案例显示，广告内容属于广告引证内容不真实、不准确场景，相关宣传可能影响消费者判断，涉及《广告法》第十一条第二款、第五十九条第一款第二项，需核验官方来源后确认监管认定。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "广告引证内容不真实、不准确",
+    "广告引证内容不规范",
+    "中健科技"
+  ],
+  "vector_text": "这是一起人工整理的广告引证内容不真实、不准确候选案例。案件事实显示，经营者发布“中健科技”宣传广告，使用数据、统计资料、调查结果等引证内容未标明出处 处罚依据记载为《广告法》第十一条第二款、第五十九条第一款第二项，处理结果为罚款10000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from Excel manual compilation; source_url pending verification.",
+    "approved_for_rag": false
+  }
+}

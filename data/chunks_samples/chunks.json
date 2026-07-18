@@ -1,0 +1,214 @@
+[
+  {
+    "chunk_id": "offline_sample__e01f02867c79__case_summary",
+    "case_id": "offline_sample__e01f02867c79",
+    "chunk_type": "case_summary",
+    "title": "离线示例：某互联网广告绝对化用语",
+    "source_name": "离线示例数据（非真实处罚事实来源）",
+    "source_url": "sample://offline/absolute-terms",
+    "risk_dimensions": [
+      "绝对化用语"
+    ],
+    "keywords": [
+      "国家级最佳",
+      "绝对化用语"
+    ],
+    "text": "某公司通过互联网广告发布宣传内容，涉及绝对化用语风险；主要宣称为国家级最佳。",
+    "metadata": {
+      "penalty_authority": "",
+      "party_name": "某公司",
+      "industry": "",
+      "product_or_service": "",
+      "ad_channel": "互联网广告",
+      "penalty_amount": 10000,
+      "review_status": "pending_review",
+      "raw_text_path": "data/raw_text/offline_sample__e01f02867c79.json"
+    }
+  },
+  {
+    "chunk_id": "offline_sample__e01f02867c79__regulatory_logic",
+    "case_id": "offline_sample__e01f02867c79",
+    "chunk_type": "regulatory_logic",
+    "title": "离线示例：某互联网广告绝对化用语",
+    "source_name": "离线示例数据（非真实处罚事实来源）",
+    "source_url": "sample://offline/absolute-terms",
+    "risk_dimensions": [
+      "绝对化用语"
+    ],
+    "keywords": [
+      "国家级最佳",
+      "绝对化用语"
+    ],
+    "text": "离线示例：某互联网广告绝对化用语的监管逻辑：监管机关认为广告使用国家级、最佳等绝对化表述，违反广告用语限制。 相关广告宣称：国家级最佳。",
+    "metadata": {
+      "penalty_authority": "",
+      "party_name": "某公司",
+      "industry": "",
+      "product_or_service": "",
+      "ad_channel": "互联网广告",
+      "penalty_amount": 10000,
+      "review_status": "pending_review",
+      "raw_text_path": "data/raw_text/offline_sample__e01f02867c79.json"
+    }
+  },
+  {
+    "chunk_id": "offline_samples__080b6ddfb48c__case_summary",
+    "case_id": "offline_samples__080b6ddfb48c",
+    "chunk_type": "case_summary",
+    "title": "离线样例：普通食品宣传降血糖案",
+    "source_name": "离线样例数据（非真实处罚事实来源）",
+    "source_url": "https://example.com/offline/food-blood-sugar",
+    "risk_dimensions": [
+      "涉医疗宣传"
+    ],
+    "keywords": [
+      "涉医疗宣传",
+      "降血糖"
+    ],
+    "text": "某公司通过广告发布宣传内容，涉及涉医疗宣传、涉医疗宣传风险；主要宣称为降血糖。",
+    "metadata": {
+      "penalty_authority": "",
+      "party_name": "某公司",
+      "industry": "",
+      "product_or_service": "",
+      "ad_channel": "",
+      "penalty_amount": null,
+      "review_status": "pending_review",
+      "raw_text_path": "data/raw_text/offline_samples__080b6ddfb48c.json"
+    }
+  },
+  {
+    "chunk_id": "offline_samples__080b6ddfb48c__regulatory_logic",
+    "case_id": "offline_samples__080b6ddfb48c",
+    "chunk_type": "regulatory_logic",
+    "title": "离线样例：普通食品宣传降血糖案",
+    "source_name": "离线样例数据（非真实处罚事实来源）",
+    "source_url": "https://example.com/offline/food-blood-sugar",
+    "risk_dimensions": [
+      "涉医疗宣传"
+    ],
+    "keywords": [
+      "涉医疗宣传",
+      "降血糖"
+    ],
+    "text": "离线样例：普通食品宣传降血糖案的监管逻辑：监管机关认为广告涉及医疗、治疗或疾病功效宣传，容易误导消费者。 相关广告宣称：降血糖。",
+    "metadata": {
+      "penalty_authority": "",
+      "party_name": "某公司",
+      "industry": "",
+      "product_or_service": "",
+      "ad_channel": "",
+      "penalty_amount": null,
+      "review_status": "pending_review",
+      "raw_text_path": "data/raw_text/offline_samples__080b6ddfb48c.json"
+    }
+  },
+  {
+    "chunk_id": "offline_samples__26334151740c__case_summary",
+    "case_id": "offline_samples__26334151740c",
+    "chunk_type": "case_summary",
+    "title": "离线样例：化妆品医疗化宣传案",
+    "source_name": "离线样例数据（非真实处罚事实来源）",
+    "source_url": "https://example.com/offline/cosmetic-medical",
+    "risk_dimensions": [
+      "涉医疗宣传",
+      "化妆品医疗化宣传"
+    ],
+    "keywords": [
+      "化妆品医疗化宣传",
+      "治疗皮炎",
+      "涉医疗宣传"
+    ],
+    "text": "某公司通过广告发布宣传内容，涉及涉医疗宣传、化妆品医疗化宣传风险；主要宣称为治疗皮炎。",
+    "metadata": {
+      "penalty_authority": "",
+      "party_name": "某公司",
+      "industry": "",
+      "product_or_service": "",
+      "ad_channel": "",
+      "penalty_amount": null,
+      "review_status": "pending_review",
+      "raw_text_path": "data/raw_text/offline_samples__26334151740c.json"
+    }
+  },
+  {
+    "chunk_id": "offline_samples__26334151740c__regulatory_logic",
+    "case_id": "offline_samples__26334151740c",
+    "chunk_type": "regulatory_logic",
+    "title": "离线样例：化妆品医疗化宣传案",
+    "source_name": "离线样例数据（非真实处罚事实来源）",
+    "source_url": "https://example.com/offline/cosmetic-medical",
+    "risk_dimensions": [
+      "涉医疗宣传",
+      "化妆品医疗化宣传"
+    ],
+    "keywords": [
+      "化妆品医疗化宣传",
+      "治疗皮炎",
+      "涉医疗宣传"
+    ],
+    "text": "离线样例：化妆品医疗化宣传案的监管逻辑：监管机关认为广告涉及医疗、治疗或疾病功效宣传，容易误导消费者。 相关广告宣称：治疗皮炎。",
+    "metadata": {
+      "penalty_authority": "",
+      "party_name": "某公司",
+      "industry": "",
+      "product_or_service": "",
+      "ad_channel": "",
+      "penalty_amount": null,
+      "review_status": "pending_review",
+      "raw_text_path": "data/raw_text/offline_samples__26334151740c.json"
+    }
+  },
+  {
+    "chunk_id": "offline_samples__b167611aa03e__case_summary",
+    "case_id": "offline_samples__b167611aa03e",
+    "chunk_type": "case_summary",
+    "title": "离线样例：某公司绝对化用语广告案",
+    "source_name": "离线样例数据（非真实处罚事实来源）",
+    "source_url": "https://example.com/offline/absolute-terms",
+    "risk_dimensions": [
+      "绝对化用语"
+    ],
+    "keywords": [
+      "国家级最佳",
+      "绝对化用语"
+    ],
+    "text": "某公司通过互联网广告发布宣传内容，涉及绝对化用语风险；主要宣称为国家级最佳。",
+    "metadata": {
+      "penalty_authority": "",
+      "party_name": "某公司",
+      "industry": "",
+      "product_or_service": "",
+      "ad_channel": "互联网广告",
+      "penalty_amount": null,
+      "review_status": "pending_review",
+      "raw_text_path": "data/raw_text/offline_samples__b167611aa03e.json"
+    }
+  },
+  {
+    "chunk_id": "offline_samples__b167611aa03e__regulatory_logic",
+    "case_id": "offline_samples__b167611aa03e",
+    "chunk_type": "regulatory_logic",
+    "title": "离线样例：某公司绝对化用语广告案",
+    "source_name": "离线样例数据（非真实处罚事实来源）",
+    "source_url": "https://example.com/offline/absolute-terms",
+    "risk_dimensions": [
+      "绝对化用语"
+    ],
+    "keywords": [
+      "国家级最佳",
+      "绝对化用语"
+    ],
+    "text": "离线样例：某公司绝对化用语广告案的监管逻辑：监管机关认为广告使用国家级、最佳等绝对化表述，违反广告用语限制。 相关广告宣称：国家级最佳。",
+    "metadata": {
+      "penalty_authority": "",
+      "party_name": "某公司",
+      "industry": "",
+      "product_or_service": "",
+      "ad_channel": "互联网广告",
+      "penalty_amount": null,
+      "review_status": "pending_review",
+      "raw_text_path": "data/raw_text/offline_samples__b167611aa03e.json"
+    }
+  }
+]

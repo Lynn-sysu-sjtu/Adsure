@@ -1,0 +1,65 @@
+{
+  "case_id": "sector_docx__health__9e72583c",
+  "title": "缙云县市场监督管理局申请执行王志虎行政处罚案",
+  "case_number": "（2019）浙1122行审36号",
+  "court": "缙云县人民法院",
+  "decision_date": "2019-08-07",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "缙云县市场监督管理局",
+  "party_name": "王志虎",
+  "region": "缙云县人民法",
+  "industry": "保健食品 / 保健品 / 普通食品",
+  "sector": "health",
+  "sector_cn": "保健品",
+  "violation_type": "会销普通食品虚假宣传",
+  "case_nature": "administrative_nonlitigation_enforcement",
+  "source_lookup_priority": "P0",
+  "is_admin_penalty_candidate": true,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "health"
+  ],
+  "product_or_service": "天舟卫士牌葡聚糖压片糖",
+  "ad_channel": "视频宣传、视频",
+  "risk_dimensions": [
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "天舟卫士牌葡聚糖压片糖",
+    "抗癌、抗衰老、抗病毒、抗辐射、平衡血脂血压"
+  ],
+  "facts_summary": "以免费礼品诱使105位老年人集中，播放视频宣传“天舟卫士牌葡聚糖压片糖”（坚实型压片糖果，普通食品）具有“抗癌、抗衰老、抗病毒、抗辐射、平衡血脂血压”等功效",
+  "legal_basis": [
+    "《反不正当竞争法》第八条第一款、第二十条第一款"
+  ],
+  "penalty_result": "罚款500000元",
+  "penalty_amount": null,
+  "regulatory_logic": "保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销普通食品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《反不正当竞争法》第八条第一款、第二十条第一款。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "health",
+    "保健品",
+    "会销普通食品虚假宣传",
+    "虚假宣传",
+    "天舟卫士牌葡聚糖压片糖",
+    "抗癌、抗衰老、抗病毒、抗辐射、平衡血脂血压"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2019）浙1122行审36号 缙云县市场监督管理局申请执行王志虎行政处罚案",
+  "vector_text": "【赛道】保健品。【场景】视频宣传、视频。【宣称】天舟卫士牌葡聚糖压片糖；抗癌、抗衰老、抗病毒、抗辐射、平衡血脂血压。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销普通食品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《反不正当竞争法》第八条第一款、第二十条第一款。。【依据】《反不正当竞争法》第八条第一款、第二十条第一款。【结果】罚款500000元。"
+}

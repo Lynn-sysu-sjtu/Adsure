@@ -1,0 +1,56 @@
+{
+  "case_id": "excel_candidate__medical_beauty_device_guarantee__b8bc4386",
+  "title": "大连市金州区中医医院与大连市市场监督管理局行政案",
+  "case_number": "（2019）辽02行终627号",
+  "source_type": "manual_compilation_pending_source_verification",
+  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "decision_date": "2019-12-16",
+  "penalty_authority": "大连市金州区中医医院与大连市市场监督管理局",
+  "party_name": null,
+  "region": "辽宁省大连市",
+  "court": "辽宁省大连市中级人民法院",
+  "industry": "医疗美容/医疗器械",
+  "product_or_service": "越治越重",
+  "ad_channel": "网站",
+  "risk_dimensions": [
+    "医疗广告违规",
+    "医疗器械广告违规",
+    "功效保证"
+  ],
+  "illegal_claims": [
+    "越治越重",
+    "效果神奇"
+  ],
+  "facts_summary": "在网站发布《平凡中药尽显神奇（一）—中医治疗肿瘤顽症3则》文章，提及患者在其他医疗机构“越治越重”，宣传自己治疗“效果神奇”，构成与其他药品功效或其他医疗机构比较",
+  "legal_basis": [
+    "《广告法》第十六条第一款第（三）项、第五十八条"
+  ],
+  "penalty_result": "罚款110000元",
+  "penalty_amount": 110000,
+  "regulatory_logic": "该候选案例显示，广告内容属于医疗美容/医疗器械功效保证场景，相关宣传可能影响消费者判断，涉及《广告法》第十六条第一款第（三）项、第五十八条，需核验官方来源后确认监管认定。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "医疗美容/医疗器械功效保证",
+    "医疗广告违规",
+    "医疗器械广告违规",
+    "功效保证",
+    "网站",
+    "越治越重",
+    "效果神奇"
+  ],
+  "vector_text": "这是一起人工整理的医疗美容/医疗器械功效保证候选案例。案件事实显示，经营者在网站发布《平凡中药尽显神奇（一）—中医治疗肿瘤顽症3则》文章，提及患者在其他医疗机构“越治越重”，宣传自己治疗“效果神奇”，构成与其他药品功效或其他医疗机构比较 处罚依据记载为《广告法》第十六条第一款第（三）项、第五十八条，处理结果为罚款110000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from Excel manual compilation; source_url pending verification.",
+    "approved_for_rag": false
+  }
+}
