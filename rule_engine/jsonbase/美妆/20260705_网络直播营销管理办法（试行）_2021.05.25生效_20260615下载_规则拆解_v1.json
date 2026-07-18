@@ -1,0 +1,1593 @@
+{
+  "meta": {
+    "name": "美妆规则库-网络直播营销管理办法（试行）_2021.05.25生效_20260615下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "网络直播营销管理办法（试行）_2021.05.25生效_20260615下载.doc",
+    "source_track": "美妆",
+    "rule_count": 9,
+    "error_count": 0,
+    "source_units_processed": 30,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "LMM",
+      "name": "网络直播营销管理办法（试行）_2021.05.25生效_20260615下载",
+      "short": "LMM-2021",
+      "type": "法规",
+      "legal_level": 3,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "LMM-2021-007-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "LMM-2021",
+      "source_type": "法规",
+      "platform": null,
+      "title": "直播营销平台应制定并公开管理规则和平台公约",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "直播话术",
+          "短视频脚本"
+        ],
+        "channels": [
+          "直播",
+          "短视频"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "LMM",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "LMM",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "直播营销平台应当依据相关法律法规和国家有关规定，制定并公开网络直播营销管理规则、平台公约。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "",
+        "decision": ""
+      },
+      "recall": {
+        "tags": [
+          "平台规则",
+          "平台公约",
+          "直播营销管理"
+        ],
+        "vector_text": "直播营销平台未制定并公开网络直播营销管理规则和平台公约",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接要求直播营销平台制定并公开管理规则和平台公约，属于平台准入/资质不符维度的明确义务"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需解释或事实核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-0d8a9d9648fff864",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则要求平台制定并公开管理规则，属于形式合规，运营可直接检查并补充，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "LMM-2021-007-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "LMM-2021",
+      "source_type": "法规",
+      "platform": null,
+      "title": "直播营销平台应与相关方签订协议并履行审核义务",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "直播话术",
+          "短视频脚本"
+        ],
+        "channels": [
+          "直播",
+          "短视频"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "LMM",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "LMM",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "直播营销平台应当与直播营销人员服务机构、直播间运营者签订协议，要求其规范直播营销人员招募、培训、管理流程，履行对直播营销内容、商品和服务的真实性、合法性审核义务。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "",
+        "decision": ""
+      },
+      "recall": {
+        "tags": [
+          "协议签订",
+          "审核义务",
+          "直播营销人员",
+          "直播间运营者"
+        ],
+        "vector_text": "直播营销平台未与直播营销人员服务机构、直播间运营者签订协议，或未履行对直播营销内容、商品和服务的真实性、合法性审核义务",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求直播营销平台与相关方签订协议并履行审核义务，属于平台准入/资质不符维度的明确义务"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需解释或事实核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-2b43bb63b372daa9",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "该规则涉及平台与相关方是否签订协议及履行审核义务，需要法务判断协议有效性及审核义务履行情况，且事实核验需调取后台协议和审核记录，运营无法自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "LMM-2021-007-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "LMM-2021",
+      "source_type": "法规",
+      "platform": null,
+      "title": "直播营销平台应制定直播营销商品和服务负面目录",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "直播话术",
+          "短视频脚本"
+        ],
+        "channels": [
+          "直播",
+          "短视频"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "LMM",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "LMM",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "直播营销平台应当制定直播营销商品和服务负面目录，列明法律法规规定的禁止生产销售、禁止网络交易、禁止商业推销宣传以及不适宜以直播形式营销的商品和服务类别。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "",
+        "decision": ""
+      },
+      "recall": {
+        "tags": [
+          "负面目录",
+          "禁止生产销售",
+          "禁止网络交易",
+          "禁止商业推销宣传",
+          "不适宜直播营销"
+        ],
+        "vector_text": "直播营销平台未制定直播营销商品和服务负面目录，或目录未列明法律法规规定的禁止生产销售、禁止网络交易、禁止商业推销宣传以及不适宜以直播形式营销的商品和服务类别",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求直播营销平台制定负面目录并列出特定类别，属于平台准入/资质不符维度的明确义务"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需解释或事实核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-49a657f73fdc7067",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则要求平台制定负面目录，属于平台义务，运营可直接检查并补充目录，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "LMM-2021",
+      "source_type": "法规",
+      "platform": null,
+      "title": "直播营销平台不得为虚假或引人误解的商业宣传提供帮助或便利条件",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "直播话术",
+          "短视频脚本",
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "私域文案"
+        ],
+        "channels": [
+          "直播",
+          "短视频",
+          "图文",
+          "私域"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "LMM",
+        "source_article_id": "第十一条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "LMM",
+          "article": "第十一条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "直播营销平台不得为直播间运营者、直播营销人员虚假或者引人误解的商业宣传提供帮助、便利条件。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚假",
+            "引人误解",
+            "商业宣传",
+            "帮助",
+            "便利条件"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测直播营销平台是否在文案或话术中为直播间运营者或直播营销人员的虚假或引人误解的商业宣传提供帮助或便利条件，如提供虚假数据、伪造用户评价、协助编造宣传内容等",
+        "decision": "若检测到平台主动协助或提供便利条件支持虚假或引人误解的商业宣传，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "直播营销平台",
+          "虚假宣传",
+          "帮助行为",
+          "便利条件"
+        ],
+        "vector_text": "平台提供虚假销量数据、伪造用户评价、协助编造宣传内容、为直播间刷单提供便利、提供虚假流量数据、帮助主",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原规则涉及开放概念'帮助、便利条件'，关键词难以覆盖所有具体表述，语义召回可捕捉平台主动协助虚假宣传的各种变体表达，适合作为主要召回方式。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、引人误解、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:13:07",
+          "old_vector_text": "直播营销平台不得为直播间运营者或直播营销人员的虚假或引人误解的商业宣传提供任何形式的帮助或便利条件",
+          "old_semantic_reason": "关键词可能无法覆盖所有帮助或便利条件的具体表述，需语义理解辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "平台协助",
+            "便利条件",
+            "帮助行为",
+            "虚假数据",
+            "伪造评价",
+            "编造内容",
+            "直播营销平台"
+          ],
+          "negative_signals_recommendation": [
+            "正常流量分发",
+            "合规审核",
+            "平台免责声明",
+            "用户自行发布"
+          ],
+          "change_summary": "将原法条式描述改写为大量具体违规场景的集合，覆盖平台提供虚假数据、伪造评价、协助编造内容等多种帮助形式，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若检测到平台为虚假或引人误解的商业宣传提供帮助或便利条件，应判定违规并触发平台责任审查",
+      "examples": {
+        "violation": [
+          "平台为直播间提供虚假销量数据作为宣传素材",
+          "平台协助编造用户好评用于直播话术"
+        ],
+        "compliant": [
+          "平台仅提供正常流量分发，未参与宣传内容编造"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "历史法务口径",
+          "平台规则"
+        ],
+        "reason": "需要参考历史案例和平台规则明确‘帮助、便利条件’的具体认定标准",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "‘帮助、便利条件’的具体行为类型需结合实际情况解释，无法穷举"
+      },
+      "routing": {
+        "interpretation_dependency": "需要法务解释‘帮助、便利条件’的认定范围",
+        "fact_dependency": "需要确认平台是否实际提供了帮助或便利条件",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及平台责任认定，需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "平台与直播间运营者的合作协议",
+          "平台提供的导流服务记录"
+        ],
+        "data_sources": [
+          "平台内部系统"
+        ],
+        "note": "后期需接入平台服务记录以核实是否提供了帮助或便利条件"
+      },
+      "rule_uid": "RUID-5d3efd1b7f6c6c7e",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及开放概念‘帮助、便利条件’的认定，且需核验平台内部服务记录，误判后果严重，必须法务复核",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "LMM-MP-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "LMM-2021",
+      "source_type": "法规",
+      "platform": null,
+      "title": "直播营销平台未成年人保护提示义务",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "直播"
+        ],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "LMM",
+        "source_article_id": "12",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "LMM",
+          "article": "第十二条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "直播营销平台应当建立健全未成年人保护机制，注重保护未成年人身心健康。网络直播营销中包含可能影响未成年人身心健康内容的，直播营销平台应当在信息展示前以显著方式作出提示。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "未成年人",
+            "青少年",
+            "儿童",
+            "小孩",
+            "宝宝"
+          ],
+          "regex": [],
+          "context_signals": [
+            "可能影响未成年人身心健康",
+            "未成年人保护"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测直播营销文案中是否包含可能影响未成年人身心健康的内容，如暴力、色情、诱导消费、不良价值观等，且未以显著方式作出提示",
+        "decision": "若文案涉及可能影响未成年人身心健康的内容且未以显著方式提示，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "直播营销",
+          "显著提示"
+        ],
+        "vector_text": "这款美妆产品适合12岁小女孩使用，快来买吧；儿童专用美妆，宝宝也能用；青少年护肤神器，学生党必备；未",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及开放概念'可能影响未成年人身心健康'，关键词难以覆盖所有违规表达，语义召回可有效识别面向未成年人的美妆产品营销话术，包括诱导消费、暗示安全等软性违规表述。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 显著、未成年人.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:13:20",
+          "old_vector_text": "直播营销文案中包含可能影响未成年人身心健康的内容，未在信息展示前以显著方式作出提示",
+          "old_semantic_reason": "关键词可能无法完全覆盖'可能影响未成年人身心健康'的语义范围，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "美妆",
+            "直播营销",
+            "诱导消费",
+            "儿童化妆品",
+            "青少年护肤",
+            "显著提示"
+          ],
+          "negative_signals_recommendation": [
+            "家长陪同",
+            "监护人指导",
+            "请在家长指导下",
+            "未成年人请在家长"
+          ],
+          "change_summary": "将原规则摘要式文本改写为仿真违规文案集合，覆盖多种面向未成年人的美妆产品营销话术，并增加诱导消费、安全暗示等软性表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求直播营销平台在包含可能影响未成年人身心健康内容的文案展示前，以显著方式作出提示；未提示则判定违规",
+      "examples": {
+        "violation": [
+          "直播话术：'这款美妆产品适合12岁小女孩使用，快来买吧'（未提示可能影响未成年人身心健康）"
+        ],
+        "compliant": [
+          "直播话术：'本产品适合成年人使用，未成年人请在家长指导下购买'（显著提示）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "条文中的'可能影响未成年人身心健康内容'需要结合具体场景解释，无法完全通过关键词硬触发"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断内容是否'可能影响未成年人身心健康'",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及未成年人保护，违规风险高，需法务审核确认内容是否属于'可能影响未成年人身心健康'",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-6439163a7e2b34c8",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "判断内容是否'可能影响未成年人身心健康'属于开放法律概念，且违规后果严重，运营难以自行判断，需法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "LMM-FALSE-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "LMM_2021_18",
+      "source_type": "法规",
+      "platform": null,
+      "title": "直播营销禁止发布虚假或引人误解信息",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "直播话术",
+          "短视频脚本"
+        ],
+        "channels": [
+          "直播",
+          "短视频"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "LMM",
+        "source_article_id": "18",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "LMM",
+          "article": "第十八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "直播间运营者、直播营销人员从事网络直播营销活动，应当遵守法律法规和国家有关规定，遵循社会公序良俗，真实、准确、全面地发布商品或服务信息，不得有下列行为：（二）发布虚假或者引人误解的信息，欺骗、误导用户；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚假",
+            "引人误解",
+            "欺骗",
+            "误导"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否存在对商品或服务效果、成分、功效等的不实描述或可能误导消费者的表述",
+        "decision": "若检测到虚假或引人误解的描述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "直播营销",
+          "误导用户"
+        ],
+        "vector_text": "本产品使用一次即可美白?绝对有效，无效退款（无依据）?虚假?引人误解?欺骗?误导?虚假宣传?直播营销",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、引人误解、欺骗、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:15:27",
+          "old_vector_text": "直播营销中发布虚假或引人误解的商品信息，欺骗、误导用户的行为",
+          "old_semantic_reason": "虚假或引人误解信息可能通过语义变体表达，关键词可能漏召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "虚假宣传",
+            "直播营销",
+            "误导用户"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《网络直播营销管理办法》第十八条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "本产品使用一次即可美白",
+          "绝对有效，无效退款（无依据）"
+        ],
+        "compliant": [
+          "本产品含有维生素C，有助于提亮肤色"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止发布虚假或引人误解信息，可直接作为审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "虚假宣传风险高，需直接拦截",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-d8b2091501dd10bf",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假或引人误解信息属于开放法律概念，需要法务结合具体描述和事实证据判断是否构成欺骗误导，且后果风险高，运营难以自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "LMM-FRAUD-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "LMM_2021_18",
+      "source_type": "法规",
+      "platform": null,
+      "title": "直播营销禁止数据流量造假",
+      "dimension": "概率造假",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "直播话术",
+          "短视频脚本",
+          "图文文案"
+        ],
+        "channels": [
+          "直播",
+          "短视频"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "LMM",
+        "source_article_id": "18",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "LMM",
+          "article": "第十八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "直播间运营者、直播营销人员从事网络直播营销活动，应当遵守法律法规和国家有关规定，遵循社会公序良俗，真实、准确、全面地发布商品或服务信息，不得有下列行为：（四）虚构或者篡改交易、关注度、浏览量、点赞量等数据流量造假；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚构交易",
+            "刷单",
+            "刷量",
+            "流量造假",
+            "篡改数据",
+            "虚假关注",
+            "虚假浏览量",
+            "虚假点赞"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否存在暗示或明示通过非正常手段提升交易、关注度、浏览量、点赞量等数据的行为",
+        "decision": "若检测到数据流量造假相关表述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "数据造假",
+          "流量造假",
+          "直播营销"
+        ],
+        "vector_text": "本直播间已刷10万单?购买后帮您刷浏览量?虚构交易?刷单?刷量?流量造假?篡改数据?虚假关注?虚假浏",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 明示、清晰、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:16:32",
+          "old_vector_text": "直播营销中虚构或篡改交易、关注度、浏览量、点赞量等数据流量造假的行为",
+          "old_semantic_reason": "数据造假表述可能使用隐晦词汇，关键词可能漏召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "数据造假",
+            "流量造假",
+            "直播营销"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Missing vector_text.",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《网络直播营销管理办法》第十八条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "本直播间已刷10万单",
+          "购买后帮您刷浏览量"
+        ],
+        "compliant": [
+          "本产品已售出1000件（真实数据）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止数据流量造假，可直接作为审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_direct",
+        "route_reason": "数据造假风险高，需直接拦截",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-c8581a8186897da7",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接删除或替换违规表述，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "LMM-2021",
+      "source_type": "法规",
+      "platform": null,
+      "title": "直播营销重点环节不得含有违法和不良信息",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "直播话术"
+        ],
+        "channels": [
+          "直播"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "LMM",
+        "source_article_id": "第二十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "LMM",
+          "article": "第二十条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "直播间运营者、直播营销人员应当加强直播间管理，在下列重点环节的设置应当符合法律法规和国家有关规定，不得含有违法和不良信息，不得以暗示等方式误导用户：\n（一）直播间运营者账号名称、头像、简介；\n（二）直播间标题、封面；\n（三）直播间布景、道具、商品展示；\n（四）直播营销人员着装、形象；\n（五）其他易引起用户关注的重点环节。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "违法",
+            "不良信息",
+            "误导"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "直播话术中涉及违法、不良信息或暗示性误导用户的内容",
+        "decision": "若直播话术含有违法信息、不良信息或以暗示方式误导用户，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "直播管理",
+          "重点环节",
+          "违法信息",
+          "不良信息",
+          "误导用户"
+        ],
+        "vector_text": "直播间标题封面暗示色情内容；主播穿着暴露诱导点击；账号简介含违法信息；布景道具出现不良图案；直播话术",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "违法和不良信息定义宽泛，关键词难以穷举，语义召回可覆盖多种违规表达",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 误导.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:16:40",
+          "old_vector_text": "直播营销中，直播间运营者账号名称、头像、简介、标题、封面、布景、道具、商品展示、主播着装形象及其他重点环节不得含有违法和不良信息，不得以暗示方式误导用户",
+          "old_semantic_reason": "违法和不良信息定义宽泛，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "直播违规",
+            "不良信息",
+            "误导用户",
+            "暗示",
+            "低俗",
+            "违法内容",
+            "重点环节"
+          ],
+          "negative_signals_recommendation": [
+            "合规",
+            "合法",
+            "正能量",
+            "健康"
+          ],
+          "change_summary": "从法条改写为真实违规场景集合，覆盖多种重点环节的违法和不良信息表达",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝或要求修改",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规",
+          "平台规则"
+        ],
+        "reason": "违法和不良信息的具体范围需参考相关法律法规及平台规则",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "违法和不良信息的具体内容需结合其他法规解释"
+      },
+      "routing": {
+        "interpretation_dependency": "违法和不良信息的定义需参考其他法规",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及违法和不良信息的判断需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-b1f3dc8a97142e58",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "违法和不良信息定义宽泛且需参考其他法规，运营难以自行判断，必须由法务审核",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-UC-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "LMM-2021",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止删除、屏蔽用户不利评价",
+      "dimension": "用户评价/种草误导",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "直播话术",
+          "私域文案",
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "短视频脚本"
+        ],
+        "channels": [
+          "直播",
+          "私域",
+          "电商",
+          "社交媒体"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "LMM",
+        "source_article_id": "第二十一条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "LMM",
+          "article": "第二十一条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "直播间运营者、直播营销人员应当依据平台服务协议做好语音和视频连线、评论、弹幕等互动内容的实时管理，不得以删除、屏蔽相关不利评价等方式欺骗、误导用户。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "删除评价",
+            "屏蔽评价",
+            "删除差评",
+            "屏蔽差评",
+            "删除不利评价",
+            "屏蔽不利评价",
+            "删除负面评价",
+            "屏蔽负面评价",
+            "删除评论",
+            "屏蔽评论",
+            "删除不利评论",
+            "屏蔽不利评论"
+          ],
+          "regex": [],
+          "context_signals": [
+            "删除",
+            "屏蔽",
+            "不利评价",
+            "差评",
+            "负面评价",
+            "不利评论"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否存在暗示或明示通过删除、屏蔽用户不利评价（如差评、负面评论）来欺骗、误导用户的行为描述或操作指引",
+        "decision": "若检测到文案中包含删除、屏蔽用户不利评价的表述或操作指引，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "用户评价管理",
+          "禁止删除评价",
+          "禁止屏蔽评价",
+          "欺骗误导用户"
+        ],
+        "vector_text": "自动删除所有差评，确保好评率；屏蔽负面评论，让用户只看到好评；清理不利评价；隐藏差评；过滤负面反馈；",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text是法条改写，不像真实违规文案。新文本模拟了多种违规表达，包括直接操作、软性暗示、效果承诺等，适合语义召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 明示、欺骗、清晰、种草、误导.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:16:49",
+          "old_vector_text": "直播间运营者或直播营销人员不得以删除、屏蔽用户不利评价（如差评、负面评论）的方式欺骗、误导用户",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，如'清理差评'、'隐藏负面评论'等，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "删除差评",
+            "屏蔽评价",
+            "隐藏负面",
+            "评价管理",
+            "欺骗误导",
+            "好评率",
+            "用户评价"
+          ],
+          "negative_signals_recommendation": [
+            "真实展示",
+            "不干预",
+            "重视反馈",
+            "包括差评"
+          ],
+          "change_summary": "将法条式描述改写为真实违规文案集合，覆盖多种变体表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布含有删除、屏蔽用户不利评价内容的文案或话术",
+      "examples": {
+        "violation": [
+          "我们会自动删除所有差评，确保好评率",
+          "屏蔽负面评论，让用户只看到好评"
+        ],
+        "compliant": [
+          "我们重视每一条用户反馈，包括差评",
+          "用户评价真实展示，不进行人为干预"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止删除、屏蔽不利评价的行为，可直接转化为审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可自动化执行，误判风险低",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-3a4dae0457f1acac",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规表述，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

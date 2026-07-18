@@ -1,0 +1,1125 @@
+{
+  "meta": {
+    "name": "保健食品规则库-中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "保健食品广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载.doc",
+    "source_track": "保健食品",
+    "rule_count": 6,
+    "error_count": 0,
+    "source_units_processed": 63,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "CPL",
+      "name": "中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载",
+      "short": "CPL-2013",
+      "type": "法规",
+      "legal_level": 1,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "HF-INFO-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "CPL-2013",
+      "source_type": "法规",
+      "platform": null,
+      "title": "消费者知情权保障规则",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "第八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第八条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第八条 消费者享有知悉其购买、使用的商品或者接受的服务的真实情况的权利。\n 消费者有权根据商品或者服务的不同情况，要求经营者提供商品的价格、产地、生产者、用途、性能、规格、等级、主要成份、生产日期、有效期限、检验合格证明、使用方法说明书、售后服务，或者服务的内容、规格、费用等有关情况。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中不得隐瞒或虚构商品的价格、产地、生产者、用途、性能、规格、等级、主要成份、生产日期、有效期限、检验合格证明、使用方法说明书、售后服务等真实情况，不得误导消费者对商品或服务的认知。",
+        "decision": "若广告文案存在对上述信息的虚假、不实或误导性描述，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "消费者知情权",
+          "虚假宣传",
+          "信息真实性"
+        ],
+        "vector_text": "原装进口，纯天然无添加，功效显著，无效退款。本产品采用独家秘方，富含多种活性成分，能快速改善睡眠，增",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及消费者知情权，需识别广告中是否隐瞒或虚构商品信息，语义召回可覆盖多种虚假或误导性描述场景。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T02:47:56",
+          "old_vector_text": "广告文案中不得隐瞒或虚构商品的价格、产地、生产者、用途、性能、规格、等级、主要成份、生产日期、有效期限、检验合格证明、使用方法说明书、售后服务等真实情况，不得误导消费者对商品或服务的认知。",
+          "old_semantic_reason": "该条文为原则性规定，无具体禁用词，需语义理解判断是否隐瞒或虚构信息。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "消费者知情权",
+            "虚假宣传",
+            "信息真实性",
+            "误导性描述",
+            "虚构产地",
+            "虚假功效",
+            "隐瞒信息"
+          ],
+          "negative_signals_recommendation": [
+            "价格优惠",
+            "促销活动",
+            "限时折扣"
+          ],
+          "change_summary": "从法条式描述改为仿真违规广告文案集合，包含虚构产地、功效、保质期等典型违规表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 101
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 价格、功效、宣传、显著、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若判定违规，建议要求修改或删除不实信息。",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "条文为原则性规定，需结合具体广告内容判断是否侵犯消费者知情权，无明确硬性指标。"
+      },
+      "routing": {
+        "interpretation_dependency": "高",
+        "fact_dependency": "低",
+        "misjudgment_cost": "中",
+        "default_route": "legal_review_required",
+        "route_reason": "该规则依赖语义理解和主观判断，需法务或审核人员介入。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-074b0589e2d06465",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "该规则为原则性规定，依赖语义理解判断是否隐瞒或虚构信息，需法务解释概念边界并评估误导性。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-FALSEAD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "CPL",
+      "source_type": "法规",
+      "platform": null,
+      "title": "经营者提供商品或服务信息应当真实全面，不得虚假或引人误解宣传",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "第二十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第二十条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第二十条 经营者向消费者提供有关商品或者服务的质量、性能、用途、有效期限等信息，应当真实、全面，不得作虚假或者引人误解的宣传。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否存在对保健食品的质量、性能、用途、有效期限等信息的虚假或引人误解的描述，包括但不限于夸大功效、虚构成分、隐瞒副作用、误导性比较等",
+        "decision": "若文案中存在对保健食品质量、性能、用途、有效期限等信息的虚假或引人误解的描述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "信息真实性",
+          "消费者权益保护"
+        ],
+        "vector_text": "本保健食品可治愈所有慢性疾病；使用本产品后100%有效，无效退款；纯天然无副作用，效果立竿见影；三天",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "虚假宣传场景多样，关键词难以穷举，需语义模型辅助识别，通过模拟真实违规文案的集合，提高语义召回对夸大功效、虚假承诺、误导性比较等表达的覆盖。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、夸大、宣传、引人误解、比较.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T16:56:35",
+          "old_vector_text": "保健食品广告中关于质量、性能、用途、有效期限等信息必须真实全面，不得虚假或引人误解",
+          "old_semantic_reason": "虚假宣传场景多样，关键词难以穷举，需语义模型辅助识别",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "夸大功效",
+            "误导性比较",
+            "无效退款",
+            "保健食品",
+            "绝对化用语",
+            "功效承诺"
+          ],
+          "negative_signals_recommendation": [
+            "合规声明",
+            "科普知识",
+            "官方指南",
+            "法律法规",
+            "注意事项"
+          ],
+          "change_summary": "将原规则性描述改写为大量真实违规文案的集合，覆盖多种虚假宣传表达方式，提升语义召回能力。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反消费者权益保护法，可能面临行政处罚或民事赔偿",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改或删除违规内容",
+      "examples": {
+        "violation": [
+          "本保健食品可治愈所有慢性疾病",
+          "使用本产品后100%有效，无效退款"
+        ],
+        "compliant": [
+          "本保健食品含维生素C，有助于增强免疫力",
+          "本品保质期至2025年12月"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定经营者提供信息应当真实全面，不得虚假或引人误解，适用于广告文案审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中等",
+        "default_route": "operator_direct",
+        "route_reason": "虚假宣传判断主要依赖文案语义，无需外部资料核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-99a5b0b1a35aca56",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假或引人误解宣传属于开放法律概念，需要法务结合具体语境和监管口径判断边界，且风险等级高，不宜由运营自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-FC-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "CPL-2013",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告宣称与实际质量相符规则",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "第二十三条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第二十三条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "经营者以广告、产品说明、实物样品或者其他方式表明商品或者服务的质量状况的，应当保证其提供的商品或者服务的实际质量与表明的质量状况相符。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "质量",
+            "功效",
+            "效果",
+            "保证",
+            "承诺",
+            "疗效",
+            "治愈",
+            "安全",
+            "无副作用"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否对保健食品的质量、性能、用途、效果等作出明确或暗示的承诺，且该承诺可能超出实际产品备案或检测范围",
+        "decision": "若广告宣称的质量状况与实际产品不符，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "质量不符",
+          "功效夸大"
+        ],
+        "vector_text": "本产品100%有效改善睡眠质量?保证一个月内血糖恢复正常?质量?功效?效果?保证?承诺?疗效?治愈?",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、夸大、宣传、宣称、疗效.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T16:57:37",
+          "old_vector_text": "广告中宣称保健食品具有特定质量、性能、用途或效果，但实际产品可能无法达到该宣称标准",
+          "old_semantic_reason": "关键词可能无法覆盖所有暗示性质量承诺表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "虚假宣传",
+            "质量不符",
+            "功效夸大"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Missing vector_text.",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《消费者权益保护法》第二十三条，可能面临行政处罚或民事赔偿",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回或要求修改广告文案，确保宣称与实际质量相符",
+      "examples": {
+        "violation": [
+          "本产品100%有效改善睡眠质量",
+          "保证一个月内血糖恢复正常"
+        ],
+        "compliant": [
+          "本品经检测符合国家标准",
+          "有助于维持正常血压水平"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定广告宣称应与实际质量相符，可形成明确审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核实产品实际质量状况与广告宣称是否一致",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供产品备案或检测资料以核实宣称真实性",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品备案凭证",
+          "质量检测报告",
+          "功效证明材料"
+        ],
+        "data_sources": [
+          "国家市场监管总局数据库",
+          "企业提交的资质文件"
+        ],
+        "note": "后期需接入资料核验系统，比对广告宣称与产品实际质量信息"
+      },
+      "rule_uid": "RUID-02bd582c22b68621",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及保健食品功效宣称与实际质量是否相符，需法务结合产品备案和检测报告判断是否构成虚假宣传，运营无法自行核实。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-CONTRACT-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "CPL-2013",
+      "source_type": "法规",
+      "platform": null,
+      "title": "格式条款中不得排除或限制消费者权利、减轻或免除经营者责任",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "第二十六条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第二十六条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "经营者不得以格式条款、通知、声明、店堂告示等方式，作出排除或者限制消费者权利、减轻或者免除经营者责任、加重消费者责任等对消费者不公平、不合理的规定，不得利用格式条款并借助技术手段强制交易。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "最终解释权",
+            "概不负责",
+            "不承担任何责任",
+            "恕不退款",
+            "不退不换",
+            "概不退换",
+            "本公司保留最终解释权",
+            "活动最终解释权归本公司所有",
+            "一经售出概不退换",
+            "不承担任何法律责任",
+            "免除责任",
+            "排除消费者权利",
+            "限制消费者权利",
+            "减轻责任",
+            "加重消费者责任",
+            "强制交易"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否包含格式条款、通知、声明、店堂告示等形式的文字，内容涉及排除或限制消费者权利、减轻或免除经营者责任、加重消费者责任或强制交易等不公平、不合理的规定。",
+        "decision": "若检测到上述关键词或语义匹配，则判定为违规，需提示修改或删除相关条款。"
+      },
+      "recall": {
+        "tags": [
+          "格式条款",
+          "消费者权利",
+          "经营者责任",
+          "不公平条款",
+          "强制交易"
+        ],
+        "vector_text": "广告文案中不得包含格式条款、通知、声明、店堂告示等形式的内容，排除或限制消费者权利、减轻或免除经营者责任、加重消费者责任，或利用技术手段强制交易。",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "关键词可能无法覆盖所有变体表述，需语义补充检测不公平条款。",
+        "trigger_layer": "workflow",
+        "trigger_layer_reason": "Rule mainly concerns subject obligation, platform responsibility, archive, or process duty: 经营者责任. It also has content signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "格式条款无效，可能面临行政处罚或民事赔偿",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布含有排除或限制消费者权利、减轻或免除经营者责任、加重消费者责任等不公平、不合理格式条款的广告内容。",
+      "examples": {
+        "violation": [
+          "本活动最终解释权归本公司所有",
+          "商品一经售出，概不退换",
+          "本公司对产品质量概不负责",
+          "消费者不得因任何原因要求退款"
+        ],
+        "compliant": [
+          "本活动规则详见店内公告，如有疑问请咨询客服",
+          "商品支持7天无理由退换货（具体条件见退换货政策）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止格式条款中的不公平、不合理规定，可直接应用于广告文案审核。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可自动化处理，无需人工审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-6763f650c9e732d2",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规条款，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-PRI-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "CPL",
+      "source_type": "法规",
+      "platform": null,
+      "title": "未经消费者同意不得发送商业性信息",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "第二十九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第二十九条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "经营者未经消费者同意或者请求，或者消费者明确表示拒绝的，不得向其发送商业性信息。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "发送",
+            "推送",
+            "短信",
+            "邮件",
+            "商业信息",
+            "营销信息",
+            "广告信息"
+          ],
+          "regex": [],
+          "context_signals": [
+            "未经同意",
+            "未经请求",
+            "拒绝",
+            "明确表示拒绝"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否存在向消费者发送商业性信息的表述，且未提及已获得消费者同意或消费者未拒绝的场景",
+        "decision": "如果文案中明确表示向消费者发送商业性信息（如短信、邮件、推送等），且未声明已获得消费者同意或消费者未明确拒绝，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "消费者权益保护",
+          "个人信息",
+          "商业信息发送",
+          "同意"
+        ],
+        "vector_text": "发送短信推送优惠活动，订阅邮件获取每日推荐，未经同意发送营销信息，推送广告短信，发送商业邮件，未经请",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及消费者同意，关键词难以覆盖所有商业性信息发送的表述，语义召回可有效召回各种变体表述，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T02:54:37",
+          "old_vector_text": "未经消费者同意或请求，或消费者明确表示拒绝的情况下，向消费者发送商业性信息",
+          "old_semantic_reason": "关键词可能无法覆盖所有商业性信息发送的表述方式，需要语义理解辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "消费者权益保护",
+            "商业信息发送",
+            "未经同意",
+            "营销短信",
+            "邮件广告",
+            "推送通知",
+            "同意授权"
+          ],
+          "negative_signals_recommendation": [
+            "经您同意",
+            "如您同意",
+            "已获得同意",
+            "您已同意",
+            "同意后"
+          ],
+          "change_summary": "将原法条式描述改写为真实违规文案集合，覆盖短信、邮件、推送等多种商业信息发送场景及未经同意、拒绝后仍发送等违规表述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 286
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 促销、清晰. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": "违反《消费者权益保护法》第二十九条，可能面临行政处罚或民事赔偿",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若文案中包含未经同意发送商业性信息的表述，需删除或修改为已获消费者同意的表述",
+      "examples": {
+        "violation": [
+          "我们将通过短信向您推送最新优惠活动",
+          "订阅我们的邮件，获取每日推荐"
+        ],
+        "compliant": [
+          "经您同意后，我们将通过短信向您推送最新优惠活动",
+          "如您同意，我们将通过邮件发送推荐信息"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止未经消费者同意发送商业性信息，可直接作为广告审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可覆盖常见违规场景，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-e9129bbc59cd80cd",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接删除或补充同意声明，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-FAKE-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "CPL-2013",
+      "source_type": "法规",
+      "platform": null,
+      "title": "虚假广告连带责任（生命健康商品/服务）",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "45",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第四十五条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第四十五条 消费者因经营者利用虚假广告或者其他虚假宣传方式提供商品或者服务，其合法权益受到损害的，可以向经营者要求赔偿。广告经营者、发布者发布虚假广告的，消费者可以请求行政主管部门予以惩处。广告经营者、发布者不能提供经营者的真实名称、地址和有效联系方式的，应当承担赔偿责任。\n 广告经营者、发布者设计、制作、发布关系消费者生命健康商品或者服务的虚假广告，造成消费者损害的，应当与提供该商品或者服务的经营者承担连带责任。\n 社会团体或者其他组织、个人在关系消费者生命健康商品或者服务的虚假广告或者其他虚假宣传中向消费者推荐商品或者服务，造成消费者损害的，应当与提供该商品或者服务的经营者承担连带责任。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "本条主要规定虚假广告的民事责任和连带责任，适用于保健食品等关系消费者生命健康的商品或服务。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚假广告",
+            "虚假宣传",
+            "推荐",
+            "生命健康"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告内容存在虚假或引人误解的宣传，且涉及保健食品等关系消费者生命健康的商品或服务。",
+        "decision": "若广告内容被认定为虚假广告或虚假宣传，且涉及保健食品，则广告经营者、发布者、推荐者可能承担连带责任。"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "连带责任",
+          "生命健康",
+          "保健食品"
+        ],
+        "vector_text": "这款保健食品效果神奇，三天见效，无效退款！专家强烈推荐，央视报道，纯天然无副作用。赶紧下单，错过等一年！",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及虚假广告连带责任，适合语义召回以捕获各种虚假宣传话术，如效果夸大、虚假推荐、虚构背书等。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T02:54:44",
+          "old_vector_text": "涉及保健食品的虚假广告或虚假宣传，广告经营者、发布者、推荐者需承担连带责任。",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "保健食品",
+            "效果夸大",
+            "虚假推荐",
+            "生命健康"
+          ],
+          "negative_signals_recommendation": [
+            "合规声明",
+            "免责条款",
+            "一般性介绍"
+          ],
+          "change_summary": "从法条解释改写为仿真违规文案集合，覆盖多种虚假宣传表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 夸大、宣传、引人误解、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "广告经营者、发布者、推荐者与经营者承担连带赔偿责任；消费者可请求行政主管部门惩处。",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若检测到虚假广告或虚假宣传内容，且涉及保健食品，需标记为高风险，建议人工审核或拒绝发布。",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定虚假广告的连带责任，适用于保健食品等生命健康商品/服务。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要判断广告内容是否构成虚假广告或虚假宣传",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假广告认定需结合事实判断，且涉及生命健康商品，误判风险高，需法务审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "广告内容真实性证明材料",
+          "产品资质证明"
+        ],
+        "data_sources": [],
+        "note": "后期需接入资料核验以确认广告内容是否虚假。"
+      },
+      "rule_uid": "RUID-9d3516057c6bf874",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假广告认定涉及开放法律概念，需结合事实判断，且涉及生命健康商品，误判风险高，必须法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

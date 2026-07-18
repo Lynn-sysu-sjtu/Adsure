@@ -1,0 +1,906 @@
+{
+  "meta": {
+    "name": "保健食品规则库-网络食品安全违法行为查处办法（2025修订）_2025.05.01生效_20260617下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "保健食品广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "网络食品安全违法行为查处办法（2025修订）_2025.05.01生效_20260617下载.doc",
+    "source_track": "保健食品",
+    "rule_count": 5,
+    "error_count": 0,
+    "source_units_processed": 48,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "WFSA",
+      "name": "网络食品安全违法行为查处办法（2025修订）_2025.05.01生效_20260617下载",
+      "short": "WFSA-2025",
+      "type": "法规",
+      "legal_level": 3,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "HF-PLAT-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "WFSA",
+      "source_type": "法规",
+      "platform": null,
+      "title": "入网食品生产经营者应当依法取得许可，并按许可范围销售",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "WFSA",
+        "source_article_id": "16",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "WFSA",
+          "article": "第十六条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十六条 入网食品生产经营者应当依法取得许可，入网食品生产者应当按照许可的类别范围销售食品，入网食品经营者应当按照许可的经营项目范围从事食品经营。法律、法规规定不需要取得食品生产经营许可的除外。 取得食品生产许可的食品生产者，通过网络销售其生产的食品，不需要取得食品经营许可。取得食品经营许可的食品经营者通过网络销售其制作加工的食品，不需要取得食品生产许可。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品",
+            "许可",
+            "经营许可",
+            "生产许可",
+            "资质"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中提及保健食品销售或推广时，需核实商家是否依法取得食品生产经营许可，并按许可范围销售",
+        "decision": "若广告文案中涉及保健食品销售或推广，且未体现或暗示商家已取得相应许可，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "平台准入",
+          "资质合规",
+          "许可要求"
+        ],
+        "vector_text": "保健食品广告需确保入网食品生产经营者已依法取得许可，并按许可类别或经营项目范围销售",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 许可、证明、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求补充资质证明",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定入网食品生产经营者需取得许可并按范围销售，适用于广告审核中资质合规判断"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核实商家是否持有有效食品生产经营许可",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则依赖商家资质证明，需运营方提供许可文件进行核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "食品生产经营许可证",
+          "保健食品生产许可证",
+          "保健食品经营许可证"
+        ],
+        "data_sources": [
+          "商家提交的资质文件",
+          "国家市场监管总局许可查询系统"
+        ],
+        "note": "后期需接入资料核验系统，验证商家许可信息"
+      },
+      "rule_uid": "RUID-c89cdee611365fc3",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则依赖商家资质证明，需运营方提供许可文件进行核验，且风险高，不宜直接修改或跳过法务",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-MIS-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "WFSA",
+      "source_type": "法规",
+      "platform": null,
+      "title": "网上刊载的非保健食品信息不得明示或暗示具有保健功能",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "非保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "WFSA",
+        "source_article_id": "17",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "WFSA",
+          "article": "第十七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "（二）网上刊载的非保健食品信息明示或者暗示具有保健功能；网上刊载的保健食品的注册证书或者备案凭证等信息与注册或者备案信息不一致。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健功能",
+            "保健",
+            "增强免疫力",
+            "调节血脂",
+            "辅助降血糖",
+            "改善睡眠",
+            "缓解疲劳",
+            "抗氧化",
+            "促进消化",
+            "润肠通便"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "非保健食品的宣传文案中，不得使用明示或暗示具有保健功能的表述，包括但不限于声称具有调节人体机能、预防疾病、改善健康状态等功效。",
+        "decision": "若检测到非保健食品文案中包含明示或暗示保健功能的表述，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "非保健食品",
+          "保健功能",
+          "暗示",
+          "虚假宣传"
+        ],
+        "vector_text": "增强免疫力、调节血脂、辅助降血糖、改善睡眠、缓解疲劳、抗氧化、促进消化、润肠通便、清肺、护肝、补肾、",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "非保健食品暗示保健功能的表达方式多样，包括功效词、场景化描述、软性暗示、虚假背书等，关键词难以穷举，需语义召回覆盖变体。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 保健功能、功效、宣传、明示、疾病.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T17:17:13",
+          "old_vector_text": "非保健食品的宣传文案中，不得明示或暗示具有保健功能，例如声称产品可以增强免疫力、调节血脂、改善睡眠等。",
+          "old_semantic_reason": "保健功能的暗示可能通过非标准关键词表达，需语义理解辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "非保健食品",
+            "保健功能暗示",
+            "功效宣称",
+            "虚假宣传",
+            "软文",
+            "营销话术",
+            "规避表达"
+          ],
+          "negative_signals_recommendation": [
+            "保健食品",
+            "蓝帽子",
+            "国食健字",
+            "卫食健字",
+            "保健食品批准文号"
+          ],
+          "change_summary": "从法条式描述改写为真实违规文案集合，覆盖功效词、场景化暗示、虚假背书、促销话术等多种表达，并增加规避表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改，删除违规表述",
+      "examples": {
+        "violation": [
+          "本品富含维生素C，可增强免疫力",
+          "每天一杯，改善睡眠质量"
+        ],
+        "compliant": [
+          "本品富含维生素C",
+          "每天一杯，口感醇厚"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止非保健食品信息明示或暗示具有保健功能，规则可直接执行。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可覆盖大部分违规场景，无需法务介入。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-41c06c06a570d16c",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需判断产品是否为非保健食品及文案是否暗示保健功能，运营需补充产品分类证明或修改文案，但高风险需法务复核确认边界。",
+        "confidence": "medium",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-MIS-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "WFSA",
+      "source_type": "法规",
+      "platform": null,
+      "title": "网上刊载的保健食品注册证书或备案凭证信息必须与注册或备案信息一致",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "WFSA",
+        "source_article_id": "17",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "WFSA",
+          "article": "第十七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "（二）网上刊载的非保健食品信息明示或者暗示具有保健功能；网上刊载的保健食品的注册证书或者备案凭证等信息与注册或者备案信息不一致。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "注册证书",
+            "备案凭证",
+            "批准文号",
+            "国食健字",
+            "卫食健字",
+            "保健食品注册号",
+            "备案号"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "保健食品宣传文案中提及的注册证书、备案凭证、批准文号等信息，必须与官方注册或备案信息完全一致，不得篡改或虚构。",
+        "decision": "若检测到保健食品文案中引用了注册证书或备案凭证信息，需后续资料核验是否与官方信息一致；若明显不一致则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "注册证书",
+          "备案凭证",
+          "信息一致性"
+        ],
+        "vector_text": "保健食品宣传中引用的注册证书、备案凭证、批准文号等信息，必须与官方注册或备案信息完全一致，不得出现不一致或虚假信息。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "主要依赖关键词召回和后续资料核验，语义检测非必需。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 保健功能、宣传、明示、虚假. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改，提供与注册/备案信息一致的凭证",
+      "examples": {
+        "violation": [
+          "本品批准文号：国食健字G20201234（实际为G20205678）",
+          "备案凭证号：食健备G20210001（实际为G20210002）"
+        ],
+        "compliant": [
+          "本品批准文号：国食健字G20201234（与官方一致）"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规",
+          "平台规则"
+        ],
+        "reason": "需要参考注册/备案信息数据库进行一致性核验。",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要比对文案中引用的注册/备案信息与官方数据库，判断是否一致。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要接入保健食品注册/备案信息数据库进行核验",
+        "misjudgment_cost": "high",
+        "default_route": "legal_review_required",
+        "route_reason": "需要人工或系统核验注册/备案信息一致性，无法仅通过文案检测判定。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "保健食品注册证书",
+          "保健食品备案凭证"
+        ],
+        "data_sources": [
+          "国家市场监督管理总局特殊食品信息查询平台"
+        ],
+        "note": "后期需接入官方数据库进行信息一致性核验。"
+      },
+      "rule_uid": "RUID-82a8a7c8f78d473e",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "需要核验注册证书或备案凭证与官方信息是否一致，运营无法自行判断，必须进入法务或合规复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "WFSA-2025",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品网络销售应显著标明警示语",
+      "dimension": "警示语缺失",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "WFSA",
+        "source_article_id": "第十九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "WFSA",
+          "article": "第十九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "保健食品还应当显著标明\"本品不能代替药物\"。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品",
+            "本品不能代替药物"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测保健食品相关文案中是否包含'本品不能代替药物'的警示语",
+        "decision": "若保健食品文案中未显著标明'本品不能代替药物'，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "警示语",
+          "网络销售"
+        ],
+        "vector_text": "保健食品广告或宣传文案中必须显著标明'本品不能代替药物'的警示语",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、显著、显著标明.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求补充'本品不能代替药物'警示语，并显著标明",
+      "examples": {
+        "violation": [
+          "某保健食品详情页未标注'本品不能代替药物'"
+        ],
+        "compliant": [
+          "某保健食品Banner底部显著标注'本品不能代替药物'"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定保健食品必须显著标明警示语，规则明确可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词可检测，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-21a8efaddf55ec7b",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清楚，仅需检测是否包含固定警示语，运营可直接补充标注，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-AD-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "WFSA-2025",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品网络销售应公示注册证书或备案凭证及广告审查批准文号",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "详情页文字",
+          "Banner文字"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "WFSA",
+        "source_article_id": "第十九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "WFSA",
+          "article": "第十九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "入网销售保健食品、特殊医学用途配方食品、婴幼儿配方乳粉的食品生产经营者，除依照本办法第十八条的规定公示相关信息外，还应当依法公示产品注册证书或者备案凭证，持有广告审查批准文号的还应当公示广告审查批准文号，并链接至市场监督管理部门网站对应的数据查询页面。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品",
+            "注册证书",
+            "备案凭证",
+            "广告审查批准文号"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测保健食品宣传材料中是否公示了产品注册证书或备案凭证，以及广告审查批准文号（如有）",
+        "decision": "若保健食品文案中未公示注册证书/备案凭证，或持有广告审查批准文号但未公示，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "资质公示",
+          "注册证书",
+          "备案凭证",
+          "广告审查批准文号"
+        ],
+        "vector_text": "购买保健食品请认准蓝帽子标志，本品已取得国家食品药品监督管理局批准文号，国食健字G2023XXXX，备案凭证编号食健备G2023XXXX，广告审查批准文号京食健广审(文)第2023XXXX号，资质齐全，安全放心。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及资质公示义务，属于程序性要求，文案中通常不会主动提及未公示，因此语义召回难以直接命中违规场景，建议禁用语义召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:04:19",
+          "old_vector_text": "保健食品网络销售必须公示产品注册证书或备案凭证，持有广告审查批准文号的还需公示该文号并链接至市场监管部门数据查询页面",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": false,
+          "semantic_role_recommendation": "disabled",
+          "tags_recommendation": [
+            "保健食品",
+            "资质公示",
+            "注册证书",
+            "备案凭证",
+            "广告审查批准文号"
+          ],
+          "negative_signals_recommendation": [
+            "蓝帽子",
+            "国食健字",
+            "食健备",
+            "广审文号"
+          ],
+          "change_summary": "原vector_text为法条改写，现改为仿真合规文案，但语义召回仍不适用，建议禁用。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、审查批准、广告审查、批准文号、注册证.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求补充公示产品注册证书或备案凭证，以及广告审查批准文号（如有），并链接至市场监管部门数据查询页面",
+      "examples": {
+        "violation": [
+          "某保健食品详情页未展示注册证书或备案凭证"
+        ],
+        "compliant": [
+          "某保健食品详情页底部展示了注册证书编号并链接至市场监管部门查询页面"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "平台规则"
+        ],
+        "reason": "需要确认具体注册证书或备案凭证的格式要求及链接规范",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求公示资质信息，规则可执行但需人工核验资质真实性"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核验注册证书或备案凭证的真实性",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及资质真实性核验，需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品注册证书",
+          "备案凭证",
+          "广告审查批准文号"
+        ],
+        "data_sources": [
+          "市场监管部门数据查询页面"
+        ],
+        "note": "后期需接入市场监管部门数据库进行资质核验"
+      },
+      "rule_uid": "RUID-37ec0490667f2c72",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则触发清晰，但需要核验注册证书、备案凭证及广告审查批准文号的真实性，运营无法自行判断，必须法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

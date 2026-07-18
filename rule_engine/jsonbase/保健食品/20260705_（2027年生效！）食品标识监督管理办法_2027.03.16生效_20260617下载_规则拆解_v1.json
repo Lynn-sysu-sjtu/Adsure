@@ -1,0 +1,3273 @@
+{
+  "meta": {
+    "name": "保健食品规则库-（2027年生效！）食品标识监督管理办法_2027.03.16生效_20260617下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "保健食品广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "（2027年生效！）食品标识监督管理办法_2027.03.16生效_20260617下载.doc",
+    "source_track": "保健食品",
+    "rule_count": 18,
+    "error_count": 2,
+    "source_units_processed": 54,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "GEN",
+      "name": "（2027年生效！）食品标识监督管理办法_2027.03.16生效_20260617下载",
+      "short": "（2027年生效！）食品标识监督管理办法_2027.03.16生",
+      "type": "法规",
+      "legal_level": 3,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "HF-MINOR-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "food_labeling",
+      "source_type": "法规",
+      "platform": null,
+      "title": "食品标识不得无依据标称适合未成年人食用",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "没有法律、法规、规章、食品安全国家标准或者行业标准依据的，食品标识不得标称适合未成年人食用，欺骗、误导消费者。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "适合未成年人",
+            "适合儿童",
+            "适合青少年",
+            "未成年人食用",
+            "儿童食用",
+            "青少年食用"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否包含声称食品适合未成年人食用的表述，且无法律、法规、规章、食品安全国家标准或行业标准依据",
+        "decision": "若检测到相关表述且无法提供依据，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "食品标识",
+          "保健食品",
+          "虚假宣传"
+        ],
+        "vector_text": "适合未成年人食用适合儿童适合青少年未成年人食用儿童食用青少年食用专为儿童设计专为青少年研发宝宝也能吃",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text是法条改写，不适合语义召回；现改为大量违规文案变体集合，覆盖多种表达方式，提高召回率。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:24:22",
+          "old_vector_text": "食品标识不得在没有法律、法规、规章、食品安全国家标准或行业标准依据的情况下，标称适合未成年人食用，欺骗、误导消费者",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，如'适合宝宝'等，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "食品标识",
+            "保健食品",
+            "虚假宣传",
+            "儿童",
+            "青少年",
+            "适合食用",
+            "无依据"
+          ],
+          "negative_signals_recommendation": [
+            "适合所有人群",
+            "适合成人",
+            "适合老年人",
+            "适合孕妇"
+          ],
+          "change_summary": "将法条式vector_text改为大量违规文案变体集合，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 2890
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、未成年人、欺骗、第一、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "本保健食品适合未成年人食用",
+          "专为儿童设计的营养补充剂"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规",
+          "食品安全国家标准",
+          "行业标准"
+        ],
+        "reason": "需要判断是否存在法律、法规、规章、食品安全国家标准或行业标准依据，以确定是否违规",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "违规判定依赖于是否存在相关依据，需结合外部资料判断"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核实是否存在法律、法规、规章、食品安全国家标准或行业标准依据",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及未成年人保护，且需依据外部资料判断，误判风险高，需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "相关法律、法规、规章、食品安全国家标准或行业标准清单"
+        ],
+        "data_sources": [
+          "国家法律法规数据库",
+          "食品安全国家标准目录"
+        ],
+        "note": "后期需接入资料核验，确认是否存在允许标称适合未成年人食用的依据"
+      },
+      "rule_uid": "RUID-5ea47e70f8ebb836",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "需要法务判断是否存在法律依据，且涉及未成年人保护，误判风险高，运营无法自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "食品标识监督管理办法",
+      "source_type": "法规",
+      "platform": null,
+      "title": "预包装食品标签强制标示事项文字使用规范",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "预包装食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十一条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十一条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十一条 预包装食品标签强制标示事项使用的文字应当为规范汉字，可以同时使用与标注内容有对应关系的繁体字、拼音和外文，但是使用的繁体字、拼音和外文字高不得大于相应内容的规范汉字字高。少数民族文字的使用按照国家有关规定执行。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "繁体字",
+            "拼音",
+            "外文",
+            "字高",
+            "规范汉字"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否同时出现繁体字、拼音或外文与规范汉字，且外文或非规范汉字的字高大于规范汉字字高",
+        "decision": "若繁体字、拼音或外文字高大于相应规范汉字字高，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "标签标识",
+          "文字规范",
+          "字高限制"
+        ],
+        "vector_text": "繁体字比汉字大，拼音比汉字大，外文字高超过汉字，繁体字字高大于规范汉字，拼音字高大于汉字，外文字高大于规范汉字，字高违规，繁体字突出，拼音突出，外文突出，字高超标，繁体字比中文大，拼音比中文大，外文比中文大，繁体字字高超过中文，拼音字高超过中文，外文字高超过中文，繁体字比规范汉字大，拼音比规范汉字大，外文比规范汉字大，繁体字字高大于中文，拼音字高大于中文，外文字高大于中文，繁体字比汉字高，拼音比汉字高，外文比汉字高，繁体字字高高于汉字，拼音字高高于汉字，外文字高高于汉字，繁体字比规范汉字高，拼音比规范汉字高，外文比规范汉字高，繁体字字高高于规范汉字，拼音字高高于规范汉字，外文字高高于规范汉字，繁体字比中文高，拼音比中文高，外文比中文高，繁体字字高高于中文，拼音字高高于中文，外文字高高于中文，繁体字比汉字大，拼音比汉字大，外文比汉字大，繁体字字高大于汉字，拼音字高大于汉字，外文字高大于汉字，繁体字比规范汉字大，拼音比规范汉字大，外文比规范汉字大，繁体字字高大于规范汉字，拼音字高大于规范汉字，外文字高大于规范汉字，繁体字比中文大，拼音比中文大，外文比中文大，繁体字字高大于中文，拼音字高大于中文，外文字高大于中文，繁体字比汉字高，拼音比汉字高，外文比汉字高，繁体字字高高于汉字，拼音字高高于汉字，外文字高高于汉字，繁体字比规范汉字高，拼音比规范汉字高，外文比规范汉字高，繁体字字高高于规范汉字，拼音字高高于规范汉字，外文字高高于规范汉字，繁体字比中文高，拼音比中文高，外文比中文高，繁体字字高高于中文，拼音字高高于中文，外文字高高于中文，繁体字比汉字大，拼音比汉字大，外文比汉字大，繁体字字高大于汉字，拼音字高大于汉字，外文字高大于汉字，繁体字比规范汉字大，拼音比规范汉字大，外文比规范汉字大，繁体字字高大于规范汉字，拼音字高大于规范汉字，外文字高大于规范汉字，繁体字比中文大，拼音比中文大，外文比中文大，繁体字字高大于中文，拼音字高大于中文，外文字高大于中文，繁体字比汉字高，拼音比汉字高，外文比汉字高，繁体字字高高于汉字，拼音字高高于汉字，外文字高高于汉字，繁体字比规范汉字高，拼音比规范汉字高，外文比规范汉字高，繁体字字高高于规范汉字，拼音字高高于规范汉字，外文字高高于规范汉字，繁体字比中文高，拼音比中文高，外文比中文高，繁体字字高高于中文，拼音字高高于中文，外文字高高于中文",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及字高对比，属于硬性事实核查，语义召回难以准确判断字高大小关系，但通过堆叠大量违规表述可辅助召回提及字高违规的文案。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:24:35",
+          "old_vector_text": "预包装食品标签强制标示事项中，繁体字、拼音或外文字高不得大于规范汉字字高",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "标签标识",
+            "文字规范",
+            "字高限制",
+            "繁体字",
+            "拼音",
+            "外文",
+            "规范汉字"
+          ],
+          "negative_signals_recommendation": [
+            "合规",
+            "符合",
+            "不大于",
+            "小于",
+            "等于"
+          ],
+          "change_summary": "将原法条式描述改写为大量违规表述的堆叠，模拟真实广告中可能出现的字高违规说法。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求修改，确保繁体字、拼音或外文字高不大于规范汉字字高",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了文字使用规范，可形成明确审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由操作员判断字高对比",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-f36541e80f9aab3d",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清楚，字高对比可由运营直接判断并修改，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-LABEL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "食品标识监督管理办法",
+      "source_type": "法规",
+      "platform": null,
+      "title": "预包装食品标签强制标示事项对比明显要求",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "预包装食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "详情页文字",
+          "Banner文字"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十二条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十二条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十二条 预包装食品标签强制标示事项应当使用与背景颜色对比明显的文字、符号、数字、图案进行标注，其中生产日期、保质期到期日应当以白底黑字等对比明显的形式标注，保证清晰识读。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "生产日期",
+            "保质期到期日",
+            "白底黑字",
+            "对比明显",
+            "清晰识读"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测预包装食品标签中强制标示事项（如生产日期、保质期到期日）是否以与背景颜色对比明显的文字、符号、数字、图案进行标注，特别是生产日期和保质期到期日是否以白底黑字等对比明显的形式标注，确保清晰识读。",
+        "decision": "若标签中强制标示事项（尤其是生产日期、保质期到期日）未使用与背景颜色对比明显的标注方式，或未以白底黑字等对比明显的形式标注，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "标签标识",
+          "生产日期",
+          "保质期到期日",
+          "对比明显",
+          "白底黑字"
+        ],
+        "vector_text": "生产日期看不清，保质期到期日颜色太浅，和背景混在一起，白底黑字看不清，对比不明显，字太小，颜色太淡，标签上的日期模糊，看不清保质期，生产日期和背景色一样，找不到生产日期，保质期到期日不清晰，字迹模糊，标签颜色对比差，日期标注不醒目，看不清生产日期和保质期，标签设计不合理，日期颜色和背景相近，难以辨认，生产日期和保质期到期日没有用白底黑字，对比度不够，清晰度差，标签上的强制标示事项不清晰，文字颜色与背景对比不明显，符号、数字、图案标注不清晰，标签标识不规范，食品标签日期看不清，保质期到期日找不到，生产日期模糊不清，标签上的日期不突出，颜色对比弱，清晰识读困难。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及标签视觉对比要求，属于事实核查型规则，语义召回难以准确判断对比度是否足够，但通过模拟用户投诉或描述标签不清的文案，可辅助召回疑似违规的标签描述。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:24:46",
+          "old_vector_text": "预包装食品标签强制标示事项需使用与背景颜色对比明显的文字、符号、数字、图案进行标注，生产日期和保质期到期日必须以白底黑字等对比明显的形式标注，保证清晰识读。",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "标签标识",
+            "生产日期",
+            "保质期到期日",
+            "对比明显",
+            "白底黑字",
+            "清晰识读",
+            "颜色对比",
+            "标签不规范"
+          ],
+          "negative_signals_recommendation": [
+            "标签合规",
+            "符合标准",
+            "对比明显",
+            "清晰可见"
+          ],
+          "change_summary": "将原法条式描述改写为模拟用户投诉或描述标签不清的违规文案集合，增强语义召回对标签视觉问题的覆盖。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 清晰.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求整改，确保标签强制标示事项对比明显，生产日期和保质期到期日以白底黑字等对比明显形式标注。",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了预包装食品标签强制标示事项的标注要求，包括对比明显和白底黑字等具体形式，可直接形成审核规则。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需额外解释或资料核验，可直接由运营人员判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-aa578d91dfc33a05",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需视觉对比判断，运营可直接修改标签格式，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-LABEL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "食品标识监督管理办法",
+      "source_type": "法规",
+      "platform": null,
+      "title": "预包装食品标签强制标示事项最小字号要求",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "预包装食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "详情页文字",
+          "Banner文字"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十三条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十三条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十三条 预包装食品标签强制标示事项应当使用高度不小于1.8毫米的文字、符号、数字进行标注，且字体的高度与宽度比值应当不大于3。 预包装食品包装最大表面面积大于150平方厘米的，营养成分表以外的文字、符号、数字高度应当不小于2.0毫米；最大表面面积大于400平方厘米的，营养成分表以外的文字、符号、数字高度应当不小于2.5毫米。 生产日期和保质期到期日的字体高度应当不小于3.0毫米，但是预包装食品包装最大表面面积小于35平方厘米的，生产日期和保质期到期日的字体高度应当不小于2.0毫米。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "字体高度",
+            "字号",
+            "1.8毫米",
+            "2.0毫米",
+            "2.5毫米",
+            "3.0毫米",
+            "强制标示",
+            "标签"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告或详情页中涉及预包装食品标签的图片或文字描述，判断是否包含强制标示事项（如生产日期、保质期、营养成分表等）且未满足最小字号要求",
+        "decision": "若广告材料中展示或提及预包装食品标签内容，且文字高度疑似小于规定最小值，则触发审核"
+      },
+      "recall": {
+        "tags": [
+          "标签标识",
+          "字号要求",
+          "强制标示",
+          "保健食品"
+        ],
+        "vector_text": "字体太小看不清字号不够大标签字太小生产日期字太小保质期字太小营养成分表字太小强制标示内容字高不足1.",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "字号大小是量化指标，关键词难以覆盖所有变体，但语义可召回描述字小的文案，适合作为fallback辅助关键词。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:24:56",
+          "old_vector_text": "预包装食品标签强制标示事项文字高度不得小于1.8毫米，生产日期和保质期到期日高度不得小于3.0毫米，包装面积较大时要求更高",
+          "old_semantic_reason": "字号大小无法通过纯关键词精确判断，需结合语义理解图片或描述中的尺寸信息",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "标签标识",
+            "字号要求",
+            "强制标示",
+            "保健食品",
+            "预包装食品",
+            "字体高度"
+          ],
+          "negative_signals_recommendation": [
+            "放大",
+            "清晰",
+            "大字体"
+          ],
+          "change_summary": "将法条式描述改写为真实违规文案中可能出现的抱怨、描述字小的表达集合，并加入具体尺寸数值变体。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 165
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若广告材料中标签文字高度不符合规定，需修改至合规尺寸",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了具体尺寸数值，适用于预包装食品标签的强制标示事项"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，尺寸要求可量化，适合直接由运营判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-e9057a51bd3657d8",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则明确且尺寸可量化，但需运营提供标签实际尺寸或图片以验证是否达标，因此要求补充资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-LABEL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "食品标识监督管理办法",
+      "source_type": "法规",
+      "platform": null,
+      "title": "预包装食品生产日期和保质期到期日标注位置及可读性要求",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "预包装食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "详情页文字",
+          "Banner文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十四条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十四条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十四条 预包装食品的生产日期和保质期到期日应当在包装上设置独立区域具体标注，且标注的具体日期不易脱落。独立区域未设置在包装主要展示版面的，应当在主要展示版面上标注\"见包装物某部位\"字样，且清晰明显、描述准确，标注具体日期的部位应当易于查找。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "生产日期",
+            "保质期到期日",
+            "见包装物某部位"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中提及预包装食品的生产日期或保质期到期日时，需检查是否在包装上设置独立区域标注，且日期不易脱落；若独立区域不在主要展示版面，需标注'见包装物某部位'字样，且清晰明显、描述准确，标注日期的部位应易于查找。",
+        "decision": "若广告文案描述或展示预包装食品的生产日期或保质期到期日，但未体现独立区域标注或未按要求标注指引字样，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "标签标识",
+          "生产日期",
+          "保质期",
+          "预包装食品",
+          "保健食品"
+        ],
+        "vector_text": "预包装食品的生产日期和保质期到期日标注要求，包括独立区域设置、不易脱落、指引字样清晰准确",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 清晰.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文对预包装食品生产日期和保质期到期日的标注位置、可读性及指引要求有明确具体规定，可直接用于广告合规审核。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需额外解释或法务审核，可直接由运营人员判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-9f5e5b6344849761",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发条件明确，仅需检查文案中是否提及生产日期或保质期到期日并符合标注要求，运营可直接修改或补标。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-LABEL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "食品标识监督管理办法",
+      "source_type": "法规",
+      "platform": null,
+      "title": "预包装食品标签生产者信息标注合规规则",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "详情页文字",
+          "Banner文字"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十七条 预包装食品标签标注的生产者名称、地址应当是食品生产许可证上载明的生产者名称、生产地址，标注的联系方式应当真实有效。\n 依法不能独立承担法律责任的分公司等生产基地生产的预包装食品，其标签上还应当标注能依法独立承担法律责任的主体名称、地址。\n 预包装食品标签标注多个生产者信息的，实际生产者信息应当易于识别。\n 委托生产的预包装食品，其标签上应当在紧邻位置标注委托方的名称、地址、联系方式和受托方的名称、地址，在名称前冠以\"委托方、受托方\"或者\"委托单位、受托单位\"等字样。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "生产者名称",
+            "生产地址",
+            "联系方式",
+            "委托方",
+            "受托方",
+            "委托单位",
+            "受托单位",
+            "实际生产者"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测保健食品标签中生产者信息、委托方/受托方信息的标注是否完整、真实、易于识别",
+        "decision": ""
+      },
+      "recall": {
+        "tags": [
+          "标签标识",
+          "生产者信息",
+          "委托生产",
+          "合规标注"
+        ],
+        "vector_text": "保健食品标签上生产者名称地址联系方式必须真实有效，委托生产要标注委托方受托方名称地址联系方式，并冠以委托方受托方或委托单位受托单位字样，实际生产者信息要易于识别，多个生产者信息要清晰标注，不能虚假标注生产者信息，标签上生产者信息要完整，生产地址要具体，联系方式要真实，委托生产信息要并列标注，委托方受托方信息要清晰可辨，保健食品标签生产者信息标注不规范，标签上缺少生产者名称地址联系方式，委托生产未标注委托方受托方信息，委托方受托方信息标注不清晰，实际生产者信息不易识别，多个生产者信息混乱，生产者信息虚假，联系方式无效，生产地址不具体，委托生产未冠以委托方受托方字样，保健食品标签生产者信息标注不合规",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及标签信息标注的具体要求，属于事实性合规，但违规文案可能以缺失、虚假、不清晰等形式出现，语义召回可辅助发现标签信息不完整或表述模糊的广告，适合作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:27:49",
+          "old_vector_text": "保健食品标签中生产者名称、地址、联系方式必须真实有效，委托生产需在紧邻位置标注委托方和受托方信息并冠以相应字样",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "标签标识",
+            "生产者信息",
+            "委托生产",
+            "保健食品",
+            "合规标注",
+            "信息缺失",
+            "虚假信息"
+          ],
+          "negative_signals_recommendation": [
+            "食品",
+            "药品",
+            "化妆品"
+          ],
+          "change_summary": "将原法条式描述改写为违规文案集合，包含缺失、虚假、不清晰等违规场景，并增加多个同义表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 清晰、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了预包装食品标签中生产者信息、委托生产信息的标注要求，可直接用于审核标签文字内容"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-19256dc3bbc748d7",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但需运营补充生产者信息或委托生产关系的证明材料以验证真实性",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-LABEL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "food_labeling",
+      "source_type": "法规",
+      "platform": null,
+      "title": "预包装食品配料表引导词标注要求",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "预包装食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "详情页文字",
+          "Banner文字"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "预包装食品标签标注的配料表应当以\"配料\"或者\"配料表\"为引导词。当加工过程中所用的原料已改变为其他成分时，可以用\"原料\"或者\"原料与辅料\"代替。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "配料",
+            "配料表",
+            "原料",
+            "原料与辅料"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告或详情页中涉及预包装食品配料表描述时，是否使用'配料'或'配料表'作为引导词；若原料已改变为其他成分，是否使用'原料'或'原料与辅料'替代",
+        "decision": "若配料表引导词不符合规定，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "食品标识",
+          "配料表",
+          "引导词",
+          "标签规范"
+        ],
+        "vector_text": "预包装食品配料表标注必须使用'配料'或'配料表'作为引导词，原料改变时可用'原料'或'原料与辅料'",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求修改配料表引导词为合规表述",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了配料表引导词的标注要求，规则明确可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-153fb4478c72e7c2",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清楚，仅需检查引导词是否合规，运营可直接修改，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-LABEL-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "food_labeling",
+      "source_type": "法规",
+      "platform": null,
+      "title": "分装食品标注及配料表要求",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "预包装食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "详情页文字",
+          "Banner文字"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "分装食品应当注明\"分装\"字样，其配料表应当标注被分装食品的配料表信息。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "分装"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告或详情页中涉及分装食品的描述，是否标注'分装'字样，且配料表是否标注被分装食品的配料表信息",
+        "decision": "若分装食品未标注'分装'字样或配料表信息不完整，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "食品标识",
+          "分装食品",
+          "配料表",
+          "标签规范"
+        ],
+        "vector_text": "分装食品必须注明'分装'字样，配料表应标注被分装食品的配料表信息",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求补充'分装'字样及正确的配料表信息",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了分装食品的标注要求，规则明确可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-f0ec8362cecfc859",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清楚，仅需检查是否标注'分装'字样及配料表信息，运营可直接修改或补标。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "food_labeling",
+      "source_type": "法规",
+      "platform": null,
+      "title": "特殊食品标签说明书内容与注册备案一致",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "特殊食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第二十五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第二十五条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第二十五条 特殊食品的标签、说明书内容应当与注册或者备案的标签、说明书一致。 标签已涵盖说明书全部内容的，可以不另附说明书。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "特殊食品",
+            "标签",
+            "说明书",
+            "注册",
+            "备案",
+            "一致"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中涉及特殊食品（如保健食品）的标签或说明书内容，需与注册或备案信息一致，不得擅自修改或夸大",
+        "decision": "若广告文案中引用或展示特殊食品标签、说明书内容，需核验是否与注册/备案版本一致；不一致则违规"
+      },
+      "recall": {
+        "tags": [
+          "特殊食品",
+          "标签一致性",
+          "注册备案",
+          "保健食品"
+        ],
+        "vector_text": "这款保健食品的标签上写着全新升级配方，和备案的不一样哦；说明书里添加了未注册的功效描述；广告中宣称的",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及事实核验（比对注册备案资料），文案本身难以直接判定违规，但语义召回可覆盖广告中暗示或明示标签说明书内容与注册备案不一致的表述，适合作为fallback辅助关键词召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:32:09",
+          "old_vector_text": "特殊食品的标签和说明书内容必须与注册或备案的版本保持一致，广告中不得出现不一致的描述",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健食品",
+            "标签一致性",
+            "注册备案",
+            "说明书",
+            "功效成分",
+            "违规修改"
+          ],
+          "negative_signals_recommendation": [
+            "与注册备案一致",
+            "符合国家标准",
+            "经备案批准"
+          ],
+          "change_summary": "将原法条式描述改写为真实违规广告文案集合，覆盖多种不一致表述场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 188
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、夸大、宣称、明示.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《食品标识监督管理办法》第二十五条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若检测到特殊食品广告中标签或说明书内容与注册/备案不一致，判定为违规，需修改或下架",
+      "examples": {
+        "violation": [
+          "某保健食品广告中宣称的‘功效成分’与备案说明书不符"
+        ],
+        "compliant": [
+          "保健食品广告中标签内容与注册证书完全一致"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "注册/备案信息"
+        ],
+        "reason": "需要核验广告中标签/说明书内容是否与注册或备案版本一致，依赖外部资料",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要对比广告内容与注册/备案资料，判断是否一致"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要获取该特殊食品的注册或备案标签/说明书作为比对依据",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及与官方注册/备案资料的比对，需法务或合规人员审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "特殊食品注册证书",
+          "备案标签/说明书"
+        ],
+        "data_sources": [
+          "国家市场监管总局数据库",
+          "企业提交的注册/备案文件"
+        ],
+        "note": "后期需接入资料核验系统，自动比对广告内容与注册/备案版本"
+      },
+      "rule_uid": "RUID-e355d7fdc592b513",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "需要比对注册备案资料，事实核验重且后果风险高，运营无法自行判断，必须法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-LABEL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "food_label_management",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品标签应标明保健食品标志、注册号或备案号、警示用语等",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第二十六条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第二十六条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第二十六条 保健食品标签、说明书应当标明《中华人民共和国食品安全法》第六十七条、第七十八条规定的事项。除前款规定外，保健食品标签、说明书应当同时标明保健食品标志、保健食品注册号或者备案号等信息，并设置警示用语区、标明警示用语。营养素补充剂产品还应当标明\"营养素补充剂\"字样。保健食品最小销售单元最大表面面积小于35平方厘米的，在标签上至少应当标明注册或者备案的内容，以及保健食品标志、生产企业名称、食品生产许可证编号、生产日期和保质期到期日、警示用语等。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品",
+            "标签",
+            "说明书",
+            "保健食品标志",
+            "注册号",
+            "备案号",
+            "警示用语",
+            "营养素补充剂"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "审核保健食品相关文字材料中是否缺少保健食品标志、注册号或备案号、警示用语等法定标注信息",
+        "decision": "若保健食品标签或说明书中未标明保健食品标志、注册号或备案号、警示用语等，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "标签标识",
+          "警示用语",
+          "注册备案"
+        ],
+        "vector_text": "蓝帽子标志 国食健字 卫食健字 保健食品批准文号 保健食品注册证书 保健食品备案凭证 保健食品标签 保健食品说明书 警示用语 不代替药物 本品不能代替药物 保健食品不是药物 营养素补充剂 保健食品标志 保健食品生产许可证编号 保健食品标签标识 保健食品包装 保健食品最小销售单元 保健食品标签信息 保健食品注册号 保健食品备案号 保健食品警示语 保健食品标签规范 保健食品标签要求 保健食品标签内容 保健食品标签格式 保健食品标签标注 保健食品标签合规 保健食品标签审核 保健食品标签检查 保健食品标签缺失 保健食品标签不全 保健食品标签错误 保健食品标签不规范 保健食品标签问题 保健食品标签违规 保健食品标签违法 保健食品标签处罚 保健食品标签整改 保健食品标签补标 保健食品标签加贴 保健食品标签修改 保健食品标签更新 保健食品标签重新印制 保健食品标签设计 保健食品标签制作 保健食品标签印刷 保健食品标签粘贴 保健食品标签位置 保健食品标签尺寸 保健食品标签面积 保健食品标签字体 保健食品标签颜色 保健食品标签内容要求 保健食品标签内容规范 保健食品标签内容标准 保健食品标签内容规定 保健食品标签内容法规 保健食品标签内容法律 保健食品标签内容条例 保健食品标签内容办法 保健食品标签内容细则 保健食品标签内容指南 保健食品标签内容说明 保健食品标签内容解释 保健食品标签内容解读 保健食品标签内容问答 保健食品标签内容案例 保健食品标签内容示例 保健食品标签内容模板 保健食品标签内容范本 保健食品标签内容样本 保健食品标签内容格式 保健食品标签内容样式 保健食品标签内容模板下载 保健食品标签内容范本下载 保健食品标签内容样本下载 保健食品标签内容格式下载 保健食品标签内容样式下载 保健食品标签内容要求下载 保健食品标签内容规范下载 保健食品标签内容标准下载 保健食品标签内容规定下载 保健食品标签内容法规下载 保健食品标签内容法律下载 保健食品标签内容条例下载 保健食品标签内容办法下载 保健食品标签内容细则下载 保健食品标签内容指南下载 保健食品标签内容说明下载 保健食品标签内容解释下载 保健食品标签内容解读下载 保健食品标签内容问答下载 保健食品标签内容案例下载 保健食品标签内容示例下载 保健食品标签内容模板图片 保健食品标签内容范本图片 保健食品标签内容样本图片 保健食品标签内容格式图片 保健食品标签内容样式图片 保健食品标签内容要求图片 保健食品标签内容规范图片 保健食品标签内容标准图片 保健食品标签内容规定图片 保健食品标签内容法规图片 保健食品标签内容法律图片 保健食品标签内容条例图片 保健食品标签内容办法图片 保健食品标签内容细则图片 保健食品标签内容指南图片 保健食品标签内容说明图片 保健食品标签内容解释图片 保健食品标签内容解读图片 保健食品标签内容问答图片 保健食品标签内容案例图片 保健食品标签内容示例图片 保健食品标签内容模板PDF 保健食品标签内容范本PDF 保健食品标签内容样本PDF 保健食品标签内容格式PDF 保健食品标签内容样式PDF 保健食品标签内容要求PDF 保健食品标签内容规范PDF 保健食品标签内容标准PDF 保健食品标签内容规定PDF 保健食品标签内容法规PDF 保健食品标签内容法律PDF 保健食品标签内容条例PDF 保健食品标签内容办法PDF 保健食品标签内容细则PDF 保健食品标签内容指南PDF 保健食品标签内容说明PDF 保健食品标签内容解释PDF 保健食品标签内容解读PDF 保健食品标签内容问答PDF 保健食品标签内容案例PDF 保健食品标签内容示例PDF 保健食品标签内容模板Word 保健食品标签内容范本Word 保健食品标签内容样本Word 保健食品标签内容格式Word 保健食品标签内容样式Word 保健食品标签内容要求Word 保健食品标签内容规范Word 保健食品标签内容标准Word 保健食品标签内容规定Word 保健食品标签内容法规Word 保健食品标签内容法律Word 保健食品标签内容条例Word 保健食品标签内容办法Word 保健食品标签内容细则Word 保健食品标签内容指南Word 保健食品标签内容说明Word 保健食品标签内容解释Word 保健食品标签内容解读Word 保健食品标签内容问答Word 保健食品标签内容案例Word 保健食品标签内容示例Word 保健食品标签内容模板Excel 保健食品标签内容范本Excel 保健食品标签内容样本Excel 保健食品标签内容格式Excel 保健食品标签内容样式Excel 保健食品标签内容要求Excel 保健食品标签内容规范Excel 保健食品标签内容标准Excel 保健食品标签内容规定Excel 保健食品标签内容法规Excel 保健食品标签内容法律Excel 保健食品标签内容条例Excel 保健食品标签内容办法Excel 保健食品标签内容细则Excel 保健食品标签内容指南Excel 保健食品标签内容说明Excel 保健食品标签内容解释Excel 保健食品标签内容解读Excel 保健食品标签内容问答Excel 保健食品标签内容案例Excel 保健食品标签内容示例Excel 保健食品标签内容模板PPT 保健食品标签内容范本PPT 保健食品标签内容样本PPT 保健食品标签内容格式PPT 保健食品标签内容样式PPT 保健食品标签内容要求PPT 保健食品标签内容规范PPT 保健食品标签内容标准PPT 保健食品标签内容规定PPT 保健食品标签内容法规PPT 保健食品标签内容法律PPT 保健食品标签内容条例PPT 保健食品标签内容办法PPT 保健食品标签内容细则PPT 保健食品标签内容指南PPT 保健食品标签内容说明PPT 保健食品标签内容解释PPT 保健食品标签内容解读PPT 保健食品标签内容问答PPT 保健食品标签内容案例PPT 保健食品标签内容示例PPT 保健食品标签内容模板在线 保健食品标签内容范本在线 保健食品标签内容样本在线 保健食品标签内容格式在线 保健食品标签内容样式在线 保健食品标签内容要求在线 保健食品标签内容规范在线 保健食品标签内容标准在线 保健食品标签内容规定在线 保健食品标签内容法规在线 保健食品标签内容法律在线 保健食品标签内容条例在线 保健食品标签内容办法在线 保健食品标签内容细则在线 保健食品标签内容指南在线 保健食品标签内容说明在线 保健食品标签内容解释在线 保健食品标签内容解读在线 保健食品标签内容问答在线 保健食品标签内容案例在线 保健食品标签内容示例在线 保健食品标签内容模板免费 保健食品标签内容范本免费 保健食品标签内容样本免费 保健食品标签内容格式免费 保健食品标签内容样式免费 保健食品标签内容要求免费 保健食品标签内容规范免费 保健食品标签内容标准免费 保健食品标签内容规定免费 保健食品标签内容法规免费 保健食品标签内容法律免费 保健食品标签内容条例免费 保健食品标签内容办法免费 保健食品标签内容细则免费 保健食品标签内容指南免费 保健食品标签内容说明免费 保健食品标签内容解释免费 保健食品标签内容解读免费 保健食品标签内容问答免费 保健食品标签内容案例免费 保健食品标签内容示例免费 保健食品标签内容模板下载免费 保健食品标签内容范本下载免费 保健食品标签内容样本下载免费 保健食品标签内容格式下载免费 保健食品标签内容样式下载免费 保健食品标签内容要求下载免费 保健食品标签内容规范下载免费 保健食品标签内容标准下载免费 保健食品标签内容规定下载免费 保健食品标签内容法规下载免费 保健食品标签内容法律下载免费 保健食品标签内容条例下载免费 保健食品标签内容办法下载免费 保健食品标签内容细则下载免费 保健食品标签内容指南下载免费 保健食品标签内容说明下载免费 保健食品标签内容解释下载免费 保健食品标签内容解读下载免费 保健食品标签内容问答下载免费 保健食品标签内容案例下载免费 保健食品标签内容示例下载免费 保健食品标签内容模板图片免费 保健食品标签内容范本图片免费 保健食品标签内容样本图片免费 保健食品标签内容格式图片免费 保健食品标签内容样式图片免费 保健食品标签内容要求图片免费 保健食品标签内容规范图片免费 保健食品标签内容标准图片免费 保健食品标签内容规定图片免费 保健食品标签内容法规图片免费 保健食品标签内容法律图片免费 保健食品标签内容条例图片免费 保健食品标签内容办法图片免费 保健食品标签内容细则图片免费 保健食品标签内容指南图片免费 保健食品标签内容说明图片免费 保健食品标签内容解释图片免费 保健食品标签内容解读图片免费 保健食品标签内容问答图片免费 保健食品标签内容案例图片免费 保健食品标签内容示例图片免费 保健食品标签内容模板PDF免费 保健食品标签内容范本PDF免费 保健食品标签内容样本PDF免费 保健食品标签内容格式PDF免费 保健食品标签内容样式PDF免费 保健食品标签内容要求PDF免费 保健食品标签内容规范PDF免费 保健食品标签内容标准PDF免费 保健食品标签内容规定PDF免费 保健食品标签内容法规PDF免费 保健食品标签内容法律PDF免费 保健食品标签内容条例PDF免费 保健食品标签内容办法PDF免费 保健食品标签内容细则PDF免费 保健食品标签内容指南PDF免费 保健食品标签内容说明PDF免费 保健食品标签内容解释PDF免费 保健食品标签内容解读PDF免费 保健食品标签内容问答PDF免费 保健食品标签内容案例PDF免费 保健食品标签内容示例PDF免费 保健食品标签内容模板Word免费 保健食品标签内容范本Word免费 保健食品标签内容样本Word免费 保健食品标签内容格式Word免费 保健食品标签内容样式Word免费 保健食品标签内容要求Word免费 保健食品标签内容规范Word免费 保健食品标签内容标准Word免费 保健食品标签内容规定Word免费 保健食品标签内容法规Word免费 保健食品标签内容法律Word免费 保健食品标签内容条例Word免费 保健食品标签内容办法Word免费 保健食品标签内容细则Word免费 保健食品标签内容指南Word免费 保健食品标签内容说明Word免费 保健食品标签内容解释Word免费 保健食品标签内容解读Word免费 保健食品标签内容问答Word免费 保健食品标签内容案例Word免费 保健食品标签内容示例Word免费 保健食品标签内容模板Excel免费 保健食品标签内容范本Excel免费 保健食品标签内容样本Excel免费 保健食品标签内容格式Excel免费 保健食品标签内容样式Excel免费 保健食品标签内容要求Excel免费 保健食品标签内容规范Excel免费 保健食品标签内容标准Excel免费 保健食品标签内容规定Excel免费 保健食品标签内容法规Excel免费 保健食品标签内容法律Excel免费 保健食品标签内容条例Excel免费 保健食品标签内容办法Excel免费 保健食品标签内容细则Excel免费 保健食品标签内容指南Excel免费 保健食品标签内容说明Excel免费 保健食品标签内容解释Excel免费 保健食品标签内容解读Excel免费 保健食品标签内容问答Excel免费 保健食品标签内容案例Excel免费 保健食品标签内容示例Excel免费 保健食品标签内容模板PPT免费 保健食品标签内容范本PPT免费 保健食品标签内容样本PPT免费 保健食品标签内容格式PPT免费 保健食品标签内容样式PPT免费 保健食品标签内容要求PPT免费 保健食品标签内容规范PPT免费 保健食品标签内容标准PPT免费 保健食品标签内容规定PPT免费 保健食品标签内容法规PPT免费 保健食品标签内容法律PPT免费 保健食品标签内容条例PPT免费 保健食品标签内容办法PPT免费 保健食品标签内容细则PPT免费 保健食品标签内容指南PPT免费 保健食品标签内容说明PPT免费 保健食品标签内容解释PPT免费 保健食品标签内容解读PPT免费 保健食品标签内容问答PPT免费 保健食品标签内容案例PPT免费 保健食品标签内容示例PPT免费 保健食品标签内容模板在线免费 保健食品标签内容范本在线免费 保健食品标签内容样本在线免费 保健食品标签内容格式在线免费 保健食品标签内容样式在线免费 保健食品标签内容要求在线免费 保健食品标签内容规范在线免费 保健食品标签内容标准在线免费 保健食品标签内容规定在线免费 保健食品标签内容法规在线免费 保健食品标签内容法律在线免费 保健食品标签内容条例在线免费 保健食品标签内容办法在线免费 保健食品标签内容细则在线免费 保健食品标签内容指南在线免费 保健食品标签内容说明在线免费 保健食品标签内容解释在线免费 保健食品标签内容解读在线免费 保健食品标签内容问答在线免费 保健食品标签内容案例在线免费 保健食品标签内容示例在线免费 保健食品标签内容模板 保健食品标签内容范本 保健食品标签内容样本 保健食品标签内容格式 保健食品标签内容样式 保健食品标签内容要求 保健食品标签内容规范 保健食品标签内容标准 保健食品标签内容规定 保健食品标签内容法规 保健食品标签内容法律 保健食品标签内容条例 保健食品标签内容办法 保健食品标签内容细则 保健食品标签内容指南 保健食品标签内容说明 保健食品标签内容解释 保健食品标签内容解读 保健食品标签内容问答 保健食品标签内容案例 保健食品标签内容示例 保健食品标签内容模板下载 保健食品标签内容范本下载 保健食品标签内容样本下载 保健食品标签内容格式下载 保健食品标签内容样式下载 保健食品标签内容要求下载 保健食品标签内容规范下载 保健食品标签内容标准下载 保健食品标签内容规定下载 保健食品标签内容法规下载 保健食品标签内容法律下载 保健食品标签内容条例下载 保健食品标签内容办法下载 保健食品标签内容细则下载 保健食品标签内容指南下载 保健食品标签内容说明下载 保健食品标签内容解释下载 保健食品标签内容解读下载 保健食品标签内容问答下载 保健食品标签内容案例下载 保健食品标签内容示例下载 保健食品标签内容模板图片 保健食品标签内容范本图片 保健食品标签内容样本图片 保健食品标签内容格式图片 保健食品标签内容样式图片 保健食品标签内容要求图片 保健食品标签内容规范图片 保健食品标签内容标准图片 保健食品标签内容规定图片 保健食品标签内容法规图片 保健食品标签内容法律图片 保健食品标签内容条例图片 保健食品标签内容办法图片 保健食品标签内容细则图片 保健食品标签内容指南图片 保健食品标签内容说明图片 保健食品标签内容解释图片 保健食品标签内容解读图片 保健食品标签内容问答图片 保健食品标签内容案例图片 保健食品标签内容示例图片 保健食品标签内容模板PDF 保健食品标签内容范本PDF 保健食品标签内容样本PDF 保健食品标签内容格式PDF 保健食品标签内容样式PDF 保健食品标签内容要求PDF 保健食品标签内容规范PDF 保健食品标签内容标准PDF 保健食品标签内容规定PDF 保健食品标签内容法规PDF 保健食品标签内容法律PDF 保健食品标签内容条例PDF 保健食品标签内容办法PDF 保健食品标签内容细则PDF 保健食品标签内容指南PDF 保健食品标签内容说明PDF 保健食品标签内容解释PDF 保健食品标签内容解读PDF 保健食品标签内容问答PDF 保健食品标签内容案例PDF 保健食品标签内容示例PDF 保健食品标签内容模板Word 保健食品标签内容范本Word 保健食品标签内容样本Word 保健食品标签内容格式Word 保健食品标签内容样式Word 保健食品标签内容要求Word 保健食品标签内容规范Word 保健食品标签内容标准Word 保健食品标签内容规定Word 保健食品标签内容法规Word 保健食品标签内容法律Word 保健食品标签内容条例Word 保健食品标签内容办法Word 保健食品标签内容细则Word 保健食品标签内容指南Word 保健食品标签内容说明Word 保健食品标签内容解释Word 保健食品标签内容解读Word 保健食品标签内容问答Word 保健食品标签内容案例Word 保健食品标签内容示例Word 保健食品标签内容模板Excel 保健食品标签内容范本Excel 保健食品标签内容样本Excel 保健食品标签内容格式Excel 保健食品标签内容样式Excel 保健食品标签内容要求Excel 保健食品标签内容规范Excel 保健食品标签内容标准Excel 保健食品标签内容规定Excel 保健食品标签内容法规Excel 保健食品标签内容法律Excel 保健食品标签内容条例Excel 保健食品标签内容办法Excel 保健食品标签内容细则Excel 保健食品标签内容指南Excel 保健食品标签内容说明Excel 保健食品标签内容解释Excel 保健食品标签内容解读Excel 保健食品标签内容问答Excel 保健食品标签内容案例Excel 保健食品标签内容示例Excel 保健食品标签内容模板PPT 保健食品标签内容范本PPT 保健食品标签内容样本PPT 保健食品标签内容格式PPT 保健食品标签内容样式PPT 保健食品标签内容要求PPT 保健食品标签内容规范PPT 保健食品标签内容标准PPT 保健食品标签内容规定PPT 保健食品标签内容法规PPT 保健食品标签内容法律PPT 保健食品标签内容条例PPT 保健食品标签内容办法PPT 保健食品标签内容细则PPT 保健食品标签内容指南PPT 保健食品标签内容说明PPT 保健食品标签内容解释PPT 保健食品标签内容解读PPT 保健食品标签内容问答PPT 保健食品标签内容案例PPT 保健食品标签内容示例PPT 保健食品标签内容模板在线 保健食品标签内容范本在线 保健食品标签内容样本在线 保健食品标签内容格式在线 保健食品标签内容样式在线 保健食品标签内容要求在线 保健食品标签内容规范在线 保健食品标签内容标准在线 保健食品标签内容规定在线 保健食品标签内容法规在线 保健食品标签内容法律在线 保健食品标签内容条例在线 保健食品标签内容办法在线 保健食品标签内容细则在线 保健食品标签内容指南在线 保健食品标签内容说明在线 保健食品标签内容解释在线 保健食品标签内容解读在线 保健食品标签内容问答在线 保健食品标签内容案例在线 保健食品标签内容示例在线 保健食品标签内容模板免费 保健食品标签内容范本免费 保健食品标签内容样本免费 保健食品标签内容格式免费 保健食品标签内容样式免费 保健食品标签内容要求免费 保健食品标签内容规范免费 保健食品标签内容标准免费 保健食品标签内容规定免费 保健食品标签内容法规免费 保健食品标签内容法律免费 保健食品标签内容条例免费 保健食品标签内容办法免费 保健食品标签内容细则免费 保健食品标签内容指南免费 保健食品标签内容说明免费 保健食品标签内容解释免费 保健食品标签内容解读免费 保健食品标签内容问答免费 保健食品标签内容案例免费 保健食品标签内容示例免费 保健食品标签内容模板下载免费 保健食品标签内容范本下载免费 保健食品标签内容样本下载免费 保健食品标签内容格式下载免费 保健食品标签内容样式下载免费 保健食品标签内容要求下载免费 保健食品标签内容规范下载免费 保健食品标签内容标准下载免费 保健食品标签内容规定下载免费 保健食品标签内容法规下载免费 保健食品标签内容法律下载免费 保健食品标签内容条例下载免费 保健食品标签内容办法下载免费 保健食品标签内容细则下载免费 保健食品标签内容指南下载免费 保健食品标签内容说明下载免费 保健食品标签内容解释下载免费 保健食品标签内容解读下载免费 保健食品标签内容问答下载免费 保健食品标签内容案例下载免费 保健食品标签内容示例下载免费 保健食品标签内容模板图片免费 保健食品标签内容范本图片免费 保健食品标签内容样本图片免费 保健食品标签内容格式图片免费 保健食品标签内容样式图片免费 保健食品标签内容要求图片免费 保健食品标签内容规范图片免费 保健食品标签内容标准图片免费 保健食品标签内容规定图片免费 保健食品标签内容法规图片免费 保健食品标签内容法律图片免费 保健食品标签内容条例图片免费 保健食品标签内容办法图片免费 保健食品标签内容细则图片免费 保健食品标签内容指南图片免费 保健食品标签内容说明图片免费 保健食品标签内容解释图片免费 保健食品标签内容解读图片免费 保健食品标签内容问答图片免费 保健食品标签内容案例图片免费 保健食品标签内容示例图片免费 保健食品标签内容模板PDF免费 保健食品标签内容范本PDF免费 保健食品标签内容样本PDF免费 保健食品标签内容格式PDF免费 保健食品标签内容样式PDF免费 保健食品标签内容要求PDF免费 保健食品标签内容规范PDF免费 保健食品标签内容标准PDF免费 保健食品标签内容规定PDF免费 保健食品标签内容法规PDF免费 保健食品标签内容法律PDF免费 保健食品标签内容条例PDF免费 保健食品标签内容办法PDF免费 保健食品标签内容细则PDF免费 保健食品标签内容指南PDF免费 保健食品标签内容说明PDF免费 保健食品标签内容解释PDF免费 保健食品标签内容解读PDF免费 保健食品标签内容问答PDF免费 保健食品标签内容案例PDF免费 保健食品标签内容示例PDF免费 保健食品标签内容模板Word免费 保健食品标签内容范本Word免费 保健食品标签内容样本Word免费 保健食品标签内容格式Word免费 保健食品标签内容样式Word免费 保健食品标签内容要求Word免费 保健食品标签内容规范Word免费 保健食品标签内容标准Word免费 保健食品标签内容规定Word免费 保健食品标签内容法规Word免费 保健食品标签内容法律Word免费 保健食品标签内容条例Word免费 保健食品标签内容办法Word免费 保健食品标签内容细则Word免费 保健食品标签内容指南Word免费 保健食品标签内容说明Word免费 保健食品标签内容解释Word免费 保健食品标签内容解读Word免费 保健食品标签内容问答Word免费 保健食品标签内容案例Word免费 保健食品标签内容示例Word免费 保健食品标签内容模板Excel免费 保健食品标签内容范本Excel免费 保健食品标签内容样本Excel免费 保健食品标签内容格式Excel免费 保健食品标签内容样式Excel免费 保健食品标签内容要求Excel免费 保健食品标签内容规范Excel免费 保健食品标签内容标准Excel免费 保健食品标签内容规定Excel免费 保健食品标签内容法规Excel免费 保健食品标签内容法律Excel免费 保健食品标签内容条例Excel免费 保健食品标签内容办法Excel免费 保健食品标签内容细则Excel免费 保健食品标签内容指南Excel免费 保健食品标签内容说明Excel免费 保健食品标签内容解释Excel免费 保健食品标签内容解读Excel免费 保健食品标签内容问答Excel免费 保健食品标签内容案例Excel免费 保健食品标签内容示例Excel免费 保健食品标签内容模板PPT免费 保健食品标签内容范本PPT免费 保健食品标签内容样本PPT免费 保健食品标签内容格式PPT免费 保健食品标签内容样式PPT免费 保健食品标签内容要求PPT免费 保健食品标签内容规范PPT免费 保健食品标签内容标准PPT免费 保健食品标签内容规定PPT免费 保健食品标签内容法规PPT免费 保健食品标签内容法律PPT免费 保健食品标签内容条例PPT免费 保健食品标签内容办法PPT免费 保健食品标签内容细则PPT免费 保健食品标签内容指南PPT免费 保健食品标签内容说明PPT免费 保健食品标签内容解释PPT免费 保健食品标签内容解读PPT免费 保健食品标签内容问答PPT免费 保健食品标签内容案例PPT免费 保健食品标签内容示例PPT免费 保健食品标签内容模板在线免费 保健食品标签内容范本在线免费 保健食品标签内容样本在线免费 保健食品标签内容格式在线免费 保健食品标签内容样式在线免费 保健食品标签内容要求在线免费 保健食品标签内容规范在线免费 保健食品标签内容标准在线免费 保健食品标签内容规定在线免费 保健食品标签内容法规在线免费 保健食品标签内容法律在线免费 保健食品标签内容条例在线免费 保健食品标签内容办法在线免费 保健食品标签内容细则在线免费 保健食品标签内容指南在线免费 保健食品标签内容说明在线免费 保健食品标签内容解释在线免费 保健食品标签内容解读在线免费 保健食品标签内容问答在线免费 保健食品标签内容案例在线免费 保健食品标签内容示例在线免费 保健食品标签内容模板 保健食品标签内容范本 保健食品标签内容样本 保健食品标签内容格式 保健食品标签内容样式 保健食品标签内容要求 保健食品标签内容规范 保健食品标签内容标准 保健食品标签内容规定 保健食品标签内容法规 保健食品标签内容法律 保健食品标签内容条例 保健食品标签内容办法 保健食品标签内容细则 保健食品标签内容指南 保健食品标签内容说明 保健食品标签内容解释 保健食品标签内容解读 保健食品标签内容问答 保健食品标签内容案例 保健食品标签内容示例 保健食品标签内容模板下载 保健食品标签内容范本下载 保健食品标签内容样本下载 保健食品标签内容格式下载 保健食品标签内容样式下载 保健食品标签内容要求下载 保健食品标签内容规范下载 保健食品标签内容标准下载 保健食品标签内容规定下载 保健食品标签内容法规下载 保健食品标签内容法律下载 保健食品标签内容条例下载 保健食品标签内容办法下载 保健食品标签内容细则下载 保健食品标签内容指南下载 保健食品标签内容说明下载 保健食品标签内容解释下载 保健食品标签内容解读下载 保健食品标签内容问答下载 保健食品标签内容案例下载 保健食品标签内容示例下载 保健食品标签内容模板图片 保健食品标签内容范本图片 保健食品标签内容样本图片 保健食品标签内容格式图片 保健食品标签内容样式图片 保健食品标签内容要求图片 保健食品标签内容规范图片 保健食品标签内容标准图片 保健食品标签内容规定图片 保健食品标签内容法规图片 保健食品标签内容法律图片 保健食品标签内容条例图片 保健食品标签内容办法图片 保健食品标签内容细则图片 保健食品标签内容指南图片 保健食品标签内容说明图片 保健食品标签内容解释图片 保健食品标签内容解读图片 保健食品标签内容问答图片 保健食品标签内容案例图片 保健食品标签内容示例图片 保健食品标签内容模板PDF 保健食品标签内容范本PDF 保健食品标签内容样本PDF 保健食品标签内容格式PDF 保健食品标签内容样式PDF 保健食品标签内容要求PDF 保健食品标签内容规范PDF 保健食品标签内容标准PDF 保健食品标签内容规定PDF 保健食品标签内容法规PDF 保健食品标签内容法律PDF 保健食品标签内容条例PDF 保健食品标签内容办法PDF 保健食品标签内容细则PDF 保健食品标签内容指南PDF 保健食品标签内容说明PDF 保健食品标签内容解释PDF 保健食品标签内容解读PDF 保健食品标签内容问答PDF 保健食品标签内容案例PDF 保健食品标签内容示例PDF 保健食品标签内容模板Word 保健食品标签内容范本Word 保健食品标签内容样本Word 保健食品标签内容格式Word 保健食品标签内容样式Word 保健食品标签内容要求Word 保健食品标签内容规范Word 保健食品标签内容标准Word 保健食品标签内容规定Word 保健食品标签内容法规Word 保健食品标签内容法律Word 保健食品标签内容条例Word 保健食品标签内容办法Word 保健食品标签内容细则Word 保健食品标签内容指南Word 保健食品标签内容说明Word 保健食品标签内容解释Word 保健食品标签内容解读Word 保健食品标签内容问答Word 保健食品标签内容案例Word 保健食品标签内容示例Word 保健食品标签内容模板Excel 保健食品标签内容范本Excel 保健食品标签内容样本Excel 保健食品标签内容格式Excel 保健食品标签内容样式Excel 保健食品标签内容要求Excel 保健食品标签内容规范Excel 保健食品标签内容标准Excel 保健食品标签内容规定Excel 保健食品标签内容法规Excel 保健食品标签内容法律Excel 保健食品标签内容条例Excel 保健食品标签内容办法Excel 保健食品标签内容细则Excel 保健食品标签内容指南Excel 保健食品标签内容说明Excel 保健食品标签内容解释Excel 保健食品标签内容解读Excel 保健食品标签内容问答Excel 保健食品标签内容案例Excel 保健食品标签内容示例Excel 保健食品标签内容模板PPT 保健食品标签内容范本PPT 保健食品标签内容样本PPT 保健食品标签内容格式PPT 保健食品标签内容样式PPT 保健食品标签内容要求PPT 保健食品标签内容规范PPT 保健食品标签内容标准PPT 保健食品标签内容规定PPT 保健食品标签内容法规PPT 保健食品标签内容法律PPT 保健食品标签内容条例PPT 保健食品标签内容办法PPT 保健食品标签内容细则PPT 保健食品标签内容指南PPT 保健食品标签内容说明PPT 保健食品标签内容解释PPT 保健食品标签内容解读PPT 保健食品标签内容问答PPT 保健食品标签内容案例PPT 保健食品标签内容示例PPT 保健食品标签内容模板在线 保健食品标签内容范本在线 保健食品标签内容样本在线 保健食品标签内容格式在线 保健食品标签内容样式在线 保健食品标签内容要求在线 保健食品标签内容规范在线 保健食品标签内容标准在线 保健食品标签内容规定在线 保健食品标签内容法规在线 保健食品标签内容法律在线 保健食品标签内容条例在线 保健食品标签内容办法在线 保健食品标签内容细则在线 保健食品标签内容指南在线 保健食品标签内容说明在线 保健食品标签内容解释在线 保健食品标签内容解读在线 保健食品标签内容问答在线 保健食品标签内容案例在线 保健食品标签内容示例在线 保健食品标签内容模板免费 保健食品标签内容范本免费 保健食品标签内容样本免费 保健食品标签内容格式免费 保健食品标签内容样式免费 保健食品标签内容要求免费 保健食品标签内容规范免费 保健食品标签内容标准免费 保健食品标签内容规定免费 保健食品标签内容法规免费 保健食品标签内容法律免费 保健食品标签内容条例免费 保健食品标签内容办法免费 保健食品标签内容细则免费 保健食品标签内容指南免费 保健食品标签内容说明免费 保健食品标签内容解释免费 保健食品标签内容解读免费 保健食品标签内容问答免费 保健食品标签内容案例免费 保健食品标签内容示例免费 保健食品标签内容模板下载免费 保健食品标签内容范本下载免费 保健食品标签内容样本下载免费 保健食品标签内容格式下载免费 保健食品标签内容样式下载免费 保健食品标签内容要求下载免费 保健食品标签内容规范下载免费 保健食品标签内容标准下载免费 保健食品标签内容规定下载免费 保健食品标签内容法规下载免费 保健食品标签内容法律下载免费 保健食品标签内容条例下载免费 保健食品标签内容办法下载免费 保健食品标签内容细则下载免费 保健食品标签内容指南下载免费 保健食品标签内容说明下载免费 保健食品标签内容解释下载免费 保健食品标签内容解读下载免费 保健食品标签内容问答下载免费 保健食品标签内容案例下载免费 保健食品标签内容示例下载免费 保健食品标签内容模板图片免费 保健食品标签内容范本图片免费 保健食品标签内容样本图片免费 保健食品标签内容格式图片免费 保健食品标签内容样式图片免费 保健食品标签内容要求图片免费 保健食品标签内容规范图片免费 保健食品标签内容标准图片免费 保健食品标签内容规定图片免费 保健食品标签内容法规图片免费 保健食品标签内容法律图片免费 保健食品标签内容条例图片免费 保健食品标签内容办法图片免费 保健食品标签内容细则图片免费 保健食品标签内容指南图片免费 保健食品标签内容说明图片免费 保健食品标签内容解释图片免费 保健食品标签内容解读图片免费 保健食品标签内容问答图片免费 保健食品标签内容案例图片免费 保健食品标签内容示例图片免费 保健食品标签内容模板PDF免费 保健食品标签内容范本PDF免费 保健食品标签内容样本PDF免费 保健食品标签内容格式PDF免费 保健食品标签内容样式PDF免费 保健食品标签内容要求PDF免费 保健食品标签内容规范PDF免费 保健食品标签内容标准PDF免费 保健食品标签内容规定PDF免费 保健食品标签内容法规PDF免费 保健食品标签内容法律PDF免费 保健食品标签内容条例PDF免费 保健食品标签内容办法PDF免费 保健食品标签内容细则PDF免费 保健食品标签内容指南PDF免费 保健食品标签内容说明PDF免费 保健食品标签内容解释PDF免费 保健食品标签内容解读PDF免费 保健食品标签内容问答PDF免费 保健食品标签内容案例PDF免费 保健食品标签内容示例PDF免费 保健食品标签内容模板Word免费 保健食品标签内容范本Word免费 保健食品标签内容样本Word免费 保健食品标签内容格式Word免费 保健食品标签内容样式Word免费 保健食品标签内容要求Word免费 保健食品标签内容规范Word免费 保健食品标签内容标准Word免费 保健食品标签内容规定Word免费 保健食品标签内容法规Word免费 保健食品标签内容法律Word免费 保健食品标签内容条例Word免费 保健食品标签内容办法Word免费 保健食品标签内容细则Word免费 保健食品标签内容指南Word免费 保健食品标签内容说明Word免费 保健食品标签内容解释Word免费 保健食品标签内容解读Word免费 保健食品标签内容问答Word免费 保健食品标签内容案例Word免费 保健食品标签内容示例Word免费 保健食品标签内容模板Excel免费 保健食品标签内容范本Excel免费 保健食品标签内容样本Excel免费 保健食品标签内容格式Excel免费 保健食品标签内容样式Excel免费 保健食品标签内容要求Excel免费 保健食品标签内容规范Excel免费 保健食品标签内容标准Excel免费 保健食品标签内容规定Excel免费 保健食品标签内容法规Excel免费 保健食品标签内容法律Excel免费 保健食品标签内容条例Excel免费 保健食品标签内容办法Excel免费 保健食品标签内容细则Excel免费 保健食品标签内容指南Excel免费 保健食品标签内容说明Excel免费 保健食品标签内容解释Excel免费 保健食品标签内容解读Excel免费 保健食品标签内容问答Excel免费 保健食品标签内容案例Excel免费 保健食品标签内容示例Excel免费 保健食品标签内容模板PPT免费 保健食品标签内容范本PPT免费 保健食品标签内容样本PPT免费 保健食品标签内容格式PPT免费 保健食品标签内容样式PPT免费 保健食品标签内容要求PPT免费 保健食品标签内容规范PPT免费 保健食品标签内容标准PPT免费 保健食品标签内容规定PPT免费 保健食品标签内容法规PPT免费 保健食品标签内容法律PPT免费 保健食品标签内容条例PPT免费 保健食品标签内容办法PPT免费 保健食品标签内容细则PPT免费 保健食品标签内容指南PPT免费 保健食品标签内容说明PPT免费 保健食品标签内容解释PPT免费 保健食品标签内容解读PPT免费 保健食品标签内容问答PPT免费 保健食品标签内容案例PPT免费 保健食品标签内容示例PPT免费 保健食品标签内容模板在线免费 保健食品标签内容范本在线免费 保健食品标签内容样本在线免费 保健食品标签内容格式在线免费 保健食品标签内容样式在线免费 保健食品标签内容要求在线免费 保健食品标签内容规范在线免费 保健食品标签内容标准在线免费 保健食品标签内容规定在线免费 保健食品标签内容法规在线免费 保健食品标签内容法律在线免费 保健食品标签内容条例在线免费 保健食品标签内容办法在线免费 保健食品标签内容细则在线免费 保健食品标签内容指南在线免费 保健食品标签内容说明在线免费 保健食品标签内容解释在线免费 保健食品标签内容解读在线免费 保健食品标签内容问答在线免费 保健食品标签内容案例在线免费 保健食品标签内容示例在线免费",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及保健食品标签必须标注的法定信息，属于事实核验型规则，语义召回难以准确判断是否缺失，且关键词已能有效召回，故不建议启用语义召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:32:56",
+          "old_vector_text": "保健食品标签或说明书必须标明保健食品标志、注册号或备案号、警示用语等信息，营养素补充剂还需标明'营养素补充剂'字样",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": false,
+          "semantic_role_recommendation": "disabled",
+          "tags_recommendation": [
+            "保健食品",
+            "标签标识",
+            "警示用语",
+            "注册备案",
+            "蓝帽子"
+          ],
+          "negative_signals_recommendation": [
+            "普通食品",
+            "药品",
+            "化妆品",
+            "医疗器械"
+          ],
+          "change_summary": "将原合规说明改写为包含大量保健食品标签相关术语的仿真违规文案集合，但鉴于规则性质，建议禁用语义召回。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、备案号、批准文号、注册证、蓝帽.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求补充标注缺失信息",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了保健食品标签必须标注的内容，可直接用于审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-9053ab404f8e0d64",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发条件明确，运营可直接检查并补充缺失的法定标注信息，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-LABEL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "food_label_management",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品标签信息集中展示要求",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "详情页文字",
+          "Banner文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第二十七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第二十七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第二十七条 保健食品标志、产品名称、注册号或者备案号、警示用语区以及警示用语、净含量和规格等信息应当集中在最小销售单元标签的同一区域展示。 最小销售单元有多个独立包装或者有多层包装的，外包装应当符合本办法关于最小销售单元的标注要求，其中直接接触食品的包装应当标明产品名称、净含量和规格、生产日期和保质期到期日、食用量以及食用方法。但是，拆除外包装后能够单独销售的保健食品包装，也应当符合本办法关于最小销售单元的标注要求。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "该条文为标签标识规范，涉及广告审核中文字材料对保健食品标签信息的描述是否合规"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品标志",
+            "产品名称",
+            "注册号",
+            "备案号",
+            "警示用语",
+            "净含量",
+            "规格",
+            "最小销售单元",
+            "同一区域"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "审核广告文案中提及保健食品标签信息时，是否将保健食品标志、产品名称、注册号或备案号、警示用语区及警示用语、净含量和规格等信息集中在同一区域展示；对于最小销售单元有多个独立包装或多层包装的，外包装是否符合最小销售单元标注要求，直接接触食品的包装是否标明产品名称、净含量和规格、生产日期和保质期到期日、食用量及食用方法；拆除外包装后能单独销售的保健食品包装是否符合最小销售单元标注要求",
+        "decision": "若广告文案中描述或展示保健食品标签信息时，未将上述信息集中在同一区域，或外包装、直接接触食品包装、单独销售包装不符合标注要求，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "标签标识",
+          "集中展示",
+          "最小销售单元"
+        ],
+        "vector_text": "保健食品标签信息集中展示，保健食品标志、产品名称、注册号、备案号、警示用语、净含量、规格在同一区域；最小销售单元独立包装或多层包装，外包装标注要求；直接接触食品包装标明产品名称、净含量、规格、生产日期、保质期、食用量、食用方法；拆除外包装单独销售包装符合最小销售单元标注要求。",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及具体标签信息展示要求，关键词可覆盖，语义召回作为兜底以防表述变化。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:33:04",
+          "old_vector_text": "保健食品标签信息需集中在最小销售单元同一区域展示，包括保健食品标志、产品名称、注册号或备案号、警示用语区及警示用语、净含量和规格；多包装或单独销售包装需符合标注要求",
+          "old_semantic_reason": "关键词可能无法完全覆盖所有描述标签信息的广告文案，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健食品",
+            "标签标识",
+            "集中展示",
+            "最小销售单元",
+            "警示用语",
+            "净含量",
+            "规格"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "将原规则描述改写为更贴近广告文案中可能出现的标签信息列举表述，增强召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、备案号.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告文案中涉及保健食品标签信息的描述必须符合集中展示和包装标注要求，否则需修改",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了保健食品标签信息的展示要求，可明确判断广告文案中相关描述是否合规"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营人员判断标签信息展示是否符合要求",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-1cfc275b64f1423f",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，运营可直接判断标签信息是否集中展示，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-LABEL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "food_label_management",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品名称标注一致性规则",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第二十八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第二十八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第二十八条 保健食品名称应当按照注册或者备案的产品名称标注。产品名称中所包含的商标名、通用名、属性名不得分开标注，且字体、颜色和字号应当一致。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品",
+            "产品名称",
+            "商标名",
+            "通用名",
+            "属性名"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测保健食品广告文案中是否将产品名称的商标名、通用名、属性名分开标注，或字体、颜色、字号不一致",
+        "decision": "若发现保健食品名称中商标名、通用名、属性名分开标注或字体颜色字号不一致，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "标签标识",
+          "名称标注",
+          "一致性"
+        ],
+        "vector_text": "康宝莱 蛋白粉 分开标注 字体颜色不一致 字号不同 保健食品名称 商标名 通用名 属性名 分开写 样式不统一 牌字颜色不同 产品名称不连写 违规标注 标签标识不规范",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及具体样式一致性，关键词难以穷举所有不一致情况，语义召回可覆盖多种分开标注或样式差异的表述。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:33:12",
+          "old_vector_text": "保健食品广告中产品名称的商标名、通用名、属性名必须连在一起标注，且字体颜色字号一致，不得分开或样式不同",
+          "old_semantic_reason": "关键词可能无法覆盖所有样式不一致的情况，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健食品",
+            "标签标识",
+            "名称标注",
+            "一致性",
+            "分开标注",
+            "样式不一致"
+          ],
+          "negative_signals_recommendation": [
+            "保健食品名称",
+            "产品名称",
+            "商标名",
+            "通用名",
+            "属性名"
+          ],
+          "change_summary": "将原法条式描述改写为真实违规文案集合，包含具体违规示例和多种不一致表述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求修改，确保保健食品名称标注符合注册或备案名称，且商标名、通用名、属性名连用、样式一致",
+      "examples": {
+        "violation": [
+          "某保健食品注册名称为'康宝莱牌蛋白粉'，广告中写成'康宝莱 蛋白粉'（分开标注）",
+          "某保健食品广告中产品名称的'牌'字使用不同颜色"
+        ],
+        "compliant": [
+          "保健食品广告中产品名称完整连写，字体颜色字号统一"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了保健食品名称标注的具体要求，可形成明确审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-a12e2bc6d7a97240",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，仅需检查名称是否分开或样式不一致，运营可直接修改。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-LABEL-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "food_label_management",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品其他商标面积限制规则",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第二十八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第二十八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第二十八条 使用产品名称中商标名对应商标以外的商标，该商标的面积不得大于产品名称面积的四分之一，且小于产品名称中商标名面积，不得与产品名称连用，不得引人误解其为产品名称的一部分。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "商标",
+            "面积",
+            "产品名称",
+            "连用"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测保健食品广告中是否使用了产品名称中商标名对应商标以外的其他商标，且该商标面积是否超过产品名称面积的四分之一或大于产品名称中商标名面积，或与产品名称连用",
+        "decision": "若发现其他商标面积超过产品名称面积的四分之一或大于产品名称中商标名面积，或与产品名称连用，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "标签标识",
+          "商标面积",
+          "其他商标"
+        ],
+        "vector_text": "保健食品广告中，除了产品名称自带的商标，还用了别的商标，那个商标面积比产品名称面积的四分之一还大，或",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "面积比较和连用表达需要语义理解，关键词难以覆盖所有变体，适合语义召回作为主要方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:33:20",
+          "old_vector_text": "保健食品广告中除产品名称自带商标外，使用其他商标时，该商标面积不得超过产品名称面积的四分之一，且小于产品名称中商标名面积，不得与产品名称连用",
+          "old_semantic_reason": "面积比较需要语义理解，关键词难以精确召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "保健食品",
+            "商标面积",
+            "其他商标",
+            "连用",
+            "标签标识",
+            "面积限制"
+          ],
+          "negative_signals_recommendation": [
+            "产品名称",
+            "商标名",
+            "四分之一"
+          ],
+          "change_summary": "从法条解释改写为仿真违规文案集合，增加多种违规表达场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 130
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 引人误解、比较.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求修改，确保其他商标面积符合规定，不与产品名称连用",
+      "examples": {
+        "violation": [
+          "某保健食品广告中，产品名称旁出现另一个商标，面积占产品名称面积的一半",
+          "某保健食品广告中，其他商标与产品名称连写在一起"
+        ],
+        "compliant": [
+          "其他商标面积小于产品名称面积的四分之一，且不与产品名称连用"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了其他商标的面积限制和连用禁止，可形成明确审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-c226537b266f59c9",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供广告物料中商标面积的具体测量数据或截图，以便判断是否超过四分之一限制，但无需法务解释法律概念。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-LABEL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "食品标识监督管理办法",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品标签规格和净含量标注要求",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "详情页文字",
+          "Banner文字"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第二十九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第二十九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第二十九条 保健食品标签标注的规格应当为最小制剂单位的质量或者体积；标注的净含量应当为最小销售单元中所含产品的质量或者体积，或者最小制剂单位的规格及其对应数量。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "规格",
+            "净含量",
+            "最小制剂单位",
+            "最小销售单元"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "保健食品标签中规格和净含量的标注需符合最小制剂单位和最小销售单元的要求",
+        "decision": "若标签中规格或净含量标注不符合最小制剂单位或最小销售单元的规定，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "标签标识",
+          "规格标注",
+          "净含量标注"
+        ],
+        "vector_text": "规格：每粒0.5g，每瓶60粒；净含量：30g；规格：每袋10ml，每盒10袋；净含量：100ml；规格：每片1g，每板12片，每盒3板；净含量：36g；最小制剂单位：每粒0.5g；最小销售单元：每盒60粒；规格标注为每粒0.5g，净含量标注为30g；规格标注为每袋10ml，净含量标注为100ml；规格标注为每片1g，净含量标注为36g；规格标注不符合最小制剂单位要求；净含量标注不符合最小销售单元要求；规格和净含量标注错误；规格净含量标注不规范；保健食品标签规格净含量标注问题",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及具体标注内容，语义召回可覆盖多种规格净含量表述，但关键词已能较好召回，建议作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:33:29",
+          "old_vector_text": "保健食品标签标注的规格应当为最小制剂单位的质量或者体积；标注的净含量应当为最小销售单元中所含产品的质量或者体积，或者最小制剂单位的规格及其对应数量",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健食品",
+            "标签标识",
+            "规格标注",
+            "净含量标注",
+            "最小制剂单位",
+            "最小销售单元"
+          ],
+          "negative_signals_recommendation": [
+            "药品",
+            "普通食品",
+            "化妆品"
+          ],
+          "change_summary": "将法条式文本改写为仿真违规标注表述集合，覆盖多种规格净含量表达方式。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主或商家提供保健食品标签的规格和净含量标注信息，核实是否符合最小制剂单位和最小销售单元的规定",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了保健食品标签中规格和净含量的标注方式，可直接用于审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核实标签中规格和净含量的实际标注内容",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要广告主或商家提供标签信息以进行核实",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-6a4a155cfa3b028c",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供标签实物或截图以核实规格和净含量标注是否符合最小制剂单位和最小销售单元要求",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-MIS-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "food_labeling",
+      "source_type": "法规",
+      "platform": null,
+      "title": "0-6月龄婴儿配方食品不得进行含量声称和功能声称",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "婴儿配方食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第三十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第三十条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第三十条 适用于0-6月龄的婴儿配方食品不得在标签上进行含量声称和功能声称。适用于6月龄以上的婴幼儿配方食品不得在标签上对必需成分进行含量声称和功能声称。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "0-6月龄",
+            "婴儿配方食品",
+            "含量声称",
+            "功能声称"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否对0-6月龄婴儿配方食品进行含量声称或功能声称",
+        "decision": "若检测到0-6月龄婴儿配方食品文案中出现含量声称或功能声称，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "婴儿配方食品",
+          "含量声称",
+          "功能声称",
+          "0-6月龄"
+        ],
+        "vector_text": "0-6月龄婴儿配方奶粉 含有DHA 有助于大脑发育 富含铁 满足宝宝需求 高钙 促进骨骼生长 添加益生元 呵护肠道 增强免疫力 含乳铁蛋白 提升抵抗力 科学配方 营养全面 助力成长 含量声称 功能声称 富含 含有 有助于 促进 增强 提升 呵护 满足",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "原规则是硬性禁止，但文案中可能以多种方式表达含量或功能声称，需要语义召回覆盖各种变体。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:33:37",
+          "old_vector_text": "适用于0-6月龄的婴儿配方食品不得在标签上进行含量声称和功能声称",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "婴儿配方食品",
+            "0-6月龄",
+            "含量声称",
+            "功能声称",
+            "功效宣称",
+            "婴幼儿",
+            "奶粉"
+          ],
+          "negative_signals_recommendation": [
+            "6月龄以上",
+            "较大婴儿",
+            "幼儿配方"
+          ],
+          "change_summary": "从法条式改写为仿真违规文案集合，包含多种声称表达和关键词堆叠。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "含有DHA，有助于大脑发育",
+          "富含铁，满足宝宝需求"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止0-6月龄婴儿配方食品进行含量声称和功能声称，规则可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-f13e59866175d74d",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，仅需判断文案是否对0-6月龄婴儿配方食品进行含量或功能声称，运营可直接删除或替换违规表述。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-MIS-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "food_labeling",
+      "source_type": "法规",
+      "platform": null,
+      "title": "6月龄以上婴幼儿配方食品不得对必需成分进行含量声称和功能声称",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "婴幼儿配方食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第三十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第三十条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第三十条 适用于0-6月龄的婴儿配方食品不得在标签上进行含量声称和功能声称。适用于6月龄以上的婴幼儿配方食品不得在标签上对必需成分进行含量声称和功能声称。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "6月龄以上",
+            "婴幼儿配方食品",
+            "必需成分",
+            "含量声称",
+            "功能声称"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否对6月龄以上婴幼儿配方食品的必需成分进行含量声称或功能声称",
+        "decision": "若检测到6月龄以上婴幼儿配方食品文案中对必需成分进行含量声称或功能声称，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "婴幼儿配方食品",
+          "必需成分",
+          "含量声称",
+          "功能声称",
+          "6月龄以上"
+        ],
+        "vector_text": "6月龄以上婴幼儿配方奶粉富含DHA，促进大脑发育；含有钙铁锌，助力骨骼生长；添加益生元，增强免疫力；必需成分全面，营养更均衡；含量高，吸收好；功能强大，宝宝更聪明",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则禁止对必需成分进行含量和功能声称，vector_text模拟了真实广告中常见的违规表达，适合语义召回",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:33:45",
+          "old_vector_text": "适用于6月龄以上的婴幼儿配方食品不得在标签上对必需成分进行含量声称和功能声称",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "婴幼儿配方食品",
+            "必需成分",
+            "含量声称",
+            "功能声称",
+            "6月龄以上",
+            "违规声称"
+          ],
+          "negative_signals_recommendation": [
+            "非必需成分",
+            "6月龄以下",
+            "婴儿配方食品"
+          ],
+          "change_summary": "从法条改写为仿真违规文案集合，覆盖多种声称表达",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "富含蛋白质，促进生长发育",
+          "含有钙，有助于骨骼健康"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止6月龄以上婴幼儿配方食品对必需成分进行含量声称和功能声称，规则可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-80d16aeb303d7176",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，运营可直接删除或替换违规声称，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-INFO-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "食品标识监督管理办法",
+      "source_type": "法规",
+      "platform": null,
+      "title": "网络销售预包装食品标签信息展示一致性要求",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "预包装食品",
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "网络销售"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "product_category"
+        ],
+        "logic": "product_category 属于预包装食品或保健食品"
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第三十四条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第三十四条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "食品生产经营者通过网络销售的预包装食品，应当在销售主页面刊载食品名称、净含量、成分或者配料表、保质期、产品标准代号、贮存条件、生产者名称、地址、特殊食品注册或者备案信息等食品标签信息。除生产日期、保质期到期日等动态变化的内容外，销售主页面刊载的食品标签信息应当与实际销售的食品标签信息保持一致。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "食品名称",
+            "净含量",
+            "成分",
+            "配料表",
+            "保质期",
+            "产品标准代号",
+            "贮存条件",
+            "生产者名称",
+            "生产者地址",
+            "特殊食品注册",
+            "特殊食品备案",
+            "食品标签信息"
+          ],
+          "regex": [],
+          "context_signals": [
+            "网络销售",
+            "销售主页面"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检查销售主页面是否刊载了食品名称、净含量、成分或配料表、保质期、产品标准代号、贮存条件、生产者名称、地址、特殊食品注册或备案信息等标签信息，且除生产日期、保质期到期日外，刊载信息与实际标签一致",
+        "decision": "若销售主页面未刊载上述任一标签信息，或刊载信息与实际标签不一致（除动态变化内容外），则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "食品标识",
+          "标签信息",
+          "网络销售",
+          "一致性"
+        ],
+        "vector_text": "销售主页面没有写食品名称、净含量、成分表、配料表、保质期、产品标准代号、贮存条件、生产者名称、地址、特殊食品注册号或备案号；标签信息不一致，比如保质期写错了、成分表对不上、生产者名称不符；缺少标签信息、标签信息不全、标签信息与实际不符；主页面展示的食品标签和实物标签不一样；没有标注食品名称、净含量、成分、保质期、贮存条件、生产者信息；特殊食品注册备案信息缺失；标签信息不一致违规；网络销售预包装食品标签信息缺失或不一致",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及多个具体标签字段，关键词难以穷尽所有表述变体，语义召回可覆盖缺失、不一致等违规场景，适合作为fallback辅助关键词召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:33:54",
+          "old_vector_text": "网络销售预包装食品时，销售主页面必须刊载食品名称、净含量、成分或配料表、保质期、产品标准代号、贮存条件、生产者名称、地址、特殊食品注册或备案信息等标签信息，且除生产日期、保质期到期日外，刊载信息必须与实际标签一致",
+          "old_semantic_reason": "关键词可能无法覆盖所有标签信息表述变体，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "标签信息",
+            "预包装食品",
+            "网络销售",
+            "一致性",
+            "缺失",
+            "违规",
+            "保健食品"
+          ],
+          "negative_signals_recommendation": [
+            "生产日期",
+            "保质期到期日"
+          ],
+          "change_summary": "将原法条式描述改写为违规文案集合，包含缺失、不一致等典型违规表述，并加入负面信号排除动态变化字段。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、备案号.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求销售主页面完整刊载指定标签信息，并确保信息一致性",
+      "examples": {
+        "violation": [
+          "销售主页面未刊载成分或配料表",
+          "销售主页面刊载的保质期与实际标签不一致（非动态变化）",
+          "销售主页面缺少生产者名称和地址"
+        ],
+        "compliant": [
+          "销售主页面完整刊载食品名称、净含量、成分或配料表、保质期、产品标准代号、贮存条件、生产者名称、地址、特殊食品注册或备案信息",
+          "销售主页面刊载的标签信息与实际标签完全一致（生产日期、保质期到期日除外）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了网络销售预包装食品标签信息的刊载内容和一致性要求，可直接转化为审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核实销售主页面实际刊载的标签信息是否完整且与实际标签一致",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供实际标签信息以进行一致性比对",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "实际销售食品的标签图片或信息"
+        ],
+        "data_sources": [
+          "运营提交的标签资料"
+        ],
+        "note": "后期需接入实际标签信息进行一致性核验"
+      },
+      "rule_uid": "RUID-6e3933eda959df95",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需结合销售主页面内容判断，且核心违规认定依赖实际标签信息比对，运营需先提供标签资料才能进行一致性核验。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-WARN-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "food_label_management",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品网络销售主页面显著位置标注消费提示信息",
+      "dimension": "警示语缺失",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "网络销售"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第三十六条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第三十六条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "保健食品经营者应当在实体经营场所的显著位置、网络销售保健食品主页面显著位置标注\"保健食品不是药物，不能代替药物治疗疾病\"等消费提示信息。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品",
+            "不是药物",
+            "不能代替药物治疗疾病"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测网络销售保健食品主页面是否包含'保健食品不是药物，不能代替药物治疗疾病'或类似消费提示信息",
+        "decision": "若网络销售保健食品主页面未标注'保健食品不是药物，不能代替药物治疗疾病'等消费提示信息，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "警示语",
+          "消费提示",
+          "网络销售"
+        ],
+        "vector_text": "保健食品不是药物，不能代替药物治疗疾病。本产品不能替代药品，不治病。保健品不能当药吃，无治疗作用。本",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则要求网络销售保健食品主页面必须标注特定消费提示，语义召回可覆盖各种变体表述，避免因关键词变体漏召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:34:02",
+          "old_vector_text": "保健食品网络销售主页面必须标注保健食品不是药物不能代替药物治疗疾病等消费提示信息",
+          "old_semantic_reason": "关键词可能因表述变体而漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健食品",
+            "消费提示",
+            "警示语",
+            "网络销售",
+            "蓝帽子"
+          ],
+          "negative_signals_recommendation": [
+            "药品",
+            "治疗",
+            "处方",
+            "疗效"
+          ],
+          "change_summary": "将原规则性描述改写为多种真实广告中可能出现的消费提示变体表述集合，增强语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 103
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、显著、替代药物、治疗、疾病.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求补充标注消费提示信息",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求网络销售保健食品主页面标注指定消费提示信息，规则可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-f12427be4f5db663",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发条件明确，运营可直接补标消费提示文字，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": [
+    {
+      "article_id": "第七条",
+      "error": "Expecting ',' delimiter: line 377 column 42 (char 9504)"
+    },
+    {
+      "article_id": "第十六条",
+      "error": "Expecting ',' delimiter: line 264 column 56 (char 7025)"
+    }
+  ]
+}

@@ -1,0 +1,1978 @@
+{
+  "meta": {
+    "name": "美妆规则库-小红书聚光帮助中心 - 文档",
+    "version": "v1",
+    "generated_date": "20260706",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "小红书聚光帮助中心 - 文档.pdf",
+    "source_track": "美妆",
+    "rule_count": 11,
+    "error_count": 0,
+    "source_units_processed": 45,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "XHS",
+      "name": "小红书聚光帮助中心 - 文档",
+      "short": "XHS-小红书聚光帮助中心-文档",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "小红书"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-小红书聚光帮助中心-文档",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "广告素材涉及第三方合作需提供授权证明",
+      "dimension": "IP侵权",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "1.1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "1.1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "根据⼴告法第三章第三⼗三条、《⺠法典》相关管理规定，⼴告素材不得侵犯注册商标专⽤权、公⺠肖像权等权利。因此，如您在⼴告素材中涉及肖像、商标、第三⽅品牌/合作等内容，请提供相关材料证明。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "肖像",
+            "商标",
+            "第三方品牌",
+            "合作",
+            "联名",
+            "授权"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告素材文字中提及他人肖像、商标、第三方品牌或合作内容，需检测是否已提供授权证明",
+        "decision": "若广告素材文字涉及肖像、商标、第三方品牌或合作内容，且未提供相应授权证明，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "授权证明",
+          "肖像权",
+          "商标权",
+          "第三方合作",
+          "IP侵权"
+        ],
+        "vector_text": "广告素材文字中涉及他人肖像、商标、第三方品牌或合作内容时，需要提供授权证明，否则可能侵犯注册商标专用权或公民肖像权",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 证明、证明文件.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意审核未通过，需补充上传相关证明"
+      },
+      "relations": [],
+      "disposition": "要求补充上传合作证明或授权文件",
+      "examples": {
+        "violation": [
+          "广告文案中提及某明星肖像但未提供肖像授权",
+          "广告中展示其他品牌商标但未提供商标授权"
+        ],
+        "compliant": [
+          "广告文案中提及明星肖像并已上传肖像授权书",
+          "广告中展示联名品牌商标并已提供联名授权证明"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求广告素材涉及肖像、商标、第三方品牌/合作等内容时需提供授权证明，适用场景清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告素材文字中是否确实涉及肖像、商标或第三方品牌",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需广告主补充上传授权证明文件",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "经销授权书",
+          "联名/品牌授权证明",
+          "肖像授权协议",
+          "代言授权协议",
+          "商标授权书",
+          "专利授权书"
+        ],
+        "data_sources": [],
+        "note": "后期需接入资料核验，验证广告主是否已上传相关授权证明文件"
+      },
+      "rule_uid": "RUID-8063a9f0e191918a",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需结合文案内容判断是否涉及第三方权益，但核心问题是缺少授权证明，因此要求运营先补充资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-小红书聚光帮助中心-文档",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "不得利用不满10周岁的未成年人作为广告代言人",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "1.1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "1.1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "不得利⽤不满10周岁的未成年⼈作为⼴告代⾔⼈。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "不满10周岁",
+            "未成年人",
+            "代言",
+            "童星",
+            "儿童代言"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告素材文字中提及或暗示使用不满10周岁的未成年人作为广告代言人",
+        "decision": "若广告素材文字中明确提及或暗示使用不满10周岁的未成年人作为代言人，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "代言人",
+          "年龄限制"
+        ],
+        "vector_text": "广告素材文字中不得利用不满10周岁的未成年人作为广告代言人",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 代言、未成年人、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意审核未通过"
+      },
+      "relations": [],
+      "disposition": "拒绝广告投放，要求删除涉及不满10周岁未成年人代言的内容",
+      "examples": {
+        "violation": [
+          "广告文案中写道'9岁小明星推荐'",
+          "直播话术中提及'我家8岁宝宝也在用'作为代言"
+        ],
+        "compliant": [
+          "广告中使用10周岁以上未成年人代言并已提供授权",
+          "广告中未涉及任何未成年人代言内容"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止利用不满10周岁的未成年人作为广告代言人，适用场景清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告素材文字中是否提及未成年人年龄或暗示不满10周岁",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-3cb7962acf8d23b3",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接识别并删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-PLAT-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_聚光_美妆",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "美妆产品禁止涉及医疗保健功效宣传",
+      "dimension": "涉医疗宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "2.1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2.1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "2.1、产品涉及医疗保健功效"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "医疗",
+            "保健",
+            "功效",
+            "治疗",
+            "治愈",
+            "预防",
+            "消炎",
+            "抗菌",
+            "抗敏",
+            "药用",
+            "医美",
+            "医美级",
+            "医疗级",
+            "药妆",
+            "医学护肤"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否将美妆产品与医疗、保健功效相关联，如宣称产品具有治疗疾病、预防疾病、消炎抗菌等医疗作用，或暗示产品具有医疗保健功效",
+        "decision": "若检测到美妆产品文案涉及医疗保健功效宣传，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "涉医疗宣传",
+          "功效宣称",
+          "小红书",
+          "平台规则"
+        ],
+        "vector_text": "这款面霜具有消炎抗菌功效?医美级修复精华，治疗敏感肌?药妆产品，预防皮肤过敏?医疗?保健?功效?治疗",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、医疗、宣传、宣称、治疗.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:52:00",
+          "old_vector_text": "美妆产品广告文案中不得涉及医疗保健功效，不得使用医疗术语或暗示产品具有治疗、预防疾病等医疗作用",
+          "old_semantic_reason": "医疗保健功效表述可能通过变体或隐晦方式表达，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "美妆",
+            "涉医疗宣传",
+            "功效宣称",
+            "小红书",
+            "平台规则"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Missing vector_text.",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "这款面霜具有消炎抗菌功效",
+          "医美级修复精华，治疗敏感肌",
+          "药妆产品，预防皮肤过敏"
+        ],
+        "compliant": [
+          "这款面霜保湿滋润",
+          "精华液提亮肤色",
+          "产品温和不刺激"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接禁止美妆产品涉及医疗保健功效，规则明确可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中等",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可覆盖大部分场景，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-b11a65604979d8cb",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词和语义检测可覆盖，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-小红书聚光帮助中心-文档",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "事实性描述需提供证明材料且描述与材料一致",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "1.2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "1.2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "《广告法》已明确， 广告主应当对广告素材的真实性负责，广告经营者、广告发布者依据法律查验有关证明文件，对内容不符或者证明文件不全的广告，广告发布者不得发布。因此，如您在广告素材中针对所推广的产品/服务的属性/功效进行阐释和说明，需提供相关证明材料。需注意：广告素材的描述需要与相关材料证明保持一致性，避免出现因【广告素材描述与材料证明不匹配】被审核驳回。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "销量数据",
+            "质检报告",
+            "测试数据",
+            "专利",
+            "技术证书",
+            "权威媒体",
+            "新闻报道"
+          ],
+          "regex": [],
+          "context_signals": [
+            "事实性描述",
+            "证明材料",
+            "属性",
+            "功效",
+            "阐释",
+            "说明"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告素材中针对产品/服务的属性或功效进行阐释和说明，且未提供相关证明材料，或描述与证明材料不一致",
+        "decision": "若广告素材包含对产品/服务属性或功效的事实性描述，且未上传对应证明材料，或描述与证明材料不匹配，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "事实性描述",
+          "证明材料",
+          "功效宣称",
+          "虚假宣传",
+          "小红书"
+        ],
+        "vector_text": "销量突破100万，销量数据截图，质检报告，测试数据，专利，技术证书，权威媒体，新闻报道，经权威机构检",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则核心是事实性描述需有证明材料且一致，违规文案常以具体数据、功效、专利等表述出现，且可能缺失或伪造材料，语义召回可覆盖多种表达方式，关键词可能漏召回，故适合语义辅助召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、宣称、虚假. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:52:11",
+          "old_vector_text": "广告素材中针对产品/服务的属性或功效进行事实性描述，需要提供相关证明材料且描述与材料一致",
+          "old_semantic_reason": "事实性描述可能通过多种语义表达，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "事实性描述",
+            "证明材料",
+            "功效宣称",
+            "虚假宣传",
+            "小红书",
+            "美妆",
+            "数据造假",
+            "专利证书"
+          ],
+          "negative_signals_recommendation": [
+            "已上传",
+            "已提供",
+            "证明材料齐全",
+            "与材料一致"
+          ],
+          "change_summary": "将原规则性描述改写为仿真违规文案集合，包含具体数据、功效、专利等违规表述及缺失材料、不一致等场景，增强语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "审核驳回"
+      },
+      "relations": [],
+      "disposition": "要求广告主上传对应证明材料，且确保广告素材描述与材料证明一致",
+      "examples": {
+        "violation": [
+          "本产品销量突破100万（未提供销量数据截图）",
+          "经权威机构检测，美白效果提升50%（未提供质检报告或测试数据）",
+          "拥有独家专利技术（未提供专利证书）"
+        ],
+        "compliant": [
+          "本产品销量突破100万（已上传销量数据截图且截图数据与描述一致）",
+          "经权威机构检测，美白效果提升50%（已上传质检报告且报告数据与描述一致）",
+          "拥有独家专利技术（已上传专利证书且证书内容与描述一致）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求事实性描述需提供证明材料且描述与材料一致，适用场景清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核验广告素材中是否包含事实性描述，以及是否上传了对应证明材料",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则要求广告主补充证明材料，需运营介入引导上传",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "销量数据截图",
+          "质检报告",
+          "测试数据",
+          "专利证书",
+          "技术证书",
+          "权威媒体新闻报道发文截图"
+        ],
+        "data_sources": [
+          "广告主上传的资质材料"
+        ],
+        "note": "后期需接入资料核验，验证广告主上传的证明材料是否真实有效且与描述一致"
+      },
+      "rule_uid": "RUID-24587804b9ccbf09",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则核心是要求运营补充证明材料，运营可引导广告主上传，但需后续核验材料真实性，故默认要求运营先补充资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-DATA-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-小红书聚光帮助中心-文档",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "广告中使用数据引证内容需提供证明材料",
+      "dimension": "数据引用不规范",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "1.3",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "1.3",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "《广告法》第十一条已明确，广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。因此，如您在广告中使用数据引证内容的（通过测试/实验/试验或市场调查/市场统计的方式取得的数据、统计资料、调查结果等内容），需提供对应证明材料。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "数据",
+            "统计资料",
+            "调查结果",
+            "文摘",
+            "引用语",
+            "测试",
+            "实验",
+            "试验",
+            "市场调查",
+            "市场统计"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中提及具体数据、统计结果、调查结论、测试或实验成果等引证内容，且未明确标注出处或未提供证明材料",
+        "decision": "若广告文案中包含数据引证内容（如测试数据、统计资料、调查结果等），且未在素材资质后台上传对应证明材料（如质检报告、实验报告），则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "数据引用",
+          "证明材料",
+          "广告真实性",
+          "小红书平台规则"
+        ],
+        "vector_text": "广告中使用数据、统计资料、调查结果、文摘、引用语等引证内容，需提供对应证明材料，否则违规",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "关键词可能无法覆盖所有数据引证表达方式，需语义辅助召回",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 统计资料、证明、证明材料、调查结果、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意审核不通过，需补充证明材料"
+      },
+      "relations": [],
+      "disposition": "要求广告主在素材资质后台上传对应证明材料（如质检报告、实验报告），否则不予通过",
+      "examples": {
+        "violation": [
+          "本产品经测试，有效率达90%",
+          "根据市场调查，80%用户推荐此产品"
+        ],
+        "compliant": [
+          "本产品经测试，有效率达90%（数据来源：XX实验室测试报告）",
+          "根据市场调查，80%用户推荐此产品（数据来源：XX市场调研公司2023年报告）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求广告中使用数据引证内容需提供证明材料，场景清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告文案中是否包含数据引证内容",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则明确要求提供证明材料，需运营人员引导广告主上传资质",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "质检报告",
+          "实验报告"
+        ],
+        "data_sources": [
+          "广告主上传的素材资质"
+        ],
+        "note": "后期需接入资料核验，验证广告主上传的证明材料是否真实有效"
+      },
+      "rule_uid": "RUID-06ec2b429e927cba",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则明确要求提供证明材料，运营需引导广告主上传质检或实验报告，无需法务介入解释法律概念。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-小红书聚光帮助中心-文档",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "成分/材质宣传需提供证明材料",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "聚光平台"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "1.4",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "1.4",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "依照《⼴告法》第⼋条：⼴告中对商品的性能、功能、产地、⽤途、质量、成分、价格、⽣产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明⽩。因此，如您在⼴告素材中针对所推⼴的产品或服务的成分/材质进⾏阐释和说明的描述，需提供相关成分/材质的证明材料。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "成分",
+            "材质",
+            "添加",
+            "无添加",
+            "配料",
+            "xx材质",
+            "鉴定证书"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告素材中涉及对产品成分或材质的阐释和说明描述",
+        "decision": "若广告素材中包含成分或材质相关描述，则需上传对应证明材料，否则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "成分宣传",
+          "材质宣传",
+          "证明材料",
+          "小红书",
+          "聚光平台"
+        ],
+        "vector_text": "产品中含有玻尿酸成分?无添加防腐剂?纯棉材质?成分?材质?添加?无添加?配料?xx材质?鉴定证书?成",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 价格、宣传、清晰、虚假. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:53:57",
+          "old_vector_text": "广告素材中宣传产品成分或材质，如含有或无添加xx成分、xx配料，产品是xx材质等描述，需提供相关证明材料",
+          "old_semantic_reason": "成分/材质描述可能使用多样化表达，关键词可能漏召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "成分宣传",
+            "材质宣传",
+            "证明材料",
+            "小红书",
+            "聚光平台"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意审核不通过，需补充资质"
+      },
+      "relations": [],
+      "disposition": "审核不通过，提示需上传成分/材质证明材料",
+      "examples": {
+        "violation": [
+          "产品中含有玻尿酸成分",
+          "无添加防腐剂",
+          "纯棉材质"
+        ],
+        "compliant": [
+          "产品成分已上传证明材料"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求成分/材质宣传需提供证明材料，适用场景清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核验是否已上传成分/材质证明材料",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则要求上传资质，需运营人员引导补充材料",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "成分/材质证明材料",
+          "珠宝玉石鉴定证书"
+        ],
+        "data_sources": [
+          "小红书聚光平台-物料资质"
+        ],
+        "note": "后期需接入资料核验，确认用户是否已上传对应证明材料"
+      },
+      "rule_uid": "RUID-4c6c470923121bc1",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但核心是要求运营补充证明材料，无需法务介入解释法律概念。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-小红书聚光帮助中心-文档",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "珠宝玉石鉴定证书材质与广告宣传一致性",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "珠宝玉石"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "聚光广告"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "8",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "8",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "8.珠宝⽟⽯鉴定证书需注意，鉴定证书的材质需要与⼴告宣传中保持⼀致性。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "鉴定证书",
+            "珠宝",
+            "玉石",
+            "材质"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告宣传中提及的珠宝玉石材质与鉴定证书标注的材质不一致",
+        "decision": "若广告宣传的材质与鉴定证书材质不符，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "珠宝玉石",
+          "鉴定证书",
+          "材质一致性",
+          "虚假宣传"
+        ],
+        "vector_text": "翡翠手镯鉴定证书是石英岩玉，和田玉证书是大理石，证书写A货实际是B货，证书写天然钻石其实是莫桑石，证",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及材质与证书不一致的虚假宣传，语义召回可覆盖多种材质替换的违规表达，但需注意避免误召回合规的材质描述。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:54:13",
+          "old_vector_text": "广告宣传中珠宝玉石的材质需要与鉴定证书上的材质保持一致，不得出现材质不符的虚假描述",
+          "old_semantic_reason": "材质不一致可能通过语义表达而非关键词触发，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "珠宝玉石",
+            "鉴定证书",
+            "材质不符",
+            "虚假宣传",
+            "证书造假",
+            "以次充好"
+          ],
+          "negative_signals_recommendation": [
+            "证书一致",
+            "证书相符",
+            "证书匹配",
+            "证书对应"
+          ],
+          "change_summary": "将原规则性描述改写为大量真实违规案例的堆叠，覆盖多种材质替换场景，增强语义召回能力。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "广告中提及的珠宝玉石材质必须与鉴定证书标注的材质一致，否则判定为虚假宣传",
+      "examples": {
+        "violation": [
+          "宣传为'翡翠手镯'但鉴定证书标注为'石英岩玉'",
+          "宣传为'和田玉'但鉴定证书标注为'大理石'"
+        ],
+        "compliant": [
+          "宣传为'翡翠手镯'且鉴定证书标注为'翡翠'",
+          "宣传为'和田玉'且鉴定证书标注为'和田玉'"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求鉴定证书材质与广告宣传一致，无需额外解释"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核验广告宣传的材质与鉴定证书材质是否一致",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需人工或系统比对鉴定证书材质与广告宣传材质，依赖资料核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "珠宝玉石鉴定证书"
+        ],
+        "data_sources": [
+          "广告主提供的鉴定证书"
+        ],
+        "note": "后期需接入鉴定证书数据，自动比对材质一致性"
+      },
+      "rule_uid": "RUID-55f3ce01aa182031",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供鉴定证书并比对材质一致性，运营无法自行判断，但法务无需介入解释法律概念",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-ADV-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-小红书聚光帮助中心-文档",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "广告中宣称教师/导师/员工/创始人/设计师等具有院校背景需提供证明材料及任职证明",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "10",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "10",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "10.在校任职证明\n需注意，如⼴告中宣称教师/导师/员⼯/创始⼈/设计师等机构内⼈员具有院校背景，需提供证明材料（如学信⽹查询截图、毕业证书照⽚等）及在⼴告主公司任职证明。宣传在名校任职的需提供任职证明及在⼴告主公司任职证明。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "教师",
+            "导师",
+            "员工",
+            "创始人",
+            "设计师",
+            "院校背景",
+            "名校任职"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣称人物具有院校背景或名校任职经历，且未提供相关证明材料及任职证明",
+        "decision": "若广告中宣称教师/导师/员工/创始人/设计师等具有院校背景或名校任职，需提供证明材料及在广告主公司任职证明，否则违规"
+      },
+      "recall": {
+        "tags": [
+          "资质证明",
+          "院校背景",
+          "任职证明",
+          "小红书",
+          "美妆"
+        ],
+        "vector_text": "广告中宣称教师、导师、员工、创始人、设计师等机构内人员具有院校背景或名校任职，需提供学信网截图、毕业证书等证明材料及在广告主公司任职证明",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、宣称、清晰. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主提供证明材料及任职证明，否则不得发布相关宣称",
+      "examples": {
+        "violation": [
+          "本产品由XX大学博士导师研发",
+          "创始人毕业于哈佛大学"
+        ],
+        "compliant": [
+          "本产品由XX大学博士导师研发（附学信网截图及任职证明）"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求广告中宣称具有院校背景或名校任职时需提供证明材料及任职证明，属于明确资质要求"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要广告主提供证明材料及任职证明进行审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "学信网查询截图",
+          "毕业证书照片",
+          "在广告主公司任职证明"
+        ],
+        "data_sources": [],
+        "note": "后期需接入资料核验，验证广告主提供的证明材料真实性"
+      },
+      "rule_uid": "RUID-3965558bfcc2ec92",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但需要运营补充学信网截图、毕业证书及任职证明等材料，因此默认要求运营先提供资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-小红书聚光帮助中心-文档",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "美妆广告投放需完成行业认证",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "聚光平台"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "account_type"
+        ],
+        "logic": "account_type == '品牌账号' OR account_type == '代理商虚拟子账号'"
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "2、您需完成⾏业认证\n需注意，区分2种情况：\n2026/6/17 23:32聚光帮助中⼼ - ⽂档\n第17/17⻚https://ad.xiaohongshu.com/help/docs?id=3656\n备注 账号类型 是否有⾏业认证权限\n如您为品牌账号，可参考驳回理由的指引，通过【聚光平台-⼴告-推⼴资质认证】选择对应的⾏业并提交相关资质证明进⾏⾏业认证，审核通过即代表认证成功。\n品牌账号 有权限\n如您为代理商虚拟⼦账号，⽬前暂⽆认证⾏业的权限，请引导品牌账号完成⾏业认证后，再提审相关⾏业的⼴告。\n代理商虚拟⼦账号 ⽆权限"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "该规则为平台准入前置条件，广告提审前需完成行业认证"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [
+            "行业认证",
+            "推广资质认证"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告主账号是否已完成行业认证，若未认证则驳回",
+        "decision": "若账号类型为品牌账号且未完成行业认证，则驳回；若为代理商虚拟子账号，则引导品牌账号完成认证"
+      },
+      "recall": {
+        "tags": [
+          "行业认证",
+          "资质准入",
+          "品牌账号",
+          "代理商虚拟子账号"
+        ],
+        "vector_text": "广告主需完成行业认证才能投放美妆广告，品牌账号有认证权限，代理商虚拟子账号无认证权限需引导品牌账号完成",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 证明、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告被驳回，无法投放"
+      },
+      "relations": [],
+      "disposition": "驳回广告，提示广告主完成行业认证",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求广告主需完成行业认证，区分品牌账号和代理商虚拟子账号，可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告主账号类型及行业认证状态",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可由系统直接判断账号类型和认证状态",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-7ca31fd391ea189b",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但需运营确认账号类型和行业认证状态，并引导品牌账号完成认证或补充资质证明。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-小红书聚光帮助中心-文档",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "美妆产品广告不得涉及医疗保健功效，除非完成行业认证",
+      "dimension": "涉医疗宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "2.1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2.1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "2.1、产品涉及医疗保健功效\n●【适⽤场景】：如您提交的⼴告创意审核未通过，且系统提示“ 不得使⽤医疗⽤语/易使其与药品/医疗器械相混淆的⽤语，请修改或删除相关描述；或完成【医疗器械/保健⻝品/特殊医学⽤途配⽅⻝品/OTC药品】⾏业认证后再提交物料。”可参考以下资质样例进⾏补充。\n●【审核提示】：根据《⼴告法》及⼩红书平台⾏业认证要求，请您先在aurora平台完成⾏业认证，再提交⼴告素材审核。\n如您推⼴内容涉及医疗保健功效，请完成【医疗器械/保健⻝品/特殊医学⽤途配⽅⻝品/OTC药品】⾏业认证后再提交⼴告审核。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "医疗",
+            "保健",
+            "功效",
+            "治疗",
+            "治愈",
+            "药",
+            "医疗器械",
+            "药品",
+            "OTC"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告内容涉及医疗保健功效描述，如宣称产品具有治疗、预防疾病或保健功能，且未完成医疗器械/保健食品/特殊医学用途配方食品/OTC药品行业认证",
+        "decision": "若广告内容涉及医疗保健功效且未完成相关行业认证，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "涉医疗宣传",
+          "行业认证",
+          "美妆",
+          "小红书"
+        ],
+        "vector_text": "这款面霜能有效治疗痘痘肌，修复受损屏障，具有医疗级护肤功效。使用后皮肤焕然一新，堪比医美效果。本产品",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则禁止美妆广告宣称医疗保健功效，但违规文案常使用变体或隐晦表达，如'治疗'、'治愈'、'医疗级'、'药妆'、'械字号'等，关键词难以穷举，语义召回可覆盖更多变体。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 保健功能、功效、医疗、宣传、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:54:22",
+          "old_vector_text": "美妆广告中不得使用医疗用语或易与药品、医疗器械相混淆的用语，除非已完成医疗器械、保健食品、特殊医学用途配方食品或OTC药品的行业认证",
+          "old_semantic_reason": "医疗保健功效表述可能通过变体或隐晦方式出现，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "涉医疗宣传",
+            "美妆",
+            "功效宣称",
+            "违规变体",
+            "行业认证"
+          ],
+          "negative_signals_recommendation": [
+            "保湿",
+            "滋润",
+            "补水",
+            "清洁",
+            "防晒"
+          ],
+          "change_summary": "将原法条式描述改写为真实违规文案集合，覆盖多种变体表达，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告审核不通过，需修改或删除相关描述，或完成行业认证后再提交"
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "本产品可有效治疗痘痘肌",
+          "使用后皮肤如获新生，具有保健功效"
+        ],
+        "compliant": [
+          "本产品保湿滋润，适合日常护肤"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止未认证的美妆广告涉及医疗保健功效，适用场景清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可覆盖大部分违规场景，无需法务介入",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-6dcf2f6c5000348c",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及医疗保健功效的边界判断，且需要核验行业认证资质，风险高，运营难以自行处理，应进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-小红书聚光帮助中心-文档",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "行业未认证或行业不符禁止投放广告",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "2.2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2.2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "2.2、⾏业未认证&⾏业不符\n●【适⽤场景】：如您提交的⼴告创意审核未通过，且系统提示“您的推⼴资质未成功认证/认证已失效，请完成【推⼴资质认证】⾏业后再提交物料审核。”可参考以下资质样例进⾏补充。\n●【审核提示】：根据⼩红书平台⾏业认证要求，请您先在aurora平台完成⾏业认证，再提交⼴告素材审核。\n如您推⼴内容未认证⾏业、或未认证与产品类⽬相匹配的⾏业，请完成相关⾏业认证后再提交⼴告审核。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "该规则不依赖文案关键词检测，而是依赖平台行业认证状态，需通过系统接口或人工核验广告主是否已完成行业认证且认证行业与推广产品类目匹配。",
+        "decision": "若广告主未完成行业认证或认证行业与产品类目不匹配，则判定违规，禁止投放。"
+      },
+      "recall": {
+        "tags": [
+          "平台准入",
+          "行业认证",
+          "资质不符"
+        ],
+        "vector_text": "广告主未完成小红书平台行业认证或认证行业与推广产品类目不匹配，禁止提交广告素材审核。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则依赖平台认证状态而非文案内容，无需语义召回。",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意审核不通过，需完成行业认证后再提交"
+      },
+      "relations": [],
+      "disposition": "拒绝投放，提示广告主完成行业认证或认证与产品类目匹配的行业后再提交审核。",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求广告主必须先完成行业认证且认证行业与产品类目匹配，否则禁止提交广告审核。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核验广告主在小红书平台的行业认证状态及认证行业是否与产品类目匹配",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需人工或系统核验广告主行业认证状态，非纯文案判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-99baa2be5e66c4e1",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发明确，但需运营补充行业认证状态信息，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

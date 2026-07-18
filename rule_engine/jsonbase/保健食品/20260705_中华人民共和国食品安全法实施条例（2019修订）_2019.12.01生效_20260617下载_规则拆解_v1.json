@@ -1,0 +1,1935 @@
+{
+  "meta": {
+    "name": "保健食品规则库-中华人民共和国食品安全法实施条例（2019修订）_2019.12.01生效_20260617下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "保健食品广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "中华人民共和国食品安全法实施条例（2019修订）_2019.12.01生效_20260617下载.doc",
+    "source_track": "保健食品",
+    "rule_count": 10,
+    "error_count": 0,
+    "source_units_processed": 86,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "FSLR",
+      "name": "中华人民共和国食品安全法实施条例（2019修订）_2019.12.01生效_20260617下载",
+      "short": "FSLR-2019",
+      "type": "法规",
+      "legal_level": 2,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "HF-FC-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "FSLR",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止对食品（含保健食品）进行虚假宣传",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "FSLR",
+        "source_article_id": "第三十四条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "FSLR",
+          "article": "第三十四条",
+          "legal_level": 2,
+          "role": "based_on",
+          "text": "禁止利用包括会议、讲座、健康咨询在内的任何方式对食品进行虚假宣传。食品安全监督管理部门发现虚假宣传行为的，应当依法及时处理。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚假宣传",
+            "虚假",
+            "夸大",
+            "不实",
+            "误导"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否存在对食品（含保健食品）的功效、成分、安全性等进行虚假、夸大或误导性描述的语义",
+        "decision": "若检测到虚假宣传内容，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "保健食品",
+          "食品广告"
+        ],
+        "vector_text": "吃了就能根治糖尿病，三天见效，永不复发；纯天然无副作用，比药还管用；国家级权威认证，100%有效；补",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及虚假宣传，语义变体多，关键词难以覆盖，需通过仿真违规文案集合召回各种夸大、误导、虚假表述。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T02:54:54",
+          "old_vector_text": "禁止对食品（含保健食品）进行任何形式的虚假宣传，包括但不限于夸大功效、虚构成分、误导消费者等行为",
+          "old_semantic_reason": "虚假宣传可能通过语义变体规避关键词，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "保健食品",
+            "夸大功效",
+            "误导",
+            "违规广告"
+          ],
+          "negative_signals_recommendation": [
+            "合规功效描述",
+            "营养成分",
+            "正常功能声称"
+          ],
+          "change_summary": "将原法条式vector_text改写为HyDE风格的仿真违规文案集合，覆盖多种虚假宣传场景和表达方式。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 288
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 免费、功效、夸大、宣传、疾病.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《中华人民共和国食品安全法实施条例》第三十四条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "本产品能治愈所有慢性疾病",
+          "100%有效，无任何副作用"
+        ],
+        "compliant": [
+          "本品富含维生素C，有助于维持免疫系统正常功能"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止虚假宣传，可直接形成审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "虚假宣传判断较为明确，可由运营直接处理",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-5a788a0335e840b1",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假宣传属于开放法律概念，需要法务结合具体描述、证据和监管口径判断是否构成虚假或误导，且后果严重，不宜由运营自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-ADM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "FSLR-2019",
+      "source_type": "法规",
+      "platform": null,
+      "title": "特殊医学用途配方食品广告分类管理规则",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "特殊医学用途配方食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "FSLR",
+        "source_article_id": "第三十七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "FSLR",
+          "article": "第三十七条",
+          "legal_level": 2,
+          "role": "based_on",
+          "text": "特殊医学用途配方食品中的特定全营养配方食品广告按照处方药广告管理，其他类别的特殊医学用途配方食品广告按照非处方药广告管理。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "特殊医学用途配方食品",
+            "特定全营养配方食品",
+            "处方药广告",
+            "非处方药广告"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "识别广告内容是否涉及特殊医学用途配方食品，并判断是否属于特定全营养配方食品类别，以确定适用的广告管理规则",
+        "decision": "若广告涉及特定全营养配方食品，则按处方药广告管理；若涉及其他特殊医学用途配方食品，则按非处方药广告管理"
+      },
+      "recall": {
+        "tags": [
+          "特殊医学用途配方食品",
+          "广告分类",
+          "处方药",
+          "非处方药"
+        ],
+        "vector_text": "特殊医学用途配方食品广告，特定全营养配方食品按处方药管理，其他按非处方药管理。特医食品广告，全营养配",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及产品分类管理，关键词可覆盖主要表述，但变体如'特医食品'、'全营养配方'等需语义辅助，适合作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T02:55:02",
+          "old_vector_text": "特殊医学用途配方食品广告管理规则，特定全营养配方食品按处方药广告管理，其他类别按非处方药广告管理",
+          "old_semantic_reason": "关键词可能无法覆盖所有特殊医学用途配方食品的变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "特殊医学用途配方食品",
+            "特医食品",
+            "处方药广告",
+            "非处方药广告",
+            "全营养配方食品",
+            "广告分类管理"
+          ],
+          "negative_signals_recommendation": [
+            "普通食品",
+            "保健食品",
+            "药品广告"
+          ],
+          "change_summary": "将原法条式描述改写为仿真违规文案集合，包含多种常见表述和变体。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 126
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 处方药. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "根据产品类别判定广告管理方式，特定全营养配方食品广告需符合处方药广告要求，其他类别需符合非处方药广告要求",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了特殊医学用途配方食品广告的分类管理方式，规则明确可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告产品是否为特殊医学用途配方食品及其具体类别",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供产品类别证明以判断适用的广告管理规则",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品注册证书或备案凭证",
+          "产品类别说明"
+        ],
+        "data_sources": [
+          "国家市场监管总局特殊食品信息查询平台"
+        ],
+        "note": "需后期核验产品是否属于特殊医学用途配方食品及具体类别"
+      },
+      "rule_uid": "RUID-701c33a0186144aa",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供产品类别证明（如注册证书）以判断适用处方药或非处方药广告管理规则，运营无法自行判断类别归属。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-虚假宣传-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "FSLR-2019",
+      "source_type": "法规",
+      "platform": null,
+      "title": "非保健食品不得声称具有保健功能",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品",
+          "普通食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "product_category"
+        ],
+        "logic": "product_category != '保健食品'"
+      },
+      "source_trace": {
+        "source_doc_id": "FSLR",
+        "source_article_id": "第三十八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "FSLR",
+          "article": "第三十八条",
+          "legal_level": 2,
+          "role": "based_on",
+          "text": "对保健食品之外的其他食品，不得声称具有保健功能。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健功能",
+            "保健",
+            "增强免疫力",
+            "辅助降血糖",
+            "辅助降血脂",
+            "改善睡眠",
+            "缓解体力疲劳",
+            "提高缺氧耐受力",
+            "对化学性肝损伤有辅助保护",
+            "祛黄褐斑",
+            "改善皮肤水份",
+            "改善皮肤油份",
+            "抗氧化",
+            "辅助改善记忆",
+            "促进排铅",
+            "清咽",
+            "促进泌乳",
+            "减肥",
+            "改善生长发育",
+            "增加骨密度",
+            "改善营养性贫血",
+            "调节肠道菌群",
+            "促进消化",
+            "通便",
+            "对胃黏膜损伤有辅助保护"
+          ],
+          "regex": [],
+          "context_signals": [
+            "产品类别为普通食品",
+            "产品类别为其他食品"
+          ],
+          "negative_signals": [
+            "产品类别为保健食品"
+          ]
+        },
+        "semantic_criteria": "若文案中声称产品具有保健功能（如增强免疫力、辅助降血脂等），且产品非保健食品，则违规",
+        "decision": "若检测到非保健食品文案中包含保健功能声称，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "虚假宣传",
+          "保健功能声称",
+          "普通食品"
+        ],
+        "vector_text": "普通食品也能增强免疫力！每天一杯，辅助降血糖、降血脂，改善睡眠，抗氧化，减肥瘦身，清咽润喉，通便排毒",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则适合语义召回，因为保健功能声称可能以变体、隐含或夸张方式表达，关键词难以穷举。vector_text模拟了普通食品宣称多种保健功能的违规文案，覆盖常见功能词和营销话术。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T02:55:10",
+          "old_vector_text": "非保健食品不得声称具有保健功能，包括增强免疫力、辅助降血糖、辅助降血脂、改善睡眠等具体保健功能表述",
+          "old_semantic_reason": "保健功能声称可能以变体或隐含方式表达，关键词可能漏召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "保健功能",
+            "普通食品",
+            "虚假宣传",
+            "功效声称",
+            "非保健食品",
+            "违规营销"
+          ],
+          "negative_signals_recommendation": [
+            "保健食品",
+            "蓝帽子",
+            "国食健字"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，增加多种保健功能声称的堆叠和营销话术，提升语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 162
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 保健功能、宣传、宣称、普通食品、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《中华人民共和国食品安全法实施条例》第三十八条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [
+          "本产品为普通饼干，具有增强免疫力的保健功能",
+          "这款饮料能辅助降血糖，适合糖尿病患者"
+        ],
+        "compliant": [
+          "本保健食品具有增强免疫力的保健功能（产品为保健食品）",
+          "本产品为普通饼干，口感酥脆"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止非保健食品声称保健功能，规则可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认产品是否为保健食品",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可通过产品类别字段直接判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-5beeb660318cf574",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需确认产品类别字段即可判断，运营可直接删除或替换违规声称。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-LBL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "FSLR-2019",
+      "source_type": "法规",
+      "platform": null,
+      "title": "特殊食品标签说明书与注册备案一致",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "特殊食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "FSLR",
+        "source_article_id": "第三十九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "FSLR",
+          "article": "第三十九条",
+          "legal_level": 2,
+          "role": "based_on",
+          "text": "特殊食品的标签、说明书内容应当与注册或者备案的标签、说明书一致。销售特殊食品，应当核对食品标签、说明书内容是否与注册或者备案的标签、说明书一致，不一致的不得销售。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品",
+            "特殊食品",
+            "标签",
+            "说明书",
+            "注册",
+            "备案"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中涉及保健食品或特殊食品的标签、说明书内容，需与注册或备案信息一致，不得出现不一致的描述。",
+        "decision": "若广告文案中提及的标签、说明书内容与注册或备案信息不符，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "标签标识",
+          "注册备案一致性",
+          "特殊食品"
+        ],
+        "vector_text": "这款保健食品的标签和说明书内容与注册备案信息完全一致，请放心购买。我们的产品标签严格按照国家注册备案标准制作，说明书内容与备案文件一模一样。特殊食品标签说明书必须与注册备案一致，我们保证完全符合。购买时请核对标签说明书是否与注册备案一致，不一致的不要买。我们的保健食品标签说明书都是按照注册备案内容来的，没有任何修改。",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及事实核验（标签说明书与注册备案一致），广告文案中很少直接提及不一致，语义召回容易误召回或漏召回，建议作为fallback辅助关键词。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T02:55:19",
+          "old_vector_text": "保健食品或特殊食品的标签、说明书内容必须与注册或备案信息一致，广告中不得出现不一致的描述。",
+          "old_semantic_reason": "关键词可能无法覆盖所有不一致表述，需语义理解辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健食品",
+            "标签说明书",
+            "注册备案",
+            "一致性",
+            "特殊食品"
+          ],
+          "negative_signals_recommendation": [
+            "不一致",
+            "修改",
+            "变更",
+            "不同"
+          ],
+          "change_summary": "将原法条式描述改写为仿真广告文案，模拟商家宣称一致性的表述，便于语义召回。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《中华人民共和国食品安全法实施条例》第三十九条，可能面临行政处罚。",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求修改至与注册备案一致",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "注册或备案的标签、说明书内容"
+        ],
+        "reason": "需要查询具体产品的注册或备案信息以判断广告内容是否一致。",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要比对广告内容与注册备案信息，属于关系判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要获取产品注册或备案的标签、说明书内容",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及法规合规性，需法务或专业审核人员判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品注册或备案的标签、说明书文件"
+        ],
+        "data_sources": [
+          "国家市场监督管理总局网站",
+          "省级食品安全监督管理部门网站"
+        ],
+        "note": "后期需接入资料核验系统，自动比对广告内容与注册备案信息。"
+      },
+      "rule_uid": "RUID-e1dd3bae81fcc2be",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "需要比对广告内容与注册备案文件，事实核验成本高且误判后果严重，必须法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-LBL-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "FSLR-2019",
+      "source_type": "法规",
+      "platform": null,
+      "title": "特殊食品不得与普通食品或药品混放销售",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "特殊食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "FSLR",
+        "source_article_id": "第三十九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "FSLR",
+          "article": "第三十九条",
+          "legal_level": 2,
+          "role": "based_on",
+          "text": "特殊食品不得与普通食品或者药品混放销售。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "特殊食品",
+            "普通食品",
+            "药品",
+            "混放",
+            "混放销售"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中不得描述或暗示特殊食品与普通食品或药品混放销售的场景。",
+        "decision": "若广告文案中明确提及或暗示特殊食品与普通食品或药品混放销售，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "混放销售",
+          "特殊食品",
+          "普通食品",
+          "药品"
+        ],
+        "vector_text": "特殊食品和普通食品一起卖，特殊食品和药品混着放，保健食品和普通食品混放销售，特殊食品与药品同柜陈列，",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text是法条改写，不适合语义召回；改写后模拟了多种混放销售的违规表述，覆盖同义表达和行业场景，适合作为fallback召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T02:55:28",
+          "old_vector_text": "特殊食品不得与普通食品或药品混放销售，广告中不得出现此类描述。",
+          "old_semantic_reason": "关键词可能无法覆盖所有暗示混放销售的表述，需语义理解辅助。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "混放销售",
+            "特殊食品",
+            "普通食品",
+            "药品",
+            "保健食品",
+            "混放",
+            "同柜销售"
+          ],
+          "negative_signals_recommendation": [
+            "不得混放",
+            "禁止混放",
+            "不能混放"
+          ],
+          "change_summary": "将法条式改写为仿真违规文案集合，覆盖多种混放销售表述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 449
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 普通食品、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": "违反《中华人民共和国食品安全法实施条例》第三十九条，可能面临行政处罚。",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求修改",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止混放销售，可直接判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营人员判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-e73465f087ca5da3",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接判断并修改文案中混放销售描述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "FSLR-2019",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止利用未依法取得资质认定的食品检验信息进行等级评定欺骗误导消费者",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "FSLR",
+        "source_article_id": "第四十三条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "FSLR",
+          "article": "第四十三条",
+          "legal_level": 2,
+          "role": "based_on",
+          "text": "任何单位和个人不得发布未依法取得资质认定的食品检验机构出具的食品检验信息，不得利用上述检验信息对食品、食品生产经营者进行等级评定，欺骗、误导消费者。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "检验信息",
+            "等级评定",
+            "资质认定",
+            "食品检验机构"
+          ],
+          "regex": [],
+          "context_signals": [
+            "食品检验",
+            "等级",
+            "评定"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否引用食品检验信息进行等级评定，且未提及检验机构已依法取得资质认定",
+        "decision": "若广告文案引用食品检验信息对保健食品进行等级评定，且未明确说明检验机构已依法取得资质认定，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "食品检验信息",
+          "等级评定",
+          "资质认定"
+        ],
+        "vector_text": "本产品经XX检验机构检测，被评为A级保健食品；经权威食品检验机构评定，本品为优质等级；国家级检测中心",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及利用食品检验信息进行等级评定，语义场景多样，关键词难以覆盖所有变体，适合语义召回作为主要方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T02:55:37",
+          "old_vector_text": "广告文案中引用食品检验机构出具的检验信息，对保健食品进行等级评定，欺骗或误导消费者",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "食品检验信息",
+            "等级评定",
+            "资质认定",
+            "欺骗误导",
+            "保健食品",
+            "检测认证"
+          ],
+          "negative_signals_recommendation": [
+            "依法取得资质认定",
+            "已取得资质",
+            "资质认定证书"
+          ],
+          "change_summary": "从规则描述改写为仿真违规文案集合，覆盖多种等级评定表述和规避表达，并建议提升为primary召回。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 186
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、欺骗、虚假、误导.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "本产品经XX检验机构检测，被评为A级保健食品",
+          "经权威食品检验机构评定，本品为优质等级"
+        ],
+        "compliant": [
+          "本产品经依法取得资质认定的XX检验机构检测，符合国家标准"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接禁止发布未依法取得资质认定的食品检验信息并进行等级评定，规则明确可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可初步判定，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-aaf05fea32f34de7",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营补充检验机构资质认定信息，但规则触发条件较明确，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-FC-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "FSLR-2019",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品标签说明书内容与注册或备案不一致",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "FSLR",
+        "source_article_id": "第六十八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "FSLR",
+          "article": "第六十八条",
+          "legal_level": 2,
+          "role": "based_on",
+          "text": "生产经营的特殊食品的标签、说明书内容与注册或者备案的标签、说明书不一致。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测保健食品的标签或说明书文字内容是否与注册或备案信息不一致",
+        "decision": ""
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "标签",
+          "说明书",
+          "注册",
+          "备案",
+          "不一致"
+        ],
+        "vector_text": "本产品功效成分含量远超国家标准，实际成分与备案不符；标签未按注册批件标注，擅自增加适用人群；说明书夸大保健功能，与备案内容不一致；产品名称与注册证不同；保健食品标签擅自修改，未按批准内容标注；说明书功效描述与注册信息矛盾；标签遗漏注册号；备案信息已变更但标签未更新；标签标注的保健功能超出注册范围；说明书中的食用方法与注册不一致；标签擅自添加未经批准的原料；保健食品标签与备案信息不符，涉嫌虚假标注；产品包装上的保健功能与注册批件不同；说明书中的不适宜人群与备案不一致；标签未标注注册备案号；保健食品标签内容与注册备案信息有出入；擅自更改标签中的保健功能声称；说明书中的注意事项与注册不一致；标签标注的规格与注册不同；保健食品标签与备案信息不一致，存在误导；产品标签未按注册批件标注生产日期；说明书中的贮藏方法与注册不一致；标签擅自删除注册批件中的警示语；保健食品标签与注册信息不符，涉嫌违规；说明书中的功效成分与注册不同；标签标注的适宜人群与备案不一致；保健食品标签内容与注册备案信息不符，违反规定。",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及标签说明书内容与注册备案信息的一致性比对，属于事实核验型规则，但违规文案中常出现具体的不一致描述（如功效、成分、人群等），因此语义召回可作为关键词的补充，但不宜作为主要方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T02:55:49",
+          "old_vector_text": "保健食品的标签或说明书内容与注册或备案的标签、说明书不一致",
+          "old_semantic_reason": "不一致性判断依赖语义比对，无法仅通过关键词召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健食品",
+            "标签",
+            "说明书",
+            "注册",
+            "备案",
+            "不一致",
+            "虚假标注",
+            "违规声称"
+          ],
+          "negative_signals_recommendation": [
+            "保健食品标签合规",
+            "标签备案流程",
+            "注册备案要求"
+          ],
+          "change_summary": "将原规则描述改写为具体违规文案集合，覆盖多种不一致场景（功效、成分、人群、规格等），提升语义召回覆盖面。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、备案号、批件、注册证. It also has content signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "依照食品安全法第一百二十五条第一款、本条例第七十五条的规定给予处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "注册或备案的标签说明书内容"
+        ],
+        "reason": "需要比对实际文案与注册备案信息，依赖外部资料",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要比对文案与注册备案信息是否一致，属于关系判断"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要注册或备案的标签说明书内容作为比对依据",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "不一致性判断需法务或专业审核人员比对注册备案信息",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "注册或备案的标签说明书"
+        ],
+        "data_sources": [
+          "国家市场监管总局特殊食品注册备案数据库"
+        ],
+        "note": "后期需接入注册备案信息核验接口"
+      },
+      "rule_uid": "RUID-385390706db3ccb0",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "需要比对注册或备案信息，运营无法自行判断是否一致，且后果严重，必须法务复核",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-FALSEADV-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "FSLR",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止利用会议、讲座、健康咨询等方式对食品进行虚假宣传",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "直播话术",
+          "短视频脚本",
+          "私域文案",
+          "图文文案",
+          "Banner文字",
+          "详情页文字"
+        ],
+        "channels": [
+          "会议",
+          "讲座",
+          "健康咨询"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "FSLR",
+        "source_article_id": "73",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "FSLR",
+          "article": "第七十三条",
+          "legal_level": 2,
+          "role": "based_on",
+          "text": "第七十三条 利用会议、讲座、健康咨询等方式对食品进行虚假宣传的，由县级以上人民政府食品安全监督管理部门责令消除影响，有违法所得的，没收违法所得；情节严重的，依照食品安全法第一百四十条第五款的规定进行处罚；属于单位违法的，还应当依照本条例第七十五条的规定对单位的法定代表人、主要负责人、直接负责的主管人员和其他直接责任人员给予处罚。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚假宣传",
+            "虚假",
+            "夸大",
+            "误导"
+          ],
+          "regex": [],
+          "context_signals": [
+            "会议",
+            "讲座",
+            "健康咨询"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否存在对保健食品功效、成分、效果等进行不实或夸大描述，且通过会议、讲座、健康咨询等场景传播的行为",
+        "decision": "若检测到通过会议、讲座、健康咨询等方式对保健食品进行虚假宣传，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "会议营销",
+          "讲座营销",
+          "健康咨询",
+          "保健食品"
+        ],
+        "vector_text": "会议中专家推荐这款保健食品，效果神奇，吃了一个月血糖就正常了；讲座上老师说这个产品能根治高血压，不用",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及通过会议、讲座、健康咨询等场景对保健食品进行虚假宣传，语义召回需覆盖各种夸大功效、虚构效果、误导消费者的表达方式，包括软性规避说法。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T02:55:59",
+          "old_vector_text": "利用会议、讲座、健康咨询等方式对保健食品进行虚假宣传，包括夸大功效、虚构效果、误导消费者等行为",
+          "old_semantic_reason": "关键词可能无法覆盖所有虚假宣传表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "会议营销",
+            "讲座营销",
+            "健康咨询",
+            "保健食品",
+            "夸大功效",
+            "虚构效果",
+            "误导消费者"
+          ],
+          "negative_signals_recommendation": [
+            "不能替代药物",
+            "理性消费",
+            "保健食品不是药品"
+          ],
+          "change_summary": "将原法条式描述改写为真实违规广告文案集合，覆盖会议、讲座、健康咨询等场景下的多种虚假宣传表达，包括软文、直播、私域等渠道。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 286
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 免费、功效、夸大、宣传、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "责令消除影响，没收违法所得；情节严重的，依照食品安全法第一百四十条第五款处罚；单位违法时对法定代表人、主要负责人等给予处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "reject",
+      "examples": {
+        "violation": [
+          "本产品通过健康讲座宣传能治愈所有慢性病，效果显著",
+          "会议中宣称该保健食品具有神奇疗效，远超实际功效"
+        ],
+        "compliant": [
+          "本产品为保健食品，不能替代药物，请理性消费"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止利用会议、讲座、健康咨询等方式进行虚假宣传，规则可直接适用"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "虚假宣传判定较为明确，可由运营直接处理",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-a751d4e9b07f3987",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "虚假宣传判定需结合具体宣传内容是否夸大或误导，运营可先补充会议/讲座/健康咨询场景下的宣传材料，再由法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-其他-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "FSLR",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品标签标识不得标注低于食品安全标准的企业标准指标",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "FSLR",
+        "source_article_id": "74",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "FSLR",
+          "article": "第七十四条",
+          "legal_level": 2,
+          "role": "based_on",
+          "text": "食品生产经营者生产经营的食品符合食品安全标准但不符合食品所标注的企业标准规定的食品安全指标的，由县级以上人民政府食品安全监督管理部门给予警告，并责令食品经营者停止经营该食品，责令食品生产企业改正；拒不停止经营或者改正的，没收不符合企业标准规定的食品安全指标的食品，货值金额不足1万元的，并处1万元以上5万元以下罚款，货值金额1万元以上的，并处货值金额5倍以上10倍以下罚款。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "该条文主要规范食品生产经营行为，但涉及企业标准标注，可延伸至广告宣传中不得虚假标注企业标准指标"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "企业标准",
+            "食品安全指标",
+            "符合企业标准"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣称产品符合企业标准，但实际企业标准中的食品安全指标低于食品安全标准，或未标注企业标准具体指标导致误导消费者",
+        "decision": "若广告文案中提及企业标准或标注企业标准指标，需核实该企业标准中的食品安全指标不低于食品安全标准；若低于，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "标签标识",
+          "企业标准",
+          "食品安全指标",
+          "保健食品"
+        ],
+        "vector_text": "本产品符合企业标准Q/XXX001，蛋白质含量≥5g/100g（实际食品安全标准要求≥10g/100",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣称、误导.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T16:59:14",
+          "old_vector_text": "保健食品广告中标注或提及企业标准，企业标准中的食品安全指标不得低于食品安全标准，否则构成违规",
+          "old_semantic_reason": "企业标准标注可能以多种表述出现，关键词召回可能遗漏，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "标签标识",
+            "企业标准",
+            "食品安全指标",
+            "保健食品"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": "警告、责令停止经营、罚款（1万-10万）",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若广告文案中标注企业标准且企业标准指标低于食品安全标准，则判定违规，建议修改或删除相关标注",
+      "examples": {
+        "violation": [
+          "本产品符合企业标准Q/XXX001，蛋白质含量≥5g/100g（实际食品安全标准要求≥10g/100g）"
+        ],
+        "compliant": [
+          "本产品符合企业标准Q/XXX001，食品安全指标不低于国家标准"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要判断广告中标注的企业标准指标是否低于食品安全标准，涉及标准对比"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核实企业标准文本及食品安全标准指标",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供企业标准文件以对比指标",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "企业标准文本",
+          "食品安全标准文件"
+        ],
+        "data_sources": [
+          "企业备案信息",
+          "国家食品安全标准数据库"
+        ],
+        "note": "后期需接入企业标准备案数据库和食品安全标准数据库进行自动比对"
+      },
+      "rule_uid": "RUID-fea3ce72204b2d43",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供企业标准文本与食品安全标准进行指标对比，运营无法自行判断是否违规",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-FALSE-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "FSLR-2019",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止发布未取得资质认定的食品检验机构出具的食品检验信息或利用该信息进行等级评定",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "FSLR",
+        "source_article_id": "80",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "FSLR",
+          "article": "第八十条",
+          "legal_level": 2,
+          "role": "based_on",
+          "text": "第八十条 发布未依法取得资质认定的食品检验机构出具的食品检验信息，或者利用上述检验信息对食品、食品生产经营者进行等级评定，欺骗、误导消费者的，由县级以上人民政府食品安全监督管理部门责令改正，有违法所得的，没收违法所得，并处10万元以上50万元以下罚款；拒不改正的，处50万元以上100万元以下罚款；构成违反治安管理行为的，由公安机关依法给予治安管理处罚。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "食品检验信息",
+            "检验机构",
+            "等级评定",
+            "资质认定"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否引用或提及食品检验信息，且该信息来源的检验机构未依法取得资质认定，或利用该信息对食品、食品生产经营者进行等级评定，可能欺骗、误导消费者。",
+        "decision": "若广告文案中引用未取得资质认定的食品检验机构出具的检验信息，或利用该信息进行等级评定，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "食品检验信息",
+          "资质认定",
+          "等级评定"
+        ],
+        "vector_text": "本产品经XX检验机构检测，质量等级为A级；经权威检测，品质卓越，荣获五星评级；第三方检测报告显示，本",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
+        "semantic_reason": "该规则涉及具体资质认定和等级评定，关键词可能无法覆盖所有变体表述，需语义召回辅助检测类似违规文案。",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "人工校准：该规则需要结合运营提交的资质、授权、专利、产地、防伪、检验或真实性证明材料进行事实核验。",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T16:59:22",
+          "old_vector_text": "广告文案中引用或利用未取得资质认定的食品检验机构出具的检验信息，或利用该信息对食品、食品生产经营者进行等级评定，欺骗、误导消费者。",
+          "old_semantic_reason": "关键词可能无法完全覆盖所有变体表述，需语义辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "虚假宣传",
+            "食品检验信息",
+            "资质认定",
+            "等级评定",
+            "检测报告",
+            "欺骗误导"
+          ],
+          "negative_signals_recommendation": [
+            "国家认可",
+            "资质认定",
+            "CMA",
+            "CNAS"
+          ],
+          "change_summary": "将原法条式描述改写为真实违规文案集合，包含多种变体表述和规避说法。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "由县级以上人民政府食品安全监督管理部门责令改正，有违法所得的，没收违法所得，并处10万元以上50万元以下罚款；拒不改正的，处50万元以上100万元以下罚款；构成违反治安管理行为的，由公安机关依法给予治安管理处罚。",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "本产品经XX检验机构检测，质量等级为A级（该机构未取得资质认定）"
+        ],
+        "compliant": [
+          "本产品经国家认可的检验机构检测，符合国家标准"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了发布未取得资质认定的食品检验信息或利用该信息进行等级评定的行为及处罚，可形成明确的广告审核规则。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核实广告中引用的检验机构是否取得资质认定",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "涉及检验机构资质认定的事实核查，需法务或专业审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "检验机构资质认定证书或证明文件"
+        ],
+        "data_sources": [
+          "国家市场监督管理总局资质认定查询系统"
+        ],
+        "note": "后期需接入检验机构资质认定数据库进行核验。"
+      },
+      "rule_uid": "RUID-e2e8360b7bc53bac",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准：该规则主要依赖事实资料核验，应先要求运营补充证明材料，再决定是否需要法务复核。",
+        "confidence": "high",
+        "calibration_status": "human_confirmed",
+        "calibrated_at": "2026-07-16T23:19:09",
+        "calibration_source": "manual_rule_layer_correction_20260716"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

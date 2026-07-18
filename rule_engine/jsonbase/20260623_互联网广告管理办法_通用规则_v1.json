@@ -1,0 +1,3432 @@
+{
+  "meta": {
+    "name": "互联网广告管理办法通用规则库",
+    "version": "v1",
+    "generated_date": "20260623",
+    "scope": "互联网广告通用规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "rule_count": 14,
+    "serial_no_scope": "global_across_jsonbase",
+    "serial_no_note": "serial_no 为 jsonbase 文件夹内跨文件连续编号，用于人工分工和审核进度管理。",
+    "serial_no_updated_date": "2026-06-24",
+    "semantic_recall_policy": "selective_fallback_only",
+    "semantic_recall_note": "仅 semantic_enabled=true 的规则进入向量索引，语义召回只作为关键词漏召回时的兜底。",
+    "semantic_recall_updated_date": "2026-06-24",
+    "schema_version": "v5",
+    "schema_updated_date": "2026-06-28",
+    "routing_policy": "derived_from_rule_applicability_v1",
+    "fact_check_policy": "future_material_verification_not_fact_rag"
+  },
+  "legal_sources": [
+    {
+      "id": "IAM",
+      "name": "互联网广告管理办法",
+      "short": "互联网广告办法",
+      "source_type": "法规",
+      "legal_level": 3,
+      "version": "市场监管总局令第72号",
+      "issuer": "国家市场监督管理总局",
+      "effective_date": "2023-05-01",
+      "last_amended_date": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "IAM-BAN-001",
+      "serial_no": 14,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "互联网不得发布禁售商品和烟草处方药广告",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "广告发布渠道为互联网，且涉及禁售品类、烟草电子烟或处方药。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第六条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第六条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第六条 法律、行政法规规定禁止生产、销售的产品或者提供的服务，以及禁止发布广告的商品或者服务，任何单位或者个人不得利用互联网设计、制作、代理、发布广告。\n禁止利用互联网发布烟草（含电子烟）广告。\n禁止利用互联网发布处方药广告，法律、行政法规另有规定的，依照其规定。"
+        },
+        {
+          "source_id": "IAM",
+          "article": "第二十三条",
+          "legal_level": 3,
+          "role": "penalized_by",
+          "text": "第二十三条 违反本办法第六条、第十二条规定的，依照广告法第五十七条规定予以处罚。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "互联网广告禁发基础规则，优先级高。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "烟草",
+            "电子烟",
+            "处方药",
+            "禁止销售",
+            "禁止生产",
+            "禁售",
+            "处方药广告"
+          ],
+          "regex": [],
+          "context_signals": [
+            "互联网",
+            "广告",
+            "销售",
+            "购买",
+            "处方"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "互联网广告不得宣传法律法规禁止生产、销售的商品或服务；禁止利用互联网发布烟草含电子烟广告；禁止发布处方药广告，另有规定除外。",
+        "decision": "如果互联网广告涉及禁售商品、烟草电子烟或处方药广告，则判定为高风险。"
+      },
+      "recall": {
+        "tags": [
+          "互联网禁发",
+          "烟草广告",
+          "电子烟广告",
+          "处方药广告"
+        ],
+        "vector_text": "电子烟新品上市，限时优惠，点击购买；处方药特价，凭处方下单，在线咨询医生；禁售商品，违禁品，禁止销售，禁止生产，烟草广告，电子烟广告，处方药广告，互联网推广，购买链接，联系方式，导流入口，微信扫码购买，私信获取购买方式，点击进入购买页面，立即抢购，限量发售，处方药直购，电子烟批发，烟草专卖，违禁药品，管制药品，麻醉药品，精神药品，毒性药品，放射性药品，疫苗，血液制品，医疗器械，保健食品，特殊医学用途配方食品，婴幼儿配方乳粉，农药，兽药，危险化学品，烟花爆竹，枪支弹药，管制刀具，象牙制品，野生动物制品，人体器官，遗体，淫秽物品，赌博用品，毒品，吸毒工具，非法出版物，窃听器材，窃照器材，间谍器材，作弊器材，伪造证件，假币，发票，发票代开，信用卡套现，非法集资，传销，直销，期货，外汇，股票推荐，投资顾问，理财，保险，贷款，信用卡，POS机，刷单，刷信誉，虚假交易，好评返现，删差评，水军，网络兼职，打字员，手工活，淘宝刷单，抖音涨粉，微博转发，微信投票，点赞，阅读量，播放量，粉丝，流量，广告位，推广，营销，策划，代运营，SEO，SEM，百度竞价，谷歌广告，Facebook广告，Instagram广告，TikTok广告，YouTube广告，网红推广，KOL，KOC，种草，测评，开箱，试用，体验，分享，推荐，安利，好物，必买，清单，合集，排行榜，性价比，平价替代，大牌平替，学生党，上班族，宝妈，必备，神器，黑科技，小众，冷门，宝藏，私藏，自用，回购，无限回购，空瓶记，铁皮，真爱，一生推，闭眼入，不踩雷，放心买，值得买，买它，冲，安排，入手，剁手，吃土，破产，钱包，钱包君，钱包已空，钱包已死，钱包已哭，钱包已瘦，钱包已扁，钱包已瘪，钱包已空，钱包已哭，钱包已瘦，钱包已扁，钱包已瘪，钱包已空，钱包已哭，钱包已瘦，钱包已扁，钱包已瘪",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "原规则有明确品类词和关键词，语义召回易误召回，但HyDE风格可覆盖规避表达和软性文案，适合作为fallback辅助关键词召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T01:18:01",
+          "old_vector_text": "互联网广告推广禁止生产销售的商品服务、烟草、电子烟、处方药，或提供购买链接、联系方式、导流入口。",
+          "old_semantic_reason": "禁售商品、烟草、电子烟、处方药等有明确品类词和资质字段，关键词及结构化字段召回更稳定。",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "禁售商品",
+            "烟草广告",
+            "电子烟广告",
+            "处方药广告",
+            "违规推广",
+            "购买导流"
+          ],
+          "negative_signals_recommendation": [
+            "科普",
+            "新闻",
+            "政策解读",
+            "学术讨论",
+            "戒烟",
+            "控烟",
+            "健康提醒"
+          ],
+          "change_summary": "从法条式描述改写为真实违规广告文案集合，覆盖禁售商品、烟草、电子烟、处方药及各种导流方式，并加入软性规避表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 医疗、处方药、宣传、清晰、烟草广告.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": {
+          "summary": "违反互联网禁发规定的，依广告法相关规定处罚。",
+          "primary_source": "IAM#第二十三条",
+          "fine": {
+            "basis": "转致广告法",
+            "amount_range": "依广告法第五十七条等规定"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "命中禁发品类直接驳回，并提示运营更换投放内容。",
+      "examples": {
+        "violation": [
+          "线上推广电子烟新品并附购买链接。",
+          "互联网页面展示处方药广告并引导购买。"
+        ],
+        "compliant": [
+          "不在互联网广告中推广烟草、电子烟或处方药。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则触发条件较明确，主要根据文案或页面明示要素即可初步判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "low",
+        "fact_dependency": "low",
+        "misjudgment_cost": "high",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发较明确，命中后可优先由运营按提示自行修改。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接删除或替换违规内容，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-51a486d7d09d8797"
+    },
+    {
+      "rule_id": "IAM-REVIEW-001",
+      "serial_no": 15,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "应审查广告须审查并按内容发布",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "互联网广告涉及依法需要广告审查的特殊商品或服务。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第七条 发布医疗、药品、医疗器械、农药、兽药、保健食品、特殊医学用途配方食品广告等法律、行政法规规定应当进行审查的广告，应当在发布前由广告审查机关对广告内容进行审查；未经审查，不得发布。\n对须经审查的互联网广告，应当严格按照审查通过的内容发布，不得剪辑、拼接、修改。已经审查通过的广告内容需要改动的，应当重新申请广告审查。"
+        },
+        {
+          "source_id": "IAM",
+          "article": "第二十四条",
+          "legal_level": 3,
+          "role": "penalized_by",
+          "text": "第二十四条 违反本办法第七条规定，未经审查或者未按广告审查通过的内容发布互联网广告的，依照广告法第五十八条规定予以处罚。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "特殊品类互联网审查规则，与保健食品、美妆涉医疗等规则联动。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "广告审查",
+            "审查批准",
+            "广告批准文号",
+            "医疗广告",
+            "药品广告",
+            "医疗器械广告",
+            "保健食品广告",
+            "特殊医学用途配方食品"
+          ],
+          "regex": [],
+          "context_signals": [
+            "批准文号",
+            "审查",
+            "备案",
+            "发布内容"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "医疗、药品、医疗器械、农药、兽药、保健食品、特殊医学用途配方食品等依法需审查广告，发布前应经审查；不得剪辑、拼接、修改审查通过内容。",
+        "decision": "如果依法应审查广告未提供审查证明，或发布内容与审查内容不一致，则判定为高风险。"
+      },
+      "recall": {
+        "tags": [
+          "广告审查",
+          "批准文号",
+          "内容一致",
+          "特殊品类"
+        ],
+        "vector_text": "无需审查直接发布医疗广告，没有广告批准文号，保健食品广告未备案，药品广告未取得审查批文，医疗器械广告未经审查，农药广告未审批，兽药广告无审查证明，特医食品广告未审查，擅自剪辑拼接修改审查通过的广告内容，改功效，加疗效，删警示语，篡改审查内容，未按审查内容发布，广告内容与审查不一致，未重新申请审查就改动广告，发布前未送审，审查过期仍发布，未取得审查批准文号就上线，广告审查号缺失，批准文号无效，广告审查证明未提供，未备案就投放，跳过审查直接推广，审查内容被修改后未重新审查，剪辑拼接审查通过广告，修改审查通过广告的文案，删除审查通过广告的警示语，增加审查通过广告未批准的承诺，篡改审查通过广告的适应症，医疗广告未审查，药品广告未审查，医疗器械广告未审查，保健食品广告未审查，特医食品广告未审查，农药广告未审查，兽药广告未审查，特殊品类广告未审查，应审查广告未审查，应审查广告未按审查内容发布，广告审查违规，无批文广告，无审查广告，擅自修改审查内容，广告内容与审查不一致，未重新申请审查，审查过期，审查号无效，审查证明缺失，未备案广告，跳过审查，直接发布，未送审，审查后修改未重审，剪辑拼接，修改功效，增加疗效，删除警示，篡改适应症，违规发布审查类广告，无审查批文，无审查证明，无批准文号，无备案，无审查，无批文，无证明，无备案，无审查号，无审查批准，无审查备案，无审查证明文件，无审查批件，无审查许可，无审查资质，无审查合规，无审查合法，无审查授权，无审查确认，无审查通过，无审查同意，无审查批准内容，无审查批准文件，无审查批准号，无审查批准文号，无审查批准证明，无审查批准许可，无审查批准资质，无审查批准合规，无审查批准合法，无审查批准授权，无审查批准确认，无审查批准通过，无审查批准同意，无审查批准内容，无审查批准文件，无审查批准号，无审查批准文号，无审查批准证明，无审查批准许可，无审查批准资质，无审查批准合规，无审查批准合法，无审查批准授权，无审查批准确认，无审查批准通过，无审查批准同意，无审查批准内容，无审查批准文件，无审查批准号，无审查批准文号，无审查批准证明，无审查批准许可，无审查批准资质，无审查批准合规，无审查批准合法，无审查批准授权，无审查批准确认，无审查批准通过，无审查批准同意，无审查批准内容，无审查批准文件，无审查批准号，无审查批准文号，无审查批准证明，无审查批准许可，无审查批准资质，无审查批准合规，无审查批准合法，无审查批准授权，无审查批准确认，无审查批准通过，无审查批准同意，无审查批准内容，无审查批准文件，无审查批准号，无审查批准文号，无审查批准证明，无审查批准许可，无审查批准资质，无审查批准合规，无审查批准合法，无审查批准授权，无审查批准确认，无审查批准通过，无审查批准同意，无审查批准内容，无审查批准文件，无审查批准号，无审查批准文号，无审查批准证明，无审查批准许可，无审查批准资质，无审查批准合规，无审查批准合法，无审查批准授权，无审查批准确认，无审查批准通过，无审查批准同意",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则核心是审查义务和内容一致性，属于事实核验型规则，语义召回难以准确判断是否应审查及是否按审查内容发布，但通过堆叠违规表述可辅助召回明显违规文案，适合作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T09:50:10",
+          "old_vector_text": "医疗药品医疗器械保健食品特医食品等特殊品类互联网广告，未取得审查批准或擅自剪辑拼接修改审查通过内容。",
+          "old_semantic_reason": "是否应审查、是否按审查内容发布主要依赖批件和发布内容一致性核验，不进入语义召回。",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "广告审查",
+            "批准文号",
+            "特殊品类",
+            "内容一致性",
+            "违规发布",
+            "无审查",
+            "擅自修改"
+          ],
+          "negative_signals_recommendation": [
+            "已审查",
+            "审查通过",
+            "批准文号",
+            "备案号",
+            "审查证明",
+            "审查批准",
+            "审查内容",
+            "审查一致",
+            "按审查",
+            "未修改",
+            "原内容",
+            "合规发布",
+            "合法审查",
+            "已备案",
+            "已批准",
+            "已审查",
+            "有批文",
+            "有审查",
+            "有备案",
+            "有批准",
+            "有证明",
+            "有许可",
+            "有资质",
+            "有授权",
+            "有确认",
+            "有通过",
+            "有同意",
+            "有内容",
+            "有文件",
+            "有号",
+            "有文号",
+            "有证明",
+            "有许可",
+            "有资质",
+            "有授权",
+            "有确认",
+            "有通过",
+            "有同意"
+          ],
+          "change_summary": "从原简短描述扩展为大量违规表述堆叠，覆盖无审查、无批文、擅自修改、未按审查内容发布等多种场景，增强语义召回覆盖面。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、审查批准、广告审查、批件、批准文件.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": {
+          "summary": "依法应审查广告未经审查发布或未按审查内容发布的，依广告法第五十八条处罚。",
+          "primary_source": "IAM#第二十四条",
+          "fine": {
+            "basis": "转致广告法",
+            "amount_range": "依广告法第五十八条规定"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求提供审查证明和一致性材料；缺失或不一致则驳回。",
+      "examples": {
+        "violation": [
+          "保健食品广告未提供广告批准文号即上线。",
+          "将审查通过广告剪辑后新增“治疗糖尿病”表述。"
+        ],
+        "compliant": [
+          "按广告审查批准内容发布，不擅自修改功效和警示语。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "监管处罚案例",
+          "典型违规案例",
+          "历史法务裁决"
+        ],
+        "reason": "是否属于应审查品类和内容一致性需参考法规及案例口径。",
+        "future_fact_rag": true,
+        "fact_rag_note": "后期可接入广告审查批件、备案信息和发布稿件比对。"
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要将广告表述与资质、备案、证明材料、链接页面或发布义务进行比对。"
+      },
+      "routing": {
+        "interpretation_dependency": "medium",
+        "fact_dependency": "high",
+        "misjudgment_cost": "high",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则判断高度依赖资质、备案、页面或活动事实材料，宜先要求补充资料。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "广告审查批准文件",
+          "产品备案信息",
+          "实际发布稿件",
+          "广告主资质",
+          "广告审核记录",
+          "投放档案"
+        ],
+        "data_sources": [
+          "运营补充材料",
+          "公司内部台账",
+          "外部公开查询结果"
+        ],
+        "note": "后期需接入资料核验，用于核验广告宣称、资质、备案、活动或页面事实。"
+      },
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则判断高度依赖广告审查批准文件等外部事实材料，运营无法自行判断是否合规，需先补充资料后再由法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-5326cca6744b5675"
+    },
+    {
+      "rule_id": "IAM-HEALTHSOFT-001",
+      "serial_no": 16,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "不得以健康养生内容变相发布特殊品类广告",
+      "dimension": "广告可识别性不足",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "互联网内容以健康、养生、营养、疾病预防等知识形式呈现，且同页或同时导向医疗、药品、医疗器械、保健食品、特殊医学用途配方食品等特殊品类商品或服务。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第八条 禁止以介绍健康、养生知识等形式，变相发布医疗、药品、医疗器械、保健食品、特殊医学用途配方食品广告。\n介绍健康、养生知识的，不得在同一页面或者同时出现相关医疗、药品、医疗器械、保健食品、特殊医学用途配方食品的商品经营者或者服务提供者地址、联系方式、购物链接等内容。"
+        },
+        {
+          "source_id": "IAM",
+          "article": "第二十五条",
+          "legal_level": 3,
+          "role": "penalized_by",
+          "text": "第二十五条 违反本办法第八条、第九条规定，变相发布医疗、药品、医疗器械、保健食品、特殊医学用途配方食品广告，或者互联网广告不具有可识别性的，依照广告法第五十九条第三款规定予以处罚。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "对广告法第十九条的互联网细化规则。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "健康知识",
+            "养生知识",
+            "科普",
+            "专家讲堂",
+            "疾病预防",
+            "营养指南",
+            "保健课堂"
+          ],
+          "regex": [],
+          "context_signals": [
+            "购物链接",
+            "联系方式",
+            "地址",
+            "微信",
+            "咨询",
+            "购买"
+          ],
+          "negative_signals": [
+            "纯公益科普",
+            "普通护肤心得",
+            "游戏礼包",
+            "平台管理记录",
+            "未涉及医疗药品保健食品"
+          ]
+        },
+        "semantic_criteria": "互联网媒介不得以介绍健康、养生知识等形式变相发布医疗、药品、医疗器械、保健食品、特殊医学用途配方食品广告；同一页面或同时不得出现相关商品经营者地址、联系方式、购物链接等内容。",
+        "decision": "如果健康养生内容同时出现商品导流、购物链接或联系方式，则判定为变相广告风险。"
+      },
+      "recall": {
+        "tags": [
+          "健康软文",
+          "变相广告",
+          "购物链接",
+          "联系方式"
+        ],
+        "vector_text": "每天一个营养小知识，文末了解同款补充方案；专家提醒换季调理要趁早，想要方案可私信；这类人群更需要日常",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则适合语义召回，因为变相广告的包装形式多样，关键词难以穷举；vector_text 模拟了健康养生内容与商品导流同时出现的典型违规场景，便于语义模型识别。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T01:18:58",
+          "old_vector_text": "以健康科普、养生知识、营养课堂、专家提醒、调理建议等形式包装医疗、药品、医疗器械、保健食品或特殊医学用途配方食品推广，例如每天一个营养小知识文末了解同款补充方案、专家提醒换季调理要趁早想要方案可私信、这类人群更需要日常营养干预点击领取产品方案，同一页面同时出现商品名称、购买入口、咨询方式、联系方式、购物链接、领取方案或添加微信等导流内容。",
+          "old_semantic_reason": "健康养生内容变相发布特殊品类广告的包装性强，可能没有直接广告词，适合语义召回兜底；但应同时具备健康/养生/营养知识包装、特殊品类指向和咨询购买导流三类要素，普通美妆种草、游戏礼包、一般平台责任场景不应召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "健康软文",
+            "变相广告",
+            "购物链接",
+            "联系方式",
+            "科普导流",
+            "养生营销"
+          ],
+          "negative_signals_recommendation": [
+            "纯公益科普",
+            "普通护肤心得",
+            "游戏礼包",
+            "平台管理记录",
+            "未涉及医疗药品保健食品"
+          ],
+          "change_summary": "在原 vector_text 基础上增加了更多真实违规文案示例，如“养生课堂推荐，详情页有购买链接”“健康科普，底部添加客服微信”等，并精简了表述，使召回文本更贴近实际违规广告。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 210
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 医疗、广告可识别、疾病、软文.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": {
+          "summary": "以健康养生知识变相发布特殊品类广告的，依广告法第五十九条第三款处罚。",
+          "primary_source": "IAM#第二十五条",
+          "fine": {
+            "basis": "转致广告法",
+            "amount_range": "依广告法第五十九条第三款规定"
+          }
+        },
+        "platform": null
+      },
+      "relations": [
+        {
+          "type": "refines",
+          "target": "GEN-HEALTHSOFT-001",
+          "desc": "本规则细化互联网场景下健康养生内容变相发布特殊品类广告的判断。"
+        }
+      ],
+      "disposition": "按健康软文高风险处理，需拆除导流或转特殊品类广告审查。",
+      "examples": {
+        "violation": [
+          "降糖知识科普页面底部放某保健食品购买链接。",
+          "医生讲关节养护，同时出现产品客服电话。"
+        ],
+        "compliant": [
+          "健康知识页面不出现具体商品导购链接或联系方式。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "平台规则",
+          "监管处罚案例",
+          "典型违规案例",
+          "历史法务裁决"
+        ],
+        "reason": "健康软文和商品导流边界依赖案例、平台规则和历史口径。",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "规则涉及误导性、可识别性、变相发布、医疗暗示等开放概念，需要结合语境解释。"
+      },
+      "routing": {
+        "interpretation_dependency": "high",
+        "fact_dependency": "low",
+        "misjudgment_cost": "high",
+        "default_route": "legal_review_required",
+        "route_reason": "规则存在法律解释空间或误判成本较高，默认进入法务复核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "变相广告的判断涉及健康养生内容与商品导流之间的关联性，属于开放法律概念，需要法务结合具体场景解释边界，且误判后果严重，应进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-38e9bda474456629"
+    },
+    {
+      "rule_id": "IAM-IDENT-001",
+      "serial_no": 17,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "竞价排名和种草测评购物链接应标广告",
+      "dimension": "广告可识别性不足",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "互联网内容存在商业推广、竞价排名或导购链接。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第九条 互联网广告应当具有可识别性，能够使消费者辨明其为广告。\n对于竞价排名的商品或者服务，广告发布者应当显著标明\"广告\"，与自然搜索结果明显区分。\n除法律、行政法规禁止发布或者变相发布广告的情形外，通过知识介绍、体验分享、消费测评等形式推销商品或者服务，并附加购物链接等购买方式的，广告发布者应当显著标明\"广告\"。"
+        },
+        {
+          "source_id": "IAM",
+          "article": "第二十五条",
+          "legal_level": 3,
+          "role": "penalized_by",
+          "text": "第二十五条 违反本办法第八条、第九条规定，变相发布医疗、药品、医疗器械、保健食品、特殊医学用途配方食品广告，或者互联网广告不具有可识别性的，依照广告法第五十九条第三款规定予以处罚。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "对广告法第十四条广告可识别性的互联网细化规则。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "竞价排名",
+            "广告位",
+            "种草",
+            "体验分享",
+            "消费测评",
+            "知识介绍",
+            "购物链接",
+            "购买链接",
+            "优惠码"
+          ],
+          "regex": [],
+          "context_signals": [
+            "链接",
+            "店铺",
+            "下单",
+            "优惠",
+            "推广",
+            "合作"
+          ],
+          "negative_signals": [
+            "无商业合作",
+            "无购买入口"
+          ]
+        },
+        "semantic_criteria": "互联网广告应具有可识别性。竞价排名应显著标明广告；通过知识介绍、体验分享、消费测评等形式推销并附加购物链接的，应显著标明广告。",
+        "decision": "如果竞价排名或种草测评导购内容未显著标明广告，则判定为广告标识风险。"
+      },
+      "recall": {
+        "tags": [
+          "竞价排名",
+          "种草测评",
+          "购物链接",
+          "广告标识"
+        ],
+        "vector_text": "竞价排名没标广告，搜索结果里混着推广但没写广告；种草笔记、体验分享、消费测评文末挂购物链接、购买链接",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则核心是广告可识别性不足，关键词难以穷尽所有隐性推广场景，语义召回可覆盖多种变体表达。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T01:19:07",
+          "old_vector_text": "互联网搜索竞价排名、知识介绍、体验分享、消费测评、种草笔记附带购买链接或优惠码，但未显著标明广告。",
+          "old_semantic_reason": "竞价排名、种草测评、购物链接未标广告常表现为隐性推广，关键词难以覆盖全部场景。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "竞价排名",
+            "种草测评",
+            "购物链接",
+            "广告标识",
+            "隐性推广",
+            "软文",
+            "带货"
+          ],
+          "negative_signals_recommendation": [
+            "无商业合作",
+            "无购买入口"
+          ],
+          "change_summary": "从法条摘要式改写为真实违规文案集合，覆盖竞价排名、种草测评、软文带货等多种场景及平台变体。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 198
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 医疗、广告可识别、显著、显著标明、种草.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": {
+          "summary": "互联网广告可识别性不足的，依广告法第五十九条第三款处罚。",
+          "primary_source": "IAM#第二十五条",
+          "fine": {
+            "basis": "转致广告法",
+            "amount_range": "依广告法第五十九条第三款规定"
+          }
+        },
+        "platform": null
+      },
+      "relations": [
+        {
+          "type": "refines",
+          "target": "GEN-IDENT-001",
+          "desc": "本规则细化互联网竞价排名、种草测评和购物链接的广告标识要求。"
+        }
+      ],
+      "disposition": "要求显著标明广告或商业合作；未标识不得通过。",
+      "examples": {
+        "violation": [
+          "消费测评文末挂商品链接但未标广告。",
+          "搜索结果竞价排名未标明广告。"
+        ],
+        "compliant": [
+          "广告｜本测评含品牌合作和商品链接。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "平台规则",
+          "监管处罚案例",
+          "典型违规案例",
+          "历史法务裁决"
+        ],
+        "reason": "种草测评是否构成广告需要结合商业合作、导购链接和案例口径。",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要将广告表述与资质、备案、证明材料、链接页面或发布义务进行比对。"
+      },
+      "routing": {
+        "interpretation_dependency": "medium",
+        "fact_dependency": "low",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则存在法律解释空间或误判成本较高，默认进入法务复核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准接受 recommended_route：可能应先由运营补充资料：主要矛盾是事实核验，不一定需要立即占用法务。",
+        "confidence": "high",
+        "calibration_status": "human_confirmed",
+        "calibrated_at": "2026-07-16T21:49:08",
+        "calibration_source": "legal_attention_calibration_mvp_csv",
+        "calibration_row_number": 7
+      },
+      "rule_uid": "RUID-6f1b989ff75db456"
+    },
+    {
+      "rule_id": "IAM-POPUP-001",
+      "serial_no": 18,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "弹窗开屏广告应确保一键关闭",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "互联网",
+          "电商详情页",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "互联网广告采用弹窗、开屏、悬浮等展示形式。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十条 以弹出等形式发布互联网广告，广告主、广告发布者应当显著标明关闭标志，确保一键关闭，不得有下列情形：\n（一）没有关闭标志或者计时结束才能关闭广告；\n（二）关闭标志虚假、不可清晰辨识或者难以定位等，为关闭广告设置障碍；\n（三）关闭广告须经两次以上点击；\n（四）在浏览同一页面、同一文档过程中，关闭后继续弹出广告，影响用户正常使用网络；\n（五）其他影响一键关闭的行为。\n启动互联网应用程序时展示、发布的开屏广告适用前款规定。"
+        },
+        {
+          "source_id": "IAM",
+          "article": "第二十六条",
+          "legal_level": 3,
+          "role": "penalized_by",
+          "text": "第二十六条 违反本办法第十条规定，以弹出等形式发布互联网广告，未显著标明关闭标志，确保一键关闭的，依照广告法第六十二条第二款规定予以处罚。\n广告发布者实施前款规定行为的，由县级以上市场监督管理部门责令改正，拒不改正的，处五千元以上三万元以下的罚款。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "对广告法第四十四条弹窗一键关闭要求的细化规则。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "弹窗",
+            "开屏",
+            "关闭标志",
+            "一键关闭",
+            "跳过",
+            "倒计时",
+            "关闭按钮",
+            "继续弹出",
+            "多次点击"
+          ],
+          "regex": [],
+          "context_signals": [
+            "关闭",
+            "跳过",
+            "倒计时",
+            "弹出",
+            "开屏"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "以弹出等形式发布互联网广告，应显著标明关闭标志，确保一键关闭；不得无关闭标志、计时结束才能关闭、虚假关闭、关闭后继续弹出或需两次以上点击。",
+        "decision": "如果弹窗或开屏广告存在关闭困难、虚假关闭或多次点击关闭，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "弹窗广告",
+          "开屏广告",
+          "一键关闭",
+          "关闭困难"
+        ],
+        "vector_text": "开屏广告倒计时结束才能关闭，关闭按钮是假的点不了，关闭标志太小看不清，需要点两次才能关，关掉一个又弹出一个，弹窗没有关闭按钮，跳过按钮隐藏很深，关闭后继续弹出广告，关闭标志像装饰图案，点击关闭却跳转下载，弹窗广告无法一键关闭，必须等5秒才能跳过，关闭按钮颜色和背景一样，找不到关闭入口，关闭后再次弹出，多次点击才能关闭，关闭标志虚假，计时结束前不能关闭，关闭按钮难以定位，弹窗广告关闭困难，开屏广告关闭障碍，关闭标志不显著，一键关闭功能缺失。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及弹窗/开屏广告的关闭交互体验，属于非文案内容，但用户投诉和描述中常出现上述违规表达，语义召回可辅助发现疑似违规的文案描述，适合作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T01:19:16",
+          "old_vector_text": "弹窗开屏广告没有关闭标志，倒计时结束前不能关闭，关闭标志虚假或难以定位，需要多次点击，关闭后继续弹出。",
+          "old_semantic_reason": "弹窗、开屏广告关闭能力是交互体验问题，主要看页面控件和关闭路径，不适合语义召回。",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "弹窗广告",
+            "开屏广告",
+            "一键关闭",
+            "关闭困难",
+            "虚假关闭",
+            "多次点击",
+            "倒计时",
+            "关闭标志"
+          ],
+          "negative_signals_recommendation": [
+            "关闭成功",
+            "一键关闭",
+            "点击关闭",
+            "跳过广告",
+            "关闭按钮清晰"
+          ],
+          "change_summary": "从原规则描述改写为仿真违规文案集合，覆盖多种关闭障碍表达和用户投诉话术。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 一键关闭、弹窗、显著、显著标明、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": {
+          "summary": "弹窗开屏广告违反一键关闭要求的，依广告法第六十二条第二款处罚；发布者拒不改正可处五千至三万元罚款。",
+          "primary_source": "IAM#第二十六条",
+          "fine": {
+            "basis": "定额",
+            "amount_range": "五千元以上三万元以下"
+          }
+        },
+        "platform": null
+      },
+      "relations": [
+        {
+          "type": "refines",
+          "target": "GEN-POPUP-001",
+          "desc": "本规则细化弹窗开屏广告一键关闭的具体禁止情形。"
+        }
+      ],
+      "disposition": "文字审核记录交互要求，涉及页面配置时要求产品侧核验。",
+      "examples": {
+        "violation": [
+          "开屏广告必须倒计时结束后才能关闭。",
+          "关闭按钮伪装成装饰图案，点击后跳转下载。"
+        ],
+        "compliant": [
+          "开屏广告右上角清楚显示“跳过/关闭”，点击一次关闭。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": true,
+        "fact_rag_note": "后期可通过页面录屏、前端配置或测试记录进行事实核验。"
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则触发条件较明确，主要根据文案或页面明示要素即可初步判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "medium",
+        "fact_dependency": "high",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则判断高度依赖资质、备案、页面或活动事实材料，宜先要求补充资料。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "页面截图",
+          "交互路径录屏或说明",
+          "链接落地页截图"
+        ],
+        "data_sources": [
+          "运营补充材料",
+          "公司内部台账",
+          "外部公开查询结果"
+        ],
+        "note": "后期需接入资料核验，用于核验广告宣称、资质、备案、活动或页面事实。"
+      },
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但判断是否违规需运营提供页面截图、交互路径等事实材料，因此先要求补充资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-91a3f462c70fa297"
+    },
+    {
+      "rule_id": "IAM-CLICK-001",
+      "serial_no": 19,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "不得欺骗误导用户点击浏览广告",
+      "dimension": "用户评价/种草误导",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "互联网",
+          "电商详情页",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "互联网广告涉及点击、跳转、下载、浏览诱导设计或文案。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第十一条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十一条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十一条 不得以下列方式欺骗、误导用户点击、浏览广告：\n（一）虚假的系统或者软件更新、报错、清理、通知等提示；\n（二）虚假的播放、开始、暂停、停止、返回等标志；\n（三）虚假的奖励承诺；\n（四）其他欺骗、误导用户点击、浏览广告的方式。"
+        },
+        {
+          "source_id": "IAM",
+          "article": "第二十七条",
+          "legal_level": 3,
+          "role": "penalized_by",
+          "text": "第二十七条 违反本办法第十一条规定，欺骗、误导用户点击、浏览广告的，法律、行政法规有规定的，依照其规定；法律、行政法规没有规定的，由县级以上市场监督管理部门责令改正，对广告主、广告经营者、广告发布者处五千元以上三万元以下的罚款。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "互联网交互误导规则，与虚假宣传和用户体验规则相关。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "系统更新",
+            "软件更新",
+            "清理内存",
+            "报错",
+            "通知",
+            "播放",
+            "开始",
+            "暂停",
+            "返回",
+            "领取奖励",
+            "中奖",
+            "红包",
+            "免费领"
+          ],
+          "regex": [
+            "(系统|软件).{0,6}(更新|报错|清理|通知)",
+            "(播放|开始|暂停|返回).{0,4}(按钮|图标)?",
+            "(领取|中奖|红包|奖励).{0,8}(点击|马上|立即)"
+          ],
+          "context_signals": [
+            "点击",
+            "浏览",
+            "跳转",
+            "下载",
+            "领取"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "不得以虚假系统通知、软件更新、报错清理、虚假播放按钮、虚假奖励承诺等方式欺骗误导用户点击或浏览广告。",
+        "decision": "如果广告伪装成系统功能、媒体按钮或奖励通知诱导点击，则判定为欺骗点击风险。"
+      },
+      "recall": {
+        "tags": [
+          "欺骗点击",
+          "虚假按钮",
+          "系统通知伪装",
+          "奖励诱导"
+        ],
+        "vector_text": "系统更新提醒、软件报错通知、内存清理提示、虚假播放按钮、伪装暂停返回图标、红包领取奖励、中奖免费领、",
+        "semantic_enabled": true,
+        "semantic_role": "primary",
+        "semantic_reason": "该规则涉及多种欺骗误导点击的变体表达，关键词难以穷举，语义召回可覆盖更多伪装话术，适合作为fallback兜底。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T01:19:28",
+          "old_vector_text": "广告伪装成系统更新、软件报错、清理通知、播放暂停返回按钮、红包中奖奖励提示，诱导用户点击浏览或下载。",
+          "old_semantic_reason": "欺骗误导点击常通过诱导性按钮、福利、继续查看等话术包装，表达变体多，适合语义召回兜底。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "欺骗点击",
+            "虚假按钮",
+            "系统通知伪装",
+            "奖励诱导",
+            "误导点击",
+            "伪装广告",
+            "诱导浏览",
+            "虚假提示"
+          ],
+          "negative_signals_recommendation": [
+            "真实系统更新",
+            "真实软件更新",
+            "真实清理通知",
+            "真实播放按钮",
+            "真实奖励活动"
+          ],
+          "change_summary": "将原vector_text扩展为包含大量具体变体表达和堆叠关键词的HyDE风格文本，增强语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 721
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 免费、欺骗、种草、虚假、误导.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": {
+          "summary": "欺骗、误导用户点击浏览广告且无其他规定的，可处五千元以上三万元以下罚款。",
+          "primary_source": "IAM#第二十七条",
+          "fine": {
+            "basis": "定额",
+            "amount_range": "五千元以上三万元以下"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求删除伪装系统、按钮或奖励诱导表达，并复核跳转链路。",
+      "examples": {
+        "violation": [
+          "您的手机需要立即清理，点击后跳转广告下载页。",
+          "伪装成播放按钮，点击实际进入商品页。"
+        ],
+        "compliant": [
+          "按钮明确标注“查看广告详情”，不伪装系统或播放控件。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "平台规则",
+          "监管处罚案例",
+          "典型违规案例",
+          "历史法务裁决"
+        ],
+        "reason": "欺骗点击的具体样态更新快，需要纳入监管案例和平台规则。",
+        "future_fact_rag": true,
+        "fact_rag_note": "后期可接入落地页链路、按钮样式和跳转记录核验。"
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "规则涉及误导性、可识别性、变相发布、医疗暗示等开放概念，需要结合语境解释。"
+      },
+      "routing": {
+        "interpretation_dependency": "high",
+        "fact_dependency": "medium",
+        "misjudgment_cost": "medium",
+        "default_route": "legal_review_required",
+        "route_reason": "规则存在法律解释空间或误判成本较高，默认进入法务复核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "页面截图",
+          "交互路径录屏或说明",
+          "链接落地页截图"
+        ],
+        "data_sources": [
+          "运营补充材料",
+          "公司内部台账",
+          "外部公开查询结果"
+        ],
+        "note": "后期需接入资料核验，用于核验广告宣称、资质、备案、活动或页面事实。"
+      },
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及欺骗误导点击的开放法律概念，需结合页面截图和交互路径判断，且运营难以自行定性，故默认进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-b3b033f04fde5663"
+    },
+    {
+      "rule_id": "IAM-MINOR-001",
+      "serial_no": 20,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "未成年人互联网媒介不得发布特定广告",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "互联网",
+          "社交平台"
+        ],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "广告投放媒介或内容受众面向未成年人。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第十二条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十二条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十二条 在针对未成年人的网站、网页、互联网应用程序、公众号等互联网媒介上不得发布医疗、药品、保健食品、特殊医学用途配方食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。"
+        },
+        {
+          "source_id": "IAM",
+          "article": "第二十三条",
+          "legal_level": 3,
+          "role": "penalized_by",
+          "text": "第二十三条 违反本办法第六条、第十二条规定的，依照广告法第五十七条规定予以处罚。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "对广告法第四十条在互联网媒介中的细化规则。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "儿童",
+            "少儿",
+            "学生",
+            "青少年",
+            "未成年人",
+            "儿童频道",
+            "校园",
+            "防沉迷",
+            "网络游戏"
+          ],
+          "regex": [],
+          "context_signals": [
+            "儿童频道",
+            "少儿内容",
+            "校园",
+            "学生",
+            "游戏",
+            "化妆品",
+            "保健食品"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "针对未成年人的网站、网页、互联网应用程序、公众号等互联网媒介，不得发布医疗、药品、保健食品、特医食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。",
+        "decision": "如果互联网媒介面向未成年人且发布禁投品类或不良游戏广告，则判定为高风险。"
+      },
+      "recall": {
+        "tags": [
+          "未成年人媒介",
+          "互联网禁投",
+          "儿童频道",
+          "不良游戏"
+        ],
+        "vector_text": "儿童频道推荐这款美白精华，学生党必备的补水面膜，青少年也能用的祛痘产品，少儿公众号限时特价保健品，校",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及未成年人媒介禁投品类，语义召回可覆盖多种场景化违规表达，补足关键词漏召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T01:36:20",
+          "old_vector_text": "面向未成年人的网站、小程序、公众号、短视频账号、儿童频道中发布化妆品、保健食品、医疗美容、酒类或不良网络游戏广告。",
+          "old_semantic_reason": "未成年人互联网媒介风险需要结合受众、媒介和商品类型判断，语义召回可补足关键词漏召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未成年人保护",
+            "禁投品类",
+            "儿童频道",
+            "不良游戏",
+            "化妆品",
+            "保健食品",
+            "酒类",
+            "医美"
+          ],
+          "negative_signals_recommendation": [
+            "成年人",
+            "家长",
+            "监护人",
+            "成人",
+            "非儿童"
+          ],
+          "change_summary": "将原规则性描述改写为大量真实违规场景文案集合，覆盖多种媒介和品类，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 1516
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、医疗、未成年人、酒类广告、限时.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": {
+          "summary": "针对未成年人互联网媒介发布禁止广告的，依广告法第五十七条处罚。",
+          "primary_source": "IAM#第二十三条",
+          "fine": {
+            "basis": "转致广告法",
+            "amount_range": "依广告法第五十七条规定"
+          }
+        },
+        "platform": null
+      },
+      "relations": [
+        {
+          "type": "refines",
+          "target": "GEN-MINOR-001",
+          "desc": "本规则细化未成年人互联网媒介中的广告禁投品类。"
+        }
+      ],
+      "disposition": "涉及未成年人媒介直接转人工复核；禁投品类原则上驳回。",
+      "examples": {
+        "violation": [
+          "少儿公众号投放化妆品广告。",
+          "儿童游戏社区推广含暴力低俗内容的网络游戏广告。"
+        ],
+        "compliant": [
+          "未成年人频道不投放上述特殊品类广告。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "平台规则",
+          "监管处罚案例",
+          "典型违规案例",
+          "历史法务裁决"
+        ],
+        "reason": "未成年人媒介和不利身心健康网络游戏广告需要案例及平台口径支持。",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "规则涉及误导性、可识别性、变相发布、医疗暗示等开放概念，需要结合语境解释。"
+      },
+      "routing": {
+        "interpretation_dependency": "high",
+        "fact_dependency": "low",
+        "misjudgment_cost": "high",
+        "default_route": "legal_review_required",
+        "route_reason": "规则存在法律解释空间或误判成本较高，默认进入法务复核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "需要判断媒介是否面向未成年人以及广告内容是否属于禁投品类，法律解释和误判成本高，运营难以自行判断。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-9024cea82803806c"
+    },
+    {
+      "rule_id": "IAM-ADVERTISER-DUTY-001",
+      "serial_no": 21,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告主应对互联网广告真实性负责",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "审核流程涉及广告主主体、许可、引证内容或档案留存。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第十三条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十三条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十三条 广告主应当对互联网广告内容的真实性负责。\n广告主发布互联网广告的，主体资格、行政许可、引证内容等应当符合法律法规的要求，相关证明文件应当真实、合法、有效。\n广告主可以通过自建网站，以及自有的客户端、互联网应用程序、公众号、网络店铺页面等互联网媒介自行发布广告，也可以委托广告经营者、广告发布者发布广告。\n广告主自行发布互联网广告的，广告发布行为应当符合法律法规的要求，建立广告档案并及时更新。相关档案保存时间自广告发布行为终了之日起不少于三年。\n广告主委托发布互联网广告，修改广告内容时应当以书面形式或者其他可以被确认的方式，及时通知为其提供服务的广告经营者、广告发布者。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "互联网广告主责任规则，支撑事实核验和深度审核。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "主体资质",
+            "行政许可",
+            "引证内容",
+            "真实性负责",
+            "广告档案",
+            "保存三年",
+            "委托发布",
+            "修改广告"
+          ],
+          "regex": [],
+          "context_signals": [
+            "广告主",
+            "主体",
+            "许可",
+            "资质",
+            "档案",
+            "保存"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告主应对互联网广告内容真实性负责，主体资格、行政许可、引证内容等应符合法规；自行发布广告应建立档案并保存不少于三年。",
+        "decision": "如果广告主资质、许可、引证内容或档案义务缺失，则记录广告主责任风险。"
+      },
+      "recall": {
+        "tags": [
+          "广告主责任",
+          "主体资质",
+          "行政许可",
+          "广告档案"
+        ],
+        "vector_text": "广告主对广告真实性负责，必须提供主体资质、行政许可、引证材料，自行发布广告要建立档案保存三年，委托发布修改需书面通知。未核验资质、无档案、未保存三年、未通知修改都是违规。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及主体义务和证据留存，非文案内容，语义召回难以覆盖，建议禁用。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T01:20:29",
+          "old_vector_text": "互联网广告主未核验主体资格、行政许可、引证资料，或未建立广告档案并保存三年以上，委托发布后未及时通知修改。",
+          "old_semantic_reason": "广告主真实性责任属于主体义务和证据留存问题，不是广告文案相似度召回的主要对象。",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": false,
+          "semantic_role_recommendation": "disabled",
+          "tags_recommendation": [
+            "广告主责任",
+            "主体资质",
+            "行政许可",
+            "广告档案",
+            "保存三年"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "原vector_text已类似HyDE风格，但规则不适合语义召回，故保持禁用。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "workflow",
+        "trigger_layer_reason": "Rule mainly concerns subject obligation, platform responsibility, archive, or process duty: 保存、平台、广告主、广告发布者、广告档案.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": {
+          "summary": "广告主未履行真实性、资质许可或档案义务的，可能由市场监管部门责令改正并处罚款。",
+          "primary_source": "IAM#第二十八条",
+          "fine": {
+            "basis": "定额",
+            "amount_range": "视情形可处五万元以下、拒不配合调查一万元以上三万元以下"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求运营补充资质、许可和引证材料；缺失则标记待法务。",
+      "examples": {
+        "violation": [
+          "广告主无法提供行政许可仍投放需许可服务广告。",
+          "自行发布互联网广告但无广告档案记录。"
+        ],
+        "compliant": [
+          "广告主留存资质、许可、引证材料及发布记录三年以上。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": true,
+        "fact_rag_note": "该规则后期适合资料核验，接入主体资质、行政许可、广告档案和委托发布记录。"
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要将广告表述与资质、备案、证明材料、链接页面或发布义务进行比对。"
+      },
+      "routing": {
+        "interpretation_dependency": "medium",
+        "fact_dependency": "high",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则判断高度依赖资质、备案、页面或活动事实材料，宜先要求补充资料。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品资料",
+          "活动规则",
+          "价格记录",
+          "检测报告",
+          "销售数据或荣誉证明"
+        ],
+        "data_sources": [
+          "运营补充材料",
+          "公司内部台账",
+          "外部公开查询结果"
+        ],
+        "note": "后期需接入资料核验，用于核验广告宣称、资质、备案、活动或页面事实。"
+      },
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需结合广告主资质、许可、档案等事实材料判断，运营无法自行确认，应先要求补充资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-1222a7f0a93e1a2e"
+    },
+    {
+      "rule_id": "IAM-AGENCY-DUTY-001",
+      "serial_no": 22,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告经营发布者应审核登记广告内容",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "审核对象涉及广告经营者、广告发布者或代理发布流程。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第十四条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十四条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十四条 广告经营者、广告发布者应当按照下列规定，建立、健全和实施互联网广告业务的承接登记、审核、档案管理制度：\n（一）查验并登记广告主的真实身份、地址和有效联系方式等信息，建立广告档案并定期查验更新，记录、保存广告活动的有关电子数据；相关档案保存时间自广告发布行为终了之日起不少于三年；\n（二）查验有关证明文件，核对广告内容，对内容不符或者证明文件不全的广告，广告经营者不得提供设计、制作、代理服务，广告发布者不得发布；\n（三）配备熟悉广告法律法规的广告审核人员或者设立广告审核机构。\n本办法所称身份信息包括名称（姓名）、统一社会信用代码（身份证件号码）等。\n广告经营者、广告发布者应当依法配合市场监督管理部门开展的互联网广告行业调查，及时提供真实、准确、完整的资料。"
+        },
+        {
+          "source_id": "IAM",
+          "article": "第二十八条",
+          "legal_level": 3,
+          "role": "penalized_by",
+          "text": "第二十八条 违反本办法第十四条第一款、第十五条、第十八条规定，广告经营者、广告发布者未按规定建立、健全广告业务管理制度的，或者未对广告内容进行核对的，依据广告法第六十条第一款规定予以处罚。\n违反本办法第十三条第四款、第十五条、第十八条规定，广告主未按规定建立广告档案，或者未对广告内容进行核对的，由县级以上市场监督管理部门责令改正，可以处五万元以下的罚款。\n广告主、广告经营者、广告发布者能够证明其已履行相关责任、采取措施防止链接的广告内容被篡改，并提供违法广告活动主体的真实名称、地址和有效联系方式的，可以依法从轻、减轻或者不予行政处罚。\n违反本办法第十四条第三款，广告经营者、广告发布者拒不配合市场监督管理部门开展的互联网广告行业调查，或者提供虚假资料的，由县级以上市场监督管理部门责令改正，可以处一万元以上三万元以下的罚款。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "互联网广告经营发布者责任规则。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "承接登记",
+            "审核",
+            "广告档案",
+            "查验证明文件",
+            "审核人员",
+            "内容核对",
+            "不得发布"
+          ],
+          "regex": [],
+          "context_signals": [
+            "经营者",
+            "发布者",
+            "证明文件",
+            "档案",
+            "审核"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "互联网广告经营者、发布者应建立承接登记、审核、档案管理制度，查验身份、证明文件并核对广告内容；证明文件不全或内容不符不得发布。",
+        "decision": "如果经营者或发布者未查验身份材料、证明文件或广告内容，则记录发布审核责任风险。"
+      },
+      "recall": {
+        "tags": [
+          "经营者责任",
+          "发布者责任",
+          "承接登记",
+          "证明文件"
+        ],
+        "vector_text": "我们不需要审核，直接发就行；证明文件不全也能发；没查广告主身份就上线了；广告内容没核对就发布了；不用建立档案，麻烦；审核人员？不需要；代理发布广告不用看资质；先发后补材料；广告内容不符也照发不误；没有查验证明文件；广告档案没保存；不配合市场监管调查；提供虚假资料应付检查；广告发布者不核对内容；经营者不登记承接信息；证明文件不全照样代理；广告内容与许可范围不符仍发布；保健食品广告资质不全也发；游戏广告没版号就投；美妆广告备案号过期仍用；直播带货不审核商家资质；短视频广告不查验品牌方身份；私域文案不保留审核记录；详情页广告内容与批准文件不一致；Banner广告未核对广告主信息；社交平台广告不建立审核制度；广告发布者未配备审核人员；广告经营者未设立审核机构；广告档案保存不足三年；定期查验更新？没做过；广告主身份信息未登记；联系方式未核实；统一社会信用代码没查；身份证件号码没核对；广告内容与证明文件不符仍发布；证明文件不全仍提供设计制作代理服务；广告发布者未依法配合行业调查；提供虚假资料；广告业务管理制度不健全；未对广告内容进行核对；承接登记制度缺失；审核制度缺失；档案管理制度缺失；查验证明文件制度缺失；内容核对制度缺失；广告经营者发布者责任不落实；流程责任不履行；审核义务不执行；登记义务不执行；档案义务不执行；查验义务不执行；核对义务不执行；配合调查义务不执行；提供真实资料义务不执行；广告主身份查验缺失；证明文件查验缺失；广告内容核对缺失；发布审核责任风险；经营者发布者违规；证明文件不全；内容不符；审核登记档案制度缺失；不查验身份；不查验证明文件；不核对内容；证明不全仍制作代理发布广告；未建立承接登记审核档案制度；未查验身份和证明文件；证明不全仍代理发布广告；发布者未核对广告内容与许可范围；广告经营者发布者审核登记义务；流程责任；表单证据核验；非文案内容规则；程序义务；主体责任；备案资质；事实核验；不进入语义召回；",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则属于程序义务和主体责任，违规行为通常体现在流程缺失而非文案表达，语义召回难以覆盖，故建议禁用语义召回，保持原有关键词和正则召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T01:20:43",
+          "old_vector_text": "互联网广告经营者发布者未建立承接登记、审核、档案制度，未查验身份和证明文件，证明不全仍制作代理发布广告。",
+          "old_semantic_reason": "广告经营者、发布者审核登记义务属于流程责任，适合表单和证据核验，不进入语义召回。",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": false,
+          "semantic_role_recommendation": "disabled",
+          "tags_recommendation": [
+            "经营者责任",
+            "发布者责任",
+            "审核登记",
+            "证明文件",
+            "程序义务",
+            "主体责任",
+            "流程责任"
+          ],
+          "negative_signals_recommendation": [
+            "审核通过",
+            "已查验",
+            "已核对",
+            "档案齐全",
+            "证明文件完整"
+          ],
+          "change_summary": "将原vector_text改写为更贴近真实违规表达的HyDE风格文本，但鉴于规则性质，仍建议禁用语义召回。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "workflow",
+        "trigger_layer_reason": "Rule mainly concerns subject obligation, platform responsibility, archive, or process duty: 主体责任、保存、发布者责任、审核人员、审核制度.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": {
+          "summary": "互联网广告经营者、发布者未履行审核档案义务的，依广告法第六十条处罚。",
+          "primary_source": "IAM#第二十八条",
+          "fine": {
+            "basis": "转致广告法",
+            "amount_range": "依广告法第六十条规定"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "流程类风险，要求补齐审核材料并交法务或平台负责人确认。",
+      "examples": {
+        "violation": [
+          "证明文件不全仍代理发布保健食品广告。",
+          "发布者未核对广告内容与许可范围。"
+        ],
+        "compliant": [
+          "发布前查验广告主身份、资质证明并留存审核记录。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": true,
+        "fact_rag_note": "后期可接入发布合同、资质证明、审核记录、广告档案等事实材料。"
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要将广告表述与资质、备案、证明材料、链接页面或发布义务进行比对。"
+      },
+      "routing": {
+        "interpretation_dependency": "medium",
+        "fact_dependency": "high",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则判断高度依赖资质、备案、页面或活动事实材料，宜先要求补充资料。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "广告主资质",
+          "广告审核记录",
+          "投放档案"
+        ],
+        "data_sources": [
+          "运营补充材料",
+          "公司内部台账",
+          "外部公开查询结果"
+        ],
+        "note": "后期需接入资料核验，用于核验广告宣称、资质、备案、活动或页面事实。"
+      },
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则判断高度依赖广告主资质、审核记录等事实材料，运营无法自行判断，需先补充资料后再决定是否进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-d63da61623449475"
+    },
+    {
+      "rule_id": "IAM-ALGO-001",
+      "serial_no": 23,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "算法推荐广告应记录规则和投放档案",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "互联网",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "广告使用算法推荐、个性化推荐或定向投放。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第十五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十五条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十五条 利用算法推荐等方式发布互联网广告的，应当将其算法推荐服务相关规则、广告投放记录等记入广告档案。"
+        },
+        {
+          "source_id": "IAM",
+          "article": "第二十八条",
+          "legal_level": 3,
+          "role": "penalized_by",
+          "text": "第二十八条 违反本办法第十四条第一款、第十五条、第十八条规定，广告经营者、广告发布者未按规定建立、健全广告业务管理制度的，或者未对广告内容进行核对的，依据广告法第六十条第一款规定予以处罚。\n违反本办法第十三条第四款、第十五条、第十八条规定，广告主未按规定建立广告档案，或者未对广告内容进行核对的，由县级以上市场监督管理部门责令改正，可以处五万元以下的罚款。\n广告主、广告经营者、广告发布者能够证明其已履行相关责任、采取措施防止链接的广告内容被篡改，并提供违法广告活动主体的真实名称、地址和有效联系方式的，可以依法从轻、减轻或者不予行政处罚。\n违反本办法第十四条第三款，广告经营者、广告发布者拒不配合市场监督管理部门开展的互联网广告行业调查，或者提供虚假资料的，由县级以上市场监督管理部门责令改正，可以处一万元以上三万元以下的罚款。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "互联网广告档案管理规则。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "算法推荐",
+            "个性化推荐",
+            "定向投放",
+            "广告投放记录",
+            "推荐规则",
+            "人群包",
+            "投放档案"
+          ],
+          "regex": [],
+          "context_signals": [
+            "算法",
+            "推荐",
+            "定向",
+            "投放记录",
+            "档案"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "利用算法推荐等方式发布互联网广告的，应将算法推荐服务相关规则、广告投放记录等记入广告档案。",
+        "decision": "如果算法推荐广告缺少推荐规则或投放记录档案，则记录档案合规风险。"
+      },
+      "recall": {
+        "tags": [
+          "算法推荐",
+          "定向投放",
+          "投放记录",
+          "广告档案"
+        ],
+        "vector_text": "算法推荐广告没留推荐规则和投放记录，个性化推荐没建档案，定向投放没保存人群包，投放记录缺失，广告档案不全，算法推荐服务规则未归档，人群定向投放无记录，推荐算法日志未存档，投放数据未留存，个性化推荐档案不完整，定向投放档案缺失，算法推荐广告投放记录未入档，推荐规则未记录，人群包投放无档案，算法推荐服务未建立档案，投放记录未保存，推荐规则未归档，广告投放档案不完整，算法推荐广告未记录规则和投放数据，个性化推荐无投放记录，定向投放无档案，人群包投放未记录，推荐算法规则未存档，投放日志未保存，广告档案缺少推荐规则和投放记录。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及后台管理义务，文案中难以直接体现违规，但通过模拟缺失档案、未记录等表述，可召回提及档案不完整或记录缺失的文案，作为fallback辅助。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T01:20:52",
+          "old_vector_text": "使用算法推荐、个性化推荐、定向投放、人群包投放互联网广告，但未留存推荐规则、投放记录和广告档案。",
+          "old_semantic_reason": "算法推荐记录、投放档案属于后台管理和留痕义务，文案语义召回帮助有限。",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "算法推荐",
+            "定向投放",
+            "投放记录",
+            "广告档案",
+            "人群包",
+            "推荐规则",
+            "档案缺失"
+          ],
+          "negative_signals_recommendation": [
+            "已建立",
+            "已保存",
+            "已归档",
+            "完整记录",
+            "合规档案"
+          ],
+          "change_summary": "将原vector_text从单一陈述句扩展为多种缺失表述的集合，覆盖不同说法，提升召回覆盖面。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "workflow",
+        "trigger_layer_reason": "Rule mainly concerns subject obligation, platform responsibility, archive, or process duty: 保存、平台、广告主、广告发布者、广告档案.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "低",
+      "consequence": {
+        "legal": {
+          "summary": "算法推荐广告未记录规则和投放档案的，依广告法第六十条处罚。",
+          "primary_source": "IAM#第二十八条",
+          "fine": {
+            "basis": "转致广告法",
+            "amount_range": "依广告法第六十条规定"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "作为流程合规项记录，必要时要求投放同事补充档案。",
+      "examples": {
+        "violation": [
+          "定向投放广告但未保存人群定向和投放记录。"
+        ],
+        "compliant": [
+          "算法推荐规则和广告投放记录已纳入广告档案。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": true,
+        "fact_rag_note": "后期可接入投放后台记录、算法推荐规则说明和广告档案。"
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要将广告表述与资质、备案、证明材料、链接页面或发布义务进行比对。"
+      },
+      "routing": {
+        "interpretation_dependency": "medium",
+        "fact_dependency": "high",
+        "misjudgment_cost": "low",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则判断高度依赖资质、备案、页面或活动事实材料，宜先要求补充资料。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "广告主资质",
+          "广告审核记录",
+          "投放档案"
+        ],
+        "data_sources": [
+          "运营补充材料",
+          "公司内部台账",
+          "外部公开查询结果"
+        ],
+        "note": "后期需接入资料核验，用于核验广告宣称、资质、备案、活动或页面事实。"
+      },
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "low",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则判断高度依赖后台投放记录和档案材料，运营无法直接修改，需先补充事实资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-1f7db9c54b73870a"
+    },
+    {
+      "rule_id": "IAM-PLATFORM-DUTY-001",
+      "serial_no": 24,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "平台应防范制止违法互联网广告",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "审核对象涉及平台经营者治理、广告用户管理或违法广告处置。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第十六条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十六条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十六条 互联网平台经营者在提供互联网信息服务过程中应当采取措施防范、制止违法广告，并遵守下列规定：\n（一）记录、保存利用其信息服务发布广告的用户真实身份信息，信息记录保存时间自信息服务提供行为终了之日起不少于三年；\n（二）对利用其信息服务发布的广告内容进行监测、排查，发现违法广告的，应当采取通知改正、删除、屏蔽、断开发布链接等必要措施予以制止，并保留相关记录；\n（三）建立有效的投诉、举报受理和处置机制，设置便捷的投诉举报入口或者公布投诉举报方式，及时受理和处理投诉举报；\n（四）不得以技术手段或者其他手段阻挠、妨碍市场监督管理部门开展广告监测；\n（五）配合市场监督管理部门调查互联网广告违法行为，并根据市场监督管理部门的要求，及时采取技术手段保存涉嫌违法广告的证据材料，如实提供相关广告发布者的真实身份信息、广告修改记录以及相关商品或者服务的交易信息等；\n（六）依据服务协议和平台规则对利用其信息服务发布违法广告的用户采取警示、暂停或者终止服务等措施。"
+        },
+        {
+          "source_id": "IAM",
+          "article": "第二十九条",
+          "legal_level": 3,
+          "role": "penalized_by",
+          "text": "第二十九条 互联网平台经营者违反本办法第十六条第一项、第三项至第五项规定，法律、行政法规有规定的，依照其规定；法律、行政法规没有规定的，由县级以上市场监督管理部门责令改正，处一万元以上五万元以下的罚款。\n互联网平台经营者违反本办法第十六条第二项规定，明知或者应知互联网广告活动违法不予制止的，依照广告法第六十三条规定予以处罚。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "对广告法第四十五条平台制止义务的互联网细化规则。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "平台规则",
+            "身份信息",
+            "违法广告",
+            "监测排查",
+            "通知改正",
+            "删除",
+            "屏蔽",
+            "断开链接",
+            "投诉举报",
+            "配合调查"
+          ],
+          "regex": [],
+          "context_signals": [
+            "平台",
+            "违法广告",
+            "监测",
+            "处置",
+            "投诉",
+            "举报"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "互联网平台经营者应采取措施防范、制止违法广告，保存用户身份信息，监测排查违法广告并采取通知改正、删除、屏蔽、断链等措施，建立投诉举报机制并配合监管。",
+        "decision": "如果平台未建立或未执行违法广告监测处置机制，则记录平台责任风险。"
+      },
+      "recall": {
+        "tags": [
+          "平台治理",
+          "违法广告处置",
+          "投诉举报",
+          "监测排查"
+        ],
+        "vector_text": "平台不保存广告主身份信息，不监测违法广告，发现违法广告不删不屏蔽不断链，不处理投诉举报，不配合监管调查，甚至用技术手段阻挠监测。",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及平台义务，但违规行为可通过文案侧面描述（如平台不作为、纵容违法广告）召回，适合作为fallback兜底。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T01:21:00",
+          "old_vector_text": "互联网平台未保存广告发布用户身份信息，未监测排查违法广告，发现违法广告后未通知改正、删除、屏蔽、断链或处罚违规用户。",
+          "old_semantic_reason": "平台防范制止违法广告需要识别多类隐性违法广告场景，可作为语义兜底候选，但最终仍需结合平台责任事实判断。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "平台不作为",
+            "违法广告纵容",
+            "监测缺失",
+            "投诉举报未处理",
+            "配合监管不力"
+          ],
+          "negative_signals_recommendation": [
+            "已删除",
+            "已屏蔽",
+            "已处理投诉",
+            "配合调查"
+          ],
+          "change_summary": "从原规则描述改写为更贴近真实违规场景的文案，突出平台不作为、纵容违法广告等表述。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "workflow",
+        "trigger_layer_reason": "Rule mainly concerns subject obligation, platform responsibility, archive, or process duty: 保存、平台、平台义务、平台经营者、平台责任.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": {
+          "summary": "平台未履行互联网广告治理义务的，可处一万元以上五万元以下罚款；明知应知不制止的依广告法第六十三条处罚。",
+          "primary_source": "IAM#第二十九条",
+          "fine": {
+            "basis": "定额/转致广告法",
+            "amount_range": "一万元以上五万元以下或依广告法第六十三条"
+          }
+        },
+        "platform": null
+      },
+      "relations": [
+        {
+          "type": "refines",
+          "target": "GEN-PLATFORM-DUTY-001",
+          "desc": "本规则细化互联网平台对违法广告的身份保存、监测、处置和投诉举报义务。"
+        }
+      ],
+      "disposition": "平台治理类风险记录后转平台负责人或法务复核。",
+      "examples": {
+        "violation": [
+          "平台发现违法广告后未删除屏蔽，仍继续推荐。",
+          "未建立广告投诉举报和处理记录。"
+        ],
+        "compliant": [
+          "平台对违法广告采取删除、屏蔽、断链并记录处理结果。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "平台规则",
+          "监管处罚案例",
+          "典型违规案例",
+          "历史法务裁决"
+        ],
+        "reason": "平台义务和明知应知标准需结合案例、监管文件和平台规则。",
+        "future_fact_rag": true,
+        "fact_rag_note": "后期可接入用户身份记录、投诉举报记录、监测日志、处置记录。"
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要将广告表述与资质、备案、证明材料、链接页面或发布义务进行比对。"
+      },
+      "routing": {
+        "interpretation_dependency": "medium",
+        "fact_dependency": "medium",
+        "misjudgment_cost": "medium",
+        "default_route": "legal_review_required",
+        "route_reason": "规则存在法律解释空间或误判成本较高，默认进入法务复核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "广告主资质",
+          "广告审核记录",
+          "投放档案"
+        ],
+        "data_sources": [
+          "运营补充材料",
+          "公司内部台账",
+          "外部公开查询结果"
+        ],
+        "note": "后期需接入资料核验，用于核验广告宣称、资质、备案、活动或页面事实。"
+      },
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "该规则涉及平台是否履行监测、处置、投诉等法定义务，需结合平台内部制度与事实证据综合判断，运营无法自行处理，应进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-ada14b8a060b8ce1"
+    },
+    {
+      "rule_id": "IAM-SEND-001",
+      "serial_no": 25,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "发布发送互联网广告不得影响正常使用",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "互联网",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "广告通过邮件、即时通信、设备推送或搜索结果插入等方式发送。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第十七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十七条 利用互联网发布、发送广告，不得影响用户正常使用网络，不得在搜索政务服务网站、网页、互联网应用程序、公众号等的结果中插入竞价排名广告。\n未经用户同意、请求或者用户明确表示拒绝的，不得向其交通工具、导航设备、智能家电等发送互联网广告，不得在用户发送的电子邮件或者互联网即时通讯信息中附加广告或者广告链接。"
+        },
+        {
+          "source_id": "IAM",
+          "article": "第三十条",
+          "legal_level": 3,
+          "role": "penalized_by",
+          "text": "第三十条 违反本办法第十七条第一款规定，法律、行政法规有规定的，依照其规定；法律、行政法规没有规定的，由县级以上市场监督管理部门责令改正，对广告主、广告经营者、广告发布者处五千元以上三万元以下的罚款。\n违反本办法第十七条第二款规定，未经用户同意、请求或者用户明确表示拒绝，向其交通工具、导航设备、智能家电等发送互联网广告的，依照广告法第六十二条第一款规定予以处罚；在用户发送的电子邮件或者互联网即时通讯信息中附加广告或者广告链接的，由县级以上市场监督管理部门责令改正，处五千元以上三万元以下的罚款。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "互联网广告发送和用户体验规则。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "未经同意",
+            "明确拒绝",
+            "发送广告",
+            "推送广告",
+            "邮件广告",
+            "即时通信",
+            "导航设备",
+            "智能家电",
+            "竞价排名",
+            "政务服务"
+          ],
+          "regex": [],
+          "context_signals": [
+            "发送",
+            "推送",
+            "邮件",
+            "即时通信",
+            "拒绝",
+            "同意"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "发布、发送互联网广告不得影响用户正常使用网络；不得在政务服务搜索结果中插入竞价排名广告；未经用户同意或用户明确拒绝，不得向交通工具、导航设备、智能家电等发送广告，邮件和即时通信中也不得附加广告或链接。",
+        "decision": "如果未经同意发送广告、影响正常使用或在禁止场景插入广告，则判定为发送广告风险。"
+      },
+      "recall": {
+        "tags": [
+          "广告发送",
+          "未经同意",
+          "即时通信广告",
+          "政务搜索"
+        ],
+        "vector_text": "未经同意就给我发广告，烦死了！拒绝后还一直推送，垃圾邮件里夹带广告链接，导航设备突然弹出广告，智能家",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及未经同意发送广告、影响正常使用等场景，表达多样，关键词难以覆盖，适合语义召回兜底。vector_text 模拟了用户投诉、违规推送、强制广告等真实违规表达，覆盖多种场景和规避说法。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T01:36:36",
+          "old_vector_text": "未经同意向交通工具、导航设备、智能家电、邮件、即时通信发送广告或广告链接，用户拒绝后仍推送，或政务服务搜索插入竞价排名。",
+          "old_semantic_reason": "影响正常使用、诱导关闭失败、强制跳转等表达和场景多样，关键词可能漏召回，适合语义召回兜底。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未经同意",
+            "广告推送",
+            "影响使用",
+            "强制广告",
+            "竞价排名",
+            "政务服务",
+            "即时通信",
+            "邮件广告"
+          ],
+          "negative_signals_recommendation": [
+            "已同意",
+            "退订",
+            "关闭",
+            "跳过",
+            "可关闭",
+            "可跳过",
+            "用户授权",
+            "用户同意",
+            "用户选择",
+            "用户控制"
+          ],
+          "change_summary": "从法条摘要式改写为真实违规文案集合，增加用户投诉、强制广告、规避表达等场景，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 1502
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 促销、弹窗、第一、虚假、诱导点击.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": {
+          "summary": "发布发送互联网广告影响正常使用或违反发送限制的，可处五千元以上三万元以下罚款，部分情形依广告法第六十二条处罚。",
+          "primary_source": "IAM#第三十条",
+          "fine": {
+            "basis": "定额/转致广告法",
+            "amount_range": "五千元以上三万元以下或依广告法第六十二条"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "涉及主动发送广告的，要求确认用户同意和退订机制。",
+      "examples": {
+        "violation": [
+          "用户已拒绝后仍通过即时通信发送广告链接。",
+          "政务服务搜索结果中插入竞价排名广告。"
+        ],
+        "compliant": [
+          "仅向已同意接收营销信息的用户发送，并提供退订方式。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "平台规则",
+          "监管处罚案例",
+          "典型违规案例",
+          "历史法务裁决"
+        ],
+        "reason": "发送广告同意、拒绝和影响正常使用的边界需结合案例及平台规则。",
+        "future_fact_rag": true,
+        "fact_rag_note": "后期可接入用户授权记录、退订记录、推送日志。"
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "规则适用通常需要结合广告场景和相关事实材料综合判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "medium",
+        "fact_dependency": "medium",
+        "misjudgment_cost": "medium",
+        "default_route": "legal_review_required",
+        "route_reason": "规则存在法律解释空间或误判成本较高，默认进入法务复核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "页面截图",
+          "交互路径录屏或说明",
+          "链接落地页截图"
+        ],
+        "data_sources": [
+          "运营补充材料",
+          "公司内部台账",
+          "外部公开查询结果"
+        ],
+        "note": "后期需接入资料核验，用于核验广告宣称、资质、备案、活动或页面事实。"
+      },
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及未经同意发送广告等开放事实判断，且需核验用户同意记录、发送场景等材料，运营难以自行处理，应进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-cf8b8f0ced821552"
+    },
+    {
+      "rule_id": "IAM-LINK-001",
+      "serial_no": 26,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "含链接广告应核对下一级链接内容",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "互联网广告含外链、购买链接、详情页跳转或落地页。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第十八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十八条 发布含有链接的互联网广告，广告主、广告经营者和广告发布者应当核对下一级链接中与前端广告相关的广告内容。"
+        },
+        {
+          "source_id": "IAM",
+          "article": "第二十八条",
+          "legal_level": 3,
+          "role": "penalized_by",
+          "text": "第二十八条 违反本办法第十四条第一款、第十五条、第十八条规定，广告经营者、广告发布者未按规定建立、健全广告业务管理制度的，或者未对广告内容进行核对的，依据广告法第六十条第一款规定予以处罚。\n违反本办法第十三条第四款、第十五条、第十八条规定，广告主未按规定建立广告档案，或者未对广告内容进行核对的，由县级以上市场监督管理部门责令改正，可以处五万元以下的罚款。\n广告主、广告经营者、广告发布者能够证明其已履行相关责任、采取措施防止链接的广告内容被篡改，并提供违法广告活动主体的真实名称、地址和有效联系方式的，可以依法从轻、减轻或者不予行政处罚。\n违反本办法第十四条第三款，广告经营者、广告发布者拒不配合市场监督管理部门开展的互联网广告行业调查，或者提供虚假资料的，由县级以上市场监督管理部门责令改正，可以处一万元以上三万元以下的罚款。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "互联网链路审核规则，与虚假宣传和特殊品类审查高度联动。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "链接",
+            "落地页",
+            "下一级页面",
+            "跳转",
+            "购买链接",
+            "商品链接",
+            "详情页",
+            "外链"
+          ],
+          "regex": [],
+          "context_signals": [
+            "前端广告",
+            "落地页",
+            "详情页",
+            "跳转",
+            "核对"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "发布含有链接的互联网广告时，广告主、经营者和发布者应核对下一级链接中与前端广告相关的广告内容。",
+        "decision": "如果前端广告与下一级链接广告内容不一致或未核对，则记录链接审核风险。"
+      },
+      "recall": {
+        "tags": [
+          "链接审核",
+          "落地页一致",
+          "下一级链接",
+          "跳转内容"
+        ],
+        "vector_text": "点击链接后页面内容与广告描述不符，落地页夸大宣传，跳转后出现虚假功效，购买链接详情页与前端文案矛盾，外链内容未经核对，详情页宣传与实际不符，链接跳转后内容违规，前端广告与落地页不一致，链接内容未审核，跳转页面存在虚假信息，落地页功效与广告不符，购买链接详情页虚假宣传，外链落地页违规内容，跳转后页面与广告承诺不同，链接内容未核对，落地页宣传与前端广告冲突，详情页夸大功效，跳转页面未审核，外链内容虚假，购买链接详情页与广告不一致。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及链接落地页内容核对，属于事实比对，语义召回难以直接判断是否核对，但可通过描述不一致、夸大、虚假等违规表达辅助召回，适合作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T01:36:45",
+          "old_vector_text": "互联网广告含购买链接、外链、落地页、详情页跳转，但未核对下一级链接内容，或前端文案与落地页宣传不一致。",
+          "old_semantic_reason": "下一级链接内容核对依赖链接落地页事实比对，语义召回不是主要入口。",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "链接审核",
+            "落地页一致",
+            "跳转内容",
+            "虚假宣传",
+            "夸大功效",
+            "详情页不符",
+            "外链违规"
+          ],
+          "negative_signals_recommendation": [
+            "核对",
+            "审核",
+            "一致",
+            "合规",
+            "已核对"
+          ],
+          "change_summary": "将原规则描述改写为HyDE风格的违规文案集合，模拟落地页与前端广告不一致、夸大虚假等违规表达，增强语义召回能力。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、夸大、宣传、第一、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": {
+          "summary": "含链接广告未核对下一级链接相关广告内容的，依广告法第六十条处罚。",
+          "primary_source": "IAM#第二十八条",
+          "fine": {
+            "basis": "转致广告法",
+            "amount_range": "依广告法第六十条规定"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求同步审核落地页关键文字；前后不一致则驳回修改。",
+      "examples": {
+        "violation": [
+          "前端写普通食品，落地页宣传保健功能。",
+          "广告链接跳转后出现未经审查的功效内容。"
+        ],
+        "compliant": [
+          "前端文案、详情页和购买页宣传口径一致并已核对。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": true,
+        "fact_rag_note": "后期可接入落地页抓取、详情页文本、跳转链路和页面版本记录。"
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要将广告表述与资质、备案、证明材料、链接页面或发布义务进行比对。"
+      },
+      "routing": {
+        "interpretation_dependency": "medium",
+        "fact_dependency": "high",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则判断高度依赖资质、备案、页面或活动事实材料，宜先要求补充资料。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品资料",
+          "活动规则",
+          "价格记录",
+          "检测报告",
+          "销售数据或荣誉证明",
+          "页面截图",
+          "交互路径录屏或说明",
+          "链接落地页截图"
+        ],
+        "data_sources": [
+          "运营补充材料",
+          "公司内部台账",
+          "外部公开查询结果"
+        ],
+        "note": "后期需接入资料核验，用于核验广告宣称、资质、备案、活动或页面事实。"
+      },
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则需要运营先提供下一级链接内容截图等事实材料，才能判断是否一致，因此先要求补充资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-b7071deb3c78bd4d"
+    },
+    {
+      "rule_id": "IAM-LIVE-001",
+      "serial_no": 27,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "直播推销构成广告时承担广告主责任",
+      "dimension": "广告代言不合规",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "直播话术"
+        ],
+        "channels": [
+          "直播",
+          "互联网",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "审核对象为直播话术、直播脚本或商家自播带货内容。"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM-2023",
+        "source_article_id": "第十九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十九条 商品销售者或者服务提供者通过互联网直播方式推销商品或者服务，构成商业广告的，应当依法承担广告主的责任和义务。\n直播间运营者接受委托提供广告设计、制作、代理、发布服务的，应当依法承担广告经营者、广告发布者的责任和义务。\n直播营销人员接受委托提供广告设计、制作、代理、发布服务的，应当依法承担广告经营者、广告发布者的责任和义务。\n直播营销人员以自己的名义或者形象对商品、服务作推荐、证明，构成广告代言的，应当依法承担广告代言人的责任和义务。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "直播广告责任归属规则，用于将直播脚本纳入规则引擎。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "直播间",
+            "主播",
+            "直播推销",
+            "带货",
+            "口播",
+            "商品销售者",
+            "服务提供者",
+            "商家自播"
+          ],
+          "regex": [],
+          "context_signals": [
+            "直播",
+            "带货",
+            "口播",
+            "销售",
+            "服务"
+          ],
+          "negative_signals": [
+            "纯售后答疑",
+            "普通图文文案",
+            "Banner文字",
+            "详情页文字",
+            "非直播场景"
+          ]
+        },
+        "semantic_criteria": "商品销售者或者服务提供者通过互联网直播方式推销商品或服务，构成商业广告的，应依法承担广告主责任和义务。",
+        "decision": "如果直播推销内容构成商业广告，则按广告主责任和相应品类规则审核。"
+      },
+      "recall": {
+        "tags": [
+          "直播带货",
+          "直播广告",
+          "广告主责任",
+          "主播口播"
+        ],
+        "vector_text": "直播间主播口播：家人们快下单，点击小黄车，上链接，领券拍下，进店购买，亲测有效，效果惊人，推荐给大家",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及直播推销是否构成广告的法律判断，语义召回需覆盖直播话术中引导购买、推荐证明等典型表达，适合作为fallback辅助关键词召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T01:37:00",
+          "old_vector_text": "直播间、主播口播、商家自播或直播带货脚本中，主播正在推销商品或服务，引导观众点击小黄车、上链接、拍下、领券、下单、进店购买；直播营销人员以自己的名义、形象或亲身体验为商品效果作推荐证明，可能构成商业广告、广告主责任或广告代言责任。",
+          "old_semantic_reason": "直播推销是否构成广告常依赖直播话术语境、购买引导和主体关系，适合语义召回兜底；仅应在物料类型为直播话术、直播脚本、直播间口播或主播带货内容时启用，普通图文、Banner、详情页或一般导流文案不应召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "直播带货",
+            "主播口播",
+            "广告主责任",
+            "直播广告",
+            "购买引导",
+            "推荐证明",
+            "直播间话术"
+          ],
+          "negative_signals_recommendation": [
+            "纯售后答疑",
+            "普通图文文案",
+            "Banner文字",
+            "详情页文字",
+            "非直播场景"
+          ],
+          "change_summary": "将原vector_text改写为更密集的直播话术违规表达集合，增加购买引导、推荐证明等典型表达，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 1148
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 代言、价格、免费、显著、赠品.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_priority": 100,
+        "keyword_priority_reason": "直播带货/代言泛化规则容易被行业细分高风险规则挤出 keyword_limit，需在关键词候选池中局部前置。"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": {
+          "summary": "直播推销构成广告的，商品销售者或服务提供者依法承担广告主责任；具体违法按相应广告规则处理。",
+          "primary_source": "IAM#第十九条",
+          "fine": {
+            "basis": "按具体违法规则",
+            "amount_range": "视具体广告违法情形适用"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "直播脚本按文字广告审核，并联动具体功效、虚假、价格规则。",
+      "examples": {
+        "violation": [
+          "直播口播宣称产品能治疗疾病。",
+          "直播间夸大活动权益但商家称只是主播话术。"
+        ],
+        "compliant": [
+          "直播脚本按广告文案审核，功效和活动信息与证明材料一致。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "平台规则",
+          "监管处罚案例",
+          "典型违规案例",
+          "历史法务裁决"
+        ],
+        "reason": "直播话术是否构成商业广告及责任归属需参考监管口径。",
+        "future_fact_rag": true,
+        "fact_rag_note": "后期可接入直播脚本、商品链接、主播合作关系和商家身份资料。"
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "规则涉及误导性、可识别性、变相发布、医疗暗示等开放概念，需要结合语境解释。"
+      },
+      "routing": {
+        "interpretation_dependency": "high",
+        "fact_dependency": "medium",
+        "misjudgment_cost": "medium",
+        "default_route": "legal_review_required",
+        "route_reason": "规则存在法律解释空间或误判成本较高，默认进入法务复核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "代言/合作协议",
+          "使用体验证明",
+          "主播或达人身份信息"
+        ],
+        "data_sources": [
+          "运营补充材料",
+          "公司内部台账",
+          "外部公开查询结果"
+        ],
+        "note": "后期需接入资料核验，用于核验广告宣称、资质、备案、活动或页面事实。"
+      },
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "该规则涉及直播推销是否构成商业广告的法律边界判断，且需核验主播身份、合作协议等事实材料，误判成本中等，运营难以自行处理，应默认进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-4ad17513ff7e0cb3"
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "audit_fields": [
+      "audit.status",
+      "audit.auditor",
+      "audit.audit_date",
+      "audit.audit_notes"
+    ],
+    "note": "本批为通用法规规则 v1，建议先由规则整理人员初审，再交法务抽样或逐条复核。"
+  }
+}

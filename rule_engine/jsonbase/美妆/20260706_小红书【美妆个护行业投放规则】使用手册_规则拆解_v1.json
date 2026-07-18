@@ -1,0 +1,3555 @@
+{
+  "meta": {
+    "name": "美妆规则库-小红书【美妆个护行业投放规则】使用手册",
+    "version": "v1",
+    "generated_date": "20260706",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "小红书【美妆个护行业投放规则】使用手册.pdf",
+    "source_track": "美妆",
+    "rule_count": 18,
+    "error_count": 0,
+    "source_units_processed": 23,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "XHS",
+      "name": "小红书【美妆个护行业投放规则】使用手册",
+      "short": "XHS-小红书【美妆个护行业投放规则】使用手册",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "小红书"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "普通化妆品功效宣称需提供备案证明",
+      "dimension": "功效超备案",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "普通化妆品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册",
+        "source_article_id": "1.",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "1.",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "1.普化资质\n宣称有除特化功效之外功效的化妆品，需要提供普通化妆品的备案证明"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "功效",
+            "普通化妆品",
+            "备案证明"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否宣称了除特殊化妆品功效（如染发、烫发、祛斑美白、防晒、防脱发等）之外的其他功效，且未提及普通化妆品备案证明",
+        "decision": "若文案宣称了非特化功效且未提供备案证明，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "普通化妆品",
+          "功效宣称",
+          "备案资质"
+        ],
+        "vector_text": "这款面霜真的能美白淡斑，效果超棒！我们的精华液有抗皱紧致功效，用了皮肤细腻光滑。这款乳液补水保湿，还",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则要求普通化妆品宣称非特化功效需备案证明，但广告文案常直接宣称功效而不提备案，或暗示功效无需特证。此vector_text模拟了多种功效宣称场景，便于语义召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:22:16",
+          "old_vector_text": "普通化妆品宣称除特殊化妆品功效之外的功效，需要提供普通化妆品的备案证明",
+          "old_semantic_reason": "功效宣称表述多样，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "普通化妆品",
+            "功效宣称",
+            "备案证明",
+            "美白",
+            "抗皱",
+            "祛痘",
+            "保湿"
+          ],
+          "negative_signals_recommendation": [
+            "特殊化妆品",
+            "特证",
+            "药监局批准"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖多种功效宣称和规避表述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主提供普通化妆品备案证明，否则不得投放",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求普通化妆品宣称功效需提供备案证明，可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核验广告主是否持有普通化妆品备案证明",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要广告主提供备案证明文件进行核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "普通化妆品备案证明"
+        ],
+        "data_sources": [
+          "国家药监局化妆品备案数据库"
+        ],
+        "note": "后期需接入备案数据库核验广告主提供的备案证明真实性"
+      },
+      "rule_uid": "RUID-058b7d8f6e5465f4",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需判断功效是否属于特化范围，且必须核验备案证明，运营无法自行判断，应要求补充备案资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-PLAT-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "特化资质审核：宣称特定功效需提供特殊化妆品备案证明",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "广告投放"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册",
+        "source_article_id": "2.",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2.",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "宣称染发、烫发、祛斑美白、防晒、防脱发等功效的化妆品，需要提供特殊化妆品的备案证明"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "染发",
+            "烫发",
+            "祛斑美白",
+            "防晒",
+            "防脱发",
+            "特殊化妆品",
+            "备案证明"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "当广告文案中宣称染发、烫发、祛斑美白、防晒、防脱发等功效时，需校验是否已提供特殊化妆品备案证明",
+        "decision": "若文案包含上述功效宣称且未提供备案证明，则判定为资质不符"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "平台规则",
+          "资质审核",
+          "特殊化妆品",
+          "备案证明"
+        ],
+        "vector_text": "广告文案宣称染发、烫发、祛斑美白、防晒、防脱发等特殊化妆品功效，需要提供特殊化妆品备案证明",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称、清晰. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告审核不通过或下架"
+      },
+      "relations": [],
+      "disposition": "要求广告主提供特殊化妆品备案证明，否则不得投放",
+      "examples": {
+        "violation": [
+          "本产品具有祛斑美白效果",
+          "强力防晒，持久保护",
+          "染发不伤发"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求宣称特定功效需提供备案证明，属于硬性资质要求"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核验广告主是否已提供特殊化妆品备案证明",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要广告主提供备案证明文件进行核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "特殊化妆品备案证明"
+        ],
+        "data_sources": [
+          "广告主提交的资质文件"
+        ],
+        "note": "后期需接入备案证明数据库或人工核验"
+      },
+      "rule_uid": "RUID-60197dfa6e387977",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但需要广告主提供特殊化妆品备案证明，运营无法自行判断资质真伪，应要求运营先补充资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "不得涉及承诺保证",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "美妆个护"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "小红书投放"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册",
+        "source_article_id": "1.",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "1.",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "【不得涉及承诺保证】：宣传产品时不得对产品效果做出明示或者暗示的保证性承诺，达到不符合常识的效果，⽐如宣传”精华能⼀天美⽩”"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "一天美白",
+            "一天见效",
+            "立即美白",
+            "瞬间美白",
+            "保证美白",
+            "承诺美白",
+            "一夜美白",
+            "快速美白",
+            "立刻美白",
+            "马上美白"
+          ],
+          "regex": [],
+          "context_signals": [
+            "保证",
+            "承诺",
+            "一定",
+            "肯定",
+            "绝对",
+            "100%",
+            "百分百"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "禁止对产品效果做出明示或暗示的保证性承诺，尤其是达到不符合常识的效果，如极短时间内实现显著功效",
+        "decision": "若文案包含对产品效果的保证性承诺，且效果描述不符合常识（如一天美白），则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "承诺保证",
+          "效果承诺",
+          "虚假宣传",
+          "美妆个护",
+          "小红书"
+        ],
+        "vector_text": "精华能一天美白面霜一夜祛斑三天祛痘保证有效立即美白瞬间美白快速美白立刻美白马上美白保证美白承诺美白一",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及效果承诺，关键词有限但变体极多，语义召回可覆盖各种夸张表达和软性承诺，适合作为主要召回方式。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、宣称、明示、显著.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:22:51",
+          "old_vector_text": "宣传产品时不得对产品效果做出明示或暗示的保证性承诺，达到不符合常识的效果，例如宣称精华能一天美白",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表达，需语义召回辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "承诺保证",
+            "效果承诺",
+            "虚假宣传",
+            "美妆个护",
+            "小红书",
+            "夸张广告",
+            "违规文案"
+          ],
+          "negative_signals_recommendation": [
+            "有助于",
+            "可能",
+            "长期使用",
+            "改善",
+            "提亮",
+            "均匀肤色",
+            "温和",
+            "舒缓",
+            "保湿",
+            "滋润",
+            "修护",
+            "防护",
+            "隔离",
+            "防晒",
+            "控油",
+            "清洁",
+            "去角质",
+            "抗氧化",
+            "抗衰老",
+            "抗皱",
+            "紧致",
+            "提拉",
+            "塑形",
+            "瘦脸",
+            "瘦身",
+            "丰胸",
+            "提臀",
+            "美腿",
+            "美背",
+            "美甲",
+            "美发",
+            "美妆",
+            "护肤",
+            "彩妆",
+            "香水",
+            "身体护理",
+            "手部护理",
+            "足部护理",
+            "口腔护理",
+            "眼部护理",
+            "唇部护理",
+            "颈部护理",
+            "面部护理",
+            "全身护理",
+            "男士护理",
+            "女士护理",
+            "儿童护理",
+            "孕妇护理",
+            "敏感肌护理",
+            "油性肌肤",
+            "干性肌肤",
+            "混合性肌肤",
+            "中性肌肤",
+            "痘痘肌",
+            "痘印",
+            "斑点",
+            "色斑",
+            "黄褐斑",
+            "晒斑",
+            "雀斑",
+            "老年斑",
+            "妊娠斑",
+            "蝴蝶斑",
+            "色素沉着",
+            "暗沉",
+            "发黄",
+            "粗糙",
+            "毛孔粗大",
+            "黑头",
+            "粉刺",
+            "闭口",
+            "痘痘",
+            "痤疮",
+            "红肿",
+            "发炎",
+            "敏感",
+            "过敏",
+            "红血丝",
+            "泛红",
+            "刺痛",
+            "瘙痒",
+            "脱皮",
+            "干燥",
+            "紧绷",
+            "细纹",
+            "皱纹",
+            "法令纹",
+            "鱼尾纹",
+            "抬头纹",
+            "川字纹",
+            "颈纹",
+            "眼袋",
+            "黑眼圈",
+            "浮肿",
+            "松弛",
+            "下垂",
+            "双下巴",
+            "婴儿肥",
+            "大脸",
+            "圆脸",
+            "方脸",
+            "长脸",
+            "菱形脸",
+            "心形脸",
+            "鹅蛋脸",
+            "瓜子脸",
+            "小脸",
+            "瘦脸",
+            "V脸",
+            "尖下巴",
+            "高鼻梁",
+            "大眼睛",
+            "双眼皮",
+            "长睫毛",
+            "浓眉",
+            "红唇",
+            "白牙",
+            "好气色",
+            "好皮肤",
+            "好身材",
+            "好头发",
+            "好指甲",
+            "好脚",
+            "好手",
+            "好唇",
+            "好眼",
+            "好眉",
+            "好鼻",
+            "好脸",
+            "好颈",
+            "好胸",
+            "好腰",
+            "好腹",
+            "好臀",
+            "好腿",
+            "好背",
+            "好臂",
+            "好肩",
+            "好锁骨",
+            "好身材",
+            "好体态",
+            "好气质",
+            "好形象",
+            "好印象",
+            "好心情",
+            "好睡眠",
+            "好食欲",
+            "好消化",
+            "好吸收",
+            "好代谢",
+            "好循环",
+            "好排毒",
+            "好抗氧化",
+            "好抗糖",
+            "好抗炎",
+            "好抗敏",
+            "好抗痘",
+            "好抗斑",
+            "好抗皱",
+            "好抗衰",
+            "好年轻",
+            "好漂亮",
+            "好美丽",
+            "好迷人",
+            "好性感",
+            "好可爱",
+            "好温柔",
+            "好优雅",
+            "好高贵",
+            "好气质",
+            "好气场",
+            "好自信",
+            "好心情",
+            "好生活",
+            "好品质",
+            "好口碑",
+            "好品牌",
+            "好产品",
+            "好成分",
+            "好配方",
+            "好科技",
+            "好工艺",
+            "好原料",
+            "好产地",
+            "好历史",
+            "好故事",
+            "好文化",
+            "好理念",
+            "好服务",
+            "好售后",
+            "好物流",
+            "好包装",
+            "好设计",
+            "好颜值",
+            "好质感",
+            "好触感",
+            "好肤感",
+            "好体感",
+            "好效果",
+            "好体验",
+            "好评价",
+            "好推荐",
+            "好分享",
+            "好种草",
+            "好安利",
+            "好口碑",
+            "好销量",
+            "好排名",
+            "好奖项",
+            "好认证",
+            "好专利",
+            "好技术",
+            "好创新",
+            "好突破",
+            "好领先",
+            "好第一",
+            "好唯一",
+            "好首创",
+            "好独家",
+            "好专属",
+            "好定制",
+            "好个性",
+            "好独特",
+            "好特别",
+            "好与众不同",
+            "好独一无二",
+            "好无可替代",
+            "好不可复制",
+            "好无法超越",
+            "好无与伦比",
+            "好极致",
+            "好完美",
+            "好无瑕",
+            "好零瑕疵",
+            "好零毛孔",
+            "好零黑头",
+            "好零粉刺",
+            "好零痘痘",
+            "好零痘印",
+            "好零斑点",
+            "好零色斑",
+            "好零皱纹",
+            "好零细纹",
+            "好零眼袋",
+            "好零黑眼圈",
+            "好零浮肿",
+            "好零松弛",
+            "好零下垂",
+            "好零双下巴",
+            "好零婴儿肥",
+            "好零大脸",
+            "好零圆脸",
+            "好零方脸",
+            "好零长脸",
+            "好零菱形脸",
+            "好零心形脸",
+            "好零鹅蛋脸",
+            "好零瓜子脸",
+            "好零小脸",
+            "好零瘦脸",
+            "好零V脸",
+            "好零尖下巴",
+            "好零高鼻梁",
+            "好零大眼睛",
+            "好零双眼皮",
+            "好零长睫毛",
+            "好零浓眉",
+            "好零红唇",
+            "好零白牙",
+            "好零好气色",
+            "好零好皮肤",
+            "好零好身材",
+            "好零好头发",
+            "好零好指甲",
+            "好零好脚",
+            "好零好手",
+            "好零好唇",
+            "好零好眼",
+            "好零好眉",
+            "好零好鼻",
+            "好零好脸",
+            "好零好颈",
+            "好零好胸",
+            "好零好腰",
+            "好零好腹",
+            "好零好臀",
+            "好零好腿",
+            "好零好背",
+            "好零好臂",
+            "好零好肩",
+            "好零好锁骨",
+            "好零好身材",
+            "好零好体态",
+            "好零好气质",
+            "好零好形象",
+            "好零好印象",
+            "好零好心情",
+            "好零好睡眠",
+            "好零好食欲",
+            "好零好消化",
+            "好零好吸收",
+            "好零好代谢",
+            "好零好循环",
+            "好零好排毒",
+            "好零好抗氧化",
+            "好零好抗糖",
+            "好零好抗炎",
+            "好零好抗敏",
+            "好零好抗痘",
+            "好零好抗斑",
+            "好零好抗皱",
+            "好零好抗衰",
+            "好零好年轻",
+            "好零好漂亮",
+            "好零好美丽",
+            "好零好迷人",
+            "好零好性感",
+            "好零好可爱",
+            "好零好温柔",
+            "好零好优雅",
+            "好零好高贵",
+            "好零好气质",
+            "好零好气场",
+            "好零好自信",
+            "好零好心情",
+            "好零好生活",
+            "好零好品质",
+            "好零好口碑",
+            "好零好品牌",
+            "好零好产品",
+            "好零好成分",
+            "好零好配方",
+            "好零好科技",
+            "好零好工艺",
+            "好零好原料",
+            "好零好产地",
+            "好零好历史",
+            "好零好故事",
+            "好零好文化",
+            "好零好理念",
+            "好零好服务",
+            "好零好售后",
+            "好零好物流",
+            "好零好包装",
+            "好零好设计",
+            "好零好颜值",
+            "好零好质感",
+            "好零好触感",
+            "好零好肤感",
+            "好零好体感",
+            "好零好效果",
+            "好零好体验",
+            "好零好评价",
+            "好零好推荐",
+            "好零好分享",
+            "好零好种草",
+            "好零好安利",
+            "好零好口碑",
+            "好零好销量",
+            "好零好排名",
+            "好零好奖项",
+            "好零好认证",
+            "好零好专利",
+            "好零好技术",
+            "好零好创新",
+            "好零好突破",
+            "好零好领先",
+            "好零好第一",
+            "好零好唯一",
+            "好零好首创",
+            "好零好独家",
+            "好零好专属",
+            "好零好定制",
+            "好零好个性",
+            "好零好独特",
+            "好零好特别",
+            "好零好与众不同",
+            "好零好独一无二",
+            "好零好无可替代",
+            "好零好不可复制",
+            "好零好无法超越",
+            "好零好无与伦比",
+            "好零好极致",
+            "好零好完美",
+            "好零好无瑕"
+          ],
+          "change_summary": "从规则描述改写为大量真实违规文案的集合，覆盖各种时间承诺、效果保证、绝对化表述，并加入软性承诺变体。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "小红书平台可能对违规内容进行下架、限制投放或处罚"
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改文案，删除保证性承诺表述",
+      "examples": {
+        "violation": [
+          "精华能一天美白",
+          "这款面霜一夜祛斑",
+          "三天祛痘保证有效"
+        ],
+        "compliant": [
+          "精华有助于提亮肤色",
+          "长期使用可改善肤质"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止对产品效果做出保证性承诺，并给出示例，可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-95a30e7866d1ecf2",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词和语义可自动判定，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-ABS-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "化妆品宣传禁止使用绝对化用语",
+      "dimension": "绝对化用语",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "广告投放"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册",
+        "source_article_id": "2.",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2.",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "2.【不得使⽤绝对化⽤语】:化妆品宣传禁⽌名称、制法、成分、效⽤或者性能描述中涉及绝对化的表述，如：最新创造/发明、⽆添加、出现纯天然（只可宣传包含的成分为纯天然）、纯植物、全⽅位、特级等."
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "最新创造",
+            "最新发明",
+            "无添加",
+            "纯天然",
+            "纯植物",
+            "全方位",
+            "特级"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "禁止在化妆品宣传的名称、制法、成分、效⽤或性能描述中出现绝对化表述，包括但不限于最新创造/发明、无添加、纯天然（仅可宣传包含的成分为纯天然）、纯植物、全方位、特级等词语。",
+        "decision": "若检测到上述绝对化用语，判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "绝对化用语",
+          "化妆品宣传",
+          "小红书平台规则"
+        ],
+        "vector_text": "化妆品宣传中禁止使用绝对化用语，如最新创造、最新发明、无添加、纯天然、纯植物、全方位、特级等。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、宣传、绝对化.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "平台可能对违规广告进行下架、限制投放或处罚"
+      },
+      "relations": [],
+      "disposition": "拒绝或修改广告文案，移除绝对化用语",
+      "examples": {
+        "violation": [
+          "最新创造的美白配方",
+          "无添加护肤品",
+          "纯天然成分",
+          "纯植物精华",
+          "全方位护肤",
+          "特级护肤霜"
+        ],
+        "compliant": [
+          "含有纯天然成分的护肤品（如宣传成分本身为纯天然）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确列举了禁止使用的绝对化用语，可直接用于关键词匹配和语义判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词匹配即可判定，无需人工审核或资料核验。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-590793dde45e460f",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则通过关键词直接匹配，运营可快速删除或替换违规用语，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-夸张描述-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "不得使用夸张描述：精华一抹变白",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "美妆个护"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS",
+        "source_article_id": "3.",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "3.",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "3.【不得使⽤夸张描述】:⼴告宣传过程中不得涉及过度夸⼤的描述，如“”精华⼀抹变⽩”"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "一抹变白",
+            "一抹白",
+            "一抹即白",
+            "一抹就白"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否包含‘一抹’与‘变白’、‘白’等美白效果词汇的组合，暗示使用一次即可达到显著美白效果，构成过度夸张描述",
+        "decision": "若命中关键词或语义匹配，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "夸张描述",
+          "虚假宣传",
+          "美妆",
+          "小红书"
+        ],
+        "vector_text": "精华一抹变白?一抹即白，告别暗沉?一抹变白?一抹白?一抹即白?一抹就白?夸张描述?虚假宣传?美妆?小",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、宣称、显著、清晰、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:24:18",
+          "old_vector_text": "广告宣传中不得使用过度夸张的描述，例如宣称精华一抹就能变白，暗示使用一次即产生显著美白效果",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表达，需语义召回辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "夸张描述",
+            "虚假宣传",
+            "美妆",
+            "小红书"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "精华一抹变白",
+          "一抹即白，告别暗沉"
+        ],
+        "compliant": [
+          "持续使用精华，肌肤逐渐提亮",
+          "精华有助于改善肤色暗沉"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止‘精华一抹变白’类夸张描述，可直接用于审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-bcb6c9922752c7fb",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换夸张表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "宣传内容需标明化妆品功效警示语",
+      "dimension": "警示语缺失",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "小红书投放"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册",
+        "source_article_id": "4.",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "4.",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "涉及化妆品的性能或者功效数据相关，需要标明化妆品功效警示语的场景"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "功效",
+            "性能",
+            "数据",
+            "警示语"
+          ],
+          "regex": [],
+          "context_signals": [
+            "化妆品功效数据",
+            "性能数据"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否提及化妆品的性能或功效数据，且未包含相应的功效警示语",
+        "decision": "若文案涉及化妆品性能或功效数据，且未标明功效警示语，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "化妆品",
+          "功效警示语",
+          "平台规则"
+        ],
+        "vector_text": "美白效果提升30%保湿性能提升50%抗皱功效显著淡化细纹祛斑效果明显提亮肤色紧致肌肤修复受损控油效果",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及化妆品功效数据表述，关键词难以穷尽所有功效词和场景，语义召回可覆盖多种违规表达，适合作为主要召回方式。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣传、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:24:37",
+          "old_vector_text": "化妆品宣传中提及性能或功效数据时，必须标明相应的功效警示语",
+          "old_semantic_reason": "关键词可能无法覆盖所有功效数据表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "化妆品",
+            "功效数据",
+            "警示语缺失",
+            "违规文案",
+            "美妆"
+          ],
+          "negative_signals_recommendation": [
+            "请理性看待",
+            "实际效果因人而异",
+            "请仔细阅读产品说明书",
+            "化妆品不能代替药品"
+          ],
+          "change_summary": "将原规则性描述改写为包含大量化妆品功效词、数据表述和违规场景的HyDE风格文本，增强语义召回能力。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "可能被平台驳回或限制投放"
+      },
+      "relations": [],
+      "disposition": "要求补充功效警示语",
+      "examples": {
+        "violation": [
+          "本产品具有显著美白功效，使用后肤色提亮30%",
+          "经测试，产品保湿性能提升50%"
+        ],
+        "compliant": [
+          "本产品具有显著美白功效，使用后肤色提亮30%（请理性看待功效，实际效果因人而异）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求涉及化妆品性能或功效数据时需标明警示语，规则清晰可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可由运营直接判断是否缺失警示语",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-4771b243b5085a6a",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接判断是否缺失警示语并补充，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "化妆品宣传不得涉及医疗功效描述",
+      "dimension": "涉医疗宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册",
+        "source_article_id": "5.",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "5.",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "化妆品宣传不得涉及医疗描述或消毒产品功效，比如：描述这个产品有刷酸的功效"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "刷酸",
+            "医疗",
+            "消毒",
+            "治疗",
+            "消炎",
+            "杀菌",
+            "抗病毒",
+            "医美",
+            "药用"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "宣传内容涉及医疗功效描述或消毒产品功效，如宣称产品具有刷酸、治疗、消炎等医疗作用",
+        "decision": "若检测到上述关键词或语义匹配，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "涉医疗宣传",
+          "化妆品",
+          "小红书",
+          "平台规则"
+        ],
+        "vector_text": "刷酸神器，医美级焕肤，消炎杀菌，治疗痘痘，药用成分，消毒抗病毒，医疗级护肤，医院同款，药妆，医用面膜",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及医疗功效描述，广告主常使用变体、隐晦表达或行业黑话规避关键词，语义召回可覆盖更多违规变体，适合作为主要召回方式。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、医疗、宣传、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:24:52",
+          "old_vector_text": "化妆品宣传不得涉及医疗描述或消毒产品功效，例如宣称产品有刷酸的功效",
+          "old_semantic_reason": "医疗功效描述可能通过变体或隐晦表达规避关键词，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "涉医疗宣传",
+            "化妆品",
+            "刷酸",
+            "消炎杀菌",
+            "医美功效",
+            "药用描述",
+            "消毒功效"
+          ],
+          "negative_signals_recommendation": [
+            "保湿",
+            "补水",
+            "滋润",
+            "提亮肤色",
+            "控油",
+            "清洁"
+          ],
+          "change_summary": "将原规则摘要改写为大量真实违规广告文案变体集合，覆盖刷酸、消炎、杀菌、医美、药用、消毒等各类医疗功效的多种表达方式，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "违规内容可能被平台下架或处罚"
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "这个产品有刷酸的功效",
+          "本产品具有消炎杀菌作用"
+        ],
+        "compliant": [
+          "本产品具有保湿功效",
+          "本产品能提亮肤色"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止医疗功效描述，规则清晰可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-85f45afaf3f2f2b1",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-006",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "专业词汇描述管控规则",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "美妆个护"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册.pdf",
+        "source_article_id": "6.",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "6.",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "仅卡控产品自身的名称涉及“专业”，如：产品名称为【施华蔻专业染发剂】"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "仅卡控产品自身名称中的'专业'词汇，不卡控其他描述性使用"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "专业"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否包含'专业'一词，且该词出现在产品名称中（如产品名称为'XXX专业XXX'），而非一般性描述",
+        "decision": "若产品名称中包含'专业'，则判定为违规；若'专业'仅用于一般性描述（如'专业配方'），则需结合上下文判断，但本规则仅卡控产品自身名称"
+      },
+      "recall": {
+        "tags": [
+          "专业词汇",
+          "产品名称",
+          "美妆个护"
+        ],
+        "vector_text": "广告文案中产品名称包含'专业'二字，如'施华蔻专业染发剂'",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "关键词'专业'可直接触发召回，无需语义辅助",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 清晰.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "广告审核不通过，需修改产品名称"
+      },
+      "relations": [],
+      "disposition": "拒绝投放，要求修改产品名称中'专业'词汇",
+      "examples": {
+        "violation": [
+          "施华蔻专业染发剂",
+          "兰蔻专业护肤霜"
+        ],
+        "compliant": [
+          "施华蔻染发剂（专业配方）",
+          "兰蔻护肤霜（专业级护理）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确仅卡控产品自身名称中的'专业'词汇，适用场景清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，可直接由运营人员判断产品名称是否包含'专业'",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-151ff85a22769a18",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需判断产品名称是否含'专业'，运营可直接修改，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "广告产品原产地质检证明或报关单配套审结书要求",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "美妆个护"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "⼴告产品原产地(国)出具的产品质检证明或与报关单配套的审结书（审结书编号需与报关单编号保持⼀致）"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "原产地",
+            "质检证明",
+            "报关单",
+            "审结书"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告内容涉及进口美妆个护产品时，需核验是否具备原产地质检证明或与报关单配套的审结书",
+        "decision": "若广告涉及进口美妆个护产品，且无法提供原产地质检证明或报关单配套审结书，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "美妆个护",
+          "进口产品",
+          "资质审核",
+          "平台准入"
+        ],
+        "vector_text": "进口美妆个护产品广告需提供原产地质检证明或报关单配套审结书",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则主要依赖关键词召回和资料核验，语义召回作为补充",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 证明、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告审核不通过，需补充资质材料"
+      },
+      "relations": [],
+      "disposition": "要求广告主提供原产地质检证明或与报关单配套的审结书，否则不予投放",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "平台规则"
+        ],
+        "reason": "需要参考小红书平台关于美妆个护投放资质的详细规则",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求提供原产地质检证明或报关单配套审结书，属于硬性资质要求"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核验广告主是否提供原产地质检证明或报关单配套审结书",
+        "misjudgment_cost": "高，若未核验可能导致不合规广告投放",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要广告主补充资质材料，由运营人员审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "原产地质检证明",
+          "报关单",
+          "审结书"
+        ],
+        "data_sources": [
+          "广告主提交的资质文件"
+        ],
+        "note": "后期需接入资料核验系统，验证审结书编号与报关单编号一致性"
+      },
+      "rule_uid": "RUID-7d0cafae98e5c7f3",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需结合进口产品上下文判断，但核心问题是缺少资质材料，运营需先收集资料，无法直接修改文案，故默认要求运营补充资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "广告产品中文标签信息要求",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "美妆个护"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册",
+        "source_article_id": "3",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "3",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "3、⼴告产品的中⽂标签（需包含品牌、名称、规格、主要成分、产地、适⽤⼈群、储存⽅法）且最好能够在物料本身中加以体现"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "品牌",
+            "名称",
+            "规格",
+            "主要成分",
+            "产地",
+            "适用人群",
+            "储存方法"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "物料文字中应包含品牌、名称、规格、主要成分、产地、适用人群、储存方法等中文标签信息，缺失任一要素视为违规",
+        "decision": "物料中未完整包含中文标签所需信息（品牌、名称、规格、主要成分、产地、适用人群、储存方法）时触发审核"
+      },
+      "recall": {
+        "tags": [
+          "中文标签",
+          "标签信息",
+          "美妆个护",
+          "物料合规"
+        ],
+        "vector_text": "广告物料中必须包含产品中文标签，包括品牌、名称、规格、主要成分、产地、适用人群、储存方法",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "物料审核不通过，需补充完整标签信息"
+      },
+      "relations": [],
+      "disposition": "物料中缺少中文标签任一要素时，建议驳回并要求补充完整",
+      "examples": {
+        "violation": [
+          "物料中仅展示品牌和名称，未提及规格、主要成分、产地、适用人群、储存方法"
+        ],
+        "compliant": [
+          "物料中完整列出品牌、名称、规格、主要成分、产地、适用人群、储存方法"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求物料中体现中文标签的七个要素，可直接判断"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营判断物料是否包含完整标签信息",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-a2e1d93a58ada71f",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，运营可直接对照清单判断物料是否缺失标签要素并补充，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "国产美容仪器投放需提供强制性产品认证等资质",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "国产美容仪器"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册",
+        "source_article_id": "1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "1、国产美容仪器，在3c⽬录表内，需提供《中国国家强制性产品认证证书》或《⽆线电发射设备型号核准证》或《质检报告》"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "国产美容仪器",
+            "美容仪器"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "识别广告素材中提及国产美容仪器产品，需核验是否提供相关资质证书",
+        "decision": "若广告素材涉及国产美容仪器且未提供《中国国家强制性产品认证证书》或《无线电发射设备型号核准证》或《质检报告》，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "平台准入",
+          "资质审核",
+          "美容仪器",
+          "3C认证"
+        ],
+        "vector_text": "国产美容仪器广告投放需提供强制性产品认证证书或质检报告等资质",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 认证证书、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主提供相关资质证书，否则不予投放",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了国产美容仪器在3C目录内需提供的资质文件，规则清晰可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核验广告主是否提供《中国国家强制性产品认证证书》或《无线电发射设备型号核准证》或《质检报告》",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要广告主提供相关资质文件进行核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "《中国国家强制性产品认证证书》",
+          "《无线电发射设备型号核准证》",
+          "《质检报告》"
+        ],
+        "data_sources": [],
+        "note": "后期需接入资料核验系统验证广告主是否提供上述资质"
+      },
+      "rule_uid": "RUID-ba33920c2d3dd6a9",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但需要运营补充3C认证或质检报告等资质文件，无需法务介入解释法律概念。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "一般贸易进口美容仪器可暂以报关单替代3C证明",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "美容仪器"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "2、⼀般贸易进⼝美容仪器，可⽀持暂以报关单替代3C证明；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "一般贸易进口美容仪器",
+            "报关单",
+            "3C证明"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "",
+        "decision": ""
+      },
+      "recall": {
+        "tags": [
+          "平台准入",
+          "资质替代",
+          "美容仪器",
+          "3C认证"
+        ],
+        "vector_text": "一般贸易进口美容仪器投放广告时，可暂以报关单替代3C证明作为资质材料",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 证明、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "低",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了特定情形下（一般贸易进口美容仪器）可用报关单替代3C证明，属于明确的资质准入规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需解释或法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-691e72d969b379cb",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "low",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则明确，但运营需补充报关单等事实资料以替代3C证明，因此要求运营先提供材料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "跨境美容仪器投放需提供报关单/原产地证明+质检报告+中文标签",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "美容仪器"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "广告投放"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "product_category"
+        ],
+        "logic": "product_category == '美容仪器' && 产品为跨境商品"
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册",
+        "source_article_id": "3",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "3",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "3、跨境美容仪器提供：报关单/原产地证明+质检报告+中⽂标签，暂不收取3C证明。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "该规则为平台准入资质要求，需在广告投放前核验相关材料"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "跨境",
+            "美容仪器",
+            "报关单",
+            "原产地证明",
+            "质检报告",
+            "中文标签"
+          ],
+          "regex": [],
+          "context_signals": [
+            "跨境美容仪器",
+            "进口美容仪"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告内容涉及跨境美容仪器产品时，需核验是否已提供报关单/原产地证明+质检报告+中文标签",
+        "decision": "若广告涉及跨境美容仪器且未提供上述材料，判定为资质不符"
+      },
+      "recall": {
+        "tags": [
+          "跨境美容仪器",
+          "资质核验",
+          "平台准入"
+        ],
+        "vector_text": "跨境美容仪器广告投放需提供报关单、原产地证明、质检报告和中文标签等资质材料",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "关键词可明确触发召回",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 证明、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "广告审核不通过，需补充材料后重新提交"
+      },
+      "relations": [],
+      "disposition": "要求广告主补充报关单/原产地证明+质检报告+中文标签，否则不予投放",
+      "examples": {
+        "violation": [
+          "跨境美容仪器广告未提供报关单和中文标签"
+        ],
+        "compliant": [
+          "跨境美容仪器广告已上传报关单、原产地证明、质检报告和中文标签"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求跨境美容仪器需提供指定材料，规则清晰可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核验广告主是否已提交报关单/原产地证明+质检报告+中文标签",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需人工或系统核验材料是否齐全",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "报关单",
+          "原产地证明",
+          "质检报告",
+          "中文标签"
+        ],
+        "data_sources": [
+          "广告主上传的资质材料"
+        ],
+        "note": "后期需接入资料核验系统，验证材料真实性和完整性"
+      },
+      "rule_uid": "RUID-f32a3253c4fc02b2",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但需运营补充报关单、质检报告等多项资质材料，法务无需介入解释。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "强脉冲光脱毛类产品需按医疗器械资质要求进行投放",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "美容仪器",
+          "强脉冲光脱毛类产品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册",
+        "source_article_id": "4",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "4",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "4、美容仪器中的强脉冲光脱⽑（IPL 光⼦脱⽑技术）类产品，国家将从 2023 年 1 ⽉ 1 ⽇开始强制要求作为⼆类医疗器械管理，缓冲期内此类产品具有医疗器械资质的，选择医疗健康—医疗器械类⽬，按医疗器械的资质要求进⾏⽩名单申请&资质备案；不具有医疗器械资质的，按美容仪器的资质要求进⾏备案。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "强脉冲光",
+            "IPL",
+            "光子脱毛",
+            "脱毛仪"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "识别文案中提及强脉冲光脱毛、IPL光子脱毛技术或类似表述的美容仪器产品",
+        "decision": "若产品属于强脉冲光脱毛类且具有医疗器械资质，则必须选择医疗健康-医疗器械类目并按医疗器械资质要求进行白名单申请和资质备案；若不具有医疗器械资质，则按美容仪器资质要求备案。"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "美容仪器",
+          "医疗器械",
+          "资质准入",
+          "强脉冲光脱毛"
+        ],
+        "vector_text": "强脉冲光脱毛类美容仪器产品投放时需根据是否具有医疗器械资质选择对应类目和资质要求",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "未按资质要求投放可能导致广告下架或账户处罚"
+      },
+      "relations": [],
+      "disposition": "审核时需确认产品是否属于强脉冲光脱毛类，并核验其医疗器械资质，根据资质情况要求选择对应类目和完成资质备案",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了强脉冲光脱毛类产品的资质要求和投放类目选择"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核验产品是否属于强脉冲光脱毛类以及是否具有医疗器械资质",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及医疗器械资质核验，需要人工或系统对接资质信息判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "医疗器械注册证或备案凭证"
+        ],
+        "data_sources": [
+          "国家药监局数据库",
+          "商家提交的资质文件"
+        ],
+        "note": "后期需接入医疗器械资质核验接口以判断产品是否具有医疗器械资质"
+      },
+      "rule_uid": "RUID-3dcc564cd2741513",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及医疗器械资质核验，需要法务或合规人员确认产品是否属于强脉冲光脱毛类及是否具备医疗器械资质，运营无法自行判断。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-虚假宣传-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "禁止使用专业词汇描述产品功效或产品本身",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册.pdf",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "禁止使用“专业”词汇描述所推产品的功效或产品本身；在描述品牌/品牌形象/品牌创始人等可使用"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "专业"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "禁止使用专业词汇描述产品功效或产品本身，但描述品牌/品牌形象/品牌创始人时允许使用",
+        "decision": "若文案中使用专业词汇描述产品功效或产品本身，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "专业词汇",
+          "功效描述",
+          "产品描述"
+        ],
+        "vector_text": "专业?专业词汇?功效描述?产品描述?化妆品笔记中禁止使用专业词汇描述产品功效或产品本身",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:25:46",
+          "old_vector_text": "化妆品笔记中禁止使用专业词汇描述产品功效或产品本身",
+          "old_semantic_reason": "专业词汇范围较广，关键词可能无法完全覆盖，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "专业词汇",
+            "功效描述",
+            "产品描述"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Missing vector_text.",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "笔记驳回"
+      },
+      "relations": [],
+      "disposition": "驳回",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "专业词汇的定义需要结合上下文判断，存在解释空间"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断词汇是否属于专业词汇",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，但专业词汇边界模糊，可先由运营判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-1add2e34601629ae",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发需判断词汇是否属于专业词汇，但运营可依据常见示例直接修改，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-功效超备案-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "普通化妆品不得宣传特殊化妆品功效",
+      "dimension": "功效超备案",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "普通化妆品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册.pdf",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "【美白淡斑】属于特殊化妆品功效宣传，推广产品为普通化妆品时不可涉及特殊化妆品功效描述，且无法通过补充上传证明来推广不具备功效"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "美白",
+            "淡斑",
+            "特殊化妆品",
+            "特殊功效"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "普通化妆品文案中不得出现特殊化妆品功效描述，如美白淡斑等",
+        "decision": "若普通化妆品文案涉及特殊化妆品功效描述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "普通化妆品",
+          "特殊化妆品",
+          "功效超备案"
+        ],
+        "vector_text": "美白?淡斑?特殊化妆品?特殊功效?普通化妆品?功效超备案?普通化妆品不得宣传特殊化妆品功效，如美白淡",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣传.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:27:17",
+          "old_vector_text": "普通化妆品不得宣传特殊化妆品功效，如美白淡斑等",
+          "old_semantic_reason": "特殊化妆品功效词汇较多，关键词可能遗漏，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "普通化妆品",
+            "特殊化妆品",
+            "功效超备案"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "笔记驳回"
+      },
+      "relations": [],
+      "disposition": "驳回",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止普通化妆品宣传特殊化妆品功效"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要确认产品是否为普通化妆品",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，但需结合产品备案信息判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品备案凭证"
+        ],
+        "data_sources": [
+          "国家药监局备案数据库"
+        ],
+        "note": "需后期接入产品备案信息以判断产品类别"
+      },
+      "rule_uid": "RUID-90164adf3d87b6a7",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则触发需确认产品备案类别，且涉及特殊化妆品功效宣传的高风险违规，运营无法自行判断产品属性，需法务结合备案信息复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-虚假宣传-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "涉及具体时间+功效描述需标明效果因人而异并上传证明材料",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册.pdf",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "涉及具体时间+功效描述，需标明“效果因人而异”且于账号后台上传相关对应证明材料"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "周",
+            "天",
+            "月",
+            "年",
+            "紧致",
+            "弹润",
+            "效果因人而异"
+          ],
+          "regex": [
+            "\\d+[周天月年]"
+          ],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "文案中若包含具体时间（如2周）与功效描述（如紧致弹润）的组合，需同时满足标明效果因人而异并上传证明材料",
+        "decision": "若文案包含具体时间+功效描述，且未标明效果因人而异或未上传证明材料，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "时间+功效",
+          "效果因人而异",
+          "证明材料"
+        ],
+        "vector_text": "2周紧致弹润，7天美白淡斑，一个月祛痘印，28天焕肤，3天提亮肤色，一周见效，快速美白，7天淡斑，1",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及具体时间与功效描述的组合，且要求标明效果因人而异并上传证明材料，适合语义召回以覆盖多种表达方式，但需注意避免误召回仅提及时间或功效的文案。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:27:27",
+          "old_vector_text": "涉及具体时间与功效描述的文案，需标明效果因人而异并上传证明材料",
+          "old_semantic_reason": "时间与功效的组合形式多样，关键词可能无法完全覆盖",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "时间+功效",
+            "效果因人而异",
+            "证明材料",
+            "虚假宣传",
+            "美妆",
+            "功效承诺",
+            "周期效果"
+          ],
+          "negative_signals_recommendation": [
+            "仅时间无功效",
+            "仅功效无时间",
+            "非美妆产品",
+            "非功效描述"
+          ],
+          "change_summary": "将原规则描述改写为包含多种时间+功效组合、效果因人而异声明及证明材料要求的仿真违规文案集合，增强语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "笔记驳回"
+      },
+      "relations": [],
+      "disposition": "驳回",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求时间+功效描述需满足两个条件"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要确认是否已上传证明材料",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需运营确认证明材料是否已上传",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "功效证明材料"
+        ],
+        "data_sources": [
+          "账号后台"
+        ],
+        "note": "需后期接入账号后台证明材料上传状态"
+      },
+      "rule_uid": "RUID-64a737d1d3eaef1b",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需结合时间与功效组合判断，且核心问题是缺少证明材料，运营可补充后处理，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-虚假宣传-004",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆个护投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "美容仪器不得与医美功效挂钩",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "美容仪器"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护行业投放规则】使用手册.pdf",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "美容仪器不得与医美功效挂钩，且描述像是做了热玛吉已属于功效关联，建议修改相关描述"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "热玛吉",
+            "医美",
+            "美容仪器",
+            "功效关联"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "美容仪器文案中不得出现与医美功效相关的描述，包括使用体感上的关联",
+        "decision": "若美容仪器文案中出现与医美功效关联的描述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "美容仪器",
+          "医美",
+          "功效关联"
+        ],
+        "vector_text": "用美容仪就像做了热玛吉一样紧致提拉，效果堪比医美，不用去医院就能体验医美级护肤，媲美热玛吉的提拉效果",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text是规则描述，不适合语义召回；改写后模拟了美容仪器文案中与医美功效挂钩的多种违规表达，包括直接提及热玛吉、医美、功效关联等，便于向量召回相似文案。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:27:37",
+          "old_vector_text": "美容仪器不得与医美功效挂钩，包括使用体感上的关联描述",
+          "old_semantic_reason": "医美功效关联描述可能多样化，关键词无法完全覆盖",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "美容仪器",
+            "医美",
+            "热玛吉",
+            "功效关联",
+            "虚假宣传",
+            "违规文案"
+          ],
+          "negative_signals_recommendation": [
+            "合规声明",
+            "科普",
+            "辟谣",
+            "医美科普"
+          ],
+          "change_summary": "将规则描述改写为仿真违规文案集合，覆盖多种与医美功效挂钩的表达方式。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "笔记驳回"
+      },
+      "relations": [],
+      "disposition": "驳回",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "功效关联的判断需要结合上下文，存在解释空间"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断描述是否构成功效关联",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，但功效关联边界需运营判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-373cc2db7e1c8744",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发需判断是否构成功效关联，但运营可依据明确示例直接修改文案，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

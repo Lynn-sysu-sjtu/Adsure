@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "name": "美妆规则库-抖音【美妆行业宣传规范】实施细则",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "抖音【美妆行业宣传规范】实施细则.pdf",
+    "source_track": "美妆",
+    "rule_count": 0,
+    "error_count": 2,
+    "source_units_processed": 3,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "DY",
+      "name": "抖音【美妆行业宣传规范】实施细则",
+      "short": "DY-抖音【美妆行业宣传规范】实施细则",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "抖音"
+    }
+  ],
+  "rules": [],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": [
+    {
+      "article_id": "未分条-1",
+      "error": "Expecting ',' delimiter: line 691 column 27 (char 21671)"
+    },
+    {
+      "article_id": "未分条-2",
+      "error": "Expecting ',' delimiter: line 925 column 36 (char 24342)"
+    }
+  ]
+}

@@ -1,0 +1,3525 @@
+{
+  "meta": {
+    "name": "游戏规则库-互联网广告管理办法_2023.05.01生效_20260615下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "游戏广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "互联网广告管理办法_2023.05.01生效_20260615下载.doc",
+    "source_track": "游戏",
+    "rule_count": 19,
+    "error_count": 0,
+    "source_units_processed": 32,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "IAM",
+      "name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+      "short": "IAM-2023",
+      "type": "法规",
+      "legal_level": 3,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "GAME-OTH-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止利用互联网发布烟草（含电子烟）广告",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "6",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第六条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "禁止利用互联网发布烟草（含电子烟）广告。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "烟草",
+            "电子烟",
+            "香烟",
+            "烟",
+            "雪茄",
+            "烟弹",
+            "烟油"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中提及烟草或电子烟品牌、产品、购买渠道或促销信息",
+        "decision": "若检测到烟草或电子烟相关关键词，且上下文为广告推广意图，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "烟草广告",
+          "电子烟广告",
+          "禁止发布"
+        ],
+        "vector_text": "全新电子烟上市，限时优惠！某某牌香烟，口感醇厚，劲大过瘾。烟弹烟油批发零售，正品保障。想抽烟又怕伤身",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及烟草电子烟广告，关键词可覆盖大部分情况，但语义召回可捕获变体如'低温不燃烧'、'烟具'等，适合作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:21:34",
+          "old_vector_text": "禁止在互联网广告中推广烟草或电子烟产品，包括品牌、购买链接、促销活动等",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体或隐晦表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "烟草广告",
+            "电子烟广告",
+            "香烟",
+            "烟弹",
+            "烟油",
+            "禁止发布"
+          ],
+          "negative_signals_recommendation": [
+            "戒烟",
+            "控烟",
+            "烟草危害"
+          ],
+          "change_summary": "将原规则性描述改写为仿真违规文案集合，包含多种烟草电子烟相关表述和促销话术。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 106
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 促销、清晰、烟草广告、限时.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《互联网广告管理办法》第六条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或下架广告",
+      "examples": {
+        "violation": [
+          "全新电子烟上市，限时优惠",
+          "某某牌香烟，口感醇厚"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止利用互联网发布烟草（含电子烟）广告，无需额外解释"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词触发即可直接判定违规",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-0dc74011a536f7dd",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词直接判定，运营可立即删除或替换违规内容，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-OTH-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止利用互联网发布处方药广告",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "6",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第六条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "禁止利用互联网发布处方药广告，法律、行政法规另有规定的，依照其规定。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "处方药",
+            "Rx",
+            "凭处方",
+            "医生处方",
+            "药品",
+            "药",
+            "抗生素",
+            "降压药",
+            "降糖药"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中提及处方药名称、功效、购买渠道或促销信息，且未明确为非处方药",
+        "decision": "若检测到处方药相关关键词，且上下文为广告推广意图，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "处方药广告",
+          "禁止发布"
+        ],
+        "vector_text": "某某降压药，效果显著，点击购买；凭处方可购，抗生素特惠；处方药在线开方，无需去医院；进口抗癌药，靶向",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及处方药广告，关键词无法穷尽所有处方药名称和变体，语义召回可覆盖更多违规表达，适合作为fallback。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 促销、功效、处方药、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T19:56:30",
+          "old_vector_text": "禁止在互联网广告中推广处方药，包括药品名称、适应症、购买链接等",
+          "old_semantic_reason": "关键词可能无法覆盖所有处方药名称或变体，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "处方药广告",
+            "禁止发布",
+            "药品广告",
+            "互联网广告",
+            "违规广告"
+          ],
+          "negative_signals_recommendation": [
+            "非处方药",
+            "OTC",
+            "保健品",
+            "医疗器械",
+            "化妆品"
+          ],
+          "change_summary": "将原规则性描述改写为大量真实违规广告文案和变体表达的集合，增强语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《互联网广告管理办法》第六条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或下架广告",
+      "examples": {
+        "violation": [
+          "某某降压药，效果显著，点击购买",
+          "凭处方可购，抗生素特惠"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止利用互联网发布处方药广告，但需注意法律另有规定的除外"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词触发即可直接判定违规",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-ca0724ebfb96bce9",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词直接判定，运营可删除或替换违规内容，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-ADREVIEW-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "游戏广告发布前审查要求",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "7",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "发布医疗、药品、医疗器械、农药、兽药、保健食品、特殊医学用途配方食品广告等法律、行政法规规定应当进行审查的广告，应当在发布前由广告审查机关对广告内容进行审查；未经审查，不得发布。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "",
+        "decision": ""
+      },
+      "recall": {
+        "tags": [
+          "广告审查",
+          "发布前审查",
+          "游戏广告"
+        ],
+        "vector_text": "这款游戏超好玩，无需审核直接上线！新游上线，已通过国家审查，放心下载。游戏已备案，无需等待审批。我们游戏有版号，正规运营。游戏广告未经审查也能发？快速过审，当天上线。游戏内容已审核，安全可靠。无需审查，立即开玩。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及发布前审查义务，属于程序义务，文案侧难以直接召回违规表达，但通过模拟声称无需审查、已审查等违规话术，可辅助召回部分虚假宣称已审查或规避审查的广告。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:24:14",
+          "old_vector_text": "游戏广告属于法律、行政法规规定应当进行审查的广告，发布前必须经广告审查机关审查通过，未经审查不得发布。",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "游戏广告",
+            "发布前审查",
+            "版号",
+            "资质",
+            "违规话术"
+          ],
+          "negative_signals_recommendation": [
+            "合规声明",
+            "已取得版号",
+            "正规渠道"
+          ],
+          "change_summary": "从法条解释改写为仿真违规文案集合，模拟声称无需审查或已审查的违规话术。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、审查批准、广告审查、批准文件、版号.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求须经审查的广告在发布前必须审查，未经审查不得发布，适用于游戏广告。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "legal_review_required",
+        "route_reason": "需要确认游戏广告是否属于法律、行政法规规定应当审查的广告类型，以及是否已取得审查批准文件。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "广告审查批准文件"
+        ],
+        "data_sources": [],
+        "note": "后期需接入广告审查机关出具的审查批准文件，核实游戏广告是否已通过审查。"
+      },
+      "rule_uid": "RUID-109e8ea76581f516",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "游戏广告是否属于法定审查类型需法律解释，且必须核验审查批准文件，风险高，运营无法自行判断。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-ADREVIEW-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "游戏广告内容不得剪辑拼接修改",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "7",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "对须经审查的互联网广告，应当严格按照审查通过的内容发布，不得剪辑、拼接、修改。已经审查通过的广告内容需要改动的，应当重新申请广告审查。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "",
+        "decision": ""
+      },
+      "recall": {
+        "tags": [
+          "广告内容一致性",
+          "不得修改",
+          "审查通过内容"
+        ],
+        "vector_text": "这款游戏画面太酷了，我们重新剪辑了宣传片，加了新特效，绝对震撼！原版太无聊，我们拼接了最精彩的片段，让你一次看个够。游戏内截图我们修改了一下，看起来更炫酷。广告内容我们做了些调整，更吸引人。别管审查版本，这个才是最终版。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及广告内容与审查版本的一致性，属于事实核验类规则，语义召回难以准确判断是否修改，但通过模拟违规文案中常见的‘剪辑、拼接、修改’等表述，可辅助召回明显违规的广告文案。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:24:23",
+          "old_vector_text": "游戏广告经审查通过后，必须严格按照审查通过的内容发布，不得对文字内容进行剪辑、拼接、修改；如需改动，应重新申请审查。",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "广告内容一致性",
+            "剪辑拼接",
+            "修改",
+            "审查通过",
+            "游戏广告"
+          ],
+          "negative_signals_recommendation": [
+            "合规声明",
+            "严格按照审查",
+            "重新申请审查"
+          ],
+          "change_summary": "从法条解释改写为仿真违规文案集合，包含剪辑、拼接、修改等违规表述。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求审查通过的广告内容不得剪辑、拼接、修改，适用于游戏广告。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "legal_review_required",
+        "route_reason": "需要比对实际发布的广告文字内容与审查通过的内容是否一致，涉及资料核验。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "广告审查通过内容副本"
+        ],
+        "data_sources": [],
+        "note": "后期需接入审查通过的内容副本，用于比对实际发布内容是否一致。"
+      },
+      "rule_uid": "RUID-1bf2bad28a9824d9",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "需要比对实际发布内容与审查通过副本是否一致，涉及资料核验和法律判断，运营无法自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-ADID-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止以健康养生知识形式变相发布保健食品广告",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "第八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "禁止以介绍健康、养生知识等形式，变相发布医疗、药品、医疗器械、保健食品、特殊医学用途配方食品广告。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "健康",
+            "养生",
+            "保健",
+            "健康知识",
+            "养生知识"
+          ],
+          "regex": [],
+          "context_signals": [
+            "保健食品",
+            "保健品",
+            "营养补充剂"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案是否以介绍健康、养生知识为名义，实际推广保健食品类商品或服务",
+        "decision": "若文案以健康养生知识为形式，同时出现保健食品推广内容，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "变相广告",
+          "健康养生",
+          "保健食品",
+          "游戏"
+        ],
+        "vector_text": "想健康长寿吗？每天吃一粒XX牌维生素，医生推荐！养生必看：XX保健品，天然无副作用。健康知识：如何通",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及变相广告，关键词可能漏召回，语义召回可覆盖多种软性表达，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:24:31",
+          "old_vector_text": "以介绍健康或养生知识的形式，变相发布保健食品广告",
+          "old_semantic_reason": "变相广告形式多样，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "变相广告",
+            "健康养生",
+            "保健食品",
+            "软文",
+            "虚假宣传",
+            "游戏"
+          ],
+          "negative_signals_recommendation": [
+            "纯科普无推广",
+            "非保健食品类"
+          ],
+          "change_summary": "从法条式改写为真实违规文案集合，覆盖多种变相表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 119
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 医疗、宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求删除变相广告内容",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止以健康养生知识形式变相发布保健食品广告，规则可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可初步判断，无需法务介入",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-b8b5038ab6b75775",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "变相广告判断依赖法律解释和语义边界，运营难以自行认定，且风险高，需法务复核",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-ADID-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "健康养生知识页面不得同时出现保健食品经营者联系方式或购物链接",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "第八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "介绍健康、养生知识的，不得在同一页面或者同时出现相关医疗、药品、医疗器械、保健食品、特殊医学用途配方食品的商品经营者或者服务提供者地址、联系方式、购物链接等内容。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "健康",
+            "养生",
+            "健康知识",
+            "养生知识"
+          ],
+          "regex": [],
+          "context_signals": [
+            "地址",
+            "联系方式",
+            "购物链接",
+            "购买",
+            "点击购买",
+            "链接"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测健康养生知识内容中是否同时出现保健食品经营者的地址、联系方式或购物链接",
+        "decision": "若文案为健康养生知识，且包含保健食品经营者的地址、联系方式或购物链接，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "健康养生",
+          "联系方式",
+          "购物链接",
+          "保健食品",
+          "游戏"
+        ],
+        "vector_text": "养生知识健康科普保健食品点击购买立即下单加微信扫码咨询联系客服购物链接购买链接地址电话微信号公众号小",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及健康养生知识与保健食品营销信息的组合出现，关键词难以覆盖所有变体（如微信号、扫码、链接等），语义召回可有效识别此类软性违规文案。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:24:44",
+          "old_vector_text": "介绍健康养生知识的文案中，不得同时出现保健食品经营者的地址、联系方式或购物链接",
+          "old_semantic_reason": "联系方式或链接形式多样，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "健康养生",
+            "保健食品",
+            "联系方式",
+            "购物链接",
+            "软文营销",
+            "违规广告",
+            "游戏行业"
+          ],
+          "negative_signals_recommendation": [
+            "药品",
+            "医疗器械",
+            "医疗广告",
+            "处方药"
+          ],
+          "change_summary": "从法条式改写为仿真违规文案集合，覆盖多种联系方式、购买链接及软性表达，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 463
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 促销、免费、医疗、宣传、种草.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求删除联系方式及购物链接",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止健康养生知识页面同时出现保健食品经营者联系方式或购物链接，规则可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可初步判断，无需法务介入",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-337fdb836b2712ae",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营确认文案是否属于健康养生知识，并补充保健食品经营者信息，但无需法务深度解释",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-ADID-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "互联网广告应当具有可识别性，使消费者辨明其为广告",
+      "dimension": "广告可识别性不足",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "第九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "互联网广告应当具有可识别性，能够使消费者辨明其为广告。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "判断文字材料是否以任何形式（如未标注'广告'字样、使用模糊表述等）导致消费者无法识别其为广告内容",
+        "decision": "若文字材料未明确标注'广告'或类似可识别标识，且内容具有推销性质，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "广告可识别性",
+          "通用义务"
+        ],
+        "vector_text": "这是一条广告，但没写广告两个字。推荐好物，亲测有效，良心推荐，不是广告。种草分享，纯路人，自用推荐。",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "广告可识别性违规常通过软文、种草、未标注等方式隐蔽表达，语义召回需覆盖这些真实场景。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:24:52",
+          "old_vector_text": "互联网广告未显著标明广告字样，消费者无法辨明其为广告",
+          "old_semantic_reason": "广告可识别性违规可能通过多种隐蔽方式实现，关键词难以全面覆盖，需语义理解辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "广告可识别性",
+            "软文",
+            "种草",
+            "未标注广告",
+            "隐蔽推广"
+          ],
+          "negative_signals_recommendation": [
+            "官方声明",
+            "免责声明",
+            "广告法合规声明"
+          ],
+          "change_summary": "从法条式描述改为真实违规文案集合，覆盖软文、种草、未标注等场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 104
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 广告可识别、显著、种草、软文、限时.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告发布者在广告内容中显著标明'广告'字样，确保消费者可识别",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "广告可识别性的判断需结合具体语境和消费者认知，存在解释空间"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断材料是否构成广告以及是否具有可识别性",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "legal_review_required",
+        "route_reason": "广告可识别性判断涉及主观解释，需法务或合规人员审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-b09e7f7c0f1e9099",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "广告可识别性判断需结合上下文认定是否构成广告及是否显著标注，运营难以自行判断，需法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-ADID-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "竞价排名商品或服务应显著标明'广告'，与自然搜索结果明显区分",
+      "dimension": "广告可识别性不足",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "material_type"
+        ],
+        "logic": "material_type 包含'竞价排名'或上下文表明为竞价排名场景"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "第九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "对于竞价排名的商品或者服务，广告发布者应当显著标明'广告'，与自然搜索结果明显区分。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "竞价排名",
+            "推广",
+            "广告位"
+          ],
+          "regex": [],
+          "context_signals": [
+            "搜索结果",
+            "排序",
+            "排名"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "判断文字材料是否涉及竞价排名场景，且未显著标注'广告'字样",
+        "decision": "若材料涉及竞价排名且未标注'广告'，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "竞价排名",
+          "广告标识",
+          "搜索结果"
+        ],
+        "vector_text": "竞价排名广告未标广告，与自然搜索结果混在一起，推广内容没有广告标识，搜索结果中的广告未显著标明，付费",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "竞价排名场景可能通过多种表述出现，如'推广''付费排名''搜索广告'等，关键词难以穷举，语义召回可覆盖变体表述",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 广告可识别、显著、显著标明.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T19:56:37",
+          "old_vector_text": "竞价排名广告未显著标明广告字样，与自然搜索结果未区分",
+          "old_semantic_reason": "竞价排名场景可能通过不同表述出现，关键词召回可能遗漏",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "竞价排名",
+            "广告标识",
+            "搜索结果",
+            "推广未标注",
+            "付费排名"
+          ],
+          "negative_signals_recommendation": [
+            "自然结果",
+            "非广告",
+            "有机搜索"
+          ],
+          "change_summary": "从单一表述扩展为多种违规场景的集合，覆盖不同说法和规避表达",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告发布者在竞价排名内容中显著标明'广告'，并与自然搜索结果明显区分",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "竞价排名场景定义明确，规则清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认材料是否属于竞价排名场景",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可由运营人员直接判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-6c0fa7a22a965e16",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需运营确认是否属于竞价排名场景并补充标注，若无法确认再转法务",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-ADID-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "知识介绍、体验分享、消费测评等形式推销商品并附加购物链接的，应显著标明'广告'",
+      "dimension": "广告可识别性不足",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "第九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "除法律、行政法规禁止发布或者变相发布广告的情形外，通过知识介绍、体验分享、消费测评等形式推销商品或者服务，并附加购物链接等购买方式的，广告发布者应当显著标明'广告'。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "知识介绍",
+            "体验分享",
+            "消费测评",
+            "测评",
+            "种草",
+            "推荐",
+            "购物链接",
+            "购买链接",
+            "下单链接"
+          ],
+          "regex": [],
+          "context_signals": [
+            "推销",
+            "商品",
+            "服务",
+            "链接"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "判断文字材料是否以知识介绍、体验分享、消费测评等形式推销游戏产品，并附加购物链接等购买方式，且未显著标明'广告'",
+        "decision": "若材料符合上述形式且未标注'广告'，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "种草",
+          "测评",
+          "购物链接",
+          "广告标识"
+        ],
+        "vector_text": "这款游戏真的太好玩了，强烈推荐！点击下方链接直接下载，亲测有效，良心测评，不吹不黑，种草了，链接在评",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及软文种草、测评推荐等隐蔽广告形式，关键词难以穷尽，语义召回可覆盖多种变体表达，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:26:50",
+          "old_vector_text": "以知识介绍、体验分享、消费测评形式推销游戏并附购物链接，未标注广告",
+          "old_semantic_reason": "此类内容形式多样，关键词可能无法完全覆盖，需语义理解辅助判断",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "种草",
+            "测评",
+            "购物链接",
+            "广告标识",
+            "软文",
+            "推荐",
+            "体验分享"
+          ],
+          "negative_signals_recommendation": [
+            "已标注广告",
+            "非商业推广",
+            "无购买链接"
+          ],
+          "change_summary": "从法条摘要改写为仿真违规文案集合，增加多种表达方式，提升召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 89
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 广告可识别、显著、显著标明、种草、软文.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告发布者在上述形式的内容中显著标明'广告'",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "知识介绍、体验分享、消费测评等形式的界定需结合具体内容判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断内容是否属于知识介绍、体验分享或消费测评形式",
+        "fact_dependency": "需确认是否附加购物链接等购买方式",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "形式判断存在解释空间，需法务或合规人员审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-eebd53b1f0a601a3",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准接受 recommended_route：可能应先由运营补充资料：主要矛盾是事实核验，不一定需要立即占用法务。",
+        "confidence": "high",
+        "calibration_status": "human_confirmed",
+        "calibrated_at": "2026-07-16T21:49:08",
+        "calibration_source": "legal_attention_calibration_mvp_csv",
+        "calibration_row_number": 8
+      }
+    },
+    {
+      "rule_id": "GAME-ADID-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "弹出广告必须显著标明关闭标志并确保一键关闭",
+      "dimension": "广告可识别性不足",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "第十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "以弹出等形式发布互联网广告，广告主、广告发布者应当显著标明关闭标志，确保一键关闭，不得有下列情形： （一）没有关闭标志或者计时结束才能关闭广告； （二）关闭标志虚假、不可清晰辨识或者难以定位等，为关闭广告设置障碍； （三）关闭广告须经两次以上点击； （四）在浏览同一页面、同一文档过程中，关闭后继续弹出广告，影响用户正常使用网络； （五）其他影响一键关闭的行为。 启动互联网应用程序时展示、发布的开屏广告适用前款规定。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "关闭",
+            "关闭标志",
+            "一键关闭",
+            "关闭广告",
+            "弹出广告",
+            "开屏广告"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否包含弹出广告或开屏广告的描述，且未提及关闭标志或一键关闭功能，或存在关闭障碍描述",
+        "decision": "若广告文案描述弹出广告或开屏广告，且未显著标明关闭标志或确保一键关闭，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "弹出广告",
+          "开屏广告",
+          "关闭标志",
+          "一键关闭"
+        ],
+        "vector_text": "点击此处关闭广告（需等待5秒）?关闭广告需点击两次?关闭标志极小且难以定位?关闭?关闭标志?一键关闭",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 一键关闭、广告可识别、显著、显著标明、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T19:58:08",
+          "old_vector_text": "弹出广告或开屏广告未显著标明关闭标志，未确保一键关闭，存在关闭障碍",
+          "old_semantic_reason": "关键词可能无法覆盖所有描述关闭障碍的变体表达，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "弹出广告",
+            "开屏广告",
+            "关闭标志",
+            "一键关闭"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若广告文案涉及弹出广告或开屏广告，必须包含显著关闭标志并确保一键关闭，否则判定违规",
+      "examples": {
+        "violation": [
+          "点击此处关闭广告（需等待5秒）",
+          "关闭广告需点击两次",
+          "关闭标志极小且难以定位"
+        ],
+        "compliant": [
+          "广告右上角有显著关闭按钮，点击即可关闭",
+          "开屏广告显示跳过按钮，点击立即跳过"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了弹出广告和开屏广告的关闭标志要求，可直接形成审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可覆盖，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-f119e315f9400f53",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清楚，运营可直接判断并修改关闭标志或一键关闭问题，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止以虚假系统提示欺骗误导用户点击浏览广告",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "11",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十一条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "不得以下列方式欺骗、误导用户点击、浏览广告： （一）虚假的系统或者软件更新、报错、清理、通知等提示； （二）虚假的播放、开始、暂停、停止、返回等标志； （三）虚假的奖励承诺； （四）其他欺骗、误导用户点击、浏览广告的方式。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "系统更新",
+            "软件更新",
+            "系统报错",
+            "软件报错",
+            "系统清理",
+            "软件清理",
+            "系统通知",
+            "软件通知",
+            "虚假更新",
+            "虚假报错",
+            "虚假清理",
+            "虚假通知"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否包含虚假的系统或软件更新、报错、清理、通知等提示，意图欺骗或误导用户点击浏览广告",
+        "decision": "若检测到上述关键词或语义匹配，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假系统提示",
+          "欺骗误导点击",
+          "广告合规"
+        ],
+        "vector_text": "您的系统存在严重漏洞，请点击此处立即修复（实际为广告）系统检测到垃圾文件过多，点击清理（实际为广告链",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及虚假系统提示等欺骗性文案，关键词有限且易变体，语义召回可覆盖多种表述，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:29:45",
+          "old_vector_text": "广告文案中不得出现虚假的系统更新、软件更新、系统报错、软件报错、系统清理、软件清理、系统通知、软件通知等提示，以欺骗或误导用户点击浏览广告",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假系统提示",
+            "欺骗误导点击",
+            "系统更新",
+            "系统报错",
+            "系统清理",
+            "系统通知",
+            "诱导点击",
+            "虚假通知"
+          ],
+          "negative_signals_recommendation": [
+            "真实系统更新",
+            "真实报错",
+            "真实清理",
+            "真实通知",
+            "非广告"
+          ],
+          "change_summary": "将原法条风格的vector_text改写为真实违规文案集合，覆盖多种变体表述，提升语义召回效果。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 272
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、欺骗、清晰、虚假、误导.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布，需修改删除相关虚假提示内容",
+      "examples": {
+        "violation": [
+          "您的系统存在严重漏洞，请点击此处立即修复（实际为广告）",
+          "系统检测到垃圾文件过多，点击清理（实际为广告链接）"
+        ],
+        "compliant": [
+          "系统更新提示（真实系统功能，非广告）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了禁止的欺骗误导方式，可直接形成关键词和语义检测规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可自动化执行，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-cbb2ef034ec23434",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词和语义检测可自动化执行，运营可直接删除或替换虚假提示，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止以虚假播放开始暂停等标志欺骗误导用户点击浏览广告",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "11",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十一条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "不得以下列方式欺骗、误导用户点击、浏览广告： （一）虚假的系统或者软件更新、报错、清理、通知等提示； （二）虚假的播放、开始、暂停、停止、返回等标志； （三）虚假的奖励承诺； （四）其他欺骗、误导用户点击、浏览广告的方式。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚假播放",
+            "虚假开始",
+            "虚假暂停",
+            "虚假停止",
+            "虚假返回",
+            "播放",
+            "开始",
+            "暂停",
+            "停止",
+            "返回"
+          ],
+          "regex": [],
+          "context_signals": [
+            "点击",
+            "浏览",
+            "广告"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否包含虚假的播放、开始、暂停、停止、返回等标志，意图欺骗或误导用户点击浏览广告",
+        "decision": "若检测到上述关键词且上下文表明为广告欺骗误导，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假播放标志",
+          "欺骗误导点击",
+          "广告合规"
+        ],
+        "vector_text": "点击播放按钮，实际是广告链接；点击开始游戏，跳转的是广告页面；虚假暂停标志，诱导点击；虚假停止按钮，",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及多种欺骗性标志表述，关键词难以穷尽，语义召回可覆盖变体，适合作为fallback补充。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:29:54",
+          "old_vector_text": "广告文案中不得出现虚假的播放、开始、暂停、停止、返回等标志，以欺骗或误导用户点击浏览广告",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "虚假播放标志",
+            "欺骗误导点击",
+            "广告合规",
+            "诱导点击",
+            "虚假按钮"
+          ],
+          "negative_signals_recommendation": [
+            "真实播放",
+            "真实开始",
+            "真实暂停",
+            "真实停止",
+            "真实返回"
+          ],
+          "change_summary": "将原法条式描述改写为真实违规文案集合，覆盖多种欺骗性标志表述和场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 339
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、欺骗、清晰、虚假、误导.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布，需修改删除相关虚假标志",
+      "examples": {
+        "violation": [
+          "点击播放按钮（实际为广告链接，非视频播放）",
+          "点击开始游戏（实际为广告跳转）"
+        ],
+        "compliant": [
+          "真实视频播放按钮（非广告）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了禁止的虚假标志类型，可直接形成关键词和语义检测规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可自动化执行，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-3128ad84f9229d96",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接删除或替换虚假标志，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止以虚假奖励承诺欺骗误导用户点击浏览广告",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "11",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十一条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "不得以下列方式欺骗、误导用户点击、浏览广告： （一）虚假的系统或者软件更新、报错、清理、通知等提示； （二）虚假的播放、开始、暂停、停止、返回等标志； （三）虚假的奖励承诺； （四）其他欺骗、误导用户点击、浏览广告的方式。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚假奖励",
+            "虚假承诺",
+            "奖励承诺",
+            "点击领取",
+            "免费领取",
+            "奖励",
+            "承诺"
+          ],
+          "regex": [],
+          "context_signals": [
+            "点击",
+            "浏览",
+            "广告"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否包含虚假的奖励承诺，意图欺骗或误导用户点击浏览广告",
+        "decision": "若检测到上述关键词且上下文表明为广告欺骗误导，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假奖励承诺",
+          "欺骗误导点击",
+          "广告合规"
+        ],
+        "vector_text": "点击即送100元红包，免费领取游戏皮肤，点击领取奖励，虚假奖励承诺，欺骗用户点击，误导浏览广告，点击",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text是法条式表述，不适合语义召回；改写为真实违规文案集合，覆盖多种虚假奖励承诺变体，提升召回率。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:30:03",
+          "old_vector_text": "广告文案中不得出现虚假的奖励承诺，以欺骗或误导用户点击浏览广告",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假奖励承诺",
+            "欺骗误导点击",
+            "点击领取",
+            "免费领取",
+            "游戏广告",
+            "虚假承诺"
+          ],
+          "negative_signals_recommendation": [
+            "真实活动",
+            "规则说明",
+            "活动细则"
+          ],
+          "change_summary": "将法条式表述改写为HyDE风格的违规文案集合，包含多种虚假奖励承诺变体。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 138
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 免费、宣传、抽奖、欺骗、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布，需修改删除相关虚假奖励承诺内容",
+      "examples": {
+        "violation": [
+          "点击即送100元红包（实际无奖励）",
+          "免费领取游戏皮肤（实际为广告跳转）"
+        ],
+        "compliant": [
+          "真实奖励活动（需有明确规则和兑现）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了禁止的虚假奖励承诺，可直接形成关键词和语义检测规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可自动化执行，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-0bc96ff294567d86",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则涉及虚假奖励承诺，需运营补充奖励活动规则或兑现证明以判断是否虚假，不宜直接修改或直接法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-004",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止以其他欺骗误导方式使用户点击浏览广告",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "11",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十一条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "不得以下列方式欺骗、误导用户点击、浏览广告： （一）虚假的系统或者软件更新、报错、清理、通知等提示； （二）虚假的播放、开始、暂停、停止、返回等标志； （三）虚假的奖励承诺； （四）其他欺骗、误导用户点击、浏览广告的方式。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "兜底条款，需结合具体场景判断"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否存在其他欺骗或误导用户点击浏览广告的方式，不限于前三项列举",
+        "decision": "需人工或语义模型判断是否构成欺骗误导"
+      },
+      "recall": {
+        "tags": [
+          "其他欺骗误导",
+          "兜底条款",
+          "广告合规"
+        ],
+        "vector_text": "点击此处关闭（实际为广告链接）?您已中奖，点击领取（实际为广告）?其他欺骗误导?兜底条款?广告合规?",
+        "semantic_enabled": true,
+        "semantic_role": "primary",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、欺骗、虚假、误导.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T19:59:37",
+          "old_vector_text": "广告文案中不得以其他任何方式欺骗或误导用户点击浏览广告",
+          "old_semantic_reason": "兜底条款无明确关键词，需依赖语义理解",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "primary",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "其他欺骗误导",
+            "兜底条款",
+            "广告合规"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 5 column 20 (char 102)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若判定为欺骗误导，则禁止发布",
+      "examples": {
+        "violation": [
+          "点击此处关闭（实际为广告链接）",
+          "您已中奖，点击领取（实际为广告）"
+        ],
+        "compliant": []
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "历史违规案例",
+          "监管口径"
+        ],
+        "reason": "兜底条款需参考历史案例和监管解释以辅助判断",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "兜底条款未明确具体行为，需结合具体场景和案例解释"
+      },
+      "routing": {
+        "interpretation_dependency": "高",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "legal_review_required",
+        "route_reason": "兜底条款需人工审核或法务判断，无法完全自动化",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-3ddc4ab0edeb7b3b",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "该规则为兜底条款，触发条件模糊，需法务判断是否构成欺骗误导，且风险高，运营无法自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-未成年人保护-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止在未成年人互联网媒介上发布不利于未成年人身心健康的网络游戏广告",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [
+          "网络游戏"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "网站",
+          "网页",
+          "互联网应用程序",
+          "公众号"
+        ],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "target_audience",
+          "media_type"
+        ],
+        "logic": "target_audience 包含未成年人 且 media_type 属于网站、网页、互联网应用程序、公众号等互联网媒介"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "12",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十二条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "在针对未成年人的网站、网页、互联网应用程序、公众号等互联网媒介上不得发布医疗、药品、保健食品、特殊医学用途配方食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "未成年人",
+            "青少年",
+            "儿童",
+            "小孩",
+            "学生"
+          ],
+          "regex": [],
+          "context_signals": [
+            "target_audience=未成年人",
+            "media_type=网站|网页|互联网应用程序|公众号"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "判断广告内容是否可能不利于未成年人身心健康，如包含暴力、色情、赌博、诱导消费等元素",
+        "decision": "若广告投放媒介明确针对未成年人，且广告内容为网络游戏，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "游戏广告",
+          "媒介限制"
+        ],
+        "vector_text": "未成年人专属平台上的暴力游戏广告，青少年App里诱导充值的游戏弹窗，儿童网站上的血腥游戏推广，学生社",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则核心是‘不利于未成年人身心健康的网络游戏广告’，需要语义理解广告内容是否包含暴力、色情、赌博、诱导消费等元素，关键词无法完全覆盖，因此适合语义召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、医疗、未成年人.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T19:59:45",
+          "old_vector_text": "在针对未成年人的互联网媒介上发布网络游戏广告，且该游戏广告不利于未成年人身心健康",
+          "old_semantic_reason": "不利于未成年人身心健康的判断需要语义理解，关键词无法完全覆盖",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "游戏广告",
+            "身心健康",
+            "暴力",
+            "色情",
+            "诱导消费",
+            "媒介限制"
+          ],
+          "negative_signals_recommendation": [
+            "成年人",
+            "家长",
+            "监护人",
+            "适龄提示",
+            "健康游戏"
+          ],
+          "change_summary": "从法条式描述改为真实违规广告文案集合，覆盖暴力、色情、赌博、诱导消费等具体场景，并增加未成年人媒介场景描述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《互联网广告管理办法》第十二条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "在儿童教育类App中投放含有暴力元素的网络游戏广告",
+          "在青少年常用的社交平台上投放诱导充值的游戏广告"
+        ],
+        "compliant": [
+          "在成年人为主的游戏论坛投放网络游戏广告",
+          "在非针对未成年人的普通网站上投放健康益智类游戏广告"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "历史法务口径",
+          "案例"
+        ],
+        "reason": "不利于未成年人身心健康的判断标准需要参考历史案例和法务解释",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要判断媒介是否针对未成年人以及广告内容是否不利于未成年人身心健康"
+      },
+      "routing": {
+        "interpretation_dependency": "需要明确不利于未成年人身心健康的定义和范围",
+        "fact_dependency": "需要确认广告投放媒介的目标受众是否为未成年人",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及未成年人保护和主观判断，需要法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "广告投放媒介的受众分析报告",
+          "游戏内容分级证明"
+        ],
+        "data_sources": [
+          "广告投放平台数据",
+          "游戏备案信息"
+        ],
+        "note": "后期需接入媒介受众数据和游戏内容分级信息进行核验"
+      },
+      "rule_uid": "RUID-50e1960c3642e5b5",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及‘不利于未成年人身心健康’这一开放法律概念，且需核验媒介受众与游戏内容分级，风险高，运营无法自行判断，必须法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告主对互联网广告内容真实性负责",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "第十三条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十三条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "广告主应当对互联网广告内容的真实性负责。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告内容存在虚假、不真实描述，包括但不限于虚构游戏功能、效果、数据、用户评价等",
+        "decision": "若广告内容存在虚假陈述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "广告真实性",
+          "虚假宣传",
+          "游戏广告"
+        ],
+        "vector_text": "这款游戏上线即送VIP，战力飙升，一刀999，装备全靠打，真实玩家在线，好评如潮，下载量突破1亿，官",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及广告真实性，语义召回需模拟虚假宣传的常见话术，如夸大效果、虚构数据、虚假用户评价等，以覆盖多种违规表达。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:35:48",
+          "old_vector_text": "广告主发布的互联网广告内容必须真实，不得含有虚假或引人误解的信息，包括游戏功能、效果、数据、用户评价等",
+          "old_semantic_reason": "虚假宣传场景多样，关键词难以穷举，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "游戏广告",
+            "夸大效果",
+            "虚构数据",
+            "用户评价",
+            "真实性"
+          ],
+          "negative_signals_recommendation": [
+            "合规声明",
+            "真实案例",
+            "实际测试"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，包含夸大、虚构、虚假好评等典型表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 77
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 夸大、宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改或拒绝发布",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "真实性判断依赖具体事实和语境，无法通过固定关键词直接判定"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核实广告内容是否与游戏实际功能、效果等一致",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假宣传风险高，需人工或法务审核确认",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "游戏产品功能说明",
+          "游戏实际运行截图或视频"
+        ],
+        "data_sources": [
+          "游戏运营方提供"
+        ],
+        "note": "后期需接入资料核验，确认广告内容与游戏实际功能一致"
+      },
+      "rule_uid": "RUID-44c5caa2437d82d9",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假宣传涉及开放法律概念，需法务判断内容是否真实，且需核验游戏实际功能，风险高，运营无法自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告主发布广告需主体资格和行政许可合规",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "第十三条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十三条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "广告主发布互联网广告的，主体资格、行政许可、引证内容等应当符合法律法规的要求，相关证明文件应当真实、合法、有效。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "",
+        "decision": "若广告主主体资格或行政许可不符合要求，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "广告主资质",
+          "行政许可",
+          "游戏广告"
+        ],
+        "vector_text": "无需资质也能发游戏广告？没有版号也能推广？无证经营游戏广告，没有营业执照也能投？不需要游戏版号，不需要出版许可，不需要文化经营许可证，无资质推广游戏，无证投放游戏广告，无版号游戏广告，无资质游戏推广，无证游戏广告投放，无版号游戏推广，无资质也能发广告，无证也能投广告，无版号也能推广游戏，不需要任何资质，不需要任何许可证，不需要任何版号，不需要任何审批，直接投放游戏广告，直接推广游戏，直接发游戏广告，无需审核，无需资质，无需版号，无需许可，无需审批，快速投放游戏广告，快速推广游戏，快速发游戏广告，无资质快速推广游戏，无证快速投放游戏广告，无版号快速推广游戏，无资质快速发游戏广告，无证快速发游戏广告，无版号快速发游戏广告，无资质也能快速推广游戏，无证也能快速投放游戏广告，无版号也能快速推广游戏，无资质也能快速发游戏广告，无证也能快速发游戏广告，无版号也能快速发游戏广告，无资质推广，无证推广，无版号推广，无资质投放，无证投放，无版号投放，无资质广告，无证广告，无版号广告，无资质游戏，无证游戏，无版号游戏，无资质推广游戏广告，无证推广游戏广告，无版号推广游戏广告，无资质投放游戏广告，无证投放游戏广告，无版号投放游戏广告，无资质发游戏广告，无证发游戏广告，无版号发游戏广告，无资质也能推广游戏广告，无证也能推广游戏广告，无版号也能推广游戏广告，无资质也能投放游戏广告，无证也能投放游戏广告，无版号也能投放游戏广告，无资质也能发游戏广告，无证也能发游戏广告，无版号也能发游戏广告，无资质快速推广游戏广告，无证快速推广游戏广告，无版号快速推广游戏广告，无资质快速投放游戏广告，无证快速投放游戏广告，无版号快速投放游戏广告，无资质快速发游戏广告，无证快速发游戏广告，无版号快速发游戏广告，无资质也能快速推广游戏广告，无证也能快速推广游戏广告，无版号也能快速推广游戏广告，无资质也能快速投放游戏广告，无证也能快速投放游戏广告，无版号也能快速投放游戏广告，无资质也能快速发游戏广告，无证也能快速发游戏广告，无版号也能快速发游戏广告，无资质推广游戏，无证推广游戏，无版号推广游戏，无资质投放游戏，无证投放游戏，无版号投放游戏，无资质发游戏，无证发游戏，无版号发游戏，无资质也能推广游戏，无证也能推广游戏，无版号也能推广游戏，无资质也能投放游戏，无证也能投放游戏，无版号也能投放游戏，无资质也能发游戏，无证也能发游戏，无版号也能发游戏，无资质快速推广游戏，无证快速推广游戏，无版号快速推广游戏，无资质快速投放游戏，无证快速投放游戏，无版号快速投放游戏，无资质快速发游戏，无证快速发游戏，无版号快速发游戏，无资质也能快速推广游戏，无证也能快速推广游戏，无版号也能快速推广游戏，无资质也能快速投放游戏，无证也能快速投放游戏，无版号也能快速投放游戏，无资质也能快速发游戏，无证也能快速发游戏，无版号也能快速发游戏，无资质推广，无证推广，无版号推广，无资质投放，无证投放，无版号投放，无资质广告，无证广告，无版号广告，无资质游戏，无证游戏，无版号游戏，无资质推广游戏广告，无证推广游戏广告，无版号推广游戏广告，无资质投放游戏广告，无证投放游戏广告，无版号投放游戏广告，无资质发游戏广告，无证发游戏广告，无版号发游戏广告，无资质也能推广游戏广告，无证也能推广游戏广告，无版号也能推广游戏广告，无资质也能投放游戏广告，无证也能投放游戏广告，无版号也能投放游戏广告，无资质也能发游戏广告，无证也能发游戏广告，无版号也能发游戏广告，无资质快速推广游戏广告，无证快速推广游戏广告，无版号快速推广游戏广告，无资质快速投放游戏广告，无证快速投放游戏广告，无版号快速投放游戏广告，无资质快速发游戏广告，无证快速发游戏广告，无版号快速发游戏广告，无资质也能快速推广游戏广告，无证也能快速推广游戏广告，无版号也能快速推广游戏广告，无资质也能快速投放游戏广告，无证也能快速投放游戏广告，无版号也能快速投放游戏广告，无资质也能快速发游戏广告，无证也能快速发游戏广告，无版号也能快速发游戏广告",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及广告主资质和行政许可，属于事实核验类规则，广告文案本身难以直接体现违规，但通过模拟无资质推广的营销话术，可召回暗示无证无版号推广的违规表达，适合作为fallback召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:36:02",
+          "old_vector_text": "广告主发布游戏广告，需具备合法主体资格和相关行政许可（如游戏版号），相关证明文件必须真实有效",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "游戏广告",
+            "资质不符",
+            "无版号",
+            "无证推广",
+            "行政许可",
+            "主体资格"
+          ],
+          "negative_signals_recommendation": [
+            "有版号",
+            "已备案",
+            "持证经营",
+            "资质齐全"
+          ],
+          "change_summary": "从合规描述改写为模拟无资质推广的违规话术集合，增强对暗示无证无版号推广表达的召回能力。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 版号、许可、许可证、证明、证明文件.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求补充资质证明，否则拒绝发布",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "资质要求明确，可通过资料核验判断"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核实广告主主体资格和行政许可文件",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需广告主提供资质证明文件进行核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "广告主营业执照",
+          "游戏版号或相关行政许可文件"
+        ],
+        "data_sources": [
+          "广告主提供"
+        ],
+        "note": "后期需接入资料核验，确认广告主资质和行政许可合规"
+      },
+      "rule_uid": "RUID-58e192a8dddf575c",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需结合广告主资质文件判断，运营无法自行确认，需先要求补充营业执照和游戏版号等材料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "直播营销中广告主、广告经营者、广告发布者、广告代言人责任认定规则",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "直播话术"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "19",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十九条 商品销售者或者服务提供者通过互联网直播方式推销商品或者服务，构成商业广告的，应当依法承担广告主的责任和义务。 直播间运营者接受委托提供广告设计、制作、代理、发布服务的，应当依法承担广告经营者、广告发布者的责任和义务。 直播营销人员接受委托提供广告设计、制作、代理、发布服务的，应当依法承担广告经营者、广告发布者的责任和义务。 直播营销人员以自己的名义或者形象对商品、服务作推荐、证明，构成广告代言的，应当依法承担广告代言人的责任和义务。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "直播",
+            "广告主",
+            "广告经营者",
+            "广告发布者",
+            "广告代言人",
+            "推荐",
+            "证明"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "直播话术中涉及游戏商品或服务的推销内容，需识别是否构成商业广告，并判断相关主体是否应承担广告主、广告经营者、广告发布者或广告代言人责任",
+        "decision": "若直播话术构成商业广告，则需明确广告主、广告经营者、广告发布者、广告代言人身份及相应责任"
+      },
+      "recall": {
+        "tags": [
+          "直播营销",
+          "广告责任",
+          "广告主",
+          "广告经营者",
+          "广告发布者",
+          "广告代言人"
+        ],
+        "vector_text": "我是主播，今天给大家推荐这款游戏，真的超好玩，我自己也在玩，强烈推荐！这款游戏我代言了，品质有保障，",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
+        "semantic_reason": "规则涉及直播营销中广告责任主体认定，属于法律定性问题，文案本身难以直接召回，但通过模拟主播自认责任主体的违规话术，可辅助语义召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:36:11",
+          "old_vector_text": "通过互联网直播方式推销游戏商品或服务，构成商业广告时，相关主体应依法承担广告主、广告经营者、广告发布者或广告代言人的责任和义务",
+          "old_semantic_reason": "直播话术语义复杂，关键词可能漏召回，需语义辅助判断是否构成商业广告及责任主体",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "直播营销",
+            "广告责任",
+            "广告主",
+            "广告代言人",
+            "主播自认"
+          ],
+          "negative_signals_recommendation": [
+            "非商业广告",
+            "个人分享",
+            "无推荐证明"
+          ],
+          "change_summary": "从法条解释改写为仿真违规直播话术，模拟主播自认广告责任主体的表达。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 131
+        },
+        "trigger_layer": "workflow",
+        "trigger_layer_reason": "人工校准：该规则涉及直播营销主体责任/责任认定，属于流程或责任归属判断，不进入普通文案内容审核。",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": "违反广告法相关责任规定，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "审核直播话术是否构成商业广告，并识别广告主、广告经营者、广告发布者、广告代言人身份，确保责任归属合规",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "广告法相关责任条款",
+          "直播营销合规案例"
+        ],
+        "reason": "需参考广告法及直播营销相关法规、案例以准确判断是否构成商业广告及责任主体",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需判断直播话术是否构成商业广告，以及相关主体是否接受委托或构成广告代言，属于关系判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需解释是否构成商业广告及责任主体认定",
+        "fact_dependency": "需确认直播话术内容及主体关系",
+        "misjudgment_cost": "中",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及广告责任主体认定，需法务或合规人员审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-8ebbf6afe08670d5",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "人工校准：责任认定类 workflow 规则不进入普通文案审核，后续应在专项流程中由法务或合规复核。",
+        "confidence": "high",
+        "calibration_status": "human_confirmed",
+        "calibrated_at": "2026-07-16T23:19:09",
+        "calibration_source": "manual_rule_layer_correction_20260716"
+      }
+    },
+    {
+      "rule_id": "GAME-ADID-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "互联网广告应具有可识别性，不得变相发布医疗、药品、医疗器械、保健食品、特殊医学用途配方食品广告",
+      "dimension": "广告可识别性不足",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "第二十五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第二十五条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "违反本办法第八条、第九条规定，变相发布医疗、药品、医疗器械、保健食品、特殊医学用途配方食品广告，或者互联网广告不具有可识别性的，依照广告法第五十九条第三款规定予以处罚。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "本条为处罚条款，引用了第八条、第九条关于变相发布广告和广告可识别性的规定，形成可执行规则"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "医疗",
+            "药品",
+            "医疗器械",
+            "保健食品",
+            "特殊医学用途配方食品",
+            "广告"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案是否以非广告形式（如软文、科普、故事等）变相宣传医疗、药品、医疗器械、保健食品、特殊医学用途配方食品，或整体广告是否未明确标注'广告'字样或类似可识别标识",
+        "decision": "若广告文案变相宣传上述品类或未标注可识别标识，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "广告可识别性",
+          "变相广告",
+          "医疗广告",
+          "保健食品广告"
+        ],
+        "vector_text": "这款保健品效果超棒，很多玩家都在用！游戏里隐藏的医疗神器，快速恢复体力，不告诉别人哦～特医食品配方，",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及变相广告和可识别性，语义模糊，关键词难以覆盖所有变体，适合语义召回。vector_text模拟了软文、分享、隐藏推荐等变相表达，旨在召回未标注广告的医疗、药品、保健食品等推广文案。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:36:20",
+          "old_vector_text": "互联网广告不具有可识别性，或变相发布医疗、药品、医疗器械、保健食品、特殊医学用途配方食品广告",
+          "old_semantic_reason": "变相广告可能通过语义模糊方式规避关键词，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "变相广告",
+            "软文",
+            "医疗推广",
+            "保健食品",
+            "可识别性",
+            "游戏广告",
+            "隐性营销"
+          ],
+          "negative_signals_recommendation": [
+            "标注了广告字样",
+            "明确为广告",
+            "合规声明"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖软文、分享、隐藏推荐等变相表达，增强语义召回能力。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 122
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 医疗、宣传、广告可识别、软文.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "依照广告法第五十九条第三款规定予以处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求修改，确保广告具有可识别性且不涉及变相发布上述品类广告",
+      "examples": {
+        "violation": [
+          "以科普文章形式推荐某保健食品，未标注'广告'字样",
+          "游戏内嵌软文宣传药品，未明确标识为广告"
+        ],
+        "compliant": [
+          "游戏广告页面明确标注'广告'字样",
+          "广告内容不涉及医疗、药品、保健食品等品类"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了变相发布广告和广告可识别性的违规情形及处罚，规则明确可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高，涉及处罚",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可覆盖，无需法务前置审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-93d50938bf28556e",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "变相广告的判断涉及开放法律概念，需要法务结合具体文案形式与内容进行边界解释，且风险高，不宜由运营直接处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

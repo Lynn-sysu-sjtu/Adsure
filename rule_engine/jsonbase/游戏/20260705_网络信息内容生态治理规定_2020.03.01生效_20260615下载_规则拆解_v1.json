@@ -1,0 +1,1883 @@
+{
+  "meta": {
+    "name": "游戏规则库-网络信息内容生态治理规定_2020.03.01生效_20260615下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "游戏广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "网络信息内容生态治理规定_2020.03.01生效_20260615下载.doc",
+    "source_track": "游戏",
+    "rule_count": 10,
+    "error_count": 1,
+    "source_units_processed": 42,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "NICE",
+      "name": "网络信息内容生态治理规定_2020.03.01生效_20260615下载",
+      "short": "NICE-2020",
+      "type": "法规",
+      "legal_level": 3,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "GAME-OTH-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "NICE-2020",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止使用夸张标题，内容与标题严重不符",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "NICE",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "NICE",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "网络信息内容生产者应当采取措施，防范和抵制制作、复制、发布含有下列内容的不良信息：(一)使用夸张标题，内容与标题严重不符的；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "夸张标题",
+            "标题党"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测标题与正文内容是否严重不符，标题是否存在夸大、误导性描述",
+        "decision": "若标题使用夸张表述且与正文内容严重不符，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "标题违规",
+          "内容与标题不符",
+          "不良信息"
+        ],
+        "vector_text": "震惊！这款游戏让你一夜暴富；不看后悔一辈子，点击就送VIP；标题：全网最火游戏，内容：普通介绍；标题",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则适合语义召回，因为夸张标题和标题党有大量变体，关键词难以穷举，语义召回可覆盖多种表达方式。vector_text 模拟了真实违规标题和描述，便于向量匹配。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:00:58",
+          "old_vector_text": "广告或推广内容中标题使用夸张、误导性词语，导致标题与正文内容严重不一致",
+          "old_semantic_reason": "关键词可能无法覆盖所有夸张标题变体，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "标题党",
+            "夸张标题",
+            "内容不符",
+            "误导点击",
+            "标题违规"
+          ],
+          "negative_signals_recommendation": [
+            "标题与正文一致",
+            "标题客观描述",
+            "标题无夸张"
+          ],
+          "change_summary": "将原有偏规则描述的vector_text改写为HyDE风格的违规文案集合，包含多种夸张标题和标题党变体，增强语义召回能力。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 335
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 夸大、宣传、虚假、误导、诱导点击.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [
+          "标题：'震惊！这款游戏让你一夜暴富'，正文仅为普通游戏介绍"
+        ],
+        "compliant": [
+          "标题：'全新RPG游戏上线'，正文描述游戏玩法"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "是否构成'严重不符'需结合具体内容判断，存在主观性"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断标题与内容不符的严重程度",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_direct",
+        "route_reason": "常见违规类型，运营可直接判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-6baad48b642096d2",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供标题与正文内容对比，以判断是否严重不符，但无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-OTH-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "NICE-2020",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止炒作绯闻、丑闻、劣迹等",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "NICE",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "NICE",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "网络信息内容生产者应当采取措施，防范和抵制制作、复制、发布含有下列内容的不良信息：(二)炒作绯闻、丑闻、劣迹等的；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "绯闻",
+            "丑闻",
+            "劣迹",
+            "炒作"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测内容是否涉及对绯闻、丑闻、劣迹事件的刻意渲染或放大",
+        "decision": "若内容以炒作绯闻、丑闻、劣迹为主要目的，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "炒作",
+          "不良信息",
+          "绯闻丑闻"
+        ],
+        "vector_text": "这款游戏由某劣迹艺人代言，快来体验；震惊！某明星丑闻内幕曝光，游戏内隐藏彩蛋；绯闻缠身的主播力荐，你",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则适合语义召回，因为关键词可能无法覆盖所有炒作变体，如隐晦提及、暗示、借势等，需要语义理解识别炒作意图。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:01:07",
+          "old_vector_text": "广告或推广内容中涉及对绯闻、丑闻、劣迹事件的炒作或不当利用",
+          "old_semantic_reason": "关键词可能无法覆盖所有炒作变体，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "炒作",
+            "绯闻",
+            "丑闻",
+            "劣迹",
+            "不良信息",
+            "明星",
+            "代言"
+          ],
+          "negative_signals_recommendation": [
+            "新闻报道",
+            "客观陈述",
+            "辟谣",
+            "批评"
+          ],
+          "change_summary": "将原规则性描述改写为仿真违规文案集合，覆盖多种炒作表达方式，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 164
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 代言、限时.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [
+          "文案：'这款游戏由某劣迹艺人代言，快来体验'"
+        ],
+        "compliant": [
+          "文案：'游戏新版本上线，新增角色'"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "是否构成'炒作'需结合上下文判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断是否属于恶意炒作",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_direct",
+        "route_reason": "常见违规类型，运营可直接判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-1bd24b363d2b8bea",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需运营补充是否涉及恶意炒作或事实依据，再决定是否需法务介入",
+        "confidence": "medium",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-OTH-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "NICE-2020",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止不当评述自然灾害、重大事故等灾难",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "NICE",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "NICE",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "网络信息内容生产者应当采取措施，防范和抵制制作、复制、发布含有下列内容的不良信息：(三)不当评述自然灾害、重大事故等灾难的；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "自然灾害",
+            "重大事故",
+            "灾难",
+            "评述"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测内容是否对自然灾害、重大事故等灾难进行不当评述，如调侃、歪曲事实等",
+        "decision": "若内容对灾难进行不当评述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "灾难评述",
+          "不当内容",
+          "不良信息"
+        ],
+        "vector_text": "文案：'这款游戏就像地震一样刺激'，不当类比自然灾害?自然灾害?重大事故?灾难?评述?灾难评述?不当",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:09:22",
+          "old_vector_text": "广告或推广内容中对自然灾害、重大事故等灾难进行不当评述或调侃",
+          "old_semantic_reason": "关键词可能无法覆盖所有不当评述变体，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "灾难评述",
+            "不当内容",
+            "不良信息"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [
+          "文案：'这款游戏就像地震一样刺激'，不当类比自然灾害"
+        ],
+        "compliant": [
+          "文案：'游戏内新增灾难模拟模式，仅供娱乐'"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "是否构成'不当评述'需结合具体语境判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断评述是否不当",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及灾难话题，误判风险高，需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-8e84fbe9ca82f28c",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及‘不当评述’这一开放法律概念，需法务判断是否构成调侃或歪曲事实，且误判风险高",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-OTH-004",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "NICE-2020",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止带有性暗示、性挑逗等易使人产生性联想的内容",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "NICE",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "NICE",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "网络信息内容生产者应当采取措施，防范和抵制制作、复制、发布含有下列内容的不良信息：(四)带有性暗示、性挑逗等易使人产生性联想的；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "性暗示",
+            "性挑逗",
+            "性感",
+            "诱惑",
+            "挑逗"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测内容是否包含性暗示、性挑逗等易使人产生性联想的表述",
+        "decision": "若内容包含性暗示或性挑逗，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "性暗示",
+          "低俗",
+          "不良信息"
+        ],
+        "vector_text": "欲火焚身、性感撩人、挑逗你的神经、诱惑难挡、让人想入非非、血脉贲张、湿身诱惑、夜夜春宵、激情四射、暧",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "性暗示表达多变，关键词难以穷举，语义召回可覆盖变体、隐晦表达和软性规避文案",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:03:41",
+          "old_vector_text": "广告或推广内容中包含性暗示、性挑逗等易引发性联想的文字",
+          "old_semantic_reason": "关键词可能无法覆盖所有性暗示变体，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "性暗示",
+            "低俗",
+            "色情",
+            "软色情",
+            "擦边球",
+            "不良信息",
+            "成人内容"
+          ],
+          "negative_signals_recommendation": [
+            "健康",
+            "教育",
+            "科普",
+            "艺术",
+            "医学"
+          ],
+          "change_summary": "从概括性描述改为包含大量真实违规文案变体、隐晦表达和软性规避话术的集合",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 236
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [
+          "文案：'这款游戏让你欲火焚身'"
+        ],
+        "compliant": [
+          "文案：'游戏角色设计精美'"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "是否构成'性暗示'需结合语境判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断是否属于性暗示",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及低俗内容，误判风险高，需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-0602d9a5586168ae",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "性暗示属于开放法律概念，边界模糊，误判风险高，需法务结合语境判断",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-OTH-005",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "NICE-2020",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止展现血腥、惊悚、残忍等致人身心不适的内容",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "NICE",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "NICE",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "网络信息内容生产者应当采取措施，防范和抵制制作、复制、发布含有下列内容的不良信息：(五)展现血腥、惊悚、残忍等致人身心不适的；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "血腥",
+            "惊悚",
+            "残忍",
+            "恐怖",
+            "暴力"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测内容是否包含血腥、惊悚、残忍等致人身心不适的描述",
+        "decision": "若内容包含血腥、惊悚、残忍等描述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "血腥",
+          "惊悚",
+          "残忍",
+          "不良信息"
+        ],
+        "vector_text": "游戏内斩杀画面极其血腥，断肢横飞，内脏外露，鲜血喷溅，恐怖惊悚，残忍暴力，令人不适，毛骨悚然，吓人，",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及开放概念，关键词无法覆盖所有变体，语义召回可捕捉多种血腥、惊悚、残忍等致人身心不适的表达方式，适合作为fallback辅助关键词召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:03:51",
+          "old_vector_text": "广告或推广内容中包含血腥、惊悚、残忍等致人身心不适的文字描述",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "血腥",
+            "惊悚",
+            "残忍",
+            "暴力",
+            "恐怖",
+            "不适",
+            "限制级"
+          ],
+          "negative_signals_recommendation": [
+            "炫酷",
+            "刺激",
+            "精彩",
+            "激烈",
+            "爽快"
+          ],
+          "change_summary": "将原规则摘要式文本改写为包含多种血腥、惊悚、残忍等违规表达的仿真文案集合，增强语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 195
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [
+          "文案：'游戏内斩杀画面极其血腥'"
+        ],
+        "compliant": [
+          "文案：'游戏战斗效果炫酷'"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "是否构成'身心不适'需主观判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断是否致人身心不适",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及暴力血腥内容，误判风险高，需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-daabdb1179ed1c42",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及血腥、惊悚等致人身心不适的开放概念，误判风险高，需法务结合上下文判断是否违规",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-OTH-006",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "NICE-2020",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止煽动人群歧视、地域歧视等",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "NICE",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "NICE",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "网络信息内容生产者应当采取措施，防范和抵制制作、复制、发布含有下列内容的不良信息：(六)煽动人群歧视、地域歧视等的；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "歧视",
+            "地域歧视",
+            "种族歧视",
+            "煽动"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测内容是否煽动人群歧视或地域歧视",
+        "decision": "若内容煽动歧视，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "歧视",
+          "煽动",
+          "不良信息"
+        ],
+        "vector_text": "某地区玩家水平低，快来虐；XX省的人都是骗子；东北人素质差；河南人偷井盖；上海人小气；外地人滚出去；",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及开放概念，关键词难以覆盖所有变体，语义召回可捕获多种歧视表达，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:04:00",
+          "old_vector_text": "广告或推广内容中煽动人群歧视、地域歧视等不当言论",
+          "old_semantic_reason": "关键词可能无法覆盖所有歧视变体，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "歧视",
+            "地域黑",
+            "煽动",
+            "不良信息",
+            "地图炮",
+            "拉踩",
+            "引战"
+          ],
+          "negative_signals_recommendation": [
+            "反歧视",
+            "包容",
+            "尊重",
+            "多元"
+          ],
+          "change_summary": "从法条式描述改为真实违规文案集合，覆盖地域、种族、性别等歧视场景及变体表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 130
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [
+          "文案：'某地区玩家水平低，快来虐'"
+        ],
+        "compliant": [
+          "文案：'欢迎所有玩家加入'"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "是否构成'煽动'需结合语境判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断是否属于煽动歧视",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及歧视敏感话题，误判风险高，需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-c0c1a05c8235f35e",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "煽动歧视属于开放法律概念，需要法务判断是否构成煽动，且误判风险高，应进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-OTH-007",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "NICE-2020",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止宣扬低俗、庸俗、媚俗内容",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "NICE",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "NICE",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "网络信息内容生产者应当采取措施，防范和抵制制作、复制、发布含有下列内容的不良信息：(七)宣扬低俗、庸俗、媚俗内容的；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "低俗",
+            "庸俗",
+            "媚俗",
+            "三俗"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测内容是否宣扬低俗、庸俗、媚俗等不良价值观",
+        "decision": "若内容宣扬低俗、庸俗、媚俗，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "低俗",
+          "庸俗",
+          "媚俗",
+          "不良信息"
+        ],
+        "vector_text": "低俗快乐，庸俗趣味，媚俗表演，三俗内容，恶俗段子，低俗营销，庸俗文案，媚俗广告，低俗游戏，庸俗直播，",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及开放概念'三俗'，关键词有限但变体多，语义召回可覆盖低俗、庸俗、媚俗及其组合、场景化表达，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:04:13",
+          "old_vector_text": "广告或推广内容中宣扬低俗、庸俗、媚俗等不良内容",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "低俗",
+            "庸俗",
+            "媚俗",
+            "三俗",
+            "恶俗",
+            "擦边",
+            "不良内容"
+          ],
+          "negative_signals_recommendation": [
+            "健康向上",
+            "正能量",
+            "积极",
+            "合规",
+            "合法"
+          ],
+          "change_summary": "从简短描述扩展为包含大量低俗、庸俗、媚俗及其组合、场景化表达的仿真违规文案集合，覆盖多种变体和行业场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 1079
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [
+          "文案：'这款游戏让你体验最庸俗的快乐'"
+        ],
+        "compliant": [
+          "文案：'游戏内容健康向上'"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "是否构成'低俗、庸俗、媚俗'需主观判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断是否属于三俗内容",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及低俗内容，误判风险高，需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-52295a6b17fe5b44",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "三俗概念边界模糊，需法务结合语境和监管口径判断是否违规，运营难以自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-OTH-008",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "NICE-2020",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止可能引发未成年人模仿不安全行为和违反社会公德行为、诱导未成年人不良嗜好的内容",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "NICE",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "NICE",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "网络信息内容生产者应当采取措施，防范和抵制制作、复制、发布含有下列内容的不良信息：(八)可能引发未成年人模仿不安全行为和违反社会公德行为、诱导未成年人不良嗜好等的；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "模仿",
+            "不安全行为",
+            "违反社会公德",
+            "诱导",
+            "不良嗜好",
+            "未成年人"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测内容是否可能引发未成年人模仿不安全行为、违反社会公德行为或诱导不良嗜好",
+        "decision": "若内容可能对未成年人产生不良引导，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "不良引导",
+          "模仿行为"
+        ],
+        "vector_text": "跳楼游戏你敢来吗？吸烟喝酒游戏里也能体验，模仿危险动作，挑战极限，暴力恶搞，教唆犯罪，不良嗜好诱导，",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及开放概念，关键词难以覆盖所有变体，语义召回可捕获多种诱导未成年人模仿不安全行为或不良嗜好的表达，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:04:25",
+          "old_vector_text": "广告或推广内容中可能引发未成年人模仿不安全行为、违反社会公德或诱导不良嗜好的文字",
+          "old_semantic_reason": "关键词可能无法覆盖所有诱导变体，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "不良引导",
+            "模仿行为",
+            "不安全行为",
+            "违反社会公德",
+            "诱导不良嗜好",
+            "危险动作",
+            "暴力恶搞"
+          ],
+          "negative_signals_recommendation": [
+            "教育类",
+            "科普类",
+            "安全提示",
+            "正面引导",
+            "家长监护"
+          ],
+          "change_summary": "从概括性描述改写为包含具体违规文案、场景和变体的集合，增强语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 368
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 动作、未成年人.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [
+          "文案：'跳楼游戏，你敢来吗？'",
+          "文案：'吸烟喝酒，游戏里也能体验'"
+        ],
+        "compliant": [
+          "文案：'游戏适合全年龄段玩家'"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "是否'可能引发'需结合未成年人心理判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断是否对未成年人有不良影响",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及未成年人保护，误判风险高，需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-f0f0856a9d04a11c",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及开放法律概念，需法务判断内容是否对未成年人产生不良引导，且误判风险高",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-FAKE-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "NICE-2020",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止流量造假、流量劫持及虚假注册交易账号",
+      "dimension": "概率造假",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "NICE",
+        "source_article_id": "第二十四条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "NICE",
+          "article": "第二十四条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第二十四条 网络信息内容服务使用者和网络信息内容生产者、网络信息内容服务平台不得通过人工方式或者技术手段实施流量造假、流量劫持以及虚假注册账号、非法交易账号、操纵用户账号等行为，破坏网络生态秩序。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "流量造假",
+            "流量劫持",
+            "虚假注册账号",
+            "非法交易账号",
+            "操纵用户账号"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "禁止在广告文案或推广内容中宣传、承诺或暗示通过技术或人工手段实现流量造假、流量劫持、虚假注册账号、非法交易账号、操纵用户账号等破坏网络生态秩序的行为",
+        "decision": "若检测到相关关键词或语义，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "流量造假",
+          "流量劫持",
+          "虚假注册",
+          "非法交易账号",
+          "操纵账号",
+          "游戏广告"
+        ],
+        "vector_text": "本游戏可提供刷量服务，保证流量真实?注册即送VIP，账号可交易?流量造假?流量劫持?虚假注册账号?非",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、清晰、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:10:55",
+          "old_vector_text": "游戏广告中不得出现任何关于流量造假、流量劫持、虚假注册账号、非法交易账号、操纵用户账号的表述或暗示",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "流量造假",
+            "流量劫持",
+            "虚假注册",
+            "非法交易账号",
+            "操纵账号",
+            "游戏广告"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《网络信息内容生态治理规定》第二十四条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求修改",
+      "examples": {
+        "violation": [
+          "本游戏可提供刷量服务，保证流量真实",
+          "注册即送VIP，账号可交易"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止流量造假等行为，可直接形成广告审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-f443e44e592d3a93",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词和语义可自动判定，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "NICE-2020",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止利用党和国家形象标识及重大活动名义进行商业营销",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "NICE",
+        "source_article_id": "25",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "NICE",
+          "article": "第二十五条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第二十五条 网络信息内容服务使用者和网络信息内容生产者、网络信息内容服务平台不得利用党旗、党徽、国旗、国徽、国歌等代表党和国家形象的标识及内容，或者借国家重大活动、重大纪念日和国家机关及其工作人员名义等，违法违规开展网络商业营销活动。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "党旗",
+            "党徽",
+            "国旗",
+            "国徽",
+            "国歌",
+            "党和国家形象",
+            "国家重大活动",
+            "重大纪念日",
+            "国家机关",
+            "工作人员名义"
+          ],
+          "regex": [],
+          "context_signals": [
+            "商业营销",
+            "广告",
+            "推广",
+            "促销"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否包含党旗、党徽、国旗、国徽、国歌等代表党和国家形象的标识或内容，或提及国家重大活动、重大纪念日、国家机关及其工作人员名义，且同时具有商业营销意图（如推广、促销、广告等）。",
+        "decision": "若检测到上述标识或内容与商业营销意图同时出现，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "党和国家形象",
+          "国家标识",
+          "重大活动",
+          "商业营销",
+          "禁止性规则"
+        ],
+        "vector_text": "庆祝国庆，游戏内购全场五折；党旗飘扬，充值送限定皮肤；喜迎二十大，登录领福利；致敬英雄，建军节礼包；",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及党和国家形象标识及重大活动名义的商业营销，关键词明确但变体多（如简称、谐音、图片描述），语义召回可覆盖各种软性表述和规避说法，适合作为fallback辅助关键词召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:07:05",
+          "old_vector_text": "禁止在广告或商业营销中使用党旗、党徽、国旗、国徽、国歌等党和国家形象标识，或借国家重大活动、重大纪念日、国家机关及工作人员名义进行商业推广。",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述（如简称、谐音、图片文字描述），需语义辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "党和国家形象",
+            "国家标识",
+            "重大活动",
+            "商业营销",
+            "禁止性规则",
+            "政治敏感",
+            "违规广告"
+          ],
+          "negative_signals_recommendation": [
+            "新闻报道",
+            "时政评论",
+            "教育内容",
+            "非商业用途"
+          ],
+          "change_summary": "将原法条式vector_text改写为HyDE风格的违规文案集合，包含多种变体表述和规避说法，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 959
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 代言、促销、宣传、清晰、限时.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《网络信息内容生态治理规定》第二十五条，可能面临行政处罚。",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改，删除违规内容。",
+      "examples": {
+        "violation": [
+          "庆祝国庆，游戏内购全场五折",
+          "党旗飘扬，充值送限定皮肤"
+        ],
+        "compliant": [
+          "游戏内购全场五折（无国家标识或重大活动关联）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止利用党和国家形象标识及重大活动名义进行商业营销，规则可直接适用。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可覆盖常见违规场景，无需法务审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-df203041f183ec14",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规内容，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": [
+    {
+      "article_id": "第六条",
+      "error": "Expecting ',' delimiter: line 961 column 51 (char 24971)"
+    }
+  ]
+}

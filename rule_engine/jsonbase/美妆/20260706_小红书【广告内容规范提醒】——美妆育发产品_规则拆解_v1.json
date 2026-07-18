@@ -1,0 +1,1140 @@
+{
+  "meta": {
+    "name": "美妆规则库-小红书【广告内容规范提醒】—— 美妆育发产品",
+    "version": "v1",
+    "generated_date": "20260706",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "小红书【广告内容规范提醒】—— 美妆育发产品.pdf",
+    "source_track": "美妆",
+    "rule_count": 6,
+    "error_count": 0,
+    "source_units_processed": 6,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "XHS",
+      "name": "小红书【广告内容规范提醒】—— 美妆育发产品",
+      "short": "XHS-小红书【广告内容规范提醒】——美妆育发产品",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "小红书"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "XHS-COSM-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_platform_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "育发产品广告宣传需提供特化注册证资质",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "育发产品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【广告内容规范提醒】——美妆育发产品",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "2021年1月1日前取得特化注册备案的育发产品，在收取育发特化注册证产品资质后，支持在过渡期内进行育发产品投放推广和育发功效宣传"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "育发",
+            "育发产品",
+            "育发功效",
+            "生发",
+            "防脱育发"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "物料宣传内容涉及育发产品或育发功效（含产品名称或产品外包装）",
+        "decision": "若物料宣传育发产品或育发功效，则需校验是否已提供育发特化注册证产品资质；未提供则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "育发",
+          "资质校验",
+          "特化注册证",
+          "小红书平台规则"
+        ],
+        "vector_text": "物料宣传育发产品或育发功效，需要提供育发特化注册证产品资质",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、注册证、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告投放限制或下架"
+      },
+      "relations": [],
+      "disposition": "若物料宣传育发产品或育发功效，且未提供育发特化注册证产品资质，则判定违规，不予投放或要求补充资质",
+      "examples": {
+        "violation": [
+          "宣传'育发液'但未提供育发特化注册证",
+          "宣传'防脱育发洗发水'但无相关资质"
+        ],
+        "compliant": [
+          "宣传育发产品且已提供育发特化注册证产品资质"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求育发产品宣传需提供特化注册证资质，条件清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核验广告主是否已提供育发特化注册证产品资质",
+        "misjudgment_cost": "中等",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要广告主提供资质文件进行核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "育发特化注册证产品资质"
+        ],
+        "data_sources": [
+          "广告主上传资质"
+        ],
+        "note": "后期需接入资料核验，确认广告主是否已提供育发特化注册证"
+      },
+      "rule_uid": "RUID-0cb2e6f90ecd2a85",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但核心是资质核验，运营无法自行判断，需先要求广告主补充特化注册证资质。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_platform_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "原育发产品禁止宣传育发功效（2026年1月1日起）",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "育发产品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【广告内容规范提醒】——美妆育发产品",
+        "source_article_id": "（1）",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "（1）",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "原育发产品，2026年1⽉1⽇起不区分产品备案时间，均不可宣传育发功效（含跨境产品），涉及育发宣传按医疗功效处理"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "育发",
+            "生发",
+            "防脱育发",
+            "促进毛发生长",
+            "育发功效"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否包含育发相关功效宣称，包括但不限于育发、生发、促进毛发生长等表述",
+        "decision": "若检测到育发功效宣称，则判定违规，按医疗功效处理"
+      },
+      "recall": {
+        "tags": [
+          "育发产品",
+          "功效宣称",
+          "医疗功效",
+          "小红书平台规则"
+        ],
+        "vector_text": "促进毛发生长，告别秃头?育发精华，生发效果显著?育发?生发?防脱育发?促进毛发生长?育发功效?育发产",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、医疗、宣传、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:18:31",
+          "old_vector_text": "原育发产品自2026年1月1日起，无论备案时间，均不得宣传育发功效，包括跨境产品，违者按医疗功效处理",
+          "old_semantic_reason": "育发功效可能以变体或隐晦方式表达，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "育发产品",
+            "功效宣称",
+            "医疗功效",
+            "小红书平台规则"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "按医疗功效处理，可能涉及违规处罚"
+      },
+      "relations": [],
+      "disposition": "禁止宣传育发功效，涉及育发宣传按医疗功效处理",
+      "examples": {
+        "violation": [
+          "促进毛发生长，告别秃头",
+          "育发精华，生发效果显著"
+        ],
+        "compliant": [
+          "头皮护理，滋养发根"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了时间节点、适用范围和禁止行为，可直接形成审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可自动判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-2ce222fc1979af66",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可自动判定，运营可直接删除或替换违规表述，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-MED-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_platform_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "防脱产品及普通化妆品不得宣传育发功效",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "防脱产品",
+          "普通化妆品",
+          "跨境产品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【广告内容规范提醒】——美妆育发产品",
+        "source_article_id": "（2）",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "（2）",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "（2）防脱产品及普通化妆品等其他产品，均不可宣传育发功效（含跨境产品），涉及育发宣传按医疗功效处理"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "育发",
+            "生发",
+            "防脱育发",
+            "育发功效",
+            "促进毛发生长",
+            "毛发再生"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否包含育发、生发等功效宣称，且产品为防脱产品、普通化妆品或跨境产品",
+        "decision": "若检测到育发功效宣传且产品属于防脱产品、普通化妆品或跨境产品，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "育发宣传",
+          "防脱产品",
+          "普通化妆品",
+          "跨境产品",
+          "医疗功效"
+        ],
+        "vector_text": "防脱产品及普通化妆品等其他产品，均不可宣传育发功效（含跨境产品），涉及育发宣传按医疗功效处理",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、医疗、宣传、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改，删除育发相关宣传内容",
+      "examples": {
+        "violation": [
+          "防脱洗发水宣传'育发'功效",
+          "普通化妆品宣传'生发'",
+          "跨境产品宣传'促进毛发生长'"
+        ],
+        "compliant": [
+          "防脱产品宣传'防脱'功效",
+          "普通化妆品宣传'滋养头皮'"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止防脱产品及普通化妆品宣传育发功效，规则清晰可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词可触发，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-b6a337ad305653b6",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规宣传语，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆育发产品",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "涉及生发类描述按医疗产品功效管理",
+      "dimension": "涉医疗宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "育发产品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【广告内容规范提醒】——美妆育发产品",
+        "source_article_id": "（1）",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "（1）",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "涉及⽣发类描述按医疗产品功效管理 如：头发越洗越多、增发、密发、促进⽑发⽣⻓、有助⽑发⽣⻓、增加发量、填补发逢、发逢变密、秃头⽤了发量多、发际线不秃了、⻓出⼩绒⽑等"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "头发越洗越多",
+            "增发",
+            "密发",
+            "促进毛发⽣⻓",
+            "有助毛发⽣⻓",
+            "增加发量",
+            "填补发逢",
+            "发逢变密",
+            "秃头用了发量多",
+            "发际线不秃了",
+            "长出小绒毛"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "禁止在美妆育发产品广告中使用任何暗示生发、增发、促进毛发生长等医疗功效的描述，此类描述应按医疗产品功效管理，不得用于普通美妆产品宣传。",
+        "decision": "若文案中出现上述关键词或语义等同的生发类描述，则判定为违规，按医疗产品功效管理要求处理。"
+      },
+      "recall": {
+        "tags": [
+          "生发类描述",
+          "医疗产品功效",
+          "育发产品",
+          "小红书平台规则"
+        ],
+        "vector_text": "头发越洗越多?增发?密发?促进毛发生长?有助毛发生长?增加发量?填补发逢?发逢变密?秃头用了发量多?",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、医疗、宣传.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:20:04",
+          "old_vector_text": "美妆育发产品广告中禁止使用生发、增发、密发、促进毛发生长等医疗功效描述，此类描述按医疗产品功效管理。",
+          "old_semantic_reason": "生发类描述可能存在变体或同义表达，关键词可能漏召回，需语义辅助。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "生发类描述",
+            "医疗产品功效",
+            "育发产品",
+            "小红书平台规则"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "平台可能对违规内容进行下架、限制投放或处罚"
+      },
+      "relations": [],
+      "disposition": "禁止使用生发类医疗功效描述，违规内容需修改或删除。",
+      "examples": {
+        "violation": [
+          "头发越洗越多",
+          "增发",
+          "密发",
+          "促进毛发生长",
+          "有助毛发生长",
+          "增加发量",
+          "填补发逢",
+          "发逢变密",
+          "秃头用了发量多",
+          "发际线不秃了",
+          "长出小绒毛"
+        ],
+        "compliant": [
+          "滋养头皮",
+          "强韧发根",
+          "改善头皮环境"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了生发类描述示例，并规定按医疗产品功效管理，规则清晰可执行。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词匹配即可判定，无需人工审核或资料核验。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-90d6074f3706ee70",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则通过关键词直接匹配，运营可快速删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-PLAT-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_platform_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "美妆育发产品功效宣称需按特殊化妆品管理",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "育发产品",
+          "防脱产品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【广告内容规范提醒】——美妆育发产品",
+        "source_article_id": "（2）",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "（2）",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "通过改善头皮环境预防脱发的按特殊化妆品功效管理 如：减少掉发，视觉上更显浓密；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "减少掉发",
+            "预防脱发",
+            "防脱",
+            "掉发减少",
+            "更显浓密"
+          ],
+          "regex": [],
+          "context_signals": [
+            "改善头皮环境",
+            "预防脱发"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣称通过改善头皮环境达到预防脱发、减少掉发、视觉上更显浓密等功效，需按特殊化妆品功效管理，即产品应具备特殊化妆品备案或注册资质",
+        "decision": "若广告文案包含上述关键词或语义，且产品未标注为特殊化妆品或未提供相关资质，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "育发产品",
+          "防脱",
+          "特殊化妆品",
+          "功效宣称",
+          "平台规则"
+        ],
+        "vector_text": "掉发明显减少，头发更显浓密，改善头皮环境，预防脱发，防脱育发，减少掉发，掉发变少，掉发少了，头发变浓",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及功效宣称，关键词有限但变体多，适合语义召回作为fallback，vector_text模拟了多种违规表述，覆盖同义替换和场景化表达。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:20:16",
+          "old_vector_text": "广告文案中宣称通过改善头皮环境预防脱发、减少掉发、视觉上更显浓密等功效，需按特殊化妆品管理",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，如'减少掉发'可能被表述为'掉发减少'或'掉发变少'，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "美妆",
+            "育发",
+            "防脱",
+            "功效宣称",
+            "特殊化妆品",
+            "小红书",
+            "平台规则"
+          ],
+          "negative_signals_recommendation": [
+            "已备案",
+            "特殊化妆品",
+            "国妆特字",
+            "持证"
+          ],
+          "change_summary": "将原规则性描述改写为仿真违规文案集合，增加同义变体、场景化表达和堆叠高频词，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "平台可能对违规广告进行下架、限制投放或处罚"
+      },
+      "relations": [],
+      "disposition": "若广告文案宣称通过改善头皮环境预防脱发、减少掉发、视觉上更显浓密等功效，需核实产品是否按特殊化妆品管理（即具备特殊化妆品备案或注册），否则判定违规",
+      "examples": {
+        "violation": [
+          "使用本产品后，掉发明显减少，头发更显浓密",
+          "改善头皮环境，有效预防脱发"
+        ],
+        "compliant": [
+          "本产品为特殊化妆品，已备案，可减少掉发"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了通过改善头皮环境预防脱发的功效宣称需按特殊化妆品管理，规则可直接适用"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核实产品是否具备特殊化妆品备案或注册资质",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营或审核人员确认产品是否属于特殊化妆品，可能需要提供相关资质文件",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "特殊化妆品备案凭证",
+          "特殊化妆品注册证书"
+        ],
+        "data_sources": [
+          "国家药监局化妆品备案数据库"
+        ],
+        "note": "后期需接入资料核验，确认产品是否已按特殊化妆品管理"
+      },
+      "rule_uid": "RUID-484d4f5bb51ccac8",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需结合产品是否具备特殊化妆品资质判断，运营需先补充备案或注册证书，无法直接修改文案。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_platform_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "通过改善发质预防断发的按普通化妆品功效管理",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "育发产品",
+          "普通化妆品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【广告内容规范提醒】——美妆育发产品",
+        "source_article_id": "（3）",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "（3）",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "（3）通过改善发质预防断发的按普通化妆品功效管理 如：修护发丝、强韧秀发、防⽌中断等"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "修护发丝",
+            "强韧秀发",
+            "防止中断",
+            "预防断发",
+            "改善发质"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣称通过改善发质来预防断发，或使用修护发丝、强韧秀发、防止中断等类似表述，应按照普通化妆品功效管理，不得暗示或明示具有特殊化妆品功效（如生发、防脱发等）。",
+        "decision": "若广告文案中宣称通过改善发质预防断发，且未按普通化妆品功效管理（如未标注普通化妆品备案信息或违规宣称特殊化妆品功效），则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "育发产品",
+          "功效宣称",
+          "普通化妆品",
+          "平台规则"
+        ],
+        "vector_text": "修护发丝，强韧秀发，防止中断，预防断发，改善发质，告别断发，发丝强韧不断裂，修护受损发质，强韧发根，",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及通过改善发质预防断发的宣称，属于普通化妆品功效管理，语义上需要召回各种变体表述，关键词可能遗漏，适合语义召回作为主要方式。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称、明示、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:20:24",
+          "old_vector_text": "广告文案中宣称通过改善发质预防断发，使用修护发丝、强韧秀发、防止中断等表述，需按普通化妆品功效管理，不得违规宣称特殊化妆品功效。",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义补充召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "美妆",
+            "普通化妆品",
+            "功效宣称",
+            "断发",
+            "修护发丝",
+            "强韧秀发",
+            "预防断发"
+          ],
+          "negative_signals_recommendation": [
+            "生发",
+            "防脱",
+            "育发",
+            "特殊化妆品"
+          ],
+          "change_summary": "从法条解释风格改写为真实违规文案集合，包含多种变体表述和规避说法，并明确排除特殊化妆品宣称。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "平台可能要求广告主自查自纠，修正违规内容，重新提交资质文件。"
+      },
+      "relations": [],
+      "disposition": "若广告文案中宣称通过改善发质预防断发，但未按普通化妆品功效管理（如未标注普通化妆品备案信息或违规宣称特殊化妆品功效），则判定为违规，需修改文案或补充资质。",
+      "examples": {
+        "violation": [
+          "本产品修护发丝，强韧秀发，有效防止断发，具有生发功效。",
+          "使用后改善发质，预防断发，属于防脱育发产品。"
+        ],
+        "compliant": [
+          "本产品修护发丝，强韧秀发，防止断发，属于普通化妆品。",
+          "改善发质，预防断发，按普通化妆品功效管理。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了通过改善发质预防断发的功效宣称应按普通化妆品管理，规则清晰可执行。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定，无需人工审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-fb6dcb0f7fcda7ac",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规宣称，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

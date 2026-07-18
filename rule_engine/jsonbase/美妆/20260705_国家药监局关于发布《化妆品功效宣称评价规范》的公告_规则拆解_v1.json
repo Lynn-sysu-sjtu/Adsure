@@ -1,0 +1,2069 @@
+{
+  "meta": {
+    "name": "美妆规则库-国家药监局关于发布《化妆品功效宣称评价规范》的公告",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "国家药监局关于发布《化妆品功效宣称评价规范》的公告.doc",
+    "source_track": "美妆",
+    "rule_count": 11,
+    "error_count": 0,
+    "source_units_processed": 21,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "CECN",
+      "name": "国家药监局关于发布《化妆品功效宣称评价规范》的公告",
+      "short": "CECN-2021",
+      "type": "法规",
+      "legal_level": 3,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "COSM-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "cosmetics_efficacy_claim",
+      "source_type": "法规",
+      "platform": null,
+      "title": "化妆品功效宣称应当有充分科学依据",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CECN-2021",
+        "source_article_id": "第五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CECN",
+          "article": "第五条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第五条 化妆品的功效宣称应当有充分的科学依据，功效宣称依据包括文献资料、研究数据或者化妆品功效宣称评价试验结果等。 化妆品功效宣称评价的方法应当具有科学性、合理性和可行性，并能够满足化妆品功效宣称评价的目的。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "本规则为原则性规定，具体执行需结合其他细则"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "功效",
+            "宣称",
+            "科学依据",
+            "文献资料",
+            "研究数据",
+            "功效宣称评价"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否包含化妆品功效宣称内容，且未提及或暗示有科学依据支撑",
+        "decision": "若文案包含化妆品功效宣称，且未提供或引用任何科学依据（如文献、研究数据、试验结果），则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "化妆品功效宣称",
+          "科学依据",
+          "功效评价"
+        ],
+        "vector_text": "本产品具有美白功效?使用后肌肤明显紧致?功效?宣称?科学依据?文献资料?研究数据?功效宣称评价?化妆",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:50:16",
+          "old_vector_text": "化妆品功效宣称必须有充分的科学依据，包括文献资料、研究数据或功效宣称评价试验结果，否则违规",
+          "old_semantic_reason": "功效宣称表述多样，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "化妆品功效宣称",
+            "科学依据",
+            "功效评价"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主提供功效宣称的科学依据材料，否则不得发布",
+      "examples": {
+        "violation": [
+          "本产品具有美白功效",
+          "使用后肌肤明显紧致"
+        ],
+        "compliant": [
+          "本产品经实验室测试，具有保湿功效（测试报告编号XXX）",
+          "根据文献资料，成分X具有抗氧化作用"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规",
+          "平台规则"
+        ],
+        "reason": "需要参考具体功效宣称评价规范细则以判断科学依据是否充分",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "科学依据的充分性需结合具体功效类型和评价方法判断，存在解释空间"
+      },
+      "routing": {
+        "interpretation_dependency": "需要明确不同功效类型对应的科学依据要求",
+        "fact_dependency": "需要广告主提供科学依据材料",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需广告主提供功效宣称的科学依据材料供审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "文献资料",
+          "研究数据",
+          "化妆品功效宣称评价试验报告"
+        ],
+        "data_sources": [],
+        "note": "后期需接入资料核验系统，验证广告主提供的科学依据是否真实有效"
+      },
+      "rule_uid": "RUID-a0a791db18ce94c1",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需结合功效宣称内容判断，且必须由广告主提供科学依据材料，运营无法自行判断依据是否充分，故要求运营先补充资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-OTHER-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "",
+      "source_type": "法规",
+      "platform": null,
+      "title": "免予公布功效宣称依据摘要的化妆品功效宣称范围",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CECN",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CECN",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第七条 能够通过视觉、嗅觉等感官直接识别的（如清洁、卸妆、美容修饰、芳香、爽身、染发、烫发、发色护理、脱毛、除臭和辅助剃须剃毛等），或者通过简单物理遮盖、附着、摩擦等方式发生效果（如物理遮盖祛斑美白、物理方式去角质和物理方式去黑头等）且在标签上明确标识仅具物理作用的功效宣称，可免予公布产品功效宣称依据的摘要。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "清洁",
+            "卸妆",
+            "美容修饰",
+            "芳香",
+            "爽身",
+            "染发",
+            "烫发",
+            "发色护理",
+            "脱毛",
+            "除臭",
+            "辅助剃须剃毛",
+            "物理遮盖祛斑美白",
+            "物理方式去角质",
+            "物理方式去黑头",
+            "仅具物理作用"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "若功效宣称属于视觉、嗅觉等感官直接识别类型（如清洁、卸妆等），或属于物理遮盖、附着、摩擦方式且标签明确标识仅具物理作用，则免予公布功效宣称依据摘要；否则需提供功效宣称依据摘要。",
+        "decision": "若产品功效宣称属于上述免予公布摘要的范围，则广告文案中可不引用功效宣称依据摘要；若不属于，则需确保广告文案中涉及的功效宣称有相应依据摘要支持。"
+      },
+      "recall": {
+        "tags": [
+          "功效宣称",
+          "免予公布摘要",
+          "感官识别",
+          "物理作用"
+        ],
+        "vector_text": "化妆品功效宣称中，属于视觉、嗅觉等感官直接识别（如清洁、卸妆、美容修饰、芳香、爽身、染发、烫发、发色护理、脱毛、除臭、辅助剃须剃毛）或通过简单物理遮盖、附着、摩擦方式发生效果（如物理遮盖祛斑美白、物理方式去角质、物理方式去黑头）且标签明确标识仅具物理作用的，可免予公布功效宣称依据摘要。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "低",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若产品功效宣称属于免予公布摘要的范围，则广告文案中可不要求引用功效宣称依据摘要；若不属于，则需确保广告文案中涉及的功效宣称有相应依据摘要支持。",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了免予公布功效宣称依据摘要的功效宣称类型，可直接用于判断广告文案中是否需要引用功效宣称依据摘要。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营人员判断功效宣称是否属于免予公布摘要的范围。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-0f9e19a6e362072e",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则列举了明确的功效宣称类型，运营可直接对照判断是否免予公布摘要，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "",
+      "source_type": "法规",
+      "platform": null,
+      "title": "仅保湿和护发功效化妆品功效宣称评价方式规则",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CECN-2021",
+        "source_article_id": "第八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CECN",
+          "article": "第八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "仅具有保湿和护发功效的化妆品，可以通过文献资料调研、研究数据分析或者化妆品功效宣称评价试验等方式进行功效宣称评价。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保湿",
+            "护发",
+            "功效"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否宣称产品仅具有保湿和/或护发功效，并判断其功效宣称评价方式是否合规",
+        "decision": "若产品宣称仅具有保湿和/或护发功效，则其功效宣称评价方式必须为文献资料调研、研究数据分析或化妆品功效宣称评价试验之一，否则视为违规"
+      },
+      "recall": {
+        "tags": [
+          "功效宣称",
+          "保湿",
+          "护发",
+          "评价方式"
+        ],
+        "vector_text": "仅具有保湿和护发功效的化妆品，其功效宣称评价方式需通过文献资料调研、研究数据分析或化妆品功效宣称评价试验进行",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若广告文案中宣称产品仅具有保湿和/或护发功效，但未通过文献资料调研、研究数据分析或化妆品功效宣称评价试验等方式进行评价，则判定为违规",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了仅具有保湿和护发功效化妆品的功效宣称评价方式，可直接用于审核广告文案中相关功效宣称的合规性"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营人员判断广告文案中是否涉及仅保湿和护发功效宣称及评价方式",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-abac4f15a05bae47",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需判断文案是否涉及保湿护发功效及评价方式，运营可直接处理",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-CLAIM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "cosmetic_claim_verification",
+      "source_type": "法规",
+      "platform": null,
+      "title": "特定功效宣称需通过功效评价试验验证",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CECN-2021",
+        "source_article_id": "第九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CECN",
+          "article": "第九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "具有抗皱、紧致、舒缓、控油、去角质、防断发和去屑功效，以及宣称温和（如无刺激）或量化指标（如功效宣称保持时间、功效宣称相关统计数据等）的化妆品，应当通过化妆品功效宣称评价试验方式，可以同时结合文献资料或研究数据分析结果，进行功效宣称评价。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "抗皱",
+            "紧致",
+            "舒缓",
+            "控油",
+            "去角质",
+            "防断发",
+            "去屑",
+            "温和",
+            "无刺激",
+            "功效宣称保持时间",
+            "功效宣称相关统计数据"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣称具有抗皱、紧致、舒缓、控油、去角质、防断发、去屑功效，或宣称温和（如无刺激）、量化指标（如功效宣称保持时间、功效宣称相关统计数据）的化妆品，需通过功效评价试验验证，否则违规。",
+        "decision": "若广告文案中包含上述功效宣称或量化指标描述，且未提供功效评价试验依据，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "功效宣称",
+          "评价试验",
+          "化妆品",
+          "抗皱",
+          "紧致",
+          "舒缓",
+          "控油",
+          "去角质",
+          "防断发",
+          "去屑",
+          "温和",
+          "无刺激",
+          "量化指标"
+        ],
+        "vector_text": "抗皱效果显著，皱纹明显减少，紧致肌肤，舒缓敏感，控油清爽，去角质嫩滑，防断发强韧，去屑止痒，温和不刺",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及具体功效宣称和量化指标，关键词可能无法覆盖所有变体（如'减少皱纹'替代'抗皱'），语义召回可捕捉多种表达方式，适合作为fallback辅助关键词召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:50:25",
+          "old_vector_text": "化妆品广告中宣称抗皱、紧致、舒缓、控油、去角质、防断发、去屑功效，或宣称温和、无刺激、功效保持时间、统计数据等量化指标，需通过功效评价试验验证。",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，如'减少皱纹'替代'抗皱'，需语义召回辅助。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "功效宣称",
+            "化妆品",
+            "抗皱",
+            "紧致",
+            "舒缓",
+            "控油",
+            "去角质",
+            "防断发",
+            "去屑",
+            "温和",
+            "无刺激",
+            "量化指标",
+            "评价试验"
+          ],
+          "negative_signals_recommendation": [
+            "已通过功效评价试验验证",
+            "经试验证明",
+            "检测报告",
+            "功效评价报告"
+          ],
+          "change_summary": "将原规则描述改写为仿真违规文案集合，包含多种功效宣称的变体表达、量化指标描述及行业常见话术，增强语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《化妆品功效宣称评价规范》第九条，可能面临责令改正、行政处罚等法律后果。",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主提供化妆品功效评价试验报告或相关文献资料、研究数据分析结果，否则不得发布相关功效宣称。",
+      "examples": {
+        "violation": [
+          "本产品具有抗皱功效，使用后皱纹明显减少。",
+          "这款洗发水去屑效果显著，持续48小时。",
+          "温和无刺激，适合敏感肌。"
+        ],
+        "compliant": [
+          "本产品抗皱功效已通过化妆品功效评价试验验证。",
+          "去屑功效经试验证明，具体数据见报告。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "功效评价试验报告示例"
+        ],
+        "reason": "需要参考《化妆品功效宣称评价规范》全文及试验报告格式以辅助审核。",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了需通过功效评价试验的功效类型和宣称形式，规则边界清晰。"
+      },
+      "routing": {
+        "interpretation_dependency": "低",
+        "fact_dependency": "高",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及功效宣称的合规性，需法务或专业审核人员判断是否提供试验依据。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "化妆品功效评价试验报告",
+          "文献资料",
+          "研究数据分析结果"
+        ],
+        "data_sources": [
+          "广告主提供"
+        ],
+        "note": "后期需接入资料核验系统，验证广告主是否提供有效的功效评价试验报告。"
+      },
+      "rule_uid": "RUID-4fb1b6a17d0a999a",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则触发清晰，但需要核验广告主是否提供功效评价试验报告等证明材料，且后果严重，应进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "cosmetics_claim_evidence",
+      "source_type": "法规",
+      "platform": null,
+      "title": "祛斑美白、防晒、防脱发、祛痘、滋养和修护功效宣称需通过人体功效评价试验",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "祛斑美白化妆品",
+          "防晒化妆品",
+          "防脱发化妆品",
+          "祛痘化妆品",
+          "滋养化妆品",
+          "修护化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "product_category"
+        ],
+        "logic": "product_category in ['祛斑美白化妆品','防晒化妆品','防脱发化妆品','祛痘化妆品','滋养化妆品','修护化妆品']"
+      },
+      "source_trace": {
+        "source_doc_id": "CECN-2021",
+        "source_article_id": "第十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CECN",
+          "article": "第十条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "具有祛斑美白、防晒、防脱发、祛痘、滋养和修护功效的化妆品，应当通过人体功效评价试验方式进行功效宣称评价。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "祛斑美白",
+            "防晒",
+            "防脱发",
+            "祛痘",
+            "滋养",
+            "修护"
+          ],
+          "regex": [],
+          "context_signals": [
+            "功效",
+            "宣称"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "若文案中宣称产品具有祛斑美白、防晒、防脱发、祛痘、滋养或修护功效，则触发规则",
+        "decision": "若检测到上述功效宣称，且产品类别匹配，则判定为需提供人体功效评价试验证据"
+      },
+      "recall": {
+        "tags": [
+          "功效宣称",
+          "人体功效评价试验",
+          "祛斑美白",
+          "防晒",
+          "防脱发",
+          "祛痘",
+          "滋养",
+          "修护"
+        ],
+        "vector_text": "化妆品宣称祛斑美白、防晒、防脱发、祛痘、滋养或修护功效时，必须通过人体功效评价试验进行评价",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "关键词明确，无需语义召回",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称、清晰、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《化妆品功效宣称评价规范》第十条，可能面临责令改正、行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求提供人体功效评价试验报告，否则不得进行相关功效宣称",
+      "examples": {
+        "violation": [
+          "本产品具有祛斑美白功效",
+          "防晒效果显著",
+          "有效防脱发",
+          "祛痘神器",
+          "深层滋养修护"
+        ],
+        "compliant": [
+          "本产品经人体功效评价试验验证具有祛斑美白功效（附报告编号）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了需人体功效评价试验的功效类别，规则可直接适用"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核验产品是否属于所列功效类别，以及是否已提供人体功效评价试验报告",
+        "misjudgment_cost": "高，虚假功效宣称可能导致消费者健康风险及监管处罚",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需运营方提供人体功效评价试验报告作为证据",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "人体功效评价试验报告"
+        ],
+        "data_sources": [
+          "化妆品注册备案信息平台"
+        ],
+        "note": "后期需接入化妆品注册备案数据库核验产品是否已通过人体功效评价试验"
+      },
+      "rule_uid": "RUID-b327371d6be6c530",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但需运营提供人体功效评价试验报告，无法自行判断或修改，故要求补充资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-CLAIM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "cosmetic_claim_evaluation",
+      "source_type": "法规",
+      "platform": null,
+      "title": "特定宣称化妆品需通过人体功效评价试验或消费者使用测试进行功效宣称评价",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CECN-2021",
+        "source_article_id": "第十一条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CECN",
+          "article": "第十一条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "进行特定宣称的化妆品（如宣称适用敏感皮肤、宣称无泪配方），应当通过人体功效评价试验或消费者使用测试的方式进行功效宣称评价。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "适用敏感皮肤",
+            "无泪配方",
+            "敏感肌适用",
+            "敏感肌",
+            "无泪",
+            "温和不刺激",
+            "适合敏感肌"
+          ],
+          "regex": [],
+          "context_signals": [
+            "特定宣称",
+            "敏感皮肤",
+            "无泪配方"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "若文案中包含宣称产品适用于敏感皮肤或无泪配方等特定宣称，且未提及通过人体功效评价试验或消费者使用测试进行评价，则触发审核",
+        "decision": "若文案包含特定宣称（如适用敏感皮肤、无泪配方），且未提供功效评价依据，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "特定宣称",
+          "功效宣称评价",
+          "人体功效评价试验",
+          "消费者使用测试"
+        ],
+        "vector_text": "本产品适用敏感皮肤，温和不刺激?无泪配方，宝宝放心使用?适用敏感皮肤?无泪配方?敏感肌适用?敏感肌?",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:52:00",
+          "old_vector_text": "化妆品宣称适用敏感皮肤或无泪配方等特定宣称时，需要经过人体功效评价试验或消费者使用测试进行功效宣称评价",
+          "old_semantic_reason": "特定宣称的表述可能多样化，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "特定宣称",
+            "功效宣称评价",
+            "人体功效评价试验",
+            "消费者使用测试"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求提供人体功效评价试验或消费者使用测试报告",
+      "examples": {
+        "violation": [
+          "本产品适用敏感皮肤，温和不刺激",
+          "无泪配方，宝宝放心使用"
+        ],
+        "compliant": [
+          "本产品适用敏感皮肤，已通过人体功效评价试验验证",
+          "无泪配方，经消费者使用测试确认"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "功效评价报告示例"
+        ],
+        "reason": "需要参考法规原文及功效评价报告的具体要求进行审核",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了特定宣称的化妆品需通过特定方式评价，可直接用于审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要确认产品是否进行了人体功效评价试验或消费者使用测试",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营方提供功效评价报告以验证合规性",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "人体功效评价试验报告",
+          "消费者使用测试报告"
+        ],
+        "data_sources": [
+          "国家药监局备案系统",
+          "第三方检测机构"
+        ],
+        "note": "后期需接入资料核验，确认产品是否具备相应的功效评价报告"
+      },
+      "rule_uid": "RUID-0343bb855d28a7c8",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需结合文案是否包含特定宣称，且核心问题是缺少功效评价报告，需运营先补充资料再判断是否合规",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-CLAIM-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "cosmetic_claim_evaluation",
+      "source_type": "法规",
+      "platform": null,
+      "title": "通过宣称原料功效进行产品功效宣称需证实原料功效及关联性",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CECN-2021",
+        "source_article_id": "第十一条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CECN",
+          "article": "第十一条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "通过宣称原料的功效进行产品功效宣称的，应当开展文献资料调研、研究数据分析或者功效宣称评价试验证实原料具有宣称的功效，且原料的功效宣称应当与产品的功效宣称具有充分的关联性。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "原料功效",
+            "成分功效",
+            "含有",
+            "富含",
+            "添加",
+            "萃取",
+            "提取物",
+            "精华"
+          ],
+          "regex": [],
+          "context_signals": [
+            "通过原料",
+            "通过成分",
+            "原料宣称",
+            "成分宣称"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "若文案通过宣称原料或成分的功效来暗示或直接宣称产品功效，且未提及文献资料调研、研究数据分析或功效宣称评价试验等依据，则触发审核",
+        "decision": "若文案通过原料功效宣称产品功效，且未提供原料功效证实及关联性证据，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "原料功效",
+          "成分功效",
+          "功效关联性",
+          "文献资料调研",
+          "研究数据分析",
+          "功效宣称评价试验"
+        ],
+        "vector_text": "含有维生素C，美白效果显著；添加玻尿酸，深层补水保湿；富含胶原蛋白，紧致抗皱；萃取天然植物精华，舒缓",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及原料功效与产品功效的关联性，违规文案常直接宣称原料功效等同于产品功效，表述多样且隐蔽，语义召回可有效覆盖关键词无法捕获的变体表达",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣传、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:52:10",
+          "old_vector_text": "化妆品通过宣称原料或成分的功效来宣传产品功效时，需要提供文献资料调研、研究数据分析或功效宣称评价试验证实原料功效，并证明原料功效与产品功效的关联性",
+          "old_semantic_reason": "原料功效宣称的表述多样，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "原料功效",
+            "成分功效",
+            "功效关联性",
+            "功效宣称",
+            "化妆品",
+            "违规文案",
+            "HyDE"
+          ],
+          "negative_signals_recommendation": [
+            "文献资料调研",
+            "研究数据分析",
+            "功效宣称评价试验",
+            "经证实",
+            "具有充分关联性"
+          ],
+          "change_summary": "将原规则说明式文本改写为仿真违规文案集合，聚焦原料功效直接等同于产品功效的表述，并增加多种常见变体",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求提供原料功效证实材料及关联性证明",
+      "examples": {
+        "violation": [
+          "本产品含有维生素C，能美白肌肤",
+          "添加玻尿酸，深层补水"
+        ],
+        "compliant": [
+          "本产品含有维生素C，经文献资料调研证实维生素C具有抗氧化功效，且与产品美白功效具有充分关联性"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "原料功效证实材料示例"
+        ],
+        "reason": "需要参考法规原文及原料功效证实的具体要求进行审核",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了通过原料功效宣称产品功效的要求，可直接用于审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要确认是否提供了原料功效证实材料及关联性证明",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营方提供原料功效证实材料及关联性证明以验证合规性",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "文献资料调研报告",
+          "研究数据分析报告",
+          "功效宣称评价试验报告",
+          "原料功效与产品功效关联性证明"
+        ],
+        "data_sources": [
+          "国家药监局备案系统",
+          "第三方检测机构",
+          "学术文献数据库"
+        ],
+        "note": "后期需接入资料核验，确认是否具备原料功效证实及关联性材料"
+      },
+      "rule_uid": "RUID-2ee4c92b78a28c9c",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需结合文案是否通过原料功效宣称产品功效，且运营无法自行判断原料功效证实及关联性材料是否充分，需先补充资料再判断是否进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-CLAIM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "cosmetics_claim_evaluation",
+      "source_type": "法规",
+      "platform": null,
+      "title": "新功效宣称需提交功效宣称评价资料，免予提交情形除外",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CECN-2021",
+        "source_article_id": "第十二条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CECN",
+          "article": "第十二条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "宣称新功效的化妆品，应当根据产品功效宣称的具体情况，进行科学合理的分析。能够通过视觉、嗅觉等感官直接识别或通过物理作用方式发生效果且在标签上明确标识仅具有物理作用的新功效，可免予提交功效宣称评价资料。对于需要提交产品功效宣称评价资料的，应当由化妆品注册和备案检验机构按照强制性国家标准、技术规范规定的试验方法开展产品的功效评价，并出具报告。使用强制性国家标准、技术规范以外的试验方法，应当委托两家及以上的化妆品注册和备案检验机构进行方法验证，经验证符合要求的，方可开展新功效的评价，同时在产品功效宣称评价报告中阐明方法的有效性和可靠性等参数。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "新功效",
+            "免予提交",
+            "功效宣称评价资料",
+            "功效评价报告",
+            "检验机构"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣称化妆品具有新功效时，需判断是否属于免予提交功效宣称评价资料的情形（如仅通过视觉、嗅觉等感官直接识别或仅具有物理作用且标签明确标识），否则应要求提供功效宣称评价资料",
+        "decision": "若广告文案宣称新功效且不属于免予提交情形，则判定为违规，需补充功效宣称评价资料"
+      },
+      "recall": {
+        "tags": [
+          "化妆品",
+          "新功效",
+          "功效宣称",
+          "评价资料"
+        ],
+        "vector_text": "全新抗衰老功效，无需提供功效评价报告；独创美白黑科技，免检；新功效，无需检测报告；突破性抗皱，免提交",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及新功效宣称需提交评价资料，但广告中常出现'免提交''无需报告'等规避表述，关键词难以穷举，语义召回可覆盖多种变体，适合作为fallback辅助关键词召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:52:26",
+          "old_vector_text": "化妆品广告中宣称新功效，需确保已提交功效宣称评价资料，或属于免予提交情形（如仅感官识别或物理作用且标签标识）",
+          "old_semantic_reason": "新功效宣称可能使用多种表述，关键词难以全覆盖，需语义理解辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "化妆品",
+            "新功效",
+            "功效宣称",
+            "评价资料",
+            "免提交",
+            "违规文案",
+            "规避表述"
+          ],
+          "negative_signals_recommendation": [
+            "已提交",
+            "已备案",
+            "已检测",
+            "已评价",
+            "已提供",
+            "已上传",
+            "已审核",
+            "已批准"
+          ],
+          "change_summary": "将原偏合规说明的vector_text改写为大量违规/规避表述的集合，覆盖'免提交''无需报告'等变体，增强语义召回能力。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《化妆品功效宣称评价规范》第十二条，可能面临责令改正、行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主提供功效宣称评价资料，否则不得发布相关新功效宣称内容",
+      "examples": {
+        "violation": [
+          "本产品具有全新抗衰老功效，无需提供任何功效评价报告"
+        ],
+        "compliant": [
+          "本产品通过视觉可识别的美白效果，标签已注明仅具物理作用，免予提交功效评价资料"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "功效宣称评价资料清单"
+        ],
+        "reason": "需确认新功效是否属于免予提交情形，以及评价资料是否合规",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需判断广告宣称的新功效是否属于免予提交情形，以及是否已提交评价资料"
+      },
+      "routing": {
+        "interpretation_dependency": "需明确新功效的定义及免予提交情形的具体范围",
+        "fact_dependency": "需核实广告主是否已提交功效宣称评价资料",
+        "misjudgment_cost": "高，误判可能导致合规风险或广告主投诉",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及法规解释和资料核验，需法务或专业审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "功效宣称评价资料",
+          "标签标识证明"
+        ],
+        "data_sources": [
+          "广告主提供"
+        ],
+        "note": "后期需接入资料核验系统，验证功效宣称评价资料的真实性和合规性"
+      },
+      "rule_uid": "RUID-eb41ab6bd8db8841",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及新功效定义及免予提交情形的法规解释，且需核验功效评价资料，运营无法自行判断，必须法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-OTH-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CECN-2021",
+      "source_type": "法规",
+      "platform": null,
+      "title": "化妆品功效宣称评价试验要求",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CECN",
+        "source_article_id": "14",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CECN",
+          "article": "第十四条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "化妆品功效宣称评价试验包括人体功效评价试验、消费者使用测试和实验室试验。 化妆品功效宣称评价试验应当有合理的试验方案，方案设计应当符合统计学原则，试验数据符合统计学要求，并按照化妆品功效宣称评价试验技术导则（附3）的要求开展。 人体功效评价试验和消费者使用测试应当遵守伦理学原则要求，进行试验之前应当完成必要的产品安全性评价，确保在正常、可预见的情况下不得对受试者（或消费者）的人体健康产生危害，所有受试者（或消费者）应当签署知情同意书后方可开展试验。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "本条主要规定功效宣称评价试验的技术和伦理要求，不直接形成广告文案审核规则，但可作为功效宣称数据来源合规性的背景依据。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "",
+        "decision": ""
+      },
+      "recall": {
+        "tags": [
+          "功效宣称",
+          "评价试验",
+          "合规背景"
+        ],
+        "vector_text": "化妆品功效宣称评价试验的技术和伦理要求，不直接用于广告文案审核",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "低",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "本条为试验技术规范，不直接约束广告文案内容，需结合其他规则判断功效宣称数据来源合规性"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "本条不直接形成可执行广告审核规则，无需路由",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-fcddcf576186f9e9",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "该规则涉及化妆品功效宣称评价试验的技术和伦理要求，属于开放法律概念，需要法务判断试验方案、数据合规性及伦理审查，且需核验试验报告等事实材料，运营无法自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CECN-2021",
+      "source_type": "法规",
+      "platform": null,
+      "title": "化妆品功效宣称评价报告完整性要求",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CECN",
+        "source_article_id": "17",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CECN",
+          "article": "第十七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "化妆品功效宣称评价试验完成后，应当由承担功效评价的机构出具化妆品功效宣称评价报告。功效宣称评价报告应当信息完整、格式规范、结论明确，并由评价机构签章确认。报告一般应当包括以下内容： （一）化妆品注册人、备案人或境内责任人名称、地址等相关信息； （二）功效宣称评价机构名称、地址等相关信息； （三）产品名称、数量及规格、生产日期或批号、颜色和物态等相关信息； （四）试验项目和依据、试验的开始与完成日期、材料和方法、试验结果、试验结论等相关信息。 采用第十五条第（一）（二）项以外的试验方法的，应当在报告后随附试验方法的完整文本。方法文本、试验报告为外文的，还应当翻译成标准中文。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "该规则要求广告中涉及化妆品功效宣称时，必须有完整、规范、结论明确的评价报告作为依据，且报告内容需包含注册人/备案人信息、评价机构信息、产品信息、试验信息等，外文材料需翻译为中文。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "功效",
+            "功效宣称",
+            "评价报告",
+            "试验报告",
+            "功效评价"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中提及化妆品功效（如美白、抗皱、保湿等）时，需核实是否有对应的功效宣称评价报告，且报告内容符合第十七条要求。",
+        "decision": "若广告文案包含化妆品功效宣称，且未提供或无法提供符合第十七条要求的评价报告，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "化妆品功效宣称",
+          "评价报告",
+          "合规依据"
+        ],
+        "vector_text": "美白效果显著，经权威机构检测验证；抗皱功效实验证明有效；保湿力经皮肤科测试认证；淡斑功效有临床试验报",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及化妆品功效宣称评价报告完整性，属于事实核验型规则，广告文案本身难以直接体现报告缺失，语义召回容易误召回合规文案，建议禁用语义召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:52:37",
+          "old_vector_text": "化妆品广告中涉及功效宣称时，需要依据第十七条要求提供完整、规范、结论明确的功效宣称评价报告，报告内容需包含注册人/备案人信息、评价机构信息、产品信息、试验信息等，外文材料需翻译为中文。",
+          "old_semantic_reason": "功效宣称可能使用多种表述方式，关键词可能无法完全覆盖，需语义匹配辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": false,
+          "semantic_role_recommendation": "disabled",
+          "tags_recommendation": [
+            "化妆品功效",
+            "评价报告",
+            "事实核验",
+            "资质要求"
+          ],
+          "negative_signals_recommendation": [
+            "报告编号",
+            "检测报告",
+            "评价报告",
+            "试验报告"
+          ],
+          "change_summary": "从fallback改为disabled，因为规则核心是事实核验（报告完整性），文案侧无法可靠召回违规场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《化妆品监督管理条例》及《化妆品功效宣称评价规范》相关规定，可能面临行政处罚。",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主提供符合第十七条要求的功效宣称评价报告，否则不得发布涉及功效宣称的广告内容。",
+      "examples": {
+        "violation": [
+          "本产品具有显著美白效果，但无法提供功效宣称评价报告。",
+          "抗皱功效经试验验证，但试验报告缺少评价机构签章。"
+        ],
+        "compliant": [
+          "本产品美白功效已通过功效宣称评价，报告编号XXXX，由XX机构出具。",
+          "抗皱功效评价报告完整，包含注册人信息、试验方法及结论。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "案例"
+        ],
+        "reason": "需要参考《化妆品功效宣称评价规范》全文及历史执法案例，以判断评价报告是否满足第十七条要求。",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "第十七条明确规定了功效宣称评价报告的内容和格式要求，可直接用于审核广告中功效宣称的合规性。"
+      },
+      "routing": {
+        "interpretation_dependency": "无",
+        "fact_dependency": "需要广告主提供功效宣称评价报告以核实内容完整性。",
+        "misjudgment_cost": "高，误判可能导致合规广告被拒或违规广告通过。",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要广告主提供评价报告作为事实依据，由运营人员审核报告完整性。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "化妆品功效宣称评价报告"
+        ],
+        "data_sources": [
+          "广告主提供"
+        ],
+        "note": "后期需接入资料核验系统，自动验证评价报告是否包含第十七条所列内容。"
+      },
+      "rule_uid": "RUID-1031d0432864cd9a",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需结合文案是否涉及功效宣称，且核心问题是缺少评价报告这一事实材料，运营需先收集报告再判断完整性，故默认要求运营补充资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "cosmetics_claim_management",
+      "source_type": "法规",
+      "platform": null,
+      "title": "化妆品功效宣称依据摘要内容完整性要求",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CECN-2021",
+        "source_article_id": "第十九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CECN",
+          "article": "第十九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "化妆品功效宣称依据的摘要应当简明扼要地列出产品功效宣称依据的内容，至少包括以下信息：\n （一）产品基本信息；\n （二）功效宣称评价项目及评价机构；\n （三）评价方法与结果简述；\n （四）功效宣称评价结论，应当阐明产品的功效宣称与评价方法与结果之间的关联性。\n 化妆品功效宣称依据的摘要式样见附4。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "该条文要求化妆品功效宣称依据摘要必须包含四项基本信息，属于内容完整性要求，可转化为广告审核规则，用于检查广告文案中是否提及功效宣称依据摘要或相关功效宣称时，需确保摘要内容完整。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "功效宣称",
+            "功效宣称依据",
+            "摘要",
+            "产品基本信息",
+            "评价项目",
+            "评价机构",
+            "评价方法",
+            "评价结果",
+            "功效宣称评价结论",
+            "关联性"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "当广告文案中提及化妆品功效宣称依据摘要或引用功效宣称评价结果时，需检查是否包含产品基本信息、评价项目及机构、评价方法与结果简述、功效宣称评价结论及关联性等四项内容。",
+        "decision": "若广告文案中涉及功效宣称依据摘要内容，但缺少上述四项信息中的任意一项，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "功效宣称",
+          "摘要完整性",
+          "化妆品",
+          "法规合规"
+        ],
+        "vector_text": "本产品经功效评价，具有美白功效，摘要见官网。产品功效宣称依据摘要已公示，包含评价方法。功效评价报告显",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及功效宣称摘要的完整性，违规文案常以简略提及摘要或部分内容的方式出现，语义召回可覆盖多种省略关键信息的表述。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:52:46",
+          "old_vector_text": "化妆品广告中提及功效宣称依据摘要时，必须包含产品基本信息、功效宣称评价项目及评价机构、评价方法与结果简述、功效宣称评价结论及关联性。",
+          "old_semantic_reason": "关键词可能无法完全覆盖所有提及摘要的场景，需语义辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "功效宣称",
+            "摘要完整性",
+            "化妆品",
+            "评价依据",
+            "违规话术"
+          ],
+          "negative_signals_recommendation": [
+            "合规",
+            "完整",
+            "包含",
+            "四项"
+          ],
+          "change_summary": "将原法条式描述改写为仿真违规文案集合，模拟广告中提及功效宣称摘要但内容不完整的常见表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若广告文案中提及功效宣称依据摘要但内容不完整，需退回修改补充缺失信息。",
+      "examples": {
+        "violation": [
+          "本产品经功效评价，具有美白功效，摘要见官网。",
+          "产品功效宣称依据摘要已公示，包含评价方法。"
+        ],
+        "compliant": [
+          "本产品功效宣称依据摘要包含产品基本信息、评价项目及机构、评价方法与结果简述、功效宣称评价结论及关联性，详见附件。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求摘要包含四项信息，可直接用于审核广告文案中相关内容的完整性。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营人员判断摘要内容是否完整。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-59770ece92f3e491",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需检查摘要内容是否包含四项基本信息，运营可直接判断并修改。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

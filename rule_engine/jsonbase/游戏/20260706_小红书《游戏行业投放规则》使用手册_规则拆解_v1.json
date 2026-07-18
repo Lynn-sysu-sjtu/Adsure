@@ -1,0 +1,1359 @@
+{
+  "meta": {
+    "name": "游戏规则库-小红书《游戏行业投放规则》使用手册",
+    "version": "v1",
+    "generated_date": "20260706",
+    "scope": "游戏广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "小红书《游戏行业投放规则》使用手册.pdf",
+    "source_track": "游戏",
+    "rule_count": 7,
+    "error_count": 0,
+    "source_units_processed": 11,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "XHS",
+      "name": "小红书《游戏行业投放规则》使用手册",
+      "short": "XHS-小红书《游戏行业投放规则》使用手册",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "小红书"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "GAME-PLAT-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS_game_ad_platform_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "游戏广告推广需提供游戏软件版号和计算机软件著作权登记证书",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《游戏行业投放规则》使用手册",
+        "source_article_id": "1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "物料推广游戏时需同时提供1、《游戏软件版号》2、《计算机软件著作权登记证书》"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "该规则为平台准入资质要求，非内容审核规则，但属于广告合规前置条件"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "游戏",
+            "推广",
+            "物料"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测物料是否涉及游戏推广，若涉及则需核验资质",
+        "decision": "若物料涉及游戏推广，则需检查是否已提供游戏软件版号和计算机软件著作权登记证书"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "资质",
+          "版号",
+          "著作权",
+          "平台准入"
+        ],
+        "vector_text": "新游戏上线推广，已拿到版号和软著，欢迎来玩。这款游戏有版号，正规授权。游戏版号已公示，软著齐全。游戏推广需要版号资质。没有版号的游戏不能推广。游戏版号申请中，软著已提交。游戏版号下来了，软著证书编号。游戏推广物料需附版号。游戏广告投放需提供版号和软著。游戏推广资质版号软著缺一不可。游戏版号软著双证齐全。游戏推广合规必备版号软著。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及资质核验，属于事实核查类，语义召回难以直接检测资质缺失，但可召回提及版号、软著等资质的文案，作为关键词的补充。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:58:24",
+          "old_vector_text": "游戏广告推广需要提供游戏软件版号和计算机软件著作权登记证书作为前置资质",
+          "old_semantic_reason": "规则为明确的资质核验要求，关键词召回即可",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "游戏",
+            "版号",
+            "软著",
+            "资质",
+            "推广",
+            "合规"
+          ],
+          "negative_signals_recommendation": [
+            "游戏攻略",
+            "游戏评测",
+            "游戏下载"
+          ],
+          "change_summary": "将原规则性描述改写为仿真违规文案集合，模拟广告主提及版号、软著等资质的常见表达。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 版号、资质、软著.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "物料可能被拒绝投放或下架"
+      },
+      "relations": [],
+      "disposition": "需核验广告主是否已提交游戏软件版号和计算机软件著作权登记证书，未提供则不允许投放",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求提供两项资质文件，属于硬性准入条件"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核验广告主是否已提交资质文件",
+        "misjudgment_cost": "高，未核验可能导致违规投放",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要广告主提供资质文件进行核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "游戏软件版号",
+          "计算机软件著作权登记证书"
+        ],
+        "data_sources": [
+          "广告主提交的资质文件"
+        ],
+        "note": "后期需接入资质核验系统或人工审核"
+      },
+      "rule_uid": "RUID-505e4fef4a8c6cbf",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但需核验版号和著作权证书等资质文件，运营无法自行判断，应要求补充资料后进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS_game_ad_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "宣传内容需与推广产品相关",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《游戏行业投放规则》使用手册",
+        "source_article_id": "1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "⼴告物料宣传需与推⼴产品结合，不得出现与宣传产品⽆关内容"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告物料中的宣传内容应与推广的游戏产品直接相关，不得出现与推广产品无关的内容，如其他游戏、非游戏产品、无关品牌等",
+        "decision": "若广告物料宣传内容与推广游戏产品无关，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "游戏广告",
+          "宣传内容相关性",
+          "小红书"
+        ],
+        "vector_text": "推广游戏A却大篇幅介绍游戏B，广告里全是另一个游戏的内容，跟推广的游戏无关；游戏广告中插入电商产品链",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则核心是判断宣传内容与推广产品的相关性，关键词难以穷举所有无关场景，语义召回可覆盖各种无关内容表述，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:58:34",
+          "old_vector_text": "广告物料宣传内容需与推广的游戏产品直接相关，不得出现与宣传产品无关的内容",
+          "old_semantic_reason": "关键词难以穷举无关内容，需语义理解判断宣传内容与推广产品的相关性",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "游戏广告",
+            "宣传内容相关性",
+            "无关内容",
+            "挂羊头卖狗肉",
+            "产品不匹配",
+            "误导点击"
+          ],
+          "negative_signals_recommendation": [
+            "合规",
+            "相关",
+            "一致",
+            "匹配"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖多种无关宣传场景和规避表达，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 229
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [
+          "推广游戏A的广告中大量宣传游戏B的内容",
+          "游戏广告中宣传与游戏无关的电商产品"
+        ],
+        "compliant": [
+          "广告内容围绕推广的游戏产品进行描述和展示"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "是否与宣传产品无关需要结合具体广告内容进行语义判断，存在解释空间"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断广告内容是否与推广产品相关",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_direct",
+        "route_reason": "规则语义明确，可由运营人员直接判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-46a4da0ae9566fe9",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营确认广告内容与推广产品的关联性，但无需法务深度解释，可要求运营补充产品信息后自行判断。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-IP-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS_game_ad_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "游戏素材使用第三方游戏元素需提供授权证明",
+      "dimension": "IP侵权",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《游戏行业投放规则》使用手册",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "游戏素材若使⽤或模仿第三⽅游戏的⼈物形象、场景、标志性logo或代表性图标等作为物料或物料元素——需提供与第三⽅合作证明/授权"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "人物形象",
+            "场景",
+            "标志性logo",
+            "代表性图标",
+            "第三方游戏",
+            "模仿"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测游戏广告素材文字中是否提及或暗示使用了第三方游戏的人物形象、场景、标志性logo或代表性图标等元素",
+        "decision": "若检测到相关元素且未提供授权证明，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "IP侵权",
+          "授权证明",
+          "第三方游戏元素"
+        ],
+        "vector_text": "王者荣耀英雄形象 原神logo 和平精英场景 梦幻西游图标 模仿第三方游戏角色 使用知名游戏元素 未经授权 蹭IP 侵权素材 游戏广告素材 人物形象 场景 标志性logo 代表性图标 第三方游戏 授权证明 合作证明",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及第三方游戏元素侵权，关键词难以穷尽所有游戏名称和元素表述，语义召回可覆盖各种变体表述。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:58:42",
+          "old_vector_text": "游戏广告素材中使用了或模仿了第三方游戏的人物形象、场景、标志性logo或代表性图标等元素，需要提供第三方合作证明或授权",
+          "old_semantic_reason": "关键词可能无法覆盖所有第三方游戏元素的表述方式，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "游戏",
+            "IP侵权",
+            "第三方游戏元素",
+            "授权证明",
+            "侵权素材",
+            "蹭IP"
+          ],
+          "negative_signals_recommendation": [
+            "自有游戏",
+            "原创元素",
+            "授权证明",
+            "合作证明"
+          ],
+          "change_summary": "将规则性描述改写为真实违规文案集合，包含具体游戏名称和侵权表述，增强召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 证明.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求提供第三方合作证明或授权，否则不得投放",
+      "examples": {
+        "violation": [
+          "素材中出现《王者荣耀》的英雄形象但未提供授权",
+          "素材中模仿《原神》的标志性logo"
+        ],
+        "compliant": [
+          "素材中使用了自有游戏原创元素",
+          "素材中使用了第三方游戏元素但附有授权证明"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "平台规则",
+          "案例口径"
+        ],
+        "reason": "需要参考小红书平台对第三方游戏元素的具体认定标准和历史审核案例",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了使用或模仿第三方游戏元素需提供授权证明，规则清晰可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要确认素材中是否确实使用了第三方游戏元素",
+        "misjudgment_cost": "中等",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营人员核实素材元素并索取授权证明",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "第三方合作证明",
+          "授权书"
+        ],
+        "data_sources": [],
+        "note": "后期需接入授权证明核验系统，确认授权真实有效"
+      },
+      "rule_uid": "RUID-495934a5b91e69ef",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需判断素材是否使用第三方游戏元素，且必须由运营补充授权证明，无法直接修改文案解决。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-PLAT-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "不得使用不良导向文案及物料元素",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《游戏行业投放规则》使用手册",
+        "source_article_id": "3",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "3",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "不得使用不良导向文案及物料元素"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "不良导向",
+            "导向不佳"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "文案或物料元素包含不良导向性描述，如涉及暴力、色情、赌博、歧视、诱导不良行为等负面价值观导向",
+        "decision": "若检测到不良导向性描述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "平台规则",
+          "小红书",
+          "不良导向",
+          "文案审核"
+        ],
+        "vector_text": "暴力血腥场景描述，色情暗示文案，赌博诱导话术，种族歧视性用语，低俗露骨内容，软色情擦边球，诱导未成年",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "不良导向概念开放，违规表达多样且常隐晦，关键词难以穷举，需语义召回覆盖变体与软性表达",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:58:53",
+          "old_vector_text": "游戏广告文案或物料元素不得包含不良导向性描述，如暴力、色情、赌博、歧视、诱导不良行为等负面价值观导向内容",
+          "old_semantic_reason": "不良导向性描述可能通过隐晦或变体表达，关键词难以全面覆盖，需语义理解辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "不良导向",
+            "暴力",
+            "色情",
+            "赌博",
+            "歧视",
+            "诱导",
+            "负面价值观",
+            "软性规避"
+          ],
+          "negative_signals_recommendation": [
+            "健康向上",
+            "正能量",
+            "合规宣传",
+            "正常游戏介绍"
+          ],
+          "change_summary": "从法条式描述改为真实违规文案集合，覆盖暴力、色情、赌博、歧视、诱导等各类不良导向表达及隐晦变体",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 299
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 未成年人、软文.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放，要求修改或删除不良导向内容",
+      "examples": {
+        "violation": [
+          "暴力血腥场景描述",
+          "色情暗示文案",
+          "赌博诱导话术",
+          "种族歧视性用语"
+        ],
+        "compliant": [
+          "健康向上的游戏宣传文案",
+          "无不良暗示的常规游戏介绍"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "平台规则",
+          "历史案例"
+        ],
+        "reason": "不良导向性描述定义较宽泛，需参考平台具体案例和规则解释以准确判定",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "不良导向性描述缺乏明确列举，需结合上下文和平台实践进行解释"
+      },
+      "routing": {
+        "interpretation_dependency": "需要法务或平台规则解释不良导向的具体范围",
+        "fact_dependency": "",
+        "misjudgment_cost": "高，误判可能导致合规风险或广告主投诉",
+        "default_route": "legal_review_required",
+        "route_reason": "规则开放解释，需人工审核确认是否构成不良导向",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-4f2a9f100d7a7a63",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "不良导向概念开放且风险高，运营难以自行判断，需法务解释边界并确认是否违规",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-PROT-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS_game_ad_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "物料不得涉及不利于未成年身心健康相关的内容",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《游戏行业投放规则》使用手册",
+        "source_article_id": "4",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "4",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "4、【不得涉及未成年不良导向内容】物料不得涉及不利于未成年⼈身⼼健康相关的内容"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "未成年",
+            "未成年人",
+            "不良导向",
+            "身心健康"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "物料内容不得包含任何可能对未成年人身心健康产生负面影响的描述、暗示或引导，包括但不限于暴力、色情、赌博、成瘾性诱导、不良价值观等",
+        "decision": "若物料文字涉及不利于未成年人身心健康的内容，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "游戏广告",
+          "小红书",
+          "不良内容"
+        ],
+        "vector_text": "未成年人沉迷游戏无法自拔，快来玩这款超刺激的游戏！暴力血腥场面真实震撼，色情诱惑让你欲罢不能，赌博玩",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及开放概念，关键词难以覆盖所有变体，语义召回可捕捉暴力、色情、赌博、成瘾诱导等不良导向的广告文案。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:59:02",
+          "old_vector_text": "游戏广告物料中不得出现任何可能对未成年人身心健康造成不良影响的内容，包括暴力、色情、赌博、成瘾性诱导等",
+          "old_semantic_reason": "关键词可能无法覆盖所有不利于未成年人身心健康的内容变体，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "不良导向",
+            "暴力",
+            "色情",
+            "赌博",
+            "成瘾诱导",
+            "游戏广告"
+          ],
+          "negative_signals_recommendation": [
+            "健康游戏",
+            "适龄提示",
+            "家长监护"
+          ],
+          "change_summary": "从法条式改写为仿真违规文案集合，覆盖暴力、色情、赌博、成瘾诱导等场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 96
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 未成年人.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "不利于未成年人身心健康属于开放性概念，需要结合具体内容判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需要人工判断内容是否对未成年人身心健康不利",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "规则表述宽泛，需人工审核判断是否涉及不良导向",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-181d60bae9ec03dc",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则表述宽泛，涉及开放法律概念，需法务判断内容是否对未成年人身心健康不利，且误判后果严重",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-MAT-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS_game_ad_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "物料推广产品需明确，不得涉及无具体产品/服务的描述",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《游戏行业投放规则》使用手册",
+        "source_article_id": "5",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "5",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "物料需明确具体推广内容，不得涉及无具体产品/服务的描述"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "无具体产品",
+            "无具体服务",
+            "无产品",
+            "无服务",
+            "不明确",
+            "模糊推广",
+            "泛指"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "物料文案中未提及任何具体的游戏产品名称、服务名称或可识别的推广对象，仅使用模糊、泛指的描述",
+        "decision": "若物料文案未明确推广的具体游戏产品或服务，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "物料明确性",
+          "推广内容",
+          "小红书"
+        ],
+        "vector_text": "快来玩这款超好玩的游戏！全新游戏体验，等你来战热门游戏推荐超火爆手游最新上线免费畅玩点击即玩无需下载",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则要求物料必须明确具体产品/服务，禁止模糊泛指；原vector_text偏合规说明，现改写为大量真实违规广告文案中的模糊表述和常见营销话术，便于语义召回识别未提及具体游戏名称的推广文案。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:59:14",
+          "old_vector_text": "游戏广告物料必须明确推广的具体产品名称或服务内容，不得使用无具体指向的模糊描述",
+          "old_semantic_reason": "关键词可能无法覆盖所有模糊表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "游戏",
+            "物料明确性",
+            "模糊推广",
+            "泛指描述",
+            "无具体产品",
+            "小红书",
+            "广告文案"
+          ],
+          "negative_signals_recommendation": [
+            "具体游戏名称",
+            "具体服务名称",
+            "具体产品名称",
+            "《》",
+            "【】"
+          ],
+          "change_summary": "将原合规说明风格的vector_text改写为大量真实违规广告文案中的模糊表述和营销话术集合，提升语义召回对无具体产品/服务描述的识别能力。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 396
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 免费、动作、抽奖、清晰、限时.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [
+          "快来玩这款超好玩的游戏！",
+          "全新游戏体验，等你来战",
+          "热门游戏推荐"
+        ],
+        "compliant": [
+          "《王者荣耀》新赛季开启，立即下载",
+          "《原神》4.0版本更新，探索新地图"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则表述清晰，可直接判断物料是否明确推广产品"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可覆盖大部分场景，无需法务介入",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-4c297709b9836b2d",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接补充具体产品名称，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-CONT-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS_game_ad_content",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "游戏画面不得涉及色情画面",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《游戏行业投放规则》使用手册",
+        "source_article_id": "6",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "6",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "游戏画⾯不得涉及低俗内容，如低俗词汇、⼈物⻆度拍摄低俗、⼈物⾐着暴露、低俗语⾳、低俗画⾯等场景"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "低俗词汇",
+            "人物角度拍摄低俗",
+            "人物衣着暴露",
+            "低俗语音",
+            "低俗画面"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中不得出现低俗词汇、描述人物衣着暴露、低俗语音或低俗画面的文字内容",
+        "decision": "若检测到低俗词汇、人物衣着暴露、低俗语音或低俗画面相关文字描述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "色情",
+          "低俗",
+          "小红书"
+        ],
+        "vector_text": "性感美女衣着暴露低俗语音挑逗角色穿着暴露透视装露点性暗示动作挑逗姿势色情画面裸体半裸内衣泳装情趣服装",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及低俗色情内容，违规表达多样且常通过变体、隐晦或擦边球方式规避关键词，语义召回可有效覆盖这些变体，提升召回率。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:59:27",
+          "old_vector_text": "游戏广告画面文字中不得包含低俗词汇、人物衣着暴露、低俗语音或低俗画面等色情低俗内容",
+          "old_semantic_reason": "低俗内容可能通过变体或隐晦表达规避关键词，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "游戏",
+            "色情",
+            "低俗",
+            "衣着暴露",
+            "性暗示",
+            "擦边球",
+            "软色情",
+            "小红书"
+          ],
+          "negative_signals_recommendation": [
+            "正常游戏角色展示",
+            "健康游戏",
+            "正能量",
+            "合规"
+          ],
+          "change_summary": "从法条式描述改为大量真实违规文案和变体表达的集合，覆盖低俗词汇、衣着暴露、性暗示、擦边球等多种场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 482
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 动作.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告被拒绝投放或下架"
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "性感美女衣着暴露",
+          "低俗语音挑逗"
+        ],
+        "compliant": [
+          "正常游戏角色展示"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止低俗内容，列举了具体场景，可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-d37c6d8a28a69dc7",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则关键词明确，运营可依据示例直接修改，但涉及低俗边界判断，需引导运营参考平台示例处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

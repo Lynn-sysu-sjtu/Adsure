@@ -1,0 +1,2936 @@
+{
+  "meta": {
+    "name": "美妆规则库-中华人民共和国产品质量法（2018修正）_2018.12.29生效_20260615下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "中华人民共和国产品质量法（2018修正）_2018.12.29生效_20260615下载.doc",
+    "source_track": "美妆",
+    "rule_count": 16,
+    "error_count": 0,
+    "source_units_processed": 74,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "PQL",
+      "name": "中华人民共和国产品质量法（2018修正）_2018.12.29生效_20260615下载",
+      "short": "PQL-2018",
+      "type": "法规",
+      "legal_level": 1,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "COSM-FALSE-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止伪造或冒用质量标志、产地、厂名厂址",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL",
+        "source_article_id": "第五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第五条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "禁止伪造或者冒用认证标志等质量标志；禁止伪造产品的产地，伪造或者冒用他人的厂名、厂址；禁止在生产、销售的产品中掺杂、掺假，以假充真，以次充好。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "认证标志",
+            "质量标志",
+            "产地",
+            "厂名",
+            "厂址",
+            "伪造",
+            "冒用",
+            "掺杂",
+            "掺假",
+            "以假充真",
+            "以次充好"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否声称产品具有认证标志、特定产地、厂名厂址等质量信息，且该信息可能为伪造或冒用；或描述产品成分、品质时存在掺杂掺假、以假充真、以次充好的表述。",
+        "decision": "若文案中出现伪造或冒用认证标志、质量标志、产地、厂名厂址的表述，或暗示产品掺杂掺假、以假充真、以次充好，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "质量标志",
+          "产地",
+          "厂名厂址",
+          "伪造冒用",
+          "掺杂掺假",
+          "以假充真",
+          "以次充好"
+        ],
+        "vector_text": "广告文案中不得伪造或冒用认证标志、质量标志、产地、厂名、厂址，不得描述产品掺杂掺假、以假充真、以次充好。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《产品质量法》第五条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改或删除违规表述",
+      "examples": {
+        "violation": [
+          "本产品荣获国际ISO认证（实际未获认证）",
+          "法国原装进口（实际产地为国内）",
+          "纯天然无添加（实际掺杂人工成分）"
+        ],
+        "compliant": [
+          "本产品已通过国家质检",
+          "产地：广州"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止伪造冒用质量标志、产地、厂名厂址及掺杂掺假等行为，可直接转化为广告文案审核规则。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核实广告中声称的质量标志、产地、厂名厂址是否真实",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词可触发，无需法务介入",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "认证证书",
+          "产地证明",
+          "厂名厂址注册文件"
+        ],
+        "data_sources": [
+          "国家认证认可监督管理委员会",
+          "企业工商登记信息"
+        ],
+        "note": "后期需接入资料核验以确认质量标志、产地、厂名厂址的真实性"
+      },
+      "rule_uid": "RUID-fa225688d6eeaa8e",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及伪造或冒用质量标志、产地等事实核验，需法务介入确认真实性并评估风险。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-PQL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "美妆产品必须符合保障人体健康和人身、财产安全的国家标准或行业标准",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第十三条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第十三条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "可能危及人体健康和人身、财产安全的工业产品，必须符合保障人体健康和人身、财产安全的国家标准、行业标准；未制定国家标准、行业标准的，必须符合保障人体健康和人身、财产安全的要求。 禁止生产、销售不符合保障人体健康和人身、财产安全的标准和要求的工业产品。具体管理办法由国务院规定。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "符合国家标准",
+            "符合行业标准",
+            "保障人体健康",
+            "保障人身安全",
+            "保障财产安全"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中不得声称或暗示美妆产品不符合保障人体健康和人身、财产安全的国家标准或行业标准，也不得宣传不符合相关标准的产品",
+        "decision": "若广告文案中明确提及或暗示产品不符合国家标准、行业标准或保障人体健康安全的要求，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "产品质量",
+          "国家标准",
+          "行业标准",
+          "安全标准",
+          "美妆合规"
+        ],
+        "vector_text": "这款面霜没有通过国家质检，成分不安全，别买正规产品，我们这款是工厂直供无标准，不符合行业要求，用了会烂脸，没有安全保障，三无产品，无生产许可，无备案，无检测报告，不达标，不合格，劣质，有害，有毒，重金属超标，菌落超标，激素添加，违禁成分，廉价原料，没有经过安全测试，没有保障，不负责，随便用，没事的，反正不会死人，没有标准，自己做的，没有监管，没有认证，没有批号，没有卫生许可，没有质检报告，没有安全评估，没有功效验证，没有备案号，没有生产日期，没有保质期，没有成分表，没有厂家信息，没有执行标准，没有合格证，没有第三方检测，没有保险，没有售后，没有保障，风险自担，后果自负，不保证安全，不保证效果，不保证质量，不保证合规，不保证合法，不保证正品，不保证真货，不保证原装，不保证进口，不保证正品，不保证官方，不保证授权，不保证渠道，不保证来源，不保证新鲜，不保证有效，不保证无害，不保证无毒，不保证无副作用，不保证无过敏，不保证无刺激，不保证无依赖，不保证无激素，不保证无重金属，不保证无微生物，不保证无杂质，不保证无污染，不保证无辐射，不保证无致癌物，不保证无致畸物，不保证无致突变物，不保证无过敏原，不保证无禁用成分，不保证无限用成分，不保证无超量成分，不保证无违规添加，不保证无虚假宣传，不保证无误导，不保证无欺诈，不保证无侵权，不保证无违法，不保证无违规，不保证无风险，不保证无隐患，不保证无问题，不保证无投诉，不保证无纠纷，不保证无处罚，不保证无召回，不保证无下架，不保证无封禁，不保证无赔偿，不保证无诉讼，不保证无刑事责任，不保证无行政处罚，不保证无民事赔偿，不保证无刑事处罚，不保证无任何法律责任。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及产品安全标准，违规文案可能通过否定或规避标准表述来暗示产品不合规，语义召回需覆盖各种否定、规避、淡化安全标准的表达，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T08:16:03",
+          "old_vector_text": "美妆产品广告不得宣传产品不符合保障人体健康和人身、财产安全的国家标准或行业标准，不得销售不符合安全标准的产品",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "产品质量",
+            "国家标准",
+            "行业标准",
+            "安全标准",
+            "美妆合规",
+            "三无产品",
+            "违规宣传",
+            "否定标准"
+          ],
+          "negative_signals_recommendation": [
+            "符合国家标准",
+            "符合行业标准",
+            "通过检测",
+            "有备案",
+            "有认证"
+          ],
+          "change_summary": "从法条式描述改为大量真实违规文案中可能出现的否定、规避安全标准的表达集合，覆盖多种说法和场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、清晰、虚假、误导. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求工业产品必须符合安全标准，禁止销售不符合标准的产品，可直接适用于广告审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接基于关键词和语义判断广告文案是否违反安全标准要求",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-852f55127f56f04a",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接删除或修改违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-PQL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "产品质量应当符合注明采用的产品标准及表明的质量状况",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第二十六条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第二十六条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第二十六条 生产者应当对其生产的产品质量负责。 产品质量应当符合下列要求： (一)不存在危及人身、财产安全的不合理的危险，有保障人体健康和人身、财产安全的国家标准、行业标准的，应当符合该标准； (二)具备产品应当具备的使用性能，但是，对产品存在使用性能的瑕疵作出说明的除外； (三)符合在产品或者其包装上注明采用的产品标准，符合以产品说明、实物样品等方式表明的质量状况。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "符合",
+            "标准",
+            "质量",
+            "产品说明",
+            "实物样品"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣称产品符合某标准或具备某质量状况时，需核实该标准或质量状况是否真实存在且与产品实际相符",
+        "decision": "若广告文案宣称产品符合特定标准或质量状况，但实际产品不符合该标准或质量状况，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "产品质量",
+          "标准符合性",
+          "虚假宣传"
+        ],
+        "vector_text": "本产品符合GB/T12345-2020标准（实际未达标）?产品实物样品显示为A级品质（实际为B级）?",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、宣称、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:37:43",
+          "old_vector_text": "广告文案中宣称产品符合某标准或具备某质量状况，但实际产品不符合该标准或质量状况，构成虚假宣传",
+          "old_semantic_reason": "关键词可能无法覆盖所有宣称标准或质量状况的表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "产品质量",
+            "标准符合性",
+            "虚假宣传"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若广告文案宣称产品符合某标准或质量状况，但实际产品不符合，则判定为违规，需修改或删除相关宣称",
+      "examples": {
+        "violation": [
+          "本产品符合GB/T 12345-2020标准（实际未达标）",
+          "产品实物样品显示为A级品质（实际为B级）"
+        ],
+        "compliant": [
+          "本产品符合GB/T 12345-2020标准（实际已达标）",
+          "产品实物样品显示为A级品质（实际为A级）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要结合广告文案中宣称的标准或质量状况与实际产品进行比对判断"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核实广告宣称的标准或质量状况是否与产品实际相符",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供产品实际标准或质量状况的证明材料",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品标准证书",
+          "产品检测报告",
+          "产品说明文件"
+        ],
+        "data_sources": [
+          "企业提交的资质文件"
+        ],
+        "note": "后期需接入资料核验，确认广告宣称的标准或质量状况与产品实际相符"
+      },
+      "rule_uid": "RUID-8fcd20970384dcc8",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则需要运营提供产品标准或质量状况的证明材料，运营无法自行判断是否达标，故要求补充资料后进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-LABEL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "产品标识必须真实且包含中文标明的产品名称、生产厂厂名和厂址",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第二十七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第二十七条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "产品或者其包装上的标识必须真实，并符合下列要求： (一)有产品质量检验合格证明； (二)有中文标明的产品名称、生产厂厂名和厂址； (三)根据产品的特点和使用要求，需要标明产品规格、等级、所含主要成份的名称和含量的，用中文相应予以标明；需要事先让消费者知晓的，应当在外包装上标明，或者预先向消费者提供有关资料； (四)限期使用的产品，应当在显著位置清晰地标明生产日期和安全使用期或者失效日期； (五)使用不当，容易造成产品本身损坏或者可能危及人身、财产安全的产品，应当有警示标志或者中文警示说明。 裸装的食品和其他根据产品的特点难以附加标识的裸装产品，可以不附加产品标识。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "产品名称",
+            "生产厂厂名",
+            "厂址",
+            "中文标明"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中提及美妆产品时，若未包含中文标明的产品名称、生产厂厂名和厂址，则可能违规",
+        "decision": "若广告文案中未包含中文标明的产品名称、生产厂厂名和厂址，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "标签标识",
+          "产品标识",
+          "中文标识",
+          "美妆"
+        ],
+        "vector_text": "这款面霜，进口产品，没有中文标签，只有英文名称和产地，找不到生产厂家和厂址。我们的面膜是韩国原装进口，包装上全是韩文，没有中文产品名称和厂名厂址。正品保证，但包装上没有中文标明的生产厂信息。工厂直供，无中文标识，只有英文厂名。买一送一，产品名称和厂家信息都是外文，没有中文。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及产品标识的完整性，违规文案常表现为缺少中文名称、厂名、厂址，适合语义召回以覆盖多种表述。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T08:18:15",
+          "old_vector_text": "美妆产品广告文案中必须包含中文标明的产品名称、生产厂厂名和厂址，否则违反产品质量法",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "标签标识",
+            "中文标识",
+            "产品名称",
+            "厂名厂址",
+            "美妆",
+            "进口产品"
+          ],
+          "negative_signals_recommendation": [
+            "合格证明",
+            "生产日期",
+            "保质期"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖进口、无中文、缺少厂名厂址等场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 显著、清晰. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告文案中补充中文标明的产品名称、生产厂厂名和厂址",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求产品标识必须包含中文标明的产品名称、生产厂厂名和厂址，可直接作为广告审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由操作员判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-22798ffd64783d46",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接判断文案是否缺少中文产品名称、厂名和厂址并补充，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-LABEL-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "限期使用的美妆产品必须在显著位置标明生产日期和安全使用期或失效日期",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第二十七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第二十七条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "产品或者其包装上的标识必须真实，并符合下列要求： (四)限期使用的产品，应当在显著位置清晰地标明生产日期和安全使用期或者失效日期；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "限期使用",
+            "生产日期",
+            "安全使用期",
+            "失效日期",
+            "保质期"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中提及美妆产品有保质期或限期使用时，必须同时标明生产日期和安全使用期或失效日期",
+        "decision": "若广告文案中提及限期使用但未标明生产日期和安全使用期或失效日期，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "标签标识",
+          "限期使用",
+          "生产日期",
+          "失效日期",
+          "美妆"
+        ],
+        "vector_text": "这款面霜保质期三年，生产日期见瓶底；精华液限期使用，失效日期2025年6月；请在产品包装上查看生产日期和保质期；我们的产品都有明确的生产日期和安全使用期；失效日期标注在盒底；生产日期和安全使用期请见包装；限期使用产品，生产日期和失效日期清晰可见；保质期至2026年，生产日期见封口；安全使用期标注在瓶身；失效日期和生产日期请查看包装背面。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则要求美妆产品广告中提及限期使用或保质期时必须标明生产日期和安全使用期或失效日期，但广告文案本身可能不直接包含法条关键词，而是通过描述性语言暗示，因此语义召回可补充关键词召回遗漏的变体表达。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T08:18:24",
+          "old_vector_text": "美妆产品广告中若涉及限期使用或保质期信息，必须在显著位置标明生产日期和安全使用期或失效日期",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "美妆",
+            "限期使用",
+            "生产日期",
+            "失效日期",
+            "保质期",
+            "标签标识"
+          ],
+          "negative_signals_recommendation": [
+            "生产日期见包装",
+            "保质期见包装",
+            "请查看包装"
+          ],
+          "change_summary": "将原法条式描述改写为仿真违规文案集合，覆盖多种表达方式，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 显著、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告文案中补充生产日期和安全使用期或失效日期",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求限期使用的产品必须标明生产日期和安全使用期或失效日期，可直接作为广告审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由操作员判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-c0cd38abf84e6636",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发条件明确，运营可直接判断文案是否缺少生产日期或失效日期标注并补充，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-LABEL-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "使用不当可能危及人身安全的美妆产品必须有警示标志或中文警示说明",
+      "dimension": "警示语缺失",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第二十七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第二十七条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "产品或者其包装上的标识必须真实，并符合下列要求： (五)使用不当，容易造成产品本身损坏或者可能危及人身、财产安全的产品，应当有警示标志或者中文警示说明。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "使用不当",
+            "警示",
+            "警告",
+            "注意",
+            "危险",
+            "安全"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中描述美妆产品使用方式时，若产品使用不当可能造成损坏或危及人身安全，则必须包含警示标志或中文警示说明",
+        "decision": "若广告文案中描述的产品使用不当可能危及人身安全但未提供警示标志或中文警示说明，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "警示语",
+          "安全警示",
+          "美妆"
+        ],
+        "vector_text": "使用不当可能引起皮肤过敏、灼伤、刺激、感染、脱发、指甲断裂、眼部损伤等，请务必注意安全，使用前请仔细阅读说明书，本品含有强酸/强碱/酒精/水杨酸/果酸/维A酸等成分，请勿接触眼睛，如不慎入眼请立即用清水冲洗，请置于儿童无法触及处，孕妇慎用，敏感肌慎用，建议先在耳后测试，如有不适请停止使用，本品仅供外用，不可食用，请按照说明使用，过量使用可能导致皮肤损伤，请勿长期使用，请勿与其他产品混用，请存放于阴凉干燥处，避免阳光直射，本品含有易燃成分，请远离火源，使用后请盖紧瓶盖，请勿使用于伤口或破损皮肤，如出现红肿、瘙痒等过敏症状请立即停用并咨询医生，本品为化妆品，不能替代药品，请理性购买，效果因人而异，本品通过国家化妆品备案，备案号：XXXX，生产日期见包装，保质期三年，开封后请于六个月内使用完毕，请认准官方渠道购买，谨防假冒。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text偏法规摘要，不适合语义召回。改写后模拟真实美妆产品广告中常见的警示语、安全提示、注意事项等文案，覆盖多种可能涉及人身安全的表达，便于召回缺失警示标志或说明的违规广告。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T08:18:34",
+          "old_vector_text": "美妆产品广告中若产品使用不当可能危及人身安全，必须包含警示标志或中文警示说明",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "警示语",
+            "安全提示",
+            "使用不当",
+            "美妆",
+            "化妆品",
+            "注意事项",
+            "过敏",
+            "危险成分"
+          ],
+          "negative_signals_recommendation": [
+            "药品",
+            "医疗器械",
+            "食品",
+            "保健品"
+          ],
+          "change_summary": "从法规摘要改写为仿真违规广告文案集合，包含多种警示语、安全提示、注意事项等表达，增强语义召回能力。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、备案号.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告文案中补充警示标志或中文警示说明",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求使用不当可能危及人身安全的产品必须有警示标志或中文警示说明，可直接作为广告审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则明确，可直接由操作员判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-8dce3e742896cf6d",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准接受 recommended_route：可能应先由运营补充资料：主要矛盾是事实核验，不一定需要立即占用法务。；legal_attention.default_route 与旧 routing.default_route 不一致。",
+        "confidence": "medium",
+        "calibration_status": "human_confirmed",
+        "calibrated_at": "2026-07-16T21:49:08",
+        "calibration_source": "legal_attention_calibration_mvp_csv",
+        "calibration_row_number": 11
+      }
+    },
+    {
+      "rule_id": "COSM-FALSE-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "生产者不得伪造产地、厂名、厂址",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第三十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第三十条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "生产者不得伪造产地，不得伪造或者冒用他人的厂名、厂址。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "产地",
+            "厂名",
+            "厂址",
+            "伪造",
+            "冒用"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中声称的产地、厂名、厂址与实际情况不符，或存在伪造、冒用他人信息的行为",
+        "decision": "若广告文案中提及产地、厂名、厂址，且内容涉嫌伪造或冒用，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "产地伪造",
+          "厂名冒用",
+          "厂址伪造"
+        ],
+        "vector_text": "原装进口法国巴黎，产地法国，正宗意大利制造，德国工艺，日本原产，美国加州农场直供，瑞士实验室研发，韩",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及产地、厂名、厂址的伪造或冒用，属于事实核查型违规，但广告文案中常出现各种变体表述（如原装进口、XX品牌出品等），关键词难以穷举，语义召回可辅助发现疑似伪造或冒用的表述，但需结合事实核查，因此适合作为fallback。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:38:32",
+          "old_vector_text": "广告文案中不得伪造产地，不得伪造或冒用他人的厂名、厂址",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "虚假宣传",
+            "产地伪造",
+            "厂名冒用",
+            "厂址伪造",
+            "原装进口",
+            "品牌冒用",
+            "产地误导",
+            "厂名虚假"
+          ],
+          "negative_signals_recommendation": [
+            "真实产地",
+            "实际厂名",
+            "实际厂址",
+            "本公司生产",
+            "自有工厂",
+            "产地证明",
+            "厂名证明",
+            "厂址证明"
+          ],
+          "change_summary": "将原法条式vector_text改写为HyDE风格，堆叠大量可能的违规表述和变体，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "本产品产自法国巴黎（实际产地为中国）",
+          "由XX知名公司（冒用他人厂名）生产"
+        ],
+        "compliant": [
+          "本产品产自中国广州（真实产地）",
+          "由本公司（真实厂名）生产"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接禁止伪造产地、厂名、厂址，可形成明确广告审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核实广告中声称的产地、厂名、厂址是否真实",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需提供产地、厂名、厂址的真实性证明材料",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产地证明",
+          "厂名厂址注册证明或授权文件"
+        ],
+        "data_sources": [
+          "企业工商登记信息",
+          "产品产地证明文件"
+        ],
+        "note": "后期需接入资料核验，确认广告中声称的产地、厂名、厂址真实有效"
+      },
+      "rule_uid": "RUID-3600b19ba8e143ae",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需运营先提供产地、厂名、厂址的真实性证明材料，再判断是否违规，无法直接修改或法务直接复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-虚假宣传-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "生产者不得伪造或者冒用认证标志等质量标志",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第三十一条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第三十一条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "生产者不得伪造或者冒用认证标志等质量标志。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "认证标志",
+            "质量标志",
+            "伪造认证",
+            "冒用认证",
+            "伪造质量标志",
+            "冒用质量标志"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否声称或暗示产品拥有认证标志（如ISO、QS、有机认证等）但实际未获得或冒用他人认证标志。",
+        "decision": "若文案中出现伪造或冒用认证标志等质量标志的表述，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "认证标志",
+          "质量标志",
+          "伪造",
+          "冒用",
+          "虚假宣传"
+        ],
+        "vector_text": "广告文案中不得伪造或冒用认证标志、质量标志，包括但不限于ISO认证、QS标志、有机认证、绿色食品标志等。",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "人工校准：该规则需要结合运营提交的资质、授权、专利、产地、防伪、检验或真实性证明材料进行事实核验。",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《产品质量法》第三十一条，可能面临责令改正、没收违法生产、销售的产品，并处违法生产、销售产品货值金额等值以下的罚款；有违法所得的，并处没收违法所得；情节严重的，吊销营业执照。",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改或删除相关违规表述",
+      "examples": {
+        "violation": [
+          "本产品获得ISO9001认证（实际未获得）",
+          "冒用某知名有机认证标志"
+        ],
+        "compliant": [
+          "本产品已通过ISO9001认证（附真实证书）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接禁止伪造或冒用认证标志等质量标志，属于明确的行为禁止，可直接形成广告审核规则。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核实广告中声称的认证标志是否真实获得",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "判断是否伪造或冒用认证标志需要核实实际认证情况，需运营提供相关证明文件。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "认证证书",
+          "授权证明"
+        ],
+        "data_sources": [
+          "国家认证认可监督管理委员会数据库",
+          "第三方认证机构官网"
+        ],
+        "note": "后期需接入认证标志数据库进行核验，确认广告中声称的认证标志是否真实有效。"
+      },
+      "rule_uid": "RUID-cd55c70db0ea11c3",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准：该规则主要依赖事实资料核验，应先要求运营补充证明材料，再决定是否需要法务复核。",
+        "confidence": "high",
+        "calibration_status": "human_confirmed",
+        "calibrated_at": "2026-07-16T23:19:09",
+        "calibration_source": "manual_rule_layer_correction_20260716"
+      }
+    },
+    {
+      "rule_id": "COSM-OTHER-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "销售者不得销售国家明令淘汰并停止销售的产品和失效、变质的产品",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第三十五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第三十五条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "销售者不得销售国家明令淘汰并停止销售的产品和失效、变质的产品。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "国家明令淘汰",
+            "失效",
+            "变质"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否宣传或暗示销售国家明令淘汰、失效或变质的美妆产品",
+        "decision": "若广告文案中提及或暗示销售国家明令淘汰、失效或变质的美妆产品，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "产品质量",
+          "禁止销售",
+          "失效变质",
+          "淘汰产品"
+        ],
+        "vector_text": "清仓处理过期变质面膜，低价甩卖；特价销售国家已淘汰的含汞美白霜；临期特卖，产品已变质但效果一样；工厂",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text为法条改写，缺乏真实违规文案的多样性。本改写模拟了销售失效、变质、淘汰产品的常见营销话术，便于语义召回识别此类违规表达。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T08:22:26",
+          "old_vector_text": "广告文案中不得宣传销售国家明令淘汰并停止销售的产品，以及失效、变质的产品",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "失效产品",
+            "变质产品",
+            "淘汰产品",
+            "清仓处理",
+            "过期销售",
+            "违规促销",
+            "产品质量"
+          ],
+          "negative_signals_recommendation": [
+            "临期正品",
+            "保质期内",
+            "正规渠道",
+            "国家认证"
+          ],
+          "change_summary": "将法条式文本替换为真实违规文案集合，覆盖过期、变质、淘汰产品的多种销售话术。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 123
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、宣传、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "本店清仓处理过期变质面膜，低价甩卖",
+          "特价销售国家已淘汰的含汞美白霜"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定禁止销售特定产品，广告文案中若出现相关表述即可直接判定违规"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词触发后可直接判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-e6b6df4058b0ced8",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-FALSE-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "销售者不得伪造产地，不得伪造或者冒用他人的厂名、厂址",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第三十七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第三十七条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第三十七条 销售者不得伪造产地，不得伪造或者冒用他人的厂名、厂址。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "产地",
+            "厂名",
+            "厂址",
+            "伪造",
+            "冒用"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否声称产地、厂名、厂址信息，且该信息与实际情况不符，存在伪造或冒用他人信息的行为",
+        "decision": "若广告文案中声称的产地、厂名、厂址信息经核实为伪造或冒用他人，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "产地伪造",
+          "厂名冒用",
+          "厂址冒用"
+        ],
+        "vector_text": "广告文案中不得伪造产品产地，不得伪造或冒用他人的厂名、厂址",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求修改，删除虚假的产地、厂名、厂址信息",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止伪造产地、伪造或冒用他人厂名厂址，可直接作为广告审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核实广告中声称的产地、厂名、厂址是否真实",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供产品产地、厂名、厂址的真实性证明材料",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品产地证明",
+          "厂名厂址授权或注册证明"
+        ],
+        "data_sources": [],
+        "note": "后期需接入资料核验，确认广告中声称的产地、厂名、厂址是否真实"
+      },
+      "rule_uid": "RUID-fd8df2d0ec77fca4",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及伪造或冒用产地、厂名、厂址，需要法务判断是否构成伪造或冒用，且需核验证明材料，风险高，运营无法自行判断。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-OTHER-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "销售者不得伪造或者冒用认证标志等质量标志",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第三十八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第三十八条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "销售者不得伪造或者冒用认证标志等质量标志。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "认证标志",
+            "质量标志",
+            "伪造",
+            "冒用"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否声称或暗示产品拥有认证标志或质量标志，但实际未获得或冒用他人标志",
+        "decision": "若文案中出现伪造或冒用认证标志、质量标志的表述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "质量标志",
+          "认证标志",
+          "伪造",
+          "冒用"
+        ],
+        "vector_text": "广告文案中不得伪造或冒用认证标志、质量标志，如有机认证、ISO认证、绿色食品标志等",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 证明.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《产品质量法》第三十八条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "本产品已获得国家有机认证（实际未获得）",
+          "冒用ISO9001质量标志"
+        ],
+        "compliant": [
+          "本产品已通过国家有机认证（附真实证书编号）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接禁止伪造或冒用认证标志等质量标志，可形成明确审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核实广告中声称的认证标志是否真实获得",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供认证标志的真实性证明",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "认证证书",
+          "授权文件"
+        ],
+        "data_sources": [
+          "国家认证认可监督管理委员会数据库"
+        ],
+        "note": "后期需接入认证标志真实性核验"
+      },
+      "rule_uid": "RUID-491c9616141a70d9",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及认证标志真实性核验，需法务判断是否构成伪造或冒用，且后果严重，不宜仅由运营处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-FALSE-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "美妆_虚假宣传",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止以假充真、以次充好、以不合格产品冒充合格产品",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL",
+        "source_article_id": "第三十九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第三十九条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "销售者销售产品，不得掺杂、掺假，不得以假充真、以次充好，不得以不合格产品冒充合格产品。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "以假充真",
+            "以次充好",
+            "不合格产品冒充合格产品",
+            "假货",
+            "仿品",
+            "正品保证",
+            "原装正品"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否存在明示或暗示产品为假货、仿品、以次充好、不合格产品冒充合格产品的表述，或通过虚假承诺正品身份误导消费者的内容",
+        "decision": "若文案中出现以假充真、以次充好、不合格产品冒充合格产品等虚假表述，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "产品质量",
+          "美妆"
+        ],
+        "vector_text": "原装正品，假一赔十，绝非假货，工厂尾单品质与正品无异，高仿A货，超A级仿品，一比一复刻，精仿，顶级复",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text是法条改写，缺乏真实违规文案的多样性。新vector_text模拟了美妆广告中常见的假货、仿品、以次充好等违规表述，包括各种变体，便于语义召回覆盖更多场景。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T08:25:58",
+          "old_vector_text": "广告文案中不得声称产品为假货、仿品、以次充好，不得以不合格产品冒充合格产品，不得进行虚假的正品保证",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "产品质量",
+            "假货",
+            "仿品",
+            "以次充好",
+            "正品保证",
+            "美妆"
+          ],
+          "negative_signals_recommendation": [
+            "正品",
+            "官方",
+            "授权",
+            "专柜",
+            "防伪",
+            "质检",
+            "合格",
+            "标准"
+          ],
+          "change_summary": "从法条式改写为真实违规文案集合，增加大量变体表述，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 4254
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 促销、功效、宣传、明示、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《产品质量法》第三十九条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "本产品为原装正品，绝非假货",
+          "超低价正品，假一赔十",
+          "工厂尾单，品质与正品无异"
+        ],
+        "compliant": [
+          "本产品符合国家质量标准",
+          "产品经检测合格"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止以假充真、以次充好、以不合格产品冒充合格产品，可直接形成广告审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-109d5529ff183391",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词和语义可自动判定，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-FALSE-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止以假充真、以次充好或以不合格产品冒充合格产品",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第五十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第五十条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "在产品中掺杂、掺假，以假充真，以次充好，或者以不合格产品冒充合格产品的，责令停止生产、销售，没收违法生产、销售的产品，并处违法生产、销售产品货值金额百分之五十以上三倍以下的罚款；有违法所得的，并处没收违法所得；情节严重的，吊销营业执照；构成犯罪的，依法追究刑事责任。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "以假充真",
+            "以次充好",
+            "冒充合格",
+            "正品保证",
+            "假一赔十",
+            "原装正品",
+            "非正品"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中不得声称产品为合格产品、正品、原装等，若实际产品存在掺杂掺假、以假充真、以次充好或不合格冒充合格的情况，则构成违规。",
+        "decision": "若广告文案中出现'以假充真''以次充好''冒充合格'等表述，或声称产品为正品、原装但实际不符，判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "产品质量",
+          "美妆"
+        ],
+        "vector_text": "100%纯天然正品，绝无掺假；假一赔十，原装进口正品保证；正品保障，假一赔三；原装正品，品质保证；非",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及开放概念，关键词难以覆盖所有变体表述，语义召回可捕获多种违规表达，适合作为主要召回方式。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:38:49",
+          "old_vector_text": "广告文案中不得宣传产品为合格产品、正品、原装，若实际产品存在掺杂掺假、以假充真、以次充好或以不合格产品冒充合格产品的情况，属于虚假宣传。",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "产品质量",
+            "以假充真",
+            "以次充好",
+            "冒充合格",
+            "正品保证",
+            "假一赔十",
+            "美妆"
+          ],
+          "negative_signals_recommendation": [
+            "正品保障",
+            "假一赔十",
+            "原装正品",
+            "品质保证",
+            "支持验货"
+          ],
+          "change_summary": "将原规则解释性文本改写为大量真实违规文案和变体表述的集合，覆盖多种说法和场景，提升语义召回覆盖率。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "责令停止生产、销售，没收违法产品，处货值金额50%以上3倍以下罚款；有违法所得的没收违法所得；情节严重的吊销营业执照；构成犯罪的追究刑事责任。",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改文案，删除虚假宣称内容。",
+      "examples": {
+        "violation": [
+          "本产品为100%纯天然正品，绝无掺假",
+          "假一赔十，原装进口正品保证"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接禁止以假充真、以次充好等行为，广告文案中若出现此类宣称或暗示，可直接适用。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认产品实际是否存在掺杂掺假、以假充真等质量问题，依赖事实核验。",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "判断是否违规需结合产品实际质量情况，需运营方提供产品质检报告或相关证明。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品质检报告",
+          "产品合格证明",
+          "生产许可证"
+        ],
+        "data_sources": [
+          "国家市场监督管理总局",
+          "第三方质检机构"
+        ],
+        "note": "后期需接入产品质检数据，核实产品是否合格，以判断广告宣称是否虚假。"
+      },
+      "rule_uid": "RUID-e263721a26975f81",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及以假充真、以次充好等开放法律概念，且必须依赖产品质检报告等外部事实才能判断是否违规，误判后果严重，应进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-OTHER-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止伪造或冒用产地、厂名厂址及质量标志",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第五十三条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第五十三条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第五十三条 伪造产品产地的，伪造或者冒用他人厂名、厂址的，伪造或者冒用认证标志等质量标志的，责令改正，没收违法生产、销售的产品，并处违法生产、销售产品货值金额等值以下的罚款；有违法所得的，并处没收违法所得；情节严重的，吊销营业执照。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "产地",
+            "厂名",
+            "厂址",
+            "认证标志",
+            "质量标志",
+            "原产地",
+            "制造地"
+          ],
+          "regex": [],
+          "context_signals": [
+            "伪造",
+            "冒用",
+            "虚假标注"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣称的产品产地、厂名、厂址或认证标志等质量标志，若存在伪造或冒用他人信息的情形，构成违规。",
+        "decision": "若检测到广告文案中明确标注产地、厂名、厂址或认证标志，且与产品实际信息不符或冒用他人信息，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "产地虚假",
+          "厂名冒用",
+          "厂址冒用",
+          "质量标志伪造",
+          "认证标志冒用"
+        ],
+        "vector_text": "原装进口法国巴黎产，正宗韩国制造，日本原产，德国工艺，意大利设计，美国品牌，瑞士研发，澳洲原料，新西",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及产地、厂名厂址、质量标志的伪造冒用，广告文案中常出现各种虚假宣称，如原装进口、认证标志等，语义召回可覆盖关键词无法穷尽的变体表述，适合作为fallback辅助召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣称、虚假. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:39:05",
+          "old_vector_text": "广告文案中伪造产品产地、伪造或冒用他人厂名厂址、伪造或冒用认证标志等质量标志的行为",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，如'原产地'、'制造地'等，需语义辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "产地虚假",
+            "厂名冒用",
+            "厂址冒用",
+            "质量标志伪造",
+            "认证标志冒用",
+            "原装进口",
+            "虚假认证"
+          ],
+          "negative_signals_recommendation": [
+            "实际产地一致",
+            "真实厂名",
+            "真实认证"
+          ],
+          "change_summary": "将原规则描述改写为大量真实广告中可能出现的虚假产地、厂名厂址、认证标志等违规表述的集合，增强语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "责令改正，没收违法生产、销售的产品，并处货值金额等值以下罚款；有违法所得的，没收违法所得；情节严重的，吊销营业执照。",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布含有伪造或冒用产地、厂名、厂址、认证标志等质量标志的广告内容。",
+      "examples": {
+        "violation": [
+          "本产品产自法国巴黎（实际产地为中国）",
+          "由XX知名品牌代工厂生产（实际为冒用他人厂名）",
+          "通过ISO9001认证（实际未获得该认证）"
+        ],
+        "compliant": [
+          "本产品产地为中国广州（与实际产地一致）",
+          "由本公司自有工厂生产（厂名真实）",
+          "已获得国家化妆品质量监督检验中心认证（认证真实有效）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接禁止伪造或冒用产地、厂名厂址及质量标志，广告文案中涉及此类信息即可直接适用。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核实广告中宣称的产地、厂名、厂址、认证标志等是否真实，依赖产品实际信息或资质文件。",
+        "misjudgment_cost": "高，误判可能导致合规广告被拒或违规广告通过，引发法律风险。",
+        "default_route": "operator_supply_docs",
+        "route_reason": "判断是否伪造或冒用需依赖产品实际产地、厂名厂址及认证资质等资料，需运营人员提供相关证明文件。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品产地证明",
+          "厂名厂址证明",
+          "认证标志证书或授权文件"
+        ],
+        "data_sources": [
+          "产品备案信息",
+          "企业资质文件",
+          "认证机构数据库"
+        ],
+        "note": "后期需接入产品备案或企业资质数据库，自动核验广告中宣称的产地、厂名、厂址及认证标志的真实性。"
+      },
+      "rule_uid": "RUID-7765255fe0e244d5",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "判断是否伪造或冒用产地、厂名厂址及质量标志，需运营提供产品实际产地、资质等证明文件，无法仅凭文案直接判定。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "社会团体/中介机构对产品质量承诺保证的连带责任",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第五十八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第五十八条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第五十八条 社会团体、社会中介机构对产品质量作出承诺、保证，而该产品又不符合其承诺、保证的质量要求，给消费者造成损失的，与产品的生产者、销售者承担连带责任。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "承诺",
+            "保证",
+            "质量"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中由社会团体或社会中介机构对产品质量作出承诺或保证，且未明确产品符合该质量要求",
+        "decision": "若检测到社会团体或社会中介机构对产品质量作出承诺或保证，且产品实际不符合该质量要求，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "连带责任",
+          "产品质量承诺",
+          "社会团体",
+          "中介机构"
+        ],
+        "vector_text": "本产品由XX协会质量认证，品质有保障，放心购买。XX中介机构推荐，质量承诺，假一赔十。行业协会保证产",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及社会团体/中介机构对产品质量的承诺保证，关键词难以覆盖所有变体，语义召回可捕捉类似表述。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T08:30:09",
+          "old_vector_text": "社会团体或社会中介机构在广告中对产品质量作出承诺或保证，可能导致虚假宣传并承担连带责任",
+          "old_semantic_reason": "关键词可能无法覆盖所有社会团体/中介机构的表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "连带责任",
+            "产品质量承诺",
+            "社会团体",
+            "中介机构",
+            "质量保证",
+            "认证"
+          ],
+          "negative_signals_recommendation": [
+            "个人承诺",
+            "企业自身承诺"
+          ],
+          "change_summary": "将法条解释改写为仿真违规文案集合，覆盖协会、中介、团体等主体及多种承诺表述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 91
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "与产品的生产者、销售者承担连带责任",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若发现社会团体或社会中介机构对产品质量作出承诺或保证，需核实产品是否符合该质量要求，否则判定违规",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要判断广告中是否由社会团体或社会中介机构作出承诺/保证，以及产品是否符合该质量要求"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核实产品实际质量是否符合承诺/保证",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及连带责任，需法务审核确认产品实际质量与承诺的一致性",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品质量检测报告",
+          "产品合格证明"
+        ],
+        "data_sources": [],
+        "note": "后期需接入产品质量检测报告等资料核验产品是否符合承诺的质量要求"
+      },
+      "rule_uid": "RUID-e879462bd9dec990",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及社会团体或中介机构对产品质量的承诺保证，需法务判断主体身份及产品实际质量是否达标，且后果为连带责任，风险极高",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-FALSE-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "PQL-2018",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止在广告中对产品质量作虚假宣传",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "PQL-2018",
+        "source_article_id": "第五十九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "PQL",
+          "article": "第五十九条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "在广告中对产品质量作虚假宣传，欺骗和误导消费者的，依照《中华人民共和国广告法》的规定追究法律责任。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚假宣传",
+            "欺骗",
+            "误导",
+            "质量",
+            "产品质量"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否存在对产品质量的虚假描述，包括但不限于虚构产品成分、性能、功效、产地、生产日期、有效期等信息，且可能欺骗或误导消费者。",
+        "decision": "若广告文案中对产品质量的描述与事实不符，且具有欺骗或误导消费者的可能性，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "产品质量",
+          "广告合规"
+        ],
+        "vector_text": "纯天然100%无添加，效果立竿见影，三天美白，七天祛斑，无效退款。独家专利成分，诺贝尔奖技术，临床验",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及产品质量虚假宣传，常见于美妆广告中的夸大成分、功效、产地、保质期等，语义召回可覆盖多种变体表达，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T08:30:17",
+          "old_vector_text": "广告中对产品质量进行虚假宣传，欺骗和误导消费者，包括虚构产品成分、性能、功效、产地、生产日期、有效期等质量相关信息。",
+          "old_semantic_reason": "虚假宣传可能通过语义变体表达，关键词可能漏召回，需语义辅助。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "产品质量",
+            "美妆",
+            "夸大功效",
+            "虚构成分",
+            "误导消费者"
+          ],
+          "negative_signals_recommendation": [
+            "备案",
+            "检测报告",
+            "实际",
+            "符合"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖成分、功效、产地、保质期等常见虚假宣传场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 106
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、夸大、宣传、欺骗、第一.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "依照《中华人民共和国广告法》的规定追究法律责任，可能包括罚款、停止发布广告、吊销营业执照等。",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若检测到违规，需标记为虚假宣传，并触发法律审查流程。",
+      "examples": {
+        "violation": [
+          "本产品含100%纯天然成分（实际含有人工添加剂）",
+          "产品保质期三年（实际仅一年）"
+        ],
+        "compliant": [
+          "本产品含天然成分（有备案证明）",
+          "产品保质期三年（符合实际标注）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定广告中对产品质量作虚假宣传的法律责任，规则明确可执行。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核实广告中产品质量描述的真实性，依赖产品实际质量信息。",
+        "misjudgment_cost": "高，虚假宣传可能引发法律诉讼和平台声誉损失。",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假宣传涉及法律后果，需法务或专业审核人员介入判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品质量检测报告",
+          "产品备案信息",
+          "产品成分清单"
+        ],
+        "data_sources": [
+          "国家市场监督管理总局数据库",
+          "企业提交的资质文件"
+        ],
+        "note": "后期需接入资料核验系统，验证广告中产品质量描述的真实性。"
+      },
+      "rule_uid": "RUID-b04dfa24711da00d",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假宣传涉及开放法律概念，需法务判断是否构成欺骗误导，且依赖产品质量检测报告等外部事实核验，风险高，运营无法自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

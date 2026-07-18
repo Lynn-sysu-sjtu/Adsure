@@ -1,0 +1,797 @@
+{
+  "meta": {
+    "name": "游戏规则库-B站广告推广平台审核规范（二）",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "游戏广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "B站广告推广平台审核规范（二）.pdf",
+    "source_track": "游戏",
+    "rule_count": 4,
+    "error_count": 0,
+    "source_units_processed": 1,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "BILI",
+      "name": "B站广告推广平台审核规范（二）",
+      "short": "BILI-B站广告推广平台审核规范（二）",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "B站"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "GAME-BILI-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "B站广告推广平台审核规范（二）",
+      "source_type": "平台规则",
+      "platform": "B站",
+      "title": "游戏广告不得出现未成年人相关元素",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "B站"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "BILI",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "BILI",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "高风险内容（金融、游戏、酒类、医疗、OTC药品、医疗器械等）严禁出现任何未成年人相关元素"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "未成年人",
+            "儿童",
+            "少年",
+            "小孩",
+            "宝宝",
+            "小学生",
+            "中学生",
+            "青少年"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中不得出现任何直接或间接指向未成年人的元素，包括但不限于提及未成年人、使用未成年人形象描述、暗示未成年人使用等",
+        "decision": "若检测到未成年人相关元素，判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "游戏广告",
+          "B站平台规则"
+        ],
+        "vector_text": "适合小学生玩的游戏青少年专属福利儿童节特惠宝宝也爱玩中学生都在玩少年玩家首选未成年人也能轻松上手小孩",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则关键词明确，但语义召回可覆盖更多间接提及未成年人的表述，如'学生党''00后'等，适合作为fallback增强召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T05:18:27",
+          "old_vector_text": "游戏广告中严禁出现任何未成年人相关元素，包括文字描述中提及未成年人、儿童、少年等",
+          "old_semantic_reason": "关键词可能无法覆盖所有间接提及未成年人的表述，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未成年人保护",
+            "游戏广告",
+            "B站平台规则",
+            "儿童",
+            "青少年",
+            "学生",
+            "年龄限制",
+            "防沉迷"
+          ],
+          "negative_signals_recommendation": [
+            "成年人",
+            "成人",
+            "18岁以上",
+            "仅限成人",
+            "家长监护"
+          ],
+          "change_summary": "将原规则描述改写为大量违规文案示例的集合，覆盖直接和间接提及未成年人的各种表述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 8332
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 代言、促销、免费、医疗、宣传.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告拒绝投放"
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "适合小学生玩的游戏",
+          "青少年专属福利"
+        ],
+        "compliant": [
+          "适合成年玩家的策略游戏"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止游戏广告出现未成年人相关元素，无需额外解释"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由操作员判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-a8c4374f2de3ec85",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接删除或替换违规关键词，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-BILI-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "B站广告推广平台审核规范（二）",
+      "source_type": "平台规则",
+      "platform": "B站",
+      "title": "游戏广告不得宣传不利于未成年人身心健康的游戏",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "B站"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "BILI",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "BILI",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "禁止宣传或介绍不利于未成年人身心健康的游戏"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "未成年人",
+            "儿童",
+            "青少年",
+            "身心健康",
+            "暴力",
+            "色情",
+            "赌博",
+            "血腥"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案不得宣传或介绍可能对未成年人身心健康产生负面影响的游戏内容，如暴力、色情、赌博等",
+        "decision": "若检测到宣传不利于未成年人身心健康的游戏内容，判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "游戏广告",
+          "B站平台规则"
+        ],
+        "vector_text": "这款游戏充满血腥暴力，适合青少年挑战；未成年人也能玩的成人游戏；儿童不宜的刺激玩法；青少年沉迷的赌博",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及开放概念'不利于未成年人身心健康'，关键词难以穷举所有违规表述，语义召回作为主要方式可覆盖多种变体表达，如暴力、色情、赌博等不良内容的软性描述。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T05:18:38",
+          "old_vector_text": "禁止宣传或介绍不利于未成年人身心健康的游戏，包括暴力、色情、赌博等不良内容",
+          "old_semantic_reason": "关键词可能无法覆盖所有不利于未成年人身心健康的游戏描述，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "游戏广告",
+            "暴力",
+            "色情",
+            "赌博",
+            "青少年",
+            "儿童",
+            "身心健康"
+          ],
+          "negative_signals_recommendation": [
+            "适合成年玩家",
+            "仅限成年人",
+            "18禁",
+            "成人游戏",
+            "成年人专属"
+          ],
+          "change_summary": "将原法条式vector_text改写为仿真违规文案集合，覆盖暴力、色情、赌博等不良内容的多种组合表达，并增加青少年、儿童等目标人群词，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 713
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、未成年人.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告拒绝投放"
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "这款游戏充满血腥暴力，适合青少年挑战",
+          "未成年人也能玩的成人游戏"
+        ],
+        "compliant": [
+          "适合成年玩家的策略游戏"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "不利于未成年人身心健康的游戏定义较宽泛，需结合具体内容判断"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "规则较开放，需法务审核确认是否不利于未成年人身心健康",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-eb350ea9104aebf5",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及'不利于未成年人身心健康'这一开放法律概念，需要法务结合具体游戏内容判断是否违规，运营难以自行界定。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-BILI-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "B站广告推广平台审核规范（二）",
+      "source_type": "平台规则",
+      "platform": "B站",
+      "title": "游戏广告涉及赠送福利需提供奖励品真实有效证明",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "B站"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "BILI",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "BILI",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "涉及用户不消费即可领取某福利的活动情况应当对奖励品进行二次核查如：某游戏广告语是“有一份3280元源石待领取””上线即得神级辅助英雄“等需前置提供奖励品真实有效可领取的截屏或录屏"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "待领取",
+            "免费",
+            "送",
+            "赠送",
+            "福利",
+            "领取",
+            "0元",
+            "不消费"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中涉及用户不消费即可领取福利的表述，需检测是否包含奖励品真实有效可领取的承诺",
+        "decision": "若检测到相关表述，需触发资料核验流程"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "游戏广告",
+          "B站平台规则",
+          "福利赠送"
+        ],
+        "vector_text": "有一份3280元源石待领取?上线即得神级辅助英雄?待领取?免费?送?赠送?福利?领取?0元?不消费?",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 免费、宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T19:40:16",
+          "old_vector_text": "游戏广告中涉及不消费即可领取福利的表述，需提供奖励品真实有效可领取的截屏或录屏",
+          "old_semantic_reason": "关键词可能无法覆盖所有福利赠送的变体表述，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "虚假宣传",
+            "游戏广告",
+            "B站平台规则",
+            "福利赠送"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Missing vector_text.",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "要求提供证明材料，否则拒绝投放"
+      },
+      "relations": [],
+      "disposition": "要求提供奖励品真实有效可领取的截屏或录屏",
+      "examples": {
+        "violation": [
+          "有一份3280元源石待领取",
+          "上线即得神级辅助英雄"
+        ],
+        "compliant": [
+          "上线即得新手礼包（详情见活动规则）"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求对奖励品进行二次核查并提供证明"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要奖励品真实有效可领取的截屏或录屏",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需操作员要求广告主提供证明材料",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "奖励品真实有效可领取的截屏或录屏"
+        ],
+        "data_sources": [],
+        "note": "后期需接入资料核验，验证奖励品真实性"
+      },
+      "rule_uid": "RUID-e990073bbb155ad2",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则明确要求运营提供奖励品真实有效证明，运营可引导广告主补充材料，无需法务介入解释法律边界。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-BILI-004",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "B站广告推广平台审核规范（二）",
+      "source_type": "平台规则",
+      "platform": "B站",
+      "title": "游戏广告涉及数据引证需明示官方数据来源并提供承诺函",
+      "dimension": "数据引用不规范",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "B站"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "BILI",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "BILI",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "涉及数据引证应当明示官方数据（如：BOSS直聘、51JOB、前程无忧等）某行业官方机构统计，需要对数据来源进行二次核查如：某教育机构推广3D建模师引用了BOSS直聘（官方机构）对该职位的未来发展趋势统计（数据引证），且标明此数据来源于BOSS直聘（数据来源）并前置给到数据真实性的承诺函"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "数据",
+            "统计",
+            "调查",
+            "报告",
+            "显示",
+            "据",
+            "来源",
+            "官方数据"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中引用数据时，需检测是否明示数据来源，并需提供数据真实性承诺函",
+        "decision": "若检测到数据引证且未明示来源，判定违规；若明示来源，需触发资料核验"
+      },
+      "recall": {
+        "tags": [
+          "数据引用不规范",
+          "游戏广告",
+          "B站平台规则"
+        ],
+        "vector_text": "据调查，90%玩家选择本游戏；行业报告显示本游戏排名第一；据官方统计，本游戏用户量突破千万；数据来源",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及数据引证需明示来源并提供承诺函，违规文案常以数据引用形式出现，关键词难以覆盖所有变体，语义召回可有效识别类似表述。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T05:21:15",
+          "old_vector_text": "广告中引用数据需明示官方数据来源，并提供数据真实性承诺函",
+          "old_semantic_reason": "关键词可能无法覆盖所有数据引证表述，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "数据引用",
+            "数据来源",
+            "承诺函",
+            "游戏广告",
+            "B站规则",
+            "数据真实性"
+          ],
+          "negative_signals_recommendation": [
+            "个人观点",
+            "非数据引用",
+            "内部数据"
+          ],
+          "change_summary": "将原规则说明改写为仿真违规文案集合，包含多种数据引证表述及缺失来源/承诺函的违规表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 125
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 明示、第一. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "要求提供数据来源和承诺函，否则拒绝投放"
+      },
+      "relations": [],
+      "disposition": "要求明示数据来源并提供数据真实性承诺函",
+      "examples": {
+        "violation": [
+          "据调查，90%玩家选择本游戏",
+          "行业报告显示本游戏排名第一"
+        ],
+        "compliant": [
+          "据BOSS直聘统计（数据来源：BOSS直聘），该职位需求增长"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求数据引证需明示来源并提供承诺函"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要数据来源和真实性承诺函",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需操作员要求广告主提供数据来源和承诺函",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "数据来源说明",
+          "数据真实性承诺函"
+        ],
+        "data_sources": [],
+        "note": "后期需接入资料核验，验证数据来源真实性"
+      },
+      "rule_uid": "RUID-bf2932a3a0d7ba2b",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需判断是否涉及数据引证，且主要问题在于缺少数据来源和承诺函，运营可引导广告主补充资料，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

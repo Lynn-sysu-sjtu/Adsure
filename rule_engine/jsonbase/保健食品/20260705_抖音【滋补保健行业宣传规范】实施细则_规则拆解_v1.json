@@ -1,0 +1,1279 @@
+{
+  "meta": {
+    "name": "保健食品规则库-抖音【滋补保健行业宣传规范】实施细则",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "保健食品广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "抖音【滋补保健行业宣传规范】实施细则.pdf",
+    "source_track": "保健食品",
+    "rule_count": 6,
+    "error_count": 0,
+    "source_units_processed": 1,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "DY",
+      "name": "抖音【滋补保健行业宣传规范】实施细则",
+      "short": "DY-抖音【滋补保健行业宣传规范】实施细则",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "抖音"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "HF-虚假宣传-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "DY_滋补保健宣传规范",
+      "source_type": "平台规则",
+      "platform": "抖音",
+      "title": "滋补保健商品不得宣传对重大疾病有效果",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "传统滋补",
+          "营养保健/特医食品"
+        ],
+        "platforms": [
+          "抖音"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本",
+          "私域文案"
+        ],
+        "channels": [
+          "直播间",
+          "短视频",
+          "图文"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "DY",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "DY",
+          "article": "3.1.3",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "宣传售卖商品对重大疾病有效果（含暗示宣传，常见重大疾病如恶性肿瘤、尿毒症、瘫痪等），属于重大疾病的功效类严重虚假宣传；（注：重大疾病以国家规定36种重大疾病作为参考）"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "肿瘤",
+            "癌",
+            "白血病",
+            "恶性+瘤",
+            "脑血管畸形",
+            "梗塞",
+            "心脏病",
+            "尿毒症",
+            "肾功能衰竭",
+            "深度昏迷",
+            "失聪",
+            "失明",
+            "瘫痪",
+            "语言能力丧失",
+            "失语症",
+            "植物人",
+            "红斑狼疮",
+            "1型糖尿病",
+            "一/1型糖尿病",
+            "偏瘫",
+            "重症肝炎",
+            "脑炎后遗症",
+            "脑膜炎后遗症",
+            "阿尔茨海默病",
+            "老年痴呆",
+            "严重脑损伤",
+            "帕金森病",
+            "III度烧伤",
+            "三/3度烧伤",
+            "原发性肺动脉高压",
+            "运动神经元病",
+            "渐冻症",
+            "再生障碍性贫血",
+            "硬化症",
+            "HIV",
+            "艾滋",
+            "原发性心肌病",
+            "重症肌无力",
+            "坏死性胰腺炎",
+            "坏死性筋膜炎",
+            "终末期肺病",
+            "严重类风湿性关节炎"
+          ],
+          "regex": [],
+          "context_signals": [
+            "治疗",
+            "治愈",
+            "缓解",
+            "有效"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "宣传滋补保健商品对重大疾病有治疗、治愈或缓解效果",
+        "decision": "若命中关键词且上下文暗示治疗重大疾病，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "滋补保健",
+          "重大疾病",
+          "功效虚假",
+          "严重违规"
+        ],
+        "vector_text": "吃这个能抗癌，肿瘤患者必备，白血病有救了，心脏病一吃就好，尿毒症不用透析了，肾功能衰竭逆转，深度昏迷",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及滋补保健商品宣传对重大疾病有效，属于典型的效果夸大和虚假宣传，适合语义召回以覆盖多种暗示表达和变体说法。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:46:19",
+          "old_vector_text": "滋补保健商品宣传对重大疾病如肿瘤、心脏病、尿毒症等有治疗或缓解效果",
+          "old_semantic_reason": "关键词可能无法覆盖所有暗示表达，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "滋补保健",
+            "重大疾病",
+            "虚假宣传",
+            "功效夸大",
+            "暗示治疗",
+            "软性规避"
+          ],
+          "negative_signals_recommendation": [
+            "预防",
+            "辅助",
+            "改善亚健康",
+            "增强免疫力"
+          ],
+          "change_summary": "将原简短描述扩展为包含多种重大疾病名称和违规营销话术的仿真文案集合，覆盖更多暗示表达和变体。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 310
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、夸大、宣传、治疗、疾病.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "平台违规处罚"
+      },
+      "relations": [],
+      "disposition": "禁止宣传",
+      "examples": {
+        "violation": [
+          "主播口播针对心某脏的人群、脑部中某风的一些人群，有针对性的呵护"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确列举了禁止宣传的重大疾病类型"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，可直接触发",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-5b65ff2df7287a67",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，运营可直接删除或替换违规表述，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-虚假宣传-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "DY_滋补保健宣传规范",
+      "source_type": "平台规则",
+      "platform": "抖音",
+      "title": "滋补保健商品不得进行功效虚假宣传（含丰胸、壮阳等）",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "传统滋补",
+          "营养保健/特医食品"
+        ],
+        "platforms": [
+          "抖音"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本",
+          "私域文案"
+        ],
+        "channels": [
+          "直播间",
+          "短视频",
+          "图文"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "DY",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "DY",
+          "article": "3.1.4",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "功效虚假宣传，指创作者进行商品分享时，对商品功效进行没有依据、虚假夸大描述，引人误解的营销推广行为。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "丰胸",
+            "从A到C",
+            "小葡萄变大葡萄",
+            "告别飞机场",
+            "壮阳",
+            "补肾",
+            "益肾",
+            "养肾",
+            "补阳",
+            "补天灵",
+            "补腰子",
+            "时间变长",
+            "男人的加油站",
+            "又粗又硬"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "宣传滋补保健商品具有丰胸、壮阳等功效",
+        "decision": "若命中关键词，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "滋补保健",
+          "功效虚假",
+          "丰胸",
+          "壮阳"
+        ],
+        "vector_text": "丰胸从A到C小葡萄变大葡萄告别飞机场壮阳补肾益肾养肾补阳补天灵补腰子时间变长男人的加油站又粗又硬滋补",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "关键词可能无法覆盖所有变体表达，语义召回可捕获同义、近义、夸张及软性规避表述，如‘男人的加油站’‘又粗又硬’等，适合作为fallback增强召回覆盖。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:46:27",
+          "old_vector_text": "滋补保健商品宣传丰胸、壮阳等未经批准的功效",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表达",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "滋补保健",
+            "功效虚假",
+            "丰胸",
+            "壮阳",
+            "性暗示",
+            "夸大宣传",
+            "违规话术"
+          ],
+          "negative_signals_recommendation": [
+            "科普",
+            "医学研究",
+            "学术讨论",
+            "非商业推广"
+          ],
+          "change_summary": "将原规则摘要式文本改写为仿真违规文案集合，堆叠高频违规词、同义表达及软性规避话术，增强语义召回能力。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 90
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、夸大、宣传、引人误解、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "平台违规处罚"
+      },
+      "relations": [],
+      "disposition": "禁止宣传",
+      "examples": {
+        "violation": [
+          "主播口播：**兄弟，就去给我买13号链接，13号链接就是你的加油站，你需要饱和痒一下"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确列举了丰胸、壮阳等违规词"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，可直接触发",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-c8f99a65aa8e912f",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，运营可直接删除或替换违规表述，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-虚假宣传-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "DY_滋补保健宣传规范",
+      "source_type": "平台规则",
+      "platform": "抖音",
+      "title": "滋补保健商品不得进行治疗类功效虚假宣传",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "传统滋补",
+          "营养保健/特医食品"
+        ],
+        "platforms": [
+          "抖音"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本",
+          "私域文案"
+        ],
+        "channels": [
+          "直播间",
+          "短视频",
+          "图文"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "DY",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "DY",
+          "article": "3.1.4",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "治疗类功效 宣传商品具有治理功效或解决、去除、根除某类身体症状，例如：高血压、高血脂、高血糖、三高、糖尿病、痔疮、痉挛、咽喉肿痛、便秘、运动缺氧、腹泻、肠道功能絮乱、痛风、中风、人体各种器官硬化(包括但不限于动脉硬化、肝硬化等)、脂肪肝、肝损伤、肝毒、幽门螺旋杆菌、(器官)溃疡、降低胆固醇、化痰、月经不调、姨妈不规律、延缓绝经、绝经后恢复月经、促进排卵、促进卵泡发育、净化羊水、胸部或下体私处、变色(包括但不限黑变粉嫩等)、缩阴(包括但不限于紧致、宽变窄、告别松弛等)、补羊水、不孕不育、促进怀孕、增加受孕几率、胎儿畸形、溃烂/糜烂、胸部或下体私处颜色不对、胸部或下体私处宽/松/垮、抑制多种病菌、修复DNA、修复口腔黏膜/连膜、驱虫、宫寒、体寒、手脚冰凉、血不足、肝气郁结、脾虚、肝虚、缓解因心脑血管系统障碍或呼吸系统障碍导致的供氧不足、醒酒、辅助戒烟、抗雾霾、调节体内酸碱度（如售卖商品为酒类商品可豁免）、解酒、马上尿的畅、调节内分泌失调、补氧、提高缺氧耐受力、对放化疗有辅助作用、辐射危害有辅助保护功能、对化学性肝损伤有辅助保护功能、改善亚健康、缓解视疲劳、促进排铅、催乳、促进泌乳、改善偏食症、免疫调节、免疫调节效应、调节人体免疫功能、、提升身体免疫力(抵抗力)、增强免疫力(抵抗力)"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "高血压",
+            "高血脂",
+            "高血糖",
+            "三高",
+            "糖尿病",
+            "痔疮",
+            "痉挛",
+            "咽喉肿痛",
+            "便秘",
+            "运动缺氧",
+            "腹泻",
+            "肠道功能絮乱",
+            "痛风",
+            "中风",
+            "动脉硬化",
+            "肝硬化",
+            "脂肪肝",
+            "肝损伤",
+            "肝毒",
+            "幽门螺旋杆菌",
+            "溃疡",
+            "降低胆固醇",
+            "化痰",
+            "月经不调",
+            "姨妈不规律",
+            "延缓绝经",
+            "绝经后恢复月经",
+            "促进排卵",
+            "促进卵泡发育",
+            "净化羊水",
+            "缩阴",
+            "紧致",
+            "宽变窄",
+            "告别松弛",
+            "补羊水",
+            "不孕不育",
+            "促进怀孕",
+            "增加受孕几率",
+            "胎儿畸形",
+            "溃烂",
+            "糜烂",
+            "抑制多种病菌",
+            "修复DNA",
+            "修复口腔黏膜",
+            "驱虫",
+            "宫寒",
+            "体寒",
+            "手脚冰凉",
+            "血不足",
+            "肝气郁结",
+            "脾虚",
+            "肝虚",
+            "供氧不足",
+            "醒酒",
+            "辅助戒烟",
+            "抗雾霾",
+            "调节体内酸碱度",
+            "解酒",
+            "马上尿的畅",
+            "调节内分泌失调",
+            "补氧",
+            "提高缺氧耐受力",
+            "对放化疗有辅助作用",
+            "辐射危害有辅助保护功能",
+            "对化学性肝损伤有辅助保护功能",
+            "改善亚健康",
+            "缓解视疲劳",
+            "促进排铅",
+            "催乳",
+            "促进泌乳",
+            "改善偏食症",
+            "免疫调节",
+            "免疫调节效应",
+            "调节人体免疫功能",
+            "提升身体免疫力",
+            "增强免疫力"
+          ],
+          "regex": [],
+          "context_signals": [
+            "治疗",
+            "解决",
+            "去除",
+            "根除"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "宣传滋补保健商品具有治疗类功效",
+        "decision": "若命中关键词，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "滋补保健",
+          "治疗类功效",
+          "虚假宣传"
+        ],
+        "vector_text": "吃这个能降血压，糖尿病吃了就好，三高人群必备，根治痔疮，便秘一吃就通，痛风克星，脂肪肝吃好了，肝毒排",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则关键词列表非常详尽，但语义召回可覆盖关键词未穷尽的同义表达和软性规避说法，如'降血压'替代'治疗高血压'，'吃了就好'等，适合作为fallback补充关键词召回",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:46:38",
+          "old_vector_text": "滋补保健商品宣传治疗高血压、糖尿病等疾病症状",
+          "old_semantic_reason": "关键词列表较长但可能仍有遗漏",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "滋补保健",
+            "治疗类功效",
+            "虚假宣传",
+            "保健品违规",
+            "功效夸大",
+            "疾病治疗",
+            "软性规避"
+          ],
+          "negative_signals_recommendation": [
+            "食品",
+            "普通食品",
+            "非保健品",
+            "药品",
+            "医疗器械"
+          ],
+          "change_summary": "将原简短vector_text扩展为包含所有列举症状及常见同义表达、软性规避说法的仿真违规文案集合，覆盖更多召回场景",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 339
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、显著、治疗、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "平台违规处罚"
+      },
+      "relations": [],
+      "disposition": "禁止宣传",
+      "examples": {
+        "violation": [
+          "宣传可以治疗胃病、失眠、风湿、头晕眼花，3-4天见效"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确列举了治疗类功效的违规词"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，可直接触发",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-79f7ff14a5af24ee",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "关键词列表明确，运营可直接删除或替换违规表述，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-虚假宣传-004",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "DY_滋补保健宣传规范",
+      "source_type": "平台规则",
+      "platform": "抖音",
+      "title": "滋补保健商品不得宣传药用成分",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "传统滋补",
+          "营养保健/特医食品"
+        ],
+        "platforms": [
+          "抖音"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本",
+          "私域文案"
+        ],
+        "channels": [
+          "直播间",
+          "短视频",
+          "图文"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "DY",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "DY",
+          "article": "3.1.4",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "宣传商品具有药用成分，例如：中药、药材、入药、药用、某药成分、可替代药品、胰岛素"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "中药",
+            "药材",
+            "入药",
+            "药用",
+            "某药成分",
+            "可替代药品",
+            "胰岛素"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "宣传滋补保健商品含有药用成分",
+        "decision": "若命中关键词，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "滋补保健",
+          "药用成分",
+          "虚假宣传"
+        ],
+        "vector_text": "这款滋补品含有珍贵中药成分，入药级别，药用价值高，可替代药品，含胰岛素样物质，药材精华，药食同源，中药配方，药效显著，堪比药品，药用植物提取，中药养生，药材入膳，药补不如食补，中药调理，药性温和，药力强劲，药食两用，中药瑰宝，药材精华，药效持久，药到病除，中药秘方，药材炮制，药用真菌，中药多糖，药材提取物，药用成分高，中药配伍，药材地道，药效显著，中药世家，药材基地，药用植物园，中药博物馆，药材鉴别，药用价值高，中药文化，药材养生，药食同源，中药调理，药性温和，药力强劲，药食两用，中药瑰宝，药材精华，药效持久，药到病除，中药秘方，药材炮制，药用真菌，中药多糖，药材提取物，药用成分高，中药配伍，药材地道，药效显著，中药世家，药材基地，药用植物园，中药博物馆，药材鉴别，药用价值高，中药文化，药材养生",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则关键词明确，但语义召回可覆盖更多变体表达，如'药食同源''中药配方''堪比药品'等软性规避说法，适合作为fallback补充。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:46:49",
+          "old_vector_text": "滋补保健商品宣传含有中药、药材等药用成分",
+          "old_semantic_reason": "关键词明确，无需语义",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "滋补保健",
+            "药用成分",
+            "虚假宣传",
+            "中药",
+            "药材",
+            "药效",
+            "软性规避"
+          ],
+          "negative_signals_recommendation": [
+            "药品",
+            "处方药",
+            "非处方药",
+            "OTC",
+            "国药准字"
+          ],
+          "change_summary": "从简单短语扩展为包含多种软性规避表达的仿真违规文案集合，覆盖'药食同源''中药配方''堪比药品'等变体。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、显著、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "平台违规处罚"
+      },
+      "relations": [],
+      "disposition": "禁止宣传",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确列举了药用成分相关词"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，可直接触发",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-59a3f198ff19518c",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，运营可直接删除或替换违规表述，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-虚假宣传-005",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "DY_滋补保健宣传规范",
+      "source_type": "平台规则",
+      "platform": "抖音",
+      "title": "滋补保健商品不得进行效果保证宣传",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "传统滋补",
+          "营养保健/特医食品"
+        ],
+        "platforms": [
+          "抖音"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本",
+          "私域文案"
+        ],
+        "channels": [
+          "直播间",
+          "短视频",
+          "图文"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "DY",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "DY",
+          "article": "3.1.5",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "含有表示产品功能、功效、安全性的断言或者保证，含有使用该产品能获得健康的表述；含有无法证实的所谓“科学或研究发现”、“实验或数据证明”等方面的内容；含有“100%有效”、“无效退款”、“保险公司保险”、“安全”、“零风险”、“无毒副作用”、“无依赖”等内容的；夸大功能或扩大适宜人群范围，明示或者暗示适合所有症状及所有人群"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "100%有效",
+            "无效退款",
+            "保险公司保险",
+            "安全",
+            "零风险",
+            "无毒副作用",
+            "无依赖",
+            "科学发现",
+            "研究发现",
+            "实验证明",
+            "数据证明"
+          ],
+          "regex": [],
+          "context_signals": [
+            "保证",
+            "断言",
+            "适合所有"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "宣传滋补保健商品具有保证性效果或安全性断言",
+        "decision": "若命中关键词或语义匹配，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "滋补保健",
+          "效果保证",
+          "虚假宣传"
+        ],
+        "vector_text": "100%有效?无效退款?保险公司保险?安全?零风险?无毒副作用?无依赖?科学发现?研究发现?实验证明",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、夸大、宣传、明示、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T17:16:54",
+          "old_vector_text": "滋补保健商品宣传100%有效、无效退款、安全无毒副作用等保证性内容",
+          "old_semantic_reason": "关键词可能无法覆盖所有保证性表述",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "滋补保健",
+            "效果保证",
+            "虚假宣传"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "平台违规处罚"
+      },
+      "relations": [],
+      "disposition": "禁止宣传",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确列举了效果保证的违规类型"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，可直接触发",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-5f89865ecd76debb",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，运营可直接删除或替换违规表述，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-绝对化用语-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "DY_滋补保健宣传规范",
+      "source_type": "平台规则",
+      "platform": "抖音",
+      "title": "滋补保健商品不得使用广告极限词",
+      "dimension": "绝对化用语",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "传统滋补",
+          "营养保健/特医食品"
+        ],
+        "platforms": [
+          "抖音"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本",
+          "私域文案"
+        ],
+        "channels": [
+          "直播间",
+          "短视频",
+          "图文"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "DY",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "DY",
+          "article": "3.1.6",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "含有“最高技术”、“最科学”、“最先进”、“最佳”、“国家级产品”、“填补国内空白”等唯一性、绝对化或排他性的用语和表述。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "最高技术",
+            "最科学",
+            "最先进",
+            "最佳",
+            "国家级产品",
+            "填补国内空白"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "使用唯一性、绝对化或排他性用语",
+        "decision": "若命中关键词，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "滋补保健",
+          "绝对化用语",
+          "极限词"
+        ],
+        "vector_text": "滋补保健商品宣传使用最高技术、最科学、最佳等绝对化用语",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "关键词明确，无需语义",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、最佳、绝对化.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "平台违规处罚"
+      },
+      "relations": [],
+      "disposition": "禁止宣传",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确列举了极限词类型"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，可直接触发",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-c8d9714e6134eb2e",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，运营可直接删除或替换绝对化用语，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

@@ -1,0 +1,386 @@
+{
+  "meta": {
+    "name": "美妆规则库-小红书【时尚及美妆类产品】广告内容规范调整",
+    "version": "v1",
+    "generated_date": "20260706",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "小红书【时尚及美妆类产品】广告内容规范调整.pdf",
+    "source_track": "美妆",
+    "rule_count": 2,
+    "error_count": 0,
+    "source_units_processed": 2,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "XHS",
+      "name": "小红书【时尚及美妆类产品】广告内容规范调整",
+      "short": "XHS-小红书【时尚及美妆类产品】广告内容规范调整",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "小红书"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "XHS-虚假宣传-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_美妆_广告内容规范",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "时尚及美妆类品牌推广不得涉及大牌临期/临期特惠/临期清仓/全新保真/支持查验等内容",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "时尚类产品",
+          "美妆类产品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "广告投放",
+          "内容推广"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【时尚及美妆类产品】广告内容规范调整",
+        "source_article_id": "1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "推广部分时尚、美妆类品牌时，不得涉及大牌临期/临期特惠/临期清仓/全新保真/支持查验等内容"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "大牌临期",
+            "临期特惠",
+            "临期清仓",
+            "全新保真",
+            "支持查验"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "推广内容涉及时尚或美妆类品牌时，不得包含任何关于大牌临期、临期特惠、临期清仓、全新保真、支持查验等表述",
+        "decision": "若检测到上述关键词或语义，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "时尚",
+          "临期",
+          "虚假宣传",
+          "平台规则"
+        ],
+        "vector_text": "大牌临期特惠，手慢无！全新保真，支持专柜查验。临期清仓，白菜价。正品临期，假一赔十。支持验货，放心购",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及临期、保真、查验等关键词，但用户可能使用变体或组合表达，语义召回可覆盖更多违规变体。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、清晰、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:20:32",
+          "old_vector_text": "推广时尚或美妆类品牌时，不得使用大牌临期、临期特惠、临期清仓、全新保真、支持查验等表述",
+          "old_semantic_reason": "关键词可能被变体或同义表述绕过，需语义召回辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "美妆",
+            "时尚",
+            "临期",
+            "保真",
+            "查验",
+            "虚假宣传",
+            "清仓"
+          ],
+          "negative_signals_recommendation": [
+            "临期食品",
+            "临期药品",
+            "临期母婴"
+          ],
+          "change_summary": "将法条式描述改写为真实违规文案集合，包含多种变体表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "平台可能对违规内容进行下架、限制推广或处罚"
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "大牌临期特惠，手慢无",
+          "全新保真，支持查验"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了禁止的表述，可直接用于关键词和语义检测"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可直接判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-2d6b54805a05b56a",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS_platform_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "个体工商户主体不可推广部分时尚、美妆类品牌",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "时尚",
+          "美妆"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "advertiser_business_license_type"
+        ],
+        "logic": "advertiser_business_license_type == '个体工商户'"
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【时尚及美妆类产品】广告内容规范调整",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "营业执照主体类型如为个体⼯商户，不可推⼴部分时尚、美妆类品牌"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "个体工商户",
+            "个体户"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告主营业执照主体类型为个体工商户时，禁止推广时尚、美妆类品牌",
+        "decision": "若广告主营业执照主体类型为个体工商户，则判定违规，不允许推广"
+      },
+      "recall": {
+        "tags": [
+          "平台准入",
+          "个体工商户",
+          "美妆",
+          "时尚",
+          "资质不符"
+        ],
+        "vector_text": "个体工商户主体不可推广部分时尚、美妆类品牌",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: license、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告不可投放，可能被平台拒绝或下架"
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止个体工商户主体推广部分时尚、美妆类品牌，无需额外解释"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "advertiser_business_license_type",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，基于营业执照类型直接判断，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-4873cb73cc35db20",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发条件明确，仅需核对营业执照类型，运营可直接判断并处理，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

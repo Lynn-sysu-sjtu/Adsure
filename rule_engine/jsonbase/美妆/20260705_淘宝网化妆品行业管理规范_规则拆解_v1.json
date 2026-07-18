@@ -1,0 +1,1700 @@
+{
+  "meta": {
+    "name": "美妆规则库-淘宝网化妆品行业管理规范",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "淘宝网化妆品行业管理规范.pdf",
+    "source_track": "美妆",
+    "rule_count": 10,
+    "error_count": 0,
+    "source_units_processed": 6,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "TB",
+      "name": "淘宝网化妆品行业管理规范",
+      "short": "TB-淘宝网化妆品行业管理规范",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "淘宝"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "TB-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "TB_COSMETIC_MANAGEMENT",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "商品信息不得含医疗术语或暗示医疗作用",
+      "dimension": "涉医疗宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网化妆品行业管理规范",
+        "source_article_id": "第三条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第三条",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "商品信息中不得有任何与商品真实信息无关的文字或符号，如医疗术语、明示或暗示医疗作用和效果的用语、虚假/夸大/绝对化的词语、医学名人的姓名等"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "医疗术语",
+            "医疗作用",
+            "医疗效果",
+            "治疗",
+            "治愈",
+            "医学名人"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "商品信息中不得出现明示或暗示医疗作用和效果的用语",
+        "decision": "若命中关键词或语义判定为医疗术语或暗示医疗作用，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "涉医疗宣传",
+          "美妆",
+          "淘宝平台规则"
+        ],
+        "vector_text": "本品可治疗皮肤炎症?著名医生推荐使用?医疗术语?医疗作用?医疗效果?治疗?治愈?医学名人?涉医疗宣传",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 医疗、夸大、宣传、明示、治疗.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:10:56",
+          "old_vector_text": "商品信息中不得包含医疗术语、明示或暗示医疗作用和效果的用语、医学名人姓名等与商品真实信息无关的文字或符号",
+          "old_semantic_reason": "医疗术语和暗示医疗作用的表达方式多样，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "涉医疗宣传",
+            "美妆",
+            "淘宝平台规则"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "本品可治疗皮肤炎症",
+          "著名医生推荐使用"
+        ],
+        "compliant": [
+          "本品保湿滋润",
+          "含维生素E成分"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止医疗术语和暗示医疗作用的用语，规则清晰可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-a34619e0a54aad98",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词和语义可自动判定，运营可直接删除或替换违规用语，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "TB-COSM-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "TB_COSMETIC_MANAGEMENT",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "非特殊化妆品不得宣称特妆功效",
+      "dimension": "功效超备案",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网化妆品行业管理规范",
+        "source_article_id": "第三条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第三条",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "非特殊化妆品不得宣称特妆功效（特殊化妆品分类）"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "防晒",
+            "美白",
+            "祛斑",
+            "防脱发",
+            "染发",
+            "烫发",
+            "特殊化妆品功效"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "非特殊化妆品不得宣称特殊化妆品功效，如防晒、美白、祛斑、防脱发等",
+        "decision": "若商品非特殊化妆品但宣称特妆功效，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "功效超备案",
+          "美妆",
+          "淘宝平台规则"
+        ],
+        "vector_text": "普通面霜防晒美白祛斑防脱发染发烫发特妆功效非特殊化妆品宣称特殊化妆品功效一抹白七天白快速美白祛斑不防",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text偏法条表述，改写为真实违规文案集合，覆盖多种特妆功效宣称方式，提升语义召回对软性表达的覆盖",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:11:04",
+          "old_vector_text": "非特殊化妆品不得宣称特殊化妆品功效，包括防晒、美白、祛斑、防脱发、染发、烫发等",
+          "old_semantic_reason": "特妆功效表述多样，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "功效超备案",
+            "非特宣称特妆",
+            "美妆违规",
+            "防晒美白",
+            "祛斑防脱"
+          ],
+          "negative_signals_recommendation": [
+            "保湿",
+            "补水",
+            "清洁",
+            "滋润"
+          ],
+          "change_summary": "从法条式改写为仿真违规文案集合，增加软性表达和堆叠词",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "普通面霜宣称具有防晒功效",
+          "非特殊化妆品宣称美白祛斑"
+        ],
+        "compliant": [
+          "普通面霜宣称保湿",
+          "非特殊化妆品宣称补水"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止非特殊化妆品宣称特妆功效，规则清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "product_category",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需确认商品是否属于特殊化妆品，依赖资质核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "特殊化妆品批准文号",
+          "备案编号"
+        ],
+        "data_sources": [],
+        "note": "需后期接入商品备案信息以判断是否属于特殊化妆品"
+      },
+      "rule_uid": "RUID-a32401789d437490",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "需法务判断商品是否属于特殊化妆品并核验备案资质，运营无法自行确认",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "TB-COSM-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "TB_COSMETIC_MANAGEMENT",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "临保商品须在标题和详情明示保质期信息",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网化妆品行业管理规范",
+        "source_article_id": "第三条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第三条",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "临保商品（保质期≤90天）应在标题中明示“临保商品”，且在详情描述明示保质期或限制使用日期"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "临保商品",
+            "保质期",
+            "限制使用日期"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "临保商品标题必须包含'临保商品'字样，详情描述必须明示保质期或限制使用日期",
+        "decision": "若商品为临保商品但标题未明示'临保商品'或详情未明示保质期，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "标签标识不规范",
+          "美妆",
+          "淘宝平台规则"
+        ],
+        "vector_text": "临保商品（保质期≤90天）须在标题中明示'临保商品'，并在详情描述中明示保质期或限制使用日期",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则明确要求特定关键词，关键词可覆盖",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 明示.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求修改",
+      "examples": {
+        "violation": [
+          "标题未写'临保商品'",
+          "详情未标注保质期"
+        ],
+        "compliant": [
+          "标题含'临保商品'，详情标注保质期至2025年6月"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求临保商品标题和详情标注特定信息，规则清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "product_shelf_life",
+        "misjudgment_cost": "low",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需确认商品是否为临保商品，依赖保质期信息",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "商品保质期信息"
+        ],
+        "data_sources": [],
+        "note": "需后期接入商品保质期数据以判断是否为临保商品"
+      },
+      "rule_uid": "RUID-d23e1234197e3dca",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需确认商品是否为临保商品，依赖保质期信息，运营可补充资料后自行修改标题和详情。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-TB-004",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "TB-淘宝网化妆品行业管理规范",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "儿童化妆品商品描述禁止使用“食品级”“可食用”等词语或食品有关图案",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "儿童化妆品"
+        ],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "电商"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网化妆品行业管理规范",
+        "source_article_id": "第五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第五条",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "商品描述中不得使用“食品级”、“可食用”等词语或者食品有关的图案。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "食品级",
+            "可食用"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "商品描述中不得出现与食品相关的词语或图案描述，包括但不限于“食品级”、“可食用”等暗示可食用的表述。",
+        "decision": "若检测到商品描述中包含“食品级”或“可食用”等词语，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "儿童化妆品",
+          "虚假宣传",
+          "食品级",
+          "可食用"
+        ],
+        "vector_text": "儿童化妆品商品描述中禁止使用食品级、可食用等词语或食品相关图案",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "食品级儿童口红",
+          "可食用儿童唇膏"
+        ],
+        "compliant": [
+          "温和儿童润肤露",
+          "无添加儿童面霜"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止使用特定词语，属于硬性规定，无需额外解释。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，可直接由运营人员判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-581fef6ad17cd845",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-TB-005",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "TB-淘宝网化妆品行业管理规范",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "儿童化妆品功效宣称须符合使用人群对应的功效范围",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "儿童化妆品"
+        ],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "电商"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网化妆品行业管理规范",
+        "source_article_id": "第五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第五条",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "商品描述须符合商品使用人群对应的功效宣称要求，具体是指：使用人群 婴幼儿（0～3周岁，含3周岁）功效宣称仅限于清洁、保湿、护发、防晒、舒缓、爽身；儿童（3～12周岁，含12周岁）功效宣称仅限于清洁、卸妆、保湿、美容修饰、芳香、护发、防晒、修护、舒缓、爽身。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "婴幼儿",
+            "儿童",
+            "清洁",
+            "保湿",
+            "护发",
+            "防晒",
+            "舒缓",
+            "爽身",
+            "卸妆",
+            "美容修饰",
+            "芳香",
+            "修护"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "商品描述中宣称的功效必须与商品使用人群（婴幼儿或儿童）对应的允许功效范围一致，超出范围则违规。",
+        "decision": "若商品描述中宣称的功效超出对应人群允许的功效范围，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "儿童化妆品",
+          "功效宣称",
+          "婴幼儿",
+          "儿童",
+          "功效范围"
+        ],
+        "vector_text": "婴幼儿美白面霜?儿童抗皱精华?婴幼儿?儿童?清洁?保湿?护发?防晒?舒缓?爽身?卸妆?美容修饰?芳香",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:12:48",
+          "old_vector_text": "儿童化妆品功效宣称须符合使用人群对应的功效范围，婴幼儿仅限清洁、保湿、护发、防晒、舒缓、爽身，儿童仅限清洁、卸妆、保湿、美容修饰、芳香、护发、防晒、修护、舒缓、爽身",
+          "old_semantic_reason": "功效宣称可能使用同义词或变体，关键词可能漏召回，需语义辅助。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "儿童化妆品",
+            "功效宣称",
+            "婴幼儿",
+            "儿童",
+            "功效范围"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "婴幼儿美白面霜",
+          "儿童抗皱精华"
+        ],
+        "compliant": [
+          "婴幼儿保湿乳",
+          "儿童防晒霜"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确列出了不同人群允许的功效范围，属于硬性规定。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要确认商品使用人群和功效宣称，可能需要运营人员提供商品信息。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-3d1a291926510b6a",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营确认商品使用人群和功效宣称是否超出允许范围，并补充商品信息。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-TB-006",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "TB-淘宝网化妆品行业管理规范",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "化妆品样品标题须明示样品属性关键词",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "电商"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网化妆品行业管理规范",
+        "source_article_id": "第五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第五条",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "发布样品时，标题中须明示“试用”、“小样”、“样品”、“试用装”、“体验装”等符合样品信息的属性关键词，规格属性须勾选“小样”。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "试用",
+            "小样",
+            "样品",
+            "试用装",
+            "体验装"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "发布化妆品样品时，标题中必须包含“试用”、“小样”、“样品”、“试用装”或“体验装”等关键词。",
+        "decision": "若标题中未包含上述任一关键词，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "化妆品",
+          "样品",
+          "标题",
+          "标签标识"
+        ],
+        "vector_text": "化妆品样品标题须明示试用、小样、样品、试用装、体验装等属性关键词",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、明示.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求修改",
+      "examples": {
+        "violation": [
+          "某品牌面霜",
+          "某品牌精华液"
+        ],
+        "compliant": [
+          "某品牌面霜试用装",
+          "某品牌精华液小样"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求标题中必须包含特定关键词，属于硬性规定。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "关键词明确，可直接由运营人员判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-85293382ef9c95f4",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发条件明确，仅需检查标题是否包含指定关键词，运营可直接修改标题，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "TB-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "TB-cosmetics-industry-management",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "特殊用途化妆品须取得批准文号",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "特殊用途化妆品"
+        ],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网化妆品行业管理规范",
+        "source_article_id": "第四条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第四条",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "（⼀）国产和⼤贸进⼝的特殊⽤途化妆品须取得相应法规要求的特殊⽤途化妆品批准⽂号。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "特殊用途化妆品",
+            "批准文号",
+            "特殊用途"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否提及特殊用途化妆品且未声明或暗示已取得批准文号",
+        "decision": "若文案中宣传特殊用途化妆品但未展示或提及批准文号，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "平台准入",
+          "资质合规",
+          "特殊用途化妆品"
+        ],
+        "vector_text": "特殊用途化妆品在广告宣传中必须取得并展示批准文号，否则违规",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 批准文号、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "下架商品、删除商品、监管商品、限制发布商品、屏蔽店铺、监管账户、查封账户"
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求补充批准文号信息",
+      "examples": {
+        "violation": [
+          "美白祛斑霜（特殊用途化妆品）未标注批准文号"
+        ],
+        "compliant": [
+          "美白祛斑霜（特殊用途化妆品）国妆特字G2023XXXX"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求特殊用途化妆品须取得批准文号，可直接作为审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营判断是否提及特殊用途化妆品及批准文号",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-701f0d5d96fb0a30",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但需要运营补充批准文号信息，若无法提供则进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "TB-COSM-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "TB-cosmetics-industry-management",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "非特殊用途化妆品须完成备案",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "非特殊用途化妆品"
+        ],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网化妆品行业管理规范",
+        "source_article_id": "第四条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第四条",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "（⼀）国产和⼤贸进⼝的⾮特殊⽤途化妆品须完成相对应的⾮特殊⽤途化妆品备案；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "非特殊用途化妆品",
+            "备案",
+            "非特殊"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否提及非特殊用途化妆品且未声明或暗示已完成备案",
+        "decision": "若文案中宣传非特殊用途化妆品但未展示或提及备案信息，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "平台准入",
+          "资质合规",
+          "非特殊用途化妆品"
+        ],
+        "vector_text": "非特殊用途化妆品在广告宣传中必须完成备案，否则违规",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、证明、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "下架商品、删除商品、监管商品、限制发布商品、屏蔽店铺、监管账户、查封账户"
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求补充备案信息",
+      "examples": {
+        "violation": [
+          "保湿面霜（非特殊用途化妆品）未标注备案编号"
+        ],
+        "compliant": [
+          "保湿面霜（非特殊用途化妆品）粤G妆网备字2023XXXX"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求非特殊用途化妆品须完成备案，可直接作为审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营判断是否提及非特殊用途化妆品及备案信息",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-aa4486f3d27d63cb",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但运营需补充备案信息或证明，否则无法判断是否合规，故要求运营先提供资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "TB-COSM-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "TB-cosmetics-industry-management",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "不得发布无生产资质来源的自行配制或分装化妆品",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网化妆品行业管理规范",
+        "source_article_id": "第四条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第四条",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "（⼆）不得发布⽆化妆品⽣产资质来源的⾃⾏配制、分装的化妆品；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "自行配制",
+            "分装",
+            "自制",
+            "手工",
+            "无资质"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否宣传化妆品为自行配制、分装或自制，且未提及生产资质",
+        "decision": "若文案中宣传自行配制或分装化妆品，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "平台准入",
+          "资质合规",
+          "配制分装"
+        ],
+        "vector_text": "禁止发布无化妆品生产资质来源的自行配制或分装化妆品",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 资质. It also has content signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "下架商品、删除商品、监管商品、限制发布商品、屏蔽店铺、监管账户、查封账户"
+      },
+      "relations": [],
+      "disposition": "拒绝发布",
+      "examples": {
+        "violation": [
+          "手工自制口红，纯天然无添加"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止发布无生产资质来源的自行配制或分装化妆品，可直接作为审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "low",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词匹配即可判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-f89790bc52b5abab",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词匹配即可判断，运营可直接删除或替换违规表述。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "TB-COSM-004",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "TB-cosmetics-industry-management",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "化妆品最小销售包装须含中文标签",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网化妆品行业管理规范",
+        "source_article_id": "第四条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第四条",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "（四）国产和⼤贸进⼝的化妆品的最⼩销售包装上须含中⽂化妆品标签。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "中文标签",
+            "无中文",
+            "进口",
+            "最小销售包装"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否宣传进口化妆品且未提及中文标签",
+        "decision": "若文案中宣传进口化妆品且未说明有中文标签，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "标签合规",
+          "中文标签"
+        ],
+        "vector_text": "国产和进口化妆品的最小销售包装上必须含有中文标签",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、宣传、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "下架商品、删除商品、监管商品"
+      },
+      "relations": [],
+      "disposition": "要求补充中文标签信息",
+      "examples": {
+        "violation": [
+          "韩国进口面膜，纯韩文包装"
+        ],
+        "compliant": [
+          "韩国进口面膜，附中文标签"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求化妆品最小销售包装须含中文标签，可直接作为审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "low",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词匹配即可判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-76b65a79a6228d3e",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需关键词匹配即可判断，运营可直接修改文案或补充中文标签说明。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

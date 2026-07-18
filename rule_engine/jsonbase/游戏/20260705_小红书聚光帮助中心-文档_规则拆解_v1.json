@@ -1,0 +1,1320 @@
+{
+  "meta": {
+    "name": "游戏规则库-小红书聚光帮助中心 - 文档",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "游戏广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "小红书聚光帮助中心 - 文档.pdf",
+    "source_track": "游戏",
+    "rule_count": 7,
+    "error_count": 0,
+    "source_units_processed": 1,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "XHS",
+      "name": "小红书聚光帮助中心 - 文档",
+      "short": "XHS-小红书聚光帮助中心-文档",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "小红书"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "XHS-GAME-ADM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS_聚光平台_广告规则总则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "广告素材涉及第三方合作需提供合作证明/授权",
+      "dimension": "广告代言不合规",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "聚光平台"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "根据广告法第三章第三十三条、《民法典》相关管理规定，广告素材不得侵犯注册商标专用权、公民肖像权等权利。因此，如您在广告素材中涉及肖像、商标、第三方品牌/合作等内容，请提供相关材料证明。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "联名",
+            "合作",
+            "授权",
+            "肖像",
+            "商标",
+            "第三方品牌"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告素材中提及与第三方品牌、个人肖像、商标等合作或授权内容，需检测是否已提供合作证明/授权文件",
+        "decision": "若广告素材涉及第三方合作且未提供合作证明/授权，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "合作证明",
+          "授权",
+          "第三方",
+          "肖像权",
+          "商标权"
+        ],
+        "vector_text": "与XX品牌联名推出限定皮肤，未提供联名授权书；使用明星肖像宣传游戏，未提供肖像授权协议；与第三方合作",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则核心是检测广告中是否提及第三方合作但缺少授权证明，语义召回需覆盖各种提及合作、授权、肖像、商标的表述，关键词可能遗漏变体，语义作为fallback可扩大召回范围",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:52:37",
+          "old_vector_text": "广告素材中涉及与第三方品牌联名、个人肖像使用、商标使用等合作内容，需提供合作证明或授权文件",
+          "old_semantic_reason": "关键词可能无法覆盖所有涉及第三方合作的表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "联名",
+            "授权",
+            "肖像权",
+            "商标权",
+            "第三方合作",
+            "合作证明",
+            "品牌背书"
+          ],
+          "negative_signals_recommendation": [
+            "提供授权书",
+            "已获得授权",
+            "授权协议",
+            "合作证明见附件"
+          ],
+          "change_summary": "将原规则性描述改写为违规文案集合，包含多种违规场景和表述，增强语义召回覆盖",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 194
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 代言、宣传.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意审核不通过，需补充上传相关证明"
+      },
+      "relations": [],
+      "disposition": "要求广告主提供合作证明/授权文件，否则驳回广告创意",
+      "examples": {
+        "violation": [
+          "与XX品牌联名推出限定皮肤，未提供联名授权书",
+          "使用明星肖像宣传游戏，未提供肖像授权协议"
+        ],
+        "compliant": [
+          "提供品牌联名授权书，内容包含授权双方、时间、范围等",
+          "提供明星肖像授权协议，授权方为本人或经纪公司并加盖公章"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求涉及第三方合作需提供证明，适用场景清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告素材是否涉及第三方合作",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需广告主补充提供合作证明/授权文件",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-fd7410c9d02fdc94",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需判断是否涉及第三方合作，但核心问题是缺少授权证明，运营可补充材料后处理，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-GAME-ADM-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS_聚光平台_广告规则总则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "广告素材中事实性描述需提供证明材料",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "聚光平台"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "《广告法》已明确，广告主应当对广告素材的真实性负责，广告经营者、广告发布者依据法律查验有关证明文件，对内容不符或者证明文件不全的广告，广告发布者不得发布。因此，如您在广告素材中针对所推广的产品/服务的属性/功效进行阐释和说明，需提供相关证明材料。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "事实性描述",
+            "属性",
+            "功效",
+            "说明",
+            "阐释"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告素材中对游戏产品/服务的属性、功效等进行具体描述，需检测是否已提供相关证明材料",
+        "decision": "若广告素材包含事实性描述且未提供证明材料，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "事实性描述",
+          "证明材料",
+          "真实性"
+        ],
+        "vector_text": "游戏画质4K超清，真实下载量突破1000万，全网首发，独家玩法，100%真实玩家在线，实测数据，权威",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则要求事实性描述需提供证明材料，违规文案常包含具体数据、效果、认证等表述，语义召回可覆盖多种真实广告中的夸大或具体描述，适合作为主要召回方式。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、虚假. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:04:59",
+          "old_vector_text": "广告素材中对游戏产品的属性、功能、效果等进行具体说明，需提供对应的证明材料以确保宣传真实性",
+          "old_semantic_reason": "事实性描述表述多样，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "事实性描述",
+            "证明材料",
+            "虚假宣传",
+            "数据夸大",
+            "效果保证",
+            "权威认证",
+            "游戏广告"
+          ],
+          "negative_signals_recommendation": [
+            "无需证明",
+            "仅供参考",
+            "个人体验",
+            "非官方数据"
+          ],
+          "change_summary": "从规则说明改写为仿真违规文案集合，包含具体数据、效果、认证等表述，增强语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意审核不通过，需补充上传证明材料"
+      },
+      "relations": [],
+      "disposition": "要求广告主提供事实性描述的证明材料，否则驳回广告创意",
+      "examples": {
+        "violation": [
+          "宣称游戏画面达到4K画质，未提供质检报告或测试数据",
+          "声称游戏下载量突破1000万，未提供销量数据截图"
+        ],
+        "compliant": [
+          "提供质检报告证明画质参数",
+          "提供权威媒体新闻报道截图证明下载量数据"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求事实性描述需提供证明材料，适用场景清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告素材是否包含事实性描述",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需广告主补充提供事实性描述的证明材料",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-196bab159aa0adb4",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需判断是否属于事实性描述，但主要问题是缺少证明材料，运营可补充后处理，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-GAME-DAT-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS_聚光平台_广告规则总则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "广告中使用数据引证内容需提供证明材料并表明出处",
+      "dimension": "数据引用不规范",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "聚光平台"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "《广告法》第十一条已明确，广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。因此，如您在广告中使用数据引证内容的（通过测试/实验/试验或市场调查/市场统计的方式取得的数据、统计资料、调查结果等内容），需提供对应证明材料。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "数据",
+            "统计资料",
+            "调查结果",
+            "文摘",
+            "引用语",
+            "测试",
+            "实验",
+            "试验",
+            "市场调查",
+            "市场统计"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告素材中使用数据、统计资料、调查结果等引证内容，需检测是否提供证明材料并表明出处",
+        "decision": "若广告素材包含数据引证内容且未提供证明材料或未表明出处，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "数据引用",
+          "证明材料",
+          "出处",
+          "统计资料"
+        ],
+        "vector_text": "广告素材中使用数据、统计资料、调查结果、文摘、引用语等引证内容，需提供对应证明材料并表明出处",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "数据引证表述多样，关键词可能漏召回，需语义辅助",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 统计资料、证明、证明材料、调查结果.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意审核不通过，需补充上传证明材料"
+      },
+      "relations": [],
+      "disposition": "要求广告主提供数据引证内容的证明材料并表明出处，否则驳回广告创意",
+      "examples": {
+        "violation": [
+          "宣称游戏用户满意度达95%，未提供调查结果证明",
+          "引用第三方数据称游戏排名第一，未表明数据出处"
+        ],
+        "compliant": [
+          "提供市场调查报告证明满意度数据",
+          "在广告中明确标注数据来源和统计时间"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求数据引证需提供证明材料并表明出处，适用场景清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告素材是否包含数据引证内容",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需广告主补充提供数据引证的证明材料",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-9ecf144ad28c1c77",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需判断是否包含数据引证内容，但核心问题是缺少证明材料，运营可补充后处理，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-GAME-COM-004",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS_聚光平台_广告规则总则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "广告中成分/材质宣传需提供证明材料",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "聚光平台"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "依照《广告法》第八条：广告中对商品的性能、功能、产地、用途、质量、成分、价格、生产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明白。因此，如您在广告素材中针对所推广的产品或服务的成分/材质进行阐释和说明的描述，需提供相关成分/材质的证明材料。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "成分",
+            "材质",
+            "配料",
+            "添加"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告素材中对游戏产品（如硬件设备）的成分或材质进行描述，需检测是否提供证明材料",
+        "decision": "若广告素材包含成分/材质宣传且未提供证明材料，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "成分",
+          "材质",
+          "证明材料"
+        ],
+        "vector_text": "游戏手柄航空级铝合金材质，未提供材质证明；游戏卡带不含有害物质，无成分检测报告；采用进口ABS塑料，",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及成分/材质宣传需提供证明材料，但违规文案可能不直接使用关键词，需语义召回覆盖各种材质描述和证明缺失的表述。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:56:24",
+          "old_vector_text": "广告素材中对游戏相关产品的成分、材质进行具体描述，需提供对应的成分/材质证明",
+          "old_semantic_reason": "成分/材质描述可能不直接使用关键词，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "成分",
+            "材质",
+            "证明材料",
+            "虚假宣传",
+            "游戏周边",
+            "硬件设备",
+            "质检报告"
+          ],
+          "negative_signals_recommendation": [
+            "提供",
+            "已提供",
+            "附上",
+            "详见",
+            "证书编号"
+          ],
+          "change_summary": "将原规则性描述改写为具体违规文案示例集合，覆盖多种材质和成分表述，并包含证明缺失的语境。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 152
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 价格、宣传、虚假. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意审核不通过，需补充上传证明材料"
+      },
+      "relations": [],
+      "disposition": "要求广告主提供成分/材质的证明材料，否则驳回广告创意",
+      "examples": {
+        "violation": [
+          "宣称游戏手柄采用航空级铝合金材质，未提供材质证明",
+          "声称游戏卡带不含有害物质，未提供成分检测报告"
+        ],
+        "compliant": [
+          "提供材质鉴定证书证明铝合金材质",
+          "提供质检报告证明成分安全"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求成分/材质宣传需提供证明材料，适用场景清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告素材是否包含成分/材质宣传",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需广告主补充提供成分/材质的证明材料",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-37b74d27ad064021",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需判断是否涉及成分/材质宣传，但核心问题是缺少证明材料，运营可引导广告主补充资料后处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-GAME-ADM-005",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS_聚光平台_广告规则总则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "不得利用不满10周岁的未成年人作为广告代言人",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "聚光平台"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "不得利用不满10周岁的未成年人作为广告代言人。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "不满10周岁",
+            "未成年人",
+            "代言人",
+            "儿童代言"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告素材中是否明确提及或暗示使用不满10周岁的未成年人作为代言人",
+        "decision": "若广告素材中利用不满10周岁的未成年人作为代言人，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人",
+          "代言",
+          "儿童"
+        ],
+        "vector_text": "使用9岁儿童作为游戏代言人进行宣传?广告中出现不满10周岁的儿童形象并标注为代言人?不满10周岁?未",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 代言、未成年人、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:06:01",
+          "old_vector_text": "广告素材中不得利用不满10周岁的未成年人作为广告代言人",
+          "old_semantic_reason": "代言人年龄可能不直接表述，需语义辅助判断",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未成年人",
+            "代言",
+            "儿童"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Missing vector_text.",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意审核不通过，需修改或删除相关描述"
+      },
+      "relations": [],
+      "disposition": "驳回广告创意，要求删除涉及不满10周岁未成年人代言的内容",
+      "examples": {
+        "violation": [
+          "使用9岁儿童作为游戏代言人进行宣传",
+          "广告中出现不满10周岁的儿童形象并标注为代言人"
+        ],
+        "compliant": [
+          "使用成年人作为游戏代言人",
+          "使用10周岁及以上未成年人作为代言人并符合相关规定"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止利用不满10周岁的未成年人作为广告代言人"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告素材中代言人的年龄",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确禁止，可直接判定违规",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-d9fff6c6cc6d8670",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确禁止利用不满10周岁未成年人代言，触发清晰，运营可直接删除或替换代言人内容。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-GAME-IND-006",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS_聚光平台_广告规则总则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "广告涉及医疗保健功效需完成行业认证",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "聚光平台"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "根据《广告法》及小红书平台行业认证要求，请您先在aurora平台完成行业认证，再提交广告素材审核。如您推广内容涉及医疗保健功效，请完成【医疗器械/保健食品/特殊医学用途配方食品/OTC药品】行业认证后再提交广告审核。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "医疗",
+            "保健",
+            "功效",
+            "医疗器械",
+            "保健食品",
+            "特殊医学用途配方食品",
+            "OTC药品"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告素材中是否涉及医疗保健功效相关描述，需检测是否已完成行业认证",
+        "decision": "若广告素材涉及医疗保健功效且未完成行业认证，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "医疗保健功效",
+          "行业认证",
+          "医疗器械",
+          "保健食品"
+        ],
+        "vector_text": "游戏广告中宣称具有缓解视疲劳功效，未完成医疗器械行业认证?推广游戏相关保健品，未完成保健食品行业认证",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、医疗.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:07:44",
+          "old_vector_text": "广告素材中涉及医疗保健功效描述，需先完成医疗器械/保健食品/特殊医学用途配方食品/OTC药品行业认证",
+          "old_semantic_reason": "医疗保健功效表述多样，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "医疗保健功效",
+            "行业认证",
+            "医疗器械",
+            "保健食品"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意审核不通过，需完成行业认证后再提交"
+      },
+      "relations": [],
+      "disposition": "要求广告主先完成行业认证，否则驳回广告创意",
+      "examples": {
+        "violation": [
+          "游戏广告中宣称具有缓解视疲劳功效，未完成医疗器械行业认证",
+          "推广游戏相关保健品，未完成保健食品行业认证"
+        ],
+        "compliant": [
+          "完成医疗器械行业认证后提交广告",
+          "完成保健食品行业认证后提交广告"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求涉及医疗保健功效需完成行业认证"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告素材是否涉及医疗保健功效",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需广告主完成行业认证并提交资质",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-a3d5eff5b886ac67",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及医疗保健功效的认定和行业认证资质核验，需要法务判断是否属于医疗保健功效并确认认证状态，运营无法自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-GAME-IND-007",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "XHS_聚光平台_广告规则总则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "广告推广需完成行业认证，未认证或认证不符不得提交",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "聚光平台"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "根据小红书平台行业认证要求，请您先在aurora平台完成行业认证，再提交广告素材审核。如您推广内容未认证行业、或未认证与产品类目相匹配的行业，请完成相关行业认证后再提交广告审核。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "行业认证",
+            "认证失效",
+            "未认证",
+            "行业不符"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告素材推广内容是否已完成与产品类目相匹配的行业认证",
+        "decision": "若广告推广内容未完成行业认证或认证已失效，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "行业认证",
+          "资质",
+          "推广资质"
+        ],
+        "vector_text": "游戏推广没认证行业能过吗？行业认证过期了还能投广告吗？未认证游戏行业就提交广告审核会被拒吗？认证不符也能硬投？没做行业认证直接发广告行不行？认证失效了还继续推广游戏可以吗？",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及行业认证状态，属于平台准入资质，文案本身难以直接体现认证状态，语义召回容易误判，建议禁用语义召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:00:47",
+          "old_vector_text": "广告推广内容需完成与产品类目相匹配的行业认证，未认证或认证失效不得提交广告审核",
+          "old_semantic_reason": "行业认证状态需系统查询，关键词召回辅助",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": false,
+          "semantic_role_recommendation": "disabled",
+          "tags_recommendation": [
+            "行业认证",
+            "资质",
+            "游戏推广",
+            "认证失效"
+          ],
+          "negative_signals_recommendation": [
+            "认证通过",
+            "已认证",
+            "认证有效"
+          ],
+          "change_summary": "从fallback改为disabled，vector_text改为仿真违规问句，但语义召回不推荐启用。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意审核不通过，需完成行业认证后再提交"
+      },
+      "relations": [],
+      "disposition": "要求广告主完成行业认证，否则驳回广告创意",
+      "examples": {
+        "violation": [
+          "游戏推广未完成游戏行业认证",
+          "认证已失效仍提交广告"
+        ],
+        "compliant": [
+          "完成游戏行业认证后提交广告",
+          "认证有效期内提交广告"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求推广需完成行业认证"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告主的行业认证状态",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需广告主完成行业认证并提交资质",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-a66231d6972cdcea",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但需运营补充行业认证状态或完成认证，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

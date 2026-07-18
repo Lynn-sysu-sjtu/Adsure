@@ -1,0 +1,216 @@
+{
+  "meta": {
+    "name": "美妆规则库-小红书【美妆个护】广告内容规范调整",
+    "version": "v1",
+    "generated_date": "20260706",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "小红书【美妆个护】广告内容规范调整.pdf",
+    "source_track": "美妆",
+    "rule_count": 1,
+    "error_count": 0,
+    "source_units_processed": 1,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "XHS",
+      "name": "小红书【美妆个护】广告内容规范调整",
+      "short": "XHS-小红书【美妆个护】广告内容规范调整",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "小红书"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "XHS-美妆个护广告内容规范调整",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "美妆个护广告中“专业”词汇使用限制",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "美妆个护"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【美妆个护】广告内容规范调整",
+        "source_article_id": "PDF",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "PDF",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "“专业”词汇描述仅卡控产品自身的名称涉及“专业”，如：产品名称为【施华蔻专业染发剂】"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "专业"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中若出现“专业”一词，需判断该词是否属于产品自身名称的一部分；若不属于产品名称，则视为违规使用“专业”词汇进行虚假宣传。",
+        "decision": "若广告文案中“专业”一词非产品自身名称组成部分，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "专业词汇",
+          "虚假宣传",
+          "小红书"
+        ],
+        "vector_text": "专业护肤精华（非产品名称）?专业美妆工具（非产品名称）?专业?美妆?专业词汇?虚假宣传?小红书?美妆",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:22:07",
+          "old_vector_text": "美妆个护广告中，非产品名称的“专业”词汇描述，涉嫌虚假宣传",
+          "old_semantic_reason": "关键词“专业”可能出现在产品名称中，需语义判断是否属于产品名称，避免误判",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "美妆",
+            "专业词汇",
+            "虚假宣传",
+            "小红书"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "平台可能对违规广告进行下架、限制投放或处罚"
+      },
+      "relations": [],
+      "disposition": "若广告文案中“专业”一词非产品自身名称，则判定违规，建议修改或删除该词汇。",
+      "examples": {
+        "violation": [
+          "专业护肤精华（非产品名称）",
+          "专业美妆工具（非产品名称）"
+        ],
+        "compliant": [
+          "施华蔻专业染发剂（产品名称包含“专业”）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要判断“专业”一词是否属于产品自身名称，属于关系判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断“专业”是否在产品名称中",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可通过关键词和语义判断，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-36253635404eb86d",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营确认'专业'是否属于产品名称，补充产品名称信息后可自行判断修改。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

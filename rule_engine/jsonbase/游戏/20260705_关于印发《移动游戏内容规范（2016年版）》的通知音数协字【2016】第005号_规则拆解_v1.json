@@ -1,0 +1,3266 @@
+{
+  "meta": {
+    "name": "游戏规则库-关于印发《移动游戏内容规范（2016年版）》的通知 音数协字【2016】第005号",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "游戏广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "关于印发《移动游戏内容规范（2016年版）》的通知 音数协字【2016】第005号.docx",
+    "source_track": "游戏",
+    "rule_count": 16,
+    "error_count": 0,
+    "source_units_processed": 16,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "GEN",
+      "name": "关于印发《移动游戏内容规范（2016年版）》的通知 音数协字【2016】第005号",
+      "short": "关于印发《移动游戏内容规范（2016年版）》的通知音数协字【20",
+      "type": "法规",
+      "legal_level": 3,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "GAME-WARN-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "",
+      "source_type": "法规",
+      "platform": null,
+      "title": "移动游戏开始画面显著位置登载《健康游戏忠告》",
+      "dimension": "警示语缺失",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第三条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第三条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第三条  移动游戏应按照《关于在游戏出版物中登载〈健康游戏忠告〉的通知》（新出音[2003]861号）要求，在游戏开始画面的显著位置全文登载《健康游戏忠告》。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "健康游戏忠告"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测移动游戏相关文字材料中是否包含《健康游戏忠告》全文内容，若缺失则违规",
+        "decision": "若文字材料涉及移动游戏介绍、宣传或展示，且未在游戏开始画面显著位置登载《健康游戏忠告》全文，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "警示语",
+          "健康游戏忠告"
+        ],
+        "vector_text": "健康游戏忠告 抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活 游戏开始画面必须显示 游戏启动页未显示健康游戏忠告 缺少健康游戏忠告 没有健康游戏忠告 健康游戏忠告缺失 游戏登录界面未展示健康游戏忠告 游戏加载页未包含健康游戏忠告 游戏启动画面未登载健康游戏忠告 游戏开始画面未显示健康游戏忠告全文 健康游戏忠告未在显著位置展示 游戏宣传图未带健康游戏忠告 游戏广告未包含健康游戏忠告 游戏介绍未提及健康游戏忠告 游戏详情页缺少健康游戏忠告 游戏直播未口播健康游戏忠告 游戏短视频未展示健康游戏忠告 游戏私域文案未包含健康游戏忠告",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则要求游戏开始画面必须包含《健康游戏忠告》全文，属于明确的文本内容缺失检测，关键词'健康游戏忠告'已能有效召回，语义召回易引入无关内容，故建议禁用语义召回，仅用关键词精确匹配。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:36:29",
+          "old_vector_text": "移动游戏开始画面显著位置必须全文登载《健康游戏忠告》",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": false,
+          "semantic_role_recommendation": "disabled",
+          "tags_recommendation": [
+            "游戏",
+            "警示语",
+            "健康游戏忠告",
+            "缺失",
+            "显著位置"
+          ],
+          "negative_signals_recommendation": [
+            "健康",
+            "游戏",
+            "忠告",
+            "健康游戏",
+            "游戏忠告"
+          ],
+          "change_summary": "将原规则性描述改写为违规文案集合，但鉴于规则明确且关键词可精确召回，建议禁用语义召回。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、显著.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求补充《健康游戏忠告》全文",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求移动游戏在开始画面显著位置登载《健康游戏忠告》，可直接作为审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-8fa614e20526ca2b",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则要求明确，仅需检查是否包含《健康游戏忠告》全文，运营可直接补登，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-LANG-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "移动游戏应规范使用文字",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第四条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第四条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第四条  移动游戏应按照《中华人民共和国国家通用语言文字法》、《出版物汉字使用管理规定》、《关于进一步规范出版物文字使用的通知》等规定，规范使用文字。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "移动游戏中的文字内容（包括但不限于游戏内文案、广告文案、宣传文字等）应遵守国家通用语言文字法及相关规定，不得使用不规范汉字、繁体字（特定情形除外）、异体字、错别字、拼音缩写等不符合规范的文字表达。",
+        "decision": "若检测到文字内容存在不规范使用汉字（如繁体字、异体字、错别字、拼音缩写等）且无正当理由（如书法、艺术创作、特定历史背景等），则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "文字规范",
+          "通用语言文字",
+          "游戏内容"
+        ],
+        "vector_text": "繁体字异体字错别字拼音缩写不规范汉字火星文生僻字自造字谐音字网络用语非标准简体港台用语日韩汉字乱码符",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "文字规范违规难以通过固定关键词完全覆盖，需语义理解判断是否属于不规范使用，因此适合语义召回作为主要方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:36:40",
+          "old_vector_text": "移动游戏应规范使用文字，不得使用不规范汉字、繁体字、异体字、错别字、拼音缩写等，需符合国家通用语言文字法及相关规定。",
+          "old_semantic_reason": "文字规范违规难以通过固定关键词完全覆盖，需语义理解判断是否属于不规范使用。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "文字规范",
+            "通用语言文字",
+            "游戏内容",
+            "繁体字",
+            "异体字",
+            "错别字",
+            "拼音缩写",
+            "不规范汉字"
+          ],
+          "negative_signals_recommendation": [
+            "书法作品",
+            "艺术创作",
+            "特定历史背景",
+            "注册商标",
+            "专有名词",
+            "外语翻译"
+          ],
+          "change_summary": "将原规则摘要式文本改写为大量真实违规文案中可能出现的具体不规范文字表达集合，覆盖繁体字、异体字、错别字、拼音缩写等多种类型，并加入广告场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 486
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传. It also has workflow signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求整改，确保文字使用符合国家通用语言文字规范。",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "条文仅要求'规范使用文字'，具体哪些情形属于不规范需结合其他法规和实际情况判断，属于开放解释型规则。"
+      },
+      "routing": {
+        "interpretation_dependency": "需要结合《中华人民共和国国家通用语言文字法》、《出版物汉字使用管理规定》、《关于进一步规范出版物文字使用的通知》等法规的具体条款进行解释。",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "legal_review_required",
+        "route_reason": "文字规范判断涉及多部法规，且存在例外情形（如书法、艺术创作），需要法务或专业审核人员介入。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-1694a44a93daa824",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "文字规范判断需结合多部法规及例外情形，运营难以自行把握边界，建议法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-POL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "移动游戏不得含有反对宪法确定的基本原则的内容",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第六条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第六条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第六条  移动游戏不得含有“反对宪法确定的基本原则”的内容，包括但不限于：\n（一）反对人民民主专政，攻击、污蔑、贬损、歪曲、丑化我国的人民代表大会制度、选举制度、司法制度、民族区域自治和特别行政区制度、军事制度、中国共产党领导的多党合作和政治协商制度、基本经济制度和分配制度等社会主义制度。\n（二）反对中国共产党的领导，攻击、污蔑、贬损、歪曲、丑化中国共产党的领导地位、执政能力和执政形象。\n（三）反对马克思列宁主义、毛泽东思想、中国特色社会主义理论体系的指导，攻击、污蔑、贬损、歪曲、丑化马克思列宁主义、毛泽东思想、中国特色社会主义理论体系。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "反对宪法",
+            "反对人民民主专政",
+            "攻击",
+            "污蔑",
+            "贬损",
+            "歪曲",
+            "丑化",
+            "人民代表大会制度",
+            "选举制度",
+            "司法制度",
+            "民族区域自治",
+            "特别行政区制度",
+            "军事制度",
+            "多党合作",
+            "政治协商制度",
+            "基本经济制度",
+            "分配制度",
+            "社会主义制度",
+            "反对中国共产党",
+            "中国共产党领导",
+            "执政能力",
+            "执政形象",
+            "反对马克思列宁主义",
+            "反对毛泽东思想",
+            "反对中国特色社会主义理论体系",
+            "马克思列宁主义",
+            "毛泽东思想",
+            "中国特色社会主义理论体系"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否包含反对、攻击、污蔑、贬损、歪曲、丑化宪法确定的基本原则、中国共产党领导、社会主义制度、马克思列宁主义、毛泽东思想、中国特色社会主义理论体系等内容的表述",
+        "decision": "若检测到上述关键词或语义，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "政治敏感",
+          "宪法基本原则",
+          "游戏内容合规"
+        ],
+        "vector_text": "推翻宪法，反对人民民主专政，攻击人民代表大会制度，污蔑选举制度，贬损司法制度，歪曲民族区域自治，丑化",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及政治敏感内容，关键词难以覆盖所有变体表述，语义召回可捕捉多种攻击性表达，适合作为fallback辅助关键词召回",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Only weak workflow wording was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T19:59:54",
+          "old_vector_text": "移动游戏广告文案不得含有反对宪法确定的基本原则的内容，包括反对人民民主专政、反对中国共产党领导、反对马克思列宁主义毛泽东思想中国特色社会主义理论体系，以及攻击、污蔑、贬损、歪曲、丑化相关制度和理论体系",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "政治敏感",
+            "宪法基本原则",
+            "攻击性言论",
+            "反党反社会主义",
+            "游戏合规"
+          ],
+          "negative_signals_recommendation": [
+            "正面宣传",
+            "历史讨论",
+            "学术引用",
+            "批评建议"
+          ],
+          "change_summary": "将原法条式描述改写为仿真违规文案集合，包含多种攻击、污蔑、歪曲、丑化的具体表达，增强语义召回能力",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "历史案例"
+        ],
+        "reason": "涉及政治敏感内容，需要参考法规原文和历史法务口径辅助判断",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "反对、攻击、污蔑等表述需要结合上下文语义判断，存在解释空间"
+      },
+      "routing": {
+        "interpretation_dependency": "需要法务或审核人员对语义进行解释判断",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及政治敏感内容，误判风险高，需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-47e1a0bcd00ea589",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及宪法基本原则等政治敏感内容，语义边界开放，误判风险极高，必须由法务进行解释和复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-SOV-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "移动游戏不得含有危害国家统一、主权和领土完整的内容",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第七条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第七条  移动游戏不得含有“危害国家统一、主权和领土完整”的内容，包括但不限于：\n（一）将台湾、香港特别行政区、澳门特别行政区、新疆维吾尔自治区、西藏自治区及钓鱼岛、赤尾屿、南海诸岛等中国任何地区从中华人民共和国分割出去。\n（二）将台湾、香港特别行政区、澳门特别行政区等中国任何地区作为主权国家表示。\n（三）将“中央研究院”、“行政院”、“总统”等中华人民共和国成立后的台湾地方当局官方机构及职务称谓的引号遗漏。\n（四）出现中华人民共和国成立后的台湾地方当局官方机构的标识。\n（五）宣扬侵略内容的：\n1.歪曲历史事实，对侵略者加以宣扬美化、对侵略行为加以刻意渲染、扮演侵略者的角色；\n2.虚构境外武装力量、组织或个人侵入我国领土、领空、领水、专属经济区、大陆架及底土；\n3.境外武装力量、组织或个人以反恐、追逃等任何名义、借口攻击我国领土上或我国驻外使领馆内的任何目标，或进入我国从事侵犯我国主权的活动。\n（六）表现、描写外国民用船只、飞机等未经许可进入我国领土、领空、领水、专属经济区、大陆架及底土进行开发作业等活动。\n（七）错误表述我国领土、领空、领水、专属经济区、大陆架、底土以及与其他国家有争议的界段和区域的名称。\n（八）以下几种宣称为中国疆界地图的（虚构、形似或其他不定名为中国地图的不在此列）：\n1.凡标明为中华人民共和国国界的地图，未按照中华人民共和国同有关邻国签订的边界条约、协定、议定书及其附图绘制；\n2.凡标明为中华人民共和国尚未同有关邻国签订边界条约的界段的地图，未按照中华人民共和国地图的国界线标准样图绘制；\n3.凡标明为中国历史疆界的地图，1840年至中华人民共和国成立期间的，未按照中国历史疆界标准样图绘制；1840年以前的，未按照实际历史疆界绘制；\n4.其他与中国地图疆界相关的内容，违反有关法律法规及政策的。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "台湾",
+            "香港",
+            "澳门",
+            "新疆",
+            "西藏",
+            "钓鱼岛",
+            "赤尾屿",
+            "南海诸岛",
+            "中央研究院",
+            "行政院",
+            "总统",
+            "主权国家",
+            "分割",
+            "侵略",
+            "国界",
+            "疆界",
+            "领土",
+            "领空",
+            "领水",
+            "专属经济区",
+            "大陆架",
+            "底土"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否包含将中国任何地区从中华人民共和国分割出去、将中国地区作为主权国家表示、遗漏台湾地方当局官方机构称谓引号、出现台湾地方当局官方机构标识、宣扬侵略内容、错误表述领土或疆界名称、未按规定绘制中国地图等危害国家统一、主权和领土完整的内容",
+        "decision": "若命中关键词且语义分析确认存在危害国家统一、主权和领土完整的内容，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "国家统一",
+          "主权",
+          "领土完整",
+          "台湾问题",
+          "地图规范",
+          "侵略内容"
+        ],
+        "vector_text": "台湾是一个主权国家；香港是独立国家；澳门不属于中国；新疆是独立国家；西藏是独立国家；钓鱼岛是日本的；",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及国家主权和领土完整，违规表述可能以多种变体出现，关键词难以覆盖所有情况，语义召回可辅助检测隐晦或变体表述，但需谨慎避免误判。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣称. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:00:11",
+          "old_vector_text": "移动游戏文案中不得出现将台湾、香港、澳门、新疆、西藏、钓鱼岛、赤尾屿、南海诸岛等中国任何地区从中华人民共和国分割出去的内容；不得将台湾、香港、澳门等作为主权国家表示；不得遗漏台湾地方当局官方机构称谓的引号；不得出现台湾地方当局官方机构标识；不得宣扬侵略内容或歪曲历史；不得错误表述领土、领空、领水、专属经济区、大陆架、底土名称；不得使用未按规定绘制的中国地图",
+          "old_semantic_reason": "部分违规表述可能通过变体或隐晦方式出现，关键词可能漏召回，需语义分析辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "国家统一",
+            "主权",
+            "领土完整",
+            "台湾问题",
+            "地图规范",
+            "侵略内容",
+            "分裂国家",
+            "危害国家安全"
+          ],
+          "negative_signals_recommendation": [
+            "游戏攻略",
+            "历史讨论",
+            "学术研究",
+            "新闻报道",
+            "教育内容"
+          ],
+          "change_summary": "将原法条式描述改写为大量真实违规表述和变体表述的集合，覆盖多种可能的分裂、错误表述、地图问题等场景，增强语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "将台湾称为主权国家",
+          "遗漏‘行政院’引号",
+          "出现台湾地方当局官方机构标识",
+          "歪曲历史美化侵略者",
+          "错误标注南海诸岛归属"
+        ],
+        "compliant": [
+          "正确表述台湾为中国的一部分",
+          "正确使用引号标注台湾地方当局机构称谓",
+          "使用符合国家标准的地图"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "案例"
+        ],
+        "reason": "涉及国家主权和领土完整，需参考具体法规解释和过往违规案例",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了禁止的具体情形，可直接用于审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及国家主权和领土完整，误判风险高，需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-ada70d48827919eb",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及国家主权和领土完整，语义判断复杂且误判风险极高，必须由法务审核确认是否违规。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-SEC-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "game_content_security",
+      "source_type": "法规",
+      "platform": null,
+      "title": "移动游戏不得含有泄露国家秘密、危害国家安全或损害国家荣誉和利益的内容",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第八条  移动游戏不得含有“泄漏国家秘密、危害国家安全或者损害国家荣誉和利益”的内容，包括但不限于：\n（一）涉及以下保密内容的：\n1.含有党和国家事务重大决策中的秘密事项；\n2.含有保密地图和内部地图；\n3.含有国防建设和武装力量的秘密事项；\n4.含有外交和外事活动的秘密事项；\n5.含有国民经济、社会发展和科学技术中的秘密事项；\n6.含有维护国家安全活动和追查刑事犯罪中的秘密事项；\n7.相关法律法规规定的不得公开的其他保密内容。\n（二）含有渲染、宣扬、美化、褒奖各种分裂势力、反华组织、间谍机构的内容。\n（三）含有挑动、教唆、鼓励任何组织、个人以任何形式从事颠覆中国政府、分裂中国国家以及危害中国国家安全的内容。\n（四）含有攻击、丑化、焚烧、毁损、玷污、亵渎以及其他以不庄重形式表现我国国旗、国歌、国徽、党旗、党徽、军旗、军歌、军徽、天安门、人民大会堂、长城、华表等象征中国国家、政权、军队和民族的标志物的内容。\n（五）攻击、贬损、丑化、歪曲、捏造、篡改我国、我党、我军历史及其杰出人物的形象的内容。\n（六）违背我国对外政策、国际准则立场的，攻击、诋毁、丑化、歪曲、损害他国政权、民族、党和领导人、军队等形象的内容。\n（七）宣扬法西斯主义，美化侵略战争、军队及战犯形象，将上述军队或人物作为可选择角色等。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "国家秘密",
+            "保密",
+            "分裂势力",
+            "反华",
+            "间谍",
+            "颠覆",
+            "分裂中国",
+            "国旗",
+            "国歌",
+            "国徽",
+            "党旗",
+            "党徽",
+            "军旗",
+            "军歌",
+            "军徽",
+            "天安门",
+            "人民大会堂",
+            "长城",
+            "华表",
+            "法西斯",
+            "侵略战争",
+            "战犯"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否包含泄露国家秘密、危害国家安全、损害国家荣誉和利益、宣扬分裂势力、攻击国家象征、歪曲历史、美化侵略等违规内容",
+        "decision": "若命中关键词或语义匹配，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "国家安全",
+          "国家秘密",
+          "国家象征",
+          "历史歪曲",
+          "分裂势力",
+          "法西斯",
+          "侵略战争"
+        ],
+        "vector_text": "这款游戏带你潜入国家秘密基地，窃取机密文件！加入反华组织，一起颠覆政权！分裂中国，独立建国！快来焚烧",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及国家安全、国家秘密等开放法律概念，违规表述可能以隐晦、变体或场景化方式出现，关键词难以覆盖所有变体，语义召回可作为关键词的补充，但误判风险极高，建议仅作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:41:27",
+          "old_vector_text": "移动游戏广告文案中不得出现泄露国家秘密、危害国家安全、损害国家荣誉和利益的内容，包括但不限于涉及保密事项、宣扬分裂势力、攻击国家象征、歪曲历史、美化侵略战争等",
+          "old_semantic_reason": "部分违规表述可能通过变体或隐晦方式出现，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "国家安全",
+            "国家秘密",
+            "分裂势力",
+            "国家象征",
+            "历史歪曲",
+            "法西斯",
+            "侵略战争",
+            "危害国家安全"
+          ],
+          "negative_signals_recommendation": [
+            "游戏攻略",
+            "历史科普",
+            "军事题材",
+            "爱国主义教育",
+            "反战宣传"
+          ],
+          "change_summary": "将原规则性描述改写为仿真违规广告文案集合，包含多种违规表达和变体，增强语义召回能力。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 392
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求修改",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "历史案例"
+        ],
+        "reason": "涉及国家安全等敏感内容，需参考法规原文和过往审核案例辅助判断",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "条文列举了多种情形但未穷尽，且部分表述（如‘秘密事项’）需结合具体语境判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断是否属于国家秘密或敏感内容",
+        "fact_dependency": "无",
+        "misjudgment_cost": "极高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及国家安全，误判风险极高，需法务或安全团队审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-2d2eae91a2d0335e",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及国家安全、国家秘密等开放法律概念，误判后果极高，必须由法务或安全团队审核",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-OTH-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止煽动民族仇恨、民族歧视，破坏民族团结或侵害民族风俗习惯",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第九条  移动游戏不得含有“煽动民族仇恨、民族歧视，破坏民族团结，或者侵害民族风俗、习惯”的内容，包括但不限于：\n（一）编造、渲染、夸大各民族间的矛盾、冲突和争端等。\n（二）诋毁、侮辱、丑化、歪曲中华各民族形象，如：民族特征、人物形象等。\n（三）贬低、歪曲、否定中华各民族历史、地位、作用、贡献和价值等。\n（四）宣扬某一民族、某一宗教居于支配地位、享有特权等。\n（五）破坏民族团结、宗教和睦、信仰自由等。\n（六）诋毁、损害、丑化、侮辱中华各民族所特有的传统风俗、禁忌以及具有民族特征的标志等。\n（七）宣扬外国势力破坏我国民族团结、干涉宗教事务等。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "民族仇恨",
+            "民族歧视",
+            "破坏民族团结",
+            "侵害民族风俗",
+            "侵害民族习惯",
+            "民族矛盾",
+            "民族冲突",
+            "民族争端",
+            "诋毁民族",
+            "侮辱民族",
+            "丑化民族",
+            "歪曲民族",
+            "贬低民族",
+            "否定民族历史",
+            "民族特权",
+            "宗教特权",
+            "破坏宗教和睦",
+            "破坏信仰自由",
+            "民族风俗",
+            "民族禁忌",
+            "民族标志",
+            "外国势力破坏民族团结",
+            "干涉宗教事务"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否存在煽动民族仇恨、民族歧视、破坏民族团结或侵害民族风俗习惯的表述，包括但不限于编造渲染民族矛盾、诋毁侮辱民族形象、贬低民族历史地位、宣扬民族或宗教特权、破坏宗教和睦、诋毁民族风俗标志、宣扬外国势力干涉等场景",
+        "decision": "若检测到上述关键词或语义，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "民族歧视",
+          "民族团结",
+          "民族风俗",
+          "宗教和睦",
+          "内容安全"
+        ],
+        "vector_text": "某民族是低等民族?渲染某民族与另一民族的冲突历史?侮辱某民族的传统服饰?民族仇恨?民族歧视?破坏民族",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 夸大、贬低.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:01:44",
+          "old_vector_text": "移动游戏广告文案中不得含有煽动民族仇恨、民族歧视、破坏民族团结或侵害民族风俗习惯的内容，包括编造渲染民族矛盾、诋毁侮辱民族形象、贬低民族历史地位、宣扬民族或宗教特权、破坏宗教和睦信仰自由、诋毁民族风俗标志、宣扬外国势力干涉等",
+          "old_semantic_reason": "部分违规表述可能通过隐晦或变体方式出现，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "民族歧视",
+            "民族团结",
+            "民族风俗",
+            "宗教和睦",
+            "内容安全"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放并通知整改",
+      "examples": {
+        "violation": [
+          "某民族是低等民族",
+          "渲染某民族与另一民族的冲突历史",
+          "侮辱某民族的传统服饰"
+        ],
+        "compliant": [
+          "各民族共同发展",
+          "尊重各民族风俗习惯"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了禁止的具体情形，可直接用于广告文案审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及民族宗教敏感内容，误判风险高，需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-857a61bf07c4657f",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及民族宗教敏感内容，概念边界模糊，误判后果严重，需法务审核",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-OTHER-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "移动游戏不得含有宣扬邪教、迷信的内容",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十条  移动游戏不得含有“宣扬邪教、迷信”的内容，包括但不限于：（一）宣扬“法轮功”等敌视国家、反政府、危害社会的邪教组织。（二）宣扬“教主崇拜”，表现邪教首要分子肖像，神化邪教首要分子。（三）宣扬邪教教规、教义、经书、典籍、标识等。（四）宣扬从事邪教活动。（五）制造、散布邪说，蛊惑、蒙骗他人，实施精神控制。（六）歪曲或篡改传统的宗教教义。（七）设置具有迷信色彩的算命、辟邪等功能。（八）假借科学旗号，臆造、夸大、渲染现实生活中超物质、超自然的现象。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "法轮功",
+            "邪教",
+            "教主崇拜",
+            "邪教教规",
+            "邪教教义",
+            "邪教经书",
+            "邪教典籍",
+            "邪教标识",
+            "邪教活动",
+            "邪说",
+            "精神控制",
+            "算命",
+            "辟邪",
+            "超物质",
+            "超自然"
+          ],
+          "regex": [],
+          "context_signals": [
+            "宣扬",
+            "表现",
+            "神化",
+            "制造",
+            "散布",
+            "蛊惑",
+            "蒙骗",
+            "歪曲",
+            "篡改",
+            "臆造",
+            "夸大",
+            "渲染"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否包含宣扬邪教组织、教主崇拜、邪教教义、邪教活动、迷信算命、辟邪功能或假借科学渲染超自然现象的内容",
+        "decision": "若命中关键词且上下文为宣扬或正面描述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "邪教",
+          "迷信",
+          "游戏内容禁止"
+        ],
+        "vector_text": "游戏内可拜邪教教主获得神力?输入生辰八字即可算命辟邪?本游戏基于超自然能量设计?法轮功?邪教?教主崇",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 夸大.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:02:40",
+          "old_vector_text": "移动游戏广告文案不得宣扬邪教、迷信，包括宣扬邪教组织、教主崇拜、邪教教义、邪教活动、制造邪说、精神控制、歪曲宗教教义、设置算命辟邪功能、假借科学渲染超自然现象",
+          "old_semantic_reason": "部分违规表述可能使用变体或隐晦表达，关键词可能漏召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "邪教",
+            "迷信",
+            "游戏内容禁止"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Missing vector_text.",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "游戏内可拜邪教教主获得神力",
+          "输入生辰八字即可算命辟邪",
+          "本游戏基于超自然能量设计"
+        ],
+        "compliant": []
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "案例",
+          "法规"
+        ],
+        "reason": "邪教、迷信的认定需要参考历史案例和具体法规解释",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "邪教、迷信的界定需要结合具体语境和外部参考，存在解释空间"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断是否属于邪教或迷信范畴",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及政治敏感和意识形态，误判风险高，需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-e38c2cd555e3d610",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及邪教、迷信等开放法律概念，需法务判断是否属于违规范畴，且误判风险高",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-OTH-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "移动游戏不得含有扰乱社会秩序、破坏社会稳定的内容",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十一条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十一条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十一条  移动游戏不得含有“扰乱社会秩序、破坏社会稳定”的内容，包括但不限于：\n（一）以现实社会生活为游戏背景，设定相关功能或情节，宣扬各种扰乱社会秩序、破坏社会稳定的活动。\n（二）宣扬以暴力、威胁等手段抗拒、妨碍国家工作人员依法执行公务。\n（三）恶意丑化、攻击特定区域的人群或种族。\n（四）未明示具体规则而以随机抽取等偶然方式，诱导用户直接或者间接投入法定货币获取游戏产品或服务。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "扰乱社会秩序",
+            "破坏社会稳定",
+            "暴力",
+            "威胁",
+            "抗拒",
+            "妨碍",
+            "依法执行公务",
+            "丑化",
+            "攻击",
+            "随机抽取",
+            "偶然方式",
+            "诱导",
+            "投入法定货币"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测游戏文案中是否以现实社会生活为背景，宣扬扰乱社会秩序、破坏社会稳定的活动；是否宣扬以暴力、威胁等手段抗拒、妨碍国家工作人员依法执行公务；是否恶意丑化、攻击特定区域的人群或种族；是否未明示具体规则而以随机抽取等偶然方式诱导用户投入法定货币获取游戏产品或服务。",
+        "decision": "若检测到上述违规内容，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "内容安全",
+          "社会秩序",
+          "社会稳定",
+          "暴力",
+          "随机抽取",
+          "诱导消费"
+        ],
+        "vector_text": "来玩这款游戏，你可以组织游行示威，破坏公共秩序，体验真实社会动荡！用暴力手段阻止警察执法，看谁还敢管",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及多种违规场景，包括扰乱社会秩序、暴力抗法、丑化攻击人群、未明示概率诱导充值，这些场景在真实广告中可能以软性、诱导性文案出现，语义召回能有效覆盖关键词难以捕捉的变体表达。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:44:29",
+          "old_vector_text": "移动游戏文案中不得含有宣扬扰乱社会秩序、破坏社会稳定、暴力抗拒执法、丑化攻击特定人群或种族、未明示规则以随机抽取诱导用户投入法定货币的内容。",
+          "old_semantic_reason": "部分违规场景（如恶意丑化、攻击特定区域人群）可能依赖语义理解，关键词可能漏召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "游戏",
+            "社会秩序",
+            "暴力抗法",
+            "丑化攻击",
+            "随机抽取",
+            "诱导充值",
+            "概率不公开"
+          ],
+          "negative_signals_recommendation": [
+            "虚构",
+            "奇幻",
+            "明确概率",
+            "合规抽奖"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖多个违规场景的诱导性表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 106
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 明示.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "以现实社会为背景，设定玩家可以组织游行示威破坏公共秩序的情节",
+          "宣扬用暴力手段阻止警察执法",
+          "恶意丑化某地区居民为低素质人群",
+          "未明确说明抽奖概率，使用‘随机抽取’诱导用户充值获取道具"
+        ],
+        "compliant": [
+          "游戏背景为虚构奇幻世界，不涉及现实社会秩序",
+          "明确标注抽奖概率和规则，不诱导用户投入法定货币"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "案例",
+          "法规"
+        ],
+        "reason": "需要参考历史案例和法规解释以判断具体场景是否构成扰乱社会秩序或恶意丑化。",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "‘扰乱社会秩序’、‘恶意丑化’等概念需要结合具体语境和案例进行解释。"
+      },
+      "routing": {
+        "interpretation_dependency": "高",
+        "fact_dependency": "低",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及社会秩序、暴力、种族攻击等敏感内容，误判风险高，需法务审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-2f7f92b20658369b",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及扰乱社会秩序、暴力、种族攻击等开放法律概念，解释难度高且误判风险大，需法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-CONTENT-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止宣扬淫秽色情内容",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十二条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十二条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十二条  移动游戏不得含有“宣扬淫秽、赌博、暴力或者教唆犯罪”的内容，包括但不限于：（一）含有淫秽色情的内容：1.表现乱伦、强奸、轮奸、集体淫乱等行为的过程和细节，或设置相关功能；2.表现未成年人性行为，或者成年人与未成年人之间的性行为，或设置相关功能；3.具体表现同性恋性行为，或设置相关功能；4.具体表现性变态行为或者与性变态有关的暴力、虐待、侮辱行为，或设置相关功能；5.具体表现卖淫、嫖娼的过程和细节，或设置相关功能；6.具体表现人类或类人的裸体和生殖器官；7.具体表现动物的生殖器官；8.具体表现性用品或其功能；9.具体表现性交行为或暗示性的表现性交行为及其声音；10.具体表现、描述或传授性技巧；11.具体表现、描述与性行为有关的梅毒、淋病、艾滋病等疾病；12.露骨地语言描述性交易、性心理、性行为、性体验等；13.宣扬性开放、性自由。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "乱伦",
+            "强奸",
+            "轮奸",
+            "集体淫乱",
+            "未成年人性行为",
+            "同性恋性行为",
+            "性变态",
+            "卖淫",
+            "嫖娼",
+            "裸体",
+            "生殖器官",
+            "性用品",
+            "性交",
+            "性技巧",
+            "梅毒",
+            "淋病",
+            "艾滋病",
+            "性交易",
+            "性心理",
+            "性体验",
+            "性开放",
+            "性自由"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否含有淫秽色情相关描述，包括性行为、性器官、性技巧、性病等露骨内容",
+        "decision": "若命中关键词或语义匹配，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "淫秽色情",
+          "游戏内容",
+          "禁止内容"
+        ],
+        "vector_text": "乱伦、强奸、轮奸、集体淫乱、未成年人性行为、成年人与未成年人性行为、同性恋性行为、性变态、性虐待、性",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则关键词明确，但违规表达可能通过变体、谐音、隐晦描述等方式规避，语义召回可覆盖更多变体，适合作为fallback辅助关键词召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 未成年人、疾病.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:02:56",
+          "old_vector_text": "移动游戏文案中不得含有宣扬淫秽色情的内容，包括性行为、性器官、性技巧、性病等露骨描述",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表达，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "淫秽色情",
+            "游戏内容",
+            "禁止内容",
+            "软色情",
+            "擦边球",
+            "性暗示",
+            "露骨描述",
+            "违规广告"
+          ],
+          "negative_signals_recommendation": [
+            "性教育",
+            "健康科普",
+            "医学知识",
+            "性病防治",
+            "艾滋病宣传",
+            "性心理辅导",
+            "性健康",
+            "合法成人内容",
+            "艺术鉴赏",
+            "文学评论"
+          ],
+          "change_summary": "从法条摘要式改写为大量真实违规表达、变体、谐音、隐晦描述的集合，增强语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布含淫秽色情内容的游戏文案",
+      "examples": {
+        "violation": [
+          "游戏中描述乱伦情节",
+          "文案中出现裸体角色描述"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了淫秽色情内容的具体表现，可直接用于审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-a0a49e5b5d57abd0",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则关键词明确，运营可直接删除或替换违规内容，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-CONTENT-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止含有赌博内容",
+      "dimension": "概率造假",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十二条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十二条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十二条  移动游戏不得含有“宣扬淫秽、赌博、暴力或者教唆犯罪”的内容，包括但不限于：（二）含有赌博的内容：1.具体介绍赌博形式以及赌博器具的使用方法和技巧；2.设置赌博功能，提供赌博服务；3.收取或以“虚拟货币”等方式变相收取与游戏输赢相关的佣金；4.开设使用游戏积分押输赢、竞猜等功能，未设置用户每局、每日游戏积分输赢数量；5.提供游戏积分交易、兑换或以“虚拟货币”等方式变相兑换现金、财物的服务；6.提供用户间赠予、转让等游戏积分转账服务。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "赌博",
+            "赌具",
+            "押输赢",
+            "竞猜",
+            "游戏积分交易",
+            "虚拟货币兑换",
+            "积分转账",
+            "佣金"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否含有赌博相关描述，如介绍赌博形式、提供赌博服务、积分兑换现金等",
+        "decision": "若命中关键词或语义匹配，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "赌博",
+          "游戏内容",
+          "禁止内容"
+        ],
+        "vector_text": "赌博技巧揭秘，扑克牌必胜法，轮盘赌稳赢策略，游戏积分可兑换现金，虚拟货币提现，押输赢赢大奖，竞猜赢红",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "赌博规则关键词明确，但广告文案中可能使用变体、隐晦表达或行业黑话，语义召回可覆盖更多变体，作为关键词的补充。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:47:12",
+          "old_vector_text": "移动游戏文案中不得含有赌博内容，包括介绍赌博形式、设置赌博功能、积分兑换现金等",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表达，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "赌博",
+            "游戏内容",
+            "禁止内容",
+            "积分兑换",
+            "虚拟货币",
+            "竞猜",
+            "博彩"
+          ],
+          "negative_signals_recommendation": [
+            "合法彩票",
+            "福利彩票",
+            "体育彩票",
+            "公益竞猜",
+            "模拟游戏",
+            "教学演示"
+          ],
+          "change_summary": "将原规则性描述改写为大量真实违规广告文案的集合，覆盖赌博技巧、积分兑换、虚拟货币变现、竞猜、博彩等多种变体表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 1260
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 免费、抽奖、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布含赌博内容的游戏文案",
+      "examples": {
+        "violation": [
+          "文案中介绍扑克牌赌博技巧",
+          "宣传游戏积分可兑换现金"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了赌博内容的具体表现，可直接用于审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-d1ba681186bf1922",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则关键词明确，语义清晰，运营可直接删除或替换赌博相关内容，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-CONTENT-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止宣扬暴力、恐怖、残酷内容",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十二条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十二条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十二条  移动游戏不得含有“宣扬淫秽、赌博、暴力或者教唆犯罪”的内容，包括但不限于：（三）含有宣扬暴力、恐怖、残酷等内容：1.逼真表现、描述残缺人体或人体被分解等，表现清晰的伤害过程和鲜血喷涌、血流成河、血流满地等场景；2.刻意表现曝尸、肢解尸体、叉尸、虐尸等有悖常理的行为；3.宣扬、鼓吹大规模杀伤性武器、生化武器、核武器、反人类武器等的作用和效果，刻意渲染大规模杀伤的恐怖场景；4.刻意表现、设计外形过于恐怖的角色、形象或场景。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "残缺人体",
+            "人体被分解",
+            "鲜血喷涌",
+            "血流成河",
+            "血流满地",
+            "曝尸",
+            "肢解尸体",
+            "叉尸",
+            "虐尸",
+            "大规模杀伤性武器",
+            "生化武器",
+            "核武器",
+            "反人类武器",
+            "恐怖场景"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否含有暴力、恐怖、残酷内容，如描述人体伤害、血腥场景、恐怖形象等",
+        "decision": "若命中关键词或语义匹配，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "暴力",
+          "恐怖",
+          "残酷",
+          "游戏内容",
+          "禁止内容"
+        ],
+        "vector_text": "砍头断肢血肉模糊肠子流出来爆头碎尸分尸虐杀活剥剥皮挖眼割喉斩首腰斩五马分尸凌迟火刑电刑酷刑折磨血腥恐",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text偏法条摘要，语义召回效果差；改写为真实违规文案集合，覆盖血腥、恐怖、暴力、残酷等各类表达，提升召回率。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:47:27",
+          "old_vector_text": "移动游戏文案中不得含有宣扬暴力、恐怖、残酷的内容，包括血腥场景、恐怖形象、大规模杀伤武器等",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表达，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "暴力",
+            "恐怖",
+            "残酷",
+            "血腥",
+            "游戏内容",
+            "禁止内容",
+            "违规文案"
+          ],
+          "negative_signals_recommendation": [
+            "游戏攻略",
+            "游戏评测",
+            "游戏介绍",
+            "游戏背景",
+            "游戏剧情",
+            "游戏设定",
+            "游戏玩法",
+            "游戏技巧",
+            "游戏心得",
+            "游戏推荐"
+          ],
+          "change_summary": "从法条摘要式改写为HyDE风格的真实违规文案集合，增加大量血腥、恐怖、暴力、残酷等表达，提升语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 669
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 动作、宣传、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布含暴力、恐怖、残酷内容的游戏文案",
+      "examples": {
+        "violation": [
+          "文案描述角色被肢解",
+          "宣传核武器威力"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了暴力、恐怖、残酷内容的具体表现，可直接用于审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-f84112a0736d4a38",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则关键词明确，运营可直接删除或替换违规表述，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-OTHER-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "移动游戏不得含有侮辱或诽谤他人、侵害他人合法权益的内容",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十三条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十三条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十三条  移动游戏不得含有“侮辱或者诽谤他人，侵害他人合法权益”的内容，包括但不限于：（一）以语言或手势、动作对他人进行恶意嘲笑和侮辱。（二）恶意使用政治人物、社会公众人物的姓名或姓名的谐音。（三）刻意表现他人在生理、精神方面的缺陷，侵害他人人格尊严。（四）传播虚假事实致使他人名誉受到损害、蒙受耻辱。（五）非法或不尊重地使用他人肖像等，侵犯他人肖像权。（六）传播他人隐私，干扰他人私生活。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "侮辱",
+            "诽谤",
+            "恶意嘲笑",
+            "恶意使用",
+            "政治人物",
+            "社会公众人物",
+            "谐音",
+            "生理缺陷",
+            "精神缺陷",
+            "人格尊严",
+            "虚假事实",
+            "名誉受损",
+            "肖像权",
+            "隐私",
+            "私生活"
+          ],
+          "regex": [],
+          "context_signals": [
+            "恶意",
+            "刻意",
+            "非法",
+            "不尊重"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否存在侮辱、诽谤他人或侵害他人合法权益的表述，包括但不限于恶意嘲笑、使用政治人物或公众人物姓名谐音、表现他人缺陷、传播虚假事实、侵犯肖像权或隐私等行为",
+        "decision": "若检测到上述关键词或语义，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "侮辱诽谤",
+          "侵害合法权益",
+          "人格尊严",
+          "肖像权",
+          "隐私权",
+          "游戏内容规范"
+        ],
+        "vector_text": "这游戏里的角色简直是在侮辱智商，恶意嘲笑玩家是傻子；用某政治人物名字的谐音来讽刺，真是诽谤；刻意表现",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及侮辱、诽谤等开放概念，关键词难以穷尽变体，语义召回可覆盖恶意嘲笑、谐音、缺陷表现、虚假事实、肖像隐私等真实违规表达。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:47:36",
+          "old_vector_text": "移动游戏广告文案不得包含侮辱、诽谤他人或侵害他人合法权益的内容，如恶意嘲笑、使用政治人物或公众人物姓名谐音、表现他人生理或精神缺陷、传播虚假事实损害名誉、非法使用他人肖像、传播他人隐私等",
+          "old_semantic_reason": "关键词可能无法覆盖所有侮辱或诽谤的变体表达，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "侮辱",
+            "诽谤",
+            "恶意嘲笑",
+            "谐音",
+            "人格尊严",
+            "肖像权",
+            "隐私"
+          ],
+          "negative_signals_recommendation": [
+            "游戏角色",
+            "玩家",
+            "正常描述"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖多种侮辱诽谤场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 100
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 动作、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《移动游戏内容规范（2016年版）》第十三条，可能面临监管处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求修改",
+      "examples": {
+        "violation": [
+          "恶意使用某政治人物姓名谐音进行嘲讽",
+          "传播虚假事实致使他人名誉受损"
+        ],
+        "compliant": [
+          "正常描述游戏角色特点，不涉及侮辱或诽谤"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止侮辱、诽谤等行为，并列举具体情形，可直接形成审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则明确，关键词和语义检测可覆盖大部分违规场景，无需法务介入",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-fb811992cbdc1f06",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准接受 recommended_route：可能应先由运营补充资料：主要矛盾是事实核验，不一定需要立即占用法务。；legal_attention.default_route 与旧 routing.default_route 不一致。",
+        "confidence": "high",
+        "calibration_status": "human_confirmed",
+        "calibrated_at": "2026-07-16T21:49:08",
+        "calibration_source": "legal_attention_calibration_mvp_csv",
+        "calibration_row_number": 13
+      }
+    },
+    {
+      "rule_id": "GAME-SOC-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止危害社会公德或民族优秀文化传统的内容",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十四条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十四条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十四条  移动游戏不得含有“危害社会公德或者民族优秀文化传统”的内容，包括但不限于：\n（一）违背爱祖国、爱人民、爱劳动、爱科学、爱社会主义的基本道德要求。\n（二）刻意表现斗殴、脏话、随地吐痰等污秽、粗俗、低级、下流的言行。\n（三）侵占、损害、破坏我国文物、名胜古迹、政府办公场所、地标性建筑等。\n（四）表现嘲弄、歧视、侮辱妇女、儿童、老人、残疾人等社会弱势群体。\n（五）混淆是非、善恶、美丑界限，或表现其他不利于构建和谐社会的情节。\n（六）宣扬金钱至上、挥霍无度、换妻游戏、婚外情、一夜情、养情人、包二奶、傍大款等腐化、寄生生活方式。\n（七）宣扬以权谋私、权钱交易、权色交易等。\n（八）践踏民族优秀文化遗产和恶意篡改重大历史、文化事件及代表人物形象。\n（九）宣扬宗法观念、男尊女卑、一夫多妻、一妻多夫等内容。\n（十）弱化、诋毁、否定中华民族优秀文化传统的历史地位和存在价值，将民族优秀文化传统虚无化、庸俗化，宣扬与民族优秀文化传统相悖的世界观、历史观、价值观。\n（十一）诋毁或者否认以爱国主义为核心的团结统一、爱好和平、勤劳勇敢、自强不息的伟大民族精神。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "斗殴",
+            "脏话",
+            "随地吐痰",
+            "污秽",
+            "粗俗",
+            "低级",
+            "下流",
+            "嘲弄",
+            "歧视",
+            "侮辱",
+            "妇女",
+            "儿童",
+            "老人",
+            "残疾人",
+            "社会弱势群体",
+            "金钱至上",
+            "挥霍无度",
+            "换妻游戏",
+            "婚外情",
+            "一夜情",
+            "养情人",
+            "包二奶",
+            "傍大款",
+            "腐化",
+            "寄生",
+            "以权谋私",
+            "权钱交易",
+            "权色交易",
+            "践踏",
+            "恶意篡改",
+            "宗法观念",
+            "男尊女卑",
+            "一夫多妻",
+            "一妻多夫",
+            "弱化",
+            "诋毁",
+            "否定",
+            "虚无化",
+            "庸俗化",
+            "否认",
+            "民族精神"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否含有违背社会公德、民族优秀文化传统或宣扬不良价值观的表述",
+        "decision": "若命中关键词或语义匹配，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "社会公德",
+          "民族优秀文化传统",
+          "不良价值观",
+          "游戏内容规范"
+        ],
+        "vector_text": "斗殴脏话随地吐痰污秽粗俗低级下流嘲弄歧视侮辱妇女儿童老人残疾人社会弱势群体金钱至上挥霍无度换妻游戏婚",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及开放概念，关键词可能无法覆盖所有变体，语义召回可辅助识别隐晦或变体表达，适合作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:47:45",
+          "old_vector_text": "移动游戏广告文案不得包含危害社会公德或民族优秀文化传统的内容，如违背基本道德要求、表现污秽粗俗言行、损害文物古迹、歧视弱势群体、混淆是非善恶、宣扬腐化生活方式、权钱交易、篡改历史、宣扬男尊女卑、否定民族精神等",
+          "old_semantic_reason": "部分违规表述可能通过变体或隐晦方式表达，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "社会公德",
+            "民族传统",
+            "不良价值观",
+            "歧视",
+            "低俗",
+            "历史篡改",
+            "拜金"
+          ],
+          "negative_signals_recommendation": [
+            "合规",
+            "正面",
+            "弘扬",
+            "保护"
+          ],
+          "change_summary": "将原法条式描述改写为仿真违规文案集合，堆叠关键词和常见违规场景，增强语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 195
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Only weak workflow wording was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "宣扬金钱至上、挥霍无度的生活方式",
+          "表现嘲弄、歧视妇女、儿童等弱势群体",
+          "恶意篡改重大历史事件及代表人物形象"
+        ],
+        "compliant": []
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "历史案例",
+          "法规解释"
+        ],
+        "reason": "部分条款如‘混淆是非、善恶、美丑界限’等需要结合具体语境和案例判断",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "条款列举了多种情形，但具体判断需结合上下文和行业实践，存在解释空间"
+      },
+      "routing": {
+        "interpretation_dependency": "需要法务或审核人员对具体表述是否违规进行解释",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及社会公德和民族文化的判断主观性强，误判风险高，需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-5b15fd6e1e0913ca",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及社会公德和民族文化的判断主观性强，误判风险高，需法务复核",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-PROT-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "移动游戏不得含有诱发未成年人模仿违法犯罪行为的内容",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十五条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十五条  移动游戏不得含有诱发未成年人模仿违反社会公德、违法犯罪的行为的内容以及妨害未成年人身心健康的内容，包括但不限于：（一）宣扬违法、犯罪，含有诱使未成年人模仿学习的内容：1.详细表现、描述犯罪手段、方法和细节，诱发或鼓动未成年人模仿犯罪；2.美化罪犯形象，易引起未成年人对罪犯同情或赞赏；3.宣扬以不正当手段侵害国家、集体和私人财产，如：扮演盗贼角色、实施偷窃、骗取、抢夺或抢劫等行为；4.表现罪犯逃脱法律制裁，藐视法律尊严，如设置洗罪功能、贿赂、劫狱等;5.宣扬或具体表现黑社会性质的组织及其行为；6.鼓动、诱导、奖励恶意PK。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "犯罪手段",
+            "犯罪方法",
+            "犯罪细节",
+            "模仿犯罪",
+            "美化罪犯",
+            "盗贼角色",
+            "偷窃",
+            "骗取",
+            "抢夺",
+            "抢劫",
+            "逃脱法律制裁",
+            "洗罪",
+            "贿赂",
+            "劫狱",
+            "黑社会",
+            "恶意PK"
+          ],
+          "regex": [],
+          "context_signals": [
+            "未成年人",
+            "诱使",
+            "鼓动",
+            "诱导",
+            "奖励"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "游戏文案中描述或宣扬违法犯罪行为，可能诱发未成年人模仿",
+        "decision": "若检测到相关关键词且上下文涉及未成年人，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "违法犯罪",
+          "游戏内容",
+          "诱导模仿"
+        ],
+        "vector_text": "快来扮演盗贼，偷取宝藏，体验犯罪快感！教你如何完美抢劫银行，不被警察抓住。加入黑帮，成为老大，奖励恶",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及未成年人保护，关键词可能无法覆盖所有变体表述，需语义补充召回，适合作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:47:53",
+          "old_vector_text": "移动游戏文案中不得含有诱发未成年人模仿违法犯罪行为的内容，包括描述犯罪手段、美化罪犯、宣扬偷窃抢劫、逃脱制裁、黑社会行为、恶意PK等",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未成年人保护",
+            "违法犯罪",
+            "游戏内容",
+            "诱导模仿",
+            "暴力",
+            "黑社会",
+            "偷窃抢劫"
+          ],
+          "negative_signals_recommendation": [
+            "教育",
+            "普法",
+            "新闻",
+            "举报",
+            "反诈"
+          ],
+          "change_summary": "将原规则摘要改写为仿真违规文案集合，包含多种犯罪场景和诱导表述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 150
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 未成年人.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "快来扮演盗贼，偷取宝藏，体验犯罪快感！",
+          "教你如何完美抢劫银行，不被警察抓住",
+          "加入黑帮，成为老大，奖励恶意PK次数"
+        ],
+        "compliant": [
+          "游戏角色需遵守法律，正义战胜邪恶",
+          "未成年人请在家长指导下健康游戏"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了禁止的具体行为，可直接用于审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则明确，关键词可触发，无需法务介入",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-95d3a0fa0a69003b",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准接受 recommended_route：可能应先由运营补充资料：主要矛盾是事实核验，不一定需要立即占用法务。；legal_attention.default_route 与旧 routing.default_route 不一致。",
+        "confidence": "high",
+        "calibration_status": "human_confirmed",
+        "calibrated_at": "2026-07-16T21:49:08",
+        "calibration_source": "legal_attention_calibration_mvp_csv",
+        "calibration_row_number": 14
+      }
+    },
+    {
+      "rule_id": "GAME-PROT-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "移动游戏不得含有宣扬吸毒贩毒诱发未成年人模仿的内容",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十五条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十五条  移动游戏不得含有诱发未成年人模仿违反社会公德、违法犯罪的行为的内容以及妨害未成年人身心健康的内容，包括但不限于：（二）宣扬吸毒、贩毒，含有诱使未成年人模仿学习的内容：1.具体表现种植罂粟等毒品原植物；2.宣扬和具体表现制造、走私、运输、贩卖、购买毒品；3.宣扬或具体表现吸食、注射或引诱、教唆、欺骗、强迫他人吸食、注射毒品的方法或过程；4.宣扬、鼓吹毒品可带给人的功效；5.宣扬和具体表现通过贩卖毒品盈利。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "罂粟",
+            "毒品原植物",
+            "制造毒品",
+            "走私毒品",
+            "运输毒品",
+            "贩卖毒品",
+            "购买毒品",
+            "吸食毒品",
+            "注射毒品",
+            "引诱吸毒",
+            "教唆吸毒",
+            "欺骗吸毒",
+            "强迫吸毒",
+            "毒品功效",
+            "贩卖毒品盈利"
+          ],
+          "regex": [],
+          "context_signals": [
+            "未成年人",
+            "诱使",
+            "宣扬",
+            "鼓吹"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "游戏文案中宣扬或具体表现吸毒、贩毒行为，可能诱发未成年人模仿",
+        "decision": "若检测到相关关键词且上下文涉及未成年人，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "吸毒",
+          "贩毒",
+          "毒品",
+          "游戏内容"
+        ],
+        "vector_text": "种植罂粟体验制毒过程，教你如何走私毒品赚大钱，吸食毒品后感觉超爽快来试试，毒品能让你快乐到飞起，贩卖",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及毒品相关违规表述，关键词可能无法覆盖所有变体，语义召回可捕捉各种软性鼓吹、诱导、美化毒品的文案，适合作为fallback补充。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、未成年人、欺骗、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:03:14",
+          "old_vector_text": "移动游戏文案中不得含有宣扬吸毒、贩毒的内容，包括种植毒品原植物、制造走私贩卖购买毒品、吸食注射方法、鼓吹毒品功效、贩卖毒品盈利等",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "毒品",
+            "吸毒",
+            "贩毒",
+            "未成年人保护",
+            "游戏内容",
+            "违规诱导",
+            "软性宣传"
+          ],
+          "negative_signals_recommendation": [
+            "禁毒宣传",
+            "远离毒品",
+            "拒绝毒品",
+            "毒品危害",
+            "戒毒"
+          ],
+          "change_summary": "从法条式描述改写为大量真实违规文案的集合，覆盖各种软性鼓吹、诱导、美化毒品的表达，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "在游戏中种植罂粟，体验制毒过程",
+          "教你如何走私毒品赚大钱",
+          "吸食毒品后感觉超爽，快来试试"
+        ],
+        "compliant": [
+          "游戏倡导健康生活，远离毒品",
+          "未成年人请勿模仿任何吸毒行为"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了禁止的具体行为，可直接用于审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词可触发，无需法务介入",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-9523377dbc2e395f",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规内容，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-PROT-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "移动游戏内容规范",
+      "source_type": "法规",
+      "platform": null,
+      "title": "移动游戏不得含有其他危害未成年人身心健康的内容",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "第十五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "第十五条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十五条  移动游戏不得含有诱发未成年人模仿违反社会公德、违法犯罪的行为的内容以及妨害未成年人身心健康的内容，包括但不限于：（三）宣扬其他危害未成年人身心健康的内容：1.集中表现格调低俗的内容；2.具体表现未成年人饮酒、抽烟等行为，或在游戏中出现烟草这一道具；3.具体表现未成年人出入不适宜未成年人活动的场所；4.鼓励未成年人同居、结婚等不适宜未成年人的行为。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "格调低俗",
+            "未成年人饮酒",
+            "未成年人抽烟",
+            "烟草道具",
+            "不适宜未成年人场所",
+            "未成年人同居",
+            "未成年人结婚"
+          ],
+          "regex": [],
+          "context_signals": [
+            "未成年人",
+            "鼓励",
+            "具体表现"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "游戏文案中宣扬或具体表现危害未成年人身心健康的内容，如低俗、饮酒抽烟、出入不适宜场所、鼓励同居结婚等",
+        "decision": "若检测到相关关键词且上下文涉及未成年人，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "低俗",
+          "饮酒",
+          "抽烟",
+          "烟草",
+          "不适宜场所",
+          "同居",
+          "结婚"
+        ],
+        "vector_text": "未成年人角色抽烟喝酒、游戏内出现烟草道具、鼓励未成年人同居结婚、格调低俗的未成年人场景、未成年人出入",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及多种危害未成年人身心健康的具体行为，关键词难以穷举所有变体，语义召回可覆盖低俗、饮酒抽烟、不适宜场所、同居结婚等各类违规表达，适合作为fallback补充。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:50:03",
+          "old_vector_text": "移动游戏文案中不得含有危害未成年人身心健康的内容，包括格调低俗、未成年人饮酒抽烟、出现烟草道具、出入不适宜场所、鼓励同居结婚等",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未成年人保护",
+            "低俗",
+            "饮酒",
+            "抽烟",
+            "烟草",
+            "不适宜场所",
+            "同居",
+            "结婚"
+          ],
+          "negative_signals_recommendation": [
+            "成年人",
+            "成人",
+            "成年角色",
+            "18岁以上",
+            "已成年"
+          ],
+          "change_summary": "将原规则性描述改写为大量具体违规文案示例的集合，覆盖低俗、饮酒抽烟、烟草道具、不适宜场所、同居结婚等场景，并扩展了更多危害未成年人身心健康的行为变体。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 1544
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 未成年人、饮酒、驾驶.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "未成年人角色在游戏中抽烟喝酒",
+          "游戏内出现烟草道具供未成年人使用",
+          "鼓励未成年人角色同居结婚"
+        ],
+        "compliant": [
+          "游戏角色均为成年人，行为健康",
+          "未成年人角色不参与任何不适宜活动"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了禁止的具体行为，可直接用于审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词可触发，无需法务介入",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-b0582382434a6009",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则关键词明确但需结合上下文判断是否涉及未成年人，且风险高，运营需补充场景说明或修改方向后处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

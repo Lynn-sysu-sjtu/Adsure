@@ -1,0 +1,2848 @@
+{
+  "meta": {
+    "name": "保健食品规则库-互联网广告管理办法_2023.05.01生效_20260615下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "保健食品广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "互联网广告管理办法_2023.05.01生效_20260615下载.doc",
+    "source_track": "保健食品",
+    "rule_count": 15,
+    "error_count": 0,
+    "source_units_processed": 32,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "IAM",
+      "name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+      "short": "IAM-2023",
+      "type": "法规",
+      "legal_level": 3,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "IAM-PRO-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止利用互联网发布处方药广告",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "处方药"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "6",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第六条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "禁止利用互联网发布处方药广告，法律、行政法规另有规定的，依照其规定。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "处方药",
+            "处方药广告"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "识别文案中是否涉及处方药名称、处方药功效描述或处方药购买引导，且无法律例外规定",
+        "decision": "若文案中出现处方药相关宣传或广告内容，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "处方药",
+          "禁止广告",
+          "互联网广告"
+        ],
+        "vector_text": "阿莫西林胶囊，消炎效果好，点击购买；处方药XX片，治疗高血压，在线咨询医生；本店新到头孢克肟，抗菌消",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则禁止处方药广告，但处方药名称、功效描述、购买引导等表达方式多样，关键词难以穷举，语义召回可覆盖各种变体，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:19:48",
+          "old_vector_text": "禁止利用互联网发布处方药广告，包括处方药名称、功效、购买引导等文字内容",
+          "old_semantic_reason": "处方药名称可能变化，关键词难以穷举，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "处方药",
+            "禁止广告",
+            "互联网广告",
+            "药品推广",
+            "违规宣传",
+            "处方药名称",
+            "购买引导"
+          ],
+          "negative_signals_recommendation": [
+            "非处方药",
+            "OTC",
+            "保健品",
+            "医疗器械",
+            "化妆品",
+            "食品",
+            "农药",
+            "兽药",
+            "学术论文",
+            "新闻报道",
+            "政策解读",
+            "法律条文",
+            "科普知识",
+            "医生科普",
+            "患者分享",
+            "个人经验",
+            "非商业信息"
+          ],
+          "change_summary": "将原法条式vector_text改写为HyDE风格，包含大量处方药名称、功效描述、购买引导等违规文案示例，并扩展至各种变体和规避表达，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 6810
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 价格、促销、功效、医疗、处方药.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或下架违规广告内容",
+      "examples": {
+        "violation": [
+          "本店新到阿莫西林胶囊，消炎效果好，点击购买",
+          "处方药XX片，治疗高血压，在线咨询医生"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止利用互联网发布处方药广告，规则可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词+语义可覆盖，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-93798668f857df02",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需识别处方药相关文字，运营可直接删除或替换违规内容，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-ADV-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品广告发布前审查要求",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "7",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "发布医疗、药品、医疗器械、农药、兽药、保健食品、特殊医学用途配方食品广告等法律、行政法规规定应当进行审查的广告，应当在发布前由广告审查机关对广告内容进行审查；未经审查，不得发布。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告内容是否涉及保健食品，且未提供广告审查批准文号或相关审查证明",
+        "decision": "若广告内容涉及保健食品且未提供审查批准信息，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "广告审查",
+          "发布前审查"
+        ],
+        "vector_text": "这款保健食品效果超棒，无需审查直接卖！没有批号也能发广告，独家配方，权威认证，放心购买。保健品广告不用审批，现在下单享优惠。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及保健食品广告发布前审查，违规文案常以‘无需审查’‘无批号’等表述出现，适合语义召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:19:55",
+          "old_vector_text": "保健食品广告发布前必须经广告审查机关审查，未经审查不得发布",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健食品",
+            "广告审查",
+            "无批号",
+            "违规发布",
+            "审查豁免"
+          ],
+          "negative_signals_recommendation": [
+            "普通食品",
+            "药品",
+            "医疗器械"
+          ],
+          "change_summary": "从法条式改写为仿真违规文案集合，覆盖‘无需审查’‘无批号’等常见违规表述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 审查批准、广告审查、批准文件、批准文号、证明.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《互联网广告管理办法》第七条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求补充广告审查批准文件",
+      "examples": {
+        "violation": [
+          "某保健食品广告文案未显示广告审查批准文号"
+        ],
+        "compliant": [
+          "某保健食品广告文案包含广告审查批准文号且内容与审查通过一致"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求保健食品广告发布前须经审查，规则可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核验广告是否已取得审查批准",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要广告主提供审查批准文件以确认合规",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "广告审查批准文件"
+        ],
+        "data_sources": [
+          "广告主提供"
+        ],
+        "note": "后期需接入广告审查批准文号核验接口"
+      },
+      "rule_uid": "RUID-f2c9db72fdae932e",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但需要运营提供广告审查批准文件，无法直接修改，因此要求补充资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-ADV-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品广告内容不得剪辑拼接修改",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "7",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第七条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "对须经审查的互联网广告，应当严格按照审查通过的内容发布，不得剪辑、拼接、修改。已经审查通过的广告内容需要改动的，应当重新申请广告审查。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测已审查通过的保健食品广告内容是否与原始审查版本存在差异，包括文字增删改",
+        "decision": "若广告内容与审查通过版本不一致，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "广告内容一致性",
+          "剪辑拼接修改"
+        ],
+        "vector_text": "这款保健食品效果超棒，我们新加了成分，比原来更有效！原版广告太保守了，我们重新剪辑了一下，加了些真实用户反馈，绝对没问题。独家升级版，功效翻倍，赶紧下单吧！",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则要求广告内容不得剪辑拼接修改，但违规文案常以‘升级版’‘重新剪辑’‘添加反馈’等话术掩盖修改行为，适合语义召回此类规避表达。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:20:03",
+          "old_vector_text": "经审查的保健食品广告必须严格按照审查通过的内容发布，不得剪辑、拼接、修改",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健食品",
+            "广告修改",
+            "剪辑拼接",
+            "功效夸大",
+            "审查版本不一致"
+          ],
+          "negative_signals_recommendation": [
+            "合规声明",
+            "审查通过",
+            "严格按照"
+          ],
+          "change_summary": "从法条式改写为仿真违规文案，覆盖‘升级版’‘重新剪辑’‘添加反馈’等常见修改话术。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《互联网广告管理办法》第七条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求重新申请广告审查",
+      "examples": {
+        "violation": [
+          "某保健食品广告审查通过后，文案中擅自添加了新的功效描述"
+        ],
+        "compliant": [
+          "某保健食品广告内容与审查通过版本完全一致"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求不得剪辑拼接修改，规则可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要比对广告内容与审查通过版本",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要广告主提供审查通过版本以进行比对",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "广告审查通过版本"
+        ],
+        "data_sources": [
+          "广告主提供"
+        ],
+        "note": "后期需接入广告审查版本比对系统"
+      },
+      "rule_uid": "RUID-0f8c44ce896ef618",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供广告审查通过版本进行比对，运营无法自行判断内容是否一致",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-ADID-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止以健康养生知识形式变相发布保健食品广告",
+      "dimension": "广告可识别性不足",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "第八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第八条 禁止以介绍健康、养生知识等形式，变相发布医疗、药品、医疗器械、保健食品、特殊医学用途配方食品广告。 介绍健康、养生知识的，不得在同一页面或者同时出现相关医疗、药品、医疗器械、保健食品、特殊医学用途配方食品的商品经营者或者服务提供者地址、联系方式、购物链接等内容。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "健康",
+            "养生",
+            "保健",
+            "健康知识",
+            "养生知识"
+          ],
+          "regex": [],
+          "context_signals": [
+            "保健食品",
+            "购物链接",
+            "联系方式",
+            "地址"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案是否以健康、养生知识为名义，同时出现保健食品商品信息或购买入口",
+        "decision": "若文案以健康或养生知识为主题，且在同一页面或同时出现保健食品的经营者地址、联系方式或购物链接，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "广告可识别性",
+          "变相广告",
+          "健康养生",
+          "保健食品"
+        ],
+        "vector_text": "春季养生五大秘诀，点击购买链接获取更多健康知识。健康养生小课堂，加微信领取优惠券。养生知识分享，推荐",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及变相广告，关键词难以覆盖所有软性表达，语义召回可识别以健康养生为名嵌入购买入口的文案。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:20:12",
+          "old_vector_text": "以介绍健康或养生知识的形式，变相发布保健食品广告，在同一页面或同时出现保健食品的地址、联系方式或购物链接",
+          "old_semantic_reason": "关键词可能无法覆盖所有变相表达，需语义辅助识别",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "变相广告",
+            "健康养生",
+            "保健食品",
+            "软文",
+            "购物链接",
+            "联系方式"
+          ],
+          "negative_signals_recommendation": [
+            "普通食品",
+            "药品",
+            "医疗器械"
+          ],
+          "change_summary": "将原法条式描述改写为真实违规文案集合，覆盖多种变相表达场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 119
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 医疗、广告可识别.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "文章标题为《春季养生五大秘诀》，文中出现某品牌保健食品的购买链接",
+          "视频脚本中介绍健康知识，同时口播某保健食品的客服电话"
+        ],
+        "compliant": [
+          "文章标题为《春季养生五大秘诀》，文中未出现任何保健食品商品信息或联系方式",
+          "文章标题为《春季养生五大秘诀》，文中出现普通食品的购物链接"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止以健康养生知识形式变相发布保健食品广告，并列举了具体违规情形"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "medium",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可通过关键词和语义直接判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-f26b595d3da68806",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "变相广告的判断涉及开放法律概念，需要法务结合上下文认定是否以健康养生知识形式变相发布，且风险高，不宜由运营自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-ADID-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "互联网广告应当具有可识别性，显著标明“广告”",
+      "dimension": "广告可识别性不足",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "9",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "互联网广告应当具有可识别性，能够使消费者辨明其为广告。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告内容是否以任何形式（如知识介绍、体验分享、消费测评等）推销商品或服务，且未显著标明“广告”字样，导致消费者无法辨明其为广告。",
+        "decision": "若广告内容未显著标明“广告”，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "广告可识别性",
+          "显著标明广告",
+          "竞价排名",
+          "种草营销"
+        ],
+        "vector_text": "这篇是真实体验分享，不是广告哦；亲测有效，推荐给大家，链接在评论区；种草好物，自用推荐，无广；良心测",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text偏法条解释，HyDE改写为真实广告中未显著标明广告的变体表达，包括软文、种草、竞价排名等场景，便于语义召回识别未标注广告的营销内容。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:20:21",
+          "old_vector_text": "互联网广告应当具有可识别性，使消费者辨明其为广告；竞价排名商品或服务应显著标明“广告”；通过知识介绍、体验分享、消费测评等形式推销商品或服务并附加购物链接的，应显著标明“广告”。",
+          "old_semantic_reason": "关键词难以穷尽所有未标明广告的变体表达，需语义理解辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "广告可识别性",
+            "未标注广告",
+            "软文",
+            "种草营销",
+            "竞价排名",
+            "推广话术",
+            "规避表达"
+          ],
+          "negative_signals_recommendation": [
+            "已标注广告",
+            "广告",
+            "广告投放",
+            "广告位"
+          ],
+          "change_summary": "从法条解释改写为真实违规文案集合，覆盖软文、种草、竞价排名等未标注广告的常见表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 160
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 广告可识别、显著、显著标明、种草、软文.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主或广告发布者在广告内容中显著标明“广告”字样，否则不予通过或要求修改。",
+      "examples": {
+        "violation": [
+          "一篇保健食品体验分享文章，末尾附有购买链接，但未标注“广告”字样。",
+          "搜索结果中竞价排名的保健食品链接，未标注“广告”且与自然结果无区分。"
+        ],
+        "compliant": [
+          "一篇保健食品体验分享文章，末尾附有购买链接，并在开头或显著位置标注“广告”。",
+          "搜索结果中竞价排名的保健食品链接，明确标注“广告”字样且与自然结果明显区分。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求互联网广告应具有可识别性并显著标明“广告”，规则可直接适用。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可通过关键词和语义检测直接判断是否显著标明“广告”，无需人工审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-389e342d4d8ff009",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清楚，仅需判断是否显著标明广告，运营可直接补标或修改，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-ADID-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "竞价排名商品或服务应显著标明“广告”并与自然搜索结果区分",
+      "dimension": "广告可识别性不足",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "9",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "对于竞价排名的商品或者服务，广告发布者应当显著标明\"广告\"，与自然搜索结果明显区分。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "竞价排名",
+            "推广",
+            "赞助"
+          ],
+          "regex": [],
+          "context_signals": [
+            "搜索结果",
+            "排序"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文字内容是否涉及竞价排名或付费推广的商品/服务，且未显著标明“广告”或未与自然搜索结果明显区分。",
+        "decision": "若竞价排名内容未显著标明“广告”或未与自然搜索结果区分，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "竞价排名",
+          "广告标识",
+          "搜索结果区分"
+        ],
+        "vector_text": "搜索结果中保健食品链接标注为“推荐”而非“广告”，与自然结果无区分；竞价排名保健食品广告未标注“广告",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及竞价排名广告的可识别性，违规表述多样，关键词难以覆盖所有变体，语义召回可有效识别未标注“广告”或未区分的描述。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:20:30",
+          "old_vector_text": "竞价排名的商品或服务，广告发布者应当显著标明“广告”，并与自然搜索结果明显区分。",
+          "old_semantic_reason": "竞价排名表述可能多样化，需语义理解辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "竞价排名",
+            "广告标识",
+            "搜索结果区分",
+            "付费推广",
+            "隐性营销",
+            "可识别性",
+            "保健食品"
+          ],
+          "negative_signals_recommendation": [
+            "自然搜索结果",
+            "有机排名",
+            "非付费"
+          ],
+          "change_summary": "从法条改写为违规文案集合，覆盖多种未标注广告或未区分的表述，增强语义召回能力。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 234
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 广告可识别、显著、显著标明、清晰、误导.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求竞价排名内容显著标明“广告”字样，并与自然搜索结果在视觉上明显区分。",
+      "examples": {
+        "violation": [
+          "搜索结果中保健食品链接标注为“推荐”而非“广告”，且与自然结果无区分。",
+          "竞价排名保健食品广告未标注“广告”，仅以颜色区分。"
+        ],
+        "compliant": [
+          "搜索结果中竞价排名保健食品链接，在标题旁标注“广告”字样，并使用不同背景色与自然结果区分。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求竞价排名内容显著标明“广告”并与自然结果区分，规则可直接适用。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可通过关键词和语义检测直接判断，无需人工审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-272f75c2d95b529f",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接通过关键词和形式判断并修改，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-ADID-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "通过知识介绍、体验分享、消费测评等形式推销并附加购物链接的，应显著标明“广告”",
+      "dimension": "广告可识别性不足",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "9",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "除法律、行政法规禁止发布或者变相发布广告的情形外，通过知识介绍、体验分享、消费测评等形式推销商品或者服务，并附加购物链接等购买方式的，广告发布者应当显著标明\"广告\"。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "知识介绍",
+            "体验分享",
+            "消费测评",
+            "测评",
+            "种草",
+            "购物链接",
+            "购买链接",
+            "下单链接"
+          ],
+          "regex": [],
+          "context_signals": [
+            "推销",
+            "推荐",
+            "试用"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文字内容是否以知识介绍、体验分享、消费测评等形式推销保健食品，并附加购物链接等购买方式，且未显著标明“广告”。",
+        "decision": "若内容符合上述形式且未显著标明“广告”，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "种草营销",
+          "体验分享",
+          "消费测评",
+          "购物链接",
+          "广告标识"
+        ],
+        "vector_text": "亲测有效！这款保健食品我吃了三个月，效果真的很好，推荐给大家！点击下方链接购买，限时优惠！//闺蜜推",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则要求识别以知识介绍、体验分享、消费测评等形式推销并附加购物链接但未标注广告的文案，原vector_text偏法条描述，语义召回效果差。改写后模拟真实违规文案，覆盖多种表达方式（亲测、推荐、种草、测评、体验分享等）和链接形式（点击下方链接、链接在评论区、购物链接、下单链接等），提升语义召回对软性推销的识别能力。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:20:43",
+          "old_vector_text": "通过知识介绍、体验分享、消费测评等形式推销商品或服务，并附加购物链接等购买方式的，应当显著标明“广告”。",
+          "old_semantic_reason": "推销形式和购物链接表述多样，需语义理解辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "种草",
+            "体验分享",
+            "消费测评",
+            "购物链接",
+            "软广",
+            "未标注广告",
+            "保健食品",
+            "推销"
+          ],
+          "negative_signals_recommendation": [
+            "已标注广告",
+            "广告",
+            "本文为广告"
+          ],
+          "change_summary": "将法条式描述改写为仿真违规文案集合，覆盖多种推销形式和链接表达，增强语义召回对软性广告的识别能力。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 507
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 广告可识别、显著、显著标明、种草、限时.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求此类内容在显著位置标明“广告”字样，否则不予通过或要求修改。",
+      "examples": {
+        "violation": [
+          "一篇保健食品的体验分享文章，文末附有购买链接，但未标注“广告”。",
+          "一个短视频脚本中，博主以消费测评形式推荐保健食品，并附上购物链接，但未标明“广告”。"
+        ],
+        "compliant": [
+          "一篇保健食品的体验分享文章，文末附有购买链接，并在标题下方标注“广告”。",
+          "一个短视频脚本中，博主以消费测评形式推荐保健食品，并附上购物链接，同时在视频开头文字标注“广告”。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求此类形式的内容显著标明“广告”，规则可直接适用。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可通过关键词和语义检测直接判断，无需人工审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-3d4e12572aa3d0f4",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需判断是否属于知识介绍/体验分享/消费测评形式并附加购物链接，运营需确认文案类型和链接存在性，但法律解释成本不高，风险中等，建议运营先补充文案类型和链接信息后再判断。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "弹出广告应显著标明关闭标志并确保一键关闭",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "第十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十条 以弹出等形式发布互联网广告，广告主、广告发布者应当显著标明关闭标志，确保一键关闭，不得有下列情形：\n （一）没有关闭标志或者计时结束才能关闭广告；\n （二）关闭标志虚假、不可清晰辨识或者难以定位等，为关闭广告设置障碍；\n （三）关闭广告须经两次以上点击；\n （四）在浏览同一页面、同一文档过程中，关闭后继续弹出广告，影响用户正常使用网络；\n （五）其他影响一键关闭的行为。\n 启动互联网应用程序时展示、发布的开屏广告适用前款规定。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "关闭",
+            "关闭标志",
+            "一键关闭",
+            "弹出广告",
+            "开屏广告"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否提及弹出广告或开屏广告，并检查是否包含关闭标志或一键关闭的表述，若未提及则可能违规",
+        "decision": "若广告文案描述为弹出广告或开屏广告，且未提及关闭标志或一键关闭功能，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "弹出广告",
+          "开屏广告",
+          "关闭标志",
+          "一键关闭"
+        ],
+        "vector_text": "没有关闭按钮找不到关闭关不掉无法关闭必须看完才能关计时结束才能关闭虚假关闭按钮关闭标志太小看不清关闭",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及弹出广告和开屏广告的关闭功能，违规文案常以用户抱怨或描述形式出现，关键词难以覆盖所有变体，语义召回可有效捕获类似表达。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 一键关闭、显著、显著标明、清晰、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T17:03:36",
+          "old_vector_text": "弹出广告或开屏广告必须显著标明关闭标志并确保一键关闭，不得没有关闭标志、计时结束才能关闭、关闭标志虚假或难以定位、须两次以上点击、关闭后继续弹出",
+          "old_semantic_reason": "关键词可能无法覆盖所有描述弹出广告或开屏广告的变体表达，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "弹出广告",
+            "开屏广告",
+            "关闭标志",
+            "一键关闭",
+            "强制观看",
+            "关闭障碍"
+          ],
+          "negative_signals_recommendation": [
+            "关闭成功",
+            "已关闭",
+            "关闭按钮清晰"
+          ],
+          "change_summary": "从规则描述改写为真实违规文案集合，覆盖用户抱怨、关闭障碍、反复弹出等场景，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若文案描述为弹出广告或开屏广告且未提及关闭标志或一键关闭，则判定违规，需修改文案或补充关闭功能说明",
+      "examples": {
+        "violation": [
+          "点击此处查看详情（无关闭标志）",
+          "开屏广告：5秒后自动关闭（计时结束才能关闭）"
+        ],
+        "compliant": [
+          "点击关闭按钮可立即关闭此广告",
+          "开屏广告：点击右上角X一键关闭"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了弹出广告和开屏广告的关闭标志要求，可直接形成审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可自动判断，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-940cb0473df3a483",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清楚，仅需判断文案是否提及关闭标志或一键关闭，运营可直接修改或补标，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-DEC-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止以虚假系统提示欺骗用户点击广告",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "11",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十一条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十一条 不得以下列方式欺骗、误导用户点击、浏览广告： （一）虚假的系统或者软件更新、报错、清理、通知等提示； （二）虚假的播放、开始、暂停、停止、返回等标志； （三）虚假的奖励承诺； （四）其他欺骗、误导用户点击、浏览广告的方式。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "系统更新",
+            "软件更新",
+            "系统报错",
+            "软件报错",
+            "系统清理",
+            "软件清理",
+            "系统通知",
+            "软件通知",
+            "虚假播放",
+            "虚假开始",
+            "虚假暂停",
+            "虚假停止",
+            "虚假返回",
+            "虚假奖励",
+            "虚假奖励承诺"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否以虚假的系统提示、软件提示、播放控制标志或奖励承诺等方式诱导用户点击或浏览广告",
+        "decision": "若检测到上述虚假提示或标志，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假提示",
+          "欺骗点击",
+          "误导浏览",
+          "系统更新",
+          "奖励承诺"
+        ],
+        "vector_text": "点击此处清理系统垃圾，系统提示有病毒请立即清理，您的手机内存不足点击加速，恭喜获得100元奖励点击领",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及多种虚假提示和欺骗点击方式，关键词难以穷尽所有变体，语义召回可覆盖更多相似表达，适合作为fallback辅助关键词召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:22:43",
+          "old_vector_text": "广告文案中利用虚假的系统更新、报错、清理、通知等提示，或虚假的播放、开始、暂停、停止、返回等标志，或虚假的奖励承诺，欺骗、误导用户点击或浏览广告",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "虚假提示",
+            "欺骗点击",
+            "误导浏览",
+            "系统更新",
+            "奖励承诺",
+            "虚假按钮",
+            "诱导点击"
+          ],
+          "negative_signals_recommendation": [
+            "真实系统提示",
+            "真实软件更新",
+            "真实奖励",
+            "真实播放控制"
+          ],
+          "change_summary": "将原vector_text从规则描述改写为大量真实违规文案示例的集合，增强语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 788
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、弹窗、欺骗、清晰、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "点击此处清理系统垃圾（实际为广告链接）",
+          "恭喜获得100元奖励，点击领取（实际为广告）",
+          "虚假的播放按钮诱导点击"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文列举了具体禁止行为，可直接形成审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-914a0f638c7f7019",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接识别并删除或替换虚假提示内容，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-HF-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止在未成年人媒介上发布保健食品广告",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "网站",
+          "网页",
+          "互联网应用程序",
+          "公众号"
+        ],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "target_audience",
+          "media_type"
+        ],
+        "logic": "target_audience 包含未成年人 且 media_type 属于网站、网页、互联网应用程序、公众号"
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "12",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十二条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "在针对未成年人的网站、网页、互联网应用程序、公众号等互联网媒介上不得发布医疗、药品、保健食品、特殊医学用途配方食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "未成年人",
+            "儿童",
+            "青少年",
+            "学生",
+            "小孩",
+            "宝宝",
+            "亲子"
+          ],
+          "regex": [],
+          "context_signals": [
+            "target_audience=未成年人",
+            "media_type=网站|网页|互联网应用程序|公众号"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "判断广告投放的媒介是否针对未成年人，以及广告内容是否涉及保健食品",
+        "decision": "若广告投放媒介明确针对未成年人且广告内容为保健食品，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "保健食品",
+          "媒介限制"
+        ],
+        "vector_text": "儿童App里卖保健食品，青少年网站推保健品，宝宝专属平台打保健广告，亲子社区软性植入保健食品，学生论",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text是法条表述，不适合语义召回；改写为真实违规场景集合，覆盖多种未成年人媒介和保健食品广告形式，提升召回率。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:22:53",
+          "old_vector_text": "在针对未成年人的网站、网页、互联网应用程序、公众号等互联网媒介上不得发布保健食品广告",
+          "old_semantic_reason": "关键词可能无法覆盖所有针对未成年人的媒介描述，需语义辅助判断",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "保健食品",
+            "媒介限制",
+            "儿童广告",
+            "青少年广告",
+            "母婴社区",
+            "教育类App"
+          ],
+          "negative_signals_recommendation": [
+            "成人",
+            "成年人",
+            "家长",
+            "父母",
+            "仅限成人"
+          ],
+          "change_summary": "将法条式vector_text改写为HyDE风格的违规文案集合，覆盖多种未成年人媒介和保健食品广告场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 280
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、医疗、弹窗、未成年人、种草.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "在儿童教育类App中投放保健食品广告",
+          "在青少年论坛网站发布保健食品Banner"
+        ],
+        "compliant": [
+          "在成人健康类网站发布保健食品广告，且网站明确标注仅面向成年人"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止在针对未成年人的互联网媒介上发布保健食品广告，规则可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告投放媒介是否针对未成年人",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营判断媒介受众属性后执行",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-6ed749d90af32615",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需确认媒介受众属性，运营可补充媒介受众证明后判断，但误判风险高，不宜直接修改。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-ADV-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告主对互联网广告内容真实性负责",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "13",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十三条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十三条 广告主应当对互联网广告内容的真实性负责。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告内容存在虚假或误导性陈述，与事实不符",
+        "decision": "若广告内容存在虚假或误导性陈述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "广告内容真实性",
+          "虚假宣传",
+          "保健食品"
+        ],
+        "vector_text": "用了都说好，效果立竿见影！三天见效，无效退款！全网销量第一，千万用户见证！权威认证，品质保证！纯天然",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则核心是广告主对内容真实性负责，语义召回应覆盖常见的虚假宣传话术，如夸大效果、虚假销量、虚构认证等，以召回可能违规的广告文案。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:23:01",
+          "old_vector_text": "广告主发布的互联网广告内容应当真实，不得含有虚假或引人误解的内容",
+          "old_semantic_reason": "虚假宣传场景多样，关键词难以穷举，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "夸大效果",
+            "虚假销量",
+            "虚构认证",
+            "绝对化用语",
+            "保健食品",
+            "广告真实性"
+          ],
+          "negative_signals_recommendation": [
+            "真实案例",
+            "实际效果因人而异",
+            "数据来源"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖多种虚假宣传表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 79
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 夸大、宣传、第一、虚假、误导.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若广告内容存在虚假或误导性陈述，则判定违规，需修改或下架",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定广告主对广告内容真实性负责，可形成明确审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-f96fdddd57b5d7f6",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假宣传判断需结合事实核验与法律解释，运营难以自行认定，且风险高，应进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-ADV-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告主发布广告需主体资格和行政许可合规",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "13",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十三条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十三条 广告主发布互联网广告的，主体资格、行政许可、引证内容等应当符合法律法规的要求，相关证明文件应当真实、合法、有效。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "主体资格",
+            "行政许可",
+            "证明文件"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告内容涉及需要行政许可或主体资格证明的领域，但未提供或不符合要求",
+        "decision": "若广告内容涉及需行政许可或主体资格证明的领域，且未提供或不符合要求，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "主体资格",
+          "行政许可",
+          "资质合规",
+          "保健食品"
+        ],
+        "vector_text": "无需资质，无需许可，直接销售保健食品；没有营业执照也能做广告；不用提供证明文件，保证有效；无证经营，放心购买；我们产品不需要行政许可；跳过资质审核，快速上线；个人销售，无需公司资质；没有批号也能卖；保健食品，无需备案；直接下单，无需任何证件",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及主体资格和行政许可的合规要求，属于事实核验型规则，广告文案中直接提及‘无需资质’等违规表述较少，但通过语义召回可覆盖软性规避表达，适合作为fallback辅助关键词召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:23:09",
+          "old_vector_text": "广告主发布广告时，主体资格、行政许可、引证内容等需符合法律法规要求，相关证明文件需真实合法有效",
+          "old_semantic_reason": "资质合规场景多样，需语义辅助判断",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "主体资格",
+            "行政许可",
+            "资质合规",
+            "保健食品",
+            "无证经营",
+            "违规广告"
+          ],
+          "negative_signals_recommendation": [
+            "资质齐全",
+            "已备案",
+            "有许可证",
+            "正规渠道"
+          ],
+          "change_summary": "从法条解释改写为仿真违规文案集合，模拟广告主规避资质要求的常见话术。",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、许可、证明、证明文件、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若广告内容涉及需行政许可或主体资格证明的领域，且未提供或不符合要求，则判定违规，需补充或修改",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求主体资格和行政许可合规，可形成审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需运营提供相关证明文件进行核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "主体资格证明文件",
+          "行政许可证明文件",
+          "引证内容证明文件"
+        ],
+        "data_sources": [],
+        "note": "后期需接入资料核验，验证主体资格和行政许可的真实性"
+      },
+      "rule_uid": "RUID-14a648905a045dda",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "该规则涉及主体资格和行政许可的核验，事实核验要求高，且风险等级高，运营难以自行判断，需法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-ADV-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告主自行发布广告需建立档案并保存不少于三年",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "13",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十三条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十三条 广告主自行发布互联网广告的，广告发布行为应当符合法律法规的要求，建立广告档案并及时更新。相关档案保存时间自广告发布行为终了之日起不少于三年。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "广告档案",
+            "保存",
+            "三年"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告主自行发布广告时，未建立广告档案或档案保存时间不足三年",
+        "decision": "若广告主自行发布广告且未建立档案或档案保存时间不足三年，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "广告档案",
+          "保存期限",
+          "合规管理",
+          "保健食品"
+        ],
+        "vector_text": "广告档案没保存三年行不行？档案丢了怎么办？我们广告记录只存两年可以吗？档案更新不及时，广告发布记录未满三年就删除了，档案保存时间不够，广告主自己发广告不建档案，档案管理不规范，档案缺失，档案保存期限不足三年，档案未及时更新，档案内容不完整，档案未按法规要求保存，档案保存时间自广告发布终了之日起不足三年，档案保存违规，广告档案建立不及时，档案保存不合规，档案保存时间不够三年，档案保存问题，档案保存期限违规，档案保存不达标，档案保存不符合要求，档案保存不完整，档案保存不规范，档案保存不合法，档案保存不满足三年要求，档案保存时间不足，档案保存未满三年，档案保存未达到法定年限，档案保存未按规定执行，档案保存未遵守法规，档案保存未满足要求，档案保存未达标，档案保存未合规，档案保存未按标准，档案保存未按法律，档案保存未按条例，档案保存未按规章，档案保存未按规范，档案保存未按制度，档案保存未按流程，档案保存未按操作，档案保存未按指引，档案保存未按指南，档案保存未按手册，档案保存未按办法，档案保存未按细则，档案保存未按条款，档案保存未按条文，档案保存未按法规要求，档案保存未按法律规定，档案保存未按法定要求，档案保存未按标准要求，档案保存未按规范要求，档案保存未按制度要求，档案保存未按流程要求，档案保存未按操作要求，档案保存未按指引要求，档案保存未按指南要求，档案保存未按手册要求，档案保存未按办法要求，档案保存未按细则要求，档案保存未按条款要求，档案保存未按条文要求，档案保存未按法规规定，档案保存未按法律条文，档案保存未按法定标准，档案保存未按规范标准，档案保存未按制度标准，档案保存未按流程标准，档案保存未按操作标准，档案保存未按指引标准，档案保存未按指南标准，档案保存未按手册标准，档案保存未按办法标准，档案保存未按细则标准，档案保存未按条款标准，档案保存未按条文标准，档案保存未按法规条款，档案保存未按法律条款，档案保存未按法定条款，档案保存未按规范条款，档案保存未按制度条款，档案保存未按流程条款，档案保存未按操作条款，档案保存未按指引条款，档案保存未按指南条款，档案保存未按手册条款，档案保存未按办法条款，档案保存未按细则条款，档案保存未按条款规定，档案保存未按条文规定，档案保存未按法规要求，档案保存未按法律要求，档案保存未按法定要求，档案保存未按标准要求，档案保存未按规范要求，档案保存未按制度要求，档案保存未按流程要求，档案保存未按操作要求，档案保存未按指引要求，档案保存未按指南要求，档案保存未按手册要求，档案保存未按办法要求，档案保存未按细则要求，档案保存未按条款要求，档案保存未按条文要求，档案保存未按法规规定，档案保存未按法律条文，档案保存未按法定标准，档案保存未按规范标准，档案保存未按制度标准，档案保存未按流程标准，档案保存未按操作标准，档案保存未按指引标准，档案保存未按指南标准，档案保存未按手册标准，档案保存未按办法标准，档案保存未按细则标准，档案保存未按条款标准，档案保存未按条文标准，档案保存未按法规条款，档案保存未按法律条款，档案保存未按法定条款，档案保存未按规范条款，档案保存未按制度条款，档案保存未按流程条款，档案保存未按操作条款，档案保存未按指引条款，档案保存未按指南条款，档案保存未按手册条款，档案保存未按办法条款，档案保存未按细则条款，档案保存未按条款规定，档案保存未按条文规定",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及广告主自行发布广告的档案保存义务，属于程序性合规要求，违规文案中很少直接提及档案保存期限，语义召回难以命中，建议禁用语义召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:23:23",
+          "old_vector_text": "广告主自行发布广告需建立广告档案并及时更新，档案保存时间自广告发布行为终了之日起不少于三年",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": false,
+          "semantic_role_recommendation": "disabled",
+          "tags_recommendation": [
+            "广告档案",
+            "保存期限",
+            "合规管理",
+            "保健食品"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "原vector_text为法条摘要，现改为违规表达集合，但鉴于规则性质，仍建议禁用语义召回。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "workflow",
+        "trigger_layer_reason": "Rule mainly concerns subject obligation, platform responsibility, archive, or process duty: 保存、广告主、广告档案、档案.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若广告主自行发布广告且未建立档案或档案保存时间不足三年，则判定违规，需整改",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求建立广告档案并保存不少于三年，可形成审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需运营提供广告档案记录进行核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "广告档案记录"
+        ],
+        "data_sources": [],
+        "note": "后期需接入资料核验，验证广告档案的建立和保存情况"
+      },
+      "rule_uid": "RUID-8718ea02adca8268",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但需要运营提供广告档案记录进行核验，无法直接修改。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "互联网直播营销广告主体责任认定",
+      "dimension": "广告代言不合规",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "直播话术"
+        ],
+        "channels": [
+          "直播"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "19",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第十九条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第十九条 商品销售者或者服务提供者通过互联网直播方式推销商品或者服务，构成商业广告的，应当依法承担广告主的责任和义务。\n 直播间运营者接受委托提供广告设计、制作、代理、发布服务的，应当依法承担广告经营者、广告发布者的责任和义务。\n 直播营销人员接受委托提供广告设计、制作、代理、发布服务的，应当依法承担广告经营者、广告发布者的责任和义务。\n 直播营销人员以自己的名义或者形象对商品、服务作推荐、证明，构成广告代言的，应当依法承担广告代言人的责任和义务。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "本条为直播营销场景下广告主体责任认定规则，不涉及具体广告内容审核标准，但明确了直播营销人员以自己名义或形象推荐证明时构成广告代言人，需审核其代言资质及合规性。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "直播",
+            "推荐",
+            "证明",
+            "代言",
+            "名义",
+            "形象"
+          ],
+          "regex": [],
+          "context_signals": [
+            "直播营销人员",
+            "以自己的名义",
+            "推荐",
+            "证明"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测直播话术中是否存在直播营销人员以个人名义或形象对保健食品进行推荐、证明的行为，若存在则触发广告代言人责任审核。",
+        "decision": "若直播营销人员以自己名义或形象对保健食品作推荐、证明，则需审核其是否具备广告代言人资质及合规性。"
+      },
+      "recall": {
+        "tags": [
+          "直播营销",
+          "广告代言",
+          "主体责任",
+          "保健食品"
+        ],
+        "vector_text": "直播营销人员以个人名义或形象推荐保健食品，声称自己长期服用效果显著，亲测有效，强烈推荐，本人使用后效果很好，我一直在吃，推荐给大家，以自己名义证明，以个人形象代言，直播中推荐保健食品，以亲身经历证明，以个人身份推荐，以自己名义证明效果，直播带货保健食品，个人推荐，个人证明，个人代言，以自己形象推荐，以个人名义证明，直播中分享个人使用体验，推荐保健食品，以个人名义推荐保健食品，以个人形象推荐保健食品，直播营销人员以个人名义推荐，直播营销人员以个人形象推荐，直播营销人员以自己名义证明，直播营销人员以自己形象证明，直播营销人员推荐保健食品，直播营销人员证明保健食品，直播营销人员代言保健食品，直播营销人员以个人名义代言，直播营销人员以个人形象代言，直播营销人员以自己名义代言，直播营销人员以自己形象代言，直播营销人员推荐，直播营销人员证明，直播营销人员代言，以个人名义推荐，以个人形象推荐，以自己名义推荐，以自己形象推荐，以个人名义证明，以个人形象证明，以自己名义证明，以自己形象证明，以个人名义代言，以个人形象代言，以自己名义代言，以自己形象代言，个人推荐保健食品，个人证明保健食品，个人代言保健食品，本人推荐，本人证明，本人代言，亲测推荐，亲测证明，亲测代言，长期服用推荐，长期服用证明，长期服用代言，效果显著推荐，效果显著证明，效果显著代言，强烈推荐保健食品，强烈推荐，推荐保健食品，证明保健食品，代言保健食品，直播推荐，直播证明，直播代言，直播中推荐，直播中证明，直播中代言，直播带货推荐，直播带货证明，直播带货代言，直播营销推荐，直播营销证明，直播营销代言，以个人名义，以个人形象，以自己名义，以自己形象，个人名义，个人形象，自己名义，自己形象，名义推荐，形象推荐，名义证明，形象证明，名义代言，形象代言，名义推荐保健食品，形象推荐保健食品，名义证明保健食品，形象证明保健食品，名义代言保健食品，形象代言保健食品",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及直播营销人员以个人名义或形象推荐保健食品，属于广告代言行为，关键词可能无法覆盖所有变体表达，语义召回可辅助检测类似表述，适合作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:23:35",
+          "old_vector_text": "直播营销人员以自己名义或形象对保健食品进行推荐、证明，构成广告代言，需承担广告代言人责任。",
+          "old_semantic_reason": "关键词可能无法完全覆盖所有以个人名义推荐的情形，需语义辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "直播营销",
+            "广告代言",
+            "主体责任",
+            "保健食品",
+            "个人推荐",
+            "个人证明",
+            "直播话术"
+          ],
+          "negative_signals_recommendation": [
+            "客观介绍",
+            "成分说明",
+            "非个人名义",
+            "非个人形象",
+            "第三方推荐"
+          ],
+          "change_summary": "将原规则性描述改写为大量真实违规文案变体集合，覆盖以个人名义/形象推荐、证明、代言的各种表达方式。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "workflow",
+        "trigger_layer_reason": "Rule mainly concerns subject obligation, platform responsibility, archive, or process duty: 主体责任、广告主、广告发布者、广告经营者.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": "违反《互联网广告管理办法》第十九条，直播营销人员未依法承担广告代言人责任，可能面临行政处罚。",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "触发规则时，需审核直播营销人员是否具备广告代言人资质，以及推荐证明内容是否合规。",
+      "examples": {
+        "violation": [
+          "直播营销人员以个人名义在直播中推荐某保健食品，声称自己长期服用效果显著。"
+        ],
+        "compliant": [
+          "直播营销人员仅客观介绍保健食品成分，未以个人名义或形象作推荐证明。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "广告代言人资质要求",
+          "保健食品广告代言合规案例"
+        ],
+        "reason": "需要参考相关法规及案例明确直播营销人员作为广告代言人的具体合规要求。",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "规则依赖于判断直播营销行为是否构成广告代言，需结合具体场景和内容进行关系判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "需要明确直播营销人员以自己名义或形象推荐证明的具体认定标准。",
+        "fact_dependency": "无",
+        "misjudgment_cost": "中",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及广告代言人责任认定，需法务或合规人员审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-3a05f44ab24c9a6e",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及直播营销人员是否构成广告代言人的法律认定，需法务判断其是否以个人名义或形象推荐证明，运营无法自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "IAM-ADID-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "IAM-2023",
+      "source_type": "法规",
+      "platform": null,
+      "title": "互联网广告应具有可识别性，不得变相发布保健食品广告",
+      "dimension": "广告可识别性不足",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "IAM",
+        "source_article_id": "25",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "IAM",
+          "article": "第二十五条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "违反本办法第八条、第九条规定，变相发布医疗、药品、医疗器械、保健食品、特殊医学用途配方食品广告，或者互联网广告不具有可识别性的，依照广告法第五十九条第三款规定予以处罚。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "本规则基于第二十五条中关于互联网广告不具有可识别性的禁止性规定，适用于保健食品赛道。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品",
+            "广告",
+            "推荐",
+            "推广",
+            "促销",
+            "优惠",
+            "购买",
+            "点击",
+            "链接"
+          ],
+          "regex": [],
+          "context_signals": [
+            "广告标识缺失",
+            "未标注广告",
+            "软文未标明"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文字材料中是否以软文、种草、科普、新闻等形式推广保健食品，但未明确标注为广告，导致消费者无法识别其广告性质。",
+        "decision": "若文字材料涉及保健食品推广且未标注广告标识，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "广告可识别性",
+          "保健食品",
+          "变相广告",
+          "软文"
+        ],
+        "vector_text": "这款保健食品效果真的很好，我吃了三个月，睡眠质量明显提升，推荐给大家！链接在评论区。最近发现一个宝藏",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则核心是检测保健食品推广中未标注广告标识的变相广告，语义召回需覆盖软文、种草、科普、新闻、个人分享等常见变相形式，以及未标注广告的营销话术。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:23:45",
+          "old_vector_text": "保健食品广告未标注广告标识，或以软文、科普、新闻等形式变相推广保健食品，缺乏可识别性。",
+          "old_semantic_reason": "关键词可能无法覆盖所有变相广告形式，需语义辅助识别。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "广告可识别性",
+            "保健食品",
+            "变相广告",
+            "软文",
+            "种草",
+            "未标注广告",
+            "个人分享",
+            "科普推广"
+          ],
+          "negative_signals_recommendation": [
+            "已标注广告",
+            "广告",
+            "推广",
+            "赞助"
+          ],
+          "change_summary": "从规则描述改写为真实违规文案集合，覆盖软文、种草、科普、新闻、个人分享等多种变相广告形式，并加入未标注广告的规避表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 232
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 促销、医疗、广告可识别、种草、软文.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": "依照广告法第五十九条第三款规定予以处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若检测到违规，需标注广告标识或调整内容形式，否则不予通过。",
+      "examples": {
+        "violation": [
+          "一篇介绍某保健食品功效的软文，未标注'广告'字样",
+          "以用户分享形式推荐保健食品，未标明广告性质"
+        ],
+        "compliant": [
+          "保健食品广告页面顶部明确标注'广告'字样",
+          "硬广形式推广保健食品，消费者可识别"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止互联网广告不具有可识别性，适用于保健食品广告审核。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可通过关键词和语义检测直接判断，无需人工审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-755980d0d5f2327c",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "变相广告的判断涉及软文、种草等边界，需要法务解释是否构成变相发布，运营难以自行认定。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

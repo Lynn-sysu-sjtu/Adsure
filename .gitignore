@@ -98,3 +98,13 @@ vectorbase/cache/
 *_scratch.json
 *_tmp.json
 debug_*.json
+# Keep selected rule-engine evaluation artifacts for MVP handoff.
+!rule_engine/reports/
+!rule_engine/reports/risk_synthesis_diagnostics/
+!rule_engine/reports/risk_synthesis_diagnostics/*.json
+!rule_engine/reports/risk_synthesis_diagnostics/*.csv
+!rule_engine/reports/legal_attention_medium_qc/
+!rule_engine/reports/legal_attention_medium_qc/*.json
+!rule_engine/reports/legal_attention_medium_qc/*.csv
+!rule_engine/test_reports/
+!rule_engine/test_reports/*.json

@@ -1,0 +1,1134 @@
+{
+  "meta": {
+    "name": "美妆规则库-化妆品生产经营监督管理办法_2022.01.01生效_20260615下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "化妆品生产经营监督管理办法_2022.01.01生效_20260615下载.doc",
+    "source_track": "美妆",
+    "rule_count": 6,
+    "error_count": 0,
+    "source_units_processed": 66,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "CPM",
+      "name": "化妆品生产经营监督管理办法_2022.01.01生效_20260615下载",
+      "short": "CPM-2022",
+      "type": "法规",
+      "legal_level": 3,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "COSM-LABEL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPM-2022",
+      "source_type": "法规",
+      "platform": null,
+      "title": "化妆品标签内容应与注册备案资料一致",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPM-2022",
+        "source_article_id": "第三十五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPM",
+          "article": "第三十五条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "化妆品的最小销售单元应当有中文标签。标签内容应当与化妆品注册或者备案资料中产品标签样稿一致。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "规则要求标签内容与注册备案资料一致，审核时需比对注册备案信息，属于资料核验型规则。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "标签",
+            "注册",
+            "备案",
+            "产品标签样稿"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中宣称的产品名称、成分、功效等信息是否与注册或备案资料中的标签样稿一致",
+        "decision": "若文案中宣称的产品信息与注册备案资料不一致，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "标签一致性",
+          "注册备案",
+          "化妆品"
+        ],
+        "vector_text": "文案宣称成分含A，但注册备案标签样稿中未列出A成分?标签?注册?备案?产品标签样稿?标签一致性?注册",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:23:48",
+          "old_vector_text": "化妆品文案中宣称的产品名称、成分、功效等信息应与注册或备案资料中的标签样稿一致，不得存在差异",
+          "old_semantic_reason": "关键词可能无法覆盖所有不一致情形，需语义匹配辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "标签一致性",
+            "注册备案",
+            "化妆品"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主提供注册或备案资料中的产品标签样稿进行比对，若不一致则要求修改或下架",
+      "examples": {
+        "violation": [
+          "文案宣称成分含A，但注册备案标签样稿中未列出A成分"
+        ],
+        "compliant": [
+          "文案宣称成分与注册备案标签样稿完全一致"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "注册备案资料"
+        ],
+        "reason": "需要获取注册备案资料中的标签样稿进行比对",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要比对文案与注册备案资料中的标签样稿是否一致，属于关系判断"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "注册备案资料中的产品标签样稿",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "需要人工比对注册备案资料，无法自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "注册备案资料中的产品标签样稿"
+        ],
+        "data_sources": [
+          "国家药监局化妆品注册备案信息平台"
+        ],
+        "note": "后期需接入注册备案资料核验接口，自动比对标签内容一致性"
+      },
+      "rule_uid": "RUID-1121cc681df8ab03",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "需要人工比对注册备案资料，运营无法自行判断一致性，且后果风险高，必须法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-MEDICAL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPM-2022",
+      "source_type": "法规",
+      "platform": null,
+      "title": "化妆品标签不得明示或暗示医疗作用",
+      "dimension": "涉医疗宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPM-2022",
+        "source_article_id": "第三十五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPM",
+          "article": "第三十五条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "化妆品的名称、成分、功效等标签标注的事项应当真实、合法，不得含有明示或者暗示具有医疗作用，以及虚假或者引人误解、违背社会公序良俗等违反法律法规的内容。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "规则禁止化妆品标签含有医疗作用暗示，属于明确禁止性规定"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "医疗",
+            "治疗",
+            "治愈",
+            "消炎",
+            "抗炎",
+            "杀菌",
+            "药用",
+            "药物",
+            "医美",
+            "医学",
+            "临床",
+            "疗效",
+            "药妆"
+          ],
+          "regex": [],
+          "context_signals": [
+            "明示或暗示医疗作用",
+            "医疗术语"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案是否使用医疗术语或暗示产品具有医疗功效，如治疗疾病、消炎杀菌等",
+        "decision": "若文案含有明示或暗示医疗作用的表述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "医疗作用",
+          "化妆品",
+          "禁止性内容"
+        ],
+        "vector_text": "本产品具有消炎杀菌功效，医用级护肤品，临床验证有效，药妆，治疗痘痘，抗炎修复，药用成分，医学护肤，医",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则适合语义召回，因为医疗暗示常通过变体表达（如药妆、医用级、临床验证）规避关键词，HyDE风格文本覆盖了多种真实违规话术，提升召回率。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、医疗、宣传、引人误解.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:23:58",
+          "old_vector_text": "化妆品文案中不得含有明示或暗示具有医疗作用的表述，如治疗、治愈、消炎、杀菌等医疗术语",
+          "old_semantic_reason": "医疗暗示可能通过语义变体表达，关键词可能漏召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "医疗暗示",
+            "化妆品违规",
+            "药妆",
+            "医用级",
+            "临床验证",
+            "消炎杀菌",
+            "禁止性内容"
+          ],
+          "negative_signals_recommendation": [
+            "保湿",
+            "滋润",
+            "清洁",
+            "温和",
+            "护肤",
+            "化妆品"
+          ],
+          "change_summary": "将原法条式vector_text改写为HyDE风格的真实违规文案集合，覆盖多种医疗暗示变体表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求删除或修改含有医疗暗示的表述",
+      "examples": {
+        "violation": [
+          "本产品具有消炎杀菌功效",
+          "医用级护肤品",
+          "临床验证有效"
+        ],
+        "compliant": [
+          "本产品保湿滋润",
+          "温和清洁肌肤"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止明示或暗示医疗作用，属于直接适用的禁止性规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_direct",
+        "route_reason": "可通过关键词和语义检测自动判定，无需人工介入",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-7694a8850060153f",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接删除或替换医疗术语，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-FALSE-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPM-2022",
+      "source_type": "法规",
+      "platform": null,
+      "title": "化妆品标签不得虚假或引人误解",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPM-2022",
+        "source_article_id": "第三十五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPM",
+          "article": "第三十五条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "化妆品的名称、成分、功效等标签标注的事项应当真实、合法，不得含有明示或者暗示具有医疗作用，以及虚假或者引人误解、违背社会公序良俗等违反法律法规的内容。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "规则禁止化妆品标签虚假或引人误解，属于原则性禁止规定"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚假",
+            "误解",
+            "夸大",
+            "不实",
+            "误导"
+          ],
+          "regex": [],
+          "context_signals": [
+            "功效宣称与事实不符",
+            "数据无依据"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案是否存在夸大功效、无依据宣称、与事实不符等虚假或引人误解的表述",
+        "decision": "若文案存在虚假或引人误解的内容，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "引人误解",
+          "化妆品"
+        ],
+        "vector_text": "使用后7天美白（无依据）?100%用户满意（无数据支撑）?虚假?误解?夸大?不实?误导?功效宣称与事",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、医疗、夸大、宣传.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:25:35",
+          "old_vector_text": "化妆品文案中不得含有虚假或引人误解的内容，如夸大功效、无依据宣称、与事实不符等",
+          "old_semantic_reason": "虚假宣传形式多样，关键词难以全面覆盖，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "虚假宣传",
+            "引人误解",
+            "化妆品"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求删除或修改虚假或引人误解的表述，并提供相关证明材料",
+      "examples": {
+        "violation": [
+          "使用后7天美白（无依据）",
+          "100%用户满意（无数据支撑）"
+        ],
+        "compliant": [
+          "含有维生素C成分",
+          "帮助提亮肤色"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "历史案例",
+          "法务口径"
+        ],
+        "reason": "虚假宣传判断需参考历史案例和法务解释",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "虚假或引人误解的判断需要结合具体语境和事实，属于开放解释"
+      },
+      "routing": {
+        "interpretation_dependency": "需要法务解释何为虚假或引人误解",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假宣传判断复杂，需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "功效宣称证明材料",
+          "数据来源"
+        ],
+        "data_sources": [],
+        "note": "后期需接入功效宣称证明材料核验"
+      },
+      "rule_uid": "RUID-f5ed5ecace7a0628",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假或引人误解属于开放法律概念，需要法务结合功效宣称材料与数据来源进行边界判断，且后果风险高，运营难以自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPM-2022",
+      "source_type": "法规",
+      "platform": null,
+      "title": "化妆品不得与食品、药品等产品相混淆，防止误食误用",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPM",
+        "source_article_id": "第三十八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPM",
+          "article": "第三十八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "化妆品注册人、备案人、受托生产企业应当采取措施避免产品性状、外观形态等与食品、药品等产品相混淆，防止误食、误用。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "食品",
+            "药品",
+            "糖果",
+            "饮料",
+            "胶囊",
+            "药片",
+            "口服",
+            "食用"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中描述化妆品性状、外观形态时，使用与食品或药品相似的语言，可能引起消费者误食误用",
+        "decision": "若广告文案描述化妆品外观、性状时，使用与食品或药品相似表述，且未明确区分，判定违规"
+      },
+      "recall": {
+        "tags": [
+          "化妆品混淆",
+          "误食误用",
+          "标签标识"
+        ],
+        "vector_text": "本款面霜像糖果一样香甜?这款精华液如药片般浓缩?食品?药品?糖果?饮料?胶囊?药片?口服?食用?化妆",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:26:43",
+          "old_vector_text": "化妆品广告中不得将产品性状、外观形态描述得与食品或药品相似，防止消费者误食误用",
+          "old_semantic_reason": "关键词可能无法覆盖所有混淆性表述，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "化妆品混淆",
+            "误食误用",
+            "标签标识"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Missing semantic_reason.",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝或要求修改，删除混淆性表述",
+      "examples": {
+        "violation": [
+          "本款面霜像糖果一样香甜",
+          "这款精华液如药片般浓缩"
+        ],
+        "compliant": [
+          "本款面霜质地细腻",
+          "这款精华液高浓度配方"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定化妆品不得与食品、药品混淆，广告文案属于措施范畴"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-70e2080dbd695f1f",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发需结合上下文判断是否构成混淆，但运营可依据明确示例直接修改文案，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPM-2022",
+      "source_type": "法规",
+      "platform": null,
+      "title": "普通化妆品不得宣称特殊化妆品相关功效",
+      "dimension": "功效超备案",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "普通化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPM",
+        "source_article_id": "第三十八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPM",
+          "article": "第三十八条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "普通化妆品不得宣称特殊化妆品相关功效。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "防晒",
+            "美白",
+            "祛斑",
+            "防脱发",
+            "染发",
+            "烫发",
+            "特殊化妆品",
+            "特殊用途"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中普通化妆品宣称具有特殊化妆品功效，如防晒、美白、祛斑、防脱发等",
+        "decision": "若普通化妆品广告宣称特殊化妆品功效，判定违规"
+      },
+      "recall": {
+        "tags": [
+          "普通化妆品",
+          "特殊化妆品",
+          "功效宣称"
+        ],
+        "vector_text": "本款面霜具有美白功效?这款乳液能防晒?防晒?美白?祛斑?防脱发?染发?烫发?特殊化妆品?特殊用途?普",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:28:14",
+          "old_vector_text": "普通化妆品广告不得宣称防晒、美白、祛斑、防脱发、染发、烫发等特殊化妆品功效",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "普通化妆品",
+            "特殊化妆品",
+            "功效宣称"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝或要求修改，删除违规功效宣称",
+      "examples": {
+        "violation": [
+          "本款面霜具有美白功效",
+          "这款乳液能防晒"
+        ],
+        "compliant": [
+          "本款面霜保湿滋润",
+          "这款乳液质地清爽"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接禁止普通化妆品宣称特殊化妆品功效"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-232bd1ed0d599941",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规功效宣称，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-LABEL-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPM-2022",
+      "source_type": "法规",
+      "platform": null,
+      "title": "化妆品经营者应披露与注册或备案资料一致的标签信息",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "电子商务平台",
+          "自建网站",
+          "其他网络服务"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPM-2022",
+        "source_article_id": "第四十四条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPM",
+          "article": "第四十四条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "电子商务平台内化妆品经营者以及通过自建网站、其他网络服务经营化妆品的电子商务经营者应当在其经营活动主页面全面、真实、准确披露与化妆品注册或者备案资料一致的化妆品标签等信息。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "化妆品标签",
+            "注册资料",
+            "备案资料",
+            "标签信息"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中披露的化妆品标签信息是否与注册或备案资料一致，若存在不一致或未披露标签信息，则可能违规",
+        "decision": "若文案中化妆品标签信息与注册或备案资料不一致，或未在主页面全面、真实、准确披露，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "化妆品标签一致性",
+          "注册备案资料",
+          "标签披露"
+        ],
+        "vector_text": "化妆品经营者应在主页面全面、真实、准确披露与注册或备案资料一致的化妆品标签信息",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "关键词可能无法覆盖所有标签信息不一致的场景，需语义辅助判断",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求经营者确保文案中化妆品标签信息与注册或备案资料一致，否则需修改或下架",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了化妆品经营者的标签披露义务，可形成明确审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需核验文案中标签信息是否与注册或备案资料一致",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要经营者提供注册或备案资料以比对标签信息一致性",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "化妆品注册或备案资料"
+        ],
+        "data_sources": [
+          "国家药监局化妆品注册备案信息平台"
+        ],
+        "note": "后期需接入资料核验以确认标签信息是否与注册或备案资料一致"
+      },
+      "rule_uid": "RUID-8df0336ce7aaf59c",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需运营提供注册或备案资料以比对标签信息一致性，运营无法自行判断是否一致",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

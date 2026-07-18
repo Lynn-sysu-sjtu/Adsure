@@ -1,0 +1,448 @@
+{
+  "meta": {
+    "name": "保健食品规则库-小红书聚光帮助中心 - 文档",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "保健食品广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "小红书聚光帮助中心 - 文档.pdf",
+    "source_track": "保健食品",
+    "rule_count": 2,
+    "error_count": 0,
+    "source_units_processed": 1,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "XHS",
+      "name": "小红书聚光帮助中心 - 文档",
+      "short": "XHS-小红书聚光帮助中心-文档",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "小红书"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "HF-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_聚光_物料资质",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "保健食品广告不得利用广告代言人作推荐、证明",
+      "dimension": "广告代言不合规",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "聚光平台"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "医疗、药品、医疗器械、保健食品广告不得利用广告代言人作推荐、证明。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "代言人",
+            "推荐",
+            "证明",
+            "代言",
+            "亲测",
+            "亲身体验",
+            "推荐使用",
+            "强烈推荐"
+          ],
+          "regex": [],
+          "context_signals": [
+            "保健食品",
+            "保健品",
+            "营养补充剂",
+            "膳食补充剂"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否出现以个人名义对保健食品进行推荐或证明的表述，包括但不限于明星、网红、素人代言、推荐语、使用体验分享等",
+        "decision": "若检测到保健食品广告中出现代言人推荐或证明内容，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "广告代言",
+          "代言人",
+          "推荐证明",
+          "小红书",
+          "聚光"
+        ],
+        "vector_text": "XX明星推荐这款保健品，效果显著；我亲测这款保健品有效，推荐给大家；网红亲测，效果惊人；素人分享，吃",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则禁止保健食品广告中使用代言人推荐或证明，包括明星、网红、素人等的推荐语和亲身体验分享，关键词可能无法覆盖所有变体，语义召回可有效捕获口语化、软性推荐表述。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:45:40",
+          "old_vector_text": "保健食品广告中不得使用任何形式的广告代言人进行推荐或证明，包括明星、网红、素人等的推荐语、亲身体验分享等",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，如'我吃了效果很好'等口语化表达",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "保健食品",
+            "广告代言",
+            "推荐证明",
+            "亲测",
+            "网红推荐",
+            "素人分享",
+            "明星同款"
+          ],
+          "negative_signals_recommendation": [
+            "普通食品",
+            "非保健食品",
+            "个人使用体验不涉及推荐"
+          ],
+          "change_summary": "将原法条式描述改写为真实违规文案集合，包含明星、网红、素人等多种代言场景及口语化推荐表述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 143
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 代言、医疗、显著、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告素材审核不通过，被驳回"
+      },
+      "relations": [],
+      "disposition": "驳回广告素材，要求删除代言人推荐或证明内容",
+      "examples": {
+        "violation": [
+          "XX明星推荐这款保健品，效果显著",
+          "我亲测这款保健品有效，推荐给大家"
+        ],
+        "compliant": [
+          "本品含有XX成分，有助于补充维生素C",
+          "经国家批准，具有保健功能"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "平台规则明确禁止保健食品广告利用广告代言人作推荐、证明，规则清晰可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可自动判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-581e6b801073e750",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词和语义检测可自动判定，运营可直接删除或替换代言表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-AD-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_聚光_行业认证",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "保健食品广告需完成行业认证后方可投放",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "保健食品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "聚光平台"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书聚光帮助中心-文档",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "如您推广内容涉及医疗保健功效，请完成【医疗器械/保健食品/特殊医学用途配方食品/OTC药品】行业认证后再提交广告审核。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品",
+            "保健品",
+            "保健",
+            "营养",
+            "补充",
+            "功效",
+            "调节",
+            "增强免疫力",
+            "辅助降血脂",
+            "改善睡眠"
+          ],
+          "regex": [],
+          "context_signals": [
+            "保健食品",
+            "保健品",
+            "膳食补充剂",
+            "营养补充剂"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否涉及保健食品或医疗保健功效相关描述，如功效宣称、保健功能等",
+        "decision": "若检测到涉及保健食品或医疗保健功效内容，且未完成行业认证，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "行业认证",
+          "资质",
+          "小红书",
+          "聚光"
+        ],
+        "vector_text": "这款保健品能增强免疫力，调节身体机能，改善睡眠，辅助降血脂，营养补充，保健功效，膳食补充剂，天然草本，提升精力，抗疲劳，排毒养颜，延缓衰老，促进健康，未认证直接推广，无资质投放保健食品广告，小红书聚光平台推广保健品，行业认证未完成就发广告，保健食品功效宣传，软性暗示保健作用，规避认证直接卖货，私域文案推荐保健品，直播话术说保健功效，详情页写调节身体，Banner写增强免疫，图文种草保健品，没有蓝帽子标志，未备案推广营养补充剂。",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则核心是资质认证前置，但文案侧难以直接检测认证状态，语义召回应聚焦于保健食品相关功效表达和推广场景，作为关键词的补充，避免漏召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:45:51",
+          "old_vector_text": "推广保健食品或涉及医疗保健功效的广告内容，必须先完成小红书平台的保健食品行业认证，否则不得投放广告",
+          "old_semantic_reason": "保健食品相关表述多样，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健食品",
+            "行业认证",
+            "资质",
+            "功效宣称",
+            "小红书",
+            "聚光",
+            "营养补充剂",
+            "违规推广"
+          ],
+          "negative_signals_recommendation": [
+            "普通食品",
+            "无保健功能",
+            "已认证",
+            "蓝帽子"
+          ],
+          "change_summary": "将原规则性描述改写为仿真违规文案集合，覆盖多种保健食品功效表达和推广场景，增强语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、蓝帽、资质. It also has content signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告素材审核不通过，被驳回，提示需完成行业认证"
+      },
+      "relations": [],
+      "disposition": "驳回广告素材，提示广告主先完成保健食品行业认证后再提交",
+      "examples": {
+        "violation": [
+          "这款保健品能增强免疫力",
+          "XX牌营养补充剂，调节身体机能"
+        ],
+        "compliant": [
+          "本品为普通食品，无保健功能",
+          "已通过保健食品行业认证的广告"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "平台规则明确要求涉及医疗保健功效需完成行业认证，规则清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需确认广告主是否已完成行业认证",
+        "misjudgment_cost": "低",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需依赖平台行业认证状态数据，无法仅凭文案判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "保健食品行业认证状态"
+        ],
+        "data_sources": [
+          "小红书聚光平台行业认证系统"
+        ],
+        "note": "需接入平台行业认证数据接口，确认广告主是否已完成保健食品行业认证"
+      },
+      "rule_uid": "RUID-0890919fcdafb70b",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但核心判断依赖平台行业认证状态数据，运营无法自行确认，需先补充认证信息。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

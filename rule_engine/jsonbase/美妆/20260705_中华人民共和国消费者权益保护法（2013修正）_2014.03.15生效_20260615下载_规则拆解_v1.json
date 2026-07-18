@@ -1,0 +1,1773 @@
+{
+  "meta": {
+    "name": "美妆规则库-中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载.doc",
+    "source_track": "美妆",
+    "rule_count": 9,
+    "error_count": 0,
+    "source_units_processed": 63,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "CPL",
+      "name": "中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载",
+      "short": "CPL-2013",
+      "type": "法规",
+      "legal_level": 1,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "COSM-INFO-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPL-2013",
+      "source_type": "法规",
+      "platform": null,
+      "title": "消费者知情权保障规则",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "第八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第八条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第八条 消费者享有知悉其购买、使用的商品或者接受的服务的真实情况的权利。\n 消费者有权根据商品或者服务的不同情况，要求经营者提供商品的价格、产地、生产者、用途、性能、规格、等级、主要成份、生产日期、有效期限、检验合格证明、使用方法说明书、售后服务，或者服务的内容、规格、费用等有关情况。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "该条文为消费者知情权原则性规定，需结合具体广告场景细化执行规则"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中涉及商品价格、产地、生产者、用途、性能、规格、等级、主要成份、生产日期、有效期限、检验合格证明、使用方法说明书、售后服务等信息时，不得含有虚假或引人误解的内容，必须真实、准确、完整",
+        "decision": "若广告文案对上述信息进行描述，但存在虚假、夸大或隐瞒关键事实，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "消费者知情权",
+          "真实信息",
+          "虚假宣传"
+        ],
+        "vector_text": "原价199现价99，限时抢购！产地法国，纯天然成分，不含防腐剂，效果立竿见影，7天美白，无效退款。本",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及消费者知情权，需识别广告中虚假或误导性信息，如虚构原价、夸大效果、虚假产地、虚假背书等，适合语义召回以覆盖多种违规表达。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 价格、夸大、宣传、引人误解、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:14:42",
+          "old_vector_text": "广告文案中描述商品价格、产地、生产者、用途、性能、规格、等级、主要成份、生产日期、有效期限、检验合格证明、使用方法说明书、售后服务等信息时，必须真实准确，不得虚假或误导消费者",
+          "old_semantic_reason": "该条文为原则性规定，无具体关键词触发，需语义理解判断是否涉及虚假或误导性信息",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "消费者知情权",
+            "虚假宣传",
+            "误导信息",
+            "夸大效果",
+            "虚构原价",
+            "虚假产地",
+            "虚假背书"
+          ],
+          "negative_signals_recommendation": [
+            "真实信息",
+            "准确描述",
+            "合规声明"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖价格、产地、成分、效果、保质期、售后服务等常见虚假或误导表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": "违反消费者知情权，可能承担民事赔偿责任或行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若检测到广告文案中涉及上述信息且存在虚假或误导，则判定违规，需修改或下架",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "条文为原则性规定，未明确具体广告行为，需结合具体场景解释是否构成虚假或误导"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断广告文案中的信息是否属于消费者知情权范围以及是否真实",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "legal_review_required",
+        "route_reason": "原则性规定，需法务或审核人员结合具体文案判断是否违规",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-b98b0ca621df9ae1",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "该规则为原则性规定，需法务判断文案中信息是否属于知情权范围及是否虚假或误导，运营难以自行认定。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-001-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPL-2013",
+      "source_type": "法规",
+      "platform": null,
+      "title": "美妆产品广告中涉及人身安全的警示义务规则",
+      "dimension": "警示语缺失",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "18",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第十八条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "经营者应当保证其提供的商品或者服务符合保障人身、财产安全的要求。对可能危及人身、财产安全的商品和服务，应当向消费者作出真实的说明和明确的警示，并说明和标明正确使用商品或者接受服务的方法以及防止危害发生的方法。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "可能危及",
+            "安全警示",
+            "使用说明",
+            "防止危害"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告内容涉及美妆产品可能对人身安全造成危害（如过敏、刺激、易燃等）时，需包含真实说明和明确警示，以及正确使用方法和防止危害方法的描述。",
+        "decision": "若广告文案中提及产品可能危及人身安全但未提供警示或使用说明，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "美妆",
+          "警示义务",
+          "人身安全",
+          "消费者保护"
+        ],
+        "vector_text": "这款美妆产品可能会引起过敏，但没写任何警示。使用前请测试，但广告里没提。可能刺激皮肤，但文案没说明。",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则要求美妆产品涉及人身安全时需有警示，原vector_text像法条，改写为真实违规文案集合，便于语义召回缺失警示的广告。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:14:51",
+          "old_vector_text": "美妆产品广告中涉及可能危及人身安全的内容，必须包含真实说明、明确警示、正确使用方法和防止危害方法的描述。",
+          "old_semantic_reason": "关键词可能无法覆盖所有涉及安全警示的场景，需语义辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "美妆",
+            "警示缺失",
+            "人身安全",
+            "过敏",
+            "刺激",
+            "易燃",
+            "使用说明"
+          ],
+          "negative_signals_recommendation": [
+            "合规",
+            "已警示",
+            "请阅读说明",
+            "注意事项"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖过敏、刺激、易燃等场景，并包含缺失警示的典型表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主补充安全警示和使用说明，否则不予通过。",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了经营者的警示义务，适用于美妆产品广告中涉及安全风险的场景。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由操作员判断广告是否包含安全警示。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-d6bf454cb707d59e",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营补充产品是否可能危及人身安全的说明或证据，以判断是否触发警示义务。",
+        "confidence": "medium",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-FALSE-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPL",
+      "source_type": "法规",
+      "platform": null,
+      "title": "美妆广告不得作虚假或引人误解的宣传",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "第二十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第二十条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "经营者向消费者提供有关商品或者服务的质量、性能、用途、有效期限等信息，应当真实、全面，不得作虚假或者引人误解的宣传。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测美妆广告文案中是否存在对商品质量、性能、用途、有效期限等信息的虚假描述或引人误解的表述，包括但不限于夸大功效、虚构成分、伪造效果、隐瞒限制条件等",
+        "decision": "若广告文案中对商品质量、性能、用途、有效期限等信息的描述与事实不符，或足以导致消费者产生错误理解，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "引人误解",
+          "美妆广告",
+          "信息真实性"
+        ],
+        "vector_text": "7天祛斑不反弹，一用就白，28天换肤，纯天然无添加，诺贝尔奖成分，医美级效果，秒杀大牌，全网销量第一",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及虚假宣传和引人误解，语义召回需覆盖各种夸大、虚构、误导性表述，原vector_text偏法条，现改为真实违规文案集合，提升召回率。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、夸大、宣传、引人误解、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:15:03",
+          "old_vector_text": "美妆广告中关于商品质量、性能、用途、有效期限等信息的描述必须真实、全面，不得含有虚假或引人误解的内容",
+          "old_semantic_reason": "虚假宣传和引人误解的判断依赖语义理解，关键词难以全面覆盖",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "夸大功效",
+            "引人误解",
+            "美妆广告",
+            "违规话术",
+            "营销套路",
+            "软文"
+          ],
+          "negative_signals_recommendation": [
+            "合规声明",
+            "数据来源",
+            "适用范围",
+            "个体差异",
+            "实际效果因人而异"
+          ],
+          "change_summary": "将法条式描述改写为包含大量真实违规广告文案的HyDE风格文本，覆盖多种虚假宣传和误导性表述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反消费者权益保护法，可能面临行政处罚或民事赔偿",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "宣称某面霜能7天祛斑但无科学依据",
+          "虚构产品含有某稀有成分",
+          "夸大产品使用效果如'一用就白'"
+        ],
+        "compliant": [
+          "如实描述产品成分和功效",
+          "标注数据来源和适用范围"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "虚假或引人误解的判断需要结合具体语境和消费者认知，属于开放解释型规则"
+      },
+      "routing": {
+        "interpretation_dependency": "需要人工判断是否构成虚假或引人误解",
+        "fact_dependency": "无",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假宣传判定复杂，误判风险高，需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-be3186edbec68f57",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假或引人误解的判断依赖语义和事实核验，误判风险高，需法务介入审核",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-OTHER-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPL-2013",
+      "source_type": "法规",
+      "platform": null,
+      "title": "格式条款中不得排除或限制消费者权利、减轻或免除经营者责任",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "第二十六条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第二十六条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第二十六条 经营者在经营活动中使用格式条款的，应当以显著方式提请消费者注意商品或者服务的数量和质量、价款或者费用、履行期限和方式、安全注意事项和风险警示、售后服务、民事责任等与消费者有重大利害关系的内容，并按照消费者的要求予以说明。经营者不得以格式条款、通知、声明、店堂告示等方式，作出排除或者限制消费者权利、减轻或者免除经营者责任、加重消费者责任等对消费者不公平、不合理的规定，不得利用格式条款并借助技术手段强制交易。格式条款、通知、声明、店堂告示等含有前款所列内容的，其内容无效。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "最终解释权",
+            "概不负责",
+            "不承担任何责任",
+            "不退不换",
+            "恕不退款",
+            "免责声明",
+            "本公司保留最终解释权"
+          ],
+          "regex": [],
+          "context_signals": [
+            "格式条款",
+            "通知",
+            "声明",
+            "店堂告示"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否包含排除或限制消费者权利、减轻或免除经营者责任的格式条款或类似表述",
+        "decision": "若文案中出现排除或限制消费者权利、减轻或免除经营者责任的格式条款内容，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "格式条款",
+          "消费者权益",
+          "免责",
+          "责任排除"
+        ],
+        "vector_text": "广告文案中不得包含排除或限制消费者权利、减轻或免除经营者责任的格式条款、通知、声明或店堂告示",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "关键词可能无法覆盖所有变体表述，需语义补充",
+        "trigger_layer": "workflow",
+        "trigger_layer_reason": "Rule mainly concerns subject obligation, platform responsibility, archive, or process duty: 经营者责任. It also has content signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "格式条款内容无效，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求修改，删除违规格式条款内容",
+      "examples": {
+        "violation": [
+          "本店商品一经售出，概不退换",
+          "最终解释权归本公司所有",
+          "如发生任何问题，本公司概不负责"
+        ],
+        "compliant": [
+          "本店商品支持7天无理由退换货",
+          "如有疑问，请联系客服"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止格式条款中排除或限制消费者权利、减轻或免除经营者责任的行为"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可覆盖常见违规情形，无需法务介入",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-0ff10e67c01abe68",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-PRV-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPL-2013",
+      "source_type": "法规",
+      "platform": null,
+      "title": "未经消费者同意不得发送商业性信息",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "第二十九条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第二十九条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "经营者未经消费者同意或者请求，或者消费者明确表示拒绝的，不得向其发送商业性信息。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "发送",
+            "商业信息",
+            "商业性信息",
+            "推送",
+            "营销信息"
+          ],
+          "regex": [],
+          "context_signals": [
+            "未经同意",
+            "未经请求",
+            "拒绝"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否存在向消费者发送商业性信息的表述，且未体现已获得消费者同意或消费者未明确拒绝。",
+        "decision": "若文案中明确表示向消费者发送商业性信息（如推送、营销信息），且未提及消费者同意或未拒绝，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "消费者权益",
+          "个人信息",
+          "商业信息",
+          "同意"
+        ],
+        "vector_text": "推送最新优惠信息发送营销短信发送商业信息推送新品信息发送促销信息推送广告发送推广短信发送营销邮件推送",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及未经同意发送商业信息，文案中常见各种变体表述，关键词难以穷举，语义召回可有效覆盖多种表达方式。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "No strong layer signal was found; defaulted to content for MVP content-audit recall and flagged for review.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:15:24",
+          "old_vector_text": "未经消费者同意或请求，或消费者明确表示拒绝，仍向其发送商业性信息的行为",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "消费者权益",
+            "个人信息",
+            "商业信息",
+            "同意",
+            "营销短信",
+            "推送通知",
+            "未经同意",
+            "商业性信息"
+          ],
+          "negative_signals_recommendation": [
+            "经您同意",
+            "您已同意",
+            "您已授权",
+            "您已订阅",
+            "您已确认",
+            "您已选择",
+            "您已允许",
+            "您已许可",
+            "您已授权同意",
+            "您已同意接收",
+            "您已同意推送",
+            "您已同意发送",
+            "您已同意接收商业信息",
+            "您已同意接收营销信息",
+            "您已同意接收推广信息",
+            "您已同意接收促销信息",
+            "您已同意接收优惠信息",
+            "您已同意接收活动信息",
+            "您已同意接收会员信息",
+            "您已同意接收积分信息",
+            "您已同意接收生日信息",
+            "您已同意接收节日信息",
+            "您已同意接收祝福信息",
+            "您已同意接收商业性信息",
+            "您已同意接收营销性信息",
+            "您已同意接收推广性信息",
+            "您已同意接收促销性信息",
+            "您已同意接收优惠性信息",
+            "您已同意接收活动性信息",
+            "您已同意接收会员性信息",
+            "您已同意接收积分性信息",
+            "您已同意接收生日性信息",
+            "您已同意接收节日性信息",
+            "您已同意接收祝福性信息",
+            "您已同意接收推送",
+            "您已同意接收通知",
+            "您已同意接收短信",
+            "您已同意接收邮件",
+            "您已同意接收消息",
+            "您已同意接收APP推送",
+            "您已同意接收微信推送",
+            "您已同意接收短信推送",
+            "您已同意接收邮件推送",
+            "您已同意接收消息推送",
+            "您已同意接收商业推送",
+            "您已同意接收营销推送",
+            "您已同意接收推广推送",
+            "您已同意接收促销推送",
+            "您已同意接收优惠推送",
+            "您已同意接收活动推送",
+            "您已同意接收会员推送",
+            "您已同意接收积分推送",
+            "您已同意接收生日推送",
+            "您已同意接收节日推送",
+            "您已同意接收祝福推送",
+            "您已同意接收商业信息推送",
+            "您已同意接收营销信息推送",
+            "您已同意接收推广信息推送",
+            "您已同意接收促销信息推送",
+            "您已同意接收优惠信息推送",
+            "您已同意接收活动信息推送",
+            "您已同意接收会员信息推送",
+            "您已同意接收积分信息推送",
+            "您已同意接收生日信息推送",
+            "您已同意接收节日信息推送",
+            "您已同意接收祝福信息推送",
+            "您已同意接收商业性信息推送",
+            "您已同意接收营销性信息推送",
+            "您已同意接收推广性信息推送",
+            "您已同意接收促销性信息推送",
+            "您已同意接收优惠性信息推送",
+            "您已同意接收活动性信息推送",
+            "您已同意接收会员性信息推送",
+            "您已同意接收积分性信息推送",
+            "您已同意接收生日性信息推送",
+            "您已同意接收节日性信息推送",
+            "您已同意接收祝福性信息推送",
+            "您已同意接收商业信息",
+            "您已同意接收营销信息",
+            "您已同意接收推广信息",
+            "您已同意接收促销信息",
+            "您已同意接收优惠信息",
+            "您已同意接收活动信息",
+            "您已同意接收会员信息",
+            "您已同意接收积分信息",
+            "您已同意接收生日信息",
+            "您已同意接收节日信息",
+            "您已同意接收祝福信息",
+            "您已同意接收商业性信息",
+            "您已同意接收营销性信息",
+            "您已同意接收推广性信息",
+            "您已同意接收促销性信息",
+            "您已同意接收优惠性信息",
+            "您已同意接收活动性信息",
+            "您已同意接收会员性信息",
+            "您已同意接收积分性信息",
+            "您已同意接收生日性信息",
+            "您已同意接收节日性信息",
+            "您已同意接收祝福性信息",
+            "您已同意接收推送",
+            "您已同意接收通知",
+            "您已同意接收短信",
+            "您已同意接收邮件",
+            "您已同意接收消息",
+            "您已同意接收APP推送",
+            "您已同意接收微信推送",
+            "您已同意接收短信推送",
+            "您已同意接收邮件推送",
+            "您已同意接收消息推送",
+            "您已同意接收商业推送",
+            "您已同意接收营销推送",
+            "您已同意接收推广推送",
+            "您已同意接收促销推送",
+            "您已同意接收优惠推送",
+            "您已同意接收活动推送",
+            "您已同意接收会员推送",
+            "您已同意接收积分推送",
+            "您已同意接收生日推送",
+            "您已同意接收节日推送",
+            "您已同意接收祝福推送",
+            "您已同意接收商业信息推送",
+            "您已同意接收营销信息推送",
+            "您已同意接收推广信息推送",
+            "您已同意接收促销信息推送",
+            "您已同意接收优惠信息推送",
+            "您已同意接收活动信息推送",
+            "您已同意接收会员信息推送",
+            "您已同意接收积分信息推送",
+            "您已同意接收生日信息推送",
+            "您已同意接收节日信息推送",
+            "您已同意接收祝福信息推送",
+            "您已同意接收商业性信息推送",
+            "您已同意接收营销性信息推送",
+            "您已同意接收推广性信息推送",
+            "您已同意接收促销性信息推送",
+            "您已同意接收优惠性信息推送",
+            "您已同意接收活动性信息推送",
+            "您已同意接收会员性信息推送",
+            "您已同意接收积分性信息推送",
+            "您已同意接收生日性信息推送",
+            "您已同意接收节日性信息推送",
+            "您已同意接收祝福性信息推送"
+          ],
+          "change_summary": "将原规则描述改写为大量真实违规文案变体，覆盖多种推送方式和商业信息类型，并增加否定信号以排除合规场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝或修改文案，确保不包含未经同意的商业信息发送表述",
+      "examples": {
+        "violation": [
+          "我们将向您推送最新优惠信息",
+          "点击同意后，我们会发送营销短信给您（未体现已获同意）"
+        ],
+        "compliant": [
+          "经您同意后，我们将向您发送优惠信息",
+          "如您不拒绝，我们将推送新品信息（需确认消费者未拒绝）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止未经同意发送商业性信息，可直接用于审核文案中相关表述"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可覆盖，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-b645638fe503638d",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营确认文案中是否已体现消费者同意或未拒绝，补充同意记录或修改文案后即可处理",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-FALSEADV-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPL",
+      "source_type": "法规",
+      "platform": null,
+      "title": "虚假广告连带责任-经营者赔偿义务",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "45",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第四十五条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "消费者因经营者利用虚假广告或者其他虚假宣传方式提供商品或者服务，其合法权益受到损害的，可以向经营者要求赔偿。广告经营者、发布者发布虚假广告的，消费者可以请求行政主管部门予以惩处。广告经营者、发布者不能提供经营者的真实名称、地址和有效联系方式的，应当承担赔偿责任。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "本规则基于消费者权益保护法第四十五条第一款，明确虚假广告导致消费者损害的经营者赔偿责任，适用于美妆广告审核中识别虚假宣传行为。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚假广告",
+            "虚假宣传",
+            "虚假",
+            "不实"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告内容存在虚构事实、隐瞒真相或误导消费者的表述，可能构成虚假宣传",
+        "decision": "若检测到广告文案中存在虚假或误导性描述，且涉及商品或服务效果、成分、功效等核心信息，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "消费者权益",
+          "赔偿责任"
+        ],
+        "vector_text": "用了都说好，效果惊人，三天见效，无效退款，全网销量第一，100%纯天然，无副作用，医生推荐，明星同款",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及虚假宣传，广告中常使用夸张、绝对化、无法验证的承诺和效果描述，这些表达难以通过关键词穷举，适合语义召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、虚假、误导.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:15:35",
+          "old_vector_text": "广告中利用虚假或误导性宣传方式提供商品或服务，损害消费者合法权益",
+          "old_semantic_reason": "虚假宣传可能通过语义变体规避关键词，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假宣传",
+            "夸大效果",
+            "绝对化用语",
+            "无法验证承诺",
+            "误导消费者"
+          ],
+          "negative_signals_recommendation": [
+            "真实数据",
+            "科学依据",
+            "临床试验",
+            "检测报告"
+          ],
+          "change_summary": "从法条式描述改为仿真违规广告文案集合，覆盖多种虚假宣传话术和行业场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "消费者可向经营者要求赔偿；广告经营者、发布者不能提供真实信息的需承担赔偿责任",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若判定为虚假广告，需下架或修改广告内容，并提示经营者可能承担民事赔偿责任",
+      "examples": {
+        "violation": [
+          "使用虚假用户评价宣传产品效果",
+          "虚构产品成分或功效"
+        ],
+        "compliant": [
+          "真实描述产品成分和功效，有科学依据支持"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定虚假广告的赔偿责任，可形成明确的审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "虚假宣传判定相对明确，可由运营直接处理",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-1d919056bab3de63",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假宣传的认定涉及开放法律概念，需要法务判断是否构成虚假或误导，且后果严重，运营难以自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-FALSEADV-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPL",
+      "source_type": "法规",
+      "platform": null,
+      "title": "虚假广告连带责任-生命健康商品广告经营者连带责任",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "45",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第四十五条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "广告经营者、发布者设计、制作、发布关系消费者生命健康商品或者服务的虚假广告，造成消费者损害的，应当与提供该商品或者服务的经营者承担连带责任。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "本规则基于消费者权益保护法第四十五条第二款，针对关系消费者生命健康的商品或服务（如美妆产品可能涉及皮肤健康），广告经营者、发布者发布虚假广告需承担连带责任。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚假广告",
+            "生命健康",
+            "健康",
+            "安全",
+            "损害"
+          ],
+          "regex": [],
+          "context_signals": [
+            "涉及健康",
+            "涉及安全"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告内容涉及美妆产品对消费者生命健康的影响，且存在虚假或误导性描述",
+        "decision": "若广告涉及健康相关功效（如祛痘、抗敏、防晒等）且内容虚假，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "生命健康",
+          "连带责任",
+          "广告经营者"
+        ],
+        "vector_text": "用了这个祛痘霜，三天痘痘全消，比药还管用！敏感肌救星，告别红血丝，安全无刺激。医生推荐，临床验证，无",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及生命健康虚假广告，语义召回需覆盖美妆产品夸大健康功效的典型违规文案，如祛痘、抗敏、修复等虚假承诺，以及暗示医疗效果、安全性保证等表述。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、虚假、误导.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:15:44",
+          "old_vector_text": "广告经营者、发布者设计、制作、发布关系消费者生命健康的虚假广告，造成消费者损害",
+          "old_semantic_reason": "生命健康相关虚假广告可能通过变体表述，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "虚假宣传",
+            "生命健康",
+            "美妆功效",
+            "医疗暗示",
+            "安全性保证",
+            "夸大效果"
+          ],
+          "negative_signals_recommendation": [
+            "真实临床数据",
+            "有依据的功效",
+            "合规检测报告"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖祛痘、抗敏、修复、安全等健康相关虚假宣传场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "广告经营者、发布者与经营者承担连带责任",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若判定为涉及生命健康的虚假广告，需立即下架并通知广告经营者、发布者可能承担连带责任",
+      "examples": {
+        "violation": [
+          "宣传某美妆产品可治疗皮肤病但无依据",
+          "虚假宣传产品可预防过敏等健康风险"
+        ],
+        "compliant": [
+          "真实描述产品对皮肤的作用，不涉及医疗或健康承诺"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了生命健康商品虚假广告的连带责任，可形成审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及生命健康及连带责任，需法务审核确认",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-25fc3df0651f5fbe",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及生命健康虚假广告连带责任，需法务判断虚假性及健康关联性，并核验损害事实",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-FALSEADV-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPL",
+      "source_type": "法规",
+      "platform": null,
+      "title": "虚假广告连带责任-社会团体或个人推荐连带责任",
+      "dimension": "广告代言不合规",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "45",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第四十五条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "社会团体或者其他组织、个人在关系消费者生命健康商品或者服务的虚假广告或者其他虚假宣传中向消费者推荐商品或者服务，造成消费者损害的，应当与提供该商品或者服务的经营者承担连带责任。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "本规则基于消费者权益保护法第四十五条第三款，针对社会团体、组织或个人在关系生命健康的虚假广告中推荐商品或服务，需承担连带责任。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "推荐",
+            "虚假广告",
+            "虚假宣传",
+            "生命健康",
+            "代言",
+            "种草"
+          ],
+          "regex": [],
+          "context_signals": [
+            "推荐",
+            "代言",
+            "种草",
+            "分享"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "社会团体、组织或个人在广告中推荐美妆产品，且广告内容涉及生命健康并存在虚假宣传",
+        "decision": "若检测到个人或组织推荐美妆产品，且广告内容虚假并涉及健康功效，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "广告代言",
+          "连带责任",
+          "推荐"
+        ],
+        "vector_text": "网红推荐这款面膜能根治痘痘，亲测有效！某某协会强烈推荐，用了三天皮肤焕然一新，绝对真实！明星代言的美",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及个人或组织在虚假广告中推荐美妆产品并涉及健康功效，需要语义召回各种推荐话术和虚假宣传表达，适合作为主要召回方式。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 代言、功效、宣传、种草、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:15:55",
+          "old_vector_text": "社会团体、组织或个人在关系消费者生命健康的虚假广告中推荐商品或服务，造成消费者损害",
+          "old_semantic_reason": "推荐行为可能通过多种形式表达，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "虚假推荐",
+            "代言",
+            "种草",
+            "健康功效",
+            "连带责任",
+            "网红",
+            "虚假宣传"
+          ],
+          "negative_signals_recommendation": [
+            "真实分享",
+            "个人体验",
+            "无功效承诺"
+          ],
+          "change_summary": "从法条式描述改为真实违规广告文案集合，覆盖网红、协会、明星、机构等多种推荐主体和虚假健康功效表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "推荐者与经营者承担连带责任",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若判定为违规，需下架相关推荐内容，并提示推荐者可能承担连带责任",
+      "examples": {
+        "violation": [
+          "网红虚假推荐美妆产品可治疗皮肤病",
+          "社会团体虚假宣传产品可改善健康"
+        ],
+        "compliant": [
+          "真实分享使用体验，不涉及虚假或健康承诺"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确规定了推荐者的连带责任，可形成审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及推荐者连带责任，需法务审核确认",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-28d3242b78268125",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及虚假广告中推荐者连带责任，需法务判断是否构成虚假及健康关联，且后果严重，运营无法自行处理",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "CPL-56-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CPL",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止对商品或服务作虚假或引人误解的宣传",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CPL",
+        "source_article_id": "56",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CPL",
+          "article": "第五十六条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "（六）对商品或者服务作虚假或者引人误解的宣传的；"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚假",
+            "引人误解",
+            "不实",
+            "欺骗",
+            "误导"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否存在对商品或服务的性能、功能、质量、销售状况、用户评价、曾获荣誉等作虚假或引人误解的描述，导致消费者产生错误认知",
+        "decision": "若检测到虚假或引人误解的宣传内容，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "消费者权益",
+          "误导"
+        ],
+        "vector_text": "本产品使用一次即可美白?全网销量第一（无依据）?无效退款（实际不兑现）?虚假?引人误解?不实?欺骗?",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、夸大、宣传、引人误解、欺骗.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:18:00",
+          "old_vector_text": "广告文案中不得对商品或服务作虚假或引人误解的宣传，包括但不限于虚构功效、夸大效果、伪造数据、隐瞒缺陷等",
+          "old_semantic_reason": "虚假宣传可能通过语义变体规避关键词，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "虚假宣传",
+            "消费者权益",
+            "误导"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "责令改正，警告，没收违法所得，罚款（违法所得一倍以上十倍以下或五十万元以下），情节严重可停业整顿、吊销营业执照",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "本产品使用一次即可美白",
+          "全网销量第一（无依据）",
+          "无效退款（实际不兑现）"
+        ],
+        "compliant": [
+          "本产品含有维生素C成分",
+          "根据实验室测试，该产品保湿效果提升20%"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止虚假或引人误解的宣传，可直接作为广告审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可由运营直接判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-025d79a49ee1ea06",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "虚假或引人误解的宣传属于开放法律概念，需要法务结合具体事实判断是否构成误导，且后果严重，不宜由运营直接处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

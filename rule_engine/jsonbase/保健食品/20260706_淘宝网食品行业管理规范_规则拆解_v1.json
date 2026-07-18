@@ -1,0 +1,1098 @@
+{
+  "meta": {
+    "name": "保健食品规则库-淘宝网食品行业管理规范",
+    "version": "v1",
+    "generated_date": "20260706",
+    "scope": "保健食品广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "淘宝网食品行业管理规范.pdf",
+    "source_track": "保健食品",
+    "rule_count": 6,
+    "error_count": 1,
+    "source_units_processed": 14,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "TB",
+      "name": "淘宝网食品行业管理规范",
+      "short": "TB-淘宝网食品行业管理规范",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "淘宝"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "HF-虚假宣传-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "TB-food-industry",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "食品功效描述真实性要求",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "食品"
+        ],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网食品行业管理规范",
+        "source_article_id": "第三条-part2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第三条（五）",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "须如实描述商品的实际功效，⻝品产品、成分、功能、适⽤⼈群、检验认证、质量、执⾏标准等信息应真实、合法，不得含有虚假、夸⼤、引⼈误解的内容，不得涉及疾病预防、治疗等功效描述"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "疾病预防",
+            "治疗",
+            "虚假",
+            "夸大",
+            "引人误解"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否含有虚假、夸大、引人误解的功效描述，或涉及疾病预防、治疗等医疗功效描述",
+        "decision": "若文案含有虚假、夸大、引人误解的功效描述，或涉及疾病预防、治疗等医疗功效描述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "食品功效",
+          "虚假宣传",
+          "医疗功效"
+        ],
+        "vector_text": "吃了就能预防感冒，治疗胃病效果显著，抗癌抗肿瘤，排毒养颜，减肥瘦身，增强免疫力，改善睡眠，调节三高，",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及食品功效虚假宣传，关键词难以穷尽所有变体，语义召回可覆盖多种夸大、医疗化表述，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T05:10:41",
+          "old_vector_text": "食品广告中不得含有虚假、夸大、引人误解的功效描述，不得涉及疾病预防、治疗等医疗功效描述",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "食品功效",
+            "虚假宣传",
+            "医疗功效",
+            "夸大宣传",
+            "疾病预防",
+            "治疗功效",
+            "保健品违规"
+          ],
+          "negative_signals_recommendation": [
+            "不含",
+            "无",
+            "非",
+            "不涉及",
+            "不宣称"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖多种功效夸大、疾病治疗、医疗化表述，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 282
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、医疗、夸大、宣传、引人误解.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "商品下架、商品删除"
+      },
+      "relations": [],
+      "disposition": "拒绝或要求修改",
+      "examples": {
+        "violation": [
+          "本产品可预防感冒",
+          "治疗胃病效果显著"
+        ],
+        "compliant": [
+          "本产品富含维生素C",
+          "适合成人食用"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止虚假、夸大、引人误解及疾病预防治疗描述，可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-6a1831b2bd97ee97",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接删除或替换违规功效描述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-虚假宣传-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "TB-food-industry",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "普通食品绿色/有机认证展示要求",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "普通食品"
+        ],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网食品行业管理规范",
+        "source_article_id": "第三条-part2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第三条（五）",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "普通⻝品宣称“绿⾊⻝品、有机⻝品”等内容时，需在主图或详情⻚⾯展示清晰可辨认的认证证书，且认证证书应真实有效"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "绿色食品",
+            "有机食品"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否宣称绿色食品或有机食品，且未在主图或详情页展示清晰可辨认的认证证书",
+        "decision": "若宣称绿色食品或有机食品但未展示认证证书，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "绿色食品",
+          "有机食品",
+          "认证证书"
+        ],
+        "vector_text": "普通食品宣称绿色食品或有机食品时，必须在主图或详情页展示清晰可辨认的认证证书",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "关键词明确，无需语义辅助",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、宣称、普通食品、清晰、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "商品下架、商品删除"
+      },
+      "relations": [],
+      "disposition": "要求补充认证证书或删除相关宣称",
+      "examples": {
+        "violation": [
+          "本产品为绿色食品（无证书展示）"
+        ],
+        "compliant": [
+          "本产品为绿色食品（附证书图片）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求展示认证证书，可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-8317b41b0f1c931d",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发清晰，但需要运营补充认证证书图片，运营可自行处理，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-虚假宣传-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "TB-food-industry",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "禁止真人展示效果",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "食品"
+        ],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网食品行业管理规范",
+        "source_article_id": "第三条-part2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第三条（五）",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "不得真⼈展示效果"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "真人展示",
+            "真人效果",
+            "亲身经历",
+            "使用效果"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否包含真人展示效果的内容，如使用前后对比、个人体验描述等",
+        "decision": "若文案包含真人展示效果的内容，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "真人展示",
+          "效果展示"
+        ],
+        "vector_text": "真人展示效果亲身经历使用前后对比个人体验描述我吃了皮肤变好了用户反馈真实案例效果对比见证分享我的变化",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则禁止真人展示效果，但广告中常以软性表述（如‘亲测有效’‘前后对比’‘真实变化’）出现，关键词难以穷举，语义召回可覆盖变体，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T05:12:28",
+          "old_vector_text": "食品广告中不得使用真人展示效果，包括使用前后对比、个人体验描述等",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "真人展示",
+            "效果展示",
+            "前后对比",
+            "个人体验",
+            "虚假宣传",
+            "保健食品",
+            "使用效果"
+          ],
+          "negative_signals_recommendation": [
+            "科学研究",
+            "实验室数据",
+            "成分分析",
+            "第三方检测",
+            "临床实验"
+          ],
+          "change_summary": "将原法条式描述改写为真实违规文案集合，覆盖多种变体表述，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 250
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、清晰、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "商品下架、商品删除"
+      },
+      "relations": [],
+      "disposition": "拒绝或要求修改",
+      "examples": {
+        "violation": [
+          "我吃了这个产品后皮肤变好了",
+          "用户使用前后对比图"
+        ],
+        "compliant": [
+          "本产品富含营养成分"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止真人展示效果，可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-4a1a7923eead1dbd",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词和语义可自动判定，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-虚假宣传-004",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "TB-food-industry",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "婴幼儿配方乳粉禁止明示或暗示益智、增强免疫力等功能",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "婴幼儿配方乳粉"
+        ],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网食品行业管理规范",
+        "source_article_id": "第三条-part2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第三条（五）第1项",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "婴幼⼉配⽅乳粉产品，不得明示或者暗示具有益智、增加抵抗⼒、提⾼免疫⼒、保护肠道等功能或保健作⽤"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "益智",
+            "增加抵抗力",
+            "提高免疫力",
+            "保护肠道",
+            "保健作用"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测婴幼儿配方乳粉文案中是否明示或暗示具有益智、增加抵抗力、提高免疫力、保护肠道等功能或保健作用",
+        "decision": "若文案含有上述功能或保健作用描述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "婴幼儿配方乳粉",
+          "功能宣称",
+          "保健作用"
+        ],
+        "vector_text": "宝宝喝了更聪明，智力发育快，增强抵抗力，提高免疫力，保护肠道健康，有保健作用，益智配方，提升宝宝免疫",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及功能暗示，关键词有限但变体多，语义召回可覆盖软性表达，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T05:12:37",
+          "old_vector_text": "婴幼儿配方乳粉产品不得明示或暗示具有益智、增加抵抗力、提高免疫力、保护肠道等功能或保健作用",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "婴幼儿配方乳粉",
+            "功能宣称",
+            "益智",
+            "免疫力",
+            "保健作用",
+            "肠道保护",
+            "抵抗力"
+          ],
+          "negative_signals_recommendation": [
+            "不含",
+            "无",
+            "不添加"
+          ],
+          "change_summary": "将法条式文本改写为仿真违规文案集合，覆盖多种功能暗示表达，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 242
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 保健功能、宣传、宣称、明示、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "商品下架、商品删除"
+      },
+      "relations": [],
+      "disposition": "拒绝或要求修改",
+      "examples": {
+        "violation": [
+          "本奶粉有助于宝宝智力发育",
+          "增强宝宝抵抗力"
+        ],
+        "compliant": [
+          "本奶粉适合婴幼儿食用"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止特定功能宣称，可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-98027a304ce874f3",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-标签标识不规范-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "TB-food-industry",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "转基因食品显著标示要求",
+      "dimension": "标签标识不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "转基因食品"
+        ],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网食品行业管理规范",
+        "source_article_id": "第三条-part2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第三条（五）第2项",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "转基因⻝品，应当按照规定显著标示"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "转基因"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否提及转基因食品，且未显著标示",
+        "decision": "若提及转基因食品但未显著标示，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "转基因",
+          "标示"
+        ],
+        "vector_text": "转基因食品应当按照规定显著标示",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "关键词明确，无需语义辅助",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 显著、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "商品下架、商品删除"
+      },
+      "relations": [],
+      "disposition": "要求补充显著标示",
+      "examples": {
+        "violation": [
+          "本产品含转基因成分（未标示）"
+        ],
+        "compliant": [
+          "本产品含转基因成分（显著标示）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求显著标示，可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-b0b8afdc5a66bf1e",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需判断是否显著标示，运营可直接修改文案补标，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-虚假宣传-005",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "TB-food-industry",
+      "source_type": "平台规则",
+      "platform": "淘宝",
+      "title": "特许养殖类商品禁止使用误导性用词",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "特许养殖类商品"
+        ],
+        "platforms": [
+          "淘宝"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "TB-淘宝网食品行业管理规范",
+        "source_article_id": "第三条-part2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "TB",
+          "article": "第三条（五）第3项",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "特许养殖类商品，不得出现“野⽣”、“野外”、“⾮家养”等误导性⽤词"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "野生",
+            "野外",
+            "非家养"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测特许养殖类商品文案中是否出现野生、野外、非家养等误导性用词",
+        "decision": "若出现上述误导性用词，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "特许养殖",
+          "误导性用词"
+        ],
+        "vector_text": "野生养殖鱼 非家养鸡 野外放养 野生山鸡 非家养土鸡 野生甲鱼 野外捕捞 野生蜜蜂 非家养蜜蜂 野生灵芝 野外生长 野生人参 非家养鹿 野生海参 野外散养 野生菌 非家养鸭 野生鱼 野外养殖 野生龟 非家养鹅 野生蛙 野外放养 野生蛇 非家养兔 野生鸽子 野外散养 野生黄鳝 非家养羊 野生牛蛙 野外养殖 野生虾 非家养猪 野生蟹 野外放养 野生贝 非家养马 野生驴 野外散养 野生骆驼 非家养孔雀 野生鸵鸟 野外养殖 野生狐狸 非家养貂 野生水獭 野外放养 野生鳄鱼 非家养蜥蜴 野生龟鳖 野外养殖 野生鱼苗 非家养鱼种 野生虾苗 野外放养 野生蟹苗 非家养贝苗 野生海参苗 野外养殖 野生灵芝孢子粉 非家养鹿茸 野生人参须 野外生长 野生蜂蜜 非家养蜂王浆 野生花粉 野外采集 野生山泉水 非家养矿泉水 野生茶叶 野外种植 野生水果 非家养蔬菜 野生药材 野外采摘 野生香料 非家养调料 野生食用菌 野外采集 野生山野菜 非家养野菜 野生蕨菜 野外采摘 野生竹笋 非家养竹荪 野生木耳 野外生长 野生银耳 非家养香菇 野生猴头菇 野外生长 野生松茸 非家养牛肝菌 野生羊肚菌 野外采集 野生鸡枞菌 非家养青头菌 野生干巴菌 野外生长 野生松露 非家养块菌 野生冬虫夏草 野外生长 野生蝉花 非家养蛹虫草 野生灵芝片 野外切片 野生人参片 非家养鹿茸片 野生海参片 野外干制 野生鱼干 非家养虾干 野生贝干 野外干制 野生菌干 非家养蔬菜干 野生水果干 野外干制 野生药材干 非家养香料干 野生调料干 野外干制 野生山泉水 非家养矿泉水 野生茶叶 野外种植 野生水果 非家养蔬菜 野生药材 野外采摘 野生香料 非家养调料 野生食用菌 野外采集 野生山野菜 非家养野菜 野生蕨菜 野外采摘 野生竹笋 非家养竹荪 野生木耳 野外生长 野生银耳 非家养香菇 野生猴头菇 野外生长 野生松茸 非家养牛肝菌 野生羊肚菌 野外采集 野生鸡枞菌 非家养青头菌 野生干巴菌 野外生长 野生松露 非家养块菌 野生冬虫夏草 野外生长 野生蝉花 非家养蛹虫草 野生灵芝片 野外切片 野生人参片 非家养鹿茸片 野生海参片 野外干制 野生鱼干 非家养虾干 野生贝干 野外干制 野生菌干 非家养蔬菜干 野生水果干 野外干制 野生药材干 非家养香料干 野生调料干 野外干制",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "原规则关键词明确，语义召回作为fallback可覆盖变体表达，如'野外放养'、'非家养'等，提升召回率。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T05:15:04",
+          "old_vector_text": "特许养殖类商品不得出现野生、野外、非家养等误导性用词",
+          "old_semantic_reason": "关键词明确，无需语义辅助",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "特许养殖",
+            "误导性用词",
+            "野生",
+            "野外",
+            "非家养",
+            "虚假宣传"
+          ],
+          "negative_signals_recommendation": [
+            "家养",
+            "养殖",
+            "人工养殖",
+            "农场",
+            "饲养"
+          ],
+          "change_summary": "将原法条式文本改写为HyDE风格的违规文案集合，包含多种变体表达，增强语义召回能力。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、虚假、误导.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "商品下架、商品删除"
+      },
+      "relations": [],
+      "disposition": "拒绝或要求修改",
+      "examples": {
+        "violation": [
+          "野生养殖鱼",
+          "非家养鸡"
+        ],
+        "compliant": [
+          "养殖鱼",
+          "家养鸡"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止特定用词，可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-ce67806995da6707",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则关键词明确，运营可直接删除或替换违规用词，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": [
+    {
+      "article_id": "第三条-part1",
+      "error": "Expecting ',' delimiter: line 955 column 31 (char 25095)"
+    }
+  ]
+}

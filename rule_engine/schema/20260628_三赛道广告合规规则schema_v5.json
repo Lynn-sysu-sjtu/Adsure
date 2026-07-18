@@ -1,0 +1,1081 @@
+{
+  "meta": {
+    "name": "审心广告合规三赛道规则库",
+    "version": "0.5-schema",
+    "industries": [
+      "美妆",
+      "保健食品",
+      "游戏"
+    ],
+    "scope_note": "仅审核文字材料，包括图文文案、详情页文字、Banner文字、直播话术、短视频脚本/口播脚本；不审核图片、视频画面、音频本身。",
+    "description": "用于广告合规智能审核的结构化规则库，支持规则召回、LLM判断、人工复核、平台差异判定与法务规则沉淀。",
+    "rule_design_principle": "一条规则是一个可执行的广告合规判断单元；规则库不仅服务违规判断，也服务法务注意力分配。",
+    "processing_principle": [
+      "默认规则来自法规、平台规则或内部审核口径",
+      "法务记忆规则仅来自法务纠正，不学习运营修改",
+      "通用广告规则跨赛道复用，行业专项规则按赛道隔离",
+      "第一轮加工不强制生成跨规则关系，relations 可留空",
+      "当前阶段优先建设规则 RAG，数据源为法规原文、平台规则、监管案例、历史法务裁决和审核口径",
+      "资料核验 暂不进入早期主流程，仅作为深度审核或后期自动核验能力预留",
+      "规则清洗阶段同步进行路由初判，但 route_status 默认为 provisional，待同一违规维度规则补齐后再统一校正。",
+      "人工标注基础判断维度，default_route 由系统根据路由矩阵推导；人工覆盖必须留痕。",
+      "上下文重建必须产出固定格式 context_package，供模式推荐、规则召回和 LLM 判断共用。"
+    ],
+    "last_updated": "2026-06-28",
+    "schema_update_note": "v5新增法务注意力分配、规则适用清晰度、资料核验和上下文包字段。"
+  },
+  "taxonomies": {
+    "industries": [
+      "通用",
+      "美妆",
+      "保健食品",
+      "游戏"
+    ],
+    "source_types": [
+      "法规",
+      "平台规则",
+      "内部规则",
+      "法务记忆"
+    ],
+    "rule_kinds": [
+      "default_rule",
+      "platform_rule",
+      "internal_rule",
+      "memory_refine",
+      "memory_override"
+    ],
+    "legal_levels": {
+      "1": "法律",
+      "2": "行政法规",
+      "3": "部门规章",
+      "4": "规范性文件/国家标准/监管指引",
+      "null": "平台规则或内部规则"
+    },
+    "material_types": {
+      "美妆": [
+        "图文文案",
+        "直播话术",
+        "短视频脚本",
+        "Banner文字",
+        "详情页文字",
+        "私域文案",
+        "其他文字材料"
+      ],
+      "保健食品": [
+        "图文文案",
+        "直播话术",
+        "短视频脚本",
+        "Banner文字",
+        "详情页文字",
+        "私域文案",
+        "其他文字材料"
+      ],
+      "游戏": [
+        "图文文案",
+        "直播话术",
+        "短视频脚本",
+        "Banner文字",
+        "详情页文字",
+        "私域文案",
+        "其他文字材料"
+      ]
+    },
+    "platforms": {
+      "美妆": [
+        "抖音",
+        "小红书",
+        "微信",
+        "B站",
+        "淘宝",
+        "微博",
+        "快手",
+        "视频号",
+        "其他"
+      ],
+      "保健食品": [
+        "抖音",
+        "小红书",
+        "微信",
+        "B站",
+        "淘宝",
+        "微博",
+        "快手",
+        "视频号",
+        "天猫",
+        "京东",
+        "拼多多",
+        "其他"
+      ],
+      "游戏": [
+        "抖音",
+        "B站",
+        "微信",
+        "TapTap",
+        "微博",
+        "快手",
+        "视频号",
+        "巨量引擎",
+        "穿山甲",
+        "腾讯广告",
+        "其他"
+      ]
+    },
+    "product_categories": {
+      "美妆": [
+        "护肤",
+        "彩妆",
+        "香水",
+        "个护",
+        "美容仪器",
+        "普通化妆品",
+        "特殊化妆品",
+        "儿童化妆品",
+        "其他"
+      ],
+      "保健食品": [
+        "保健食品",
+        "普通食品",
+        "营养补充剂",
+        "特殊医学用途配方食品",
+        "其他"
+      ],
+      "游戏": [
+        "MMO",
+        "MOBA",
+        "卡牌",
+        "二次元",
+        "SLG",
+        "休闲",
+        "射击",
+        "其他"
+      ]
+    },
+    "violation_dimensions": {
+      "通用": [
+        "绝对化用语",
+        "虚假宣传",
+        "引证内容不规范",
+        "广告可识别性不足",
+        "价格促销误导",
+        "用户评价/种草误导",
+        "权威背书/国家机关背书",
+        "广告代言不合规",
+        "未成年人保护",
+        "低俗/擦边/不良导向",
+        "大小字误导",
+        "平台准入/资质不符",
+        "其他"
+      ],
+      "美妆": [
+        "涉医疗宣传",
+        "功效超备案/注册范围",
+        "特殊化妆品功效越界",
+        "普通化妆品越界宣称",
+        "儿童化妆品限制",
+        "成分功效夸大",
+        "使用前后效果对比误导",
+        "备案信息缺失或不一致"
+      ],
+      "保健食品": [
+        "疾病预防治疗宣称",
+        "保健功能越界",
+        "普通食品冒充保健食品",
+        "替代药物暗示",
+        "功效保证承诺",
+        "适宜人群不当扩大",
+        "不适宜人群遗漏或弱化",
+        "蓝帽/批准备案信息缺失",
+        "专家患者证明",
+        "健康焦虑营销"
+      ],
+      "游戏": [
+        "版号/软著/资质缺失",
+        "概率公示不充分",
+        "概率造假/概率承诺误导",
+        "充值消费诱导",
+        "未成年人诱导或防沉迷风险",
+        "虚拟道具权益误导",
+        "IP授权风险",
+        "低俗暴力恐怖内容",
+        "历史/英雄人物不良改编",
+        "诱导下载/外挂私服风险"
+      ]
+    },
+    "risk_levels": [
+      "高",
+      "中",
+      "低",
+      "无明显风险"
+    ],
+    "audit_modes": [
+      "极速",
+      "标准",
+      "深度"
+    ],
+    "legal_review_evaluation": [
+      "同意无补充",
+      "同意有补充",
+      "驳回"
+    ],
+    "material_decisions": [
+      "通过",
+      "不通过"
+    ],
+    "disputed_fields": [
+      "风险等级",
+      "违规类型",
+      "高风险词识别",
+      "备案核查",
+      "资质核查",
+      "法条依据",
+      "修改建议",
+      "整体推理逻辑",
+      "其他"
+    ],
+    "workflow_status": [
+      "运营起草",
+      "AI预审中",
+      "运营修改中",
+      "待法务复核",
+      "已通过",
+      "需修改",
+      "已上线",
+      "已撤回"
+    ],
+    "feedback_types": [
+      "无",
+      "refine",
+      "override"
+    ],
+    "rule_audit_status": [
+      "draft",
+      "pending_review",
+      "approved",
+      "rejected",
+      "archived"
+    ],
+    "rag_types": {
+      "rule_rag": "规则 RAG：当前阶段正式动工，用于检索法规原文、平台规则、监管处罚案例、典型违规案例、历史法务裁决和审核口径。",
+      "fact_rag_later": "资料核验：后期预留能力，用于核验广告宣称与备案资料、产品说明、活动规则、游戏实际配置等事实材料是否一致。早期不进入主流程。"
+    },
+    "rule_rag_scopes": [
+      "法规原文",
+      "平台规则",
+      "监管处罚案例",
+      "典型违规案例",
+      "历史法务裁决",
+      "审核口径说明"
+    ],
+    "future_fact_rag_scopes": [
+      "备案资料",
+      "注册证/批准文号",
+      "产品说明书",
+      "功效评价依据",
+      "检测报告",
+      "活动规则",
+      "游戏概率/奖励配置"
+    ],
+    "interpretation_dependency_levels": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "interpretation_dependency_levels__comment": "法律解释依赖程度。low=事实清楚时基本无需法律解释；medium=部分场景需要解释；high=即使事实齐全仍需法务解释开放法律概念。",
+    "fact_dependency_levels": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "fact_dependency_levels__comment": "资料/事实核验依赖程度。low=主要看文案；medium=部分需要核验；high=必须对照备案、批件、价格、授权、检测报告等资料。",
+    "misjudgment_cost_levels": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "misjudgment_cost_levels__comment": "判断错误代价。综合监管处罚、平台处罚、消费者健康、未成年人、品牌舆情等风险。",
+    "rule_applicability_types": [
+      "明确适用型",
+      "关系判断型",
+      "开放解释型"
+    ],
+    "rule_applicability_types__comment": "规则本身适用条件的清晰度。明确适用型=条件清楚；关系判断型=需比对两个对象关系；开放解释型=需解释引人误解、变相广告等开放概念。",
+    "default_routes": [
+      "operator_direct",
+      "operator_supply_docs",
+      "legal_review_required"
+    ],
+    "default_routes__comment": "系统推导的默认流转路径。operator_direct=运营直接修改或处理；operator_supply_docs=运营补充资料或修改后再审；legal_review_required=法务必审。",
+    "route_statuses": [
+      "provisional",
+      "finalized"
+    ],
+    "route_statuses__comment": "路由定性状态。provisional=规则清洗初判；finalized=同维度规则补齐并统一校正后定稿。",
+    "legal_attention_trigger_clarity": [
+      "clear",
+      "contextual",
+      "open"
+    ],
+    "legal_attention_trigger_clarity__comment": "规则触发特征清晰度。clear=一看文字即可判断；contextual=需要结合产品、平台、场景等上下文；open=涉及开放法律概念，需要解释适用边界。",
+    "legal_attention_interpretation_levels": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "legal_attention_interpretation_levels__comment": "法律解释依赖程度。low=主要是形式判断；medium=需要一定法律判断；high=需要法务解释概念边界、适用条件或监管口径。",
+    "legal_attention_fact_verification_levels": [
+      "none",
+      "light",
+      "heavy"
+    ],
+    "legal_attention_fact_verification_levels__comment": "事实或资料核验强度。none=基本不需要外部事实；light=需要少量运营字段或简单证明；heavy=需要备案、资质、检测、活动规则、后台数据、平台记录等穿透核验。",
+    "legal_attention_risk_severity_levels": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "legal_attention_risk_severity_levels__comment": "判断错误或放行后的风险后果。low=轻微提示或低后果；medium=可能导致整改、投诉或平台处理；high=可能触发监管处罚、重大投诉、资质/行业红线或品牌高敏风险。",
+    "legal_attention_operator_fixability": [
+      "direct_fixable",
+      "guided_fixable",
+      "not_self_fixable"
+    ],
+    "legal_attention_operator_fixability__comment": "运营可自行整改程度。direct_fixable=按提示删除、替换、补标即可；guided_fixable=需要系统给出明确补充项或修改方向；not_self_fixable=运营难以自行判断，需要法务或资料核验。"
+  },
+  "form_context_schema": {
+    "public_fields": {
+      "material_id": "①运营·物料编号",
+      "industry": "①运营·行业领域",
+      "content": "①运营·物料内容",
+      "attachments": "①运营·物料附件",
+      "submitter": "①运营·提交人",
+      "submitted_at": "①运营·提交时间",
+      "urgency": "①运营·紧急程度",
+      "ai_precheck_enabled": "①运营·是否启用AI预审"
+    },
+    "industry_fields": {
+      "美妆": {
+        "material_type": "①美妆·物料类型",
+        "platforms": "①美妆·投放平台",
+        "product_category": "①美妆·产品品类",
+        "product_filing_name": "①美妆·产品备案名称",
+        "scenario": "①美妆·物料涉及场景",
+        "core_claims": "①美妆·核心宣称功效"
+      },
+      "保健食品": {
+        "material_type": "①保健食品·物料类型",
+        "platforms": "①保健食品·投放平台",
+        "product_category": "①保健食品·产品品类",
+        "product_name": "①保健食品·产品名称",
+        "approval_or_filing_number": "①保健食品·批准文号/备案号",
+        "blue_hat_status": "①保健食品·蓝帽标识情况",
+        "health_function_claims": "①保健食品·保健功能宣称",
+        "suitable_population": "①保健食品·适宜人群",
+        "unsuitable_population": "①保健食品·不适宜人群",
+        "scenario": "①保健食品·物料涉及场景"
+      },
+      "游戏": {
+        "material_type": "①游戏·物料类型",
+        "platforms": "①游戏·投放平台",
+        "product_category": "①游戏·产品品类",
+        "game_name": "①游戏·游戏名称",
+        "scenario": "①游戏·物料涉及场景",
+        "ip_name": "①游戏·IP名称"
+      }
+    },
+    "ai_precheck_fields": {
+      "risk_level": "②AI预审·风险等级",
+      "hit_summary": "②AI预审·命中要点",
+      "revision_suggestion": "②AI预审·修改建议",
+      "precheck_time": "②AI预审·时间",
+      "operator_revision_log": "②AI预审·运营修改记录",
+      "operator_adoption_status": "②AI预审·运营是否采纳建议"
+    },
+    "ai_audit_fields": {
+      "audit_mode": "③AI审核·审核模式",
+      "mode_reason": "③AI审核·模式推荐理由",
+      "audit_opinion": "③AI审核·审核意见",
+      "entity_extraction": "③AI审核·关键实体抽取",
+      "high_risk_hits": "③AI审核·高风险词命中",
+      "platform_precheck": "③AI审核·平台规则预检",
+      "qualification_check": "③AI审核·备案核查结果",
+      "recommended_dimensions": "③AI审核·推荐违规类型",
+      "recommended_risk_level": "③AI审核·推荐风险等级",
+      "audit_time": "③AI审核·审核时间"
+    },
+    "legal_review_fields": {
+      "ai_opinion_evaluation": "④法务·AI意见评价",
+      "material_decision": "④法务·物料裁决",
+      "disputed_fields": "④法务·异议字段",
+      "supplement_or_reject_reason": "④法务·补充或驳回理由",
+      "correct_judgment": "④法务·驳回正确判定",
+      "final_revision_opinion": "④法务·最终修改意见",
+      "comment": "④法务·批注",
+      "reviewer": "④法务·复核人",
+      "review_time": "④法务·复核时间"
+    },
+    "workflow_fields": {
+      "current_status": "⑤流转·当前状态",
+      "feedback_type": "⑤流转·反馈类型",
+      "enter_memory": "⑤流转·是否进入大脑沉淀",
+      "rejection_count": "⑤流转·驳回次数",
+      "round": "⑤流转·轮次"
+    }
+  },
+  "source_documents": [],
+  "legal_sources": [],
+  "rules": [
+    {
+      "rule_id": "GEN-FALSE-001",
+      "serial_no": 1,
+      "serial_no__comment": "规则纯数字序号。用于人工分工、批量审核和进度统计；建议在 jsonbase 文件夹内跨文件连续编号，从 1 开始。",
+      "rule_id__comment": "规则唯一编号。用于规则检索、图谱节点 ID、审核记录回写和跨规则关系引用。建议格式为：赛道/来源前缀-违规维度-三位序号，例如 GEN-FALSE-001、COSM-MED-001、HF-CLAIM-001。",
+      "rule_kind": "default_rule",
+      "rule_kind__comment": "规则类型。default_rule 表示法规/平台规则抽取出的基础规则；platform_rule 表示平台专项规则；internal_rule 表示内部审核口径；memory_refine/memory_override 表示法务反馈沉淀规则。",
+      "industry": "通用",
+      "industry__comment": "规则所属赛道。通用规则可跨美妆、保健食品、游戏复用；行业专项规则填写对应赛道。用于审核台筛选和规则召回前置过滤。",
+      "namespace": "general",
+      "namespace__comment": "规则命名空间。用于区分 general 通用规则、cosmetic 美妆规则、health_food 保健食品规则、game 游戏规则等，便于后续分库和图谱分层。",
+      "source_type": "法规",
+      "source_type__comment": "规则来源类型。可填法规、平台规则、内部规则、法务记忆。用于判断法律位阶、可信度和展示来源。",
+      "platform": null,
+      "platform__comment": "适用平台。法规规则通常为 null；平台规则填写抖音、小红书、微信、B站、淘宝等。用于平台规则预检和差异化审核。",
+      "title": "广告不得作虚假或引人误解宣传",
+      "title__comment": "规则标题。给审核员看的短标题，建议 20-30 字内，表达“禁止/要求什么”。",
+      "dimension": "虚假宣传",
+      "dimension__comment": "违规维度。必须尽量使用 taxonomies.violation_dimensions 中已有维度。用于分类筛选、统计高频风险和推荐违规类型。",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "industries__comment": "适用行业范围。通用规则通常覆盖全部赛道；行业规则只填对应赛道。用于规则召回前置过滤。",
+        "product_categories": [
+          "通用"
+        ],
+        "product_categories__comment": "适用商品/服务品类。用于结合运营提交的产品品类做过滤，例如普通化妆品、特殊化妆品、保健食品、普通食品、网络游戏等。",
+        "platforms": [
+          "通用"
+        ],
+        "platforms__comment": "适用投放平台。通用法规可填通用；平台专项规则填具体平台。用于平台规则预检。",
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "material_types__comment": "适用物料类型。当前只审文字材料；短视频仅指脚本/口播文本，不审画面和音频本身。用于按物料类型召回规则。",
+        "channels": [
+          "通用",
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "channels__comment": "适用渠道。用于区分互联网、电商详情页、直播、社交平台等场景，因为同一文案在不同渠道可能触发不同规则。",
+        "audiences": [
+          "通用"
+        ],
+        "audiences__comment": "适用受众。通用、未成年人、儿童、成人等。未成年人相关规则应明确标注，方便前置高风险识别。"
+      },
+      "applies_to__comment": "规则适用范围。系统可先用运营提交字段进行过滤，减少无关规则进入召回和 LLM 判断。",
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "required_context_fields__comment": "触发本规则判断前必须具备的上下文字段。content 表示物料文本；后续可加入 product_category、platform、material_type、audience 等。",
+        "logic": "广告对商品或服务的客观事实、效果、荣誉、价格、活动等作出具体宣传。",
+        "logic__comment": "适用前提。告诉审核引擎在什么语境下才需要判断本规则，避免只靠关键词误伤。"
+      },
+      "preconditions__comment": "规则前置条件。用于上下文重建和审核模式分流之后，判断这条规则是否真的适用。",
+      "source_trace": {
+        "source_doc_id": "AL-2021",
+        "source_doc_id__comment": "来源文件 ID。对应 legal_sources 或 source_documents 中的文档编号，用于追溯规则来自哪份法规/平台规则。",
+        "source_article_id": "第四条/第二十八条",
+        "source_article_id__comment": "来源条款编号。可以是单条，也可以是多个条款组合。用于定位原始法条。",
+        "source_chunk_id": null,
+        "source_chunk_id__comment": "来源切片 ID。若后续把法规拆成段落或 RAG chunk，可填写对应 chunk；当前可为 null。",
+        "extraction_method": "legal_article_structuring_v1",
+        "extraction_method__comment": "规则生成方式。例如 manual、llm_draft、case_high_frequency、legal_article_structuring_v1。用于区分人工整理、LLM 初稿和案例高频抽取。",
+        "llm_model": null,
+        "llm_model__comment": "如果由模型生成，记录模型名称；纯人工整理可为 null。",
+        "llm_confidence": null,
+        "llm_confidence__comment": "模型自评置信度或人工给出的可信度。当前可为 null，不作为法律结论依据。"
+      },
+      "source_trace__comment": "规则抽取溯源信息。用于后续复核、回看原文、比较不同批次规则质量。",
+      "legal_basis": [
+        {
+          "source_id": "AL",
+          "source_id__comment": "法规或平台规则来源缩写，例如 AL=广告法、IAM=互联网广告管理办法、CSAR=化妆品监督管理条例。",
+          "article": "第四条",
+          "article__comment": "具体条文编号。需与 text 中的原文一致。",
+          "legal_level": 1,
+          "legal_level__comment": "法律位阶。1=法律，2=行政法规，3=部门规章，4=规范性文件/国家标准/监管指引，null=平台规则或内部规则。",
+          "role": "based_on",
+          "role__comment": "该条文在本规则中的作用。based_on=直接依据，refines=细化依据，precondition=适用前提，penalized_by=处罚依据。",
+          "text": "第四条 广告不得含有虚假或者引人误解的内容，不得欺骗、误导消费者。\n广告主应当对广告内容的真实性负责。",
+          "text__comment": "条文原文。应逐字摘录，不要改写；如果只引用节选，应在审核备注中说明。"
+        }
+      ],
+      "legal_basis__comment": "法律/规则依据数组。每条规则可引用一条或多条法规、平台规则、处罚条款。",
+      "hierarchy": {
+        "refines": null,
+        "refines__comment": "上位规则 ID。如果本规则是另一条母规则的细化，填写目标 rule_id；不确定时先填 null，第二轮关系标注再补。",
+        "note": "通用虚假广告母规则，覆盖三赛道中宣传内容与实际不符、证明材料虚构等高频风险。",
+        "note__comment": "层级说明。用一句话说明本规则在规则体系中的位置，例如母规则、细化规则、平台落地规则。"
+      },
+      "hierarchy__comment": "规则层级。主要用于知识图谱展示“上位规则/细化规则”的结构。",
+      "detection": {
+        "method": "hybrid",
+        "method__comment": "检测方式。当前统一为 hybrid，表示关键词召回、语义召回、规则 RAG 和 LLM 判断结合。",
+        "keyword_signals": {
+          "hit_terms": [
+            "虚假",
+            "误导",
+            "真实有效",
+            "官方认证",
+            "权威认证",
+            "销量领先",
+            "全网第一",
+            "效果显著",
+            "保证有效"
+          ],
+          "hit_terms__comment": "关键词召回清单。这里才是真正用于硬命中文案的词库，应具体、可枚举，包含同义词、近义词、常见变体。",
+          "regex": [
+            "(\\d+天|\\d+小时).{0,8}(见效|改善|逆转|恢复)",
+            "(官方|权威).{0,6}(认证|推荐|背书)"
+          ],
+          "regex__comment": "正则召回规则。用于捕捉数字+效果、权威+背书等组合表达；建议使用 Python re 语法。",
+          "context_signals": [
+            "功能",
+            "效果",
+            "价格",
+            "荣誉",
+            "活动",
+            "销售状况",
+            "承诺"
+          ],
+          "context_signals__comment": "上下文信号词。通常需要与 hit_terms 同时出现或用于增强置信度，帮助判断关键词是否处在广告宣称语境中。",
+          "negative_signals": [
+            "以实际页面为准",
+            "具体以说明书为准"
+          ],
+          "negative_signals__comment": "排除/降权信号。用于减少误报，但不能单独作为合规结论，仍需结合整体语义判断。"
+        },
+        "keyword_signals__comment": "关键词召回模块。目标是把可能相关的规则先捞出来，不负责最终定性。",
+        "semantic_criteria": "判断广告是否对商品或服务的功能、效果、价格、荣誉、活动、销售状况等作出与实际不符或无法证明的表示，并足以影响消费者购买决策。",
+        "semantic_criteria__comment": "语义判定标准。给 LLM 和人工审核员看的实质判断口径，应说明什么情况违规、什么情况不违规，不能只重复法条。",
+        "decision": "如果广告具体宣传信息与实际情况不符、无法验证或足以误导消费者购买，则判定为虚假宣传风险。",
+        "decision__comment": "最终判断逻辑。建议用“如果……则……”表达，方便后续转成提示词或规则引擎判断链。"
+      },
+      "detection__comment": "检测与判定模块。hit_terms/regex 负责关键词召回，semantic_criteria/decision 负责 LLM 或人工的实质判断。",
+      "recall": {
+        "tags": [
+          "虚假宣传",
+          "实际不符",
+          "效果虚构",
+          "荣誉不实",
+          "误导购买"
+        ],
+        "tags__comment": "规则标签，不是关键词清单。用于审核台筛选、统计、聚合展示和粗分类；不要把所有命中词都堆在这里。",
+        "vector_text": "广告声称效果、价格、荣誉、销量、活动、服务内容与真实情况不一致，或使用无法验证的证明材料误导消费者。",
+        "vector_text__comment": "语义召回文本。用于向量化，应是一段自然语言描述“这条规则管什么风险场景”，可以包含关键词，但不应只是词表堆砌。",
+        "semantic_enabled": true,
+        "semantic_enabled__comment": "是否进入语义召回/向量召回索引。true 表示该规则用 vector_text 做语义相似度召回；false 表示保留 vector_text 但不进入向量索引。",
+        "semantic_role": "fallback",
+        "semantic_role__comment": "语义召回角色。当前固定为 fallback，表示只在关键词可能漏召回时兜底，不直接裁决违规。",
+        "semantic_reason": "为什么启用或不启用语义召回。应说明关键词为什么可能漏召回，或为什么关键词/事实核验已经足够。",
+        "semantic_reason__comment": "语义召回标注理由。规则审核时需填写，方便后续决定是否入向量库。"
+      },
+      "recall__comment": "召回辅助模块。tags 用于分类筛选；vector_text 描述违规语义场景；semantic_enabled 控制是否真正进入向量召回索引；关键词词库仍放在 detection.keyword_signals.hit_terms。",
+      "risk_level": "高",
+      "risk_level__comment": "风险等级。高/中/低/无明显风险。建议结合处罚强度、健康安全、未成年人、涉医疗、刑责或平台严重处罚来定。",
+      "consequence": {
+        "legal": {
+          "summary": "虚假广告可被责令停止发布、消除影响并按广告费用倍数罚款。",
+          "summary__comment": "法律后果摘要。给审核员快速理解风险，不代替完整处罚条款。",
+          "primary_source": "AL#第五十五条",
+          "primary_source__comment": "主要处罚依据。格式建议为 来源缩写#条文编号，例如 AL#第五十五条、IAM#第二十五条。",
+          "fine": {
+            "basis": "广告费用",
+            "basis__comment": "罚款计算基础。例如广告费用、货值金额、违法所得、定额、转致广告法。",
+            "amount_range": "通常为广告费用三倍以上五倍以下，严重情形可更高",
+            "amount_range__comment": "罚款范围或处罚幅度。无法确定时填 null，不要编造。"
+          },
+          "fine__comment": "罚款信息。用于风险提示和法务复核，不作为自动处罚结论。"
+        },
+        "legal__comment": "法律责任信息。没有明确法律后果时可填 null。",
+        "platform": null,
+        "platform__comment": "平台处罚信息。法规规则通常可为 null；平台规则可填写处罚依据、限流、下架、扣分、封禁等动作。"
+      },
+      "consequence__comment": "违规后果。用于审核台展示风险严重性和处置优先级。",
+      "relations": [
+        {
+          "type": "refines",
+          "type__comment": "关系类型。常用：refines=细化，co_occurs_with=常并发，derived_from=源于，implements=执行，penalized_by=处罚依据，counter_exception=例外/反向限制。",
+          "target": "GEN-IDENT-001",
+          "target__comment": "关系目标。目标可以是 rule_id，也可以是法规条文引用，例如 AL#第十四条。",
+          "desc": "本规则是对广告可识别性母规则的互联网场景细化。",
+          "desc__comment": "关系说明。用一句话解释为什么存在这条关系，方便图谱审核。"
+        }
+      ],
+      "relations__comment": "跨规则关系。第一轮单条法条清洗时可以先留空数组；全量规则完成后再做第二轮关系标注。",
+      "disposition": "要求提交证明材料；无法证明或表述明显误导的，建议驳回修改。",
+      "disposition__comment": "审查处置建议。给审核员的操作指令，建议 20-50 字，说明通过、修改、驳回或转人工复核。",
+      "examples": {
+        "violation": [
+          "本产品连续使用3天彻底改善所有皮肤问题。",
+          "官方认证全网销量第一，效果不满意全额赔付。"
+        ],
+        "violation__comment": "违规示例。应写具体广告文案片段，便于规则清洗人员和审核员理解边界。",
+        "compliant": [
+          "产品参数和活动价格以页面实际展示为准。"
+        ],
+        "compliant__comment": "合规示例。用于说明可接受表达方式，帮助运营修改文案。"
+      },
+      "examples__comment": "示例库。用于人工审核、提示词 few-shot 和规则培训。",
+      "review_required": true,
+      "review_required__comment": "旧字段。v5 推荐优先使用 routing.default_route 判断流转；本字段可作为兼容或强制复核标记。",
+      "audit": {
+        "status": "待审核",
+        "status__comment": "规则审核状态。建议值：待审核、通过、驳回、待讨论。",
+        "auditor": null,
+        "auditor__comment": "规则审核人。由审核台或人工填写。",
+        "audit_date": null,
+        "audit_date__comment": "规则审核日期。由审核台或人工填写。",
+        "audit_notes": null,
+        "audit_notes__comment": "审核备注。记录修改理由、争议点、法务意见或待补材料。"
+      },
+      "audit__comment": "规则本身的审核状态，不是广告物料的审核结果。用于规则库建设阶段的人工作业。",
+      "rag": {
+        "required": true,
+        "required__comment": "当前阶段是否需要进入规则 RAG；不包含产品资料核验。",
+        "types": [
+          "rule_rag"
+        ],
+        "types__comment": "RAG 类型。当前正式动工的是 rule_rag；资料核验请使用 fact_check 字段。",
+        "scope": [
+          "法规原文",
+          "监管处罚案例",
+          "典型违规案例",
+          "历史法务裁决"
+        ],
+        "scope__comment": "规则 RAG 检索范围。用于说明需要进入知识库的资料类型，不代表每次审核都必须全部检索。",
+        "reason": "虚假宣传常依赖监管案例和历史裁判口径判断“足以误导”的边界。",
+        "reason__comment": "为什么需要规则 RAG。应说明该规则的判断难点，例如边界模糊、语义近似、平台口径变化快。",
+        "future_fact_rag": true,
+        "future_fact_rag__comment": "兼容旧字段：是否后期需接入资料核验。v5 推荐使用 fact_check.future_required。",
+        "fact_rag_note": "后期资料核验可接入产品资料、活动规则、价格记录、检测报告等用于核验宣称真实性。",
+        "fact_rag_note__comment": "兼容旧字段：资料核验预留说明。v5 推荐使用 fact_check.note。"
+      },
+      "rag__comment": "RAG 标注模块。当前重点是规则 RAG；资料核验 只做能力预留，避免早期工作流过重。",
+      "rule_applicability": {
+        "type": "开放解释型",
+        "type__comment": "规则适用条件清晰度：明确适用型、关系判断型、开放解释型。",
+        "reason": "本规则涉及开放概念，需要解释适用边界。",
+        "reason__comment": "说明为什么这样标注。"
+      },
+      "rule_applicability__comment": "规则本身的适用条件清晰度，用于辅助判断法律解释依赖和默认流转路径。",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "trigger_clarity__comment": "规则触发特征清晰度：clear=硬触发；contextual=需结合上下文；open=开放法律概念或边界判断。用于判断是否值得占用法务注意力。",
+        "legal_interpretation_level": "high",
+        "legal_interpretation_level__comment": "法律解释依赖程度：low、medium、high。高解释依赖通常意味着法务判断会实质影响结论。",
+        "fact_verification_level": "light",
+        "fact_verification_level__comment": "事实/资料核验强度：none、light、heavy。heavy 通常意味着需补充备案、资质、证明材料、活动规则或平台数据。",
+        "risk_severity": "high",
+        "risk_severity__comment": "误判或放行后的风险后果：low、medium、high。高风险包括监管处罚、行业红线、重大投诉、平台重大处置等。",
+        "operator_fixability": "not_self_fixable",
+        "operator_fixability__comment": "运营可自行整改程度：direct_fixable=可直接删改；guided_fixable=按建议补充或改写；not_self_fixable=不宜仅由运营自行判断。",
+        "default_route": "legal_review_required",
+        "default_route__comment": "默认流转路径，沿用 taxonomies.default_routes：operator_direct=回运营直接修改/处理；operator_supply_docs=运营先补资料；legal_review_required=进入法务复核。",
+        "route_reason": "该规则涉及开放法律概念、较高解释依赖和较高误判成本，默认进入法务复核。",
+        "route_reason__comment": "用自然语言说明为什么该规则默认这样流转，便于团队复核和后续向运营/法务解释。",
+        "confidence": "medium",
+        "confidence__comment": "AI 或人工初标置信度：low、medium、high。用于后续抽检和统一校准。",
+        "calibration_status": "provisional",
+        "calibration_status__comment": "标注校准状态：provisional=初标；finalized=经统一口径校准后定稿。"
+      },
+      "legal_attention__comment": "法务注意力分配字段。用于标注一条规则命中后是否值得占用法务时间；先服务规则清洗和团队校准，后续可被 routing、LLM prompt、飞书状态机消费。",
+      "routing": {
+        "interpretation_dependency": "high",
+        "interpretation_dependency__comment": "是否需要法律解释：low、medium、high。",
+        "fact_dependency": "medium",
+        "fact_dependency__comment": "是否需要资料或事实核验：low、medium、high。",
+        "misjudgment_cost": "high",
+        "misjudgment_cost__comment": "判断错误代价：low、medium、high。",
+        "default_route": "legal_review_required",
+        "default_route__comment": "系统根据基础维度推导，不建议人工自由填写。",
+        "route_reason": "法律解释依赖高且错误代价较高，默认进入法务复核。",
+        "route_reason__comment": "说明系统推导或人工确认该默认路由的理由。",
+        "route_status": "provisional",
+        "route_status__comment": "provisional=清洗初判；finalized=统一校正后定稿。",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        },
+        "route_override__comment": "特殊情况允许人工覆盖默认路由，但必须留痕。"
+      },
+      "routing__comment": "兼容旧字段/系统派生字段。v5 后续推荐以 legal_attention 作为人工标注主字段，再由系统映射或推导 routing.default_route。",
+      "fact_check": {
+        "future_required": true,
+        "future_required__comment": "是否后期需要接入资料核验，不代表当前流程强制补材料。",
+        "current_required": false,
+        "current_required__comment": "当前审核是否必须补充资料才能继续。",
+        "required_materials": [
+          "产品资料",
+          "活动规则",
+          "价格记录",
+          "检测报告",
+          "游戏版号/软著信息",
+          "概率公示或抽卡规则"
+        ],
+        "required_materials__comment": "后期资料核验可能需要的材料类型。",
+        "data_sources": [
+          "运营补充材料",
+          "公司内部台账",
+          "外部公开查询结果"
+        ],
+        "data_sources__comment": "资料来源，可包括备案台账、蓝帽、版号、授权、检测报告库等。",
+        "note": "后期资料核验可接入产品资料、活动规则、价格记录、检测报告等用于核验宣称真实性。",
+        "note__comment": "资料核验说明。"
+      },
+      "fact_check__comment": "资料核验字段，用于替代资料核验 表述，避免与规则 RAG 混淆。"
+    }
+  ],
+  "memory_rules": [
+    {
+      "memory_id": null,
+      "feedback_type": null,
+      "industry": null,
+      "platform": null,
+      "applies_to": {
+        "product_categories": [],
+        "material_types": [],
+        "audiences": []
+      },
+      "trigger": {
+        "keywords": [],
+        "semantic_pattern": null,
+        "example_text": null
+      },
+      "correct_judgment": {
+        "is_violation": null,
+        "correct_dimension": null,
+        "reason": null
+      },
+      "disputed_fields": [],
+      "priority": null,
+      "source_review": {
+        "material_id": null,
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "status": "active"
+    }
+  ],
+  "review_workflow": {
+    "feedback_matrix": {
+      "同意无补充+通过": "无",
+      "同意无补充+不通过": "无",
+      "同意有补充+通过": "refine",
+      "同意有补充+不通过": "refine",
+      "驳回+不通过": "override",
+      "驳回+通过": "override"
+    },
+    "learning_boundary": {
+      "learn_from": [
+        "④法务·补充或驳回理由",
+        "④法务·驳回正确判定",
+        "④法务·异议字段",
+        "④法务·最终修改意见"
+      ],
+      "do_not_learn_from": [
+        "②AI预审·运营修改记录",
+        "②AI预审·运营是否采纳建议"
+      ],
+      "reason": "只沉淀法务纠正，不沉淀运营修改，避免规则漂移。"
+    }
+  },
+  "rag_policy": {
+    "current_stage": "当前阶段只正式启动规则 RAG；资料核验仅做后期预留，不要求运营在早期为每条文案提交大量事实材料。",
+    "rule_rag": {
+      "start_timing": "当前阶段随全量法规、平台规则和案例清洗同步推进。",
+      "data_sources": [
+        "法规原文",
+        "平台规则",
+        "监管处罚案例",
+        "典型违规案例",
+        "历史法务裁决",
+        "审核口径说明"
+      ],
+      "purpose": "判断广告文案是否落入某类违规规则、平台审核口径或相似案例。"
+    },
+    "fact_check": {
+      "start_timing": "后期启动，等待运营提交清单稳定、产品资料入口明确、法务确认需要自动核验后再建设。",
+      "data_sources": [
+        "备案资料",
+        "注册证/批准文号",
+        "产品说明书",
+        "功效评价依据",
+        "检测报告",
+        "活动规则",
+        "游戏概率/奖励配置"
+      ],
+      "early_stage_policy": "早期不进入主流程；仅在规则层预留 fact_check 标记，并在深度审核中提示补充事实材料。",
+      "display_name": "后期需接入资料核验"
+    }
+  },
+  "semantic_recall_policy": {
+    "__comment": "语义召回总原则。用于约束哪些规则进入向量索引，避免把所有规则都做语义相似度召回。",
+    "current_policy": "不做全量语义召回。每条规则可以保留 vector_text，但只有 semantic_enabled=true 的规则进入向量索引。",
+    "current_policy__comment": "当前策略说明。强调 vector_text 可以作为规则描述保留，但是否真正向量化由 recall.semantic_enabled 决定。",
+    "default_role": "fallback",
+    "default_role__comment": "默认角色。当前阶段语义召回只做关键词漏召回的兜底候选召回，不直接判定违规。",
+    "enabled_when": [
+      "关键词表达分散，无法穷举",
+      "文案通过暗示、包装、语气规避硬词",
+      "规则是原则性、结果性或场景性表述",
+      "真实案例中大量违规文案不命中核心关键词"
+    ],
+    "enabled_when__comment": "建议开启语义召回的情形。清洗规则时可据此判断 semantic_enabled 是否填 true。",
+    "disabled_when": [
+      "有明确禁用词、强触发词或固定编号",
+      "主要依赖资质、备案、批准文号、专利号等事实核验",
+      "主要是流程义务或页面交互核验",
+      "语义相似度容易带来大量误报"
+    ],
+    "disabled_when__comment": "建议关闭语义召回的情形。此类规则更适合关键词、结构化字段、事实核验或人工核查。",
+    "conflict_handling": "多路召回只合并候选规则并记录来源，不直接裁决；同一规则被多路召回时去重，最终由 LLM 基于候选规则、上下文和规则判定标准判断是否适用。",
+    "conflict_handling__comment": "多路召回冲突处理方式。关键词召回、语义召回、规则 RAG 命中同一规则时只去重和记录来源，最终交给判定环节。"
+  },
+  "context_package_schema": {
+    "__comment": "上下文重建的固定输出格式。由运营文案和半结构化表单生成，供模式推荐、规则召回和 LLM 判断共用。",
+    "material_id": {
+      "type": "string",
+      "source": "form.public_fields.material_id",
+      "comment": "物料编号，用于追踪审核轮次和反馈沉淀。"
+    },
+    "industry": {
+      "type": "enum",
+      "values": [
+        "美妆",
+        "保健食品",
+        "游戏"
+      ],
+      "source": "form.public_fields.industry",
+      "comment": "行业赛道。"
+    },
+    "material_text": {
+      "type": "string",
+      "source": "form.public_fields.content",
+      "comment": "运营提交的文案原文，不做改写。"
+    },
+    "material_type": {
+      "type": "string",
+      "source": "industry_fields.material_type",
+      "comment": "图文文案、直播话术、短视频脚本、详情页文字等。"
+    },
+    "platforms": {
+      "type": "array<string>",
+      "source": "industry_fields.platforms",
+      "comment": "投放平台，用于匹配平台规则和渠道限制。"
+    },
+    "product_or_work": {
+      "type": "object",
+      "comment": "产品、游戏或作品的核心身份信息，如备案名称、产品名称、游戏名称、版号等。"
+    },
+    "target_audience": {
+      "type": "string|null",
+      "comment": "目标受众或可能受影响人群。"
+    },
+    "core_claims": {
+      "type": "array<string>",
+      "comment": "从文案和表单中抽取的核心功效、利益、价格、概率、资质、荣誉等宣称。"
+    },
+    "sensitive_entities": {
+      "type": "array<string>",
+      "comment": "疾病、医疗、保健功能、未成年人、国家机关、专家、明星、竞品等敏感实体。"
+    },
+    "facts_provided": {
+      "type": "array<string>",
+      "comment": "运营已提交或系统已识别到的事实依据。"
+    },
+    "facts_missing": {
+      "type": "array<string>",
+      "comment": "判断当前文案可能还缺少的事实材料。"
+    },
+    "context_summary": {
+      "type": "string",
+      "comment": "给 AI 使用的统一上下文摘要，应忠实概括，不新增事实。"
+    },
+    "mode_hint": {
+      "type": "enum",
+      "values": [
+        "极速",
+        "标准",
+        "深度"
+      ],
+      "comment": "AI 根据上下文推荐的审核模式，最终是否触发可由运营确认。"
+    },
+    "open_questions": {
+      "type": "array<string>",
+      "comment": "上下文仍不清楚、需要运营补充或法务判断的问题。"
+    }
+  },
+  "routing_policy": {
+    "__comment": "法务注意力分配与系统流转策略。v5 后续推荐人工优先标注 legal_attention，系统再映射或推导 routing.default_route，避免同类规则因人工自由填写而分流不一致。",
+    "core_principle": "把法务注意力留给高解释难度、高事实核验、高后果风险的工作；低难度、低复杂、可按明确建议修改的事项回运营处理。",
+    "human_marks": [
+      "interpretation_dependency",
+      "fact_dependency",
+      "misjudgment_cost",
+      "rule_applicability.type",
+      "route_status"
+    ],
+    "system_derives": [
+      "default_route"
+    ],
+    "route_matrix": [
+      {
+        "when": {
+          "interpretation_dependency": "high"
+        },
+        "default_route": "legal_review_required",
+        "reason": "需要解释开放法律概念，法务判断会实质影响结论。"
+      },
+      {
+        "when": {
+          "misjudgment_cost": "high"
+        },
+        "default_route": "legal_review_required",
+        "reason": "判断错误代价高，应强制升级法务。"
+      },
+      {
+        "when": {
+          "fact_dependency": "high",
+          "facts_missing": true
+        },
+        "default_route": "operator_supply_docs",
+        "reason": "主要缺口是资料或事实依据，先由运营补充。"
+      },
+      {
+        "when": {
+          "interpretation_dependency": "low",
+          "fact_dependency": "low",
+          "misjudgment_cost": [
+            "low",
+            "medium"
+          ]
+        },
+        "default_route": "operator_direct",
+        "reason": "文字触发清楚且无需复杂事实核验，可由运营直接修改或处理。"
+      },
+      {
+        "when": {
+          "rule_applicability.type": "关系判断型",
+          "fact_dependency": [
+            "medium",
+            "high"
+          ]
+        },
+        "default_route": "operator_supply_docs",
+        "reason": "先补足关系比对材料，必要时再升级法务。"
+      },
+      {
+        "when": {
+          "rule_applicability.type": "开放解释型"
+        },
+        "default_route": "legal_review_required",
+        "reason": "开放解释型规则通常需要法务解释适用边界。"
+      }
+    ],
+    "override_policy": {
+      "allowed": true,
+      "required_fields": [
+        "enabled",
+        "reason",
+        "reviewer",
+        "review_date"
+      ],
+      "comment": "人工可以覆盖系统默认路由，但必须说明原因并留痕。"
+    },
+    "calibration_policy": "规则提取可按法规来源推进，但最终路由应按违规维度簇统一校正，避免上位法阶段过早定性。",
+    "primary_human_marks": [
+      "legal_attention.trigger_clarity",
+      "legal_attention.legal_interpretation_level",
+      "legal_attention.fact_verification_level",
+      "legal_attention.risk_severity",
+      "legal_attention.operator_fixability",
+      "legal_attention.confidence",
+      "legal_attention.calibration_status"
+    ],
+    "primary_human_marks__comment": "推荐规则清洗阶段优先填写的主标注字段。旧 routing.interpretation_dependency 等字段可由这些字段映射生成。",
+    "legacy_field_mapping": {
+      "legal_attention.trigger_clarity": "rule_applicability.type / routing.interpretation_dependency 的参考来源",
+      "legal_attention.legal_interpretation_level": "routing.interpretation_dependency",
+      "legal_attention.fact_verification_level": "routing.fact_dependency",
+      "legal_attention.risk_severity": "routing.misjudgment_cost",
+      "legal_attention.default_route": "routing.default_route",
+      "legal_attention.route_reason": "routing.route_reason"
+    },
+    "legacy_field_mapping__comment": "兼容说明：不要求标注脚本同时维护两套字段；优先写 legal_attention，后续可用脚本同步到 routing。",
+    "attention_route_matrix": [
+      {
+        "when": {
+          "legal_interpretation_level": "high"
+        },
+        "default_route": "legal_review_required",
+        "reason": "需要解释开放法律概念或监管口径，法务判断会实质影响结论。"
+      },
+      {
+        "when": {
+          "risk_severity": "high"
+        },
+        "default_route": "legal_review_required",
+        "reason": "误判后果高，即使触发较清楚，也应优先进入法务或至少法务抽检。"
+      },
+      {
+        "when": {
+          "fact_verification_level": "heavy"
+        },
+        "default_route": "operator_supply_docs",
+        "reason": "主要缺口是证明材料或事实数据，先由运营补齐；补齐后如仍需解释再进入法务。"
+      },
+      {
+        "when": {
+          "trigger_clarity": "clear",
+          "legal_interpretation_level": "low",
+          "fact_verification_level": [
+            "none",
+            "light"
+          ],
+          "operator_fixability": [
+            "direct_fixable",
+            "guided_fixable"
+          ],
+          "risk_severity": [
+            "low",
+            "medium"
+          ]
+        },
+        "default_route": "operator_direct",
+        "reason": "文字触发清楚、解释成本低、运营可按明确建议修改，默认回运营处理。"
+      },
+      {
+        "when": {
+          "operator_fixability": "not_self_fixable"
+        },
+        "default_route": "legal_review_required",
+        "reason": "运营难以自行判断或修改，需法务或专业人员介入。"
+      }
+    ],
+    "attention_route_matrix__comment": "基于 legal_attention 的建议分流矩阵。当前可作为标注脚本的参考，不要求规则引擎立即消费。"
+  }
+}

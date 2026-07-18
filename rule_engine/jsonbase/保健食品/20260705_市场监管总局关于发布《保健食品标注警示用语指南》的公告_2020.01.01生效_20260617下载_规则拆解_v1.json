@@ -1,0 +1,400 @@
+{
+  "meta": {
+    "name": "保健食品规则库-市场监管总局关于发布《保健食品标注警示用语指南》的公告 _2020.01.01生效_20260617下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "保健食品广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "市场监管总局关于发布《保健食品标注警示用语指南》的公告 _2020.01.01生效_20260617下载.doc",
+    "source_track": "保健食品",
+    "rule_count": 2,
+    "error_count": 0,
+    "source_units_processed": 1,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "HFWG",
+      "name": "市场监管总局关于发布《保健食品标注警示用语指南》的公告 _2020.01.01生效_20260617下载",
+      "short": "HFWG-2020",
+      "type": "法规",
+      "legal_level": 3,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "HF-WARN-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "HFWG-2020",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品标签警示用语内容及格式要求",
+      "dimension": "警示语缺失",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "HFWG",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "HFWG",
+          "article": "未分条-1",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "保健食品标签设置警示用语区及警示用语。警示用语区位于最小销售包装包装物（容器）的主要展示版面，所占面积不应小于其所在面的20％。警示用语区内文字与警示用语区背景有明显色差。警示用语使用黑体字印刷，包括以下内容：保健食品不是药物，不能代替药物治疗疾病。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品",
+            "不是药物",
+            "不能代替药物治疗疾病"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "若保健食品宣传材料中未包含'保健食品不是药物，不能代替药物治疗疾病'的警示用语，则判定违规",
+        "decision": "若检测到保健食品相关文字材料中缺少上述警示用语，则触发违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "警示语",
+          "标签标注"
+        ],
+        "vector_text": "保健食品不是药物，不能代替药物治疗疾病。保健食品不能替代药品，不能治病。本产品不能替代药物。本品不是",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则要求保健食品广告必须包含固定警示语，但实际广告中可能出现各种变体或省略，语义召回可覆盖这些变体，避免漏召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:45:59",
+          "old_vector_text": "保健食品宣传材料必须包含'保健食品不是药物，不能代替药物治疗疾病'的警示用语",
+          "old_semantic_reason": "关键词可能因表述变体而漏召回，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健食品",
+            "警示语",
+            "不能代替药物",
+            "不是药品",
+            "标签标注"
+          ],
+          "negative_signals_recommendation": [
+            "药品",
+            "治疗",
+            "药物",
+            "代替"
+          ],
+          "change_summary": "将原法条式描述改写为多种违规变体表述集合，增强语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 115
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、替代药物、治疗、清晰、疾病.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求补充警示用语",
+      "examples": {
+        "violation": [
+          "某保健食品详情页未标注'保健食品不是药物，不能代替药物治疗疾病'"
+        ],
+        "compliant": [
+          "某保健食品Banner文字中明确标注'保健食品不是药物，不能代替药物治疗疾病'"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "法规明确要求保健食品标签必须包含特定警示用语，规则可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营判断是否包含警示用语",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-e2b10ade45f4dc83",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需判断是否包含固定警示用语，运营可直接修改或补充，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-WARN-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "HFWG-2020",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品经营场所及网络平台消费提示要求",
+      "dimension": "警示语缺失",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "HFWG",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "HFWG",
+          "article": "未分条-1",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "保健食品经营者在经营保健食品的场所、网络平台等显要位置标注'保健食品不是药物，不能代替药物治疗疾病'等消费提示信息，引导消费者理性消费。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "保健食品",
+            "不是药物",
+            "不能代替药物治疗疾病"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "若保健食品经营场所或网络平台的文字材料中未标注'保健食品不是药物，不能代替药物治疗疾病'消费提示，则判定违规",
+        "decision": "若检测到保健食品相关文字材料中缺少上述消费提示，则触发违规"
+      },
+      "recall": {
+        "tags": [
+          "保健食品",
+          "消费提示",
+          "经营场所",
+          "网络平台"
+        ],
+        "vector_text": "保健食品不是药物，不能代替药物治疗疾病。本品不能替代药品。本产品不是药品，不能用于治疗疾病。保健食品",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则要求必须包含固定消费提示语，但广告文案中可能出现变体或省略，语义召回可补充关键词漏召回的变体表达。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:46:08",
+          "old_vector_text": "保健食品经营场所或网络平台必须标注'保健食品不是药物，不能代替药物治疗疾病'消费提示",
+          "old_semantic_reason": "关键词可能因表述变体而漏召回，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健食品",
+            "消费提示",
+            "不是药物",
+            "不能代替治疗",
+            "警示语"
+          ],
+          "negative_signals_recommendation": [
+            "药品",
+            "处方药",
+            "治疗疾病",
+            "疗效"
+          ],
+          "change_summary": "将原法条式描述改写为多种违规变体文案集合，覆盖省略、替换、口语化等表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 144
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 替代药物、治疗、清晰、疾病.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求补充消费提示信息",
+      "examples": {
+        "violation": [
+          "某电商平台保健食品详情页未标注'保健食品不是药物，不能代替药物治疗疾病'消费提示"
+        ],
+        "compliant": [
+          "某保健食品直播话术中明确提示'保健食品不是药物，不能代替药物治疗疾病'"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "法规明确要求保健食品经营场所和网络平台标注消费提示，规则可直接执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营判断是否包含消费提示",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-a6e17fbc9c08c24a",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需判断是否包含固定消费提示，运营可直接补充或修改，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

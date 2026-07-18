@@ -1,0 +1,3872 @@
+{
+  "baseline_name": "zhipu_deepseek_after_llm_medium_risk_policy",
+  "timestamp": "20260718_113632",
+  "case_layers": [
+    "content"
+  ],
+  "config": {
+    "ADSURE_LLM_BACKEND": "deepseek",
+    "ADSURE_LLM_MODE": "strict",
+    "ADSURE_SEMANTIC_BACKEND": "zhipu",
+    "DEEPSEEK_MODEL": "deepseek-chat",
+    "ZHIPU_EMBEDDING_MODEL": "embedding-3"
+  },
+  "summary": {
+    "case_count": 23,
+    "response_ok_count": 23,
+    "error_count": 0,
+    "core_audit_pass_count": 16,
+    "core_audit_fail_count": 7,
+    "core_audit_pass_rate": 0.6957,
+    "recall_pass_count": 23,
+    "recall_pass_rate": 1.0,
+    "semantic_expected_pass_count": 23,
+    "semantic_expected_pass_rate": 1.0,
+    "dimension_pass_count": 23,
+    "dimension_pass_rate": 1.0,
+    "risk_level_match_count": 16,
+    "risk_level_match_rate": 0.6957,
+    "rule_engine_risk_match_count": 14,
+    "rule_engine_risk_match_rate": 0.6087,
+    "llm_risk_match_count": 15,
+    "llm_risk_match_rate": 0.6522,
+    "final_risk_match_count": 16,
+    "final_risk_match_rate": 0.6957,
+    "risk_disagreement_count": 13,
+    "routing_pass_count": 23,
+    "routing_pass_rate": 1.0,
+    "semantic_matched_case_count": 18,
+    "llm_json_valid_count": 23,
+    "llm_json_valid_rate": 1.0,
+    "llm_rule_citation_ok_count": 23,
+    "llm_rule_citation_rate": 1.0,
+    "llm_hallucination_case_count": 0,
+    "outside_rule_risk_count": 6,
+    "average_elapsed_ms": 6764.38
+  },
+  "cases": [
+    {
+      "case_id": "CASE-COSM-001",
+      "name": "美妆短期见效与绝对化宣称",
+      "elapsed_ms": 6302.29,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-FALSE-001",
+          "GEN-ABS-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "虚假宣传",
+          "绝对化用语"
+        ],
+        "expected_risk_level": "高",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "COSM-ADEX-001",
+          "COSM-FALSE-004",
+          "COSM-虚假宣传-001",
+          "DY-COSM-001",
+          "GEN-ABS-001",
+          "GEN-FALSE-001",
+          "XHS-AD-001",
+          "XHS-COSM-002"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "DY-COSM-001",
+            "rule_uid": "RUID-79ddc3d35625acfc",
+            "title": "美妆行业禁止使用广告极限词",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-FALSE-001",
+            "rule_uid": "RUID-d958618a8503a8de",
+            "title": "广告不得作虚假或引人误解宣传",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-ABS-001",
+            "rule_uid": "RUID-b60852699e8ddd70",
+            "title": "广告不得使用绝对化用语等红线内容",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-虚假宣传-001",
+            "rule_uid": "RUID-1c246de1b3125c73",
+            "title": "美妆宣传禁止使用虚假性保证词语",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-ADEX-001",
+            "rule_uid": "RUID-770045974521f8d2",
+            "title": "禁止使用广告极限词",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-FALSE-004",
+            "rule_uid": "RUID-6aacf3fd76ca293f",
+            "title": "虚假广告定义-虚构使用商品或接受服务的效果",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "XHS-AD-001",
+            "rule_uid": "RUID-90f0f330fbd84ecb",
+            "title": "美妆广告禁止使用绝对化用语",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-虚假宣传-001",
+            "rule_uid": "RUID-f5ec77e12b20c051",
+            "title": "禁止无数据支撑的效果保证宣传",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "XHS-COSM-002",
+            "rule_uid": "RUID-fd8cb4eea586643c",
+            "title": "美妆产品广告不得对产品效果做出时间性保证承诺",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          }
+        ],
+        "dimensions": [
+          "绝对化用语",
+          "虚假宣传"
+        ],
+        "risk_level": "高",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "risk_disagreement": false,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断一致。",
+        "final_risk_source": "llm_case_high"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "XHS-COSM-002"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "COSM-FALSE-004",
+          "COSM-虚假宣传-001",
+          "DY-COSM-001",
+          "GEN-ABS-001",
+          "GEN-FALSE-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-COSM-002",
+      "name": "美妆临床证明与数据引证",
+      "elapsed_ms": 7410.06,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": false,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": false,
+        "final_risk_ok": false,
+        "routing_ok": true,
+        "core_audit_ok": false
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-DATA-001",
+          "GEN-FALSE-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "引证内容不规范",
+          "虚假宣传"
+        ],
+        "expected_risk_level": "高",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "COSM-AD-002",
+          "COSM-ADV-001",
+          "COSM-FALSE-004",
+          "COSM-OTHER-001",
+          "DY-COSM-001",
+          "GEN-DATA-001",
+          "GEN-EDU-003",
+          "GEN-FALSE-001",
+          "GEN-IDENT-001",
+          "XHS-COSM-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "DY-COSM-001",
+            "rule_uid": "RUID-7c41716145d01973",
+            "title": "化妆品商品不得过度承诺效果",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-FALSE-001",
+            "rule_uid": "RUID-d958618a8503a8de",
+            "title": "广告不得作虚假或引人误解宣传",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-AD-002",
+            "rule_uid": "RUID-343e09b5c1c6b0d2",
+            "title": "农药、兽药、饲料和饲料添加剂广告不得利用科研单位等名义作推荐证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-EDU-003",
+            "rule_uid": "RUID-8c62d78f59c1cfaa",
+            "title": "教育、培训广告不得利用科研单位、学术机构等名义或形象作推荐、证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-AD-002",
+            "rule_uid": "RUID-90b3548616f67e98",
+            "title": "招商广告不得利用学术机构、行业协会、专业人士、受益者名义作推荐证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-FALSE-004",
+            "rule_uid": "RUID-6aacf3fd76ca293f",
+            "title": "虚假广告定义-虚构使用商品或接受服务的效果",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-ADV-001",
+            "rule_uid": "RUID-c434bc40389bb1a2",
+            "title": "广告中使用他人名义或形象需取得书面同意",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-ADV-001",
+            "rule_uid": "RUID-d31f24a1455c5ead",
+            "title": "广告代言人不得为其未使用过的商品作推荐、证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-IDENT-001",
+            "rule_uid": "RUID-0504df6a38716141",
+            "title": "广告应当具有可识别性",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "COSM-OTHER-001",
+            "rule_uid": "RUID-8c97a7b4a07c5ab8",
+            "title": "化妆品标签创新用语需解释说明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "XHS-COSM-001",
+            "rule_uid": "RUID-7ca31fd391ea189b",
+            "title": "美妆广告投放需完成行业认证",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "fact"
+          },
+          {
+            "rule_id": "GEN-DATA-001",
+            "rule_uid": "RUID-5b2a03e0fd190b3e",
+            "title": "广告引证内容应真实准确并标明出处",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "fact"
+          }
+        ],
+        "dimensions": [
+          "其他",
+          "平台准入/资质不符",
+          "广告代言不合规",
+          "广告可识别性不足",
+          "引证内容不规范",
+          "虚假宣传"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": true,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "COSM-OTHER-001",
+          "GEN-IDENT-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "COSM-FALSE-004",
+          "DY-COSM-001",
+          "GEN-DATA-001",
+          "GEN-FALSE-001",
+          "XHS-COSM-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-COSM-003",
+      "name": "美妆涉医疗治疗用语",
+      "elapsed_ms": 5726.41,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-MED-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "涉医疗宣传"
+        ],
+        "expected_risk_level": "高",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "COSM-001-001",
+          "COSM-MEDICAL-001",
+          "COSM-PLAT-001",
+          "DY-COSM-001",
+          "GEN-MED-001",
+          "XHS-COSM-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "GEN-MED-001",
+            "rule_uid": "RUID-1e455acefad683e3",
+            "title": "非医疗广告不得涉及疾病治疗和医疗用语",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-PLAT-001",
+            "rule_uid": "RUID-b11a65604979d8cb",
+            "title": "美妆产品禁止涉及医疗保健功效宣传",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-001-001",
+            "rule_uid": "RUID-bbed7e84e3673d78",
+            "title": "禁止在广告中使用医疗用语或易与药品、医疗器械混淆的用语",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-MEDICAL-001",
+            "rule_uid": "RUID-7694a8850060153f",
+            "title": "化妆品标签不得明示或暗示医疗作用",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-001-001",
+            "rule_uid": "RUID-229e394a1d9023ee",
+            "title": "化妆品标签禁止明示或暗示医疗作用",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-001-001",
+            "rule_uid": "RUID-fa12537003091a36",
+            "title": "化妆品名称不得宣称医疗效果或产品不具备的功效",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "DY-COSM-001",
+            "rule_uid": "RUID-8747128b12bea56d",
+            "title": "化妆品不得宣传医疗效果",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "XHS-COSM-001",
+            "rule_uid": "RUID-85f45afaf3f2f2b1",
+            "title": "化妆品宣传不得涉及医疗功效描述",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          }
+        ],
+        "dimensions": [
+          "涉医疗宣传",
+          "虚假宣传"
+        ],
+        "risk_level": "高",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "risk_disagreement": false,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断一致。",
+        "final_risk_source": "llm_case_high"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "COSM-001-001",
+          "COSM-MEDICAL-001",
+          "DY-COSM-001",
+          "GEN-MED-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-COSM-004",
+      "name": "美妆种草购物链接广告识别",
+      "elapsed_ms": 5371.25,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": false,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-IDENT-001",
+          "IAM-IDENT-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "广告可识别性不足"
+        ],
+        "expected_risk_level": "中",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "COSM-ADEX-001",
+          "COSM-CLAIM-002",
+          "COSM-DATA-001",
+          "COSM-FALSEADV-003",
+          "DY-COSM-001",
+          "GEN-IDENT-001",
+          "IAM-ADID-001",
+          "IAM-IDENT-001",
+          "IAM-LINK-001",
+          "IAM-MED-002"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "COSM-FALSEADV-003",
+            "rule_uid": "RUID-28d3242b78268125",
+            "title": "虚假广告连带责任-社会团体或个人推荐连带责任",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-MED-002",
+            "rule_uid": "RUID-6f4d76fd2b5089b7",
+            "title": "健康养生知识页面不得同时出现保健食品经营者地址、联系方式或购物链接",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-IDENT-001",
+            "rule_uid": "RUID-0504df6a38716141",
+            "title": "广告应当具有可识别性",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-IDENT-001",
+            "rule_uid": "RUID-6f1b989ff75db456",
+            "title": "竞价排名和种草测评购物链接应标广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-ADID-001",
+            "rule_uid": "RUID-cdccbb5ccd860a81",
+            "title": "互联网广告应具有可识别性，显著标明广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-LINK-001",
+            "rule_uid": "RUID-b7071deb3c78bd4d",
+            "title": "含链接广告应核对下一级链接内容",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-DATA-001",
+            "rule_uid": "RUID-90f82554bd48bfce",
+            "title": "广告发布者提供的覆盖率、收视率、点击率、发行量等资料应当真实",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-CLAIM-002",
+            "rule_uid": "RUID-2ee4c92b78a28c9c",
+            "title": "通过宣称原料功效进行产品功效宣称需证实原料功效及关联性",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "DY-COSM-001",
+            "rule_uid": "RUID-2cf05ee3b2738f63",
+            "title": "特殊身份带货禁止规则",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "COSM-ADEX-001",
+            "rule_uid": "RUID-770045974521f8d2",
+            "title": "禁止使用广告极限词",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          }
+        ],
+        "dimensions": [
+          "功效宣称",
+          "广告代言不合规",
+          "广告可识别性不足",
+          "数据引用不规范",
+          "绝对化用语",
+          "虚假宣传"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": true,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "COSM-ADEX-001",
+          "DY-COSM-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "COSM-CLAIM-002",
+          "IAM-IDENT-001",
+          "IAM-LINK-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-COSM-005",
+      "name": "美妆专利配方宣称",
+      "elapsed_ms": 7957.5,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": false,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-PATENT-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "引证内容不规范"
+        ],
+        "expected_risk_level": "中",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "COSM-001-002",
+          "COSM-OTHER-001",
+          "COSM-OTHER-002",
+          "COSM-PAT-001",
+          "COSM-PAT-002",
+          "COSM-PAT-003",
+          "COSM-虚假宣传-001",
+          "GEN-PATENT-001",
+          "XHS-COSM-001",
+          "XHS-COSM-002",
+          "XHS-PAT-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "COSM-001-002",
+            "rule_uid": "RUID-9a22a73c310fc68c",
+            "title": "化妆品通用名应与产品配方成分相符且功效宣称相符",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "XHS-COSM-002",
+            "rule_uid": "RUID-a01290d271d5ba30",
+            "title": "广告素材中事实性描述需提供证明材料",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-虚假宣传-001",
+            "rule_uid": "RUID-9e32de4d02d4c3d3",
+            "title": "专利/荣誉/销量/研发单位/效果指数虚假宣传",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "XHS-PAT-001",
+            "rule_uid": "RUID-50818349cdf87f85",
+            "title": "广告中涉及专利宣传必须标注专利号和专利种类",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "XHS-COSM-001",
+            "rule_uid": "RUID-24587804b9ccbf09",
+            "title": "事实性描述需提供证明材料且描述与材料一致",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-OTHER-001",
+            "rule_uid": "RUID-8c97a7b4a07c5ab8",
+            "title": "化妆品标签创新用语需解释说明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "COSM-PAT-002",
+            "rule_uid": "RUID-cbbaf4aee0850090",
+            "title": "禁止在广告中谎称取得专利权",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-PAT-003",
+            "rule_uid": "RUID-4516cb8da41523b8",
+            "title": "禁止使用未授权专利申请或已失效专利作广告",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-OTHER-002",
+            "rule_uid": "RUID-6de71a28bbfbccf5",
+            "title": "广告中不得假冒他人专利",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-PATENT-001",
+            "rule_uid": "RUID-07fe253c98da8c7b",
+            "title": "专利广告应标明专利号和种类",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-PAT-001",
+            "rule_uid": "RUID-88bde5d1fe0aa54d",
+            "title": "广告中涉及专利产品/方法须标明专利号和专利种类",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          }
+        ],
+        "dimensions": [
+          "其他",
+          "功效宣称",
+          "引证内容不规范",
+          "数据引用不规范",
+          "虚假宣传"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": true,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "COSM-OTHER-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "COSM-OTHER-002",
+          "COSM-PAT-001",
+          "COSM-PAT-002",
+          "COSM-PAT-003",
+          "COSM-虚假宣传-001",
+          "GEN-PATENT-001",
+          "XHS-COSM-001",
+          "XHS-COSM-002",
+          "XHS-PAT-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-HF-001",
+      "name": "保健食品审查批准与批准文号",
+      "elapsed_ms": 10151.4,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "IAM-REVIEW-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "平台准入/资质不符"
+        ],
+        "expected_risk_level": "高",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "GEN-MED-001",
+          "HF-001-001",
+          "HF-ADID-001",
+          "HF-ADPRE-001",
+          "HF-ADV-001",
+          "HF-ADW-001",
+          "HF-ADW-002",
+          "HF-APPROVAL-001",
+          "HF-LBL-001",
+          "HF-虚假宣传-001",
+          "IAM-ADID-001",
+          "IAM-ADV-002",
+          "IAM-REVIEW-001",
+          "XHS-HF-001",
+          "XHS-HF-002"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "HF-ADV-001",
+            "rule_uid": "RUID-4d1475cb7d65d9fe",
+            "title": "禁止以介绍健康、养生知识形式变相发布保健食品广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-虚假宣传-001",
+            "rule_uid": "RUID-5beeb660318cf574",
+            "title": "非保健食品不得声称具有保健功能",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-ADW-001",
+            "rule_uid": "RUID-989d33ad946f5d52",
+            "title": "保健食品广告须声明'本品不能代替药物'",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-LBL-001",
+            "rule_uid": "RUID-35692036187035e7",
+            "title": "进口保健食品中文标签与说明书合规要求",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-ADV-002",
+            "rule_uid": "RUID-0f8c44ce896ef618",
+            "title": "保健食品广告内容不得剪辑拼接修改",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-ADID-001",
+            "rule_uid": "RUID-f26b595d3da68806",
+            "title": "禁止以健康养生知识形式变相发布保健食品广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "XHS-HF-001",
+            "rule_uid": "RUID-4c2420c3a7556715",
+            "title": "普通食品不得宣传具有具体功效",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "XHS-HF-002",
+            "rule_uid": "RUID-6a1ae8f36a438260",
+            "title": "普通食品不得涉及夸大宣传（医疗、保健、化妆品功效）",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-ADID-001",
+            "rule_uid": "RUID-b53e7bf454d4e8b4",
+            "title": "广告应当具有可识别性，显著标明广告字样",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "GEN-MED-001",
+            "rule_uid": "RUID-1e455acefad683e3",
+            "title": "非医疗广告不得涉及疾病治疗和医疗用语",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "IAM-REVIEW-001",
+            "rule_uid": "RUID-5326cca6744b5675",
+            "title": "应审查广告须审查并按内容发布",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "fact"
+          },
+          {
+            "rule_id": "HF-001-001",
+            "rule_uid": "RUID-70d3fcec74ce985b",
+            "title": "保健食品广告未经审查发布",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "fact"
+          },
+          {
+            "rule_id": "HF-ADW-002",
+            "rule_uid": "RUID-c759ae9e2b02d013",
+            "title": "保健食品广告须经审查批准并取得批准文件",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "fact"
+          },
+          {
+            "rule_id": "HF-ADPRE-001",
+            "rule_uid": "RUID-b6d85093aac76c45",
+            "title": "保健食品广告发布前须经审查机关审查",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "fact"
+          },
+          {
+            "rule_id": "HF-APPROVAL-001",
+            "rule_uid": "RUID-6863b929b2f758ca",
+            "title": "保健食品广告需取得批准文件且内容一致",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "fact"
+          }
+        ],
+        "dimensions": [
+          "平台准入/资质不符",
+          "广告可识别性不足",
+          "标签标识不规范",
+          "涉医疗宣传",
+          "虚假宣传",
+          "警示语缺失"
+        ],
+        "risk_level": "高",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "risk_disagreement": false,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断一致。",
+        "final_risk_source": "llm_case_high"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "GEN-MED-001",
+          "HF-ADID-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GEN-MED-001",
+          "HF-001-001",
+          "HF-ADID-001",
+          "HF-ADPRE-001",
+          "HF-ADV-001",
+          "HF-ADW-001",
+          "HF-ADW-002",
+          "HF-APPROVAL-001",
+          "HF-LBL-001",
+          "HF-虚假宣传-001",
+          "IAM-ADID-001",
+          "IAM-ADV-002",
+          "IAM-REVIEW-001",
+          "XHS-HF-001",
+          "XHS-HF-002"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-HF-002",
+      "name": "保健食品疾病预防健康科普导流",
+      "elapsed_ms": 9628.22,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-HEALTHSOFT-001",
+          "IAM-HEALTHSOFT-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "广告可识别性不足"
+        ],
+        "expected_risk_level": "高",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "GEN-HEALTHSOFT-001",
+          "HF-001-001",
+          "HF-002",
+          "HF-005",
+          "HF-AD-002",
+          "HF-ADID-002",
+          "HF-ADL-001",
+          "HF-FALSE-001",
+          "HF-IP-003",
+          "HF-MIS-001",
+          "HFAD-011-002",
+          "IAM-HEALTHSOFT-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "IAM-HEALTHSOFT-001",
+            "rule_uid": "RUID-38e9bda474456629",
+            "title": "不得以健康养生内容变相发布特殊品类广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-HEALTHSOFT-001",
+            "rule_uid": "RUID-1b5a618fd60fdd11",
+            "title": "不得以健康养生知识变相发布广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-FALSE-001",
+            "rule_uid": "RUID-4eb2d27878eedc20",
+            "title": "保健食品标签说明书不得涉及疾病预防治疗功能",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-MIS-001",
+            "rule_uid": "RUID-a63b69e3e828b39c",
+            "title": "保健食品标签说明书不得涉及疾病预防治疗功能",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-001-001",
+            "rule_uid": "RUID-c3511b0e7c2dc985",
+            "title": "保健食品标签说明书不得涉及疾病预防治疗功能",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HFAD-011-002",
+            "rule_uid": "RUID-92f0e76f37a2a1a1",
+            "title": "保健食品广告不得使用科研单位、学术机构、专家、患者等名义作推荐证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-002",
+            "rule_uid": "RUID-b2af3e129ef8e342",
+            "title": "保健食品广告不得涉及疾病预防、治疗功能",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-005",
+            "rule_uid": "RUID-d79610014e487328",
+            "title": "保健食品广告不得利用广告代言人作推荐、证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-ADID-002",
+            "rule_uid": "RUID-fcb0f664c1fd7f0b",
+            "title": "变相发布保健食品广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "HF-IP-003",
+            "rule_uid": "RUID-95d03473566aa0b5",
+            "title": "广告中未经同意不得使用他人名义或形象",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-AD-002",
+            "rule_uid": "RUID-0890919fcdafb70b",
+            "title": "保健食品广告需完成行业认证后方可投放",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-ADL-001",
+            "rule_uid": "RUID-a4231e5bdb7ce08b",
+            "title": "广告中使用他人名义或形象需取得书面同意",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          }
+        ],
+        "dimensions": [
+          "平台准入/资质不符",
+          "广告代言不合规",
+          "广告可识别性不足",
+          "涉医疗宣传",
+          "虚假宣传"
+        ],
+        "risk_level": "高",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "risk_disagreement": false,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断一致。",
+        "final_risk_source": "llm_case_high"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "HF-ADID-002"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GEN-HEALTHSOFT-001",
+          "HF-001-001",
+          "HF-002",
+          "HF-005",
+          "HF-AD-002",
+          "HF-ADID-002",
+          "HF-ADL-001",
+          "HF-FALSE-001",
+          "HF-IP-003",
+          "HF-MIS-001",
+          "HFAD-011-002",
+          "IAM-HEALTHSOFT-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-HF-003",
+      "name": "保健食品治疗降血糖宣称",
+      "elapsed_ms": 7463.62,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-MED-001",
+          "GEN-FALSE-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "涉医疗宣传",
+          "虚假宣传"
+        ],
+        "expected_risk_level": "高",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "GEN-FALSE-001",
+          "GEN-MED-001",
+          "HF-001-001",
+          "HF-001-002",
+          "HF-002",
+          "HF-FALSE-001",
+          "HF-MT-001",
+          "HF-WARN-002",
+          "XHS-HF-002"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "GEN-MED-001",
+            "rule_uid": "RUID-1e455acefad683e3",
+            "title": "非医疗广告不得涉及疾病治疗和医疗用语",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-002",
+            "rule_uid": "RUID-b2af3e129ef8e342",
+            "title": "保健食品广告不得涉及疾病预防、治疗功能",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-FALSE-001",
+            "rule_uid": "RUID-4eb2d27878eedc20",
+            "title": "保健食品标签说明书不得涉及疾病预防治疗功能",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "XHS-HF-002",
+            "rule_uid": "RUID-6a1ae8f36a438260",
+            "title": "普通食品不得涉及夸大宣传（医疗、保健、化妆品功效）",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-001-002",
+            "rule_uid": "RUID-165591db82effab3",
+            "title": "保健食品广告不得涉及疾病预防、治疗功能",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-MT-001",
+            "rule_uid": "RUID-7704214ffc5d9535",
+            "title": "保健食品广告不得涉及疾病预防、治疗功能",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-FALSE-001",
+            "rule_uid": "RUID-d958618a8503a8de",
+            "title": "广告不得作虚假或引人误解宣传",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-001-001",
+            "rule_uid": "RUID-d65bef32d08d3476",
+            "title": "禁止保健食品广告涉及疾病治疗功能或使用医疗用语",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-WARN-002",
+            "rule_uid": "RUID-a6e17fbc9c08c24a",
+            "title": "保健食品经营场所及网络平台消费提示要求",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          }
+        ],
+        "dimensions": [
+          "涉医疗宣传",
+          "虚假宣传",
+          "警示语缺失"
+        ],
+        "risk_level": "高",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "risk_disagreement": false,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断一致。",
+        "final_risk_source": "llm_case_high"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "HF-WARN-002"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GEN-FALSE-001",
+          "GEN-MED-001",
+          "HF-001-001",
+          "HF-001-002",
+          "HF-002",
+          "HF-FALSE-001",
+          "HF-MT-001",
+          "HF-WARN-002"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-HF-004",
+      "name": "保健食品买赠价格促销",
+      "elapsed_ms": 7442.78,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": false,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-CLEAR-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "价格促销误导"
+        ],
+        "expected_risk_level": "中",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "DY-HF-001",
+          "GEN-CLEAR-001",
+          "GEN-HEALTHSOFT-001",
+          "HF-ACC-002",
+          "HF-ADID-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "DY-HF-001",
+            "rule_uid": "RUID-c7f28f8ede77c6b0",
+            "title": "商品宣传信息真实性义务",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-CLEAR-001",
+            "rule_uid": "RUID-83cc700ddeecd288",
+            "title": "商品服务信息表示应准确清楚明白",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-ACC-002",
+            "rule_uid": "RUID-648a74f0a007c117",
+            "title": "附带赠送广告应当明示品种、规格、数量、期限和方式",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "DY-HF-001",
+            "rule_uid": "RUID-712ccb2f6856de76",
+            "title": "大小/重量/数量虚假宣传禁止规则",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-HEALTHSOFT-001",
+            "rule_uid": "RUID-1b5a618fd60fdd11",
+            "title": "不得以健康养生知识变相发布广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "HF-ADID-001",
+            "rule_uid": "RUID-cac0e7fe1d986d37",
+            "title": "保健食品广告不具有可识别性",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          }
+        ],
+        "dimensions": [
+          "价格促销误导",
+          "广告可识别性不足",
+          "虚假宣传"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": true,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "GEN-HEALTHSOFT-001",
+          "HF-ADID-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "DY-HF-001",
+          "GEN-CLEAR-001",
+          "GEN-HEALTHSOFT-001",
+          "HF-ACC-002",
+          "HF-ADID-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-HF-005",
+      "name": "保健食品平台禁售处方药混淆",
+      "elapsed_ms": 6244.8,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "IAM-BAN-001",
+          "GEN-MED-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "平台准入/资质不符",
+          "涉医疗宣传"
+        ],
+        "expected_risk_level": "高",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "GEN-HEALTHSOFT-001",
+          "GEN-MED-001",
+          "HF-001-001",
+          "HF-005",
+          "HF-AD-002",
+          "HF-ADID-002",
+          "HF-ADL-001",
+          "HF-EDU-003",
+          "HF-IP-003",
+          "HF-OTH-002",
+          "HF-虚假宣传-002",
+          "IAM-BAN-001",
+          "IAM-PRO-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "GEN-MED-001",
+            "rule_uid": "RUID-1e455acefad683e3",
+            "title": "非医疗广告不得涉及疾病治疗和医疗用语",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-BAN-001",
+            "rule_uid": "RUID-51a486d7d09d8797",
+            "title": "互联网不得发布禁售商品和烟草处方药广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-PRO-001",
+            "rule_uid": "RUID-93798668f857df02",
+            "title": "禁止利用互联网发布处方药广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-OTH-002",
+            "rule_uid": "RUID-46fae3e5e70229f7",
+            "title": "处方药仅限在指定医学、药学专业刊物上作广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-001-001",
+            "rule_uid": "RUID-d65bef32d08d3476",
+            "title": "禁止保健食品广告涉及疾病治疗功能或使用医疗用语",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-005",
+            "rule_uid": "RUID-d79610014e487328",
+            "title": "保健食品广告不得利用广告代言人作推荐、证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-虚假宣传-002",
+            "rule_uid": "RUID-168081152ac6fa9d",
+            "title": "保健食品广告不得利用科研单位、学术机构、技术推广机构、行业协会或者专业人士、用户的名义或者形象作推荐、证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-EDU-003",
+            "rule_uid": "RUID-7f1a9698aaa2cf50",
+            "title": "教育、培训广告不得利用科研单位、学术机构等名义作推荐、证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-HEALTHSOFT-001",
+            "rule_uid": "RUID-1b5a618fd60fdd11",
+            "title": "不得以健康养生知识变相发布广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "HF-ADID-002",
+            "rule_uid": "RUID-fcb0f664c1fd7f0b",
+            "title": "变相发布保健食品广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "HF-ADL-001",
+            "rule_uid": "RUID-a4231e5bdb7ce08b",
+            "title": "广告中使用他人名义或形象需取得书面同意",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-IP-003",
+            "rule_uid": "RUID-95d03473566aa0b5",
+            "title": "广告中未经同意不得使用他人名义或形象",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-AD-002",
+            "rule_uid": "RUID-0890919fcdafb70b",
+            "title": "保健食品广告需完成行业认证后方可投放",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          }
+        ],
+        "dimensions": [
+          "其他",
+          "平台准入/资质不符",
+          "广告代言不合规",
+          "广告可识别性不足",
+          "涉医疗宣传",
+          "虚假宣传"
+        ],
+        "risk_level": "高",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "risk_disagreement": false,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断一致。",
+        "final_risk_source": "llm_case_high"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "GEN-HEALTHSOFT-001",
+          "HF-ADID-002"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GEN-MED-001",
+          "HF-001-001",
+          "HF-OTH-002",
+          "IAM-BAN-001",
+          "IAM-PRO-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-GAME-001",
+      "name": "游戏全网第一绝对化宣称",
+      "elapsed_ms": 7455.49,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": false,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": false,
+        "final_risk_ok": false,
+        "routing_ok": true,
+        "core_audit_ok": false
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-ABS-001",
+          "GEN-FALSE-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "绝对化用语",
+          "虚假宣传"
+        ],
+        "expected_risk_level": "高",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "GAME-AD-001",
+          "GAME-AD-002",
+          "GAME-BILI-002",
+          "GAME-BILI-003",
+          "GAME-BILI-004",
+          "GAME-FALSE-005",
+          "GAME-IP-002",
+          "GAME-URL-002",
+          "GAME-URL-003",
+          "GEN-ABS-001",
+          "GEN-FALSE-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "GEN-ABS-001",
+            "rule_uid": "RUID-b60852699e8ddd70",
+            "title": "广告不得使用绝对化用语等红线内容",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-FALSE-001",
+            "rule_uid": "RUID-d958618a8503a8de",
+            "title": "广告不得作虚假或引人误解宣传",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-IP-002",
+            "rule_uid": "RUID-5c1b488604c3bbd0",
+            "title": "游戏类广告创意不得抄袭其他游戏元素",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-003",
+            "rule_uid": "RUID-e990073bbb155ad2",
+            "title": "游戏广告涉及赠送福利需提供奖励品真实有效证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-AD-002",
+            "rule_uid": "RUID-c0d8414639b33f16",
+            "title": "广告中附带赠送应当明示品种、规格、数量、期限和方式",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-002",
+            "rule_uid": "RUID-aab092aa8071f6cb",
+            "title": "涉及赠送/免费等活动需明示参与条件与门槛",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-FALSE-005",
+            "rule_uid": "RUID-49ce8230eea10fa3",
+            "title": "禁止虚假广告（其他虚假或引人误解内容）",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "GAME-AD-001",
+            "rule_uid": "RUID-44c5caa2437d82d9",
+            "title": "广告主对互联网广告内容真实性负责",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "GAME-BILI-004",
+            "rule_uid": "RUID-6c1b712f431c6b0d",
+            "title": "手游广告落地页iOS端需链接至App Store，安卓端需链接至B站游戏开放平台内链",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-URL-002",
+            "rule_uid": "RUID-80d816a2ebffe900",
+            "title": "手游广告落地页iOS端需链接至App Store",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-URL-003",
+            "rule_uid": "RUID-fe1de6c6adfa8d2f",
+            "title": "手游广告落地页安卓端需链接至B站游戏开放平台内链",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          }
+        ],
+        "dimensions": [
+          "IP侵权",
+          "平台准入/资质不符",
+          "绝对化用语",
+          "虚假宣传"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": true,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "GAME-AD-001",
+          "GAME-FALSE-005"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GAME-AD-002",
+          "GAME-BILI-002",
+          "GAME-BILI-003",
+          "GEN-ABS-001",
+          "GEN-FALSE-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-GAME-002",
+      "name": "游戏未成年人校园投放",
+      "elapsed_ms": 8068.69,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-MINOR-001",
+          "IAM-MINOR-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "未成年人保护"
+        ],
+        "expected_risk_level": "高",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "GAME-AD-002",
+          "GAME-BILI-001",
+          "GAME-BILI-002",
+          "GAME-OTH-001",
+          "GAME-RISK-001",
+          "GAME-未成年人保护-001",
+          "GEN-MINOR-001",
+          "IAM-MINOR-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "IAM-MINOR-001",
+            "rule_uid": "RUID-9024cea82803806c",
+            "title": "未成年人互联网媒介不得发布特定广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-MINOR-001",
+            "rule_uid": "RUID-c469ad39a233d403",
+            "title": "针对未成年人媒介不得发布特定广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-001",
+            "rule_uid": "RUID-a8c4374f2de3ec85",
+            "title": "游戏广告不得出现未成年人相关元素",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-未成年人保护-001",
+            "rule_uid": "RUID-50e1960c3642e5b5",
+            "title": "禁止在未成年人互联网媒介上发布不利于未成年人身心健康的网络游戏广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-RISK-001",
+            "rule_uid": "RUID-2b2947f368984e5b",
+            "title": "高风险内容（含游戏）严禁出现任何未成年人相关元素",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-002",
+            "rule_uid": "RUID-eb350ea9104aebf5",
+            "title": "游戏广告不得宣传不利于未成年人身心健康的游戏",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-OTH-001",
+            "rule_uid": "RUID-04db0a8c2279c669",
+            "title": "广告不得损害未成年人身心健康",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-AD-002",
+            "rule_uid": "RUID-fa71dc6aaa7dc3f9",
+            "title": "禁止向未成年人发送任何形式的烟草广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          }
+        ],
+        "dimensions": [
+          "未成年人保护"
+        ],
+        "risk_level": "高",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "risk_disagreement": false,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断一致。",
+        "final_risk_source": "llm_case_high"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GAME-AD-002",
+          "GAME-BILI-001",
+          "GAME-BILI-002",
+          "GAME-OTH-001",
+          "GAME-RISK-001",
+          "GAME-未成年人保护-001",
+          "GEN-MINOR-001",
+          "IAM-MINOR-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-GAME-003",
+      "name": "游戏直播带货达人推荐",
+      "elapsed_ms": 6432.37,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": false,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-ENDORSE-001",
+          "IAM-LIVE-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "广告代言不合规"
+        ],
+        "expected_risk_level": "中",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "GAME-AD-001",
+          "GAME-AD-002",
+          "GAME-AD-003",
+          "GAME-BILI-004",
+          "GAME-IP-002",
+          "GEN-ENDORSE-001",
+          "IAM-LIVE-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "IAM-LIVE-001",
+            "rule_uid": "RUID-4ad17513ff7e0cb3",
+            "title": "直播推销构成广告时承担广告主责任",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-ENDORSE-001",
+            "rule_uid": "RUID-d17e2e8d7db24657",
+            "title": "广告代言应真实并符合限制",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-004",
+            "rule_uid": "RUID-c96e2a3dbc0b3a2e",
+            "title": "广告不得违规使用艺人/人物",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-IP-002",
+            "rule_uid": "RUID-f30ed7aec04e8afa",
+            "title": "不得利用不满10周岁的未成年人作为广告代言人",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-AD-002",
+            "rule_uid": "RUID-fe324abb9130484c",
+            "title": "农药、兽药、饲料和饲料添加剂广告不得利用科研单位、学术机构、技术推广机构、行业协会或者专业人士、用户的名义或者形象作推荐、证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-AD-003",
+            "rule_uid": "RUID-32fd3325bec319e7",
+            "title": "教育、培训广告不得利用特定机构或个人名义作推荐证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-AD-002",
+            "rule_uid": "RUID-81d59a7fff4f0a21",
+            "title": "招商广告不得利用学术机构、行业协会、专业人士、受益者名义作推荐证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-AD-001",
+            "rule_uid": "RUID-0bb184d1ed7e014c",
+            "title": "广告中使用他人名义或形象需取得书面同意",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          }
+        ],
+        "dimensions": [
+          "广告代言不合规",
+          "未成年人保护",
+          "虚假宣传"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": true,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GAME-AD-001",
+          "GEN-ENDORSE-001",
+          "IAM-LIVE-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 1,
+        "outside_rule_risks": [
+          "文案未明确产品名称、核心宣称等关键信息，无法全面评估合规风险，建议补充完整物料后再审核。"
+        ]
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-GAME-004",
+      "name": "游戏系统更新误导点击",
+      "elapsed_ms": 7799.29,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": false,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "IAM-CLICK-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "用户评价/种草误导"
+        ],
+        "expected_risk_level": "中",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "GAME-AD-001",
+          "GAME-AD-002",
+          "GAME-BILI-002",
+          "GAME-BILI-003",
+          "IAM-CLICK-001",
+          "IAM-DEC-001",
+          "IAM-LINK-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "GAME-AD-002",
+            "rule_uid": "RUID-3128ad84f9229d96",
+            "title": "禁止以虚假播放开始暂停等标志欺骗误导用户点击浏览广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-AD-001",
+            "rule_uid": "RUID-cbb2ef034ec23434",
+            "title": "禁止以虚假系统提示欺骗误导用户点击浏览广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-003",
+            "rule_uid": "RUID-0c1871c3d7b8e462",
+            "title": "涉及用户不消费即可领取福利需二次核查奖励品真实性",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-CLICK-001",
+            "rule_uid": "RUID-b3b033f04fde5663",
+            "title": "不得欺骗误导用户点击浏览广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-LINK-001",
+            "rule_uid": "RUID-b7071deb3c78bd4d",
+            "title": "含链接广告应核对下一级链接内容",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-003",
+            "rule_uid": "RUID-e990073bbb155ad2",
+            "title": "游戏广告涉及赠送福利需提供奖励品真实有效证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-002",
+            "rule_uid": "RUID-aab092aa8071f6cb",
+            "title": "涉及赠送/免费等活动需明示参与条件与门槛",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-DEC-001",
+            "rule_uid": "RUID-fd31b0391641dd72",
+            "title": "禁止虚假系统提示欺骗点击",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          }
+        ],
+        "dimensions": [
+          "用户评价/种草误导",
+          "虚假宣传"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": true,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GAME-AD-001",
+          "GAME-AD-002",
+          "GAME-BILI-002",
+          "GAME-BILI-003",
+          "IAM-CLICK-001",
+          "IAM-DEC-001",
+          "IAM-LINK-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 1,
+        "outside_rule_risks": [
+          "文案中'立即领取礼包'涉及赠送福利，但未明示参与条件与门槛，且平台为快手，候选规则中无快手平台关于赠送福利的具体规则，需人工确认快手平台规则。"
+        ]
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-GEN-001",
+      "name": "通用价格限时买赠",
+      "elapsed_ms": 7168.9,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-CLEAR-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "价格促销误导"
+        ],
+        "expected_risk_level": "中",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "COSM-ACC-002",
+          "COSM-INFO-001",
+          "COSM-PRICE-001",
+          "COSM-PRICE-002",
+          "GEN-CLEAR-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "GEN-CLEAR-001",
+            "rule_uid": "RUID-83cc700ddeecd288",
+            "title": "商品服务信息表示应准确清楚明白",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-PRICE-001",
+            "rule_uid": "RUID-e82dd36e3a77d579",
+            "title": "宣传售价与实际支付价格不符",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-PRICE-002",
+            "rule_uid": "RUID-3b1de2e3b266d71a",
+            "title": "基准价无真实依据",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-ACC-002",
+            "rule_uid": "RUID-972b12b69bc72106",
+            "title": "附带赠送广告应当明示品种、规格、数量、期限和方式",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "COSM-INFO-001",
+            "rule_uid": "RUID-b98b0ca621df9ae1",
+            "title": "消费者知情权保障规则",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          }
+        ],
+        "dimensions": [
+          "价格促销误导",
+          "虚假宣传"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "中",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "中",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": false,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断一致。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "COSM-ACC-002",
+          "COSM-INFO-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "COSM-ACC-002",
+          "COSM-INFO-001",
+          "COSM-PRICE-001",
+          "COSM-PRICE-002",
+          "GEN-CLEAR-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-GEN-002",
+      "name": "通用竞品贬低比较",
+      "elapsed_ms": 3737.46,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": false,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-COMPARE-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "其他"
+        ],
+        "expected_risk_level": "中",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "GAME-AD-003",
+          "GAME-OTHER-002",
+          "GEN-COMPARE-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "GAME-AD-003",
+            "rule_uid": "RUID-56d109de8b0d7e91",
+            "title": "禁止利用其他商品或服务广告宣传烟草制品",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-COMPARE-001",
+            "rule_uid": "RUID-57784ae7f30846e6",
+            "title": "广告不得贬低其他经营者",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-OTHER-002",
+            "rule_uid": "RUID-98e77b57a7749728",
+            "title": "广告中不得假冒他人专利",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          }
+        ],
+        "dimensions": [
+          "其他",
+          "虚假宣传"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": true,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "GAME-OTHER-002"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GEN-COMPARE-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-GEN-003",
+      "name": "通用弹窗一键关闭",
+      "elapsed_ms": 4646.72,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": false,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-POPUP-001",
+          "IAM-POPUP-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "其他"
+        ],
+        "expected_risk_level": "中",
+        "expected_routing": "运营"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "COSM-ADID-001",
+          "GEN-POPUP-001",
+          "IAM-POP-001",
+          "IAM-POPUP-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "GEN-POPUP-001",
+            "rule_uid": "RUID-8dda514382cdea98",
+            "title": "互联网弹窗广告应一键关闭",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-POPUP-001",
+            "rule_uid": "RUID-91a3f462c70fa297",
+            "title": "弹窗开屏广告应确保一键关闭",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-ADID-001",
+            "rule_uid": "RUID-5e8ec4c9dd8a903e",
+            "title": "互联网弹出广告须显著标明关闭标志并确保一键关闭",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-POP-001",
+            "rule_uid": "RUID-a6cc05cef258c1d6",
+            "title": "弹出广告应显著标明关闭标志并确保一键关闭",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          }
+        ],
+        "dimensions": [
+          "其他",
+          "广告可识别性不足"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "中",
+        "llm_risk_level": "无明显风险",
+        "final_risk_level": "中",
+        "routing": "运营",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "中",
+        "llm_risk_level": "无明显风险",
+        "final_risk_level": "中",
+        "risk_disagreement": true,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。",
+        "final_risk_source": "minimum_matched_risk"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "COSM-ADID-001",
+          "GEN-POPUP-001",
+          "IAM-POP-001",
+          "IAM-POPUP-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-GEN-004",
+      "name": "通用未经同意推送广告",
+      "elapsed_ms": 4562.03,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": false,
+        "rule_engine_risk_ok": false,
+        "llm_risk_ok": false,
+        "final_risk_ok": false,
+        "routing_ok": true,
+        "core_audit_ok": false
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "IAM-SEND-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "其他"
+        ],
+        "expected_risk_level": "中",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "GEN-MED-001",
+          "HF-ACC-002",
+          "HF-ADID-001",
+          "HF-ADL-001",
+          "HF-IP-003",
+          "HF-PRI-001",
+          "HF-虚假宣传-002",
+          "IAM-ADID-001",
+          "IAM-SEND-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "HF-虚假宣传-002",
+            "rule_uid": "RUID-168081152ac6fa9d",
+            "title": "保健食品广告不得利用科研单位、学术机构、技术推广机构、行业协会或者专业人士、用户的名义或者形象作推荐、证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-SEND-001",
+            "rule_uid": "RUID-cf8b8f0ced821552",
+            "title": "发布发送互联网广告不得影响正常使用",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-PRI-001",
+            "rule_uid": "RUID-e9129bbc59cd80cd",
+            "title": "未经消费者同意不得发送商业性信息",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-ACC-002",
+            "rule_uid": "RUID-648a74f0a007c117",
+            "title": "附带赠送广告应当明示品种、规格、数量、期限和方式",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-ADID-001",
+            "rule_uid": "RUID-b53e7bf454d4e8b4",
+            "title": "广告应当具有可识别性，显著标明广告字样",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-ADID-001",
+            "rule_uid": "RUID-cac0e7fe1d986d37",
+            "title": "保健食品广告不具有可识别性",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-ADID-001",
+            "rule_uid": "RUID-755980d0d5f2327c",
+            "title": "互联网广告应具有可识别性，不得变相发布保健食品广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-MED-001",
+            "rule_uid": "RUID-1e455acefad683e3",
+            "title": "非医疗广告不得涉及疾病治疗和医疗用语",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "HF-ADL-001",
+            "rule_uid": "RUID-a4231e5bdb7ce08b",
+            "title": "广告中使用他人名义或形象需取得书面同意",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "HF-IP-003",
+            "rule_uid": "RUID-95d03473566aa0b5",
+            "title": "广告中未经同意不得使用他人名义或形象",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          }
+        ],
+        "dimensions": [
+          "其他",
+          "广告代言不合规",
+          "广告可识别性不足",
+          "涉医疗宣传",
+          "虚假宣传"
+        ],
+        "risk_level": "高",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "高",
+        "final_risk_level": "高",
+        "risk_disagreement": false,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断一致。",
+        "final_risk_source": "llm_case_high"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "GEN-MED-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "HF-PRI-001",
+          "IAM-SEND-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-GEN-005",
+      "name": "通用链接落地页核对",
+      "elapsed_ms": 8378.03,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": true,
+        "rule_engine_risk_ok": false,
+        "llm_risk_ok": true,
+        "final_risk_ok": true,
+        "routing_ok": true,
+        "core_audit_ok": true
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "IAM-LINK-001"
+        ],
+        "expected_semantic_rule_ids": [],
+        "expected_dimensions": [
+          "虚假宣传"
+        ],
+        "expected_risk_level": "中",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "GAME-AD-002",
+          "GAME-AD-004",
+          "GAME-ADID-003",
+          "GAME-BILI-001",
+          "GAME-BILI-002",
+          "GAME-BILI-003",
+          "GAME-BILI-004",
+          "GAME-BILI-006",
+          "GAME-FALSE-005",
+          "GAME-URL-002",
+          "GAME-URL-003",
+          "IAM-IDENT-001",
+          "IAM-LINK-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "IAM-LINK-001",
+            "rule_uid": "RUID-b7071deb3c78bd4d",
+            "title": "含链接广告应核对下一级链接内容",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-IDENT-001",
+            "rule_uid": "RUID-6f1b989ff75db456",
+            "title": "竞价排名和种草测评购物链接应标广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-002",
+            "rule_uid": "RUID-cf58c6137564f22c",
+            "title": "游戏类广告创意必须显示游戏名称且与落地页一致",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-ADID-003",
+            "rule_uid": "RUID-eebd53b1f0a601a3",
+            "title": "知识介绍、体验分享、消费测评等形式推销商品并附加购物链接的，应显著标明'广告'",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-001",
+            "rule_uid": "RUID-9e46af623109be68",
+            "title": "闪屏广告落地页一跳页面弹窗面积限制",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-002",
+            "rule_uid": "RUID-f9353d7f574decd9",
+            "title": "闪屏广告落地页一跳页面嵌入式下载banner面积限制",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-003",
+            "rule_uid": "RUID-1929b02368fe6f69",
+            "title": "闪屏广告落地页一跳页面禁止悬浮窗口",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-003",
+            "rule_uid": "RUID-fb4d81b8975ab278",
+            "title": "弹幕广告文案不得直接填写网址链接",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-FALSE-005",
+            "rule_uid": "RUID-49ce8230eea10fa3",
+            "title": "禁止虚假广告（其他虚假或引人误解内容）",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "GAME-AD-004",
+            "rule_uid": "RUID-3ddc4ab0edeb7b3b",
+            "title": "禁止以其他欺骗误导方式使用户点击浏览广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "GAME-BILI-006",
+            "rule_uid": "RUID-9da5df84d5616427",
+            "title": "inline视频广告基本规范-落地页与视频强相关性要求",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "GAME-AD-002",
+            "rule_uid": "RUID-3128ad84f9229d96",
+            "title": "禁止以虚假播放开始暂停等标志欺骗误导用户点击浏览广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "GAME-URL-002",
+            "rule_uid": "RUID-80d816a2ebffe900",
+            "title": "手游广告落地页iOS端需链接至App Store",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "fact"
+          },
+          {
+            "rule_id": "GAME-URL-003",
+            "rule_uid": "RUID-fe1de6c6adfa8d2f",
+            "title": "手游广告落地页安卓端需链接至B站游戏开放平台内链",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "fact"
+          },
+          {
+            "rule_id": "GAME-BILI-004",
+            "rule_uid": "RUID-6c1b712f431c6b0d",
+            "title": "手游广告落地页iOS端需链接至App Store，安卓端需链接至B站游戏开放平台内链",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          }
+        ],
+        "dimensions": [
+          "其他",
+          "平台准入/资质不符",
+          "广告可识别性不足",
+          "虚假宣传"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": true,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "GAME-AD-002",
+          "GAME-AD-004",
+          "GAME-BILI-006",
+          "GAME-FALSE-005"
+        ],
+        "expected_semantic_rule_ids": [],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GAME-ADID-003",
+          "GAME-BILI-002",
+          "GAME-URL-002",
+          "GAME-URL-003",
+          "IAM-LINK-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-SEM-001",
+      "name": "语义召回-软文导流未标合作",
+      "elapsed_ms": 6320.7,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": false,
+        "rule_engine_risk_ok": false,
+        "llm_risk_ok": false,
+        "final_risk_ok": false,
+        "routing_ok": true,
+        "core_audit_ok": false
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-IDENT-001"
+        ],
+        "expected_semantic_rule_ids": [
+          "GEN-IDENT-001"
+        ],
+        "expected_dimensions": [
+          "广告可识别性不足"
+        ],
+        "expected_risk_level": "高",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "COSM-001-003",
+          "DY-COSM-003",
+          "GEN-IDENT-001",
+          "XHS-COSM-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "COSM-001-003",
+            "rule_uid": "RUID-9d9929996c379a01",
+            "title": "化妆品名称组合使用可能产生歧义时需解释说明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "XHS-COSM-001",
+            "rule_uid": "RUID-21bbfdd0c18d269e",
+            "title": "广告素材涉及第三方合作需提供合作证明/授权",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "DY-COSM-003",
+            "rule_uid": "RUID-c23965025c739d8f",
+            "title": "美妆不得展示其他平台博主笔记/视频分享规则",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-IDENT-001",
+            "rule_uid": "RUID-0504df6a38716141",
+            "title": "广告应当具有可识别性",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          }
+        ],
+        "dimensions": [
+          "其他",
+          "广告代言不合规",
+          "广告可识别性不足",
+          "虚假宣传"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "中",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "中",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": false,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断一致。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "GEN-IDENT-001"
+        ],
+        "expected_semantic_rule_ids": [
+          "GEN-IDENT-001"
+        ],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GEN-IDENT-001",
+          "XHS-COSM-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 1,
+        "outside_rule_risks": [
+          "文案未提供产品备案名称，无法判断是否涉及化妆品功效宣称合规，建议补充产品信息后重新审核。"
+        ]
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-SEM-002",
+      "name": "语义召回-健康知识包装保健食品",
+      "elapsed_ms": 6660.72,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": false,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": false,
+        "final_risk_ok": false,
+        "routing_ok": true,
+        "core_audit_ok": false
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-HEALTHSOFT-001",
+          "IAM-HEALTHSOFT-001"
+        ],
+        "expected_semantic_rule_ids": [
+          "GEN-HEALTHSOFT-001",
+          "IAM-HEALTHSOFT-001"
+        ],
+        "expected_dimensions": [
+          "广告可识别性不足"
+        ],
+        "expected_risk_level": "高",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "GEN-HEALTHSOFT-001",
+          "HF-AD-002",
+          "HF-ADID-002",
+          "IAM-HEALTHSOFT-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "IAM-HEALTHSOFT-001",
+            "rule_uid": "RUID-38e9bda474456629",
+            "title": "不得以健康养生内容变相发布特殊品类广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "GEN-HEALTHSOFT-001",
+            "rule_uid": "RUID-1b5a618fd60fdd11",
+            "title": "不得以健康养生知识变相发布广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "HF-ADID-002",
+            "rule_uid": "RUID-fcb0f664c1fd7f0b",
+            "title": "变相发布保健食品广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "HF-AD-002",
+            "rule_uid": "RUID-0890919fcdafb70b",
+            "title": "保健食品广告需完成行业认证后方可投放",
+            "trigger_layer": "fact",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          }
+        ],
+        "dimensions": [
+          "平台准入/资质不符",
+          "广告可识别性不足"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": true,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "GEN-HEALTHSOFT-001",
+          "HF-ADID-002",
+          "IAM-HEALTHSOFT-001"
+        ],
+        "expected_semantic_rule_ids": [
+          "GEN-HEALTHSOFT-001",
+          "IAM-HEALTHSOFT-001"
+        ],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GEN-HEALTHSOFT-001",
+          "HF-AD-002",
+          "HF-ADID-002",
+          "IAM-HEALTHSOFT-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 2,
+        "outside_rule_risks": [
+          "文案未明确产品备案名称，需确认是否已取得保健食品注册或备案凭证。",
+          "核心宣称'增强免疫力'属于保健功能，需确认是否在批准的功能范围内。"
+        ]
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-SEM-003",
+      "name": "语义召回-伪装版本提示诱导点击",
+      "elapsed_ms": 6349.82,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": false,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": false,
+        "final_risk_ok": false,
+        "routing_ok": true,
+        "core_audit_ok": false
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "IAM-CLICK-001"
+        ],
+        "expected_semantic_rule_ids": [
+          "IAM-CLICK-001"
+        ],
+        "expected_dimensions": [
+          "用户评价/种草误导"
+        ],
+        "expected_risk_level": "高",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "GAME-AD-002",
+          "GAME-BILI-002",
+          "GAME-BILI-003",
+          "GAME-PROT-001",
+          "IAM-CLICK-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "GAME-AD-002",
+            "rule_uid": "RUID-fe324abb9130484c",
+            "title": "农药、兽药、饲料和饲料添加剂广告不得利用科研单位、学术机构、技术推广机构、行业协会或者专业人士、用户的名义或者形象作推荐、证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-PROT-001",
+            "rule_uid": "RUID-a7ee03564d7423d7",
+            "title": "网络服务提供者对可能影响未成年人身心健康的信息应作显著提示",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-003",
+            "rule_uid": "RUID-0c1871c3d7b8e462",
+            "title": "涉及用户不消费即可领取福利需二次核查奖励品真实性",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-003",
+            "rule_uid": "RUID-e990073bbb155ad2",
+            "title": "游戏广告涉及赠送福利需提供奖励品真实有效证明",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-AD-002",
+            "rule_uid": "RUID-e3bd6129ab6af87a",
+            "title": "未成年人游戏广告须包含适龄提示",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GAME-BILI-002",
+            "rule_uid": "RUID-aab092aa8071f6cb",
+            "title": "涉及赠送/免费等活动需明示参与条件与门槛",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "IAM-CLICK-001",
+            "rule_uid": "RUID-b3b033f04fde5663",
+            "title": "不得欺骗误导用户点击浏览广告",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          }
+        ],
+        "dimensions": [
+          "广告代言不合规",
+          "未成年人保护",
+          "用户评价/种草误导",
+          "虚假宣传",
+          "警示语缺失"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": true,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "IAM-CLICK-001"
+        ],
+        "expected_semantic_rule_ids": [
+          "IAM-CLICK-001"
+        ],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GAME-AD-002",
+          "GAME-BILI-002",
+          "GAME-BILI-003"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 1,
+        "outside_rule_risks": [
+          "文案描述为'版本提示'，实际跳转至礼包领取页，可能涉及欺骗误导用户点击，需人工确认是否违反IAM-CLICK-001。"
+        ]
+      },
+      "error": null
+    },
+    {
+      "case_id": "CASE-SEM-005",
+      "name": "语义召回-权益条件表述不完整",
+      "elapsed_ms": 4302.12,
+      "checks": {
+        "response_ok": true,
+        "recall_ok": true,
+        "semantic_expected_ok": true,
+        "dimension_ok": true,
+        "risk_ok": false,
+        "rule_engine_risk_ok": true,
+        "llm_risk_ok": false,
+        "final_risk_ok": false,
+        "routing_ok": true,
+        "core_audit_ok": false
+      },
+      "expected": {
+        "must_recall_rule_ids": [
+          "GEN-CLEAR-001"
+        ],
+        "expected_semantic_rule_ids": [
+          "GEN-CLEAR-001"
+        ],
+        "expected_dimensions": [
+          "价格促销误导"
+        ],
+        "expected_risk_level": "高",
+        "expected_routing": "法务"
+      },
+      "actual": {
+        "matched_rule_ids": [
+          "COSM-001-001",
+          "COSM-AD-001",
+          "COSM-ADV-001",
+          "COSM-FC-001",
+          "COSM-虚假宣传-001",
+          "DY-COSM-001",
+          "DY-COSM-004",
+          "GEN-CLEAR-001",
+          "GEN-EDU-001"
+        ],
+        "matched_rule_details": [
+          {
+            "rule_id": "COSM-AD-001",
+            "rule_uid": "RUID-e879462bd9dec990",
+            "title": "社会团体/中介机构对产品质量承诺保证的连带责任",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "legal_review_required",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-EDU-001",
+            "rule_uid": "RUID-56eb9dfe9ffbe1a8",
+            "title": "教育、培训广告不得含有对升学、通过考试等效果的保证性承诺",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-ADV-001",
+            "rule_uid": "RUID-c434bc40389bb1a2",
+            "title": "广告中使用他人名义或形象需取得书面同意",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "DY-COSM-004",
+            "rule_uid": "RUID-4b74c2a3f429df0f",
+            "title": "不得无依据承诺效果或使用绝对化用语",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-FC-001",
+            "rule_uid": "RUID-98a02d5814c51abf",
+            "title": "化妆品类商品不得过度承诺",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "DY-COSM-001",
+            "rule_uid": "RUID-7c41716145d01973",
+            "title": "化妆品商品不得过度承诺效果",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-虚假宣传-001",
+            "rule_uid": "RUID-503970617d0d84f1",
+            "title": "美妆商品效果保证宣传禁止规则",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_direct",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "COSM-虚假宣传-001",
+            "rule_uid": "RUID-f5ec77e12b20c051",
+            "title": "禁止无数据支撑的效果保证宣传",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "高",
+            "recall_channel": "keyword"
+          },
+          {
+            "rule_id": "GEN-CLEAR-001",
+            "rule_uid": "RUID-83cc700ddeecd288",
+            "title": "商品服务信息表示应准确清楚明白",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          },
+          {
+            "rule_id": "COSM-001-001",
+            "rule_uid": "RUID-d6bf454cb707d59e",
+            "title": "美妆产品广告中涉及人身安全的警示义务规则",
+            "trigger_layer": "content",
+            "legal_attention_default_route": "operator_supply_docs",
+            "risk_level": "中",
+            "recall_channel": "semantic"
+          }
+        ],
+        "dimensions": [
+          "价格促销误导",
+          "广告代言不合规",
+          "虚假宣传",
+          "警示语缺失"
+        ],
+        "risk_level": "中",
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "routing": "法务",
+        "llm_engine": "deepseek_llm_v0",
+        "llm_mode": "strict"
+      },
+      "risk_assessment": {
+        "rule_engine_risk_level": "高",
+        "llm_risk_level": "中",
+        "final_risk_level": "中",
+        "risk_disagreement": true,
+        "risk_disagreement_reason": "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。",
+        "final_risk_source": "llm_case_adjusted"
+      },
+      "semantic": {
+        "semantic_matched_rule_ids": [
+          "COSM-001-001",
+          "GEN-CLEAR-001"
+        ],
+        "expected_semantic_rule_ids": [
+          "GEN-CLEAR-001"
+        ],
+        "semantic_missing_expected_rule_ids": []
+      },
+      "llm_checks": {
+        "json_valid": true,
+        "rule_citation_ok": true,
+        "cited_rule_ids": [
+          "GEN-CLEAR-001"
+        ],
+        "hallucinated_rule_ids": [],
+        "outside_rule_risk_count": 0,
+        "outside_rule_risks": []
+      },
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "审心规则引擎审核响应 schema v0.1",
+  "type": "object",
+  "description": "规则引擎 /audit 返回给飞书状态机的响应结构。MVP 统一使用标准审核模式。",
+  "required": [
+    "code",
+    "msg",
+    "data"
+  ],
+  "properties": {
+    "code": {
+      "type": "integer",
+      "description": "0 表示成功；-1 表示规则引擎可识别错误。"
+    },
+    "msg": {
+      "type": "string",
+      "description": "响应说明或错误原因。"
+    },
+    "data": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "request_id",
+        "resolved_mode",
+        "mode_reason",
+        "预审_风险等级",
+        "预审_命中要点",
+        "预审_修改建议",
+        "预审_时间",
+        "审核_审核意见",
+        "审核_关键实体抽取",
+        "审核_高风险词命中",
+        "审核_平台规则预检",
+        "审核_备案核查结果",
+        "审核_推荐违规类型",
+        "审核_推荐风险等级",
+        "matched_rules",
+        "审核_审核时间",
+        "routing",
+        "audit_time"
+      ],
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "description": "对应飞书 record_id。"
+        },
+        "resolved_mode": {
+          "type": "string",
+          "enum": [
+            "标准",
+            "极速",
+            "深度"
+          ],
+          "description": "MVP 阶段固定返回标准。"
+        },
+        "mode_reason": {
+          "type": "string"
+        },
+        "预审_风险等级": {
+          "type": "string",
+          "enum": [
+            "高",
+            "中",
+            "低",
+            "无明显风险"
+          ]
+        },
+        "预审_命中要点": {
+          "type": "string"
+        },
+        "预审_修改建议": {
+          "type": "string"
+        },
+        "审核_审核意见": {
+          "type": "string",
+          "description": "六段式完整报告。"
+        },
+        "审核_关键实体抽取": {
+          "type": "string"
+        },
+        "审核_高风险词命中": {
+          "type": "string"
+        },
+        "审核_平台规则预检": {
+          "type": "string"
+        },
+        "审核_备案核查结果": {
+          "type": "string"
+        },
+        "审核_推荐违规类型": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "审核_推荐风险等级": {
+          "type": "string",
+          "enum": [
+            "高",
+            "中",
+            "低"
+          ]
+        },
+        "matched_rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "rule_id",
+              "title",
+              "dimension",
+              "risk_level",
+              "judgment",
+              "match_reason"
+            ],
+            "properties": {
+              "rule_id": {
+                "type": "string"
+              },
+              "serial_no": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "title": {
+                "type": "string"
+              },
+              "dimension": {
+                "type": "string"
+              },
+              "risk_level": {
+                "type": "string"
+              },
+              "judgment": {
+                "type": "string"
+              },
+              "match_reason": {
+                "type": "string"
+              },
+              "legal_basis": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "context_package": {
+          "type": "object",
+          "description": "规则引擎内部上下文重建结果，飞书侧可选择不回写。"
+        },
+        "routing": {
+          "type": "string",
+          "enum": [
+            "运营",
+            "法务"
+          ],
+          "description": "飞书侧当前接收该字段并映射为 待运营修改 / 待法务复核。"
+        },
+        "audit_time": {
+          "type": "integer",
+          "description": "毫秒时间戳。"
+        },
+        "预审_时间": {
+          "type": "integer",
+          "description": "对应 ②AI预审·时间，毫秒时间戳。"
+        },
+        "审核_审核时间": {
+          "type": "integer",
+          "description": "对应 ③AI审核·审核时间，毫秒时间戳。"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

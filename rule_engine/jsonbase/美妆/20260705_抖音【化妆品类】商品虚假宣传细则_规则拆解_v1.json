@@ -1,0 +1,1003 @@
+{
+  "meta": {
+    "name": "美妆规则库-抖音【化妆品类】商品虚假宣传细则",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "抖音【化妆品类】商品虚假宣传细则.pdf",
+    "source_track": "美妆",
+    "rule_count": 5,
+    "error_count": 0,
+    "source_units_processed": 1,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "DY",
+      "name": "抖音【化妆品类】商品虚假宣传细则",
+      "short": "DY-抖音【化妆品类】商品虚假宣传细则",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "抖音"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "DY-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "DY_cosmetic_false_advertising",
+      "source_type": "平台规则",
+      "platform": "抖音",
+      "title": "化妆品不得宣传医疗效果",
+      "dimension": "涉医疗宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [
+          "抖音"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "抖音电商"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "DY",
+        "source_article_id": "DY-化妆品类商品虚假宣传细则",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "DY",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "明示或暗示化妆品具有医疗效果：化妆品的作⽤位置⼀般为⼈体表层，它的效果与药品以及医疗美容带来的效果有着本质上的区别，所以⽆论是特化还是⾮特化，都不可以宣传医疗效果。常见违规效果宣传：消炎、⽌痛、解毒、治疗、加速伤⼝愈合、修复细胞。在化妆品的宣传中，会存在⼀些⾏业的特殊称呼，但很多常⻅称呼均违反了平台规则以及相关监管条例。常见违规话术宣传：药妆、医⽤、械字号、药字号、医学级、疗效、医学护肤、药物护肤。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "消炎",
+            "止痛",
+            "解毒",
+            "治疗",
+            "加速伤口愈合",
+            "修复细胞",
+            "药妆",
+            "医用",
+            "械字号",
+            "药字号",
+            "医学级",
+            "疗效",
+            "医学护肤",
+            "药物护肤"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否明示或暗示化妆品具有医疗效果，包括但不限于使用医疗术语或暗示治疗功能。",
+        "decision": "若命中关键词或语义判定为医疗效果宣传，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "化妆品",
+          "医疗效果",
+          "虚假宣传",
+          "平台规则"
+        ],
+        "vector_text": "本品具有消炎止痛功效?医用级护肤品?药妆产品?消炎?止痛?解毒?治疗?加速伤口愈合?修复细胞?药妆?",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、医疗、宣传、明示、治疗.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:06:06",
+          "old_vector_text": "化妆品宣传中不得使用医疗术语或暗示具有医疗效果，如消炎、止痛、治疗、药妆、医用等。",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体或隐晦表达，需语义辅助召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "化妆品",
+            "医疗效果",
+            "虚假宣传",
+            "平台规则"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "违规宣传医疗效果，可能触发平台处罚。"
+      },
+      "relations": [],
+      "disposition": "禁止宣传医疗效果，违规内容需删除或修改。",
+      "examples": {
+        "violation": [
+          "本品具有消炎止痛功效",
+          "医用级护肤品",
+          "药妆产品"
+        ],
+        "compliant": [
+          "本品具有保湿功效",
+          "改善皮肤干燥"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确列举了禁止宣传的医疗效果和话术，可直接执行。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中等",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词匹配即可判定，无需人工审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-8747128b12bea56d",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词匹配即可判定，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "DY-COSM-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "DY_cosmetic_false_advertising",
+      "source_type": "平台规则",
+      "platform": "抖音",
+      "title": "非特殊用途化妆品不得宣传特殊功效",
+      "dimension": "功效超备案",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "非特殊用途化妆品"
+        ],
+        "platforms": [
+          "抖音"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "抖音电商"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "DY",
+        "source_article_id": "DY-化妆品类商品虚假宣传细则",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "DY",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "⾮特殊⽤途化妆品宣传特殊功效：没有取得特殊⽤途化妆品资质的商品，不可以宣传特殊功效，否则会被判定为违规。常见特殊功效宣传：淡斑、美⽩、防晒、脱⽑、促进⽑发⽣⻓/防脱、改变发⾊、美乳、健美类、消除腋臭。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "淡斑",
+            "美白",
+            "防晒",
+            "脱毛",
+            "促进毛发生长",
+            "防脱",
+            "改变发色",
+            "美乳",
+            "健美",
+            "消除腋臭"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测非特殊用途化妆品文案中是否宣传特殊功效。",
+        "decision": "若命中关键词且商品为非特殊用途化妆品，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "非特殊用途化妆品",
+          "特殊功效",
+          "超范围宣传",
+          "平台规则"
+        ],
+        "vector_text": "美白淡斑效果显著，7天焕白肌肤；强力防晒，抵御紫外线；脱毛膏温和不刺激，抑制毛发生长；防脱育发，促进",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及非特殊用途化妆品宣传特殊功效，关键词可能被变体或软性表达绕过，语义召回可覆盖更多真实违规话术。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣传、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:06:14",
+          "old_vector_text": "非特殊用途化妆品不得宣传淡斑、美白、防晒等特殊功效。",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体，需语义辅助。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "非特殊用途化妆品",
+            "特殊功效",
+            "美白",
+            "防晒",
+            "淡斑",
+            "超范围宣传",
+            "违规话术"
+          ],
+          "negative_signals_recommendation": [
+            "保湿",
+            "补水",
+            "清洁",
+            "滋润"
+          ],
+          "change_summary": "从法条式改写为仿真违规文案集合，覆盖多种特殊功效的软性表达和营销话术。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "违规宣传特殊功效，可能触发平台处罚。"
+      },
+      "relations": [],
+      "disposition": "禁止非特殊用途化妆品宣传特殊功效，违规内容需删除或修改。",
+      "examples": {
+        "violation": [
+          "本品具有美白效果",
+          "防晒霜（非特殊用途化妆品）"
+        ],
+        "compliant": [
+          "本品具有保湿效果"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确列举了特殊功效，可直接执行。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中等",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词匹配即可判定。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-b4a75d0bcb280918",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词匹配即可判定，运营可直接删除或替换违规功效词，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "DY-COSM-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "DY_cosmetic_false_advertising",
+      "source_type": "平台规则",
+      "platform": "抖音",
+      "title": "特殊用途化妆品不得跨类别宣传",
+      "dimension": "功效超备案",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "特殊用途化妆品"
+        ],
+        "platforms": [
+          "抖音"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "抖音电商"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "DY",
+        "source_article_id": "DY-化妆品类商品虚假宣传细则",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "DY",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "特殊⽤途化妆品跨类别宣传：每⼀类特殊⽤途化妆品，都有⾃⼰的可宣传范围，跨类别宣传属于违规⾏为。常见违规情形：仅有防晒类特殊⽤途化妆品资质的商品宣传美⽩效果。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "美白",
+            "淡斑",
+            "防晒",
+            "脱毛",
+            "促进毛发生长",
+            "防脱",
+            "改变发色",
+            "美乳",
+            "健美",
+            "消除腋臭"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测特殊用途化妆品文案中是否宣传了其资质范围外的特殊功效。",
+        "decision": "若商品资质与宣传功效不匹配，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "特殊用途化妆品",
+          "跨类别宣传",
+          "超范围宣传",
+          "平台规则"
+        ],
+        "vector_text": "只有防晒资质的化妆品宣传美白效果；仅有脱毛备案的产品说能促进毛发生长；防脱洗发水宣称可以生发；美乳产",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及特殊用途化妆品跨类别宣传，需要识别文案中是否宣传了备案范围外的特殊功效，语义召回可以覆盖多种违规表达方式，适合作为主要召回方式。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣传.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:06:23",
+          "old_vector_text": "特殊用途化妆品只能宣传其备案类别对应的功效，不得跨类别宣传其他特殊功效。",
+          "old_semantic_reason": "需结合商品资质判断，关键词仅作初步召回。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "特殊用途化妆品",
+            "跨类别宣传",
+            "超备案功效",
+            "美白",
+            "防晒",
+            "防脱",
+            "生发",
+            "虚假宣传"
+          ],
+          "negative_signals_recommendation": [
+            "普通化妆品",
+            "非特殊用途",
+            "合规宣传",
+            "备案一致"
+          ],
+          "change_summary": "将原法条式描述改写为真实违规文案集合，覆盖多种特殊用途化妆品跨类别宣传的常见违规表达，提升语义召回效果。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "跨类别宣传特殊功效，可能触发平台处罚。"
+      },
+      "relations": [],
+      "disposition": "禁止特殊用途化妆品跨类别宣传，违规内容需删除或修改。",
+      "examples": {
+        "violation": [
+          "仅有防晒资质的商品宣传美白效果"
+        ],
+        "compliant": [
+          "防晒商品宣传防晒效果"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需结合商品备案资质判断宣传是否跨类别。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需商品资质信息辅助判断，不能仅凭关键词。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "特殊用途化妆品备案证明"
+        ],
+        "data_sources": [
+          "商品详情页参数"
+        ],
+        "note": "需接入商品备案信息以判断宣传是否超类别。"
+      },
+      "rule_uid": "RUID-a0fe79ec4fa4a790",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "需要核验商品备案资质与宣传功效是否匹配，运营无法自行判断，且误判后果严重，应进入法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "DY-COSM-004",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "DY_cosmetic_false_advertising",
+      "source_type": "平台规则",
+      "platform": "抖音",
+      "title": "不得无依据承诺效果或使用绝对化用语",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [
+          "抖音"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "抖音电商"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "DY",
+        "source_article_id": "DY-化妆品类商品虚假宣传细则",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "DY",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "不得过度承诺：在⽆法提供依据或证明的情况下，承诺X天后可达到XXX效果。常见违规情形：⽆依据宣传“可为肌肤提升锁⽔⼒30%”。使⽤绝对化⽤语进⾏商品宣传。常见违规情形：宣传商品可「祛除」斑点、「瓦解」斑点、「祛除」红⾎丝、「修复」细胞。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "祛除",
+            "瓦解",
+            "修复",
+            "彻底解决",
+            "提升锁水力",
+            "承诺",
+            "天后",
+            "效果"
+          ],
+          "regex": [
+            "\\d+天后.*效果",
+            "提升.*%"
+          ],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否存在无依据的效果承诺或绝对化用语。",
+        "decision": "若命中关键词或语义判定为过度承诺，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "过度承诺",
+          "绝对化用语",
+          "虚假宣传",
+          "平台规则"
+        ],
+        "vector_text": "7天后肌肤提升锁水力30%?祛除斑点?瓦解斑点?祛除?瓦解?修复?彻底解决?提升锁水力?承诺?天后?",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、宣传、绝对化、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:07:18",
+          "old_vector_text": "化妆品宣传中不得无依据承诺具体效果或使用祛除、瓦解等绝对化用语。",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体，需语义辅助。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "过度承诺",
+            "绝对化用语",
+            "虚假宣传",
+            "平台规则"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Missing vector_text.",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "过度承诺或使用绝对化用语，可能触发平台处罚。"
+      },
+      "relations": [],
+      "disposition": "禁止无依据承诺效果或使用绝对化用语，违规内容需删除或修改。",
+      "examples": {
+        "violation": [
+          "7天后肌肤提升锁水力30%",
+          "祛除斑点",
+          "瓦解斑点"
+        ],
+        "compliant": [
+          "改善肌肤状态",
+          "淡化斑点"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确列举了违规情形和话术。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中等",
+        "default_route": "operator_direct",
+        "route_reason": "关键词匹配即可判定。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-4b74c2a3f429df0f",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则通过关键词和正则即可明确触发，运营可直接删除或替换违规用语，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "DY-COSM-005",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "DY_cosmetic_false_advertising",
+      "source_type": "平台规则",
+      "platform": "抖音",
+      "title": "不得恶意贬低第三方进行不正当竞争",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "化妆品"
+        ],
+        "platforms": [
+          "抖音"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "抖音电商"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "DY",
+        "source_article_id": "DY-化妆品类商品虚假宣传细则",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "DY",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "恶意贬低第三⽅：在商品宣传过程中通过 “贬低” ⼀⽅ “夸赞”另⼀⽅，以达到宣传商品的⽬的，属于恶意对⽐⾏为。常见违规情形：达⼈分享A品牌⾯霜，却将B品牌⾯霜扔进垃圾桶。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "贬低",
+            "扔进垃圾桶",
+            "不如",
+            "差",
+            "垃圾"
+          ],
+          "regex": [],
+          "context_signals": [
+            "对比",
+            "贬低",
+            "夸赞"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否存在通过贬低其他品牌来宣传自身商品的行为。",
+        "decision": "若语义判定为恶意贬低第三方，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "不正当竞争",
+          "恶意贬低",
+          "平台规则"
+        ],
+        "vector_text": "A品牌面霜比B品牌好多了，B品牌就是垃圾?将B品牌面霜扔进垃圾桶?贬低?扔进垃圾桶?不如?差?垃圾?",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、宣传、贬低.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T22:09:01",
+          "old_vector_text": "化妆品宣传中不得通过贬低其他品牌来宣传自身商品。",
+          "old_semantic_reason": "关键词可能无法覆盖所有贬低表达，需语义辅助。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "不正当竞争",
+            "恶意贬低",
+            "平台规则"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "恶意贬低第三方，可能触发平台处罚。"
+      },
+      "relations": [],
+      "disposition": "禁止恶意贬低第三方，违规内容需删除或修改。",
+      "examples": {
+        "violation": [
+          "A品牌面霜比B品牌好多了，B品牌就是垃圾",
+          "将B品牌面霜扔进垃圾桶"
+        ],
+        "compliant": [
+          "A品牌面霜具有保湿功效"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "需结合上下文判断是否构成恶意贬低。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需人工判断是否构成恶意贬低。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-122b5cc5e88c8091",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准接受 recommended_route：可能应先由运营补充资料：主要矛盾是事实核验，不一定需要立即占用法务。",
+        "confidence": "high",
+        "calibration_status": "human_confirmed",
+        "calibrated_at": "2026-07-16T21:49:08",
+        "calibration_source": "legal_attention_calibration_mvp_csv",
+        "calibration_row_number": 12
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

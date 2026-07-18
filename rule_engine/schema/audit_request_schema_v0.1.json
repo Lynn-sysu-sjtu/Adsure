@@ -1,0 +1,376 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "审心规则引擎审核请求 schema v0.1",
+  "type": "object",
+  "description": "飞书状态机调用规则引擎 /audit 时提交的请求结构。MVP 同时兼容 record_id + fields 原始字段格式，以及 record_id + industry/content/platform/extras 扁平格式。",
+  "required": [
+    "record_id"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "description": "飞书 bitable 记录 ID，用于审核结果回写。"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "auto",
+        "极速",
+        "标准",
+        "深度"
+      ],
+      "default": "auto",
+      "description": "运营确认的审核模式。MVP 阶段规则引擎统一按标准模式处理。"
+    },
+    "fields": {
+      "type": "object",
+      "description": "飞书多维表格字段。字段名保持飞书中文字段名，由 field_mapper.py 映射为规则引擎内部字段。",
+      "required": [
+        "①运营·行业领域",
+        "①运营·物料内容"
+      ],
+      "properties": {
+        "①运营·物料编号": {
+          "type": [
+            "string",
+            "number",
+            "null"
+          ]
+        },
+        "①运营·行业领域": {
+          "type": "string",
+          "enum": [
+            "美妆",
+            "游戏",
+            "保健食品"
+          ]
+        },
+        "①运营·物料内容": {
+          "description": "广告文案。飞书富文本可由飞书侧预处理为字符串；MVP 也兼容 [{'text': '...'}] 形式。",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array"
+            }
+          ]
+        },
+        "①运营·物料附件": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "description": "附件列表。MVP 暂不处理附件。"
+        },
+        "①运营·紧急程度": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "普通",
+            "加急",
+            null
+          ]
+        },
+        "①运营·补充背景资料": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "①运营·提交人": {
+          "type": [
+            "string",
+            "object",
+            "null"
+          ]
+        },
+        "①运营·提交时间": {
+          "type": [
+            "integer",
+            "string",
+            "null"
+          ],
+          "description": "飞书侧当前为毫秒时间戳 int。"
+        },
+        "①美妆·物料类型": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "图文",
+            "短视频",
+            "直播话术",
+            "Banner",
+            "详情页",
+            "其他",
+            null
+          ]
+        },
+        "①美妆·投放平台": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "①美妆·产品品类": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "①美妆·产品备案名称": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "①美妆·物料涉及场景": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "①美妆·核心宣称功效": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "①保健食品·物料类型": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "图文",
+            "短视频",
+            "直播话术",
+            "Banner",
+            "详情页",
+            "其他",
+            null
+          ]
+        },
+        "①保健食品·投放平台": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "①保健食品·产品品类": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "①保健食品·物料涉及场景": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "①保健食品·核心宣称功效": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "①保健食品·产品备案名称": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "①保健食品·批准文号": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "①游戏·物料类型": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "图文",
+            "短视频",
+            "直播话术",
+            "Banner",
+            "详情页",
+            "其他",
+            null
+          ]
+        },
+        "①游戏·投放平台": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "①游戏·产品品类": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "①游戏·游戏名称": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "①游戏·物料涉及场景": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "①游戏·IP名称": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "industry": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "美妆",
+        "游戏",
+        "保健食品",
+        null
+      ],
+      "description": "扁平格式行业字段，对应 ①运营·行业领域。"
+    },
+    "content": {
+      "type": [
+        "string",
+        "array",
+        "null"
+      ],
+      "description": "扁平格式物料内容，对应 ①运营·物料内容。"
+    },
+    "urgency": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "普通",
+        "加急",
+        null
+      ],
+      "description": "扁平格式紧急程度。"
+    },
+    "supplement": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "扁平格式补充背景资料。"
+    },
+    "platform": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "扁平格式投放平台，推荐数组。"
+    },
+    "material_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "图文",
+        "短视频",
+        "直播话术",
+        "Banner",
+        "详情页",
+        "其他",
+        null
+      ],
+      "description": "扁平格式物料类型；field_mapper 会归一化为规则库内部物料类型。"
+    },
+    "product_category": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "扁平格式产品品类。"
+    },
+    "extras": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "行业扩展字段，如 产品备案名称、核心宣称功效、批准文号、游戏名称、IP名称、物料涉及场景。",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

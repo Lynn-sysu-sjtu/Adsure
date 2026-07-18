@@ -1,0 +1,2251 @@
+{
+  "meta": {
+    "name": "保健食品规则库-小红书《食品行业投放规则》使用手册",
+    "version": "v1",
+    "generated_date": "20260706",
+    "scope": "保健食品广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "小红书《食品行业投放规则》使用手册.pdf",
+    "source_track": "保健食品",
+    "rule_count": 12,
+    "error_count": 1,
+    "source_units_processed": 15,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "XHS",
+      "name": "小红书《食品行业投放规则》使用手册",
+      "short": "XHS-小红书《食品行业投放规则》使用手册",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "小红书"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "HF-ADV-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_food_ad_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "食品检测机构证明提及要求",
+      "dimension": "数据引用不规范",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "食品",
+          "保健食品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《食品行业投放规则》使用手册",
+        "source_article_id": "1.",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "1.",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "1.【⻝品检测机构证明】⻝品⾏业涉及⻝品检测机构认证，需提及相关证明材料。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "检测机构",
+            "检测认证",
+            "检测报告",
+            "食品检测",
+            "认证机构"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中提及食品检测机构认证相关内容时，必须同时提及相关证明材料",
+        "decision": "若广告文案提及食品检测机构认证，则需包含证明材料提及，否则违规"
+      },
+      "recall": {
+        "tags": [
+          "食品检测机构认证",
+          "证明材料",
+          "小红书食品规则"
+        ],
+        "vector_text": "广告文案中涉及食品检测机构认证的表述，必须同时提及相关证明材料，否则违反平台规则",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "关键词可能无法覆盖所有提及检测机构认证的变体表述，需语义召回辅助",
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 检测报告、证明、证明材料.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主补充提及相关证明材料，否则拒绝投放",
+      "examples": {
+        "violation": [
+          "本产品通过权威检测机构认证",
+          "经检测机构检测合格"
+        ],
+        "compliant": [
+          "本产品通过权威检测机构认证，相关证明材料详见附件",
+          "经检测机构检测合格，检测报告编号XXXX"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求提及食品检测机构认证时必须提及相关证明材料，属于直接可执行的审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可覆盖，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-2798fc53480800ac",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需在文案中补充提及证明材料，运营可直接修改，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-ADV-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_food_ad_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "普通食品涉及医生推荐需提交医生证明",
+      "dimension": "广告代言不合规",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "普通食品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《食品行业投放规则》使用手册",
+        "source_article_id": "2.",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2.",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "普通食品涉及医生推荐需要提交医生证明。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "医生推荐",
+            "医生证明",
+            "医师推荐",
+            "医师证明"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "物料中提及医生推荐或医生证明相关内容，需触发规则",
+        "decision": "若物料中出现医生推荐相关表述，且未提交医生证明，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "医生推荐",
+          "医生证明",
+          "普通食品",
+          "广告代言"
+        ],
+        "vector_text": "普通食品广告中涉及医生推荐或医生形象进行证明推荐，需提交医生证明",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 代言、普通食品. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主提交医生证明，否则不得使用医生推荐内容",
+      "examples": {
+        "violation": [
+          "本产品经某某医生推荐，效果显著"
+        ],
+        "compliant": []
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求普通食品涉及医生推荐需提交医生证明，属于硬性规定"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要广告主提交医生证明文件进行核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "医生证明文件"
+        ],
+        "data_sources": [],
+        "note": "后期需接入医生证明资料核验"
+      },
+      "rule_uid": "RUID-dee30111d39ef7a8",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发明确，但需要运营补充医生证明文件，无需法务介入解释或判断。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-ADV-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_food_ad_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "奶粉及特定营养成分食品不得利用医生形象做证明推荐",
+      "dimension": "广告代言不合规",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "奶粉",
+          "涉及特定营养成分的食品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《食品行业投放规则》使用手册",
+        "source_article_id": "2.",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2.",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "奶粉行业以及涉及特定营养成分的食品，不得利用医生形象做证明推荐。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "医生",
+            "医师",
+            "医生形象",
+            "医师形象",
+            "医生推荐",
+            "医师推荐",
+            "医生证明",
+            "医师证明"
+          ],
+          "regex": [],
+          "context_signals": [
+            "奶粉",
+            "特定营养成分"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "物料中利用医生形象或医生推荐进行证明推荐，且产品为奶粉或涉及特定营养成分的食品",
+        "decision": "若物料中出现医生形象或医生推荐，且产品属于奶粉或特定营养成分食品，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "医生形象",
+          "医生推荐",
+          "奶粉",
+          "特定营养成分",
+          "禁止使用"
+        ],
+        "vector_text": "医生推荐这款奶粉，宝宝喝了更健康；医师证明有效，含有特定营养成分；儿科医生都在用；医生形象背书，值得信赖；医生推荐配方，营养全面；医师亲测有效；医生都说好；医生证明适合宝宝；医生推荐，妈妈放心；医生形象代言，品质保证",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则适合语义召回，因为违规表达可能以多种软性方式出现，如‘医生推荐’‘医师证明’‘医生形象背书’等，关键词难以穷举，语义召回可覆盖变体。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:44:08",
+          "old_vector_text": "奶粉及涉及特定营养成分的食品广告中，不得利用医生形象或医生推荐进行证明推荐",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "医生推荐",
+            "医生形象",
+            "奶粉",
+            "特定营养成分",
+            "证明推荐",
+            "违规代言"
+          ],
+          "negative_signals_recommendation": [
+            "医生科普",
+            "医生建议",
+            "医生咨询",
+            "医生诊断"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖多种医生形象推荐表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 代言. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止在奶粉及特定营养成分食品广告中使用医生形象或医生推荐内容",
+      "examples": {
+        "violation": [
+          "本奶粉经某某医生推荐，适合宝宝",
+          "含有特定营养成分，医生证明有效"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止奶粉及特定营养成分食品利用医生形象做证明推荐"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "operator_direct",
+        "route_reason": "明确禁止，无需额外资料核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-8b4409e0ef5b29d0",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确禁止医生形象或推荐，运营可直接删除或替换违规内容，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_食品行业投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "广告物料宣传需与推广产品结合，不得出现无关内容",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《食品行业投放规则》使用手册",
+        "source_article_id": "1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "广告物料宣传需与推广产品结合，不得出现与宣传产品无关内容"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告物料中宣传的内容应与推广产品直接相关，不得出现与产品无关的描述、对比或推荐",
+        "decision": "若广告物料中出现与推广产品无关的内容，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "广告物料相关性",
+          "产品关联",
+          "无关内容"
+        ],
+        "vector_text": "这款产品真的超好用，推荐给大家！//今天给大家安利一款神器，效果绝了！//这个面膜我用了三个月，皮肤",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原规则要求广告物料必须与推广产品相关，但实际违规常表现为推广A产品却宣传B产品、无产品关联的泛推荐、软文种草等。该vector_text模拟了多种无关内容场景，便于语义模型召回此类违规。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:44:18",
+          "old_vector_text": "广告物料宣传需与推广产品结合，不得出现与宣传产品无关的内容",
+          "old_semantic_reason": "该规则为开放性语义判断，关键词难以穷举，需语义模型辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "无关内容",
+            "软文种草",
+            "泛推荐",
+            "产品关联",
+            "虚假宣传",
+            "广告物料相关性"
+          ],
+          "negative_signals_recommendation": [
+            "产品名称",
+            "品牌名",
+            "具体功效成分"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖软文、种草、泛推荐、对比推荐等无关内容场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 234
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、种草、虚假、软文.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "是否与产品无关需结合具体广告内容进行语义判断，无明确量化标准"
+      },
+      "routing": {
+        "interpretation_dependency": "需要判断广告内容与产品的关联性",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_direct",
+        "route_reason": "规则语义明确但需人工判断，可由运营直接处理",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-baabf5c6bdd492d1",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则为开放性语义判断，需人工判断内容与产品的关联性，但运营可依据明确标准直接修改，无需法务介入",
+        "confidence": "medium",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-HF-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_食品行业投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "生鲜食品不得宣传具体功效或暗示保健作用",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "生鲜食品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《食品行业投放规则》使用手册",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "生鲜食品不得声称具有特殊功效，也不得借助宣传成分作用明示或者暗示其保健作用，如：多吃西红柿可以美白、多吃葡萄眼睛可以又大又圆等"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "美白",
+            "保健",
+            "功效",
+            "明目",
+            "又大又圆",
+            "眼睛",
+            "葡萄",
+            "西红柿",
+            "可以"
+          ],
+          "regex": [],
+          "context_signals": [
+            "生鲜",
+            "食品",
+            "多吃"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测生鲜食品文案中是否声称具有特殊功效或借助成分宣传暗示保健作用，如美白、明目等",
+        "decision": "若生鲜食品文案声称具有特殊功效或借助成分宣传暗示保健作用，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "生鲜食品",
+          "功效宣传",
+          "保健暗示",
+          "小红书平台规则"
+        ],
+        "vector_text": "多吃西红柿可以美白，多吃葡萄眼睛又大又圆，吃蓝莓保护视力，吃猕猴桃补充维C美白，吃胡萝卜明目，吃石榴",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text是法条式表述，不适合语义召回；改写为大量真实违规文案的集合，覆盖多种生鲜食品暗示保健作用的表达，便于向量匹配相似文案。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、明示、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T17:20:45",
+          "old_vector_text": "生鲜食品不得声称具有特殊功效，也不得借助宣传成分作用明示或暗示其保健作用，例如美白、明目等",
+          "old_semantic_reason": "关键词可能无法覆盖所有暗示保健作用的表达，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "生鲜食品",
+            "功效宣传",
+            "保健暗示",
+            "美白",
+            "明目",
+            "抗氧化",
+            "补血",
+            "排毒"
+          ],
+          "negative_signals_recommendation": [
+            "药品",
+            "保健品",
+            "医疗器械",
+            "处方",
+            "治疗"
+          ],
+          "change_summary": "将法条式vector_text改写为大量真实违规文案的集合，覆盖多种生鲜食品暗示保健作用的表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "多吃西红柿可以美白",
+          "多吃葡萄眼睛可以又大又圆"
+        ],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止生鲜食品宣传具体功效或暗示保健作用，并给出示例，规则边界清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-8659810a8fa3fc37",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发需结合生鲜食品语境判断是否暗示保健作用，但运营可依据示例直接修改文案，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-HF-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_食品行业投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "普通食品不得涉及夸大宣传",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "普通食品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《食品行业投放规则》使用手册",
+        "source_article_id": "3",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "3",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "普通⻝品仅有饱腹的功效，不得超出普通⻝品本身的作⽤，禁⽌涉及“医疗功效”，“保健功效”，“化妆品功效”（美⽩，防晒）等。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "医疗功效",
+            "保健功效",
+            "美白",
+            "防晒",
+            "治疗",
+            "治愈",
+            "抗衰老",
+            "抗氧化",
+            "排毒",
+            "减肥",
+            "瘦身"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "普通食品文案中不得宣称具有医疗、保健或化妆品功效，如美白、防晒等超出普通食品本身作用的内容",
+        "decision": "若检测到普通食品文案中包含医疗功效、保健功效或化妆品功效（如美白、防晒）等表述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "普通食品",
+          "夸大宣传",
+          "医疗功效",
+          "保健功效",
+          "化妆品功效"
+        ],
+        "vector_text": "吃这个能美白，每天一片排毒养颜，抗衰老抗氧化，瘦身减肥效果显著，治疗感冒咳嗽，保健养生必备，防晒护肤",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及夸大宣传，关键词难以穷尽变体，语义召回可覆盖多种违规表达，适合作为主要召回方式。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、医疗、夸大、宣传.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T17:20:56",
+          "old_vector_text": "普通食品不得涉及医疗功效、保健功效或化妆品功效（如美白、防晒）等夸大宣传",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "普通食品",
+            "夸大宣传",
+            "医疗功效",
+            "保健功效",
+            "化妆品功效",
+            "美白",
+            "防晒",
+            "减肥"
+          ],
+          "negative_signals_recommendation": [
+            "饱腹",
+            "口感",
+            "美味",
+            "营养",
+            "健康食品（无功效宣称）"
+          ],
+          "change_summary": "从法条式改写为仿真违规文案集合，覆盖多种功效宣称变体，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "这款普通饼干具有美白功效",
+          "每日食用可排毒养颜",
+          "普通食品能治疗感冒"
+        ],
+        "compliant": [
+          "这款饼干口感酥脆，饱腹感强"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止普通食品涉及医疗、保健、化妆品功效，规则清晰可执行"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中等",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-cf05dfc8722bfbb0",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "HF-ADV-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_food_ad_rules",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "食品检测机构认证相关-不得利用检测机构为食品安全性做保证承诺",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "食品",
+          "保健食品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《食品行业投放规则》使用手册",
+        "source_article_id": "5",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "5",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "5、【⻝品检测机构认证相关】⻝品涉及⻝品检测机构认证需要提交相关证明材料，但是不得利⽤⻝品检测机构为⻝品得安全性做保证承诺。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "检测机构",
+            "认证",
+            "保证",
+            "安全",
+            "承诺",
+            "检测",
+            "机构认证"
+          ],
+          "regex": [],
+          "context_signals": [
+            "检测机构",
+            "认证",
+            "保证",
+            "安全承诺"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测到广告文案中提及食品检测机构认证，并包含对食品安全性的保证或承诺性表述",
+        "decision": "若文案中出现食品检测机构认证相关表述，且同时包含对食品安全性的保证或承诺，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "食品检测机构认证",
+          "安全性保证",
+          "保证承诺",
+          "虚假宣传"
+        ],
+        "vector_text": "经XX检测机构认证，绝对安全，放心食用；通过国家检测机构认证，安全有保障；检测机构认证，品质安全无忧",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及利用检测机构认证做安全性保证承诺，属于语义场景，关键词难以覆盖所有变体，需语义召回辅助。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:49:15",
+          "old_vector_text": "广告文案中利用食品检测机构认证为食品的安全性做保证承诺，例如声称'经XX检测机构认证，安全无虞'等类似表述",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "检测机构认证",
+            "安全性保证",
+            "保证承诺",
+            "虚假宣传",
+            "食品安全",
+            "认证背书"
+          ],
+          "negative_signals_recommendation": [
+            "仅陈述事实",
+            "通过认证",
+            "已认证"
+          ],
+          "change_summary": "将原规则性描述改写为真实违规文案集合，覆盖多种变体表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 130
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "驳回修改",
+      "examples": {
+        "violation": [
+          "本产品经XX检测机构认证，绝对安全，放心食用"
+        ],
+        "compliant": [
+          "本产品已通过XX检测机构认证（仅陈述事实，不涉及安全性保证）"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止利用食品检测机构为食品安全性做保证承诺，规则边界清晰"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-6a8383c10e696e68",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营补充检测机构认证材料，并判断文案是否涉及安全性保证承诺，运营可依据示例修改。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-HF-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_食品行业投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "食品行业物料投放规则-笔记类型类",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《食品行业投放规则》使用手册",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "2、笔记类型类\n⼀、⻝品⾏业物料投放规则"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "该条文为章节标题，未提供具体规则内容，无法形成可执行的广告审核规则"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "",
+        "decision": ""
+      },
+      "recall": {
+        "tags": [],
+        "vector_text": "保健食品投放小红书笔记，没有资质也发种草文，软文推广保健品，个人号发保健食品测评，无蓝帽子标识宣传功效，普通食品冒充保健食品，笔记类物料未报备，非官方渠道推广保健品，素人账号发保健品推荐，规避平台审核的保健品文案，保健品笔记不带资质标签，小红书保健品投放违规，食品行业物料投放规则笔记类型，保健食品笔记类物料违规投放",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则为章节标题，无具体内容，但语义召回可覆盖保健食品笔记投放的常见违规表达，适合作为fallback辅助关键词召回",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:49:24",
+          "old_vector_text": "",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健食品",
+            "笔记投放",
+            "资质不符",
+            "软文",
+            "小红书",
+            "食品行业",
+            "物料投放"
+          ],
+          "negative_signals_recommendation": [
+            "合规指南",
+            "资质办理",
+            "如何报备"
+          ],
+          "change_summary": "从空文本改为HyDE风格违规文案集合，聚焦保健食品笔记投放的违规表达",
+          "confidence": "medium",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、普通食品、种草、软文.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "条文仅为章节标题，无具体规则内容，无法直接形成可执行审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "",
+        "default_route": "legal_review_required",
+        "route_reason": "条文内容不完整，需人工判断是否可形成规则",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-c40c5cc7f19f3c4c",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则为章节标题，无具体内容，无法自动执行，需法务判断是否可形成规则及适用边界",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-HF-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_食品行业投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "话题标签不得包含疾病名称",
+      "dimension": "涉医疗宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《食品行业投放规则》使用手册",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "话题中的#感冒#需要删除哦，话题也是正文的一部分，也是不可以出现疾病的"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "感冒",
+            "疾病",
+            "#感冒#"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "话题标签中不得出现疾病名称或疾病相关词汇",
+        "decision": "若话题标签包含疾病名称，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "话题标签",
+          "疾病名称",
+          "涉医疗宣传"
+        ],
+        "vector_text": "#感冒# #发烧# #咳嗽# #头痛# #胃痛# #失眠# #高血压# #糖尿病# #鼻炎# #湿疹# #过敏# #哮喘# #关节炎# #颈椎病# #腰椎间盘突出# #癌症# #肿瘤# #心脏病# #中风# #抑郁症# #焦虑症# 话题标签里带上疾病名，蹭热度，吸引点击，暗示产品能治这些病，软性推广保健食品。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则明确禁止话题标签含疾病名称，适合语义召回以覆盖各种疾病名称的变体、缩写、谐音等，避免仅靠关键词漏召。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:49:32",
+          "old_vector_text": "话题标签中不得包含疾病名称，如感冒等",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "话题标签",
+            "疾病名称",
+            "涉医疗宣传",
+            "保健食品",
+            "违规营销",
+            "软性推广"
+          ],
+          "negative_signals_recommendation": [
+            "健康",
+            "养生",
+            "科普",
+            "知识分享"
+          ],
+          "change_summary": "从法条式描述改为真实违规文案集合，列举常见疾病名称及违规意图，增强语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 医疗、宣传、清晰、疾病.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "卡审不通过"
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "#感冒#",
+          "#发烧#"
+        ],
+        "compliant": [
+          "#健康饮食#",
+          "#营养补充#"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止话题标签中出现疾病名称"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "关键词匹配即可判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-191b74ed061a90af",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需关键词匹配即可判定，运营可直接删除或替换违规话题标签。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-HF-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_食品行业投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "酒水行业笔记不得展示KOL饮酒动作",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《食品行业投放规则》使用手册",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "平台是不会卡控成年人饮酒的，但是酒水行业不可以展示kol饮酒动作哦，易引导其他未成年人饮酒或其他不好的影响"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "饮酒",
+            "喝酒",
+            "干杯",
+            "碰杯",
+            "喝一口"
+          ],
+          "regex": [],
+          "context_signals": [
+            "KOL",
+            "博主",
+            "达人",
+            "展示",
+            "动作"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "酒水行业笔记中不得描述或暗示KOL有饮酒动作",
+        "decision": "若笔记描述KOL饮酒动作，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "酒水",
+          "饮酒动作",
+          "未成年人保护",
+          "KOL"
+        ],
+        "vector_text": "博主举杯饮酒 达人喝了一口酒 KOL喝酒动作 网红饮酒姿势 博主干杯 碰杯喝一口 展示饮酒动作 喝酒画面 饮酒镜头 博主喝酒特写 达人饮酒瞬间 喝酒动作展示 饮酒行为 喝酒场景 博主喝酒 达人喝酒 喝酒动作 饮酒动作 喝酒姿势 饮酒姿势 喝酒画面 饮酒画面 喝酒镜头 饮酒镜头 喝酒特写 饮酒特写 喝酒瞬间 饮酒瞬间 喝酒行为 饮酒行为 喝酒展示 饮酒展示 喝酒动作描述 饮酒动作描述 喝酒动作展示 饮酒动作展示 喝酒动作画面 饮酒动作画面 喝酒动作镜头 饮酒动作镜头 喝酒动作特写 饮酒动作特写 喝酒动作瞬间 饮酒动作瞬间 喝酒动作行为 饮酒动作行为 喝酒动作场景 饮酒动作场景 喝酒动作姿势 饮酒动作姿势 喝酒动作干杯 饮酒动作干杯 喝酒动作碰杯 饮酒动作碰杯 喝酒动作喝一口 饮酒动作喝一口 喝酒动作举杯 饮酒动作举杯 喝酒动作饮酒 饮酒动作喝酒 喝酒动作KOL 饮酒动作KOL 喝酒动作博主 饮酒动作博主 喝酒动作达人 饮酒动作达人 喝酒动作网红 饮酒动作网红 喝酒动作展示 饮酒动作展示 喝酒动作描述 饮酒动作描述 喝酒动作画面 饮酒动作画面 喝酒动作镜头 饮酒动作镜头 喝酒动作特写 饮酒动作特写 喝酒动作瞬间 饮酒动作瞬间 喝酒动作行为 饮酒动作行为 喝酒动作场景 饮酒动作场景 喝酒动作姿势 饮酒动作姿势 喝酒动作干杯 饮酒动作干杯 喝酒动作碰杯 饮酒动作碰杯 喝酒动作喝一口 饮酒动作喝一口 喝酒动作举杯 饮酒动作举杯 喝酒动作饮酒 饮酒动作喝酒 喝酒动作KOL 饮酒动作KOL 喝酒动作博主 饮酒动作博主 喝酒动作达人 饮酒动作达人 喝酒动作网红 饮酒动作网红",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "原规则语义召回文本过于法条化，不适合向量召回；改写为真实违规文案集合，覆盖多种饮酒动作表达，提升召回率。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:49:43",
+          "old_vector_text": "酒水行业笔记中不得展示KOL饮酒动作，以免引导未成年人饮酒",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "酒水",
+            "饮酒动作",
+            "未成年人保护",
+            "KOL",
+            "博主",
+            "达人",
+            "喝酒",
+            "违规文案"
+          ],
+          "negative_signals_recommendation": [
+            "产品展示",
+            "酒水介绍",
+            "无饮酒动作"
+          ],
+          "change_summary": "将法条式文本改写为HyDE风格的违规文案集合，包含多种饮酒动作表达，提升语义召回效果。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 动作、未成年人、清晰、饮酒.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "卡审不通过"
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "博主举杯饮酒",
+          "达人喝了一口酒"
+        ],
+        "compliant": [
+          "产品展示",
+          "酒水介绍"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止展示KOL饮酒动作"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "关键词匹配即可判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-9dfe543e12eb73b6",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词匹配即可判定，运营可直接删除或替换违规描述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-HF-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_食品行业投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "宣传无添加需明确具体成分",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《食品行业投放规则》使用手册",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "笔记文案宣传三大无添加，需要明确是哪三个成分哦"
+        },
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "九大零添加需明确具体哪九个成分未添加"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "无添加",
+            "零添加",
+            "0添加",
+            "无防腐剂",
+            "无色素",
+            "无香精"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "宣传无添加或零添加时，必须明确列出具体未添加的成分名称",
+        "decision": "若宣传无添加但未明确具体成分，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "无添加",
+          "零添加",
+          "成分明确",
+          "虚假宣传"
+        ],
+        "vector_text": "三大无添加 九大零添加 0添加 无添加 不含防腐剂 不含色素 不含香精 无防腐 无色素 无香精 零防腐 零色素 零香精 无添加任何防腐剂 无添加色素香精 无添加防腐剂色素 零添加蔗糖 零添加防腐剂 无添加化学成分 无添加人工色素 无添加人工香精 无添加任何添加剂 无添加防腐剂香精色素 无添加防腐剂和色素 无添加香精和防腐剂 无添加色素和香精 无添加防腐剂、色素、香精 零添加防腐剂、色素、香精 无添加防腐剂色素香精 零添加防腐剂色素香精 无添加任何防腐剂色素香精 零添加任何防腐剂色素香精 不含任何防腐剂 不含任何色素 不含任何香精 不含任何添加剂 无添加 零添加 0添加 无防腐 无色素 无香精 零防腐 零色素 零香精 无添加任何防腐剂 无添加色素香精 无添加防腐剂色素 零添加蔗糖 零添加防腐剂 无添加化学成分 无添加人工色素 无添加人工香精 无添加任何添加剂 无添加防腐剂香精色素 无添加防腐剂和色素 无添加香精和防腐剂 无添加色素和香精 无添加防腐剂、色素、香精 零添加防腐剂、色素、香精 无添加防腐剂色素香精 零添加防腐剂色素香精 无添加任何防腐剂色素香精 零添加任何防腐剂色素香精 不含任何防腐剂 不含任何色素 不含任何香精 不含任何添加剂",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则适合语义召回，因为违规文案常以模糊的“无添加”“零添加”表述出现，需要召回未明确具体成分的违规表达。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:49:53",
+          "old_vector_text": "宣传无添加或零添加时，必须明确列出具体未添加的成分，如三大无添加需说明是哪三个成分",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "无添加",
+            "零添加",
+            "成分明确",
+            "虚假宣传",
+            "保健食品"
+          ],
+          "negative_signals_recommendation": [
+            "明确列出",
+            "具体成分",
+            "包含",
+            "含有"
+          ],
+          "change_summary": "将原规则性描述改写为大量违规文案示例的集合，覆盖多种无添加/零添加的变体表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、清晰、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "卡审不通过"
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "三大无添加",
+          "九大零添加",
+          "无添加任何防腐剂"
+        ],
+        "compliant": [
+          "无添加防腐剂、色素、香精",
+          "零添加蔗糖、防腐剂"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求无添加宣传需列出具体成分"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "关键词匹配即可判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-043946044bc3579e",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需检查是否明确列出具体成分，运营可直接修改文案补充成分名称。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-HF-004",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "XHS_食品行业投放规则",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "不得利用美国FDA机构宣传产品安全性",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书《食品行业投放规则》使用手册",
+        "source_article_id": "2",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "2",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "核查到确实有相关资质的，但是不可以利用美国FDA机构宣传自己产品是安全的，这点需要修改哦"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "FDA",
+            "美国FDA",
+            "美国食品药品监督管理局",
+            "FDA认证",
+            "FDA批准"
+          ],
+          "regex": [],
+          "context_signals": [
+            "安全",
+            "安全认证",
+            "安全保证"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "不得利用美国FDA机构或其认证来宣传产品安全性",
+        "decision": "若文案利用FDA机构宣传产品安全性，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "FDA",
+          "安全性宣传",
+          "虚假宣传",
+          "机构背书"
+        ],
+        "vector_text": "美国FDA认证，安全放心；通过FDA批准，绝对安全；FDA认证产品，安全无副作用；美国食品药品监督管理局认证，安全可靠；FDA安全认证，值得信赖；获得FDA批准，安全有保障；FDA认证，安全有效；美国FDA机构认证，安全无忧；FDA认证，安全品质保证；通过美国FDA检测，安全放心使用",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text是法条式表述，不适合语义召回。改写为真实违规文案集合，覆盖多种利用FDA宣传安全性的表达，提升召回率。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T04:50:01",
+          "old_vector_text": "不得利用美国FDA机构或其认证来宣传产品安全性",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "FDA",
+            "安全性宣传",
+            "虚假宣传",
+            "机构背书",
+            "认证",
+            "批准"
+          ],
+          "negative_signals_recommendation": [
+            "符合FDA标准",
+            "FDA相关资质",
+            "FDA注册"
+          ],
+          "change_summary": "将法条式表述改写为仿真违规文案集合，覆盖多种利用FDA宣传安全性的表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、清晰、虚假.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "卡审不通过"
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "本产品通过FDA认证，安全可靠",
+          "美国FDA认证，放心使用"
+        ],
+        "compliant": [
+          "产品已获得FDA相关资质",
+          "产品符合FDA标准"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止利用FDA机构宣传产品安全性"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "关键词匹配即可判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-773c55f8245d2fcf",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词匹配即可判定，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": [
+    {
+      "article_id": "4、",
+      "error": "Expecting ',' delimiter: line 40 column 6 (char 1085)"
+    }
+  ]
+}

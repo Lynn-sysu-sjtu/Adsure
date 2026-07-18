@@ -1,0 +1,408 @@
+{
+  "meta": {
+    "name": "美妆规则库-小红书【广告内容规范提醒】—— 美妆育发产品",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "小红书【广告内容规范提醒】—— 美妆育发产品.pdf",
+    "source_track": "美妆",
+    "rule_count": 2,
+    "error_count": 0,
+    "source_units_processed": 1,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "XHS",
+      "name": "小红书【广告内容规范提醒】—— 美妆育发产品",
+      "short": "XHS-小红书【广告内容规范提醒】——美妆育发产品",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "小红书"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "XHS-COSM-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "小红书广告内容规范",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "原育发产品2026年1月1日起不可宣传育发功效",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "原育发产品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "聚光广告"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【广告内容规范提醒】——美妆育发产品",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "原育发产品，2026年1月1日起不区分产品备案时间，均不可宣传育发功效（含跨境产品），涉及育发宣传按医疗功效处理"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "育发",
+            "生发",
+            "增发",
+            "密发",
+            "促进毛发生长",
+            "有助毛发生长",
+            "增加发量",
+            "填补发逢",
+            "发逢变密",
+            "秃头用了发量多",
+            "发际线不秃了",
+            "长出小绒毛",
+            "头发越洗越多"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "物料中宣传育发功效或使用生发类描述，按医疗功效处理",
+        "decision": "若物料涉及育发功效宣传，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "育发",
+          "医疗功效",
+          "功效宣传",
+          "小红书",
+          "美妆"
+        ],
+        "vector_text": "原育发产品及防脱产品、普通化妆品等，均不可宣传育发功效，涉及育发宣传按医疗功效处理",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、医疗、宣传、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "物料审核不通过，禁止投放"
+      },
+      "relations": [],
+      "disposition": "禁止投放",
+      "examples": {
+        "violation": [
+          "头发越洗越多",
+          "增发",
+          "密发",
+          "促进毛发生长",
+          "有助毛发生长",
+          "增加发量",
+          "填补发逢",
+          "发逢变密",
+          "秃头用了发量多",
+          "发际线不秃了",
+          "长出小绒毛"
+        ],
+        "compliant": [
+          "减少掉发",
+          "视觉上更显浓密",
+          "修护发丝",
+          "强韧秀发",
+          "防止中断"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止原育发产品宣传育发功效，并列举了具体违规描述"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词可触发，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-14302e5470dd2348",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "XHS-COSM-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "小红书广告内容规范",
+      "source_type": "平台规则",
+      "platform": "小红书",
+      "title": "防脱产品及普通化妆品不可宣传育发功效",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "防脱产品",
+          "普通化妆品"
+        ],
+        "platforms": [
+          "小红书"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [
+          "聚光广告"
+        ],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "XHS-小红书【广告内容规范提醒】——美妆育发产品",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "XHS",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "防脱产品及普通化妆品等其他产品，均不可宣传育发功效（含跨境产品），涉及育发宣传按医疗功效处理"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "育发",
+            "生发",
+            "增发",
+            "密发",
+            "促进毛发生长",
+            "有助毛发生长",
+            "增加发量",
+            "填补发逢",
+            "发逢变密",
+            "秃头用了发量多",
+            "发际线不秃了",
+            "长出小绒毛",
+            "头发越洗越多"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "物料中宣传育发功效或使用生发类描述，按医疗功效处理",
+        "decision": "若物料涉及育发功效宣传，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "育发",
+          "医疗功效",
+          "功效宣传",
+          "小红书",
+          "美妆"
+        ],
+        "vector_text": "防脱产品及普通化妆品等其他产品，均不可宣传育发功效，涉及育发宣传按医疗功效处理",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、医疗、宣传、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "物料审核不通过，禁止投放"
+      },
+      "relations": [],
+      "disposition": "禁止投放",
+      "examples": {
+        "violation": [
+          "头发越洗越多",
+          "增发",
+          "密发",
+          "促进毛发生长",
+          "有助毛发生长",
+          "增加发量",
+          "填补发逢",
+          "发逢变密",
+          "秃头用了发量多",
+          "发际线不秃了",
+          "长出小绒毛"
+        ],
+        "compliant": [
+          "减少掉发",
+          "视觉上更显浓密",
+          "修护发丝",
+          "强韧秀发",
+          "防止中断"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止防脱产品及普通化妆品宣传育发功效，并列举了具体违规描述"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词可触发，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-9065d5794fd5a8fa",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

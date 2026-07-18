@@ -1,0 +1,584 @@
+{
+  "meta": {
+    "name": "游戏规则库-B站广告推广平台审核规范",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "游戏广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "B站广告推广平台审核规范.pdf",
+    "source_track": "游戏",
+    "rule_count": 4,
+    "error_count": 0,
+    "source_units_processed": 1,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "BILI",
+      "name": "B站广告推广平台审核规范",
+      "short": "BILI-B站广告推广平台审核规范",
+      "type": "平台规则",
+      "legal_level": null,
+      "platform": "B站"
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "GAME-BILI-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "B站广告推广平台审核规范",
+      "source_type": "平台规则",
+      "platform": "B站",
+      "title": "游戏类广告创意必须显示游戏名称且与落地页一致",
+      "dimension": "虚假宣传",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "B站"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "BILI",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "BILI",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "创意中必须显示游戏名称，且保证与实际落地页中游戏logo、名称一致"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "游戏名称",
+            "游戏logo",
+            "落地页"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告创意中必须包含游戏名称，且该名称需与落地页中的游戏logo和名称完全一致",
+        "decision": "若广告创意中未显示游戏名称，或名称与落地页不一致，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "虚假宣传",
+          "一致性",
+          "B站"
+        ],
+        "vector_text": "快来玩这款超好玩的游戏！点击即玩，无需下载！\n这款游戏太棒了，你一定会爱上它！\n新游上线，限时福利，速来！\n游戏名称：XXX，点击进入官网下载\n这款游戏和XXX一模一样，快来体验！\n游戏内购超值，首充双倍！\n落地页游戏名称：YYY，广告中却写ZZZ，不一致",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则要求广告创意必须显示游戏名称且与落地页一致，但原vector_text是法条式表述，不适合语义召回。改写为真实违规文案，覆盖未显示名称、名称不一致、使用简称或别名、诱导点击等场景，便于向量召回。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T05:15:20",
+          "old_vector_text": "游戏类广告创意必须显示游戏名称，且与落地页中的游戏logo和名称保持一致",
+          "old_semantic_reason": "规则明确要求显示游戏名称，可通过关键词直接召回",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "游戏",
+            "虚假宣传",
+            "一致性",
+            "名称不符",
+            "诱导点击"
+          ],
+          "negative_signals_recommendation": [
+            "合规",
+            "已显示",
+            "一致"
+          ],
+          "change_summary": "将法条式表述改写为仿真违规文案集合，覆盖未显示名称、名称不一致、诱导点击等场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、虚假、诱导点击、限时.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意被拒绝或下架"
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "广告文案中未提及游戏名称，或使用了与落地页不同的游戏名称"
+        ],
+        "compliant": [
+          "广告文案中明确显示游戏名称，且与落地页logo和名称一致"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确要求显示游戏名称并保证一致性"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营人员判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-cf58c6137564f22c",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "light",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清楚，运营可直接比对文案与落地页名称是否一致并修改。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-BILI-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "B站广告推广平台审核规范",
+      "source_type": "平台规则",
+      "platform": "B站",
+      "title": "游戏类广告不得使用真实军用枪械、装备及军用标识",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "B站"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "BILI",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "BILI",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "不得使用真实军用枪械、装备，可使用游戏内元素；不得使用军用logo、标志、特殊符号等可代表各国军队的标识"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "军用枪械",
+            "军用装备",
+            "军用logo",
+            "军用标志",
+            "军队标识"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告创意中不得出现真实军用枪械、装备，以及可代表各国军队的logo、标志、特殊符号",
+        "decision": "若检测到广告创意中包含真实军用枪械、装备或军用标识，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "军用",
+          "标识",
+          "B站"
+        ],
+        "vector_text": "广告中出现了真实军用步枪的图片或描述?广告中使用了美军军徽?军用枪械?军用装备?军用logo?军用标",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 清晰.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T19:38:57",
+          "old_vector_text": "游戏类广告不得使用真实军用枪械、装备及任何代表军队的标识",
+          "old_semantic_reason": "军用标识可能通过变体或隐晦方式出现，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "游戏",
+            "军用",
+            "标识",
+            "B站"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意被拒绝或下架"
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "广告中出现了真实军用步枪的图片或描述",
+          "广告中使用了美军军徽"
+        ],
+        "compliant": [
+          "广告中使用了游戏内虚构的枪械和装备"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确禁止使用真实军用元素和标识"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营人员判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-c8af187cba6f2d06",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接识别并删除违规内容，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-BILI-004",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "B站广告推广平台审核规范",
+      "source_type": "平台规则",
+      "platform": "B站",
+      "title": "手游广告落地页iOS端需链接至App Store，安卓端需链接至B站游戏开放平台内链",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [
+          "B站"
+        ],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "BILI",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "BILI",
+          "article": "未分条-1",
+          "legal_level": null,
+          "role": "based_on",
+          "text": "手游广告落地页ios端需链接至appstore；安卓端必须链接至bilibili游戏开放平台内链"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "手游",
+            "落地页",
+            "ios",
+            "安卓",
+            "appstore",
+            "bilibili游戏开放平台"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "手游广告的落地页链接必须符合平台要求：iOS端跳转至App Store，安卓端跳转至B站游戏开放平台内链",
+        "decision": "若手游广告落地页链接不符合iOS端App Store或安卓端B站游戏开放平台内链的要求，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "手游",
+          "落地页",
+          "链接",
+          "B站"
+        ],
+        "vector_text": "手游广告落地页iOS端必须链接到App Store，安卓端必须链接到B站游戏开放平台内链。不能跳转到第三方下载站、其他应用商店或自定义链接。iOS端只能跳App Store，安卓端只能跳B站游戏开放平台内链。",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则明确指定链接目标，关键词已能覆盖，语义召回易误判，故建议禁用。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T05:17:50",
+          "old_vector_text": "手游广告落地页iOS端必须链接至App Store，安卓端必须链接至B站游戏开放平台内链",
+          "old_semantic_reason": "规则明确指定链接目标，可通过关键词直接召回",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": false,
+          "semantic_role_recommendation": "disabled",
+          "tags_recommendation": [
+            "游戏",
+            "手游",
+            "落地页",
+            "链接",
+            "B站",
+            "App Store"
+          ],
+          "negative_signals_recommendation": [
+            "下载",
+            "安装",
+            "点击下载"
+          ],
+          "change_summary": "将原vector_text改写为更贴近违规场景的表述，但语义召回仍不建议启用。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": "广告创意被拒绝或下架"
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "手游广告iOS端落地页链接至第三方下载站",
+          "手游广告安卓端落地页链接至其他平台"
+        ],
+        "compliant": [
+          "手游广告iOS端落地页链接至App Store",
+          "手游广告安卓端落地页链接至B站游戏开放平台内链"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则明确指定了不同端口的链接要求"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营人员判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-6c1b712f431c6b0d",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "low",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，运营可直接检查链接是否符合平台要求并修改",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

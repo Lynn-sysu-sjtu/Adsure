@@ -1,0 +1,422 @@
+{
+  "meta": {
+    "name": "美妆规则库-化妆品注册备案管理办法_2021.05.01生效_20260615下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "美妆广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "化妆品注册备案管理办法_2021.05.01生效_20260615下载.doc",
+    "source_track": "美妆",
+    "rule_count": 2,
+    "error_count": 0,
+    "source_units_processed": 63,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "CRM",
+      "name": "化妆品注册备案管理办法_2021.05.01生效_20260615下载",
+      "short": "CRM-2021",
+      "type": "法规",
+      "legal_level": 3,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "COSM-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CRM-2021",
+      "source_type": "法规",
+      "platform": null,
+      "title": "已备案普通化妆品不得随意改变功效宣称",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "普通化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CRM-2021",
+        "source_article_id": "第三十六条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CRM",
+          "article": "第三十六条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "已经备案的普通化妆品，无正当理由不得随意改变产品名称；没有充分的科学依据，不得随意改变功效宣称。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "本规则仅针对功效宣称变更，不涉及产品名称变更和配方变更"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "功效",
+            "宣称",
+            "功效宣称"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中关于普通化妆品的功效宣称是否与备案信息一致，若宣称内容超出备案范围或与备案信息不符，且无充分科学依据，则判定违规",
+        "decision": "若广告文案中普通化妆品的功效宣称与备案信息不一致且无充分科学依据，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "功效宣称",
+          "普通化妆品",
+          "备案",
+          "变更"
+        ],
+        "vector_text": "这款洗面奶能美白抗皱，效果显著，已备案普通化妆品，放心使用。我们的面霜具有祛斑功效，备案信息齐全。精",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及功效宣称与备案信息的一致性，需要语义理解来识别超出备案范围的功效宣称，关键词难以覆盖所有变体，适合语义召回作为主要方式。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:21:54",
+          "old_vector_text": "已备案普通化妆品在广告中不得随意改变功效宣称，需有充分科学依据",
+          "old_semantic_reason": "关键词可能无法覆盖所有功效宣称变更场景，需语义理解辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "功效宣称",
+            "普通化妆品",
+            "备案",
+            "超范围宣称",
+            "虚假宣传",
+            "化妆品广告"
+          ],
+          "negative_signals_recommendation": [
+            "特殊化妆品",
+            "药妆",
+            "医疗器械"
+          ],
+          "change_summary": "从法条式描述改为仿真违规文案集合，覆盖多种功效宣称场景和规避表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若发现广告文案中普通化妆品功效宣称与备案信息不一致且无充分科学依据，需驳回并要求提供科学依据或修改文案",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "备案信息",
+          "科学依据"
+        ],
+        "reason": "需要查询产品备案信息以判断功效宣称是否一致，并可能需要科学依据资料",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要对比广告文案中的功效宣称与备案信息，判断是否一致，属于关系判断"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要获取产品备案信息",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供备案信息或科学依据资料进行核验",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "产品备案信息",
+          "功效宣称科学依据"
+        ],
+        "data_sources": [
+          "国家药监局备案数据库",
+          "企业提供的备案凭证"
+        ],
+        "note": "后期需接入备案信息数据库进行自动核验"
+      },
+      "rule_uid": "RUID-fba2b7c4e349d1ee",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "medium",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营提供备案信息和科学依据资料，无法直接判断是否违规，故要求补充资料后由法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "COSM-REG-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "美妆",
+      "namespace": "CRM-2021",
+      "source_type": "法规",
+      "platform": null,
+      "title": "特殊化妆品注册事项变更分类管理",
+      "dimension": "功效超备案",
+      "applies_to": {
+        "industries": [
+          "美妆"
+        ],
+        "product_categories": [
+          "特殊化妆品"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "CRM-2021",
+        "source_article_id": "第四十一条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "CRM",
+          "article": "第四十一条",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "第四十一条 已经注册的特殊化妆品的注册事项发生变化的，国家药品监督管理局根据变化事项对产品安全、功效的影响程度实施分类管理： （一）不涉及安全性、功效宣称的事项发生变化的，注册人应当及时向国家药品监督管理局备案； （二）涉及安全性的事项发生变化的，以及生产工艺、功效宣称等方面发生实质性变化的，注册人应当向国家药品监督管理局提出产品注册变更申请； （三）产品名称、配方等发生变化，实质上构成新的产品的，注册人应当重新申请注册。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "本规则基于特殊化妆品注册事项变更分类管理，要求广告中宣称的功效必须与注册信息一致，若功效宣称发生实质性变化需先申请变更，否则构成违规。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "特殊化妆品",
+            "注册",
+            "功效宣称",
+            "变更",
+            "重新注册"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣称的特殊化妆品功效与已注册信息不一致，或宣称了未经注册变更的新功效，可能构成违规。",
+        "decision": "若广告宣称的特殊化妆品功效与注册信息不符，且未提供注册变更或重新注册的证明，则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "特殊化妆品",
+          "功效超备案",
+          "注册变更"
+        ],
+        "vector_text": "这款特殊化妆品不仅美白还能抗衰老，效果超棒！全新升级配方，功效更强！我们家的产品有特殊化妆品注册证，",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及功效宣称与注册信息的一致性，需要语义理解来识别广告中宣称的功效是否超出注册范围，适合语义召回作为主要方式。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、化妆品、宣称.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T21:22:02",
+          "old_vector_text": "特殊化妆品广告中宣称的功效必须与注册信息一致，若功效宣称发生实质性变化需先申请注册变更或重新注册，否则违规。",
+          "old_semantic_reason": "关键词可能无法覆盖所有功效变更场景，需语义理解辅助判断功效宣称是否与注册信息一致。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "特殊化妆品",
+            "功效超备案",
+            "注册变更",
+            "美白抗衰老",
+            "升级配方",
+            "虚假宣传"
+          ],
+          "negative_signals_recommendation": [
+            "已通过注册变更",
+            "已重新注册",
+            "与注册信息一致"
+          ],
+          "change_summary": "从规则解释性文本改为仿真违规广告文案集合，覆盖多种宣称方式和规避表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《化妆品注册备案管理办法》第四十一条，可能面临责令改正、罚款等行政处罚。",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若广告宣称的特殊化妆品功效与注册信息不符，且未提供注册变更或重新注册的证明，则判定为违规，需下架或修改广告内容。",
+      "examples": {
+        "violation": [
+          "某特殊化妆品注册功效为美白，广告宣称具有抗衰老功效，但未申请注册变更。",
+          "某特殊化妆品注册配方未变，广告宣称全新升级配方，但未重新注册。"
+        ],
+        "compliant": [
+          "某特殊化妆品广告宣称的功效与注册信息完全一致。",
+          "某特殊化妆品广告宣称的新功效已通过注册变更申请。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "注册信息"
+        ],
+        "reason": "需要查询特殊化妆品的注册信息以比对广告宣称的功效是否一致。",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要判断广告宣称的功效与注册信息之间的关系是否一致或变更。"
+      },
+      "routing": {
+        "interpretation_dependency": "需要解释功效宣称是否构成实质性变化。",
+        "fact_dependency": "需要核实特殊化妆品的注册信息。",
+        "misjudgment_cost": "高，误判可能导致合规风险或影响正常广告投放。",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及注册信息比对和功效变更判断，需法务或专业审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "特殊化妆品注册证书",
+          "注册变更证明"
+        ],
+        "data_sources": [
+          "国家药品监督管理局数据库"
+        ],
+        "note": "后期需接入注册信息数据库进行比对。"
+      },
+      "rule_uid": "RUID-e1b2a48b602823be",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "需要法务判断功效宣称是否构成实质性变化，并核验注册信息，运营无法自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

@@ -1,0 +1,588 @@
+{
+  "meta": {
+    "name": "游戏规则库-国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11.01生效_20260615下载",
+    "version": "v1",
+    "generated_date": "20260706",
+    "scope": "游戏广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11.01生效_20260615下载.pdf",
+    "source_track": "游戏",
+    "rule_count": 3,
+    "error_count": 0,
+    "source_units_processed": 2,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "GEN",
+      "name": "国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11.01生效_20260615下载",
+      "short": "国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11",
+      "type": "法规",
+      "legal_level": 3,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "GAME-MP-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "game_ad_compliance",
+      "source_type": "法规",
+      "platform": null,
+      "title": "网络游戏用户账号实名注册制度",
+      "dimension": "平台准入/资质不符",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "PDF-part1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "一",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "一 、实行网络游戏用户账号实名注册制度。所有网络游戏用户均须使用有效身份信息方可进行游戏账号注册。自本通知施行之日起，网络游戏企业应建立并实施用户实名注册系统，不得以任何形式为未实名注册的新增用户提供游戏服务。自本通知施行之日起2个月内，网络游戏企业须要求已有用户全部完成实名注册，对未完成实名注册的用户停止提供游戏服务。对用户提供的实名注册信息，网络游戏企业必须严格按照有关法律法规妥善保存、保护，不得用作其他用途。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "无需实名",
+            "免实名",
+            "跳过实名",
+            "不实名",
+            "游客模式",
+            "免注册"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣传或暗示游戏无需实名注册即可游玩，或宣传游客模式可无限使用、可充值付费",
+        "decision": "若广告文案包含上述关键词或语义，则触发违规判定"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "实名注册",
+          "未成年人保护"
+        ],
+        "vector_text": "无需实名注册，即开即玩?游客模式无限畅玩，无需充值限制?无需实名?免实名?跳过实名?不实名?游客模式",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、未成年人、清晰. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "medium",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T20:33:54",
+          "old_vector_text": "广告文案中宣传游戏无需实名注册、可跳过实名、或游客模式可无限使用、可充值付费，违反实名注册制度",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "游戏",
+            "实名注册",
+            "未成年人保护"
+          ],
+          "negative_signals_recommendation": [],
+          "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
+          "confidence": "low",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "无需实名注册，即开即玩",
+          "游客模式无限畅玩，无需充值限制"
+        ],
+        "compliant": [
+          "本游戏需实名注册",
+          "请使用有效身份信息注册账号"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "法规明确要求所有网络游戏用户须实名注册，广告中不得宣传规避实名注册的内容"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "low",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-7bb3f201c1db1fd8",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接删除或替换违规表述，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-MP-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "game_ad_compliance",
+      "source_type": "法规",
+      "platform": null,
+      "title": "未成年人游戏时段时长限制",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "PDF-part1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "二",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "二 、严格控制未成年人使用网络游戏时段、时长。每日22时至次日8时，网络游戏企业不得以任何形式为未成年人提供游戏服务。网络游戏企业向未成年人提供游戏服务的时长，法定节假日每日累计不得超过3小时，其他时间每日累计不得超过1.5小时。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "不限时",
+            "无限玩",
+            "全天可玩",
+            "无时间限制",
+            "未成年人畅玩"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣传或暗示未成年人可不受时段时长限制游玩游戏，或宣传游戏无防沉迷时间限制",
+        "decision": "若广告文案包含上述关键词或语义，则触发违规判定"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "未成年人保护",
+          "防沉迷",
+          "时段时长"
+        ],
+        "vector_text": "未成年人全天不限时畅玩，无防沉迷限制，想玩多久玩多久，深夜也能玩，凌晨可登录，节假日无限玩，每天玩1",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及未成年人游戏时段时长限制，违规文案常以各种变体宣传无限制，语义召回可覆盖关键词无法穷尽的表达，如'深夜也能玩''凌晨可登录'等，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:58:04",
+          "old_vector_text": "广告文案中宣传未成年人可无限游玩、无时间限制、或违反每日22时至次日8时禁止服务、节假日不超过3小时、其他时间不超过1.5小时的规定",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "游戏",
+            "未成年人保护",
+            "防沉迷",
+            "时段时长",
+            "不限时",
+            "无限玩",
+            "深夜游戏"
+          ],
+          "negative_signals_recommendation": [
+            "成年人",
+            "家长监护",
+            "实名认证",
+            "健康游戏"
+          ],
+          "change_summary": "从法条式描述改为真实违规文案集合，增加多种变体表述，提升语义召回覆盖度。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 317
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、未成年人、清晰、限时.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "未成年人全天不限时畅玩",
+          "无防沉迷限制，想玩多久玩多久"
+        ],
+        "compliant": [
+          "本游戏严格执行防沉迷规定",
+          "未成年人法定节假日每日最多3小时"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "法规明确规定了未成年人游戏时段时长限制，广告中不得宣传违反该限制的内容"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "low",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-c1efc611fdda35b0",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词和语义明确，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-MP-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "game_ad_compliance",
+      "source_type": "法规",
+      "platform": null,
+      "title": "未成年人付费服务限制",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "PDF-part1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "三",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "三 、规范向未成年人提供付费服务。网络游戏企业须采取有效措施，限制未成年人使用与其民事行为能力不符的付费服务。网络游戏企业不得为未满8周岁的用户提供游戏付费服务。同一网络游戏企业所提供的游戏付费服务，8周岁以上未满16周岁的用户，单次充值金额不得超过50元人民币，每月充值金额累计不得超过200元人民币；16周岁以上未满18周岁的用户，单次充值金额不得超过100元人民币，每月充值金额累计不得超过400元人民币。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "无充值限制",
+            "无限充值",
+            "未成年人充值",
+            "免付费限制",
+            "充值无上限"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣传或暗示未成年人可不受充值金额限制，或宣传游戏无付费限制、可任意充值",
+        "decision": "若广告文案包含上述关键词或语义，则触发违规判定"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "未成年人保护",
+          "付费限制",
+          "充值"
+        ],
+        "vector_text": "未成年人充值无上限，无限充值，免付费限制，充值无限制，想充就充，不限金额，未成年人可任意充值，游戏无",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及具体金额和年龄限制，关键词难以穷举所有变体，语义召回可覆盖更多规避表述，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T07:58:14",
+          "old_vector_text": "广告文案中宣传未成年人可无限制充值、或宣传游戏无付费限制，违反未成年人付费服务规定",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义补充",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "游戏",
+            "未成年人保护",
+            "付费限制",
+            "充值",
+            "氪金",
+            "年龄限制",
+            "金额限制"
+          ],
+          "negative_signals_recommendation": [
+            "成年人充值",
+            "家长充值",
+            "实名认证"
+          ],
+          "change_summary": "将原规则说明改写为大量违规文案变体集合，覆盖不同年龄、金额、表述方式，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 389
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、未成年人、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "未成年人充值无上限",
+          "不限金额，想充就充"
+        ],
+        "compliant": [
+          "本游戏严格执行未成年人充值限制",
+          "8-16岁用户单次充值不超过50元"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "法规明确规定了未成年人付费服务的金额限制，广告中不得宣传违反该限制的内容"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "low",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可自动判定",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-04c04468c9b89961",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

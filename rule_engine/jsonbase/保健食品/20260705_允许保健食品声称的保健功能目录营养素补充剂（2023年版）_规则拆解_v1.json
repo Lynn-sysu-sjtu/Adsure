@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "name": "保健食品规则库-允许保健食品声称的保健功能目录营养素补充剂（2023 年版）",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "保健食品广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "允许保健食品声称的保健功能目录营养素补充剂（2023 年版）.pdf",
+    "source_track": "保健食品",
+    "rule_count": 1,
+    "error_count": 0,
+    "source_units_processed": 1,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "GEN",
+      "name": "允许保健食品声称的保健功能目录营养素补充剂（2023 年版）",
+      "short": "允许保健食品声称的保健功能目录营养素补充剂（2023年版）",
+      "type": "法规",
+      "legal_level": 3,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "HF-FC-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "保健食品",
+      "namespace": "保健功能声称",
+      "source_type": "法规",
+      "platform": null,
+      "title": "保健食品功能声称用语不得删改添加合并",
+      "dimension": "功效宣称",
+      "applies_to": {
+        "industries": [
+          "保健食品"
+        ],
+        "product_categories": [
+          "营养素补充剂"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "GEN",
+        "source_article_id": "未分条-1",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "GEN",
+          "article": "未分条-1",
+          "legal_level": 3,
+          "role": "based_on",
+          "text": "保健功能释义按照现行的《食品安全国家标准 预包装食品营养标签通则》（GB28050）附录 D 内容进行标注；保健食品标签中可使用释义中相应的一条或多条营养成分功能声称标准用语。不得对功能声称用语进行任何形式的删改、添加或合并。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "补充钙",
+            "补充镁",
+            "补充铁",
+            "补充锌",
+            "补充维生素A",
+            "补充维生素D",
+            "补充维生素B1",
+            "补充维生素B2",
+            "补充维生素B6",
+            "补充维生素B12",
+            "补充烟酸",
+            "补充叶酸",
+            "补充维生素C",
+            "补充泛酸",
+            "补充维生素E",
+            "补充n-3多不饱和脂肪酸"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "保健食品广告中使用的保健功能声称用语必须与《允许保健食品声称的保健功能目录营养素补充剂（2023年版）》中列出的释义标准用语完全一致，不得有任何删改、添加或合并。",
+        "decision": "若检测到保健食品广告中使用了上述关键词，但表述与目录中释义标准用语不完全一致（如删改、添加、合并），则判定为违规。"
+      },
+      "recall": {
+        "tags": [
+          "保健功能声称",
+          "营养素补充剂",
+          "标准用语",
+          "不得删改添加合并"
+        ],
+        "vector_text": "钙有助于骨骼和牙齿更坚固更健康，维生素C有助于维持皮肤健康，补充铁有助于血红蛋白合成，补充锌有助于生",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及标准用语的精确匹配，但违规变体可能通过删改、添加、合并产生，语义召回可覆盖这些变体，适合作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T03:33:09",
+          "old_vector_text": "保健食品广告中使用的保健功能声称用语必须严格使用目录中列出的标准释义，不得自行修改、添加或合并多个声称用语。",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义匹配以识别删改、添加或合并的情况。",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "保健功能声称",
+            "营养素补充剂",
+            "标准用语",
+            "删改添加合并",
+            "功效宣称",
+            "保健食品"
+          ],
+          "negative_signals_recommendation": [
+            "保健品",
+            "营养品",
+            "膳食补充剂"
+          ],
+          "change_summary": "将原规则性描述改写为包含多个标准用语及违规变体的仿真文案集合，增强语义召回能力。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 306
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 保健功能、功效、宣称、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若违规，要求修改为符合目录的标准用语，否则下架广告。",
+      "examples": {
+        "violation": [
+          "钙有助于骨骼和牙齿更坚固、更健康（合并了'钙有助于骨骼和牙齿更坚固'与'钙有助于骨骼和牙齿的发育'）",
+          "维生素C有助于维持皮肤健康（删除了'和黏膜'）"
+        ],
+        "compliant": [
+          "钙有助于骨骼和牙齿更坚固。",
+          "维生素C有助于维持皮肤和黏膜健康。"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "法规明确规定了保健功能声称用语必须使用标准释义，不得删改添加合并，规则清晰可执行。"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可通过关键词和语义直接判断，无需人工审核。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-da61ab09ed38b762",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需比对标准用语是否被删改添加合并，运营可直接修改文案。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}

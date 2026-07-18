@@ -1,0 +1,717 @@
+[
+  {
+    "case_id": "CASE-COSM-001",
+    "name": "美妆短期见效与绝对化宣称",
+    "input_payload": {
+      "record_id": "rec_case_cosm_001",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·物料内容": "15天见效，全网第一，焕发新生",
+        "①美妆·物料类型": "Banner",
+        "①美妆·投放平台": [
+          "抖音"
+        ],
+        "①美妆·产品品类": "护肤",
+        "①美妆·核心宣称功效": "改善肤色"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-FALSE-001",
+        "GEN-ABS-001"
+      ],
+      "expected_dimensions": [
+        "虚假宣传",
+        "绝对化用语"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-COSM-002",
+    "name": "美妆临床证明与数据引证",
+    "input_payload": {
+      "record_id": "rec_case_cosm_002",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·物料内容": "临床证明使用后肌肤水润度提升，报告显示效果显著",
+        "①美妆·物料类型": "详情页文字",
+        "①美妆·投放平台": [
+          "小红书"
+        ],
+        "①美妆·产品品类": "护肤",
+        "①美妆·核心宣称功效": "保湿"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-DATA-001",
+        "GEN-FALSE-001"
+      ],
+      "expected_dimensions": [
+        "引证内容不规范",
+        "虚假宣传"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-COSM-003",
+    "name": "美妆涉医疗治疗用语",
+    "input_payload": {
+      "record_id": "rec_case_cosm_003",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·物料内容": "修护屏障，治疗痘痘，消炎抗菌治疗",
+        "①美妆·物料类型": "直播话术",
+        "①美妆·投放平台": [
+          "快手"
+        ],
+        "①美妆·产品品类": "护肤",
+        "①美妆·核心宣称功效": "修护"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-MED-001"
+      ],
+      "expected_dimensions": [
+        "涉医疗宣传"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-COSM-004",
+    "name": "美妆种草购物链接广告识别",
+    "input_payload": {
+      "record_id": "rec_case_cosm_004",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·物料内容": "真实体验分享，今日种草这款精华，点击购物链接购买",
+        "①美妆·物料类型": "图文文案",
+        "①美妆·投放平台": [
+          "小红书"
+        ],
+        "①美妆·产品品类": "护肤",
+        "①美妆·核心宣称功效": "提亮"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-IDENT-001",
+        "IAM-IDENT-001"
+      ],
+      "expected_dimensions": [
+        "广告可识别性不足"
+      ],
+      "expected_risk_level": "中",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-COSM-005",
+    "name": "美妆专利配方宣称",
+    "input_payload": {
+      "record_id": "rec_case_cosm_005",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·物料内容": "采用国家专利配方和专利技术，打造专利产品",
+        "①美妆·物料类型": "详情页文字",
+        "①美妆·投放平台": [
+          "天猫"
+        ],
+        "①美妆·产品品类": "护肤",
+        "①美妆·核心宣称功效": "保湿"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-PATENT-001"
+      ],
+      "expected_dimensions": [
+        "引证内容不规范"
+      ],
+      "expected_risk_level": "中",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-HF-001",
+    "name": "保健食品审查批准与批准文号",
+    "input_payload": {
+      "record_id": "rec_case_hf_001",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "保健食品",
+        "①运营·物料内容": "保健食品广告已取得广告审查批准，广告批准文号齐全",
+        "①保健食品·物料类型": "详情页文字",
+        "①保健食品·投放平台": [
+          "抖音"
+        ],
+        "①保健食品·产品品类": "营养补充",
+        "①保健食品·核心宣称功效": "增强免疫力",
+        "①保健食品·产品备案名称": "某某片",
+        "①保健食品·批准文号": "国食健字G00000000"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "IAM-REVIEW-001"
+      ],
+      "expected_dimensions": [
+        "平台准入/资质不符"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-HF-002",
+    "name": "保健食品疾病预防健康科普导流",
+    "input_payload": {
+      "record_id": "rec_case_hf_002",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "保健食品",
+        "①运营·物料内容": "健康科普提醒：疾病预防要趁早，专家讲堂推荐这款营养补充品",
+        "①保健食品·物料类型": "图文文案",
+        "①保健食品·投放平台": [
+          "微信"
+        ],
+        "①保健食品·产品品类": "营养补充",
+        "①保健食品·核心宣称功效": "增强免疫力"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-HEALTHSOFT-001",
+        "IAM-HEALTHSOFT-001"
+      ],
+      "expected_dimensions": [
+        "广告可识别性不足"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-HF-003",
+    "name": "保健食品治疗降血糖宣称",
+    "input_payload": {
+      "record_id": "rec_case_hf_003",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "保健食品",
+        "①运营·物料内容": "本品可降血糖，辅助治疗慢性病，长期调理效果显著",
+        "①保健食品·物料类型": "直播话术",
+        "①保健食品·投放平台": [
+          "快手"
+        ],
+        "①保健食品·产品品类": "营养补充",
+        "①保健食品·核心宣称功效": "辅助降血糖"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-MED-001",
+        "GEN-FALSE-001"
+      ],
+      "expected_dimensions": [
+        "涉医疗宣传",
+        "虚假宣传"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-HF-004",
+    "name": "保健食品买赠价格促销",
+    "input_payload": {
+      "record_id": "rec_case_hf_004",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "保健食品",
+        "①运营·物料内容": "限时买一送一，到手价99元，赠送礼包数量有限",
+        "①保健食品·物料类型": "Banner",
+        "①保健食品·投放平台": [
+          "京东"
+        ],
+        "①保健食品·产品品类": "营养补充",
+        "①保健食品·核心宣称功效": "补充维生素"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-CLEAR-001"
+      ],
+      "expected_dimensions": [
+        "价格促销误导"
+      ],
+      "expected_risk_level": "中",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-HF-005",
+    "name": "保健食品平台禁售处方药混淆",
+    "input_payload": {
+      "record_id": "rec_case_hf_005",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "保健食品",
+        "①运营·物料内容": "处方药同款营养方案，处方药广告级别推荐",
+        "①保健食品·物料类型": "私域文案",
+        "①保健食品·投放平台": [
+          "微信"
+        ],
+        "①保健食品·产品品类": "营养补充",
+        "①保健食品·核心宣称功效": "调理"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "IAM-BAN-001",
+        "GEN-MED-001"
+      ],
+      "expected_dimensions": [
+        "平台准入/资质不符",
+        "涉医疗宣传"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-GAME-001",
+    "name": "游戏全网第一绝对化宣称",
+    "input_payload": {
+      "record_id": "rec_case_game_001",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·物料内容": "全网第一MMO，最佳国风手游，下载即送顶级装备",
+        "①游戏·物料类型": "Banner",
+        "①游戏·投放平台": [
+          "TapTap"
+        ],
+        "①游戏·产品品类": "MMO",
+        "①游戏·游戏名称": "某某江湖",
+        "①游戏·物料涉及场景": "拉新投放"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-ABS-001",
+        "GEN-FALSE-001"
+      ],
+      "expected_dimensions": [
+        "绝对化用语",
+        "虚假宣传"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-GAME-002",
+    "name": "游戏未成年人校园投放",
+    "input_payload": {
+      "record_id": "rec_case_game_002",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·物料内容": "学生专属福利，校园青少年组队挑战，防沉迷也能畅玩",
+        "①游戏·物料类型": "图文文案",
+        "①游戏·投放平台": [
+          "B站"
+        ],
+        "①游戏·产品品类": "休闲",
+        "①游戏·游戏名称": "某某乐园",
+        "①游戏·物料涉及场景": "校园活动"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-MINOR-001",
+        "IAM-MINOR-001"
+      ],
+      "expected_dimensions": [
+        "未成年人保护"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-GAME-003",
+    "name": "游戏直播带货达人推荐",
+    "input_payload": {
+      "record_id": "rec_case_game_003",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·物料内容": "主播直播间带货，达人推荐官亲测，直播推销礼包",
+        "①游戏·物料类型": "直播话术",
+        "①游戏·投放平台": [
+          "抖音"
+        ],
+        "①游戏·产品品类": "卡牌",
+        "①游戏·游戏名称": "某某卡牌",
+        "①游戏·物料涉及场景": "直播转化"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-ENDORSE-001",
+        "IAM-LIVE-001"
+      ],
+      "expected_dimensions": [
+        "广告代言不合规"
+      ],
+      "expected_risk_level": "中",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-GAME-004",
+    "name": "游戏系统更新误导点击",
+    "input_payload": {
+      "record_id": "rec_case_game_004",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·物料内容": "系统更新通知，点击开始按钮立即领取礼包，返回按钮继续跳转",
+        "①游戏·物料类型": "开屏文字",
+        "①游戏·投放平台": [
+          "快手"
+        ],
+        "①游戏·产品品类": "休闲",
+        "①游戏·游戏名称": "某某消消乐",
+        "①游戏·物料涉及场景": "开屏广告"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "IAM-CLICK-001"
+      ],
+      "expected_dimensions": [
+        "用户评价/种草误导"
+      ],
+      "expected_risk_level": "中",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-GAME-005",
+    "name": "游戏算法定向投放记录",
+    "input_payload": {
+      "record_id": "rec_case_game_005",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·物料内容": "算法推荐定向投放人群包，个性化推荐广告投放记录已保存",
+        "①游戏·物料类型": "信息流文案",
+        "①游戏·投放平台": [
+          "微信"
+        ],
+        "①游戏·产品品类": "SLG",
+        "①游戏·游戏名称": "某某战略",
+        "①游戏·物料涉及场景": "信息流投放"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "IAM-ALGO-001"
+      ],
+      "expected_dimensions": [
+        "平台准入/资质不符"
+      ],
+      "expected_risk_level": "低",
+      "expected_routing": "运营"
+    },
+    "case_layer": "workflow",
+    "case_layer_reason": "算法定向投放记录属于算法/投放档案流程义务，不纳入普通文案内容 baseline。"
+  },
+  {
+    "case_id": "CASE-GEN-001",
+    "name": "通用价格限时买赠",
+    "input_payload": {
+      "record_id": "rec_case_gen_001",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·物料内容": "限时活动，买一送一，原价299，到手价99，活动有效期今日结束"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-CLEAR-001"
+      ],
+      "expected_dimensions": [
+        "价格促销误导"
+      ],
+      "expected_risk_level": "中",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-GEN-002",
+    "name": "通用竞品贬低比较",
+    "input_payload": {
+      "record_id": "rec_case_gen_002",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·物料内容": "我们的产品吊打同行，竞品都不行，其他品牌没用"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-COMPARE-001"
+      ],
+      "expected_dimensions": [
+        "其他"
+      ],
+      "expected_risk_level": "中",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-GEN-003",
+    "name": "通用弹窗一键关闭",
+    "input_payload": {
+      "record_id": "rec_case_gen_003",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·物料内容": "开屏弹窗广告，倒计时结束后显示关闭按钮，支持一键关闭"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-POPUP-001",
+        "IAM-POPUP-001"
+      ],
+      "expected_dimensions": [
+        "其他"
+      ],
+      "expected_risk_level": "中",
+      "expected_routing": "运营"
+    }
+  },
+  {
+    "case_id": "CASE-GEN-004",
+    "name": "通用未经同意推送广告",
+    "input_payload": {
+      "record_id": "rec_case_gen_004",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "保健食品",
+        "①运营·物料内容": "未经同意发送广告，用户明确拒绝后仍通过即时通信推送广告"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "IAM-SEND-001"
+      ],
+      "expected_dimensions": [
+        "其他"
+      ],
+      "expected_risk_level": "中",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-GEN-005",
+    "name": "通用链接落地页核对",
+    "input_payload": {
+      "record_id": "rec_case_gen_005",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·物料内容": "点击购买链接进入落地页，下一级页面跳转商品详情页和外链"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "IAM-LINK-001"
+      ],
+      "expected_dimensions": [
+        "虚假宣传"
+      ],
+      "expected_risk_level": "中",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-SEM-001",
+    "name": "语义召回-软文导流未标合作",
+    "input_payload": {
+      "record_id": "case-sem-001",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·物料内容": "日常笔记包装成个人心得，文末放入手入口，没有任何商业合作说明",
+        "①美妆·物料类型": "图文文案",
+        "①美妆·投放平台": [
+          "小红书"
+        ],
+        "①美妆·产品品类": "护肤",
+        "①美妆·核心宣称功效": "提亮"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-IDENT-001"
+      ],
+      "expected_semantic_rule_ids": [
+        "GEN-IDENT-001"
+      ],
+      "expected_dimensions": [
+        "广告可识别性不足"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-SEM-002",
+    "name": "语义召回-健康知识包装保健食品",
+    "input_payload": {
+      "record_id": "case-sem-002",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "保健食品",
+        "①运营·物料内容": "这篇主要聊日常营养管理的小知识，文末可了解同款补充方案",
+        "①保健食品·物料类型": "图文文案",
+        "①保健食品·投放平台": [
+          "微信"
+        ],
+        "①保健食品·产品品类": "营养补充",
+        "①保健食品·核心宣称功效": "增强免疫力"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-HEALTHSOFT-001",
+        "IAM-HEALTHSOFT-001"
+      ],
+      "expected_semantic_rule_ids": [
+        "GEN-HEALTHSOFT-001",
+        "IAM-HEALTHSOFT-001"
+      ],
+      "expected_dimensions": [
+        "广告可识别性不足"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-SEM-003",
+    "name": "语义召回-伪装版本提示诱导点击",
+    "input_payload": {
+      "record_id": "case-sem-003",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·物料内容": "页面看起来像版本提示，用户点继续后进入礼包领取页",
+        "①游戏·物料类型": "图文文案",
+        "①游戏·投放平台": [
+          "TapTap"
+        ],
+        "①游戏·产品品类": "休闲",
+        "①游戏·游戏名称": "某某乐园",
+        "①游戏·物料涉及场景": "拉新投放"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "IAM-CLICK-001"
+      ],
+      "expected_semantic_rule_ids": [
+        "IAM-CLICK-001"
+      ],
+      "expected_dimensions": [
+        "用户评价/种草误导"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
+  },
+  {
+    "case_id": "CASE-SEM-004",
+    "name": "语义召回-平台未留存排查记录",
+    "input_payload": {
+      "record_id": "case-sem-004",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·物料内容": "账号信息和素材排查记录都没留，出现问题后也没有及时处理",
+        "①游戏·物料类型": "图文文案",
+        "①游戏·投放平台": [
+          "TapTap"
+        ],
+        "①游戏·产品品类": "休闲",
+        "①游戏·游戏名称": "某某乐园",
+        "①游戏·物料涉及场景": "拉新投放"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "IAM-PLATFORM-DUTY-001"
+      ],
+      "expected_semantic_rule_ids": [
+        "IAM-PLATFORM-DUTY-001"
+      ],
+      "expected_dimensions": [
+        "平台准入/资质不符"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    },
+    "case_layer": "workflow",
+    "case_layer_reason": "平台未留存排查记录属于平台/流程义务，不纳入普通文案内容 baseline。"
+  },
+  {
+    "case_id": "CASE-SEM-005",
+    "name": "语义召回-权益条件表述不完整",
+    "input_payload": {
+      "record_id": "case-sem-005",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·物料内容": "权益条件、使用门槛和承诺事项没有写完整，消费者很难判断实际能拿到什么",
+        "①美妆·物料类型": "图文文案",
+        "①美妆·投放平台": [
+          "小红书"
+        ],
+        "①美妆·产品品类": "护肤",
+        "①美妆·核心宣称功效": "提亮"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-CLEAR-001"
+      ],
+      "expected_semantic_rule_ids": [
+        "GEN-CLEAR-001"
+      ],
+      "expected_dimensions": [
+        "价格促销误导"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
+  }
+]

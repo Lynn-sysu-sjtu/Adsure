@@ -1,0 +1,4003 @@
+{
+  "meta": {
+    "name": "游戏规则库-中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+    "version": "v1",
+    "generated_date": "20260705",
+    "scope": "游戏广告合规规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
+    "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
+    "prompt_version": "legal_rule_extract_v1_20260705",
+    "source_file": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载.doc",
+    "source_track": "游戏",
+    "rule_count": 21,
+    "error_count": 0,
+    "source_units_processed": 132,
+    "limited_run": false
+  },
+  "legal_sources": [
+    {
+      "id": "ML",
+      "name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+      "short": "ML-2024",
+      "type": "法规",
+      "legal_level": 1,
+      "platform": null
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "GAME-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "学校、幼儿园不得安排未成年人参加商业性活动",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "第三十八条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第三十八条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "学校、幼儿园不得安排未成年人参加商业性活动，不得向未成年人及其父母或者其他监护人推销或者要求其购买指定的商品和服务。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "学校",
+            "幼儿园",
+            "未成年人",
+            "商业性活动",
+            "推销",
+            "指定商品",
+            "指定服务"
+          ],
+          "regex": [],
+          "context_signals": [
+            "安排",
+            "参加",
+            "要求购买"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中描述或暗示由学校、幼儿园组织或安排未成年人参与商业推广、促销、推销商品或服务的活动",
+        "decision": "若文案涉及学校或幼儿园组织未成年人参与商业性活动或推销商品/服务，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "学校",
+          "幼儿园",
+          "商业活动",
+          "推销"
+        ],
+        "vector_text": "学校组织学生参加游戏推广活动，幼儿园安排小朋友参与商业演出，学校要求家长购买指定游戏点卡，幼儿园推销",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及学校/幼儿园组织未成年人参与商业活动，关键词可能无法覆盖所有变体，语义召回可捕获多种表述",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:11:53",
+          "old_vector_text": "广告文案中提及学校或幼儿园安排未成年人参加商业性活动，或向未成年人及其监护人推销指定商品或服务",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未成年人保护",
+            "学校",
+            "幼儿园",
+            "商业活动",
+            "推销",
+            "游戏推广",
+            "组织参与"
+          ],
+          "negative_signals_recommendation": [
+            "公益",
+            "非商业",
+            "自愿"
+          ],
+          "change_summary": "将法条式描述改写为真实违规文案集合，覆盖多种场景和表述",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 144
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 代言、促销、未成年人、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《未成年人保护法》第三十八条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布涉及学校或幼儿园安排未成年人参加商业性活动或推销商品/服务的广告内容",
+      "examples": {
+        "violation": [
+          "某游戏公司联合学校组织未成年人参加游戏推广活动",
+          "幼儿园向家长推销指定游戏充值卡"
+        ],
+        "compliant": [
+          "游戏广告面向成年人，不涉及学校或幼儿园组织未成年人"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接禁止学校、幼儿园安排未成年人参加商业性活动或推销商品/服务，可形成明确审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营判断是否涉及学校/幼儿园组织未成年人参与商业活动",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-4f1b9d757dc9177c",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接判断文案是否涉及学校或幼儿园组织未成年人参与商业活动，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-PROTECT-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止发布含有危害未成年人身心健康内容的广告",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML-2024",
+        "source_article_id": "第五十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第五十条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "禁止制作、复制、出版、发布、传播含有宣扬淫秽、色情、暴力、邪教、迷信、赌博、引诱自杀、恐怖主义、分裂主义、极端主义等危害未成年人身心健康内容的图书、报刊、电影、广播电视节目、舞台艺术作品、音像制品、电子出版物和网络信息等。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "淫秽",
+            "色情",
+            "暴力",
+            "邪教",
+            "迷信",
+            "赌博",
+            "引诱自杀",
+            "恐怖主义",
+            "分裂主义",
+            "极端主义"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中不得含有宣扬淫秽、色情、暴力、邪教、迷信、赌博、引诱自杀、恐怖主义、分裂主义、极端主义等危害未成年人身心健康的内容",
+        "decision": "若检测到上述关键词或语义匹配，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "禁止内容",
+          "危害身心健康"
+        ],
+        "vector_text": "这款游戏充满暴力杀戮，让你体验血腥快感；加入我们，一起赌博赢大奖；点击即送色情福利，未成年人勿入；邪",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及多种危害未成年人身心健康的内容，关键词可能被变体或隐晦表达绕过，语义召回可覆盖软性表述和场景化文案",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:12:03",
+          "old_vector_text": "广告文案中禁止出现宣扬淫秽、色情、暴力、邪教、迷信、赌博、引诱自杀、恐怖主义、分裂主义、极端主义等危害未成年人身心健康的内容",
+          "old_semantic_reason": "部分违规表述可能使用变体或隐晦表达，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未成年人保护",
+            "禁止内容",
+            "危害身心健康",
+            "暴力",
+            "色情",
+            "赌博",
+            "邪教",
+            "迷信"
+          ],
+          "negative_signals_recommendation": [
+            "健康游戏",
+            "益智",
+            "全年龄段",
+            "适合儿童"
+          ],
+          "change_summary": "从法条式描述改写为仿真违规文案集合，覆盖多种违规场景和变体表达",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 172
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、未成年人.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求修改",
+      "examples": {
+        "violation": [
+          "这款游戏充满暴力杀戮，让你体验血腥快感",
+          "加入我们，一起赌博赢大奖"
+        ],
+        "compliant": [
+          "这款游戏适合全年龄段，健康益智"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确列举了禁止内容类型，可直接用于广告审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "关键词匹配明确，可直接由运营审核拦截",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-f49bb059d259adeb",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "关键词匹配明确，运营可直接删除或替换违规内容，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "可能影响未成年人身心健康内容的显著提示义务",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "第五十一条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第五十一条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "任何组织或者个人出版、发布、传播的图书、报刊、电影、广播电视节目、舞台艺术作品、音像制品、电子出版物或者网络信息，包含可能影响未成年人身心健康内容的，应当以显著方式作出提示。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告内容中是否包含可能影响未成年人身心健康的内容（如暴力、色情、赌博、恐怖、不良诱导等），且未以显著方式作出提示",
+        "decision": "若广告内容包含可能影响未成年人身心健康的内容，且未以显著方式作出提示，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "显著提示",
+          "身心健康"
+        ],
+        "vector_text": "这款游戏太刺激了，打打杀杀根本停不下来！来啊，一起玩点成人内容，保证让你爽到飞起！小赌怡情，试试手气",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及开放概念，需要召回各种可能影响未成年人身心健康的内容表述，包括暴力、色情、赌博、恐怖等，以及未显著提示或提示不规范的文案。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:12:13",
+          "old_vector_text": "广告内容包含可能影响未成年人身心健康的信息，未以显著方式作出提示",
+          "old_semantic_reason": "关键词难以穷举所有可能影响未成年人身心健康的内容，需语义理解辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "显著提示",
+            "暴力",
+            "色情",
+            "赌博",
+            "恐怖",
+            "不良诱导",
+            "身心健康"
+          ],
+          "negative_signals_recommendation": [
+            "适合所有年龄",
+            "健康游戏",
+            "绿色无广告"
+          ],
+          "change_summary": "从法条式描述改为真实违规文案集合，覆盖多种不良内容类型及提示缺失或不当的表述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 215
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 显著、未成年人.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主在包含可能影响未成年人身心健康内容的广告中以显著方式作出提示，否则不予通过",
+      "examples": {
+        "violation": [],
+        "compliant": []
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规",
+          "案例"
+        ],
+        "reason": "需要参考相关案例和法规解释，明确哪些内容属于'可能影响未成年人身心健康'",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "'可能影响未成年人身心健康内容'需要主观判断，依赖语义理解和案例参考"
+      },
+      "routing": {
+        "interpretation_dependency": "需要明确'可能影响未成年人身心健康内容'的界定标准",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及未成年人保护，违规风险高，需法务审核确认",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-40abc2ad895e0675",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及'可能影响未成年人身心健康内容'这一开放法律概念，需要法务结合具体内容进行边界判断，且违规后果严重，不宜由运营自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止制作、复制、发布、传播或持有涉及未成年人的淫秽色情内容",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "第五十二条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第五十二条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第五十二条 禁止制作、复制、发布、传播或者持有有关未成年人的淫秽色情物品和网络信息。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "淫秽",
+            "色情",
+            "未成年人",
+            "少儿不宜",
+            "成人内容",
+            "裸",
+            "性",
+            "情色"
+          ],
+          "regex": [],
+          "context_signals": [
+            "未成年人",
+            "儿童",
+            "少年",
+            "青少年",
+            "学生"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中涉及未成年人形象或指向未成年人受众时，不得包含任何淫秽、色情或性暗示内容",
+        "decision": "若检测到涉及未成年人的淫秽色情内容，判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "淫秽色情",
+          "内容安全",
+          "游戏广告"
+        ],
+        "vector_text": "未成年福利，私聊看片；小学生专属，性感角色；儿童色情，幼女诱惑；青少年成人内容，学生妹私密；游戏里的",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及未成年人淫秽色情内容，属于高危红线，但违规表达可能通过隐晦词、变体、场景包装规避关键词，因此语义召回作为fallback可有效覆盖变体表达，如'私聊看片''学生妹福利'等软性表述。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 未成年人、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T19:55:59",
+          "old_vector_text": "游戏广告中不得出现任何涉及未成年人的淫秽、色情、性暗示或成人内容",
+          "old_semantic_reason": "淫秽色情内容可能通过隐晦表达或变体词规避关键词，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未成年人保护",
+            "淫秽色情",
+            "儿童色情",
+            "性暗示",
+            "游戏广告",
+            "内容安全",
+            "高危红线"
+          ],
+          "negative_signals_recommendation": [
+            "健康游戏",
+            "绿色游戏",
+            "青少年模式",
+            "家长监护",
+            "防沉迷"
+          ],
+          "change_summary": "将原规则性描述改写为大量真实违规文案变体集合，覆盖隐晦表达、场景包装、行业黑话等，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《未成年人保护法》第五十二条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放，并标记为严重违规",
+      "examples": {
+        "violation": [
+          "游戏广告中出现未成年人角色裸露或性暗示场景的文字描述",
+          "直播话术中提及'未成年玩家福利，私聊获取色情内容'"
+        ],
+        "compliant": [
+          "游戏广告中未成年人角色穿着正常、无性暗示",
+          "游戏广告宣传健康向上的内容"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止制作、发布、传播涉及未成年人的淫秽色情内容，可直接适用于广告审核"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义检测可覆盖大部分违规场景，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-4dac2ea882f49cb2",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词和语义检测可覆盖，运营可直接删除或替换违规内容，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止发布含有危害未成年人身心健康内容的广告",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "53",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第五十三条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "任何组织或者个人不得刊登、播放、张贴或者散发含有危害未成年人身心健康内容的广告；不得在学校、幼儿园播放、张贴或者散发商业广告；不得利用校服、教材等发布或者变相发布商业广告。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "危害未成年人",
+            "未成年人身心健康",
+            "有害未成年人"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告内容可能对未成年人身心健康造成危害，包括但不限于暴力、色情、赌博、诱导消费、不良价值观等",
+        "decision": "若广告文字内容含有危害未成年人身心健康的信息，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "危害未成年人",
+          "广告内容安全"
+        ],
+        "vector_text": "未成年人充值诱导，小学生氪金攻略，青少年沉迷游戏，暴力血腥画面，色情暗示，赌博玩法，不良价值观引导，",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "危害未成年人身心健康是开放概念，关键词难以覆盖所有变体，语义召回可捕捉隐晦表达和行业黑话，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:14:27",
+          "old_vector_text": "广告中含有危害未成年人身心健康的内容，如暴力、色情、赌博、诱导未成年人过度消费、宣扬不良价值观等",
+          "old_semantic_reason": "危害未成年人身心健康的内容可能通过隐晦或变相方式表达，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "危害未成年人",
+            "诱导消费",
+            "暴力色情",
+            "不良价值观",
+            "游戏广告",
+            "青少年保护"
+          ],
+          "negative_signals_recommendation": [
+            "健康游戏",
+            "正能量",
+            "适合全年龄段",
+            "家长监护"
+          ],
+          "change_summary": "从法条式描述改为真实违规文案集合，覆盖诱导消费、暴力、色情、赌博、不良价值观等场景，并加入行业黑话和规避表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 164
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 充值诱导、未成年人.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反未成年人保护法，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "诱导未成年人充值消费的文案",
+          "含有暴力血腥描述的游戏广告"
+        ],
+        "compliant": [
+          "健康向上的游戏宣传语",
+          "适合全年龄段的正能量广告"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止发布含有危害未成年人身心健康内容的广告，可直接作为审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可初步判断，无需法务前置审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-87f9acdc104348ff",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "危害未成年人身心健康属于开放法律概念，需要法务结合具体内容判断是否构成违规，且后果严重，不宜由运营直接处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止在学校、幼儿园播放、张贴或散发商业广告",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "投放场所"
+        ],
+        "logic": "投放场所为学校或幼儿园"
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "53",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第五十三条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "任何组织或者个人不得刊登、播放、张贴或者散发含有危害未成年人身心健康内容的广告；不得在学校、幼儿园播放、张贴或者散发商业广告；不得利用校服、教材等发布或者变相发布商业广告。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "学校",
+            "幼儿园",
+            "校园",
+            "校内"
+          ],
+          "regex": [],
+          "context_signals": [
+            "投放场所",
+            "投放位置"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告投放或展示场所为学校、幼儿园等未成年人集中活动区域",
+        "decision": "若广告投放场所为学校或幼儿园，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "学校",
+          "幼儿园",
+          "投放场所限制"
+        ],
+        "vector_text": "广告在学校、幼儿园等未成年人集中场所播放、张贴或散发",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 未成年人. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反未成年人保护法，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "在学校门口张贴游戏广告海报",
+          "在幼儿园内播放游戏宣传视频"
+        ],
+        "compliant": [
+          "在商场或线上平台投放游戏广告"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要结合投放场所信息判断是否违规，规则本身明确但依赖上下文"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "投放场所",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要投放场所信息才能判断，需运营提供相关材料",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-31c47669db6fa8b9",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发依赖投放场所信息，运营需提供场所证明材料，无法自行判断是否违规",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止利用校服、教材等发布或变相发布商业广告",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "广告载体"
+        ],
+        "logic": "广告载体为校服、教材或其他学校相关物品"
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "53",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第五十三条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "任何组织或者个人不得刊登、播放、张贴或者散发含有危害未成年人身心健康内容的广告；不得在学校、幼儿园播放、张贴或者散发商业广告；不得利用校服、教材等发布或者变相发布商业广告。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "校服",
+            "教材",
+            "课本",
+            "教辅",
+            "书包"
+          ],
+          "regex": [],
+          "context_signals": [
+            "广告载体",
+            "广告形式"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告以校服、教材、教辅等学校相关物品为载体发布或变相发布",
+        "decision": "若广告载体为校服、教材等学校相关物品，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "校服",
+          "教材",
+          "广告载体限制"
+        ],
+        "vector_text": "校服上印游戏广告logo，教材封底印游戏宣传二维码，课本里夹带游戏推广页，教辅资料内页植入游戏广告，书包上绣游戏品牌标识，作业本封面印游戏下载链接，文具盒上贴游戏宣传贴纸，校服背面印游戏活动二维码，教材扉页印游戏充值优惠，教辅答案页夹带游戏广告传单，校服袖口绣游戏角色图案，课本插图替换为游戏场景，教辅封底印游戏社区二维码，书包拉链头挂游戏周边，校服纽扣印游戏logo，教材页码旁印游戏广告语，教辅习题中嵌入游戏名称，校服口袋内衬印游戏宣传语，教材封套印游戏活动信息，教辅光盘包装印游戏广告",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及具体物品（校服、教材等）作为广告载体，关键词可覆盖但变相发布形式多样，语义召回可补充关键词无法覆盖的变体表达，适合作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:16:46",
+          "old_vector_text": "利用校服、教材、教辅等学校相关物品发布或变相发布商业广告",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未成年人保护",
+            "校服",
+            "教材",
+            "教辅",
+            "广告载体",
+            "变相广告",
+            "校园场景"
+          ],
+          "negative_signals_recommendation": [
+            "校服促销",
+            "教材优惠",
+            "书包打折",
+            "文具团购"
+          ],
+          "change_summary": "从法条式描述改为真实违规文案集合，覆盖多种载体和变相发布形式。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、未成年人.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反未成年人保护法，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止发布",
+      "examples": {
+        "violation": [
+          "在校服上印游戏广告logo",
+          "在教材封底印游戏宣传二维码"
+        ],
+        "compliant": [
+          "在游戏官网或应用商店发布广告"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "关系判断型",
+        "reason": "需要结合广告载体信息判断是否违规，规则本身明确但依赖上下文"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "广告载体",
+        "misjudgment_cost": "中",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要广告载体信息才能判断，需运营提供相关材料",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-22cc6a32785cd9c7",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需要运营确认广告载体是否为校服、教材等学校相关物品，才能判断是否违规，因此要求运营补充载体信息。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-SPEC-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "游戏游艺设备须符合国家或行业标准且不得危害未成年人安全健康",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [
+          "游戏游艺设备"
+        ],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "55",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第五十五条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第五十五条 生产、销售用于未成年人的食品、药品、玩具、用具和游戏游艺设备、游乐设施等，应当符合国家或者行业标准，不得危害未成年人的人身安全和身心健康。上述产品的生产者应当在显著位置标明注意事项，未标明注意事项的不得销售。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "游戏游艺设备",
+            "未成年人",
+            "安全",
+            "健康",
+            "标准",
+            "注意事项"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣传游戏游艺设备时，不得暗示或明示产品不符合国家或行业标准，不得含有危害未成年人身心健康的内容；若涉及注意事项，须在显著位置标明。",
+        "decision": "若广告文案中宣传游戏游艺设备且未提及符合标准或存在危害未成年人安全健康的内容，则判定违规。"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "游戏游艺设备",
+          "产品标准",
+          "安全健康"
+        ],
+        "vector_text": "无需安全认证，适合所有未成年人使用；不达标也安全；无标准无注意事项；危害健康也没事；游戏机不按标准生",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text是法条改写，不像真实违规文案；HyDE改写后覆盖了多种违规表达和规避说法，适合语义召回",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:16:55",
+          "old_vector_text": "游戏游艺设备广告不得违反国家或行业标准，不得危害未成年人安全健康，须在显著位置标明注意事项",
+          "old_semantic_reason": "关键词可能无法覆盖所有暗示性违规表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "游戏游艺设备",
+            "未成年人",
+            "安全标准",
+            "注意事项",
+            "违规宣传",
+            "健康危害",
+            "无认证"
+          ],
+          "negative_signals_recommendation": [
+            "符合标准",
+            "通过认证",
+            "注意事项已标明",
+            "安全可靠"
+          ],
+          "change_summary": "从法条式改写转为HyDE风格违规文案集合，覆盖无标准、无注意事项、危害健康等违规表达",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 152
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、明示、显著、未成年人.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反未成年人保护法，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "本游戏游艺设备无需任何安全标准认证，适合所有未成年人使用"
+        ],
+        "compliant": [
+          "本游戏游艺设备符合国家GB标准，安全可靠，适合未成年人使用"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定游戏游艺设备须符合标准且不得危害未成年人安全健康，可形成明确审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营人员判断广告文案是否涉及违规表述",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-28e7a7d2d25ae606",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需结合产品是否属于游戏游艺设备及是否涉及未成年人，运营需补充产品标准符合性说明或注意事项标注情况，再判断是否违规。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-MN-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "游戏场所及设备对未成年人的禁入/限入规定",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "58",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第五十八条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第五十八条 学校、幼儿园周边不得设置营业性娱乐场所、酒吧、互联网上网服务营业场所等不适宜未成年人活动的场所。营业性歌舞娱乐场所、酒吧、互联网上网服务营业场所等不适宜未成年人活动场所的经营者，不得允许未成年人进入；游艺娱乐场所设置的电子游戏设备，除国家法定节假日外，不得向未成年人提供。经营者应当在显著位置设置未成年人禁入、限入标志；对难以判明是否是未成年人的，应当要求其出示身份证件。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "未成年人",
+            "禁入",
+            "限入",
+            "电子游戏设备",
+            "国家法定节假日",
+            "身份证件"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中不得宣传或暗示允许未成年人进入游戏场所或使用电子游戏设备，不得违反国家法定节假日限制，不得缺失未成年人禁入/限入标志提示",
+        "decision": "若广告文案涉及游戏场所或电子游戏设备，且未提及未成年人禁入/限入规定，或暗示未成年人可随意进入/使用，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "游戏场所",
+          "电子游戏设备",
+          "禁入标志",
+          "限入标志"
+        ],
+        "vector_text": "欢迎所有年龄玩家来店畅玩电子游戏；节假日期间未成年人免费体验电子游戏设备；不限年龄，小朋友也能玩；周",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及未成年人禁入/限入的具体场景，关键词可能无法覆盖所有变体表述，语义召回可有效捕捉各种暗示未成年人可进入或未设置标志的违规文案。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:17:05",
+          "old_vector_text": "广告文案中涉及游戏场所或电子游戏设备，需确保遵守未成年人禁入/限入规定，不得在非法定节假日向未成年人提供电子游戏设备，且应提示设置禁入/限入标志",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义理解辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "游戏场所",
+            "电子游戏设备",
+            "禁入标志",
+            "限入标志",
+            "身份证件",
+            "法定节假日"
+          ],
+          "negative_signals_recommendation": [
+            "成年人",
+            "家长陪同",
+            "监护人",
+            "合规",
+            "遵守规定"
+          ],
+          "change_summary": "将原规则性描述改写为仿真违规文案集合，覆盖多种违规场景和规避表达，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 322
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 免费、宣传、显著、未成年人、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反未成年人保护法，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改文案，补充未成年人禁入/限入提示",
+      "examples": {
+        "violation": [
+          "欢迎所有年龄玩家来店畅玩电子游戏",
+          "节假日期间未成年人免费体验电子游戏设备（未注明法定节假日限制）"
+        ],
+        "compliant": [
+          "本场所电子游戏设备仅限国家法定节假日向未成年人提供",
+          "未成年人请在监护人陪同下遵守场所规定"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了游戏场所和电子游戏设备对未成年人的禁入/限入要求，可形成明确审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，无需法务或资料核验即可判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-a0a3175230952dcd",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接根据文案是否提及禁入/限入规定或暗示未成年人随意进入进行判断并修改，无需法务介入或补充资料。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止向未成年人销售烟、酒、彩票及兑付奖金",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "59",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第五十九条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第五十九条 学校、幼儿园周边不得设置烟、酒、彩票销售网点。禁止向未成年人销售烟、酒、彩票或者兑付彩票奖金。烟、酒和彩票经营者应当在显著位置设置不向未成年人销售烟、酒或者彩票的标志；对难以判明是否是未成年人的，应当要求其出示身份证件。 任何人不得在学校、幼儿园和其他未成年人集中活动的公共场所吸烟、饮酒。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "向未成年人销售",
+            "未成年人",
+            "烟",
+            "酒",
+            "彩票",
+            "兑付奖金",
+            "销售烟",
+            "销售酒",
+            "销售彩票"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中不得包含向未成年人销售烟、酒、彩票或兑付彩票奖金的内容或诱导",
+        "decision": "若广告文案中出现向未成年人销售烟、酒、彩票或兑付彩票奖金的表述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "禁止销售",
+          "烟酒彩票"
+        ],
+        "vector_text": "未成年人买烟特惠，学生购酒打折，青少年彩票兑奖，未成年可领奖金，向未成年人出售香烟，卖给小孩酒水，学生彩票兑付，未成年人专属烟酒促销，青少年彩票中奖兑付，未成年烟酒销售，学生彩票奖金领取",
+        "semantic_enabled": false,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则关键词明确，但语义召回可覆盖更多变体表达，如'学生'、'青少年'、'小孩'等替代词，以及'特惠'、'打折'、'促销'等诱导性表述，适合作为primary召回以补充关键词遗漏。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:17:14",
+          "old_vector_text": "广告文案中不得出现向未成年人销售烟、酒、彩票或兑付彩票奖金的内容",
+          "old_semantic_reason": "",
+          "semantic_enabled_before": false,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "禁止销售",
+            "烟酒彩票",
+            "诱导购买",
+            "青少年",
+            "学生"
+          ],
+          "negative_signals_recommendation": [
+            "成年人",
+            "年满18",
+            "仅限成人"
+          ],
+          "change_summary": "从法条式描述改为真实违规文案集合，覆盖多种变体表达和诱导性话术。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 促销、公共场所、显著、未成年人、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "未成年人专属优惠：买烟送打火机",
+          "学生特价酒水，快来抢购",
+          "未成年人可兑奖彩票"
+        ],
+        "compliant": [
+          "成年人购酒专区",
+          "彩票销售需年满18岁"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止向未成年人销售烟、酒、彩票，可直接作为广告审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "high",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词可触发，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-6aaf675cf32e4e3d",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词可直接命中，运营可删除或替换违规表述，无需法务介入",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-OTH-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "ML-2024",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止向未成年人提供管制刀具或可能致人严重伤害的器具",
+      "dimension": "其他",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "60",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第六十条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第六十条 禁止向未成年人提供、销售管制刀具或者其他可能致人严重伤害的器具等物品。经营者难以判明购买者是否是未成年人的，应当要求其出示身份证件。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "管制刀具",
+            "致人严重伤害",
+            "器具",
+            "未成年人",
+            "提供",
+            "销售"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告内容中涉及向未成年人提供或销售管制刀具、可能致人严重伤害的器具等物品的描述或引导",
+        "decision": "若广告文案中出现向未成年人提供或销售管制刀具、可能致人严重伤害的器具等物品的表述，则判定为违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "禁止销售",
+          "管制刀具",
+          "伤害器具"
+        ],
+        "vector_text": "未成年人专属福利：购买游戏周边管制刀具模型；限时特惠，致人伤害道具免费送，未成年人可参与；学生党必备",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及向未成年人提供管制刀具或伤害器具，关键词可能无法覆盖所有变体表述，需语义辅助召回，适合作为fallback。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:17:23",
+          "old_vector_text": "广告中不得出现向未成年人提供或销售管制刀具、可能致人严重伤害的器具等物品的内容",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未成年人保护",
+            "管制刀具",
+            "伤害器具",
+            "禁止销售",
+            "游戏周边",
+            "防身工具",
+            "仿真武器"
+          ],
+          "negative_signals_recommendation": [
+            "仅供成年人",
+            "需年满18岁",
+            "实名认证",
+            "年龄验证"
+          ],
+          "change_summary": "将法条式描述改写为真实违规广告文案集合，覆盖多种变体表述和规避说法。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 185
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 免费、未成年人、清晰、限时.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放",
+      "examples": {
+        "violation": [
+          "未成年人专属福利：购买游戏周边管制刀具模型",
+          "限时特惠，致人伤害道具免费送，未成年人可参与"
+        ],
+        "compliant": [
+          "本游戏道具仅供成年人使用，不涉及任何危险器具"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止向未成年人提供管制刀具等物品，可直接形成广告审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词匹配即可判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-838a8c63391b101f",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，关键词匹配即可判定，运营可直接删除或替换违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-PRV-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "处理不满十四周岁未成年人个人信息需征得监护人同意",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": [
+          "不满十四周岁未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "第七十二条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第七十二条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第七十二条 信息处理者通过网络处理未成年人个人信息的，应当遵循合法、正当和必要的原则。处理不满十四周岁未成年人个人信息的，应当征得未成年人的父母或者其他监护人同意，但法律、行政法规另有规定的除外。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "不满十四周岁",
+            "14周岁",
+            "十四周岁",
+            "未成年人",
+            "个人信息",
+            "监护人同意",
+            "父母同意"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中涉及收集、使用不满十四周岁未成年人个人信息（如姓名、联系方式、账号信息等）时，未声明已征得监护人同意",
+        "decision": "若广告文案中明确或暗示收集不满十四周岁未成年人个人信息，且未包含监护人同意声明，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "个人信息",
+          "监护人同意",
+          "不满十四周岁"
+        ],
+        "vector_text": "注册即送皮肤，请输入你的姓名和手机号（面向14岁以下玩家）填写孩子信息即可领取礼包14岁以下用户请填",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及收集不满14周岁未成年人个人信息，文案中常出现诱导填写信息、暗示未获监护人同意的表达，适合语义召回以覆盖关键词无法捕获的变体。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:17:32",
+          "old_vector_text": "广告文案中涉及处理不满十四周岁未成年人个人信息，未征得父母或其他监护人同意的情形",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表达，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未成年人保护",
+            "个人信息",
+            "监护人同意",
+            "14周岁",
+            "游戏",
+            "收集信息",
+            "家长同意"
+          ],
+          "negative_signals_recommendation": [
+            "已获得监护人同意",
+            "已征得家长同意",
+            "监护人已授权",
+            "家长已同意"
+          ],
+          "change_summary": "将原规则描述改写为仿真违规文案集合，包含多种诱导收集未成年人信息的表达，增强语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 168
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 未成年人. It also has fact signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《未成年人保护法》第七十二条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告文案中涉及收集不满十四周岁未成年人个人信息时，必须包含监护人同意声明或明确说明已获授权",
+      "examples": {
+        "violation": [
+          "注册即送皮肤，请输入你的姓名和手机号（面向14岁以下玩家）",
+          "填写孩子信息即可领取礼包"
+        ],
+        "compliant": [
+          "本游戏不收集14岁以下用户个人信息",
+          "已获得监护人同意，可收集您的信息"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了处理不满十四周岁未成年人个人信息的同意要求，可形成明确审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，关键词和语义可覆盖常见违规场景，无需法务审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-c8ba974830e0c03a",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需判断文案是否涉及收集不满十四周岁未成年人个人信息，运营需补充是否已征得监护人同意的声明或证明材料，否则无法直接修改。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-ML-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "不得向未成年人提供诱导沉迷的网络游戏产品和服务",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML-2024",
+        "source_article_id": "第七十四条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第七十四条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "网络产品和服务提供者不得向未成年人提供诱导其沉迷的产品和服务。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "诱导沉迷",
+            "沉迷",
+            "未成年人",
+            "诱导"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否存在诱导未成年人沉迷游戏的内容，如强调长时间游玩、奖励机制诱导持续参与等",
+        "decision": "若广告文案面向未成年人或可能被未成年人接触，且包含诱导沉迷的表述，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "诱导沉迷",
+          "游戏广告"
+        ],
+        "vector_text": "快来玩，根本停不下来！连续在线3小时领稀有装备，熬夜也要肝，上瘾停不了，每天签到送大礼，在线时长越多",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则涉及诱导未成年人沉迷，属于开放概念，关键词难以覆盖所有变体，语义召回可捕获类似‘停不下来’‘上瘾’等表达。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:17:41",
+          "old_vector_text": "广告文案中不得包含诱导未成年人沉迷游戏的内容，包括但不限于鼓励长时间在线、利用奖励机制诱导持续参与、弱化时间管理等",
+          "old_semantic_reason": "诱导沉迷的表述可能通过语义变体出现，关键词可能漏召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "诱导沉迷",
+            "游戏广告",
+            "上瘾",
+            "长时间在线",
+            "奖励机制"
+          ],
+          "negative_signals_recommendation": [
+            "防沉迷",
+            "健康游戏",
+            "适龄提示",
+            "合理安排时间"
+          ],
+          "change_summary": "将原规则性描述改写为仿真违规文案集合，包含多种诱导沉迷表达和场景。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 132
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 未成年人.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反未成年人保护法，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放或要求修改",
+      "examples": {
+        "violation": [
+          "快来玩，根本停不下来！",
+          "连续在线3小时领稀有装备"
+        ],
+        "compliant": [
+          "适龄提示：本游戏适合16岁以上玩家",
+          "合理安排游戏时间"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止向未成年人提供诱导沉迷的产品和服务，可直接形成广告审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由运营人员判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-2bea34dd82777eae",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "诱导沉迷属于开放法律概念，需要法务结合具体表述、受众及游戏机制判断是否构成诱导，且后果严重，不宜由运营自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "game_ad_compliance",
+      "source_type": "法规",
+      "platform": null,
+      "title": "网络游戏运营须经依法审批",
+      "dimension": "版号缺失",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "第七十五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第七十五条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第七十五条 网络游戏经依法审批后方可运营。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "游戏",
+            "运营",
+            "上线",
+            "开服",
+            "公测",
+            "不删档"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中宣传游戏可下载、可游玩、可注册、可登录等运营状态，但未提及版号或审批信息",
+        "decision": "若广告宣传游戏可运营但未展示版号信息，则触发规则"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "版号",
+          "审批",
+          "运营资质"
+        ],
+        "vector_text": "全新手游《XX》今日公测，快来下载！《XX》游戏不删档测试开启，立即注册。火爆开服，无需预约直接玩！上线即送VIP，登录领豪礼。游戏已开放下载，点击即玩。首服开启，万人同服。不删档内测，数据永久保留。快来加入战斗，无需等待！",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及版号审批，属于强事实核验，但广告文案中常出现宣传运营状态而未提版号的违规表达，语义召回可辅助关键词覆盖更多变体。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:17:49",
+          "old_vector_text": "广告宣传游戏可运营、可下载、可登录，但未提及游戏版号或审批信息，可能违反网络游戏须经依法审批后方可运营的规定",
+          "old_semantic_reason": "关键词可能无法覆盖所有宣传运营状态的表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "游戏",
+            "版号",
+            "审批",
+            "运营资质",
+            "公测",
+            "开服",
+            "不删档"
+          ],
+          "negative_signals_recommendation": [
+            "已获得版号",
+            "ISBN",
+            "审批文号",
+            "版号信息"
+          ],
+          "change_summary": "将原规则描述改写为仿真违规广告文案集合，包含公测、开服、不删档、下载、登录等典型违规表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "fact",
+        "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 版号、证明、证明文件、资质.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《未成年人保护法》第七十五条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告主提供游戏版号证明，否则不得宣传游戏可运营状态",
+      "examples": {
+        "violation": [
+          "全新手游《XX》今日公测，快来下载！",
+          "《XX》游戏不删档测试开启，立即注册"
+        ],
+        "compliant": [
+          "《XX》游戏已获得版号（ISBN XXXX），即将上线"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求网络游戏经依法审批后方可运营，广告中宣传游戏运营状态需有版号依据"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "需要核实广告主是否持有游戏版号",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "需广告主提供版号证明文件以判断合规性",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": true,
+        "current_required": false,
+        "required_materials": [
+          "游戏版号证书或审批文件"
+        ],
+        "data_sources": [
+          "国家新闻出版署版号查询系统"
+        ],
+        "note": "后期需接入版号核验接口确认游戏是否已获审批"
+      },
+      "rule_uid": "RUID-6df547a796e6aaa8",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "heavy",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则触发需结合广告是否宣传运营状态判断，但核心问题是版号事实核验，运营无法自行判断，需先要求补充版号证明文件。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "game_ad_compliance",
+      "source_type": "法规",
+      "platform": null,
+      "title": "未成年人游戏广告须包含适龄提示",
+      "dimension": "警示语缺失",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "第七十五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第七十五条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第七十五条 网络游戏服务提供者应当按照国家有关规定和标准，对游戏产品进行分类，作出适龄提示，并采取技术措施，不得让未成年人接触不适宜的游戏或者游戏功能。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "游戏",
+            "适龄",
+            "年龄",
+            "未成年人",
+            "提示",
+            "适合",
+            "岁以上"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": [
+            "适龄提示",
+            "适龄范围",
+            "适龄"
+          ]
+        },
+        "semantic_criteria": "广告宣传游戏产品，但未包含任何适龄提示信息",
+        "decision": "若广告中宣传游戏但未出现适龄提示，则触发规则"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "适龄提示",
+          "未成年人保护",
+          "警示语"
+        ],
+        "vector_text": "全新冒险游戏《XX》上线啦！《XX》游戏，刺激好玩，快来下载！这款游戏适合所有年龄段玩家。游戏无年龄",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text偏法条解释，HyDE改写为真实违规广告文案集合，覆盖多种缺失适龄提示的表达，提升语义召回对违规变体的覆盖。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:17:57",
+          "old_vector_text": "游戏广告中未包含适龄提示信息，可能违反未成年人保护法关于游戏产品须作出适龄提示的规定",
+          "old_semantic_reason": "适龄提示表述多样，关键词可能漏召回，需语义辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "游戏",
+            "适龄提示",
+            "未成年人保护",
+            "警示语缺失",
+            "年龄限制"
+          ],
+          "negative_signals_recommendation": [
+            "适龄提示",
+            "适龄范围",
+            "适龄"
+          ],
+          "change_summary": "将法条式描述改为仿真违规文案集合，包含无适龄提示的多种表达。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 107
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、未成年人、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "中",
+      "consequence": {
+        "legal": "违反《未成年人保护法》第七十五条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "要求广告中必须包含适龄提示，如'本游戏适合XX岁以上玩家'",
+      "examples": {
+        "violation": [
+          "全新冒险游戏《XX》上线啦！",
+          "《XX》游戏，刺激好玩"
+        ],
+        "compliant": [
+          "《XX》游戏适合12岁以上玩家，现已上线",
+          "《XX》适龄提示：16+"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确要求游戏产品须作出适龄提示，广告中宣传游戏应包含该提示"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "中",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接通过关键词和语义判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-e3bd6129ab6af87a",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，仅需判断广告中是否包含适龄提示，运营可直接补充或修改文案，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-003",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "game_ad_compliance",
+      "source_type": "法规",
+      "platform": null,
+      "title": "游戏广告不得宣传向未成年人提供夜间服务",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "第七十五条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第七十五条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第七十五条 网络游戏服务提供者不得在每日二十二时至次日八时向未成年人提供网络游戏服务。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "夜间",
+            "22点",
+            "22时",
+            "晚上",
+            "通宵",
+            "熬夜",
+            "深夜",
+            "凌晨"
+          ],
+          "regex": [],
+          "context_signals": [
+            "未成年人",
+            "学生",
+            "青少年",
+            "孩子"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告宣传游戏可在夜间（22时至次日8时）游玩，或鼓励未成年人夜间游戏",
+        "decision": "若广告内容暗示或明示未成年人可在夜间时段游玩游戏，则触发规则"
+      },
+      "recall": {
+        "tags": [
+          "游戏",
+          "未成年人",
+          "夜间服务",
+          "防沉迷"
+        ],
+        "vector_text": "通宵开黑更刺激！深夜上线等你来战！晚上十点后也能玩？熬夜打游戏，凌晨组队，22点后不停服！学生党深夜",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "规则禁止宣传向未成年人提供夜间服务，需召回各种鼓励或暗示未成年人夜间游戏的广告文案，包括直接宣传和软性诱导。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:18:06",
+          "old_vector_text": "游戏广告宣传夜间可玩、通宵畅玩、深夜开黑等，可能诱导未成年人在禁止时段玩游戏",
+          "old_semantic_reason": "夜间游戏表述多样，需语义理解判断是否涉及禁止时段",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "游戏",
+            "未成年人",
+            "夜间",
+            "防沉迷",
+            "通宵",
+            "深夜",
+            "诱导"
+          ],
+          "negative_signals_recommendation": [
+            "成年人",
+            "成人",
+            "18岁以上",
+            "实名认证"
+          ],
+          "change_summary": "将原偏描述性的vector_text改写为更贴近真实违规广告的HyDE风格文案集合，增加多种违规表达和规避说法。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 94
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、明示、未成年人.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《未成年人保护法》第七十五条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "禁止广告中出现鼓励或暗示未成年人在22时至次日8时玩游戏的表述",
+      "examples": {
+        "violation": [
+          "《XX》游戏，通宵开黑更刺激！",
+          "深夜上线，等你来战"
+        ],
+        "compliant": [
+          "《XX》游戏，健康游戏，合理安排时间"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止在特定时段向未成年人提供游戏服务，广告不得宣传该行为"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接通过关键词和语义判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-430a1b69712f7e5e",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发需结合上下文判断是否针对未成年人，但运营可依据明确关键词和语义标准直接修改，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止为未满十六周岁未成年人提供网络直播发布者账号注册服务",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "第七十六条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第七十六条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第七十六条 网络直播服务提供者不得为未满十六周岁的未成年人提供网络直播发布者账号注册服务；为年满十六周岁的未成年人提供网络直播发布者账号注册服务时，应当对其身份信息进行认证，并征得其父母或者其他监护人同意。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "未满十六周岁",
+            "未成年人",
+            "直播发布者",
+            "账号注册"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否包含为未满十六周岁未成年人提供网络直播发布者账号注册服务的表述或暗示",
+        "decision": "若文案明确或暗示为未满十六周岁未成年人提供网络直播发布者账号注册服务，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "直播发布者",
+          "账号注册",
+          "年龄限制"
+        ],
+        "vector_text": "未满十六周岁可以开直播吗？十六岁以下也能注册直播账号！欢迎小朋友来当主播！未成年人直播账号注册服务，",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及明确年龄限制，关键词可能遗漏变体表述，语义召回可覆盖暗示性文案。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:18:13",
+          "old_vector_text": "禁止为未满十六周岁的未成年人提供网络直播发布者账号注册服务",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义召回辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未成年人保护",
+            "直播发布者",
+            "账号注册",
+            "年龄限制",
+            "十六周岁"
+          ],
+          "negative_signals_recommendation": [
+            "年满十六周岁",
+            "家长同意",
+            "监护人同意"
+          ],
+          "change_summary": "将法条式文本改写为仿真违规文案集合，包含多种变体表述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 71
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 未成年人、清晰.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若文案涉及为未满十六周岁未成年人提供网络直播发布者账号注册服务，应拒绝或要求修改",
+      "examples": {
+        "violation": [
+          "欢迎未满十六周岁的小朋友来开直播！",
+          "十六岁以下也能轻松注册直播账号"
+        ],
+        "compliant": [
+          "年满十六周岁可申请直播账号，需家长同意"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了禁止行为，无需额外解释"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由操作员判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-ebab4818abe63984",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发清晰，运营可直接删除或修改违规表述，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "为年满十六周岁未成年人提供网络直播发布者账号注册服务需身份认证并征得监护人同意",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": []
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "第七十六条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第七十六条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第七十六条 网络直播服务提供者不得为未满十六周岁的未成年人提供网络直播发布者账号注册服务；为年满十六周岁的未成年人提供网络直播发布者账号注册服务时，应当对其身份信息进行认证，并征得其父母或者其他监护人同意。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "年满十六周岁",
+            "未成年人",
+            "直播发布者",
+            "账号注册",
+            "身份认证",
+            "监护人同意"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测文案中是否涉及为年满十六周岁未成年人提供网络直播发布者账号注册服务，并检查是否提及身份认证和监护人同意的要求",
+        "decision": "若文案涉及为年满十六周岁未成年人提供网络直播发布者账号注册服务，但未提及身份认证或监护人同意，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "直播发布者",
+          "账号注册",
+          "身份认证",
+          "监护人同意"
+        ],
+        "vector_text": "十六岁就能开直播了！快来注册直播账号吧。年满16周岁即可成为主播，无需家长同意。未成年人直播账号注册",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及未成年人直播账号注册，文案中常出现诱导性表述，语义召回可覆盖关键词无法匹配的变体，如省略身份认证或监护人同意的说法。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:18:21",
+          "old_vector_text": "为年满十六周岁未成年人提供网络直播发布者账号注册服务时，必须进行身份认证并征得监护人同意",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义召回辅助",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "fallback",
+          "tags_recommendation": [
+            "未成年人",
+            "直播",
+            "账号注册",
+            "身份认证",
+            "监护人同意",
+            "十六周岁"
+          ],
+          "negative_signals_recommendation": [
+            "年满十八周岁",
+            "成年人",
+            "已满十八"
+          ],
+          "change_summary": "将原规则性描述改写为仿真违规文案集合，包含省略关键合规要素的诱导性表述。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 98
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 未成年人. It also has workflow signals, so this should be reviewed.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": null,
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "若文案涉及为年满十六周岁未成年人提供网络直播发布者账号注册服务，必须同时包含身份认证和监护人同意的要求，否则应拒绝或要求修改",
+      "examples": {
+        "violation": [
+          "十六岁即可注册直播账号",
+          "年满十六周岁，快来开直播吧"
+        ],
+        "compliant": [
+          "年满十六周岁可申请直播账号，需提供身份认证并征得家长同意"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文直接规定了合规要求，无需额外解释"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "低",
+        "default_route": "operator_direct",
+        "route_reason": "规则明确，可直接由操作员判断",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-fbafdc0ec2ab90be",
+      "legal_attention": {
+        "trigger_clarity": "clear",
+        "legal_interpretation_level": "low",
+        "fact_verification_level": "none",
+        "risk_severity": "medium",
+        "operator_fixability": "direct_fixable",
+        "default_route": "operator_direct",
+        "route_reason": "规则触发条件明确，运营可直接判断文案是否遗漏身份认证或监护人同意表述并补充修改，无需法务介入。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-AD-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "禁止通过广告文字对未成年人实施网络欺凌",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML",
+        "source_article_id": "77",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第七十七条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "任何组织或者个人不得通过网络以文字、图片、音视频等形式，对未成年人实施侮辱、诽谤、威胁或者恶意损害形象等网络欺凌行为。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "侮辱",
+            "诽谤",
+            "威胁",
+            "恶意损害形象",
+            "欺凌"
+          ],
+          "regex": [],
+          "context_signals": [],
+          "negative_signals": []
+        },
+        "semantic_criteria": "广告文案中若包含针对未成年人的侮辱、诽谤、威胁或恶意损害形象的表述，则判定违规",
+        "decision": "若检测到针对未成年人的网络欺凌内容，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "网络欺凌",
+          "侮辱",
+          "诽谤",
+          "威胁"
+        ],
+        "vector_text": "你真是个废物，别玩游戏了；弱智才玩这个游戏；蠢货，滚出游戏；垃圾玩家，不配玩；脑残，别来丢人；你妈没",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原规则关键词如'侮辱''诽谤'等可能无法覆盖所有变体，通过生成大量真实违规文案，增强语义召回对网络欺凌表达的识别能力，尤其针对游戏场景中的侮辱性话语。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 未成年人.",
+        "trigger_layer_confidence": "low",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T19:56:15",
+          "old_vector_text": "广告文字中不得包含对未成年人进行侮辱、诽谤、威胁或恶意损害形象等网络欺凌内容",
+          "old_semantic_reason": "关键词可能无法覆盖所有变体表述，需语义辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "网络欺凌",
+            "侮辱",
+            "游戏场景",
+            "恶意攻击",
+            "歧视性语言"
+          ],
+          "negative_signals_recommendation": [
+            "合规鼓励",
+            "友好交流",
+            "团队合作",
+            "积极向上"
+          ],
+          "change_summary": "将原法条式描述改写为大量真实违规文案集合，覆盖游戏场景中常见的侮辱、贬低、威胁等表达，提升语义召回覆盖面。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        }
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《未成年人保护法》第七十七条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝投放并通知整改",
+      "examples": {
+        "violation": [
+          "你真是个废物，别玩游戏了",
+          "弱智才玩这个游戏"
+        ],
+        "compliant": [
+          "欢迎加入我们的游戏社区",
+          "一起快乐游戏"
+        ]
+      },
+      "review_required": false,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "条文明确禁止通过网络文字形式对未成年人实施网络欺凌，可直接作为广告审核规则"
+      },
+      "routing": {
+        "interpretation_dependency": "",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "operator_supply_docs",
+        "route_reason": "规则明确，关键词和语义可自动判定，无需人工审核",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-01b39646c8648c9e",
+      "legal_attention": {
+        "trigger_clarity": "contextual",
+        "legal_interpretation_level": "medium",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准接受 recommended_route：可能应先由运营补充资料：主要矛盾是事实核验，不一定需要立即占用法务。；legal_attention.default_route 与旧 routing.default_route 不一致。",
+        "confidence": "high",
+        "calibration_status": "human_confirmed",
+        "calibrated_at": "2026-07-16T21:49:08",
+        "calibration_source": "legal_attention_calibration_mvp_csv",
+        "calibration_row_number": 3
+      }
+    },
+    {
+      "rule_id": "GAME-PROT-001",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "网络服务提供者对可能影响未成年人身心健康的信息应作显著提示",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML-2024",
+        "source_article_id": "80",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第八十条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "网络服务提供者发现用户发布、传播可能影响未成年人身心健康的信息且未作显著提示的，应当作出提示或者通知用户予以提示；未作出提示的，不得传输相关信息。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "未成年人",
+            "身心健康",
+            "提示",
+            "显著提示"
+          ],
+          "regex": [],
+          "context_signals": [
+            "可能影响未成年人身心健康"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否包含可能影响未成年人身心健康的内容（如暴力、色情、不良诱导等），且未作显著提示",
+        "decision": "若发现可能影响未成年人身心健康的信息且未作显著提示，则判定违规"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "显著提示",
+          "身心健康"
+        ],
+        "vector_text": "未成年人请在家长陪同下观看，本游戏含有暴力血腥场面，可能影响未成年人身心健康，未标注提示，游戏广告中",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "该规则涉及开放概念'可能影响未成年人身心健康'，关键词难以穷举，语义召回可覆盖多种违规表达和规避说法，适合作为主要召回方式。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:21:13",
+          "old_vector_text": "广告文案中涉及可能影响未成年人身心健康的内容，但未添加显著提示，违反未成年人保护法要求",
+          "old_semantic_reason": "关键词可能无法覆盖所有可能影响未成年人身心健康的内容，需语义理解辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "显著提示",
+            "身心健康",
+            "暴力场景",
+            "色情内容",
+            "不良诱导",
+            "家长指导",
+            "游戏广告"
+          ],
+          "negative_signals_recommendation": [
+            "已提示",
+            "显著提示",
+            "家长陪同",
+            "指导下观看"
+          ],
+          "change_summary": "从法条式描述改写为仿真违规文案集合，覆盖暴力、色情、不良诱导等场景及规避表达，并加入负面信号避免误召回合规文案。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false,
+          "vector_text_clipped_at": "20260715_001248",
+          "vector_text_clipped_from_length": 222
+        },
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 显著、未成年人.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": "违反《中华人民共和国未成年人保护法》第八十条，可能面临行政处罚",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布或要求添加显著提示",
+      "examples": {
+        "violation": [
+          "游戏广告中含有暴力场景但未标注'未成年人需在家长陪同下观看'等提示"
+        ],
+        "compliant": [
+          "游戏广告中含有暴力场景，但显著位置标注'本内容可能影响未成年人身心健康，请在家长指导下观看'"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "案例口径"
+        ],
+        "reason": "需要参考具体案例和监管口径判断哪些内容属于'可能影响未成年人身心健康'",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "'可能影响未成年人身心健康'属于开放解释，需结合具体场景判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需要法务或合规人员解释'可能影响未成年人身心健康'的范围",
+        "fact_dependency": "",
+        "misjudgment_cost": "高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及未成年人保护，违规风险高，需人工审核确认",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-a7ee03564d7423d7",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及'可能影响未成年人身心健康'这一开放法律概念，需要法务判断内容边界，且违规后果严重，不宜由运营自行处理。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    },
+    {
+      "rule_id": "GAME-PROT-002",
+      "serial_no": null,
+      "rule_kind": "default_rule",
+      "industry": "游戏",
+      "namespace": "未成年人保护",
+      "source_type": "法规",
+      "platform": null,
+      "title": "网络服务提供者对含有危害未成年人身心健康内容的信息应立即停止传输并处置",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "游戏"
+        ],
+        "product_categories": [],
+        "platforms": [],
+        "material_types": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [],
+        "logic": ""
+      },
+      "source_trace": {
+        "source_doc_id": "ML-2024",
+        "source_article_id": "80",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": "deepseek-chat",
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "ML",
+          "article": "第八十条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "网络服务提供者发现用户发布、传播含有危害未成年人身心健康内容的信息的，应当立即停止传输相关信息，采取删除、屏蔽、断开链接等处置措施，保存有关记录，并向网信、公安等部门报告。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": ""
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "未成年人",
+            "危害",
+            "身心健康",
+            "暴力",
+            "色情",
+            "赌博",
+            "毒品",
+            "自杀",
+            "自残"
+          ],
+          "regex": [],
+          "context_signals": [
+            "危害未成年人身心健康"
+          ],
+          "negative_signals": []
+        },
+        "semantic_criteria": "检测广告文案中是否含有明确危害未成年人身心健康的内容，如暴力、色情、赌博、毒品、自杀自残等",
+        "decision": "若发现含有危害未成年人身心健康的内容，则判定违规并立即处置"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "危害身心健康",
+          "禁止内容"
+        ],
+        "vector_text": "未成年人自杀自残教程，暴力血腥游戏画面，色情赌博内容，毒品诱导，危害未成年人身心健康，快来玩这个游戏，刺激暴力，未成年人专属福利，赌博赢金币，色情角色，自杀挑战，自残任务，暴力升级，血腥杀戮，毒品交易，赌博上瘾，色情诱惑，未成年人保护法禁止内容，立即停止传输，删除屏蔽断开链接，网信公安报告，危害未成年人身心健康的信息，用户发布传播，立即处置，保存记录，报告网信公安，暴力色情赌博毒品自杀自残，危害未成年人，身心健康，禁止内容，违规广告，诱导未成年人，暴力血腥，色情赌博，毒品自杀，自残挑战，未成年人保护，立即停止，传输处置，删除屏蔽，断开链接，保存记录，报告网信，公安部门，危害内容，未成年人身心健康，暴力色情，赌博毒品，自杀自残，违规文案，立即停止传输，采取处置措施，保存记录，报告网信公安，危害未成年人身心健康的内容，暴力血腥场景，色情赌博诱导，毒品自杀自残，未成年人保护法，第八十条，网络服务提供者，发现用户发布传播，立即停止传输，删除屏蔽断开链接，保存记录，报告网信公安，危害未成年人身心健康的信息，暴力色情赌博毒品自杀自残，未成年人，身心健康，禁止内容，违规广告，诱导未成年人，暴力血腥，色情赌博，毒品自杀，自残挑战，未成年人保护，立即停止，传输处置，删除屏蔽，断开链接，保存记录，报告网信，公安部门，危害内容，未成年人身心健康，暴力色情，赌博毒品，自杀自残，违规文案，立即停止传输，采取处置措施，保存记录，报告网信公安，危害未成年人身心健康的内容，暴力血腥场景，色情赌博诱导，毒品自杀自残，未成年人保护法，第八十条，网络服务提供者，发现用户发布传播，立即停止传输，删除屏蔽断开链接，保存记录，报告网信公安",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "semantic_reason": "原vector_text偏向法条摘要，HyDE改写后模拟了真实违规广告中可能出现的危害未成年人身心健康的表达，包括暴力、色情、赌博、毒品、自杀自残等关键词和场景，适合语义召回隐晦或变体表达。",
+        "hyde_review": {
+          "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
+          "reviewed_at": "2026-07-14T06:21:25",
+          "old_vector_text": "广告文案中含有危害未成年人身心健康的内容，如暴力、色情、赌博、毒品、自杀自残等，必须立即停止传输",
+          "old_semantic_reason": "危害内容可能以隐晦方式表达，需语义理解辅助召回",
+          "semantic_enabled_before": true,
+          "semantic_role_before": "fallback",
+          "semantic_enabled_recommendation": true,
+          "semantic_role_recommendation": "primary",
+          "tags_recommendation": [
+            "未成年人保护",
+            "危害身心健康",
+            "暴力",
+            "色情",
+            "赌博",
+            "毒品",
+            "自杀自残",
+            "禁止内容"
+          ],
+          "negative_signals_recommendation": [
+            "教育",
+            "科普",
+            "公益",
+            "举报",
+            "警示",
+            "预防",
+            "保护",
+            "安全"
+          ],
+          "change_summary": "将法条摘要式文本改写为仿真违规文案集合，增加多种危害表达和场景，提升语义召回覆盖。",
+          "confidence": "high",
+          "semantic_recommendations_applied": false
+        },
+        "trigger_layer": "workflow",
+        "trigger_layer_reason": "Rule mainly concerns subject obligation, platform responsibility, archive, or process duty: 保存、断开链接.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+      },
+      "risk_level": "critical",
+      "consequence": {
+        "legal": "违反《中华人民共和国未成年人保护法》第八十条，可能面临行政处罚，严重者可能涉及刑事责任",
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "拒绝发布，删除或屏蔽相关内容，保存记录并报告",
+      "examples": {
+        "violation": [
+          "游戏广告中含有诱导未成年人自杀或自残的文案",
+          "游戏广告中描述暴力血腥场景以吸引未成年人"
+        ],
+        "compliant": []
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "案例口径",
+          "平台规则"
+        ],
+        "reason": "需要参考具体案例和监管口径判断哪些内容属于'危害未成年人身心健康'",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "'危害未成年人身心健康'属于开放解释，需结合具体场景判断"
+      },
+      "routing": {
+        "interpretation_dependency": "需要法务或合规人员解释'危害未成年人身心健康'的范围",
+        "fact_dependency": "",
+        "misjudgment_cost": "极高",
+        "default_route": "legal_review_required",
+        "route_reason": "涉及未成年人保护，违规风险极高，需人工审核确认",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "rule_uid": "RUID-0e71dab0d661b022",
+      "legal_attention": {
+        "trigger_clarity": "open",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "规则涉及'危害未成年人身心健康'这一开放法律概念，解释难度高，且违规后果严重，必须由法务复核确认是否构成违规。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      }
+    }
+  ],
+  "memory_rules": [],
+  "review_workflow": {
+    "status_options": [
+      "待审核",
+      "通过",
+      "驳回",
+      "待讨论"
+    ],
+    "note": "本文件由 DeepSeek 批量拆解生成，建议后续抽样复核。"
+  },
+  "extraction_errors": []
+}
