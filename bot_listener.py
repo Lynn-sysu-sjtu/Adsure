@@ -60,7 +60,7 @@ def handle_card_action(data: P2CardActionTrigger) -> P2CardActionTriggerResponse
             resp.toast = toast
             return resp
 
-        # ── 步骤一：运营点「开启AI审核」──────────────────────────
+        # ── 步骤一：运营点「开启AI审核」→ 直接以标准模式开始审核 ─────
         if action == "start_ai_review" and record_id:
             # 防重：已在 AI预审中 则忽略，避免运营重复点击发出多次请求
             try:
@@ -76,27 +76,13 @@ def handle_card_action(data: P2CardActionTrigger) -> P2CardActionTriggerResponse
                 print(f"[bot_listener] 防重检查异常: {e}")
 
             threading.Thread(
-                target=_run_prepare,
-                args=(record_id, operator_id),
-                daemon=True,
-            ).start()
-            toast = CallBackToast()
-            toast.type    = "success"
-            toast.content = "正在分析物料上下文，请稍候…"
-            resp.toast = toast
-            return resp
-
-        # ── 步骤二：运营确认审核模式 ──────────────────────────────
-        if action == "confirm_mode" and record_id:
-            mode = value.get("mode", "标准")
-            threading.Thread(
                 target=_run_execute,
-                args=(record_id, mode, operator_id),
+                args=(record_id, "标准", operator_id),
                 daemon=True,
             ).start()
             toast = CallBackToast()
             toast.type    = "success"
-            toast.content = f"已确认【{mode}】模式，AI 审核正式开始…"
+            toast.content = "AI 审核已开始，完成后将通知您…"
             resp.toast = toast
             return resp
 
@@ -143,8 +129,9 @@ def _run_prepare(record_id: str, operator_open_id: Optional[str]):
 
 
 def _run_execute(record_id: str, mode: str, operator_open_id: Optional[str]):
-    """步骤二：正式审核（规则引擎 + LLM + 回写），完成后按路由发通知"""
+    """正式审核（规则引擎 + LLM + 回写），完成后按路由发通知"""
     try:
+        feishu_api.update_record(record_id, {F_流转_当前状态: "AI预审中"})
         from predictor import execute
         routing, llm_result = execute(record_id, mode)
 

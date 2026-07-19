@@ -9,7 +9,7 @@ import time
 import json
 import requests
 
-from config import BITABLE_APP_TOKEN, BITABLE_TABLE_ID
+from config import BITABLE_APP_TOKEN, BITABLE_TABLE_ID, WORKBENCH_URL
 from feishu_api import get_tenant_access_token, list_all_records, update_record, download_attachment, upload_image
 from fields_v4 import (
     F_物料编号, F_物料内容, F_物料附件, F_行业领域, F_提交人, F_紧急程度,
@@ -25,7 +25,9 @@ _PLATFORM_FIELD = {
 
 # === 配置 ===
 POLL_INTERVAL = 5
-WORKBENCH_URL = "http://localhost:5001/"
+
+# 内存去重：记录本次进程已处理的 record_id，防止 Feishu 写回延迟导致重复发卡
+_processed_ids: set = set()
 
 
 # === 工具函数 ===
@@ -185,6 +187,11 @@ def is_new_submission(fields):
 
 
 def process_record(record_id, fields):
+    if record_id in _processed_ids:
+        print(f"  ⚠ record_id={record_id} 已处理过，跳过（内存去重）")
+        return
+    _processed_ids.add(record_id)
+
     code = str(fields.get(F_物料编号, "")) or "(待编号)"
     print(f"  ★ 捕获新提交 record_id={record_id}  物料编号={code}")
 
