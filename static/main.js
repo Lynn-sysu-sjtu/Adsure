@@ -60,8 +60,9 @@ function renderSidebar(records) {
             <div class="content-preview">${preview}</div>
             <div class="meta">
                 <span>${record["提交人"]}</span>
-                <span>${record["提交时间"].split(" ")[1] || record["提交时间"]}</span>
+                <span>${record["提交时间"] || "—"}</span>
             </div>
+            ${record["法务审核人"] ? `<div class="meta" style="margin-top:2px;"><span style="color:var(--text-muted);">法务：</span><span>${record["法务审核人"]}</span></div>` : ""}
         `;
 
         item.addEventListener("click", () => {
@@ -178,10 +179,16 @@ function showDetail(record) {
                     <td style="padding:3px 0;">${urgencyHtml || record["紧急程度"] || "普通"}</td>
                 </tr>
                 <tr>
-                    <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">提交人</td>
+                    <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">运营提交人</td>
                     <td style="padding:3px 0;">${record["提交人"] || "—"}</td>
                     <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">提交时间</td>
                     <td style="padding:3px 0;">${record["提交时间"] || "—"}</td>
+                </tr>
+                <tr>
+                    <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">法务审核人</td>
+                    <td style="padding:3px 0;">${record["法务审核人"] || "—"}</td>
+                    <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">法务复核时间</td>
+                    <td style="padding:3px 0;">${record["法务复核时间"] || "—"}</td>
                 </tr>
             </table>
         </div>

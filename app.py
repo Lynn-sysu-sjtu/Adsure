@@ -35,7 +35,7 @@ from fields_v4 import (
     # 法务段
     F_法务_AI意见评价, F_法务_物料裁决, F_法务_异议字段,
     F_法务_补充或驳回理由, F_法务_驳回正确判定, F_法务_最终修改意见,
-    F_法务_批注, F_法务_复核时间,
+    F_法务_批注, F_法务_复核人, F_法务_复核时间,
     # 流转段
     F_流转_当前状态, F_流转_反馈类型, F_流转_驳回次数,
     # 行业专属投放平台（规则沉淀时读取）
@@ -484,6 +484,8 @@ def normalize_record(record_id, fields):
         "驳回正确判定": _as_text(fields.get(F_法务_驳回正确判定)),
         "最终修改意见": _as_text(fields.get(F_法务_最终修改意见)),
         "法务批注": _as_text(fields.get(F_法务_批注)),
+        "法务审核人": _name_of_user(fields.get(F_法务_复核人)),
+        "法务复核时间": _ts_to_str(fields.get(F_法务_复核时间)),
 
         # 行业专属 — 美妆
         "美妆_物料类型": fields.get(F_美妆_物料类型, ""),
