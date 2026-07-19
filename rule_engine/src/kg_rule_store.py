@@ -52,7 +52,7 @@ def _clean_rule(rule):
     return clean
 
 
-def load_rule_library(base_dir):
+def load_rule_library(base_dir, validate_assets=False):
     """Load and merge every JSON rule file in base_dir/jsonbase."""
     base_dir = Path(base_dir)
     jsonbase_dir = base_dir / JSONBASE_DIR_NAME
@@ -100,6 +100,11 @@ def load_rule_library(base_dir):
         "memory_rules": memory_rules,
         "review_workflow": review_workflow or {},
     }
+
+    if validate_assets:
+        from rule_asset_validator import assert_valid_rule_assets, validate_rule_assets
+
+        assert_valid_rule_assets(validate_rule_assets(rules))
 
     return {
         "base_dir": base_dir,
