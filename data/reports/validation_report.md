@@ -1,11 +1,11 @@
 # Validation Report
 
-- Total: 119
-- Valid: 119
+- Total: 124
+- Valid: 124
 - Invalid: 0
-- Needs Review: 119
+- Needs Review: 124
 - Production cases: 10
-- Candidate cases: 52
+- Candidate cases: 57
 - Sector candidate cases: 54
 - Offline samples: 3
 
@@ -23,6 +23,8 @@
 | samr_2025_typical_ads_08 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_08.json | approved | YES |
 | samr_2025_typical_ads_09 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_09.json | approved | YES |
 | samr_2025_typical_ads_10 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_10.json | approved | YES |
+| coconut_group_2021_recruitment_ad_lead | PASS | candidate | - | needs_rule_mapping | data/structured_candidates/coconut_group_2021_recruitment_ad_lead.json | pending_review | YES |
+| coconut_group_2024_coconut_juice_rubbing_ad_lead | PASS | candidate | - | needs_rule_mapping | data/structured_candidates/coconut_group_2024_coconut_juice_rubbing_ad_lead.json | pending_review | YES |
 | excel_candidate__absolute_terms__0963e2cd | PASS | candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/excel_candidate__absolute_terms__0963e2cd.json | pending_review | YES |
 | excel_candidate__absolute_terms__1c28d555 | PASS | candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/excel_candidate__absolute_terms__1c28d555.json | pending_review | YES |
 | excel_candidate__absolute_terms__434f2186 | PASS | candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/excel_candidate__absolute_terms__434f2186.json | pending_review | YES |
@@ -75,6 +77,8 @@
 | excel_candidate__real_estate_misleading__c09b9f5e | PASS | candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/excel_candidate__real_estate_misleading__c09b9f5e.json | pending_review | YES |
 | excel_candidate__real_estate_misleading__c2ee21d5 | PASS | candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/excel_candidate__real_estate_misleading__c2ee21d5.json | pending_review | YES |
 | excel_candidate__real_estate_misleading__c7de0984 | PASS | candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/excel_candidate__real_estate_misleading__c7de0984.json | pending_review | YES |
+| mihoyo_2014_2520140214 | PASS | candidate | - | needs_rule_mapping | data/structured_candidates/mihoyo_2014_2520140214.json | pending_review | YES |
+| mihoyo_2016_2520150399 | PASS | candidate | - | needs_rule_mapping | data/structured_candidates/mihoyo_2016_2520150399.json | pending_review | YES |
 | sector_docx__beauty__1696a02c | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__1696a02c.json | pending_review | YES |
 | sector_docx__beauty__21f65a16 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__21f65a16.json | pending_review | YES |
 | sector_docx__beauty__2626bbb1 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__2626bbb1.json | pending_review | YES |
@@ -129,6 +133,7 @@
 | sector_docx__health__d9cb5caf | PASS | sector_candidate | - | source_url_missing_needs_verification, illegal_claims_missing_needs_review, needs_rule_mapping | data/structured_candidates/sector_docx__health__d9cb5caf.json | pending_review | YES |
 | sector_docx__health__df7e40d5 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__df7e40d5.json | pending_review | YES |
 | sector_docx__health__f92a771c | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__f92a771c.json | pending_review | YES |
+| shanghai_jingan_2026_062026000257 | PASS | candidate | - | - | data/structured_candidates/shanghai_jingan_2026_062026000257.json | pending_review | YES |
 | offline_samples__080b6ddfb48c | PASS | offline_sample | - | needs_rule_mapping | data/structured_samples/offline_samples__080b6ddfb48c.json | pending_review | YES |
 | offline_samples__26334151740c | PASS | offline_sample | - | needs_rule_mapping | data/structured_samples/offline_samples__26334151740c.json | pending_review | YES |
 | offline_samples__b167611aa03e | PASS | offline_sample | - | needs_rule_mapping | data/structured_samples/offline_samples__b167611aa03e.json | pending_review | YES |
