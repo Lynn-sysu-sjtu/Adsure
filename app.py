@@ -592,6 +592,9 @@ def get_cases(record_id):
         from config import CASE_ENGINE_URL, CASE_ENGINE_API_KEY
         import requests as _requests
 
+        if not CASE_ENGINE_URL:
+            return jsonify({"cases": [], "record_id": record_id})
+
         rec = feishu_api.get_record(record_id)
         fields = rec.get("fields", {})
 
