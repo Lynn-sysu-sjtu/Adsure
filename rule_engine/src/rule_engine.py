@@ -878,6 +878,19 @@ def audit(payload, base_dir=None, diagnostics=None):
                 {
                     "fallback_reason_code": reason_code,
                     "fallback_detail": str(exc),
+                    "judgment_evidence": [
+                        {
+                            "rule_uid": item.get("rule_uid"),
+                            "rule_id": item.get("rule_id"),
+                            "material_evidence": item.get("material_evidence") or "",
+                        }
+                        for item in (
+                            llm_judgment.get("rule_judgments") or []
+                            if "llm_judgment" in locals()
+                            else []
+                        )
+                        if isinstance(item, dict)
+                    ],
                 }
             )
         return _subsumption_fallback_response(
