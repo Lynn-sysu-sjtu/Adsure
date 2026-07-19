@@ -1,0 +1,53 @@
+{
+  "case_id": "samr_2025_typical_ads_08",
+  "title": "山东省济南高新技术产业开发区管理委员会（市场监管部）查处山东乘时乘势电子商务有限公司违法广告案",
+  "source_type": "official_typical_case",
+  "source_name": "市场监管总局",
+  "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html",
+  "publish_date": "2026-01-31",
+  "decision_date": "2025-12",
+  "penalty_authority": "山东省济南高新技术产业开发区管理委员会（市场监管部）",
+  "party_name": "山东乘时乘势电子商务有限公司",
+  "region": "山东省济南市",
+  "industry": "医疗器械及普通食品",
+  "violation_type": "医疗器械广告未经审查及普通食品疾病功效宣传",
+  "product_or_service": "艾瑞万绵柔巾、艾瑞万医用牙齿脱敏膏、艾瑞万益生菌固体饮料等",
+  "ad_channel": "直播",
+  "risk_dimensions": [
+    "医疗器械广告违规",
+    "医疗广告未经审查",
+    "普通食品疾病治疗功效宣传",
+    "直播带货违法广告"
+  ],
+  "illegal_claims": [
+    "发布未经审查的医疗器械广告",
+    "对便秘、幽门螺旋杆菌、胃炎、溃疡有作用"
+  ],
+  "facts_summary": "山东乘时乘势电子商务有限公司通过直播发布未经审查的医疗器械广告，并为普通食品宣传对便秘、幽门螺旋杆菌、胃炎和溃疡有作用等疾病预防、治疗功效。2025年12月，山东省济南高新技术产业开发区管理委员会（市场监管部）罚款10.5万元。",
+  "legal_basis": [
+    "《中华人民共和国广告法》有关规定"
+  ],
+  "penalty_result": "罚款10.5万元",
+  "penalty_amount": 105000,
+  "regulatory_logic": "医疗器械广告应依法审查后发布，普通食品直播广告不得宣称疾病预防、治疗功效。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "医疗器械广告",
+    "广告未经审查",
+    "普通食品",
+    "幽门螺旋杆菌",
+    "直播"
+  ],
+  "vector_text": "经营者在直播中发布未经审查的医疗器械广告，同时宣称普通食品对便秘、幽门螺旋杆菌、胃炎和溃疡有作用，市场监管部门依法作出处罚。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "approved",
+  "source_verification_status": "source_verified",
+  "approved_for_rag": true,
+  "raw_html_path": "data/raw_html/samr_typical_ads__2ad160ae3056.json",
+  "raw_text_path": "data/raw_text/samr_typical_ads__2ad160ae3056.json",
+  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。",
+  "audit": {
+    "review_status": "approved",
+    "approved_for_rag": true
+  }
+}

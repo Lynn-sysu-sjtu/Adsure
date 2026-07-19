@@ -157,6 +157,8 @@ def validate_case(case: dict, allowed_risk_dimensions: set[str], group: str = "p
         issues.append("illegal_claims_missing_needs_review")
     if not has_value(case.get("mapped_rule_ids")):
         issues.append("needs_rule_mapping")
+    if group == "production" and not has_value(case.get("violation_type")):
+        issues.append("violation_type_missing_needs_review")
 
     return errors, issues
 
