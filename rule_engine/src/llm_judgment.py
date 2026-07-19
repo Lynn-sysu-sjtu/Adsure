@@ -222,12 +222,43 @@ def _parse_json_content(content):
 
 
 def _rule_judgments_from_llm(parsed):
+    structured = parsed.get("rule_judgments")
+    if isinstance(structured, list):
+        judgments = []
+        for item in structured:
+            if not isinstance(item, dict):
+                continue
+            status = item.get("applicability_status")
+            judgments.append(
+                {
+                    "rule_uid": item.get("rule_uid"),
+                    "rule_id": item.get("rule_id"),
+                    "applicability_status": status,
+                    "material_evidence": item.get("material_evidence") or "",
+                    "satisfied_elements": item.get("satisfied_elements") or [],
+                    "unsatisfied_elements": item.get("unsatisfied_elements") or [],
+                    "missing_facts": item.get("missing_facts") or [],
+                    "applicability_reason": item.get("applicability_reason") or "",
+                    "confidence": item.get("confidence"),
+                    "judgment": "确认适用" if status == "confirmed_violation" else (
+                        "需事实核验" if status == "needs_fact_verification" else "不适用"
+                    ),
+                    "risk_level": item.get("risk_level") or MEDIUM,
+                    "reasoning": item.get("applicability_reason") or "",
+                    "evidence": item.get("material_evidence") or "",
+                    "legal_basis": item.get("legal_basis") or "",
+                    "revision_suggestion": parsed.get("revision_suggestion") or "",
+                }
+            )
+        return judgments
+
     judgments = []
     for item in parsed.get("matched_rules", []) or []:
         judgments.append(
             {
+                "rule_uid": item.get("rule_uid"),
                 "rule_id": item.get("rule_id"),
-                "judgment": "\u7591\u4f3c\u8fdd\u89c4" if item.get("is_violation") else "\u672a\u786e\u8ba4\u8fdd\u89c4",
+                "judgment": "疑似违规" if item.get("is_violation") else "未确认违规",
                 "risk_level": item.get("risk_level") or MEDIUM,
                 "reasoning": item.get("reason") or "",
                 "evidence": item.get("evidence") or "",
