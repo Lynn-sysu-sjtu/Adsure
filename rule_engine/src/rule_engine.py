@@ -12,6 +12,7 @@ from field_mapper import map_feishu_payload
 from kg_rule_store import load_rule_library
 from llm_judgment import judge_with_llm, judge_with_mock_llm
 from semantic_recall import semantic_recall_rules
+from rule_identity import rule_identity
 
 
 STANDARD_MODE_REASON = "MVP阶段统一使用标准审核模式，极速和深度模式仅预留接口。"
@@ -295,20 +296,20 @@ def _recall_hit_channels(rule, hits):
 def _merge_recalled_rules(recalled):
     # Collapse duplicate parent rule ids while preserving unique hit evidence.
     merged = []
-    by_rule_id = {}
+    by_rule_identity = {}
     for rule, hits in recalled:
-        rule_id = rule.get("rule_id")
-        key = rule_id if rule_id not in (None, "") else ("anonymous", id(rule))
-        if key not in by_rule_id:
+        identity = rule_identity(rule)
+        key = identity if identity not in (None, "") else ("anonymous", id(rule))
+        if key not in by_rule_identity:
             unique_hits = []
             for hit in hits:
                 if hit not in unique_hits:
                     unique_hits.append(hit)
             entry = [rule, unique_hits]
-            by_rule_id[key] = entry
+            by_rule_identity[key] = entry
             merged.append(entry)
             continue
-        existing_hits = by_rule_id[key][1]
+        existing_hits = by_rule_identity[key][1]
         for hit in hits:
             if hit not in existing_hits:
                 existing_hits.append(hit)

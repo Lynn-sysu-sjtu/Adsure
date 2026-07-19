@@ -45,7 +45,7 @@ legal_basis中的source/article/text
 生成格式：
 
 ```text
-RU-<SHA256前20位大写十六进制>
+RUID-<SHA256前16位小写十六进制>
 ```
 
 规则：
@@ -84,7 +84,7 @@ rule.get("rule_uid") or rule.get("rule_id")
 
 ```json
 {
-  "rule_uid": "RU-0123456789ABCDEF0123",
+  "rule_uid": "RUID-0123456789abcdef",
   "rule_id": "COSM-002"
 }
 ```

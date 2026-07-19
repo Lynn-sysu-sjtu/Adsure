@@ -8,7 +8,11 @@ import unittest
 from pathlib import Path
 
 from kg_rule_store import load_rule_library
-from rule_asset_validator import assert_valid_rule_assets, validate_rule_assets
+from rule_asset_validator import (
+    assert_valid_rule_assets,
+    assert_valid_rule_uids,
+    validate_rule_assets,
+)
 
 
 class RuleAssetValidatorTests(unittest.TestCase):
@@ -137,6 +141,44 @@ class RuleAssetValidatorTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "DUP-001"):
                 load_rule_library(temp_dir, validate_assets=True)
 
+    def test_reports_empty_and_duplicate_rule_uids(self):
+        report = validate_rule_assets(
+            [
+                {"rule_uid": "RU-ONE", "rule_id": "LEGACY-001", "_source_file": "a.json"},
+                {"rule_uid": "RU-ONE", "rule_id": "LEGACY-002", "_source_file": "b.json"},
+                {"rule_id": "LEGACY-003", "title": "缺少UID", "_source_file": "c.json"},
+            ]
+        )
+        self.assertEqual(
+            [{"rule_uid": "RU-ONE", "source_files": ["a.json", "b.json"], "rule_ids": ["LEGACY-001", "LEGACY-002"]}],
+            report["duplicate_rule_uids"],
+        )
+        self.assertEqual(
+            [{"source_file": "c.json", "rule_id": "LEGACY-003", "title": "缺少UID"}],
+            report["empty_rule_uids"],
+        )
+
+    def test_reports_orphan_uid_references(self):
+        report = validate_rule_assets(
+            [{"rule_uid": "RU-ONE", "rule_id": "LEGACY-001"}],
+            vector_rule_uids={"RU-ONE", "RU-VECTOR-404"},
+            group_rule_uids={"RU-GROUP-404"},
+        )
+        self.assertEqual(["RU-VECTOR-404"], report["orphan_vector_rule_uids"])
+        self.assertEqual(["RU-GROUP-404"], report["orphan_group_rule_uids"])
+
+    def test_uid_assertion_ignores_legacy_collisions_but_rejects_uid_failures(self):
+        legacy_only = validate_rule_assets(
+            [
+                {"rule_uid": "RU-A", "rule_id": "DUP-001", "_source_file": "a.json"},
+                {"rule_uid": "RU-B", "rule_id": "DUP-001", "_source_file": "b.json"},
+            ]
+        )
+        assert_valid_rule_uids(legacy_only)
+        invalid_uid = dict(legacy_only)
+        invalid_uid["orphan_vector_rule_uids"] = ["RU-404"]
+        with self.assertRaisesRegex(ValueError, "RU-404"):
+            assert_valid_rule_uids(invalid_uid)
 
 if __name__ == "__main__":
     unittest.main()

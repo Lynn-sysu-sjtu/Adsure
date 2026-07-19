@@ -17,6 +17,7 @@ from rule_vector_index import (
     semantic_vector_records,
     vector_text_hash,
 )
+from rule_identity import rule_identity
 
 
 def _normalize(text):
@@ -187,13 +188,21 @@ def _applicable_semantic_vectors(rules, request, query):
     return applicable, rejected
 
 
+def _cached_index_entry(index, rule, scenario_id, text_hash):
+    identity = rule_identity(rule)
+    entry = index.get((identity, scenario_id, text_hash))
+    legacy_id = rule.get("rule_id")
+    if entry is None and legacy_id and legacy_id != identity:
+        entry = index.get((legacy_id, scenario_id, text_hash))
+    return entry
+
 def _cached_embedding_items(applicable, vector_index_path):
     index = load_rule_vector_index(vector_index_path)
     cached = []
     missing = []
     grouped = {}
     for rule, record in applicable:
-        parent_key = rule.get("rule_id") or rule.get("rule_uid") or id(rule)
+        parent_key = rule_identity(rule) or id(rule)
         grouped.setdefault(parent_key, []).append((rule, record))
 
     for items in grouped.values():
@@ -202,11 +211,11 @@ def _cached_embedding_items(applicable, vector_index_path):
         missing_for_parent = []
         for _, record in items:
             key = (
-                rule.get("rule_id"),
+                rule_identity(rule),
                 record.get("scenario_id") or "rule_summary",
                 record.get("vector_text_hash"),
             )
-            entry = index.get(key)
+            entry = _cached_index_entry(index, rule, key[1], key[2])
             if entry and entry.get("embedding"):
                 cached_for_parent.append((rule, record, entry.get("embedding")))
             else:
@@ -215,11 +224,15 @@ def _cached_embedding_items(applicable, vector_index_path):
         if not cached_for_parent:
             parent_text = str((rule.get("recall", {}) or {}).get("vector_text") or "").strip()
             legacy_key = (
-                rule.get("rule_id"),
+                rule_identity(rule),
                 "rule_summary",
                 vector_text_hash(parent_text),
             )
-            legacy_entry = index.get(legacy_key) if parent_text else None
+            legacy_entry = (
+                _cached_index_entry(index, rule, legacy_key[1], legacy_key[2])
+                if parent_text
+                else None
+            )
             if legacy_entry and legacy_entry.get("embedding"):
                 cached.append(
                     (
@@ -244,7 +257,7 @@ def _collapse_parent_scores(scored, threshold, limit=None):
     for rule, record, score, source in scored:
         if score < threshold:
             continue
-        parent_key = rule.get("rule_id") or rule.get("rule_uid") or id(rule)
+        parent_key = rule_identity(rule) or id(rule)
         current = best_by_parent.get(parent_key)
         if current is None or score > current[2]:
             best_by_parent[parent_key] = (rule, record, score, source)
@@ -376,7 +389,7 @@ def semantic_recall_diagnostics(
         "backend": backend,
         "threshold": threshold,
         "query": query,
-        "applicable_count": len({rule.get("rule_id") for rule, _ in applicable}),
+        "applicable_count": len({rule_identity(rule) for rule, _ in applicable}),
         "scenario_vector_count": len(applicable),
         "rejected_count": len(rejected),
         "top_candidates": top_candidates,

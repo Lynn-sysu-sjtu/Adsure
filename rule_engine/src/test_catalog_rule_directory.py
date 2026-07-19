@@ -48,7 +48,7 @@ class CatalogRuleDirectoryTests(unittest.TestCase):
         directory = build_catalog_directory(self.rules, {})
 
         self.assertEqual(
-            {"rule_id", "title", "dimension", "catalog_text", "catalog_group", "trigger_layer"},
+            {"rule_uid", "rule_id", "title", "dimension", "catalog_text", "catalog_group", "trigger_layer"},
             set(directory[0]),
         )
 

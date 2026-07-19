@@ -7,6 +7,8 @@ import json
 from datetime import datetime
 from pathlib import Path
 
+from rule_identity import rule_identity
+
 
 PROJECT_BASE = Path(__file__).resolve().parents[1]
 DEFAULT_VECTOR_INDEX_PATH = PROJECT_BASE / "vectorbase" / "rule_vector_index.json"
@@ -76,7 +78,7 @@ def _semantic_rule_records(rules):
         if semantic_role == "disabled":
             continue
         records.extend(semantic_vector_records(rule))
-    return [record for record in records if record.get("rule_id")]
+    return [record for record in records if rule_identity(record)]
 
 def _chunks(items, size):
     for index in range(0, len(items), size):
@@ -127,11 +129,11 @@ def load_rule_vector_index(path=DEFAULT_VECTOR_INDEX_PATH):
     payload = json.loads(path.read_text(encoding="utf-8"))
     entries = {}
     for item in payload.get("vectors", []):
-        rule_id = item.get("rule_id")
+        identity = rule_identity(item)
         text_hash = item.get("vector_text_hash")
         embedding = item.get("embedding")
-        if rule_id and text_hash and embedding:
-            entries[(rule_id, item.get("scenario_id") or "rule_summary", text_hash)] = item
+        if identity and text_hash and embedding:
+            entries[(identity, item.get("scenario_id") or "rule_summary", text_hash)] = item
     return entries
 
 

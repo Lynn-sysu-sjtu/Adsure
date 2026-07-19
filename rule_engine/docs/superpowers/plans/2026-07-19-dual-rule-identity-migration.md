@@ -30,7 +30,7 @@
 - [ ] Write failing tests for deterministic generation, idempotence, no replacement of existing UID, source-sensitive uniqueness, and collision rejection.
 - [ ] Verify RED.
 - [ ] Implement `rule_uid_seed(rule)` using source file, legacy ID, title and normalized legal basis.
-- [ ] Implement `generate_rule_uid(rule)` as `RU-` plus the first 20 uppercase SHA-256 hex characters.
+- [ ] Implement `generate_rule_uid(rule)` as `RUID-` plus the first 16 lowercase SHA-256 hex characters.
 - [ ] Implement dry-run and apply modes; write only missing UIDs.
 - [ ] Run dry-run and persist a report outside version control.
 - [ ] Apply to all formal rule JSON assets.
