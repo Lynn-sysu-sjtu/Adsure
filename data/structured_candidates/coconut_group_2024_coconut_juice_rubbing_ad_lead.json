@@ -1,0 +1,71 @@
+{
+  "case_id": "coconut_group_2024_coconut_juice_rubbing_ad_lead",
+  "title": "椰树集团2024年‘用椰汁擦乳’广告处罚线索（待官方原文核验）",
+  "case_number": null,
+  "source_type": "manual_compilation_pending_source_verification",
+  "source_name": "海南省市场监督管理局官方查询入口及用户提供的来源核验说明（非案件原文）",
+  "source_url": "https://amr.hainan.gov.cn/",
+  "source_url_role": "official_lookup_entry_not_case_document",
+  "official_lookup_entry_urls": [
+    "https://amr.hainan.gov.cn/",
+    "https://e-register.amr.hainan.gov.cn:1888/",
+    "https://www.gsxt.gov.cn/index.html",
+    "https://www.creditchina.gov.cn/"
+  ],
+  "source_verification_status": "pending_official_source_lookup",
+  "original_decision_url": null,
+  "original_decision_url_status": "not_found",
+  "source_lookup_priority": "P1",
+  "source_lookup_query": "椰树集团 2024 用椰汁擦乳 广告 行政处罚决定书",
+  "publish_date": null,
+  "decision_date": null,
+  "penalty_authority": null,
+  "party_name": "椰树集团相关主体（待决定书核验）",
+  "region": "海南省",
+  "industry": "食品饮料",
+  "sector": "general",
+  "sector_cn": "通用",
+  "violation_type": "广告内容及社会良好风尚风险线索",
+  "case_nature": "administrative_penalty_lead_pending_verification",
+  "is_admin_penalty_candidate": true,
+  "product_or_service": "椰汁饮料",
+  "ad_channel": "广告宣传渠道待核验",
+  "risk_dimensions": [
+    "违背社会良好风尚",
+    "网络营销风险"
+  ],
+  "illegal_claims": [
+    "用椰汁擦乳"
+  ],
+  "facts_summary": "用户提供的来源核验说明将该事项列为椰树集团相关主体2024年‘用椰汁擦乳’广告处罚线索，但目前没有取得处罚决定书原文，具体处罚主体、处罚机关、案号、完整事实和结果均待官方来源核验。",
+  "legal_basis": [
+    "待取得处罚决定书原文后核验，不在候选阶段推定具体条款"
+  ],
+  "penalty_result": "待取得处罚决定书原文后核验",
+  "penalty_amount": null,
+  "regulatory_logic": "该记录仅用于追踪广告表达和社会良好风尚风险线索，不作为已确认处罚事实，也不用于输出处罚金额或具体法律依据。取得正式处罚决定书后方可补充监管认定。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "椰树集团",
+    "2024",
+    "椰汁",
+    "用椰汁擦乳",
+    "广告内容",
+    "社会良好风尚",
+    "待官方原文核验"
+  ],
+  "vector_text": "这是一条待核验的食品饮料广告行政处罚线索，涉及椰树集团相关主体在2024年发布的‘用椰汁擦乳’宣传。当前只有官方查询入口，没有具体处罚决定书原文，因此仅用于候选检索和后续人工查证，不确认处罚机关、完整违法事实、法律依据、处罚金额或处罚结果。",
+  "rag_chunk_type": "case_summary",
+  "scope": "public",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "raw_text_path": "data/raw_text/coconut_group_penalty_leads_user_research.json",
+  "notes": "官方原文直达链接核验结果为0条；只进入候选索引。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "待人工通过海南市场监管、公示系统或信用中国取得案件原文。",
+    "approved_for_rag": false
+  }
+}
