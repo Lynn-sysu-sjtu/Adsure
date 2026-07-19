@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """LLM judgment module.
 
 The mock function keeps the current workflow deterministic. The real LLM path
@@ -43,21 +43,35 @@ def _default_opinion_type(matched_rules):
 
 def _rule_judgment(rule):
     risk = rule.get("risk_level") or MEDIUM
-    if risk == HIGH:
-        judgment = "\u7591\u4f3c\u8fdd\u89c4"
-    elif risk == MEDIUM:
-        judgment = "\u9700\u8fdb\u4e00\u6b65\u6838\u67e5"
-    else:
-        judgment = "\u4f4e\u98ce\u9669\u63d0\u793a"
+    trigger_layer = (rule.get("recall") or {}).get("trigger_layer") or (
+        "fact" if rule.get("recall_channel") == "fact" else "content"
+    )
+    status = "needs_fact_verification" if trigger_layer == "fact" else "confirmed_violation"
+    missing_facts = (
+        ["与该事实宣称对应的备案、资质或证明材料"]
+        if status == "needs_fact_verification"
+        else []
+    )
     return {
+        "rule_uid": rule.get("rule_uid"),
         "rule_id": rule.get("rule_id"),
-        "judgment": judgment,
-        "risk_level": risk,
-        "reasoning": (
-            f"mock LLM \u6839\u636e\u5df2\u53ec\u56de\u89c4\u5219\u300a{rule.get('title', '')}\u300b\u548c\u53ec\u56de\u7406\u7531"
-            f"\u201c{rule.get('match_reason', '')}\u201d\u5f62\u6210\u521d\u6b65\u6db5\u6444\u5224\u65ad\u3002"
+        "applicability_status": status,
+        "material_evidence": rule.get("match_reason") or "",
+        "satisfied_elements": [rule.get("title") or "候选规则相关事实"],
+        "unsatisfied_elements": [],
+        "missing_facts": missing_facts,
+        "applicability_reason": (
+            "mock LLM 将事实核验规则保留为需补资料。"
+            if status == "needs_fact_verification"
+            else "mock LLM 根据候选规则和召回证据确认内容风险。"
         ),
-        "revision_suggestion": "\u5efa\u8bae\u7ed3\u5408\u8be5\u89c4\u5219\u7684\u6cd5\u5f8b\u4f9d\u636e\u3001\u8bed\u4e49\u5224\u5b9a\u6807\u51c6\u548c\u4e1a\u52a1\u4e8b\u5b9e\u4fee\u6539\u6587\u6848\u6216\u8865\u5145\u8bc1\u660e\u6750\u6599\u3002",
+        "confidence": 1.0,
+        "judgment": "需事实核验" if status == "needs_fact_verification" else "疑似违规",
+        "risk_level": risk,
+        "reasoning": f"mock LLM 基于候选规则《{rule.get('title', '')}》形成结构化涵摄判断。",
+        "evidence": rule.get("match_reason") or "",
+        "legal_basis": rule.get("legal_basis_detail") or rule.get("legal_basis") or [],
+        "revision_suggestion": "建议根据适用状态修改文案或补充证明材料。",
     }
 
 
@@ -103,6 +117,7 @@ def judge_with_mock_llm(context_package, matched_rules):
 def _compact_rule_for_llm(rule):
     detection = rule.get("detection", {}) or {}
     return {
+        "rule_uid": rule.get("rule_uid"),
         "rule_id": rule.get("rule_id"),
         "serial_no": rule.get("serial_no"),
         "title": rule.get("title"),
@@ -110,6 +125,7 @@ def _compact_rule_for_llm(rule):
         "risk_level": rule.get("risk_level"),
         "match_reason": rule.get("match_reason"),
         "recall_channel": rule.get("recall_channel"),
+        "trigger_layer": (rule.get("recall") or {}).get("trigger_layer") or rule.get("trigger_layer"),
         "legal_basis": rule.get("legal_basis_detail") or rule.get("legal_basis") or [],
         "semantic_criteria": rule.get("semantic_criteria") or detection.get("semantic_criteria"),
         "decision": rule.get("decision") or detection.get("decision"),
@@ -137,26 +153,38 @@ def build_judgment_messages(context_package, matched_rules, mode="strict"):
             "\u5982\u679c\u53d1\u73b0\u660e\u663e\u4f46\u672c\u5730\u89c4\u5219\u5e93\u672a\u8986\u76d6\u7684\u98ce\u9669\uff0c\u53ef\u4ee5\u5199\u5165\u201c\u89c4\u5219\u5e93\u5916\u98ce\u9669\u201d\uff1b\u4f46\u4e0d\u5f97\u4f2a\u9020\u5177\u4f53\u6761\u6587\u6216\u5e73\u53f0\u6765\u6e90\u3002"
         )
 
+    judgment_policy = {
+        "identity_field": "rule_uid",
+        "require_every_candidate_once": True,
+        "keyword_relevance_is_not_applicability": "关键词或语义命中只证明规则相关，不能单独证明规则适用或构成违规。",
+        "missing_fact_policy": "依赖备案、资质、证明材料或履约事实时，必须返回needs_fact_verification并列出缺失事实。",
+        "direct_content_priority": "直接内容违规与补资料并存时，直接内容违规是核心风险，补资料只能作为附带核验。",
+        "evidence_policy": "confirmed_violation必须引用物料中的连续原文证据。",
+    }
     output_contract = {
         "opinion_type": "风险提示/违规修改/需补资料/无明显风险（必须四选一）",
-        "overall_risk_level": "\u9ad8/\u4e2d/\u4f4e/\u65e0\u660e\u663e\u98ce\u9669",
-        "matched_rules": [
+        "overall_risk_level": "高/中/低/无明显风险",
+        "rule_judgments": [
             {
-                "rule_id": "string",
-                "is_violation": "boolean",
-                "risk_level": "\u9ad8/\u4e2d/\u4f4e",
-                "reason": "\u4e3a\u4ec0\u4e48\u8be5\u89c4\u5219\u9002\u7528\u6216\u4e0d\u9002\u7528",
-                "evidence": "\u6587\u6848\u4e2d\u5bf9\u5e94\u7684\u89e6\u53d1\u8868\u8ff0",
-                "legal_basis": "\u89c4\u5219\u6765\u6e90\u6216\u6cd5\u6761\u4f9d\u636e",
+                "rule_uid": "候选规则的全局唯一UID",
+                "rule_id": "兼容展示用业务ID",
+                "applicability_status": "confirmed_violation | needs_fact_verification | not_applicable",
+                "material_evidence": "物料中的连续原文；不适用且无证据时为空字符串",
+                "satisfied_elements": ["已经满足的规则构成要件"],
+                "unsatisfied_elements": ["尚未满足的规则构成要件"],
+                "missing_facts": ["完成判断所需的备案、资质、证明或履约事实"],
+                "applicability_reason": "为什么规则适用、待核验或不适用",
+                "confidence": "0到1之间的数字",
             }
         ],
-        "outside_rule_risks": ["\u4ec5\u5728\u5019\u9009\u89c4\u5219\u4e0d\u8db3\u65f6\u586b\u5199"],
-        "audit_opinion": "面向运营/法务的审核意见，开头应写明意见类型；风险提示表示目前不能直接认定投放前违规，但需要提示履约、证明或披露风险；违规修改表示文案本身已经触发刚性规则，投放前需要修改；需补资料表示缺少判断所需证明材料；无明显风险表示未发现明显规则命中。",
-        "revision_suggestion": "\u53ef\u6267\u884c\u7684\u4fee\u6539\u5efa\u8bae",
+        "outside_rule_risks": ["仅在候选规则不足时填写"],
+        "audit_opinion": "面向运营/法务的审核意见，开头写明意见类型。",
+        "revision_suggestion": "可执行的修改或补资料建议",
         "need_legal_review": "boolean",
-        "routing": "\u8fd0\u8425/\u6cd5\u52a1",
+        "routing": "运营/法务",
     }
     payload = {
+        "judgment_policy": judgment_policy,
         "opinion_type_policy": "必须输出 opinion_type，且只能是：风险提示、违规修改、需补资料、无明显风险。不要把所有规则命中都直接认定为违规；赠送、价格、概率、资质、证明材料等事实或履约类问题，若仅凭文案不能确认违法，应优先归为风险提示或需补资料。",
         "mode": mode,
         "mode_policy": mode_policy,
