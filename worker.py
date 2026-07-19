@@ -7,6 +7,7 @@
 import os
 import time
 import json
+import fcntl
 import requests
 
 from config import BITABLE_APP_TOKEN, BITABLE_TABLE_ID, WORKBENCH_URL
@@ -26,8 +27,32 @@ _PLATFORM_FIELD = {
 # === 配置 ===
 POLL_INTERVAL = 5
 
-# 内存去重：记录本次进程已处理的 record_id，防止 Feishu 写回延迟导致重复发卡
-_processed_ids: set = set()
+# 持久化去重文件：进程重启后仍记得已处理过的 record_id
+_DEDUP_FILE = "/tmp/adsure_processed_ids.json"
+# 进程锁文件：防止同一台机器上多个 worker 进程同时运行
+_LOCK_FILE  = "/tmp/adsure_worker.lock"
+
+
+def _load_processed() -> set:
+    try:
+        with open(_DEDUP_FILE) as f:
+            ids = json.load(f)
+            return set(ids) if isinstance(ids, list) else set()
+    except Exception:
+        return set()
+
+
+def _save_processed(ids: set):
+    try:
+        with open(_DEDUP_FILE, "w") as f:
+            json.dump(list(ids), f)
+    except Exception as e:
+        print(f"    ⚠ 去重文件写入失败: {e}")
+
+
+# 启动时从磁盘恢复去重集合（重启后不重复发卡）
+_processed_ids: set = _load_processed()
+print(f"[worker] 去重集合已从磁盘恢复，共 {len(_processed_ids)} 条历史记录")
 
 
 # === 工具函数 ===
@@ -195,7 +220,7 @@ def is_new_submission(fields):
 
 def process_record(record_id, fields):
     if record_id in _processed_ids:
-        print(f"  ⚠ record_id={record_id} 已处理过，跳过（内存去重）")
+        print(f"  ⚠ record_id={record_id} 已处理过，跳过（持久化去重）")
         return
 
     code = str(fields.get(F_物料编号, "")) or "(待编号)"
@@ -209,20 +234,10 @@ def process_record(record_id, fields):
         print(f"    ✗ 状态更新失败: {e}")
         return
 
-    # 写入后等1秒让 Feishu 传播，再回读验证
-    # 若另一个进程先写成功，这里会读到非空状态，直接跳过发卡
-    time.sleep(1)
-    try:
-        latest = get_record(record_id)
-        actual = latest.get("fields", {}).get(F_流转_当前状态, "")
-        if actual != "运营起草":
-            print(f"    ⚠ 状态回读为「{actual}」（非运营起草），已被其他进程处理，跳过发卡")
-            _processed_ids.add(record_id)
-            return
-    except Exception as e:
-        print(f"    ⚠ 状态回读失败，继续发卡: {e}")
-
+    # 立即将 record_id 写入持久化去重文件，防止进程重启后重复发卡
     _processed_ids.add(record_id)
+    _save_processed(_processed_ids)
+
     # 向提交人发互动卡片
     send_review_card(record_id, fields)
 
@@ -244,6 +259,16 @@ def poll_once():
 
 
 def main():
+    # 进程互斥锁：同一台机器上只允许一个 worker 实例运行
+    # 若已有另一个 worker 进程在跑，立即退出，避免重复发卡
+    lock_fd = open(_LOCK_FILE, "w")
+    try:
+        fcntl.flock(lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        print("[worker] ✗ 检测到另一个 worker 实例正在运行，本进程退出")
+        lock_fd.close()
+        return
+
     print("=" * 60)
     print("审心 · 多维表格轮询触发器启动")
     print(f"  表: {BITABLE_APP_TOKEN}/{BITABLE_TABLE_ID}")
@@ -251,9 +276,13 @@ def main():
     print(f"  触发条件: ⑤流转·当前状态=空 且 ①运营·物料内容!=空")
     print(f"  触发动作: 状态→运营起草 + 给提交人发互动卡片")
     print("=" * 60)
-    while True:
-        poll_once()
-        time.sleep(POLL_INTERVAL)
+    try:
+        while True:
+            poll_once()
+            time.sleep(POLL_INTERVAL)
+    finally:
+        fcntl.flock(lock_fd, fcntl.LOCK_UN)
+        lock_fd.close()
 
 
 if __name__ == "__main__":
