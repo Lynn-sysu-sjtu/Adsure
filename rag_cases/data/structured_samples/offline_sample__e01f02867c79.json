@@ -1,0 +1,38 @@
+{
+  "case_id": "offline_sample__e01f02867c79",
+  "title": "离线示例：某互联网广告绝对化用语",
+  "source_type": "offline_sample",
+  "source_name": "离线示例数据（非真实处罚事实来源）",
+  "source_url": "sample://offline/absolute-terms",
+  "publish_date": "",
+  "decision_date": "",
+  "penalty_authority": "",
+  "party_name": "某公司",
+  "region": "",
+  "industry": "",
+  "product_or_service": "",
+  "ad_channel": "互联网广告",
+  "risk_dimensions": [
+    "绝对化用语"
+  ],
+  "illegal_claims": [
+    "国家级最佳"
+  ],
+  "facts_summary": "离线示例：绝对化广告用语 离线示例：某互联网广告绝对化用语 某公司在互联网广告中宣称产品为“国家级最佳”。 监管机关认为相关宣传构成绝对化用语违法，并处以罚款10000元。 本数据仅用于离线演示，不是处罚事实来源。",
+  "legal_basis": [],
+  "penalty_result": "罚款10000元",
+  "penalty_amount": 10000,
+  "regulatory_logic": "监管机关认为广告使用国家级、最佳等绝对化表述，违反广告用语限制。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "国家级最佳",
+    "绝对化用语"
+  ],
+  "vector_text": "某公司通过互联网广告发布宣传内容，涉及绝对化用语风险；主要宣称为国家级最佳。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "exclude_from_validation": true,
+  "notes": "旧离线样例，仅用于历史演示，不进入当前候选/生产校验与chunk构建。",
+  "raw_text_path": "data/raw_text/offline_sample__e01f02867c79.json",
+  "raw_html_path": "data/raw_html/offline_sample__e01f02867c79.json"
+}

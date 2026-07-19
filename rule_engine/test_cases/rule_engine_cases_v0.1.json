@@ -713,5 +713,30 @@
       "expected_risk_level": "高",
       "expected_routing": "法务"
     }
+  },
+  {
+    "case_id": "CASE-SEM-006",
+    "name": "语义召回-动物化羞辱消费者",
+    "input_payload": {
+      "record_id": "case-sem-006",
+      "mode": "标准",
+      "fields": {
+        "①运营·行业领域": "通用",
+        "①运营·物料内容": "我们一降价，你还不是像狗一样跑过来"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [
+        "GEN-GOOD-CUSTOMS-001"
+      ],
+      "expected_semantic_rule_ids": [
+        "GEN-GOOD-CUSTOMS-001"
+      ],
+      "expected_dimensions": [
+        "社会良好风尚"
+      ],
+      "expected_risk_level": "高",
+      "expected_routing": "法务"
+    }
   }
 ]

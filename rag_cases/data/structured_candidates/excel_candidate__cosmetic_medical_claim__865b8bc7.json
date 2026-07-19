@@ -1,0 +1,53 @@
+{
+  "case_id": "excel_candidate__cosmetic_medical_claim__865b8bc7",
+  "title": "周致正与北京创锐文化传媒有限公司买卖合同纠纷案",
+  "case_number": "（2015）朝民（商）初字第49845号",
+  "source_type": "manual_compilation_pending_source_verification",
+  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "decision_date": "2016-11-02",
+  "penalty_authority": null,
+  "party_name": "北京创锐文化传媒有限公司",
+  "region": "北京市朝阳区",
+  "court": "北京市朝阳区人民法院",
+  "industry": "化妆品",
+  "product_or_service": "净化排毒、抗菌排毒",
+  "ad_channel": "网站",
+  "risk_dimensions": [
+    "化妆品医疗化宣传",
+    "涉医疗宣传"
+  ],
+  "illegal_claims": [
+    "净化排毒、抗菌排毒",
+    "排走毒素、抗菌消炎、速效消炎、茶树精油温和杀菌、镇静红肿肌肤"
+  ],
+  "facts_summary": "在聚美优品网站销售兰蔻、稀拉克儿等化妆品，宣传“净化排毒、抗菌排毒”“排走毒素、抗菌消炎、速效消炎、茶树精油温和杀菌、镇静红肿肌肤”等医疗功效",
+  "legal_basis": [
+    "《消费者权益保护法》第五十五条"
+  ],
+  "penalty_result": "退还货款38320元、赔偿114960元",
+  "penalty_amount": null,
+  "regulatory_logic": "该候选案例显示，广告内容属于化妆品宣称医疗作用场景，相关宣传可能影响消费者判断，涉及《消费者权益保护法》第五十五条，需核验官方来源后确认监管认定。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "化妆品宣称医疗作用",
+    "化妆品医疗化宣传",
+    "涉医疗宣传",
+    "网站",
+    "净化排毒、抗菌排毒"
+  ],
+  "vector_text": "这是一起人工整理的化妆品宣称医疗作用候选案例。案件事实显示，经营者在聚美优品网站销售兰蔻、稀拉克儿等化妆品，宣传“净化排毒、抗菌排毒”“排走毒素、抗菌消炎、速效消炎、茶树精油温和杀菌、镇静红肿肌肤”等医疗功效 处罚依据记载为《消费者权益保护法》第五十五条，处理结果为退还货款38320元、赔偿114960元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from Excel manual compilation; source_url pending verification.",
+    "approved_for_rag": false
+  }
+}

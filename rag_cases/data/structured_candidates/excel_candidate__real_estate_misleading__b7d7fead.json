@@ -1,0 +1,57 @@
+{
+  "case_id": "excel_candidate__real_estate_misleading__b7d7fead",
+  "title": "克拉玛依市克拉玛依区市场监督管理局与新疆某甲房地产开发有限公司行政非诉审查案",
+  "case_number": "（2025）新0203行审17号",
+  "source_type": "manual_compilation_pending_source_verification",
+  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "decision_date": "2025-04-25",
+  "penalty_authority": "克拉玛依市克拉玛依区市场监督管理局",
+  "party_name": "新疆某甲房地产开发有限公司行政",
+  "region": "克拉玛依市",
+  "court": "克拉玛依市克拉玛依区人民法院",
+  "industry": "房地产",
+  "product_or_service": "升值空间巨大",
+  "ad_channel": null,
+  "risk_dimensions": [
+    "房地产广告误导",
+    "升值承诺",
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "升值空间巨大",
+    "价值优势更加明显",
+    "项目距某超市约两分钟车程"
+  ],
+  "facts_summary": "在宣传彩页中使用“升值空间巨大”“价值优势更加明显”“项目距某超市约两分钟车程”等内容",
+  "legal_basis": [
+    "《广告法》第二十六条第一项、第二项、第五十八条"
+  ],
+  "penalty_result": "罚款200600元",
+  "penalty_amount": 200600,
+  "regulatory_logic": "该候选案例显示，广告内容属于房地产升值承诺、规划误导场景，相关宣传可能影响消费者判断，涉及《广告法》第二十六条第一项、第二项、第五十八条，需核验官方来源后确认监管认定。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "房地产升值承诺、规划误导",
+    "房地产广告误导",
+    "升值承诺",
+    "虚假宣传",
+    "升值空间巨大",
+    "价值优势更加明显",
+    "项目距某超市约两分钟车程"
+  ],
+  "vector_text": "这是一起人工整理的房地产升值承诺、规划误导候选案例。案件事实显示，经营者在宣传彩页中使用“升值空间巨大”“价值优势更加明显”“项目距某超市约两分钟车程”等内容 处罚依据记载为《广告法》第二十六条第一项、第二项、第五十八条，处理结果为罚款200600元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from Excel manual compilation; source_url pending verification.",
+    "approved_for_rag": false
+  }
+}

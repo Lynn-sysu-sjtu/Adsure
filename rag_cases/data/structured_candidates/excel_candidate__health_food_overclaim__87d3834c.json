@@ -1,0 +1,54 @@
+{
+  "case_id": "excel_candidate__health_food_overclaim__87d3834c",
+  "title": "宜兴市市场监督管理局、宜兴市某某服务部行政处罚非诉执行审查案",
+  "case_number": "（2025）苏0282行审17号",
+  "source_type": "manual_compilation_pending_source_verification",
+  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "decision_date": "2025-04-02",
+  "penalty_authority": "宜兴市市场监督管理局",
+  "party_name": "宜兴市某某服务部行政处罚",
+  "region": "宜兴市",
+  "court": "宜兴市人民法院",
+  "industry": "保健食品",
+  "product_or_service": "三七人参胶囊",
+  "ad_channel": "会议",
+  "risk_dimensions": [
+    "保健食品违规宣传",
+    "涉医疗宣传",
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "三七人参胶囊"
+  ],
+  "facts_summary": "以会议宣传形式向老年人销售“三七人参胶囊”（保健食品），播放视频宣称对风湿关节痛、降血压血脂、头疼脑梗、改善睡眠等疾病有好的反应和效果",
+  "legal_basis": [
+    "《反不正当竞争法》第八条第一款、第二十条第一款"
+  ],
+  "penalty_result": "罚款200000元",
+  "penalty_amount": 200000,
+  "regulatory_logic": "该候选案例显示，广告内容属于保健食品功效保证、替代药物、超批准功能宣传场景，相关宣传可能影响消费者判断，涉及《反不正当竞争法》第八条第一款、第二十条第一款，需核验官方来源后确认监管认定。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "保健食品功效保证、替代药物、超批准功能宣传",
+    "保健食品违规宣传",
+    "涉医疗宣传",
+    "虚假宣传",
+    "会议",
+    "三七人参胶囊"
+  ],
+  "vector_text": "这是一起人工整理的保健食品功效保证、替代药物、超批准功能宣传候选案例。案件事实显示，经营者以会议宣传形式向老年人销售“三七人参胶囊”（保健食品），播放视频宣称对风湿关节痛、降血压血脂、头疼脑梗、改善睡眠等疾病有好的反应和效果 处罚依据记载为《反不正当竞争法》第八条第一款、第二十条第一款，处理结果为罚款200000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from Excel manual compilation; source_url pending verification.",
+    "approved_for_rag": false
+  }
+}

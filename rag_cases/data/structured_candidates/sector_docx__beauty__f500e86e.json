@@ -1,0 +1,65 @@
+{
+  "case_id": "sector_docx__beauty__f500e86e",
+  "title": "驻马店市晨钟生物科技有限公司诉平顶山市工商行政管理局新华分局行政处罚案",
+  "case_number": "（2016）豫04行终126号",
+  "court": "河南省平顶山市中级人民法院",
+  "decision_date": "2016-07-13",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "驻马店市晨钟生物科技有限公司诉平顶山市工商行政管理局",
+  "party_name": "新华分局",
+  "region": "河南省平顶山",
+  "industry": "化妆品 / 医疗美容 / 美妆",
+  "sector": "beauty",
+  "sector_cn": "美妆",
+  "violation_type": "化妆品标签虚假宣传",
+  "case_nature": "administrative_litigation_review",
+  "source_lookup_priority": "P0",
+  "is_admin_penalty_candidate": true,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "beauty"
+  ],
+  "product_or_service": "巨型一号",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "巨型一号",
+    "抑制黑色素细胞生成"
+  ],
+  "facts_summary": "在“巨型一号”丝瓜水美肤液（非特殊用途化妆品）外包装上标注“抑制黑色素细胞生成”等特殊用途功效宣传",
+  "legal_basis": [
+    "《反不正当竞争法》第九条、第二十四条"
+  ],
+  "penalty_result": "罚款40000元",
+  "penalty_amount": null,
+  "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品标签虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《反不正当竞争法》第九条、第二十四条。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "beauty",
+    "美妆",
+    "化妆品标签虚假宣传",
+    "虚假宣传",
+    "巨型一号",
+    "抑制黑色素细胞生成"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2016）豫04行终126号 驻马店市晨钟生物科技有限公司诉平顶山市工商行政管理局新华分局行政处罚案",
+  "vector_text": "【赛道】美妆。【场景】其他。【宣称】巨型一号；抑制黑色素细胞生成。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品标签虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《反不正当竞争法》第九条、第二十四条。。【依据】《反不正当竞争法》第九条、第二十四条。【结果】罚款40000元。"
+}

@@ -132,8 +132,53 @@ def _flat_payload_to_fields(payload):
     return fields
 
 
+def _canonical_payload(payload):
+    """Normalize the internal request shape without depending on Feishu field names."""
+    material_input = payload.get("material")
+    context_input = payload.get("context")
+    if not isinstance(material_input, dict) or not isinstance(context_input, dict):
+        return None
+
+    audit_input = payload.get("audit") if isinstance(payload.get("audit"), dict) else {}
+    request_id = payload.get("request_id") or payload.get("record_id") or material_input.get("material_id")
+    return {
+        "tenant_id": _plain_text(payload.get("tenant_id")) or "adsure_demo",
+        "request_id": _plain_text(request_id),
+        "source": _plain_text(payload.get("source")) or "internal",
+        "material": {
+            "material_id": _plain_text(material_input.get("material_id")),
+            "content": _plain_text(material_input.get("content")),
+            "attachments": material_input.get("attachments") or [],
+            "submitter": _plain_text(material_input.get("submitter")),
+            "submitted_at": material_input.get("submitted_at"),
+            "urgency": _plain_text(material_input.get("urgency")),
+            "supplemental_background": _plain_text(
+                material_input.get("supplemental_background") or material_input.get("supplement")
+            ),
+        },
+        "context": {
+            "industry": _plain_text(context_input.get("industry")),
+            "material_type": _normalize_material_type(context_input.get("material_type")),
+            "platforms": _list_value(context_input.get("platforms") or context_input.get("platform")),
+            "product_category": _plain_text(context_input.get("product_category")),
+            "product_filing_name": _plain_text(context_input.get("product_filing_name")),
+            "approval_or_filing_number": _plain_text(context_input.get("approval_or_filing_number")),
+            "core_claims": _list_value(context_input.get("core_claims")),
+            "scenario": _plain_text(context_input.get("scenario")),
+            "game_name": _plain_text(context_input.get("game_name")),
+            "ip_name": _plain_text(context_input.get("ip_name")),
+        },
+        "audit": {
+            "requested_mode": audit_input.get("requested_mode") or payload.get("mode") or "auto",
+        },
+        "raw": payload.get("raw") or {"record_id": payload.get("record_id")},
+    }
+
 def map_feishu_payload(payload):
     """Normalize a Feishu callback payload into the internal audit request."""
+    canonical = _canonical_payload(payload)
+    if canonical is not None:
+        return canonical
     fields = (
         payload.get("fields")
         or payload.get("record", {}).get("fields")
@@ -159,6 +204,7 @@ def map_feishu_payload(payload):
     }
 
     return {
+        "tenant_id": _plain_text(payload.get("tenant_id")) or "adsure_demo",
         "request_id": record_id or _plain_text(_field(fields, PUBLIC_FIELDS["material_id"])),
         "source": "feishu",
         "material": {
@@ -179,4 +225,3 @@ def map_feishu_payload(payload):
             "fields": fields,
         },
     }
-

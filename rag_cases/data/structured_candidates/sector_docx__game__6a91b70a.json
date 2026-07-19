@@ -1,0 +1,63 @@
+{
+  "case_id": "sector_docx__game__6a91b70a",
+  "title": "鲍道成诉广州掌跃网络科技有限公司等网络服务合同纠纷案",
+  "case_number": "（2021）粤0192民初25167号",
+  "court": "广州互联网法院",
+  "decision_date": "2021-12-15",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": null,
+  "party_name": "广州掌跃网络科技有限公司等",
+  "region": "广州互联网法",
+  "industry": "游戏",
+  "sector": "game",
+  "sector_cn": "游戏",
+  "violation_type": "游戏道具抽取概率未公示",
+  "case_nature": "judicial_reference_not_admin_penalty",
+  "source_lookup_priority": "P2",
+  "is_admin_penalty_candidate": false,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "game"
+  ],
+  "product_or_service": "游戏《三国仙侠志》",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "不动二"
+  ],
+  "facts_summary": "游戏《三国仙侠志》玩家为获取“不动二”道具连续抽取400多次（花费约2万元）未获得，客服答复未公布过抽取概率。法院认定概率未公示属实，但原告明知概率不明仍继续充值，视为放弃撤销权",
+  "legal_basis": [
+    "《民法典》第一百四十八条、第一百五十二条"
+  ],
+  "penalty_result": "驳回诉讼请求",
+  "penalty_amount": null,
+  "regulatory_logic": "游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏道具抽取概率未公示，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十八条、第一百五十二条。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "game",
+    "游戏",
+    "游戏道具抽取概率未公示",
+    "虚假宣传",
+    "不动二"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2021）粤0192民初25167号 鲍道成诉广州掌跃网络科技有限公司等网络服务合同纠纷案",
+  "vector_text": "【赛道】游戏。【场景】其他。【宣称】不动二。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏道具抽取概率未公示，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十八条、第一百五十二条。。【依据】《民法典》第一百四十八条、第一百五十二条。【结果】驳回诉讼请求。"
+}

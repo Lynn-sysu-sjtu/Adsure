@@ -1,4 +1,4 @@
-﻿import json
+import json
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -91,6 +91,40 @@ class RuleEngineMvpTests(unittest.TestCase):
         self.assertNotIn("regex:", display_text)
         self.assertNotIn("????", display_text)
 
+    def test_audit_canonical_payload_returns_tenant_and_request_ids(self):
+        response = audit(
+            {
+                "tenant_id": "tenant_example",
+                "request_id": "req_canonical_001",
+                "source": "internal",
+                "material": {"content": "新品上市，欢迎选购"},
+                "context": {
+                    "industry": "美妆",
+                    "platforms": ["抖音"],
+                    "material_type": "Banner",
+                    "product_category": "护肤",
+                },
+                "unknown_field": "ignored",
+            },
+            base_dir=BASE,
+        )
+
+        self.assertEqual(0, response["code"])
+        self.assertEqual("tenant_example", response["data"]["tenant_id"])
+        self.assertEqual("req_canonical_001", response["data"]["request_id"])
+    def test_canonical_payload_missing_content_keeps_existing_error_contract(self):
+        response = audit_endpoint(
+            {
+                "tenant_id": "adsure_demo",
+                "request_id": "req_missing_content",
+                "material": {"content": ""},
+                "context": {"industry": "美妆"},
+            }
+        )
+
+        self.assertEqual(-1, response["code"])
+        self.assertEqual("缺少必填字段：①运营·物料内容", response["msg"])
+        self.assertIsNone(response["data"])
     def test_audit_safe_content_routes_to_operator(self):
         response = audit(
             {
@@ -147,7 +181,14 @@ class RuleEngineMvpTests(unittest.TestCase):
                 json.dumps(
                     {
                         "meta": {"name": "weak hit display test"},
-                        "legal_sources": [],
+                        "legal_sources": [
+                            {
+                                "id": "AL",
+                                "name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+                                "type": "法规",
+                                "legal_level": 1,
+                            }
+                        ],
                         "rules": [
                             {
                                 "rule_id": "GAME-GIFT-001",
@@ -196,7 +237,8 @@ class RuleEngineMvpTests(unittest.TestCase):
 
         self.assertIn("[GAME-GIFT-001] 游戏赠送福利需明示活动规则", user_facing_text)
         self.assertIn("【触犯法条原文】", user_facing_text)
-        self.assertIn("广告中表明推销的商品或者服务附带赠送的", user_facing_text)
+        self.assertIn("【法律】《中华人民共和国广告法》第八条：“广告中表明推销的商品或者服务附带赠送的", user_facing_text)
+        self.assertNotIn("AL第八条", user_facing_text)
         self.assertNotIn("命中要点：送", user_facing_text)
 
     def test_legal_basis_details_show_authority_level_labels(self):
@@ -211,6 +253,7 @@ class RuleEngineMvpTests(unittest.TestCase):
                     "legal_basis_detail": [
                         {
                             "source_id": "AL",
+                            "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
                             "article": "第八条",
                             "legal_level": 1,
                             "text": "广告中表明推销的商品或者服务附带赠送的，应当明示所附带赠送商品或者服务的品种、规格、数量、期限和方式。",
@@ -226,6 +269,7 @@ class RuleEngineMvpTests(unittest.TestCase):
                     "legal_basis_detail": [
                         {
                             "source_id": "BILI",
+                            "source_name": "B站广告推广平台审核规范（二）",
                             "article": "7.",
                             "text": "涉及赠送/送/免费等活动应当明示参与条件与门槛。",
                         }
@@ -234,8 +278,10 @@ class RuleEngineMvpTests(unittest.TestCase):
             ]
         )
 
-        self.assertIn("[法律] AL第八条：广告中表明推销的商品或者服务附带赠送的", section)
-        self.assertIn("[平台规则] BILI7.：涉及赠送/送/免费等活动应当明示参与条件与门槛", section)
+        self.assertIn("【法律】《中华人民共和国广告法》第八条：“广告中表明推销的商品或者服务附带赠送的", section)
+        self.assertIn("【平台规则】《B站广告推广平台审核规范（二）》7.：“涉及赠送/送/免费等活动应当明示参与条件与门槛", section)
+        self.assertNotIn("[GEN-GIFT-001]", section)
+        self.assertNotIn("AL第八条", section)
 
     def test_plain_copy_recall_only_uses_content_trigger_layer(self):
         request = {
@@ -385,7 +431,14 @@ class RuleEngineMvpTests(unittest.TestCase):
                 json.dumps(
                     {
                         "meta": {"name": "diagnostic metadata test"},
-                        "legal_sources": [],
+                        "legal_sources": [
+                            {
+                                "id": "AL",
+                                "name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+                                "type": "法规",
+                                "legal_level": 1,
+                            }
+                        ],
                         "rules": [
                             {
                                 "rule_id": "DIAG-001",
@@ -429,7 +482,14 @@ class RuleEngineMvpTests(unittest.TestCase):
                 json.dumps(
                     {
                         "meta": {"name": "legal attention routing test"},
-                        "legal_sources": [],
+                        "legal_sources": [
+                            {
+                                "id": "AL",
+                                "name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+                                "type": "法规",
+                                "legal_level": 1,
+                            }
+                        ],
                         "rules": [
                             {
                                 "rule_id": "CONTENT-HIGH-OPERATOR-001",
@@ -474,7 +534,14 @@ class RuleEngineMvpTests(unittest.TestCase):
                 json.dumps(
                     {
                         "meta": {"name": "legal attention routing test"},
-                        "legal_sources": [],
+                        "legal_sources": [
+                            {
+                                "id": "AL",
+                                "name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+                                "type": "法规",
+                                "legal_level": 1,
+                            }
+                        ],
                         "rules": [
                             {
                                 "rule_id": "CONTENT-LEGAL-001",
@@ -623,4 +690,3 @@ class RuleEngineMvpTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

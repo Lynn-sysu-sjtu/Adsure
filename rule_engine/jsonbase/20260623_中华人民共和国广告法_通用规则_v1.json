@@ -5,7 +5,7 @@
     "generated_date": "20260623",
     "scope": "通用广告规则；仅审查文字材料，不审查图片、视频画面或音频本身。",
     "schema_reference": "20260628_三赛道广告合规规则schema_v5.json",
-    "rule_count": 13,
+    "rule_count": 21,
     "serial_no_scope": "global_across_jsonbase",
     "serial_no_note": "serial_no 为 jsonbase 文件夹内跨文件连续编号，用于人工分工和审核进度管理。",
     "serial_no_updated_date": "2026-06-24",
@@ -15,7 +15,8 @@
     "schema_version": "v5",
     "schema_updated_date": "2026-06-28",
     "routing_policy": "derived_from_rule_applicability_v1",
-    "fact_check_policy": "future_material_verification_not_fact_rag"
+    "fact_check_policy": "future_material_verification_not_fact_rag",
+    "semantic_scenario_policy": "dual_format_parent_vector_plus_scenarios_v1"
   },
   "legal_sources": [
     {
@@ -153,10 +154,10 @@
           "荣誉不实",
           "误导购买"
         ],
-        "vector_text": "3天彻底改善所有皮肤问题，效果不满意全额赔付，全网销量第一，官方认证，限时免费领取，实际需支付高额服",
+        "vector_text": "隐瞒限制条件、夸大个例或模糊承诺，造成消费者整体误解",
         "semantic_enabled": true,
-        "semantic_role": "fallback",
-        "semantic_reason": "虚假宣传常通过效果承诺、荣誉背书、限时限量、价格优惠等场景暗示，关键词难以穷举，语义召回可覆盖多种变体表达。",
+        "semantic_role": "primary",
+        "semantic_reason": "虚假误导的兜底形态依赖整体语境，固定关键词难以覆盖。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
           "reviewed_at": "2026-07-14T10:19:50",
@@ -192,7 +193,29 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "hidden_conditions",
+            "vector_text": "优惠效果承诺隐藏门槛期限和适用条件",
+            "enabled": true
+          },
+          {
+            "scenario_id": "partial_truth_misleading",
+            "vector_text": "用局部真实信息制造商品整体更优的错误印象",
+            "enabled": true
+          },
+          {
+            "scenario_id": "individual_as_general",
+            "vector_text": "把少数用户个例包装成所有消费者普遍效果",
+            "enabled": true
+          },
+          {
+            "scenario_id": "possibility_as_certainty",
+            "vector_text": "把可能获得可能改善表述成必然结果",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -397,10 +420,10 @@
           "价格条件",
           "期限遗漏"
         ],
-        "vector_text": "权益门槛承诺未写完整，消费者难判断能拿什么；赠品期限SKU限制不清",
+        "vector_text": "优惠赠品期限适用范围等关键信息模糊遗漏，消费者难以理解",
         "semantic_enabled": true,
-        "semantic_role": "fallback",
-        "semantic_reason": "该规则针对优惠、权益、赠品、活动条件等关键信息缺失或表述不清，适合语义召回覆盖门槛、条件、承诺不完整的表达。",
+        "semantic_role": "primary",
+        "semantic_reason": "准确清楚明白包含信息遗漏和模糊表达，适合场景召回补充。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
           "reviewed_at": "2026-07-14T01:15:20",
@@ -441,7 +464,24 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "promotion_terms_missing",
+            "vector_text": "促销优惠未说明门槛期限适用商品和限制条件",
+            "enabled": true
+          },
+          {
+            "scenario_id": "gift_details_missing",
+            "vector_text": "赠品品种数量规格领取方式没有说清楚",
+            "enabled": true
+          },
+          {
+            "scenario_id": "important_text_obscured",
+            "vector_text": "重要限制用小字模糊表达或隐藏在页面角落",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "中",
       "consequence": {
@@ -545,7 +585,7 @@
       "namespace": "general",
       "source_type": "法规",
       "platform": null,
-      "title": "广告不得使用绝对化用语等红线内容",
+      "title": "广告不得使用绝对化用语或国家机关背书",
       "dimension": "绝对化用语",
       "applies_to": {
         "industries": [
@@ -584,7 +624,7 @@
         "required_context_fields": [
           "content"
         ],
-        "logic": "广告文案中存在极限评价、权威背书或社会导向相关表述。"
+        "logic": "广告文案使用最高级、唯一性评价或国家机关名义形象背书。"
       },
       "source_trace": {
         "source_doc_id": "AL-2021",
@@ -597,10 +637,10 @@
       "legal_basis": [
         {
           "source_id": "AL",
-          "article": "第九条",
+          "article": "第九条第（二）、（三）项",
           "legal_level": 1,
           "role": "based_on",
-          "text": "第九条 广告不得有下列情形：\n（一）使用或者变相使用中华人民共和国的国旗、国歌、国徽，军旗、军歌、军徽；\n（二）使用或者变相使用国家机关、国家机关工作人员的名义或者形象；\n（三）使用\"国家级\"、\"最高级\"、\"最佳\"等用语；\n（四）损害国家的尊严或者利益，泄露国家秘密；\n（五）妨碍社会安定，损害社会公共利益；\n（六）危害人身、财产安全，泄露个人隐私；\n（七）妨碍社会公共秩序或者违背社会良好风尚；\n（八）含有淫秽、色情、赌博、迷信、恐怖、暴力的内容；\n（九）含有民族、种族、宗教、性别歧视的内容；\n（十）妨碍环境、自然资源或者文化遗产保护；\n（十一）法律、行政法规规定禁止的其他情形。"
+          "text": "第九条 广告不得有下列情形：（二）使用或者变相使用国家机关、国家机关工作人员的名义或者形象；（三）使用“国家级”、“最高级”、“最佳”等用语。"
         }
       ],
       "hierarchy": {
@@ -643,20 +683,19 @@
             "商品型号"
           ]
         },
-        "semantic_criteria": "重点识别绝对化评价、国家机关背书、损害公共利益、低俗违法不良内容等广告法第九条红线。对客观排序且有充分依据的表述仍需人工复核。",
-        "decision": "如果广告出现绝对化用语、国家机关背书或第九条禁止内容，则判定为高风险。"
+        "semantic_criteria": "识别国家机关背书和绝对化评价；客观排名、商品型号及非广告语境需排除。",
+        "decision": "如果广告使用国家机关名义形象背书或违法绝对化用语，则判定为高风险。"
       },
       "recall": {
         "tags": [
           "绝对化用语",
           "国家机关背书",
-          "红线内容",
-          "不良导向"
+          "广告法第九条"
         ],
-        "vector_text": "国家级护肤科技，行业最佳效果。政府指定合作品牌，全网最低价。这是目前最安全、最有效的游戏充值方案。顶级产品，唯一选择，首选品牌，最先进技术，最安全配方，最有效方法，全网第一，行业领先，国家机关推荐，政府认证，官方指定，销量冠军，效果最佳，绝对安全，百分百有效，第一品牌，唯一指定，首选推荐，最受欢迎，好评第一，零风险，无副作用，永久有效，万能，全能，极致，巅峰，王牌，至尊，超级，终极，绝无仅有，史无前例，独一无二，首屈一指，名列前茅，遥遥领先，无可比拟，无与伦比，当之无愧，毋庸置疑，绝对，最，第一，唯一，首选，顶级，极致，巅峰，王牌，至尊，超级，终极，绝无仅有，史无前例，独一无二，首屈一指，名列前茅，遥遥领先，无可比拟，无与伦比，当之无愧，毋庸置疑，绝对，最，第一，唯一，首选，顶级，极致，巅峰，王牌，至尊，超级，终极，绝无仅有，史无前例，独一无二，首屈一指，名列前茅，遥遥领先，无可比拟，无与伦比，当之无愧，毋庸置疑",
+        "vector_text": "国家级最高级最佳唯一官方指定政府推荐等绝对化或权威背书",
         "semantic_enabled": false,
         "semantic_role": "fallback",
-        "semantic_reason": "绝对化用语规则适合语义召回作为补充，因为违规表达可能使用同义变体或软性规避，关键词无法穷举。该vector_text覆盖了常见绝对化词汇、权威背书表述及变体，用于召回疑似绝对化用语或国家机关背书的广告文案。",
+        "semantic_reason": "该规则主要由强关键词和正则稳定召回，不进入场景向量索引。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
           "reviewed_at": "2026-07-14T01:34:21",
@@ -1347,10 +1386,10 @@
           "商业诋毁",
           "同行对比"
         ],
-        "vector_text": "其他品牌都是垃圾，只有我们最好；竞品根本不行，别买那些没用的；同行产品都是智商税，我们的才是真有效；",
+        "vector_text": "影射友商产品无效不安全，嘲讽竞品用户交智商税",
         "semantic_enabled": true,
-        "semantic_role": "fallback",
-        "semantic_reason": "贬低竞品常通过隐性比较、影射、排名压制等方式表达，不一定出现固定辱骂词，适合语义召回兜底。",
+        "semantic_role": "primary",
+        "semantic_reason": "贬低经营者常通过影射反讽和隐性比较表达。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
           "reviewed_at": "2026-07-14T01:16:33",
@@ -1384,7 +1423,24 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "implicit_competitor_disparagement",
+            "vector_text": "用某友商隔壁品牌影射竞品质量差或不安全",
+            "enabled": true
+          },
+          {
+            "scenario_id": "mock_competitor_users",
+            "vector_text": "嘲讽购买竞品的消费者愚蠢并称其交智商税",
+            "enabled": true
+          },
+          {
+            "scenario_id": "unfair_comparison_scene",
+            "vector_text": "用无法验证的对比实验贬低同行商品效果",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "中",
       "consequence": {
@@ -1578,10 +1634,10 @@
           "新闻广告",
           "测评推广"
         ],
-        "vector_text": "真实测评，亲测有效，文末有购买链接，没标广告。新闻报道式推广，品牌专访，科普软文，种草笔记，体验分享",
+        "vector_text": "新闻科普测评种草伪装商业推广，带购买入口却未标广告",
         "semantic_enabled": true,
         "semantic_role": "primary",
-        "semantic_reason": "该规则涉及软文、种草、测评等伪装形式，关键词难以穷举，语义召回可覆盖多种变体表达。",
+        "semantic_reason": "广告可识别性依赖整体传播形式，场景向量比单一关键词更有效。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
           "reviewed_at": "2026-07-14T01:16:41",
@@ -1615,7 +1671,29 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "native_ad_personal_note",
+            "vector_text": "个人心得种草笔记带购物链接但未标明广告",
+            "enabled": true
+          },
+          {
+            "scenario_id": "news_style_promotion",
+            "vector_text": "把品牌推广包装成新闻报道或品牌专访",
+            "enabled": true
+          },
+          {
+            "scenario_id": "review_ranking_sponsorship",
+            "vector_text": "付费测评排行榜伪装成独立客观评价",
+            "enabled": true
+          },
+          {
+            "scenario_id": "expert_interview_ad",
+            "vector_text": "专家访谈科普内容实际持续推荐特定商品",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "中",
       "consequence": {
@@ -1814,10 +1892,10 @@
           "医疗用语",
           "药械混淆"
         ],
-        "vector_text": "普通食品、护肤品、保健品、日用品、化妆品、饮料、器械、服务等非医疗广告，宣称可以治疗疾病、治愈症状、",
+        "vector_text": "普通食品护肤品日用品暗示治病，包装成疗程处方或诊疗方案",
         "semantic_enabled": true,
-        "semantic_role": "fallback",
-        "semantic_reason": "该规则涉及大量变体表达，关键词难以穷举，语义召回可覆盖软性医疗暗示、功效宣称、疾病相关营销话术，适合作为主要召回方式。",
+        "semantic_role": "primary",
+        "semantic_reason": "医疗暗示可能避开标准医疗词，需要场景化召回。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
           "reviewed_at": "2026-07-14T01:16:55",
@@ -1855,7 +1933,29 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "implicit_treatment_claim",
+            "vector_text": "不说治疗但宣称消除疼痛炎症失眠等症状",
+            "enabled": true
+          },
+          {
+            "scenario_id": "replace_medical_care",
+            "vector_text": "暗示使用商品即可替代就医检查服药或手术",
+            "enabled": true
+          },
+          {
+            "scenario_id": "medicalized_product",
+            "vector_text": "把普通商品包装成处方级临床级专业疗程",
+            "enabled": true
+          },
+          {
+            "scenario_id": "physiological_indicator_claim",
+            "vector_text": "普通商品暗示能够降低血糖血压尿酸等指标",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -2047,10 +2147,10 @@
           "变相推广",
           "导购链接"
         ],
-        "vector_text": "健康科普养生知识变相推广，专家提醒营养课堂调理方案，附购买链接品牌导流，医生建议疾病预防保健指南，商",
+        "vector_text": "健康科普养生课堂专家提醒夹带品牌推荐和购买导流",
         "semantic_enabled": true,
-        "semantic_role": "fallback",
-        "semantic_reason": "健康养生变相广告表达隐蔽多样，关键词难以穷举，语义召回可覆盖多种软性规避表达，适合作为fallback兜底。",
+        "semantic_role": "primary",
+        "semantic_reason": "变相健康广告表达隐蔽多样，应按传播场景建立向量。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
           "reviewed_at": "2026-07-14T01:17:05",
@@ -2086,7 +2186,29 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "health_education_diversion",
+            "vector_text": "养生科普文章结尾推荐保健食品并附购买入口",
+            "enabled": true
+          },
+          {
+            "scenario_id": "doctor_advice_diversion",
+            "vector_text": "医生专家健康建议持续导向特定品牌商品",
+            "enabled": true
+          },
+          {
+            "scenario_id": "patient_story_diversion",
+            "vector_text": "用患者康复故事包装医疗保健商品推广",
+            "enabled": true
+          },
+          {
+            "scenario_id": "livestream_health_advice",
+            "vector_text": "直播健康答疑过程中反复推荐并销售特定产品",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -2282,10 +2404,10 @@
           "未成年人代言",
           "亲测背书"
         ],
-        "vector_text": "明星代言推荐，达人亲测有效，专家力荐，体验官分享，推荐官背书，本人长期使用后推荐，某专家亲自验证，某",
+        "vector_text": "明星达人专家以亲身使用专业身份或效果体验推荐商品",
         "semantic_enabled": true,
         "semantic_role": "fallback",
-        "semantic_reason": "代言规则的核心是特定人以自身名义、身份、形象或亲身经历作推荐证明，语义召回需覆盖各种代言表述和规避说法，适合作为fallback补充关键词召回。",
+        "semantic_reason": "代言可能使用体验官推荐官等规避称谓，适合语义补召回。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
           "reviewed_at": "2026-07-14T01:17:15",
@@ -2325,7 +2447,24 @@
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
         "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
         "keyword_priority": 100,
-        "keyword_priority_reason": "直播带货/代言泛化规则容易被行业细分高风险规则挤出 keyword_limit，需在关键词候选池中局部前置。"
+        "keyword_priority_reason": "直播带货/代言泛化规则容易被行业细分高风险规则挤出 keyword_limit，需在关键词候选池中局部前置。",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "personal_experience_endorsement",
+            "vector_text": "达人声称本人长期使用并证明商品效果",
+            "enabled": true
+          },
+          {
+            "scenario_id": "professional_identity_endorsement",
+            "vector_text": "医生专家以职业身份推荐并保证商品安全有效",
+            "enabled": true
+          },
+          {
+            "scenario_id": "disguised_spokesperson",
+            "vector_text": "体验官推荐官测评官以个人形象为商品背书",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "中",
       "consequence": {
@@ -2524,10 +2663,10 @@
           "劝诱购买",
           "危险模仿"
         ],
-        "vector_text": "儿童频道投放化妆品广告，学生专享保健食品特价，青少年必买医疗美容套餐，未成年人专属酒类促销，少儿游戏",
+        "vector_text": "儿童频道学生社区投放保健品化妆品酒类医美和不良游戏广告",
         "semantic_enabled": true,
         "semantic_role": "fallback",
-        "semantic_reason": "该规则涉及未成年人媒介禁投品类及劝诱/危险模仿行为，关键词难以穷举，语义召回可覆盖多种变体表达，适合作为fallback。",
+        "semantic_reason": "未成年人媒介禁投依赖媒介受众和商品类别组合。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
           "reviewed_at": "2026-07-14T01:17:30",
@@ -2563,7 +2702,24 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "minor_media_health_products",
+            "vector_text": "儿童学生媒介投放保健食品化妆品医美广告",
+            "enabled": true
+          },
+          {
+            "scenario_id": "minor_media_alcohol",
+            "vector_text": "少儿青少年平台投放酒类促销和饮酒广告",
+            "enabled": true
+          },
+          {
+            "scenario_id": "minor_media_harmful_game",
+            "vector_text": "儿童媒介推广暴力低俗或不利身心健康的游戏",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -3104,6 +3260,1734 @@
         "calibration_status": "provisional"
       },
       "rule_uid": "RUID-1a3e095bce1be1e4"
+    },
+    {
+      "rule_id": "GEN-PUBLIC-INTEREST-001",
+      "serial_no": 28,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告不得妨碍社会安定或损害社会公共利益",
+      "dimension": "社会公共利益",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "通用",
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "广告利用公共事件、灾难、群体冲突或危险社会行为进行营销。"
+      },
+      "source_trace": {
+        "source_doc_id": "AL-2021",
+        "source_article_id": "第九条第（五）项",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "AL",
+          "article": "第九条第（五）项",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第九条第（五）项：广告不得妨碍社会安定，损害社会公共利益。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "《广告法》第九条第（五）项 的开放性内容规则，独立召回并由LLM结合语境涵摄。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "灾难营销",
+            "社会恐慌",
+            "群体对立",
+            "违法挑战"
+          ],
+          "regex": [],
+          "context_signals": [
+            "公共事件",
+            "灾难",
+            "冲突",
+            "社会秩序"
+          ],
+          "negative_signals": [
+            "公益宣传",
+            "风险警示",
+            "新闻报道"
+          ]
+        },
+        "semantic_criteria": "判断广告是否制造社会恐慌、消费公共灾难、煽动群体对立或美化损害公共利益的行为。",
+        "decision": "如果广告明显妨碍社会安定或损害社会公共利益，则判定为高风险并进入法务复核。"
+      },
+      "recall": {
+        "tags": [
+          "社会公共利益",
+          "社会安定",
+          "灾难营销"
+        ],
+        "vector_text": "借灾难公共事件炒作商品，制造恐慌或群体对立吸引流量",
+        "semantic_enabled": true,
+        "semantic_role": "primary",
+        "catalog_recall_enabled": true,
+        "catalog_text": "利用灾难公共事件、恐慌或群体对立炒作营销",
+        "catalog_group": "public_interest",
+        "semantic_reason": "公共利益风险依赖社会语境和营销意图，关键词无法穷举。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is triggered by open-ended ad-copy meaning and contextual risk signals.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "disaster_exploitation",
+            "vector_text": "消费灾难伤亡和公共事件为商品制造营销话题",
+            "enabled": true
+          },
+          {
+            "scenario_id": "social_panic_marketing",
+            "vector_text": "夸大社会风险制造恐慌并趁机推销商品服务",
+            "enabled": true
+          },
+          {
+            "scenario_id": "group_conflict_marketing",
+            "vector_text": "煽动地域阶层群体对立吸引关注和促进销售",
+            "enabled": true
+          }
+        ]
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": {
+          "summary": "违反广告法第九条红线的，通常责令停止发布并处较高罚款，情节严重可吊销营业执照。",
+          "primary_source": "AL#第五十七条",
+          "fine": {
+            "basis": "定额",
+            "amount_range": "二十万元以上一百万元以下；情节严重可一百万元以上二百万元以下"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "暂停发布并交法务判断是否损害社会公共利益。",
+      "examples": {
+        "violation": [
+          "消费灾难伤亡和公共事件为商品制造营销话题",
+          "夸大社会风险制造恐慌并趁机推销商品服务",
+          "煽动地域阶层群体对立吸引关注和促进销售"
+        ],
+        "compliant": [
+          "中性、客观、无冒犯且不造成相应风险的正常广告表达。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则触发条件较明确，主要根据文案或页面明示要素即可初步判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "high",
+        "fact_dependency": "low",
+        "misjudgment_cost": "high",
+        "default_route": "legal_review_required",
+        "route_reason": "开放性法律概念需要结合对象、语境、表达强度和社会通常认知判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "legal_attention": {
+        "trigger_clarity": "open_ended",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "属于开放性内容红线，需要法务结合具体语境复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-c2eabd803ba6e37a"
+    },
+    {
+      "rule_id": "GEN-SAFETY-PRIVACY-001",
+      "serial_no": 29,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告不得危害人身财产安全或泄露个人隐私",
+      "dimension": "人身财产安全与隐私",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "通用",
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "广告鼓励危险行为、弱化安全风险或展示泄露个人敏感信息。"
+      },
+      "source_trace": {
+        "source_doc_id": "AL-2021",
+        "source_article_id": "第九条第（六）项",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "AL",
+          "article": "第九条第（六）项",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第九条第（六）项：广告不得危害人身、财产安全，泄露个人隐私。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "《广告法》第九条第（六）项 的开放性内容规则，独立召回并由LLM结合语境涵摄。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "危险挑战",
+            "无需防护",
+            "曝光隐私",
+            "住址",
+            "身份证号"
+          ],
+          "regex": [],
+          "context_signals": [
+            "模仿",
+            "挑战",
+            "隐私",
+            "安全"
+          ],
+          "negative_signals": [
+            "安全警示",
+            "隐私保护说明"
+          ]
+        },
+        "semantic_criteria": "判断广告是否诱导危险模仿、忽视必要防护，或未经同意披露住址、电话、身份等隐私。",
+        "decision": "如果广告可能危害人身财产安全或泄露个人隐私，则判定为高风险。"
+      },
+      "recall": {
+        "tags": [
+          "人身安全",
+          "财产安全",
+          "个人隐私"
+        ],
+        "vector_text": "鼓励危险挑战弱化防护要求，或曝光住址电话身份等隐私",
+        "semantic_enabled": true,
+        "semantic_role": "primary",
+        "catalog_recall_enabled": true,
+        "catalog_text": "鼓励危险行为、弱化安全防护或泄露个人隐私的营销",
+        "catalog_group": "safety_privacy",
+        "semantic_reason": "危险和隐私风险常通过场景描述体现，需要语义召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is triggered by open-ended ad-copy meaning and contextual risk signals.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "dangerous_challenge",
+            "vector_text": "鼓励消费者模仿攀爬玩火高速驾驶等危险挑战",
+            "enabled": true
+          },
+          {
+            "scenario_id": "safety_precaution_downplay",
+            "vector_text": "宣称无需防护无需专业指导即可实施高风险行为",
+            "enabled": true
+          },
+          {
+            "scenario_id": "personal_privacy_exposure",
+            "vector_text": "未经同意曝光消费者电话住址身份和健康信息",
+            "enabled": true
+          }
+        ]
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": {
+          "summary": "违反广告法第九条红线的，通常责令停止发布并处较高罚款，情节严重可吊销营业执照。",
+          "primary_source": "AL#第五十七条",
+          "fine": {
+            "basis": "定额",
+            "amount_range": "二十万元以上一百万元以下；情节严重可一百万元以上二百万元以下"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "暂停发布并核实安全及隐私影响，必要时交法务复核。",
+      "examples": {
+        "violation": [
+          "鼓励消费者模仿攀爬玩火高速驾驶等危险挑战",
+          "宣称无需防护无需专业指导即可实施高风险行为",
+          "未经同意曝光消费者电话住址身份和健康信息"
+        ],
+        "compliant": [
+          "中性、客观、无冒犯且不造成相应风险的正常广告表达。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则触发条件较明确，主要根据文案或页面明示要素即可初步判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "high",
+        "fact_dependency": "low",
+        "misjudgment_cost": "high",
+        "default_route": "legal_review_required",
+        "route_reason": "开放性法律概念需要结合对象、语境、表达强度和社会通常认知判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "legal_attention": {
+        "trigger_clarity": "open_ended",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "属于开放性内容红线，需要法务结合具体语境复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-86ed25820149d21b"
+    },
+    {
+      "rule_id": "GEN-GOOD-CUSTOMS-001",
+      "serial_no": 30,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告不得妨碍公共秩序或违背社会良好风尚",
+      "dimension": "社会良好风尚",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "通用",
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "广告存在侮辱、物化、非人化、羞辱性营销或明显恶俗不良价值导向。"
+      },
+      "source_trace": {
+        "source_doc_id": "AL-2021",
+        "source_article_id": "第九条第（七）项",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "AL",
+          "article": "第九条第（七）项",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第九条第（七）项：广告不得妨碍社会公共秩序或者违背社会良好风尚。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "《广告法》第九条第（七）项 的开放性内容规则，独立召回并由LLM结合语境涵摄。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "韭菜",
+            "穷鬼",
+            "蠢货",
+            "智商税"
+          ],
+          "regex": [],
+          "context_signals": [
+            "顾客",
+            "消费者",
+            "买不起",
+            "贪便宜",
+            "羞辱"
+          ],
+          "negative_signals": [
+            "宠物食品",
+            "宠物用品",
+            "狗狗看到",
+            "自嘲"
+          ]
+        },
+        "semantic_criteria": "结合表达对象和整体语境，判断是否贬损人格、将消费者动物化物化，或以羞辱恶俗方式刺激购买。正常幽默、自嘲和宠物描述不当然违规。",
+        "decision": "如果广告明显侮辱贬损消费者或违背社会通常伦理观念，则判定为高风险并交法务复核。"
+      },
+      "recall": {
+        "tags": [
+          "社会良好风尚",
+          "人格贬损",
+          "羞辱营销",
+          "公序良俗"
+        ],
+        "vector_text": "侮辱物化消费者，把顾客比作狗猪韭菜并以羞辱刺激购买",
+        "semantic_enabled": true,
+        "semantic_role": "primary",
+        "catalog_recall_enabled": true,
+        "catalog_text": "侮辱物化消费者、恶俗价值观及违背良好风尚的营销表达",
+        "catalog_group": "public_order_values",
+        "semantic_reason": "良好风尚属于开放性法律概念，隐喻反讽和羞辱表达需场景召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is triggered by open-ended ad-copy meaning and contextual risk signals.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "consumer_insult",
+            "vector_text": "使用侮辱性语言嘲讽顾客愚蠢穷酸没见识",
+            "enabled": true
+          },
+          {
+            "scenario_id": "consumer_dehumanization",
+            "vector_text": "一降价顾客就像狗一样跑来抢，讽刺消费者贪便宜",
+            "enabled": true
+          },
+          {
+            "scenario_id": "humiliation_marketing",
+            "vector_text": "嘲讽顾客贪便宜买不起并以羞辱刺激购买",
+            "enabled": true
+          },
+          {
+            "scenario_id": "body_status_shaming",
+            "vector_text": "利用外貌身材年龄职业经济状况贬低消费者",
+            "enabled": true
+          },
+          {
+            "scenario_id": "vulgar_social_values",
+            "vector_text": "用恶俗拜金攀比背叛等不良价值观包装营销",
+            "enabled": true
+          }
+        ]
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": {
+          "summary": "违反广告法第九条红线的，通常责令停止发布并处较高罚款，情节严重可吊销营业执照。",
+          "primary_source": "AL#第五十七条",
+          "fine": {
+            "basis": "定额",
+            "amount_range": "二十万元以上一百万元以下；情节严重可一百万元以上二百万元以下"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "暂停发布，删除侮辱性表达并提交法务复核。",
+      "examples": {
+        "violation": [
+          "使用侮辱性语言嘲讽顾客愚蠢穷酸没见识",
+          "把消费者比作狗猪韭菜进行动物化物化羞辱",
+          "嘲讽顾客贪便宜买不起并以羞辱刺激购买",
+          "利用外貌身材年龄职业经济状况贬低消费者",
+          "用恶俗拜金攀比背叛等不良价值观包装营销"
+        ],
+        "compliant": [
+          "中性、客观、无冒犯且不造成相应风险的正常广告表达。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则触发条件较明确，主要根据文案或页面明示要素即可初步判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "high",
+        "fact_dependency": "low",
+        "misjudgment_cost": "high",
+        "default_route": "legal_review_required",
+        "route_reason": "开放性法律概念需要结合对象、语境、表达强度和社会通常认知判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "legal_attention": {
+        "trigger_clarity": "open_ended",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "属于开放性内容红线，需要法务结合具体语境复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-5e76d801aabcbd36"
+    },
+    {
+      "rule_id": "GEN-OBSCENE-VIOLENCE-001",
+      "serial_no": 31,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告不得含有淫秽色情赌博迷信恐怖暴力内容",
+      "dimension": "低俗违法内容",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "通用",
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "广告通过隐晦性暗示、赌博化促销、封建迷信或恐怖暴力内容吸引消费者。"
+      },
+      "source_trace": {
+        "source_doc_id": "AL-2021",
+        "source_article_id": "第九条第（八）项",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "AL",
+          "article": "第九条第（八）项",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第九条第（八）项：广告不得含有淫秽、色情、赌博、迷信、恐怖、暴力的内容。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "《广告法》第九条第（八）项 的开放性内容规则，独立召回并由LLM结合语境涵摄。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "性暗示",
+            "下注",
+            "梭哈",
+            "改运",
+            "消灾",
+            "算命",
+            "血腥",
+            "暴力"
+          ],
+          "regex": [],
+          "context_signals": [
+            "擦边",
+            "赌一把",
+            "招财",
+            "恐怖",
+            "伤害"
+          ],
+          "negative_signals": [
+            "风险警示",
+            "法治宣传",
+            "剧情批判"
+          ]
+        },
+        "semantic_criteria": "识别擦边性暗示、下注赌博话术、算命改运消灾宣传，以及美化血腥恐怖暴力行为。",
+        "decision": "如果广告含有淫秽色情赌博迷信恐怖暴力内容，则判定为高风险。"
+      },
+      "recall": {
+        "tags": [
+          "色情低俗",
+          "赌博",
+          "迷信",
+          "恐怖暴力"
+        ],
+        "vector_text": "擦边性暗示、赌博下注、算命改运或血腥恐怖暴力营销",
+        "semantic_enabled": true,
+        "semantic_role": "primary",
+        "catalog_recall_enabled": true,
+        "catalog_text": "以色情擦边、赌博迷信、恐怖血腥或暴力内容进行营销",
+        "catalog_group": "prohibited_content",
+        "semantic_reason": "显性词可关键词召回，隐晦变体需要场景向量补充。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is triggered by open-ended ad-copy meaning and contextual risk signals.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "implicit_sexual_content",
+            "vector_text": "用身体部位双关挑逗等隐晦性暗示吸引购买",
+            "enabled": true
+          },
+          {
+            "scenario_id": "gambling_style_promotion",
+            "vector_text": "用下注梭哈赌一把等赌博话术诱导消费",
+            "enabled": true
+          },
+          {
+            "scenario_id": "superstition_marketing",
+            "vector_text": "宣称商品能够算命改运招财消灾转运",
+            "enabled": true
+          },
+          {
+            "scenario_id": "horror_violence_attraction",
+            "vector_text": "用血腥虐待死亡威胁和暴力场景吸引点击",
+            "enabled": true
+          }
+        ]
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": {
+          "summary": "违反广告法第九条红线的，通常责令停止发布并处较高罚款，情节严重可吊销营业执照。",
+          "primary_source": "AL#第五十七条",
+          "fine": {
+            "basis": "定额",
+            "amount_range": "二十万元以上一百万元以下；情节严重可一百万元以上二百万元以下"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "立即停止发布并删除相关低俗违法内容。",
+      "examples": {
+        "violation": [
+          "用身体部位双关挑逗等隐晦性暗示吸引购买",
+          "用下注梭哈赌一把等赌博话术诱导消费",
+          "宣称商品能够算命改运招财消灾转运",
+          "用血腥虐待死亡威胁和暴力场景吸引点击"
+        ],
+        "compliant": [
+          "中性、客观、无冒犯且不造成相应风险的正常广告表达。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则触发条件较明确，主要根据文案或页面明示要素即可初步判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "high",
+        "fact_dependency": "low",
+        "misjudgment_cost": "high",
+        "default_route": "legal_review_required",
+        "route_reason": "开放性法律概念需要结合对象、语境、表达强度和社会通常认知判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "legal_attention": {
+        "trigger_clarity": "open_ended",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "属于开放性内容红线，需要法务结合具体语境复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-9d2599693abf68df"
+    },
+    {
+      "rule_id": "GEN-DISCRIMINATION-001",
+      "serial_no": 32,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告不得含有民族种族宗教性别歧视内容",
+      "dimension": "歧视性内容",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "通用",
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "广告对民族、种族、宗教、性别或相关群体进行污名化、排斥和身份绑架。"
+      },
+      "source_trace": {
+        "source_doc_id": "AL-2021",
+        "source_article_id": "第九条第（九）项",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "AL",
+          "article": "第九条第（九）项",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第九条第（九）项：广告不得含有民族、种族、宗教、性别歧视的内容。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "《广告法》第九条第（九）项 的开放性内容规则，独立召回并由LLM结合语境涵摄。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "性别歧视",
+            "地域黑",
+            "低等民族",
+            "女人就该",
+            "男人必须"
+          ],
+          "regex": [],
+          "context_signals": [
+            "民族",
+            "种族",
+            "宗教",
+            "性别",
+            "群体"
+          ],
+          "negative_signals": [
+            "反歧视公益",
+            "平权倡议",
+            "批判歧视"
+          ]
+        },
+        "semantic_criteria": "判断广告是否贬低特定群体能力价值，强化歧视性刻板印象，或以身份羞辱迫使购买。",
+        "decision": "如果广告含有法定歧视内容，则判定为高风险并进入法务复核。"
+      },
+      "recall": {
+        "tags": [
+          "歧视性内容",
+          "性别歧视",
+          "民族种族宗教"
+        ],
+        "vector_text": "贬低民族种族宗教性别群体，以刻板印象和身份羞辱营销",
+        "semantic_enabled": true,
+        "semantic_role": "primary",
+        "catalog_recall_enabled": true,
+        "catalog_text": "利用民族种族宗教性别刻板印象或身份羞辱进行营销",
+        "catalog_group": "discrimination",
+        "semantic_reason": "歧视常通过刻板印象和身份暗示表达，难以用词表穷举。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is triggered by open-ended ad-copy meaning and contextual risk signals.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "gender_stereotype",
+            "vector_text": "宣称女人只配做家务或男人不买就不是真男人",
+            "enabled": true
+          },
+          {
+            "scenario_id": "ethnic_racial_discrimination",
+            "vector_text": "把特定民族种族描述成低等肮脏愚蠢或危险",
+            "enabled": true
+          },
+          {
+            "scenario_id": "religious_discrimination",
+            "vector_text": "嘲讽排斥特定宗教信仰并借此推销商品",
+            "enabled": true
+          },
+          {
+            "scenario_id": "identity_coercion",
+            "vector_text": "利用性别身份羞辱和群体压力迫使消费者购买",
+            "enabled": true
+          }
+        ]
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": {
+          "summary": "违反广告法第九条红线的，通常责令停止发布并处较高罚款，情节严重可吊销营业执照。",
+          "primary_source": "AL#第五十七条",
+          "fine": {
+            "basis": "定额",
+            "amount_range": "二十万元以上一百万元以下；情节严重可一百万元以上二百万元以下"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "暂停发布，删除歧视内容并提交法务复核。",
+      "examples": {
+        "violation": [
+          "宣称女人只配做家务或男人不买就不是真男人",
+          "把特定民族种族描述成低等肮脏愚蠢或危险",
+          "嘲讽排斥特定宗教信仰并借此推销商品",
+          "利用性别身份羞辱和群体压力迫使消费者购买"
+        ],
+        "compliant": [
+          "中性、客观、无冒犯且不造成相应风险的正常广告表达。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则触发条件较明确，主要根据文案或页面明示要素即可初步判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "high",
+        "fact_dependency": "low",
+        "misjudgment_cost": "high",
+        "default_route": "legal_review_required",
+        "route_reason": "开放性法律概念需要结合对象、语境、表达强度和社会通常认知判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "legal_attention": {
+        "trigger_clarity": "open_ended",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "属于开放性内容红线，需要法务结合具体语境复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-a1a41f5871206ea6"
+    },
+    {
+      "rule_id": "GEN-ENV-CULTURE-001",
+      "serial_no": 33,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告不得妨碍环境自然资源或文化遗产保护",
+      "dimension": "环境与文化遗产保护",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "通用",
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "广告美化破坏生态自然资源、野生动物或文物古迹的行为。"
+      },
+      "source_trace": {
+        "source_doc_id": "AL-2021",
+        "source_article_id": "第九条第（十）项",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "AL",
+          "article": "第九条第（十）项",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第九条第（十）项：广告不得妨碍环境、自然资源或者文化遗产保护。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "《广告法》第九条第（十）项 的开放性内容规则，独立召回并由LLM结合语境涵摄。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "捕猎野生动物",
+            "破坏文物",
+            "乱刻乱画",
+            "保护区越野"
+          ],
+          "regex": [],
+          "context_signals": [
+            "环境",
+            "自然资源",
+            "文化遗产",
+            "野生动物",
+            "文物"
+          ],
+          "negative_signals": [
+            "生态保护宣传",
+            "文物保护提示"
+          ]
+        },
+        "semantic_criteria": "判断广告是否鼓励伤害野生动物、浪费破坏资源、损毁文物古迹或在保护区域实施破坏活动。",
+        "decision": "如果广告明显妨碍环境自然资源或文化遗产保护，则判定为高风险。"
+      },
+      "recall": {
+        "tags": [
+          "环境保护",
+          "自然资源",
+          "文化遗产"
+        ],
+        "vector_text": "美化捕猎野生动物破坏生态资源或损毁文物古迹的行为",
+        "semantic_enabled": true,
+        "semantic_role": "fallback",
+        "catalog_recall_enabled": true,
+        "catalog_text": "美化破坏生态资源、野生动物或文物古迹的行为",
+        "catalog_group": "environment_culture",
+        "semantic_reason": "发生频率较低，但隐性破坏行为适合语义兜底召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is triggered by open-ended ad-copy meaning and contextual risk signals.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "wildlife_harm",
+            "vector_text": "鼓励捕捉伤害食用受保护野生动物进行营销",
+            "enabled": true
+          },
+          {
+            "scenario_id": "environmental_destruction",
+            "vector_text": "美化浪费资源污染环境和破坏保护区的行为",
+            "enabled": true
+          },
+          {
+            "scenario_id": "cultural_heritage_damage",
+            "vector_text": "以攀爬涂刻损坏文物古迹作为营销噱头",
+            "enabled": true
+          }
+        ]
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": {
+          "summary": "违反广告法第九条红线的，通常责令停止发布并处较高罚款，情节严重可吊销营业执照。",
+          "primary_source": "AL#第五十七条",
+          "fine": {
+            "basis": "定额",
+            "amount_range": "二十万元以上一百万元以下；情节严重可一百万元以上二百万元以下"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "暂停发布并核实是否妨碍生态或文化遗产保护。",
+      "examples": {
+        "violation": [
+          "鼓励捕捉伤害食用受保护野生动物进行营销",
+          "美化浪费资源污染环境和破坏保护区的行为",
+          "以攀爬涂刻损坏文物古迹作为营销噱头"
+        ],
+        "compliant": [
+          "中性、客观、无冒犯且不造成相应风险的正常广告表达。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则触发条件较明确，主要根据文案或页面明示要素即可初步判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "high",
+        "fact_dependency": "low",
+        "misjudgment_cost": "high",
+        "default_route": "legal_review_required",
+        "route_reason": "开放性法律概念需要结合对象、语境、表达强度和社会通常认知判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "legal_attention": {
+        "trigger_clarity": "open_ended",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "属于开放性内容红线，需要法务结合具体语境复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-2e6062944e0f99f6"
+    },
+    {
+      "rule_id": "GEN-MINOR-HEALTH-001",
+      "serial_no": 34,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "广告不得损害未成年人和残疾人身心健康",
+      "dimension": "未成年人及残疾人保护",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "通用",
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "通用"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "广告利用、侮辱或伤害未成年人和残疾人，传播不利其身心健康的内容。"
+      },
+      "source_trace": {
+        "source_doc_id": "AL-2021",
+        "source_article_id": "第十条",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "AL",
+          "article": "第十条",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第十条 广告不得损害未成年人和残疾人的身心健康。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "《广告法》第十条 的开放性内容规则，独立召回并由LLM结合语境涵摄。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "儿童焦虑",
+            "残疾人笑话",
+            "隐瞒家长",
+            "未成年人充值"
+          ],
+          "regex": [],
+          "context_signals": [
+            "儿童",
+            "学生",
+            "未成年人",
+            "残疾人",
+            "身心健康"
+          ],
+          "negative_signals": [
+            "公益关爱",
+            "无障碍宣传",
+            "安全教育"
+          ]
+        },
+        "semantic_criteria": "判断广告是否制造儿童焦虑攀比，鼓励危险和不健康行为，或以残疾人形象猎奇卖惨、侮辱贬损。",
+        "decision": "如果广告可能损害未成年人或残疾人身心健康，则判定为高风险并交法务复核。"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "残疾人保护",
+          "身心健康"
+        ],
+        "vector_text": "利用儿童焦虑攀比危险行为，或侮辱猎奇消费残疾人形象",
+        "semantic_enabled": true,
+        "semantic_role": "primary",
+        "catalog_recall_enabled": true,
+        "catalog_text": "利用儿童焦虑攀比、危险行为或猎奇形象损害身心健康",
+        "catalog_group": "minor_health",
+        "semantic_reason": "身心健康属于开放性保护标准，需要结合受众和表达语境召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is triggered by open-ended ad-copy meaning and contextual risk signals.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "minor_anxiety_marketing",
+            "vector_text": "制造儿童成绩外貌同伴攀比焦虑并刺激消费",
+            "enabled": true
+          },
+          {
+            "scenario_id": "minor_secret_purchase",
+            "vector_text": "诱导未成年人隐瞒家长私自充值下单和消费",
+            "enabled": true
+          },
+          {
+            "scenario_id": "disability_humiliation",
+            "vector_text": "把残疾作为笑料惩罚或低能失败的负面比喻",
+            "enabled": true
+          },
+          {
+            "scenario_id": "disability_misery_marketing",
+            "vector_text": "猎奇展示或卖惨消费残疾人形象推销商品",
+            "enabled": true
+          }
+        ]
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": {
+          "summary": "违反广告法第九条红线的，通常责令停止发布并处较高罚款，情节严重可吊销营业执照。",
+          "primary_source": "AL#第五十七条",
+          "fine": {
+            "basis": "定额",
+            "amount_range": "二十万元以上一百万元以下；情节严重可一百万元以上二百万元以下"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "暂停发布并交法务判断对未成年人或残疾人的影响。",
+      "examples": {
+        "violation": [
+          "制造儿童成绩外貌同伴攀比焦虑并刺激消费",
+          "诱导未成年人隐瞒家长私自充值下单和消费",
+          "把残疾作为笑料惩罚或低能失败的负面比喻",
+          "猎奇展示或卖惨消费残疾人形象推销商品"
+        ],
+        "compliant": [
+          "中性、客观、无冒犯且不造成相应风险的正常广告表达。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": false,
+        "types": [],
+        "scope": [],
+        "reason": null,
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "明确适用型",
+        "reason": "规则触发条件较明确，主要根据文案或页面明示要素即可初步判断。"
+      },
+      "routing": {
+        "interpretation_dependency": "high",
+        "fact_dependency": "low",
+        "misjudgment_cost": "high",
+        "default_route": "legal_review_required",
+        "route_reason": "开放性法律概念需要结合对象、语境、表达强度和社会通常认知判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "legal_attention": {
+        "trigger_clarity": "open_ended",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "none",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "属于开放性内容红线，需要法务结合具体语境复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-8e3373703ce71a8b"
+    },
+    {
+      "rule_id": "GEN-MINOR-INDUCEMENT-001",
+      "serial_no": 35,
+      "rule_kind": "default_rule",
+      "industry": "通用",
+      "namespace": "general",
+      "source_type": "法规",
+      "platform": null,
+      "title": "针对未成年人的广告不得劝诱购买或引发危险模仿",
+      "dimension": "未成年人保护",
+      "applies_to": {
+        "industries": [
+          "通用",
+          "美妆",
+          "保健食品",
+          "游戏"
+        ],
+        "product_categories": [
+          "通用"
+        ],
+        "platforms": [
+          "通用"
+        ],
+        "material_types": [
+          "图文文案",
+          "直播话术",
+          "短视频脚本",
+          "Banner文字",
+          "详情页文字",
+          "私域文案",
+          "其他文字材料"
+        ],
+        "channels": [
+          "通用",
+          "互联网",
+          "电商详情页",
+          "直播",
+          "社交平台"
+        ],
+        "audiences": [
+          "未成年人"
+        ]
+      },
+      "preconditions": {
+        "required_context_fields": [
+          "content"
+        ],
+        "logic": "广告面向不满十四周岁未成年人，并存在要求家长购买或模仿不安全行为的内容。"
+      },
+      "source_trace": {
+        "source_doc_id": "AL-2021",
+        "source_article_id": "第四十条第二款",
+        "source_chunk_id": null,
+        "extraction_method": "legal_article_structuring_v1",
+        "llm_model": null,
+        "llm_confidence": null
+      },
+      "legal_basis": [
+        {
+          "source_id": "AL",
+          "article": "第四十条第二款",
+          "legal_level": 1,
+          "role": "based_on",
+          "text": "第四十条第二款 针对不满十四周岁的未成年人的商品或者服务的广告不得含有下列内容：（一）劝诱其要求家长购买广告商品或者服务；（二）可能引发其模仿不安全行为。"
+        }
+      ],
+      "hierarchy": {
+        "refines": null,
+        "note": "未成年人保护通用规则，游戏、美妆、保健食品均需前置识别。"
+      },
+      "detection": {
+        "method": "hybrid",
+        "keyword_signals": {
+          "hit_terms": [
+            "让爸妈买",
+            "同学都有",
+            "偷偷充值",
+            "不要告诉家长",
+            "危险挑战"
+          ],
+          "regex": [],
+          "context_signals": [
+            "儿童",
+            "学生",
+            "未成年人",
+            "家长",
+            "模仿"
+          ],
+          "negative_signals": [
+            "家长监护提示",
+            "安全教育",
+            "风险警示"
+          ]
+        },
+        "semantic_criteria": "结合目标受众判断是否利用同伴压力劝诱儿童要求家长购买，或展示可能引发危险模仿的行为。",
+        "decision": "如果面向不满十四周岁未成年人的广告存在购买劝诱或危险模仿内容，则判定为高风险。"
+      },
+      "recall": {
+        "tags": [
+          "未成年人保护",
+          "劝诱购买",
+          "危险模仿"
+        ],
+        "vector_text": "让孩子缠着家长购买偷偷充值，或模仿玩火攀爬等危险行为",
+        "semantic_enabled": true,
+        "semantic_role": "primary",
+        "catalog_recall_enabled": true,
+        "catalog_text": "劝诱未成年人购买充值或模仿玩火攀爬等危险行为",
+        "catalog_group": "minor_inducement",
+        "semantic_reason": "劝诱和危险模仿依赖受众与行为语境，需要场景向量召回。",
+        "trigger_layer": "content",
+        "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 促销、动作、化妆品、医疗、大众传播媒介.",
+        "trigger_layer_confidence": "high",
+        "trigger_layer_source": "heuristic",
+        "trigger_layer_labeled_at": "2026-07-14T13:16:41",
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "parent_purchase_pressure",
+            "vector_text": "鼓励儿童哭闹纠缠要求父母购买广告商品",
+            "enabled": true
+          },
+          {
+            "scenario_id": "peer_pressure_purchase",
+            "vector_text": "用同学都有不买就落后制造儿童同伴压力",
+            "enabled": true
+          },
+          {
+            "scenario_id": "secret_recharge_purchase",
+            "vector_text": "教未成年人绕过家长同意偷偷充值或下单",
+            "enabled": true
+          },
+          {
+            "scenario_id": "unsafe_behavior_imitation",
+            "vector_text": "展示玩火攀爬驾车服药等可被儿童模仿的行为",
+            "enabled": true
+          }
+        ]
+      },
+      "risk_level": "高",
+      "consequence": {
+        "legal": {
+          "summary": "违反未成年人广告限制的，可责令停止发布并处较高罚款。",
+          "primary_source": "AL#第五十八条",
+          "fine": {
+            "basis": "定额或广告费用",
+            "amount_range": "视具体违法情形适用"
+          }
+        },
+        "platform": null
+      },
+      "relations": [],
+      "disposition": "涉及未成年人场景的高风险规则，建议转人工法务复核。",
+      "examples": {
+        "violation": [
+          "儿童频道投放保健食品广告。",
+          "小朋友快让爸爸妈妈给你买这款游戏礼包。"
+        ],
+        "compliant": [
+          "成人向平台投放普通商品广告，不使用儿童劝诱表达。"
+        ]
+      },
+      "review_required": true,
+      "audit": {
+        "status": "待审核",
+        "auditor": null,
+        "audit_date": null,
+        "audit_notes": null
+      },
+      "rag": {
+        "required": true,
+        "types": [
+          "rule_rag"
+        ],
+        "scope": [
+          "法规原文",
+          "平台规则",
+          "监管处罚案例",
+          "典型违规案例",
+          "历史法务裁决"
+        ],
+        "reason": "未成年人媒介和“不利身心健康”的认定需要案例和平台规则支持。",
+        "future_fact_rag": false,
+        "fact_rag_note": null
+      },
+      "rule_applicability": {
+        "type": "开放解释型",
+        "reason": "规则涉及误导性、可识别性、变相发布、医疗暗示等开放概念，需要结合语境解释。"
+      },
+      "routing": {
+        "interpretation_dependency": "high",
+        "fact_dependency": "low",
+        "misjudgment_cost": "high",
+        "default_route": "legal_review_required",
+        "route_reason": "需要结合受众年龄、表达方式和模仿可能性判断。",
+        "route_status": "provisional",
+        "route_override": {
+          "enabled": false,
+          "reason": null,
+          "reviewer": null,
+          "review_date": null
+        }
+      },
+      "fact_check": {
+        "future_required": false,
+        "current_required": false,
+        "required_materials": [],
+        "data_sources": [],
+        "note": null
+      },
+      "legal_attention": {
+        "trigger_clarity": "open_ended",
+        "legal_interpretation_level": "high",
+        "fact_verification_level": "light",
+        "risk_severity": "high",
+        "operator_fixability": "not_self_fixable",
+        "default_route": "legal_review_required",
+        "route_reason": "未成年人劝诱与危险模仿需要法务复核。",
+        "confidence": "high",
+        "calibration_status": "provisional"
+      },
+      "rule_uid": "RUID-63c3e5d834d52b48"
     }
   ],
   "memory_rules": [],

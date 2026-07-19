@@ -1,0 +1,65 @@
+{
+  "case_id": "sector_docx__beauty__96b1a837",
+  "title": "毛冉冉诉广州娇比萃化妆品有限公司产品责任纠纷案",
+  "case_number": "（2018）鄂0105民初1792号",
+  "court": "武汉市汉阳区人民法院",
+  "decision_date": "2018-07-16",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": null,
+  "party_name": "广州娇比萃化妆品有限公司产品责任纠纷案",
+  "region": "武汉市汉阳区",
+  "industry": "化妆品 / 医疗美容 / 美妆",
+  "sector": "beauty",
+  "sector_cn": "美妆",
+  "violation_type": "化妆品广告虚假宣传",
+  "case_nature": "judicial_reference_not_admin_penalty",
+  "source_lookup_priority": "P2",
+  "is_admin_penalty_candidate": false,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "beauty"
+  ],
+  "product_or_service": "诗泊泉熊果苷传明酸美白原液",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "诗泊泉熊果苷传明酸美白原液",
+    "美白、祛斑"
+  ],
+  "facts_summary": "在阿里巴巴销售“诗泊泉熊果苷传明酸美白原液”（未取得特殊用途化妆品批准文号），网页宣传“美白、祛斑”功效，且涉嫌未取得生产许可证擅自生产化妆品",
+  "legal_basis": [
+    "《食品安全法》第一百四十八条第二款（参照适用）"
+  ],
+  "penalty_result": "十倍赔偿17400元",
+  "penalty_amount": null,
+  "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《食品安全法》第一百四十八条第二款（参照适用）。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "beauty",
+    "美妆",
+    "化妆品广告虚假宣传",
+    "虚假宣传",
+    "诗泊泉熊果苷传明酸美白原液",
+    "美白、祛斑"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2018）鄂0105民初1792号 毛冉冉诉广州娇比萃化妆品有限公司产品责任纠纷案",
+  "vector_text": "【赛道】美妆。【场景】其他。【宣称】诗泊泉熊果苷传明酸美白原液；美白、祛斑。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《食品安全法》第一百四十八条第二款（参照适用）。。【依据】《食品安全法》第一百四十八条第二款（参照适用）。【结果】十倍赔偿17400元。"
+}

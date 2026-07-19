@@ -1,0 +1,13 @@
+{
+  "total": 1,
+  "valid_count": 1,
+  "invalid_count": 0,
+  "cases": [
+    {
+      "case_id": "offline_sample__e01f02867c79",
+      "path": "data/structured/offline_sample__e01f02867c79.json",
+      "valid": true,
+      "errors": []
+    }
+  ]
+}

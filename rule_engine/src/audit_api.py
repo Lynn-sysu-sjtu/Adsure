@@ -28,6 +28,13 @@ def validate_api_key(x_api_key):
     return None
 
 
+def health_endpoint():
+    return {
+        "status": "ok",
+        "service": "adsure-rule-engine",
+        "version": "0.1.0",
+    }
+
 def audit_endpoint(payload, base_dir=None):
     try:
         return audit(payload, base_dir=base_dir)
@@ -41,6 +48,10 @@ try:  # Optional dependency; the local function is the stable MVP contract.
     from fastapi import FastAPI, Header
 
     app = FastAPI(title="Adsure Rule Engine MVP")
+
+    @app.get("/health")
+    def get_health():
+        return health_endpoint()
 
     @app.post("/audit")
     def post_audit(payload: dict, x_api_key: Optional[str] = Header(default=None, alias="X-API-Key")):
@@ -62,4 +73,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

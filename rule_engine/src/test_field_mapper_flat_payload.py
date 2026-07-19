@@ -74,6 +74,49 @@ class FieldMapperFlatPayloadTests(unittest.TestCase):
         self.assertEqual("\u4e71\u4e16\u9738\u4e3b", mapped["context"]["game_name"])
         self.assertEqual("\u539f\u521bIP", mapped["context"]["ip_name"])
 
+    def test_maps_canonical_payload_and_defaults_demo_tenant(self):
+        payload = {
+            "request_id": "req_internal_001",
+            "source": "internal",
+            "material": {
+                "content": "新品上市，欢迎选购",
+                "urgency": "普通",
+                "supplemental_background": "",
+            },
+            "context": {
+                "industry": "美妆",
+                "platforms": ["抖音"],
+                "material_type": "Banner",
+                "product_category": "护肤",
+            },
+            "audit": {"requested_mode": "标准"},
+            "unknown_field": "ignored",
+        }
+
+        mapped = map_feishu_payload(payload)
+
+        self.assertEqual("adsure_demo", mapped["tenant_id"])
+        self.assertEqual("req_internal_001", mapped["request_id"])
+        self.assertEqual("internal", mapped["source"])
+        self.assertEqual("新品上市，欢迎选购", mapped["material"]["content"])
+        self.assertEqual("美妆", mapped["context"]["industry"])
+        self.assertEqual(["抖音"], mapped["context"]["platforms"])
+        self.assertEqual("Banner文字", mapped["context"]["material_type"])
+        self.assertNotIn("unknown_field", mapped)
+
+    def test_canonical_payload_preserves_explicit_tenant(self):
+        mapped = map_feishu_payload(
+            {
+                "tenant_id": "tenant_example",
+                "request_id": "req_internal_002",
+                "material": {"content": "测试文案"},
+                "context": {"industry": "游戏"},
+            }
+        )
+
+        self.assertEqual("tenant_example", mapped["tenant_id"])
+        self.assertEqual("req_internal_002", mapped["request_id"])
+
 
 if __name__ == "__main__":
     unittest.main()

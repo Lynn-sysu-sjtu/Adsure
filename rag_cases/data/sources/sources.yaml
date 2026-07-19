@@ -1,0 +1,55 @@
+sources:
+  - source_id: offline_samples
+    source_name: 离线样例数据（非真实处罚事实来源）
+    source_type: offline_sample
+    priority: DEMO
+    base_url: "https://example.com"
+    list_urls: []
+    detail_urls:
+      - "https://example.com/offline/absolute-terms"
+      - "https://example.com/offline/food-blood-sugar"
+      - "https://example.com/offline/cosmetic-medical"
+    allowed_domains:
+      - "example.com"
+    crawl_mode: manual_seed
+    sample_file: "data/sources/sample_cases.html"
+    notes: "仅用于 MVP 离线测试，不作为处罚事实来源"
+
+  - source_id: samr_typical_ads
+    source_name: 国家市场监督管理总局违法广告典型案例
+    source_type: official_typical_case
+    priority: P0
+    base_url: "https://www.samr.gov.cn"
+    list_urls: []
+    detail_urls:
+      - "https://www.samr.gov.cn/xw/df/202205/t20220528_347385.html"
+      # TODO: 继续补足经人工核验的 19 条市场监管总局/地方市场监管局/信用中国官方详情页 URL。
+      # 只填写真实官方详情页；不要填写媒体报道、律所文章或搜索结果页。
+    allowed_domains:
+      - "samr.gov.cn"
+    crawl_mode: manual_seed
+    notes: "已核验 1 条官方详情页；后续首批目标为 20 条 official detail_urls"
+
+  - source_id: sh_market_penalty
+    source_name: 上海市市场监督管理局行政处罚公开
+    source_type: local_penalty_publicity
+    priority: P1
+    base_url: "https://scjgj.sh.gov.cn"
+    list_urls: []
+    detail_urls: []
+    allowed_domains:
+      - "scjgj.sh.gov.cn"
+    crawl_mode: manual_seed
+    notes: "用于补充地方监管口径"
+
+  - source_id: credit_china_penalty
+    source_name: 信用中国行政处罚公开信息
+    source_type: credit_penalty_publicity
+    priority: P2
+    base_url: "https://www.creditchina.gov.cn"
+    list_urls: []
+    detail_urls: []
+    allowed_domains:
+      - "creditchina.gov.cn"
+    crawl_mode: manual_seed
+    notes: "仅使用公开处罚信息，需人工确认与广告合规相关"

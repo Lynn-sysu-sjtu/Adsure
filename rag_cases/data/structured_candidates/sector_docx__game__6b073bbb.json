@@ -1,0 +1,67 @@
+{
+  "case_id": "sector_docx__game__6b073bbb",
+  "title": "吴某、郝某诉杭州某公司网络服务合同纠纷案",
+  "case_number": "（2024）浙0192民初1779号",
+  "court": "杭州互联网法院",
+  "decision_date": "2024-06-05",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": null,
+  "party_name": "杭州某公司",
+  "region": "杭州互联网法",
+  "industry": "游戏",
+  "sector": "game",
+  "sector_cn": "游戏",
+  "violation_type": "盲盒抽奖概率真实性验证",
+  "case_nature": "judicial_reference_not_admin_penalty",
+  "source_lookup_priority": "P2",
+  "is_admin_penalty_candidate": false,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "game"
+  ],
+  "product_or_service": "军需",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "游戏抽奖概率公示",
+    "概率规则透明度",
+    "消费者权益争议"
+  ],
+  "illegal_claims": [
+    "军需"
+  ],
+  "facts_summary": "5E对战平台“军需”盲盒抽奖活动，吴某充值约14.8万元开启16590次宝箱、郝某充值约31.1万元开启211522次宝箱，主张概率虚假。法院组织现场勘验后台代码，确认概率无异常，市场监管局执法笔录也确认产出概率与展示概率误差在合理范围内",
+  "legal_basis": [
+    "《民法典》第一百四十八条"
+  ],
+  "penalty_result": "驳回原告诉讼请求",
+  "penalty_amount": null,
+  "regulatory_logic": "游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及盲盒抽奖概率真实性验证，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十八条。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "game",
+    "游戏",
+    "盲盒抽奖概率真实性验证",
+    "游戏抽奖概率公示",
+    "概率规则透明度",
+    "消费者权益争议",
+    "军需"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2024）浙0192民初1779号 吴某、郝某诉杭州某公司网络服务合同纠纷案",
+  "vector_text": "【赛道】游戏。【场景】其他。【宣称】军需。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及盲盒抽奖概率真实性验证，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十八条。。【依据】《民法典》第一百四十八条。【结果】驳回原告诉讼请求。"
+}

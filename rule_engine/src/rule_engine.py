@@ -3,9 +3,11 @@
 
 import os
 import re
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from pathlib import Path
 
+from catalog_recall import catalog_recall_rules
 from field_mapper import map_feishu_payload
 from kg_rule_store import load_rule_library
 from llm_judgment import judge_with_llm, judge_with_mock_llm
@@ -198,47 +200,151 @@ def recall_rules(
     if not context_package:
         return keyword_recalled
 
-    seen_ids = {rule.get("rule_id") for rule, _ in keyword_recalled}
-    semantic_recalled = []
+    def run_semantic_recall():
+        seen_ids = {rule.get("rule_id") for rule, _ in keyword_recalled}
+        semantic_recalled = []
 
-    def add_semantic_candidates(candidate_rules, limit, threshold=None):
-        for rule, hits in semantic_recall_rules(
-            candidate_rules,
+        def add_semantic_candidates(candidate_rules, limit, threshold=None):
+            for rule, hits in semantic_recall_rules(
+                candidate_rules,
+                request,
+                context_package,
+                threshold=threshold,
+                limit=limit,
+            ):
+                rule_id = rule.get("rule_id")
+                if rule_id in seen_ids:
+                    continue
+                seen_ids.add(rule_id)
+                semantic_recalled.append((rule, hits))
+
+        if keyword_recalled:
+            primary_rules = [
+                rule
+                for rule in content_rules
+                if (rule.get("recall", {}) or {}).get("semantic_role") == "primary"
+            ]
+            if primary_rules:
+                add_semantic_candidates(primary_rules, semantic_limit)
+
+            fallback_rules = [
+                rule
+                for rule in content_rules
+                if (rule.get("recall", {}) or {}).get("semantic_role", "fallback") == "fallback"
+            ]
+            if fallback_rules and fallback_supplement_limit > 0:
+                threshold = fallback_supplement_threshold
+                if threshold is None:
+                    threshold = _fallback_supplement_threshold()
+                add_semantic_candidates(fallback_rules, fallback_supplement_limit, threshold=threshold)
+            return semantic_recalled
+
+        threshold = None if _has_semantic_recall_cue(request) else _no_keyword_semantic_threshold()
+        add_semantic_candidates(content_rules, semantic_limit, threshold=threshold)
+        return semantic_recalled
+
+    catalog_enabled = str(os.getenv("ADSURE_CATALOG_RECALL_ENABLED") or "").strip().lower() in {
+        "1", "true", "yes", "on"
+    }
+    if not catalog_enabled:
+        return _merge_recalled_rules(keyword_recalled + run_semantic_recall())
+
+    catalog_context = dict(context_package)
+    catalog_context["existing_candidate_rules"] = [
+        {
+            "rule_id": rule.get("rule_id"),
+            "title": rule.get("title"),
+            "dimension": rule.get("dimension"),
+        }
+        for rule, _ in keyword_recalled
+    ]
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        semantic_future = executor.submit(run_semantic_recall)
+        catalog_future = executor.submit(
+            catalog_recall_rules,
+            rules,
             request,
-            context_package,
-            threshold=threshold,
-            limit=limit,
-        ):
-            rule_id = rule.get("rule_id")
-            if rule_id in seen_ids:
-                continue
-            seen_ids.add(rule_id)
-            semantic_recalled.append((rule, hits))
+            catalog_context,
+        )
+        semantic_recalled = semantic_future.result()
+        try:
+            catalog_recalled = catalog_future.result()
+        except Exception:
+            catalog_recalled = []
 
-    if keyword_recalled:
-        primary_rules = [
-            rule
-            for rule in content_rules
-            if (rule.get("recall", {}) or {}).get("semantic_role") == "primary"
-        ]
-        if primary_rules:
-            add_semantic_candidates(primary_rules, semantic_limit)
+    return _merge_recalled_rules(keyword_recalled + semantic_recalled + catalog_recalled)
 
-        fallback_rules = [
-            rule
-            for rule in content_rules
-            if (rule.get("recall", {}) or {}).get("semantic_role", "fallback") == "fallback"
-        ]
-        if fallback_rules and fallback_supplement_limit > 0:
-            threshold = fallback_supplement_threshold
-            if threshold is None:
-                threshold = _fallback_supplement_threshold()
-            add_semantic_candidates(fallback_rules, fallback_supplement_limit, threshold=threshold)
-        return keyword_recalled + semantic_recalled
 
-    threshold = None if _has_semantic_recall_cue(request) else _no_keyword_semantic_threshold()
-    add_semantic_candidates(content_rules, semantic_limit, threshold=threshold)
-    return keyword_recalled + semantic_recalled
+def _recall_hit_channels(rule, hits):
+    channels = set()
+    for hit in hits:
+        value = str(hit)
+        if value.startswith("llm_catalog"):
+            channels.add("llm_catalog")
+        elif value.startswith("semantic"):
+            channels.add("semantic")
+        elif value.startswith("fact_"):
+            channels.add("fact")
+        else:
+            channels.add("keyword")
+    if _is_fact_trigger_rule(rule):
+        channels.add("fact")
+    return channels
+
+
+def _merge_recalled_rules(recalled):
+    # Collapse duplicate parent rule ids while preserving unique hit evidence.
+    merged = []
+    by_rule_id = {}
+    for rule, hits in recalled:
+        rule_id = rule.get("rule_id")
+        key = rule_id if rule_id not in (None, "") else ("anonymous", id(rule))
+        if key not in by_rule_id:
+            unique_hits = []
+            for hit in hits:
+                if hit not in unique_hits:
+                    unique_hits.append(hit)
+            entry = [rule, unique_hits]
+            by_rule_id[key] = entry
+            merged.append(entry)
+            continue
+        existing_hits = by_rule_id[key][1]
+        for hit in hits:
+            if hit not in existing_hits:
+                existing_hits.append(hit)
+    return [(rule, hits) for rule, hits in merged]
+
+
+def _judgment_pool_limit():
+    raw = os.getenv("ADSURE_JUDGMENT_POOL_LIMIT")
+    if raw not in (None, ""):
+        try:
+            return max(1, int(raw))
+        except ValueError:
+            pass
+    return 8
+
+
+def _select_judgment_recalled(recalled, limit=None):
+    # Rank recalled parents for LLM judgment without changing public matches.
+    limit = _judgment_pool_limit() if limit is None else max(1, int(limit))
+
+    def sort_key(item):
+        rule, hits = item
+        channels = _recall_hit_channels(rule, hits)
+        return (
+            -len(channels),
+            -("llm_catalog" in channels),
+            -any(str(hit).startswith("regex:") for hit in hits),
+            -_keyword_priority(rule),
+            -("keyword" in channels),
+            -("semantic" in channels),
+            rule.get("risk_level") != "高",
+            -len(hits),
+            _rule_sort_no(rule),
+        )
+
+    return sorted(_merge_recalled_rules(recalled), key=sort_key)[:limit]
 
 
 FACT_CLAIM_TERMS = [
@@ -368,12 +474,15 @@ def _fact_supplement_advice(fact_recalled):
 def _legal_basis_text(rule):
     labels = []
     for lb in rule.get("legal_basis", []):
-        source = lb.get("source_id", "")
-        article = lb.get("article", "")
-        if source or article:
-            labels.append(f"{source}{article}")
+        if not isinstance(lb, dict):
+            continue
+        source_name = _legal_source_name(lb)
+        article = str(lb.get("article") or lb.get("article_id") or "").strip()
+        if source_name and article:
+            labels.append(f"《{source_name}》{article}")
+        elif source_name:
+            labels.append(f"《{source_name}》")
     return labels
-
 
 def _legal_authority_level_label(rule, legal_basis):
     level = legal_basis.get("legal_level")
@@ -389,6 +498,32 @@ def _legal_authority_level_label(rule, legal_basis):
     if source_type:
         return source_type
     return "规则依据"
+
+
+def _clean_legal_source_name(name):
+    text = str(name or "").strip()
+    if not text:
+        return "规则依据"
+    text = text.split("_")[0].strip()
+    text = re.sub(r"（[^）]*(修正|修订)[^）]*）", "", text).strip()
+    return text or "规则依据"
+
+
+def _legal_source_name(legal_basis):
+    return _clean_legal_source_name(
+        legal_basis.get("source_name")
+        or legal_basis.get("source_title")
+        or legal_basis.get("source_full_name")
+        or legal_basis.get("source_id")
+        or legal_basis.get("source")
+    )
+
+
+def _format_legal_basis_line(level_label, source_name, article, text):
+    article_label = str(article or "").strip()
+    if article_label:
+        return f"【{level_label}】《{source_name}》{article_label}：“{text}”"
+    return f"【{level_label}】《{source_name}》：“{text}”"
 
 def _regex_hit_label(hit):
     pattern = str(hit).removeprefix("regex:")
@@ -460,17 +595,16 @@ def _format_legal_basis_details(matched_rules):
                 continue
             source = str(lb.get("source_id") or lb.get("source") or "").strip()
             article = str(lb.get("article") or lb.get("article_id") or "").strip()
-            key = (source, article, text)
+            source_name = _legal_source_name(lb)
+            level_label = _legal_authority_level_label(rule, lb)
+            key = (level_label, source_name, article, text)
             if key in seen:
                 continue
             seen.add(key)
-            label = "".join(part for part in [source, article] if part) or "规则原文"
-            level_label = _legal_authority_level_label(rule, lb)
-            lines.append(f"- {_rule_display_label(rule)}\n  [{level_label}] {label}：{text}")
+            lines.append("- " + _format_legal_basis_line(level_label, source_name, article, text))
     if not lines:
         return ""
     return "【触犯法条原文】\n" + "\n".join(lines)
-
 
 def _ensure_opinion_type_prefix(audit_opinion, opinion_type):
     opinion_type = opinion_type or "待判断"
@@ -501,10 +635,15 @@ def _compose_audit_opinion(fact_advice, llm_judgment, matched_rules):
 
 def _matched_rule(rule, hits):
     detection = rule.get("detection", {}) or {}
-    if all(str(hit).startswith("semantic") for hit in hits):
-        recall_channel = "semantic"
-    elif any(str(hit).startswith("fact_") for hit in hits):
+    channels = _recall_hit_channels(rule, hits)
+    if "fact" in channels:
         recall_channel = "fact"
+    elif "keyword" in channels:
+        recall_channel = "keyword"
+    elif "semantic" in channels:
+        recall_channel = "semantic"
+    elif "llm_catalog" in channels:
+        recall_channel = "llm_catalog"
     else:
         recall_channel = "keyword"
     return {
@@ -638,17 +777,20 @@ def audit(payload, base_dir=None):
     library = load_rule_library(base)
     rules = library["data"].get("rules", [])
     context_package = build_context_package(request)
-    content_recalled = recall_rules(rules, request, context_package=context_package)
-    fact_recalled = fact_recall_rules(rules, request, context_package=context_package)
-    recalled = content_recalled + [
-        (rule, hits) for rule, hits in fact_recalled
-        if rule.get("rule_id") not in {item.get("rule_id") for item, _ in content_recalled}
-    ]
+    content_recalled = _merge_recalled_rules(
+        recall_rules(rules, request, context_package=context_package)
+    )
+    fact_recalled = _merge_recalled_rules(
+        fact_recall_rules(rules, request, context_package=context_package)
+    )
+    recalled = _merge_recalled_rules(content_recalled + fact_recalled)
     matched_rules = [_matched_rule(rule, hits) for rule, hits in recalled]
+    judgment_recalled = _select_judgment_recalled(recalled)
+    judgment_rules = [_matched_rule(rule, hits) for rule, hits in judgment_recalled]
     fact_advice = _fact_supplement_advice(fact_recalled)
     raw_high_risk_hits = sorted({hit for _, hits in recalled for hit in hits if not str(hit).startswith("semantic")})
     high_risk_hits = _humanize_hits(raw_high_risk_hits)
-    llm_judgment = _judge_with_config(context_package, matched_rules)
+    llm_judgment = _judge_with_config(context_package, judgment_rules)
     rule_engine_risk_level = _risk_level([rule for rule, _ in recalled])
     llm_risk_level = llm_judgment.get("overall_risk_level") or "无明显风险"
     final_risk_level, final_risk_source, final_risk_reason = _synthesize_risk_level(
@@ -674,6 +816,7 @@ def audit(payload, base_dir=None):
         "code": 0,
         "msg": "ok",
         "data": {
+            "tenant_id": request.get("tenant_id", "adsure_demo"),
             "request_id": request.get("request_id"),
             "resolved_mode": "标准",
             "mode_reason": STANDARD_MODE_REASON,

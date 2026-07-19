@@ -11,7 +11,12 @@ import os
 import re
 from pathlib import Path
 
-from rule_vector_index import DEFAULT_VECTOR_INDEX_PATH, load_rule_vector_index, vector_text_hash
+from rule_vector_index import (
+    DEFAULT_VECTOR_INDEX_PATH,
+    load_rule_vector_index,
+    semantic_vector_records,
+    vector_text_hash,
+)
 
 
 def _normalize(text):
@@ -155,15 +160,101 @@ def _semantic_threshold(use_embedding, threshold):
     return 0.72 if use_embedding else 0.06
 
 
-def _cached_embedding_candidates(applicable, vector_index_path):
+def _applicable_semantic_vectors(rules, request, query):
+    applicable = []
+    rejected = []
+    for rule in rules:
+        recall = rule.get("recall", {}) or {}
+        reasons = []
+        if not recall.get("semantic_enabled"):
+            reasons.append("semantic_disabled")
+        if (recall.get("semantic_role") or "fallback") == "disabled":
+            reasons.append("semantic_role_disabled")
+        records = semantic_vector_records(rule)
+        if not records:
+            reasons.append("missing_vector_text")
+        reasons.extend(_rule_filter_reasons(rule, request, query=query))
+        if reasons:
+            rejected.append(
+                {
+                    "rule_id": rule.get("rule_id"),
+                    "title": rule.get("title"),
+                    "reasons": reasons,
+                }
+            )
+            continue
+        applicable.extend((rule, record) for record in records)
+    return applicable, rejected
+
+
+def _cached_embedding_items(applicable, vector_index_path):
     index = load_rule_vector_index(vector_index_path)
     cached = []
-    for rule, vector_text in applicable:
-        key = (rule.get("rule_id"), vector_text_hash(vector_text))
-        entry = index.get(key)
-        if entry:
-            cached.append((rule, entry.get("embedding")))
-    return cached
+    missing = []
+    grouped = {}
+    for rule, record in applicable:
+        parent_key = rule.get("rule_id") or rule.get("rule_uid") or id(rule)
+        grouped.setdefault(parent_key, []).append((rule, record))
+
+    for items in grouped.values():
+        rule = items[0][0]
+        cached_for_parent = []
+        missing_for_parent = []
+        for _, record in items:
+            key = (
+                rule.get("rule_id"),
+                record.get("scenario_id") or "rule_summary",
+                record.get("vector_text_hash"),
+            )
+            entry = index.get(key)
+            if entry and entry.get("embedding"):
+                cached_for_parent.append((rule, record, entry.get("embedding")))
+            else:
+                missing_for_parent.append((rule, record))
+
+        if not cached_for_parent:
+            parent_text = str((rule.get("recall", {}) or {}).get("vector_text") or "").strip()
+            legacy_key = (
+                rule.get("rule_id"),
+                "rule_summary",
+                vector_text_hash(parent_text),
+            )
+            legacy_entry = index.get(legacy_key) if parent_text else None
+            if legacy_entry and legacy_entry.get("embedding"):
+                cached.append(
+                    (
+                        rule,
+                        {
+                            "scenario_id": "rule_summary",
+                            "vector_source": "legacy_vector_text",
+                            "vector_text": parent_text,
+                            "vector_text_hash": vector_text_hash(parent_text),
+                        },
+                        legacy_entry.get("embedding"),
+                    )
+                )
+                continue
+
+        cached.extend(cached_for_parent)
+        missing.extend(missing_for_parent)
+    return cached, missing
+
+def _collapse_parent_scores(scored, threshold, limit=None):
+    best_by_parent = {}
+    for rule, record, score, source in scored:
+        if score < threshold:
+            continue
+        parent_key = rule.get("rule_id") or rule.get("rule_uid") or id(rule)
+        current = best_by_parent.get(parent_key)
+        if current is None or score > current[2]:
+            best_by_parent[parent_key] = (rule, record, score, source)
+    collapsed = sorted(
+        best_by_parent.values(),
+        key=lambda item: (-float(item[2]), (item[0].get("serial_no") or 999999)),
+    )
+    if limit is not None:
+        collapsed = collapsed[:limit]
+    return collapsed
 
 
 def semantic_recall_rules(
@@ -180,50 +271,41 @@ def semantic_recall_rules(
     backend = (backend or os.getenv("ADSURE_SEMANTIC_BACKEND") or "local").lower()
     use_embedding = backend in {"embedding", "zhipu", "zhipu_embedding"}
     threshold = _semantic_threshold(use_embedding, threshold)
+    applicable, _ = _applicable_semantic_vectors(rules, request, query)
 
-    applicable = []
-    for rule in rules:
-        if not _rule_applies_to_context(rule, request, query=query):
-            continue
-        recall = rule.get("recall", {}) or {}
-        if not recall.get("semantic_enabled"):
-            continue
-        vector_text = recall.get("vector_text") or ""
-        if not vector_text:
-            continue
-        applicable.append((rule, vector_text))
-
+    scored = []
     if use_embedding and applicable:
         if embedding_client is None:
             from zhipu_embedding_client import ZhipuEmbeddingClient
 
             embedding_client = ZhipuEmbeddingClient()
-
-        cached = _cached_embedding_candidates(applicable, _vector_index_path(vector_index_path))
-        candidates = []
+        cached, missing = _cached_embedding_items(applicable, _vector_index_path(vector_index_path))
         if cached:
             query_vector = embedding_client.embed_texts([query])[0]
-            for rule, rule_vector in cached:
-                score = cosine_similarity(query_vector, rule_vector)
-                if score < threshold:
-                    continue
-                candidates.append((rule, [f"semantic_embedding_cached:{score:.3f}"]))
-        else:
-            scores = _embedding_scores(query, [text for _, text in applicable], embedding_client)
-            for (rule, _), score in zip(applicable, scores):
-                if score < threshold:
-                    continue
-                candidates.append((rule, [f"semantic_embedding:{score:.3f}"]))
+            for rule, record, rule_vector in cached:
+                scored.append(
+                    (rule, record, cosine_similarity(query_vector, rule_vector), "semantic_embedding_cached")
+                )
+        if missing:
+            scores = _embedding_scores(
+                query,
+                [record["vector_text"] for _, record in missing],
+                embedding_client,
+            )
+            for (rule, record), score in zip(missing, scores):
+                scored.append((rule, record, score, "semantic_embedding"))
     else:
-        candidates = []
-        for rule, vector_text in applicable:
-            score = similarity(query, vector_text)
-            if score < threshold:
-                continue
-            candidates.append((rule, [f"semantic:{score:.3f}"]))
+        for rule, record in applicable:
+            scored.append(
+                (rule, record, similarity(query, record["vector_text"]), "semantic")
+            )
 
-    candidates.sort(key=lambda item: (-float(item[1][0].split(":")[1]), (item[0].get("serial_no") or 999999)))
-    return candidates[:limit]
+    candidates = []
+    for rule, record, score, source in _collapse_parent_scores(scored, threshold, limit=limit):
+        scenario_id = record.get("scenario_id") or "rule_summary"
+        candidates.append((rule, [f"{source}:{score:.3f}:scenario={scenario_id}"]))
+    return candidates
+
 
 def semantic_recall_diagnostics(
     rules,
@@ -240,28 +322,7 @@ def semantic_recall_diagnostics(
     backend = (backend or os.getenv("ADSURE_SEMANTIC_BACKEND") or "local").lower()
     use_embedding = backend in {"embedding", "zhipu", "zhipu_embedding"}
     threshold = _semantic_threshold(use_embedding, threshold)
-
-    applicable = []
-    rejected = []
-    for rule in rules:
-        recall = rule.get("recall", {}) or {}
-        reasons = []
-        if not recall.get("semantic_enabled"):
-            reasons.append("semantic_disabled")
-        vector_text = recall.get("vector_text") or ""
-        if not vector_text:
-            reasons.append("missing_vector_text")
-        reasons.extend(_rule_filter_reasons(rule, request, query=query))
-        if reasons:
-            rejected.append(
-                {
-                    "rule_id": rule.get("rule_id"),
-                    "title": rule.get("title"),
-                    "reasons": reasons,
-                }
-            )
-            continue
-        applicable.append((rule, vector_text))
+    applicable, rejected = _applicable_semantic_vectors(rules, request, query)
 
     scored = []
     if use_embedding and applicable:
@@ -269,41 +330,30 @@ def semantic_recall_diagnostics(
             from zhipu_embedding_client import ZhipuEmbeddingClient
 
             embedding_client = ZhipuEmbeddingClient()
-        index_path = _vector_index_path(vector_index_path)
-        index = load_rule_vector_index(index_path)
-        cached_items = []
-        missing_cache = []
-        for rule, vector_text in applicable:
-            key = (rule.get("rule_id"), vector_text_hash(vector_text))
-            entry = index.get(key)
-            if entry and entry.get("embedding"):
-                cached_items.append((rule, vector_text, entry.get("embedding")))
-            else:
-                missing_cache.append((rule, vector_text))
-        if cached_items:
+        cached, missing = _cached_embedding_items(applicable, _vector_index_path(vector_index_path))
+        if cached:
             query_vector = embedding_client.embed_texts([query])[0]
-            for rule, vector_text, rule_vector in cached_items:
-                score = cosine_similarity(query_vector, rule_vector)
-                scored.append((rule, vector_text, score, "semantic_embedding_cached"))
-            for rule, _ in missing_cache:
-                rejected.append(
-                    {
-                        "rule_id": rule.get("rule_id"),
-                        "title": rule.get("title"),
-                        "reasons": ["missing_cached_vector"],
-                    }
+            for rule, record, rule_vector in cached:
+                scored.append(
+                    (rule, record, cosine_similarity(query_vector, rule_vector), "semantic_embedding_cached")
                 )
-        else:
-            scores = _embedding_scores(query, [text for _, text in applicable], embedding_client)
-            for (rule, vector_text), score in zip(applicable, scores):
-                scored.append((rule, vector_text, score, "semantic_embedding"))
+        if missing:
+            scores = _embedding_scores(
+                query,
+                [record["vector_text"] for _, record in missing],
+                embedding_client,
+            )
+            for (rule, record), score in zip(missing, scores):
+                scored.append((rule, record, score, "semantic_embedding"))
     else:
-        for rule, vector_text in applicable:
-            scored.append((rule, vector_text, similarity(query, vector_text), "semantic"))
+        for rule, record in applicable:
+            scored.append(
+                (rule, record, similarity(query, record["vector_text"]), "semantic")
+            )
 
-    scored.sort(key=lambda item: (-float(item[2]), (item[0].get("serial_no") or 999999)))
     top_candidates = []
-    for rank, (rule, vector_text, score, source) in enumerate(scored[:top_k], start=1):
+    collapsed = _collapse_parent_scores(scored, float("-inf"), limit=top_k)
+    for rank, (rule, record, score, source) in enumerate(collapsed, start=1):
         recall = rule.get("recall", {}) or {}
         top_candidates.append(
             {
@@ -315,19 +365,20 @@ def semantic_recall_diagnostics(
                 "risk_level": rule.get("risk_level"),
                 "trigger_layer": recall.get("trigger_layer") or "content",
                 "semantic_role": recall.get("semantic_role") or "fallback",
+                "scenario_id": record.get("scenario_id") or "rule_summary",
                 "score": round(float(score), 6),
                 "passed_threshold": score >= threshold,
                 "score_source": source,
-                "vector_text": vector_text,
+                "vector_text": record.get("vector_text"),
             }
         )
     return {
         "backend": backend,
         "threshold": threshold,
         "query": query,
-        "applicable_count": len(applicable),
+        "applicable_count": len({rule.get("rule_id") for rule, _ in applicable}),
+        "scenario_vector_count": len(applicable),
         "rejected_count": len(rejected),
         "top_candidates": top_candidates,
         "rejected_rules": rejected,
     }
-

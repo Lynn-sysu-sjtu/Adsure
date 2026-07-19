@@ -1,0 +1,67 @@
+{
+  "case_id": "sector_docx__beauty__80f1858a",
+  "title": "苏州开禧医药有限公司诉苏州市吴江区市场监督管理局行政处罚案",
+  "case_number": "（2018）苏0508行初268号",
+  "court": "苏州市姑苏区人民法院",
+  "decision_date": "2018-12-28",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "苏州开禧医药有限公司诉苏州市吴江区市场监督管理局",
+  "party_name": null,
+  "region": "苏州市姑苏区",
+  "industry": "化妆品 / 医疗美容 / 美妆",
+  "sector": "beauty",
+  "sector_cn": "美妆",
+  "violation_type": "化妆品宣传医疗作用",
+  "case_nature": "administrative_litigation_review",
+  "source_lookup_priority": "P0",
+  "is_admin_penalty_candidate": true,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "beauty"
+  ],
+  "product_or_service": "舒盈补水保湿蚕丝玻尿酸面膜",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "舒盈补水保湿蚕丝玻尿酸面膜",
+    "渗透力高达70倍",
+    "袪皱、袪痘"
+  ],
+  "facts_summary": "在天猫店铺销售“舒盈补水保湿蚕丝玻尿酸面膜”（非特殊用途化妆品），宣传“渗透力高达70倍”“袪皱、袪痘”等医疗用语",
+  "legal_basis": [
+    "《广告法》第十七条、第二十八条、第五十五条第一款"
+  ],
+  "penalty_result": "罚款200000元",
+  "penalty_amount": null,
+  "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品宣传医疗作用，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第十七条、第二十八条、第五十五条第一款。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "beauty",
+    "美妆",
+    "化妆品宣传医疗作用",
+    "虚假宣传",
+    "舒盈补水保湿蚕丝玻尿酸面膜",
+    "渗透力高达70倍",
+    "袪皱、袪痘"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2018）苏0508行初268号 苏州开禧医药有限公司诉苏州市吴江区市场监督管理局行政处罚案",
+  "vector_text": "【赛道】美妆。【场景】其他。【宣称】舒盈补水保湿蚕丝玻尿酸面膜；渗透力高达70倍；袪皱、袪痘。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品宣传医疗作用，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第十七条、第二十八条、第五十五条第一款。。【依据】《广告法》第十七条、第二十八条、第五十五条第一款。【结果】罚款200000元。"
+}

@@ -1,4 +1,6 @@
-﻿import unittest
+﻿import os
+import unittest
+from unittest.mock import patch
 
 from run_engine_baseline_eval import evaluate_response, filter_cases_by_layer, summarize_case_reports
 
@@ -178,6 +180,60 @@ class EngineBaselineEvalTests(unittest.TestCase):
         self.assertEqual(1, summary["llm_hallucination_case_count"])
         self.assertEqual(3, summary["outside_rule_risk_count"])
         self.assertEqual(20.0, summary["average_elapsed_ms"])
+
+    def test_report_tracks_catalog_matches_pool_size_and_latency_percentiles(self):
+        case = {
+            "case_id": "CASE-CATALOG-001",
+            "expected": {
+                "must_recall_rule_ids": ["OPEN-001"],
+                "expected_dimensions": ["良好风尚"],
+                "expected_risk_level": "高",
+                "expected_routing": "法务",
+            },
+        }
+        matched_rules = [
+            {
+                "rule_id": f"RULE-{index:03d}",
+                "recall_channel": "keyword",
+            }
+            for index in range(9)
+        ]
+        matched_rules.append(
+            {
+                "rule_id": "OPEN-001",
+                "recall_channel": "semantic",
+                "raw_hit_terms": [
+                    "llm_catalog:开放性风险",
+                ],
+            }
+        )
+        response = {
+            "code": 0,
+            "data": {
+                "审核_推荐违规类型": ["良好风尚"],
+                "审核_推荐风险等级": "高",
+                "matched_rules": matched_rules,
+                "routing": "法务",
+                "llm_judgment": {
+                    "engine": "mock",
+                    "rule_judgments": [{"rule_id": "OPEN-001"}],
+                    "outside_rule_risks": [],
+                },
+            },
+        }
+
+        with patch.dict(os.environ, {"ADSURE_JUDGMENT_POOL_LIMIT": "8"}, clear=False):
+            report = evaluate_response(case, response, elapsed_ms=25)
+            summary = summarize_case_reports([report])
+
+        self.assertEqual(10, report["actual"]["matched_rule_count"])
+        self.assertEqual(8, report["actual"]["judgment_pool_count"])
+        self.assertEqual(["OPEN-001"], report["catalog"]["catalog_matched_rule_ids"])
+        self.assertEqual(1, summary["catalog_matched_case_count"])
+        self.assertEqual(10.0, summary["average_matched_rule_count"])
+        self.assertEqual(8.0, summary["average_judgment_pool_count"])
+        self.assertEqual(25, summary["p50_elapsed_ms"])
+        self.assertEqual(25, summary["p95_elapsed_ms"])
 
     def test_summarize_handles_failed_case_without_semantic_payload(self):
         reports = [
