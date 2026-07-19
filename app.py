@@ -112,6 +112,15 @@ def _name_of_user(raw):
     return ""
 
 
+def _parse_reviewer(note: str) -> str:
+    """从批注字段开头的【法务：姓名】标记中提取审核人姓名"""
+    if not note:
+        return ""
+    import re
+    m = re.match(r'【法务：(.+?)】', note)
+    return m.group(1) if m else ""
+
+
 def _ts_to_str(raw):
     """毫秒时间戳 → yyyy-MM-dd HH:mm"""
     if not raw:
@@ -222,8 +231,12 @@ def submit_review(record_id):
         F_流转_反馈类型: feedback_type,
         F_法务_复核时间: int(datetime.datetime.now().timestamp() * 1000),
     }
+
+    # F_法务_复核人 是人员类型字段，无法写入纯文本。
+    # 改为把审核人姓名前置在批注字段里，格式：【法务：姓名】\n原批注
+    note = (data.get("note") or "").strip()
     if reviewer_name:
-        update_fields[F_法务_复核人] = reviewer_name
+        note = f"【法务：{reviewer_name}】" + (f"\n{note}" if note else "")
 
     objection = data.get("objection_fields", [])
     if objection:
@@ -241,7 +254,6 @@ def submit_review(record_id):
     if final_sug:
         update_fields[F_法务_最终修改意见] = final_sug
 
-    note = (data.get("note") or "").strip()
     if note:
         update_fields[F_法务_批注] = note
 
@@ -487,7 +499,7 @@ def normalize_record(record_id, fields):
         "驳回正确判定": _as_text(fields.get(F_法务_驳回正确判定)),
         "最终修改意见": _as_text(fields.get(F_法务_最终修改意见)),
         "法务批注": _as_text(fields.get(F_法务_批注)),
-        "法务审核人": _name_of_user(fields.get(F_法务_复核人)),
+        "法务审核人": _parse_reviewer(_as_text(fields.get(F_法务_批注))) or _name_of_user(fields.get(F_法务_复核人)),
         "法务复核时间": _ts_to_str(fields.get(F_法务_复核时间)),
 
         # 行业专属 — 美妆
