@@ -1,0 +1,69 @@
+{
+  "case_id": "mihoyo_2016_2520150399",
+  "title": "上海米哈游网络科技股份有限公司随机抽取及未实名注册处罚案（官方辅助披露）",
+  "case_number": "第2520150399号",
+  "source_type": "manual_compilation_pending_source_verification",
+  "source_name": "中国证监会预先披露的米哈游招股说明书（官方辅助证据，非处罚决定书原件）",
+  "source_url": "https://www.csrc.gov.cn/csrc/c101803/c1007028/content.shtml",
+  "source_page_url": "https://www.csrc.gov.cn/csrc/c101803/c1007028/content.shtml",
+  "source_page_reference": "招股说明书页码1-1-200（PDF第200页）",
+  "source_verification_status": "official_auxiliary_evidence_only",
+  "original_decision_url": null,
+  "original_decision_url_status": "not_found",
+  "source_lookup_priority": "P1",
+  "source_lookup_query": "第2520150399号 上海市文化市场行政执法总队 米哈游 行政处罚决定书",
+  "publish_date": "2017-02-17",
+  "decision_date": "2016-01-25",
+  "penalty_authority": "上海市文化市场行政执法总队",
+  "party_name": "上海米哈游网络科技股份有限公司",
+  "region": "上海市",
+  "industry": "游戏",
+  "sector": "game",
+  "sector_cn": "游戏",
+  "violation_type": "以随机抽取方式诱导投入游戏虚拟货币且未落实实名注册",
+  "case_nature": "administrative_penalty_with_official_auxiliary_evidence",
+  "is_admin_penalty_candidate": true,
+  "product_or_service": "网络游戏产品和服务",
+  "ad_channel": "网络游戏运营",
+  "risk_dimensions": [
+    "游戏抽奖概率公示",
+    "概率规则透明度",
+    "其他"
+  ],
+  "illegal_claims": [
+    "以随机抽取的偶然方式诱导用户投入网络游戏虚拟货币获取游戏产品"
+  ],
+  "facts_summary": "中国证监会预先披露的米哈游招股说明书记载：2016年1月25日，上海市文化市场行政执法总队作出第2520150399号行政处罚决定，涉及以随机抽取方式诱导用户投入游戏虚拟货币获取游戏产品，以及未要求网络游戏用户使用有效身份证件实名注册。",
+  "legal_basis": [
+    "招股说明书未披露具体处罚依据，待取得处罚决定书原文核验"
+  ],
+  "penalty_result": "责令改正，并从轻罚款人民币20000元",
+  "penalty_amount": 20000,
+  "regulatory_logic": "候选证据显示，付费随机抽取机制与用户实名注册义务可以同时构成网络游戏运营合规风险。该记录仅用于检索抽卡、随机奖励、概率及实名制场景；由于未取得处罚决定书原文，不推定具体法律条款。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "米哈游",
+    "第2520150399号",
+    "随机抽取",
+    "游戏虚拟货币",
+    "抽卡",
+    "爆率",
+    "实名注册",
+    "有效身份证件",
+    "罚款20000元"
+  ],
+  "vector_text": "网络游戏经营者设置投入游戏虚拟货币后随机抽取游戏产品的机制，同时未要求用户使用有效身份证件完成实名注册。官方招股书辅助披露显示，文化执法机关责令改正并从轻罚款；该案例可用于检索抽卡、爆率、随机奖励和游戏实名制风险，但处罚法条仍待决定书原文核验。",
+  "rag_chunk_type": "case_summary",
+  "scope": "public",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "raw_text_path": "data/raw_text/mihoyo_ipo_2017_penalty_disclosure.json",
+  "notes": "已核验证监会官方披露页和PDF；当前证据是发行人招股说明书中的处罚披露，不是处罚决定书原件，只进入候选索引。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "待补上海市文化市场行政执法总队处罚决定书原文及处罚依据。",
+    "approved_for_rag": false
+  }
+}
