@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """Run baseline evaluation for the rule engine and persist metric reports.
 
 This script is intentionally different from run_rule_engine_cases.py:
@@ -293,14 +293,98 @@ def evaluate_response(case, response, elapsed_ms=0):
     return base_report
 
 
+_evaluate_response_legacy = evaluate_response
+
+
+def evaluate_response(case, response, elapsed_ms=0, diagnostics=None):
+    report = _evaluate_response_legacy(case, response, elapsed_ms=elapsed_ms)
+    if response.get("code") != 0:
+        return report
+
+    diagnostics = diagnostics or {}
+    data = response.get("data", {}) or {}
+    final_rules = data.get("matched_rules", []) or []
+    final_ids = sorted({item.get("rule_id") for item in final_rules if item.get("rule_id")})
+    candidate_ids = sorted(set(diagnostics.get("candidate_rule_ids") or final_ids))
+    confirmed_ids = sorted(
+        {
+            item.get("rule_id")
+            for item in final_rules
+            if item.get("rule_id") and item.get("applicability_status") == "confirmed_violation"
+        }
+    )
+    fact_ids = sorted(
+        {
+            item.get("rule_id")
+            for item in final_rules
+            if item.get("rule_id") and item.get("applicability_status") == "needs_fact_verification"
+        }
+    )
+    expected = case.get("expected", {}) or {}
+    expected_candidates = set(expected.get("expected_candidate_rule_ids") or expected.get("must_recall_rule_ids") or [])
+    expected_confirmed = set(expected.get("expected_confirmed_rule_ids") or [])
+    expected_fact = set(expected.get("expected_fact_verification_rule_ids") or [])
+    expected_rejected = set(expected.get("expected_not_applicable_rule_ids") or [])
+    candidate_set = set(candidate_ids)
+    confirmed_set = set(confirmed_ids)
+    fact_set = set(fact_ids)
+    final_set = set(final_ids)
+
+    candidate_recall_ok = expected_candidates.issubset(candidate_set)
+    confirmed_recall_ok = expected_confirmed.issubset(confirmed_set)
+    confirmed_precision_ok = not expected_confirmed or confirmed_set.issubset(expected_confirmed)
+    fact_verification_ok = not expected_fact or fact_set == expected_fact
+    not_applicable_filter_ok = expected_rejected.isdisjoint(final_set)
+    report["checks"].update(
+        {
+            "recall_ok": candidate_recall_ok,
+            "candidate_recall_ok": candidate_recall_ok,
+            "confirmed_recall_ok": confirmed_recall_ok,
+            "confirmed_precision_ok": confirmed_precision_ok,
+            "fact_verification_ok": fact_verification_ok,
+            "not_applicable_filter_ok": not_applicable_filter_ok,
+        }
+    )
+    report["checks"]["core_audit_ok"] = all(
+        [
+            report["checks"].get("response_ok"),
+            candidate_recall_ok,
+            confirmed_recall_ok,
+            fact_verification_ok,
+            not_applicable_filter_ok,
+            report["checks"].get("semantic_expected_ok", True),
+            report["checks"].get("dimension_ok", True),
+            report["checks"].get("final_risk_ok", True),
+        ]
+    )
+    candidate_count = len(candidate_ids)
+    final_count = len(final_ids)
+    report["actual"].update(
+        {
+            "candidate_rule_ids": candidate_ids,
+            "candidate_rule_count": candidate_count,
+            "confirmed_rule_ids": confirmed_ids,
+            "fact_verification_rule_ids": fact_ids,
+            "final_rule_ids": final_ids,
+            "matched_rule_count": final_count,
+            "judgment_pool_count": min(candidate_count, report["actual"].get("judgment_pool_limit", candidate_count)),
+            "compression_ratio": round(final_count / candidate_count, 4) if candidate_count else 0.0,
+        }
+    )
+    cited_ids = set(report.get("llm_checks", {}).get("cited_rule_ids") or [])
+    report["llm_checks"]["hallucinated_rule_ids"] = sorted(cited_ids - candidate_set)
+    report["llm_checks"]["rule_citation_ok"] = not report["llm_checks"]["hallucinated_rule_ids"]
+    return report
+
+
 def evaluate_case(case, base_dir=PROJECT_BASE):
+    diagnostics = {}
     start = time.perf_counter()
-    response = audit_endpoint(case["input_payload"], base_dir=base_dir)
+    response = audit_endpoint(case["input_payload"], base_dir=base_dir, diagnostics=diagnostics)
     elapsed_ms = round((time.perf_counter() - start) * 1000, 2)
-    return evaluate_response(case, response, elapsed_ms=elapsed_ms)
+    return evaluate_response(case, response, elapsed_ms=elapsed_ms, diagnostics=diagnostics)
 
-
-def summarize_case_reports(case_reports):
+def _summarize_case_reports_legacy(case_reports):
     case_count = len(case_reports)
     response_ok_count = sum(1 for item in case_reports if item["checks"].get("response_ok"))
     core_ok_count = sum(1 for item in case_reports if item["checks"].get("core_audit_ok"))
@@ -369,6 +453,39 @@ def summarize_case_reports(case_reports):
     }
 
 
+def summarize_case_reports(case_reports):
+    summary = _summarize_case_reports_legacy(case_reports)
+    case_count = len(case_reports)
+    candidate_ok = sum(1 for item in case_reports if item.get("checks", {}).get("candidate_recall_ok"))
+    confirmed_ok = sum(1 for item in case_reports if item.get("checks", {}).get("confirmed_recall_ok"))
+    precision_ok = sum(1 for item in case_reports if item.get("checks", {}).get("confirmed_precision_ok", True))
+    fact_ok = sum(1 for item in case_reports if item.get("checks", {}).get("fact_verification_ok"))
+    filter_ok = sum(1 for item in case_reports if item.get("checks", {}).get("not_applicable_filter_ok"))
+    candidate_total = sum(item.get("actual", {}).get("candidate_rule_count", 0) for item in case_reports)
+    final_total = sum(item.get("actual", {}).get("matched_rule_count", 0) for item in case_reports)
+    fallback_count = sum(
+        1
+        for item in case_reports
+        if item.get("actual", {}).get("llm_engine") == "subsumption_fallback"
+    )
+    summary.update(
+        {
+            "candidate_recall_count": candidate_ok,
+            "candidate_recall_rate": _case_rate(candidate_ok, case_count),
+            "confirmed_recall_count": confirmed_ok,
+            "confirmed_recall_rate": _case_rate(confirmed_ok, case_count),
+            "confirmed_precision_count": precision_ok,
+            "confirmed_precision_rate": _case_rate(precision_ok, case_count),
+            "fact_verification_accuracy": _case_rate(fact_ok, case_count),
+            "not_applicable_filter_accuracy": _case_rate(filter_ok, case_count),
+            "average_candidate_rule_count": round(candidate_total / case_count, 2) if case_count else 0.0,
+            "average_final_rule_count": round(final_total / case_count, 2) if case_count else 0.0,
+            "average_compression_ratio": round(final_total / candidate_total, 4) if candidate_total else 0.0,
+            "failure_fallback_count": fallback_count,
+        }
+    )
+    return summary
+
 def build_report(cases, baseline_name, case_layers=None):
     selected_cases = filter_cases_by_layer(cases, case_layers)
     case_reports = [evaluate_case(case) for case in selected_cases]
@@ -413,6 +530,15 @@ def print_summary(report, report_path=None):
     print(f"error_count: {summary.get('error_count', 0)}")
     print(f"core_audit_pass_rate: {summary['core_audit_pass_rate']} ({summary['core_audit_pass_count']}/{summary['case_count']})")
     print(f"recall_pass_rate: {summary['recall_pass_rate']} ({summary['recall_pass_count']}/{summary['case_count']})")
+    print(f"candidate_recall_rate: {summary.get('candidate_recall_rate', 0)}")
+    print(f"confirmed_recall_rate: {summary.get('confirmed_recall_rate', 0)}")
+    print(f"confirmed_precision_rate: {summary.get('confirmed_precision_rate', 0)}")
+    print(f"fact_verification_accuracy: {summary.get('fact_verification_accuracy', 0)}")
+    print(f"not_applicable_filter_accuracy: {summary.get('not_applicable_filter_accuracy', 0)}")
+    print(f"average_candidate_rule_count: {summary.get('average_candidate_rule_count', 0)}")
+    print(f"average_final_rule_count: {summary.get('average_final_rule_count', 0)}")
+    print(f"average_compression_ratio: {summary.get('average_compression_ratio', 0)}")
+    print(f"failure_fallback_count: {summary.get('failure_fallback_count', 0)}")
     print(f"dimension_pass_rate: {summary['dimension_pass_rate']} ({summary['dimension_pass_count']}/{summary['case_count']})")
     print(f"risk_level_match_rate: {summary['risk_level_match_rate']} ({summary['risk_level_match_count']}/{summary['case_count']})")
     print(f"rule_engine_risk_match_rate: {summary['rule_engine_risk_match_rate']} ({summary['rule_engine_risk_match_count']}/{summary['case_count']})")

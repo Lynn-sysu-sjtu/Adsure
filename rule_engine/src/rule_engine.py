@@ -826,7 +826,7 @@ def _subsumption_fallback_response(request, context_package, audit_timestamp, re
         },
     }
 
-def audit(payload, base_dir=None):
+def audit(payload, base_dir=None, diagnostics=None):
     request = map_feishu_payload(payload)
     validate_request(request)
 
@@ -851,6 +851,14 @@ def audit(payload, base_dir=None):
         limit=_judgment_pool_limit(),
     )
     judgment_rules = [_matched_rule(rule, hits) for rule, hits in judgment_recalled]
+    if diagnostics is not None:
+        diagnostics.update(
+            {
+                "candidate_rule_ids": [item.get("rule_id") for item in judgment_rules if item.get("rule_id")],
+                "candidate_rule_uids": [item.get("rule_uid") for item in judgment_rules if item.get("rule_uid")],
+                "candidate_rule_count": len(judgment_rules),
+            }
+        )
     audit_timestamp = int(datetime.now().timestamp() * 1000)
     try:
         llm_judgment = _judge_with_config(context_package, judgment_rules)

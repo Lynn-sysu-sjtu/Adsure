@@ -35,9 +35,9 @@ def health_endpoint():
         "version": "0.1.0",
     }
 
-def audit_endpoint(payload, base_dir=None):
+def audit_endpoint(payload, base_dir=None, diagnostics=None):
     try:
-        return audit(payload, base_dir=base_dir)
+        return audit(payload, base_dir=base_dir, diagnostics=diagnostics)
     except AuditInputError as exc:
         return {"code": -1, "msg": str(exc), "data": None}
     except Exception as exc:  # pragma: no cover - defensive API boundary.

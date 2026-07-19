@@ -739,4 +739,128 @@
       "expected_routing": "法务"
     }
   }
+,
+  {
+    "case_id": "CASE-SUB-001",
+    "name": "\u7f8e\u767d\u4ea7\u54c1\u5c5e\u6027\u4ec5\u9700\u5907\u6848\u6838\u9a8c",
+    "input_payload": {
+      "record_id": "case-sub-001",
+      "mode": "\u6807\u51c6",
+      "fields": {
+        "\u2460\u8fd0\u8425\u00b7\u884c\u4e1a\u9886\u57df": "\u7f8e\u5986",
+        "\u2460\u8fd0\u8425\u00b7\u7269\u6599\u5185\u5bb9": "\u8fd9\u662f\u6211\u4eec\u7684\u7f8e\u767d\u7cbe\u534e"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": ["COSM-002"],
+      "expected_confirmed_rule_ids": [],
+      "expected_fact_verification_rule_ids": ["COSM-002"],
+      "expected_not_applicable_rule_ids": ["COSM-FALSE-004"],
+      "expected_dimensions": ["\u529f\u6548\u8d85\u5907\u6848"],
+      "expected_risk_level": "\u4e2d",
+      "expected_routing": "\u8fd0\u8425"
+    }
+  },
+  {
+    "case_id": "CASE-SUB-002",
+    "name": "\u660e\u786e\u5938\u5f20\u7f8e\u767d\u6548\u679c",
+    "input_payload": {
+      "record_id": "case-sub-002",
+      "mode": "\u6807\u51c6",
+      "fields": {
+        "\u2460\u8fd0\u8425\u00b7\u884c\u4e1a\u9886\u57df": "\u7f8e\u5986",
+        "\u2460\u8fd0\u8425\u00b7\u7269\u6599\u5185\u5bb9": "\u4f7f\u75287\u5929\u5fc5\u5b9a\u767d\u4e09\u4e2a\u8272\u53f7\uff0c\u6240\u6709\u4eba\u90fd\u6709\u6548"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": ["COSM-FALSE-004"],
+      "expected_confirmed_rule_ids": ["COSM-FALSE-004"],
+      "expected_fact_verification_rule_ids": [],
+      "expected_dimensions": ["\u865a\u5047\u5ba3\u4f20"],
+      "expected_risk_level": "\u9ad8",
+      "expected_routing": "\u6cd5\u52a1"
+    }
+  },
+  {
+    "case_id": "CASE-SUB-003",
+    "name": "\u672a\u6210\u5e74\u4eba\u5a92\u4ecb\u6295\u653e\u6838\u9a8c",
+    "input_payload": {
+      "record_id": "case-sub-003",
+      "mode": "\u6807\u51c6",
+      "fields": {
+        "\u2460\u8fd0\u8425\u00b7\u884c\u4e1a\u9886\u57df": "\u7f8e\u5986",
+        "\u2460\u8fd0\u8425\u00b7\u7269\u6599\u5185\u5bb9": "\u7f8e\u5bb9\u4ea7\u54c1\u5e7f\u544a\uff0c\u8ba1\u5212\u6295\u653e\u5230\u672a\u6210\u5e74\u4eba\u9891\u9053"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": ["IAM-MINOR-001"],
+      "expected_confirmed_rule_ids": ["IAM-MINOR-001"],
+      "expected_fact_verification_rule_ids": [],
+      "expected_dimensions": ["\u672a\u6210\u5e74\u4eba\u4fdd\u62a4"],
+      "expected_risk_level": "\u9ad8",
+      "expected_routing": "\u6cd5\u52a1"
+    }
+  },
+  {
+    "case_id": "CASE-SUB-004",
+    "name": "\u6570\u636e\u5f15\u8bc1\u9700\u8bc1\u660e\u6750\u6599",
+    "input_payload": {
+      "record_id": "case-sub-004",
+      "mode": "\u6807\u51c6",
+      "fields": {
+        "\u2460\u8fd0\u8425\u00b7\u884c\u4e1a\u9886\u57df": "\u7f8e\u5986",
+        "\u2460\u8fd0\u8425\u00b7\u7269\u6599\u5185\u5bb9": "\u5b9e\u9a8c\u6570\u636e\u663e\u793a98%\u7684\u7528\u6237\u4e00\u5468\u540e\u660e\u663e\u53d8\u767d"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": ["COSM-DATA-001"],
+      "expected_confirmed_rule_ids": [],
+      "expected_fact_verification_rule_ids": ["COSM-DATA-001"],
+      "expected_dimensions": ["\u6570\u636e\u5f15\u7528\u4e0d\u89c4\u8303"],
+      "expected_risk_level": "\u4e2d",
+      "expected_routing": "\u8fd0\u8425"
+    }
+  },
+  {
+    "case_id": "CASE-SUB-005",
+    "name": "\u5019\u9009\u89c4\u5219\u5168\u90e8\u4e0d\u9002\u7528",
+    "input_payload": {
+      "record_id": "case-sub-005",
+      "mode": "\u6807\u51c6",
+      "fields": {
+        "\u2460\u8fd0\u8425\u00b7\u884c\u4e1a\u9886\u57df": "\u901a\u7528",
+        "\u2460\u8fd0\u8425\u00b7\u7269\u6599\u5185\u5bb9": "\u4eca\u5929\u5929\u6c14\u4e0d\u9519\uff0c\u6b22\u8fce\u4e86\u89e3\u6211\u4eec\u7684\u65b0\u54c1"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [],
+      "expected_confirmed_rule_ids": [],
+      "expected_fact_verification_rule_ids": [],
+      "expected_dimensions": [],
+      "expected_risk_level": "\u65e0\u660e\u663e\u98ce\u9669",
+      "expected_routing": "\u8fd0\u8425"
+    }
+  },
+  {
+    "case_id": "CASE-SUB-006",
+    "case_layer": "failure_injection",
+    "name": "LLM\u6db5\u6444\u5931\u8d25\u8f6c\u4eba\u5de5",
+    "input_payload": {
+      "record_id": "case-sub-006",
+      "mode": "\u6807\u51c6",
+      "fields": {
+        "\u2460\u8fd0\u8425\u00b7\u884c\u4e1a\u9886\u57df": "\u901a\u7528",
+        "\u2460\u8fd0\u8425\u00b7\u7269\u6599\u5185\u5bb9": "\u9700\u4eba\u5de5\u590d\u6838\u7684\u6d4b\u8bd5\u7269\u6599"
+      }
+    },
+    "expected": {
+      "must_recall_rule_ids": [],
+      "expected_confirmed_rule_ids": [],
+      "expected_fact_verification_rule_ids": [],
+      "expected_dimensions": [],
+      "expected_risk_level": "\u4e2d",
+      "expected_routing": "\u6cd5\u52a1",
+      "expected_opinion_type": "\u4eba\u5de5\u590d\u6838"
+    }
+  }
 ]
