@@ -9,6 +9,11 @@ from pathlib import Path
 
 from catalog_recall import catalog_recall_rules
 from candidate_governance import govern_candidates
+from confirmed_outcome import (
+    compose_final_audit_opinion,
+    fact_advice_from_final_rules,
+    synthesize_confirmed_outcome,
+)
 from field_mapper import map_feishu_payload
 from kg_rule_store import load_rule_library
 from legal_issue_groups import load_legal_issue_groups
@@ -846,9 +851,6 @@ def audit(payload, base_dir=None):
         limit=_judgment_pool_limit(),
     )
     judgment_rules = [_matched_rule(rule, hits) for rule, hits in judgment_recalled]
-    fact_advice = _fact_supplement_advice(fact_recalled)
-    raw_high_risk_hits = sorted({hit for _, hits in recalled for hit in hits if not str(hit).startswith("semantic")})
-    high_risk_hits = _humanize_hits(raw_high_risk_hits)
     audit_timestamp = int(datetime.now().timestamp() * 1000)
     try:
         llm_judgment = _judge_with_config(context_package, judgment_rules)
@@ -870,10 +872,29 @@ def audit(payload, base_dir=None):
             reason_code,
         )
     matched_rules = validated_subsumption.final_rules
-    rule_engine_risk_level = _risk_level([rule for rule, _ in recalled])
-    llm_risk_level = llm_judgment.get("overall_risk_level") or "无明显风险"
-    final_risk_level, final_risk_source, final_risk_reason = _synthesize_risk_level(
-        rule_engine_risk_level, llm_risk_level, [rule for rule, _ in recalled]
+    llm_risk_level = llm_judgment.get("overall_risk_level") or "\u65e0\u660e\u663e\u98ce\u9669"
+    outcome = synthesize_confirmed_outcome(matched_rules, llm_risk=llm_risk_level)
+    rule_engine_risk_level = _risk_level(matched_rules)
+    final_risk_level = outcome["risk"]
+    fact_advice = fact_advice_from_final_rules(matched_rules)
+    revision_suggestion = llm_judgment.get("revision_suggestion") or ""
+    final_opinion = compose_final_audit_opinion(
+        matched_rules,
+        revision_suggestion=revision_suggestion,
+    )
+    legal_section = _format_legal_basis_details(matched_rules)
+    if legal_section:
+        final_opinion = final_opinion + "\n\n" + legal_section
+    llm_judgment = dict(llm_judgment)
+    llm_judgment.update(
+        {
+            "opinion_type": outcome["opinion_type"],
+            "overall_risk_level": final_risk_level,
+            "audit_opinion": final_opinion,
+            "rule_judgments": validated_subsumption.judgments,
+            "routing": outcome["routing"],
+            "need_legal_review": outcome["routing"] == "\u6cd5\u52a1",
+        }
     )
     risk_assessment = {
         "rule_engine_risk_level": rule_engine_risk_level,
@@ -881,12 +902,12 @@ def audit(payload, base_dir=None):
         "final_risk_level": final_risk_level,
         "risk_disagreement": rule_engine_risk_level != llm_risk_level,
         "risk_disagreement_reason": (
-            "规则库默认风险等级与 LLM 个案判断不一致，建议人工复核分歧原因。"
+            "\u6700\u7ec8\u89c4\u5219\u4e25\u91cd\u6027\u4e0e LLM \u4e2a\u6848\u98ce\u9669\u4e0d\u4e00\u81f4\u3002"
             if rule_engine_risk_level != llm_risk_level
-            else "规则库默认风险等级与 LLM 个案判断一致。"
+            else "\u6700\u7ec8\u89c4\u5219\u4e25\u91cd\u6027\u4e0e LLM \u4e2a\u6848\u98ce\u9669\u4e00\u81f4\u3002"
         ),
-        "final_risk_source": final_risk_source,
-        "final_risk_reason": final_risk_reason,
+        "final_risk_source": "confirmed_subsumption",
+        "final_risk_reason": "\u4ec5\u57fa\u4e8e\u6db5\u6444\u540e\u7684\u6700\u7ec8\u89c4\u5219\u5408\u6210\u3002",
     }
     risk_level = final_risk_level
     return {
@@ -899,9 +920,9 @@ def audit(payload, base_dir=None):
             "mode_reason": STANDARD_MODE_REASON,
             "预审_风险等级": risk_level,
             "预审_命中要点": _precheck_hit_summary(matched_rules),
-            "预审_修改建议": fact_advice or "建议根据命中规则修改文案；如无明显命中，可继续流转确认。",
+            "\u9884\u5ba1_\u4fee\u6539\u5efa\u8bae": revision_suggestion or fact_advice or "\u8bf7\u6839\u636e\u6700\u7ec8\u5ba1\u6838\u610f\u89c1\u5904\u7406\u3002",
             "预审_时间": audit_timestamp,
-            "审核_审核意见": _compose_audit_opinion(fact_advice, llm_judgment, matched_rules),
+            "\u5ba1\u6838_\u5ba1\u6838\u610f\u89c1": final_opinion,
             "审核_关键实体抽取": "、".join(
                 value
                 for value in [
@@ -918,17 +939,17 @@ def audit(payload, base_dir=None):
             "审核_推荐违规类型": sorted(
                 {rule.get("dimension") for rule in matched_rules if rule.get("dimension")}
             ),
-            "审核_推荐风险等级": risk_level if risk_level != "无明显风险" else "低",
+            "\u5ba1\u6838_\u63a8\u8350\u98ce\u9669\u7b49\u7ea7": risk_level,
             "risk_assessment": risk_assessment,
             "matched_rules": matched_rules,
             "semantic_recall": {
                 "enabled": True,
                 "matched_rule_ids": [rule.get("rule_id") for rule in matched_rules if rule.get("recall_channel") == "semantic"],
             },
-            "rule_judgments": llm_judgment["rule_judgments"],
+            "rule_judgments": validated_subsumption.judgments,
             "llm_judgment": llm_judgment,
             "context_package": context_package,
-            "routing": _routing([rule for rule, _ in content_recalled]) if content_recalled else "运营",
+            "routing": outcome["routing"],
             "审核_审核时间": audit_timestamp,
             "audit_time": audit_timestamp,
         },

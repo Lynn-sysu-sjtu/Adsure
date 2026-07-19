@@ -56,7 +56,7 @@ class RiskAssessmentDualTrackTests(unittest.TestCase):
         self.assertEqual("中", assessment["llm_risk_level"])
         self.assertEqual("中", assessment["final_risk_level"])
         self.assertTrue(assessment["risk_disagreement"])
-        self.assertEqual("llm_case_adjusted", assessment["final_risk_source"])
+        self.assertEqual("confirmed_subsumption", assessment["final_risk_source"])
         self.assertEqual("中", data["审核_推荐风险等级"])
 
     def test_eval_reports_rule_llm_final_risk_metrics(self):

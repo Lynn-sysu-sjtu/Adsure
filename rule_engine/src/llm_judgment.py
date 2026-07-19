@@ -47,11 +47,13 @@ def _rule_judgment(rule, material_text=""):
         "fact" if rule.get("recall_channel") == "fact" else "content"
     )
     status = "needs_fact_verification" if trigger_layer == "fact" else "confirmed_violation"
-    missing_facts = (
-        ["与该事实宣称对应的备案、资质或证明材料"]
-        if status == "needs_fact_verification"
-        else []
-    )
+    missing_facts = []
+    if status == "needs_fact_verification":
+        missing_facts = [
+            str(item).removeprefix("\u9700\u8865\u5145")
+            for item in rule.get("raw_hit_terms") or []
+            if str(item).startswith("\u9700\u8865\u5145")
+        ] or ["\u4e0e\u8be5\u4e8b\u5b9e\u5ba3\u79f0\u5bf9\u5e94\u7684\u5907\u6848\u3001\u8d44\u8d28\u6216\u8bc1\u660e\u6750\u6599"]
     return {
         "rule_uid": rule.get("rule_uid"),
         "rule_id": rule.get("rule_id"),
