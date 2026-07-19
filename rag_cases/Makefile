@@ -1,4 +1,4 @@
-.PHONY: setup fetch extract clean import-excel import-sector-docx build-audit-cases validate-audit-cases audit-cases validate chunks sample-chunks test pipeline candidate-pipeline sector-candidate-pipeline
+.PHONY: setup fetch extract clean import-excel import-sector-docx build-audit-cases validate-audit-cases audit-cases validate chunks sample-chunks rule-mapping-queue test test-rag preflight-rag smoke-rag serve pipeline candidate-pipeline sector-candidate-pipeline
 
 setup:
 	pip install -r requirements.txt
@@ -35,8 +35,23 @@ chunks:
 sample-chunks:
 	python3 src/build_chunks.py --structured-samples-dir data/structured_samples --chunks-dir data/chunks_samples
 
+rule-mapping-queue:
+	python3 -m src.export_rule_mapping_queue
+
 test:
 	python3 src/test_retrieval.py
+
+serve:
+	uvicorn src.api:app --host "$${RAG_HOST:-127.0.0.1}" --port "$${RAG_PORT:-8505}"
+
+test-rag:
+	python3 -m unittest tests.test_api -v
+
+preflight-rag:
+	python3 -m src.preflight_rag
+
+smoke-rag:
+	./scripts/smoke_rag_service.sh
 
 pipeline: fetch extract clean validate chunks sample-chunks test
 

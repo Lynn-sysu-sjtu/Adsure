@@ -1,0 +1,49 @@
+{
+  "case_id": "samr_2025_typical_ads_10",
+  "title": "云南省玉溪市市场监管局查处云南玉药生物制药有限公司违法广告案",
+  "source_type": "official_typical_case",
+  "source_name": "市场监管总局",
+  "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html",
+  "publish_date": "2026-01-31",
+  "decision_date": "2025-10",
+  "penalty_authority": "云南省玉溪市市场监管局",
+  "party_name": "云南玉药生物制药有限公司",
+  "region": "云南省玉溪市",
+  "industry": "药品",
+  "violation_type": "处方药广告发布媒介违法",
+  "product_or_service": "三七脂肝丸处方药",
+  "ad_channel": "健康科普",
+  "risk_dimensions": [
+    "变相广告",
+    "其他"
+  ],
+  "illegal_claims": [
+    "以健康科普形式发布“三七脂肝丸”处方药广告"
+  ],
+  "facts_summary": "云南玉药生物制药有限公司以健康科普形式发布“三七脂肝丸”处方药广告，违反处方药广告只能在指定医学、药学专业刊物发布的规定。2025年10月，云南省玉溪市市场监管局罚款10万元。",
+  "legal_basis": [
+    "《中华人民共和国广告法》有关规定"
+  ],
+  "penalty_result": "罚款10万元",
+  "penalty_amount": 100000,
+  "regulatory_logic": "处方药广告只能在国务院有关部门共同指定的医学、药学专业刊物上发布，不得以面向公众的健康科普形式变相发布。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "处方药广告",
+    "健康科普",
+    "三七脂肝丸",
+    "发布媒介限制"
+  ],
+  "vector_text": "药品生产企业以面向公众的健康科普形式发布处方药广告，违反处方药只能在指定医学、药学专业刊物发布广告的媒介限制，市场监管部门依法处罚。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "approved",
+  "source_verification_status": "source_verified",
+  "approved_for_rag": true,
+  "raw_html_path": "data/raw_html/samr_typical_ads__2ad160ae3056.json",
+  "raw_text_path": "data/raw_text/samr_typical_ads__2ad160ae3056.json",
+  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。",
+  "audit": {
+    "review_status": "approved",
+    "approved_for_rag": true
+  }
+}

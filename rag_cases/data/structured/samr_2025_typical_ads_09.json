@@ -1,0 +1,51 @@
+{
+  "case_id": "samr_2025_typical_ads_09",
+  "title": "吉林省松原市市场监管局查处松原肛肠医院违法广告案",
+  "source_type": "official_typical_case",
+  "source_name": "市场监管总局",
+  "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html",
+  "publish_date": "2026-01-31",
+  "decision_date": "2025-11",
+  "penalty_authority": "吉林省松原市市场监管局",
+  "party_name": "松原肛肠医院",
+  "region": "吉林省松原市",
+  "industry": "医疗服务",
+  "violation_type": "医疗广告虚假宣传",
+  "product_or_service": "肛肠医疗服务",
+  "ad_channel": "微信公众号、医院简介",
+  "risk_dimensions": [
+    "医疗广告违规",
+    "虚假宣传"
+  ],
+  "illegal_claims": [
+    "北京‘安氏疗法’松原分中心",
+    "中国医师协会肛肠专业委员会会员单位",
+    "卫生部北京中日友好医院‘安氏疗法’分院"
+  ],
+  "facts_summary": "松原肛肠医院在微信公众号和医院简介中发布虚假的分中心、会员单位和分院身份信息，影响群众知情权和就医安全。2025年11月，吉林省松原市市场监管局罚款10万元。",
+  "legal_basis": [
+    "《中华人民共和国广告法》有关规定"
+  ],
+  "penalty_result": "罚款10万元",
+  "penalty_amount": 100000,
+  "regulatory_logic": "医疗机构广告中的合作关系、分支身份和会员资格应当真实，不得以虚假身份信息影响患者知情权和就医选择。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "医疗广告",
+    "虚假分中心",
+    "虚假会员单位",
+    "微信公众号"
+  ],
+  "vector_text": "医疗机构在微信公众号和医院简介中虚构分中心、行业协会会员单位及知名医院分院身份，相关虚假广告影响患者知情权和就医安全，市场监管部门依法处罚。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "approved",
+  "source_verification_status": "source_verified",
+  "approved_for_rag": true,
+  "raw_html_path": "data/raw_html/samr_typical_ads__2ad160ae3056.json",
+  "raw_text_path": "data/raw_text/samr_typical_ads__2ad160ae3056.json",
+  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。",
+  "audit": {
+    "review_status": "approved",
+    "approved_for_rag": true
+  }
+}

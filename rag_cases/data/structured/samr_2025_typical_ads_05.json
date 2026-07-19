@@ -1,0 +1,59 @@
+{
+  "case_id": "samr_2025_typical_ads_05",
+  "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+  "source_type": "official_typical_case",
+  "source_name": "市场监管总局",
+  "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html",
+  "publish_date": "2026-01-31",
+  "decision_date": "2025-11",
+  "penalty_authority": "重庆市两江新区市场监管局",
+  "party_name": "重庆林晖泰商务信息咨询有限公司",
+  "region": "重庆市两江新区",
+  "industry": "普通食品",
+  "violation_type": "普通食品疾病治疗功效、虚假宣传及绝对化用语",
+  "product_or_service": "胚芽生命酶、航天长寿菌、生物素片、雨生红球藻片等普通食品",
+  "ad_channel": "",
+  "risk_dimensions": [
+    "虚假宣传",
+    "普通食品疾病治疗功效宣传",
+    "绝对化用语"
+  ],
+  "illegal_claims": [
+    "国宝级密药",
+    "10个诺贝尔奖得主证实",
+    "抗衰老圣品",
+    "返老还童",
+    "干细胞生命酶可以治疗癌症、心脏病",
+    "高血压一吃见效",
+    "防治老人痴呆症",
+    "世界最强"
+  ],
+  "facts_summary": "重庆林晖泰商务信息咨询有限公司为多款普通食品发布广告，使用虚假信息作噱头，宣称治疗癌症、心脏病、高血压和防治老年痴呆症，并违法使用绝对化用语及国家机关、国家机关工作人员名义或者形象。2025年11月，重庆市两江新区市场监管局罚款16万元。",
+  "legal_basis": [
+    "《中华人民共和国广告法》有关规定"
+  ],
+  "penalty_result": "罚款16万元",
+  "penalty_amount": 160000,
+  "regulatory_logic": "普通食品广告不得虚构权威背书和治疗疾病功效，不得使用世界最强等绝对化用语，也不得违法使用国家机关及其工作人员名义或者形象。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "普通食品",
+    "治疗癌症",
+    "高血压",
+    "老年痴呆症",
+    "世界最强",
+    "国家机关形象"
+  ],
+  "vector_text": "经营者为多款普通食品发布广告，以诺贝尔奖得主等虚假权威信息为噱头，宣称产品能够治疗癌症、心脏病和高血压，并使用世界最强等绝对化用语，监管机关依法予以处罚。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "approved",
+  "source_verification_status": "source_verified",
+  "approved_for_rag": true,
+  "raw_html_path": "data/raw_html/samr_typical_ads__2ad160ae3056.json",
+  "raw_text_path": "data/raw_text/samr_typical_ads__2ad160ae3056.json",
+  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。",
+  "audit": {
+    "review_status": "approved",
+    "approved_for_rag": true
+  }
+}

@@ -1,10 +1,10 @@
 # Validation Report
 
-- Total: 109
-- Valid: 109
+- Total: 119
+- Valid: 119
 - Invalid: 0
-- Needs Review: 109
-- Production cases: 0
+- Needs Review: 119
+- Production cases: 10
 - Candidate cases: 52
 - Sector candidate cases: 54
 - Offline samples: 3
@@ -13,6 +13,16 @@
 
 | case_id | status | group | errors | issues | path | review_status | needs_review |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| samr_2025_typical_ads_01 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_01.json | approved | YES |
+| samr_2025_typical_ads_02 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_02.json | approved | YES |
+| samr_2025_typical_ads_03 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_03.json | approved | YES |
+| samr_2025_typical_ads_04 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_04.json | approved | YES |
+| samr_2025_typical_ads_05 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_05.json | approved | YES |
+| samr_2025_typical_ads_06 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_06.json | approved | YES |
+| samr_2025_typical_ads_07 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_07.json | approved | YES |
+| samr_2025_typical_ads_08 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_08.json | approved | YES |
+| samr_2025_typical_ads_09 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_09.json | approved | YES |
+| samr_2025_typical_ads_10 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_10.json | approved | YES |
 | excel_candidate__absolute_terms__0963e2cd | PASS | candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/excel_candidate__absolute_terms__0963e2cd.json | pending_review | YES |
 | excel_candidate__absolute_terms__1c28d555 | PASS | candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/excel_candidate__absolute_terms__1c28d555.json | pending_review | YES |
 | excel_candidate__absolute_terms__434f2186 | PASS | candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/excel_candidate__absolute_terms__434f2186.json | pending_review | YES |
