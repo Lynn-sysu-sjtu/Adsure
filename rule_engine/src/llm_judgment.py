@@ -164,7 +164,7 @@ def build_judgment_messages(context_package, matched_rules, mode="strict"):
         "keyword_relevance_is_not_applicability": "关键词或语义命中只证明规则相关，不能单独证明规则适用或构成违规。",
         "missing_fact_policy": "依赖备案、资质、证明材料或履约事实时，必须返回needs_fact_verification并列出缺失事实。",
         "direct_content_priority": "直接内容违规与补资料并存时，直接内容违规是核心风险，补资料只能作为附带核验。",
-        "evidence_policy": "confirmed_violation必须引用物料中的连续原文证据。",
+        "evidence_policy": "confirmed_violation\u5fc5\u987b\u4ece\u7269\u6599\u539f\u6587\u4e2d\u9010\u5b57\u590d\u5236\u4e00\u4e2a\u5355\u4e2a\u8fde\u7eed\u7247\u6bb5\u3002\u4e0d\u5f97\u6539\u5199\u6216\u6982\u62ec\u3002\u4e0d\u5f97\u5220\u9664\u4e2d\u95f4\u6587\u5b57\u540e\u62fc\u63a5\uff1b\u82e5\u591a\u4e2a\u98ce\u9669\u4e8b\u5b9e\u4f4d\u4e8e\u4e0d\u540c\u4f4d\u7f6e\uff0cmaterial_evidence\u53ea\u80fd\u9009\u62e9\u5176\u4e2d\u4e00\u4e2a\u8fde\u7eed\u7247\u6bb5\u3002",
     }
     output_contract = {
         "opinion_type": "风险提示/违规修改/需补资料/无明显风险（必须四选一）",
