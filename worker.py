@@ -10,7 +10,7 @@ import json
 import requests
 
 from config import BITABLE_APP_TOKEN, BITABLE_TABLE_ID, WORKBENCH_URL
-from feishu_api import get_tenant_access_token, list_all_records, update_record, get_record
+from feishu_api import get_tenant_access_token, list_all_records, update_record, get_record, download_attachment, upload_image
 from fields_v4 import (
     F_物料编号, F_物料内容, F_物料附件, F_行业领域, F_提交人, F_紧急程度,
     F_流转_当前状态,
@@ -75,15 +75,22 @@ def send_review_card(record_id, fields):
     content   = _text_of(fields.get(F_物料内容))
     urgency   = fields.get(F_紧急程度, "普通")
 
-    # 判断是图片物料还是文字物料（只做文字预览，不上传图片避免 img_key 过期问题）
+    # 判断是否有图片附件，尝试上传拿 img_key 显示缩略图
     attachments = fields.get(F_物料附件) or []
     if isinstance(attachments, dict):
         attachments = [attachments]
-    has_image = any(isinstance(a, dict) and a.get("file_token") for a in attachments)
+    image_att = next((a for a in attachments if isinstance(a, dict) and a.get("file_token")), None)
+
+    img_key = None
+    if image_att and not content.strip():
+        try:
+            img_bytes = download_attachment(image_att["file_token"])
+            img_key = upload_image(img_bytes)
+            print(f"    ✓ 图片上传成功 img_key={img_key[:16]}…")
+        except Exception as e:
+            print(f"    ⚠ 图片上传失败，降级为文字提示: {e}")
 
     preview = content[:100] + ("…" if len(content) > 100 else "") if content.strip() else None
-    if not preview and has_image:
-        preview = "（图片物料，AI审核时自动识别文字）"
     platform  = _text_of(fields.get(_PLATFORM_FIELD.get(industry, ""), "")) or "未填"
 
     card = {
@@ -104,11 +111,19 @@ def send_review_card(record_id, fields):
                 "tag": "div",
                 "text": {"tag": "lark_md", "content": f"**投放平台**\n{platform}"},
             },
-            # 物料预览：纯文字（不上传图片，避免 img_key 过期导致裂图）
-            {
+            # 物料预览：有图片时显示缩略图，文字物料显示前100字
+            *([
+                {"tag": "div", "text": {"tag": "lark_md", "content": "**物料预览**"}},
+                {
+                    "tag": "img",
+                    "img_key": img_key,
+                    "alt": {"tag": "plain_text", "content": "物料图片"},
+                    "mode": "crop_center",
+                },
+            ] if img_key else [{
                 "tag": "div",
-                "text": {"tag": "lark_md", "content": f"**物料预览**\n{preview}"},
-            },
+                "text": {"tag": "lark_md", "content": f"**物料预览**\n{preview or '（图片物料，AI审核时自动识别）'}"},
+            }]),
             {"tag": "hr"},
             {
                 "tag": "note",
@@ -183,31 +198,32 @@ def process_record(record_id, fields):
         print(f"  ⚠ record_id={record_id} 已处理过，跳过（内存去重）")
         return
 
-    # 二次确认：重新读飞书，防止轮询间隙已被其他进程处理
-    try:
-        latest = get_record(record_id)
-        current_status = latest.get("fields", {}).get(F_流转_当前状态, "")
-        if current_status:
-            print(f"  ⚠ record_id={record_id} 状态已为「{current_status}」，跳过（并发去重）")
-            _processed_ids.add(record_id)
-            return
-    except Exception as e:
-        print(f"  ⚠ 二次确认读取失败，继续处理: {e}")
-
-    _processed_ids.add(record_id)
-
     code = str(fields.get(F_物料编号, "")) or "(待编号)"
     print(f"  ★ 捕获新提交 record_id={record_id}  物料编号={code}")
 
-    # 1. 先把状态推进到「运营起草」，防止下一次轮询重复处理
+    # 先写状态（相当于抢锁），写失败直接返回
     try:
         update_record(record_id, {F_流转_当前状态: "运营起草"})
         print(f"    ✓ 状态 → 运营起草")
     except Exception as e:
         print(f"    ✗ 状态更新失败: {e}")
-        return  # 状态没更新成功就不发卡片，下次轮询会重试
+        return
 
-    # 2. 向提交人发互动卡片
+    # 写入后等1秒让 Feishu 传播，再回读验证
+    # 若另一个进程先写成功，这里会读到非空状态，直接跳过发卡
+    time.sleep(1)
+    try:
+        latest = get_record(record_id)
+        actual = latest.get("fields", {}).get(F_流转_当前状态, "")
+        if actual != "运营起草":
+            print(f"    ⚠ 状态回读为「{actual}」（非运营起草），已被其他进程处理，跳过发卡")
+            _processed_ids.add(record_id)
+            return
+    except Exception as e:
+        print(f"    ⚠ 状态回读失败，继续发卡: {e}")
+
+    _processed_ids.add(record_id)
+    # 向提交人发互动卡片
     send_review_card(record_id, fields)
 
 
