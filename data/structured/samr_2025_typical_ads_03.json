@@ -1,0 +1,51 @@
+{
+  "case_id": "samr_2025_typical_ads_03",
+  "title": "景德镇市市场监管局查处景德镇悦鑫亦彩陶瓷有限公司违法广告案",
+  "source_type": "official_typical_case",
+  "source_name": "市场监管总局",
+  "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html",
+  "publish_date": "2026-01-31",
+  "decision_date": "2025-11",
+  "penalty_authority": "江西省景德镇市市场监管局",
+  "party_name": "景德镇悦鑫亦彩陶瓷有限公司",
+  "region": "江西省景德镇市",
+  "industry": "陶瓷餐具",
+  "violation_type": "商品产地虚假宣传",
+  "product_or_service": "陶瓷餐具",
+  "ad_channel": "直播",
+  "risk_dimensions": [
+    "虚假宣传",
+    "引人误解宣传",
+    "直播带货违法广告"
+  ],
+  "illegal_claims": [
+    "中国景德镇",
+    "景德镇瓷器"
+  ],
+  "facts_summary": "景德镇悦鑫亦彩陶瓷有限公司在直播间销售的陶瓷餐具实际由山西、山东、成都等地厂家生产，却在广告中使用“中国景德镇”“景德镇瓷器”字样，欺骗、误导消费者。2025年11月，景德镇市市场监管局作出罚没款28.72万元的行政处罚。",
+  "legal_basis": [
+    "《中华人民共和国广告法》有关规定"
+  ],
+  "penalty_result": "罚没款28.72万元",
+  "penalty_amount": 287200,
+  "regulatory_logic": "直播广告对商品产地的宣传应与实际情况一致，将外地生产的陶瓷餐具宣传为景德镇瓷器会欺骗、误导消费者。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "直播",
+    "陶瓷餐具",
+    "商品产地",
+    "景德镇瓷器"
+  ],
+  "vector_text": "经营者在直播间销售由山西、山东和成都等地厂家生产的陶瓷餐具，却使用中国景德镇和景德镇瓷器字样宣传商品产地，监管机关认定该广告欺骗并误导消费者。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "approved",
+  "source_verification_status": "source_verified",
+  "approved_for_rag": true,
+  "raw_html_path": "data/raw_html/samr_typical_ads__2ad160ae3056.json",
+  "raw_text_path": "data/raw_text/samr_typical_ads__2ad160ae3056.json",
+  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。",
+  "audit": {
+    "review_status": "approved",
+    "approved_for_rag": true
+  }
+}
