@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "version": "1.0",
+    "description": "Reviewed legal-issue groups for runtime candidate collapse"
+  },
+  "groups": [
+    {
+      "issue_group_id": "cosmetic_special_efficacy_ordinary_product",
+      "title": "普通化妆品宣称特殊功效与注册备案一致性",
+      "member_rule_uids": [
+        "RUID-232bd1ed0d599941",
+        "RUID-b4a75d0bcb280918",
+        "RUID-a6f6803a76ae8fee",
+        "RUID-a32401789d437490",
+        "RUID-766ee742d5a55d97",
+        "RUID-90164adf3d87b6a7"
+      ],
+      "selection_policy": {
+        "primary_rule_strategy": "highest_legal_authority",
+        "platform_rule_strategy": "current_platform_only",
+        "max_primary_rules": 1,
+        "max_platform_rules": 1
+      }
+    },
+    {
+      "issue_group_id": "cosmetic_special_efficacy_cross_category",
+      "title": "特殊化妆品跨类别功效宣传",
+      "member_rule_uids": [
+        "RUID-a0fe79ec4fa4a790",
+        "RUID-3f3b7c719ab88095"
+      ],
+      "selection_policy": {
+        "primary_rule_strategy": "highest_legal_authority",
+        "platform_rule_strategy": "current_platform_only",
+        "max_primary_rules": 1,
+        "max_platform_rules": 1
+      }
+    }
+  ]
+}
