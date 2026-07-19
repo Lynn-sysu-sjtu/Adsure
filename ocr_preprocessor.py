@@ -111,10 +111,19 @@ def extract_text_from_attachments(record_id: str, fields: dict) -> str:
 
     combined = "\n\n".join(parts)
 
-    try:
-        update_record(record_id, {F_物料内容: combined})
-        print(f"[ocr] ✓ OCR 结果已写回「物料内容」，共 {len(combined)} 字")
-    except Exception as e:
-        print(f"[ocr] ✗ 写回失败（非致命）: {e}")
+    # 写回飞书，最多重试 2 次——规则引擎会直接读飞书字段，写回失败则审核无法继续
+    last_err = None
+    for attempt in range(1, 3):
+        try:
+            update_record(record_id, {F_物料内容: combined})
+            print(f"[ocr] ✓ OCR 结果已写回「物料内容」，共 {len(combined)} 字")
+            last_err = None
+            break
+        except Exception as e:
+            last_err = e
+            print(f"[ocr] ✗ 写回失败（第{attempt}次）: {e}")
+
+    if last_err:
+        raise RuntimeError(f"OCR 文案写回飞书失败，无法继续审核: {last_err}")
 
     return combined
