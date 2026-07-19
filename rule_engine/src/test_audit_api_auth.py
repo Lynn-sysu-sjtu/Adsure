@@ -1,4 +1,5 @@
 import os
+import time
 import unittest
 from unittest.mock import patch
 
@@ -39,6 +40,26 @@ class AuditApiAuthTests(unittest.TestCase):
         self.assertEqual(-1, rejected["code"])
         self.assertEqual(0, accepted["code"])
         fake_audit.assert_called_once()
+
+    def test_health_endpoint_is_public_fast_and_dependency_free(self):
+        started = time.perf_counter()
+        with patch.object(audit_api, "audit", side_effect=AssertionError("audit must not run")):
+            results = [audit_api.health_endpoint() for _ in range(100)]
+        elapsed = time.perf_counter() - started
+
+        self.assertTrue(all(result == results[0] for result in results))
+        self.assertEqual(
+            {"status": "ok", "service": "adsure-rule-engine", "version": "0.1.0"},
+            results[0],
+        )
+        self.assertLess(elapsed, 0.1)
+
+    def test_http_app_exposes_public_health_route(self):
+        if audit_api.app is None:
+            self.skipTest("FastAPI is not installed")
+
+        route = next(route for route in audit_api.app.routes if getattr(route, "path", None) == "/health")
+        self.assertIn("GET", route.methods)
 
 
 if __name__ == "__main__":

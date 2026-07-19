@@ -1,4 +1,4 @@
-﻿import json
+import json
 import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -91,6 +91,40 @@ class RuleEngineMvpTests(unittest.TestCase):
         self.assertNotIn("regex:", display_text)
         self.assertNotIn("????", display_text)
 
+    def test_audit_canonical_payload_returns_tenant_and_request_ids(self):
+        response = audit(
+            {
+                "tenant_id": "tenant_example",
+                "request_id": "req_canonical_001",
+                "source": "internal",
+                "material": {"content": "新品上市，欢迎选购"},
+                "context": {
+                    "industry": "美妆",
+                    "platforms": ["抖音"],
+                    "material_type": "Banner",
+                    "product_category": "护肤",
+                },
+                "unknown_field": "ignored",
+            },
+            base_dir=BASE,
+        )
+
+        self.assertEqual(0, response["code"])
+        self.assertEqual("tenant_example", response["data"]["tenant_id"])
+        self.assertEqual("req_canonical_001", response["data"]["request_id"])
+    def test_canonical_payload_missing_content_keeps_existing_error_contract(self):
+        response = audit_endpoint(
+            {
+                "tenant_id": "adsure_demo",
+                "request_id": "req_missing_content",
+                "material": {"content": ""},
+                "context": {"industry": "美妆"},
+            }
+        )
+
+        self.assertEqual(-1, response["code"])
+        self.assertEqual("缺少必填字段：①运营·物料内容", response["msg"])
+        self.assertIsNone(response["data"])
     def test_audit_safe_content_routes_to_operator(self):
         response = audit(
             {
@@ -656,5 +690,3 @@ class RuleEngineMvpTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-

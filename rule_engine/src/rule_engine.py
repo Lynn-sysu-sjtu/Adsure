@@ -702,6 +702,7 @@ def audit(payload, base_dir=None):
         "code": 0,
         "msg": "ok",
         "data": {
+            "tenant_id": request.get("tenant_id", "adsure_demo"),
             "request_id": request.get("request_id"),
             "resolved_mode": "标准",
             "mode_reason": STANDARD_MODE_REASON,
