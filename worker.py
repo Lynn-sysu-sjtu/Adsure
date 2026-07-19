@@ -163,11 +163,19 @@ def send_review_card(record_id, fields):
 # === 核心逻辑 ===
 
 def is_new_submission(fields):
-    """状态为空 + (物料内容非空 或 有图片附件) = 新提交"""
+    """状态为空 + (物料内容非空 或 有图片附件) + 7天内创建 = 新提交"""
     status  = fields.get(F_流转_当前状态, "")
     content = _text_of(fields.get(F_物料内容))
     has_attachment = bool(fields.get(F_物料附件))
-    return (not status) and (bool(content.strip()) or has_attachment)
+    if not ((not status) and (bool(content.strip()) or has_attachment)):
+        return False
+    # 只处理7天内创建的记录，防止历史遗留空状态记录反复触发
+    created_ms = fields.get("创建时间")
+    if created_ms:
+        age_days = (time.time() * 1000 - int(created_ms)) / (1000 * 86400)
+        if age_days > 7:
+            return False
+    return True
 
 
 def process_record(record_id, fields):
