@@ -119,10 +119,23 @@ class RecallMergeAndJudgmentPoolTests(unittest.TestCase):
                 captured["rule_ids"] = [rule["rule_id"] for rule in matched_rules]
                 return {
                     "engine": "fake",
-                    "opinion_type": "风险提示",
-                    "overall_risk_level": "中",
-                    "audit_opinion": "测试",
-                    "rule_judgments": [],
+                    "opinion_type": "\u98ce\u9669\u63d0\u793a",
+                    "overall_risk_level": "\u4e2d",
+                    "audit_opinion": "",
+                    "rule_judgments": [
+                        {
+                            "rule_uid": item["rule_uid"],
+                            "rule_id": item["rule_id"],
+                            "applicability_status": "confirmed_violation",
+                            "material_evidence": context_package["material_text"],
+                            "satisfied_elements": ["candidate applies"],
+                            "unsatisfied_elements": [],
+                            "missing_facts": [],
+                            "applicability_reason": "test confirmation",
+                            "confidence": 1.0,
+                        }
+                        for item in matched_rules
+                    ],
                     "outside_rule_risks": [],
                 }
 
@@ -141,7 +154,7 @@ class RecallMergeAndJudgmentPoolTests(unittest.TestCase):
                     )
 
         self.assertEqual(0, response["code"])
-        self.assertEqual(3, len(response["data"]["matched_rules"]))
+        self.assertEqual(1, len(response["data"]["matched_rules"]))
         self.assertEqual(1, len(captured["rule_ids"]))
 
 

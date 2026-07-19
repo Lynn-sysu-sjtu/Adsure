@@ -15,6 +15,7 @@ from legal_issue_groups import load_legal_issue_groups
 from llm_judgment import judge_with_llm, judge_with_mock_llm
 from semantic_recall import semantic_recall_rules
 from rule_identity import rule_identity
+from subsumption import validate_subsumption_result
 
 
 STANDARD_MODE_REASON = "MVP阶段统一使用标准审核模式，极速和深度模式仅预留接口。"
@@ -651,7 +652,7 @@ def _matched_rule(rule, hits):
         recall_channel = "keyword"
     return {
         "rule_id": rule.get("rule_id"),
-        "rule_uid": rule.get("rule_uid"),
+        "rule_uid": rule_identity(rule),
         "serial_no": rule.get("serial_no"),
         "title": rule.get("title"),
         "dimension": rule.get("dimension"),
@@ -770,6 +771,56 @@ def _judge_with_config(context_package, matched_rules):
     return judge_with_mock_llm(context_package, matched_rules)
 
 
+def _subsumption_fallback_response(request, context_package, audit_timestamp, reason_code):
+    opinion = (
+        "\u610f\u89c1\u7c7b\u578b\uff1a\u4eba\u5de5\u590d\u6838\n\n"
+        "AI\u89c4\u5219\u6db5\u6444\u672a\u80fd\u5b8c\u6210\uff0c\u672c\u6b21\u4e0d\u5c55\u793a\u672a\u7ecf\u786e\u8ba4\u7684\u5019\u9009\u89c4\u5219\uff0c\u8bf7\u6cd5\u52a1\u7ed3\u5408\u7269\u6599\u539f\u6587\u8fdb\u884c\u4eba\u5de5\u5ba1\u6838\u3002"
+    )
+    return {
+        "code": 0,
+        "msg": "ok",
+        "data": {
+            "tenant_id": request.get("tenant_id", "adsure_demo"),
+            "request_id": request.get("request_id"),
+            "resolved_mode": "\u6807\u51c6",
+            "mode_reason": STANDARD_MODE_REASON,
+            "\u9884\u5ba1_\u98ce\u9669\u7b49\u7ea7": "\u4e2d",
+            "\u9884\u5ba1_\u547d\u4e2d\u8981\u70b9": "AI\u89c4\u5219\u6db5\u6444\u672a\u5b8c\u6210\uff0c\u9700\u4eba\u5de5\u590d\u6838\u3002",
+            "\u9884\u5ba1_\u4fee\u6539\u5efa\u8bae": "\u8bf7\u63d0\u4ea4\u6cd5\u52a1\u4eba\u5de5\u590d\u6838\u3002",
+            "\u9884\u5ba1_\u65f6\u95f4": audit_timestamp,
+            "\u5ba1\u6838_\u5ba1\u6838\u610f\u89c1": opinion,
+            "\u5ba1\u6838_\u5173\u952e\u5b9e\u4f53\u62bd\u53d6": "",
+            "\u5ba1\u6838_\u9ad8\u98ce\u9669\u8bcd\u547d\u4e2d": "\u65e0",
+            "\u5ba1\u6838_\u5e73\u53f0\u89c4\u5219\u9884\u68c0": "\u672c\u6b21\u6db5\u6444\u672a\u5b8c\u6210\uff0c\u672a\u5f62\u6210\u5e73\u53f0\u89c4\u5219\u7ed3\u8bba\u3002",
+            "\u5ba1\u6838_\u5907\u6848\u6838\u67e5\u7ed3\u679c": "\u672c\u6b21\u6db5\u6444\u672a\u5b8c\u6210\uff0c\u8bf7\u4eba\u5de5\u6838\u67e5\u5907\u6848\u548c\u8bc1\u660e\u6750\u6599\u3002",
+            "\u5ba1\u6838_\u63a8\u8350\u8fdd\u89c4\u7c7b\u578b": [],
+            "\u5ba1\u6838_\u63a8\u8350\u98ce\u9669\u7b49\u7ea7": "\u4e2d",
+            "risk_assessment": {
+                "rule_engine_risk_level": "\u65e0\u660e\u663e\u98ce\u9669",
+                "llm_risk_level": "\u4e2d",
+                "final_risk_level": "\u4e2d",
+                "risk_disagreement": True,
+                "risk_disagreement_reason": "AI\u89c4\u5219\u6db5\u6444\u672a\u5b8c\u6210\u3002",
+                "final_risk_source": "subsumption_fallback",
+                "final_risk_reason": reason_code,
+            },
+            "matched_rules": [],
+            "semantic_recall": {"enabled": True, "matched_rule_ids": []},
+            "rule_judgments": [],
+            "llm_judgment": {
+                "engine": "subsumption_fallback",
+                "opinion_type": "\u4eba\u5de5\u590d\u6838",
+                "overall_risk_level": "\u4e2d",
+                "rule_judgments": [],
+                "audit_opinion": opinion,
+            },
+            "context_package": context_package,
+            "routing": "\u6cd5\u52a1",
+            "\u5ba1\u6838_\u5ba1\u6838\u65f6\u95f4": audit_timestamp,
+            "audit_time": audit_timestamp,
+        },
+    }
+
 def audit(payload, base_dir=None):
     request = map_feishu_payload(payload)
     validate_request(request)
@@ -787,7 +838,6 @@ def audit(payload, base_dir=None):
         fact_recall_rules(rules, request, context_package=context_package)
     )
     recalled = _merge_recalled_rules(content_recalled + fact_recalled)
-    matched_rules = [_matched_rule(rule, hits) for rule, hits in recalled]
     group_asset = load_legal_issue_groups(base)
     judgment_recalled = govern_candidates(
         recalled,
@@ -799,7 +849,27 @@ def audit(payload, base_dir=None):
     fact_advice = _fact_supplement_advice(fact_recalled)
     raw_high_risk_hits = sorted({hit for _, hits in recalled for hit in hits if not str(hit).startswith("semantic")})
     high_risk_hits = _humanize_hits(raw_high_risk_hits)
-    llm_judgment = _judge_with_config(context_package, judgment_rules)
+    audit_timestamp = int(datetime.now().timestamp() * 1000)
+    try:
+        llm_judgment = _judge_with_config(context_package, judgment_rules)
+        validated_subsumption = validate_subsumption_result(
+            judgment_rules,
+            llm_judgment.get("rule_judgments"),
+            context_package.get("material_text") or "",
+        )
+    except Exception as exc:
+        reason_code = (
+            "subsumption_validation_failed"
+            if exc.__class__.__name__ == "SubsumptionValidationError"
+            else "subsumption_provider_failed"
+        )
+        return _subsumption_fallback_response(
+            request,
+            context_package,
+            audit_timestamp,
+            reason_code,
+        )
+    matched_rules = validated_subsumption.final_rules
     rule_engine_risk_level = _risk_level([rule for rule, _ in recalled])
     llm_risk_level = llm_judgment.get("overall_risk_level") or "无明显风险"
     final_risk_level, final_risk_source, final_risk_reason = _synthesize_risk_level(
@@ -819,8 +889,6 @@ def audit(payload, base_dir=None):
         "final_risk_reason": final_risk_reason,
     }
     risk_level = final_risk_level
-    audit_timestamp = int(datetime.now().timestamp() * 1000)
-
     return {
         "code": 0,
         "msg": "ok",

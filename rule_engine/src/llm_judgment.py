@@ -41,7 +41,7 @@ def _default_opinion_type(matched_rules):
         return OPINION_VIOLATION
     return OPINION_RISK_NOTICE
 
-def _rule_judgment(rule):
+def _rule_judgment(rule, material_text=""):
     risk = rule.get("risk_level") or MEDIUM
     trigger_layer = (rule.get("recall") or {}).get("trigger_layer") or (
         "fact" if rule.get("recall_channel") == "fact" else "content"
@@ -56,7 +56,7 @@ def _rule_judgment(rule):
         "rule_uid": rule.get("rule_uid"),
         "rule_id": rule.get("rule_id"),
         "applicability_status": status,
-        "material_evidence": rule.get("match_reason") or "",
+        "material_evidence": material_text if status == "confirmed_violation" else "",
         "satisfied_elements": [rule.get("title") or "候选规则相关事实"],
         "unsatisfied_elements": [],
         "missing_facts": missing_facts,
@@ -102,7 +102,10 @@ def _audit_opinion(overall_risk, matched_rules, rule_judgments):
 
 def judge_with_mock_llm(context_package, matched_rules):
     """Return deterministic LLM-like legal subsumption output."""
-    rule_judgments = [_rule_judgment(rule) for rule in matched_rules]
+    rule_judgments = [
+        _rule_judgment(rule, context_package.get("material_text") or "")
+        for rule in matched_rules
+    ]
     overall_risk = _overall_risk_level(matched_rules)
     return {
         "opinion_type": _default_opinion_type(matched_rules),

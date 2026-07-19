@@ -100,18 +100,33 @@ class LlmJudgmentRealTests(unittest.TestCase):
         os.environ["ADSURE_LLM_MODE"] = "expanded"
         try:
             with patch("rule_engine.judge_with_llm") as fake_judge:
-                fake_judge.return_value = {
-                    "engine": "deepseek_llm_v0",
-                    "mode": "expanded",
-                    "overall_risk_level": "\u9ad8",
-                    "audit_opinion": "\u771f\u5b9e LLM \u5224\u65ad\u5360\u4f4d\u3002",
-                    "rule_judgments": [],
-                    "summary": "",
-                    "outside_rule_risks": [],
-                    "revision_suggestion": "\u5220\u9664\u7edd\u5bf9\u5316\u8868\u8ff0\u3002",
-                    "need_legal_review": True,
-                    "routing": "\u6cd5\u52a1",
-                }
+                def structured_judge(context_package, matched_rules, mode="strict"):
+                    return {
+                        "engine": "deepseek_llm_v0",
+                        "mode": mode,
+                        "overall_risk_level": "\u9ad8",
+                        "audit_opinion": "",
+                        "rule_judgments": [
+                            {
+                                "rule_uid": item["rule_uid"],
+                                "rule_id": item["rule_id"],
+                                "applicability_status": "confirmed_violation",
+                                "material_evidence": context_package["material_text"],
+                                "satisfied_elements": ["candidate applies"],
+                                "unsatisfied_elements": [],
+                                "missing_facts": [],
+                                "applicability_reason": "test confirmation",
+                                "confidence": 1.0,
+                            }
+                            for item in matched_rules
+                        ],
+                        "summary": "",
+                        "outside_rule_risks": [],
+                        "revision_suggestion": "",
+                        "need_legal_review": True,
+                        "routing": "\u6cd5\u52a1",
+                    }
+                fake_judge.side_effect = structured_judge
                 response = audit(
                     {
                         "record_id": "rec_real_llm_switch",

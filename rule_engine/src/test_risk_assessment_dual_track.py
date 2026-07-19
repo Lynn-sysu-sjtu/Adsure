@@ -12,13 +12,28 @@ PROJECT_BASE = Path(__file__).resolve().parents[1]
 class RiskAssessmentDualTrackTests(unittest.TestCase):
     def test_rule_engine_outputs_dual_track_risk_assessment(self):
         with patch("rule_engine.judge_with_mock_llm") as fake_judge:
-            fake_judge.return_value = {
-                "engine": "mock_llm_v0",
-                "overall_risk_level": "中",
-                "audit_opinion": "LLM 认为个案风险为中。",
-                "rule_judgments": [{"rule_id": "GEN-ABS-001"}],
-                "summary": "",
-            }
+            def structured_judge(context_package, matched_rules):
+                return {
+                    "engine": "mock_llm_v0",
+                    "overall_risk_level": "\u4e2d",
+                    "audit_opinion": "",
+                    "rule_judgments": [
+                        {
+                            "rule_uid": item["rule_uid"],
+                            "rule_id": item["rule_id"],
+                            "applicability_status": "confirmed_violation",
+                            "material_evidence": context_package["material_text"],
+                            "satisfied_elements": ["candidate applies"],
+                            "unsatisfied_elements": [],
+                            "missing_facts": [],
+                            "applicability_reason": "test confirmation",
+                            "confidence": 1.0,
+                        }
+                        for item in matched_rules
+                    ],
+                    "summary": "",
+                }
+            fake_judge.side_effect = structured_judge
             response = audit(
                 {
                     "record_id": "rec_dual_risk",

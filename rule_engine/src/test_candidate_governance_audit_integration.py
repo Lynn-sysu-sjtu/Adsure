@@ -54,10 +54,23 @@ class CandidateGovernanceAuditIntegrationTests(unittest.TestCase):
             captured["uids"] = [item["rule_uid"] for item in matched_rules]
             return {
                 "engine": "mock",
-                "opinion_type": "违规修改",
-                "overall_risk_level": "高",
-                "audit_opinion": "意见类型：违规修改",
-                "rule_judgments": [],
+                "opinion_type": "\u8fdd\u89c4\u4fee\u6539",
+                "overall_risk_level": "\u9ad8",
+                "audit_opinion": "",
+                "rule_judgments": [
+                    {
+                        "rule_uid": item["rule_uid"],
+                        "rule_id": item["rule_id"],
+                        "applicability_status": "confirmed_violation",
+                        "material_evidence": context_package["material_text"],
+                        "satisfied_elements": ["candidate applies"],
+                        "unsatisfied_elements": [],
+                        "missing_facts": [],
+                        "applicability_reason": "test confirmation",
+                        "confidence": 1.0,
+                    }
+                    for item in matched_rules
+                ],
             }
 
         with (
@@ -78,7 +91,7 @@ class CandidateGovernanceAuditIntegrationTests(unittest.TestCase):
 
         self.assertEqual(0, response["code"])
         self.assertEqual(["RUID-OPEN", "RUID-DEPT", "RUID-XHS"], captured["uids"])
-        self.assertEqual(4, len(response["data"]["matched_rules"]))
+        self.assertEqual(3, len(response["data"]["matched_rules"]))
 
 
 if __name__ == "__main__":
