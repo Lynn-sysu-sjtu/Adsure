@@ -10,7 +10,7 @@ import json
 import requests
 
 from config import BITABLE_APP_TOKEN, BITABLE_TABLE_ID, WORKBENCH_URL
-from feishu_api import get_tenant_access_token, list_all_records, update_record
+from feishu_api import get_tenant_access_token, list_all_records, update_record, get_record
 from fields_v4 import (
     F_物料编号, F_物料内容, F_物料附件, F_行业领域, F_提交人, F_紧急程度,
     F_流转_当前状态,
@@ -174,6 +174,18 @@ def process_record(record_id, fields):
     if record_id in _processed_ids:
         print(f"  ⚠ record_id={record_id} 已处理过，跳过（内存去重）")
         return
+
+    # 二次确认：重新读飞书，防止轮询间隙已被其他进程处理
+    try:
+        latest = get_record(record_id)
+        current_status = latest.get("fields", {}).get(F_流转_当前状态, "")
+        if current_status:
+            print(f"  ⚠ record_id={record_id} 状态已为「{current_status}」，跳过（并发去重）")
+            _processed_ids.add(record_id)
+            return
+    except Exception as e:
+        print(f"  ⚠ 二次确认读取失败，继续处理: {e}")
+
     _processed_ids.add(record_id)
 
     code = str(fields.get(F_物料编号, "")) or "(待编号)"
