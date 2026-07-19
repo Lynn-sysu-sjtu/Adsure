@@ -8,8 +8,10 @@ from datetime import datetime
 from pathlib import Path
 
 from catalog_recall import catalog_recall_rules
+from candidate_governance import govern_candidates
 from field_mapper import map_feishu_payload
 from kg_rule_store import load_rule_library
+from legal_issue_groups import load_legal_issue_groups
 from llm_judgment import judge_with_llm, judge_with_mock_llm
 from semantic_recall import semantic_recall_rules
 from rule_identity import rule_identity
@@ -786,7 +788,13 @@ def audit(payload, base_dir=None):
     )
     recalled = _merge_recalled_rules(content_recalled + fact_recalled)
     matched_rules = [_matched_rule(rule, hits) for rule, hits in recalled]
-    judgment_recalled = _select_judgment_recalled(recalled)
+    group_asset = load_legal_issue_groups(base)
+    judgment_recalled = govern_candidates(
+        recalled,
+        request=request,
+        group_asset=group_asset,
+        limit=_judgment_pool_limit(),
+    )
     judgment_rules = [_matched_rule(rule, hits) for rule, hits in judgment_recalled]
     fact_advice = _fact_supplement_advice(fact_recalled)
     raw_high_risk_hits = sorted({hit for _, hits in recalled for hit in hits if not str(hit).startswith("semantic")})
