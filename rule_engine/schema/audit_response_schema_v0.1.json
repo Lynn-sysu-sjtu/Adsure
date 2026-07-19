@@ -99,9 +99,10 @@
         "审核_推荐风险等级": {
           "type": "string",
           "enum": [
-            "高",
-            "中",
-            "低"
+            "\u9ad8",
+            "\u4e2d",
+            "\u4f4e",
+            "\u65e0\u660e\u663e\u98ce\u9669"
           ]
         },
         "matched_rules": {
@@ -119,6 +120,21 @@
             "properties": {
               "rule_id": {
                 "type": "string"
+              },
+              "rule_uid": {"type": "string"},
+              "applicability_status": {
+                "type": "string",
+                "enum": ["confirmed_violation", "needs_fact_verification"]
+              },
+              "material_evidence": {"type": "string"},
+              "satisfied_elements": {"type": "array", "items": {"type": "string"}},
+              "unsatisfied_elements": {"type": "array", "items": {"type": "string"}},
+              "missing_facts": {"type": "array", "items": {"type": "string"}},
+              "applicability_reason": {"type": "string"},
+              "confidence": {
+                "type": ["number", "null"],
+                "minimum": 0,
+                "maximum": 1
               },
               "serial_no": {
                 "type": [
