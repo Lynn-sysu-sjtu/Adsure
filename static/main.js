@@ -14,11 +14,11 @@ function setupTabs() {
             tab.classList.add("active");
             const type = tab.dataset.tab;
             if (type === "pending") {
-                renderSidebar(allRecords.filter(r => r["审核状态"] === "待法务复核"));
+                renderSidebar(allRecords.filter(r => r["审核状态"] === "待法务复核"), "pending");
             } else if (type === "done") {
-                renderSidebar(allRecords.filter(r => r["审核状态"] === "已通过" || r["审核状态"] === "需修改"));
+                renderSidebar(allRecords.filter(r => r["审核状态"] === "已通过" || r["审核状态"] === "需修改"), "done");
             } else if (type === "rules") {
-                renderSidebar([]);
+                renderSidebar([], "pending");
                 loadRulesView();
             }
         });
@@ -35,7 +35,8 @@ async function loadRecords() {
 }
 
 // 渲染左侧列表
-function renderSidebar(records) {
+// mode: "pending"（待处理，显示运营提交人）| "done"（已处理，显示法务审核人）
+function renderSidebar(records, mode = "pending") {
     const list = document.getElementById("record-list");
     list.innerHTML = "";
 
@@ -52,6 +53,12 @@ function renderSidebar(records) {
         const riskClass = record["风险等级"] === "高风险" ? "high" : record["风险等级"] === "中风险" ? "medium" : "low";
         const preview = record["物料内容"].substring(0, 50) + (record["物料内容"].length > 50 ? "..." : "");
 
+        // 待处理显示运营提交人，已处理显示法务审核人
+        const personLabel = mode === "done" ? "法务" : "提交";
+        const personName  = mode === "done"
+            ? (record["法务审核人"] || "—")
+            : (record["提交人"] || "—");
+
         item.innerHTML = `
             <div class="record-item-header">
                 <span class="risk-badge ${riskClass}"><span class="risk-dot"></span>${record["风险等级"]}</span>
@@ -59,10 +66,9 @@ function renderSidebar(records) {
             </div>
             <div class="content-preview">${preview}</div>
             <div class="meta">
-                <span>${record["提交人"]}</span>
+                <span style="color:var(--text-muted);">${personLabel}：</span><span>${personName}</span>
                 <span>${record["提交时间"] || "—"}</span>
             </div>
-            ${record["法务审核人"] ? `<div class="meta" style="margin-top:2px;"><span style="color:var(--text-muted);">法务：</span><span>${record["法务审核人"]}</span></div>` : ""}
         `;
 
         item.addEventListener("click", () => {
@@ -317,6 +323,11 @@ function renderReviewForm(prefill = null) {
 
     return `
             <div class="form-group">
+                <label class="form-label">法务审核人<span class="required">*</span></label>
+                <input type="text" class="form-select" id="reviewer-name" placeholder="请输入您的姓名（用于记录法务审核人）" value="${(p["法务审核人"] || "").replace(/</g,'&lt;').replace(/>/g,'&gt;')}" style="height:38px;">
+            </div>
+
+            <div class="form-group">
                 <label class="form-label">AI意见评价<span class="required">*</span></label>
                 <select class="form-select" id="ai-opinion">
                     <option value="">请选择对AI审核意见的评价...</option>
@@ -539,8 +550,10 @@ async function submitReview(notifyOperator = true) {
 
     const opinion = document.getElementById("ai-opinion").value;
     const verdict = document.getElementById("verdict").value;
+    const reviewerName = (document.getElementById("reviewer-name")?.value || "").trim();
 
     // 基础校验
+    if (!reviewerName) { alert("请填写法务审核人姓名"); return; }
     if (!opinion) { alert("请选择AI意见评价"); return; }
     if (!verdict) { alert("请选择物料裁决"); return; }
 
@@ -578,6 +591,7 @@ async function submitReview(notifyOperator = true) {
     const data = {
         ai_opinion: opinion,
         verdict: verdict,
+        reviewer_name: reviewerName,
         objection_fields: objectionFields,
         supplement_reason: document.getElementById("supplement-reason")?.value || "",
         reject_reason: document.getElementById("reject-reason")?.value || "",

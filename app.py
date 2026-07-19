@@ -214,6 +214,7 @@ def submit_review(record_id):
     feedback_type = {"同意无补充": "无", "同意有补充": "refine", "驳回": "override"}.get(ai_opinion, "无")
 
     # 组装回写字段（v4 字段名）
+    reviewer_name = data.get("reviewer_name", "").strip()
     update_fields = {
         F_法务_AI意见评价: ai_opinion,
         F_法务_物料裁决: verdict,
@@ -221,6 +222,8 @@ def submit_review(record_id):
         F_流转_反馈类型: feedback_type,
         F_法务_复核时间: int(datetime.datetime.now().timestamp() * 1000),
     }
+    if reviewer_name:
+        update_fields[F_法务_复核人] = reviewer_name
 
     objection = data.get("objection_fields", [])
     if objection:
