@@ -10,7 +10,7 @@ import json
 import requests
 
 from config import BITABLE_APP_TOKEN, BITABLE_TABLE_ID, WORKBENCH_URL
-from feishu_api import get_tenant_access_token, list_all_records, update_record, download_attachment, upload_image
+from feishu_api import get_tenant_access_token, list_all_records, update_record
 from fields_v4 import (
     F_物料编号, F_物料内容, F_物料附件, F_行业领域, F_提交人, F_紧急程度,
     F_流转_当前状态,
@@ -75,23 +75,15 @@ def send_review_card(record_id, fields):
     content   = _text_of(fields.get(F_物料内容))
     urgency   = fields.get(F_紧急程度, "普通")
 
-    # 判断是图片物料还是文字物料
+    # 判断是图片物料还是文字物料（只做文字预览，不上传图片避免 img_key 过期问题）
     attachments = fields.get(F_物料附件) or []
     if isinstance(attachments, dict):
         attachments = [attachments]
-    image_att = next((a for a in attachments if isinstance(a, dict) and a.get("file_token")), None)
-    is_image_material = bool(image_att) and not content.strip()
-
-    # 尝试上传图片拿 img_key（失败则降级为文字提示）
-    img_key = None
-    if is_image_material and image_att:
-        try:
-            img_bytes = download_attachment(image_att["file_token"])
-            img_key = upload_image(img_bytes)
-        except Exception as e:
-            print(f"    ⚠ 图片上传失败，降级为文字提示: {e}")
+    has_image = any(isinstance(a, dict) and a.get("file_token") for a in attachments)
 
     preview = content[:100] + ("…" if len(content) > 100 else "") if content.strip() else None
+    if not preview and has_image:
+        preview = "（图片物料，AI审核时自动识别文字）"
     platform  = _text_of(fields.get(_PLATFORM_FIELD.get(industry, ""), "")) or "未填"
 
     card = {
@@ -112,19 +104,11 @@ def send_review_card(record_id, fields):
                 "tag": "div",
                 "text": {"tag": "lark_md", "content": f"**投放平台**\n{platform}"},
             },
-            # 物料预览：图片显示缩略图，文字显示前100字
-            *([
-                {"tag": "div", "text": {"tag": "lark_md", "content": "**物料预览**"}},
-                {
-                    "tag": "img",
-                    "img_key": img_key,
-                    "alt": {"tag": "plain_text", "content": "物料图片"},
-                    "mode": "crop_center",
-                },
-            ] if img_key else [{
+            # 物料预览：纯文字（不上传图片，避免 img_key 过期导致裂图）
+            {
                 "tag": "div",
-                "text": {"tag": "lark_md", "content": f"**物料预览**\n{preview or '（图片物料，AI审核时自动识别）'}"},
-            }]),
+                "text": {"tag": "lark_md", "content": f"**物料预览**\n{preview}"},
+            },
             {"tag": "hr"},
             {
                 "tag": "note",
