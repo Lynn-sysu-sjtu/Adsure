@@ -873,6 +873,13 @@ def audit(payload, base_dir=None, diagnostics=None):
             if exc.__class__.__name__ == "SubsumptionValidationError"
             else "subsumption_provider_failed"
         )
+        if diagnostics is not None:
+            diagnostics.update(
+                {
+                    "fallback_reason_code": reason_code,
+                    "fallback_detail": str(exc),
+                }
+            )
         return _subsumption_fallback_response(
             request,
             context_package,
