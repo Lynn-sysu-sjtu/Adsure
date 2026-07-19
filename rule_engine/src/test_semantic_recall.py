@@ -13,6 +13,35 @@ PROJECT_BASE = Path(__file__).resolve().parents[1]
 
 
 class SemanticRecallTests(unittest.TestCase):
+    def test_semantic_recall_deduplicates_multiple_scenarios_to_parent_rule(self):
+        request = {
+            "material": {"content": "我们一降价，你还不是像狗一样跑过来"},
+            "context": {"industry": "通用", "core_claims": [], "platforms": []},
+        }
+        context_package = build_context_package(request)
+        rules = [
+            {
+                "rule_id": "GEN-GOOD-CUSTOMS-001",
+                "rule_uid": "RUID-good-customs",
+                "serial_no": 1,
+                "industry": "通用",
+                "applies_to": {"industries": ["通用"]},
+                "recall": {
+                    "trigger_layer": "content",
+                    "semantic_enabled": True,
+                    "semantic_role": "primary",
+                    "vector_text": "侮辱物化消费者，以人格贬损方式刺激购买",
+                    "semantic_scenarios": [
+                        {"scenario_id": "consumer_insult", "vector_text": "侮辱顾客贬低消费者人格"},
+                        {"scenario_id": "consumer_dehumanization", "vector_text": "把顾客比作狗进行动物化羞辱"},
+                    ],
+                },
+            }
+        ]
+        recalled = semantic_recall_rules(rules, request, context_package, threshold=0.01, limit=5)
+        self.assertEqual(1, len(recalled))
+        self.assertEqual("GEN-GOOD-CUSTOMS-001", recalled[0][0]["rule_id"])
+        self.assertIn("scenario=consumer_dehumanization", recalled[0][1][0])
 
     def test_semantic_recall_respects_material_type_scope(self):
         request = {

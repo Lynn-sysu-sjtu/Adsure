@@ -27,6 +27,67 @@ class FakeEmbeddingClient:
 
 
 class RuleVectorIndexTests(unittest.TestCase):
+    def test_build_rule_vector_index_expands_enabled_semantic_scenarios(self):
+        rules = [
+            {
+                "rule_id": "GEN-GOOD-CUSTOMS-001",
+                "rule_uid": "RUID-good-customs",
+                "title": "广告不得违背社会良好风尚",
+                "recall": {
+                    "trigger_layer": "content",
+                    "semantic_enabled": True,
+                    "vector_text": "侮辱物化消费者，以人格贬损方式刺激购买",
+                    "semantic_scenarios": [
+                        {"scenario_id": "consumer_insult", "vector_text": "使用侮辱性语言贬低消费者人格"},
+                        {"scenario_id": "consumer_dehumanization", "vector_text": "把顾客比作狗猪韭菜进行动物化羞辱"},
+                        {"scenario_id": "disabled_scenario", "vector_text": "不应进入索引", "enabled": False},
+                    ],
+                },
+            }
+        ]
+        client = FakeEmbeddingClient()
+        with tempfile.TemporaryDirectory() as tmp:
+            index = build_rule_vector_index(
+                rules,
+                output_path=Path(tmp) / "rule_vector_index.json",
+                embedding_client=client,
+                model="fake-embedding",
+            )
+        self.assertEqual(2, index["meta"]["vector_count"])
+        self.assertEqual(
+            ["consumer_insult", "consumer_dehumanization"],
+            [item["scenario_id"] for item in index["vectors"]],
+        )
+        self.assertEqual({"RUID-good-customs"}, {item["rule_uid"] for item in index["vectors"]})
+        self.assertEqual(
+            ["使用侮辱性语言贬低消费者人格", "把顾客比作狗猪韭菜进行动物化羞辱"],
+            client.calls[0],
+        )
+
+    def test_build_rule_vector_index_falls_back_to_legacy_parent_vector(self):
+        rules = [
+            {
+                "rule_id": "LEGACY-001",
+                "rule_uid": "RUID-legacy",
+                "recall": {
+                    "trigger_layer": "content",
+                    "semantic_enabled": True,
+                    "vector_text": "旧版单向量召回文本",
+                },
+            }
+        ]
+        client = FakeEmbeddingClient()
+        with tempfile.TemporaryDirectory() as tmp:
+            index = build_rule_vector_index(
+                rules,
+                output_path=Path(tmp) / "rule_vector_index.json",
+                embedding_client=client,
+                model="fake-embedding",
+            )
+        self.assertEqual(1, index["meta"]["vector_count"])
+        self.assertEqual("rule_summary", index["vectors"][0]["scenario_id"])
+        self.assertEqual("legacy_vector_text", index["vectors"][0]["vector_source"])
+        self.assertEqual("旧版单向量召回文本", index["vectors"][0]["vector_text"])
     def test_build_rule_vector_index_writes_vector_file(self):
         rules = [
             {
@@ -155,6 +216,63 @@ class RuleVectorIndexTests(unittest.TestCase):
             self.assertEqual(1, len(client.calls[0]))
             self.assertTrue(recalled[0][1][0].startswith("semantic_embedding_cached:"))
 
+    def test_semantic_recall_uses_legacy_cached_parent_until_scenario_index_is_rebuilt(self):
+        parent_vector = "种草未标广告，个人心得带购物入口但没有广告标识"
+        rules = [
+            {
+                "rule_id": "GEN-IDENT-001",
+                "rule_uid": "RUID-ident",
+                "industry": "通用",
+                "applies_to": {"industries": ["通用", "美妆"]},
+                "recall": {
+                    "semantic_enabled": True,
+                    "vector_text": parent_vector,
+                    "semantic_scenarios": [
+                        {"scenario_id": "native_note", "vector_text": "个人种草带购物链接却没有广告标识"},
+                        {"scenario_id": "news_style", "vector_text": "新闻报道包装品牌商业推广"},
+                    ],
+                },
+            }
+        ]
+        request = {
+            "material": {"content": "这像普通分享，但没有标广告"},
+            "context": {"industry": "美妆"},
+        }
+        context_package = {"context_summary": "未标广告", "material_text": request["material"]["content"]}
+        client = FakeEmbeddingClient()
+
+        with tempfile.TemporaryDirectory() as tmp:
+            output_path = Path(tmp) / "rule_vector_index.json"
+            output_path.write_text(
+                json.dumps(
+                    {
+                        "meta": {"model": "fake"},
+                        "vectors": [
+                            {
+                                "rule_id": "GEN-IDENT-001",
+                                "vector_text_hash": __import__("rule_vector_index").vector_text_hash(parent_vector),
+                                "embedding": [1.0, 0.0],
+                            }
+                        ],
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            recalled = semantic_recall_rules(
+                rules,
+                request,
+                context_package,
+                threshold=0.8,
+                backend="zhipu",
+                embedding_client=client,
+                vector_index_path=output_path,
+            )
+
+        self.assertEqual(["GEN-IDENT-001"], [rule["rule_id"] for rule, _ in recalled])
+        self.assertEqual(1, len(client.calls))
+        self.assertEqual(1, len(client.calls[0]))
+        self.assertIn("scenario=rule_summary", recalled[0][1][0])
     def test_load_rule_vector_index_returns_empty_for_missing_file(self):
         with tempfile.TemporaryDirectory() as tmp:
             self.assertEqual({}, load_rule_vector_index(Path(tmp) / "missing.json"))

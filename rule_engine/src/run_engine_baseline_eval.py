@@ -59,6 +59,22 @@ def _case_rate(numerator, denominator):
     return round(numerator / denominator, 4)
 
 
+def _judgment_pool_limit_for_report():
+    raw = os.getenv("ADSURE_JUDGMENT_POOL_LIMIT") or "8"
+    try:
+        return max(1, int(raw))
+    except ValueError:
+        return 8
+
+
+def _nearest_rank_percentile(values, percentile):
+    if not values:
+        return 0.0
+    ordered = sorted(values)
+    rank = max(1, int((len(ordered) * percentile + 0.999999)))
+    return round(ordered[min(rank, len(ordered)) - 1], 2)
+
+
 def _rule_ids_from_judgments(llm_judgment):
     ids = []
     for item in llm_judgment.get("rule_judgments", []) or []:
@@ -144,6 +160,7 @@ def evaluate_response(case, response, elapsed_ms=0):
         "actual": {},
         "risk_assessment": {},
         "semantic": {},
+        "catalog": {},
         "llm_checks": {
             "json_valid": False,
             "rule_citation_ok": False,
@@ -171,6 +188,23 @@ def evaluate_response(case, response, elapsed_ms=0):
             if rule.get("rule_id") and rule.get("recall_channel") == "semantic"
         }
     )
+    catalog_matched_ids = sorted(
+        {
+            rule.get("rule_id")
+            for rule in matched_rules
+            if rule.get("rule_id")
+            and (
+                rule.get("recall_channel") == "llm_catalog"
+                or any(
+                    str(hit).startswith("llm_catalog:")
+                    for hit in (rule.get("raw_hit_terms") or [])
+                )
+            )
+        }
+    )
+    matched_rule_count = len(matched_rules)
+    judgment_pool_limit = _judgment_pool_limit_for_report()
+    judgment_pool_count = min(matched_rule_count, judgment_pool_limit)
     actual_dimensions = sorted(_as_set(_first_value(data, DIMENSION_KEYS, [])))
     actual_risk = _first_value(data, RISK_KEYS)
     risk_assessment = data.get("risk_assessment", {}) or {}
@@ -219,6 +253,9 @@ def evaluate_response(case, response, elapsed_ms=0):
     base_report["actual"] = {
         "matched_rule_ids": matched_ids,
         "matched_rule_details": matched_rule_details,
+        "matched_rule_count": matched_rule_count,
+        "judgment_pool_limit": judgment_pool_limit,
+        "judgment_pool_count": judgment_pool_count,
         "dimensions": actual_dimensions,
         "risk_level": final_risk,
         "rule_engine_risk_level": rule_engine_risk,
@@ -241,6 +278,9 @@ def evaluate_response(case, response, elapsed_ms=0):
         "semantic_matched_rule_ids": semantic_matched_ids,
         "expected_semantic_rule_ids": sorted(expected_semantic_ids),
         "semantic_missing_expected_rule_ids": sorted(expected_semantic_ids - set(semantic_matched_ids)),
+    }
+    base_report["catalog"] = {
+        "catalog_matched_rule_ids": catalog_matched_ids,
     }
     base_report["llm_checks"] = {
         "json_valid": json_valid,
@@ -280,8 +320,14 @@ def summarize_case_reports(case_reports):
     semantic_matched_case_count = sum(
         1 for item in case_reports if item.get("semantic", {}).get("semantic_matched_rule_ids", [])
     )
+    catalog_matched_case_count = sum(
+        1 for item in case_reports if item.get("catalog", {}).get("catalog_matched_rule_ids", [])
+    )
     error_count = sum(1 for item in case_reports if item.get("error"))
-    total_elapsed = sum(item.get("elapsed_ms", 0) for item in case_reports)
+    elapsed_values = [item.get("elapsed_ms", 0) for item in case_reports]
+    total_elapsed = sum(elapsed_values)
+    matched_rule_total = sum(item.get("actual", {}).get("matched_rule_count", 0) for item in case_reports)
+    judgment_pool_total = sum(item.get("actual", {}).get("judgment_pool_count", 0) for item in case_reports)
 
     return {
         "case_count": case_count,
@@ -308,6 +354,9 @@ def summarize_case_reports(case_reports):
         "routing_pass_count": routing_ok_count,
         "routing_pass_rate": _case_rate(routing_ok_count, case_count),
         "semantic_matched_case_count": semantic_matched_case_count,
+        "catalog_matched_case_count": catalog_matched_case_count,
+        "average_matched_rule_count": round(matched_rule_total / case_count, 2) if case_count else 0.0,
+        "average_judgment_pool_count": round(judgment_pool_total / case_count, 2) if case_count else 0.0,
         "llm_json_valid_count": llm_json_valid_count,
         "llm_json_valid_rate": _case_rate(llm_json_valid_count, case_count),
         "llm_rule_citation_ok_count": llm_rule_citation_ok_count,
@@ -315,6 +364,8 @@ def summarize_case_reports(case_reports):
         "llm_hallucination_case_count": hallucination_case_count,
         "outside_rule_risk_count": outside_rule_risk_count,
         "average_elapsed_ms": round(total_elapsed / case_count, 2) if case_count else 0.0,
+        "p50_elapsed_ms": _nearest_rank_percentile(elapsed_values, 0.50),
+        "p95_elapsed_ms": _nearest_rank_percentile(elapsed_values, 0.95),
     }
 
 
@@ -330,6 +381,10 @@ def build_report(cases, baseline_name, case_layers=None):
             "ADSURE_LLM_BACKEND": os.getenv("ADSURE_LLM_BACKEND", "mock"),
             "ADSURE_LLM_MODE": os.getenv("ADSURE_LLM_MODE", "strict"),
             "ADSURE_SEMANTIC_BACKEND": os.getenv("ADSURE_SEMANTIC_BACKEND", "local"),
+            "ADSURE_CATALOG_RECALL_ENABLED": os.getenv("ADSURE_CATALOG_RECALL_ENABLED", "false"),
+            "ADSURE_CATALOG_LLM_BACKEND": os.getenv("ADSURE_CATALOG_LLM_BACKEND", "mock"),
+            "ADSURE_CATALOG_LLM_MODEL": os.getenv("ADSURE_CATALOG_LLM_MODEL", "deepseek-chat"),
+            "ADSURE_JUDGMENT_POOL_LIMIT": os.getenv("ADSURE_JUDGMENT_POOL_LIMIT", "8"),
             "DEEPSEEK_MODEL": os.getenv("DEEPSEEK_MODEL", "deepseek-chat"),
             "ZHIPU_EMBEDDING_MODEL": os.getenv("ZHIPU_EMBEDDING_MODEL", "embedding-3"),
         },
@@ -370,7 +425,12 @@ def print_summary(report, report_path=None):
     print(f"llm_hallucination_case_count: {summary['llm_hallucination_case_count']}")
     print(f"outside_rule_risk_count: {summary['outside_rule_risk_count']}")
     print(f"semantic_matched_case_count: {summary['semantic_matched_case_count']}")
+    print(f"catalog_matched_case_count: {summary['catalog_matched_case_count']}")
+    print(f"average_matched_rule_count: {summary['average_matched_rule_count']}")
+    print(f"average_judgment_pool_count: {summary['average_judgment_pool_count']}")
     print(f"average_elapsed_ms: {summary['average_elapsed_ms']}")
+    print(f"p50_elapsed_ms: {summary['p50_elapsed_ms']}")
+    print(f"p95_elapsed_ms: {summary['p95_elapsed_ms']}")
     if report_path:
         print(f"report: {report_path}")
 

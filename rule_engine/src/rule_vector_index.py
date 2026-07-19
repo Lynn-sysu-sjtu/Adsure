@@ -16,6 +16,53 @@ def vector_text_hash(text):
     return hashlib.sha256(str(text or "").encode("utf-8")).hexdigest()
 
 
+def semantic_vector_records(rule):
+    """Expand one parent rule into enabled scenario vectors with legacy fallback."""
+    recall = rule.get("recall", {}) or {}
+    records = []
+    seen_ids = set()
+    for index, scenario in enumerate(recall.get("semantic_scenarios") or [], start=1):
+        if not isinstance(scenario, dict) or scenario.get("enabled") is False:
+            continue
+        scenario_id = str(scenario.get("scenario_id") or f"scenario_{index}").strip()
+        vector_text = str(scenario.get("vector_text") or "").strip()
+        if not scenario_id or not vector_text or scenario_id in seen_ids:
+            continue
+        seen_ids.add(scenario_id)
+        records.append(
+            {
+                "rule_id": rule.get("rule_id"),
+                "rule_uid": rule.get("rule_uid"),
+                "serial_no": rule.get("serial_no"),
+                "title": rule.get("title"),
+                "scenario_id": scenario_id,
+                "vector_source": "semantic_scenario",
+                "vector_text": vector_text,
+                "vector_text_hash": vector_text_hash(vector_text),
+                "source_file": rule.get("_source_file"),
+            }
+        )
+    if records:
+        return records
+
+    vector_text = str(recall.get("vector_text") or "").strip()
+    if not vector_text:
+        return []
+    return [
+        {
+            "rule_id": rule.get("rule_id"),
+            "rule_uid": rule.get("rule_uid"),
+            "serial_no": rule.get("serial_no"),
+            "title": rule.get("title"),
+            "scenario_id": "rule_summary",
+            "vector_source": "legacy_vector_text",
+            "vector_text": vector_text,
+            "vector_text_hash": vector_text_hash(vector_text),
+            "source_file": rule.get("_source_file"),
+        }
+    ]
+
+
 def _semantic_rule_records(rules):
     records = []
     for rule in rules:
@@ -28,21 +75,8 @@ def _semantic_rule_records(rules):
             continue
         if semantic_role == "disabled":
             continue
-        vector_text = recall.get("vector_text") or ""
-        if not vector_text:
-            continue
-        records.append(
-            {
-                "rule_id": rule.get("rule_id"),
-                "serial_no": rule.get("serial_no"),
-                "title": rule.get("title"),
-                "vector_text": vector_text,
-                "vector_text_hash": vector_text_hash(vector_text),
-                "source_file": rule.get("_source_file"),
-            }
-        )
+        records.extend(semantic_vector_records(rule))
     return [record for record in records if record.get("rule_id")]
-
 
 def _chunks(items, size):
     for index in range(0, len(items), size):
@@ -97,7 +131,7 @@ def load_rule_vector_index(path=DEFAULT_VECTOR_INDEX_PATH):
         text_hash = item.get("vector_text_hash")
         embedding = item.get("embedding")
         if rule_id and text_hash and embedding:
-            entries[(rule_id, text_hash)] = item
+            entries[(rule_id, item.get("scenario_id") or "rule_summary", text_hash)] = item
     return entries
 
 

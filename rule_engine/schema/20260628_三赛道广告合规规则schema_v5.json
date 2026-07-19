@@ -583,7 +583,18 @@
         ],
         "tags__comment": "规则标签，不是关键词清单。用于审核台筛选、统计、聚合展示和粗分类；不要把所有命中词都堆在这里。",
         "vector_text": "广告声称效果、价格、荣誉、销量、活动、服务内容与真实情况不一致，或使用无法验证的证明材料误导消费者。",
-        "vector_text__comment": "语义召回文本。用于向量化，应是一段自然语言描述“这条规则管什么风险场景”，可以包含关键词，但不应只是词表堆砌。",
+        "vector_text__comment": "父规则级兼容向量文本。旧版引擎继续读取；新版引擎在没有启用场景时使用该文本。",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "overall_impression_misleading",
+            "scenario_id__comment": "父规则内部唯一的稳定场景标识，用于向量索引和召回诊断，不作为独立法律规则。",
+            "vector_text": "隐瞒限制条件或用局部事实制造整体误导印象",
+            "vector_text__comment": "不超过50字的单一风险场景表达，用于独立向量化。",
+            "enabled": true,
+            "enabled__comment": "false 时该场景不进入向量索引；省略时默认启用。"
+          }
+        ],
+        "semantic_scenarios__comment": "可选的场景向量数组。存在启用场景时，新版引擎逐场景建向量并按父 rule_id 去重；旧版引擎忽略该字段并继续读取父级 vector_text。",
         "semantic_enabled": true,
         "semantic_enabled__comment": "是否进入语义召回/向量召回索引。true 表示该规则用 vector_text 做语义相似度召回；false 表示保留 vector_text 但不进入向量索引。",
         "semantic_role": "fallback",
@@ -591,7 +602,7 @@
         "semantic_reason": "为什么启用或不启用语义召回。应说明关键词为什么可能漏召回，或为什么关键词/事实核验已经足够。",
         "semantic_reason__comment": "语义召回标注理由。规则审核时需填写，方便后续决定是否入向量库。"
       },
-      "recall__comment": "召回辅助模块。tags 用于分类筛选；vector_text 描述违规语义场景；semantic_enabled 控制是否真正进入向量召回索引；关键词词库仍放在 detection.keyword_signals.hit_terms。",
+      "recall__comment": "召回辅助模块。vector_text 保持旧版兼容；semantic_scenarios 用于多场景向量；semantic_enabled 控制是否进入索引；关键词仍放在 detection.keyword_signals.hit_terms。",
       "risk_level": "高",
       "risk_level__comment": "风险等级。高/中/低/无明显风险。建议结合处罚强度、健康安全、未成年人、涉医疗、刑责或平台严重处罚来定。",
       "consequence": {
