@@ -1,4 +1,4 @@
-﻿# Game Probability Advertising Review Implementation Plan
+# Game Probability Advertising Review Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -394,4 +394,3 @@ Report:
 - mock and real baseline outcome for `CASE-GAME-PROB-001`;
 - confirmed-violation probe outcome;
 - confirmation that `/audit`, dual IDs, parent-rule deduplication, and Feishu integration remain unchanged.
-
