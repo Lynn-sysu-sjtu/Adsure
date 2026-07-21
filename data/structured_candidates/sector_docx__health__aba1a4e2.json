@@ -1,0 +1,80 @@
+{
+  "case_id": "sector_docx__health__aba1a4e2",
+  "title": "泸州市澳鼎医疗器械有限公司非诉执行案",
+  "case_number": "（2020）川0502行审15号",
+  "court": "泸州市江阳区人民法院",
+  "decision_date": "2020-09-02",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "保健食品广告合规案例库.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": null,
+  "party_name": "泸州市澳鼎医疗器械有限公司非",
+  "region": "泸州市江阳区",
+  "industry": "保健食品 / 保健品 / 普通食品",
+  "sector": "health",
+  "sector_cn": "保健品",
+  "violation_type": "会销保健品虚假宣传",
+  "case_nature": "civil_dispute_with_regulatory_signal",
+  "source_lookup_priority": "P1",
+  "is_admin_penalty_candidate": false,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "health"
+  ],
+  "product_or_service": "甲阳牌几丁聚糖",
+  "ad_channel": "视频宣传、视频",
+  "risk_dimensions": [
+    "保健品违规宣传",
+    "会销虚假宣传",
+    "疾病治疗功效宣传",
+    "老年人营销风险"
+  ],
+  "illegal_claims": [
+    "甲阳牌几丁聚糖",
+    "CLA共轭亚油酸软胶囊"
+  ],
+  "facts_summary": "被执行人采取邀请中老年免费体验电子仪器及医疗器械方式，在经营场所开展健康知识讲座，通过视频宣传、口头宣传、PPT宣传等方式，宣传“甲阳牌几丁聚糖”“CLA共轭亚油酸软胶囊”（均为保健食品）能预防和治疗疾病，共销售金额12740元，后退还消费者2000元。",
+  "legal_basis": [
+    "《中华人民共和国反不正当竞争法》第八条（虚假宣传）"
+  ],
+  "penalty_result": "罚款30000元（从轻处罚）。",
+  "penalty_amount": 30000,
+  "regulatory_logic": "保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销保健品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《中华人民共和国反不正当竞争法》第八条（虚假宣传）。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "health",
+    "保健品",
+    "会销保健品虚假宣传",
+    "保健品违规宣传",
+    "会销虚假宣传",
+    "疾病治疗功效宣传",
+    "老年人营销风险",
+    "甲阳牌几丁聚糖",
+    "CLA共轭亚油酸软胶囊"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "由用户提供的分赛道DOCX案例库导入；已归档原文，但缺少官方source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from user-provided sector DOCX case library; official source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2020）川0502行审15号 泸州市澳鼎医疗器械有限公司非诉执行案",
+  "vector_text": "【赛道】保健品。【场景】视频宣传、视频。【宣称】甲阳牌几丁聚糖；CLA共轭亚油酸软胶囊。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销保健品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《中华人民共和国反不正当竞争法》第八条（虚假宣传）。。【依据】《中华人民共和国反不正当竞争法》第八条（虚假宣传）。【结果】罚款30000元（从轻处罚）。。",
+  "raw_text_path": "data/raw_text/case_library_docx__保健食品广告合规案例库.json",
+  "decision_highlights": "利用健康讲座形式对保健食品作虚假宣传，宣称能预防和治疗疾病，构成不正当竞争行为；主动退还部分消费者款项可从轻处罚。",
+  "source_documents": [
+    {
+      "source_name": "保健食品广告合规案例库.docx",
+      "raw_text_path": "data/raw_text/case_library_docx__保健食品广告合规案例库.json",
+      "verification_status": "pending_source_lookup"
+    }
+  ]
+}

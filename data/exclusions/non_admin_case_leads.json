@@ -1,16 +1,21 @@
 {
-  "updated_at": "2026-07-20",
+  "updated_at": "2026-07-21",
   "items": [
     {
       "lead_id": "one_yuan_grab_ten_thousand_primogems",
       "title": "‘1元抢一万原石’案件",
       "case_nature": "civil_unfair_competition_dispute",
+      "administrative_penalty": false,
+      "primary_judgment_found": false,
+      "approved_for_administrative_penalty_rag": false,
+      "approved_for_civil_case_auxiliary_rag": true,
+      "auxiliary_record_path": "data/auxiliary_cases/mihoyo_v_pinduoduo_primogems_unfair_competition.json",
       "excluded_from": [
         "administrative_penalty_cases",
         "candidate_chunks",
         "production_chunks"
       ],
-      "reason": "该案属于民事不正当竞争纠纷，不是行政处罚案件，不存在行政处罚决定书。"
+      "reason": "该案属于民事不正当竞争纠纷，不是行政处罚案件，不存在行政处罚决定书。已另存为民事辅助案例，不进入任何行政处罚索引。"
     }
   ]
 }

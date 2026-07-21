@@ -2,7 +2,7 @@
   "evidence_id": "coconut_group_penalty_leads_user_research",
   "title": "椰树集团相关处罚线索及官方原文核验状态",
   "source_type": "user_supplied_research_note",
-  "recorded_date": "2026-07-20",
+  "recorded_date": "2026-07-21",
   "official_lookup_entry_urls": [
     "https://amr.hainan.gov.cn/",
     "https://e-register.amr.hainan.gov.cn:1888/",
@@ -14,13 +14,37 @@
     {
       "lead_id": "coconut_group_2021_recruitment_ad",
       "description": "2021年招聘广告处罚线索",
-      "verification_status": "pending_official_source_lookup"
+      "reported_party_name": "椰树集团海南椰汁饮料有限公司",
+      "reported_decision_date": "2021-04-30",
+      "reported_decision_number": "琼市监处19号",
+      "decision_number_normalized": null,
+      "reported_penalty_authority": "海南省市场监督管理局",
+      "reported_penalty_amount_cny": 400000,
+      "secondary_source_url": "https://finance.sina.com.cn/tech/2021-06-11/doc-ikqciyzi9150932.shtml",
+      "secondary_source_note": "媒体报道转引企业信用信息，不是处罚决定书或政府案件公示原文。",
+      "verification_status": "credible_secondary_source_verified",
+      "primary_decision_document_found": false
     },
     {
       "lead_id": "coconut_group_2024_coconut_juice_rubbing_ad",
       "description": "2024年‘用椰汁擦乳’广告处罚线索",
-      "verification_status": "pending_official_source_lookup"
+      "reported_party_name": "椰树集团有限公司",
+      "reported_decision_date": "2024-05-06",
+      "reported_penalty_authority": "海口市市场监督管理局龙华分局",
+      "reported_penalty_amount_cny": 400000,
+      "reported_claim_variants": [
+        "用椰子擦乳",
+        "用椰汁擦乳"
+      ],
+      "secondary_source_urls": [
+        "https://www.thepaper.cn/newsDetail_forward_27296586",
+        "https://finance.sina.com.cn/jjxw/2024-05-08/doc-inaupecm7260951.shtml",
+        "https://www.zaobao.com/realtime/china/story20240510-3639085"
+      ],
+      "secondary_source_note": "报道转引信用中国或处罚决定书内容，但未取得可公开直达的处罚决定书原文页面。",
+      "verification_status": "credible_secondary_source_only",
+      "primary_decision_document_found": false
     }
   ],
-  "verification_note": "现有链接仅为官方查询入口，不是具体案件的处罚决定书页面。未取得正式原文前，不确认具体处罚主体、处罚机关、决定书编号、法律依据、处罚金额或处罚结果。"
+  "verification_note": "已新增媒体二次证据并在候选记录中显式标注转引属性。官方查询入口仍不是具体案件原文；在未取得处罚决定书或政府案件公示原文前，不批准进入行政处罚生产主库。"
 }

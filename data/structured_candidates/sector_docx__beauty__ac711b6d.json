@@ -1,0 +1,78 @@
+{
+  "case_id": "sector_docx__beauty__ac711b6d",
+  "title": "临邑县临南镇双丰至尚洗化百货商店非诉执行案",
+  "case_number": "（2019）鲁1424行审75号",
+  "court": "临邑县人民法院",
+  "decision_date": "2019-08-01",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "美妆广告合规案例库.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": null,
+  "party_name": "临邑县临南镇双丰至尚洗化百货商店非",
+  "region": "临邑县人民法",
+  "industry": "化妆品 / 医疗美容 / 美妆",
+  "sector": "beauty",
+  "sector_cn": "美妆",
+  "violation_type": "化妆品广告使用医疗用语",
+  "case_nature": "administrative_nonlitigation_enforcement",
+  "source_lookup_priority": "P0",
+  "is_admin_penalty_candidate": true,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "beauty"
+  ],
+  "product_or_service": "治疗抬头纹、皱眉纹、鱼尾纹、法令纹",
+  "ad_channel": "微信朋友圈",
+  "risk_dimensions": [
+    "化妆品医疗化宣传",
+    "涉医疗宣传",
+    "医疗用语"
+  ],
+  "illegal_claims": [
+    "治疗抬头纹、皱眉纹、鱼尾纹、法令纹",
+    "不管你是弯腰驼背！还是脖子后面的富贵包！肩颈有问题的！脊柱弯曲的！还是严重的宫寒！体寒！湿气！妇科病！乳腺结节！乳腺增生！有以上病症的！我们身材管理器通通能给你治好"
+  ],
+  "facts_summary": "被执行人通过微信朋友圈转发蓝某内衣广告，宣传内容含有“治疗抬头纹、皱眉纹、鱼尾纹、法令纹”“不管你是弯腰驼背！还是脖子后面的富贵包！肩颈有问题的！脊柱弯曲的！还是严重的宫寒！体寒！湿气！妇科病！乳腺结节！乳腺增生！有以上病症的！我们身材管理器通通能给你治好”等医疗用语。",
+  "legal_basis": [
+    "《广告法》第十七条（非医疗广告涉及疾病治疗功能）"
+  ],
+  "penalty_result": "责令停止发布广告，在相应范围内消除影响，罚款100000元（从轻处罚）。",
+  "penalty_amount": 100000,
+  "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告使用医疗用语，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第十七条（非医疗广告涉及疾病治疗功能）。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "beauty",
+    "美妆",
+    "化妆品广告使用医疗用语",
+    "化妆品医疗化宣传",
+    "涉医疗宣传",
+    "医疗用语",
+    "治疗抬头纹、皱眉纹、鱼尾纹、法令纹",
+    "不管你是弯腰驼背！还是脖子后面的富贵包！肩颈有问题的！脊柱弯曲的！还是严重的宫寒！体寒！湿气！妇科病！乳腺结节！乳腺增生！有以上病症的！我们身材管理器通通能给你治好"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "由用户提供的分赛道DOCX案例库导入；已归档原文，但缺少官方source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from user-provided sector DOCX case library; official source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2019）鲁1424行审75号 临邑县临南镇双丰至尚洗化百货商店非诉执行案",
+  "vector_text": "【赛道】美妆。【场景】微信朋友圈。【宣称】治疗抬头纹、皱眉纹、鱼尾纹、法令纹；不管你是弯腰驼背！还是脖子后面的富贵包！肩颈有问题的！脊柱弯曲的！还是严重的宫寒！体寒！湿气！妇科病！乳腺结节！乳腺增生！有以上病症的！我们身材管理器通通能给你治好。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告使用医疗用语，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第十七条（非医疗广告涉及疾病治疗功能）。。【依据】《广告法》第十七条（非医疗广告涉及疾病治疗功能）。【结果】责令停止发布广告，在相应范围内消除影响，罚款100000元（从轻处罚）。。",
+  "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
+  "decision_highlights": "内衣产品广告使用医疗用语宣传疾病治疗功能，违反第十七条；微信朋友圈转发广告属于商业广告发布行为；广告费用无法计算时，处10万元以上20万元以下罚款。",
+  "source_documents": [
+    {
+      "source_name": "美妆广告合规案例库.docx",
+      "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
+      "verification_status": "pending_source_lookup"
+    }
+  ]
+}
