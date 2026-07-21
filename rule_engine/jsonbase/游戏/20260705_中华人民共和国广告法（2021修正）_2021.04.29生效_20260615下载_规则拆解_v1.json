@@ -8273,8 +8273,8 @@
           "context_signals": [],
           "negative_signals": []
         },
-        "semantic_criteria": "广告中虚构或夸大游戏使用效果，如虚假宣传游戏内收益、爆率、体验等",
-        "decision": "若广告虚构游戏使用效果，则判定为虚假广告"
+        "semantic_criteria": "广告对抽卡、装备掉落或随机奖励的概率和获取难度作出宣传时，核对是否遗漏足以影响消费决策的奖池、保底、期限或适用条件，以及宣传的概率和获取结果是否与实际机制相符。",
+        "decision": "缺少实际奖池、概率、保底和适用条件资料时标记 needs_fact_verification；已有连续原文证据证明概率承诺、必出结果或奖池与实际明显不符，且足以影响用户下载、充值或抽取决策时标记 confirmed_violation。"
       },
       "recall": {
         "tags": [
@@ -8319,7 +8319,34 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "loot_rate_exaggeration",
+            "vector_text": "宣称抽卡爆率拉满稀有装备和角色随便获得",
+            "enabled": true
+          },
+          {
+            "scenario_id": "guaranteed_reward_claim",
+            "vector_text": "将随机抽取奖励宣传为十连必出一抽必中",
+            "enabled": true
+          },
+          {
+            "scenario_id": "probability_conditions_omitted",
+            "vector_text": "宣传高爆率却未说明奖池保底期限和适用条件",
+            "enabled": true
+          },
+          {
+            "scenario_id": "loot_pool_mismatch",
+            "vector_text": "广告展示神装稀有角色但实际奖池没有或极难获得",
+            "enabled": true
+          },
+          {
+            "scenario_id": "guarantee_conditions_hidden",
+            "vector_text": "十连必出承诺隐藏累计次数新用户或付费门槛",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -8374,9 +8401,12 @@
         "future_required": true,
         "current_required": false,
         "required_materials": [
-          "游戏实际数据报告",
-          "游戏内概率公示",
-          "收益说明"
+          "游戏内或官网概率公示页",
+          "实际奖池配置",
+          "各等级道具掉落概率",
+          "保底机制",
+          "活动期限和适用对象",
+          "概率宣传与实际机制的对照说明"
         ],
         "data_sources": [
           "运营部门",

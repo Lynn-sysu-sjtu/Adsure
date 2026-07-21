@@ -862,5 +862,32 @@
       "expected_routing": "\u6cd5\u52a1",
       "expected_opinion_type": "\u4eba\u5de5\u590d\u6838"
     }
+  },
+{
+  "case_id": "CASE-GAME-PROB-001",
+  "name": "游戏十连抽爆率和神装获取宣传",
+  "input_payload": {
+    "record_id": "case-game-prob-001",
+    "mode": "标准",
+    "fields": {
+      "①运营·行业领域": "游戏",
+      "①运营·物料内容": "开局十连抽，爆率拉满，神装随便出",
+      "①运营·补充背景资料": "买量信息流广告，尚未提供实际概率、奖池和保底机制"
+    }
+  },
+  "expected": {
+    "must_recall_rule_ids": [
+      "GAME-FALSE-004"
+    ],
+    "expected_confirmed_rule_ids": [],
+    "expected_fact_verification_rule_ids": [
+      "GAME-FALSE-004"
+    ],
+    "expected_dimensions": [
+      "虚假宣传"
+    ],
+    "expected_risk_level": "中",
+    "expected_routing": "法务"
   }
+}
 ]
