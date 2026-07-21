@@ -1,0 +1,84 @@
+{
+  "case_id": "sector_docx__health__4868d2df",
+  "title": "连城县文亨良瑞食品经营部诉连城县市场监督管理局案",
+  "case_number": "（2019）闽0824行初28号",
+  "court": "武平县人民法院",
+  "decision_date": "2019-12-09",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "保健食品广告合规案例库.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "连城县文亨良瑞食品经营部诉连城县市场监督管理局",
+  "party_name": "案",
+  "region": "武平县人民法",
+  "industry": "保健食品 / 保健品 / 普通食品",
+  "sector": "health",
+  "sector_cn": "保健品",
+  "violation_type": "会销保健品虚假宣传",
+  "case_nature": "administrative_litigation_review",
+  "source_lookup_priority": "P0",
+  "is_admin_penalty_candidate": true,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "health"
+  ],
+  "product_or_service": "佳尔乐牌蜂胶软胶囊",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "保健品违规宣传",
+    "会销虚假宣传",
+    "疾病治疗功效宣传",
+    "老年人营销风险"
+  ],
+  "illegal_claims": [
+    "佳尔乐牌蜂胶软胶囊",
+    "能有效防治高脂血症、心脑血管疾病",
+    "止咳化痰、镇痛、抗病毒",
+    "抗癌、降血脂"
+  ],
+  "facts_summary": "原告举办讲座，向老年人宣传蜂胶及“佳尔乐牌蜂胶软胶囊”（保健食品），宣称蜂胶具有“能有效防治高脂血症、心脑血管疾病”“止咳化痰、镇痛、抗病毒”“抗癌、降血脂”等疾病预防治疗作用，暗示该保健食品具有上述功效。",
+  "legal_basis": [
+    "《中华人民共和国反不正当竞争法》第八条第一款（虚假宣传）"
+  ],
+  "penalty_result": "责令停止违法行为，罚款250000元。",
+  "penalty_amount": 250000,
+  "regulatory_logic": "保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销保健品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《中华人民共和国反不正当竞争法》第八条第一款（虚假宣传）。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "health",
+    "保健品",
+    "会销保健品虚假宣传",
+    "保健品违规宣传",
+    "会销虚假宣传",
+    "疾病治疗功效宣传",
+    "老年人营销风险",
+    "佳尔乐牌蜂胶软胶囊",
+    "能有效防治高脂血症、心脑血管疾病",
+    "止咳化痰、镇痛、抗病毒",
+    "抗癌、降血脂"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "由用户提供的分赛道DOCX案例库导入；已归档原文，但缺少官方source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from user-provided sector DOCX case library; official source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2019）闽0824行初28号 连城县文亨良瑞食品经营部诉连城县市场监督管理局案",
+  "vector_text": "【赛道】保健品。【场景】其他。【宣称】佳尔乐牌蜂胶软胶囊；能有效防治高脂血症、心脑血管疾病；止咳化痰、镇痛、抗病毒；抗癌、降血脂。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销保健品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《中华人民共和国反不正当竞争法》第八条第一款（虚假宣传）。。【依据】《中华人民共和国反不正当竞争法》第八条第一款（虚假宣传）。【结果】责令停止违法行为，罚款250000元。。",
+  "raw_text_path": "data/raw_text/case_library_docx__保健食品广告合规案例库.json",
+  "decision_highlights": "借助宣传蜂胶的疾病预防治疗作用暗示主要成分为蜂胶的保健食品具有疾病预防治疗作用，构成引人误解的商业宣传；针对老年群体虚假宣传，依法应予处罚。",
+  "source_documents": [
+    {
+      "source_name": "保健食品广告合规案例库.docx",
+      "raw_text_path": "data/raw_text/case_library_docx__保健食品广告合规案例库.json",
+      "verification_status": "pending_source_lookup"
+    }
+  ]
+}

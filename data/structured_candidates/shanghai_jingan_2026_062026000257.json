@@ -12,6 +12,11 @@
     "https://m.21jingji.com/article/20260715/herald/0226c71d175d7e3bb65acfc1cd0fce30.html"
   ],
   "source_verification_status": "pending_official_source_lookup",
+  "entity_name_verified_by_official_public_source": false,
+  "primary_decision_document_found": false,
+  "approved_for_primary_penalty_rag": false,
+  "gate_reason": "处罚文号、企业主体和处罚内容尚未由可公开直达的官方材料验证；现有内容为用户提供文本",
+  "official_search_updated_at": "2026-07-21",
   "original_decision_url": null,
   "original_decision_url_status": "not_found",
   "official_lookup_entry_urls": [

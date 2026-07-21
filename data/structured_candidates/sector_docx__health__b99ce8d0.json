@@ -1,0 +1,78 @@
+{
+  "case_id": "sector_docx__health__b99ce8d0",
+  "title": "济南历下金泰保健食品经营部非诉执行案",
+  "case_number": "（2020）鲁0102行审30号",
+  "court": "济南市历下区人民法院",
+  "decision_date": "2020-04-21",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "保健食品广告合规案例库.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": null,
+  "party_name": "济南历下金泰保健食品经营部非",
+  "region": "济南市历下区",
+  "industry": "保健食品 / 保健品 / 普通食品",
+  "sector": "health",
+  "sector_cn": "保健品",
+  "violation_type": "会销保健品虚假宣传",
+  "case_nature": "administrative_nonlitigation_enforcement",
+  "source_lookup_priority": "P0",
+  "is_admin_penalty_candidate": true,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "health"
+  ],
+  "product_or_service": "古元金丹天网牌奇正丸",
+  "ad_channel": "视频",
+  "risk_dimensions": [
+    "保健品违规宣传",
+    "会销虚假宣传",
+    "疾病治疗功效宣传",
+    "老年人营销风险"
+  ],
+  "illegal_claims": [
+    "古元金丹天网牌奇正丸"
+  ],
+  "facts_summary": "被执行人在经营场所向老年顾客播放视频，宣传“古元金丹天网牌奇正丸”（保健食品）能够治疗多种疾病。",
+  "legal_basis": [
+    "《中华人民共和国反不正当竞争法》第八条第一款（虚假宣传）"
+  ],
+  "penalty_result": "罚款200000元。",
+  "penalty_amount": 200000,
+  "regulatory_logic": "保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销保健品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《中华人民共和国反不正当竞争法》第八条第一款（虚假宣传）。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "health",
+    "保健品",
+    "会销保健品虚假宣传",
+    "保健品违规宣传",
+    "会销虚假宣传",
+    "疾病治疗功效宣传",
+    "老年人营销风险",
+    "古元金丹天网牌奇正丸"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "由用户提供的分赛道DOCX案例库导入；已归档原文，但缺少官方source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from user-provided sector DOCX case library; official source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2020）鲁0102行审30号 济南历下金泰保健食品经营部非诉执行案",
+  "vector_text": "【赛道】保健品。【场景】视频。【宣称】古元金丹天网牌奇正丸。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销保健品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《中华人民共和国反不正当竞争法》第八条第一款（虚假宣传）。。【依据】《中华人民共和国反不正当竞争法》第八条第一款（虚假宣传）。【结果】罚款200000元。。",
+  "raw_text_path": "data/raw_text/case_library_docx__保健食品广告合规案例库.json",
+  "decision_highlights": "以播放视频方式向老年消费者宣传保健食品具有疾病治疗功能，构成虚假宣传；针对老年群体进行虚假宣传，依法应予处罚。",
+  "source_documents": [
+    {
+      "source_name": "保健食品广告合规案例库.docx",
+      "raw_text_path": "data/raw_text/case_library_docx__保健食品广告合规案例库.json",
+      "verification_status": "pending_source_lookup"
+    }
+  ]
+}

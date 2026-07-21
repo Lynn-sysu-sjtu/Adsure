@@ -1,28 +1,28 @@
 # Validation Report
 
-- Total: 124
-- Valid: 124
+- Total: 133
+- Valid: 133
 - Invalid: 0
-- Needs Review: 124
+- Needs Review: 133
 - Production cases: 10
 - Candidate cases: 57
-- Sector candidate cases: 54
+- Sector candidate cases: 63
 - Offline samples: 3
 
 ## Case Details
 
 | case_id | status | group | errors | issues | path | review_status | needs_review |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| samr_2025_typical_ads_01 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_01.json | approved | YES |
-| samr_2025_typical_ads_02 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_02.json | approved | YES |
-| samr_2025_typical_ads_03 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_03.json | approved | YES |
-| samr_2025_typical_ads_04 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_04.json | approved | YES |
-| samr_2025_typical_ads_05 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_05.json | approved | YES |
-| samr_2025_typical_ads_06 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_06.json | approved | YES |
-| samr_2025_typical_ads_07 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_07.json | approved | YES |
-| samr_2025_typical_ads_08 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_08.json | approved | YES |
-| samr_2025_typical_ads_09 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_09.json | approved | YES |
-| samr_2025_typical_ads_10 | PASS | production | - | needs_rule_mapping | data/structured/samr_2025_typical_ads_10.json | approved | YES |
+| samr_2025_typical_ads_01 | PASS | production | - | rule_mapping_pending_legal_review | data/structured/samr_2025_typical_ads_01.json | approved | YES |
+| samr_2025_typical_ads_02 | PASS | production | - | rule_mapping_pending_legal_review | data/structured/samr_2025_typical_ads_02.json | approved | YES |
+| samr_2025_typical_ads_03 | PASS | production | - | rule_mapping_pending_legal_review | data/structured/samr_2025_typical_ads_03.json | approved | YES |
+| samr_2025_typical_ads_04 | PASS | production | - | rule_mapping_pending_legal_review | data/structured/samr_2025_typical_ads_04.json | approved | YES |
+| samr_2025_typical_ads_05 | PASS | production | - | rule_mapping_pending_legal_review | data/structured/samr_2025_typical_ads_05.json | approved | YES |
+| samr_2025_typical_ads_06 | PASS | production | - | rule_mapping_pending_legal_review | data/structured/samr_2025_typical_ads_06.json | approved | YES |
+| samr_2025_typical_ads_07 | PASS | production | - | rule_mapping_pending_legal_review | data/structured/samr_2025_typical_ads_07.json | approved | YES |
+| samr_2025_typical_ads_08 | PASS | production | - | rule_mapping_pending_legal_review | data/structured/samr_2025_typical_ads_08.json | approved | YES |
+| samr_2025_typical_ads_09 | PASS | production | - | rule_mapping_pending_legal_review | data/structured/samr_2025_typical_ads_09.json | approved | YES |
+| samr_2025_typical_ads_10 | PASS | production | - | rule_mapping_pending_legal_review | data/structured/samr_2025_typical_ads_10.json | approved | YES |
 | coconut_group_2021_recruitment_ad_lead | PASS | candidate | - | needs_rule_mapping | data/structured_candidates/coconut_group_2021_recruitment_ad_lead.json | pending_review | YES |
 | coconut_group_2024_coconut_juice_rubbing_ad_lead | PASS | candidate | - | needs_rule_mapping | data/structured_candidates/coconut_group_2024_coconut_juice_rubbing_ad_lead.json | pending_review | YES |
 | excel_candidate__absolute_terms__0963e2cd | PASS | candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/excel_candidate__absolute_terms__0963e2cd.json | pending_review | YES |
@@ -79,6 +79,8 @@
 | excel_candidate__real_estate_misleading__c7de0984 | PASS | candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/excel_candidate__real_estate_misleading__c7de0984.json | pending_review | YES |
 | mihoyo_2014_2520140214 | PASS | candidate | - | needs_rule_mapping | data/structured_candidates/mihoyo_2014_2520140214.json | pending_review | YES |
 | mihoyo_2016_2520150399 | PASS | candidate | - | needs_rule_mapping | data/structured_candidates/mihoyo_2016_2520150399.json | pending_review | YES |
+| sector_docx__beauty__0993a40d | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__0993a40d.json | pending_review | YES |
+| sector_docx__beauty__0beb3b53 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__0beb3b53.json | pending_review | YES |
 | sector_docx__beauty__1696a02c | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__1696a02c.json | pending_review | YES |
 | sector_docx__beauty__21f65a16 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__21f65a16.json | pending_review | YES |
 | sector_docx__beauty__2626bbb1 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__2626bbb1.json | pending_review | YES |
@@ -90,6 +92,7 @@
 | sector_docx__beauty__96b1a837 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__96b1a837.json | pending_review | YES |
 | sector_docx__beauty__9b9bec19 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__9b9bec19.json | pending_review | YES |
 | sector_docx__beauty__a28e6eb6 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__a28e6eb6.json | pending_review | YES |
+| sector_docx__beauty__ac711b6d | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__ac711b6d.json | pending_review | YES |
 | sector_docx__beauty__ad8eba05 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__ad8eba05.json | pending_review | YES |
 | sector_docx__beauty__adcff395 | PASS | sector_candidate | - | source_url_missing_needs_verification, illegal_claims_missing_needs_review, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__adcff395.json | pending_review | YES |
 | sector_docx__beauty__b2d8108c | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__beauty__b2d8108c.json | pending_review | YES |
@@ -117,7 +120,9 @@
 | sector_docx__health__21364f49 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__21364f49.json | pending_review | YES |
 | sector_docx__health__32abaf01 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__32abaf01.json | pending_review | YES |
 | sector_docx__health__47adc1ea | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__47adc1ea.json | pending_review | YES |
+| sector_docx__health__4868d2df | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__4868d2df.json | pending_review | YES |
 | sector_docx__health__48c50f1c | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__48c50f1c.json | pending_review | YES |
+| sector_docx__health__4d2b48f7 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__4d2b48f7.json | pending_review | YES |
 | sector_docx__health__5560f828 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__5560f828.json | pending_review | YES |
 | sector_docx__health__5a23d058 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__5a23d058.json | pending_review | YES |
 | sector_docx__health__5d46a744 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__5d46a744.json | pending_review | YES |
@@ -126,7 +131,11 @@
 | sector_docx__health__801cf8d6 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__801cf8d6.json | pending_review | YES |
 | sector_docx__health__87d3834c | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__87d3834c.json | pending_review | YES |
 | sector_docx__health__9e72583c | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__9e72583c.json | pending_review | YES |
+| sector_docx__health__aba1a4e2 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__aba1a4e2.json | pending_review | YES |
 | sector_docx__health__abf17acb | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__abf17acb.json | pending_review | YES |
+| sector_docx__health__aeccb98a | PASS | sector_candidate | - | source_url_missing_needs_verification, illegal_claims_missing_needs_review, needs_rule_mapping | data/structured_candidates/sector_docx__health__aeccb98a.json | pending_review | YES |
+| sector_docx__health__b99ce8d0 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__b99ce8d0.json | pending_review | YES |
+| sector_docx__health__bd569381 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__bd569381.json | pending_review | YES |
 | sector_docx__health__bdad9230 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__bdad9230.json | pending_review | YES |
 | sector_docx__health__ce7b9365 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__ce7b9365.json | pending_review | YES |
 | sector_docx__health__d8460228 | PASS | sector_candidate | - | source_url_missing_needs_verification, needs_rule_mapping | data/structured_candidates/sector_docx__health__d8460228.json | pending_review | YES |

@@ -1,0 +1,22 @@
+{
+  "case_id": "civil_aux__mihoyo_v_pinduoduo_primogems",
+  "title": "米哈游诉上海寻梦信息技术有限公司1元抢一万原石不正当竞争案",
+  "case_type": "civil_unfair_competition",
+  "case_nature": "civil_unfair_competition_dispute",
+  "administrative_penalty": false,
+  "plaintiff": "米哈游",
+  "defendant": "上海寻梦信息技术有限公司（拼多多）",
+  "facts_summary": "报道称，被告未经授权使用《原神》素材发布推广任务，使用‘1元抢一万原石’链接引导用户下载平台App；用户无法获得游戏内原石，只能参与平台内部抽奖或补贴金活动。",
+  "reported_outcome": "一审认定虚假宣传不正当竞争并判赔35万元；浙江省高级人民法院二审进一步认定仿冒混淆，判令停止侵权、刊登声明消除影响，赔偿共100万元。",
+  "source_type": "credible_media_report_not_judgment",
+  "source_name": "游民星空转引米哈游法务部消息",
+  "source_url": "https://www.gamersky.com/news/202508/1971153.shtml",
+  "raw_text_path": "data/raw_text/mihoyo_pinduoduo_primogems_secondary_report.json",
+  "primary_judgment_found": false,
+  "approved_for_administrative_penalty_rag": false,
+  "approved_for_civil_case_auxiliary_rag": true,
+  "exclude_from_administrative_penalty_corpus": true,
+  "indexed_in_candidate_chunks": false,
+  "indexed_in_production_chunks": false,
+  "review_status": "auxiliary_evidence_only"
+}

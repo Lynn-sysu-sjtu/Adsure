@@ -1,0 +1,78 @@
+{
+  "case_id": "sector_docx__beauty__0beb3b53",
+  "title": "上海美狄莎思美奇商贸有限公司诉上海市长宁区市场监督管理局案",
+  "case_number": "（2024）沪7101行初94号",
+  "court": "上海铁路运输法院",
+  "decision_date": "2024-04-29",
+  "source_type": "manual_docx_sector_report_pending_source_verification",
+  "source_name": "美妆广告合规案例库.docx",
+  "source_url": null,
+  "source_verification_status": "pending_source_lookup",
+  "publish_date": null,
+  "penalty_authority": "上海美狄莎思美奇商贸有限公司诉上海市长宁区市场监督管理局",
+  "party_name": "案",
+  "region": "上海铁路运输",
+  "industry": "化妆品 / 医疗美容 / 美妆",
+  "sector": "beauty",
+  "sector_cn": "美妆",
+  "violation_type": "化妆品广告使用医疗用语",
+  "case_nature": "administrative_litigation_review",
+  "source_lookup_priority": "P0",
+  "is_admin_penalty_candidate": true,
+  "is_litigation_reference": true,
+  "duplicate_group_id": null,
+  "related_sectors": [
+    "beauty"
+  ],
+  "product_or_service": "抗病毒",
+  "ad_channel": "其他",
+  "risk_dimensions": [
+    "化妆品医疗化宣传",
+    "涉医疗宣传",
+    "医疗用语"
+  ],
+  "illegal_claims": [
+    "抗病毒",
+    "抗菌抗病毒"
+  ],
+  "facts_summary": "原告在淘宝网店销售非医用口罩，在产品页面图文详情中使用“抗病毒”“抗菌抗病毒”等广告宣传用语，广告系原告自行设计制作发布，广告费用无法计算。",
+  "legal_basis": [
+    "《广告法》第十七条（非医疗广告涉及疾病治疗功能）"
+  ],
+  "penalty_result": "责令停止发布违法广告，在相应范围内消除影响，罚款30000元（减轻处罚）。",
+  "penalty_amount": 30000,
+  "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告使用医疗用语，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第十七条（非医疗广告涉及疾病治疗功能）。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "beauty",
+    "美妆",
+    "化妆品广告使用医疗用语",
+    "化妆品医疗化宣传",
+    "涉医疗宣传",
+    "医疗用语",
+    "抗病毒",
+    "抗菌抗病毒"
+  ],
+  "rag_chunk_type": "case_summary",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "notes": "由用户提供的分赛道DOCX案例库导入；已归档原文，但缺少官方source_url，需来源核验和法务复核后方可进入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "Imported from user-provided sector DOCX case library; official source_url pending verification.",
+    "approved_for_rag": false
+  },
+  "source_lookup_query": "（2024）沪7101行初94号 上海美狄莎思美奇商贸有限公司诉上海市长宁区市场监督管理局案",
+  "vector_text": "【赛道】美妆。【场景】其他。【宣称】抗病毒；抗菌抗病毒。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告使用医疗用语，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第十七条（非医疗广告涉及疾病治疗功能）。。【依据】《广告法》第十七条（非医疗广告涉及疾病治疗功能）。【结果】责令停止发布违法广告，在相应范围内消除影响，罚款30000元（减轻处罚）。。",
+  "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
+  "decision_highlights": "“抗病毒”属于医疗用语，非医用口罩广告使用该用语违反第十七条；广告费用无法计算时，处10万元以上20万元以下罚款；主动删除涉案广告、违法行为持续时间较短可减轻处罚。",
+  "source_documents": [
+    {
+      "source_name": "美妆广告合规案例库.docx",
+      "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
+      "verification_status": "pending_source_lookup"
+    }
+  ]
+}
