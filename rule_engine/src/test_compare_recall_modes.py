@@ -11,7 +11,7 @@ class CompareRecallModesTests(unittest.TestCase):
     def test_compare_cases_reports_semantic_noise_and_missing_expected(self):
         report = compare_cases(base_dir=PROJECT_BASE, fallback_supplement_threshold=0.04)
 
-        self.assertEqual(32, report["summary"]["case_count"])
+        self.assertEqual(33, report["summary"]["case_count"])
         self.assertGreaterEqual(report["summary"]["semantic_gain_count"], 0)
         self.assertGreater(report["summary"]["semantic_noise_count"], 0)
 
