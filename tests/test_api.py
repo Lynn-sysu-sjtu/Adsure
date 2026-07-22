@@ -6,7 +6,7 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from src.api import create_app
+from src.api import case_matches_industry, create_app
 
 
 class CaseApiTests(unittest.TestCase):
@@ -324,6 +324,17 @@ class CaseApiTests(unittest.TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["data"]["cases"], [])
+
+    def test_specific_industry_always_allows_general_cases(self):
+        for industry in ("美妆", "游戏", "保健食品"):
+            with self.subTest(industry=industry):
+                self.assertTrue(
+                    case_matches_industry(
+                        industry,
+                        {"industry": "通用"},
+                        {},
+                    )
+                )
 
     def test_health_food_request_can_retrieve_verified_ordinary_food_case(self):
         food_case = self.write_case(

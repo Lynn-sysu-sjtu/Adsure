@@ -431,7 +431,7 @@ def case_matches_industry(request_industry: str | None, case: dict, chunk: dict)
         )
     }
     case_groups.discard("")
-    return requested_group in case_groups
+    return requested_group in case_groups or "general" in case_groups
 
 
 def search_case_summary(case: dict, chunk: dict) -> str:
