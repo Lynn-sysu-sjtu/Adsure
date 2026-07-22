@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Adsure 广告合规规则引擎法律产品设计文档与路演问答">
+  <title>Adsure 规则引擎｜法律产品设计与路演 Q&amp;A</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9e1ec;
+      --paper: #ffffff;
+      --canvas: #f4f7fb;
+      --navy: #183153;
+      --blue: #2563eb;
+      --blue-soft: #eaf1ff;
+      --teal: #087f70;
+      --teal-soft: #e6f7f3;
+      --amber: #a15c00;
+      --amber-soft: #fff4dc;
+      --red: #b42318;
+      --red-soft: #ffebe9;
+      --shadow: 0 12px 36px rgba(24, 49, 83, .08);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+      line-height: 1.75;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      padding: .12em .4em;
+      border-radius: 5px;
+      background: #eef2f7;
+      font-family: Consolas, monospace;
+      font-size: .92em;
+    }
+    .layout { display: grid; grid-template-columns: 288px minmax(0, 1fr); min-height: 100vh; }
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      padding: 28px 22px;
+      color: #eef4ff;
+      background: linear-gradient(165deg, #132947 0%, #183153 58%, #0f5260 100%);
+    }
+    .brand { margin-bottom: 24px; }
+    .brand-kicker { color: #9bc8ff; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+    .brand h1 { margin: 5px 0 3px; font-size: 23px; line-height: 1.3; }
+    .brand p { margin: 0; color: #b8c8db; font-size: 13px; }
+    .toc-title { margin: 24px 0 8px; color: #8fb0d1; font-size: 12px; letter-spacing: .12em; }
+    .toc { margin: 0; padding: 0; list-style: none; }
+    .toc li { margin: 2px 0; }
+    .toc a {
+      display: block;
+      padding: 7px 9px;
+      border-radius: 8px;
+      color: #dce8f5;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .toc a:hover, .toc a.active { color: #fff; background: rgba(255,255,255,.12); text-decoration: none; }
+    .sidebar-note {
+      margin-top: 22px;
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 10px;
+      color: #c7d7e8;
+      background: rgba(255,255,255,.06);
+      font-size: 12px;
+    }
+    main { min-width: 0; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 72px clamp(28px, 6vw, 88px) 62px;
+      color: #fff;
+      background: linear-gradient(120deg, #183153 0%, #214d78 55%, #087f70 120%);
+    }
+    .hero::after {
+      position: absolute;
+      right: -110px;
+      bottom: -180px;
+      width: 460px;
+      height: 460px;
+      border: 78px solid rgba(255,255,255,.06);
+      border-radius: 50%;
+      content: "";
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 1000px; }
+    .eyebrow { margin-bottom: 14px; color: #a9d8ff; font-size: 13px; font-weight: 700; letter-spacing: .14em; }
+    .hero h2 { max-width: 920px; margin: 0; font-size: clamp(34px, 5vw, 58px); line-height: 1.16; letter-spacing: -.03em; }
+    .hero-lead { max-width: 860px; margin: 24px 0 28px; color: #e1edf9; font-size: 18px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .hero-tags span { padding: 6px 11px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; background: rgba(255,255,255,.08); font-size: 13px; }
+    .meta { margin-top: 30px; color: #b9cee3; font-size: 12px; }
+    .content { max-width: 1180px; margin: 0 auto; padding: 42px clamp(20px, 4vw, 54px) 90px; }
+    section { scroll-margin-top: 24px; margin-bottom: 34px; padding: clamp(24px, 4vw, 44px); border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); box-shadow: var(--shadow); }
+    section h2 { margin: 0 0 20px; color: var(--navy); font-size: 28px; line-height: 1.3; }
+    section h3 { margin: 28px 0 10px; color: #234361; font-size: 20px; }
+    section h4 { margin: 22px 0 8px; color: #304b66; font-size: 16px; }
+    p { margin: 10px 0; }
+    ul, ol { padding-left: 22px; }
+    li { margin: 6px 0; }
+    .lead { color: #344054; font-size: 18px; }
+    .callout { margin: 20px 0; padding: 18px 20px; border-left: 5px solid var(--blue); border-radius: 8px; background: var(--blue-soft); }
+    .callout strong { color: #1d4ed8; }
+    .callout.legal { border-left-color: var(--teal); background: var(--teal-soft); }
+    .callout.legal strong { color: var(--teal); }
+    .callout.warning { border-left-color: #d67b00; background: var(--amber-soft); }
+    .callout.warning strong { color: var(--amber); }
+    .callout.danger { border-left-color: var(--red); background: var(--red-soft); }
+    .callout.danger strong { color: var(--red); }
+    .grid-2, .grid-3, .metrics { display: grid; gap: 16px; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 22px 0; }
+    .card { padding: 19px; border: 1px solid var(--line); border-radius: 12px; background: #fbfcfe; }
+    .card h3, .card h4 { margin-top: 0; }
+    .card-number { color: var(--blue); font-size: 30px; font-weight: 800; line-height: 1.15; }
+    .card-label { margin-top: 4px; color: var(--muted); font-size: 13px; }
+    .flow { display: grid; grid-template-columns: repeat(5, minmax(130px, 1fr)); gap: 24px; margin: 28px 0; }
+    .flow-step { position: relative; min-height: 155px; padding: 18px; border: 1px solid #cdd9e7; border-radius: 13px; background: linear-gradient(180deg, #fff, #f7faff); }
+    .flow-step:not(:last-child)::after { position: absolute; top: 50%; right: -21px; color: #7391b3; content: "→"; font-size: 25px; transform: translateY(-50%); }
+    .flow-no { display: inline-flex; width: 28px; height: 28px; align-items: center; justify-content: center; border-radius: 50%; color: #fff; background: var(--blue); font-size: 13px; font-weight: 700; }
+    .flow-step h4 { margin: 10px 0 5px; }
+    .flow-step p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    table { width: 100%; margin: 18px 0; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 12px 13px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: #233f5e; background: #eef3f9; }
+    tr:nth-child(even) td { background: #fbfcfe; }
+    .status { display: inline-block; padding: 3px 8px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .status.confirmed { color: #9b1c13; background: #fee4e2; }
+    .status.fact { color: #875100; background: #fff0c7; }
+    .status.na { color: #475467; background: #eaecf0; }
+    .timeline { position: relative; margin: 22px 0 0 12px; padding-left: 26px; border-left: 2px solid #b8c9dd; }
+    .timeline-item { position: relative; margin: 0 0 28px; padding: 0 0 0 8px; }
+    .timeline-item::before { position: absolute; top: 7px; left: -34px; width: 13px; height: 13px; border: 3px solid #fff; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 2px #9bb6d5; content: ""; }
+    .timeline-stage { color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: .08em; }
+    .timeline-item h3 { margin: 3px 0 7px; }
+    .decision-row { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 10px; margin-top: 12px; }
+    .decision-cell { padding: 12px; border-radius: 9px; background: #f5f7fa; font-size: 13px; }
+    .decision-cell b { display: block; margin-bottom: 3px; color: #324b67; }
+    .case { margin: 18px 0; padding: 22px; border: 1px solid var(--line); border-radius: 13px; background: #fcfdff; }
+    .case h3 { margin-top: 0; }
+    .case-copy { padding: 12px 14px; border-radius: 8px; color: #1f3550; background: #edf4fc; font-weight: 700; }
+    .case-result { display: flex; flex-wrap: wrap; gap: 8px; margin: 13px 0; }
+    .pill { padding: 4px 9px; border-radius: 999px; color: #344054; background: #edf1f6; font-size: 12px; }
+    .qa details { margin: 10px 0; border: 1px solid var(--line); border-radius: 11px; background: #fff; }
+    .qa summary { padding: 16px 18px; color: #203d5c; cursor: pointer; font-weight: 700; }
+    .qa details[open] summary { border-bottom: 1px solid var(--line); background: #f6f9fc; }
+    .qa-answer { padding: 16px 18px; }
+    .footer { padding: 30px; color: var(--muted); text-align: center; font-size: 12px; }
+    .print-only { display: none; }
+
+    @media (max-width: 1080px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; padding: 18px 22px; }
+      .toc-title, .toc, .sidebar-note { display: none; }
+      .brand { margin: 0; }
+      .flow { grid-template-columns: 1fr; gap: 12px; }
+      .flow-step { min-height: auto; }
+      .flow-step:not(:last-child)::after { top: auto; right: 50%; bottom: -19px; content: "↓"; transform: translateX(50%); }
+    }
+    @media (max-width: 760px) {
+      .hero { padding: 46px 22px; }
+      .content { padding: 22px 12px 60px; }
+      section { padding: 22px 18px; }
+      .grid-2, .grid-3, .metrics, .decision-row { grid-template-columns: 1fr; }
+      table { display: block; overflow-x: auto; }
+    }
+    @media print {
+      body { background: #fff; }
+      .layout { display: block; }
+      .sidebar { display: none; }
+      .hero { padding: 42px; background: #183153 !important; print-color-adjust: exact; }
+      .content { max-width: none; padding: 22px; }
+      section { break-inside: avoid; box-shadow: none; }
+      .qa details { break-inside: avoid; }
+      .qa details > * { display: block !important; }
+      .print-only { display: block; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-kicker">Adsure Legal Product</div>
+      <h1>广告合规规则引擎</h1>
+      <p>产品设计文档与路演 Q&amp;A</p>
+    </div>
+    <div class="toc-title">目录</div>
+    <ol class="toc" id="toc">
+      <li><a href="#summary">01 执行摘要</a></li>
+      <li><a href="#problem">02 为什么不能只靠关键词或裸 LLM</a></li>
+      <li><a href="#method">03 法律产品方法</a></li>
+      <li><a href="#flow">04 完整审核链路</a></li>
+      <li><a href="#rules">05 规则资产设计</a></li>
+      <li><a href="#recall">06 三路召回</a></li>
+      <li><a href="#governance">07 候选规则治理</a></li>
+      <li><a href="#subsumption">08 结构化法律涵摄</a></li>
+      <li><a href="#evidence">09 事实与证据边界</a></li>
+      <li><a href="#outcome">10 风险、意见与路由</a></li>
+      <li><a href="#history">11 产品演进时间线</a></li>
+      <li><a href="#baseline">12 Baseline 演进</a></li>
+      <li><a href="#cases">13 代表案例</a></li>
+      <li><a href="#boundaries">14 系统责任边界</a></li>
+      <li><a href="#value">15 产品价值与路线图</a></li>
+      <li><a href="#qa">16 路演 Q&amp;A</a></li>
+    </ol>
+    <div class="sidebar-note">
+      当前核验基线：本地、GitHub 与云端规则引擎版本一致；提交 <code>11c2099</code>。历史全量自动化测试为 191/191 通过。
+    </div>
+  </aside>
+
+  <main>
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">LEGAL REASONING · RULE GOVERNANCE · HUMAN-IN-THE-LOOP</div>
+        <h2>把法务的专业判断，拆进可治理的规则资产与审核链路</h2>
+        <p class="hero-lead">Adsure 不是在表单中嵌入一个“会说话的审核模型”，而是把广告审查拆分为规范发现、候选治理、事实涵摄、证据校验、风险定级和业务路由，使大模型在明确的法律边界内工作。</p>
+        <div class="hero-tags">
+          <span>宽召回、严涵摄</span><span>规则与个案分离</span><span>事实不明不强行定性</span><span>全链路可解释</span><span>/audit 契约稳定</span>
+        </div>
+        <div class="meta">文档日期：2026-07-22　｜　视角：资深法律产品经理　｜　范围：Adsure / rule_engine</div>
+      </div>
+    </header>
+
+    <div class="content">
+      <section id="summary">
+        <h2>01　执行摘要</h2>
+        <p class="lead">广告合规并不是一个简单的文本分类问题，而是一项需要同时处理规范、事实、证据和程序的法律工作。</p>
+        <p>Adsure 当前规则引擎采取“规则引擎稳定发现候选规范，大模型在限定规则池内完成个案涵摄，程序再对证据和结论进行校验”的组合方案。其目标不是完全替代法务，而是把高频、可复用的法律判断转化为稳定的产品能力，并把真正需要法律裁量或事实调查的案件准确送到法务或运营。</p>
+        <div class="grid-3">
+          <div class="card"><h3>规范层</h3><p>规则库保存法律依据、效力层级、适用范围、构成要件、事实材料要求和可召回场景，形成可维护的法律知识资产。</p></div>
+          <div class="card"><h3>判断层</h3><p>DeepSeek 只在经过治理的候选规则池内判断规则是否适用于当前文案，不允许自由发明法条或跳出规则池定性。</p></div>
+          <div class="card"><h3>程序层</h3><p>程序验证规则身份、状态、证据连续性和缺失事实；判断失败时不展示未经确认的规则，而是转人工复核。</p></div>
+        </div>
+        <div class="callout legal"><strong>产品的核心价值：</strong>不是“AI 给出一个答案”，而是让每个答案都能够回答：依据哪一条规则、哪些构成要件已经满足、哪些事实仍待核验、为什么进入运营或法务。</div>
+      </section>
+
+      <section id="problem">
+        <h2>02　为什么不能只靠关键词或裸 LLM</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>关键词的结构性局限</h3>
+            <p>关键词擅长发现“第一”“治疗”“国家级”等显性表达，却难以识别通过语气、隐喻、上下文形成的价值贬损。例如“你还不是像狗一样跑过来”没有出现“侮辱”“低俗”或“良好风尚”，但其法律风险来自对消费者的人格贬损。</p>
+          </div>
+          <div class="card">
+            <h3>裸 LLM 的治理局限</h3>
+            <p>把完整规则库和文案直接交给大模型，短期开发快，但容易出现引用漂移、规则遗漏、同案不同判、废止规范混入、证据改写和无法解释“为什么没有适用其他规则”等问题。</p>
+          </div>
+        </div>
+        <table>
+          <thead><tr><th>方案</th><th>优点</th><th>法律产品风险</th></tr></thead>
+          <tbody>
+            <tr><td>纯关键词/正则</td><td>稳定、便宜、可解释</td><td>对隐喻、开放性条款和新型表达漏召回严重</td></tr>
+            <tr><td>纯向量召回</td><td>能识别近义表达</td><td>依赖场景资产；相似不等于法律适用；容易引入语义噪声</td></tr>
+            <tr><td>裸 LLM 审核</td><td>交互自然、冷启动快</td><td>规范边界不稳定，难以审计和复现，无法形成长期规则资产</td></tr>
+            <tr><td><strong>Adsure 组合方案</strong></td><td>召回稳定、判断灵活、证据可校验</td><td>需要持续建设规则资产与基准案例，但由此形成产品壁垒</td></tr>
+          </tbody>
+        </table>
+        <div class="callout"><strong>关键认识：</strong>召回和判断不是同一件事。某条规则与文案“相似”，只意味着它值得被审查；只有完成构成要件比对和事实判断后，它才可以进入最终结果。</div>
+      </section>
+
+      <section id="method">
+        <h2>03　Adsure 的法律产品方法</h2>
+        <div class="grid-3">
+          <div class="card"><h3>宽召回</h3><p>允许不同渠道发现潜在规则，宁可在候选阶段保留合理疑点，也不因词面表达变化漏掉重大风险。</p></div>
+          <div class="card"><h3>严涵摄</h3><p>被召回不等于适用。每条候选规则必须由大模型逐项判断，并区分确定违规、待事实核验和不适用。</p></div>
+          <div class="card"><h3>保守定性</h3><p>资质、备案、数据真实性或履约机制不明时，不把怀疑包装成违法结论；转化为明确的材料清单。</p></div>
+          <div class="card"><h3>效力优先</h3><p>同一法律问题存在法律、部门规章和多平台细则时，优先保留效力更高的主规则，并按实际投放平台补充实施规则。</p></div>
+          <div class="card"><h3>证据约束</h3><p>确定违规必须引用广告原文中的连续片段，禁止模型改写、拼接或概括后充当物料证据。</p></div>
+          <div class="card"><h3>人工兜底</h3><p>模型超时、结构错误或证据校验失败，不对外展示未经确认的规则；保持接口成功返回并送法务人工复核。</p></div>
+        </div>
+      </section>
+
+      <section id="flow">
+        <h2>04　当前完整审核链路</h2>
+        <div class="flow">
+          <div class="flow-step"><span class="flow-no">1</span><h4>字段标准化</h4><p>接收飞书字段或标准请求，将文案、行业、平台、产品、备案及补充背景映射为统一上下文。</p></div>
+          <div class="flow-step"><span class="flow-no">2</span><h4>多路候选发现</h4><p>关键词/正则、智谱场景向量、开放性规则目录并行发现 content 规则；fact 规则进入材料核验逻辑。</p></div>
+          <div class="flow-step"><span class="flow-no">3</span><h4>候选治理</h4><p>按父规则合并，使用双 ID 确保身份唯一，折叠近义规则，按效力层级、平台和名额限制形成精简池。</p></div>
+          <div class="flow-step"><span class="flow-no">4</span><h4>法律涵摄</h4><p>DeepSeek 在限定规则池内判断每条规则，返回三种适用状态、连续证据、已满足要件和缺失事实。</p></div>
+          <div class="flow-step"><span class="flow-no">5</span><h4>结果合成</h4><p>程序校验后生成最终规则、风险、审核意见和运营/法务路由；异常统一进入人工复核。</p></div>
+        </div>
+        <div class="callout warning"><strong>接口原则：</strong>以上复杂度全部封装在规则引擎内部，<code>/audit</code> 的输入输出契约、飞书字段和状态机语义保持稳定，避免规则能力升级演变为前后端联动重构。</div>
+      </section>
+
+      <section id="rules">
+        <h2>05　规则资产设计：把法务经验变成可运行知识</h2>
+        <h3>5.1 三类触发层</h3>
+        <table>
+          <thead><tr><th>触发层</th><th>法律含义</th><th>MVP 中的处理方式</th><th>示例</th></tr></thead>
+          <tbody>
+            <tr><td><code>content</code></td><td>风险可从广告内容本身判断</td><td>进入关键词、语义和目录召回，再由 LLM 涵摄</td><td>绝对化用语、疾病治疗、侮辱消费者</td></tr>
+            <tr><td><code>fact</code></td><td>结论依赖备案、资质、数据、履约或客观机制</td><td>召回后形成待核验事实及补充材料清单</td><td>美白备案、数据出处、游戏实际爆率</td></tr>
+            <tr><td><code>workflow</code></td><td>主体义务、平台责任、档案或流程要求</td><td>暂不进入 MVP 文案审核主链路，作为流程产品能力预留</td><td>广告档案保存、平台处置义务</td></tr>
+          </tbody>
+        </table>
+        <h3>5.2 父规则与场景向量</h3>
+        <p>开放性条款的难点不在于法条不存在，而在于法条语言高度抽象。规则资产因此保留一个稳定父规则，并在父规则下维护多个可检索的事实场景。例如“社会良好风尚”下可包括消费者侮辱、动物化贬损、羞辱式营销、身份或外貌贬低、恶俗价值观等场景。</p>
+        <div class="callout legal"><strong>场景不是新的法律规则。</strong>它只是把法务在历史案件中见过的事实形态转化为召回入口。最终输出仍然只展示《广告法》第九条第（七）项对应的父规则，避免把工程场景误当作法律规范。</div>
+        <h3>5.3 双 ID 方案</h3>
+        <p>历史规则库存在大量重复业务编号。系统采用 <code>rule_uid</code> 作为内部唯一、稳定身份，用于向量、合并、分组和模型返回校验；保留 <code>rule_id</code> 作为人类可读及飞书兼容字段。这样既解决错误合并，又避免一次性重命名破坏历史报告和外部接口。</p>
+      </section>
+
+      <section id="recall">
+        <h2>06　三路召回：不是 Multi-Agent 表演，而是职责受限的候选发现</h2>
+        <div class="grid-3">
+          <div class="card"><h3>关键词 / 正则</h3><p><strong>只看文案原文。</strong>用于发现稳定、明确的词面风险，结果确定、成本低，是召回底座。</p></div>
+          <div class="card"><h3>智谱场景向量</h3><p>读取文案、补充背景及结构化上下文，与规则场景向量比较，解决同义表达、隐喻和场景化语言。</p></div>
+          <div class="card"><h3>开放规则目录</h3><p>只向小模型提供少量开放性规则目录，让它选择“还应审查哪类规则”，不得判断违法、定风险或生成新规则。</p></div>
+        </div>
+        <p>目录召回不是把全规则库重新交给大模型。它只覆盖良好风尚、公共利益、歧视、未成年人健康等少量难以穷举的开放性规则，并设置白名单、最大返回数量、超时和失败降级。智谱向量与目录召回并行执行，目录失败不会阻断主审核。</p>
+        <div class="callout"><strong>规则库仍然是中心：</strong>小模型只能从精简目录中选择真实规则；DeepSeek 只能在最终候选池中涵摄。模型负责理解表达，规则资产负责限定法律空间。</div>
+      </section>
+
+      <section id="governance">
+        <h2>07　候选规则治理：防止“召回越强，结果越差”</h2>
+        <p>召回率提高后，新的主要矛盾变成规则噪声：相同法律问题可能同时命中法律、部门规章、抖音、淘宝、小红书规则；宽泛关键词还可能让未成年人、数据引证等无关规则进入推理池。候选治理因此成为连接召回与涵摄的关键层。</p>
+        <ol>
+          <li><strong>父规则合并：</strong>同一规则被多个场景或渠道命中，只保留一个父规则，并合并召回理由。</li>
+          <li><strong>法律问题分组：</strong>向量只用于离线发现近义候选；最终是否属于同一法律问题，还需结合规范对象、行为、法律后果、平台和触发层。</li>
+          <li><strong>效力层级折叠：</strong>同一问题优先保留最高效力主规则；仅在填报了具体平台时保留一条相应平台规则。</li>
+          <li><strong>候选名额治理：</strong>最终涵摄池原则上不超过 8 条，同时限制事实规则、平台规则和同一问题组的数量，并为开放性内容规则保留席位。</li>
+          <li><strong>召回与最终命中分开统计：</strong>候选规则用于评估是否漏召回；最终规则用于评估涵摄准确率，不能把二者混为一个指标。</li>
+        </ol>
+        <div class="callout warning"><strong>法律实务考虑：</strong>同义规则压缩不是简单“相似度最高者胜出”。效力层级、适用平台和规范对象优先于文本近似，否则可能用平台细则替代法律依据，或者把不同构成要件错误合并。</div>
+      </section>
+
+      <section id="subsumption">
+        <h2>08　结构化法律涵摄：最终展示必须经过适用性判断</h2>
+        <p>DeepSeek 对候选规则逐条输出结构化判断。系统不接受一段自由发挥的审核意见作为法律结论，而要求模型说明规则身份、适用状态、物料证据、满足要件、未满足要件和缺失事实。</p>
+        <table>
+          <thead><tr><th>状态</th><th>适用条件</th><th>对外语义</th><th>典型例子</th></tr></thead>
+          <tbody>
+            <tr><td><span class="status confirmed">confirmed_violation</span></td><td>文案本身已经满足关键要件，不依赖未提供的外部事实</td><td>确认存在内容违规，应修改或法务处理</td><td>将消费者比作狗；普通食品直接宣称治疗癌症</td></tr>
+            <tr><td><span class="status fact">needs_fact_verification</span></td><td>文案触及规范对象，但结论依赖备案、资质、证明材料或真实履约机制</td><td>不是已确认违法，而是需要运营补充或核验事实</td><td>美白精华备案属性；“爆率拉满”的实际概率</td></tr>
+            <tr><td><span class="status na">not_applicable</span></td><td>只命中宽泛词语、规则前提缺失、对象不符或属于语义噪声</td><td>不进入 matched_rules，不参与风险、路由和法条展示</td><td>仅出现“美白精华”不能据此认定虚构使用效果</td></tr>
+          </tbody>
+        </table>
+        <h3>为什么需要三种状态</h3>
+        <p>传统规则引擎常把“命中”直接等同于“违规”，导致过度审核；裸 LLM 又可能把事实不明的情况直接推断为违法。三态设计把法律定性与事实调查拆开，既保留审慎性，也让运营知道下一步具体补什么。</p>
+        <div class="callout legal"><strong>核心边界：</strong>缺少证明材料不能替代构成要件。只有文案已经作出相关事实宣称时，真实性规则才可能进入事实核验；仅出现产品名称或一般属性，不应自动扩张为“虚构效果”。</div>
+      </section>
+
+      <section id="evidence">
+        <h2>09　事实与证据边界</h2>
+        <h3>9.1 连续原文证据</h3>
+        <p><code>confirmed_violation</code> 必须引用广告物料中的一段连续原文。模型不得把“15天见效”和“焕发新生”从不同位置拼成新的证据，也不得概括为原文没有出现的表达。证据不连续即视为涵摄校验失败。</p>
+        <h3>9.2 上下文来源不是同等可信</h3>
+        <table>
+          <thead><tr><th>信息来源</th><th>产品角色</th><th>能否单独支持确定违规</th></tr></thead>
+          <tbody>
+            <tr><td>物料原文</td><td>待审核广告内容，可用于内容构成要件和原文证据</td><td>可以，限于直接内容违规</td></tr>
+            <tr><td>运营补充背景</td><td>帮助理解、发现冲突和提出核验方向；属于运营提供且未经独立核验</td><td>不可以</td></tr>
+            <tr><td>行业字段</td><td>召回范围和业务路由标签</td><td>不可以证明产品法律身份</td></tr>
+            <tr><td>产品品类、备案名称等结构字段</td><td>较稳定的运营输入，但存在填报错误和资质冲突可能</td><td>涉及资质定性时仍需核验</td></tr>
+            <tr><td>未来已核验事实通道</td><td>来自证照、备案库、后台配置或人工确认的客观事实</td><td>可以支持事实型规则最终定性</td></tr>
+          </tbody>
+        </table>
+        <h3>9.3 行业冲突保护</h3>
+        <p>当“行业领域=保健食品”，但补充背景明确写明“非保健食品”时，系统不会选择相信其中任一方并直接定案，而是标记产品身份冲突。依赖保健食品身份的专项规则不得仅凭行业字段确认为违法；但《广告法》第十七条这类不依赖产品身份的直接内容禁止仍可确认适用。</p>
+      </section>
+
+      <section id="outcome">
+        <h2>10　风险等级、审核意见与业务路由</h2>
+        <h3>10.1 风险不是规则库默认值的机械继承</h3>
+        <p>规则库风险表示该类行为的一般严重性；LLM 风险表示当前个案在具体语境下的严重程度。系统采用双轨合成：个案判断是主要依据，但已确认的高风险硬性内容规则可以形成高风险护栏。未经涵摄确认的候选规则不得推高最终风险。</p>
+        <h3>10.2 意见优先级</h3>
+        <ul>
+          <li>同时存在确定违规和事实核验时，核心意见必须先处理确定违规，补材料只能作为附带事项；</li>
+          <li>仅存在事实核验时，主意见为“需补资料”，不得表述为已经违法；</li>
+          <li>所有候选均不适用时，最终结果不展示候选法条；</li>
+          <li>涵摄失败时，结果为中风险、法务人工复核，<code>matched_rules</code> 为空。</li>
+        </ul>
+        <h3>10.3 路由</h3>
+        <p>确定的高风险内容违规、需要法律裁量的开放性规则及模型异常进入法务；常规备案、资质和证明材料核验优先进入运营；如果事实核验本身具有重大法律判断属性，则仍可进入法务。紧急程度影响业务时效，但不替代法律风险判断。</p>
+      </section>
+
+      <section id="history">
+        <h2>11　产品演进：每次改动解决了什么法律问题</h2>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-stage">阶段一｜规则库结构化</div><h3>从“法条文本”转向“可执行规则”</h3>
+            <div class="decision-row"><div class="decision-cell"><b>问题</b>法律文本不能直接等于审核条件。</div><div class="decision-cell"><b>改动</b>补充适用行业、风险、检测标准、关键词、事实材料和法律依据等结构。</div><div class="decision-cell"><b>结果</b>规则成为可召回、可解释、可路由的产品资产。</div></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-stage">阶段二｜Trigger Layer</div><h3>分开内容违法、事实核验与流程义务</h3>
+            <div class="decision-row"><div class="decision-cell"><b>问题</b>把所有规则用于文案匹配，造成主体义务和资料规则大量误报。</div><div class="decision-cell"><b>改动</b>建立 content / fact / workflow 三层。</div><div class="decision-cell"><b>结果</b>事实规则进入补资料，workflow 暂不干扰 MVP 文案链路。</div></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-stage">阶段三｜语义召回与 HyDE</div><h3>解决没有显性关键词的表达</h3>
+            <div class="decision-row"><div class="decision-cell"><b>问题</b>关键词对隐含语义和改写表达漏召回。</div><div class="decision-cell"><b>改动</b>只对开启语义召回的 content 规则生成短向量文本，并重建智谱索引。</div><div class="decision-cell"><b>结果</b>23 案阶段达到召回、维度、路由 23/23，语义命中 18 案。</div></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-stage">阶段四｜场景向量</div><h3>让开放性法条能够看见具体事实</h3>
+            <div class="decision-row"><div class="decision-cell"><b>问题</b>“像狗一样跑过来”与“良好风尚”法条文本向量距离过远。</div><div class="decision-cell"><b>改动</b>在父规则下增加消费者侮辱、动物化贬损、羞辱营销等场景。</div><div class="decision-cell"><b>结果</b>该案场景分数由父规则弱相关提升至 0.5816，并稳定召回父规则一次。</div></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-stage">阶段五｜三路召回</div><h3>补足无法穷举的开放性规则场景</h3>
+            <div class="decision-row"><div class="decision-cell"><b>问题</b>仅靠人工枚举场景无法覆盖未来的新型侮辱、歧视和不良价值表达。</div><div class="decision-cell"><b>改动</b>增加仅含开放性规则的精简目录，由受限模型选择补充候选，与智谱并行。</div><div class="decision-cell"><b>结果</b>在不把全库交给模型的前提下增强开放性规则发现，并保持降级能力。</div></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-stage">阶段六｜双 ID 与候选治理</div><h3>解决身份冲突和同义规则膨胀</h3>
+            <div class="decision-row"><div class="decision-cell"><b>问题</b>892 条规则中存在 127 组重复 rule_id，且法律与多平台近义规则挤占推理池。</div><div class="decision-cell"><b>改动</b>采用 rule_uid 内部唯一身份、法律问题分组、效力优先和名额限制。</div><div class="decision-cell"><b>结果</b>避免错误合并；涵摄池原则上限制为 8 条，减少提示词和噪声。</div></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-stage">阶段七｜结构化涵摄</div><h3>召回规则不再直接展示</h3>
+            <div class="decision-row"><div class="decision-cell"><b>问题</b>美白案例曾把虚假效果、未成年人和数据引证等候选全部展示为命中。</div><div class="decision-cell"><b>改动</b>DeepSeek 逐条返回三态判断；只保留 confirmed 和 needs fact。</div><div class="decision-cell"><b>结果</b>候选召回与最终法律结论分离，噪声规则被涵摄过滤。</div></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-stage">阶段八｜证据与失败保护</div><h3>防止模型“说对了，但证据是编的”</h3>
+            <div class="decision-row"><div class="decision-cell"><b>问题</b>模型可能拼接多个原文片段，或漏回候选规则。</div><div class="decision-cell"><b>改动</b>校验一一对应、固定状态、连续原文证据及 missing_facts；失败转人工。</div><div class="decision-cell"><b>结果</b>从“文本看起来合理”提升为可程序审计的结论。</div></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-stage">阶段九｜构成要件边界</div><h3>区分“事实不明”和“根本没有作出该宣称”</h3>
+            <div class="decision-row"><div class="decision-cell"><b>问题</b>“这是我们的美白精华”曾被虚构效果规则要求补功效证明。</div><div class="decision-cell"><b>改动</b>明确缺材料不能替代构成要件；仅产品属性不等于具体效果宣称。</div><div class="decision-cell"><b>结果</b>备案规则可待核验，虚构效果规则不适用，更符合法理直觉。</div></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-stage">阶段十｜直接开放性内容确认</div><h3>价值判断不应被一律降为补资料</h3>
+            <div class="decision-row"><div class="decision-cell"><b>问题</b>模型可能把明显动物化侮辱错误降为 needs fact。</div><div class="decision-cell"><b>改动</b>明确良好风尚等直接内容规则可凭连续原文完成判断。</div><div class="decision-cell"><b>结果</b>美妆侮辱案连续两轮均为高风险、法务、确认违反良好风尚。</div></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-stage">阶段十一｜游戏概率场景</div><h3>发现风险，但不在缺少实际机制时强行认定虚假</h3>
+            <div class="decision-row"><div class="decision-cell"><b>问题</b>“爆率拉满”缺少专项召回入口。</div><div class="decision-cell"><b>改动</b>在广告法虚假宣传规则下增加爆率夸大、必得、条件隐藏等场景。</div><div class="decision-cell"><b>结果</b>稳定召回 GAME-FALSE-004；无已核验概率时输出事实核验。</div></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-stage">阶段十二｜上下文溯源</div><h3>行业标签不能代替产品法律身份</h3>
+            <div class="decision-row"><div class="decision-cell"><b>问题</b>普通果汁因行业填“保健食品”，专项规则可能压过补充背景。</div><div class="decision-cell"><b>改动</b>补充背景进入涵摄上下文并标记未核验；行业仅作召回/路由标签；增加冲突保护。</div><div class="decision-cell"><b>结果</b>通用疾病治疗规则确认适用，行业专项规则不再仅凭标签定案。</div></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="baseline">
+        <h2>12　Baseline 演进：从“能否召回”转向“是否适用”</h2>
+        <div class="metrics">
+          <div class="card"><div class="card-number">24/24</div><div class="card-label">成熟召回阶段的目标规则召回</div></div>
+          <div class="card"><div class="card-number">24/24</div><div class="card-label">维度判断与路由通过</div></div>
+          <div class="card"><div class="card-number">19</div><div class="card-label">24 案中发生语义召回的案例</div></div>
+          <div class="card"><div class="card-number">≤ 8</div><div class="card-label">治理后的 DeepSeek 候选池上限</div></div>
+        </div>
+        <table>
+          <thead><tr><th>验证阶段</th><th>主要结果</th><th>产品含义</th></tr></thead>
+          <tbody>
+            <tr><td>2026-07-18，23 案真实模型</td><td>召回、语义预期、维度和路由均为 23/23；18 案语义命中；平均约 6.76 秒</td><td>HyDE 与语义召回已经有效，主要瓶颈不再是规则是否能被发现</td></tr>
+            <tr><td>2026-07-19，场景向量早期</td><td>曾出现 21/23、22/23，调整阈值与角色后恢复 23/23</td><td>语义阈值必须由基准案例校准，不能凭单案分数拍脑袋</td></tr>
+            <tr><td>新增良好风尚案后，24 案</td><td>召回、维度、路由 24/24；19 案发生语义命中</td><td>场景向量成功补足开放性规则的典型漏召回</td></tr>
+            <tr><td>三路召回实验</td><td>目录过宽时 21/24 案命中、平均候选 10.38；收紧后目录仅补充少数案件，平均候选回落至约 8.2</td><td>目录召回必须精简和受限，否则新增召回能力会反向制造噪声</td></tr>
+            <tr><td>真实 DeepSeek + 智谱</td><td>规则引用合法率和 JSON 有效率保持 100%；平均约 6.8—7.5 秒，P95 约 9.1—10.3 秒</td><td>真实涵摄耗时可接受但应由飞书延长等待和人工兜底保障</td></tr>
+            <tr><td>最新工程验证</td><td>本地与云端全量测试均为 191/191；三个真实案例最终 3/3 通过</td><td>接口、规则身份、上下文边界和代表性法律判断已形成回归保护</td></tr>
+          </tbody>
+        </table>
+        <div class="callout warning"><strong>如何理解“核心审核通过率”没有等于召回率：</strong>早期 baseline 的人工预期风险与模型个案判断并不总是一致。产品后续没有为了追平人工标签而机械调参，而是逐案判断人工预期是否符合法理，再把指标拆为候选召回、确定命中、事实核验准确率和不适用过滤率。</div>
+      </section>
+
+      <section id="cases">
+        <h2>13　三个代表案例</h2>
+        <article class="case">
+          <h3>案例一：消费者动物化贬损</h3>
+          <div class="case-copy">“我们的美白精华一降价，你还不是和狗一样跑过来”</div>
+          <div class="case-result"><span class="pill">高风险</span><span class="pill">路由：法务</span><span class="pill">GEN-GOOD-CUSTOMS-001</span><span class="status confirmed">confirmed_violation</span></div>
+          <p><strong>法律判断：</strong>“和狗一样跑过来”已经完整出现在广告原文中，对消费者形成动物化和贬损性比喻，无须通过外部资料才能判断。《广告法》第九条第（七）项是本案核心规范。</p>
+          <p><strong>产品启示：</strong>场景向量负责让系统找到开放性条款，DeepSeek 负责确认个案事实是否落入该条款，程序保证父规则只展示一次。美白备案可以作为附带事实核验，但不能遮蔽核心内容违规。</p>
+        </article>
+        <article class="case">
+          <h3>案例二：游戏爆率宣传</h3>
+          <div class="case-copy">“开局十连抽，爆率拉满，神装随便出”</div>
+          <div class="case-result"><span class="pill">中风险</span><span class="pill">路由：法务</span><span class="pill">GAME-FALSE-004</span><span class="status fact">needs_fact_verification</span></div>
+          <p><strong>法律判断：</strong>该表达会形成高概率甚至易得稀有装备的预期，但没有实际概率、奖池和保底资料时，不能直接认定与真实情况不符。需要核验实际抽取概率、奖励池、保底机制、活动期限和适用对象。</p>
+          <p><strong>产品启示：</strong>法律风险发现与最终违法认定必须分开。系统既不能漏掉这种强烈概率表示，也不能为了“命中预期”跳过事实核验。</p>
+        </article>
+        <article class="case">
+          <h3>案例三：普通果汁宣称治疗癌症</h3>
+          <div class="case-copy">“治疗肝癌、肺癌、结肠癌等 80%-90%癌症病类”</div>
+          <div class="case-result"><span class="pill">高风险</span><span class="pill">路由：法务</span><span class="pill">GEN-MED-001</span><span class="status confirmed">confirmed_violation</span></div>
+          <p><strong>法律判断：</strong>疾病治疗表达已经直接出现在广告中，《广告法》第十七条可作为广告侧直接依据。即使飞书行业字段填为“保健食品”，也不能由此证明产品具有保健食品法律身份；补充背景所称“普通果汁、非保健食品”同样属于未核验运营陈述。</p>
+          <p><strong>产品启示：</strong>通用内容禁止与行业身份规则应分别判断。行业字段可以帮助缩小召回范围，但不能成为确认专项规则适用的证据。</p>
+        </article>
+      </section>
+
+      <section id="boundaries">
+        <h2>14　规则引擎、RAG、飞书与模型的责任边界</h2>
+        <table>
+          <thead><tr><th>模块</th><th>负责什么</th><th>不负责什么</th></tr></thead>
+          <tbody>
+            <tr><td>规则引擎</td><td>规则召回、候选治理、法律涵摄、事实核验状态、证据校验、风险与路由</td><td>不负责检索行政处罚案例全文，不负责飞书流程状态持久化</td></tr>
+            <tr><td>案例 RAG</td><td>检索相似行政执法、司法或行业案例，为法务提供裁量参照</td><td>案例相似不能替代规则构成要件，也不能单独决定违法</td></tr>
+            <tr><td>飞书状态机</td><td>收集字段、发起审核、展示结果、控制运营和法务流转</td><td>不承担规则适用判断；无需感知内部三路召回和涵摄结构</td></tr>
+            <tr><td>智谱 Embedding</td><td>计算文案与场景资产的语义接近程度</td><td>不判断规则是否适用，不给出风险或法律结论</td></tr>
+            <tr><td>目录小模型</td><td>在开放性规则白名单中补充候选</td><td>不得访问全规则库自由定性，不得生成新规则</td></tr>
+            <tr><td>DeepSeek</td><td>在限定候选池中进行事实涵摄和个案风险判断</td><td>不得引用池外规则，程序校验失败时其结论不生效</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="value">
+        <h2>15　产品价值、当前局限与路线图</h2>
+        <h3>15.1 可形成的产品壁垒</h3>
+        <ul>
+          <li><strong>法律判断资产：</strong>规则不仅保存法条，还保存开放性场景、构成要件、材料要求、适用边界和反例。</li>
+          <li><strong>组织经验沉淀：</strong>每次误判都可以落成规则、场景、边界示例或回归案例，而不是只修改一次提示词。</li>
+          <li><strong>可审计性：</strong>能够区分“为何召回”“为何适用”“证据是什么”“缺什么事实”“为何路由”。</li>
+          <li><strong>模型可替换性：</strong>模型承担受限职责，规则身份、状态和接口由程序控制，降低对单一供应商的锁定。</li>
+        </ul>
+        <h3>15.2 当前局限</h3>
+        <ul>
+          <li>开放性规则场景仍需持续从真实案件中扩展；目录召回只能缓解，不能消除长尾问题。</li>
+          <li>当前缺少独立的“已核验事实”输入，运营背景不能直接支持事实型规则定案。</li>
+          <li>法律问题分组和效力层级治理仍需要法律人员维护，不能完全由向量自动决定。</li>
+          <li>真实 LLM 存在时延和小概率波动，必须继续依赖结构校验、回归案例和人工兜底。</li>
+          <li>workflow 规则尚未形成完整的主体义务和档案流程产品。</li>
+        </ul>
+        <h3>15.3 建议路线图</h3>
+        <ol>
+          <li><strong>短期：</strong>扩大真实案例 baseline，重点评估确定违规准确率、事实核验准确率、不适用过滤率和重复规则压缩率。</li>
+          <li><strong>中期：</strong>增加已核验事实通道，连接产品备案、资质、价格、活动配置和游戏概率后台。</li>
+          <li><strong>中期：</strong>把案例 RAG 作为法律裁量参照接入法务工作台，但保持“规则决定规范边界、案例辅助尺度”的关系。</li>
+          <li><strong>长期：</strong>激活 workflow 层，覆盖广告主、经营者、发布者、平台的主体义务、审查档案和整改闭环。</li>
+        </ol>
+      </section>
+
+      <section id="qa" class="qa">
+        <h2>16　路演可能被问到的 Q&amp;A</h2>
+        <details open><summary>Q1：这不就是“关键词 + 大模型”吗？真正的产品壁垒在哪里？</summary><div class="qa-answer">不是简单串联。产品壁垒在于把法律工作拆成可治理环节：规则分层决定哪些问题可从内容判断、哪些必须核验事实；场景资产把开放性法条映射到真实表达；候选治理处理效力层级和同义规则；结构化涵摄区分确认违规、待核验和不适用；程序再校验证据。模型可以替换，但这些法律产品资产和审核边界会持续积累。</div></details>
+        <details><summary>Q2：既然最终还是 DeepSeek 判断，为什么不直接把文案交给 DeepSeek？</summary><div class="qa-answer">直接审核无法稳定回答模型遗漏了哪些规则、引用的是不是现行规范、为何适用以及是否把事实不明误判成违法。Adsure 让 DeepSeek 在限定候选池内完成它擅长的语义理解和事实涵摄，而规则库限定法律空间，程序限定证据和输出。这样得到的是可审计的法律工作流，而不是一次不可复现的问答。</div></details>
+        <details><summary>Q3：开放性条款最终还是需要模型理解，规则库是不是只是装饰？</summary><div class="qa-answer">恰恰相反。开放性条款如果没有规则库，模型可以自由选择任意价值判断和法条；有规则库后，模型只能从经过法务确认的开放性规则目录中选择，并在父规则下依据场景完成涵摄。规则库保存的是允许适用的规范、历史事实形态、适用边界和法律依据，模型只是完成个案映射。</div></details>
+        <details><summary>Q4：场景向量依赖人工枚举，是否不可扩展？</summary><div class="qa-answer">场景资产不追求穷举全部语言，而是覆盖高频事实类型；目录召回负责发现未被场景覆盖的开放性候选；真实漏判再沉淀为新场景和 baseline。其扩展方式类似法律团队积累审查指引和典型案例，而不是预先列出所有可能文案。</div></details>
+        <details><summary>Q5：为什么把“像狗一样跑过来”判为良好风尚，而不是普通低俗营销？</summary><div class="qa-answer">其核心风险不是措辞粗俗本身，而是广告对消费者作动物化、贬损性比喻。该事实可直接从原文确认，落入《广告法》第九条第（七）项的社会良好风尚审查范围。系统仍将其标记为需要法务处理，因为开放性条款的尺度需要审慎把握。</div></details>
+        <details><summary>Q6：“美白精华”为什么不直接认定虚假宣传？</summary><div class="qa-answer">“美白精华”首先触发的是产品备案类别和允许宣称范围核验。仅有产品名称或属性，不当然构成虚构使用效果。只有出现具体效果、期限、程度等可验证宣称时，真实性规则才可能进入事实核验或确认违法。该区分体现构成要件优先于材料缺失。</div></details>
+        <details><summary>Q7：“爆率拉满”明显夸张，为什么只给中风险和补资料？</summary><div class="qa-answer">它会形成高概率预期，必须召回并核验；但虚假广告通常还需要判断其与实际概率、奖池和保底机制是否不符。没有这些事实时直接认定虚假，会把风险线索误当作已经证明的违法事实。若后台已核验数据证明宣传与实际明显不符，系统才应升级为确认违规。</div></details>
+        <details><summary>Q8：为什么行业字段不能作为规则适用事实？</summary><div class="qa-answer">行业字段是运营为了选择表单和路由而填写的标签，可能与产品备案身份不一致。如果仅凭“行业=保健食品”就确认保健食品专项规则，等于让一次表单选择替代证照和备案事实。系统可以用行业字段缩小候选范围，但涉及法律身份时必须核验。</div></details>
+        <details><summary>Q9：运营补充背景为什么不能直接作为证据？</summary><div class="qa-answer">补充背景可能是真实说明，也可能是不完整摘要、推测或错误填报。它适合帮助理解和发现冲突，但在没有独立核验前不应单独支持确定违法。未来可设计“已核验事实”字段或接入权威数据库，建立更高信任等级的事实通道。</div></details>
+        <details><summary>Q10：同一问题同时命中法律和多个平台规则，系统如何避免重复？</summary><div class="qa-answer">系统先按父规则和内部唯一 rule_uid 合并，再通过法律问题分组折叠近义规则。同一问题优先保留最高效力主规则；如果明确投放平台，再保留一条当前平台的实施规则。其他规则可作为内部 supporting rules 留痕，但不重复展示和占用涵摄席位。</div></details>
+        <details><summary>Q11：向量相似是否会把不同法律问题错误合并？</summary><div class="qa-answer">向量只用于发现可能近义的候选，不单独决定法律等价。最终分组还必须比较规范对象、行为、构成要件、法律后果、触发层和平台。特别是 content 与 fact 规则原则上不得因文本相似而折叠。</div></details>
+        <details><summary>Q12：如何防止大模型引用不存在的法条或规则？</summary><div class="qa-answer">目录模型只能返回白名单规则；涵摄模型只能返回当前候选池中的 rule_uid。程序逐项校验身份、数量和状态，池外规则无法进入最终结果。对外法律依据来自规则资产，而不是让模型自由生成。</div></details>
+        <details><summary>Q13：如何防止模型“证据看起来合理，但原文没有”？</summary><div class="qa-answer">确认违规必须返回物料原文中的单个连续片段，程序检查该片段是否确实存在。改写、概括或把两个不连续片段拼在一起都会触发涵摄失败并转人工。</div></details>
+        <details><summary>Q14：模型超时或返回错误 JSON 时，飞书会不会卡死？</summary><div class="qa-answer">规则引擎保留 <code>/audit</code> 正常响应契约，异常时返回中风险、法务人工复核、空 matched_rules，并记录不含密钥的诊断原因。飞书侧可以延长等待时间；极端情况下仍有完整的人工兜底路由。</div></details>
+        <details><summary>Q15：目前的准确率是多少？</summary><div class="qa-answer">需要区分指标。成熟 baseline 的候选召回、维度和路由已达到 24/24，但候选召回不等于最终法律判断准确。当前更重要的指标是确定违规准确率、事实核验准确率、不适用过滤率、候选压缩率和真实模型稳定性。最新三个代表性真实案例已连续验证通过，全量工程测试本地和云端均为 191/191。</div></details>
+        <details><summary>Q16：为什么不把人工预期当作唯一正确答案调模型？</summary><div class="qa-answer">人工标签也可能把风险线索误写成确定违法，或引用已经废止、并不直接适用的规范。法律产品不能为了通过测试而强行“对答案”，而应复核构成要件、证据和法源。游戏爆率案就是典型：人工希望高风险虚假宣传，但在缺少实际概率时，事实核验更符合法律审慎性。</div></details>
+        <details><summary>Q17：案例 RAG 会不会与规则引擎重复？</summary><div class="qa-answer">二者作用不同。规则引擎回答“依据什么规范、要件是否满足”；案例 RAG 回答“监管机关在相似事实中如何裁量、处罚尺度如何”。案例可以辅助解释开放性条款和风险尺度，但不能替代现行规则或构成要件。</div></details>
+        <details><summary>Q18：客户的规则与平台政策经常变化，怎么维护？</summary><div class="qa-answer">规则资产将法源、效力层级、生效状态、适用平台和场景分开管理。更新时可重建受影响的向量记录并运行对应 baseline，不需要整体重训模型。双 ID 保证规则内容更新不破坏内部身份和历史关联。</div></details>
+        <details><summary>Q19：这个系统能完全替代法务吗？</summary><div class="qa-answer">不能，也不应这样定位。系统适合自动处理高频明确风险、形成材料核验清单、压缩法务候选范围并保证依据一致。开放性条款边界、重大争议、证据冲突和模型异常仍需法务。其价值是把法务从重复筛查中释放出来，把注意力集中到真正需要专业判断的案件。</div></details>
+        <details><summary>Q20：下一阶段最重要的能力是什么？</summary><div class="qa-answer">不是无限增加规则数量，而是建立高可信事实通道和更成熟的法律评测体系：接入备案、资质、价格和活动配置；持续积累真实案件；分别衡量召回、涵摄、事实核验和过滤；再逐步把 workflow 规则扩展为主体义务与整改闭环。</div></details>
+      </section>
+
+      <div class="footer">Adsure Rule Engine · 法律产品设计文档 · 2026-07-22</div>
+    </div>
+  </main>
+</div>
+<script>
+  (function () {
+    const links = Array.from(document.querySelectorAll('#toc a'));
+    const sections = links.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+      });
+    }, { rootMargin: '-18% 0px -70% 0px' });
+    sections.forEach(section => observer.observe(section));
+  }());
+</script>
+</body>
+</html>
