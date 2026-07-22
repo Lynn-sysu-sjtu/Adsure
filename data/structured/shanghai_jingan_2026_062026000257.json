@@ -1,0 +1,8 @@
+{
+  "case_id": "shanghai_jingan_2026_062026000257",
+  "source_record_path": "data/structured_candidates/shanghai_jingan_2026_062026000257.json",
+  "demo_production": true,
+  "demo_only": true,
+  "not_for_production_factual_use": true,
+  "demo_purpose": "competition_demo_retrieval_only"
+}

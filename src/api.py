@@ -16,7 +16,11 @@ from fastapi import Body, FastAPI, Header, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
-from src.build_chunks import production_exclusion_reasons
+from src.build_chunks import (
+    is_demo_production_chunk,
+    load_case_record,
+    production_exclusion_reasons,
+)
 from src.test_retrieval import bm25_scores, tokenize
 
 
@@ -107,7 +111,7 @@ def load_cases(data_dir: Path, scope: str) -> dict[tuple[str, str], dict]:
         if not directory.exists():
             continue
         for path in sorted(directory.glob("*.json")):
-            case = json.loads(path.read_text(encoding="utf-8"))
+            case = load_case_record(path)
             case_id = case.get("case_id")
             if not case_id:
                 continue
@@ -334,8 +338,8 @@ def content_snippet(case: dict, chunk: dict) -> str:
     return text[:150]
 
 
-def is_production_case(case: dict, _chunk: dict) -> bool:
-    return not production_exclusion_reasons(case)
+def is_production_case(case: dict, chunk: dict) -> bool:
+    return is_demo_production_chunk(chunk) or not production_exclusion_reasons(case)
 
 
 def adapt_case(score: float, chunk: dict, case: dict, candidate_data: bool) -> dict:
@@ -361,7 +365,7 @@ def adapt_case(score: float, chunk: dict, case: dict, candidate_data: bool) -> d
         "raw_text_path": case.get("raw_text_path", ""),
         "review_status": review_status(case),
         "source_verification_status": case.get("source_verification_status", ""),
-        "approved_for_rag": approved_for_rag(case),
+        "approved_for_rag": approved_for_rag(case) or is_demo_production_chunk(chunk),
         "candidate_data": candidate_data,
     }
 

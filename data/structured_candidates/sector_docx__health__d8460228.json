@@ -54,6 +54,7 @@
   "rag_chunk_type": "case_summary",
   "review_status": "pending_review",
   "approved_for_rag": false,
+  "raw_text_path": "data/imports/违法广告行政处罚案例汇总_近三年_游戏美妆保健品 (1).docx",
   "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
   "audit": {
     "review_status": "pending_review",

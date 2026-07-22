@@ -9,6 +9,7 @@ DEFAULT_STRUCTURED_CANDIDATES_DIR = Path("data/structured_candidates")
 DEFAULT_STRUCTURED_SAMPLES_DIR = Path("data/structured_samples")
 DEFAULT_CHUNKS_DIR = Path("data/chunks")
 DEFAULT_REPORTS_DIR = Path("data/reports")
+DEFAULT_DEMO_PRODUCTION_MANIFEST = Path("data/config/demo_production_cases.json")
 
 MANUAL_CANDIDATE_SOURCE_TYPE = "manual_compilation_pending_source_verification"
 SECTOR_CANDIDATE_SOURCE_TYPE = "manual_docx_sector_report_pending_source_verification"
@@ -40,10 +41,10 @@ def unique_list(values: list) -> list:
     return list(dict.fromkeys(values))
 
 
-def base_metadata(case: dict) -> dict:
+def base_metadata(case: dict, demo_production: bool = False) -> dict:
     scope = case.get("scope", "public")
     tenant_id = case.get("tenant_id") if scope == "tenant" else None
-    return {
+    metadata = {
         "scope": scope,
         "tenant_id": tenant_id,
         "source_type": case.get("source_type", ""),
@@ -65,9 +66,23 @@ def base_metadata(case: dict) -> dict:
         "review_status": case.get("review_status", ""),
         "raw_text_path": case.get("raw_text_path", ""),
     }
+    if demo_production:
+        metadata.update(
+            {
+                "demo_production": True,
+                "demo_only": True,
+                "not_for_production_factual_use": True,
+            }
+        )
+    return metadata
 
 
-def chunk_from_case(case: dict, chunk_type: str, text: str) -> dict:
+def chunk_from_case(
+    case: dict,
+    chunk_type: str,
+    text: str,
+    demo_production: bool = False,
+) -> dict:
     chunk_id = f"{case['case_id']}__{chunk_type}"
     scope = case.get("scope", "public")
     tenant_id = case.get("tenant_id") if scope == "tenant" else None
@@ -83,7 +98,7 @@ def chunk_from_case(case: dict, chunk_type: str, text: str) -> dict:
         "risk_dimensions": unique_list(case.get("risk_dimensions", [])),
         "keywords": unique_list(case.get("keywords", [])),
         "text": text,
-        "metadata": base_metadata(case),
+        "metadata": base_metadata(case, demo_production),
     }
     if case.get("source_type") == SECTOR_CANDIDATE_SOURCE_TYPE:
         chunk.update(
@@ -103,17 +118,31 @@ def chunk_from_case(case: dict, chunk_type: str, text: str) -> dict:
     return chunk
 
 
-def chunks_from_case(case: dict) -> list[dict]:
+def chunks_from_case(case: dict, demo_production: bool = False) -> list[dict]:
     chunks = []
     if case.get("vector_text"):
-        chunks.append(chunk_from_case(case, "case_summary", case["vector_text"]))
+        chunks.append(
+            chunk_from_case(
+                case,
+                "case_summary",
+                case["vector_text"],
+                demo_production,
+            )
+        )
     if case.get("regulatory_logic"):
         claims = "；".join(case.get("illegal_claims") or [])
         logic_text = (
             f"{case.get('title', '')}的监管逻辑：{case.get('regulatory_logic', '')}"
             f" 相关广告宣称：{claims}。"
         )
-        chunks.append(chunk_from_case(case, "regulatory_logic", logic_text))
+        chunks.append(
+            chunk_from_case(
+                case,
+                "regulatory_logic",
+                logic_text,
+                demo_production,
+            )
+        )
     return chunks
 
 
@@ -191,11 +220,51 @@ def load_cases(directory: Path) -> list[tuple[Path, dict]]:
         return []
     cases = []
     for path in sorted(directory.glob("*.json")):
-        case = json.loads(path.read_text(encoding="utf-8"))
+        case = load_case_record(path)
         if case.get("exclude_from_validation") is True:
             continue
         cases.append((path, case))
     return cases
+
+
+def load_case_record(path: Path) -> dict:
+    case = json.loads(path.read_text(encoding="utf-8"))
+    source_record_path = case.get("source_record_path")
+    if not source_record_path:
+        return case
+    source_path = Path(source_record_path)
+    if not source_path.is_absolute():
+        source_path = path.parents[2] / source_path
+    source = json.loads(source_path.read_text(encoding="utf-8"))
+    if source.get("case_id") != case.get("case_id"):
+        raise ValueError(
+            f"production overlay 与源记录 case_id 不一致：{path}"
+        )
+    return {**source, **case}
+
+
+def load_demo_production_case_ids(manifest_path: Path | None) -> set[str]:
+    if manifest_path is None or not manifest_path.exists():
+        return set()
+    payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if payload.get("enabled") is not True:
+        return set()
+    case_ids = payload.get("case_ids") or []
+    if not isinstance(case_ids, list) or any(
+        not isinstance(case_id, str) or not case_id.strip()
+        for case_id in case_ids
+    ):
+        raise ValueError(f"比赛演示 production 清单格式错误：{manifest_path}")
+    return set(case_ids)
+
+
+def is_demo_production_chunk(chunk: dict) -> bool:
+    metadata = chunk.get("metadata") or {}
+    return bool(
+        metadata.get("demo_production") is True
+        and metadata.get("demo_only") is True
+        and metadata.get("not_for_production_factual_use") is True
+    )
 
 
 def render_chunk_report(report_rows: list[dict], totals: dict) -> str:
@@ -207,14 +276,15 @@ def render_chunk_report(report_rows: list[dict], totals: dict) -> str:
         f"- Sector candidate chunks: {totals['sector_candidate_chunks']}",
         f"- Production chunks: {totals['production_chunks']}",
         "",
-        "| case_id | source_type | destinations | production_reasons | path |",
-        "| --- | --- | --- | --- | --- |",
+        "| case_id | source_type | destinations | demo_override | production_reasons | path |",
+        "| --- | --- | --- | --- | --- | --- |",
     ]
     for row in report_rows:
         destinations = ", ".join(row["destinations"]) if row["destinations"] else "-"
         reasons = ", ".join(row["production_reasons"]) if row["production_reasons"] else "-"
         lines.append(
-            f"| {row['case_id']} | {row['source_type']} | {destinations} | {reasons} | {row['path']} |"
+            f"| {row['case_id']} | {row['source_type']} | {destinations} | "
+            f"{str(row['demo_override']).lower()} | {reasons} | {row['path']} |"
         )
     lines.append("")
     return "\n".join(lines)
@@ -226,6 +296,7 @@ def run(
     structured_samples_dir: Path = DEFAULT_STRUCTURED_SAMPLES_DIR,
     chunks_dir: Path = DEFAULT_CHUNKS_DIR,
     reports_dir: Path = DEFAULT_REPORTS_DIR,
+    demo_production_manifest: Path | None = None,
 ) -> dict[str, Path]:
     chunks_dir.mkdir(parents=True, exist_ok=True)
     reports_dir.mkdir(parents=True, exist_ok=True)
@@ -235,6 +306,9 @@ def run(
     sector_candidate_chunks_by_id: dict[str, dict] = {}
     production_chunks_by_id: dict[str, dict] = {}
     report_rows: list[dict] = []
+    demo_production_case_ids = load_demo_production_case_ids(
+        demo_production_manifest
+    )
 
     for source_dir, default_group in [
         (structured_samples_dir, "offline_sample"),
@@ -243,6 +317,11 @@ def run(
     ]:
         for case_path, case in load_cases(source_dir):
             source_type = case.get("source_type", default_group)
+            case_id = case.get("case_id", case_path.stem)
+            demo_override = (
+                case.get("demo_production") is True
+                and case_id in demo_production_case_ids
+            )
             chunks = chunks_from_case(case)
             destinations = []
             if source_type == OFFLINE_SAMPLE_SOURCE_TYPE or default_group == "offline_sample":
@@ -261,16 +340,22 @@ def run(
                     sector_candidate_chunks_by_id[chunk["chunk_id"]] = chunk
 
             reasons = production_exclusion_reasons(case)
-            if not reasons:
+            if not reasons or demo_override:
                 destinations.append("production_chunks")
-                for chunk in chunks:
+                production_chunks = (
+                    chunks_from_case(case, demo_production=True)
+                    if demo_override
+                    else chunks
+                )
+                for chunk in production_chunks:
                     production_chunks_by_id[chunk["chunk_id"]] = chunk
 
             report_rows.append(
                 {
-                    "case_id": case.get("case_id", case_path.stem),
+                    "case_id": case_id,
                     "source_type": source_type,
                     "destinations": destinations,
+                    "demo_override": demo_override,
                     "production_reasons": reasons,
                     "path": str(case_path),
                 }
@@ -311,6 +396,11 @@ def main() -> None:
     parser.add_argument("--structured-samples-dir", type=Path, default=DEFAULT_STRUCTURED_SAMPLES_DIR)
     parser.add_argument("--chunks-dir", type=Path, default=DEFAULT_CHUNKS_DIR)
     parser.add_argument("--reports-dir", type=Path, default=DEFAULT_REPORTS_DIR)
+    parser.add_argument(
+        "--demo-production-manifest",
+        type=Path,
+        default=DEFAULT_DEMO_PRODUCTION_MANIFEST,
+    )
     args = parser.parse_args()
 
     paths = run(
@@ -319,6 +409,7 @@ def main() -> None:
         structured_samples_dir=args.structured_samples_dir,
         chunks_dir=args.chunks_dir,
         reports_dir=args.reports_dir,
+        demo_production_manifest=args.demo_production_manifest,
     )
     print(json.dumps({key: str(path) for key, path in paths.items()}, ensure_ascii=False, indent=2))
 

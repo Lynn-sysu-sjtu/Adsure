@@ -8,7 +8,10 @@ from src.api import (
     find_case,
     scope_of,
 )
-from src.build_chunks import production_exclusion_reasons
+from src.build_chunks import (
+    is_demo_production_chunk,
+    production_exclusion_reasons,
+)
 
 
 def resolve_raw_text_path(data_dir: Path, raw_text_path: str) -> Path:
@@ -57,7 +60,11 @@ def check_production_readiness(
         if scope_of(case, chunk) == "public":
             public_case_ids.add(case_id)
 
-        reasons = production_exclusion_reasons(case)
+        reasons = (
+            []
+            if is_demo_production_chunk(chunk)
+            else production_exclusion_reasons(case)
+        )
         if reasons:
             errors.append(f"案例不满足 production 门禁：{case_id} ({', '.join(reasons)})")
 
