@@ -6,6 +6,7 @@ is a replaceable judgment layer: recall still finds candidate rules, and the LLM
 only performs legal subsumption and opinion writing.
 """
 
+import copy
 import json
 import re
 
@@ -144,6 +145,73 @@ def _compact_rule_for_llm(rule):
     }
 
 
+def apply_context_provenance_guard(llm_judgment, candidate_rules, context_package):
+    result = copy.deepcopy(llm_judgment)
+    conflicts = context_package.get("context_conflicts") or []
+    conflict = next(
+        (
+            item
+            for item in conflicts
+            if item.get("type") == "declared_industry_denied_by_background"
+        ),
+        None,
+    )
+    if not conflict:
+        return result
+
+    industry = str(conflict.get("declared_industry") or "").strip()
+    candidates_by_uid = {
+        item.get("rule_uid"): item
+        for item in candidate_rules
+        if item.get("rule_uid")
+    }
+    candidates_by_id = {
+        item.get("rule_id"): item
+        for item in candidate_rules
+        if item.get("rule_id")
+    }
+    changed = False
+    for judgment in result.get("rule_judgments") or []:
+        if judgment.get("applicability_status") != "confirmed_violation":
+            continue
+        candidate = candidates_by_uid.get(judgment.get("rule_uid"))
+        if candidate is None:
+            candidate = candidates_by_id.get(judgment.get("rule_id"))
+        if not candidate:
+            continue
+        applies_to = candidate.get("applies_to", {}) or {}
+        industries = [str(item) for item in (applies_to.get("industries") or [])]
+        if not industries or "通用" in industries or industry not in industries:
+            continue
+
+        missing_fact = f"核验产品是否属于{industry}及相应资质"
+        unsatisfied = f"产品属于{industry}的前提尚未核验"
+        reason = (
+            "行业字段仅为召回和路由标签，且补充背景明确否认该产品身份；"
+            "需先核验产品实际监管属性。"
+        )
+        judgment["applicability_status"] = "needs_fact_verification"
+        judgment["judgment"] = "需事实核验"
+        judgment["missing_facts"] = list(judgment.get("missing_facts") or [])
+        if missing_fact not in judgment["missing_facts"]:
+            judgment["missing_facts"].append(missing_fact)
+        judgment["unsatisfied_elements"] = list(
+            judgment.get("unsatisfied_elements") or []
+        )
+        if unsatisfied not in judgment["unsatisfied_elements"]:
+            judgment["unsatisfied_elements"].append(unsatisfied)
+        judgment["applicability_reason"] = reason
+        judgment["reasoning"] = reason
+        changed = True
+
+    if changed:
+        result["revision_suggestion"] = (
+            "删除已确认的直接违法表述，并核验产品实际监管属性；"
+            "不得以添加行业专属免责或警示语替代对直接违法文案的删除。"
+        )
+    return result
+
+
 def build_judgment_messages(context_package, matched_rules, mode="strict"):
     """Build chat messages for strict or expanded LLM judgment."""
     mode = mode if mode in {"strict", "expanded"} else "strict"
@@ -183,6 +251,10 @@ def build_judgment_messages(context_package, matched_rules, mode="strict"):
                 "reason": "\u52a8\u7269\u5316\u8d2c\u635f\u6d88\u8d39\u8005\u7684\u8868\u8fbe\u5df2\u5b8c\u6574\u51fa\u73b0\u5728\u6587\u6848\u4e2d\uff0c\u53ef\u76f4\u63a5\u6839\u636e\u6587\u6848\u539f\u6587\u5b8c\u6210\u4ef7\u503c\u5224\u65ad\uff0c\u4e0d\u5f97\u964d\u7ea7\u4e3aneeds_fact_verification\u3002",
             },
         ],
+        "context_provenance_policy": "补充背景为运营提供且未经核验；可用于理解和发现冲突，不得单独支持确定违规。",
+        "industry_role_policy": "行业字段只是召回与路由标签，不单独证明产品法律属性。",
+        "industry_conflict_policy": "存在行业显式冲突时，依赖该产品身份的专项规则不得仅凭行业字段确认适用。",
+        "general_rule_priority": "不依赖产品身份的通用直接内容禁止规则可独立完成判断。",
         "direct_content_priority": "直接内容违规与补资料并存时，直接内容违规是核心风险，补资料只能作为附带核验。",
         "evidence_policy": "confirmed_violation\u5fc5\u987b\u4ece\u7269\u6599\u539f\u6587\u4e2d\u9010\u5b57\u590d\u5236\u4e00\u4e2a\u5355\u4e2a\u8fde\u7eed\u7247\u6bb5\u3002\u4e0d\u5f97\u6539\u5199\u6216\u6982\u62ec\u3002\u4e0d\u5f97\u5220\u9664\u4e2d\u95f4\u6587\u5b57\u540e\u62fc\u63a5\uff1b\u82e5\u591a\u4e2a\u98ce\u9669\u4e8b\u5b9e\u4f4d\u4e8e\u4e0d\u540c\u4f4d\u7f6e\uff0cmaterial_evidence\u53ea\u80fd\u9009\u62e9\u5176\u4e2d\u4e00\u4e2a\u8fde\u7eed\u7247\u6bb5\u3002",
     }

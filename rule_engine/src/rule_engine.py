@@ -17,7 +17,11 @@ from confirmed_outcome import (
 from field_mapper import map_feishu_payload
 from kg_rule_store import load_rule_library
 from legal_issue_groups import load_legal_issue_groups
-from llm_judgment import judge_with_llm, judge_with_mock_llm
+from llm_judgment import (
+    apply_context_provenance_guard,
+    judge_with_llm,
+    judge_with_mock_llm,
+)
 from semantic_recall import semantic_recall_rules
 from rule_identity import rule_identity
 from subsumption import validate_subsumption_result
@@ -90,6 +94,42 @@ def build_context_package(request):
             if not value
         ],
     }
+
+
+def _explicit_industry_conflicts(request):
+    material = request.get("material", {}) or {}
+    context = request.get("context", {}) or {}
+    industry = str(context.get("industry") or "").strip()
+    background = str(material.get("supplemental_background") or "").strip()
+    denial = f"非{industry}" if industry else ""
+    if not denial or denial not in background:
+        return []
+    return [
+        {
+            "type": "declared_industry_denied_by_background",
+            "declared_industry": industry,
+            "background_evidence": denial,
+            "verification_required": True,
+        }
+    ]
+
+
+def build_judgment_context_package(request, public_context_package=None):
+    judgment_context = dict(public_context_package or build_context_package(request))
+    material = request.get("material", {}) or {}
+    judgment_context.update(
+        {
+            "supplemental_background": material.get("supplemental_background", ""),
+            "context_provenance": {
+                "material_text": "advertising_content",
+                "supplemental_background": "operator_supplied_unverified",
+                "industry": "recall_and_routing_label",
+                "product_category": "operator_structured_unverified",
+            },
+            "context_conflicts": _explicit_industry_conflicts(request),
+        }
+    )
+    return judgment_context
 
 
 def _rule_applies_to_context(rule, request):
@@ -836,6 +876,7 @@ def audit(payload, base_dir=None, diagnostics=None):
     library = load_rule_library(base)
     rules = library["data"].get("rules", [])
     context_package = build_context_package(request)
+    judgment_context_package = build_judgment_context_package(request, context_package)
     content_recalled = _merge_recalled_rules(
         recall_rules(rules, request, context_package=context_package)
     )
@@ -861,7 +902,10 @@ def audit(payload, base_dir=None, diagnostics=None):
         )
     audit_timestamp = int(datetime.now().timestamp() * 1000)
     try:
-        llm_judgment = _judge_with_config(context_package, judgment_rules)
+        llm_judgment = _judge_with_config(judgment_context_package, judgment_rules)
+        llm_judgment = apply_context_provenance_guard(
+            llm_judgment, judgment_rules, judgment_context_package
+        )
         validated_subsumption = validate_subsumption_result(
             judgment_rules,
             llm_judgment.get("rule_judgments"),
