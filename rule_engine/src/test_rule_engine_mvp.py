@@ -149,6 +149,29 @@ class RuleEngineMvpTests(unittest.TestCase):
             self.assertNotIn("]", value)
             self.assertNotIn("regex:", value)
 
+    def test_card_hit_summary_joins_multiple_sentences_without_double_punctuation(self):
+        rules = [
+            {
+                "rule_id": "GEN-GOOD-CUSTOMS-001",
+                "applicability_status": "confirmed_violation",
+                "material_evidence": "和狗一样跑过来",
+                "applicability_reason": "将消费者作动物化贬损，违背社会良好风尚。",
+            },
+            {
+                "rule_id": "COSM-002",
+                "applicability_status": "needs_fact_verification",
+                "material_evidence": "美白精华",
+                "applicability_reason": "美白功效是否合规取决于产品备案类别。",
+                "missing_facts": ["产品注册备案类别"],
+            },
+        ]
+
+        summary = _card_hit_summary(rules)
+
+        self.assertNotIn("。；", summary)
+        self.assertNotIn("；。", summary)
+        self.assertTrue(summary.endswith("。"))
+
     def test_health_card_summary_keeps_treatment_evidence_without_rule_id(self):
         rules = [
             {

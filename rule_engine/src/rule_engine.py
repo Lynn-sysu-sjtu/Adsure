@@ -672,8 +672,9 @@ def _card_hit_summary(matched_rules):
         selected.append(fact_rules[0])
     if not selected:
         selected = matched_rules[:1]
-    sentences = [_card_rule_sentence(rule).rstrip("；") for rule in selected]
-    return "；".join(sentence for sentence in sentences if sentence) or "无明显命中"
+    sentences = [_card_rule_sentence(rule).rstrip("。；") for rule in selected]
+    summary = "；".join(sentence for sentence in sentences if sentence)
+    return summary + "。" if summary else "无明显命中"
 
 
 def _high_risk_evidence_summary(matched_rules):

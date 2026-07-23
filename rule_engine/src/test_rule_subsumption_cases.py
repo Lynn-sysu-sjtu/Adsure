@@ -127,6 +127,7 @@ class RuleSubsumptionCaseTests(unittest.TestCase):
         evidence_summary = response["data"]["审核_高风险词命中"]
         self.assertIn("像狗一样跑过来", hit_summary)
         self.assertIn("产品注册备案类别", hit_summary)
+        self.assertNotIn("。；", hit_summary)
         self.assertIn("像狗一样跑过来", evidence_summary)
         for value in (hit_summary, evidence_summary):
             self.assertNotIn("GEN-GOOD-CUSTOMS-001", value)
