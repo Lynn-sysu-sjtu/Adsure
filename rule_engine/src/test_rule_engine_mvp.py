@@ -149,6 +149,27 @@ class RuleEngineMvpTests(unittest.TestCase):
             self.assertNotIn("]", value)
             self.assertNotIn("regex:", value)
 
+    def test_health_card_summary_keeps_treatment_evidence_without_rule_id(self):
+        rules = [
+            {
+                "rule_id": "GEN-MED-001",
+                "title": "非医疗广告不得涉及疾病治疗和医疗用语",
+                "applicability_status": "confirmed_violation",
+                "material_evidence": "治疗肝癌、肺癌、结肠癌等 80%-90%癌症病类",
+                "applicability_reason": "普通食品广告直接宣称治疗多种癌症，涉及疾病治疗功能。",
+            }
+        ]
+
+        hit_summary = _card_hit_summary(rules)
+        evidence_summary = _high_risk_evidence_summary(rules)
+
+        self.assertIn("治疗", hit_summary)
+        self.assertIn("治疗肝癌", evidence_summary)
+        for value in (hit_summary, evidence_summary):
+            self.assertNotIn("GEN-MED-001", value)
+            self.assertNotIn("[", value)
+            self.assertNotIn("]", value)
+
     def test_audit_canonical_payload_returns_tenant_and_request_ids(self):
         response = audit(
             {

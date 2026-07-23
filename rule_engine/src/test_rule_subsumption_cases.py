@@ -123,6 +123,20 @@ class RuleSubsumptionCaseTests(unittest.TestCase):
         self.assertEqual("needs_fact_verification", matched[1]["applicability_status"])
         self.assertNotIn("COSM-FALSE-004", [item["rule_id"] for item in matched])
 
+        hit_summary = response["data"]["预审_命中要点"]
+        evidence_summary = response["data"]["审核_高风险词命中"]
+        self.assertIn("像狗一样跑过来", hit_summary)
+        self.assertIn("产品注册备案类别", hit_summary)
+        self.assertIn("像狗一样跑过来", evidence_summary)
+        for value in (hit_summary, evidence_summary):
+            self.assertNotIn("GEN-GOOD-CUSTOMS-001", value)
+            self.assertNotIn("COSM-002", value)
+            self.assertNotIn("[", value)
+            self.assertNotIn("]", value)
+            self.assertNotIn("regex:", value)
+
+        self.assertIn("[GEN-GOOD-CUSTOMS-001]", response["data"]["审核_审核意见"])
+
 
 if __name__ == "__main__":
     unittest.main()
