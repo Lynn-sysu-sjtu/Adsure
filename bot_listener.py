@@ -8,7 +8,9 @@
 运行方式：python3 bot_listener.py
 依赖：pip3 install lark-oapi
 """
+import fcntl
 import json
+import sys
 import threading
 import requests
 from typing import Optional
@@ -23,6 +25,8 @@ from lark_oapi.event.callback.model.p2_card_action_trigger import (
 import feishu_api
 from config import FEISHU_APP_ID, FEISHU_APP_SECRET, WORKBENCH_URL, LEGAL_DEPT_NAME
 from fields_v4 import F_流转_当前状态, F_物料内容, F_预审_风险等级, F_预审_命中要点
+
+_LOCK_FILE = "/tmp/adsure_bot_listener.lock"
 
 
 def _trim(text: str, max_len: int = 80) -> str:
@@ -138,8 +142,16 @@ def _run_execute(record_id: str, mode: str, operator_open_id: Optional[str]):
         if routing == "待运营修改":
             _notify_operator_result(record_id, llm_result, operator_open_id)
         elif routing == "待法务复核":
-            _notify_legal(record_id, llm_result)
-            _notify_operator_transferred(record_id, llm_result, operator_open_id)
+            legal_ok = _notify_legal(record_id, llm_result)
+            if legal_ok:
+                _notify_operator_transferred(record_id, llm_result, operator_open_id)
+            else:
+                print(
+                    f"[bot_listener] ✗ 法务通知失败，已终止向运营发送虚假成功通知 record_id={record_id}",
+                    file=sys.stderr, flush=True,
+                )
+                _on_audit_error(record_id, operator_open_id,
+                                "法务通知发送失败，请人工确认并重新提交")
     except Exception as e:
         print(f"[bot_listener] execute 异常: {e}")
         _on_audit_error(record_id, operator_open_id, str(e))
@@ -267,17 +279,17 @@ def _notify_operator_result(record_id: str, llm_result: dict, open_id: Optional[
     print(f"[bot_listener] ✓ 审核结果已推送给运营（routing=待运营修改）")
 
 
-def _notify_legal(record_id: str, llm_result: dict):
-    """路由→法务复核：向「法务部」所有成员发飞书通知"""
+def _notify_legal(record_id: str, llm_result: dict) -> bool:
+    """路由→法务复核：向「法务部」所有成员发飞书通知，返回是否全部成功"""
     try:
         legal_ids = feishu_api.get_dept_open_ids(LEGAL_DEPT_NAME)
     except Exception as e:
-        print(f"[bot_listener] ⚠ 查询法务部成员失败: {e}")
-        return
+        print(f"[bot_listener] ✗ 查询法务部成员失败: {e}", file=sys.stderr, flush=True)
+        return False
 
     if not legal_ids:
-        print(f"[bot_listener] ⚠ 「{LEGAL_DEPT_NAME}」暂无成员，通知未发送")
-        return
+        print(f"[bot_listener] ✗ 「{LEGAL_DEPT_NAME}」暂无成员，通知未发送", file=sys.stderr, flush=True)
+        return False
 
     risk   = llm_result.get("预审_风险等级", "未知")
     points = _trim(llm_result.get("预审_命中要点", "（无）"))
@@ -316,9 +328,21 @@ def _notify_legal(record_id: str, llm_result: dict):
         ],
     }
 
+    failed = []
     for oid in legal_ids:
-        _send_card_to(oid, card)
-    print(f"[bot_listener] ✓ 法务通知已发送给 {len(legal_ids)} 名法务成员")
+        ok = _send_card_to(oid, card)
+        if not ok:
+            failed.append(oid)
+
+    if failed:
+        print(
+            f"[bot_listener] ✗ 法务通知发送失败！失败人员 open_id: {failed}",
+            file=sys.stderr, flush=True,
+        )
+        return False
+
+    print(f"[bot_listener] ✓ 法务通知已发送给 {len(legal_ids)} 名法务成员", flush=True)
+    return True
 
 
 def _notify_operator_transferred(record_id: str, llm_result: dict, open_id: Optional[str]):
@@ -365,9 +389,9 @@ def _notify_operator_transferred(record_id: str, llm_result: dict, open_id: Opti
     print(f"[bot_listener] ✓ 流转通知已推送给运营 record_id={record_id}")
 
 
-def _send_card_to(open_id: str, card: dict):
-    """向指定 open_id 发送互动卡片（委托给 feishu_api）"""
-    feishu_api.send_card_to(open_id, card)
+def _send_card_to(open_id: str, card: dict) -> bool:
+    """向指定 open_id 发送互动卡片（委托给 feishu_api），返回是否成功"""
+    return feishu_api.send_card_to(open_id, card)
 
 
 # ===== 模式确认卡片 =====
@@ -440,6 +464,15 @@ def _send_mode_card(record_id: str, ctx: dict, recommended_mode: str, open_id: O
 # ===== 启动长连接 =====
 
 def main():
+    # 进程互斥锁：同一台机器上只允许一个 bot_listener 实例运行
+    lock_fd = open(_LOCK_FILE, "w")
+    try:
+        fcntl.flock(lock_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        print("[bot_listener] ✗ 检测到另一个实例正在运行，本进程退出")
+        lock_fd.close()
+        return
+
     print("=" * 50)
     print("审心 · 飞书长连接监听器启动")
     print(f"  App ID : {FEISHU_APP_ID}")
@@ -458,7 +491,11 @@ def main():
         event_handler=handler,
         log_level=lark.LogLevel.INFO,
     )
-    ws_client.start()
+    try:
+        ws_client.start()
+    finally:
+        fcntl.flock(lock_fd, fcntl.LOCK_UN)
+        lock_fd.close()
 
 
 if __name__ == "__main__":
