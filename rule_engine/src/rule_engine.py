@@ -617,6 +617,74 @@ def _rule_display_label(rule):
     return f"[{rule_id}] {title}{suffix}"
 
 
+def _plain_card_text(value, rule_id=""):
+    text = str(value or "").replace("\r", " ").replace("\n", " ").strip()
+    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"regex:.*$", "", text).strip()
+    if rule_id:
+        text = text.replace(f"[{rule_id}]", "").replace(str(rule_id), "")
+    return text.replace("[", "").replace("]", "").strip(" ：:；;")
+
+
+def _card_rule_sentence(rule):
+    rule_id = rule.get("rule_id") or ""
+    evidence = _plain_card_text(rule.get("material_evidence"), rule_id)
+    reason = _plain_card_text(rule.get("applicability_reason"), rule_id)
+    title = _plain_card_text(rule.get("title"), rule_id)
+    status = rule.get("applicability_status")
+    missing = []
+    for item in rule.get("missing_facts") or []:
+        value = _plain_card_text(item, rule_id)
+        if value and value not in missing:
+            missing.append(value)
+
+    if reason:
+        sentence = reason
+    elif evidence and title:
+        sentence = f"“{evidence}”涉及{title}。"
+    elif title:
+        sentence = f"该物料涉及{title}。"
+    else:
+        sentence = "该物料存在广告合规风险。"
+
+    if evidence and evidence not in sentence:
+        sentence = f"“{evidence}”：{sentence}"
+    if status == "needs_fact_verification" and missing:
+        sentence = sentence.rstrip("。；") + "，需核验" + "、".join(missing) + "。"
+    return _plain_card_text(sentence, rule_id)
+
+
+def _card_hit_summary(matched_rules):
+    if not matched_rules:
+        return "无明显命中"
+    confirmed = [
+        rule
+        for rule in matched_rules
+        if rule.get("applicability_status") == "confirmed_violation"
+    ]
+    fact_rules = [
+        rule
+        for rule in matched_rules
+        if rule.get("applicability_status") == "needs_fact_verification"
+    ]
+    selected = confirmed[:1]
+    if fact_rules:
+        selected.append(fact_rules[0])
+    if not selected:
+        selected = matched_rules[:1]
+    sentences = [_card_rule_sentence(rule).rstrip("；") for rule in selected]
+    return "；".join(sentence for sentence in sentences if sentence) or "无明显命中"
+
+
+def _high_risk_evidence_summary(matched_rules):
+    evidence = []
+    for rule in matched_rules:
+        text = _plain_card_text(rule.get("material_evidence"), rule.get("rule_id") or "")
+        if text and text not in evidence:
+            evidence.append(text)
+    return "、".join(evidence) if evidence else "无"
+
+
 def _precheck_hit_summary(matched_rules):
     if not matched_rules:
         return "无明显命中"
@@ -991,7 +1059,7 @@ def audit(payload, base_dir=None, diagnostics=None):
             "resolved_mode": "标准",
             "mode_reason": STANDARD_MODE_REASON,
             "预审_风险等级": risk_level,
-            "预审_命中要点": _precheck_hit_summary(matched_rules),
+            "预审_命中要点": _card_hit_summary(matched_rules),
             "\u9884\u5ba1_\u4fee\u6539\u5efa\u8bae": revision_suggestion or fact_advice or "\u8bf7\u6839\u636e\u6700\u7ec8\u5ba1\u6838\u610f\u89c1\u5904\u7406\u3002",
             "预审_时间": audit_timestamp,
             "\u5ba1\u6838_\u5ba1\u6838\u610f\u89c1": final_opinion,
@@ -1005,7 +1073,7 @@ def audit(payload, base_dir=None, diagnostics=None):
                 ]
                 if value
             ),
-            "审核_高风险词命中": _precheck_hit_summary(matched_rules) if matched_rules else "无",
+            "审核_高风险词命中": _high_risk_evidence_summary(matched_rules),
             "审核_平台规则预检": "MVP阶段暂按规则库通用规则预检，平台专项规则待扩展。",
             "审核_备案核查结果": fact_advice or "MVP阶段暂未接入备案核查，仅根据运营提交字段做形式提示。",
             "审核_推荐违规类型": sorted(
