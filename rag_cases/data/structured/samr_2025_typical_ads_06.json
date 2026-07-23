@@ -1,0 +1,53 @@
+{
+  "case_id": "samr_2025_typical_ads_06",
+  "title": "浙江省杭州市市场监管局查处杭州青碧品牌管理有限公司违法广告案",
+  "source_type": "official_typical_case",
+  "source_name": "市场监管总局",
+  "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html",
+  "publish_date": "2026-01-31",
+  "decision_date": "2025-11",
+  "penalty_authority": "浙江省杭州市市场监管局",
+  "party_name": "杭州青碧品牌管理有限公司",
+  "region": "浙江省杭州市",
+  "industry": "健康产品",
+  "violation_type": "疾病治疗功效及普通食品保健功效宣传",
+  "product_or_service": "近视散光叶黄素护眼贴、九芝堂酸枣仁、江中制药益生菌、北京同仁堂牌人参蛹虫草高钙蛋白粉等",
+  "ad_channel": "",
+  "risk_dimensions": [
+    "疾病治疗功效宣传",
+    "功效无依据"
+  ],
+  "illegal_claims": [
+    "散光+近视，一贴恢复视力",
+    "改善睡眠",
+    "促进脂肪代谢",
+    "增强免疫力",
+    "缓解疲劳"
+  ],
+  "facts_summary": "杭州青碧品牌管理有限公司发布普通商品广告宣称可以恢复视力，并为多款普通食品宣传改善睡眠、促进脂肪代谢、增强免疫力和缓解疲劳等保健功效。2025年11月，浙江省杭州市市场监管局罚款19万元。",
+  "legal_basis": [
+    "《中华人民共和国广告法》有关规定"
+  ],
+  "penalty_result": "罚款19万元",
+  "penalty_amount": 190000,
+  "regulatory_logic": "普通商品广告不得宣称疾病治疗功能，普通食品广告不得宣传未经允许的保健功效。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "恢复视力",
+    "改善睡眠",
+    "增强免疫力",
+    "普通食品保健功效"
+  ],
+  "vector_text": "经营者为护眼贴发布恢复近视和散光等疾病治疗功能广告，并为多款普通食品宣传改善睡眠、增强免疫力等保健功效，市场监管部门依法予以处罚。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "approved",
+  "source_verification_status": "source_verified",
+  "approved_for_rag": true,
+  "raw_html_path": "data/raw_html/samr_typical_ads__2ad160ae3056.json",
+  "raw_text_path": "data/raw_text/samr_typical_ads__2ad160ae3056.json",
+  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。",
+  "audit": {
+    "review_status": "approved",
+    "approved_for_rag": true
+  }
+}
