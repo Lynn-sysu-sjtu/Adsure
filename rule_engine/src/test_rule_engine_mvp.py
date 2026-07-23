@@ -6,7 +6,9 @@ from tempfile import TemporaryDirectory
 from audit_api import audit_endpoint
 from field_mapper import map_feishu_payload
 from rule_engine import (
+    _card_hit_summary,
     _format_legal_basis_details,
+    _high_risk_evidence_summary,
     _synthesize_risk_level,
     audit,
     build_context_package,
@@ -90,6 +92,62 @@ class RuleEngineMvpTests(unittest.TestCase):
         )
         self.assertNotIn("regex:", display_text)
         self.assertNotIn("????", display_text)
+
+        for field in ("预审_命中要点", "审核_高风险词命中"):
+            self.assertIsInstance(data[field], str)
+            self.assertNotIn("[", data[field])
+            self.assertNotIn("]", data[field])
+            self.assertNotIn("regex:", data[field])
+
+        self.assertTrue(any(rule.get("rule_id") for rule in data["matched_rules"]))
+        self.assertIn("[", data["审核_审核意见"])
+
+    def test_card_hit_summary_uses_plain_evidence_and_reason_without_rule_id(self):
+        rules = [
+            {
+                "rule_id": "GEN-GOOD-CUSTOMS-001",
+                "title": "广告不得妨碍公共秩序或违背社会良好风尚",
+                "applicability_status": "confirmed_violation",
+                "material_evidence": "和狗一样跑过来",
+                "applicability_reason": (
+                    "[GEN-GOOD-CUSTOMS-001] 将消费者作动物化贬损，"
+                    "违背社会良好风尚。"
+                ),
+            }
+        ]
+
+        summary = _card_hit_summary(rules)
+
+        self.assertIn("和狗一样跑过来", summary)
+        self.assertIn("违背社会良好风尚", summary)
+        self.assertNotIn("GEN-GOOD-CUSTOMS-001", summary)
+        self.assertNotIn("[", summary)
+        self.assertNotIn("]", summary)
+        self.assertNotIn("regex:", summary)
+
+    def test_card_summaries_keep_missing_facts_and_plain_original_evidence(self):
+        rules = [
+            {
+                "rule_id": "GAME-FALSE-004",
+                "title": "禁止虚假广告（虚构使用效果）",
+                "applicability_status": "needs_fact_verification",
+                "material_evidence": "开局十连抽，爆率拉满，神装随便出",
+                "applicability_reason": "该表述可能使玩家形成高概率获得装备的预期。",
+                "missing_facts": ["游戏实际奖池、概率、保底和适用条件资料"],
+            }
+        ]
+
+        hit_summary = _card_hit_summary(rules)
+        evidence_summary = _high_risk_evidence_summary(rules)
+
+        self.assertIn("高概率", hit_summary)
+        self.assertIn("游戏实际奖池、概率、保底和适用条件资料", hit_summary)
+        self.assertEqual("开局十连抽，爆率拉满，神装随便出", evidence_summary)
+        for value in (hit_summary, evidence_summary):
+            self.assertNotIn("GAME-FALSE-004", value)
+            self.assertNotIn("[", value)
+            self.assertNotIn("]", value)
+            self.assertNotIn("regex:", value)
 
     def test_audit_canonical_payload_returns_tenant_and_request_ids(self):
         response = audit(
