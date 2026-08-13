@@ -146,6 +146,192 @@ function buildIndustryCard(record) {
         </div>`;
 }
 
+// 渲染六段式 AI 审核意见
+function renderAiOpinion(text) {
+    if (!text || !text.trim()) {
+        return '<div class="ai-opinion-box" style="color:var(--text-muted);">暂无审核意见</div>';
+    }
+
+    // 六段配置：序号、标题、颜色
+    const SECTIONS = [
+        { marker: "①", label: "风险定性", color: "#cf1322", bg: "#fff1f0", border: "#ffccc7" },
+        { marker: "②", label: "违禁词鉴别", color: "#d46b08", bg: "#fff7e6", border: "#ffd591" },
+        { marker: "③", label: "违规类型", color: "#7c3aed", bg: "#f5f3ff", border: "#ddd6fe" },
+        { marker: "④", label: "法律依据", color: "#0050b3", bg: "#e6f7ff", border: "#91d5ff" },
+        { marker: "⑤", label: "修改建议", color: "#389e0d", bg: "#f6ffed", border: "#b7eb8f" },
+        { marker: "⑥", label: "风险定级", color: "#555", bg: "#f5f5f5", border: "#d9d9d9" },
+    ];
+
+    // 尝试按 ①②③④⑤⑥ 分段
+    const markers = SECTIONS.map(s => s.marker);
+    // 找出文本中出现的各段起始位置
+    const positions = markers.map(m => ({ m, idx: text.indexOf(m) })).filter(x => x.idx >= 0);
+    positions.sort((a, b) => a.idx - b.idx);
+
+    // 如果一个分段标记都没找到，降级为 pre-wrap 原样展示
+    if (positions.length === 0) {
+        return `<div class="ai-opinion-box">${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>`;
+    }
+
+    // 按位置切片，每段取"当前标记位置"到"下一标记位置"之间的内容
+    const chunks = positions.map((pos, i) => {
+        const end = i + 1 < positions.length ? positions[i + 1].idx : text.length;
+        const raw = text.slice(pos.idx + pos.m.length, end).trim();
+        return { marker: pos.m, content: raw };
+    });
+
+    // 渲染每一段
+    const blocks = chunks.map(chunk => {
+        const sec = SECTIONS.find(s => s.marker === chunk.marker);
+        if (!sec) return "";
+        // 首行可能是 "风险定性：xxx"，去掉冗余标题前缀
+        let body = chunk.content
+            .replace(new RegExp(`^${sec.label}[：:]\s*`), "")
+            .replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        // 把"无"/"无违禁词"等短结论加粗
+        body = body.replace(/^(无[^。\n]*)/m, '<strong>$1</strong>');
+        // 换行转 <br>
+        body = body.replace(/\n/g, '<br>');
+
+        return `
+        <div style="border:1px solid ${sec.border};border-radius:6px;margin-bottom:8px;overflow:hidden;">
+            <div style="background:${sec.bg};padding:5px 12px;display:flex;align-items:center;gap:6px;">
+                <span style="background:${sec.color};color:#fff;border-radius:3px;padding:1px 7px;font-size:11px;font-weight:700;">${sec.marker}</span>
+                <span style="font-weight:700;font-size:13px;color:${sec.color};">${sec.label}</span>
+            </div>
+            <div style="padding:8px 14px;font-size:13px;line-height:1.8;color:#333;">${body}</div>
+        </div>`;
+    }).join("");
+
+    return `<div style="margin-top:2px;">${blocks}</div>`;
+}
+
+// 结构化 AI 审核意见卡片（优先用结构化字段，原文本降级折叠展示）
+function renderAiReviewCard(record) {
+    const risk      = record["风险等级"] || "";
+    const riskClass = risk === "高风险" ? "high" : risk === "中风险" ? "medium" : "low";
+    const riskColorMap = { "高风险": "#cf1322", "中风险": "#d46b08", "低风险": "#389e0d" };
+    const riskBgMap    = { "高风险": "#fff1f0", "中风险": "#fff7e6", "低风险": "#f6ffed" };
+    const riskBorderMap= { "高风险": "#ffccc7", "中风险": "#ffd591", "低风险": "#b7eb8f" };
+    const riskColor  = riskColorMap[risk]   || "#555";
+    const riskBg     = riskBgMap[risk]      || "#f5f5f5";
+    const riskBorder = riskBorderMap[risk]  || "#d9d9d9";
+
+    // 意见类型映射（routing → 意见类型标签）
+    const auditStatus = record["审核状态"] || "";
+    const opinionType = record["预审_命中要点"]
+        ? (risk === "高风险" || risk === "中风险" ? "需修改" : "可发布")
+        : "待审核";
+    const opinionColorMap = {
+        "需修改": { bg: "#fff1f0", border: "#ffccc7", color: "#cf1322" },
+        "可发布": { bg: "#f6ffed", border: "#b7eb8f", color: "#389e0d" },
+        "需补资料": { bg: "#e6f7ff", border: "#91d5ff", color: "#0050b3" },
+        "待审核": { bg: "#f5f5f5", border: "#d9d9d9", color: "#888" },
+    };
+    const oc = opinionColorMap[opinionType] || opinionColorMap["待审核"];
+
+    // 违规类型标签
+    const vtypes = record["违规类型"] || [];
+    const vtypeHtml = vtypes.length
+        ? vtypes.map(v => `<span style="background:#f0f0f0;border:1px solid #d9d9d9;border-radius:3px;padding:1px 8px;font-size:12px;margin-right:4px;">${v}</span>`).join("")
+        : '<span style="color:var(--text-muted);font-size:12px;">无</span>';
+
+    // 命中要点
+    const hitPoints = record["预审_命中要点"] || "";
+    const suggestion = record["预审_修改建议"] || "";
+
+    // 高风险词
+    const hitWords = record["AI抽取-高风险词命中"] || "";
+    const showHitWords = hitWords && hitWords !== "无";
+
+    // 关键实体
+    const entities = record["关键实体抽取"] || "";
+
+    // 原始 AI 意见文本（折叠展示）
+    const rawOpinion = record["AI审核意见"] || "";
+
+    // 从完整报告中提取④法律依据段落，兼容多种格式
+    function extractLegalBasis(text) {
+        if (!text) return "";
+
+        // 方法1：按 ④...⑤ 区间提取
+        const idx4 = text.indexOf("④");
+        const idx5 = text.indexOf("⑤");
+        if (idx4 >= 0) {
+            const end = idx5 > idx4 ? idx5 : text.length;
+            const raw = text.slice(idx4 + 1, end).replace(/^[\s法律依据：:]+/, "").trim();
+            if (raw.length > 10) return raw;
+        }
+
+        // 方法2：提取所有 【法律】【法规】【部门规章】【平台规则】【司法解释】【行业规范】 开头的行
+        const legalLineRe = /【(法律|法规|部门规章|平台规则|司法解释|行业规范|规章)】[^\n]+/g;
+        const matches = text.match(legalLineRe);
+        if (matches && matches.length > 0) return matches.join("\n");
+
+        return "";
+    }
+    const legalBasisText = extractLegalBasis(rawOpinion);
+
+    return `
+    <div class="detail-card">
+        <div class="detail-card-title"><span class="icon">🤖</span>AI审核意见</div>
+
+        <!-- 顶部结论栏 -->
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;padding:10px 14px;border-radius:6px;background:${riskBg};border:1px solid ${riskBorder};">
+            <span style="background:${riskColor};color:#fff;font-weight:700;font-size:13px;border-radius:4px;padding:3px 10px;">${risk || "—"}</span>
+            <span style="background:${oc.bg};border:1px solid ${oc.border};color:${oc.color};font-weight:600;font-size:12px;border-radius:4px;padding:2px 9px;">${opinionType}</span>
+            ${record["审核模式"] ? `<span style="font-size:12px;color:#888;background:#fff;border:1px solid #e0e0e0;border-radius:4px;padding:2px 8px;">模式：${record["审核模式"]}</span>` : ""}
+        </div>
+
+        <!-- 核心结论：命中要点 -->
+        ${hitPoints ? `
+        <div style="margin-bottom:10px;">
+            <div style="font-size:14px;font-weight:700;color:#333;margin-bottom:4px;">核心风险点</div>
+            <div style="background:#fffbe6;border:1px solid #ffe58f;border-radius:5px;padding:8px 12px;font-size:13px;color:#333;line-height:1.7;">${hitPoints}</div>
+        </div>` : ""}
+
+        <!-- 所涉条文（法律依据原文）- 醒目蓝色块，不折叠 -->
+        ${legalBasisText ? `
+        <div style="margin-bottom:10px;">
+            <div style="font-size:14px;font-weight:700;color:#0050b3;margin-bottom:4px;">📜 所涉条文</div>
+            <div style="background:#e6f7ff;border:1px solid #91d5ff;border-radius:5px;padding:10px 14px;font-size:13px;color:#003a8c;line-height:1.9;">
+                ${legalBasisText.split(/\n/).map(s => s.trim()).filter(Boolean).map(s =>
+                    `<div style="padding:4px 0;border-bottom:1px solid #bae0ff;word-break:break-all;">${s}</div>`
+                ).join("")}
+            </div>
+        </div>` : ""}
+
+        <!-- 违规类型 -->
+        <div style="margin-bottom:10px;">
+            <div style="font-size:14px;font-weight:700;color:#333;margin-bottom:5px;">违规类型</div>
+            <div>${vtypeHtml}</div>
+        </div>
+
+        <!-- 修改建议 -->
+        ${suggestion ? `
+        <div style="margin-bottom:10px;">
+            <div style="font-size:14px;font-weight:700;color:#333;margin-bottom:4px;">修改建议</div>
+            <div style="background:#fff1f0;border:1px solid #ffccc7;border-radius:5px;padding:8px 12px;font-size:13px;color:#cf1322;line-height:1.7;">${suggestion}</div>
+        </div>` : ""}
+
+        <!-- 关键实体 -->
+        ${entities ? `
+        <div style="margin-bottom:10px;">
+            <div style="font-size:14px;font-weight:700;color:#333;margin-bottom:4px;">关键实体抽取</div>
+            <div style="font-size:12px;color:#555;padding:4px 0;">${entities}</div>
+        </div>` : ""}
+
+        <!-- 完整 AI 审核报告（折叠） -->
+        ${rawOpinion ? `
+        <details style="margin-top:4px;">
+            <summary style="cursor:pointer;font-size:14px;font-weight:700;color:#333;user-select:none;padding:4px 0;list-style:none;">
+                ▸ 完整审核报告
+            </summary>
+            <div style="margin-top:8px;">${renderAiOpinion(rawOpinion)}</div>
+        </details>` : ""}
+    </div>`;
+}
+
 // 显示右侧详情
 function showDetail(record) {
     currentRecord = record;
@@ -217,38 +403,8 @@ function showDetail(record) {
 
         ${buildIndustryCard(record)}
 
-        <!-- AI审核意见卡片 -->
-        <div class="detail-card">
-            <div class="detail-card-title"><span class="icon">🤖</span>AI审核意见</div>
-            <div class="ai-opinion-box">${record["AI审核意见"]}</div>
-            ${record["关键实体抽取"] ? `
-            <div style="margin-top:10px;">
-                <div style="font-size:12px;font-weight:600;color:var(--text-muted);margin-bottom:4px;">关键实体抽取</div>
-                <div class="highlight-box">${record["关键实体抽取"]}</div>
-            </div>` : ""}
-            ${record["平台规则预检"] ? `
-            <div style="margin-top:10px;">
-                <div style="font-size:12px;font-weight:600;color:var(--text-muted);margin-bottom:4px;">平台规则预检</div>
-                <div class="highlight-box">${record["平台规则预检"]}</div>
-            </div>` : ""}
-        </div>
-
-        <!-- 风险信息卡片 -->
-        <div class="detail-card">
-            <div class="detail-card-title"><span class="icon">⚠️</span>风险信息</div>
-            <div class="risk-tags" style="margin-bottom:12px;">
-                <span class="risk-badge ${riskClass}"><span class="risk-dot"></span>${record["风险等级"]}</span>
-                ${violationTags}
-            </div>
-            ${record["AI抽取-高风险词命中"] && record["AI抽取-高风险词命中"] !== "无" ? `
-            <div class="highlight-box" style="margin-bottom:10px;">
-                <strong>高风险词命中：</strong>${record["AI抽取-高风险词命中"]}
-            </div>` : ""}
-            ${record["AI抽取-备案核查结果"] ? `
-            <div class="highlight-box">
-                <strong>备案核查：</strong>${record["AI抽取-备案核查结果"]}
-            </div>` : ""}
-        </div>
+        <!-- AI审核意见卡片（结构化） -->
+        ${renderAiReviewCard(record)}
 
         <!-- 相关案例卡片（异步加载） -->
         <div class="detail-card" id="cases-card">
@@ -754,53 +910,75 @@ async function loadRulesView() {
         return;
     }
 
-    const fbLabel = { override: "驳回纠正", refine: "补充完善" };
-    const fbColor = { override: "var(--danger)", refine: "var(--primary)" };
+    const fbMeta = {
+        override: { label: "驳回纠正", bg: "#fff1f0", border: "#ffccc7", color: "#cf1322", icon: "✕" },
+        refine:   { label: "补充完善", bg: "#e6f7ff", border: "#91d5ff", color: "#0050b3", icon: "＋" },
+    };
+    const riskColor = { "高": "#cf1322", "中": "#d46b08", "低": "#389e0d" };
+    const riskBg    = { "高": "#fff1f0", "中": "#fff7e6", "低": "#f6ffed" };
 
-    const rows = corrections.slice().reverse().map(c => {
+    const cards = corrections.slice().reverse().map(c => {
         const isPaused = c.status === "paused";
+        const meta = fbMeta[c.feedback_type] || { label: c.feedback_type, bg: "#fafafa", border: "#ddd", color: "#333", icon: "●" };
+        const aiRisk = c.ai_risk_level || "—";
+        const aiTypes = (c.ai_violation_types || []).join("、") || "—";
         const statusBtn = isPaused
-            ? `<button onclick="setCorrectionStatus('${c.id}','active')" style="font-size:11px;padding:2px 8px;border:1px solid var(--success);color:var(--success);background:#fff;border-radius:4px;cursor:pointer;">启用</button>`
-            : `<button onclick="setCorrectionStatus('${c.id}','paused')" style="font-size:11px;padding:2px 8px;border:1px solid var(--border);color:var(--text-muted);background:#fff;border-radius:4px;cursor:pointer;">停用</button>`;
-        return `<tr style="${isPaused ? 'opacity:0.45;' : ''}">
-            <td style="padding:8px;white-space:nowrap;color:var(--text-muted);font-size:12px;">${c.created_at}</td>
-            <td style="padding:8px;"><span style="font-weight:600;color:${fbColor[c.feedback_type] || '#333'};">${fbLabel[c.feedback_type] || c.feedback_type}</span></td>
-            <td style="padding:8px;">${c.industry || '—'}</td>
-            <td style="padding:8px;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${c.content_snippet}">${c.content_snippet}</td>
-            <td style="padding:8px;color:var(--text-muted);font-size:12px;">${c.ai_risk_level} · ${(c.ai_violation_types || []).join('、') || '—'}</td>
-            <td style="padding:8px;max-width:200px;">${c.correct_judgment}</td>
-            <td style="padding:8px;max-width:160px;color:var(--text-secondary);font-size:12px;">${c.reason}</td>
-            <td style="padding:8px;white-space:nowrap;">
-                ${statusBtn}
-                <button onclick="deleteCorrection('${c.id}')" style="font-size:11px;padding:2px 8px;border:1px solid var(--danger);color:var(--danger);background:#fff;border-radius:4px;cursor:pointer;margin-left:4px;">删除</button>
-            </td>
-        </tr>`;
+            ? `<button onclick="setCorrectionStatus('${c.id}','active')"
+                  style="font-size:11px;padding:2px 10px;border:1px solid #52c41a;color:#52c41a;background:#fff;border-radius:4px;cursor:pointer;">启用</button>`
+            : `<button onclick="setCorrectionStatus('${c.id}','paused')"
+                  style="font-size:11px;padding:2px 10px;border:1px solid #bbb;color:#888;background:#fff;border-radius:4px;cursor:pointer;">停用</button>`;
+
+        return `
+        <div style="border:1px solid ${meta.border};border-radius:8px;margin-bottom:12px;overflow:hidden;${isPaused ? 'opacity:0.45;' : ''}">
+            <!-- 卡片头 -->
+            <div style="background:${meta.bg};padding:8px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                    <span style="background:${meta.color};color:#fff;border-radius:4px;padding:2px 8px;font-size:12px;font-weight:700;">${meta.icon} ${meta.label}</span>
+                    ${c.industry ? `<span style="font-size:12px;color:#555;background:#fff;border:1px solid #ddd;border-radius:4px;padding:1px 7px;">${c.industry}</span>` : ""}
+                    <span style="font-size:11px;color:#999;">${c.created_at || ""}</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px;">
+                    ${statusBtn}
+                    <button onclick="deleteCorrection('${c.id}')"
+                        style="font-size:11px;padding:2px 10px;border:1px solid #ff4d4f;color:#ff4d4f;background:#fff;border-radius:4px;cursor:pointer;">删除</button>
+                </div>
+            </div>
+
+            <!-- 卡片体 -->
+            <div style="padding:12px 14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+
+                <!-- 左列：物料片段 + AI原判定 -->
+                <div>
+                    <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">物料片段</div>
+                    <div style="background:#f9f9f9;border:1px solid #eee;border-radius:4px;padding:6px 10px;font-size:13px;color:#333;line-height:1.6;margin-bottom:10px;">${c.content_snippet || "—"}</div>
+
+                    <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">AI 原判定</div>
+                    <div style="background:#fffbe6;border:1px solid #ffe58f;border-radius:4px;padding:6px 10px;font-size:13px;line-height:1.7;">
+                        <span style="color:${riskColor[aiRisk] || '#333'};background:${riskBg[aiRisk] || '#f5f5f5'};border-radius:3px;padding:1px 6px;font-weight:700;font-size:12px;margin-right:6px;">${aiRisk}风险</span>
+                        <span style="color:#555;">${aiTypes}</span>
+                    </div>
+                </div>
+
+                <!-- 右列：法务纠正 + 理由 -->
+                <div>
+                    <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">法务纠正</div>
+                    <div style="background:#f6ffed;border:1px solid #b7eb8f;border-radius:4px;padding:6px 10px;font-size:13px;color:#135200;font-weight:600;line-height:1.6;margin-bottom:10px;">${c.correct_judgment || "—"}</div>
+
+                    <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">纠正理由</div>
+                    <div style="font-size:13px;color:#444;line-height:1.7;">${c.reason || "—"}</div>
+                </div>
+            </div>
+        </div>`;
     }).join("");
 
     detail.innerHTML = `
         <div style="padding:20px 24px;">
-            <div style="font-size:15px;font-weight:600;margin-bottom:4px;">规则沉淀库</div>
+            <div style="font-size:15px;font-weight:700;margin-bottom:4px;">规则沉淀库</div>
             <div style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">
                 共 ${corrections.length} 条纠正记录（active: ${corrections.filter(c=>c.status==='active').length}）·
                 AI审核时自动召回 top-3 相关案例注入 prompt
             </div>
-            <div style="overflow-x:auto;">
-            <table style="width:100%;border-collapse:collapse;font-size:13px;">
-                <thead>
-                    <tr style="background:var(--bg-page);">
-                        <th style="padding:8px;text-align:left;font-weight:600;white-space:nowrap;">时间</th>
-                        <th style="padding:8px;text-align:left;font-weight:600;">类型</th>
-                        <th style="padding:8px;text-align:left;font-weight:600;">行业</th>
-                        <th style="padding:8px;text-align:left;font-weight:600;">物料片段</th>
-                        <th style="padding:8px;text-align:left;font-weight:600;">AI原判定</th>
-                        <th style="padding:8px;text-align:left;font-weight:600;">法务纠正</th>
-                        <th style="padding:8px;text-align:left;font-weight:600;">理由</th>
-                        <th style="padding:8px;text-align:left;font-weight:600;">操作</th>
-                    </tr>
-                </thead>
-                <tbody>${rows}</tbody>
-            </table>
-            </div>
+            ${cards}
         </div>`;
 }
 

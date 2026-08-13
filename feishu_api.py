@@ -147,7 +147,8 @@ def get_dept_open_ids(dept_name: str) -> list:
     """
     按部门名称返回该部门所有成员的 open_id 列表。
     需要应用已开通权限：contact:contact.base:readonly
-    实现：从根部门 BFS 遍历子部门树，按名称匹配，避免 /search 路径被误识别为 department_id。
+    实现：从根部门("0")做 BFS 遍历整棵子部门树，按名称匹配。
+    若组织架构查询失败或部门为空，自动兜底到 config.LEGAL_OPEN_IDS。
     """
     import time
     cache_key = dept_name
@@ -158,35 +159,52 @@ def get_dept_open_ids(dept_name: str) -> list:
     token = get_tenant_access_token()
     headers = {"Authorization": f"Bearer {token}"}
 
-    # 第一步：列出所有部门，按名称匹配（/children 接口权限受限，改用 list 接口）
+    def _list_children(parent_id: str) -> list:
+        """列出 parent_id 下所有直接子部门"""
+        items = []
+        page_token = None
+        while True:
+            params = {
+                "user_id_type": "open_id",
+                "department_id_type": "open_department_id",
+                "parent_department_id": parent_id,
+                "page_size": 50,
+            }
+            if page_token:
+                params["page_token"] = page_token
+            resp = requests.get(
+                f"{BASE_URL}/contact/v3/departments",
+                headers=headers,
+                params=params,
+            ).json()
+            if resp.get("code") != 0:
+                print(f"[feishu_api] 列出子部门失败 parent={parent_id}: {resp.get('msg')} (code={resp.get('code')})")
+                break
+            items.extend(resp.get("data", {}).get("items", []))
+            if not resp.get("data", {}).get("has_more"):
+                break
+            page_token = resp.get("data", {}).get("page_token")
+        return items
+
+    # 第一步：BFS 遍历部门树，按名称匹配
     dept_id = None
-    page_token = None
-    while True:
-        params = {
-            "user_id_type": "open_id",
-            "department_id_type": "open_department_id",
-            "page_size": 50,
-        }
-        if page_token:
-            params["page_token"] = page_token
-        resp = requests.get(
-            f"{BASE_URL}/contact/v3/departments",
-            headers=headers,
-            params=params,
-        ).json()
-        if resp.get("code") != 0:
-            print(f"[feishu_api] 列出部门失败: {resp.get('msg')} (code={resp.get('code')})")
-            break
-        for dept in resp.get("data", {}).get("items", []):
+    queue = ["0"]  # 从根部门开始
+    while queue and not dept_id:
+        parent_id = queue.pop(0)
+        children = _list_children(parent_id)
+        for dept in children:
             if dept.get("name") == dept_name:
                 dept_id = dept.get("open_department_id")
                 break
-        if dept_id or not resp.get("data", {}).get("has_more"):
-            break
-        page_token = resp.get("data", {}).get("page_token")
+            # 子部门入队，继续向下搜索
+            child_id = dept.get("open_department_id")
+            if child_id:
+                queue.append(child_id)
+
     if not dept_id:
-        print(f"[feishu_api] 未找到部门「{dept_name}」")
-        return []
+        print(f"[feishu_api] 未找到部门「{dept_name}」，使用 LEGAL_OPEN_IDS 兜底")
+        from config import LEGAL_OPEN_IDS
+        return list(LEGAL_OPEN_IDS)
 
     # 第二步：拉取该部门成员
     open_ids = []
@@ -206,7 +224,10 @@ def get_dept_open_ids(dept_name: str) -> list:
             params=params,
         ).json()
         if members_resp.get("code") != 0:
-            raise Exception(f"获取部门成员失败: {members_resp.get('msg')} (code={members_resp.get('code')})")
+            print(f"[feishu_api] 获取部门成员失败: {members_resp.get('msg')} (code={members_resp.get('code')})")
+            print(f"[feishu_api] 使用 LEGAL_OPEN_IDS 兜底")
+            from config import LEGAL_OPEN_IDS
+            return list(LEGAL_OPEN_IDS)
         for u in members_resp.get("data", {}).get("items", []):
             oid = u.get("open_id")
             if oid:
@@ -214,6 +235,11 @@ def get_dept_open_ids(dept_name: str) -> list:
         if not members_resp.get("data", {}).get("has_more"):
             break
         page_token = members_resp.get("data", {}).get("page_token")
+
+    if not open_ids:
+        print(f"[feishu_api] 部门「{dept_name}」成员为空，使用 LEGAL_OPEN_IDS 兜底")
+        from config import LEGAL_OPEN_IDS
+        return list(LEGAL_OPEN_IDS)
 
     _dept_cache[cache_key] = {"ids": open_ids, "expire": time.time() + 600}
     print(f"[feishu_api] 部门「{dept_name}」查到 {len(open_ids)} 名成员")

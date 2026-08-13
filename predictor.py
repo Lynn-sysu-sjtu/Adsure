@@ -236,7 +236,7 @@ def call_teammate_engine(ctx: dict, mode: str):
             "extras":           ctx["extras"],
             "mode":             mode,
         },
-        timeout=10,
+        timeout=20,
     )
     resp.raise_for_status()
     data = resp.json()
@@ -308,7 +308,6 @@ def call_llm(ctx: dict, rules: list, mode: str = "标准") -> dict:
   "审核_审核意见": "完整六段式审核报告：①风险定性 ②违禁词鉴别 ③违规类型 ④法律依据 ⑤修改建议 ⑥风险定级",
   "审核_关键实体抽取": "品牌名、产品名、功效词、平台名（逗号分隔）",
   "审核_高风险词命中": "命中的违禁词或高风险词（逗号分隔，无则填'无'）",
-  "审核_平台规则预检": "投放平台相关规则命中情况（一句话）",
   "审核_备案核查结果": "MVP阶段暂未接入备案核查，仅根据运营提交字段做形式提示。",
   "审核_推荐违规类型": ["违规类型1", "违规类型2"],
   "审核_推荐风险等级": "高" | "中" | "低",
@@ -410,7 +409,6 @@ def write_back(record_id: str, llm_result: dict, routing: str, mode: str = "标�
         F_审核_审核意见:      audit_opinion,
         F_审核_关键实体抽取:  llm_result.get("审核_关键实体抽取", ""),
         F_审核_高风险词命中:  _clean_hit_points(llm_result.get("审核_高风险词命中", "")),
-        F_审核_平台规则预检:  llm_result.get("审核_平台规则预检", ""),
         F_审核_备案核查结果:  llm_result.get(
             "审核_备案核查结果",
             "MVP阶段暂未接入备案核查，仅根据运营提交字段做形式提示。"
