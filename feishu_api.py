@@ -2,10 +2,21 @@
 飞书开放平台 API 封装 — 多维表格读写
 """
 import time
+import logging
 import requests
 from config import FEISHU_APP_ID, FEISHU_APP_SECRET, BITABLE_APP_TOKEN, BITABLE_TABLE_ID
+from error_handling import OperationError
+from logging_utils import context_fields
 
 BASE_URL = "https://open.feishu.cn/open-apis"
+DEFAULT_TIMEOUT = 8
+logger = logging.getLogger(__name__)
+
+
+class FeishuAPIError(OperationError):
+    def __init__(self, category: str, *, retryable: bool, code=None, message="feishu request failed"):
+        super().__init__(category, retryable=retryable, message=message)
+        self.code = code
 
 # 缓存 token，避免频繁请求
 _token_cache = {"token": None, "expire": 0}
@@ -18,14 +29,11 @@ def get_tenant_access_token():
         return _token_cache["token"]
 
     url = f"{BASE_URL}/auth/v3/tenant_access_token/internal"
-    resp = requests.post(url, json={
+    response = requests.post(url, json={
         "app_id": FEISHU_APP_ID,
         "app_secret": FEISHU_APP_SECRET,
-    })
-    data = resp.json()
-
-    if data.get("code") != 0:
-        raise Exception(f"获取token失败: {data.get('msg', data)}")
+    }, timeout=DEFAULT_TIMEOUT)
+    data = _response_data(response)
 
     token = data["tenant_access_token"]
     expire = data.get("expire", 7200)
@@ -40,6 +48,22 @@ def _headers():
         "Authorization": f"Bearer {get_tenant_access_token()}",
         "Content-Type": "application/json",
     }
+
+
+def _response_data(response) -> dict:
+    """Parse a Feishu response and preserve retry/permanent error semantics."""
+    status_code = int(getattr(response, "status_code", 200) or 200)
+    try:
+        data = response.json()
+    except Exception as exc:
+        if status_code == 429:
+            raise FeishuAPIError("rate_limited", retryable=True, code=status_code) from exc
+        if status_code >= 500:
+            raise FeishuAPIError("transient_network", retryable=True, code=status_code) from exc
+        raise FeishuAPIError("engine_unavailable", retryable=True, code=status_code) from exc
+    if status_code >= 400 or data.get("code") != 0:
+        _raise_api_error(data, status_code)
+    return data
 
 
 def list_records(filter_formula=None, page_size=100, page_token=None):
@@ -58,11 +82,10 @@ def list_records(filter_formula=None, page_size=100, page_token=None):
         body["filter"] = filter_formula
 
     # 用 GET + query params（飞书bitable list接口）
-    resp = requests.get(url, headers=_headers(), params=params)
-    data = resp.json()
-
-    if data.get("code") != 0:
-        raise Exception(f"读取记录失败: code={data.get('code')}, msg={data.get('msg', data)}")
+    response = requests.get(
+        url, headers=_headers(), params=params, timeout=DEFAULT_TIMEOUT,
+    )
+    data = _response_data(response)
 
     items = data.get("data", {}).get("items", [])
     has_more = data.get("data", {}).get("has_more", False)
@@ -91,11 +114,8 @@ def list_all_records(filter_formula=None):
 def get_record(record_id):
     """读取单条记录"""
     url = f"{BASE_URL}/bitable/v1/apps/{BITABLE_APP_TOKEN}/tables/{BITABLE_TABLE_ID}/records/{record_id}"
-    resp = requests.get(url, headers=_headers())
-    data = resp.json()
-
-    if data.get("code") != 0:
-        raise Exception(f"读取记录失败: {data.get('msg', data)}")
+    response = requests.get(url, headers=_headers(), timeout=DEFAULT_TIMEOUT)
+    data = _response_data(response)
 
     return data.get("data", {}).get("record", {})
 
@@ -109,11 +129,10 @@ def update_record(record_id, fields):
     url = f"{BASE_URL}/bitable/v1/apps/{BITABLE_APP_TOKEN}/tables/{BITABLE_TABLE_ID}/records/{record_id}"
     body = {"fields": fields}
 
-    resp = requests.put(url, headers=_headers(), json=body)
-    data = resp.json()
-
-    if data.get("code") != 0:
-        raise Exception(f"更新记录失败: {data.get('msg', data)}")
+    response = requests.put(
+        url, headers=_headers(), json=body, timeout=DEFAULT_TIMEOUT,
+    )
+    data = _response_data(response)
 
     return data.get("data", {}).get("record", {})
 
@@ -147,7 +166,8 @@ def get_dept_open_ids(dept_name: str) -> list:
     """
     按部门名称返回该部门所有成员的 open_id 列表。
     需要应用已开通权限：contact:contact.base:readonly
-    实现：从根部门 BFS 遍历子部门树，按名称匹配，避免 /search 路径被误识别为 department_id。
+    实现：从根部门("0")做 BFS 遍历整棵子部门树，按名称匹配。
+    若组织架构查询失败或部门为空，自动兜底到 config.LEGAL_OPEN_IDS。
     """
     import time
     cache_key = dept_name
@@ -158,35 +178,59 @@ def get_dept_open_ids(dept_name: str) -> list:
     token = get_tenant_access_token()
     headers = {"Authorization": f"Bearer {token}"}
 
-    # 第一步：列出所有部门，按名称匹配（/children 接口权限受限，改用 list 接口）
+    def _list_children(parent_id: str) -> list:
+        """列出 parent_id 下所有直接子部门"""
+        items = []
+        page_token = None
+        while True:
+            params = {
+                "user_id_type": "open_id",
+                "department_id_type": "open_department_id",
+                "parent_department_id": parent_id,
+                "page_size": 50,
+            }
+            if page_token:
+                params["page_token"] = page_token
+            try:
+                resp = _response_data(requests.get(
+                    f"{BASE_URL}/contact/v3/departments",
+                    headers=headers,
+                    params=params,
+                    timeout=DEFAULT_TIMEOUT,
+                ))
+            except FeishuAPIError as exc:
+                if exc.retryable:
+                    raise
+                logger.warning(
+                    "event=department_list_degraded parent=%s error_category=%s feishu_code=%s",
+                    parent_id, exc.category, exc.code,
+                )
+                break
+            items.extend(resp.get("data", {}).get("items", []))
+            if not resp.get("data", {}).get("has_more"):
+                break
+            page_token = resp.get("data", {}).get("page_token")
+        return items
+
+    # 第一步：BFS 遍历部门树，按名称匹配
     dept_id = None
-    page_token = None
-    while True:
-        params = {
-            "user_id_type": "open_id",
-            "department_id_type": "open_department_id",
-            "page_size": 50,
-        }
-        if page_token:
-            params["page_token"] = page_token
-        resp = requests.get(
-            f"{BASE_URL}/contact/v3/departments",
-            headers=headers,
-            params=params,
-        ).json()
-        if resp.get("code") != 0:
-            print(f"[feishu_api] 列出部门失败: {resp.get('msg')} (code={resp.get('code')})")
-            break
-        for dept in resp.get("data", {}).get("items", []):
+    queue = ["0"]  # 从根部门开始
+    while queue and not dept_id:
+        parent_id = queue.pop(0)
+        children = _list_children(parent_id)
+        for dept in children:
             if dept.get("name") == dept_name:
                 dept_id = dept.get("open_department_id")
                 break
-        if dept_id or not resp.get("data", {}).get("has_more"):
-            break
-        page_token = resp.get("data", {}).get("page_token")
+            # 子部门入队，继续向下搜索
+            child_id = dept.get("open_department_id")
+            if child_id:
+                queue.append(child_id)
+
     if not dept_id:
-        print(f"[feishu_api] 未找到部门「{dept_name}」")
-        return []
+        logger.warning("event=legal_department_not_found department=%s", dept_name)
+        import config
+        return list(getattr(config, "LEGAL_OPEN_IDS", []))
 
     # 第二步：拉取该部门成员
     open_ids = []
@@ -200,13 +244,22 @@ def get_dept_open_ids(dept_name: str) -> list:
         }
         if page_token:
             params["page_token"] = page_token
-        members_resp = requests.get(
-            f"{BASE_URL}/contact/v3/users",
-            headers=headers,
-            params=params,
-        ).json()
-        if members_resp.get("code") != 0:
-            raise Exception(f"获取部门成员失败: {members_resp.get('msg')} (code={members_resp.get('code')})")
+        try:
+            members_resp = _response_data(requests.get(
+                f"{BASE_URL}/contact/v3/users",
+                headers=headers,
+                params=params,
+                timeout=DEFAULT_TIMEOUT,
+            ))
+        except FeishuAPIError as exc:
+            if exc.retryable:
+                raise
+            logger.warning(
+                "event=department_members_degraded department=%s error_category=%s feishu_code=%s",
+                dept_name, exc.category, exc.code,
+            )
+            import config
+            return list(getattr(config, "LEGAL_OPEN_IDS", []))
         for u in members_resp.get("data", {}).get("items", []):
             oid = u.get("open_id")
             if oid:
@@ -215,30 +268,144 @@ def get_dept_open_ids(dept_name: str) -> list:
             break
         page_token = members_resp.get("data", {}).get("page_token")
 
+    if not open_ids:
+        logger.warning("event=legal_department_empty department=%s", dept_name)
+        import config
+        return list(getattr(config, "LEGAL_OPEN_IDS", []))
+
     _dept_cache[cache_key] = {"ids": open_ids, "expire": time.time() + 600}
-    print(f"[feishu_api] 部门「{dept_name}」查到 {len(open_ids)} 名成员")
+    logger.info("event=legal_department_loaded department=%s member_count=%s", dept_name, len(open_ids))
     return open_ids
 
 
-# === 测试连接 ===
-if __name__ == "__main__":
-    print("正在测试飞书API连接...")
+def upload_image(image_bytes: bytes) -> str:
+    """
+    把图片字节上传到飞书 IM，返回 img_key（供卡片 img 元素使用）。
+    """
+    import io
+    token = get_tenant_access_token()
+    resp = requests.post(
+        f"{BASE_URL}/im/v1/images",
+        headers={"Authorization": f"Bearer {token}"},
+        data={"image_type": "message"},
+        files={"image": ("image.png", io.BytesIO(image_bytes), "image/png")},
+        timeout=30,
+    )
+    data = _response_data(resp)
+    return data["data"]["image_key"]
+
+
+def download_attachment(file_token: str) -> bytes:
+    """
+    下载飞书附件，返回原始字节。
+    file_token 来自附件字段 [{file_token, name, type, size}, ...]。
+    """
+    token = get_tenant_access_token()
+    resp = requests.get(
+        f"{BASE_URL}/drive/v1/medias/{file_token}/download",
+        headers={"Authorization": f"Bearer {token}"},
+        timeout=30,
+    )
+    status_code = int(getattr(resp, "status_code", 200) or 200)
+    if status_code >= 400:
+        _raise_api_error({}, status_code)
+    return resp.content
+
+
+def send_card(open_id: str, card: dict, *, idempotency_uuid: str) -> dict:
+    """Send a card with Feishu's official request-body uuid idempotency field."""
+    import json as _json
+    token = get_tenant_access_token()
     try:
-        token = get_tenant_access_token()
-        print(f"Token获取成功: {token[:20]}...")
+        response = requests.post(
+            f"{BASE_URL}/im/v1/messages?receive_id_type=open_id",
+            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+            json={
+                "receive_id": open_id,
+                "msg_type": "interactive",
+                "content": _json.dumps(card, ensure_ascii=False),
+                "uuid": idempotency_uuid,
+            },
+            timeout=8,
+        )
+    except Exception as exc:
+        name = exc.__class__.__name__.lower()
+        retryable = "timeout" in name or "connection" in name
+        raise FeishuAPIError(
+            "transient_network" if retryable else "engine_unavailable",
+            retryable=True,
+        ) from exc
 
-        print("\n正在读取多维表格记录...")
-        records, has_more, _ = list_records()
-        print(f"共获取 {len(records)} 条记录")
+    status_code = getattr(response, "status_code", 200)
+    try:
+        data = response.json()
+    except Exception as exc:
+        raise FeishuAPIError(
+            "transient_network" if status_code >= 500 else "invalid_card",
+            retryable=status_code >= 500,
+            code=status_code,
+        ) from exc
 
-        if records:
-            print("\n第一条记录的字段名：")
-            first = records[0]
-            print(f"  record_id: {first.get('record_id')}")
-            fields = first.get("fields", {})
-            for key in sorted(fields.keys()):
-                val = fields[key]
-                preview = str(val)[:60]
-                print(f"  {key}: {preview}")
-    except Exception as e:
-        print(f"错误: {e}")
+    code = data.get("code")
+    if status_code == 429 or code in {99991400, 99991401, 99991663, 99991664}:
+        raise FeishuAPIError("rate_limited", retryable=True, code=code or status_code)
+    if status_code >= 500:
+        raise FeishuAPIError("transient_network", retryable=True, code=code or status_code)
+    if code != 0:
+        category = _feishu_error_category(code)
+        raise FeishuAPIError(category, retryable=False, code=code)
+
+    message_id = data.get("data", {}).get("message_id")
+    headers = getattr(response, "headers", {}) or {}
+    request_id = headers.get("X-Tt-Logid") or headers.get("x-tt-logid") or headers.get("X-Request-Id")
+    return {"success": True, "message_id": message_id, "code": code, "request_id": request_id}
+
+
+def _feishu_error_category(code) -> str:
+    text = str(code or "")
+    if text.startswith("230"):
+        return "invalid_recipient"
+    if text.startswith("200") or text.startswith("99991"):
+        return "permission_denied"
+    return "invalid_card"
+
+
+def _raise_api_error(data: dict, status_code: int = 200):
+    code = data.get("code")
+    if status_code == 429 or code in {99991400, 99991401, 99991663, 99991664}:
+        raise FeishuAPIError("rate_limited", retryable=True, code=code or status_code)
+    if status_code in {408, 425}:
+        raise FeishuAPIError("transient_network", retryable=True, code=code or status_code)
+    if status_code >= 500:
+        raise FeishuAPIError("transient_network", retryable=True, code=code or status_code)
+    if status_code in {401, 403}:
+        raise FeishuAPIError("permission_denied", retryable=False, code=code or status_code)
+    raise FeishuAPIError(_feishu_error_category(code), retryable=False, code=code)
+
+
+def send_card_to(open_id: str, card: dict, idempotency_key: str = "") -> bool:
+    """Compatibility wrapper for old callers; new reliable delivery uses send_card()."""
+    import hashlib
+    import uuid
+    seed = idempotency_key or hashlib.sha256(
+        (open_id + repr(card)).encode("utf-8")
+    ).hexdigest()
+    request_uuid = str(uuid.uuid5(uuid.NAMESPACE_URL, seed))
+    try:
+        send_card(open_id, card, idempotency_uuid=request_uuid)
+        return True
+    except FeishuAPIError as exc:
+        logger.error(
+            "event=legacy_card_send_failed %s",
+            context_fields(open_id=open_id, error_category=exc.category, feishu_code=exc.code),
+        )
+        return False
+if __name__ == "__main__":
+    from logging_utils import configure_logging
+    configure_logging()
+    try:
+        get_tenant_access_token()
+        records, _has_more, _page_token = list_records()
+        logger.info("event=feishu_connectivity_check_succeeded record_count=%s", len(records))
+    except Exception:
+        logger.exception("event=feishu_connectivity_check_failed")

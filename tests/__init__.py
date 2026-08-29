@@ -1,0 +1,1 @@
+"""Adsure offline test suite."""

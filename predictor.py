@@ -15,9 +15,11 @@
 import json
 import re
 import datetime
+import logging
 from pathlib import Path
 
 from feishu_api import get_record, update_record
+from ocr_preprocessor import extract_text_from_attachments
 from fields_v4 import (
     # 运营段
     F_行业领域, F_物料内容, F_补充背景资料, F_紧急程度,
@@ -41,6 +43,9 @@ from fields_v4 import (
     # 流转段
     F_流转_当前状态,
 )
+
+
+logger = logging.getLogger(__name__)
 
 
 # ── 工具函数 ────────────────────────────────────────────────
@@ -135,6 +140,11 @@ def build_context(record_id: str) -> dict:
 
     industry   = _text(fields.get(F_行业领域, ""))
     content    = _text(fields.get(F_物料内容, ""))
+
+    # 若文字内容为空，尝试从图片附件 OCR 提取
+    if not content.strip():
+        content = extract_text_from_attachments(record_id, fields)
+
     supplement = _text(fields.get(F_补充背景资料, ""))
     urgency    = _text(fields.get(F_紧急程度, "普通"))
 
@@ -230,7 +240,7 @@ def call_teammate_engine(ctx: dict, mode: str):
             "extras":           ctx["extras"],
             "mode":             mode,
         },
-        timeout=10,
+        timeout=20,
     )
     resp.raise_for_status()
     data = resp.json()
@@ -275,11 +285,20 @@ def call_llm(ctx: dict, rules: list, mode: str = "标准") -> dict:
     """
     import anthropic
     from config import LLM_API_KEY, LLM_BASE_URL, LLM_MODEL
+    import preference_memory
 
     client = anthropic.Anthropic(api_key=LLM_API_KEY, base_url=LLM_BASE_URL)
 
     material_text = format_context_for_prompt(ctx)
     rules_text    = _format_rules_for_prompt(rules)
+
+    # Few-shot 注入：召回法务历史纠正案例
+    corrections = preference_memory.retrieve_relevant(
+        ctx["content"], industry=ctx["industry"], top_k=3
+    )
+    corrections_text = preference_memory.format_for_prompt(corrections)
+    if corrections_text:
+        logger.info("event=correction_examples_loaded count=%s", len(corrections))
 
     system_prompt = """\
 你是一名专业的广告合规审核专家，熟悉中国《广告法》《消费者权益保护法》《食品安全法》等法律法规及各平台运营规则。
@@ -293,7 +312,6 @@ def call_llm(ctx: dict, rules: list, mode: str = "标准") -> dict:
   "审核_审核意见": "完整六段式审核报告：①风险定性 ②违禁词鉴别 ③违规类型 ④法律依据 ⑤修改建议 ⑥风险定级",
   "审核_关键实体抽取": "品牌名、产品名、功效词、平台名（逗号分隔）",
   "审核_高风险词命中": "命中的违禁词或高风险词（逗号分隔，无则填'无'）",
-  "审核_平台规则预检": "投放平台相关规则命中情况（一句话）",
   "审核_备案核查结果": "MVP阶段暂未接入备案核查，仅根据运营提交字段做形式提示。",
   "审核_推荐违规类型": ["违规类型1", "违规类型2"],
   "审核_推荐风险等级": "高" | "中" | "低",
@@ -304,9 +322,9 @@ routing 字段判断标准：
 - "运营"：违规类型明确、可直接改写，无需法务解释
 - "法务"：需要法律解释、存在模糊地带、或涉及重大合规风险"""
 
-    user_message = f"{material_text}\n\n{rules_text}"
+    user_message = f"{material_text}\n\n{rules_text}{corrections_text}"
 
-    print(f"[predictor] 调用 LLM（模型={LLM_MODEL}）...")
+    logger.info("event=language_review_started model=%s", LLM_MODEL)
     message = client.messages.create(
         model=LLM_MODEL,
         max_tokens=2048,
@@ -317,7 +335,7 @@ routing 字段判断标准：
     # DeepSeek 可能返回 ThinkingBlock + TextBlock，找到有 .text 的那个
     text_block = next((b for b in message.content if hasattr(b, "text")), None)
     if text_block is None:
-        raise ValueError(f"LLM 响应中未找到文本内容，content={message.content}")
+        raise ValueError("review result did not contain text")
     raw = text_block.text.strip()
     # 去掉可能的 markdown 代码块包裹
     if raw.startswith("```"):
@@ -325,31 +343,49 @@ routing 字段判断标准：
         if raw.startswith("json"):
             raw = raw[4:]
     result = json.loads(raw)
-    print(f"[predictor] LLM 返回，风险等级={result.get('预审_风险等级')}")
+    logger.info("event=language_review_completed risk_level=%s", result.get("预审_风险等级"))
     return result
 
 
-def _format_matched_rules(matched_rules: list) -> str:
-    """把命中规则列表格式化为可附加到审核意见末尾的文本块"""
-    if not matched_rules:
-        return ""
-    lines = ["\n\n【命中规则明细】"]
-    for r in matched_rules:
-        lines.append(
-            f"- [{r.get('rule_id', '?')}] {r.get('title', '?')}"
-            f"（{r.get('dimension', '')}·{r.get('risk_level', '')}）"
-            f" → {r.get('judgment', '')}：{r.get('match_reason', '')}"
-        )
-    return "\n".join(lines)
-
 
 def _clean_hit_points(raw: str) -> str:
-    """去掉规则引擎暴露的原始 regex:(...) 表达式，只保留字面关键词。"""
+    """去掉规则引擎暴露的原始 regex:(...) 表达式，只保留字面关键词。支持顿号和逗号分隔。"""
     if not raw:
         return raw
-    parts = [p.strip() for p in raw.split("、")]
-    cleaned = [p for p in parts if not p.startswith("regex:")]
-    return "、".join(cleaned) if cleaned else raw
+    sep = next((c for c in ['、', '，', ','] if c in raw), '、')
+    parts = [p.strip() for p in raw.split(sep)]
+    cleaned = [p for p in parts if p and not p.startswith('regex:')]
+    return sep.join(cleaned) if cleaned else raw
+
+
+def _trim_hit_points(raw: str) -> str:
+    """
+    命中要点字段截断处理：
+    规则引擎有时把完整规则明细塞进命中要点，这里只保留第一句概括（分号前）。
+    规则明细已在 审核_审核意见 里完整展示，命中要点只需一句话。
+    """
+    if not raw:
+        return raw
+    # 取第一个分号/换行前的内容
+    for sep in ['；', '\n', ';']:
+        idx = raw.find(sep)
+        if idx > 0:
+            return raw[:idx].strip()
+    # 超过80字也截断，加省略号
+    if len(raw) > 80:
+        return raw[:80].strip() + "…"
+    return raw
+
+
+def _clean_match_reason(raw: str) -> str:
+    """去掉 match_reason 中的 regex:... 表达式和前置乱码字符（\ufffd 显示为 ?）。"""
+    if not raw:
+        return raw
+    # 去掉 regex: 及其之后的所有内容（规则引擎通常把正则表达式附在尾部）
+    cleaned = re.sub(r'\s*regex:.*', '', raw, flags=re.DOTALL).rstrip()
+    # 去掉前置连续乱码字符（Unicode 替换字符 \ufffd 或字面问号）
+    cleaned = re.sub(r'^[\ufffd?]+', '', cleaned).strip()
+    return cleaned if cleaned else raw
 
 
 def write_back(record_id: str, llm_result: dict, routing: str, mode: str = "标准"):
@@ -361,16 +397,13 @@ def write_back(record_id: str, llm_result: dict, routing: str, mode: str = "标�
     # 规则引擎若返回 audit_time，优先使用；否则用当前时间
     audit_ts = llm_result.get("audit_time") or now_ms
 
-    # 审核意见：若有命中规则明细，附加在末尾
+    # 审核意见：规则引擎返回的 审核_审核意见 已包含命中规则明细，直接使用，不再追加
     audit_opinion = llm_result.get("审核_审核意见", "")
-    matched_rules_text = _format_matched_rules(llm_result.get("matched_rules", []))
-    if matched_rules_text:
-        audit_opinion = audit_opinion + matched_rules_text
 
     fields = {
         # ② AI预审段（运营可见）
         F_预审_风险等级:      llm_result.get("预审_风险等级", ""),
-        F_预审_命中要点:      _clean_hit_points(llm_result.get("预审_命中要点", "")),
+        F_预审_命中要点:      _trim_hit_points(_clean_hit_points(llm_result.get("预审_命中要点", ""))),
         F_预审_修改建议:      llm_result.get("预审_修改建议", ""),
         F_预审_时间:          audit_ts,
         # ③ AI审核段（法务可见）
@@ -379,8 +412,7 @@ def write_back(record_id: str, llm_result: dict, routing: str, mode: str = "标�
         F_审核_模式推荐理由:  llm_result.get("mode_reason", "（待分配依据上线后自动填写）"),
         F_审核_审核意见:      audit_opinion,
         F_审核_关键实体抽取:  llm_result.get("审核_关键实体抽取", ""),
-        F_审核_高风险词命中:  llm_result.get("审核_高风险词命中", ""),
-        F_审核_平台规则预检:  llm_result.get("审核_平台规则预检", ""),
+        F_审核_高风险词命中:  _clean_hit_points(llm_result.get("审核_高风险词命中", "")),
         F_审核_备案核查结果:  llm_result.get(
             "审核_备案核查结果",
             "MVP阶段暂未接入备案核查，仅根据运营提交字段做形式提示。"
@@ -392,7 +424,7 @@ def write_back(record_id: str, llm_result: dict, routing: str, mode: str = "标�
         F_流转_当前状态:      routing,
     }
     update_record(record_id, fields)
-    print(f"[predictor] 回写完成，流转状态 → {routing}")
+    logger.info("event=review_writeback_completed record_id=%s routing=%s", record_id, routing)
 
 
 # ── 上下文缓存（跨两步调用） ─────────────────────────────────
@@ -409,12 +441,15 @@ def prepare(record_id: str) -> tuple:
     由 bot_listener 在运营点「开启AI审核」后调用。
     返回 (ctx, recommended_mode)，供发模式确认卡片使用。
     """
-    print(f"[predictor] 上下文重建 record_id={record_id}")
+    logger.info("event=review_context_started record_id=%s", record_id)
     ctx = build_context(record_id)
-    print(f"[predictor] 重建完成，行业={ctx['industry']}，内容={len(ctx['content'])}字")
+    logger.info(
+        "event=review_context_completed record_id=%s industry=%s content_length=%s",
+        record_id, ctx["industry"], len(ctx["content"]),
+    )
 
     mode = recommend_mode(ctx)
-    print(f"[predictor] 推荐模式 → {mode}")
+    logger.info("event=review_mode_selected record_id=%s mode=%s", record_id, mode)
 
     _ctx_cache[record_id] = ctx   # 缓存，等运营确认后 execute() 取用
     return ctx, mode
@@ -429,29 +464,42 @@ def execute(record_id: str, mode: str):
     - 返回 list（命中规则列表）：飞书侧继续调 LLM 生成完整报告（当前占位实现）
     - 返回 dict（含 routing 的完整审核结果）：直接使用，跳过 LLM（队友 API 接入后生效）
     """
-    print(f"[predictor] 正式审核开始 record_id={record_id} mode={mode}")
+    logger.info("event=review_started record_id=%s mode=%s", record_id, mode)
 
     # 优先从缓存取上下文，避免重复请求
     ctx = _ctx_cache.pop(record_id, None)
     if ctx is None:
-        print(f"[predictor] 缓存未命中，重新拉取上下文")
+        logger.info("event=review_context_cache_miss record_id=%s", record_id)
         ctx = build_context(record_id)
+
+    # 保底：若内容仍为空（图片物料 OCR 未完成或写回延迟），强制重跑一次
+    if not ctx["content"].strip():
+        logger.warning("event=review_content_missing record_id=%s action=attachment_fallback", record_id)
+        from ocr_preprocessor import extract_text_from_attachments
+        rec = get_record(record_id)
+        fields = rec.get("fields", {})
+        ocr_text = extract_text_from_attachments(record_id, fields)
+        if ocr_text:
+            ctx["content"] = ocr_text
+            logger.info("event=attachment_fallback_completed record_id=%s content_length=%s", record_id, len(ocr_text))
+        else:
+            raise ValueError("物料内容为空：既无文字也无可识别的图片，无法审核")
 
     # 调用队友规则引擎
     engine_result = call_teammate_engine(ctx, mode)
 
     if isinstance(engine_result, dict) and engine_result.get("routing"):
         # 队友引擎返回了完整结果，直接使用，跳过本地 LLM
-        print(f"[predictor] 规则引擎返回完整结果，跳过 LLM")
+        logger.info("event=rule_engine_complete_result record_id=%s", record_id)
         llm_result = engine_result
         routing = _decide_routing([], llm_result.get("routing", ""))
     else:
         # 当前占位：引擎返回命中列表（或空列表），交给 LLM 生成报告
         hits = engine_result if isinstance(engine_result, list) else []
-        print(f"[predictor] 规则引擎命中 {len(hits)} 条，调用 LLM 生成报告")
+        logger.info("event=rule_engine_hits record_id=%s count=%s", record_id, len(hits))
         llm_result = call_llm(ctx, hits, mode)
         routing = _decide_routing(hits, llm_result.get("routing", ""))
 
     write_back(record_id, llm_result, routing, mode)
-    print(f"[predictor] 审核完成，routing={routing}")
+    logger.info("event=review_completed record_id=%s routing=%s", record_id, routing)
     return routing, llm_result

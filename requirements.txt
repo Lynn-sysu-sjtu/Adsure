@@ -1,2 +1,6 @@
 flask==3.0.0
 requests==2.31.0
+lark-oapi
+anthropic
+Pillow
+tencentcloud-sdk-python
