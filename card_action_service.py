@@ -51,13 +51,23 @@ def _event_key(request: CardActionRequest, now: Optional[float] = None) -> str:
         event_ms = int(request.event_time_ms or current_ms)
         five_minute_bucket = event_ms // 300_000
         raw = json.dumps(
-            [request.action, request.record_id, request.operator_id or "", request.mode or "", five_minute_bucket],
+            [
+                request.action,
+                request.record_id,
+                request.operator_id or "",
+                request.mode or "",
+                five_minute_bucket,
+            ],
             ensure_ascii=False,
             separators=(",", ":"),
         )
         logger.warning(
             "event=card_action_missing_event_id %s",
-            context_fields(action=request.action, record_id=request.record_id, transport=request.transport),
+            context_fields(
+                action=request.action,
+                record_id=request.record_id,
+                transport=request.transport,
+            ),
         )
     return "card:" + hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
@@ -74,19 +84,23 @@ def handle_card_action(
     if not action or not record_id:
         logger.warning(
             "event=invalid_card_action %s",
-            context_fields(action=action, record_id=record_id, transport=request.transport),
+            context_fields(
+                action=action, record_id=record_id, transport=request.transport
+            ),
         )
         return CardActionResult(STALE_CARD, "info", None, False)
 
     if action == "confirm_mode" and request.mode not in VALID_MODES:
         logger.warning(
             "event=invalid_legacy_mode %s",
-            context_fields(action=action, record_id=record_id, transport=request.transport),
+            context_fields(
+                action=action, record_id=record_id, transport=request.transport
+            ),
         )
         return CardActionResult(STALE_CARD, "info", None, False)
 
     mapping = {
-        "start_ai_review": ("ai_review", {"mode": "标准"}),
+        "start_ai_review": ("context_confirm", {}),
         "confirm_mode": ("ai_review", {"mode": request.mode}),
         "resubmit": ("resubmit", {}),
         "skip_review": ("route_to_legal", {"source": "skip_review"}),
@@ -96,7 +110,11 @@ def handle_card_action(
     if selected is None:
         logger.warning(
             "event=unknown_card_action %s",
-            context_fields(action_hash=mask_identifier(action), record_id=record_id, transport=request.transport),
+            context_fields(
+                action_hash=mask_identifier(action),
+                record_id=record_id,
+                transport=request.transport,
+            ),
         )
         return CardActionResult(STALE_CARD, "info", None, False)
 
@@ -105,14 +123,21 @@ def handle_card_action(
     if request.round is not None and request.round != current_round:
         logger.info(
             "event=stale_card_round %s",
-            context_fields(action=action, record_id=record_id, card_round=request.round, current_round=current_round),
+            context_fields(
+                action=action,
+                record_id=record_id,
+                card_round=request.round,
+                current_round=current_round,
+            ),
         )
         return CardActionResult(STALE_CARD, "info", None, False)
     if request.round is None:
         if current_round > 1:
             logger.info(
                 "event=unversioned_legacy_card_stale %s",
-                context_fields(action=action, record_id=record_id, current_round=current_round),
+                context_fields(
+                    action=action, record_id=record_id, current_round=current_round
+                ),
             )
             return CardActionResult(STALE_CARD, "info", None, False)
         try:
@@ -126,7 +151,9 @@ def handle_card_action(
         if current_status not in _allowed_source_statuses(action):
             logger.info(
                 "event=stale_legacy_card_ignored %s",
-                context_fields(action=action, record_id=record_id, current_status=current_status),
+                context_fields(
+                    action=action, record_id=record_id, current_status=current_status
+                ),
             )
             return CardActionResult(STALE_CARD, "info", None, False)
 
@@ -156,7 +183,9 @@ def handle_card_action(
     except Exception:
         logger.exception(
             "event=card_action_enqueue_failed %s",
-            context_fields(action=action, record_id=record_id, idempotency_key=idempotency_key),
+            context_fields(
+                action=action, record_id=record_id, idempotency_key=idempotency_key
+            ),
         )
         return CardActionResult(ACTION_RETRY, "error", None, False)
 
@@ -167,14 +196,22 @@ def handle_card_action(
             message = STALE_CARD
         else:
             message = ACTION_RETRY
-        return CardActionResult(message, "info" if message != ACTION_RETRY else "error", queued.item_id, False)
+        return CardActionResult(
+            message,
+            "info" if message != ACTION_RETRY else "error",
+            queued.item_id,
+            False,
+        )
 
     message = ACTION_ACCEPTED
     logger.info(
         "event=card_action_enqueued %s",
         context_fields(
-            action=action, record_id=record_id, job_id=queued.item_id,
-            idempotency_key=idempotency_key, transport=request.transport,
+            action=action,
+            record_id=record_id,
+            job_id=queued.item_id,
+            idempotency_key=idempotency_key,
+            transport=request.transport,
         ),
     )
     return CardActionResult(message, "success", queued.item_id, True)
@@ -183,6 +220,7 @@ def handle_card_action(
 def _max_job_attempts() -> int:
     try:
         import config
+
         return int(getattr(config, "ADSURE_JOB_MAX_ATTEMPTS", 5))
     except ImportError:
         return 5
@@ -208,21 +246,32 @@ def _legacy_record_status(record_id: str) -> str:
 
 def parse_http_action(body: Mapping[str, Any]) -> CardActionRequest:
     event = body.get("event") if isinstance(body.get("event"), Mapping) else {}
-    action_obj = event.get("action") if isinstance(event.get("action"), Mapping) else body.get("action", {})
+    action_obj = (
+        event.get("action")
+        if isinstance(event.get("action"), Mapping)
+        else body.get("action", {})
+    )
     if not isinstance(action_obj, Mapping):
         action_obj = {}
-    value = action_obj.get("value") if isinstance(action_obj.get("value"), Mapping) else {}
+    value = (
+        action_obj.get("value") if isinstance(action_obj.get("value"), Mapping) else {}
+    )
     header = body.get("header") if isinstance(body.get("header"), Mapping) else {}
-    operator = event.get("operator") if isinstance(event.get("operator"), Mapping) else body.get("operator", {})
+    operator = (
+        event.get("operator")
+        if isinstance(event.get("operator"), Mapping)
+        else body.get("operator", {})
+    )
     if not isinstance(operator, Mapping):
         operator = {}
     operator_id = (
-        operator.get("open_id")
-        or (operator.get("operator_id") or {}).get("open_id")
+        operator.get("open_id") or (operator.get("operator_id") or {}).get("open_id")
         if isinstance(operator.get("operator_id"), Mapping)
         else operator.get("open_id")
     )
-    event_time = header.get("create_time") or body.get("create_time") or event.get("create_time")
+    event_time = (
+        header.get("create_time") or body.get("create_time") or event.get("create_time")
+    )
     try:
         event_time_ms = int(event_time) if event_time else None
     except (TypeError, ValueError):
@@ -231,7 +280,13 @@ def parse_http_action(body: Mapping[str, Any]) -> CardActionRequest:
         action=str(value.get("action", "")),
         record_id=str(value.get("record_id", "")),
         operator_id=str(operator_id) if operator_id else None,
-        event_id=str(header.get("event_id") or body.get("event_id") or event.get("event_id") or "") or None,
+        event_id=str(
+            header.get("event_id")
+            or body.get("event_id")
+            or event.get("event_id")
+            or ""
+        )
+        or None,
         event_time_ms=event_time_ms,
         mode=str(value.get("mode", "")) or None,
         round=_optional_int(value.get("round")),
