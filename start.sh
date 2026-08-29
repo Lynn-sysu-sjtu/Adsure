@@ -6,6 +6,7 @@
 cd "$(dirname "$0")"
 
 PID_FILE=".pids"
+mkdir -p logs
 
 # 如果已经在跑，先停掉
 if [ -f "$PID_FILE" ]; then

@@ -8,9 +8,12 @@
 import json
 import uuid
 import datetime
+import logging
+import hashlib
 from pathlib import Path
 
 CORRECTIONS_PATH = Path(__file__).parent / "data" / "corrections.json"
+logger = logging.getLogger(__name__)
 
 
 def _load() -> list:
@@ -19,6 +22,7 @@ def _load() -> list:
     try:
         return json.loads(CORRECTIONS_PATH.read_text(encoding="utf-8"))
     except Exception:
+        logger.exception("event=correction_store_read_failed")
         return []
 
 
@@ -41,11 +45,17 @@ def save_correction(
     objection_fields: list,
     correct_judgment: str,
     reason: str,
+    idempotency_key: str = "",
 ) -> dict:
     """保存一条法务纠正记录，返回保存的 entry dict。"""
     records = _load()
+    if idempotency_key:
+        existing = next((item for item in records if item.get("idempotency_key") == idempotency_key), None)
+        if existing:
+            return existing
     entry = {
-        "id":                 str(uuid.uuid4())[:8],
+        "id":                 hashlib.sha256(idempotency_key.encode("utf-8")).hexdigest()[:8] if idempotency_key else str(uuid.uuid4())[:8],
+        "idempotency_key":    idempotency_key,
         "created_at":         datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "record_id":          record_id,
         "industry":           industry,
@@ -61,7 +71,7 @@ def save_correction(
     }
     records.append(entry)
     _save(records)
-    print(f"[preference_memory] 已保存纠正记录 id={entry['id']} feedback_type={feedback_type}")
+    logger.info("event=correction_saved correction_id=%s feedback_type=%s", entry["id"], feedback_type)
     return entry
 
 

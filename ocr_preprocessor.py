@@ -15,14 +15,12 @@ OCR 预处理模块 — 腾讯云通用印刷体识别
 """
 
 import base64
+import logging
 
-from tencentcloud.common import credential
-from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
-from tencentcloud.ocr.v20181119 import ocr_client, models
-
-from config import TENCENT_SECRET_ID, TENCENT_SECRET_KEY, TENCENT_OCR_REGION
 from feishu_api import download_attachment, update_record
 from fields_v4 import F_物料附件, F_物料内容
+
+logger = logging.getLogger(__name__)
 
 SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp"}
 SUPPORTED_MIME_TYPES = {
@@ -39,8 +37,20 @@ def _is_image(attachment: dict) -> bool:
 
 def _ocr_image(image_bytes: bytes) -> str:
     """调用腾讯云通用印刷体识别，返回拼接后的文本。"""
-    cred = credential.Credential(TENCENT_SECRET_ID, TENCENT_SECRET_KEY)
-    client = ocr_client.OcrClient(cred, TENCENT_OCR_REGION)
+    try:
+        import config
+        from tencentcloud.common import credential
+        from tencentcloud.ocr.v20181119 import ocr_client, models
+        secret_id = getattr(config, "TENCENT_SECRET_ID", "")
+        secret_key = getattr(config, "TENCENT_SECRET_KEY", "")
+        region = getattr(config, "TENCENT_OCR_REGION", "ap-guangzhou")
+        if not secret_id or not secret_key:
+            raise RuntimeError("attachment text provider is not configured")
+    except ImportError as exc:
+        raise RuntimeError("attachment text provider is unavailable") from exc
+
+    cred = credential.Credential(secret_id, secret_key)
+    client = ocr_client.OcrClient(cred, region)
 
     req = models.GeneralBasicOCRRequest()
     req.ImageBase64 = base64.b64encode(image_bytes).decode("utf-8")
@@ -80,31 +90,28 @@ def extract_text_from_attachments(record_id: str, fields: dict) -> str:
     images = [a for a in attachments if isinstance(a, dict) and _is_image(a)]
 
     if not images:
-        print(f"[ocr] record_id={record_id} 附件中无图片，跳过")
+        logger.info("event=attachment_text_skipped record_id=%s reason=no_images", record_id)
         return ""
 
-    print(f"[ocr] record_id={record_id} 发现 {len(images)} 张图片，开始 OCR")
+    logger.info("event=attachment_text_started record_id=%s image_count=%s", record_id, len(images))
 
     parts = []
     for idx, att in enumerate(images, 1):
         file_token = att.get("file_token")
-        name = att.get("name", f"图片{idx}")
         if not file_token:
-            print(f"[ocr]   跳过第{idx}张：无 file_token")
+            logger.warning("event=attachment_missing_token record_id=%s index=%s", record_id, idx)
             continue
         try:
-            print(f"[ocr]   第{idx}张：{name}")
+            logger.info("event=attachment_text_image_started record_id=%s index=%s", record_id, idx)
             image_bytes = download_attachment(file_token)
             text = _ocr_image(image_bytes)
             if text.strip():
                 parts.append(text.strip())
-                print(f"[ocr]   ✓ 提取到 {len(text)} 字")
+                logger.info("event=attachment_text_image_completed record_id=%s index=%s text_length=%s", record_id, idx, len(text))
             else:
-                print(f"[ocr]   图片中无文字")
-        except TencentCloudSDKException as e:
-            print(f"[ocr]   ✗ 腾讯云 OCR 失败: {e}")
-        except Exception as e:
-            print(f"[ocr]   ✗ 第{idx}张处理失败: {e}")
+                logger.info("event=attachment_text_image_empty record_id=%s index=%s", record_id, idx)
+        except Exception:
+            logger.exception("event=attachment_text_image_failed record_id=%s index=%s", record_id, idx)
 
     if not parts:
         return ""
@@ -116,14 +123,14 @@ def extract_text_from_attachments(record_id: str, fields: dict) -> str:
     for attempt in range(1, 3):
         try:
             update_record(record_id, {F_物料内容: combined})
-            print(f"[ocr] ✓ OCR 结果已写回「物料内容」，共 {len(combined)} 字")
+            logger.info("event=attachment_text_writeback_completed record_id=%s text_length=%s", record_id, len(combined))
             last_err = None
             break
-        except Exception as e:
-            last_err = e
-            print(f"[ocr] ✗ 写回失败（第{attempt}次）: {e}")
+        except Exception as exc:
+            last_err = exc
+            logger.exception("event=attachment_text_writeback_failed record_id=%s attempt=%s", record_id, attempt)
 
     if last_err:
-        raise RuntimeError(f"OCR 文案写回飞书失败，无法继续审核: {last_err}")
+        raise RuntimeError("attachment text writeback failed") from last_err
 
     return combined

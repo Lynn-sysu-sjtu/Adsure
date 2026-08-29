@@ -15,6 +15,7 @@
 import json
 import re
 import datetime
+import logging
 from pathlib import Path
 
 from feishu_api import get_record, update_record
@@ -42,6 +43,9 @@ from fields_v4 import (
     # 流转段
     F_流转_当前状态,
 )
+
+
+logger = logging.getLogger(__name__)
 
 
 # ── 工具函数 ────────────────────────────────────────────────
@@ -294,7 +298,7 @@ def call_llm(ctx: dict, rules: list, mode: str = "标准") -> dict:
     )
     corrections_text = preference_memory.format_for_prompt(corrections)
     if corrections_text:
-        print(f"[predictor] 注入 {len(corrections)} 条历史纠正案例")
+        logger.info("event=correction_examples_loaded count=%s", len(corrections))
 
     system_prompt = """\
 你是一名专业的广告合规审核专家，熟悉中国《广告法》《消费者权益保护法》《食品安全法》等法律法规及各平台运营规则。
@@ -320,7 +324,7 @@ routing 字段判断标准：
 
     user_message = f"{material_text}\n\n{rules_text}{corrections_text}"
 
-    print(f"[predictor] 调用 LLM（模型={LLM_MODEL}）...")
+    logger.info("event=language_review_started model=%s", LLM_MODEL)
     message = client.messages.create(
         model=LLM_MODEL,
         max_tokens=2048,
@@ -331,7 +335,7 @@ routing 字段判断标准：
     # DeepSeek 可能返回 ThinkingBlock + TextBlock，找到有 .text 的那个
     text_block = next((b for b in message.content if hasattr(b, "text")), None)
     if text_block is None:
-        raise ValueError(f"LLM 响应中未找到文本内容，content={message.content}")
+        raise ValueError("review result did not contain text")
     raw = text_block.text.strip()
     # 去掉可能的 markdown 代码块包裹
     if raw.startswith("```"):
@@ -339,7 +343,7 @@ routing 字段判断标准：
         if raw.startswith("json"):
             raw = raw[4:]
     result = json.loads(raw)
-    print(f"[predictor] LLM 返回，风险等级={result.get('预审_风险等级')}")
+    logger.info("event=language_review_completed risk_level=%s", result.get("预审_风险等级"))
     return result
 
 
@@ -420,7 +424,7 @@ def write_back(record_id: str, llm_result: dict, routing: str, mode: str = "标�
         F_流转_当前状态:      routing,
     }
     update_record(record_id, fields)
-    print(f"[predictor] 回写完成，流转状态 → {routing}")
+    logger.info("event=review_writeback_completed record_id=%s routing=%s", record_id, routing)
 
 
 # ── 上下文缓存（跨两步调用） ─────────────────────────────────
@@ -437,12 +441,15 @@ def prepare(record_id: str) -> tuple:
     由 bot_listener 在运营点「开启AI审核」后调用。
     返回 (ctx, recommended_mode)，供发模式确认卡片使用。
     """
-    print(f"[predictor] 上下文重建 record_id={record_id}")
+    logger.info("event=review_context_started record_id=%s", record_id)
     ctx = build_context(record_id)
-    print(f"[predictor] 重建完成，行业={ctx['industry']}，内容={len(ctx['content'])}字")
+    logger.info(
+        "event=review_context_completed record_id=%s industry=%s content_length=%s",
+        record_id, ctx["industry"], len(ctx["content"]),
+    )
 
     mode = recommend_mode(ctx)
-    print(f"[predictor] 推荐模式 → {mode}")
+    logger.info("event=review_mode_selected record_id=%s mode=%s", record_id, mode)
 
     _ctx_cache[record_id] = ctx   # 缓存，等运营确认后 execute() 取用
     return ctx, mode
@@ -457,24 +464,24 @@ def execute(record_id: str, mode: str):
     - 返回 list（命中规则列表）：飞书侧继续调 LLM 生成完整报告（当前占位实现）
     - 返回 dict（含 routing 的完整审核结果）：直接使用，跳过 LLM（队友 API 接入后生效）
     """
-    print(f"[predictor] 正式审核开始 record_id={record_id} mode={mode}")
+    logger.info("event=review_started record_id=%s mode=%s", record_id, mode)
 
     # 优先从缓存取上下文，避免重复请求
     ctx = _ctx_cache.pop(record_id, None)
     if ctx is None:
-        print(f"[predictor] 缓存未命中，重新拉取上下文")
+        logger.info("event=review_context_cache_miss record_id=%s", record_id)
         ctx = build_context(record_id)
 
     # 保底：若内容仍为空（图片物料 OCR 未完成或写回延迟），强制重跑一次
     if not ctx["content"].strip():
-        print(f"[predictor] ⚠ content 为空，强制重跑 OCR")
+        logger.warning("event=review_content_missing record_id=%s action=attachment_fallback", record_id)
         from ocr_preprocessor import extract_text_from_attachments
         rec = get_record(record_id)
         fields = rec.get("fields", {})
         ocr_text = extract_text_from_attachments(record_id, fields)
         if ocr_text:
             ctx["content"] = ocr_text
-            print(f"[predictor] OCR 补救成功，内容 {len(ocr_text)} 字")
+            logger.info("event=attachment_fallback_completed record_id=%s content_length=%s", record_id, len(ocr_text))
         else:
             raise ValueError("物料内容为空：既无文字也无可识别的图片，无法审核")
 
@@ -483,16 +490,16 @@ def execute(record_id: str, mode: str):
 
     if isinstance(engine_result, dict) and engine_result.get("routing"):
         # 队友引擎返回了完整结果，直接使用，跳过本地 LLM
-        print(f"[predictor] 规则引擎返回完整结果，跳过 LLM")
+        logger.info("event=rule_engine_complete_result record_id=%s", record_id)
         llm_result = engine_result
         routing = _decide_routing([], llm_result.get("routing", ""))
     else:
         # 当前占位：引擎返回命中列表（或空列表），交给 LLM 生成报告
         hits = engine_result if isinstance(engine_result, list) else []
-        print(f"[predictor] 规则引擎命中 {len(hits)} 条，调用 LLM 生成报告")
+        logger.info("event=rule_engine_hits record_id=%s count=%s", record_id, len(hits))
         llm_result = call_llm(ctx, hits, mode)
         routing = _decide_routing(hits, llm_result.get("routing", ""))
 
     write_back(record_id, llm_result, routing, mode)
-    print(f"[predictor] 审核完成，routing={routing}")
+    logger.info("event=review_completed record_id=%s routing=%s", record_id, routing)
     return routing, llm_result

@@ -1,5 +1,31 @@
 let currentRecord = null;
 let allRecords = [];
+let reviewSubmissionKey = null;
+
+function escapeHtml(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+
+function safeHttpsUrl(value) {
+    try {
+        const url = new URL(String(value || ""));
+        return url.protocol === "https:" ? url.href : "";
+    } catch (_error) {
+        return "";
+    }
+}
+
+function newIdempotencyKey() {
+    if (window.crypto && typeof window.crypto.randomUUID === "function") {
+        return window.crypto.randomUUID();
+    }
+    return `review-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     loadRecords();
@@ -27,11 +53,24 @@ function setupTabs() {
 
 // 加载待复核记录
 async function loadRecords() {
-    const res = await fetch("/api/records");
-    allRecords = await res.json();
-    const pending = allRecords.filter(r => r["审核状态"] === "待法务复核");
-    document.getElementById("pending-count").textContent = pending.length;
-    renderSidebar(pending);
+    const list = document.getElementById("record-list");
+    try {
+        const res = await fetch("/api/records");
+        const data = await res.json();
+        if (!res.ok || !Array.isArray(data)) throw new Error("records unavailable");
+        allRecords = data;
+        const pending = allRecords.filter(r => r["审核状态"] === "待法务复核");
+        document.getElementById("pending-count").textContent = pending.length;
+        renderSidebar(pending);
+    } catch (_error) {
+        allRecords = [];
+        document.getElementById("pending-count").textContent = "0";
+        list.textContent = "";
+        const message = document.createElement("div");
+        message.style.cssText = "padding:24px 16px;color:var(--text-muted);text-align:center;";
+        message.textContent = "暂时未能加载，请稍后刷新";
+        list.appendChild(message);
+    }
 }
 
 // 渲染左侧列表
@@ -51,7 +90,8 @@ function renderSidebar(records, mode = "pending") {
         item.dataset.id = record.id;
 
         const riskClass = record["风险等级"] === "高风险" ? "high" : record["风险等级"] === "中风险" ? "medium" : "low";
-        const preview = record["物料内容"].substring(0, 50) + (record["物料内容"].length > 50 ? "..." : "");
+        const materialText = String(record["物料内容"] || "");
+        const preview = materialText.substring(0, 50) + (materialText.length > 50 ? "..." : "");
 
         // 待处理显示运营提交人，已处理显示法务审核人
         const personLabel = mode === "done" ? "法务" : "提交";
@@ -61,13 +101,13 @@ function renderSidebar(records, mode = "pending") {
 
         item.innerHTML = `
             <div class="record-item-header">
-                <span class="risk-badge ${riskClass}"><span class="risk-dot"></span>${record["风险等级"]}</span>
-                <span style="font-size:12px;color:var(--text-muted);">${record["行业领域"]}</span>
+                <span class="risk-badge ${riskClass}"><span class="risk-dot"></span>${escapeHtml(record["风险等级"])}</span>
+                <span style="font-size:12px;color:var(--text-muted);">${escapeHtml(record["行业领域"])}</span>
             </div>
-            <div class="content-preview">${preview}</div>
+            <div class="content-preview">${escapeHtml(preview)}</div>
             <div class="meta">
-                <span style="color:var(--text-muted);">${personLabel}：</span><span>${personName}</span>
-                <span>${record["提交时间"] || "—"}</span>
+                <span style="color:var(--text-muted);">${personLabel}：</span><span>${escapeHtml(personName)}</span>
+                <span>${escapeHtml(record["提交时间"] || "—")}</span>
             </div>
         `;
 
@@ -88,11 +128,11 @@ function buildIndustryCard(record) {
 
     function val(v) {
         if (!v || (Array.isArray(v) && v.length === 0)) return "—";
-        return Array.isArray(v) ? v.join("、") : v;
+        return escapeHtml(Array.isArray(v) ? v.join("、") : v);
     }
     function row(label, value) {
         return `<tr>
-            <td style="color:var(--text-muted);width:100px;padding:4px 0;vertical-align:top;white-space:nowrap;">${label}</td>
+            <td style="color:var(--text-muted);width:100px;padding:4px 0;vertical-align:top;white-space:nowrap;">${escapeHtml(label)}</td>
             <td style="padding:4px 0;">${val(value)}</td>
         </tr>`;
     }
@@ -139,7 +179,7 @@ function buildIndustryCard(record) {
 
     return `
         <div class="detail-card">
-            <div class="detail-card-title"><span class="icon">${icon}</span>${industry}专属信息</div>
+            <div class="detail-card-title"><span class="icon">${icon}</span>${escapeHtml(industry)}专属信息</div>
             <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:1.8;">
                 ${rows}
             </table>
@@ -170,7 +210,7 @@ function renderAiOpinion(text) {
 
     // 如果一个分段标记都没找到，降级为 pre-wrap 原样展示
     if (positions.length === 0) {
-        return `<div class="ai-opinion-box">${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>`;
+        return `<div class="ai-opinion-box">${escapeHtml(text)}</div>`;
     }
 
     // 按位置切片，每段取"当前标记位置"到"下一标记位置"之间的内容
@@ -185,9 +225,7 @@ function renderAiOpinion(text) {
         const sec = SECTIONS.find(s => s.marker === chunk.marker);
         if (!sec) return "";
         // 首行可能是 "风险定性：xxx"，去掉冗余标题前缀
-        let body = chunk.content
-            .replace(new RegExp(`^${sec.label}[：:]\s*`), "")
-            .replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        let body = escapeHtml(chunk.content.replace(new RegExp(`^${sec.label}[：:]\\s*`), ""));
         // 把"无"/"无违禁词"等短结论加粗
         body = body.replace(/^(无[^。\n]*)/m, '<strong>$1</strong>');
         // 换行转 <br>
@@ -233,7 +271,7 @@ function renderAiReviewCard(record) {
     // 违规类型标签
     const vtypes = record["违规类型"] || [];
     const vtypeHtml = vtypes.length
-        ? vtypes.map(v => `<span style="background:#f0f0f0;border:1px solid #d9d9d9;border-radius:3px;padding:1px 8px;font-size:12px;margin-right:4px;">${v}</span>`).join("")
+        ? vtypes.map(v => `<span style="background:#f0f0f0;border:1px solid #d9d9d9;border-radius:3px;padding:1px 8px;font-size:12px;margin-right:4px;">${escapeHtml(v)}</span>`).join("")
         : '<span style="color:var(--text-muted);font-size:12px;">无</span>';
 
     // 命中要点
@@ -278,16 +316,16 @@ function renderAiReviewCard(record) {
 
         <!-- 顶部结论栏 -->
         <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;padding:10px 14px;border-radius:6px;background:${riskBg};border:1px solid ${riskBorder};">
-            <span style="background:${riskColor};color:#fff;font-weight:700;font-size:13px;border-radius:4px;padding:3px 10px;">${risk || "—"}</span>
+            <span style="background:${riskColor};color:#fff;font-weight:700;font-size:13px;border-radius:4px;padding:3px 10px;">${escapeHtml(risk || "—")}</span>
             <span style="background:${oc.bg};border:1px solid ${oc.border};color:${oc.color};font-weight:600;font-size:12px;border-radius:4px;padding:2px 9px;">${opinionType}</span>
-            ${record["审核模式"] ? `<span style="font-size:12px;color:#888;background:#fff;border:1px solid #e0e0e0;border-radius:4px;padding:2px 8px;">模式：${record["审核模式"]}</span>` : ""}
+            ${record["审核模式"] ? `<span style="font-size:12px;color:#888;background:#fff;border:1px solid #e0e0e0;border-radius:4px;padding:2px 8px;">模式：${escapeHtml(record["审核模式"])}</span>` : ""}
         </div>
 
         <!-- 核心结论：命中要点 -->
         ${hitPoints ? `
         <div style="margin-bottom:10px;">
             <div style="font-size:14px;font-weight:700;color:#333;margin-bottom:4px;">核心风险点</div>
-            <div style="background:#fffbe6;border:1px solid #ffe58f;border-radius:5px;padding:8px 12px;font-size:13px;color:#333;line-height:1.7;">${hitPoints}</div>
+            <div style="background:#fffbe6;border:1px solid #ffe58f;border-radius:5px;padding:8px 12px;font-size:13px;color:#333;line-height:1.7;">${escapeHtml(hitPoints)}</div>
         </div>` : ""}
 
         <!-- 所涉条文（法律依据原文）- 醒目蓝色块，不折叠 -->
@@ -296,7 +334,7 @@ function renderAiReviewCard(record) {
             <div style="font-size:14px;font-weight:700;color:#0050b3;margin-bottom:4px;">📜 所涉条文</div>
             <div style="background:#e6f7ff;border:1px solid #91d5ff;border-radius:5px;padding:10px 14px;font-size:13px;color:#003a8c;line-height:1.9;">
                 ${legalBasisText.split(/\n/).map(s => s.trim()).filter(Boolean).map(s =>
-                    `<div style="padding:4px 0;border-bottom:1px solid #bae0ff;word-break:break-all;">${s}</div>`
+                    `<div style="padding:4px 0;border-bottom:1px solid #bae0ff;word-break:break-all;">${escapeHtml(s)}</div>`
                 ).join("")}
             </div>
         </div>` : ""}
@@ -311,14 +349,14 @@ function renderAiReviewCard(record) {
         ${suggestion ? `
         <div style="margin-bottom:10px;">
             <div style="font-size:14px;font-weight:700;color:#333;margin-bottom:4px;">修改建议</div>
-            <div style="background:#fff1f0;border:1px solid #ffccc7;border-radius:5px;padding:8px 12px;font-size:13px;color:#cf1322;line-height:1.7;">${suggestion}</div>
+            <div style="background:#fff1f0;border:1px solid #ffccc7;border-radius:5px;padding:8px 12px;font-size:13px;color:#cf1322;line-height:1.7;">${escapeHtml(suggestion)}</div>
         </div>` : ""}
 
         <!-- 关键实体 -->
         ${entities ? `
         <div style="margin-bottom:10px;">
             <div style="font-size:14px;font-weight:700;color:#333;margin-bottom:4px;">关键实体抽取</div>
-            <div style="font-size:12px;color:#555;padding:4px 0;">${entities}</div>
+            <div style="font-size:12px;color:#555;padding:4px 0;">${escapeHtml(entities)}</div>
         </div>` : ""}
 
         <!-- 完整 AI 审核报告（折叠） -->
@@ -335,10 +373,11 @@ function renderAiReviewCard(record) {
 // 显示右侧详情
 function showDetail(record) {
     currentRecord = record;
+    reviewSubmissionKey = null;
     const detail = document.getElementById("detail-area");
 
     const violationTags = (record["违规类型"] || [])
-        .map(v => `<span class="violation-tag">${v}</span>`)
+        .map(v => `<span class="violation-tag">${escapeHtml(v)}</span>`)
         .join("");
 
     const riskClass = record["风险等级"] === "高风险" ? "high" : record["风险等级"] === "中风险" ? "medium" : "low";
@@ -347,7 +386,7 @@ function showDetail(record) {
 
     // 紧急程度标签
     const urgencyHtml = record["紧急程度"] && record["紧急程度"] !== "普通"
-        ? `<span style="background:#fff3cd;color:#856404;border:1px solid #ffc107;border-radius:4px;padding:2px 8px;font-size:12px;font-weight:600;">⚡ ${record["紧急程度"]}</span>`
+        ? `<span style="background:#fff3cd;color:#856404;border:1px solid #ffc107;border-radius:4px;padding:2px 8px;font-size:12px;font-weight:600;">⚡ ${escapeHtml(record["紧急程度"])}</span>`
         : "";
 
     detail.innerHTML = `
@@ -360,27 +399,27 @@ function showDetail(record) {
                 </colgroup>
                 <tr>
                     <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">物料编号</td>
-                    <td style="padding:3px 0;">${record["物料编号"] || "—"}</td>
+                    <td style="padding:3px 0;">${escapeHtml(record["物料编号"] || "—")}</td>
                     <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">行业领域</td>
-                    <td style="padding:3px 0;">${record["行业领域"] || "—"}</td>
+                    <td style="padding:3px 0;">${escapeHtml(record["行业领域"] || "—")}</td>
                 </tr>
                 <tr>
                     <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">投放平台</td>
-                    <td style="padding:3px 0;">${record["投放平台"] || "—"}</td>
+                    <td style="padding:3px 0;">${escapeHtml(record["投放平台"] || "—")}</td>
                     <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">紧急程度</td>
-                    <td style="padding:3px 0;">${urgencyHtml || record["紧急程度"] || "普通"}</td>
+                    <td style="padding:3px 0;">${urgencyHtml || escapeHtml(record["紧急程度"] || "普通")}</td>
                 </tr>
                 <tr>
                     <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">运营提交人</td>
-                    <td style="padding:3px 0;">${record["提交人"] || "—"}</td>
+                    <td style="padding:3px 0;">${escapeHtml(record["提交人"] || "—")}</td>
                     <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">提交时间</td>
-                    <td style="padding:3px 0;">${record["提交时间"] || "—"}</td>
+                    <td style="padding:3px 0;">${escapeHtml(record["提交时间"] || "—")}</td>
                 </tr>
                 <tr>
                     <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">法务审核人</td>
-                    <td style="padding:3px 0;">${record["法务审核人"] || "—"}</td>
+                    <td style="padding:3px 0;">${escapeHtml(record["法务审核人"] || "—")}</td>
                     <td style="color:var(--text-muted);padding:3px 0;vertical-align:top;">法务复核时间</td>
-                    <td style="padding:3px 0;">${record["法务复核时间"] || "—"}</td>
+                    <td style="padding:3px 0;">${escapeHtml(record["法务复核时间"] || "—")}</td>
                 </tr>
             </table>
         </div>
@@ -391,14 +430,14 @@ function showDetail(record) {
             ${(record["物料附件"] || []).length > 0 ? `
             <div style="margin-bottom:${record["物料内容"] ? "10px" : "0"};">
                 ${(record["物料附件"] || []).map(a => `
-                <img src="/api/attachment/${a.file_token}"
-                     alt="${a.name}"
+                <img src="/api/attachment/${encodeURIComponent(String(a.file_token || ''))}"
+                     alt="${escapeHtml(a.name || '')}"
                      loading="lazy"
                      style="max-width:100%;max-height:260px;object-fit:contain;border-radius:6px;display:block;margin-bottom:6px;"
                      onerror="this.style.display='none'">
                 `).join("")}
             </div>` : ""}
-            ${record["物料内容"] ? `<div class="content-full">${record["物料内容"]}</div>` : ""}
+            ${record["物料内容"] ? `<div class="content-full">${escapeHtml(record["物料内容"])}</div>` : ""}
         </div>
 
         ${buildIndustryCard(record)}
@@ -434,7 +473,7 @@ function renderReviewHistory(record) {
     const verdictColor = record["物料裁决"] === "通过" ? "color:#27a745;font-weight:600;" : "color:#e6720a;font-weight:600;";
     const rows = [
         ["AI意见评价", record["AI意见评价"]],
-        ["物料裁决", `<span style="${verdictColor}">${record["物料裁决"]}</span>`],
+        ["物料裁决", `<span style="${verdictColor}">${escapeHtml(record["物料裁决"])}</span>`],
         ["反馈类型", record["反馈类型"]],
         ["驳回次数", record["驳回次数"] || 0],
     ].filter(([, v]) => v !== "" && v !== null && v !== undefined);
@@ -448,9 +487,10 @@ function renderReviewHistory(record) {
     ].filter(([, v]) => v);
 
     const allRows = [...rows, ...extras];
-    const tableRows = allRows.map(([k, v]) =>
-        `<tr><td style="color:var(--text-muted);width:110px;padding:6px 8px;vertical-align:top;">${k}</td><td style="padding:6px 8px;">${v}</td></tr>`
-    ).join("");
+    const tableRows = allRows.map(([k, v]) => {
+        const renderedValue = k === "物料裁决" ? v : escapeHtml(v);
+        return `<tr><td style="color:var(--text-muted);width:110px;padding:6px 8px;vertical-align:top;">${k}</td><td style="padding:6px 8px;">${renderedValue}</td></tr>`;
+    }).join("");
 
     return `
         <table style="width:100%;border-collapse:collapse;font-size:14px;margin-bottom:16px;">
@@ -474,13 +514,13 @@ function renderReviewForm(prefill = null) {
     function chk(val)  { return objList.includes(val) ? 'checked' : ''; }
     function pre(key, fallback = '') {
         const v = p[key] || fallback;
-        return v.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return escapeHtml(v);
     }
 
     return `
             <div class="form-group">
                 <label class="form-label">法务审核人<span class="required">*</span></label>
-                <input type="text" class="form-select" id="reviewer-name" placeholder="请输入您的姓名（用于记录法务审核人）" value="${(p["法务审核人"] || "").replace(/</g,'&lt;').replace(/>/g,'&gt;')}" style="height:38px;">
+                <input type="text" class="form-select" id="reviewer-name" placeholder="请输入您的姓名（用于记录法务审核人）" value="${escapeHtml(p["法务审核人"] || "")}" style="height:38px;">
             </div>
 
             <div class="form-group">
@@ -543,6 +583,7 @@ function renderReviewForm(prefill = null) {
                 <textarea class="form-textarea" id="note" placeholder="可选，内部备忘..." style="min-height:60px;">${pre("法务批注")}</textarea>
             </div>
 
+            <div id="form-status" role="status" aria-live="polite" style="display:none;margin-bottom:10px;font-size:13px;"></div>
             <button class="btn-submit" id="btn-submit" onclick="submitReview()">提交裁决</button>
     `;
 }
@@ -668,7 +709,7 @@ function updateFormVisibility() {
         "同意无补充_不通过":"💡 AI判断方向正确，物料仍需修改。请填写修改意见告知运营。",
         "同意有补充_通过":  "💡 AI方向正确但有遗漏。你的补充意见将参与规则沉淀，帮助AI补全此类分析。",
         "同意有补充_不通过":"💡 AI方向正确但有遗漏，且物料需修改。补充意见将沉淀为规则，修改意见将发送给运营。",
-        "驳回_通过":        "💡 AI误判违规，物料实际合规。此次驳回将作为 override 案例沉淀，帮助AI纠正同类误判。",
+        "驳回_通过":        "💡 AI误判违规，物料实际合规。此次驳回会帮助改进同类判断。",
         "驳回_不通过":      "💡 AI判断类型或程度有误，但物料确实需修改。驳回记录将沉淀，修改意见将发送给运营。",
     };
 
@@ -700,43 +741,81 @@ function updateFormVisibility() {
     }
 }
 
+function clearFormErrors() {
+    document.querySelectorAll(".field-error").forEach(el => el.remove());
+    setFormStatus("");
+}
+
+function showFieldError(elementId, message) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    const group = element.classList.contains("form-group") ? element : element.closest(".form-group");
+    const error = document.createElement("div");
+    error.className = "field-error";
+    error.style.cssText = "color:var(--danger);font-size:12px;margin-top:4px;";
+    error.textContent = message;
+    (group || element.parentNode).appendChild(error);
+}
+
+function setFormStatus(message, isError = false) {
+    const status = document.getElementById("form-status");
+    if (!status) return;
+    status.textContent = message || "";
+    status.style.display = message ? "block" : "none";
+    status.style.color = isError ? "var(--danger)" : "var(--text-muted)";
+}
+
+function resetSubmitButton(label = "提交裁决") {
+    const btn = document.getElementById("btn-submit");
+    if (!btn) return;
+    btn.disabled = false;
+    btn.textContent = label;
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // 提交裁决
 async function submitReview(notifyOperator = true) {
     if (!currentRecord) return;
+    clearFormErrors();
 
     const opinion = document.getElementById("ai-opinion").value;
     const verdict = document.getElementById("verdict").value;
     const reviewerName = (document.getElementById("reviewer-name")?.value || "").trim();
 
     // 基础校验
-    if (!reviewerName) { alert("请填写法务审核人姓名"); return; }
-    if (!opinion) { alert("请选择AI意见评价"); return; }
-    if (!verdict) { alert("请选择物料裁决"); return; }
+    let valid = true;
+    if (!reviewerName) { showFieldError("reviewer-name", "请补充法务审核人"); valid = false; }
+    if (!opinion) { showFieldError("ai-opinion", "请补充AI意见评价"); valid = false; }
+    if (!verdict) { showFieldError("verdict", "请补充物料裁决"); valid = false; }
 
     // 同意有补充校验
     if (opinion === "同意有补充") {
         const supplement = document.getElementById("supplement-reason").value.trim();
-        if (!supplement) { alert("请填写补充意见"); return; }
+        if (!supplement) { showFieldError("supplement-reason", "请补充补充意见"); valid = false; }
     }
 
     // 驳回校验
     if (opinion === "驳回") {
         const checked = document.querySelectorAll("#objection-checkboxes input:checked");
         if (checked.length === 0) {
-            alert("驳回时请至少选择一项异议字段，以便系统精准学习");
-            return;
+            showFieldError("objection-group", "请补充异议字段");
+            valid = false;
         }
         const reason = document.getElementById("reject-reason").value.trim();
-        if (!reason) { alert("请填写驳回理由"); return; }
+        if (!reason) { showFieldError("reject-reason", "请补充驳回理由"); valid = false; }
         const judgment = document.getElementById("correct-judgment").value.trim();
-        if (!judgment) { alert("请填写正确判定"); return; }
+        if (!judgment) { showFieldError("correct-judgment", "请补充正确判定"); valid = false; }
     }
 
     // 不通过时校验修改意见
     if (verdict === "不通过") {
         const suggestion = document.getElementById("final-suggestion").value.trim();
-        if (!suggestion) { alert("物料不通过时请填写最终修改意见"); return; }
+        if (!suggestion) { showFieldError("final-suggestion", "请补充最终修改意见"); valid = false; }
     }
+    if (!valid) return;
 
     // 收集异议字段
     const objectionFields = [];
@@ -760,36 +839,101 @@ async function submitReview(notifyOperator = true) {
     const btn = document.getElementById("btn-submit");
     btn.disabled = true;
     btn.textContent = "提交中...";
+    setFormStatus("");
+    reviewSubmissionKey = reviewSubmissionKey || newIdempotencyKey();
 
     try {
-        const res = await fetch(`/api/records/${currentRecord.id}/review`, {
+        const res = await fetch(`/api/records/${encodeURIComponent(currentRecord.id)}/review`, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                "Idempotency-Key": reviewSubmissionKey,
+            },
             body: JSON.stringify(data),
         });
 
         const result = await res.json();
-
-        if (result.success) {
+        if (result.operation_status === "succeeded") {
             showSuccess(verdict, notifyOperator);
             loadRecords();
+        } else if (result.operation_status === "pending") {
+            await waitForReviewOperation(reviewSubmissionKey, verdict, notifyOperator);
+        } else if (result.field_errors) {
+            const mapping = {
+                reviewer_name: "reviewer-name", ai_opinion: "ai-opinion", verdict: "verdict",
+                objection_fields: "objection-group", supplement_reason: "supplement-reason",
+                reject_reason: "reject-reason", correct_judgment: "correct-judgment",
+                final_suggestion: "final-suggestion",
+            };
+            Object.entries(result.field_errors).forEach(([field, message]) => {
+                showFieldError(mapping[field], message);
+            });
+            reviewSubmissionKey = null;
+            resetSubmitButton();
         } else {
-            alert("提交失败：" + result.message);
-            btn.disabled = false;
-            btn.textContent = "提交裁决";
+            setFormStatus("暂时未能提交，请稍后再试", true);
+            reviewSubmissionKey = null;
+            resetSubmitButton();
         }
-    } catch (e) {
-        alert("网络错误，请重试");
-        btn.disabled = false;
-        btn.textContent = "提交裁决";
+    } catch (_error) {
+        await recoverUncertainReview(reviewSubmissionKey, verdict, notifyOperator);
     }
+}
+
+async function waitForReviewOperation(key, verdict, notifyOperator) {
+    for (let attempt = 0; attempt < 40; attempt += 1) {
+        await sleep(500);
+        try {
+            const response = await fetch(`/api/review-operations/${encodeURIComponent(key)}`);
+            const result = await response.json();
+            if (result.operation_status === "succeeded") {
+                showSuccess(verdict, notifyOperator);
+                loadRecords();
+                return;
+            }
+            if (result.operation_status === "failed") {
+                setFormStatus("暂时未能提交，请稍后再试", true);
+                reviewSubmissionKey = null;
+                resetSubmitButton();
+                return;
+            }
+        } catch (_error) {
+            // Keep querying the same idempotent operation; do not ask for a duplicate submit.
+        }
+    }
+    setFormStatus("已收到，可稍后刷新查看结果");
+    resetSubmitButton("查看处理结果");
+}
+
+async function recoverUncertainReview(key, verdict, notifyOperator) {
+    for (let attempt = 0; attempt < 6; attempt += 1) {
+        await sleep(500);
+        try {
+            const response = await fetch(`/api/review-operations/${encodeURIComponent(key)}`);
+            const result = await response.json();
+            if (result.operation_status === "succeeded") {
+                showSuccess(verdict, notifyOperator);
+                loadRecords();
+                return;
+            }
+            if (result.operation_status === "pending") {
+                await waitForReviewOperation(key, verdict, notifyOperator);
+                return;
+            }
+            if (result.operation_status === "unknown") break;
+        } catch (_error) {
+            // Automatic confirmation continues silently.
+        }
+    }
+    setFormStatus("暂时未能提交，请稍后再试", true);
+    resetSubmitButton();
 }
 
 // 提交成功页面
 function showSuccess(verdict, notifyOperator = true) {
     const detail = document.getElementById("detail-area");
     const notifyMsg = notifyOperator
-        ? (verdict === "通过" ? "运营将收到通知" : "修改意见已发送给运营")
+        ? "运营会收到通知"
         : "本次修改仅更新记录，未重新通知运营";
     detail.innerHTML = `
         <div class="success-view">
@@ -801,6 +945,7 @@ function showSuccess(verdict, notifyOperator = true) {
         </div>
     `;
     currentRecord = null;
+    reviewSubmissionKey = null;
 }
 
 // ===== 相关案例 =====
@@ -810,7 +955,7 @@ async function loadCases(record_id) {
     if (!container) return;
 
     try {
-        const res = await fetch(`/api/records/${record_id}/cases`);
+        const res = await fetch(`/api/records/${encodeURIComponent(record_id)}/cases`);
         const data = await res.json();
         const cases = data.cases || [];
 
@@ -826,19 +971,17 @@ async function loadCases(record_id) {
                 ? c.legal_basis.join("；")
                 : (c.legal_basis || "");
             const riskDims = Array.isArray(c.risk_dimensions) && c.risk_dimensions.length
-                ? `<span style="color:var(--text-muted);font-size:12px;">${c.risk_dimensions.join("·")}</span>`
+                ? `<span style="color:var(--text-muted);font-size:12px;">${escapeHtml(c.risk_dimensions.join("·"))}</span>`
                 : "";
             const riskLevelHtml = c.risk_level
-                ? `<span style="color:${riskColor[c.risk_level] || '#333'};font-weight:600;">${c.risk_level}风险</span> · `
+                ? `<span style="color:${riskColor[c.risk_level] || '#333'};font-weight:600;">${escapeHtml(c.risk_level)}风险</span> · `
                 : "";
-            const scoreHtml = typeof c.score === "number"
-                ? `<span style="color:var(--text-muted);font-size:11px;">BM25: ${c.score.toFixed(2)}</span>`
-                : "";
-            const sourceHtml = c.source_url
-                ? `<a href="${c.source_url}" target="_blank" rel="noopener noreferrer"
+            const sourceUrl = safeHttpsUrl(c.source_url);
+            const sourceHtml = sourceUrl
+                ? `<a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer"
                       style="font-size:11px;color:var(--primary);text-decoration:none;"
-                   >${c.source_name || "来源"}</a>`
-                : (c.source_name ? `<span style="font-size:11px;color:var(--text-muted);">${c.source_name}</span>` : "");
+                   >${escapeHtml(c.source_name || "来源")}</a>`
+                : (c.source_name ? `<span style="font-size:11px;color:var(--text-muted);">${escapeHtml(c.source_name)}</span>` : "");
             const candidateBadge = c.candidate_data
                 ? `<span style="font-size:10px;background:#fff3cd;color:#856404;border:1px solid #ffc107;border-radius:3px;padding:1px 5px;margin-left:4px;">候选数据</span>`
                 : "";
@@ -847,31 +990,30 @@ async function loadCases(record_id) {
             <div style="border:1px solid var(--border);border-radius:6px;padding:12px 14px;margin-bottom:10px;">
                 <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px;">
                     <div style="font-weight:600;font-size:13px;line-height:1.4;">
-                        ${c.title || "（无标题）"}${candidateBadge}
+                        ${escapeHtml(c.title || "（无标题）")}${candidateBadge}
                     </div>
                     <div style="white-space:nowrap;display:flex;align-items:center;gap:6px;">
-                        ${scoreHtml}
                         ${sourceHtml}
                     </div>
                 </div>
                 <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px;">
-                    ${riskLevelHtml}${c.violation_type || ""}${c.violation_type && riskDims ? " · " : ""}${riskDims}
+                    ${riskLevelHtml}${escapeHtml(c.violation_type || "")}${c.violation_type && riskDims ? " · " : ""}${riskDims}
                 </div>
                 ${c.content_snippet ? `
                 <div class="highlight-box" style="margin-bottom:6px;font-size:12px;">
-                    <strong>原案例宣称：</strong>${c.content_snippet}
+                    <strong>原案例宣称：</strong>${escapeHtml(c.content_snippet)}
                 </div>` : ""}
                 ${c.ruling ? `
                 <div style="font-size:12px;margin-bottom:4px;">
-                    <strong>处理结果：</strong>${c.ruling}
+                    <strong>处理结果：</strong>${escapeHtml(c.ruling)}
                 </div>` : ""}
                 ${c.regulatory_logic ? `
                 <div style="font-size:12px;color:var(--text-secondary);margin-bottom:4px;">
-                    <strong>监管逻辑：</strong>${c.regulatory_logic}
+                    <strong>监管逻辑：</strong>${escapeHtml(c.regulatory_logic)}
                 </div>` : ""}
                 ${legalBasis ? `
                 <div style="font-size:11px;color:var(--text-muted);border-top:1px solid var(--border);padding-top:6px;margin-top:6px;">
-                    <strong>法律依据：</strong>${legalBasis}
+                    <strong>法律依据：</strong>${escapeHtml(legalBasis)}
                 </div>` : ""}
             </div>`;
         }).join("");
@@ -890,13 +1032,15 @@ async function loadRulesView() {
     const detail = document.getElementById("detail-area");
     detail.innerHTML = '<div style="padding:32px;color:var(--text-muted);text-align:center;">加载中…</div>';
     currentRecord = null;
+    reviewSubmissionKey = null;
 
     let corrections = [];
     try {
         const res = await fetch("/api/corrections");
         corrections = await res.json();
-    } catch (e) {
-        detail.innerHTML = '<div style="padding:32px;color:var(--danger);">加载失败，请刷新重试</div>';
+        if (!Array.isArray(corrections)) throw new Error("corrections unavailable");
+    } catch (_error) {
+        detail.innerHTML = '<div style="padding:32px;color:var(--text-muted);">暂时未能加载，请稍后刷新</div>';
         return;
     }
 
@@ -923,9 +1067,9 @@ async function loadRulesView() {
         const aiRisk = c.ai_risk_level || "—";
         const aiTypes = (c.ai_violation_types || []).join("、") || "—";
         const statusBtn = isPaused
-            ? `<button onclick="setCorrectionStatus('${c.id}','active')"
+            ? `<button class="correction-status-btn" data-correction-id="${escapeHtml(c.id)}" data-correction-status="active"
                   style="font-size:11px;padding:2px 10px;border:1px solid #52c41a;color:#52c41a;background:#fff;border-radius:4px;cursor:pointer;">启用</button>`
-            : `<button onclick="setCorrectionStatus('${c.id}','paused')"
+            : `<button class="correction-status-btn" data-correction-id="${escapeHtml(c.id)}" data-correction-status="paused"
                   style="font-size:11px;padding:2px 10px;border:1px solid #bbb;color:#888;background:#fff;border-radius:4px;cursor:pointer;">停用</button>`;
 
         return `
@@ -933,13 +1077,13 @@ async function loadRulesView() {
             <!-- 卡片头 -->
             <div style="background:${meta.bg};padding:8px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;">
                 <div style="display:flex;align-items:center;gap:8px;">
-                    <span style="background:${meta.color};color:#fff;border-radius:4px;padding:2px 8px;font-size:12px;font-weight:700;">${meta.icon} ${meta.label}</span>
-                    ${c.industry ? `<span style="font-size:12px;color:#555;background:#fff;border:1px solid #ddd;border-radius:4px;padding:1px 7px;">${c.industry}</span>` : ""}
-                    <span style="font-size:11px;color:#999;">${c.created_at || ""}</span>
+                    <span style="background:${meta.color};color:#fff;border-radius:4px;padding:2px 8px;font-size:12px;font-weight:700;">${meta.icon} ${escapeHtml(meta.label)}</span>
+                    ${c.industry ? `<span style="font-size:12px;color:#555;background:#fff;border:1px solid #ddd;border-radius:4px;padding:1px 7px;">${escapeHtml(c.industry)}</span>` : ""}
+                    <span style="font-size:11px;color:#999;">${escapeHtml(c.created_at || "")}</span>
                 </div>
                 <div style="display:flex;align-items:center;gap:6px;">
                     ${statusBtn}
-                    <button onclick="deleteCorrection('${c.id}')"
+                    <button class="correction-delete-btn" data-correction-id="${escapeHtml(c.id)}"
                         style="font-size:11px;padding:2px 10px;border:1px solid #ff4d4f;color:#ff4d4f;background:#fff;border-radius:4px;cursor:pointer;">删除</button>
                 </div>
             </div>
@@ -950,22 +1094,22 @@ async function loadRulesView() {
                 <!-- 左列：物料片段 + AI原判定 -->
                 <div>
                     <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">物料片段</div>
-                    <div style="background:#f9f9f9;border:1px solid #eee;border-radius:4px;padding:6px 10px;font-size:13px;color:#333;line-height:1.6;margin-bottom:10px;">${c.content_snippet || "—"}</div>
+                    <div style="background:#f9f9f9;border:1px solid #eee;border-radius:4px;padding:6px 10px;font-size:13px;color:#333;line-height:1.6;margin-bottom:10px;">${escapeHtml(c.content_snippet || "—")}</div>
 
                     <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">AI 原判定</div>
                     <div style="background:#fffbe6;border:1px solid #ffe58f;border-radius:4px;padding:6px 10px;font-size:13px;line-height:1.7;">
-                        <span style="color:${riskColor[aiRisk] || '#333'};background:${riskBg[aiRisk] || '#f5f5f5'};border-radius:3px;padding:1px 6px;font-weight:700;font-size:12px;margin-right:6px;">${aiRisk}风险</span>
-                        <span style="color:#555;">${aiTypes}</span>
+                        <span style="color:${riskColor[aiRisk] || '#333'};background:${riskBg[aiRisk] || '#f5f5f5'};border-radius:3px;padding:1px 6px;font-weight:700;font-size:12px;margin-right:6px;">${escapeHtml(aiRisk)}风险</span>
+                        <span style="color:#555;">${escapeHtml(aiTypes)}</span>
                     </div>
                 </div>
 
                 <!-- 右列：法务纠正 + 理由 -->
                 <div>
                     <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">法务纠正</div>
-                    <div style="background:#f6ffed;border:1px solid #b7eb8f;border-radius:4px;padding:6px 10px;font-size:13px;color:#135200;font-weight:600;line-height:1.6;margin-bottom:10px;">${c.correct_judgment || "—"}</div>
+                    <div style="background:#f6ffed;border:1px solid #b7eb8f;border-radius:4px;padding:6px 10px;font-size:13px;color:#135200;font-weight:600;line-height:1.6;margin-bottom:10px;">${escapeHtml(c.correct_judgment || "—")}</div>
 
                     <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;">纠正理由</div>
-                    <div style="font-size:13px;color:#444;line-height:1.7;">${c.reason || "—"}</div>
+                    <div style="font-size:13px;color:#444;line-height:1.7;">${escapeHtml(c.reason || "—")}</div>
                 </div>
             </div>
         </div>`;
@@ -976,14 +1120,22 @@ async function loadRulesView() {
             <div style="font-size:15px;font-weight:700;margin-bottom:4px;">规则沉淀库</div>
             <div style="font-size:12px;color:var(--text-muted);margin-bottom:16px;">
                 共 ${corrections.length} 条纠正记录（active: ${corrections.filter(c=>c.status==='active').length}）·
-                AI审核时自动召回 top-3 相关案例注入 prompt
+                审核时会参考相关纠正记录
             </div>
             ${cards}
         </div>`;
+    detail.querySelectorAll(".correction-status-btn").forEach(button => {
+        button.addEventListener("click", () => setCorrectionStatus(
+            button.dataset.correctionId, button.dataset.correctionStatus,
+        ));
+    });
+    detail.querySelectorAll(".correction-delete-btn").forEach(button => {
+        button.addEventListener("click", () => deleteCorrection(button.dataset.correctionId));
+    });
 }
 
 async function setCorrectionStatus(id, status) {
-    await fetch(`/api/corrections/${id}/status`, {
+    await fetch(`/api/corrections/${encodeURIComponent(id)}/status`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status }),
@@ -993,7 +1145,7 @@ async function setCorrectionStatus(id, status) {
 
 async function deleteCorrection(id) {
     if (!confirm("确定删除这条纠正记录？删除后不可恢复，且 AI 将不再参考该案例。")) return;
-    await fetch(`/api/corrections/${id}`, { method: "DELETE" });
+    await fetch(`/api/corrections/${encodeURIComponent(id)}`, { method: "DELETE" });
     loadRulesView();
 }
 
@@ -1007,4 +1159,5 @@ function refreshRecords() {
         </div>
     `;
     currentRecord = null;
+    reviewSubmissionKey = null;
 }
