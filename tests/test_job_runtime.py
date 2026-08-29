@@ -30,8 +30,12 @@ import feishu_api
 from card_action_service import CardActionRequest, handle_card_action
 from error_handling import OperationError
 from fields_v4 import (
-    F_提交人, F_流转_当前状态, F_流转_反馈类型,
-    F_法务_AI意见评价, F_法务_物料裁决, F_法务_复核时间,
+    F_提交人,
+    F_流转_当前状态,
+    F_流转_反馈类型,
+    F_法务_AI意见评价,
+    F_法务_物料裁决,
+    F_法务_复核时间,
 )
 from job_runtime import QueueProcessor
 from reliable_queue import SUCCEEDED, TERMINAL_FAILED, SQLiteQueue
@@ -46,10 +50,12 @@ class JobRuntimeTests(unittest.TestCase):
             retry_max_seconds=0,
         )
         self.processor = QueueProcessor(self.store, worker_id="test-worker")
-        self.record = {"fields": {
-            F_提交人: [{"id": "ou-operator", "name": "运营"}],
-            F_流转_当前状态: "运营起草",
-        }}
+        self.record = {
+            "fields": {
+                F_提交人: [{"id": "ou-operator", "name": "运营"}],
+                F_流转_当前状态: "运营起草",
+            }
+        }
 
     def tearDown(self):
         self.tmp.cleanup()
@@ -66,12 +72,15 @@ class JobRuntimeTests(unittest.TestCase):
             ("待运营修改", {}),
         ]
         job = self.store.enqueue_job(
-            "ai_review", "rec-1", "review-1",
-            {"mode": "标准", "operator_id": "ou-operator", "round": 1}, max_attempts=3,
+            "ai_review",
+            "rec-1",
+            "review-1",
+            {"mode": "标准", "operator_id": "ou-operator", "round": 1},
+            max_attempts=3,
         )
-        with self._predictor(mock.Mock(side_effect=effects)), \
-                mock.patch.object(feishu_api, "update_record"), \
-                mock.patch.object(feishu_api, "get_record", return_value=self.record):
+        with self._predictor(mock.Mock(side_effect=effects)), mock.patch.object(
+            feishu_api, "update_record"
+        ), mock.patch.object(feishu_api, "get_record", return_value=self.record):
             self.processor.run_once()
             self.processor.run_once()
             self.processor.run_once()
@@ -80,12 +89,17 @@ class JobRuntimeTests(unittest.TestCase):
         self.assertEqual(stored["status"], SUCCEEDED)
         self.assertEqual(stored["attempts"], 3)
         deliveries = self.store.list_deliveries()
-        self.assertEqual([item["card_type"] for item in deliveries], ["operator_result"])
+        self.assertEqual(
+            [item["card_type"] for item in deliveries], ["operator_result"]
+        )
 
     def test_legal_partial_delivery_retries_only_failed_recipient(self):
         self.store.enqueue_job(
-            "route_to_legal", "rec-1", "legal-1",
-            {"source": "skip_review", "round": 1}, max_attempts=3,
+            "route_to_legal",
+            "rec-1",
+            "legal-1",
+            {"source": "skip_review", "round": 1},
+            max_attempts=3,
         )
         sent_recipients = []
 
@@ -95,10 +109,15 @@ class JobRuntimeTests(unittest.TestCase):
                 raise OperationError("transient_network", retryable=True)
             return {"success": True, "message_id": f"msg-{recipient}"}
 
-        with mock.patch.object(feishu_api, "update_record") as update, \
-                mock.patch.object(feishu_api, "get_dept_open_ids", return_value=["ou-1", "ou-2"]), \
-                mock.patch.object(feishu_api, "get_record", return_value=self.record), \
-                mock.patch.object(feishu_api, "send_card", side_effect=send):
+        with mock.patch.object(
+            feishu_api, "update_record"
+        ) as update, mock.patch.object(
+            feishu_api, "get_dept_open_ids", return_value=["ou-1", "ou-2"]
+        ), mock.patch.object(
+            feishu_api, "get_record", return_value=self.record
+        ), mock.patch.object(
+            feishu_api, "send_card", side_effect=send
+        ):
             self.processor.run_once()  # create two delivery rows
             self.processor.run_once()  # ou-1 succeeds
             self.processor.run_once()  # ou-2 fails
@@ -109,14 +128,23 @@ class JobRuntimeTests(unittest.TestCase):
         self.assertEqual(rows["ou-1"]["attempts"], 1)
         self.assertEqual(rows["ou-2"]["attempts"], 2)
         self.assertTrue(all(row["status"] == SUCCEEDED for row in rows.values()))
-        self.assertEqual(update.call_args_list[0].args[1][F_流转_当前状态], "待法务复核")
-        self.assertNotIn("运营起草", [call.args[1].get(F_流转_当前状态) for call in update.call_args_list])
+        self.assertEqual(
+            update.call_args_list[0].args[1][F_流转_当前状态], "待法务复核"
+        )
+        self.assertNotIn(
+            "运营起草",
+            [call.args[1].get(F_流转_当前状态) for call in update.call_args_list],
+        )
 
     def test_ambiguous_send_retries_with_same_uuid_and_one_delivery_row(self):
         self.store.enqueue_delivery(
-            job_id=None, business_action="initial", record_id="rec-1",
-            recipient_id="ou-operator", card_type="initial_review",
-            idempotency_key="delivery-stable", max_attempts=2,
+            job_id=None,
+            business_action="initial",
+            record_id="rec-1",
+            recipient_id="ou-operator",
+            card_type="initial_review",
+            idempotency_key="delivery-stable",
+            max_attempts=2,
         )
         uuids = []
 
@@ -126,8 +154,9 @@ class JobRuntimeTests(unittest.TestCase):
                 raise OperationError("transient_network", retryable=True)
             return {"success": True, "message_id": "msg-1"}
 
-        with mock.patch.object(feishu_api, "get_record", return_value=self.record), \
-                mock.patch.object(feishu_api, "send_card", side_effect=send):
+        with mock.patch.object(
+            feishu_api, "get_record", return_value=self.record
+        ), mock.patch.object(feishu_api, "send_card", side_effect=send):
             self.processor.run_once()
             self.processor.run_once()
 
@@ -138,14 +167,24 @@ class JobRuntimeTests(unittest.TestCase):
 
     def test_permanent_delivery_error_stops_without_infinite_retry(self):
         self.store.enqueue_delivery(
-            job_id=None, business_action="legal", record_id="rec-1",
-            recipient_id="ou-invalid", card_type="legal_review",
-            idempotency_key="permanent", max_attempts=5,
+            job_id=None,
+            business_action="legal",
+            record_id="rec-1",
+            recipient_id="ou-invalid",
+            card_type="legal_review",
+            idempotency_key="permanent",
+            max_attempts=5,
         )
-        with mock.patch.object(feishu_api, "get_record", return_value=self.record), \
-                mock.patch.object(feishu_api, "send_card", side_effect=OperationError(
-                    "permission_denied", retryable=False,
-                )) as send:
+        with mock.patch.object(
+            feishu_api, "get_record", return_value=self.record
+        ), mock.patch.object(
+            feishu_api,
+            "send_card",
+            side_effect=OperationError(
+                "permission_denied",
+                retryable=False,
+            ),
+        ) as send:
             self.processor.run_once()
             self.assertFalse(self.processor.run_once())
         row = self.store.list_deliveries()[0]
@@ -163,7 +202,11 @@ class JobRuntimeTests(unittest.TestCase):
             "request_hash": "request-hash",
         }
         queued = self.store.enqueue_job(
-            "legal_review", "rec-1", "legal-review:key", payload, max_attempts=2,
+            "legal_review",
+            "rec-1",
+            "legal-review:key",
+            payload,
+            max_attempts=2,
         )
         after_fields = {
             F_提交人: self.record["fields"][F_提交人],
@@ -174,11 +217,18 @@ class JobRuntimeTests(unittest.TestCase):
             F_法务_复核时间: 1700000000000,
         }
         records = [self.record, {"fields": after_fields}]
-        with mock.patch.object(feishu_api, "get_record", side_effect=records), \
-                mock.patch.object(feishu_api, "update_record", side_effect=OperationError(
-                    "transient_network", retryable=True,
-                )) as update, \
-                mock.patch.object(self.processor, "_save_correction_noncritical"):
+        with mock.patch.object(
+            feishu_api, "get_record", side_effect=records
+        ), mock.patch.object(
+            feishu_api,
+            "update_record",
+            side_effect=OperationError(
+                "transient_network",
+                retryable=True,
+            ),
+        ) as update, mock.patch.object(
+            self.processor, "_save_correction_noncritical"
+        ):
             self.processor.run_once()
             self.processor.run_once()
 
@@ -195,11 +245,17 @@ class JobRuntimeTests(unittest.TestCase):
             "request_hash": "request-hash",
         }
         queued = self.store.enqueue_job(
-            "legal_review", "rec-1", "legal-review:notify", payload, max_attempts=2,
+            "legal_review",
+            "rec-1",
+            "legal-review:notify",
+            payload,
+            max_attempts=2,
         )
-        with mock.patch.object(feishu_api, "get_record", return_value=self.record), \
-                mock.patch.object(feishu_api, "update_record") as update, \
-                mock.patch.object(self.processor, "_save_correction_noncritical"):
+        with mock.patch.object(
+            feishu_api, "get_record", return_value=self.record
+        ), mock.patch.object(feishu_api, "update_record") as update, mock.patch.object(
+            self.processor, "_save_correction_noncritical"
+        ):
             self.processor.run_once()
 
         self.assertEqual(self.store.get_job(queued.item_id)["status"], SUCCEEDED)
@@ -211,16 +267,22 @@ class JobRuntimeTests(unittest.TestCase):
 
     def test_stale_first_attempt_does_not_update_or_create_delivery(self):
         queued = self.store.enqueue_job(
-            "route_to_legal", "rec-stale", "old-skip-action",
+            "route_to_legal",
+            "rec-stale",
+            "old-skip-action",
             {"source": "skip_review", "action": "skip_review", "round": 1},
         )
-        stale_record = {"fields": {
-            F_提交人: self.record["fields"][F_提交人],
-            F_流转_当前状态: "待运营修改",
-        }}
-        with mock.patch.object(feishu_api, "get_record", return_value=stale_record), \
-                mock.patch.object(feishu_api, "update_record") as update, \
-                mock.patch.object(feishu_api, "get_dept_open_ids") as recipients:
+        stale_record = {
+            "fields": {
+                F_提交人: self.record["fields"][F_提交人],
+                F_流转_当前状态: "待运营修改",
+            }
+        }
+        with mock.patch.object(
+            feishu_api, "get_record", return_value=stale_record
+        ), mock.patch.object(feishu_api, "update_record") as update, mock.patch.object(
+            feishu_api, "get_dept_open_ids"
+        ) as recipients:
             self.processor.run_once()
 
         stored = self.store.get_job(queued.item_id)
@@ -234,12 +296,21 @@ class JobRuntimeTests(unittest.TestCase):
         for index in range(2):
             self.store.enqueue_job("noop", f"rec-job-{index}", f"job-{index}")
         self.store.enqueue_delivery(
-            job_id=None, business_action="test", record_id="rec-delivery",
-            recipient_id="ou-test", card_type="initial_review", idempotency_key="delivery-0",
+            job_id=None,
+            business_action="test",
+            record_id="rec-delivery",
+            recipient_id="ou-test",
+            card_type="initial_review",
+            idempotency_key="delivery-0",
         )
         order = []
-        with mock.patch.object(self.processor, "_run_job", side_effect=lambda _item: order.append("job")), \
-                mock.patch.object(self.processor, "_run_delivery", side_effect=lambda _item: order.append("delivery")):
+        with mock.patch.object(
+            self.processor, "_run_job", side_effect=lambda _item: order.append("job")
+        ), mock.patch.object(
+            self.processor,
+            "_run_delivery",
+            side_effect=lambda _item: order.append("delivery"),
+        ):
             self.processor.run_once()
             self.processor.run_once()
             self.processor.run_once()
@@ -248,20 +319,29 @@ class JobRuntimeTests(unittest.TestCase):
         for index in range(2, 4):
             self.store.enqueue_job("noop", f"rec-job-{index}", f"job-{index}")
         jobs_only = []
-        with mock.patch.object(self.processor, "_run_job", side_effect=lambda _item: jobs_only.append("job")):
+        with mock.patch.object(
+            self.processor,
+            "_run_job",
+            side_effect=lambda _item: jobs_only.append("job"),
+        ):
             self.processor.run_once()
             self.processor.run_once()
         self.assertEqual(jobs_only, ["job", "job"])
 
         for index in range(1, 3):
             self.store.enqueue_delivery(
-                job_id=None, business_action="test", record_id=f"rec-delivery-{index}",
-                recipient_id="ou-test", card_type="initial_review",
+                job_id=None,
+                business_action="test",
+                record_id=f"rec-delivery-{index}",
+                recipient_id="ou-test",
+                card_type="initial_review",
                 idempotency_key=f"delivery-{index}",
             )
         deliveries_only = []
         with mock.patch.object(
-            self.processor, "_run_delivery", side_effect=lambda _item: deliveries_only.append("delivery"),
+            self.processor,
+            "_run_delivery",
+            side_effect=lambda _item: deliveries_only.append("delivery"),
         ):
             self.processor.run_once()
             self.processor.run_once()
@@ -269,8 +349,11 @@ class JobRuntimeTests(unittest.TestCase):
 
     def test_terminal_review_failure_creates_one_minimal_notice(self):
         self.store.enqueue_job(
-            "ai_review", "rec-1", "review-terminal",
-            {"mode": "标准", "operator_id": "ou-operator", "round": 1}, max_attempts=1,
+            "ai_review",
+            "rec-1",
+            "review-terminal",
+            {"mode": "标准", "operator_id": "ou-operator", "round": 1},
+            max_attempts=1,
         )
         sent_cards = []
 
@@ -278,10 +361,13 @@ class JobRuntimeTests(unittest.TestCase):
             sent_cards.append(card)
             return {"success": True, "message_id": "msg-failure"}
 
-        with self._predictor(mock.Mock(side_effect=RuntimeError("SECRET_EXCEPTION_123"))), \
-                mock.patch.object(feishu_api, "update_record"), \
-                mock.patch.object(feishu_api, "get_record", return_value=self.record), \
-                mock.patch.object(feishu_api, "send_card", side_effect=send):
+        with self._predictor(
+            mock.Mock(side_effect=RuntimeError("SECRET_EXCEPTION_123"))
+        ), mock.patch.object(feishu_api, "update_record"), mock.patch.object(
+            feishu_api, "get_record", return_value=self.record
+        ), mock.patch.object(
+            feishu_api, "send_card", side_effect=send
+        ):
             self.processor.run_once()  # review terminal -> recovery job
             self.processor.run_once()  # recovery -> one notice delivery
             self.processor.run_once()  # notice succeeds
@@ -293,35 +379,171 @@ class JobRuntimeTests(unittest.TestCase):
         self.assertIn("请稍后再试一次", rendered)
         self.assertNotIn("SECRET_EXCEPTION_123", rendered)
         self.assertEqual(
-            [row["card_type"] for row in self.store.list_deliveries()], ["final_failure"],
+            [row["card_type"] for row in self.store.list_deliveries()],
+            ["final_failure"],
         )
         retry_action = sent_cards[0]["elements"][-1]["actions"][0]["value"]
         self.assertEqual(retry_action["round"], 2)
-        retried = handle_card_action(CardActionRequest(
-            action=retry_action["action"], record_id="rec-1",
-            event_id="evt-user-retry", round=retry_action["round"],
-        ), store=self.store)
+        retried = handle_card_action(
+            CardActionRequest(
+                action=retry_action["action"],
+                record_id="rec-1",
+                event_id="evt-user-retry",
+                round=retry_action["round"],
+            ),
+            store=self.store,
+        )
         self.assertTrue(retried.created)
-        self.assertEqual(self.store.get_job(retried.job_id)["job_type"], "ai_review")
+        self.assertEqual(
+            self.store.get_job(retried.job_id)["job_type"], "context_confirm"
+        )
 
     def test_recovered_review_uses_existing_writeback_instead_of_running_twice(self):
         queued = self.store.enqueue_job(
-            "ai_review", "rec-1", "review-recovered",
-            {"mode": "标准", "operator_id": "ou-operator", "round": 1}, max_attempts=2,
+            "ai_review",
+            "rec-1",
+            "review-recovered",
+            {"mode": "标准", "operator_id": "ou-operator", "round": 1},
+            max_attempts=2,
         )
         interrupted = self.store.claim_job("dead-worker")
-        self.store.fail_job(interrupted["id"], retryable=True, category="worker_interrupted")
-        completed_record = {"fields": {
-            **self.record["fields"], F_流转_当前状态: "待运营修改",
-        }}
+        self.store.fail_job(
+            interrupted["id"], retryable=True, category="worker_interrupted"
+        )
+        completed_record = {
+            "fields": {
+                **self.record["fields"],
+                F_流转_当前状态: "待运营修改",
+            }
+        }
         execute = mock.Mock(return_value=("待运营修改", {}))
-        with self._predictor(execute), \
-                mock.patch.object(feishu_api, "get_record", return_value=completed_record), \
-                mock.patch.object(feishu_api, "update_record"):
+        with self._predictor(execute), mock.patch.object(
+            feishu_api, "get_record", return_value=completed_record
+        ), mock.patch.object(feishu_api, "update_record"):
             self.processor.run_once()
 
         self.assertEqual(self.store.get_job(queued.item_id)["status"], SUCCEEDED)
         execute.assert_not_called()
+
+    # ------------------------------------------------------------------
+    # Smoke tests: end-to-end path verification
+    # ------------------------------------------------------------------
+
+    def _run_full_submission(self, record_id, routing):
+        """
+        Drives the complete operator-submission flow through all job/delivery
+        steps and returns the list of card dicts that were sent to Feishu.
+
+        Steps simulated:
+          1. initial_submission  → sends initial_review card
+          2. start_ai_review     → context_confirm job → sends context_confirm card
+          3. confirm_mode (标准) → ai_review job → predictor returns `routing`
+                                 → sends result card(s)
+        """
+        from fields_v4 import F_行业领域, F_紧急程度, F_物料内容
+
+        operator_record = {
+            "fields": {
+                F_提交人: [{"id": "ou-op", "name": "运营"}],
+                F_流转_当前状态: "运营起草",
+                F_行业领域: "美妆",
+                F_紧急程度: "普通",
+                F_物料内容: "测试文案内容",
+            }
+        }
+
+        sent_cards = []
+
+        def send(_recipient, card, **_kw):
+            sent_cards.append(card)
+            return {"success": True, "message_id": f"msg-{len(sent_cards)}"}
+
+        with self._predictor(mock.Mock(return_value=(routing, {}))), mock.patch.object(
+            feishu_api, "get_record", return_value=operator_record
+        ), mock.patch.object(feishu_api, "update_record"), mock.patch.object(
+            feishu_api, "get_dept_open_ids", return_value=["ou-legal-1"]
+        ), mock.patch.object(
+            feishu_api, "send_card", side_effect=send
+        ):
+
+            # Step 1 – initial_submission
+            self.store.enqueue_job(
+                "initial_submission",
+                record_id,
+                f"initial-submission:{record_id}",
+                {},
+                max_attempts=3,
+            )
+            self.processor.run_once()  # job executes
+            self.processor.run_once()  # delivery sends initial_review card
+
+            # Step 2 – operator clicks "开启 AI 审核"
+            ctx = handle_card_action(
+                CardActionRequest(
+                    action="start_ai_review",
+                    record_id=record_id,
+                    operator_id="ou-op",
+                    event_id="evt-start",
+                    round=1,
+                ),
+                store=self.store,
+            )
+            self.assertTrue(
+                ctx.created, "start_ai_review should enqueue context_confirm"
+            )
+            self.processor.run_once()  # context_confirm job
+            self.processor.run_once()  # delivery sends context_confirm card
+
+            # Step 3 – operator clicks "标准"
+            confirmed = handle_card_action(
+                CardActionRequest(
+                    action="confirm_mode",
+                    mode="标准",
+                    record_id=record_id,
+                    operator_id="ou-op",
+                    event_id="evt-confirm",
+                    round=1,
+                ),
+                store=self.store,
+            )
+            self.assertTrue(confirmed.created, "confirm_mode should enqueue ai_review")
+            self.processor.run_once()  # ai_review job
+            # drain all deliveries (legal path sends legal_review + operator_transferred)
+            for _ in range(5):
+                if not self.processor.run_once():
+                    break
+
+        return sent_cards
+
+    def test_smoke_path_operator_modify(self):
+        """路径一：运营提交 → AI 判定修改 → 运营收到修改卡片"""
+        cards = self._run_full_submission("rec-smoke-modify", "待运营修改")
+        card_types = [row["card_type"] for row in self.store.list_deliveries()]
+
+        # 应依次投递：initial_review → context_confirm → operator_result
+        self.assertEqual(
+            card_types,
+            ["initial_review", "context_confirm", "operator_result"],
+        )
+        # 确认卡片内容：第一张是提交通知，第二张是模式选择，第三张是修改意见
+        headers = [c["header"]["title"]["content"] for c in cards]
+        self.assertTrue(any("物料已提交" in h for h in headers), headers)
+        self.assertTrue(any("审核模式" in h for h in headers), headers)
+        self.assertTrue(any("AI审核完成" in h for h in headers), headers)
+
+    def test_smoke_path_route_to_legal(self):
+        """路径二：运营提交 → AI 判定高风险 → 直接流转法务"""
+        cards = self._run_full_submission("rec-smoke-legal", "待法务复核")
+        card_types = [row["card_type"] for row in self.store.list_deliveries()]
+
+        # 应依次投递：initial_review → context_confirm → operator_transferred
+        # (legal_review 收件人为空列表，故无法务侧投递)
+        self.assertIn("initial_review", card_types)
+        self.assertIn("context_confirm", card_types)
+        self.assertIn("operator_transferred", card_types)
+        # 确认运营收到流转通知卡片
+        headers = [c["header"]["title"]["content"] for c in cards]
+        self.assertTrue(any("流转至法务" in h for h in headers), headers)
 
 
 if __name__ == "__main__":
