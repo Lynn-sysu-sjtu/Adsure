@@ -34,15 +34,15 @@ _run() {
     done
 }
 
-_run "bot_listener" "python3 bot_listener.py" >> logs/bot_listener.log 2>&1 &
+_run "bot_listener" "venv/bin/python3 bot_listener.py" >> logs/bot_listener.log 2>&1 &
 echo $! >> "$PID_FILE"
 echo "✓ bot_listener  已启动 (PID: $!)"
 
-_run "worker" "python3 worker.py" >> logs/worker.log 2>&1 &
+_run "worker" "venv/bin/python3 worker.py" >> logs/worker.log 2>&1 &
 echo $! >> "$PID_FILE"
 echo "✓ worker        已启动 (PID: $!)"
 
-_run "app" "python3 app.py" >> logs/app.log 2>&1 &
+_run "app" "venv/bin/python3 app.py" >> logs/app.log 2>&1 &
 echo $! >> "$PID_FILE"
 echo "✓ 法务工作台    已启动 (PID: $!)"
 
