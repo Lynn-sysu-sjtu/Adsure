@@ -158,8 +158,10 @@ def handle_card_action(
             return CardActionResult(STALE_CARD, "info", None, False)
 
     event_key = _event_key(request, now=now)
-    if action in {"start_ai_review", "confirm_mode", "skip_review"}:
+    if action in {"start_ai_review", "skip_review"}:
         business_prefix = "initial-choice"
+    elif action == "confirm_mode":
+        business_prefix = "mode-confirm"
     elif action == "escalate_to_legal":
         business_prefix = "legal-route"
     else:
