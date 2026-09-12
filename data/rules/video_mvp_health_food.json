@@ -1,0 +1,62 @@
+{
+  "catalog_id": "video_mvp_health_food_2026_08",
+  "review_status": "source_verified",
+  "rules": [
+    {
+      "rule_id": "ADLAW-009-03",
+      "title": "广告不得使用绝对化用语",
+      "article": "《中华人民共和国广告法》第九条第一款第三项",
+      "summary": "广告不得使用国家级、最高级、最佳等用语。具体适用仍应结合语境和执法指南复核。",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    },
+    {
+      "rule_id": "ABS-GUIDE-2023",
+      "title": "广告绝对化用语执法指南",
+      "article": "《广告绝对化用语执法指南》第五条至第八条",
+      "summary": "绝对化用语应结合是否指向商品、是否属于客观分级或时空顺序、能否证明真实性等因素判断。",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/ggjgs/art/2023/art_64279265c896452f8f638f2de12b8003.html"
+    },
+    {
+      "rule_id": "ADLAW-017",
+      "title": "非医疗类广告不得涉及疾病治疗功能",
+      "article": "《中华人民共和国广告法》第十七条",
+      "summary": "除医疗、药品、医疗器械广告外，其他广告不得涉及疾病治疗功能，也不得使用医疗用语或者易使商品与药品、医疗器械相混淆的用语。",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    },
+    {
+      "rule_id": "ADLAW-018",
+      "title": "保健食品广告内容限制",
+      "article": "《中华人民共和国广告法》第十八条",
+      "summary": "保健食品广告不得作功效或安全性断言、不得涉及疾病预防治疗功能，并应显著标明本品不能代替药物。",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    },
+    {
+      "rule_id": "HFAD-007",
+      "title": "保健食品广告必备内容",
+      "article": "《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第七条",
+      "summary": "保健食品广告应显著标明完整警示语、保健食品标志、适宜人群和不适宜人群。",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_4ca076ac0eeb4a9e9204e0cee26e359b.html"
+    },
+    {
+      "rule_id": "HFAD-009",
+      "title": "广告批准文号显著标明",
+      "article": "《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第九条",
+      "summary": "保健食品等广告应显著标明广告批准文号。",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_4ca076ac0eeb4a9e9204e0cee26e359b.html"
+    },
+    {
+      "rule_id": "HFAD-010",
+      "title": "视频广告必备内容持续显示",
+      "article": "《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第十条",
+      "summary": "依法应显著标明的内容应清晰可见、易于辨认，并在视频广告中持续显示。",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_4ca076ac0eeb4a9e9204e0cee26e359b.html"
+    }
+  ]
+}

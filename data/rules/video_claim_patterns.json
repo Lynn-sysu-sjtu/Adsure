@@ -1,0 +1,25 @@
+{
+  "version": "2026-09-08.v2",
+  "status": "pilot_pending_legal_review",
+  "description": "产品风险候选召回模板；不等同于法律规定的违禁词清单。原文与上下文必须保留。",
+  "supplementary_legal_basis": [
+    {"rule_id":"ADLAW-008-01","article":"第八条","paragraph":"第一款","item":null,"rule_type":"claim_clarity","text":"对商品、服务的性质、内容、价格和允诺等作出表示时，应当准确、清楚、明白。此处为条款摘要。","source_url":"https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html","source_name":"国家市场监督管理总局","law_version":"2021年修正","verified_at":"2026-09-08","review_status":"pending_human_review"},
+    {"rule_id":"ADLAW-008-02","article":"第八条","paragraph":"第二款","item":null,"rule_type":"gift_disclosure","text":"广告表明附带赠送商品或服务时，须明确其品种、规格、数量、期限和方式。此处为条款摘要；是否属于附带赠送须结合活动确认。","source_url":"https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html","source_name":"国家市场监督管理总局","law_version":"2021年修正","verified_at":"2026-09-08","review_status":"pending_human_review"}
+  ],
+  "patterns": [
+    {"id":"absolute_core","regex":"国家级|最高级|最佳","rule_ids":["ADLAW-009-03","ABS-GUIDE-2023"],"dimension":"绝对化用语","severity":"high","title":"绝对化表述","scope":"all","advice":"核查表述指向、限定范围和执法指南例外，必要时修改。"},
+    {"id":"absolute_context","regex":"(?:全网|全国|全球|世界|行业|销量|销售额|市场占有率|效果|品牌)(?:排名)?(?:第一|第1|之最)|唯一|顶级|极品|首屈一指|独一无二|最(?:好|强|优|有效|安全|便宜)","rule_ids":["ADLAW-009-03","ABS-GUIDE-2023"],"dimension":"绝对化用语","severity":"medium","title":"需要语境核验的最高或排他表述","scope":"all","advice":"核查比较范围、时间和证明材料；不是所有“最”或百分比都违法。"},
+    {"id":"medical_claim","regex":"根治|治愈|治疗|预防疾病|降血糖|降血压|抗癌|消炎|药到病除|(?:摆脱|告别|远离|解决|改善|逆转).{0,6}(?:糖尿病|高血压|癌症|关节炎|失眠)|(?:糖尿病|高血压|癌症|关节炎).{0,6}(?:好了|消失|不再|改善)","rule_ids":["ADLAW-017"],"dimension":"疾病治疗功效宣传","severity":"high","title":"疾病或医疗功效表述","scope":"non_medical","advice":"确认产品属性和批准功效；核对是否属于非医疗商品的疾病治疗宣传。"},
+    {"id":"safety_guarantee","regex":"无(?:任何)?副作用|零副作用|绝对安全|安全无害|包治|保证有效|永不复发|不再复发","rule_ids":["ADLAW-028"],"dimension":"功效安全性保证","severity":"medium","title":"安全性或功效保证待核验","scope":"all","advice":"要求提供与该产品、适用人群和使用条件一致的证据，不直接认定虚假。"},
+    {"id":"quantified_effect","regex":"(?:[一二三四五六七八九十百0-9]+)(?:天|日|周|个月).{0,8}(?:见效|瘦|减重|减掉|祛斑|变白|美白|年轻|消除)|(?:永久|彻底|一次).{0,5}(?:祛斑|除皱|脱毛|美白)|(?:有效率|治愈率|成功率|通过率).{0,5}(?:[0-9]+%|百分之[一二三四五六七八九十百]+)|(?:[0-9]+%|百分之[一二三四五六七八九十百]+).{0,6}(?:用户|客户|受试者)?(?:见效|有效|改善|满意|通过)","rule_ids":["ADLAW-028","ADLAW-011-02"],"dimension":"量化功效与引证待核验","severity":"medium","title":"量化效果或效果保证待核验","scope":"all","advice":"核对试验或统计来源、条件、样本及有效期；规则命中只能说明需要证明材料。"},
+    {"id":"authority_endorsement","regex":"(?:国家|政府|机关|央视).{0,6}(?:指定|推荐|专供|特供)|(?:专家|医生|院士).{0,4}(?:推荐|保证|背书)","rule_ids":["ADLAW-009-02","ADLAW-028"],"dimension":"权威背书待核验","severity":"medium","title":"机构或专业人士背书待核验","scope":"all","advice":"区分国家机关名义、媒体报道和专家意见，逐项核查真实性及行业适用限制。"},
+    {"id":"investment_return","regex":"保本保息|稳赚不赔|零风险投资|保证收益|收益有保障","rule_ids":["ADLAW-028"],"dimension":"投资回报保证待核验","severity":"medium","title":"投资收益保证表述","scope":"all","advice":"核查是否为投资类广告及是否存在收益承诺、风险揭示缺失；需行业专项复核。"},
+    {"id":"education_guarantee","regex":"包过|保过|保证通过|不过退款|保证拿证|保上名校","rule_ids":["ADLAW-028"],"dimension":"教育培训效果保证待核验","severity":"medium","title":"培训或考试效果保证待核验","scope":"all","advice":"核查教育培训属性、具体承诺和协议条件，进入教育广告专项复核。"},
+    {"id":"derogatory_expression","regex":"(?:像|跟|和|如同).{0,3}狗一样|舔狗|穷鬼|丑八怪|女人就该|男人都该|不配做人","rule_ids":["ADLAW-009-07"],"dimension":"贬损与不当表达待复核","severity":"medium","title":"可能贬损受众或违背良好风尚的表达","scope":"all","advice":"回听前后文并确认指向对象、叙事情境与广告表达；动物描述、批评引述不能仅凭关键词定性。"},
+    {"id":"promotional_offer","regex":"免费领(?:取)?|(?:登录|登陆|签到|注册|下载|首充)(?:即|就)?(?:送|领)[一二三四五六七八九十百0-9]+(?:抽|个|元|份|张)|买[一二三四五六七八九十0-9]+送[一二三四五六七八九十0-9]+","rule_ids":["ADLAW-008-01","ADLAW-008-02"],"dimension":"赠送承诺条件与兑现待核验","severity":"low","title":"赠送或免费领取承诺需材料核验","scope":"all","advice":"核对领取资格、数量、期限、领取方式及实际兑现；若属附带赠送，还需核对品种、规格。出现该词本身不违法，本系统尚不能判定条件缺失或承诺虚假。"}
+    ,{"id":"cosmetic_efficacy","regex":"祛斑|美白|防晒|防脱发|防脱|抗皱|抗衰","rule_ids":["ADLAW-028"],"dimension":"化妆品功效宣称待核验","severity":"medium","title":"化妆品功效和产品属性待核验","scope":"cosmetics","advice":"核对产品备案类别、功效宣称评价资料、广告表述范围及实际产品属性；命中功效词不等于已经违法。"}
+    ,{"id":"absolute_safety_or_edible","regex":"100%无(?:任何)?风险|零风险|放心吃|可以放心吃|可食用","rule_ids":["ADLAW-028"],"dimension":"功效安全性保证","severity":"medium","title":"绝对安全或可食用暗示待核验","scope":"all","advice":"删除或限定无法充分证实的绝对安全、可食用表述，并核对适用人群、误食风险和证据范围。"}
+    ,{"id":"before_after_effect","regex":"(?:左图|使用前|用前).{0,20}(?:右图|使用后|用后).{0,20}(?:效果|完美|改善|消失)|(?:前后|用前用后|使用前后).{0,6}对比效果","rule_ids":["ADLAW-028","ADLAW-011-02"],"dimension":"前后对比效果待核验","severity":"medium","title":"前后对比或效果图真实性待核验","scope":"all","advice":"核对是否为同一主体、同一条件和真实使用结果，并披露测试条件、周期与个体差异。"}
+    ,{"id":"patent_claim","regex":"(?:独家|国家|发明|核心)?专利|专利科技|专利配方","rule_ids":["ADLAW-011-02","ADLAW-028"],"dimension":"专利与技术背书待核验","severity":"medium","title":"专利或独家技术宣称待核验","scope":"all","advice":"核对专利号、权利状态、许可关系、保护范围以及专利与所宣称功效之间的对应关系。"}
+  ]
+}
