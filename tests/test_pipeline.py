@@ -15,6 +15,7 @@ class PipelineTests(unittest.TestCase):
             "data/raw_html",
             "data/raw_text",
             "data/structured",
+            "data/structured_candidates",
             "data/chunks",
             "data/reports",
             "prompts",
@@ -151,6 +152,7 @@ sources:
 
         chunks = build_chunks.run(
             structured_dir=self.root / "data/structured",
+            structured_candidates_dir=self.root / "data/structured_candidates",
             chunks_dir=self.root / "data/chunks",
         )
         production_chunks = chunks["production"]
@@ -204,6 +206,7 @@ sources:
 
         paths = build_chunks.run(
             structured_dir=self.root / "data/structured",
+            structured_candidates_dir=self.root / "data/structured_candidates",
             chunks_dir=self.root / "data/chunks",
             reports_dir=self.root / "data/reports",
         )
@@ -247,6 +250,7 @@ sources:
 
         paths = build_chunks.run(
             structured_dir=self.root / "data/structured",
+            structured_candidates_dir=self.root / "data/structured_candidates",
             chunks_dir=self.root / "data/chunks",
             reports_dir=self.root / "data/reports",
         )
@@ -297,6 +301,7 @@ sources:
 
         paths = build_chunks.run(
             structured_dir=self.root / "data/structured",
+            structured_candidates_dir=self.root / "data/structured_candidates",
             chunks_dir=self.root / "data/chunks",
             reports_dir=self.root / "data/reports",
         )

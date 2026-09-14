@@ -1,8 +1,8 @@
 # 正式案例规则映射复核队列
 
-- 待映射案例：10
-- 状态：`pending_rule_owner_review`
-- 说明：本队列不自动推断规则 ID 或具体法条；仅整理已核验案例证据，供规则负责人对照正式规则目录人工回填。
+- 待复核案例：10
+- 状态：`pending_rule_owner_review` 或 `pending_legal_review`
+- 说明：未映射案例不自动推断规则 ID 或具体法条；已有推定映射必须由法律人员对照法规目录和处罚决定书复核，不能表述为处罚机关明确引用。
 
 ## 1. samr_2025_typical_ads_01 — 广州市番禺区市场监管局查处广州简美健康科技有限公司违法广告案
 
@@ -13,7 +13,8 @@
 - 监管逻辑：普通商品广告不得宣称疾病预防、治疗功效，也不得使用虚假的国际权威眼科医生顾问团信息误导消费者。
 - 来源：[市场监管总局](https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html)
 - 原文路径：`data/raw_text/samr_typical_ads__2ad160ae3056.json`
-- 待回填规则 ID：
+- 映射状态：`pending_legal_review`
+- 待复核规则 ID：ADLAW-017；ADLAW-028
 
 ## 2. samr_2025_typical_ads_02 — 广州市海珠区市场监管局查处那拉尊驼（广州）乳业有限公司违法广告案
 
@@ -24,7 +25,8 @@
 - 监管逻辑：普通食品广告不得虚构项目背景和优惠名额，不得宣称疾病预防、治疗功效，广告引证内容还应当真实、准确。
 - 来源：[市场监管总局](https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html)
 - 原文路径：`data/raw_text/samr_typical_ads__2ad160ae3056.json`
-- 待回填规则 ID：
+- 映射状态：`pending_legal_review`
+- 待复核规则 ID：ADLAW-011-02；ADLAW-017；ADLAW-028
 
 ## 3. samr_2025_typical_ads_03 — 景德镇市市场监管局查处景德镇悦鑫亦彩陶瓷有限公司违法广告案
 
@@ -35,7 +37,8 @@
 - 监管逻辑：直播广告对商品产地的宣传应与实际情况一致，将外地生产的陶瓷餐具宣传为景德镇瓷器会欺骗、误导消费者。
 - 来源：[市场监管总局](https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html)
 - 原文路径：`data/raw_text/samr_typical_ads__2ad160ae3056.json`
-- 待回填规则 ID：
+- 映射状态：`pending_legal_review`
+- 待复核规则 ID：ADLAW-028
 
 ## 4. samr_2025_typical_ads_04 — 呼和浩特市赛罕区市场监管局查处内蒙古草之楼生物科技有限公司违法广告案
 
@@ -46,7 +49,8 @@
 - 监管逻辑：普通食品直播广告不得使用改善、缓解、抗癌等涉及疾病预防、治疗功效的宣传内容。
 - 来源：[市场监管总局](https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html)
 - 原文路径：`data/raw_text/samr_typical_ads__2ad160ae3056.json`
-- 待回填规则 ID：
+- 映射状态：`pending_legal_review`
+- 待复核规则 ID：ADLAW-017
 
 ## 5. samr_2025_typical_ads_05 — 重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案
 
@@ -57,7 +61,8 @@
 - 监管逻辑：普通食品广告不得虚构权威背书和治疗疾病功效，不得使用世界最强等绝对化用语，也不得违法使用国家机关及其工作人员名义或者形象。
 - 来源：[市场监管总局](https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html)
 - 原文路径：`data/raw_text/samr_typical_ads__2ad160ae3056.json`
-- 待回填规则 ID：
+- 映射状态：`pending_legal_review`
+- 待复核规则 ID：ADLAW-009-02；ADLAW-009-03；ADLAW-017；ADLAW-028
 
 ## 6. samr_2025_typical_ads_06 — 浙江省杭州市市场监管局查处杭州青碧品牌管理有限公司违法广告案
 
@@ -68,7 +73,8 @@
 - 监管逻辑：普通商品广告不得宣称疾病治疗功能，普通食品广告不得宣传未经允许的保健功效。
 - 来源：[市场监管总局](https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html)
 - 原文路径：`data/raw_text/samr_typical_ads__2ad160ae3056.json`
-- 待回填规则 ID：
+- 映射状态：`pending_legal_review`
+- 待复核规则 ID：ADLAW-017
 
 ## 7. samr_2025_typical_ads_07 — 安徽省六安市市场监管局查处安徽康桥置业有限公司违法广告案
 
@@ -79,7 +85,8 @@
 - 监管逻辑：房地产广告不得把未纳入规划的配套设施作为确定宣传内容，也不得作出升值承诺误导购房者。
 - 来源：[市场监管总局](https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html)
 - 原文路径：`data/raw_text/samr_typical_ads__2ad160ae3056.json`
-- 待回填规则 ID：
+- 映射状态：`pending_legal_review`
+- 待复核规则 ID：ADLAW-026-01；ADLAW-026-04
 
 ## 8. samr_2025_typical_ads_08 — 山东省济南高新技术产业开发区管理委员会（市场监管部）查处山东乘时乘势电子商务有限公司违法广告案
 
@@ -90,7 +97,8 @@
 - 监管逻辑：医疗器械广告应依法审查后发布，普通食品直播广告不得宣称疾病预防、治疗功效。
 - 来源：[市场监管总局](https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html)
 - 原文路径：`data/raw_text/samr_typical_ads__2ad160ae3056.json`
-- 待回填规则 ID：
+- 映射状态：`pending_legal_review`
+- 待复核规则 ID：ADLAW-017；ADLAW-046
 
 ## 9. samr_2025_typical_ads_09 — 吉林省松原市市场监管局查处松原肛肠医院违法广告案
 
@@ -101,7 +109,8 @@
 - 监管逻辑：医疗机构广告中的合作关系、分支身份和会员资格应当真实，不得以虚假身份信息影响患者知情权和就医选择。
 - 来源：[市场监管总局](https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html)
 - 原文路径：`data/raw_text/samr_typical_ads__2ad160ae3056.json`
-- 待回填规则 ID：
+- 映射状态：`pending_legal_review`
+- 待复核规则 ID：ADLAW-028
 
 ## 10. samr_2025_typical_ads_10 — 云南省玉溪市市场监管局查处云南玉药生物制药有限公司违法广告案
 
@@ -112,4 +121,5 @@
 - 监管逻辑：处方药广告只能在国务院有关部门共同指定的医学、药学专业刊物上发布，不得以面向公众的健康科普形式变相发布。
 - 来源：[市场监管总局](https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html)
 - 原文路径：`data/raw_text/samr_typical_ads__2ad160ae3056.json`
-- 待回填规则 ID：
+- 映射状态：`pending_legal_review`
+- 待复核规则 ID：ADLAW-015-02

@@ -1,0 +1,102 @@
+{
+ "case_id": "sector_docx__beauty__27760156",
+ "title": "泸州市龙马潭区市场监督管理局申请执行泸州韩美整形美容有限公司行政处罚案",
+ "case_number": "（2023）川0504行审1号",
+ "court": "泸州市龙马潭区人民法院",
+ "decision_date": "2023-01-17",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+ "source_url": null,
+ "source_verification_status": "pending_source_lookup",
+ "publish_date": null,
+ "penalty_authority": "泸州市龙马潭区市场监督管理局",
+ "party_name": "泸州韩美整形美容有限公司",
+ "region": "泸州市龙马潭",
+ "industry": "化妆品 / 医疗美容 / 美妆",
+ "sector": "beauty",
+ "sector_cn": "美妆",
+ "violation_type": "医美机构多项广告违法",
+ "case_nature": "administrative_nonlitigation_enforcement",
+ "source_lookup_priority": "P0",
+ "is_admin_penalty_candidate": true,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "beauty"
+ ],
+ "product_or_service": "医美服务",
+ "ad_channel": "微信小程序、小程序",
+ "risk_dimensions": [
+  "医疗广告未经审查",
+  "医美广告违规",
+  "虚假宣传",
+  "医疗器械合规"
+ ],
+ "illegal_claims": [
+  "医美机构未经审查发布医疗广告（广告费用306833元）、在微信小程序虚构销售数据发布虚假广告、使用过期医疗器械，三项违法行为合并处罚"
+ ],
+ "facts_summary": "医美机构未经审查发布医疗广告（广告费用306833元）、在微信小程序虚构销售数据发布虚假广告、使用过期医疗器械，三项违法行为合并处罚",
+ "legal_basis": [
+  "《广告法》第四十六条、第二十八条、第五十五条第一款、第五十八条第一款第（十四）项；《医疗器械监督管理条例》第五十五条、第八十六条"
+ ],
+ "penalty_result": "合并罚款277833元",
+ "penalty_amount": null,
+ "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及医美机构多项广告违法，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第四十六条、第二十八条、第五十五条第一款、第五十八条第一款第（十四）项；《医疗器械监督管理条例》第五十五条、第八十六条。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "beauty",
+  "美妆",
+  "医美机构多项广告违法",
+  "医疗广告未经审查",
+  "医美广告违规",
+  "虚假宣传",
+  "医疗器械合规",
+  "医美机构未经审查发布医疗广告（广告费用306833元）、在微信小程序虚构销售数据发布虚假广告、使用过期医疗器械，三项违法行为合并处罚"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "approved",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": true
+ },
+ "source_lookup_query": "（2023）川0504行审1号 泸州市龙马潭区市场监督管理局申请执行泸州韩美整形美容有限公司行政处罚案",
+ "vector_text": "【赛道】美妆。【场景】微信小程序、小程序。【宣称】医美机构未经审查发布医疗广告（广告费用306833元）、在微信小程序虚构销售数据发布虚假广告、使用过期医疗器械，三项违法行为合并处罚。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及医美机构多项广告违法，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第四十六条、第二十八条、第五十五条第一款、第五十八条第一款第（十四）项；《医疗器械监督管理条例》第五十五条、第八十六条。。【依据】《广告法》第四十六条、第二十八条、第五十五条第一款、第五十八条第一款第（十四）项；《医疗器械监督管理条例》第五十五条、第八十六条。【结果】合并罚款277833元。",
+ "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  }
+ ],
+ "source_record_path": "data/structured_candidates/sector_docx__beauty__27760156.json",
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T03:41:10+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）"
+ }
+}

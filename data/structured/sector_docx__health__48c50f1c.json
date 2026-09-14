@@ -1,0 +1,96 @@
+{
+ "case_id": "sector_docx__health__48c50f1c",
+ "title": "楚雄四世同堂食品经营部诉楚雄市市场监督管理局行政处罚案",
+ "case_number": "（2020）云2301行初88号",
+ "court": "楚雄市人民法院",
+ "decision_date": "2021-04-21",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+ "source_url": null,
+ "source_verification_status": "pending_source_lookup",
+ "publish_date": null,
+ "penalty_authority": "楚雄四世同堂食品经营部诉楚雄市市场监督管理局",
+ "party_name": null,
+ "region": "楚雄市人民法",
+ "industry": "保健食品 / 保健品 / 普通食品",
+ "sector": "health",
+ "sector_cn": "保健品",
+ "violation_type": "会销食品保健品虚假宣传",
+ "case_nature": "administrative_litigation_review",
+ "source_lookup_priority": "P0",
+ "is_admin_penalty_candidate": true,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "health"
+ ],
+ "product_or_service": null,
+ "ad_channel": "视频宣传、视频",
+ "risk_dimensions": [
+  "虚假宣传"
+ ],
+ "illegal_claims": [
+  "通过集中讲课、播放视频宣传藤茶、大豆颗粒磷脂、辅酶Q10、胶原蛋白粉等食品和保健食品具有治疗功效"
+ ],
+ "facts_summary": "通过集中讲课、播放视频宣传藤茶、大豆颗粒磷脂、辅酶Q10、胶原蛋白粉等食品和保健食品具有治疗功效",
+ "legal_basis": [
+  "《食品安全法》第七十三条、第一百四十条第一款；《广告法》第五十八条第一款"
+ ],
+ "penalty_result": "罚款110000元（驳回原告诉讼请求）",
+ "penalty_amount": null,
+ "regulatory_logic": "保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销食品保健品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《食品安全法》第七十三条、第一百四十条第一款；《广告法》第五十八条第一款。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "health",
+  "保健品",
+  "会销食品保健品虚假宣传",
+  "虚假宣传",
+  "通过集中讲课、播放视频宣传藤茶、大豆颗粒磷脂、辅酶Q10、胶原蛋白粉等食品和保健食品具有治疗功效"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "approved",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": true
+ },
+ "source_lookup_query": "（2020）云2301行初88号 楚雄四世同堂食品经营部诉楚雄市市场监督管理局行政处罚案",
+ "vector_text": "【赛道】保健品。【场景】视频宣传、视频。【宣称】通过集中讲课、播放视频宣传藤茶、大豆颗粒磷脂、辅酶Q10、胶原蛋白粉等食品和保健食品具有治疗功效。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销食品保健品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《食品安全法》第七十三条、第一百四十条第一款；《广告法》第五十八条第一款。。【依据】《食品安全法》第七十三条、第一百四十条第一款；《广告法》第五十八条第一款。【结果】罚款110000元（驳回原告诉讼请求）。",
+ "raw_text_path": "data/raw_text/case_library_docx__保健食品广告合规案例库.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  }
+ ],
+ "source_record_path": "data/structured_candidates/sector_docx__health__48c50f1c.json",
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T03:41:10+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）"
+ }
+}

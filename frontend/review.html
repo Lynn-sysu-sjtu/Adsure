@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>审心 Adsure · 证据回看</title>
+<style>
+  /* 视觉沿用本项目 30 页实施方案的排版：宋体标题 + 黑体正文（中文法律文书惯例），
+     时间码一律等宽 —— 它是贯穿全产品的线索，因为这个产品的核心主张就是
+     「一切都要能定位到秒」。 */
+  :root{
+    --ink:#1b1b1f; --ink-2:#4a4a55; --ink-3:#82828f;
+    --paper:#faf9f7; --card:#ffffff; --line:#e3e1dc;
+    --high:#c0392b; --medium:#d98324; --low:#4a7ab5; --advisory:#82828f;
+    --accent:#2f4f7f;
+    --serif:"Songti SC","SimSun","Noto Serif CJK SC",serif;
+    --sans:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+    --mono:"SFMono-Regular",Consolas,"Cascadia Mono",monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#eceaf0; --ink-2:#b9b7c2; --ink-3:#8a8896;
+      --paper:#16161a; --card:#1e1e24; --line:#33333c;
+      --high:#e5705f; --medium:#e0a355; --low:#7aa8db; --advisory:#8a8896;
+      --accent:#8fb0dd;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+       font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+  header{border-bottom:1px solid var(--line);background:var(--card);
+         padding:14px 20px;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+  header h1{font-family:var(--serif);font-size:17px;margin:0;font-weight:600;letter-spacing:.02em}
+  .chip{font-size:11px;padding:2px 8px;border:1px solid var(--line);border-radius:99px;
+        color:var(--ink-2);white-space:nowrap}
+  .chip.warn{border-color:var(--medium);color:var(--medium)}
+  .chip.bad{border-color:var(--high);color:var(--high)}
+  .chip.ok{border-color:var(--low);color:var(--low)}
+  .spacer{flex:1}
+
+  main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
+       gap:18px;padding:18px 20px;max-width:1480px;margin:0 auto;align-items:start}
+  @media (max-width:1000px){ main{grid-template-columns:1fr} }
+
+  section.panel{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .panel-h{padding:9px 14px;border-bottom:1px solid var(--line);font-family:var(--serif);
+           font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px}
+
+  /* ── 画面示意区 ───────────────────────────────────────── */
+  .stage-wrap{position:relative;background:#0d0d10;aspect-ratio:16/9;overflow:hidden}
+  .stage-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#0d0d10}
+  .stage{position:absolute;inset:0}
+  .novid{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+         color:#5a5a66;font-size:12px;text-align:center;padding:20px;line-height:1.9}
+  .box{position:absolute;border:2px solid var(--high);border-radius:2px;
+       box-shadow:0 0 0 1px rgba(0,0,0,.45)}
+  .box.ocr{border-color:#e8c44a}
+  .box .tag{position:absolute;left:0;top:-19px;background:rgba(0,0,0,.78);color:#fff;
+            font-size:10px;padding:1px 5px;border-radius:2px;white-space:nowrap;
+            font-family:var(--mono)}
+  .asr-strip{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.82));
+             color:#fff;padding:26px 16px 12px;font-size:13px;text-align:center}
+  .asr-strip .lbl{font-size:10px;opacity:.65;font-family:var(--mono);margin-right:6px}
+
+  /* ── 走带 ─────────────────────────────────────────────── */
+  .transport{padding:10px 14px;border-top:1px solid var(--line)}
+  .tbar{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  button{font:inherit;background:var(--card);color:var(--ink);border:1px solid var(--line);
+         border-radius:4px;padding:4px 11px;cursor:pointer}
+  button:hover{border-color:var(--accent);color:var(--accent)}
+  button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .track{position:relative;height:34px;cursor:pointer;user-select:none}
+  .rail{position:absolute;left:0;right:0;top:15px;height:4px;background:var(--line);border-radius:2px}
+  .played{position:absolute;left:0;top:15px;height:4px;background:var(--accent);border-radius:2px}
+  .mark{position:absolute;top:8px;width:3px;height:18px;border-radius:1px;cursor:pointer;
+        transform:translateX(-1px)}
+  .mark:hover{transform:translateX(-1px) scaleY(1.35)}
+  .play-head{position:absolute;top:5px;width:2px;height:24px;background:var(--ink);pointer-events:none}
+  .ticks{display:flex;justify-content:space-between;font-size:10px;color:var(--ink-3);margin-top:2px}
+
+  /* ── 风险清单 ─────────────────────────────────────────── */
+  .list{max-height:calc(100vh - 190px);overflow:auto}
+  .item{border-bottom:1px solid var(--line);padding:11px 14px;cursor:pointer}
+  .item:hover{background:rgba(127,127,127,.055)}
+  .item.active{background:rgba(127,127,127,.09);box-shadow:inset 3px 0 0 var(--accent)}
+  .item-h{display:flex;gap:9px;align-items:baseline}
+  .lv{font-size:11px;padding:1px 7px;border-radius:3px;color:#fff;white-space:nowrap;flex:none}
+  .lv.high{background:var(--high)} .lv.medium{background:var(--medium)}
+  .lv.low{background:var(--low)}  .lv.advisory{background:var(--advisory)}
+  .item-t{font-weight:600;flex:1;min-width:0}
+  .tc{font-size:11px;color:var(--ink-3);flex:none}
+  .item-sub{font-size:12px;color:var(--ink-2);margin-top:3px}
+
+  .detail{padding:0 14px 14px;font-size:13px}
+  .six{margin:10px 0 0;border-top:1px dashed var(--line);padding-top:9px}
+  .six dt{font-family:var(--serif);font-size:12px;color:var(--ink-3);margin-top:8px}
+  .six dd{margin:2px 0 0}
+  .mats{margin:9px 0 0;padding:8px 11px;border-left:3px solid var(--medium);
+        background:rgba(217,131,36,.07);font-size:12.5px}
+  .trace{margin-top:9px;font-size:12px}
+  .trace table{border-collapse:collapse;width:100%}
+  .trace td{border-top:1px solid var(--line);padding:4px 6px;vertical-align:top}
+  .trace td:first-child{color:var(--ink-3);white-space:nowrap;font-family:var(--mono);font-size:11px}
+  .ans-yes{color:var(--high)} .ans-unc{color:var(--medium)} .ans-no{color:var(--ink-3)}
+  .cases{margin-top:9px;font-size:12px;color:var(--ink-2)}
+  .cases .c{border-top:1px solid var(--line);padding:5px 0}
+  .cases a{color:var(--accent)}
+  .unverified{color:var(--medium)}
+
+  footer{border-top:1px solid var(--line);padding:12px 20px 26px;color:var(--ink-3);
+         font-size:12px;max-width:1480px;margin:0 auto}
+  .drop{margin:60px auto;max-width:620px;text-align:center;border:2px dashed var(--line);
+        border-radius:8px;padding:44px 26px;color:var(--ink-2)}
+  .drop.over{border-color:var(--accent);background:rgba(47,79,127,.06)}
+  .drop code{font-family:var(--mono);font-size:12px;background:rgba(127,127,127,.1);
+             padding:2px 6px;border-radius:3px}
+  .err{color:var(--high)}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>审心 Adsure · 证据回看</h1>
+  <span class="chip mono" id="c-file">未载入报告</span>
+  <span class="chip" id="c-level" hidden></span>
+  <span class="chip" id="c-src" hidden></span>
+  <span class="chip" id="c-llm" hidden></span>
+  <span class="chip warn" id="c-legal" hidden>词库未经法务复核</span>
+  <span class="spacer"></span>
+  <button id="btn-open">载入报告 JSON</button>
+  <button id="btn-video">载入视频（可选）</button>
+  <input type="file" id="f-report" accept=".json,application/json" hidden>
+  <input type="file" id="f-video" accept="video/*" hidden>
+</header>
+
+<div id="empty">
+  <div class="drop" id="drop">
+    <p style="font-family:var(--serif);font-size:15px;margin:0 0 10px">把报告 JSON 拖到这里</p>
+    <p style="margin:0 0 16px">或点右上角「载入报告 JSON」。</p>
+    <p style="font-size:12px;color:var(--ink-3);margin:0">
+      生成报告：<br>
+      <code>python backend/scripts/run_review.py --out out/report.json</code>
+    </p>
+    <p class="err" id="drop-err" style="margin-top:14px" hidden></p>
+  </div>
+</div>
+
+<main id="app" hidden>
+  <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+    <section class="panel">
+      <div class="panel-h">
+        画面示意
+        <span class="chip mono" id="c-time">0.00s</span>
+        <span class="spacer"></span>
+        <span class="chip" id="c-dims"></span>
+      </div>
+      <div class="stage-wrap">
+        <video id="vid" hidden playsinline></video>
+        <div class="novid" id="novid">
+          未载入视频文件<br>
+          <span style="font-size:11px">证据框按归一化坐标绘制，与原始画面位置一致；载入视频后会叠加在真实画面上</span>
+        </div>
+        <div class="stage" id="stage"></div>
+      </div>
+      <div class="transport">
+        <div class="tbar">
+          <button id="btn-play">▶ 播放</button>
+          <span class="mono" id="t-cur">0.00</span>
+          <span style="color:var(--ink-3)">/</span>
+          <span class="mono" id="t-dur">0.00</span>
+          <span class="spacer"></span>
+          <span style="font-size:11px;color:var(--ink-3)" id="cost-line"></span>
+        </div>
+        <div class="track" id="track">
+          <div class="rail"></div>
+          <div class="played" id="played"></div>
+          <div class="play-head" id="head"></div>
+        </div>
+        <div class="ticks"><span class="mono">0.00s</span><span class="mono" id="tick-end"></span></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="panel">
+    <div class="panel-h">
+      风险清单
+      <span class="chip" id="c-counts"></span>
+    </div>
+    <div class="list" id="list"></div>
+  </section>
+</main>
+
+<footer id="foot" hidden>
+  <div id="disclaimer"></div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  const $ = id => document.getElementById(id);
+  const LEVELS = {high:"高", medium:"中", low:"低", advisory:"仅提示"};
+  const COLOR = {high:"var(--high)", medium:"var(--medium)", low:"var(--low)", advisory:"var(--advisory)"};
+
+  let R = null;          // 报告
+  let dur = 0, t = 0;    // 时长 / 当前播放头
+  let playing = false, raf = 0, last = 0;
+  let sel = -1;
+  const vid = $("vid");
+  let hasVideo = false;
+
+  const fmt = s => (s ?? 0).toFixed(2) + "s";
+
+  // ── 载入 ────────────────────────────────────────────────
+  function load(json){
+    if(!json || !Array.isArray(json.findings))
+      throw new Error("这份 JSON 里没有 findings 字段，可能不是 run_review.py 导出的报告。");
+    R = json;
+    dur = (R.meta && R.meta.video && R.meta.video.duration) || 0;
+    t = 0; sel = -1; pause();
+
+    const m = R.meta || {}, s = R.summary || {};
+    $("c-file").textContent = (m.video && m.video.path) || m.review_id || "报告";
+    const lv = $("c-level");
+    lv.hidden = false;
+    lv.textContent = "整体 " + (s.level_label || "—");
+    lv.className = "chip " + (s.level === "high" ? "bad" : s.level === "advisory" ? "ok" : "warn");
+
+    const cs = $("c-src");
+    cs.hidden = false;
+    cs.textContent = m.data_source || "—";
+    cs.className = "chip" + (/演示|合成/.test(m.data_source || "") ? " warn" : "");
+
+    const cl = $("c-llm");
+    cl.hidden = false;
+    const real = m.llm && m.llm.is_real;
+    cl.textContent = real ? ("推理模型 " + m.llm.mode) : "推理为替身（非真实判断）";
+    cl.className = "chip" + (real ? "" : " bad");
+
+    $("c-legal").hidden = !!m.lexicon_reviewed_by_legal;
+    $("c-dims").textContent = m.video ? `${m.video.width}×${m.video.height}` : "";
+    $("c-counts").textContent = `风险 ${s.risk_count ?? 0} · 仅提示 ${s.advisory_count ?? 0}`;
+    $("t-dur").textContent = dur.toFixed(2);
+    $("tick-end").textContent = fmt(dur);
+
+    const c = R.cost || {};
+    $("cost-line").textContent = c.frames_sampled
+      ? `采样 ${c.frames_sampled} 帧 → 去重 ${c.frames_after_dedup} 帧（削减 ${Math.round((c.dedup_ratio||0)*100)}%）· OCR ${c.ocr_calls} 次`
+      : "";
+
+    $("disclaimer").textContent = R.disclaimer || "";
+    $("empty").hidden = true; $("app").hidden = false; $("foot").hidden = false;
+
+    renderMarks(); renderList(); tick(0);
+  }
+
+  // ── 时间轴刻点 ──────────────────────────────────────────
+  function renderMarks(){
+    const tr = $("track");
+    tr.querySelectorAll(".mark").forEach(n => n.remove());
+    R.findings.forEach((f, i) => {
+      if(!dur) return;
+      if(f.t_end === 0 && f.t_start === 0) return;   // 全片缺失项没有时间点，不画
+      const el = document.createElement("div");
+      el.className = "mark";
+      el.style.left = (f.t_start / dur * 100) + "%";
+      el.style.background = COLOR[f.level] || COLOR.low;
+      el.title = `${fmt(f.t_start)} ${f.title}`;
+      el.addEventListener("click", e => { e.stopPropagation(); select(i, true); });
+      tr.appendChild(el);
+    });
+  }
+
+  // ── 风险清单 ────────────────────────────────────────────
+  function renderList(){
+    const box = $("list");
+    box.innerHTML = "";
+    R.findings.forEach((f, i) => {
+      const it = document.createElement("div");
+      it.className = "item";
+      it.dataset.i = i;
+      const rep = f["报告"] || {};
+      it.innerHTML = `
+        <div class="item-h">
+          <span class="lv ${f.level}">${f.level_label || LEVELS[f.level] || ""}</span>
+          <span class="item-t"></span>
+          <span class="tc mono">${f.t_end || f.t_start ? fmt(f.t_start) : "全片"}</span>
+        </div>
+        <div class="item-sub"></div>`;
+      it.querySelector(".item-t").textContent = f.title || "";
+      it.querySelector(".item-sub").textContent = [f.category, f.legal_basis].filter(Boolean).join("　·　");
+      it.addEventListener("click", () => select(i, true));
+      box.appendChild(it);
+    });
+  }
+
+  function detailHTML(f){
+    const rep = f["报告"] || {};
+    const seg = [
+      ["① 风险定性", rep["风险定性"]], ["② 风险表达", rep["风险表达"]],
+      ["③ 违规类型", rep["违规类型"]], ["④ 法律依据", rep["法律依据"]],
+      ["⑤ 修改建议", rep["修改建议"]], ["⑥ 风险定级", rep["风险定级"]],
+    ];
+    const d = document.createElement("div");
+    d.className = "detail";
+
+    const dl = document.createElement("dl");
+    dl.className = "six";
+    seg.forEach(([k, v]) => {
+      if(!v) return;
+      const dt = document.createElement("dt"); dt.textContent = k;
+      const dd = document.createElement("dd"); dd.textContent = v;
+      dl.append(dt, dd);
+    });
+    d.appendChild(dl);
+
+    if(f.required_materials && f.required_materials.length){
+      const m = document.createElement("div");
+      m.className = "mats";
+      m.innerHTML = "<b>需补材料</b>（材料齐备则可能排除风险）";
+      const ul = document.createElement("ul");
+      ul.style.margin = "5px 0 0"; ul.style.paddingLeft = "18px";
+      f.required_materials.forEach(x => {
+        const li = document.createElement("li"); li.textContent = x; ul.appendChild(li);
+      });
+      m.appendChild(ul); d.appendChild(m);
+    }
+
+    if(f.element_trace && f.element_trace.length){
+      const w = document.createElement("div");
+      w.className = "trace";
+      w.innerHTML = "<div style='color:var(--ink-3);font-size:11px;margin-bottom:3px'>"
+                  + "要件逐项判断（定性由代码推导，模型只答事实层）</div>";
+      const tb = document.createElement("table");
+      f.element_trace.forEach(r => {
+        const tr = document.createElement("tr");
+        const a = r["判断"] || "";
+        const cls = a.includes("成立") && !a.includes("不成立") ? "ans-yes"
+                  : a.includes("无法") ? "ans-unc" : "ans-no";
+        const td1 = document.createElement("td"); td1.textContent = r["要件"] || "";
+        const td2 = document.createElement("td");
+        const b = document.createElement("b"); b.className = cls; b.textContent = a;
+        const p = document.createElement("div");
+        p.style.color = "var(--ink-2)"; p.style.marginTop = "1px";
+        p.textContent = r["理由"] || "";
+        td2.append(b, p);
+        tr.append(td1, td2); tb.appendChild(tr);
+      });
+      w.appendChild(tb); d.appendChild(w);
+    }
+
+    if(f.similar_cases && f.similar_cases.length){
+      const w = document.createElement("div");
+      w.className = "cases";
+      w.innerHTML = "<div style='color:var(--ink-3);font-size:11px'>"
+                  + "相似监管实践 —— 仅供理解监管口径，不构成对本素材的事实认定</div>";
+      f.similar_cases.slice(0, 3).forEach(c => {
+        const row = document.createElement("div");
+        row.className = "c";
+        const t1 = document.createElement("div");
+        t1.textContent = c["案例"] || "";
+        const t2 = document.createElement("div");
+        t2.style.fontSize = "11px";
+        t2.textContent = [c["处罚机关"], c["处罚结果"]].filter(Boolean).join("　");
+        const st = document.createElement("span");
+        const ver = (c["核验状态"] || "").startsWith("已核验");
+        st.className = ver ? "" : "unverified";
+        st.textContent = "　[" + (c["核验状态"] || "") + "]";
+        t2.appendChild(st);
+        row.append(t1, t2);
+        if(c["原文出处"]){
+          const a = document.createElement("a");
+          a.href = c["原文出处"]; a.target = "_blank"; a.rel = "noopener noreferrer";
+          a.textContent = "原文出处"; a.style.fontSize = "11px";
+          row.appendChild(a);
+        }
+        w.appendChild(row);
+      });
+      d.appendChild(w);
+    }
+    return d;
+  }
+
+  function select(i, seek){
+    sel = i;
+    [...$("list").children].forEach((el, k) => {
+      el.classList.toggle("active", k === i);
+      const old = el.querySelector(".detail");
+      if(old) old.remove();
+      if(k === i) el.appendChild(detailHTML(R.findings[i]));
+    });
+    const f = R.findings[i];
+    if(seek && (f.t_start || f.t_end)) seekTo(Math.max(0, f.t_start));
+    $("list").children[i]?.scrollIntoView({block:"nearest", behavior:"smooth"});
+  }
+
+  // ── 画面证据框 ──────────────────────────────────────────
+  function drawStage(){
+    const st = $("stage");
+    st.innerHTML = "";
+    if(!R) return;
+    const live = (R.evidence || []).filter(e => t >= e.t_start - .001 && t <= e.t_end + .001);
+
+    live.filter(e => e.bbox).forEach(e => {
+      const b = e.bbox, box = document.createElement("div");
+      box.className = "box ocr";
+      box.style.left = (b.x*100)+"%"; box.style.top = (b.y*100)+"%";
+      box.style.width = (b.w*100)+"%"; box.style.height = (b.h*100)+"%";
+      const isRisk = R.findings.some(f =>
+        f.counts_as_risk && t >= f.t_start - .001 && t <= f.t_end + .001 &&
+        (f.source || "").includes("画面"));
+      if(isRisk) box.style.borderColor = "var(--high)";
+      const tag = document.createElement("span");
+      tag.className = "tag";
+      tag.textContent = `${e.t_start.toFixed(2)}s  ${e.text}`;
+      box.appendChild(tag);
+      st.appendChild(box);
+    });
+
+    const asr = live.filter(e => e.source === "asr");
+    if(asr.length){
+      const strip = document.createElement("div");
+      strip.className = "asr-strip";
+      const lbl = document.createElement("span");
+      lbl.className = "lbl"; lbl.textContent = "口播";
+      strip.append(lbl, document.createTextNode(asr.map(a => a.text).join(" ")));
+      st.appendChild(strip);
+    }
+  }
+
+  // ── 走带 ────────────────────────────────────────────────
+  function tick(dt){
+    if(playing){
+      t = hasVideo ? vid.currentTime : t + dt;
+      if(t >= dur){ t = dur; pause(); }
+    }
+    $("t-cur").textContent = t.toFixed(2);
+    $("c-time").textContent = fmt(t);
+    const pct = dur ? (t/dur*100) : 0;
+    $("played").style.width = pct + "%";
+    $("head").style.left = pct + "%";
+    drawStage();
+  }
+  function loop(ts){
+    const dt = last ? (ts - last)/1000 : 0;
+    last = ts;
+    tick(dt);
+    if(playing) raf = requestAnimationFrame(loop);
+  }
+  function play(){
+    if(playing || !dur) return;
+    playing = true; last = 0;
+    $("btn-play").textContent = "⏸ 暂停";
+    if(hasVideo) vid.play().catch(()=>{});
+    raf = requestAnimationFrame(loop);
+  }
+  function pause(){
+    playing = false;
+    $("btn-play").textContent = "▶ 播放";
+    if(hasVideo) vid.pause();
+    cancelAnimationFrame(raf);
+  }
+  function seekTo(x){
+    t = Math.min(Math.max(0, x), dur);
+    if(hasVideo) vid.currentTime = t;
+    tick(0);
+  }
+
+  $("btn-play").addEventListener("click", () => playing ? pause() : play());
+  $("track").addEventListener("click", e => {
+    const r = e.currentTarget.getBoundingClientRect();
+    seekTo((e.clientX - r.left) / r.width * dur);
+  });
+  document.addEventListener("keydown", e => {
+    if(!R || e.target.tagName === "INPUT") return;
+    if(e.code === "Space"){ e.preventDefault(); playing ? pause() : play(); }
+    if(e.code === "ArrowLeft")  seekTo(t - (e.shiftKey ? 1 : .1));
+    if(e.code === "ArrowRight") seekTo(t + (e.shiftKey ? 1 : .1));
+  });
+
+  // ── 文件载入 ────────────────────────────────────────────
+  function readReport(file){
+    const fr = new FileReader();
+    fr.onload = () => {
+      try{ load(JSON.parse(fr.result)); $("drop-err").hidden = true; }
+      catch(err){
+        const e = $("drop-err");
+        e.hidden = false;
+        e.textContent = "读不出来：" + err.message;
+      }
+    };
+    fr.onerror = () => {
+      const e = $("drop-err"); e.hidden = false; e.textContent = "文件读取失败。";
+    };
+    fr.readAsText(file, "utf-8");
+  }
+  $("btn-open").addEventListener("click", () => $("f-report").click());
+  $("f-report").addEventListener("change", e => e.target.files[0] && readReport(e.target.files[0]));
+  $("btn-video").addEventListener("click", () => $("f-video").click());
+  $("f-video").addEventListener("change", e => {
+    const f = e.target.files[0];
+    if(!f) return;
+    vid.src = URL.createObjectURL(f);
+    vid.hidden = false; $("novid").hidden = true; hasVideo = true;
+    vid.addEventListener("timeupdate", () => { if(!playing){ t = vid.currentTime; tick(0);} });
+  });
+
+  const drop = $("drop");
+  ["dragenter","dragover"].forEach(k => drop.addEventListener(k, e => {
+    e.preventDefault(); drop.classList.add("over");
+  }));
+  ["dragleave","drop"].forEach(k => drop.addEventListener(k, e => {
+    e.preventDefault(); drop.classList.remove("over");
+  }));
+  drop.addEventListener("drop", e => {
+    const f = e.dataTransfer.files[0];
+    if(f) readReport(f);
+  });
+
+  // 通过 http 提供时可用 ?report=xxx.json 直接载入；file:// 下会被浏览器拦，回落到手动选文件
+  const q = new URLSearchParams(location.search).get("report");
+  if(q){
+    fetch(q).then(r => r.json()).then(load).catch(err => {
+      const e = $("drop-err");
+      e.hidden = false;
+      e.textContent = "自动载入失败（本地文件直接打开时浏览器会拦截，属正常）：" + err.message;
+    });
+  }
+})();
+</script>
+</body>
+</html>

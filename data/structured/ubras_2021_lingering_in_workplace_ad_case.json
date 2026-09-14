@@ -1,0 +1,99 @@
+{
+ "case_id": "ubras_2021_lingering_in_workplace_ad_case",
+ "title": "Ubras“让女性轻松躺赢职场”内衣广告被行政处罚案（媒体线索）",
+ "source_type": "manual_compilation_pending_source_verification",
+ "source_verification_status": "credible_secondary_source_only",
+ "original_decision_url": null,
+ "original_decision_url_status": "not_found",
+ "source_lookup_priority": "P3",
+ "scope": "public",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "rag_chunk_type": "case_summary",
+ "mapped_rule_ids": [],
+ "is_admin_penalty_candidate": true,
+ "case_nature": "administrative_penalty_decision",
+ "legal_basis_provenance": {
+  "case_source_text": "媒体推断涉嫌违背社会良好风尚（《广告法》第九条第（七）项），官方决定书未核到",
+  "specific_articles_published_by_case_source": false,
+  "mapping_status": "inferred_pending_legal_review",
+  "warning": "法条为依据媒体披露的候选推断，待人工核验处罚决定书原文后确认，不代表已核源。"
+ },
+ "legal_basis_details": [],
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T04:13:49+08:00",
+  "decision": "用户指令：直接入生产库（2026-09-15）；来源为媒体线索，官方决定书原文待核验",
+  "override_source_verification": true,
+  "source_verification_status_kept": "credible_secondary_source_only",
+  "original_decision_url": null,
+  "note": "仅媒体口径（87万）；处罚机关、决定书号、决定日期未核到，保持空值。"
+ },
+ "audit": {
+  "review_status": "approved",
+  "approved_for_rag": true,
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产：Ubras“躺赢职场”内衣广告案（媒体线索）；要素不全，待官方核验。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T04:13:49+08:00",
+   "action": "owner_approval_promote_media_lead",
+   "note": "媒体线索直接入生产（业主审批）；处罚机关/决定书号未核到的不填，不编造。"
+  }
+ ],
+ "case_number": null,
+ "publish_date": null,
+ "decision_date": null,
+ "penalty_authority": null,
+ "party_name": null,
+ "region": null,
+ "industry": "服装/内衣",
+ "violation_type": "发布侮辱女性、违背社会良好风尚广告",
+ "product_or_service": "Ubras无尺码内衣（“让女性轻松躺赢职场”推广广告）",
+ "ad_channel": "微博/社交平台",
+ "risk_dimensions": [
+  "违背社会良好风尚",
+  "侮辱消费者"
+ ],
+ "illegal_claims": [
+  "让女性轻松躺赢职场"
+ ],
+ "facts_summary": "2021年，脱口秀演员李诞为Ubras内衣发布的推广文案“让女性轻松躺赢职场”被指侮辱女性、违背社会良好风尚，引发舆论争议并登上热搜；媒体称涉事广告被处罚款87万元。处罚决定书原文未核到，处罚机关、决定书号、决定日期均待核。",
+ "legal_basis": [
+  "《中华人民共和国广告法》第九条第（七）项"
+ ],
+ "legal_basis_source_text": "媒体推断涉嫌违背社会良好风尚（《广告法》第九条第（七）项），官方决定书未核到",
+ "penalty_result": "媒体称罚款87万元（待官方核验）",
+ "penalty_amount": 870000,
+ "regulatory_logic": "以调侃、物化或贬低特定群体（女性）的文案做品牌推广，极易触碰《广告法》第九条第（七）项“妨碍社会公共秩序或者违背社会良好风尚”的红线。涉事广告在引发舆论后通常面临市场监管处罚，本案处罚金额87万为媒体口径，待官方决定书核验后修正。",
+ "keywords": [
+  "Ubras",
+  "李诞",
+  "内衣广告",
+  "让女性轻松躺赢职场",
+  "侮辱女性",
+  "违背社会良好风尚",
+  "罚款87万"
+ ],
+ "vector_text": "这是一起内衣品牌邀请明星代言、以“让女性轻松躺赢职场”文案推广产品，因被指侮辱女性、违背社会良好风尚而被处罚的案例（媒体线索）。品牌营销文案以调侃、贬低特定群体博眼球，监管认定违背社会良好风尚，涉事广告被处罚款87万元（媒体口径，官方决定书待核）。场景特征：明星代言、性别议题文案、侮辱/物化消费者、违背社会良好风尚。",
+ "raw_text_path": "data/raw_text/ubras_2021_lingering_in_workplace_ad_media.json",
+ "source_name": "360快资讯/微信公众号（媒体线索）",
+ "source_url": "https://www.360kuai.com/pc/91a393146c2fe29fc",
+ "source_url_role": "secondary_media_lead",
+ "official_lookup_entry_urls": [],
+ "source_lookup_query": "Ubras 内衣广告 侮辱女性 罚款 87万 行政处罚",
+ "notes": "媒体线索直接入生产（业主审批）：金额87万为媒体口径；处罚机关/决定书号/日期均未核到，保持空值不编造；待官方核验后修正。",
+ "owner_note": "仅媒体口径（87万）；处罚机关、决定书号、决定日期未核到，保持空值。",
+ "audit_note": "业主审批入生产：Ubras“躺赢职场”内衣广告案（媒体线索）；要素不全，待官方核验。",
+ "source_record_path": "data/structured_candidates/ubras_2021_lingering_in_workplace_ad_case.json",
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T04:13:49+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "note": "媒体线索直接入生产（业主审批）；官方决定书原文待核验"
+ }
+}

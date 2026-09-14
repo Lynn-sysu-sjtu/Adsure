@@ -31,7 +31,9 @@
   "penalty_result": "罚款19万元",
   "penalty_amount": 190000,
   "regulatory_logic": "普通商品广告不得宣称疾病治疗功能，普通食品广告不得宣传未经允许的保健功效。",
-  "mapped_rule_ids": [],
+  "mapped_rule_ids": [
+    "ADLAW-017"
+  ],
   "keywords": [
     "恢复视力",
     "改善睡眠",
@@ -45,9 +47,54 @@
   "approved_for_rag": true,
   "raw_html_path": "data/raw_html/samr_typical_ads__2ad160ae3056.json",
   "raw_text_path": "data/raw_text/samr_typical_ads__2ad160ae3056.json",
-  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。",
+  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。 具体条款映射为依据官方摘要事实作出的待法律复核推定，不代表处罚决定书已明确引用。",
   "audit": {
     "review_status": "approved",
     "approved_for_rag": true
+  },
+  "possible_liability_rule_ids": [
+    "ADLAW-058-02"
+  ],
+  "legal_basis_details": [
+    {
+      "rule_id": "ADLAW-017",
+      "law_name": "中华人民共和国广告法",
+      "article": "第十七条",
+      "paragraph": null,
+      "item": null,
+      "rule_type": "content_prohibition",
+      "rule_summary": "除医疗、药品、医疗器械广告外，其他广告不得涉及疾病治疗功能，也不得使用医疗用语或者易使商品与药品、医疗器械相混淆的用语。",
+      "rule_text_mode": "normalized_summary_not_verbatim",
+      "relation": "applicable_rule_inferred",
+      "mapping_basis": "official_summary_fact_pattern",
+      "mapping_review_status": "pending_legal_review",
+      "version_date": "2021-04-29",
+      "effective_status": "有效",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    },
+    {
+      "rule_id": "ADLAW-058-02",
+      "law_name": "中华人民共和国广告法",
+      "article": "第五十八条",
+      "paragraph": "第一款",
+      "item": "第二项",
+      "rule_type": "liability",
+      "rule_summary": "违反本法第十七条，在广告中涉及疾病治疗功能或者使用相关医疗用语，适用本项规定的行政责任。",
+      "rule_text_mode": "normalized_summary_not_verbatim",
+      "relation": "possible_liability_inferred",
+      "mapping_basis": "official_summary_fact_pattern",
+      "mapping_review_status": "pending_legal_review",
+      "version_date": "2021-04-29",
+      "effective_status": "有效",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    }
+  ],
+  "legal_basis_provenance": {
+    "case_source_text": "《中华人民共和国广告法》有关规定",
+    "specific_articles_published_by_case_source": false,
+    "mapping_status": "inferred_pending_legal_review",
+    "warning": "具体条款为依据官方摘要事实作出的适用性映射，不代表处罚机关在决定书中明确引用。"
   }
 }

@@ -1,0 +1,229 @@
+{
+  "evaluation_set": "data/evaluation/retrieval_quality_cases.json",
+  "modes": [
+    {
+      "requested_mode": "lexical",
+      "effective_mode": "lexical",
+      "semantic_status": "disabled",
+      "total": 9,
+      "passed": 9,
+      "pass_rate": 1.0,
+      "rows": [
+        {
+          "evaluation_id": "positive_food_disease_claim",
+          "expected_type": "first",
+          "expected": "samr_2025_typical_ads_02",
+          "actual_case_ids": [
+            "samr_2025_typical_ads_02"
+          ],
+          "passed": true,
+          "first_score": 49.231928,
+          "first_similarity": null,
+          "retrieval_method": "fielded_bm25_v2"
+        },
+        {
+          "evaluation_id": "positive_absolute_and_state_authority",
+          "expected_type": "first",
+          "expected": "samr_2025_typical_ads_05",
+          "actual_case_ids": [
+            "samr_2025_typical_ads_05"
+          ],
+          "passed": true,
+          "first_score": 9.483093,
+          "first_similarity": null,
+          "retrieval_method": "fielded_bm25_v2"
+        },
+        {
+          "evaluation_id": "positive_real_estate",
+          "expected_type": "first",
+          "expected": "samr_2025_typical_ads_07",
+          "actual_case_ids": [
+            "samr_2025_typical_ads_07"
+          ],
+          "passed": true,
+          "first_score": 14.077173,
+          "first_similarity": null,
+          "retrieval_method": "fielded_bm25_v2"
+        },
+        {
+          "evaluation_id": "positive_prescription_drug_science_content",
+          "expected_type": "first",
+          "expected": "samr_2025_typical_ads_10",
+          "actual_case_ids": [
+            "samr_2025_typical_ads_10"
+          ],
+          "passed": true,
+          "first_score": 10.684706,
+          "first_similarity": null,
+          "retrieval_method": "fielded_bm25_v2"
+        },
+        {
+          "evaluation_id": "positive_unreviewed_medical_device_ad",
+          "expected_type": "first",
+          "expected": "samr_2025_typical_ads_08",
+          "actual_case_ids": [
+            "samr_2025_typical_ads_08"
+          ],
+          "passed": true,
+          "first_score": 9.870143,
+          "first_similarity": null,
+          "retrieval_method": "fielded_bm25_v2"
+        },
+        {
+          "evaluation_id": "negative_benign_nutrition_copy",
+          "expected_type": "exact",
+          "expected": [],
+          "actual_case_ids": [],
+          "passed": true,
+          "first_score": null,
+          "first_similarity": null,
+          "retrieval_method": "fielded_bm25_v2"
+        },
+        {
+          "evaluation_id": "negative_unsupported_sales_claim",
+          "expected_type": "exact",
+          "expected": [],
+          "actual_case_ids": [],
+          "passed": true,
+          "first_score": null,
+          "first_similarity": null,
+          "retrieval_method": "fielded_bm25_v2"
+        },
+        {
+          "evaluation_id": "negative_benign_cosmetic_copy",
+          "expected_type": "exact",
+          "expected": [],
+          "actual_case_ids": [],
+          "passed": true,
+          "first_score": null,
+          "first_similarity": null,
+          "retrieval_method": "fielded_bm25_v2"
+        },
+        {
+          "evaluation_id": "semantic_only_prescription_drug_paraphrase",
+          "expected_type": "exact",
+          "expected": [],
+          "actual_case_ids": [],
+          "passed": true,
+          "first_score": null,
+          "first_similarity": null,
+          "retrieval_method": "fielded_bm25_v2"
+        }
+      ]
+    },
+    {
+      "requested_mode": "hybrid",
+      "effective_mode": "hybrid",
+      "semantic_status": "ready",
+      "total": 9,
+      "passed": 9,
+      "pass_rate": 1.0,
+      "rows": [
+        {
+          "evaluation_id": "positive_food_disease_claim",
+          "expected_type": "first",
+          "expected": "samr_2025_typical_ads_02",
+          "actual_case_ids": [
+            "samr_2025_typical_ads_02",
+            "samr_2025_typical_ads_04",
+            "samr_2025_typical_ads_08"
+          ],
+          "passed": true,
+          "first_score": 0.55,
+          "first_similarity": null,
+          "retrieval_method": "hybrid_rrf_v1"
+        },
+        {
+          "evaluation_id": "positive_absolute_and_state_authority",
+          "expected_type": "first",
+          "expected": "samr_2025_typical_ads_05",
+          "actual_case_ids": [
+            "samr_2025_typical_ads_05"
+          ],
+          "passed": true,
+          "first_score": 0.55,
+          "first_similarity": null,
+          "retrieval_method": "hybrid_rrf_v1"
+        },
+        {
+          "evaluation_id": "positive_real_estate",
+          "expected_type": "first",
+          "expected": "samr_2025_typical_ads_07",
+          "actual_case_ids": [
+            "samr_2025_typical_ads_07"
+          ],
+          "passed": true,
+          "first_score": 0.992742,
+          "first_similarity": 0.725465,
+          "retrieval_method": "hybrid_rrf_v1"
+        },
+        {
+          "evaluation_id": "positive_prescription_drug_science_content",
+          "expected_type": "first",
+          "expected": "samr_2025_typical_ads_10",
+          "actual_case_ids": [
+            "samr_2025_typical_ads_10"
+          ],
+          "passed": true,
+          "first_score": 0.992742,
+          "first_similarity": 0.794932,
+          "retrieval_method": "hybrid_rrf_v1"
+        },
+        {
+          "evaluation_id": "positive_unreviewed_medical_device_ad",
+          "expected_type": "first",
+          "expected": "samr_2025_typical_ads_08",
+          "actual_case_ids": [
+            "samr_2025_typical_ads_08"
+          ],
+          "passed": true,
+          "first_score": 1.0,
+          "first_similarity": 0.740604,
+          "retrieval_method": "hybrid_rrf_v1"
+        },
+        {
+          "evaluation_id": "negative_benign_nutrition_copy",
+          "expected_type": "exact",
+          "expected": [],
+          "actual_case_ids": [],
+          "passed": true,
+          "first_score": null,
+          "first_similarity": null,
+          "retrieval_method": "hybrid_rrf_v1"
+        },
+        {
+          "evaluation_id": "negative_unsupported_sales_claim",
+          "expected_type": "exact",
+          "expected": [],
+          "actual_case_ids": [],
+          "passed": true,
+          "first_score": null,
+          "first_similarity": null,
+          "retrieval_method": "hybrid_rrf_v1"
+        },
+        {
+          "evaluation_id": "negative_benign_cosmetic_copy",
+          "expected_type": "exact",
+          "expected": [],
+          "actual_case_ids": [],
+          "passed": true,
+          "first_score": null,
+          "first_similarity": null,
+          "retrieval_method": "hybrid_rrf_v1"
+        },
+        {
+          "evaluation_id": "semantic_only_prescription_drug_paraphrase",
+          "expected_type": "first",
+          "expected": "samr_2025_typical_ads_10",
+          "actual_case_ids": [
+            "samr_2025_typical_ads_10"
+          ],
+          "passed": true,
+          "first_score": 0.45,
+          "first_similarity": 0.742925,
+          "retrieval_method": "hybrid_rrf_v1"
+        }
+      ]
+    }
+  ]
+}

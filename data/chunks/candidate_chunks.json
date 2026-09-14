@@ -68,7 +68,11 @@
       "mapped_rule_ids": [],
       "penalty_amount": 400000,
       "review_status": "pending_review",
-      "raw_text_path": "data/raw_text/coconut_group_penalty_leads_user_research.json"
+      "raw_text_path": "data/raw_text/coconut_group_penalty_leads_user_research.json",
+      "owner_approval": null,
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -140,7 +144,11 @@
       "mapped_rule_ids": [],
       "penalty_amount": 400000,
       "review_status": "pending_review",
-      "raw_text_path": "data/raw_text/coconut_group_penalty_leads_user_research.json"
+      "raw_text_path": "data/raw_text/coconut_group_penalty_leads_user_research.json",
+      "owner_approval": null,
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -219,7 +227,11 @@
       "mapped_rule_ids": [],
       "penalty_amount": 400000,
       "review_status": "pending_review",
-      "raw_text_path": "data/raw_text/coconut_group_penalty_leads_user_research.json"
+      "raw_text_path": "data/raw_text/coconut_group_penalty_leads_user_research.json",
+      "owner_approval": null,
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -298,7 +310,11 @@
       "mapped_rule_ids": [],
       "penalty_amount": 400000,
       "review_status": "pending_review",
-      "raw_text_path": "data/raw_text/coconut_group_penalty_leads_user_research.json"
+      "raw_text_path": "data/raw_text/coconut_group_penalty_leads_user_research.json",
+      "owner_approval": null,
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -352,10 +368,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "绝对化用语",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "温州经济技术开发区海城乔诗丹顿卫浴洁具店与温州市市场监督管理局",
       "party_name": null,
       "case_number": "（2019）浙03行终113号",
@@ -366,8 +382,22 @@
       "ad_channel": "阿里巴巴网店、网店",
       "mapped_rule_ids": [],
       "penalty_amount": 100000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -421,10 +451,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "绝对化用语",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "温州经济技术开发区海城乔诗丹顿卫浴洁具店与温州市市场监督管理局",
       "party_name": null,
       "case_number": "（2019）浙03行终113号",
@@ -435,8 +465,22 @@
       "ad_channel": "阿里巴巴网店、网店",
       "mapped_rule_ids": [],
       "penalty_amount": 100000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -483,10 +527,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "绝对化用语",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "北京假日阳光环球旅行社有限公司与北京市工商行政管理局",
       "party_name": "海淀分局",
       "case_number": "（2017）京0108行初511号",
@@ -497,8 +541,22 @@
       "ad_channel": "官网",
       "mapped_rule_ids": [],
       "penalty_amount": 206150,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -545,10 +603,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "绝对化用语",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "北京假日阳光环球旅行社有限公司与北京市工商行政管理局",
       "party_name": "海淀分局",
       "case_number": "（2017）京0108行初511号",
@@ -559,8 +617,22 @@
       "ad_channel": "官网",
       "mapped_rule_ids": [],
       "penalty_amount": 206150,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -607,10 +679,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "绝对化用语",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "郑州尚之泉文化传播有限公司与郑州市工商行政管理局",
       "party_name": "金水分局",
       "case_number": "（2016）豫0104行初138号",
@@ -621,8 +693,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -669,10 +755,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "绝对化用语",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "郑州尚之泉文化传播有限公司与郑州市工商行政管理局",
       "party_name": "金水分局",
       "case_number": "（2016）豫0104行初138号",
@@ -683,8 +769,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -730,10 +830,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "绝对化用语",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "郑州市金水区工商管理和质量技术监督局",
       "case_number": "（2018）豫01行终314号",
@@ -744,8 +844,22 @@
       "ad_channel": "官网",
       "mapped_rule_ids": [],
       "penalty_amount": 300000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -791,10 +905,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "绝对化用语",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "郑州市金水区工商管理和质量技术监督局",
       "case_number": "（2018）豫01行终314号",
@@ -805,8 +919,22 @@
       "ad_channel": "官网",
       "mapped_rule_ids": [],
       "penalty_amount": 300000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -852,10 +980,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "绝对化用语",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "温州经济技术开发区海城叶挺亮洁具配件厂与温州市市场监督管理局",
       "party_name": null,
       "case_number": "（2019）浙03行终112号",
@@ -866,8 +994,22 @@
       "ad_channel": "阿里巴巴网店、网店",
       "mapped_rule_ids": [],
       "penalty_amount": 80000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -913,10 +1055,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "绝对化用语",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "温州经济技术开发区海城叶挺亮洁具配件厂与温州市市场监督管理局",
       "party_name": null,
       "case_number": "（2019）浙03行终112号",
@@ -927,8 +1069,22 @@
       "ad_channel": "阿里巴巴网店、网店",
       "mapped_rule_ids": [],
       "penalty_amount": 80000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -987,10 +1143,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "化妆品医疗化宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "天津百恩汇生物科技有限公司买卖合同纠纷",
       "case_number": "（2017）陕01民再74号",
@@ -1001,8 +1157,22 @@
       "ad_channel": "天猫",
       "mapped_rule_ids": [],
       "penalty_amount": 150000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1061,10 +1231,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "化妆品医疗化宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "天津百恩汇生物科技有限公司买卖合同纠纷",
       "case_number": "（2017）陕01民再74号",
@@ -1075,8 +1245,22 @@
       "ad_channel": "天猫",
       "mapped_rule_ids": [],
       "penalty_amount": 150000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1132,10 +1316,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "化妆品医疗化宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "苏州开禧医药有限公司与苏州市吴江区市场监督管理局",
       "party_name": null,
       "case_number": "（2018）苏0508行初268号",
@@ -1146,8 +1330,22 @@
       "ad_channel": "天猫",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1203,10 +1401,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "化妆品医疗化宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "苏州开禧医药有限公司与苏州市吴江区市场监督管理局",
       "party_name": null,
       "case_number": "（2018）苏0508行初268号",
@@ -1217,8 +1415,22 @@
       "ad_channel": "天猫",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1271,10 +1483,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "化妆品医疗化宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "北京创锐文化传媒有限公司",
       "case_number": "（2015）朝民（商）初字第49845号",
@@ -1285,8 +1497,22 @@
       "ad_channel": "网站",
       "mapped_rule_ids": [],
       "penalty_amount": null,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1339,10 +1565,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "化妆品医疗化宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "北京创锐文化传媒有限公司",
       "case_number": "（2015）朝民（商）初字第49845号",
@@ -1353,8 +1579,22 @@
       "ad_channel": "网站",
       "mapped_rule_ids": [],
       "penalty_amount": null,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1407,10 +1647,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "化妆品医疗化宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "临邑县市场监督管理局",
       "party_name": "临邑县临南镇双丰至尚洗化百货商店",
       "case_number": "（2019）鲁1424行审75号",
@@ -1421,8 +1661,22 @@
       "ad_channel": "微信朋友圈、朋友圈",
       "mapped_rule_ids": [],
       "penalty_amount": 100000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1475,10 +1729,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "化妆品医疗化宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "临邑县市场监督管理局",
       "party_name": "临邑县临南镇双丰至尚洗化百货商店",
       "case_number": "（2019）鲁1424行审75号",
@@ -1489,8 +1743,22 @@
       "ad_channel": "微信朋友圈、朋友圈",
       "mapped_rule_ids": [],
       "penalty_amount": 100000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1544,10 +1812,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "化妆品医疗化宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "崇阳县市场监督管理局",
       "party_name": "御升广盈生物科技（深圳）有限公司",
       "case_number": "（2020）鄂1223行审52号",
@@ -1558,8 +1826,22 @@
       "ad_channel": "宣传单",
       "mapped_rule_ids": [],
       "penalty_amount": 100000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1613,10 +1895,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "化妆品医疗化宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "崇阳县市场监督管理局",
       "party_name": "御升广盈生物科技（深圳）有限公司",
       "case_number": "（2020）鄂1223行审52号",
@@ -1627,8 +1909,22 @@
       "ad_channel": "宣传单",
       "mapped_rule_ids": [],
       "penalty_amount": 100000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1676,10 +1972,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "化妆品医疗化宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "宜兴市市场监督管理局",
       "party_name": "孙某非诉行政行为",
       "case_number": "（2025）苏0282行审5号",
@@ -1690,8 +1986,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 10600,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1739,10 +2049,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "化妆品医疗化宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "宜兴市市场监督管理局",
       "party_name": "孙某非诉行政行为",
       "case_number": "（2025）苏0282行审5号",
@@ -1753,8 +2063,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 10600,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1807,10 +2131,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "虚假宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "杭州市富阳区市场监督管理局",
       "party_name": "东莞市米乐真科技有限公司",
       "case_number": "（2020）浙0111行审149号",
@@ -1821,8 +2145,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 600000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1875,10 +2213,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "虚假宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "杭州市富阳区市场监督管理局",
       "party_name": "东莞市米乐真科技有限公司",
       "case_number": "（2020）浙0111行审149号",
@@ -1889,8 +2227,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 600000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -1949,10 +2301,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "虚假宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "重庆市市场监督管理局",
       "party_name": "重庆某生物科技有限公司行政",
       "case_number": "（2025）渝0112行审1486号",
@@ -1963,8 +2315,22 @@
       "ad_channel": "抖音",
       "mapped_rule_ids": [],
       "penalty_amount": 50000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2023,10 +2389,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "虚假宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "重庆市市场监督管理局",
       "party_name": "重庆某生物科技有限公司行政",
       "case_number": "（2025）渝0112行审1486号",
@@ -2037,8 +2403,22 @@
       "ad_channel": "抖音",
       "mapped_rule_ids": [],
       "penalty_amount": 50000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2092,10 +2472,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "虚假宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "宜兴市市场监督管理局",
       "party_name": "宜兴市某某服务部行政处罚",
       "case_number": "（2024）苏0282行审64号",
@@ -2106,8 +2486,22 @@
       "ad_channel": "PPT",
       "mapped_rule_ids": [],
       "penalty_amount": 24000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2161,10 +2555,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "虚假宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "宜兴市市场监督管理局",
       "party_name": "宜兴市某某服务部行政处罚",
       "case_number": "（2024）苏0282行审64号",
@@ -2175,8 +2569,22 @@
       "ad_channel": "PPT",
       "mapped_rule_ids": [],
       "penalty_amount": 24000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2226,10 +2634,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "虚假宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "南召县工商行政管理局",
       "party_name": "闫学军",
       "case_number": "（2014）南召行审字第00050号",
@@ -2240,8 +2648,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 20000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2291,10 +2713,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "虚假宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "南召县工商行政管理局",
       "party_name": "闫学军",
       "case_number": "（2014）南召行审字第00050号",
@@ -2305,8 +2727,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 20000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2362,10 +2798,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "虚假宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "沈阳美希公司与沈阳市沈河区市场监督管理局",
       "party_name": null,
       "case_number": "（2020）辽0105行初86号",
@@ -2376,8 +2812,22 @@
       "ad_channel": "官网",
       "mapped_rule_ids": [],
       "penalty_amount": 340000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2433,10 +2883,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "虚假宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "沈阳美希公司与沈阳市沈河区市场监督管理局",
       "party_name": null,
       "case_number": "（2020）辽0105行初86号",
@@ -2447,8 +2897,22 @@
       "ad_channel": "官网",
       "mapped_rule_ids": [],
       "penalty_amount": 340000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2504,10 +2968,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "涉医疗宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "德清县市场监督管理局",
       "party_name": "湖州洁净康电子科技有限公司",
       "case_number": "（2021）浙0521行审9号",
@@ -2518,8 +2982,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 196800,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2575,10 +3053,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "涉医疗宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "德清县市场监督管理局",
       "party_name": "湖州洁净康电子科技有限公司",
       "case_number": "（2021）浙0521行审9号",
@@ -2589,8 +3067,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 196800,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2642,10 +3134,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "涉医疗宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "大庆市食品药品监督管理局",
       "party_name": "黑龙江易联百货电子商务有限公司",
       "case_number": "（2018）黑0603行审1号",
@@ -2656,8 +3148,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 134895,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2709,10 +3215,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "涉医疗宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "大庆市食品药品监督管理局",
       "party_name": "黑龙江易联百货电子商务有限公司",
       "case_number": "（2018）黑0603行审1号",
@@ -2723,8 +3229,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 134895,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2781,10 +3301,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "涉医疗宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "江苏一号农场科技股份有限公司",
       "case_number": "（2016）浙0483民初6906号",
@@ -2795,8 +3315,22 @@
       "ad_channel": "网页",
       "mapped_rule_ids": [],
       "penalty_amount": 70000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2853,10 +3387,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "涉医疗宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "江苏一号农场科技股份有限公司",
       "case_number": "（2016）浙0483民初6906号",
@@ -2867,8 +3401,22 @@
       "ad_channel": "网页",
       "mapped_rule_ids": [],
       "penalty_amount": 70000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2924,10 +3472,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "涉医疗宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "盐津县市场监督管理局",
       "party_name": "盐津黑凤凰农业有限公司",
       "case_number": "（2021）云0623行审4号",
@@ -2938,8 +3486,22 @@
       "ad_channel": "官网、海报",
       "mapped_rule_ids": [],
       "penalty_amount": 6000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -2995,10 +3557,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "涉医疗宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "盐津县市场监督管理局",
       "party_name": "盐津黑凤凰农业有限公司",
       "case_number": "（2021）云0623行审4号",
@@ -3009,8 +3571,22 @@
       "ad_channel": "官网、海报",
       "mapped_rule_ids": [],
       "penalty_amount": 6000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -3071,10 +3647,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "涉医疗宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "京之源（北京）农业有限公司北潞园分公司等",
       "case_number": "（2016）京0111民初14505号",
@@ -3085,8 +3661,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": null,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -3147,10 +3737,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "涉医疗宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "京之源（北京）农业有限公司北潞园分公司等",
       "case_number": "（2016）京0111民初14505号",
@@ -3161,8 +3751,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": null,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -3220,10 +3824,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "保健食品违规宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "常州市武进区市场监督管理局",
       "party_name": "武进区湖塘颐圣堂食品店",
       "case_number": "（2020）苏0412行审155号",
@@ -3234,8 +3838,22 @@
       "ad_channel": "会议、PPT",
       "mapped_rule_ids": [],
       "penalty_amount": 300000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -3293,10 +3911,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "保健食品违规宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "常州市武进区市场监督管理局",
       "party_name": "武进区湖塘颐圣堂食品店",
       "case_number": "（2020）苏0412行审155号",
@@ -3307,8 +3925,22 @@
       "ad_channel": "会议、PPT",
       "mapped_rule_ids": [],
       "penalty_amount": 300000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -3364,10 +3996,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "保健食品违规宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "宜兴市市场监督管理局",
       "party_name": "宜兴市某某服务部行政处罚",
       "case_number": "（2025）苏0282行审17号",
@@ -3378,8 +4010,22 @@
       "ad_channel": "会议",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -3435,10 +4081,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "保健食品违规宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "宜兴市市场监督管理局",
       "party_name": "宜兴市某某服务部行政处罚",
       "case_number": "（2025）苏0282行审17号",
@@ -3449,8 +4095,22 @@
       "ad_channel": "会议",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -3475,7 +4135,11 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "海智健DHA藻油元宝枫籽油",
+        "南极磷虾油",
+        "防治高血压、高血脂、冠心病、心梗、脑血栓等疾病"
+      ],
       "risk_dimensions": [
         "保健食品违规宣传",
         "涉医疗宣传",
@@ -3500,10 +4164,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "保健食品违规宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "昌乐县市场监督管理局",
       "party_name": "吴素杰",
       "case_number": "（2020）鲁0725行审15号",
@@ -3514,8 +4178,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -3540,7 +4218,11 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "海智健DHA藻油元宝枫籽油",
+        "南极磷虾油",
+        "防治高血压、高血脂、冠心病、心梗、脑血栓等疾病"
+      ],
       "risk_dimensions": [
         "保健食品违规宣传",
         "涉医疗宣传",
@@ -3556,19 +4238,19 @@
       ],
       "regulatory_logic": "该候选案例显示，广告内容属于保健食品功效保证、替代药物、超批准功能宣传场景，相关宣传可能影响消费者判断，涉及《反不正当竞争法》第八条第一款、第二十条第一款，需核验官方来源后确认监管认定。",
       "vector_text": "这是一起人工整理的保健食品功效保证、替代药物、超批准功能宣传候选案例。案件事实显示，经营者销售海智健DHA藻油元宝枫籽油、南极磷虾油等普通食品及保健食品，利用优盘播放宣传片、现场讲解方式宣传产品能防治高血压、高血脂、冠心病、心梗、脑血栓等多种疾病 处罚依据记载为《反不正当竞争法》第八条第一款、第二十条第一款，处理结果为罚款200000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
-      "text": "昌乐县市场监督管理局、吴素杰非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于保健食品功效保证、替代药物、超批准功能宣传场景，相关宣传可能影响消费者判断，涉及《反不正当竞争法》第八条第一款、第二十条第一款，需核验官方来源后确认监管认定。 相关广告宣称：。"
+      "text": "昌乐县市场监督管理局、吴素杰非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于保健食品功效保证、替代药物、超批准功能宣传场景，相关宣传可能影响消费者判断，涉及《反不正当竞争法》第八条第一款、第二十条第一款，需核验官方来源后确认监管认定。 相关广告宣称：海智健DHA藻油元宝枫籽油；南极磷虾油；防治高血压、高血脂、冠心病、心梗、脑血栓等疾病。"
     },
-    "text": "昌乐县市场监督管理局、吴素杰非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于保健食品功效保证、替代药物、超批准功能宣传场景，相关宣传可能影响消费者判断，涉及《反不正当竞争法》第八条第一款、第二十条第一款，需核验官方来源后确认监管认定。 相关广告宣称：。",
+    "text": "昌乐县市场监督管理局、吴素杰非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于保健食品功效保证、替代药物、超批准功能宣传场景，相关宣传可能影响消费者判断，涉及《反不正当竞争法》第八条第一款、第二十条第一款，需核验官方来源后确认监管认定。 相关广告宣称：海智健DHA藻油元宝枫籽油；南极磷虾油；防治高血压、高血脂、冠心病、心梗、脑血栓等疾病。",
     "metadata": {
       "scope": "public",
       "tenant_id": null,
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "保健食品违规宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "昌乐县市场监督管理局",
       "party_name": "吴素杰",
       "case_number": "（2020）鲁0725行审15号",
@@ -3579,8 +4261,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -3640,10 +4336,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "保健食品违规宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "宁波市镇海区市场监督管理局",
       "party_name": "宁波市镇海区招宝山瑞寿食品商行",
       "case_number": "（2019）浙0211行审74号",
@@ -3654,8 +4350,22 @@
       "ad_channel": "海报、横幅",
       "mapped_rule_ids": [],
       "penalty_amount": 100,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -3715,10 +4425,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "保健食品违规宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "宁波市镇海区市场监督管理局",
       "party_name": "宁波市镇海区招宝山瑞寿食品商行",
       "case_number": "（2019）浙0211行审74号",
@@ -3729,8 +4439,22 @@
       "ad_channel": "海报、横幅",
       "mapped_rule_ids": [],
       "penalty_amount": 100,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -3799,10 +4523,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "保健食品违规宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "南宁武鸣活力保健食品有限公司与南宁市武鸣区市场监督管理局",
       "party_name": null,
       "case_number": "（2020）桂0107行初80号",
@@ -3813,8 +4537,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 15000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -3883,10 +4621,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "保健食品违规宣传",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "南宁武鸣活力保健食品有限公司与南宁市武鸣区市场监督管理局",
       "party_name": null,
       "case_number": "（2020）桂0107行初80号",
@@ -3897,8 +4635,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 15000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -3944,10 +4696,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告引证内容不规范",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "海口市市场监督管理局",
       "party_name": "杨思宝行政处罚",
       "case_number": "（2020）琼0105行审51号",
@@ -3958,8 +4710,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 10000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4005,10 +4771,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告引证内容不规范",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "海口市市场监督管理局",
       "party_name": "杨思宝行政处罚",
       "case_number": "（2020）琼0105行审51号",
@@ -4019,8 +4785,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 10000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4064,10 +4844,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告引证内容不规范",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "广州市哈雷日用品有限公司与赤壁市市场监督管理局",
       "party_name": null,
       "case_number": "（2019）鄂1281行初20号",
@@ -4078,8 +4858,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 60000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4123,10 +4917,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告引证内容不规范",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "广州市哈雷日用品有限公司与赤壁市市场监督管理局",
       "party_name": null,
       "case_number": "（2019）鄂1281行初20号",
@@ -4137,8 +4931,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 60000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4187,10 +4995,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告引证内容不规范",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "有限公司与云梦县市场监督管理局",
       "party_name": "联合利华（中国）",
       "case_number": "（2019）鄂0902行初18号",
@@ -4201,8 +5009,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 30000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4251,10 +5073,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告引证内容不规范",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "有限公司与云梦县市场监督管理局",
       "party_name": "联合利华（中国）",
       "case_number": "（2019）鄂0902行初18号",
@@ -4265,8 +5087,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 30000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4312,10 +5148,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告引证内容不规范",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "广东雪洁日化用品有限公司与崇阳县工商行政管理局",
       "party_name": null,
       "case_number": "（2018）鄂1223行初3号",
@@ -4326,8 +5162,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 70000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4373,10 +5223,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告引证内容不规范",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "广东雪洁日化用品有限公司与崇阳县工商行政管理局",
       "party_name": null,
       "case_number": "（2018）鄂1223行初3号",
@@ -4387,8 +5237,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 70000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4435,10 +5299,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告引证内容不规范",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "甘肃某某医疗科技有限公司与兰州市城关区市场监督管理局",
       "party_name": null,
       "case_number": "（2024）甘0103行初58号",
@@ -4449,8 +5313,22 @@
       "ad_channel": "微信公众号",
       "mapped_rule_ids": [],
       "penalty_amount": 10000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4497,10 +5375,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告引证内容不规范",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "甘肃某某医疗科技有限公司与兰州市城关区市场监督管理局",
       "party_name": null,
       "case_number": "（2024）甘0103行初58号",
@@ -4511,8 +5389,22 @@
       "ad_channel": "微信公众号",
       "mapped_rule_ids": [],
       "penalty_amount": 10000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4536,7 +5428,11 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "使用虚构公司名义销售",
+        "虚假宣传",
+        "未取得国家强制性产品认证的多功能电饭煲"
+      ],
       "risk_dimensions": [
         "直播带货违法广告",
         "虚假宣传",
@@ -4560,10 +5456,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "直播带货违法广告",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "成都市青白江区市场监督管理局",
       "party_name": "成都麦凡田贸易有限公司行政",
       "case_number": "（2020）川0113行审13号",
@@ -4574,8 +5470,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 236700,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4599,7 +5509,11 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "使用虚构公司名义销售",
+        "虚假宣传",
+        "未取得国家强制性产品认证的多功能电饭煲"
+      ],
       "risk_dimensions": [
         "直播带货违法广告",
         "虚假宣传",
@@ -4614,19 +5528,19 @@
       ],
       "regulatory_logic": "该候选案例显示，广告内容属于直播带货违法广告场景，相关宣传可能影响消费者判断，涉及《广告法》第二十八条第二款、第五十五条第一款，需核验官方来源后确认监管认定。",
       "vector_text": "这是一起人工整理的直播带货违法广告候选案例。案件事实显示，经营者在农家乐内举办老年人保健品推销会，使用虚构公司名义进行销售，虚假宣传、销售未取得中国国家强制性产品认证多功能电饭煲 处罚依据记载为《广告法》第二十八条第二款、第五十五条第一款，处理结果为罚款236700元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
-      "text": "成都市青白江区市场监督管理局与成都麦凡田贸易有限公司行政非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于直播带货违法广告场景，相关宣传可能影响消费者判断，涉及《广告法》第二十八条第二款、第五十五条第一款，需核验官方来源后确认监管认定。 相关广告宣称：。"
+      "text": "成都市青白江区市场监督管理局与成都麦凡田贸易有限公司行政非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于直播带货违法广告场景，相关宣传可能影响消费者判断，涉及《广告法》第二十八条第二款、第五十五条第一款，需核验官方来源后确认监管认定。 相关广告宣称：使用虚构公司名义销售；虚假宣传；未取得国家强制性产品认证的多功能电饭煲。"
     },
-    "text": "成都市青白江区市场监督管理局与成都麦凡田贸易有限公司行政非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于直播带货违法广告场景，相关宣传可能影响消费者判断，涉及《广告法》第二十八条第二款、第五十五条第一款，需核验官方来源后确认监管认定。 相关广告宣称：。",
+    "text": "成都市青白江区市场监督管理局与成都麦凡田贸易有限公司行政非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于直播带货违法广告场景，相关宣传可能影响消费者判断，涉及《广告法》第二十八条第二款、第五十五条第一款，需核验官方来源后确认监管认定。 相关广告宣称：使用虚构公司名义销售；虚假宣传；未取得国家强制性产品认证的多功能电饭煲。",
     "metadata": {
       "scope": "public",
       "tenant_id": null,
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "直播带货违法广告",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "成都市青白江区市场监督管理局",
       "party_name": "成都麦凡田贸易有限公司行政",
       "case_number": "（2020）川0113行审13号",
@@ -4637,8 +5551,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 236700,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4688,10 +5616,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "直播带货违法广告",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "河北溪林塑业有限公司与泊头市市场监督管理局",
       "party_name": null,
       "case_number": "（2018）冀0981行初14号",
@@ -4702,8 +5630,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4753,10 +5695,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "直播带货违法广告",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "河北溪林塑业有限公司与泊头市市场监督管理局",
       "party_name": null,
       "case_number": "（2018）冀0981行初14号",
@@ -4767,8 +5709,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4837,10 +5793,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "直播带货违法广告",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "宁波市市场监督管理局",
       "party_name": "宁波广发文博虫草制品科技有限公司",
       "case_number": "（2016）浙0204行审22号",
@@ -4851,8 +5807,22 @@
       "ad_channel": "期刊",
       "mapped_rule_ids": [],
       "penalty_amount": 6652470,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4921,10 +5891,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "直播带货违法广告",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "宁波市市场监督管理局",
       "party_name": "宁波广发文博虫草制品科技有限公司",
       "case_number": "（2016）浙0204行审22号",
@@ -4935,8 +5905,22 @@
       "ad_channel": "期刊",
       "mapped_rule_ids": [],
       "penalty_amount": 6652470,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -4961,7 +5945,10 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "韩国彩泥化妆品",
+        "名人、患者名义夸大疗效"
+      ],
       "risk_dimensions": [
         "直播带货违法广告",
         "虚假宣传",
@@ -4986,10 +5973,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "直播带货违法广告",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "息县工商管理和质量技术监督局",
       "case_number": "（2017）豫1528行审92号",
@@ -5000,8 +5987,22 @@
       "ad_channel": "电视",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5026,7 +6027,10 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "韩国彩泥化妆品",
+        "名人、患者名义夸大疗效"
+      ],
       "risk_dimensions": [
         "直播带货违法广告",
         "虚假宣传",
@@ -5042,19 +6046,19 @@
       ],
       "regulatory_logic": "该候选案例显示，广告内容属于直播带货违法广告场景，相关宣传可能影响消费者判断，涉及《广告法》第二十八条、第五十五条第一款，需核验官方来源后确认监管认定。",
       "vector_text": "这是一起人工整理的直播带货违法广告候选案例。案件事实显示，经营者利用电视设备发布韩国彩泥（化妆品）广告专题栏目，利用名人、患者名义夸大疗效，虚假宣传，误导消费者 处罚依据记载为《广告法》第二十八条、第五十五条第一款，处理结果为罚款200000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
-      "text": "息县工商管理和质量技术监督局与息县广播电视台非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于直播带货违法广告场景，相关宣传可能影响消费者判断，涉及《广告法》第二十八条、第五十五条第一款，需核验官方来源后确认监管认定。 相关广告宣称：。"
+      "text": "息县工商管理和质量技术监督局与息县广播电视台非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于直播带货违法广告场景，相关宣传可能影响消费者判断，涉及《广告法》第二十八条、第五十五条第一款，需核验官方来源后确认监管认定。 相关广告宣称：韩国彩泥化妆品；名人、患者名义夸大疗效。"
     },
-    "text": "息县工商管理和质量技术监督局与息县广播电视台非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于直播带货违法广告场景，相关宣传可能影响消费者判断，涉及《广告法》第二十八条、第五十五条第一款，需核验官方来源后确认监管认定。 相关广告宣称：。",
+    "text": "息县工商管理和质量技术监督局与息县广播电视台非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于直播带货违法广告场景，相关宣传可能影响消费者判断，涉及《广告法》第二十八条、第五十五条第一款，需核验官方来源后确认监管认定。 相关广告宣称：韩国彩泥化妆品；名人、患者名义夸大疗效。",
     "metadata": {
       "scope": "public",
       "tenant_id": null,
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "直播带货违法广告",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "息县工商管理和质量技术监督局",
       "case_number": "（2017）豫1528行审92号",
@@ -5065,8 +6069,22 @@
       "ad_channel": "电视",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5124,10 +6142,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "医疗广告违规",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "徐州宇彤医疗器械有限公司第一分公司与徐州市泉山区市场监督管理局",
       "party_name": null,
       "case_number": "（2021）苏03行终63号",
@@ -5138,8 +6156,22 @@
       "ad_channel": "宣传单、宣传单页、报纸",
       "mapped_rule_ids": [],
       "penalty_amount": 4700,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5197,10 +6229,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "医疗广告违规",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "徐州宇彤医疗器械有限公司第一分公司与徐州市泉山区市场监督管理局",
       "party_name": null,
       "case_number": "（2021）苏03行终63号",
@@ -5211,8 +6243,22 @@
       "ad_channel": "宣传单、宣传单页、报纸",
       "mapped_rule_ids": [],
       "penalty_amount": 4700,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5266,10 +6312,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "医疗广告违规",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "唐山煤医整形美容医院与唐山市路北区市场监督管理局",
       "party_name": null,
       "case_number": "（2019）冀0203行初302号",
@@ -5280,8 +6326,22 @@
       "ad_channel": "官网",
       "mapped_rule_ids": [],
       "penalty_amount": 201253.58,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5335,10 +6395,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "医疗广告违规",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "唐山煤医整形美容医院与唐山市路北区市场监督管理局",
       "party_name": null,
       "case_number": "（2019）冀0203行初302号",
@@ -5349,8 +6409,22 @@
       "ad_channel": "官网",
       "mapped_rule_ids": [],
       "penalty_amount": 201253.58,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5409,10 +6483,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "医疗广告违规",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "大连市金州区中医医院与大连市市场监督管理局",
       "party_name": null,
       "case_number": "（2019）辽02行终627号",
@@ -5423,8 +6497,22 @@
       "ad_channel": "网站",
       "mapped_rule_ids": [],
       "penalty_amount": 110000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5483,10 +6571,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "医疗广告违规",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "大连市金州区中医医院与大连市市场监督管理局",
       "party_name": null,
       "case_number": "（2019）辽02行终627号",
@@ -5497,8 +6585,22 @@
       "ad_channel": "网站",
       "mapped_rule_ids": [],
       "penalty_amount": 110000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5552,10 +6654,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "医疗广告违规",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "海南伊佳医疗美容医院有限公司与海口市龙华区工商行政管理局",
       "party_name": null,
       "case_number": "（2018）琼0105行初169号",
@@ -5566,8 +6668,22 @@
       "ad_channel": "官网",
       "mapped_rule_ids": [],
       "penalty_amount": 100000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5621,10 +6737,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "医疗广告违规",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "海南伊佳医疗美容医院有限公司与海口市龙华区工商行政管理局",
       "party_name": null,
       "case_number": "（2018）琼0105行初169号",
@@ -5635,8 +6751,22 @@
       "ad_channel": "官网",
       "mapped_rule_ids": [],
       "penalty_amount": 100000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5690,10 +6820,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "医疗广告违规",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "武汉市工商行政管理局",
       "party_name": "武汉广播广告传播有限公司",
       "case_number": "（2018）鄂0103行审20号",
@@ -5704,8 +6834,22 @@
       "ad_channel": "广播",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5759,10 +6903,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "医疗广告违规",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "武汉市工商行政管理局",
       "party_name": "武汉广播广告传播有限公司",
       "case_number": "（2018）鄂0103行审20号",
@@ -5773,8 +6917,22 @@
       "ad_channel": "广播",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5800,7 +6958,10 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "会销视频广告宣称对便秘、安眠、胃炎、糖尿病等有改善作用",
+        "宣称增强免疫力、解毒、抗癌等保健功能"
+      ],
       "risk_dimensions": [
         "广告可识别性不足",
         "变相广告",
@@ -5826,10 +6987,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告可识别性不足",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "安岳县市场监督管理局",
       "party_name": "安岳县康寿源健康生活馆行政",
       "case_number": "（2019）川2021行审14号",
@@ -5840,8 +7001,22 @@
       "ad_channel": "会销",
       "mapped_rule_ids": [],
       "penalty_amount": 30000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5867,7 +7042,10 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "会销视频广告宣称对便秘、安眠、胃炎、糖尿病等有改善作用",
+        "宣称增强免疫力、解毒、抗癌等保健功能"
+      ],
       "risk_dimensions": [
         "广告可识别性不足",
         "变相广告",
@@ -5884,19 +7062,19 @@
       ],
       "regulatory_logic": "该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第四条、第十七条、第二十八条、第五十五条，需核验官方来源后确认监管认定。",
       "vector_text": "这是一起人工整理的软文、健康科普变相广告候选案例。案件事实显示，经营者以会销模式召集中老年消费者，播放视频广告宣称产品对于便秘、安眠、胃炎、糖尿病等有改善作用，具有增强免疫力、解毒、抗癌等保健功能 处罚依据记载为《广告法》第四条、第十七条、第二十八条、第五十五条，处理结果为罚款30000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
-      "text": "安岳县市场监督管理局与安岳县康寿源健康生活馆行政非诉审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第四条、第十七条、第二十八条、第五十五条，需核验官方来源后确认监管认定。 相关广告宣称：。"
+      "text": "安岳县市场监督管理局与安岳县康寿源健康生活馆行政非诉审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第四条、第十七条、第二十八条、第五十五条，需核验官方来源后确认监管认定。 相关广告宣称：会销视频广告宣称对便秘、安眠、胃炎、糖尿病等有改善作用；宣称增强免疫力、解毒、抗癌等保健功能。"
     },
-    "text": "安岳县市场监督管理局与安岳县康寿源健康生活馆行政非诉审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第四条、第十七条、第二十八条、第五十五条，需核验官方来源后确认监管认定。 相关广告宣称：。",
+    "text": "安岳县市场监督管理局与安岳县康寿源健康生活馆行政非诉审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第四条、第十七条、第二十八条、第五十五条，需核验官方来源后确认监管认定。 相关广告宣称：会销视频广告宣称对便秘、安眠、胃炎、糖尿病等有改善作用；宣称增强免疫力、解毒、抗癌等保健功能。",
     "metadata": {
       "scope": "public",
       "tenant_id": null,
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告可识别性不足",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "安岳县市场监督管理局",
       "party_name": "安岳县康寿源健康生活馆行政",
       "case_number": "（2019）川2021行审14号",
@@ -5907,8 +7085,22 @@
       "ad_channel": "会销",
       "mapped_rule_ids": [],
       "penalty_amount": 30000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -5934,7 +7126,9 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "以健康、养生知识形式变相发布医疗、药品、医疗器械、保健食品广告"
+      ],
       "risk_dimensions": [
         "广告可识别性不足",
         "变相广告",
@@ -5960,10 +7154,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告可识别性不足",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "武汉市工商行政管理局",
       "party_name": "武汉广播广告传播有限公司",
       "case_number": "（2017）鄂0103行审32号",
@@ -5974,8 +7168,22 @@
       "ad_channel": "广播",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6001,7 +7209,9 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "以健康、养生知识形式变相发布医疗、药品、医疗器械、保健食品广告"
+      ],
       "risk_dimensions": [
         "广告可识别性不足",
         "变相广告",
@@ -6018,19 +7228,19 @@
       ],
       "regulatory_logic": "该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。",
       "vector_text": "这是一起人工整理的软文、健康科普变相广告候选案例。案件事实显示，经营者在广播电台以介绍健康、养生知识等形式变相发布医疗、药品、医疗器械、保健食品广告 处罚依据记载为《广告法》第十九条、第五十八条、第五十九条，处理结果为罚款200000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
-      "text": "武汉市工商行政管理局与武汉广播广告传播有限公司非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。 相关广告宣称：。"
+      "text": "武汉市工商行政管理局与武汉广播广告传播有限公司非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。 相关广告宣称：以健康、养生知识形式变相发布医疗、药品、医疗器械、保健食品广告。"
     },
-    "text": "武汉市工商行政管理局与武汉广播广告传播有限公司非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。 相关广告宣称：。",
+    "text": "武汉市工商行政管理局与武汉广播广告传播有限公司非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。 相关广告宣称：以健康、养生知识形式变相发布医疗、药品、医疗器械、保健食品广告。",
     "metadata": {
       "scope": "public",
       "tenant_id": null,
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告可识别性不足",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "武汉市工商行政管理局",
       "party_name": "武汉广播广告传播有限公司",
       "case_number": "（2017）鄂0103行审32号",
@@ -6041,8 +7251,22 @@
       "ad_channel": "广播",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6101,10 +7325,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告可识别性不足",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "荆州市工商行政管理局",
       "party_name": "荆州电视台",
       "case_number": "（2019）鄂1002行审4号",
@@ -6115,8 +7339,22 @@
       "ad_channel": "电视",
       "mapped_rule_ids": [],
       "penalty_amount": 300000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6175,10 +7413,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告可识别性不足",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "荆州市工商行政管理局",
       "party_name": "荆州电视台",
       "case_number": "（2019）鄂1002行审4号",
@@ -6189,8 +7427,22 @@
       "ad_channel": "电视",
       "mapped_rule_ids": [],
       "penalty_amount": 300000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6216,7 +7468,9 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "报纸健康养生知识变相广告"
+      ],
       "risk_dimensions": [
         "广告可识别性不足",
         "变相广告",
@@ -6242,10 +7496,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告可识别性不足",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "武汉市工商行政管理局",
       "party_name": "武汉长江日报传媒集团有限公司武汉晨报分公司",
       "case_number": "（2017）鄂0103行审86号",
@@ -6256,8 +7510,22 @@
       "ad_channel": "报纸",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6283,7 +7551,9 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "报纸健康养生知识变相广告"
+      ],
       "risk_dimensions": [
         "广告可识别性不足",
         "变相广告",
@@ -6300,19 +7570,19 @@
       ],
       "regulatory_logic": "该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。",
       "vector_text": "这是一起人工整理的软文、健康科普变相广告候选案例。案件事实显示，经营者在报纸上发布医疗、药品、保健食品等广告，以介绍健康、养生知识等形式变相发布广告 处罚依据记载为《广告法》第十九条、第五十八条、第五十九条，处理结果为罚款200000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
-      "text": "武汉市工商行政管理局与武汉长江日报传媒集团有限公司武汉晨报分公司非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。 相关广告宣称：。"
+      "text": "武汉市工商行政管理局与武汉长江日报传媒集团有限公司武汉晨报分公司非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。 相关广告宣称：报纸健康养生知识变相广告。"
     },
-    "text": "武汉市工商行政管理局与武汉长江日报传媒集团有限公司武汉晨报分公司非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。 相关广告宣称：。",
+    "text": "武汉市工商行政管理局与武汉长江日报传媒集团有限公司武汉晨报分公司非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。 相关广告宣称：报纸健康养生知识变相广告。",
     "metadata": {
       "scope": "public",
       "tenant_id": null,
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告可识别性不足",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "武汉市工商行政管理局",
       "party_name": "武汉长江日报传媒集团有限公司武汉晨报分公司",
       "case_number": "（2017）鄂0103行审86号",
@@ -6323,8 +7593,22 @@
       "ad_channel": "报纸",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6350,7 +7634,10 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "新闻形式发布医疗广告",
+        "医疗资讯服务类专题节目变相医疗广告"
+      ],
       "risk_dimensions": [
         "广告可识别性不足",
         "变相广告",
@@ -6376,10 +7663,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告可识别性不足",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "武汉市工商行政管理局",
       "party_name": "武汉电视广告传媒有限公司",
       "case_number": "（2017）鄂0103行审61号",
@@ -6390,8 +7677,22 @@
       "ad_channel": "电视",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6417,7 +7718,10 @@
     ],
     "mapped_rule_ids": [],
     "search_fields": {
-      "illegal_claims": [],
+      "illegal_claims": [
+        "新闻形式发布医疗广告",
+        "医疗资讯服务类专题节目变相医疗广告"
+      ],
       "risk_dimensions": [
         "广告可识别性不足",
         "变相广告",
@@ -6434,19 +7738,19 @@
       ],
       "regulatory_logic": "该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。",
       "vector_text": "这是一起人工整理的软文、健康科普变相广告候选案例。案件事实显示，经营者在电视台代理发布63则广告，利用新闻形式、医疗资讯服务类专题节（栏）目发布或变相发布医疗广告 处罚依据记载为《广告法》第十九条、第五十八条、第五十九条，处理结果为罚款200000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
-      "text": "武汉市工商行政管理局与武汉电视广告传媒有限公司非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。 相关广告宣称：。"
+      "text": "武汉市工商行政管理局与武汉电视广告传媒有限公司非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。 相关广告宣称：新闻形式发布医疗广告；医疗资讯服务类专题节目变相医疗广告。"
     },
-    "text": "武汉市工商行政管理局与武汉电视广告传媒有限公司非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。 相关广告宣称：。",
+    "text": "武汉市工商行政管理局与武汉电视广告传媒有限公司非诉执行审查案的监管逻辑：该候选案例显示，广告内容属于软文、健康科普变相广告场景，相关宣传可能影响消费者判断，涉及《广告法》第十九条、第五十八条、第五十九条，需核验官方来源后确认监管认定。 相关广告宣称：新闻形式发布医疗广告；医疗资讯服务类专题节目变相医疗广告。",
     "metadata": {
       "scope": "public",
       "tenant_id": null,
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告可识别性不足",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "武汉市工商行政管理局",
       "party_name": "武汉电视广告传媒有限公司",
       "case_number": "（2017）鄂0103行审61号",
@@ -6457,8 +7761,22 @@
       "ad_channel": "电视",
       "mapped_rule_ids": [],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6510,10 +7828,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告可识别性不足",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "绍兴上虞康强医疗器械经营部与绍兴市上虞区市场监督管理局",
       "party_name": null,
       "case_number": "（2019）浙0603行初180号",
@@ -6524,8 +7842,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 600000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6577,10 +7909,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "广告可识别性不足",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "绍兴上虞康强医疗器械经营部与绍兴市上虞区市场监督管理局",
       "party_name": null,
       "case_number": "（2019）浙0603行初180号",
@@ -6591,8 +7923,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 600000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6652,10 +7998,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "房地产广告误导",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "中山某有限公司",
       "case_number": "（2025）粤20行终552号",
@@ -6666,8 +8012,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 150000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6727,10 +8087,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "房地产广告误导",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "中山某有限公司",
       "case_number": "（2025）粤20行终552号",
@@ -6741,8 +8101,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 150000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6796,10 +8170,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "房地产广告误导",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "临沂市市场监督管理局",
       "party_name": "某某（临沂）地产开发有限公司",
       "case_number": "（2024）鲁1302行审499号",
@@ -6810,8 +8184,22 @@
       "ad_channel": "微信公众号",
       "mapped_rule_ids": [],
       "penalty_amount": 100000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6865,10 +8253,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "房地产广告误导",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "临沂市市场监督管理局",
       "party_name": "某某（临沂）地产开发有限公司",
       "case_number": "（2024）鲁1302行审499号",
@@ -6879,8 +8267,22 @@
       "ad_channel": "微信公众号",
       "mapped_rule_ids": [],
       "penalty_amount": 100000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -6940,10 +8342,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "房地产广告误导",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "克拉玛依市克拉玛依区市场监督管理局",
       "party_name": "新疆某甲房地产开发有限公司行政",
       "case_number": "（2025）新0203行审17号",
@@ -6954,8 +8356,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 200600,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -7015,10 +8431,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "房地产广告误导",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "克拉玛依市克拉玛依区市场监督管理局",
       "party_name": "新疆某甲房地产开发有限公司行政",
       "case_number": "（2025）新0203行审17号",
@@ -7029,8 +8445,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 200600,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -7087,10 +8517,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "房地产广告误导",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "青岛某有限公司行政",
       "case_number": "（2025）鲁0215行审189号",
@@ -7101,8 +8531,22 @@
       "ad_channel": "售楼处",
       "mapped_rule_ids": [],
       "penalty_amount": 43400,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -7159,10 +8603,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "房地产广告误导",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": null,
       "party_name": "青岛某有限公司行政",
       "case_number": "（2025）鲁0215行审189号",
@@ -7173,8 +8617,22 @@
       "ad_channel": "售楼处",
       "mapped_rule_ids": [],
       "penalty_amount": 43400,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -7226,10 +8684,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "房地产广告误导",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "重庆市北碚区市场监督管理局",
       "party_name": "重庆某房地产开发有限公司",
       "case_number": "（2025）渝0109行审15号",
@@ -7240,8 +8698,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 11000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -7293,10 +8765,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "房地产广告误导",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "重庆市北碚区市场监督管理局",
       "party_name": "重庆某房地产开发有限公司",
       "case_number": "（2025）渝0109行审15号",
@@ -7307,8 +8779,22 @@
       "ad_channel": null,
       "mapped_rule_ids": [],
       "penalty_amount": 11000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -7362,10 +8848,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "房地产广告误导",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "营山县市场监督管理局",
       "party_name": "营山某商贸有限公司行政",
       "case_number": "（2025）川1322行审9号",
@@ -7376,8 +8862,22 @@
       "ad_channel": "微信公众号",
       "mapped_rule_ids": [],
       "penalty_amount": 40000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -7431,10 +8931,10 @@
       "source_type": "manual_compilation_pending_source_verification",
       "sector": "",
       "sector_cn": "",
-      "violation_type": "",
+      "violation_type": "房地产广告误导",
       "case_nature": "",
       "source_verification_status": "pending_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "营山县市场监督管理局",
       "party_name": "营山某商贸有限公司行政",
       "case_number": "（2025）川1322行审9号",
@@ -7445,8 +8945,194 @@
       "ad_channel": "微信公众号",
       "mapped_rule_ids": [],
       "penalty_amount": 40000,
-      "review_status": "pending_review",
-      "raw_text_path": ""
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T03:35:16+08:00",
+        "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_source_lookup",
+        "original_decision_url": null,
+        "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
+    }
+  },
+  {
+    "chunk_id": "juewei_2017_1111_lowbrow_ad_case__case_summary",
+    "case_id": "juewei_2017_1111_lowbrow_ad_case",
+    "chunk_type": "case_summary",
+    "scope": "public",
+    "tenant_id": null,
+    "title": "绝味食品股份有限公司2017年“双11”低俗广告行政处罚案（媒体来源）",
+    "source_name": "闽南网转华商报/中国青年网（绝味食品公告）",
+    "source_url": "http://www.mnw.cn/news/cj/1908063.html",
+    "risk_dimensions": [
+      "违背社会良好风尚"
+    ],
+    "keywords": [
+      "绝味鸭脖",
+      "绝味食品",
+      "低俗广告",
+      "双11",
+      "性暗示",
+      "违背社会良好风尚",
+      "广告法第九条第（七）项",
+      "罚款60万元"
+    ],
+    "mapped_rule_ids": [],
+    "search_fields": {
+      "illegal_claims": [
+        "“双11”低俗/性暗示海报广告",
+        "开黄腔广告文案"
+      ],
+      "risk_dimensions": [
+        "违背社会良好风尚"
+      ],
+      "mapped_rule_ids": [],
+      "product_or_service": "绝味鸭脖（“双11”网络促销广告）",
+      "keywords": [
+        "绝味鸭脖",
+        "绝味食品",
+        "低俗广告",
+        "双11",
+        "性暗示",
+        "违背社会良好风尚",
+        "广告法第九条第（七）项",
+        "罚款60万元"
+      ],
+      "regulatory_logic": "双11网络促销广告以低俗、性暗示内容博取眼球，即使能带来流量，也因违反公序良俗构成《广告法》第九条第（七）项禁止的违背社会良好风尚广告。监管对此类“流量优先、底线让路”的低俗营销持零容忍，责令停止发布并处以罚款。",
+      "vector_text": "这是一起食品品牌在“双11”大促期间发布低俗网络广告被行政处罚的案例。运营方在天猫旗舰店发布带有低俗、性暗示内容的海报文案，为促销引流而突破广告底线。市场监管部门认定该广告图片媚俗、文字低俗，违背社会良好风尚，违反《广告法》第九条第（七）项，责令停止发布并罚款60万元。场景特征：大促促销文案、低俗/性暗示营销、违背社会良好风尚。",
+      "text": "这是一起食品品牌在“双11”大促期间发布低俗网络广告被行政处罚的案例。运营方在天猫旗舰店发布带有低俗、性暗示内容的海报文案，为促销引流而突破广告底线。市场监管部门认定该广告图片媚俗、文字低俗，违背社会良好风尚，违反《广告法》第九条第（七）项，责令停止发布并罚款60万元。场景特征：大促促销文案、低俗/性暗示营销、违背社会良好风尚。"
+    },
+    "text": "这是一起食品品牌在“双11”大促期间发布低俗网络广告被行政处罚的案例。运营方在天猫旗舰店发布带有低俗、性暗示内容的海报文案，为促销引流而突破广告底线。市场监管部门认定该广告图片媚俗、文字低俗，违背社会良好风尚，违反《广告法》第九条第（七）项，责令停止发布并罚款60万元。场景特征：大促促销文案、低俗/性暗示营销、违背社会良好风尚。",
+    "metadata": {
+      "scope": "public",
+      "tenant_id": null,
+      "source_type": "manual_compilation_pending_source_verification",
+      "sector": "",
+      "sector_cn": "",
+      "violation_type": "发布低俗广告（违背社会良好风尚）",
+      "case_nature": "administrative_penalty_decision",
+      "source_verification_status": "credible_secondary_source_only",
+      "approved_for_rag": true,
+      "penalty_authority": "长沙市工商行政管理局",
+      "party_name": "绝味食品股份有限公司",
+      "case_number": null,
+      "court": "",
+      "decision_date": "2017-12-22",
+      "industry": "食品",
+      "product_or_service": "绝味鸭脖（“双11”网络促销广告）",
+      "ad_channel": "天猫旗舰店/网络平台",
+      "mapped_rule_ids": [],
+      "penalty_amount": 600000,
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/juewei_2017_1111_lowbrow_ad_media.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T04:13:49+08:00",
+        "decision": "用户指令：直接入生产库（2026-09-15）；来源为媒体线索，官方决定书原文待核验",
+        "override_source_verification": true,
+        "source_verification_status_kept": "credible_secondary_source_only",
+        "original_decision_url": null,
+        "note": "处罚机关（长沙市工商局）、金额（60万）、法条（广告法九(七)）来自绝味食品公告与媒体转引；决定书号未核到。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
+    }
+  },
+  {
+    "chunk_id": "juewei_2017_1111_lowbrow_ad_case__regulatory_logic",
+    "case_id": "juewei_2017_1111_lowbrow_ad_case",
+    "chunk_type": "regulatory_logic",
+    "scope": "public",
+    "tenant_id": null,
+    "title": "绝味食品股份有限公司2017年“双11”低俗广告行政处罚案（媒体来源）",
+    "source_name": "闽南网转华商报/中国青年网（绝味食品公告）",
+    "source_url": "http://www.mnw.cn/news/cj/1908063.html",
+    "risk_dimensions": [
+      "违背社会良好风尚"
+    ],
+    "keywords": [
+      "绝味鸭脖",
+      "绝味食品",
+      "低俗广告",
+      "双11",
+      "性暗示",
+      "违背社会良好风尚",
+      "广告法第九条第（七）项",
+      "罚款60万元"
+    ],
+    "mapped_rule_ids": [],
+    "search_fields": {
+      "illegal_claims": [
+        "“双11”低俗/性暗示海报广告",
+        "开黄腔广告文案"
+      ],
+      "risk_dimensions": [
+        "违背社会良好风尚"
+      ],
+      "mapped_rule_ids": [],
+      "product_or_service": "绝味鸭脖（“双11”网络促销广告）",
+      "keywords": [
+        "绝味鸭脖",
+        "绝味食品",
+        "低俗广告",
+        "双11",
+        "性暗示",
+        "违背社会良好风尚",
+        "广告法第九条第（七）项",
+        "罚款60万元"
+      ],
+      "regulatory_logic": "双11网络促销广告以低俗、性暗示内容博取眼球，即使能带来流量，也因违反公序良俗构成《广告法》第九条第（七）项禁止的违背社会良好风尚广告。监管对此类“流量优先、底线让路”的低俗营销持零容忍，责令停止发布并处以罚款。",
+      "vector_text": "这是一起食品品牌在“双11”大促期间发布低俗网络广告被行政处罚的案例。运营方在天猫旗舰店发布带有低俗、性暗示内容的海报文案，为促销引流而突破广告底线。市场监管部门认定该广告图片媚俗、文字低俗，违背社会良好风尚，违反《广告法》第九条第（七）项，责令停止发布并罚款60万元。场景特征：大促促销文案、低俗/性暗示营销、违背社会良好风尚。",
+      "text": "绝味食品股份有限公司2017年“双11”低俗广告行政处罚案（媒体来源）的监管逻辑：双11网络促销广告以低俗、性暗示内容博取眼球，即使能带来流量，也因违反公序良俗构成《广告法》第九条第（七）项禁止的违背社会良好风尚广告。监管对此类“流量优先、底线让路”的低俗营销持零容忍，责令停止发布并处以罚款。 相关广告宣称：“双11”低俗/性暗示海报广告；开黄腔广告文案。"
+    },
+    "text": "绝味食品股份有限公司2017年“双11”低俗广告行政处罚案（媒体来源）的监管逻辑：双11网络促销广告以低俗、性暗示内容博取眼球，即使能带来流量，也因违反公序良俗构成《广告法》第九条第（七）项禁止的违背社会良好风尚广告。监管对此类“流量优先、底线让路”的低俗营销持零容忍，责令停止发布并处以罚款。 相关广告宣称：“双11”低俗/性暗示海报广告；开黄腔广告文案。",
+    "metadata": {
+      "scope": "public",
+      "tenant_id": null,
+      "source_type": "manual_compilation_pending_source_verification",
+      "sector": "",
+      "sector_cn": "",
+      "violation_type": "发布低俗广告（违背社会良好风尚）",
+      "case_nature": "administrative_penalty_decision",
+      "source_verification_status": "credible_secondary_source_only",
+      "approved_for_rag": true,
+      "penalty_authority": "长沙市工商行政管理局",
+      "party_name": "绝味食品股份有限公司",
+      "case_number": null,
+      "court": "",
+      "decision_date": "2017-12-22",
+      "industry": "食品",
+      "product_or_service": "绝味鸭脖（“双11”网络促销广告）",
+      "ad_channel": "天猫旗舰店/网络平台",
+      "mapped_rule_ids": [],
+      "penalty_amount": 600000,
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/juewei_2017_1111_lowbrow_ad_media.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T04:13:49+08:00",
+        "decision": "用户指令：直接入生产库（2026-09-15）；来源为媒体线索，官方决定书原文待核验",
+        "override_source_verification": true,
+        "source_verification_status_kept": "credible_secondary_source_only",
+        "original_decision_url": null,
+        "note": "处罚机关（长沙市工商局）、金额（60万）、法条（广告法九(七)）来自绝味食品公告与媒体转引；决定书号未核到。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -7523,7 +9209,11 @@
       "mapped_rule_ids": [],
       "penalty_amount": 20000,
       "review_status": "pending_review",
-      "raw_text_path": "data/raw_text/mihoyo_ipo_2017_penalty_disclosure.json"
+      "raw_text_path": "data/raw_text/mihoyo_ipo_2017_penalty_disclosure.json",
+      "owner_approval": null,
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -7600,7 +9290,11 @@
       "mapped_rule_ids": [],
       "penalty_amount": 20000,
       "review_status": "pending_review",
-      "raw_text_path": "data/raw_text/mihoyo_ipo_2017_penalty_disclosure.json"
+      "raw_text_path": "data/raw_text/mihoyo_ipo_2017_penalty_disclosure.json",
+      "owner_approval": null,
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -7677,7 +9371,11 @@
       "mapped_rule_ids": [],
       "penalty_amount": 20000,
       "review_status": "pending_review",
-      "raw_text_path": "data/raw_text/mihoyo_ipo_2017_penalty_disclosure.json"
+      "raw_text_path": "data/raw_text/mihoyo_ipo_2017_penalty_disclosure.json",
+      "owner_approval": null,
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -7754,7 +9452,11 @@
       "mapped_rule_ids": [],
       "penalty_amount": 20000,
       "review_status": "pending_review",
-      "raw_text_path": "data/raw_text/mihoyo_ipo_2017_penalty_disclosure.json"
+      "raw_text_path": "data/raw_text/mihoyo_ipo_2017_penalty_disclosure.json",
+      "owner_approval": null,
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -7827,7 +9529,7 @@
       "violation_type": "发布违背社会良好风尚广告",
       "case_nature": "administrative_penalty_decision",
       "source_verification_status": "pending_official_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "上海市静安区市场监督管理局",
       "party_name": "上海百事得电子有限公司",
       "case_number": "沪市监静处〔2026〕062026000257号",
@@ -7841,8 +9543,22 @@
         "ADLAW-009-07"
       ],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": "data/raw_text/shanghai_jingan_2026_062026000257_user_supplied.json"
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/shanghai_jingan_2026_062026000257_user_supplied.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T04:03:15+08:00",
+        "decision": "用户指令：检索确认“罗技侮辱消费者广告”处罚案（沪市监静处〔2026〕062026000257号）后入库；取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_official_source_lookup",
+        "original_decision_url": null,
+        "note": "已核对用户提供处罚决定书全文；官方原文URL未公开索引到，保留 pending_official_source_lookup，不谎称 source_verified；source_url 暂为公众号线索。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   },
   {
@@ -7915,7 +9631,7 @@
       "violation_type": "发布违背社会良好风尚广告",
       "case_nature": "administrative_penalty_decision",
       "source_verification_status": "pending_official_source_lookup",
-      "approved_for_rag": false,
+      "approved_for_rag": true,
       "penalty_authority": "上海市静安区市场监督管理局",
       "party_name": "上海百事得电子有限公司",
       "case_number": "沪市监静处〔2026〕062026000257号",
@@ -7929,8 +9645,192 @@
         "ADLAW-009-07"
       ],
       "penalty_amount": 200000,
-      "review_status": "pending_review",
-      "raw_text_path": "data/raw_text/shanghai_jingan_2026_062026000257_user_supplied.json"
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/shanghai_jingan_2026_062026000257_user_supplied.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T04:03:15+08:00",
+        "decision": "用户指令：检索确认“罗技侮辱消费者广告”处罚案（沪市监静处〔2026〕062026000257号）后入库；取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+        "override_source_verification": true,
+        "source_verification_status_kept": "pending_official_source_lookup",
+        "original_decision_url": null,
+        "note": "已核对用户提供处罚决定书全文；官方原文URL未公开索引到，保留 pending_official_source_lookup，不谎称 source_verified；source_url 暂为公众号线索。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
+    }
+  },
+  {
+    "chunk_id": "ubras_2021_lingering_in_workplace_ad_case__case_summary",
+    "case_id": "ubras_2021_lingering_in_workplace_ad_case",
+    "chunk_type": "case_summary",
+    "scope": "public",
+    "tenant_id": null,
+    "title": "Ubras“让女性轻松躺赢职场”内衣广告被行政处罚案（媒体线索）",
+    "source_name": "360快资讯/微信公众号（媒体线索）",
+    "source_url": "https://www.360kuai.com/pc/91a393146c2fe29fc",
+    "risk_dimensions": [
+      "违背社会良好风尚",
+      "侮辱消费者"
+    ],
+    "keywords": [
+      "Ubras",
+      "李诞",
+      "内衣广告",
+      "让女性轻松躺赢职场",
+      "侮辱女性",
+      "违背社会良好风尚",
+      "罚款87万"
+    ],
+    "mapped_rule_ids": [],
+    "search_fields": {
+      "illegal_claims": [
+        "让女性轻松躺赢职场"
+      ],
+      "risk_dimensions": [
+        "违背社会良好风尚",
+        "侮辱消费者"
+      ],
+      "mapped_rule_ids": [],
+      "product_or_service": "Ubras无尺码内衣（“让女性轻松躺赢职场”推广广告）",
+      "keywords": [
+        "Ubras",
+        "李诞",
+        "内衣广告",
+        "让女性轻松躺赢职场",
+        "侮辱女性",
+        "违背社会良好风尚",
+        "罚款87万"
+      ],
+      "regulatory_logic": "以调侃、物化或贬低特定群体（女性）的文案做品牌推广，极易触碰《广告法》第九条第（七）项“妨碍社会公共秩序或者违背社会良好风尚”的红线。涉事广告在引发舆论后通常面临市场监管处罚，本案处罚金额87万为媒体口径，待官方决定书核验后修正。",
+      "vector_text": "这是一起内衣品牌邀请明星代言、以“让女性轻松躺赢职场”文案推广产品，因被指侮辱女性、违背社会良好风尚而被处罚的案例（媒体线索）。品牌营销文案以调侃、贬低特定群体博眼球，监管认定违背社会良好风尚，涉事广告被处罚款87万元（媒体口径，官方决定书待核）。场景特征：明星代言、性别议题文案、侮辱/物化消费者、违背社会良好风尚。",
+      "text": "这是一起内衣品牌邀请明星代言、以“让女性轻松躺赢职场”文案推广产品，因被指侮辱女性、违背社会良好风尚而被处罚的案例（媒体线索）。品牌营销文案以调侃、贬低特定群体博眼球，监管认定违背社会良好风尚，涉事广告被处罚款87万元（媒体口径，官方决定书待核）。场景特征：明星代言、性别议题文案、侮辱/物化消费者、违背社会良好风尚。"
+    },
+    "text": "这是一起内衣品牌邀请明星代言、以“让女性轻松躺赢职场”文案推广产品，因被指侮辱女性、违背社会良好风尚而被处罚的案例（媒体线索）。品牌营销文案以调侃、贬低特定群体博眼球，监管认定违背社会良好风尚，涉事广告被处罚款87万元（媒体口径，官方决定书待核）。场景特征：明星代言、性别议题文案、侮辱/物化消费者、违背社会良好风尚。",
+    "metadata": {
+      "scope": "public",
+      "tenant_id": null,
+      "source_type": "manual_compilation_pending_source_verification",
+      "sector": "",
+      "sector_cn": "",
+      "violation_type": "发布侮辱女性、违背社会良好风尚广告",
+      "case_nature": "administrative_penalty_decision",
+      "source_verification_status": "credible_secondary_source_only",
+      "approved_for_rag": true,
+      "penalty_authority": null,
+      "party_name": null,
+      "case_number": null,
+      "court": "",
+      "decision_date": null,
+      "industry": "服装/内衣",
+      "product_or_service": "Ubras无尺码内衣（“让女性轻松躺赢职场”推广广告）",
+      "ad_channel": "微博/社交平台",
+      "mapped_rule_ids": [],
+      "penalty_amount": 870000,
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/ubras_2021_lingering_in_workplace_ad_media.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T04:13:49+08:00",
+        "decision": "用户指令：直接入生产库（2026-09-15）；来源为媒体线索，官方决定书原文待核验",
+        "override_source_verification": true,
+        "source_verification_status_kept": "credible_secondary_source_only",
+        "original_decision_url": null,
+        "note": "仅媒体口径（87万）；处罚机关、决定书号、决定日期未核到，保持空值。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
+    }
+  },
+  {
+    "chunk_id": "ubras_2021_lingering_in_workplace_ad_case__regulatory_logic",
+    "case_id": "ubras_2021_lingering_in_workplace_ad_case",
+    "chunk_type": "regulatory_logic",
+    "scope": "public",
+    "tenant_id": null,
+    "title": "Ubras“让女性轻松躺赢职场”内衣广告被行政处罚案（媒体线索）",
+    "source_name": "360快资讯/微信公众号（媒体线索）",
+    "source_url": "https://www.360kuai.com/pc/91a393146c2fe29fc",
+    "risk_dimensions": [
+      "违背社会良好风尚",
+      "侮辱消费者"
+    ],
+    "keywords": [
+      "Ubras",
+      "李诞",
+      "内衣广告",
+      "让女性轻松躺赢职场",
+      "侮辱女性",
+      "违背社会良好风尚",
+      "罚款87万"
+    ],
+    "mapped_rule_ids": [],
+    "search_fields": {
+      "illegal_claims": [
+        "让女性轻松躺赢职场"
+      ],
+      "risk_dimensions": [
+        "违背社会良好风尚",
+        "侮辱消费者"
+      ],
+      "mapped_rule_ids": [],
+      "product_or_service": "Ubras无尺码内衣（“让女性轻松躺赢职场”推广广告）",
+      "keywords": [
+        "Ubras",
+        "李诞",
+        "内衣广告",
+        "让女性轻松躺赢职场",
+        "侮辱女性",
+        "违背社会良好风尚",
+        "罚款87万"
+      ],
+      "regulatory_logic": "以调侃、物化或贬低特定群体（女性）的文案做品牌推广，极易触碰《广告法》第九条第（七）项“妨碍社会公共秩序或者违背社会良好风尚”的红线。涉事广告在引发舆论后通常面临市场监管处罚，本案处罚金额87万为媒体口径，待官方决定书核验后修正。",
+      "vector_text": "这是一起内衣品牌邀请明星代言、以“让女性轻松躺赢职场”文案推广产品，因被指侮辱女性、违背社会良好风尚而被处罚的案例（媒体线索）。品牌营销文案以调侃、贬低特定群体博眼球，监管认定违背社会良好风尚，涉事广告被处罚款87万元（媒体口径，官方决定书待核）。场景特征：明星代言、性别议题文案、侮辱/物化消费者、违背社会良好风尚。",
+      "text": "Ubras“让女性轻松躺赢职场”内衣广告被行政处罚案（媒体线索）的监管逻辑：以调侃、物化或贬低特定群体（女性）的文案做品牌推广，极易触碰《广告法》第九条第（七）项“妨碍社会公共秩序或者违背社会良好风尚”的红线。涉事广告在引发舆论后通常面临市场监管处罚，本案处罚金额87万为媒体口径，待官方决定书核验后修正。 相关广告宣称：让女性轻松躺赢职场。"
+    },
+    "text": "Ubras“让女性轻松躺赢职场”内衣广告被行政处罚案（媒体线索）的监管逻辑：以调侃、物化或贬低特定群体（女性）的文案做品牌推广，极易触碰《广告法》第九条第（七）项“妨碍社会公共秩序或者违背社会良好风尚”的红线。涉事广告在引发舆论后通常面临市场监管处罚，本案处罚金额87万为媒体口径，待官方决定书核验后修正。 相关广告宣称：让女性轻松躺赢职场。",
+    "metadata": {
+      "scope": "public",
+      "tenant_id": null,
+      "source_type": "manual_compilation_pending_source_verification",
+      "sector": "",
+      "sector_cn": "",
+      "violation_type": "发布侮辱女性、违背社会良好风尚广告",
+      "case_nature": "administrative_penalty_decision",
+      "source_verification_status": "credible_secondary_source_only",
+      "approved_for_rag": true,
+      "penalty_authority": null,
+      "party_name": null,
+      "case_number": null,
+      "court": "",
+      "decision_date": null,
+      "industry": "服装/内衣",
+      "product_or_service": "Ubras无尺码内衣（“让女性轻松躺赢职场”推广广告）",
+      "ad_channel": "微博/社交平台",
+      "mapped_rule_ids": [],
+      "penalty_amount": 870000,
+      "review_status": "approved",
+      "raw_text_path": "data/raw_text/ubras_2021_lingering_in_workplace_ad_media.json",
+      "owner_approval": {
+        "approved": true,
+        "approved_for_rag": true,
+        "approved_by": "项目负责人（用户 2026-09-15 指令）",
+        "approved_at": "2026-09-15T04:13:49+08:00",
+        "decision": "用户指令：直接入生产库（2026-09-15）；来源为媒体线索，官方决定书原文待核验",
+        "override_source_verification": true,
+        "source_verification_status_kept": "credible_secondary_source_only",
+        "original_decision_url": null,
+        "note": "仅媒体口径（87万）；处罚机关、决定书号、决定日期未核到，保持空值。"
+      },
+      "demo_production": false,
+      "demo_only": false,
+      "not_for_production_factual_use": false
     }
   }
 ]

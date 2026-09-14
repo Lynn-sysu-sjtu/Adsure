@@ -1,0 +1,42 @@
+{
+  "proposal_id": "xhs_feishu_field_extension_v1",
+  "migration_status": "proposal_not_applied_to_live_base",
+  "existing_schema_id": "ads_review_base_v4",
+  "existing_compatible_field": "③AI审核·平台规则预检",
+  "proposed_fields": [
+    {
+      "name": "③AI审核·平台预检结论",
+      "type": "SingleSelect",
+      "options": ["禁止发布", "需修改", "待补充材料", "待法务复核", "预检未发现风险"]
+    },
+    {
+      "name": "③AI审核·平台规则快照",
+      "type": "Text",
+      "description": "保存 policy_snapshot_id，支持回溯本次审核使用的规则版本。"
+    },
+    {
+      "name": "③AI审核·平台覆盖状态",
+      "type": "SingleSelect",
+      "options": ["complete", "partial", "rules_unavailable", "out_of_scope"]
+    },
+    {
+      "name": "③AI审核·待补充材料",
+      "type": "Text",
+      "description": "保存 unchecked_materials 与 missing_evidence 的可读摘要。"
+    },
+    {
+      "name": "③AI审核·平台命中明细JSON",
+      "type": "Text",
+      "description": "保存结构化 findings；如超长，建议改为关联明细表。"
+    }
+  ],
+  "proposed_flow_status": {
+    "name": "⑤流转·当前状态",
+    "add_option": "待补充材料",
+    "reason": "资质或素材缺失不应错误回退为待运营修改或待法务复核。"
+  },
+  "notes": [
+    "本文件仅是迁移提案，不代表已修改飞书多维表格。",
+    "现有③AI审核·平台规则预检继续接收兼容文本摘要。"
+  ]
+}

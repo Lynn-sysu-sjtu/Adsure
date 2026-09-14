@@ -1,0 +1,32 @@
+{
+  "source_id": "kuaishou_life_services_rule_2154",
+  "platform": "快手",
+  "document_title": "快手生活服务广告内容管理规则（页面ID 2154）",
+  "source_url": "https://university.kuaishou.com/rule/knowledge/2154",
+  "manual_verification_url": "https://university.kuaishou.com/rule/knowledge/2154",
+  "collected_at": "2026-09-04T15:02:22.942905Z",
+  "page_update_date": null,
+  "capture_format": "html",
+  "capture_method": "direct_public_download_no_login",
+  "raw_path": "data/platform_rules/raw_html/2026-09-04/kuaishou_life_services_rules.html",
+  "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/kuaishou_life_services_rules.headers.txt",
+  "raw_sha256": "09c4d2f5fdfad8ccbfa794cce1d19585388eaa1f6cb4264c0323f974dbdafee6",
+  "raw_size_bytes": 4217,
+  "extracted_text": "快手学苑 快手官方新媒体培训平台",
+  "verified_visible_excerpts": [],
+  "extracted_text_length": 16,
+  "snapshot_completeness": "dynamic_html_shell_only",
+  "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+  "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+  "review_status": "pending_human_review",
+  "effective_status": "pending_effective_review",
+  "intended_use": "platform_rule_candidate",
+  "notes": [
+    "下载HTML仅为动态页面外壳；且页面场景为生活服务，不能直接外推至快手电商美妆。"
+  ],
+  "http_status_chain": [
+    200
+  ],
+  "final_http_status": 200,
+  "content_type": "text/html"
+}

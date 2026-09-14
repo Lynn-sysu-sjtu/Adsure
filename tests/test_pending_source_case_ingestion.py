@@ -28,10 +28,15 @@ class PendingSourceCaseIngestionTest(unittest.TestCase):
             with self.subTest(case_id=case["case_id"]):
                 errors, _issues = validate_case(case, self.allowed_risks, group="candidate")
                 self.assertEqual(errors, [])
-                self.assertFalse(case["approved_for_rag"])
                 self.assertIsNone(case["original_decision_url"])
                 self.assertEqual(case["original_decision_url_status"], "not_found")
-                self.assertIn("audit_not_approved_for_rag", production_exclusion_reasons(case))
+                owner_approved = bool((case.get("owner_approval") or {}).get("approved") is True)
+                if owner_approved:
+                    self.assertTrue(case["approved_for_rag"])
+                    self.assertEqual(production_exclusion_reasons(case), [])
+                else:
+                    self.assertFalse(case["approved_for_rag"])
+                    self.assertIn("audit_not_approved_for_rag", production_exclusion_reasons(case))
                 self.assertGreaterEqual(len(chunks_from_case(case)), 1)
                 raw_path = ROOT / case["raw_text_path"]
                 self.assertTrue(raw_path.exists(), raw_path)

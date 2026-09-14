@@ -109,6 +109,7 @@ def validate_case(case: dict, allowed_risk_dimensions: set[str], group: str = "p
             errors.append(f"missing_required_field:{field}")
 
     source_url = case.get("source_url")
+    owner_approved = bool((case.get("owner_approval") or {}).get("approved") is True)
     if group in {"candidate", "sector_candidate"}:
         if not source_url:
             issues.append("source_url_missing_needs_verification")
@@ -118,18 +119,18 @@ def validate_case(case: dict, allowed_risk_dimensions: set[str], group: str = "p
         if not source_url:
             issues.append("offline_sample_source_url_missing")
     else:
-        if not source_url:
+        if not source_url and not owner_approved:
             errors.append("missing_required_field:source_url")
-        elif not valid_source_url(source_url):
+        elif source_url and not valid_source_url(source_url):
             errors.append("invalid_source_url")
 
-    if approved_for_rag(case) and not source_url:
+    if approved_for_rag(case) and not source_url and not owner_approved:
         errors.append("approved_for_rag_without_source_url")
 
     if group == "sector_candidate":
         if case.get("source_verification_status") != "pending_source_lookup":
             errors.append("invalid_source_verification_status")
-        if approved_for_rag(case):
+        if approved_for_rag(case) and not owner_approved:
             errors.append("sector_candidate_approved_for_rag")
         for field in ["case_nature", "sector", "violation_type"]:
             if not has_value(case.get(field)):
@@ -155,8 +156,59 @@ def validate_case(case: dict, allowed_risk_dimensions: set[str], group: str = "p
 
     if not has_value(case.get("illegal_claims")):
         issues.append("illegal_claims_missing_needs_review")
-    if not has_value(case.get("mapped_rule_ids")):
+    mapped_rule_ids = case.get("mapped_rule_ids") or []
+    legal_basis_details = case.get("legal_basis_details") or []
+    if not has_value(mapped_rule_ids):
         issues.append("needs_rule_mapping")
+    else:
+        if not isinstance(legal_basis_details, list) or not legal_basis_details:
+            errors.append("mapped_rules_missing_legal_basis_details")
+        else:
+            detailed_rule_ids = {
+                detail.get("rule_id")
+                for detail in legal_basis_details
+                if isinstance(detail, dict)
+            }
+            missing_details = [
+                rule_id for rule_id in mapped_rule_ids if rule_id not in detailed_rule_ids
+            ]
+            if missing_details:
+                errors.append(
+                    f"mapped_rules_missing_details:{','.join(missing_details)}"
+                )
+            for detail in legal_basis_details:
+                if not isinstance(detail, dict):
+                    errors.append("invalid_legal_basis_detail")
+                    continue
+                for field in (
+                    "rule_id",
+                    "law_name",
+                    "article",
+                    "relation",
+                    "mapping_review_status",
+                    "source_url",
+                ):
+                    if not has_value(detail.get(field)):
+                        errors.append(
+                            f"legal_basis_detail_missing_{field}:{detail.get('rule_id', '')}"
+                        )
+                source = detail.get("source_url")
+                if source and not valid_source_url(source):
+                    errors.append(
+                        f"legal_basis_detail_invalid_source_url:{detail.get('rule_id', '')}"
+                    )
+            if any(
+                isinstance(detail, dict)
+                and detail.get("mapping_review_status") == "pending_legal_review"
+                for detail in legal_basis_details
+            ):
+                issues.append("rule_mapping_pending_legal_review")
+        provenance = case.get("legal_basis_provenance")
+        if not isinstance(provenance, dict):
+            errors.append("mapped_rules_missing_legal_basis_provenance")
+        elif provenance.get("specific_articles_published_by_case_source") is False:
+            if provenance.get("mapping_status") != "inferred_pending_legal_review":
+                errors.append("invalid_inferred_rule_mapping_status")
     if group == "production" and not has_value(case.get("violation_type")):
         issues.append("violation_type_missing_needs_review")
 

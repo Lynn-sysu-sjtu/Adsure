@@ -1,0 +1,100 @@
+{
+ "case_id": "juewei_2017_1111_lowbrow_ad_case",
+ "title": "绝味食品股份有限公司2017年“双11”低俗广告行政处罚案（媒体来源）",
+ "source_type": "manual_compilation_pending_source_verification",
+ "source_verification_status": "credible_secondary_source_only",
+ "original_decision_url": null,
+ "original_decision_url_status": "not_found",
+ "source_lookup_priority": "P3",
+ "scope": "public",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "rag_chunk_type": "case_summary",
+ "mapped_rule_ids": [],
+ "is_admin_penalty_candidate": true,
+ "case_nature": "administrative_penalty_decision",
+ "legal_basis_provenance": {
+  "case_source_text": "媒体转引绝味食品公告/长沙市工商局认定：违反《广告法》第九条第（七）项",
+  "specific_articles_published_by_case_source": false,
+  "mapping_status": "inferred_pending_legal_review",
+  "warning": "法条为依据媒体披露的候选推断，待人工核验处罚决定书原文后确认，不代表已核源。"
+ },
+ "legal_basis_details": [],
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T04:13:49+08:00",
+  "decision": "用户指令：直接入生产库（2026-09-15）；来源为媒体线索，官方决定书原文待核验",
+  "override_source_verification": true,
+  "source_verification_status_kept": "credible_secondary_source_only",
+  "original_decision_url": null,
+  "note": "处罚机关（长沙市工商局）、金额（60万）、法条（广告法九(七)）来自绝味食品公告与媒体转引；决定书号未核到。"
+ },
+ "audit": {
+  "review_status": "approved",
+  "approved_for_rag": true,
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产：绝味食品2017年双11低俗广告处罚案（媒体+公司公告）；决定书号待官方核验。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T04:13:49+08:00",
+   "action": "owner_approval_promote_media_lead",
+   "note": "媒体线索直接入生产（业主审批）；处罚机关/决定书号未核到的不填，不编造。"
+  }
+ ],
+ "case_number": null,
+ "publish_date": "2017-12-24",
+ "decision_date": "2017-12-22",
+ "penalty_authority": "长沙市工商行政管理局",
+ "party_name": "绝味食品股份有限公司",
+ "region": "湖南省长沙市",
+ "industry": "食品",
+ "violation_type": "发布低俗广告（违背社会良好风尚）",
+ "product_or_service": "绝味鸭脖（“双11”网络促销广告）",
+ "ad_channel": "天猫旗舰店/网络平台",
+ "risk_dimensions": [
+  "违背社会良好风尚"
+ ],
+ "illegal_claims": [
+  "“双11”低俗/性暗示海报广告",
+  "开黄腔广告文案"
+ ],
+ "facts_summary": "2017年11月1日，绝味食品股份有限公司绝味鸭脖天猫旗舰店发布“双11”促销广告，因涉及低俗、性暗示内容引发争议，海报上线两小时后下线并致歉。长沙市工商行政管理局调查认定其两次在不同网络平台发布的网络广告图片媚俗、文字低俗，违反《广告法》第九条第（七）项，责令停止发布违法广告并罚款60万元（决定书于2017年12月22日下发，据公司公告与媒体报道）。",
+ "legal_basis": [
+  "《中华人民共和国广告法》第九条第（七）项"
+ ],
+ "legal_basis_source_text": "媒体转引绝味食品公告/长沙市工商局认定：违反《广告法》第九条第（七）项",
+ "penalty_result": "责令停止发布违法广告，罚款60万元（据绝味食品公告与媒体报道）",
+ "penalty_amount": 600000,
+ "regulatory_logic": "双11网络促销广告以低俗、性暗示内容博取眼球，即使能带来流量，也因违反公序良俗构成《广告法》第九条第（七）项禁止的违背社会良好风尚广告。监管对此类“流量优先、底线让路”的低俗营销持零容忍，责令停止发布并处以罚款。",
+ "keywords": [
+  "绝味鸭脖",
+  "绝味食品",
+  "低俗广告",
+  "双11",
+  "性暗示",
+  "违背社会良好风尚",
+  "广告法第九条第（七）项",
+  "罚款60万元"
+ ],
+ "vector_text": "这是一起食品品牌在“双11”大促期间发布低俗网络广告被行政处罚的案例。运营方在天猫旗舰店发布带有低俗、性暗示内容的海报文案，为促销引流而突破广告底线。市场监管部门认定该广告图片媚俗、文字低俗，违背社会良好风尚，违反《广告法》第九条第（七）项，责令停止发布并罚款60万元。场景特征：大促促销文案、低俗/性暗示营销、违背社会良好风尚。",
+ "raw_text_path": "data/raw_text/juewei_2017_1111_lowbrow_ad_media.json",
+ "source_name": "闽南网转华商报/中国青年网（绝味食品公告）",
+ "source_url": "http://www.mnw.cn/news/cj/1908063.html",
+ "source_url_role": "secondary_media_lead",
+ "official_lookup_entry_urls": [],
+ "source_lookup_query": "绝味食品 低俗广告 处罚 长沙市工商行政管理局 60万",
+ "notes": "媒体线索直接入生产（业主审批）：处罚机关/金额/法条来自绝味食品公告与媒体报道，决定书号未核到；待核到官方决定书原文后升级。",
+ "owner_note": "处罚机关（长沙市工商局）、金额（60万）、法条（广告法九(七)）来自绝味食品公告与媒体转引；决定书号未核到。",
+ "audit_note": "业主审批入生产：绝味食品2017年双11低俗广告处罚案（媒体+公司公告）；决定书号待官方核验。",
+ "source_record_path": "data/structured_candidates/juewei_2017_1111_lowbrow_ad_case.json",
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T04:13:49+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "note": "媒体线索直接入生产（业主审批）；官方决定书原文待核验"
+ }
+}

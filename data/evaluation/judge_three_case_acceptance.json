@@ -1,0 +1,98 @@
+{
+  "schema_id": "adsure_judge_three_case_acceptance_v1",
+  "source_file": "adsure_judge_test_cases(1).json",
+  "acceptance_boundary": {
+    "rag": "POST /cases/retrieve in candidate scope is executed and measured.",
+    "audit": "Expected /audit fields are a hand-reviewed output contract because the rule engine and Feishu state machine are outside this repository.",
+    "evidence": "All retrieved cases remain candidate_data=true and must not be represented as production-verified penalty decisions."
+  },
+  "records": [
+    {
+      "case_id": "JUDGE-GAME-001",
+      "track": "游戏",
+      "original_material": "（图片素材）开局十连抽，爆率拉满，神装随便出",
+      "original_background": "图片素材，买量信息流广告；核心卖点：充值即可获得高爆率装备",
+      "retrieval_request": {
+        "content": "网络游戏 抽卡 爆率 随机抽取 游戏虚拟货币 概率规则",
+        "industry": "游戏",
+        "platform": [],
+        "top_k": 3
+      },
+      "expected_first_case_id": "mihoyo_2016_2520150399",
+      "expected_output_contract": {
+        "risk_level": "高",
+        "routing": "法务",
+        "violation_types": [
+          "抽取概率或奖励规则披露不充分",
+          "虚假或引人误解广告（待与实际概率核验）"
+        ],
+        "hit_points": "“爆率拉满”“神装随便出”容易使玩家形成高概率或必然获得装备的预期；应核验实际概率、奖励池、保底机制和限制条件。",
+        "legal_basis": [
+          "《中华人民共和国广告法》第二十八条（只有在宣传与实际情况不符并对购买行为有实质影响时，才可据此认定虚假广告）",
+          "《文化部关于规范网络游戏运营加强事中事后监管工作的通知》（文市发〔2016〕32号）第（六）至（八）项所涉随机抽取信息及概率公示要求"
+        ],
+        "legal_accuracy_note": "原文件写的《网络游戏管理暂行办法》已于2019年7月10日废止，不应再写为现行概率披露依据。"
+      }
+    },
+    {
+      "case_id": "JUDGE-COSM-001",
+      "track": "美妆",
+      "original_material": "（图片素材）我们的美白精华一降价你还不是和狗一样跑过来",
+      "original_background": "图片素材，电商大促信息流广告；产品为美白精华液",
+      "retrieval_request": {
+        "content": "降价 和狗一样跑过来 侮辱消费者 违背社会良好风尚",
+        "industry": "通用",
+        "platform": [
+          "抖音",
+          "小红书"
+        ],
+        "top_k": 3
+      },
+      "retrieval_industry_note": "待审物料仍是美妆行业；RAG 使用通用范围是为了检索跨品类的侮辱消费者风险，不得改写历史案例行业。",
+      "expected_first_case_id": "shanghai_jingan_2026_062026000257",
+      "expected_output_contract": {
+        "risk_level": "高",
+        "routing": "法务",
+        "violation_types": [
+          "侮辱性表述",
+          "违背社会良好风尚"
+        ],
+        "hit_points": "“和狗一样跑过来”将消费者作贬损性比喻，应删除该表达并转法务复核。",
+        "legal_basis": [
+          "《中华人民共和国广告法》第九条第（七）项：广告不得妨碍社会公共秩序或者违背社会良好风尚"
+        ],
+        "legal_accuracy_note": "应写为“第九条第（七）项”，不是“第九条第七款”。"
+      }
+    },
+    {
+      "case_id": "JUDGE-HF-001",
+      "track": "保健食品",
+      "original_material": "治疗肝癌、肺癌、结肠癌等80%-90%癌症病类",
+      "original_background": "产品为普通果汁饮品，非保健食品，无任何批准文号，微信朋友圈推广",
+      "retrieval_request": {
+        "content": "治疗肝癌、肺癌、结肠癌等80%-90%癌症病类",
+        "industry": "保健食品",
+        "platform": [
+          "微信"
+        ],
+        "top_k": 3
+      },
+      "expected_first_case_id": "sector_docx__health__d8460228",
+      "expected_output_contract": {
+        "risk_level": "高",
+        "routing": "法务",
+        "violation_types": [
+          "普通食品涉疾病治疗功能宣传",
+          "虚假或引人误解广告",
+          "产品资质与宣传材料缺失"
+        ],
+        "hit_points": "普通果汁饮品直接宣称治疗多种癌症，属明显的疾病治疗功能宣传；应停止发布并核验产品真实属性及资质。",
+        "legal_basis": [
+          "《中华人民共和国广告法》第十七条（本朋友圈广告的直接审核依据）",
+          "《中华人民共和国食品安全法》第七十一条（如同类宣称同时出现在食品标签、说明书，再作为产品侧补充依据）"
+        ],
+        "legal_accuracy_note": "仅根据朋友圈广告不应把《食品安全法》第七十一条写成已经命中的标签、说明书违法事实。"
+      }
+    }
+  ]
+}

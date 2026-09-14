@@ -1,0 +1,131 @@
+{
+  "validation_time": "2026-07-21T05:05:21.407580Z",
+  "input_schema_id": "adsure_judge_three_case_acceptance_v1",
+  "health": {
+    "status": "ok",
+    "service": "adsure-rag",
+    "index_scope": "candidate",
+    "candidate_data": true,
+    "case_count": 120,
+    "chunk_count": 240,
+    "index_version": "8285aa78d4bb42f9",
+    "loaded_at": "2026-07-21T05:05:20.755745Z",
+    "retrieval": {
+      "requested_mode": "lexical",
+      "effective_mode": "lexical",
+      "semantic_status": "disabled",
+      "semantic_model": null
+    },
+    "checks": {
+      "index": "ok",
+      "api_key": "configured",
+      "semantic": "disabled"
+    }
+  },
+  "rag_acceptance": {
+    "passed": true,
+    "passed_count": 3,
+    "total": 3,
+    "records": [
+      {
+        "case_id": "JUDGE-GAME-001",
+        "request": {
+          "content": "网络游戏 抽卡 爆率 随机抽取 游戏虚拟货币 概率规则",
+          "industry": "游戏",
+          "platform": [],
+          "top_k": 3
+        },
+        "expected_first_case_id": "mihoyo_2016_2520150399",
+        "actual_first_case_id": "mihoyo_2016_2520150399",
+        "actual_first_title": "上海米哈游网络科技股份有限公司随机抽取及未实名注册处罚案（官方辅助披露）",
+        "score": 75.116675,
+        "returned_case_ids": [
+          "mihoyo_2016_2520150399",
+          "mihoyo_2014_2520140214"
+        ],
+        "candidate_data": true,
+        "approved_for_rag": false,
+        "source_verification_status": "official_auxiliary_evidence_only",
+        "checks": {
+          "http_200": true,
+          "first_hit_matches": true,
+          "candidate_data_true": true,
+          "approved_for_rag_false": true,
+          "source_boundary_present": true
+        },
+        "passed": true
+      },
+      {
+        "case_id": "JUDGE-COSM-001",
+        "request": {
+          "content": "降价 和狗一样跑过来 侮辱消费者 违背社会良好风尚",
+          "industry": "通用",
+          "platform": [
+            "抖音",
+            "小红书"
+          ],
+          "top_k": 3
+        },
+        "expected_first_case_id": "shanghai_jingan_2026_062026000257",
+        "actual_first_case_id": "shanghai_jingan_2026_062026000257",
+        "actual_first_title": "上海市静安区市场监督管理局查处上海百事得电子有限公司发布违背社会良好风尚广告案",
+        "score": 219.198334,
+        "returned_case_ids": [
+          "shanghai_jingan_2026_062026000257",
+          "coconut_group_2021_recruitment_ad_lead",
+          "coconut_group_2024_coconut_juice_rubbing_ad_lead"
+        ],
+        "candidate_data": true,
+        "approved_for_rag": false,
+        "source_verification_status": "pending_official_source_lookup",
+        "checks": {
+          "http_200": true,
+          "first_hit_matches": true,
+          "candidate_data_true": true,
+          "approved_for_rag_false": true,
+          "source_boundary_present": true
+        },
+        "passed": true
+      },
+      {
+        "case_id": "JUDGE-HF-001",
+        "request": {
+          "content": "治疗肝癌、肺癌、结肠癌等80%-90%癌症病类",
+          "industry": "保健食品",
+          "platform": [
+            "微信"
+          ],
+          "top_k": 3
+        },
+        "expected_first_case_id": "sector_docx__health__d8460228",
+        "actual_first_case_id": "sector_docx__health__d8460228",
+        "actual_first_title": "张某甲诉象州县某局行政处罚案",
+        "score": 120.775512,
+        "returned_case_ids": [
+          "sector_docx__health__d8460228"
+        ],
+        "candidate_data": true,
+        "approved_for_rag": false,
+        "source_verification_status": "pending_source_lookup",
+        "checks": {
+          "http_200": true,
+          "first_hit_matches": true,
+          "candidate_data_true": true,
+          "approved_for_rag_false": true,
+          "source_boundary_present": true
+        },
+        "passed": true
+      }
+    ]
+  },
+  "output_contract_validation": {
+    "passed": true,
+    "errors": []
+  },
+  "external_audit_and_feishu": {
+    "executed": false,
+    "status": "not_in_this_repository",
+    "note": "The /audit rule engine, DeepSeek call, Feishu cards and legal workbench must be tested in the deployed integration; this report does not claim those external responses were observed."
+  },
+  "overall_local_acceptance_passed": true
+}

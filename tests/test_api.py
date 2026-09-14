@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import json
 import re
 import tempfile
@@ -126,6 +128,50 @@ class CaseApiTests(unittest.TestCase):
             configured_health["index_version"],
             missing_key_health["index_version"],
         )
+        self.assertEqual(configured_health["checks"]["semantic"], "disabled")
+
+    def test_hybrid_mode_missing_index_degrades_to_lexical(self):
+        case = self.write_case(
+            "structured",
+            "official_case_hybrid_fallback",
+            approved=True,
+            source_type="official_typical_case",
+        )
+        self.write_chunks(
+            "production_chunks.json",
+            [self.chunk(case, "case_summary", "美妆广告宣称15天见效")],
+        )
+        client = TestClient(
+            create_app(
+                data_dir=self.data_dir,
+                index_scope="production",
+                api_key="test-secret",
+                retrieval_mode="hybrid",
+            )
+        )
+
+        health = client.get("/health").json()
+        self.assertEqual(health["status"], "ok")
+        self.assertEqual(health["retrieval"]["requested_mode"], "hybrid")
+        self.assertEqual(health["retrieval"]["effective_mode"], "lexical")
+        self.assertEqual(health["retrieval"]["semantic_status"], "missing_index")
+        self.assertEqual(health["checks"]["semantic"], "degraded")
+
+        response = client.post(
+            "/cases/retrieve",
+            headers={"X-API-Key": "test-secret"},
+            json={"content": "15天见效", "industry": "美妆"},
+        )
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertEqual(
+            payload["data"]["cases"][0]["retrieval_method"],
+            "fielded_bm25_v2",
+        )
+        self.assertEqual(
+            payload["data"]["retrieval_meta"]["effective_retrieval_mode"],
+            "lexical",
+        )
 
     def test_echoes_safe_request_id_and_exposes_index_version_in_meta(self):
         self.write_chunks("production_chunks.json", [])
@@ -166,6 +212,18 @@ class CaseApiTests(unittest.TestCase):
                 "/cases/retrieve",
                 headers=headers,
                 json={"content": "测试", "industry": "通用", "top_k": 6},
+            ).status_code,
+            400,
+        )
+        self.assertEqual(
+            client.post(
+                "/cases/retrieve",
+                headers=headers,
+                json={
+                    "content": "测试",
+                    "industry": "通用",
+                    "risk_dimensions": "虚假宣传",
+                },
             ).status_code,
             400,
         )
@@ -219,6 +277,8 @@ class CaseApiTests(unittest.TestCase):
         self.assertEqual(result["legal_basis"], ["《中华人民共和国广告法》"])
         self.assertEqual(result["score_type"], "bm25")
         self.assertIsNone(result["similarity"])
+        self.assertEqual(result["retrieval_method"], "fielded_bm25_v2")
+        self.assertTrue(result["match_evidence"]["matched_terms"])
         self.assertFalse(result["candidate_data"])
         self.assertTrue(
             {
@@ -324,6 +384,44 @@ class CaseApiTests(unittest.TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["data"]["cases"], [])
+
+    def test_specific_industry_always_allows_general_cases(self):
+        general_case = self.write_case(
+            "structured",
+            "official_general_case",
+            approved=True,
+            source_type="official_typical_case",
+            industry="通用",
+        )
+        self.write_chunks(
+            "production_chunks.json",
+            [
+                self.chunk(
+                    general_case,
+                    "case_summary",
+                    "广告中使用侮辱消费者表述，违背社会良好风尚",
+                )
+            ],
+        )
+
+        client = self.client()
+        for industry in ("美妆", "游戏", "保健食品"):
+            with self.subTest(industry=industry):
+                response = client.post(
+                    "/cases/retrieve",
+                    headers={"X-API-Key": "test-secret"},
+                    json={
+                        "content": "广告侮辱消费者，违背社会良好风尚",
+                        "industry": industry,
+                        "platform": ["抖音"],
+                    },
+                )
+
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(
+                    [case["case_id"] for case in response.json()["data"]["cases"]],
+                    ["official_general_case"],
+                )
 
     def test_health_food_request_can_retrieve_verified_ordinary_food_case(self):
         food_case = self.write_case(
@@ -446,6 +544,43 @@ class CaseApiTests(unittest.TestCase):
             [case["case_id"] for case in response.json()["data"]["cases"]],
             ["real_estate_case"],
         )
+
+    def test_benign_copy_with_one_incidental_phrase_returns_no_cases(self):
+        health_case = self.write_case(
+            "structured",
+            "health_case",
+            approved=True,
+            source_type="official_typical_case",
+            industry="普通食品",
+        )
+        health_case["illegal_claims"] = ["适合过敏性鼻炎"]
+        (self.data_dir / "structured/health_case.json").write_text(
+            json.dumps(health_case, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        self.write_chunks(
+            "production_chunks.json",
+            [
+                self.chunk(
+                    health_case,
+                    "case_summary",
+                    "普通食品广告宣称适合过敏性鼻炎并具有疾病治疗功效",
+                )
+            ],
+        )
+
+        response = self.client().post(
+            "/cases/retrieve",
+            headers={"X-API-Key": "test-secret"},
+            json={
+                "content": "含有多种营养成分，适合中老年人日常食用",
+                "industry": "保健食品",
+                "top_k": 3,
+            },
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["data"]["cases"], [])
 
     def test_retrieve_reports_broken_index_as_degraded_service(self):
         self.write_chunks("production_chunks.json", [])
@@ -602,6 +737,74 @@ class CaseApiTests(unittest.TestCase):
         self.assertEqual(degraded.status_code, 200)
         self.assertEqual(degraded.json()["data"]["cases"], [])
         self.assertEqual(degraded_client.get("/health").json()["status"], "degraded")
+
+    def test_platform_rule_precheck_is_authenticated_and_keeps_pilot_label(self):
+        self.write_chunks("production_chunks.json", [])
+        catalog_directory = self.data_dir / "rules" / "platform"
+        catalog_directory.mkdir(parents=True)
+        source_catalog = (
+            Path(__file__).resolve().parents[1]
+            / "data"
+            / "rules"
+            / "platform"
+            / "xiaohongshu_juguang_pilot.json"
+        )
+        (catalog_directory / source_catalog.name).write_text(
+            source_catalog.read_text(encoding="utf-8"),
+            encoding="utf-8",
+        )
+        client = TestClient(
+            create_app(
+                data_dir=self.data_dir,
+                index_scope="production",
+                api_key="test-secret",
+                allow_pilot_platform_rules=True,
+            )
+        )
+
+        unauthorized = client.post(
+            "/platform-rules/precheck",
+            json={
+                "industry": "游戏",
+                "product_category": "网络游戏",
+                "platform": ["小红书"],
+                "platform_scene": "聚光",
+                "material_type": "图文",
+                "content": "顶级画质",
+            },
+        )
+        self.assertEqual(unauthorized.status_code, 401)
+
+        response = client.post(
+            "/platform-rules/precheck",
+            headers={"X-API-Key": "test-secret"},
+            json={
+                "industry": "游戏",
+                "product_category": "网络游戏",
+                "platform": ["小红书"],
+                "platform_scene": "聚光",
+                "material_type": "图文",
+                "content": "顶级画质",
+                "assets": [
+                    {
+                        "asset_id": "cover",
+                        "type": "image",
+                        "analysis_status": "completed",
+                        "extracted_text": "顶级画质",
+                    }
+                ],
+                "has_landing_page": False,
+                "qualifications": {
+                    "游戏软件著作权": "已提供",
+                    "游戏版号": "已提供",
+                },
+            },
+        )
+        self.assertEqual(response.status_code, 200)
+        precheck = response.json()["data"]["platform_precheck"]
+        self.assertEqual(precheck["verdict"], "manual_review_required")
+        self.assertFalse(precheck["production_ready"])
+        self.assertIn("试点规则尚未完成生产发布审批", precheck["unchecked_materials"])
 
 
 if __name__ == "__main__":

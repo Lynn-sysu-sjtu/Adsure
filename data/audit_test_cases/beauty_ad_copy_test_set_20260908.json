@@ -1,0 +1,1062 @@
+{
+  "test_set_id": "BEAUTY-AD-COPY-20260908",
+  "name": "美妆领域广告文案真实链路测试集",
+  "version": "1.0",
+  "purpose": "用于本地规则引擎、云端 /audit 和飞书状态机端到端测试。8条疑似违规/需补资料样例覆盖广告法、化妆品监管规则和小红书、抖音、腾讯广告、B站平台规则，2条正常样例作为对照。expected 仅表示测试期望，最终以有效规则库和人工审核为准。",
+  "input_contract": "每个 case 的 input_payload 均可直接作为 /audit 请求；字段结构参照队友 health_food_ad_copy_test_set_20260906.json，并与当前 Base v4 字段命名保持一致。",
+  "reference_answer_contract": {
+    "compatibility": "保留队友模板的 expected_judgment、expected_routing、must_recall_rule_ids、must_not_recall_rule_ids 和 suspected_legal_basis。",
+    "extensions": [
+      "legal_provisions",
+      "platform_provisions",
+      "evidence_requirements",
+      "recommended_action",
+      "human_review_required",
+      "reference_answer_status"
+    ],
+    "platform_rule_boundary": "平台规则来自2026-09-04候选快照，动态页面须在实际投放日再核验；不得将候选条文当作生产库已生效规则。"
+  },
+  "cases": [
+    {
+      "case_id": "BEAUTY-AD-001",
+      "name": "化妆品医疗用语",
+      "label": "疑似违规",
+      "test_focus": [
+        "医疗用语",
+        "疾病治疗功能",
+        "微信投放范围"
+      ],
+      "input_payload": {
+        "record_id": "rec_beauty_ad_001",
+        "mode": "标准",
+        "fields": {
+          "①运营·行业领域": "美妆",
+          "①运营·物料内容": "可杀菌、消炎、镇痛",
+          "①运营·紧急程度": "普通",
+          "①运营·补充背景资料": "未提供医疗器械注册证或能证明产品属性的备案资料；拟用于公众号、手册和挂纸宣传。",
+          "①美妆·物料类型": "图文",
+          "①美妆·投放平台": [
+            "微信"
+          ],
+          "①美妆·产品品类": "其他",
+          "①美妆·物料涉及场景": "公众号、手册和挂纸宣传",
+          "①美妆·核心宣称功效": [
+            "杀菌",
+            "消炎",
+            "镇痛"
+          ],
+          "①美妆·产品备案名称": ""
+        }
+      },
+      "expected": {
+        "expected_judgment": "违规修改",
+        "expected_routing": "运营",
+        "must_recall_rule_ids": [
+          "ADLAW-017",
+          "ADLAW-028",
+          "TENCENT-COSM-GENERAL-2"
+        ],
+        "suspected_legal_basis": [
+          "【法律】《中华人民共和国广告法》第十七条、第二十八条",
+          "【行政法规】《化妆品监督管理条例》第四十三条",
+          "【平台规则】腾讯广告《护肤彩妆》通用审核规则第2项（仅适用经腾讯广告投放的微信流量）"
+        ],
+        "legal_provisions": [
+          {
+            "document_title": "《中华人民共和国广告法》",
+            "article": "第十七条",
+            "provision_text": "除医疗、药品、医疗器械广告外，禁止其他任何广告涉及疾病治疗功能，并不得使用医疗用语或者易使推销的商品与药品、医疗器械相混淆的用语。",
+            "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html",
+            "rule_id": "ADLAW-017",
+            "application": "“杀菌、消炎、镇痛”易被理解为医疗用语或疾病治疗功能。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《中华人民共和国广告法》",
+            "article": "第二十八条第一款及第二款第（二）至（四）项",
+            "provision_text": "广告以虚假或者引人误解的内容欺骗、误导消费者的，构成虚假广告。广告有下列情形之一的，为虚假广告：（二）商品的性能、功能、产地、用途、质量、规格、成分、价格、生产者、有效期限、销售状况、曾获荣誉等信息，或者服务的内容、提供者、形式、质量、价格、销售状况、曾获荣誉等信息，以及与商品或者服务有关的允诺等信息与实际情况不符，对购买行为有实质性影响的；（三）使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料的；（四）虚构使用商品或者接受服务的效果的。",
+            "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html",
+            "rule_id": "ADLAW-028",
+            "application": "若产品无相应属性或功效依据，可能构成虚假或引人误解广告。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《化妆品监督管理条例》",
+            "article": "第四十三条",
+            "provision_text": "化妆品广告的内容应当真实、合法。化妆品广告不得明示或者暗示产品具有医疗作用，不得含有虚假或者引人误解的内容，不得欺骗、误导消费者。",
+            "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=451",
+            "rule_id": "COSM-REG-043",
+            "application": "化妆品广告不得明示或暗示医疗作用。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          }
+        ],
+        "platform_provisions": [
+          {
+            "rule_id": "TENCENT-COSM-GENERAL-2",
+            "platform": "腾讯广告",
+            "document_title": "护肤彩妆",
+            "locator": "（一）护肤彩妆广告通用审核规则—第2项",
+            "provision_text": "化妆品名称、制法、成分、效果或者性能不得有虚假夸大。",
+            "application": "功效表述存在虚假夸大风险；本条仅适用腾讯广告付费投放场景。",
+            "expected_hit": true,
+            "source_url": "https://tencentads.com/Faqlist/Detail/216",
+            "snapshot_collected_at": "2026-09-04",
+            "raw_text_path": "data/platform_rules/raw_text/2026-09-04/tencent_ads_skin_care_216.json",
+            "review_status": "pending_legal_review",
+            "effective_status": "pending_effective_review",
+            "human_review_required": true
+          }
+        ],
+        "evidence_requirements": [
+          "产品注册/备案信息",
+          "产品法律属性",
+          "功效宣称评价资料",
+          "微信内具体投放产品及场景"
+        ],
+        "recommended_action": "删除“杀菌、消炎、镇痛”等医疗化表述；确认产品属性和投放场景后再审核。",
+        "human_review_required": true,
+        "reference_answer_status": "candidate_pending_human_review",
+        "decision_boundary": "仅为测试期望和平台预检参考，不构成行政违法认定，也不代表平台必然审核通过或驳回。"
+      }
+    },
+    {
+      "case_id": "BEAUTY-AD-002",
+      "name": "B站商单绝对化宣称",
+      "label": "疑似违规",
+      "test_focus": [
+        "绝对化用语",
+        "国家级",
+        "B站花火"
+      ],
+      "input_payload": {
+        "record_id": "rec_beauty_ad_002",
+        "mode": "标准",
+        "fields": {
+          "①运营·行业领域": "美妆",
+          "①运营·物料内容": "国家级抗老科技，全网效果最佳，顶级面霜。",
+          "①运营·紧急程度": "普通",
+          "①运营·补充背景资料": "商单视频，未提供评比范围、权威评比文件或数据依据。",
+          "①美妆·物料类型": "短视频",
+          "①美妆·投放平台": [
+            "b站"
+          ],
+          "①美妆·产品品类": "护肤",
+          "①美妆·物料涉及场景": "B站花火商单视频",
+          "①美妆·核心宣称功效": [
+            "国家级",
+            "效果最佳",
+            "顶级"
+          ],
+          "①美妆·产品备案名称": "光采抗皱面霜"
+        }
+      },
+      "expected": {
+        "expected_judgment": "违规修改",
+        "expected_routing": "运营",
+        "must_recall_rule_ids": [
+          "ADLAW-009-03",
+          "BILI-HUOHUA-ABSOLUTE-II"
+        ],
+        "suspected_legal_basis": [
+          "【法律】《中华人民共和国广告法》第九条第（三）项",
+          "【平台规则】哔哩哔哩《花火稿件前置审核规范总则》二、绝对化（用语）"
+        ],
+        "legal_provisions": [
+          {
+            "document_title": "《中华人民共和国广告法》",
+            "article": "第九条第（三）项",
+            "provision_text": "广告不得使用“国家级”、“最高级”、“最佳”等用语。",
+            "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html",
+            "rule_id": "ADLAW-009-03",
+            "application": "文案直接使用“国家级”“最佳”等用语，并以“顶级”指向产品。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          }
+        ],
+        "platform_provisions": [
+          {
+            "rule_id": "BILI-HUOHUA-ABSOLUTE-II",
+            "platform": "哔哩哔哩",
+            "document_title": "花火稿件前置审核规范总则",
+            "locator": "二、绝对化（用语）",
+            "provision_text": "商推部分禁止使用国家级、最高级、最佳等绝对词关联产品推广。",
+            "application": "商推内容使用平台明确列举的绝对化用语。",
+            "expected_hit": true,
+            "source_url": "https://www.bilibili.com/blackboard/activity-hp6i7WQHrx.html",
+            "snapshot_collected_at": "2026-09-04",
+            "raw_text_path": "data/platform_rules/raw_text/2026-09-04/bilibili_huohua_pre_audit_general.json",
+            "review_status": "pending_legal_review",
+            "effective_status": "pending_effective_review",
+            "human_review_required": true
+          }
+        ],
+        "evidence_requirements": [
+          "完整视频及封面",
+          "与“全网效果最佳”相关的评比范围和证明材料"
+        ],
+        "recommended_action": "删除“国家级”“最佳”“顶级”，改为与备案和功效评价一致的客观描述。",
+        "human_review_required": true,
+        "reference_answer_status": "candidate_pending_human_review",
+        "decision_boundary": "仅为测试期望和平台预检参考，不构成行政违法认定，也不代表平台必然审核通过或驳回。"
+      }
+    },
+    {
+      "case_id": "BEAUTY-AD-003",
+      "name": "小红书七天美白与99%数据",
+      "label": "疑似违规",
+      "test_focus": [
+        "见效周期",
+        "量化数据",
+        "永久效果"
+      ],
+      "input_payload": {
+        "record_id": "rec_beauty_ad_003",
+        "mode": "标准",
+        "fields": {
+          "①运营·行业领域": "美妆",
+          "①运营·物料内容": "7天美白3个度，99%用户见效，一次祛斑永不反弹。",
+          "①运营·紧急程度": "普通",
+          "①运营·补充背景资料": "品牌种草图文，附购物链接；未提供人体功效评价报告、样本量、统计口径和摘要公布链接。",
+          "①美妆·物料类型": "图文",
+          "①美妆·投放平台": [
+            "小红书"
+          ],
+          "①美妆·产品品类": "护肤",
+          "①美妆·物料涉及场景": "聚光图文种草",
+          "①美妆·核心宣称功效": [
+            "7天美白",
+            "99%见效",
+            "永不反弹"
+          ],
+          "①美妆·产品备案名称": "美白祛斑精华液"
+        }
+      },
+      "expected": {
+        "expected_judgment": "违规修改",
+        "expected_routing": "运营",
+        "must_recall_rule_ids": [
+          "ADLAW-011-02",
+          "ADLAW-028",
+          "XHS-JG-COSM-EFFECT-2.1.3",
+          "XHS-JG-DATA-2.8"
+        ],
+        "suspected_legal_basis": [
+          "【法律】《中华人民共和国广告法》第十一条第二款、第二十八条",
+          "【行政法规】《化妆品监督管理条例》第二十二条、第四十三条",
+          "【规范性文件】《化妆品功效宣称评价规范》第九条、第十条",
+          "【平台规则】小红书《内容审核规则总则》三、通用素材审核要求—2.1.3美妆、2.8"
+        ],
+        "legal_provisions": [
+          {
+            "document_title": "《中华人民共和国广告法》",
+            "article": "第十一条第二款",
+            "provision_text": "广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。",
+            "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html",
+            "rule_id": "ADLAW-011-02",
+            "application": "“99%”属于引证数据，应当真实、准确并表明出处。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《中华人民共和国广告法》",
+            "article": "第二十八条第一款及第二款第（二）至（四）项",
+            "provision_text": "广告以虚假或者引人误解的内容欺骗、误导消费者的，构成虚假广告。广告有下列情形之一的，为虚假广告：（二）商品的性能、功能、产地、用途、质量、规格、成分、价格、生产者、有效期限、销售状况、曾获荣誉等信息，或者服务的内容、提供者、形式、质量、价格、销售状况、曾获荣誉等信息，以及与商品或者服务有关的允诺等信息与实际情况不符，对购买行为有实质性影响的；（三）使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料的；（四）虚构使用商品或者接受服务的效果的。",
+            "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html",
+            "rule_id": "ADLAW-028",
+            "application": "不可验证的数据、虚构效果或与实际不符的功效可构成虚假广告。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《化妆品监督管理条例》",
+            "article": "第二十二条",
+            "provision_text": "化妆品的功效宣称应当有充分的科学依据。化妆品注册人、备案人应当在国务院药品监督管理部门规定的专门网站公布功效宣称所依据的文献资料、研究数据或者产品功效评价资料的摘要，接受社会监督。",
+            "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=451",
+            "rule_id": "COSM-REG-022",
+            "application": "美白、祛斑功效宣称须有充分科学依据并公布摘要。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《化妆品监督管理条例》",
+            "article": "第四十三条",
+            "provision_text": "化妆品广告的内容应当真实、合法。化妆品广告不得明示或者暗示产品具有医疗作用，不得含有虚假或者引人误解的内容，不得欺骗、误导消费者。",
+            "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=451",
+            "rule_id": "COSM-REG-043",
+            "application": "永久性效果承诺可能虚假或引人误解。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《化妆品功效宣称评价规范》",
+            "article": "第九条",
+            "provision_text": "具有抗皱、紧致、舒缓、控油、去角质、防断发和去屑功效，以及宣称温和（如无刺激）或量化指标（如功效宣称保持时间、功效宣称相关统计数据等）的化妆品，应当通过化妆品功效宣称评价试验方式，可以同时结合文献资料或研究数据分析结果，进行功效宣称评价。",
+            "source_url": "https://english.nmpa.gov.cn/2021-04/09/c_654820.htm",
+            "manual_verification_url": "https://vip.caffci.org/content/details_14_476.html",
+            "rule_id": "COSM-EVAL-009",
+            "application": "“7天”和“99%”属量化指标，应进行功效宣称评价试验。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《化妆品功效宣称评价规范》",
+            "article": "第十条",
+            "provision_text": "具有祛斑美白、防晒、防脱发、祛痘、滋养和修护功效的化妆品，应当通过人体功效评价试验方式进行功效宣称评价。",
+            "source_url": "https://english.nmpa.gov.cn/2021-04/09/c_654820.htm",
+            "manual_verification_url": "https://vip.caffci.org/content/details_14_476.html",
+            "rule_id": "COSM-EVAL-010",
+            "application": "祛斑美白宣称应通过人体功效评价试验。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          }
+        ],
+        "platform_provisions": [
+          {
+            "rule_id": "XHS-JG-COSM-EFFECT-2.1.3",
+            "platform": "小红书",
+            "document_title": "内容审核规则总则",
+            "locator": "三、通用素材审核要求—2.1.3 美妆",
+            "provision_text": "不得涉及承诺产品起效的时间或用量；不得过度承诺产品的安全性；不得涉及永久性效果承诺。",
+            "application": "命中起效时间及永久效果承诺。",
+            "expected_hit": true,
+            "source_url": "https://ad.xiaohongshu.com/next_help/docs/8dc5bd9c45c9a90cb9912f3400d43f92",
+            "snapshot_collected_at": "2026-09-04",
+            "raw_text_path": "data/platform_rules/raw_text/2026-09-04/xhs_content_review_general_2026_03_23.json",
+            "review_status": "pending_legal_review",
+            "effective_status": "pending_effective_review",
+            "human_review_required": true
+          },
+          {
+            "rule_id": "XHS-JG-DATA-2.8",
+            "platform": "小红书",
+            "document_title": "内容审核规则总则",
+            "locator": "三、通用素材审核要求—2.8",
+            "provision_text": "引证内容应当真实、准确并表明出处；有适用范围和有效期限的应当明确表示，同时提供证明材料。",
+            "application": "“99%”未标明出处、适用范围和有效期限。",
+            "expected_hit": true,
+            "source_url": "https://ad.xiaohongshu.com/next_help/docs/8dc5bd9c45c9a90cb9912f3400d43f92",
+            "snapshot_collected_at": "2026-09-04",
+            "raw_text_path": "data/platform_rules/raw_text/2026-09-04/xhs_content_review_general_2026_03_23.json",
+            "review_status": "pending_legal_review",
+            "effective_status": "pending_effective_review",
+            "human_review_required": true
+          }
+        ],
+        "evidence_requirements": [
+          "特殊化妆品注册证",
+          "人体功效评价报告",
+          "“99%”的原始数据、样本及统计口径",
+          "功效宣称依据摘要公布页"
+        ],
+        "recommended_action": "删除“7天”“99%”“永不反弹”等无法充分证明或平台明确限制的表述。",
+        "human_review_required": true,
+        "reference_answer_status": "candidate_pending_human_review",
+        "decision_boundary": "仅为测试期望和平台预检参考，不构成行政违法认定，也不代表平台必然审核通过或驳回。"
+      }
+    },
+    {
+      "case_id": "BEAUTY-AD-004",
+      "name": "普通化妆品超备案功效",
+      "label": "疑似违规",
+      "test_focus": [
+        "特殊化妆品",
+        "超注册备案功效",
+        "抖音美妆"
+      ],
+      "input_payload": {
+        "record_id": "rec_beauty_ad_004",
+        "mode": "标准",
+        "fields": {
+          "①运营·行业领域": "美妆",
+          "①运营·物料内容": "普通精华也能祛斑美白、防晒、防脱发，一瓶解决所有问题。",
+          "①运营·紧急程度": "普通",
+          "①运营·补充背景资料": "备案资料显示为普通化妆品，备案功效仅为保湿。",
+          "①美妆·物料类型": "短视频",
+          "①美妆·投放平台": [
+            "抖音"
+          ],
+          "①美妆·产品品类": "护肤",
+          "①美妆·物料涉及场景": "抖音电商短视频",
+          "①美妆·核心宣称功效": [
+            "祛斑美白",
+            "防晒",
+            "防脱发"
+          ],
+          "①美妆·产品备案名称": "水光保湿精华液"
+        }
+      },
+      "expected": {
+        "expected_judgment": "违规修改",
+        "expected_routing": "运营",
+        "must_recall_rule_ids": [
+          "ADLAW-028",
+          "DOUYIN-COSM-EFFICACY-2.1.1"
+        ],
+        "suspected_legal_basis": [
+          "【法律】《中华人民共和国广告法》第二十八条",
+          "【行政法规】《化妆品监督管理条例》第十六条、第十七条、第四十三条",
+          "【平台规则】抖音电商《关于〈美妆行业宣传规范〉修订的公示通知》二、禁止夸大、虚假宣传或描述—2.1.1"
+        ],
+        "legal_provisions": [
+          {
+            "document_title": "《中华人民共和国广告法》",
+            "article": "第二十八条第一款及第二款第（二）至（四）项",
+            "provision_text": "广告以虚假或者引人误解的内容欺骗、误导消费者的，构成虚假广告。广告有下列情形之一的，为虚假广告：（二）商品的性能、功能、产地、用途、质量、规格、成分、价格、生产者、有效期限、销售状况、曾获荣誉等信息，或者服务的内容、提供者、形式、质量、价格、销售状况、曾获荣誉等信息，以及与商品或者服务有关的允诺等信息与实际情况不符，对购买行为有实质性影响的；（三）使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料的；（四）虚构使用商品或者接受服务的效果的。",
+            "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html",
+            "rule_id": "ADLAW-028",
+            "application": "宣传功能与普通化妆品备案功效不符。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《化妆品监督管理条例》",
+            "article": "第十六条",
+            "provision_text": "用于染发、烫发、祛斑美白、防晒、防脱发的化妆品以及宣称新功效的化妆品为特殊化妆品。特殊化妆品以外的化妆品为普通化妆品。",
+            "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=451",
+            "rule_id": "COSM-REG-016",
+            "application": "祛斑美白、防晒和防脱发属于特殊化妆品功效范围。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《化妆品监督管理条例》",
+            "article": "第十七条",
+            "provision_text": "特殊化妆品经国务院药品监督管理部门注册后方可生产、进口。国产普通化妆品应当在上市销售前向备案人所在地省、自治区、直辖市人民政府药品监督管理部门备案。进口普通化妆品应当在进口前向国务院药品监督管理部门备案。",
+            "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=451",
+            "rule_id": "COSM-REG-017",
+            "application": "特殊化妆品应当注册后方可生产、进口。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《化妆品监督管理条例》",
+            "article": "第四十三条",
+            "provision_text": "化妆品广告的内容应当真实、合法。化妆品广告不得明示或者暗示产品具有医疗作用，不得含有虚假或者引人误解的内容，不得欺骗、误导消费者。",
+            "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=451",
+            "rule_id": "COSM-REG-043",
+            "application": "超出备案功效的宣传容易虚假或引人误解。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          }
+        ],
+        "platform_provisions": [
+          {
+            "rule_id": "DOUYIN-COSM-EFFICACY-2.1.1",
+            "platform": "抖音电商",
+            "document_title": "关于《美妆行业宣传规范》修订的公示通知（2022.5.10）",
+            "locator": "二、禁止夸大、虚假宣传或描述—2.1.1",
+            "provision_text": "推广化妆品类商品时，需严格按照商品注册、备案的功效范围宣传。",
+            "application": "文案超出产品注册、备案的功效范围。",
+            "expected_hit": true,
+            "source_url": "https://school.jinritemai.com/doudian/wap/article/aHUMNYPLL4Lk",
+            "snapshot_collected_at": "2026-09-04",
+            "raw_text_path": "data/platform_rules/raw_text/2026-09-04/douyin_beauty_rules_notice_2022_05_10.json",
+            "review_status": "pending_legal_review",
+            "effective_status": "pending_effective_review",
+            "human_review_required": true
+          }
+        ],
+        "evidence_requirements": [
+          "完整注册/备案凭证",
+          "实际商品标签",
+          "功效宣称依据摘要"
+        ],
+        "recommended_action": "删除祛斑美白、防晒、防脱发宣称，仅保留与实际备案一致的保湿表述。",
+        "human_review_required": true,
+        "reference_answer_status": "candidate_pending_human_review",
+        "decision_boundary": "仅为测试期望和平台预检参考，不构成行政违法认定，也不代表平台必然审核通过或驳回。"
+      }
+    },
+    {
+      "case_id": "BEAUTY-AD-005",
+      "name": "儿童化妆品可食用宣称",
+      "label": "疑似违规",
+      "test_focus": [
+        "儿童化妆品",
+        "食品级",
+        "安全性保证"
+      ],
+      "input_payload": {
+        "record_id": "rec_beauty_ad_005",
+        "mode": "标准",
+        "fields": {
+          "①运营·行业领域": "美妆",
+          "①运营·物料内容": "食品级儿童润唇膏，宝宝可以放心吃，100%无任何风险。",
+          "①运营·紧急程度": "普通",
+          "①运营·补充背景资料": "儿童化妆品直播话术，未提供安全评估资料。",
+          "①美妆·物料类型": "直播话术",
+          "①美妆·投放平台": [
+            "抖音"
+          ],
+          "①美妆·产品品类": "唇部护理",
+          "①美妆·物料涉及场景": "抖音电商直播",
+          "①美妆·核心宣称功效": [
+            "食品级",
+            "可食用",
+            "100%无风险"
+          ],
+          "①美妆·产品备案名称": "童趣润唇膏"
+        }
+      },
+      "expected": {
+        "expected_judgment": "违规修改",
+        "expected_routing": "运营",
+        "must_recall_rule_ids": [
+          "DOUYIN-COSM-GUARANTEE-2.1.2"
+        ],
+        "suspected_legal_basis": [
+          "【监管规定】《儿童化妆品监督管理规定》第十三条",
+          "【行政法规】《化妆品监督管理条例》第四十三条",
+          "【平台规则】抖音电商《关于〈美妆行业宣传规范〉修订的公示通知》二、禁止夸大、虚假宣传或描述—2.1.2"
+        ],
+        "legal_provisions": [
+          {
+            "document_title": "《儿童化妆品监督管理规定》",
+            "article": "第十三条第二款",
+            "provision_text": "儿童化妆品标签不得标注“食品级”“可食用”等词语或者食品有关图案。",
+            "source_url": "https://scjgj.beijing.gov.cn/zwxx/scjgdt/202310/t20231018_3281369.html",
+            "rule_id": "CHILD-COSM-013",
+            "application": "“食品级”“可以放心吃”与儿童化妆品禁止性标签要求直接冲突。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《化妆品监督管理条例》",
+            "article": "第四十三条",
+            "provision_text": "化妆品广告的内容应当真实、合法。化妆品广告不得明示或者暗示产品具有医疗作用，不得含有虚假或者引人误解的内容，不得欺骗、误导消费者。",
+            "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=451",
+            "rule_id": "COSM-REG-043",
+            "application": "“100%无任何风险”是容易误导的安全性绝对保证。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          }
+        ],
+        "platform_provisions": [
+          {
+            "rule_id": "DOUYIN-COSM-GUARANTEE-2.1.2",
+            "platform": "抖音电商",
+            "document_title": "关于《美妆行业宣传规范》修订的公示通知（2022.5.10）",
+            "locator": "二、禁止夸大、虚假宣传或描述—2.1.2",
+            "provision_text": "禁止在无依据、无证明的情况下，对未来功效、效果、安全性作出保证性承诺。",
+            "application": "同时命中无依据安全性保证及化妆品可吃、可吞表述。",
+            "expected_hit": true,
+            "source_url": "https://school.jinritemai.com/doudian/wap/article/aHUMNYPLL4Lk",
+            "snapshot_collected_at": "2026-09-04",
+            "raw_text_path": "data/platform_rules/raw_text/2026-09-04/douyin_beauty_rules_notice_2022_05_10.json",
+            "review_status": "pending_legal_review",
+            "effective_status": "pending_effective_review",
+            "human_review_required": true
+          }
+        ],
+        "evidence_requirements": [
+          "儿童化妆品备案信息",
+          "安全评估资料",
+          "产品标签全图",
+          "直播完整上下文"
+        ],
+        "recommended_action": "删除“食品级”“可吃”和“100%无风险”，改为标签允许的客观用途说明。",
+        "human_review_required": true,
+        "reference_answer_status": "candidate_pending_human_review",
+        "decision_boundary": "仅为测试期望和平台预检参考，不构成行政违法认定，也不代表平台必然审核通过或驳回。"
+      }
+    },
+    {
+      "case_id": "BEAUTY-AD-006",
+      "name": "医生推荐与临床数据",
+      "label": "疑似违规/需补资料",
+      "test_focus": [
+        "医生推荐",
+        "临床验证",
+        "99%有效"
+      ],
+      "input_payload": {
+        "record_id": "rec_beauty_ad_006",
+        "mode": "标准",
+        "fields": {
+          "①运营·行业领域": "美妆",
+          "①运营·物料内容": "三甲医院皮肤科医生亲测推荐，临床验证99%有效。",
+          "①运营·紧急程度": "普通",
+          "①运营·补充背景资料": "腾讯广告信息流素材；未提供医生身份、书面授权、实际使用证明或试验报告。",
+          "①美妆·物料类型": "图文",
+          "①美妆·投放平台": [
+            "微信"
+          ],
+          "①美妆·产品品类": "护肤",
+          "①美妆·物料涉及场景": "微信朋友圈信息流广告",
+          "①美妆·核心宣称功效": [
+            "医生推荐",
+            "临床验证",
+            "99%有效"
+          ],
+          "①美妆·产品备案名称": "舒缓修护面霜"
+        }
+      },
+      "expected": {
+        "expected_judgment": "需补资料",
+        "expected_routing": "运营",
+        "must_recall_rule_ids": [
+          "ADLAW-011-02",
+          "ADLAW-028",
+          "TENCENT-COSM-ENDORSEMENT-3",
+          "TENCENT-COSM-DATA-5"
+        ],
+        "suspected_legal_basis": [
+          "【法律】《中华人民共和国广告法》第十一条第二款、第二十八条、第三十八条第一款",
+          "【行政法规】《化妆品监督管理条例》第二十二条、第四十三条",
+          "【平台规则】腾讯广告《护肤彩妆》通用审核规则第3项、第5项"
+        ],
+        "legal_provisions": [
+          {
+            "document_title": "《中华人民共和国广告法》",
+            "article": "第十一条第二款",
+            "provision_text": "广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。",
+            "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html",
+            "rule_id": "ADLAW-011-02",
+            "application": "临床验证和99%数据需真实、准确并标明出处。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《中华人民共和国广告法》",
+            "article": "第二十八条第一款及第二款第（二）至（四）项",
+            "provision_text": "广告以虚假或者引人误解的内容欺骗、误导消费者的，构成虚假广告。广告有下列情形之一的，为虚假广告：（二）商品的性能、功能、产地、用途、质量、规格、成分、价格、生产者、有效期限、销售状况、曾获荣誉等信息，或者服务的内容、提供者、形式、质量、价格、销售状况、曾获荣誉等信息，以及与商品或者服务有关的允诺等信息与实际情况不符，对购买行为有实质性影响的；（三）使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料的；（四）虚构使用商品或者接受服务的效果的。",
+            "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html",
+            "rule_id": "ADLAW-028",
+            "application": "若医生、医院或试验数据系虚构或无法验证，可构成虚假广告。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《中华人民共和国广告法》",
+            "article": "第三十八条第一款",
+            "provision_text": "广告代言人在广告中对商品、服务作推荐、证明，应当依据事实，符合本法和有关法律、行政法规规定，并不得为其未使用过的商品或者未接受过的服务作推荐、证明。",
+            "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html",
+            "rule_id": "ADLAW-038-01",
+            "application": "以个人名义或形象作推荐、证明时，应依据事实且实际使用过商品。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《化妆品监督管理条例》",
+            "article": "第二十二条",
+            "provision_text": "化妆品的功效宣称应当有充分的科学依据。化妆品注册人、备案人应当在国务院药品监督管理部门规定的专门网站公布功效宣称所依据的文献资料、研究数据或者产品功效评价资料的摘要，接受社会监督。",
+            "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=451",
+            "rule_id": "COSM-REG-022",
+            "application": "功效数据应有充分科学依据。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《化妆品监督管理条例》",
+            "article": "第四十三条",
+            "provision_text": "化妆品广告的内容应当真实、合法。化妆品广告不得明示或者暗示产品具有医疗作用，不得含有虚假或者引人误解的内容，不得欺骗、误导消费者。",
+            "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=451",
+            "rule_id": "COSM-REG-043",
+            "application": "医院和医生表述还可能强化医疗作用暗示。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          }
+        ],
+        "platform_provisions": [
+          {
+            "rule_id": "TENCENT-COSM-ENDORSEMENT-3",
+            "platform": "腾讯广告",
+            "document_title": "护肤彩妆",
+            "locator": "（一）护肤彩妆广告通用审核规则—第3项",
+            "provision_text": "不得使用他人名义保证或者以暗示方法使人误解其效用。",
+            "application": "未证明的他人名义保证可使人误解产品效用。",
+            "expected_hit": true,
+            "source_url": "https://tencentads.com/Faqlist/Detail/216",
+            "snapshot_collected_at": "2026-09-04",
+            "raw_text_path": "data/platform_rules/raw_text/2026-09-04/tencent_ads_skin_care_216.json",
+            "review_status": "pending_legal_review",
+            "effective_status": "pending_effective_review",
+            "human_review_required": true
+          },
+          {
+            "rule_id": "TENCENT-COSM-DATA-5",
+            "platform": "腾讯广告",
+            "document_title": "护肤彩妆",
+            "locator": "（一）护肤彩妆广告通用审核规则—第5项",
+            "provision_text": "不得涉及化妆品性能或者功能、销量等方面的数据。",
+            "application": "素材直接使用化妆品功效数据，命中平台限制。",
+            "expected_hit": true,
+            "source_url": "https://tencentads.com/Faqlist/Detail/216",
+            "snapshot_collected_at": "2026-09-04",
+            "raw_text_path": "data/platform_rules/raw_text/2026-09-04/tencent_ads_skin_care_216.json",
+            "review_status": "pending_legal_review",
+            "effective_status": "pending_effective_review",
+            "human_review_required": true
+          }
+        ],
+        "evidence_requirements": [
+          "医生真实身份及书面授权",
+          "实际使用证明",
+          "临床试验完整报告",
+          "统计口径、样本量和适用范围",
+          "功效摘要公布链接"
+        ],
+        "recommended_action": "材料未补齐前不投放；即使材料真实，仍须按腾讯广告更严的平台规则删改背书和功效数据。",
+        "human_review_required": true,
+        "reference_answer_status": "candidate_pending_human_review",
+        "decision_boundary": "仅为测试期望和平台预检参考，不构成行政违法认定，也不代表平台必然审核通过或驳回。"
+      }
+    },
+    {
+      "case_id": "BEAUTY-AD-007",
+      "name": "B站前后效果对比",
+      "label": "疑似违规",
+      "test_focus": [
+        "使用前后对比",
+        "效果误导",
+        "病理图"
+      ],
+      "input_payload": {
+        "record_id": "rec_beauty_ad_007",
+        "mode": "标准",
+        "fields": {
+          "①运营·行业领域": "美妆",
+          "①运营·物料内容": "左图烂脸长痘，右图用完一瓶皮肤完美无瑕，效果如图所见。",
+          "①运营·紧急程度": "普通",
+          "①运营·补充背景资料": "视频使用前后对比图，未提供同一被试者、拍摄条件、使用周期或人体功效评价材料。",
+          "①美妆·物料类型": "短视频",
+          "①美妆·投放平台": [
+            "b站"
+          ],
+          "①美妆·产品品类": "护肤",
+          "①美妆·物料涉及场景": "B站花火商单视频",
+          "①美妆·核心宣称功效": [
+            "祛痘",
+            "使用前后对比",
+            "完美无瑕"
+          ],
+          "①美妆·产品备案名称": "清颜舒缓精华"
+        }
+      },
+      "expected": {
+        "expected_judgment": "违规修改",
+        "expected_routing": "运营",
+        "must_recall_rule_ids": [
+          "ADLAW-028",
+          "BILI-HUOHUA-COMPARE-VIII"
+        ],
+        "suspected_legal_basis": [
+          "【法律】《中华人民共和国广告法》第二十八条",
+          "【行政法规】《化妆品监督管理条例》第四十三条",
+          "【平台规则】哔哩哔哩《花火稿件前置审核规范总则》八、诱导类"
+        ],
+        "legal_provisions": [
+          {
+            "document_title": "《中华人民共和国广告法》",
+            "article": "第二十八条第一款及第二款第（二）至（四）项",
+            "provision_text": "广告以虚假或者引人误解的内容欺骗、误导消费者的，构成虚假广告。广告有下列情形之一的，为虚假广告：（二）商品的性能、功能、产地、用途、质量、规格、成分、价格、生产者、有效期限、销售状况、曾获荣誉等信息，或者服务的内容、提供者、形式、质量、价格、销售状况、曾获荣誉等信息，以及与商品或者服务有关的允诺等信息与实际情况不符，对购买行为有实质性影响的；（三）使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料的；（四）虚构使用商品或者接受服务的效果的。",
+            "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html",
+            "rule_id": "ADLAW-028",
+            "application": "无法证明同等条件的前后对比容易虚构使用效果或引人误解。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《化妆品监督管理条例》",
+            "article": "第四十三条",
+            "provision_text": "化妆品广告的内容应当真实、合法。化妆品广告不得明示或者暗示产品具有医疗作用，不得含有虚假或者引人误解的内容，不得欺骗、误导消费者。",
+            "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=451",
+            "rule_id": "COSM-REG-043",
+            "application": "化妆品效果展示不得含有虚假或引人误解的内容。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          }
+        ],
+        "platform_provisions": [
+          {
+            "rule_id": "BILI-HUOHUA-COMPARE-VIII",
+            "platform": "哔哩哔哩",
+            "document_title": "花火稿件前置审核规范总则",
+            "locator": "八、诱导类",
+            "provision_text": "使用前后对比图及病理图容易形成误导，规则提示应尽量避免使用。",
+            "application": "视频直接使用化妆品使用前后对比图，易形成误导。",
+            "expected_hit": true,
+            "source_url": "https://www.bilibili.com/blackboard/activity-hp6i7WQHrx.html",
+            "snapshot_collected_at": "2026-09-04",
+            "raw_text_path": "data/platform_rules/raw_text/2026-09-04/bilibili_huohua_pre_audit_general.json",
+            "review_status": "pending_legal_review",
+            "effective_status": "pending_effective_review",
+            "human_review_required": true
+          }
+        ],
+        "evidence_requirements": [
+          "原始图片及EXIF信息",
+          "被试者同一性证明",
+          "同等拍摄条件证明",
+          "人体功效评价报告"
+        ],
+        "recommended_action": "删除前后对比及病理化画面，改为与备案功效一致的非对比性展示。",
+        "human_review_required": true,
+        "reference_answer_status": "candidate_pending_human_review",
+        "decision_boundary": "仅为测试期望和平台预检参考，不构成行政违法认定，也不代表平台必然审核通过或驳回。"
+      }
+    },
+    {
+      "case_id": "BEAUTY-AD-008",
+      "name": "B站专利宣称缺失专利号",
+      "label": "疑似违规/需补资料",
+      "test_focus": [
+        "专利宣称",
+        "专利号",
+        "专利种类"
+      ],
+      "input_payload": {
+        "record_id": "rec_beauty_ad_008",
+        "mode": "标准",
+        "fields": {
+          "①运营·行业领域": "美妆",
+          "①运营·物料内容": "独家国家专利抗皱配方，专利科技让细纹消失。",
+          "①运营·紧急程度": "普通",
+          "①运营·补充背景资料": "素材未标明专利号和专利种类，也未提供有效专利证书。",
+          "①美妆·物料类型": "短视频",
+          "①美妆·投放平台": [
+            "b站"
+          ],
+          "①美妆·产品品类": "护肤",
+          "①美妆·物料涉及场景": "B站花火商单视频",
+          "①美妆·核心宣称功效": [
+            "国家专利",
+            "专利科技抗皱"
+          ],
+          "①美妆·产品备案名称": "紧致抗皱精华露"
+        }
+      },
+      "expected": {
+        "expected_judgment": "需补资料",
+        "expected_routing": "运营",
+        "must_recall_rule_ids": [
+          "BILI-HUOHUA-PATENT-III"
+        ],
+        "suspected_legal_basis": [
+          "【法律】《中华人民共和国广告法》第十二条第一款",
+          "【平台规则】哔哩哔哩《花火稿件前置审核规范总则》三、专利数据类"
+        ],
+        "legal_provisions": [
+          {
+            "document_title": "《中华人民共和国广告法》",
+            "article": "第十二条第一款",
+            "provision_text": "广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类。",
+            "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html",
+            "rule_id": "ADLAW-012-01",
+            "application": "文案涉及专利产品或方法，但未标明专利号和专利种类。",
+            "expected_hit": true,
+            "verification_status": "official_source_checked_2026-09-08"
+          }
+        ],
+        "platform_provisions": [
+          {
+            "rule_id": "BILI-HUOHUA-PATENT-III",
+            "platform": "哔哩哔哩",
+            "document_title": "花火稿件前置审核规范总则",
+            "locator": "三、专利数据类",
+            "provision_text": "涉及产品功效的具体数据类内容，应提供对应的数据证明。",
+            "application": "专利和具体功效均需提供与宣称匹配的证明。",
+            "expected_hit": true,
+            "source_url": "https://www.bilibili.com/blackboard/activity-hp6i7WQHrx.html",
+            "snapshot_collected_at": "2026-09-04",
+            "raw_text_path": "data/platform_rules/raw_text/2026-09-04/bilibili_huohua_pre_audit_general.json",
+            "review_status": "pending_legal_review",
+            "effective_status": "pending_effective_review",
+            "human_review_required": true
+          }
+        ],
+        "evidence_requirements": [
+          "有效专利证书",
+          "专利权属及授权链",
+          "专利号和专利种类",
+          "专利技术与“细纹消失”之间的功效证据"
+        ],
+        "recommended_action": "补齐并核验专利材料，在素材中标明专利号和种类；无法证明效果时删除“让细纹消失”。",
+        "human_review_required": true,
+        "reference_answer_status": "candidate_pending_human_review",
+        "decision_boundary": "仅为测试期望和平台预检参考，不构成行政违法认定，也不代表平台必然审核通过或驳回。"
+      }
+    },
+    {
+      "case_id": "BEAUTY-AD-009",
+      "name": "正常样例：与备案一致的清洁保湿介绍",
+      "label": "正常",
+      "test_focus": [
+        "正常对照",
+        "备案一致",
+        "无医疗功效"
+      ],
+      "input_payload": {
+        "record_id": "rec_beauty_ad_009",
+        "mode": "标准",
+        "fields": {
+          "①运营·行业领域": "美妆",
+          "①运营·物料内容": "温和清洁肌肤，帮助保持肌肤水润。具体成分和使用方法请见产品标签。",
+          "①运营·紧急程度": "普通",
+          "①运营·补充背景资料": "已提供普通化妆品备案信息、完整标签和功效宣称依据摘要；文案与备案一致。",
+          "①美妆·物料类型": "详情页",
+          "①美妆·投放平台": [
+            "抖音"
+          ],
+          "①美妆·产品品类": "护肤",
+          "①美妆·物料涉及场景": "抖音电商商品详情页",
+          "①美妆·核心宣称功效": [
+            "清洁",
+            "保湿"
+          ],
+          "①美妆·产品备案名称": "日常清洁保湿乳"
+        }
+      },
+      "expected": {
+        "expected_judgment": "无明显风险",
+        "expected_routing": "运营",
+        "must_recall_rule_ids": [],
+        "suspected_legal_basis": [
+          "无明确疑似违规法条；仅在已提供材料真实、有效且与实际商品一致的前提下作为正常对照样例。"
+        ],
+        "legal_provisions": [
+          {
+            "document_title": "《中华人民共和国广告法》",
+            "article": "第八条",
+            "provision_text": "广告中对商品的性能、功能、产地、用途、质量、成分、价格、生产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明白。",
+            "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html",
+            "rule_id": "ADLAW-008",
+            "application": "商品功能和成分描述应准确、清楚、明白；本样例假定已满足。",
+            "expected_hit": false,
+            "verification_status": "official_source_checked_2026-09-08"
+          },
+          {
+            "document_title": "《化妆品监督管理条例》",
+            "article": "第二十二条",
+            "provision_text": "化妆品的功效宣称应当有充分的科学依据。化妆品注册人、备案人应当在国务院药品监督管理部门规定的专门网站公布功效宣称所依据的文献资料、研究数据或者产品功效评价资料的摘要，接受社会监督。",
+            "source_url": "https://xzfg.moj.gov.cn/front/law/detail?LawID=451",
+            "rule_id": "COSM-REG-022",
+            "application": "功效宣称应有科学依据；本样例假定已提供并公布摘要。",
+            "expected_hit": false,
+            "verification_status": "official_source_checked_2026-09-08"
+          }
+        ],
+        "platform_provisions": [
+          {
+            "rule_id": "DOUYIN-COSM-ATTRIBUTE-2.4",
+            "platform": "抖音电商",
+            "document_title": "关于《美妆行业宣传规范》修订的公示通知（2022.5.10）",
+            "locator": "二、禁止夸大、虚假宣传或描述—2.4",
+            "provision_text": "应确保化妆品成分、含量、产地、规格等描述与商品详情页或实际商品保持一致。",
+            "application": "成分、含量、产地、规格等应与商品一致；本样例假定已满足。",
+            "expected_hit": false,
+            "source_url": "https://school.jinritemai.com/doudian/wap/article/aHUMNYPLL4Lk",
+            "snapshot_collected_at": "2026-09-04",
+            "raw_text_path": "data/platform_rules/raw_text/2026-09-04/douyin_beauty_rules_notice_2022_05_10.json",
+            "review_status": "pending_legal_review",
+            "effective_status": "pending_effective_review",
+            "human_review_required": true
+          }
+        ],
+        "evidence_requirements": [
+          "备案信息有效性",
+          "产品标签与实物一致性",
+          "功效宣称依据摘要"
+        ],
+        "recommended_action": "可作正常对照样例；上线前仍须完成商品、标签与备案一致性核验。",
+        "human_review_required": true,
+        "reference_answer_status": "candidate_pending_human_review",
+        "decision_boundary": "仅为测试期望和平台预检参考，不构成行政违法认定，也不代表平台必然审核通过或驳回。",
+        "must_not_recall_rule_ids": [
+          "ADLAW-017",
+          "ADLAW-028",
+          "DOUYIN-COSM-EFFICACY-2.1.1",
+          "DOUYIN-COSM-GUARANTEE-2.1.2"
+        ]
+      }
+    },
+    {
+      "case_id": "BEAUTY-AD-010",
+      "name": "正常样例：已显著标注广告的体验分享",
+      "label": "正常",
+      "test_focus": [
+        "正常对照",
+        "广告可识别性",
+        "购物链接"
+      ],
+      "input_payload": {
+        "record_id": "rec_beauty_ad_010",
+        "mode": "标准",
+        "fields": {
+          "①运营·行业领域": "美妆",
+          "①运营·物料内容": "【广告】今天试用的唇釉呈现玫瑰色和光泽感，质地与上唇效果如图，详细成分请见商品页。",
+          "①运营·紧急程度": "普通",
+          "①运营·补充背景资料": "品牌付费合作笔记，首行显著标明“广告”并附购物链接；已提供完整备案、标签和实拍原图。",
+          "①美妆·物料类型": "图文",
+          "①美妆·投放平台": [
+            "小红书"
+          ],
+          "①美妆·产品品类": "彩妆",
+          "①美妆·物料涉及场景": "小红书聚光图文笔记",
+          "①美妆·核心宣称功效": [
+            "玫瑰色",
+            "光泽感",
+            "上唇效果展示"
+          ],
+          "①美妆·产品备案名称": "玫瑰水光唇釉"
+        }
+      },
+      "expected": {
+        "expected_judgment": "无明显风险",
+        "expected_routing": "运营",
+        "must_recall_rule_ids": [],
+        "suspected_legal_basis": [
+          "无明确疑似违规法条；本样例仅检验已满足广告可识别性且内容与材料一致时的正常输出。"
+        ],
+        "legal_provisions": [
+          {
+            "document_title": "《互联网广告管理办法》",
+            "article": "第九条第三款",
+            "provision_text": "通过知识介绍、体验分享、消费测评等形式推销商品或者服务，并附加购物链接等购买方式的，广告发布者应当显著标明“广告”。",
+            "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_d93a579afd45413e8576e4623fab348f.html",
+            "rule_id": "INET-AD-009-03",
+            "application": "体验分享附购物链接时应显著标明“广告”；本样例假定首行标注清晰显著。",
+            "expected_hit": false,
+            "verification_status": "official_source_checked_2026-09-08"
+          }
+        ],
+        "platform_provisions": [
+          {
+            "rule_id": "XHS-JG-AD-ID-1.11",
+            "platform": "小红书",
+            "document_title": "内容审核规则总则",
+            "locator": "三、通用素材审核要求—1.11",
+            "provision_text": "广告应当具有可识别性，能够使消费者辨明其为广告。",
+            "application": "聚光笔记应让消费者能够辨明其为广告；本样例假定已显著标明。",
+            "expected_hit": false,
+            "source_url": "https://ad.xiaohongshu.com/next_help/docs/8dc5bd9c45c9a90cb9912f3400d43f92",
+            "snapshot_collected_at": "2026-09-04",
+            "raw_text_path": "data/platform_rules/raw_text/2026-09-04/xhs_content_review_general_2026_03_23.json",
+            "review_status": "pending_legal_review",
+            "effective_status": "pending_effective_review",
+            "human_review_required": true
+          }
+        ],
+        "evidence_requirements": [
+          "付费合作关系",
+          "“广告”标识在实际端的显著性截图",
+          "商品页与实物一致性",
+          "未经修图的原始实拍图"
+        ],
+        "recommended_action": "可作正常对照样例；投放前实机确认“广告”标识显著且不被折叠。",
+        "human_review_required": true,
+        "reference_answer_status": "candidate_pending_human_review",
+        "decision_boundary": "仅为测试期望和平台预检参考，不构成行政违法认定，也不代表平台必然审核通过或驳回。",
+        "must_not_recall_rule_ids": [
+          "ADLAW-017",
+          "ADLAW-009-03",
+          "XHS-JG-COSM-EFFECT-2.1.3",
+          "XHS-JG-COMPARE-2.15"
+        ]
+      }
+    }
+  ]
+}

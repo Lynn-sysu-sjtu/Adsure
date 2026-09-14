@@ -1,0 +1,100 @@
+{
+ "case_id": "sector_docx__beauty__1696a02c",
+ "title": "毛冉冉诉广州舒美生物科技有限公司产品责任纠纷案",
+ "case_number": "（2018）鄂0105民初1791号",
+ "court": "武汉市汉阳区人民法院",
+ "decision_date": "2018-07-17",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+ "source_url": null,
+ "source_verification_status": "pending_source_lookup",
+ "publish_date": null,
+ "penalty_authority": null,
+ "party_name": "广州舒美生物科技有限公司产品责任纠纷案",
+ "region": "武汉市汉阳区",
+ "industry": "化妆品 / 医疗美容 / 美妆",
+ "sector": "beauty",
+ "sector_cn": "美妆",
+ "violation_type": "化妆品广告虚假宣传",
+ "case_nature": "judicial_reference_not_admin_penalty",
+ "source_lookup_priority": "P2",
+ "is_admin_penalty_candidate": false,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "beauty"
+ ],
+ "product_or_service": "雅诗泉全身美白乳",
+ "ad_channel": "其他",
+ "risk_dimensions": [
+  "虚假宣传"
+ ],
+ "illegal_claims": [
+  "雅诗泉全身美白乳",
+  "瞬间美白",
+  "全身美白"
+ ],
+ "facts_summary": "在阿里巴巴销售“雅诗泉全身美白乳”（非特殊用途化妆品），网页宣传“瞬间美白”“全身美白”等功效，未取得特殊用途化妆品批准文号",
+ "legal_basis": [
+  "《食品安全法》第一百四十八条第二款（参照适用）"
+ ],
+ "penalty_result": "十倍赔偿9000元",
+ "penalty_amount": null,
+ "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《食品安全法》第一百四十八条第二款（参照适用）。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "beauty",
+  "美妆",
+  "化妆品广告虚假宣传",
+  "虚假宣传",
+  "雅诗泉全身美白乳",
+  "瞬间美白",
+  "全身美白"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "approved",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": true
+ },
+ "source_lookup_query": "（2018）鄂0105民初1791号 毛冉冉诉广州舒美生物科技有限公司产品责任纠纷案",
+ "vector_text": "【赛道】美妆。【场景】其他。【宣称】雅诗泉全身美白乳；瞬间美白；全身美白。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《食品安全法》第一百四十八条第二款（参照适用）。。【依据】《食品安全法》第一百四十八条第二款（参照适用）。【结果】十倍赔偿9000元。",
+ "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  }
+ ],
+ "source_record_path": "data/structured_candidates/sector_docx__beauty__1696a02c.json",
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T03:41:10+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）"
+ }
+}

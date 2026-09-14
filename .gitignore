@@ -3,7 +3,10 @@ __pycache__/
 .pytest_cache/
 .venv/
 .venv-video/
+.venv-handoff/
+.venv-handoff-video/
 .env.video.local
+backend/.env
 data/video_mvp/models/
 .env
 .DS_Store
@@ -11,6 +14,11 @@ spreadsheet_work/node_modules
 data/video_mvp/jobs/
 data/video_mvp/manual_run/
 tmp/video_mvp/
+var/
+out/
+data/ingest_runs/crawler_quota.json
+data/ingest_runs/crawler_quota.json.lock
+data/ingest_runs/crawler_quota.json.tmp
 
 # Local integration instructions may contain private endpoints or credentials.
 API调用方式说明.docx

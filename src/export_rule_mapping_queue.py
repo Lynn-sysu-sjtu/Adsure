@@ -17,8 +17,20 @@ def load_mapping_queue(structured_dir: Path) -> list[dict]:
         if production_exclusion_reasons(case):
             continue
         mapped_rule_ids = case.get("mapped_rule_ids") or []
-        if mapped_rule_ids:
+        legal_basis_details = case.get("legal_basis_details") or []
+        pending_details = [
+            detail
+            for detail in legal_basis_details
+            if isinstance(detail, dict)
+            and detail.get("mapping_review_status") == "pending_legal_review"
+        ]
+        if mapped_rule_ids and not pending_details:
             continue
+        mapping_status = (
+            "pending_legal_review"
+            if pending_details
+            else "pending_rule_owner_review"
+        )
         queue.append(
             {
                 "case_id": case["case_id"],
@@ -31,8 +43,9 @@ def load_mapping_queue(structured_dir: Path) -> list[dict]:
                 "source_name": case.get("source_name", ""),
                 "source_url": case.get("source_url", ""),
                 "raw_text_path": case.get("raw_text_path", ""),
-                "mapped_rule_ids": [],
-                "mapping_status": "pending_rule_owner_review",
+                "mapped_rule_ids": mapped_rule_ids,
+                "legal_basis_details": pending_details,
+                "mapping_status": mapping_status,
             }
         )
     return queue
@@ -42,9 +55,9 @@ def render_markdown(queue: list[dict]) -> str:
     lines = [
         "# 正式案例规则映射复核队列",
         "",
-        f"- 待映射案例：{len(queue)}",
-        "- 状态：`pending_rule_owner_review`",
-        "- 说明：本队列不自动推断规则 ID 或具体法条；仅整理已核验案例证据，供规则负责人对照正式规则目录人工回填。",
+        f"- 待复核案例：{len(queue)}",
+        "- 状态：`pending_rule_owner_review` 或 `pending_legal_review`",
+        "- 说明：未映射案例不自动推断规则 ID 或具体法条；已有推定映射必须由法律人员对照法规目录和处罚决定书复核，不能表述为处罚机关明确引用。",
         "",
     ]
     for index, item in enumerate(queue, start=1):
@@ -59,7 +72,8 @@ def render_markdown(queue: list[dict]) -> str:
                 f"- 监管逻辑：{item['regulatory_logic'] or '-'}",
                 f"- 来源：[{item['source_name']}]({item['source_url']})",
                 f"- 原文路径：`{item['raw_text_path']}`",
-                "- 待回填规则 ID：",
+                f"- 映射状态：`{item['mapping_status']}`",
+                f"- 待复核规则 ID：{'；'.join(item['mapped_rule_ids']) or '-'}",
                 "",
             ]
         )

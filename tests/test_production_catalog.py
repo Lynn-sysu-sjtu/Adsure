@@ -13,6 +13,11 @@ EXPECTED_CASE_IDS = {
     f"samr_2025_typical_ads_{index:02d}"
     for index in range(1, 11)
 }
+DEMO_CASE_IDS = {
+    "mihoyo_2016_2520150399",
+    "shanghai_jingan_2026_062026000257",
+    "sector_docx__health__d8460228",
+}
 
 
 class ProductionCatalogTests(unittest.TestCase):
@@ -41,10 +46,25 @@ class ProductionCatalogTests(unittest.TestCase):
                 case["legal_basis"],
                 ["《中华人民共和国广告法》有关规定"],
             )
-            self.assertEqual(case["mapped_rule_ids"], [])
+            self.assertTrue(case["mapped_rule_ids"])
+            self.assertTrue(case["legal_basis_details"])
+            self.assertEqual(
+                case["legal_basis_provenance"]["specific_articles_published_by_case_source"],
+                False,
+            )
+            self.assertEqual(
+                case["legal_basis_provenance"]["mapping_status"],
+                "inferred_pending_legal_review",
+            )
+            self.assertTrue(
+                all(
+                    detail["mapping_review_status"] == "pending_legal_review"
+                    for detail in case["legal_basis_details"]
+                )
+            )
             self.assertIn("未公布具体条款编号", case["notes"])
 
-    def test_official_catalog_builds_twenty_production_chunks(self):
+    def test_official_catalog_and_demo_allowlist_build_production_chunks(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             paths = build_chunks.run(
@@ -53,11 +73,17 @@ class ProductionCatalogTests(unittest.TestCase):
                 structured_samples_dir=PROJECT_ROOT / "data/structured_samples",
                 chunks_dir=root / "chunks",
                 reports_dir=root / "reports",
+                demo_production_manifest=(
+                    PROJECT_ROOT / "data/config/demo_production_cases.json"
+                ),
             )
             chunks = json.loads(paths["production"].read_text(encoding="utf-8"))
 
-        self.assertEqual(len(chunks), 20)
-        self.assertEqual({chunk["case_id"] for chunk in chunks}, EXPECTED_CASE_IDS)
+        from tests.test_demo_production_promotion import owner_approved_candidate_ids
+        expected_ids = EXPECTED_CASE_IDS | DEMO_CASE_IDS | owner_approved_candidate_ids()
+        self.assertEqual({chunk["case_id"] for chunk in chunks}, expected_ids)
+        # 每条 case 生成 case_summary + regulatory_logic 两类 chunk
+        self.assertEqual(len(chunks), 2 * len(expected_ids))
         self.assertTrue(
             all(chunk["metadata"]["violation_type"] for chunk in chunks)
         )

@@ -1,0 +1,8 @@
+{
+  "case_id": "mihoyo_2016_2520150399",
+  "source_record_path": "data/structured_candidates/mihoyo_2016_2520150399.json",
+  "demo_production": true,
+  "demo_only": true,
+  "not_for_production_factual_use": true,
+  "demo_purpose": "competition_demo_retrieval_only"
+}

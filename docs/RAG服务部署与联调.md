@@ -21,15 +21,24 @@
   "chunk_count": 20,
   "index_version": "16位索引摘要",
   "loaded_at": "UTC加载时间",
+  "retrieval": {
+    "requested_mode": "hybrid",
+    "effective_mode": "hybrid",
+    "semantic_status": "ready",
+    "semantic_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+  },
   "checks": {
     "index": "ok",
-    "api_key": "configured"
+    "api_key": "configured",
+    "semantic": "ok"
   }
 }
 ```
 
 `status=degraded` 表示索引文件无法解析或服务端尚未配置 API Key。正式索引
 合法但为空时服务仍存活，`case_count` 和 `chunk_count` 为 `0`。
+语义索引缺失、过期或模型加载失败时，`checks.semantic=degraded`、
+`effective_mode=lexical`；只要词法索引和 Key 可用，服务整体仍可为 `ok`。
 
 ### `POST /cases/retrieve`
 
@@ -44,15 +53,21 @@ X-API-Key: <由部署环境安全提供>
 
 ```json
 {
-  "content": "充3元送一只狗",
-  "industry": "游戏",
+  "content": "普通食品宣称可以治疗高血压",
+  "industry": "保健食品",
   "platform": ["抖音"],
+  "claim_spans": ["治疗高血压"],
+  "product_category": "普通食品",
+  "ad_channel": "直播",
+  "risk_dimensions": ["普通食品疾病治疗功效宣传"],
+  "matched_rule_ids": ["ADLAW-017"],
   "top_k": 3
 }
 ```
 
-必填字段是 `content` 和 `industry`。`platform` 缺省为 `[]`；`top_k`
-默认 3，允许 1—5。飞书工作台不需要传 `tenant_id`、命中规则或审核结论。
+必填字段是 `content` 和 `industry`。其余结构化字段均可省略，以兼容旧调用方；
+规则引擎能够提供时应传 `claim_spans`、产品类别、渠道、风险维度和规则 ID，
+用于过滤错赛道结果。`top_k` 默认 3，允许 1—5。
 
 成功响应：
 
@@ -68,14 +83,35 @@ X-API-Key: <由部署环境安全提供>
         "risk_level": null,
         "violation_type": "虚假宣传",
         "risk_dimensions": ["履约风险"],
-        "score": 8.23,
+        "score": 0.991803,
+        "score_type": "hybrid_rrf",
+        "similarity": 0.742925,
         "source_name": "公开监管来源",
         "source_url": "https://example.gov.cn/case",
         "candidate_data": false,
         "content_snippet": "原案例广告宣称",
         "ruling": "处理结果",
         "regulatory_logic": "监管认定逻辑",
-        "legal_basis": ["《中华人民共和国广告法》"]
+        "legal_basis": ["《中华人民共和国广告法》有关规定"],
+        "mapped_rule_ids": ["ADLAW-017"],
+        "legal_basis_details": [
+          {
+            "rule_id": "ADLAW-017",
+            "article": "第十七条",
+            "relation": "applicable_rule_inferred",
+            "mapping_review_status": "pending_legal_review",
+            "source_url": "https://www.samr.gov.cn/..."
+          }
+        ],
+        "retrieval_method": "hybrid_rrf_v1",
+        "match_evidence": {
+          "matched_terms": ["治疗", "高血", "血压"],
+          "matched_fields": ["illegal_claims", "regulatory_logic"],
+          "query_coverage": 0.75,
+          "lexical_score": 8.23,
+          "semantic_similarity": 0.742925,
+          "fusion_score": 0.991803
+        }
       }
     ],
     "retrieval_meta": {
@@ -88,15 +124,20 @@ X-API-Key: <由部署环境安全提供>
 }
 ```
 
-`score` 是 BM25 原始排序分，不是百分比或 embedding 语义相似度。RAG 只返回
-结构化案例事实，不输出整段最终法律意见。`risk_level` 当前没有稳定案例字段，
-固定返回 `null`，不得根据排序分推导。
+`score` 的含义由 `score_type` 决定：词法模式是 BM25 原始分，语义模式是余弦，
+混合模式是 RRF 融合分。三者都不是风险百分比。只有结果实际进入语义候选集时，
+`similarity` 才返回真实语义余弦，否则为 `null`。RAG 只返回结构化案例事实，
+不输出整段最终法律意见。`risk_level` 当前没有稳定案例字段，固定返回 `null`。
 
-服务默认只保留分数不低于第一名 25% 的结果，因此实际返回数可以少于 `top_k`，
-不会为了凑满数量展示明显偏弱的长尾案例。阈值可通过
-`CASE_ENGINE_MIN_RELATIVE_SCORE` 调整，取值范围为 0—1。
+服务同时执行有效短语数、查询覆盖率和相对分数门槛，因此实际返回数可以少于
+`top_k`，也可以为 0。覆盖率阈值由 `CASE_ENGINE_MIN_QUERY_COVERAGE` 调整，
+相对分数阈值由 `CASE_ENGINE_MIN_RELATIVE_SCORE` 调整，取值范围均为 0—1。
 
-行业过滤在 BM25 打分前执行。游戏和美妆请求不会因“虚假宣传”等通用词命中
+`legal_basis` 只表示案例来源实际披露的依据。`legal_basis_details` 中
+`relation=applicable_rule_inferred` 的具体条款是根据官方摘要事实作出的适用性
+映射；在 `mapping_review_status` 完成法律复核前，不得表述为处罚决定书明确引用。
+
+行业过滤在任何检索打分前执行。游戏和美妆请求不会因“虚假宣传”等通用词命中
 其他行业案例；保健食品请求允许召回健康产品和普通食品中的疾病功效宣传案例，
 但返回值保留案例的原始行业。
 
@@ -159,11 +200,24 @@ CASE_ENGINE_INDEX_SCOPE=candidate
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-semantic.txt
+make semantic-index
 export ADSURE_API_KEY="<仅在当前 shell 注入>"
 export CASE_ENGINE_INDEX_SCOPE="production"
+export CASE_ENGINE_RETRIEVAL_MODE="hybrid"
+export CASE_ENGINE_MIN_SEMANTIC_SCORE="0.62"
+export CASE_ENGINE_EMBEDDING_ALLOW_DOWNLOAD="0"
 make serve
 ```
+
+默认禁止服务运行时下载模型。部署前应通过受控流程准备模型缓存；若只安装
+`requirements.txt`，将 `CASE_ENGINE_RETRIEVAL_MODE=lexical`。混合模式下语义
+资源不可用会降级到词法；需要将语义能力作为启动硬门禁时再设置
+`CASE_ENGINE_REQUIRE_SEMANTIC=1`。
+
+systemd 示例启用了 `ProtectHome=true`，因此不要依赖部署账号主目录中的模型
+缓存。将完整模型缓存放到 `/opt/adsure-rag/models`，并使用示例配置中的
+`HF_HOME`、`HF_HUB_OFFLINE=1` 和 `TRANSFORMERS_OFFLINE=1`。
 
 验证：
 
@@ -220,6 +274,9 @@ systemd 在每次启动前都会运行生产预检，并自动读取上述两个
 - 案例声明的 `raw_text_path` 在部署目录中不存在；
 - 正式索引中没有可供 `/cases/retrieve` 使用的公共案例。
 
+当 `CASE_ENGINE_REQUIRE_SEMANTIC=1` 时，语义索引缺失、与切片指纹不一致或模型
+无法加载也会阻止启动；默认值为 `0`，此时预检记录实际模式并允许词法降级。
+
 预检只输出数量、索引版本和错误类型，不输出 API Key 或案例正文。本地使用与
 systemd 相同环境变量时也可以执行 `make preflight-rag`。
 
@@ -242,6 +299,8 @@ make smoke-rag
 
 ```bash
 make chunks
+make semantic-index
+make evaluate-retrieval
 ADSURE_API_KEY="<仅在当前 shell 注入>" make preflight-rag
 make test-rag
 python3 -m unittest discover -s tests -v
@@ -255,4 +314,9 @@ python3 -m unittest discover -s tests -v
 4. 损坏索引返回 HTTP 503，健康状态为 `degraded`；
 5. 未配置 API Key 时健康状态为 `degraded`；
 6. 响应包含请求追踪 ID 和稳定索引版本；
-7. API Key、JSON/字段校验、候选库显式标记和 `/search` 兼容路由。
+7. API Key、JSON/字段校验、候选库显式标记和 `/search` 兼容路由；
+8. 语义同义改写召回、负例空结果、混合索引指纹和词法降级。
+
+`data/evaluation/retrieval_quality_cases.json` 是小规模人工回归集，只用于防止
+已知问题复发。报告中的通过率不能表述为全量生产准确率；扩大正式案例库后应
+补充盲测集并单独统计 Recall@K、Precision@K 和无关查询拒答率。

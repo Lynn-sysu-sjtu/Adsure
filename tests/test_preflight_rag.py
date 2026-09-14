@@ -130,6 +130,31 @@ class RagPreflightTests(unittest.TestCase):
 
         self.assertTrue(any(error.startswith("案例原文不存在") for error in errors))
 
+    def test_semantic_can_be_optional_or_required(self):
+        self.write_valid_catalog()
+
+        optional_summary, optional_errors = check_production_readiness(
+            self.data_dir,
+            "production",
+            "test-secret",
+            retrieval_mode="hybrid",
+            require_semantic=False,
+        )
+        self.assertEqual(optional_errors, [])
+        self.assertEqual(optional_summary["effective_retrieval_mode"], "lexical")
+        self.assertEqual(optional_summary["semantic_status"], "missing_index")
+
+        _required_summary, required_errors = check_production_readiness(
+            self.data_dir,
+            "production",
+            "test-secret",
+            retrieval_mode="hybrid",
+            require_semantic=True,
+        )
+        self.assertTrue(
+            any(error.startswith("语义检索未就绪") for error in required_errors)
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

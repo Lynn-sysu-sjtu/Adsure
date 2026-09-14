@@ -29,7 +29,9 @@
   "penalty_result": "罚没款28.72万元",
   "penalty_amount": 287200,
   "regulatory_logic": "直播广告对商品产地的宣传应与实际情况一致，将外地生产的陶瓷餐具宣传为景德镇瓷器会欺骗、误导消费者。",
-  "mapped_rule_ids": [],
+  "mapped_rule_ids": [
+    "ADLAW-028"
+  ],
   "keywords": [
     "直播",
     "陶瓷餐具",
@@ -43,9 +45,54 @@
   "approved_for_rag": true,
   "raw_html_path": "data/raw_html/samr_typical_ads__2ad160ae3056.json",
   "raw_text_path": "data/raw_text/samr_typical_ads__2ad160ae3056.json",
-  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。",
+  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。 具体条款映射为依据官方摘要事实作出的待法律复核推定，不代表处罚决定书已明确引用。",
   "audit": {
     "review_status": "approved",
     "approved_for_rag": true
+  },
+  "possible_liability_rule_ids": [
+    "ADLAW-055"
+  ],
+  "legal_basis_details": [
+    {
+      "rule_id": "ADLAW-028",
+      "law_name": "中华人民共和国广告法",
+      "article": "第二十八条",
+      "paragraph": null,
+      "item": null,
+      "rule_type": "false_advertising",
+      "rule_summary": "广告以虚假或者引人误解的内容欺骗、误导消费者的，构成虚假广告。",
+      "rule_text_mode": "normalized_summary_not_verbatim",
+      "relation": "applicable_rule_inferred",
+      "mapping_basis": "official_summary_fact_pattern",
+      "mapping_review_status": "pending_legal_review",
+      "version_date": "2021-04-29",
+      "effective_status": "有效",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    },
+    {
+      "rule_id": "ADLAW-055",
+      "law_name": "中华人民共和国广告法",
+      "article": "第五十五条",
+      "paragraph": null,
+      "item": null,
+      "rule_type": "liability",
+      "rule_summary": "发布虚假广告的，由市场监督管理部门依法责令停止发布、消除影响并处罚款；严重情形适用更高处罚。",
+      "rule_text_mode": "normalized_summary_not_verbatim",
+      "relation": "possible_liability_inferred",
+      "mapping_basis": "official_summary_fact_pattern",
+      "mapping_review_status": "pending_legal_review",
+      "version_date": "2021-04-29",
+      "effective_status": "有效",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    }
+  ],
+  "legal_basis_provenance": {
+    "case_source_text": "《中华人民共和国广告法》有关规定",
+    "specific_articles_published_by_case_source": false,
+    "mapping_status": "inferred_pending_legal_review",
+    "warning": "具体条款为依据官方摘要事实作出的适用性映射，不代表处罚机关在决定书中明确引用。"
   }
 }
