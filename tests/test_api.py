@@ -8,7 +8,7 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from src.api import create_app
+from src.api import case_matches_industry, create_app
 
 
 class CaseApiTests(unittest.TestCase):

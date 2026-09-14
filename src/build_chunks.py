@@ -46,7 +46,7 @@ def unique_list(values: list) -> list:
 def base_metadata(case: dict, demo_production: bool = False) -> dict:
     scope = case.get("scope", "public")
     tenant_id = case.get("tenant_id") if scope == "tenant" else None
-    return {
+    metadata = {
         "scope": scope,
         "tenant_id": tenant_id,
         "source_type": case.get("source_type", ""),
@@ -73,6 +73,15 @@ def base_metadata(case: dict, demo_production: bool = False) -> dict:
         "demo_only": demo_production,
         "not_for_production_factual_use": demo_production,
     }
+    if demo_production:
+        metadata.update(
+            {
+                "demo_production": True,
+                "demo_only": True,
+                "not_for_production_factual_use": True,
+            }
+        )
+    return metadata
 
 
 def chunk_from_case(
