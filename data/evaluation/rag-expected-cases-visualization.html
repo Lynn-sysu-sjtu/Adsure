@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>30 条违规广告 × 案例库预期召回可视化</title>
+<style>
+:root{
+  --bg:#f6f7f9; --card:#ffffff; --line:#e3e6ea; --fg:#1f2937; --muted:#6b7280;
+  --beauty:#ec4899; --health:#10b981; --game:#6366f1; --ok:#16a34a; --warn:#d97706; --bad:#dc2626; --chip:#eef2f7;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--fg);line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 48px}
+header h1{font-size:22px;margin:0 0 4px}
+header p.sub{color:var(--muted);font-size:13px;margin:0 0 16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0 18px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.stat b{display:block;font-size:22px}
+.stat span{font-size:12px;color:var(--muted)}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 16px}
+.controls button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;color:var(--fg)}
+.controls button.active{background:var(--fg);color:#fff;border-color:var(--fg)}
+.controls input[type=search]{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;flex:1;min-width:180px}
+.controls label{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.card.hidden{display:none}
+.top{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.cid{font-weight:700;font-size:14px;font-family:ui-monospace,Menlo,monospace}
+.badge{font-size:11px;padding:2px 8px;border-radius:999px;color:#fff}
+.b-ind{background:var(--beauty)} .b-ind.game{background:var(--game)} .b-ind.保健食品{background:var(--health)}
+.lbl{padding:2px 8px;border-radius:999px;font-size:11px;border:1px solid var(--line);color:var(--fg)}
+.lbl.normal{background:#eef7ee;color:var(--ok);border-color:#cfe8cf}
+.hit{margin-left:auto;font-size:12px;font-weight:600}
+.hit.ok{color:var(--ok)} .hit.no{color:var(--bad)} .hit.na{color:var(--muted)}
+.ad{font-size:13px;background:#fafbfc;border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:#374151;max-height:76px;overflow:hidden;position:relative}
+.ad::after{content:"";position:absolute;left:0;right:0;bottom:0;height:18px;background:linear-gradient(transparent,#fafbfc)}
+.sect{font-size:12px;color:var(--muted);margin:2px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:11.5px;background:var(--chip);border:1px solid var(--line);border-radius:7px;padding:4px 8px;max-width:100%}
+.chip b{display:block;font-size:11px;color:var(--muted);font-family:ui-monospace,Menlo,monospace;word-break:break-all}
+.chip .tt{color:var(--fg)}
+.chip.expected{border-color:#c7d2fe}
+.chip.actual{border-color:#fecaca}
+.chip.matched{background:#e5f7ec;border-color:#9fe3b7}
+.chip.empty{background:#fff;border-style:dashed;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);background:#f7f8fa;border-radius:8px;padding:6px 10px}
+.note.warn{color:var(--warn);background:#fef7ec}
+.foot{margin-top:20px;font-size:12px;color:var(--muted);line-height:1.7}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:0 0 12px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>30 条违规广告 × 案例库预期召回可视化</h1>
+  <p class="sub">三套评测集（美妆 / 保健食品 / 游戏 × 各 10 条）· 生产案例库（129 条）· 预期召回为按风险维度编排的 gold oracle；实际召回为当前生产检索（lexical，默认阈值）输出</p>
+</header>
+
+<div class="stats" id="stats"></div>
+
+<div class="controls">
+  <span style="font-size:13px;color:var(--muted)">行业：</span>
+  <button data-ind="全部" class="active">全部</button>
+  <button data-ind="美妆">美妆</button>
+  <button data-ind="保健食品">保健食品</button>
+  <button data-ind="游戏">游戏</button>
+  <span style="width:1px"></span>
+  <span style="font-size:13px;color:var(--muted)">状态：</span>
+  <button data-lbl="全部" class="active">全部</button>
+  <button data-lbl="违规">违规/风险</button>
+  <button data-lbl="正常">正常样例</button>
+  <input type="search" id="q" placeholder="搜索广告文案 / case_id / 案例名…">
+  <label><input type="checkbox" id="onlyExp"> 仅显示有预期案例</label>
+</div>
+
+<div class="legend">
+  <span><i style="background:#c7d2fe"></i>预期召回</span>
+  <span><i style="background:#fecaca"></i>实际召回</span>
+  <span><i style="background:#9fe3b7"></i>命中预期</span>
+  <span><i style="background:#fff;border:1px dashed #cbd5e1"></i>未召回（低于阈值）</span>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="foot">
+  编排原则：同行业优先 + 同风险维度优先（医疗用语 / 绝对化用语 / 疾病治疗功效 / 虚假宣传 / 概率公示 / 功效保证 / 数据引证）；正常样例与库内无匹配（未成年人、版号/防沉迷、平台规则类）预期为空并注明。
+  <br>当前实测：30 条中仅 3 条有实际召回、2 条命中预期 —— 新文案词面/语义与库内案例重叠不足，被 <code>min_query_coverage=0.25 / min_semantic_score=0.62</code> 过滤。建议调优检索阈值或启用 hybrid、并补充未成年人/版号/平台规则等案例。
+</div>
+</div>
+
+<script>
+const DATA = {"titles":{"excel_candidate__absolute_terms__0963e2cd":"温州经济技术开发区海城乔诗丹顿卫浴洁具店与温州市市场监督管理局行政案","excel_candidate__absolute_terms__1c28d555":"北京假日阳光环球旅行社有限公司与北京市工商行政管理局海淀分局行政案","excel_candidate__absolute_terms__434f2186":"郑州尚之泉文化传播有限公司与郑州市工商行政管理局金水分局行政案","excel_candidate__absolute_terms__92b4e4d1":"郑州市金水区工商管理和质量技术监督局与郑州市科视视光技术有限公司行政案","excel_candidate__absolute_terms__f8beaa91":"温州经济技术开发区海城叶挺亮洁具配件厂与温州市市场监督管理局行政案","excel_candidate__cosmetic_medical_claim__2280310e":"温拓与天津百恩汇生物科技有限公司买卖合同纠纷再审案","excel_candidate__cosmetic_medical_claim__80f1858a":"苏州开禧医药有限公司与苏州市吴江区市场监督管理局行政处罚案","excel_candidate__cosmetic_medical_claim__865b8bc7":"周致正与北京创锐文化传媒有限公司买卖合同纠纷案","excel_candidate__cosmetic_medical_claim__ac711b6d":"临邑县市场监督管理局、临邑县临南镇双丰至尚洗化百货商店非诉执行审查案","excel_candidate__cosmetic_medical_claim__b2d8108c":"崇阳县市场监督管理局、御升广盈生物科技（深圳）有限公司非诉执行审查案","excel_candidate__cosmetic_medical_claim__ec0e2c05":"宜兴市市场监督管理局、孙某非诉行政行为申请执行审查案","excel_candidate__false_misleading_claim__700fe82c":"杭州市富阳区市场监督管理局、东莞市米乐真科技有限公司非诉执行审查案","excel_candidate__false_misleading_claim__801cf8d6":"重庆市市场监督管理局与重庆某生物科技有限公司行政非诉审查案","excel_candidate__false_misleading_claim__a55ab6a8":"宜兴市市场监督管理局、宜兴市某某服务部行政处罚非诉执行审查案","excel_candidate__false_misleading_claim__a9cfdd3e":"南召县工商行政管理局申请执行闫学军行政处罚案","excel_candidate__false_misleading_claim__f5a6d6c9":"沈阳美希公司与沈阳市沈河区市场监督管理局行政案","excel_candidate__food_medical_claim__83ff48dc":"德清县市场监督管理局、湖州洁净康电子科技有限公司非诉执行审查案","excel_candidate__food_medical_claim__883f17e8":"大庆市食品药品监督管理局、黑龙江易联百货电子商务有限公司非诉执行审查案","excel_candidate__food_medical_claim__b0e7e8a2":"李宗胜与江苏一号农场科技股份有限公司产品责任纠纷案","excel_candidate__food_medical_claim__c13d1c27":"盐津县市场监督管理局、盐津黑凤凰农业有限公司非诉执行审查案","excel_candidate__food_medical_claim__fd2c4c40":"孙玉民与京之源（北京）农业有限公司北潞园分公司等买卖合同纠纷案","excel_candidate__health_food_overclaim__32abaf01":"常州市武进区市场监督管理局与武进区湖塘颐圣堂食品店、马世开行政非诉审查案","excel_candidate__health_food_overclaim__87d3834c":"宜兴市市场监督管理局、宜兴市某某服务部行政处罚非诉执行审查案","excel_candidate__health_food_overclaim__d9cb5caf":"昌乐县市场监督管理局、吴素杰非诉执行审查案","excel_candidate__health_food_overclaim__df7e40d5":"宁波市镇海区市场监督管理局、宁波市镇海区招宝山瑞寿食品商行非诉执行审查案","excel_candidate__health_food_overclaim__f92a771c":"南宁武鸣活力保健食品有限公司与南宁市武鸣区市场监督管理局行政案","excel_candidate__improper_citation__63ed8b56":"海口市市场监督管理局龙华分局与杨思宝行政处罚非诉执行审查案","excel_candidate__improper_citation__7b5e29e0":"广州市哈雷日用品有限公司与赤壁市市场监督管理局行政案","excel_candidate__improper_citation__a989a836":"联合利华（中国）有限公司与云梦县市场监督管理局行政案","excel_candidate__improper_citation__ea28d99e":"广东雪洁日化用品有限公司与崇阳县工商行政管理局行政案","excel_candidate__improper_citation__f79ab438":"甘肃某某医疗科技有限公司与兰州市城关区市场监督管理局行政案","excel_candidate__live_commerce_ad__585696ea":"成都市青白江区市场监督管理局与成都麦凡田贸易有限公司行政非诉执行审查案","excel_candidate__live_commerce_ad__6faab3d4":"河北溪林塑业有限公司与泊头市市场监督管理局行政案","excel_candidate__live_commerce_ad__a298aa7b":"宁波市市场监督管理局与宁波广发文博虫草制品科技有限公司非诉执行审查案","excel_candidate__live_commerce_ad__a6165916":"息县工商管理和质量技术监督局与息县广播电视台非诉执行审查案","excel_candidate__medical_beauty_device_guarantee__333bec1e":"徐州宇彤医疗器械有限公司第一分公司与徐州市泉山区市场监督管理局行政处罚案","excel_candidate__medical_beauty_device_guarantee__70220379":"唐山煤医整形美容医院与唐山市路北区市场监督管理局行政案","excel_candidate__medical_beauty_device_guarantee__b8bc4386":"大连市金州区中医医院与大连市市场监督管理局行政案","excel_candidate__medical_beauty_device_guarantee__c5e4983d":"海南伊佳医疗美容医院有限公司与海口市龙华区工商行政管理局行政案","excel_candidate__medical_beauty_device_guarantee__d3aee945":"武汉市工商行政管理局、武汉广播广告传播有限公司非诉执行审查案","excel_candidate__native_health_ad__1a078812":"安岳县市场监督管理局与安岳县康寿源健康生活馆行政非诉审查案","excel_candidate__native_health_ad__6a75abb1":"武汉市工商行政管理局与武汉广播广告传播有限公司非诉执行审查案","excel_candidate__native_health_ad__8cc0903c":"荆州市工商行政管理局与荆州电视台非诉执行审查案","excel_candidate__native_health_ad__b4f965f5":"武汉市工商行政管理局与武汉长江日报传媒集团有限公司武汉晨报分公司非诉执行审查案","excel_candidate__native_health_ad__b7aba4b2":"武汉市工商行政管理局与武汉电视广告传媒有限公司非诉执行审查案","excel_candidate__native_health_ad__e805d0c6":"绍兴上虞康强医疗器械经营部与绍兴市上虞区市场监督管理局行政案","excel_candidate__real_estate_misleading__39aefb2d":"中山某有限公司与某街道办行政案","excel_candidate__real_estate_misleading__9d4cd311":"临沂市市场监督管理局与某某（临沂）地产开发有限公司非诉执行审查案","excel_candidate__real_estate_misleading__b7d7fead":"克拉玛依市克拉玛依区市场监督管理局与新疆某甲房地产开发有限公司行政非诉审查案","excel_candidate__real_estate_misleading__c09b9f5e":"青岛市即墨区某局与青岛某有限公司行政非诉审查案","excel_candidate__real_estate_misleading__c2ee21d5":"重庆市北碚区市场监督管理局与重庆某房地产开发有限公司非诉执行审查案","excel_candidate__real_estate_misleading__c7de0984":"营山县市场监督管理局与营山某商贸有限公司行政非诉审查案","juewei_2017_1111_lowbrow_ad_case":"绝味食品股份有限公司2017年“双11”低俗广告行政处罚案（媒体来源）","mihoyo_2016_2520150399":"","samr_2025_typical_ads_01":"广州市番禺区市场监管局查处广州简美健康科技有限公司违法广告案","samr_2025_typical_ads_02":"广州市海珠区市场监管局查处那拉尊驼（广州）乳业有限公司违法广告案","samr_2025_typical_ads_03":"景德镇市市场监管局查处景德镇悦鑫亦彩陶瓷有限公司违法广告案","samr_2025_typical_ads_04":"呼和浩特市赛罕区市场监管局查处内蒙古草之楼生物科技有限公司违法广告案","samr_2025_typical_ads_05":"重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案","samr_2025_typical_ads_06":"浙江省杭州市市场监管局查处杭州青碧品牌管理有限公司违法广告案","samr_2025_typical_ads_07":"安徽省六安市市场监管局查处安徽康桥置业有限公司违法广告案","samr_2025_typical_ads_08":"山东省济南高新技术产业开发区管理委员会（市场监管部）查处山东乘时乘势电子商务有限公司违法广告案","samr_2025_typical_ads_09":"吉林省松原市市场监管局查处松原肛肠医院违法广告案","samr_2025_typical_ads_10":"云南省玉溪市市场监管局查处云南玉药生物制药有限公司违法广告案","sector_docx__beauty__0993a40d":"杭州滨研生物科技有限公司非诉执行案","sector_docx__beauty__0beb3b53":"上海美狄莎思美奇商贸有限公司诉上海市长宁区市场监督管理局案","sector_docx__beauty__1696a02c":"毛冉冉诉广州舒美生物科技有限公司产品责任纠纷案","sector_docx__beauty__21f65a16":"毛冉冉诉深圳市龙岗区亿发日贸易商行网络购物合同纠纷案","sector_docx__beauty__2626bbb1":"郑州市中原区市场监督管理局处罚常某建案","sector_docx__beauty__27760156":"泸州市龙马潭区市场监督管理局申请执行泸州韩美整形美容有限公司行政处罚案","sector_docx__beauty__5560f828":"绍兴市柯桥区市场监督管理局申请执行绍兴金乌玉农业科技有限公司行政处罚案","sector_docx__beauty__6091c23e":"青岛天地和装饰设计有限公司诉青岛市市北区市场监督管理局行政处罚案","sector_docx__beauty__801cf8d6":"重庆市市场监督管理局申请执行重庆某生物科技有限公司行政处罚案","sector_docx__beauty__80f1858a":"苏州开禧医药有限公司诉苏州市吴江区市场监督管理局行政处罚案","sector_docx__beauty__96b1a837":"毛冉冉诉广州娇比萃化妆品有限公司产品责任纠纷案","sector_docx__beauty__9b9bec19":"烟台市福山区市场监督管理局申请执行仙品果蔬专业合作社行政处罚案","sector_docx__beauty__a28e6eb6":"毛冉冉诉广州雅新生物科技有限公司网络购物合同纠纷案","sector_docx__beauty__ac711b6d":"临邑县临南镇双丰至尚洗化百货商店非诉执行案","sector_docx__beauty__ad8eba05":"陈剑力诉河南维颜化妆品有限公司网络购物合同纠纷案","sector_docx__beauty__adcff395":"郑州市中原区市场监督管理局诉河南聚美化妆品公司行政处罚案","sector_docx__beauty__b2d8108c":"崇阳县市场监督管理局申请执行御升广盈生物科技（深圳）有限公司行政处罚案","sector_docx__beauty__b7712cbc":"林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案","sector_docx__beauty__ba07e527":"金华市金东区市场监督管理局申请执行俞俊玲行政处罚案","sector_docx__beauty__cfc7d2a0":"韦彩群诉东兴市市场监督管理局行政案","sector_docx__beauty__ec0e2c05":"宜兴市市场监督管理局申请执行孙某行政处罚案","sector_docx__beauty__f46b8aed":"毛冉冉诉广州医美医药科技有限公司网络购物合同纠纷案","sector_docx__beauty__f500e86e":"驻马店市晨钟生物科技有限公司诉平顶山市工商行政管理局新华分局行政处罚案","sector_docx__game__19894e09":"王越诉广州鑫晨网络科技有限公司等网络服务合同纠纷案","sector_docx__game__3ba48058":"陈睿泽诉广州库洛科技有限公司网络服务合同纠纷案","sector_docx__game__4cff4dd4":"许某诉广州某公司等网络服务合同纠纷案","sector_docx__game__53e9096b":"郭某诉某某公司等服务合同纠纷案","sector_docx__game__54a80f6c":"刘某诉某科技公司网络服务合同纠纷案","sector_docx__game__551a4343":"朱某伟诉江西某某信息技术有限公司网络服务合同纠纷案","sector_docx__game__6a91b70a":"鲍道成诉广州掌跃网络科技有限公司等网络服务合同纠纷案","sector_docx__game__6b073bbb":"吴某、郝某诉杭州某公司网络服务合同纠纷案","sector_docx__game__a5b354d7":"赵剑磊诉三七互娱（上海）科技有限公司等网络服务合同纠纷案","sector_docx__game__b5daf3c4":"孙某诉某（北京）科技有限公司网络服务合同纠纷案","sector_docx__game__cc400e61":"王某诉北京某公司网络服务合同纠纷案","sector_docx__game__ccf5c3bb":"朱某伟诉海南某公司合同纠纷案","sector_docx__game__d9a46e29":"四川某某科技有限公司诉眉山市市场监督管理局行政处罚案","sector_docx__game__e9a15585":"闻某诉广州某公司网络服务合同纠纷案","sector_docx__health__1a078812":"安岳县市场监督管理局申请执行康寿源健康生活馆行政处罚案","sector_docx__health__21364f49":"义乌市爽爽戒烟咨询服务站诉义乌市市场监督管理局行政处罚案","sector_docx__health__32abaf01":"常州市武进区市场监督管理局申请执行颐圣堂食品店行政处罚案","sector_docx__health__47adc1ea":"成都市青羊区市场监督管理局申请执行成都某有限公司行政处罚案","sector_docx__health__4868d2df":"连城县文亨良瑞食品经营部诉连城县市场监督管理局案","sector_docx__health__48c50f1c":"楚雄四世同堂食品经营部诉楚雄市市场监督管理局行政处罚案","sector_docx__health__4d2b48f7":"丽水市莲都区运祥日用品商行诉丽水市市场监督管理局案","sector_docx__health__5560f828":"绍兴市柯桥区市场监督管理局申请执行绍兴金乌玉农业科技有限公司行政处罚案","sector_docx__health__5a23d058":"济宁市任城区市场监督管理局申请执行婧港商贸公司行政处罚案","sector_docx__health__5d46a744":"佛山市南海区益尔康保健品商行诉佛山市南海区市场监督管理局行政处罚案","sector_docx__health__6a1dde83":"沧州市运河区市场监督管理局申请执行东方红保健食品经销处行政处罚案","sector_docx__health__70bd40e0":"高青县市场监督管理局申请执行华康保健品经营部行政处罚案","sector_docx__health__801cf8d6":"重庆市市场监督管理局申请执行重庆某生物科技有限公司行政处罚案","sector_docx__health__87d3834c":"宜兴市市场监督管理局申请执行宜兴市某某服务部行政处罚案","sector_docx__health__9e72583c":"缙云县市场监督管理局申请执行王志虎行政处罚案","sector_docx__health__aba1a4e2":"泸州市澳鼎医疗器械有限公司非诉执行案","sector_docx__health__abf17acb":"何某诉太原某公司买卖合同纠纷案","sector_docx__health__aeccb98a":"杭州市拱墅区海研保健食品经营部非诉执行案","sector_docx__health__b99ce8d0":"济南历下金泰保健食品经营部非诉执行案","sector_docx__health__bd569381":"丽水市莲都区善博广告设计工作室诉丽水市市场监督管理局案","sector_docx__health__bdad9230":"鄢陵县市场监督管理局申请执行婴智杰母婴商城行政处罚案","sector_docx__health__ce7b9365":"枞阳县市场监督管理局申请执行社区生活馆行政处罚案","sector_docx__health__d8460228":"张某甲诉象州县某局行政处罚案","sector_docx__health__d9cb5caf":"昌乐县市场监督管理局申请执行吴素杰行政处罚案","sector_docx__health__df7e40d5":"宁波市镇海区市场监督管理局申请执行瑞寿食品商行行政处罚案","sector_docx__health__f92a771c":"南宁武鸣活力保健食品有限公司诉南宁市武鸣区市场监督管理局行政处罚案","shanghai_jingan_2026_062026000257":"上海市静安区市场监督管理局查处上海百事得电子有限公司发布违背社会良好风尚广告案","ubras_2021_lingering_in_workplace_ad_case":"Ubras“让女性轻松躺赢职场”内衣广告被行政处罚案（媒体线索）"},"ads":[{"id":"BEAUTY-AD-001","industry":"美妆","name":"化妆品医疗用语","label":"疑似违规","ad":"可杀菌、消炎、镇痛","platform":["微信"],"focus":["医疗用语","疾病治疗功能","微信投放范围"],"expected":["sector_docx__beauty__0993a40d","sector_docx__beauty__5560f828","sector_docx__beauty__0beb3b53"],"note":"化妆品使用杀菌消炎等医疗用语，命中同行业医疗用语案例","actual":[{"id":"sector_docx__beauty__0beb3b53","score":26.9},{"id":"sector_docx__beauty__ac711b6d","score":25.2},{"id":"sector_docx__beauty__0993a40d","score":22.7}],"hit":["sector_docx__beauty__0beb3b53","sector_docx__beauty__0993a40d"]},{"id":"BEAUTY-AD-002","industry":"美妆","name":"B站商单绝对化宣称","label":"疑似违规","ad":"国家级抗老科技，全网效果最佳，顶级面霜。","platform":["b站"],"focus":["绝对化用语","国家级","B站花火"],"expected":["excel_candidate__absolute_terms__434f2186","excel_candidate__absolute_terms__0963e2cd","excel_candidate__absolute_terms__1c28d555"],"note":"国家级/最佳/顶级绝对化用语，命中绝对化用语案例","actual":[{"id":"sector_docx__beauty__6091c23e","score":54.9}],"hit":[]},{"id":"BEAUTY-AD-003","industry":"美妆","name":"小红书七天美白与99%数据","label":"疑似违规","ad":"7天美白3个度，99%用户见效，一次祛斑永不反弹。","platform":["小红书"],"focus":["见效周期","量化数据","永久效果"],"expected":["sector_docx__beauty__80f1858a","sector_docx__beauty__b7712cbc","sector_docx__beauty__21f65a16"],"note":"7天美白/99%见效/祛斑永不反弹：功效无依据+虚假宣传","actual":[],"hit":[]},{"id":"BEAUTY-AD-004","industry":"美妆","name":"普通化妆品超备案功效","label":"疑似违规","ad":"普通精华也能祛斑美白、防晒、防脱发，一瓶解决所有问题。","platform":["抖音"],"focus":["特殊化妆品","超注册备案功效","抖音美妆"],"expected":["sector_docx__beauty__ad8eba05","sector_docx__beauty__b7712cbc","sector_docx__beauty__80f1858a"],"note":"普通化妆品宣传特殊用途功效（祛斑美白防晒防脱发）","actual":[],"hit":[]},{"id":"BEAUTY-AD-005","industry":"美妆","name":"儿童化妆品可食用宣称","label":"疑似违规","ad":"食品级儿童润唇膏，宝宝可以放心吃，100%无任何风险。","platform":["抖音"],"focus":["儿童化妆品","食品级","安全性保证"],"expected":["excel_candidate__absolute_terms__434f2186","excel_candidate__absolute_terms__0963e2cd","sector_docx__beauty__b7712cbc"],"note":"低覆盖：库内无儿童化妆品可食用专属案例，近似按“100%无风险”绝对化+功效夸大匹配","actual":[],"hit":[]},{"id":"BEAUTY-AD-006","industry":"美妆","name":"医生推荐与临床数据","label":"疑似违规/需补资料","ad":"三甲医院皮肤科医生亲测推荐，临床验证99%有效。","platform":["微信"],"focus":["医生推荐","临床验证","99%有效"],"expected":["sector_docx__beauty__0993a40d","sector_docx__beauty__5560f828","sector_docx__beauty__0beb3b53"],"note":"医生推荐/临床验证99%：功效保证+医疗语境，命中医疗用语案例","actual":[],"hit":[]},{"id":"BEAUTY-AD-007","industry":"美妆","name":"B站前后效果对比","label":"疑似违规","ad":"左图烂脸长痘，右图用完一瓶皮肤完美无瑕，效果如图所见。","platform":["b站"],"focus":["使用前后对比","效果误导","病理图"],"expected":["sector_docx__beauty__b7712cbc","sector_docx__beauty__80f1858a","sector_docx__beauty__21f65a16"],"note":"前后效果对比承诺功效，命中功效/虚假宣传案例","actual":[],"hit":[]},{"id":"BEAUTY-AD-008","industry":"美妆","name":"B站专利宣称缺失专利号","label":"疑似违规/需补资料","ad":"独家国家专利抗皱配方，专利科技让细纹消失。","platform":["b站"],"focus":["专利宣称","专利号","专利种类"],"expected":["sector_docx__beauty__0993a40d","sector_docx__beauty__5560f828","sector_docx__beauty__0beb3b53"],"note":"专利宣称未标明专利号+抗皱功效，命中专利/医疗用语案例","actual":[],"hit":[]},{"id":"BEAUTY-AD-009","industry":"美妆","name":"正常样例：与备案一致的清洁保湿介绍","label":"正常","ad":"温和清洁肌肤，帮助保持肌肤水润。具体成分和使用方法请见产品标签。","platform":["抖音"],"focus":["正常对照","备案一致","无医疗功效"],"expected":[],"note":"正常样例：合规清洁保湿介绍，不应召回处罚案例","actual":[],"hit":[]},{"id":"BEAUTY-AD-010","industry":"美妆","name":"正常样例：已显著标注广告的体验分享","label":"正常","ad":"【广告】今天试用的唇釉呈现玫瑰色和光泽感，质地与上唇效果如图，详细成分请见商品页。","platform":["小红书"],"focus":["正常对照","广告可识别性","购物链接"],"expected":[],"note":"正常样例：显著标注广告的体验分享，不应召回处罚案例","actual":[],"hit":[]},{"id":"HF-AD-001","industry":"保健食品","name":"疾病预防与治疗功效宣称","label":"疑似违规","ad":"血糖偏高别担心，每天两粒稳稳降下来，帮助治疗糖尿病，告别降糖药。","platform":["抖音"],"focus":["疾病预防/治疗","医疗用语","保健食品功效禁限"],"expected":["sector_docx__health__d9cb5caf","excel_candidate__health_food_overclaim__d9cb5caf","sector_docx__health__5a23d058"],"note":"治疗糖尿病/告别降糖药：疾病预防治疗功效宣称","actual":[{"id":"sector_docx__health__5a23d058","score":46.9}],"hit":["sector_docx__health__5a23d058"]},{"id":"HF-AD-002","industry":"保健食品","name":"功效保证与有效率承诺","label":"疑似违规","ad":"坚持服用7天，免疫力提升99%，100%有效，老人孩子都能放心吃。","platform":["小红书"],"focus":["功效断言","有效率","绝对化/保证性承诺"],"expected":["excel_candidate__health_food_overclaim__32abaf01","sector_docx__health__5560f828","excel_candidate__health_food_overclaim__d9cb5caf"],"note":"免疫力提升99%/100%有效：功效保证+绝对化","actual":[],"hit":[]},{"id":"HF-AD-003","industry":"保健食品","name":"科研机构与专家背书","label":"疑似违规","ad":"中国营养学会专家亲测推荐，权威科研机构认证，吃了就能远离心脑血管问题。","platform":["抖音","小红书"],"focus":["专家/机构推荐证明","权威背书","证据核验"],"expected":["sector_docx__health__d9cb5caf","excel_candidate__health_food_overclaim__d9cb5caf","sector_docx__health__4868d2df"],"note":"专家/权威背书+远离心脑血管：疾病治疗功效","actual":[],"hit":[]},{"id":"HF-AD-004","industry":"保健食品","name":"买赠活动信息不完整","label":"疑似违规/需补资料","ad":"现在下单立送大礼包，买一盒送一盒，数量有限，先到先得！","platform":["淘宝"],"focus":["买赠","赠品品种规格数量期限方式","活动证明材料"],"expected":["excel_candidate__false_misleading_claim__700fe82c","excel_candidate__false_misleading_claim__801cf8d6","excel_candidate__false_misleading_claim__a55ab6a8"],"note":"低覆盖：买赠信息不完整≈引人误解宣传；库内无促销规则专属案例","actual":[],"hit":[]},{"id":"HF-AD-005","industry":"保健食品","name":"保健食品与药品混淆","label":"疑似违规","ad":"不是药却比药更管用，专治失眠和胃病，服用本品即可替代药物，疗效看得见。","platform":["小红书"],"focus":["药品化表达","替代药物","医疗效果"],"expected":["excel_candidate__health_food_overclaim__32abaf01","sector_docx__health__d9cb5caf","excel_candidate__health_food_overclaim__d9cb5caf"],"note":"不是药比药更管用/专治失眠胃病：保健食品与药品混淆+疾病治疗","actual":[],"hit":[]},{"id":"HF-AD-006","industry":"保健食品","name":"小红书疾病暗示与食品安全保证","label":"疑似违规","ad":"给爸妈的抗癌守护，吃它就能远离肿瘤，纯天然绝对安全，任何人吃都不会有问题。","platform":["小红书"],"focus":["平台专项规则","疾病暗示","安全性保证"],"expected":["sector_docx__health__d9cb5caf","excel_candidate__health_food_overclaim__d9cb5caf","excel_candidate__health_food_overclaim__32abaf01"],"note":"抗癌/远离肿瘤/绝对安全：疾病治疗+食品安全保证","actual":[],"hit":[]},{"id":"HF-AD-007","industry":"保健食品","name":"抖音滋补保健夸大效果","label":"疑似违规","ad":"一吃就精神，三天排出体内毒素，腰酸腿疼全消失，效果立竿见影，老人必备。","platform":["抖音"],"focus":["平台专项规则","夸大功效","无依据效果保证"],"expected":["sector_docx__health__4868d2df","sector_docx__health__4d2b48f7","sector_docx__health__5a23d058"],"note":"排毒/腰酸腿疼全消失：滋补保健夸大效果（会销虚假宣传）","actual":[],"hit":[]},{"id":"HF-AD-008","industry":"保健食品","name":"淘宝食品信息与资质不一致","label":"疑似违规/需补资料","ad":"国家蓝帽认证，进口保健食品，官方旗舰店独家发售，吃出年轻好状态。","platform":["淘宝"],"focus":["平台准入","注册备案","商品信息真实性"],"expected":["sector_docx__health__47adc1ea","excel_candidate__false_misleading_claim__700fe82c","excel_candidate__false_misleading_claim__801cf8d6"],"note":"低覆盖：食品信息与资质不一致≈标签/虚假宣传；库内无资质不一致专属案例","actual":[],"hit":[]},{"id":"HF-AD-009","industry":"保健食品","name":"正常样例：合规功效与警示语","label":"正常","ad":"蓝帽保健食品，适宜人群及食用方法详见标签。本品不能代替药物。","platform":["淘宝"],"focus":["正常对照","批准文号","警示语","限定功效表达"],"expected":[],"note":"正常样例：合规功效+警示语，不应召回处罚案例","actual":[],"hit":[]},{"id":"HF-AD-010","industry":"保健食品","name":"正常样例：小红书营养补充介绍","label":"正常","ad":"日常营养补充记录：按标签建议食用，具体配料、净含量、适宜人群和注意事项见产品包装。","platform":["小红书"],"focus":["正常对照","不作疾病功效承诺","平台文案边界"],"expected":[],"note":"正常样例：小红书营养补充介绍，不应召回处罚案例","actual":[],"hit":[]},{"id":"EVAL-GAME-001","industry":"游戏","name":"虚假宣传（夸大游戏收益）","label":"高风险","ad":"【消消赚】真实提现不是梦！玩游戏轻松日赚300元，零投入，随时提现！已有超过80万用户成功提现！邀请好友再得50元，月入过万的玩家都在玩！下载即送提现红包，试试你能赚多少？","platform":["抖音"],"focus":[],"expected":["sector_docx__game__e9a15585","sector_docx__game__551a4343","sector_docx__game__a5b354d7"],"note":"夸大游戏收益/提现引流：游戏虚假宣传（库内为民事纠纷参考）","actual":[],"hit":[]},{"id":"EVAL-GAME-002","industry":"游戏","name":"绝对化用语","label":"高风险","ad":"《霸王天下》——全球下载量最高的SLG策略手游，全球最大游戏厂商出品！最真实的三国战场还原，全球最强PVP对决系统！注册即送史诗级将领\"曹操\"，绝对实力，不服来战！","platform":["B站"],"focus":[],"expected":["excel_candidate__absolute_terms__0963e2cd","excel_candidate__absolute_terms__1c28d555","excel_candidate__absolute_terms__434f2186"],"note":"全球下载量最高/最强：绝对化用语","actual":[],"hit":[]},{"id":"EVAL-GAME-003","industry":"游戏","name":"概率未公示；误导性宣传","label":"高风险","ad":"【星之传说】周年庆限定UP！超高概率获取五星角色\"炎魂\"——只有这一次机会！UP池限时开放，充值6648元享顶级礼包，手速决定命运，不抽后悔一整年！活动仅限7天，心动不如行动！","platform":["小红书"],"focus":[],"expected":["mihoyo_2016_2520150399","sector_docx__game__3ba48058","sector_docx__game__53e9096b"],"note":"限定UP/超高概率五星：概率公示缺失（随机抽取处罚+抽奖概率争议）","actual":[],"hit":[]},{"id":"EVAL-GAME-004","industry":"游戏","name":"未成年人保护违规；诱导未成年人消费","label":"高风险","ad":"小学生超爱玩！《校园修炼记》超简单又超好玩！放学后赶紧玩，攒够金币就能解锁特殊角色！想要更厉害的装备？让爸爸妈妈帮你充值18元就能得到！班里同学都在玩，快去下载，不要落后！","platform":["抖音"],"focus":[],"expected":[],"note":"低覆盖：库内无未成年人保护/诱导未成年人消费专属案例，需补充","actual":[],"hit":[]},{"id":"EVAL-GAME-005","industry":"游戏","name":"广告代言人规范违规；绝对化用语","label":"中风险","ad":"某知名明星XX深情代言《荣光王者传》：\"我每天都会登录这款游戏，已经冲到了全服前100名！这是我玩过最好玩的手游，强烈推荐给所有人！\"首充送SSR角色，立即下载体验！","platform":["抖音"],"focus":[],"expected":["excel_candidate__absolute_terms__0963e2cd","sector_docx__game__551a4343","sector_docx__game__a5b354d7"],"note":"代言人规范+绝对化（库内无代言专属案例，按绝对化/虚假宣传近似）","actual":[],"hit":[]},{"id":"EVAL-GAME-006","industry":"游戏","name":"有奖销售违规；虚假宣传（\"100%中奖\"误导）","label":"高风险","ad":"《龙城传说》七周年庆！充值任意金额参与幸运大抽奖，100%中奖保证！大奖：iPhone 15 Pro Max（1名）；二等奖：游戏礼包（100名）；三等奖：积分兑换（所有其他参与者）。人人有奖，快来充值参与！","platform":["微信朋友圈"],"focus":[],"expected":["mihoyo_2016_2520150399","sector_docx__game__6b073bbb","sector_docx__game__d9a46e29"],"note":"充值抽奖100%中奖：有奖销售/随机抽取/盲盒概率","actual":[],"hit":[]},{"id":"EVAL-GAME-007","industry":"游戏","name":"版号缺失宣传；绕过未成年人防沉迷；违反实名制要求","label":"高风险（极高风险，涉及多项明确违法事项）","ad":"《龙域幻想》无版号限制，自由畅玩！绕过青少年防沉迷，全年龄段无限制！注册不用实名，连续登录奖励不断，首日充值1元送VIP10，快来体验真正自由的游戏世界！","platform":["抖音"],"focus":[],"expected":[],"note":"低覆盖：库内无版号缺失/防沉迷/实名制专属案例，需补充","actual":[],"hit":[]},{"id":"EVAL-GAME-008","industry":"游戏","name":"仅违反小红书平台规则（棋牌类游戏不支持推广）","label":"中风险（平台直接拒绝投放，非法律违规）","ad":"《全民斗地主》精品棋牌游戏全新升级！游戏版号：新广审〔游〕〔2024〕X号，正规平台放心玩！新用户注册赠100金币，好友邀请双方各得50金币，支持单机离线，随时随地畅玩！","platform":["小红书"],"focus":[],"expected":[],"note":"仅违反平台规则（棋牌类不支持推广），非广告法处罚，无对应处罚案例","actual":[],"hit":[]},{"id":"EVAL-GAME-009","industry":"游戏","name":"违反B站平台规则（比较性用语）；广告法层面边界状态","label":"中风险（平台规则明确违规；广告法层面为边界地带）","ad":"为什么越来越多玩家从传奇类手游转战《战神之路》？答案很简单：相同游戏时长，《战神之路》让你获取更多免费装备，付费压力更小！独立第三方数据显示：月付费用户平均消费比同类传奇手游低35%（数据来源：XX研究机构2025年Q4报告）。","platform":["B站"],"focus":[],"expected":["excel_candidate__absolute_terms__0963e2cd","excel_candidate__absolute_terms__1c28d555","excel_candidate__absolute_terms__434f2186"],"note":"比较性用语（边界）：近似绝对化用语案例","actual":[],"hit":[]},{"id":"EVAL-GAME-010","industry":"游戏","name":"数据引用不规范","label":"中风险（若能提供全部数据来源可降低风险；若无则升为高风险）","ad":"《文明征程》——全服96.8%玩家好评！上线以来累计下载量突破2亿次，连续18个月稳居策略手游畅销榜前5！资深玩家平均每日游玩时长3.7小时，社区活跃度高达行业平均水平的4.2倍！新版本史诗关卡全面开放！","platform":["小红书"],"focus":[],"expected":["excel_candidate__false_misleading_claim__700fe82c","excel_candidate__false_misleading_claim__801cf8d6","excel_candidate__false_misleading_claim__a55ab6a8"],"note":"数据引用无来源：虚假宣传/引证不规范近似","actual":[],"hit":[]}],"stats":{"total":30,"with_expected":23,"normal":4,"actual_nonempty":3,"hit":2}};
+const titles = DATA.titles, ads = DATA.ads, stats = DATA.stats;
+const IND = {"美妆":"b-ind","保健食品":"b-ind 保健食品","游戏":"b-ind game"};
+const state = {ind:"全部", lbl:"全部", q:"", onlyExp:false};
+
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+
+function renderStats(){
+  const el = document.getElementById("stats");
+  const items = [
+    ["30","评测广告总数",stats.total],
+    [String(stats.with_expected),"有预期召回案例",stats.with_expected],
+    [String(stats.normal),"正常样例（预期为空）",stats.normal],
+    [String(stats.actual_nonempty),"实际有召回",stats.actual_nonempty],
+    [String(stats.hit),"实际命中预期",stats.hit],
+  ];
+  el.innerHTML = items.map(([v,l,_])=>`<div class="stat"><b>${v}</b><span>${l}</span></div>`).join("");
+}
+
+function cardHTML(a){
+  const expected = a.expected.map(id=>`<span class="chip expected" title="${esc(titles[id]||"")}"><b>${esc(id)}</b><span class="tt">${esc((titles[id]||"").slice(0,30))}</span></span>`).join("");
+  let actual;
+  if(a.actual.length){
+    actual = a.actual.map(x=>{
+      const m = a.hit.includes(x.id);
+      return `<span class="chip actual${m?" matched":""}" title="${esc(titles[x.id]||"")}"><b>${esc(x.id)}</b><span class="tt">${esc((titles[x.id]||"").slice(0,26))} · ${x.score}</span></span>`;
+    }).join("");
+  } else {
+    actual = `<span class="chip empty">未召回（低于检索阈值）</span>`;
+  }
+  let hit;
+  if(a.hit.length){ hit = `<span class="hit ok">✓ 命中 ${a.hit.length}/${a.expected.length}</span>`; }
+  else if(a.expected.length){ hit = `<span class="hit no">✗ 未命中预期</span>`; }
+  else { hit = `<span class="hit na">正常/无预期</span>`; }
+  const normal = /正常/.test(String(a.label));
+  const lblCls = normal ? "lbl normal" : "lbl";
+  const indCls = IND[a.industry]||"b-ind";
+  const focus = (a.focus||[]).length ? `<div class="sect">风险维度：${a.focus.map(esc).join(" · ")}</div>` : "";
+  const note = a.note ? `<div class="note${a.expected.length?"":" warn"}">${esc(a.note)}</div>` : "";
+  return `<div class="card" data-id="${esc(a.id)}" data-industry="${esc(a.industry)}" data-label="${normal?"正常":"违规"}" data-search="${esc((a.ad+" "+a.id+" "+a.name).toLowerCase())}">
+    <div class="top"><span class="cid">${esc(a.id)}</span><span class="badge ${indCls}">${esc(a.industry)}</span><span class="${lblCls}">${esc(a.label)}</span>${hit}</div>
+    <div class="sect">${esc(a.name||"")}</div>
+    <div class="ad">${esc(a.ad)}</div>
+    ${focus}
+    <div class="sect">预期召回（${a.expected.length}）</div>
+    <div class="chips">${expected || `<span class="chip empty">无（正常样例/库内无匹配）</span>`}</div>
+    <div class="sect">实际召回（${a.actual.length}）</div>
+    <div class="chips">${actual}</div>
+    ${note}
+  </div>`;
+}
+
+function render(){
+  const grid = document.getElementById("grid");
+  const q = state.q.trim().toLowerCase();
+  const list = ads.filter(a=>{
+    if(state.ind!=="全部" && a.industry!==state.ind) return false;
+    const normal = /正常/.test(String(a.label));
+    if(state.lbl==="违规" && normal) return false;
+    if(state.lbl==="正常" && !normal) return false;
+    if(state.onlyExp && !a.expected.length) return false;
+    if(q && !(a.ad+" "+a.id+" "+a.name).toLowerCase().includes(q)) return false;
+    return true;
+  });
+  grid.innerHTML = list.map(cardHTML).join("") || `<div style="color:var(--muted);padding:20px">无匹配条目</div>`;
+}
+
+document.querySelectorAll(".controls button[data-ind]").forEach(b=>b.onclick=()=>{
+  state.ind=b.dataset.ind;
+  document.querySelectorAll("[data-ind]").forEach(x=>x.classList.toggle("active",x===b));
+  render();
+});
+document.querySelectorAll(".controls button[data-lbl]").forEach(b=>b.onclick=()=>{
+  state.lbl=b.dataset.lbl;
+  document.querySelectorAll("[data-lbl]").forEach(x=>x.classList.toggle("active",x===b));
+  render();
+});
+document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value;render();});
+document.getElementById("onlyExp").addEventListener("change",e=>{state.onlyExp=e.target.checked;render();});
+
+renderStats();
+render();
+</script>
+</body>
+</html>
