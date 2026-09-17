@@ -50,11 +50,21 @@ def get_asr_provider(name: str | None = None) -> ASRProvider:
 
         return MockASRProvider()
 
+    if name == "volcengine":
+        from app.pipeline.providers.volcengine import VolcSeedASR
+
+        return VolcSeedASR(
+            api_key=settings.asr_volc_api_key.get_secret_value(),
+            resource_id=settings.asr_volc_resource_id,
+            base_url=settings.asr_volc_base_url,
+            api_path=settings.asr_volc_api_path,
+            model=settings.asr_volc_model,
+            uid=settings.asr_volc_uid,
+        )
+
     raise NotImplementedError(
         f"ASR provider「{name}」尚未实现。\n"
-        "当前可用: mock（无需 API key，用于链路联调与测试）。\n"
-        "云实现待开通账号后补齐 —— 接入时**第一件事**是验证返回字段里\n"
-        "确实带 word-level timestamp，不满足就换供应商，不要将就。"
+        "当前可用: mock、volcengine（Seed-ASR，响应强制复验字级时间戳）。"
     )
 
 

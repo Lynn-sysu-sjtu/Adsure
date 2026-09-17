@@ -100,6 +100,41 @@ class Settings(BaseSettings):
     asr_region: str = "cn-shanghai"
     asr_endpoint: str = ""
 
+    # ── ASR · 火山 Seed-ASR（asr_provider=volcengine 时使用）────────
+    # 兼容旧 MVP 的 VIDEO_MVP_VOLC_SPEECH_* 命名，一份凭据两边可用。
+    asr_volc_api_key: SecretStr = Field(
+        default=SecretStr(""),
+        validation_alias=AliasChoices(
+            "ASR_VOLC_API_KEY", "VIDEO_MVP_VOLC_SPEECH_API_KEY",
+            "VIDEO_MVP_VOLC_SPEECH_ACCESS_KEY",
+        ),
+    )
+    asr_volc_resource_id: str = Field(
+        default="volc.seedasr.auc",
+        validation_alias=AliasChoices(
+            "ASR_VOLC_RESOURCE_ID", "VIDEO_MVP_VOLC_SPEECH_RESOURCE_ID"),
+    )
+    asr_volc_base_url: str = Field(
+        default="https://openspeech.bytedance.com",
+        validation_alias=AliasChoices(
+            "ASR_VOLC_BASE_URL", "VIDEO_MVP_VOLC_SPEECH_BASE_URL"),
+    )
+    asr_volc_api_path: str = Field(
+        default="/api/v3/auc/bigmodel",
+        validation_alias=AliasChoices(
+            "ASR_VOLC_API_PATH", "VIDEO_MVP_VOLC_SPEECH_API_PATH"),
+    )
+    asr_volc_model: str = Field(
+        default="bigmodel",
+        validation_alias=AliasChoices(
+            "ASR_VOLC_MODEL", "VIDEO_MVP_VOLC_SPEECH_MODEL"),
+    )
+    asr_volc_uid: str = Field(
+        default="adsure",
+        validation_alias=AliasChoices(
+            "ASR_VOLC_UID", "VIDEO_MVP_VOLC_SPEECH_UID"),
+    )
+
     # ── OCR ──────────────────────────────────────────────────
     ocr_access_key_id: str = ""
     ocr_access_key_secret: SecretStr = SecretStr("")
