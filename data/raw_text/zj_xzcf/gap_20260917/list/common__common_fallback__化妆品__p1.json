@@ -1,0 +1,141 @@
+{
+  "fetched_at": "2026-09-17T17:23:51+08:00",
+  "request": {
+    "xzcfws_name": "化妆品",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330921072026070008",
+          "xzcfws_code": "岱市监处罚〔2026〕176号",
+          "bxzcf_name": "岱山县高亭镇明夕化妆行",
+          "guid": "330921072026070008",
+          "xzcfws_name": "岱山县高亭镇明夕化妆行经营超过使用期限的化妆品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "何某某",
+          "xzcf_date": "2026-09-16",
+          "orgnode": "岱山县市场监督管理局"
+        },
+        {
+          "unid": "330683062026080001",
+          "xzcfws_code": "嵊市监处罚〔2026〕424号",
+          "bxzcf_name": "嵊州市依瑄超市",
+          "guid": "330683062026080001",
+          "xzcfws_name": "嵊州市依瑄超市擅自配制化妆品，经营变质、超过使用期限的化妆品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "王某某",
+          "xzcf_date": "2026-09-16",
+          "orgnode": "嵊州市市场监督管理局"
+        },
+        {
+          "unid": "330282112026070011",
+          "xzcfws_code": "慈市监处罚〔2026〕1229号",
+          "bxzcf_name": "瑞洲（浙江省宁波）商业管理有限责任公司",
+          "guid": "330282112026070011",
+          "xzcfws_name": "瑞洲（浙江省宁波）商业管理有限责任公司擅自配制化妆品，经营变质、超过使用期限的化妆品案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "吴某某",
+          "xzcf_date": "2026-09-16",
+          "orgnode": "慈溪市市场监督管理局"
+        },
+        {
+          "unid": "330282112026070004",
+          "xzcfws_code": "慈市监处罚〔2026〕1230号",
+          "bxzcf_name": "慈溪市白沙路刘倡倡食品店",
+          "guid": "330282112026070004",
+          "xzcfws_name": "慈溪市白沙路刘倡倡食品店擅自配制化妆品，经营变质、超过使用期限的化妆品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "刘某某",
+          "xzcf_date": "2026-09-16",
+          "orgnode": "慈溪市市场监督管理局"
+        },
+        {
+          "unid": "332501042026070001",
+          "xzcfws_code": "丽莲市监处罚〔2026〕488号",
+          "bxzcf_name": "丽水市莲都区小雅美妆工作室",
+          "guid": "332501042026070001",
+          "xzcfws_name": "丽水市莲都区小雅美妆工作室经营或者进口标签标识不符合规定的化妆品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "任某某",
+          "xzcf_date": "2026-09-15",
+          "orgnode": "丽水市莲都区市场监督管理局"
+        },
+        {
+          "unid": "330227442026060013",
+          "xzcfws_code": "甬鄞市监处罚〔2026〕1126号",
+          "bxzcf_name": "宁波市鄞州福明尤佳米美甲店",
+          "guid": "330227442026060013",
+          "xzcfws_name": "宁波市鄞州福明尤佳米美甲店擅自配制化妆品，经营变质、超过使用期限的化妆品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "郑某某",
+          "xzcf_date": "2026-09-15",
+          "orgnode": "宁波市鄞州区市场监督管理局"
+        },
+        {
+          "unid": "330282082026050011",
+          "xzcfws_code": "慈市监处罚〔2026〕1206号",
+          "bxzcf_name": "慈溪市优鲜笙食品超市",
+          "guid": "330282082026050011",
+          "xzcfws_name": "慈溪市优鲜笙食品超市经营超过使用期限的化妆品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "应某某",
+          "xzcf_date": "2026-09-14",
+          "orgnode": "慈溪市市场监督管理局"
+        },
+        {
+          "unid": "330783102026050039",
+          "xzcfws_code": "东市监处罚〔2026〕1162号",
+          "bxzcf_name": "周某某",
+          "guid": "330783102026050039",
+          "xzcfws_name": "周某某未经许可生产化妆品案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-09-14",
+          "orgnode": "东阳市市场监督管理局"
+        },
+        {
+          "unid": "330782422026070003",
+          "xzcfws_code": "义市监处罚〔2026〕3765号",
+          "bxzcf_name": "义乌市响巷电子商务有限公司",
+          "guid": "330782422026070003",
+          "xzcfws_name": "义乌市响巷电子商务有限公司经营未经备案的化妆品案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "陈某某",
+          "xzcf_date": "2026-09-11",
+          "orgnode": "义乌市市场监督管理局"
+        },
+        {
+          "unid": "330211072026050010",
+          "xzcfws_code": "甬镇市监处罚〔2026〕243号",
+          "bxzcf_name": "宁波市镇海昕妍美容店（个体工商户）",
+          "guid": "330211072026050010",
+          "xzcfws_name": "宁波市镇海昕妍美容店（个体工商户）擅自配制化妆品，经营变质、超过使用期限的化妆品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "韩某某",
+          "xzcf_date": "2026-09-10",
+          "orgnode": "宁波市镇海区市场监督管理局"
+        }
+      ],
+      "total": 3476,
+      "pageTotal": 348,
+      "pageNo": 1
+    },
+    "traceId": "8A225047E317437DB5521FF7F487ADE0",
+    "messageType": 2
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "fetched_at": "2026-09-17T17:23:51+08:00",
+  "request": {
+    "xzcfws_name": "绝对化用语",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": "未查询到相关信息",
+    "code": "200",
+    "data": {
+      "punishList": null,
+      "total": 0,
+      "pageTotal": 0,
+      "pageNo": 0
+    },
+    "traceId": "4B0EC988064A469C942521F6E6E8BA81",
+    "messageType": 2
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "fetched_at": "2026-09-17T17:31:43+08:00",
+  "request": {
+    "xzcfws_name": "促销",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330782082026030020",
+          "xzcfws_code": "义市监处罚〔2026〕1469号",
+          "bxzcf_name": "义乌市蜻心品牌运营管理有限公司",
+          "guid": "330782082026030020",
+          "xzcfws_name": "义乌市蜻心品牌运营管理有限公司违反促销行为规定案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "王某某",
+          "xzcf_date": "2026-05-13",
+          "orgnode": "义乌市市场监督管理局"
+        },
+        {
+          "unid": "330727122025090003",
+          "xzcfws_code": "磐市监处罚〔2025〕214号",
+          "bxzcf_name": "磐安县卓翔五金工具厂",
+          "guid": "330727122025090003",
+          "xzcfws_name": "磐安县卓翔五金工具厂开展限时减价、折价等价格促销活动未显著标明期限案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "吴某某",
+          "xzcf_date": "2025-10-29",
+          "orgnode": "磐安县市场监督管理局"
+        }
+      ],
+      "total": 2,
+      "pageTotal": 1,
+      "pageNo": 1
+    },
+    "traceId": "DC4A79F42F884D56B1919C05026054BD",
+    "messageType": 2
+  }
+}

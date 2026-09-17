@@ -1,0 +1,13 @@
+{
+  "fetched_at": "2026-09-17T20:00:27+08:00",
+  "source_name": "北大法宝（pkulaw.com，经 MCP 检索）",
+  "tool": "search_case",
+  "request_arguments": {
+    "text": "广告引用销量、好评率、下载量、排名、成交占比、临床数据等没有出处或通过刷单虚构交易和用户评价的处罚案例",
+    "size": 20
+  },
+  "sha256": "dfef8a827f23dbab5d700a97ee66bdea7bfaca163fb0eefe2c885072cdafddbd",
+  "response": {
+    "_transport_error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  }
+}

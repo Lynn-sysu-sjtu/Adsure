@@ -1,0 +1,64 @@
+{
+  "fetched_at": "2026-09-17T16:45:15+08:00",
+  "request": {
+    "xzcfws_name": "广告代言",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "331004082026050004",
+          "xzcfws_code": "台路市监处罚〔2026〕322号",
+          "bxzcf_name": "梁某某",
+          "guid": "331004082026050004",
+          "xzcfws_name": "梁仙聪违反《中华人民共和国广告法》第三十八条第二款规定，利用不满十周岁的未成年人作为广告代言人或违反《中华人民共和国广告法》第三十八条第三款规定，利用自然人、法人或者其他组织作为广告代言人行为案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-07-23",
+          "orgnode": "台州市路桥区市场监督管理局"
+        },
+        {
+          "unid": "330102292024070002",
+          "xzcfws_code": "杭上市监处罚〔2024〕505号",
+          "bxzcf_name": "徐某某",
+          "guid": "330102292024070002",
+          "xzcfws_name": "徐某某广告代言人在医疗、药品、医疗器械广告中作推荐、证明行为案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2024-08-29",
+          "orgnode": "杭州市上城区市场监督管理局"
+        },
+        {
+          "unid": "330000132024050001",
+          "xzcfws_code": "浙市监处罚〔2024〕8号",
+          "bxzcf_name": "廖某某",
+          "guid": "330000132024050001",
+          "xzcfws_name": "廖某某广告代言人在医疗广告中作推荐、证明行为案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2024-07-20",
+          "orgnode": "省市场监管局（省知识产权局）"
+        }
+      ],
+      "total": 3,
+      "pageTotal": 1,
+      "pageNo": 1
+    },
+    "traceId": "669BAF93DA1E420A95D62BCF661E3A5C",
+    "messageType": 2
+  }
+}

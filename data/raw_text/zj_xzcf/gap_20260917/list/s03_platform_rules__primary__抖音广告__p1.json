@@ -1,0 +1,30 @@
+{
+  "fetched_at": "2026-09-17T16:45:15+08:00",
+  "request": {
+    "xzcfws_name": "抖音广告",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": "未查询到相关信息",
+    "code": "200",
+    "data": {
+      "punishList": null,
+      "total": 0,
+      "pageTotal": 0,
+      "pageNo": 0
+    },
+    "traceId": "0F0E49E32ABF4DE8AC20D5A3F584D681",
+    "messageType": 2
+  }
+}

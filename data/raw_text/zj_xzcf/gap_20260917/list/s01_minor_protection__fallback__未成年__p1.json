@@ -1,0 +1,141 @@
+{
+  "fetched_at": "2026-09-17T16:45:15+08:00",
+  "request": {
+    "xzcfws_name": "未成年",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330122232026060006",
+          "xzcfws_code": "桐市监处罚〔2026〕638号",
+          "bxzcf_name": "桐庐县璟余餐饮店（个体工商户）",
+          "guid": "330122232026060006",
+          "xzcfws_name": "桐庐县璟余餐饮店（个体工商户）向未成年人销售酒精制品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "余某某",
+          "xzcf_date": "2026-09-15",
+          "orgnode": "桐庐县市场监督管理局"
+        },
+        {
+          "unid": "33030226071517020393",
+          "xzcfws_code": "温鹿卫职罚〔2026〕9号",
+          "bxzcf_name": "温州梵几鞋业有限公司",
+          "guid": "175b-c5c3-413f-83f6-8d36763285c2",
+          "xzcfws_name": "温州梵几鞋业有限公司安排未成年工从事接触职业病危害的作业等案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "潘某某",
+          "xzcf_date": "2026-09-15",
+          "orgnode": "温州市鹿城区卫生健康局"
+        },
+        {
+          "unid": "330703142026060019",
+          "xzcfws_code": "金开市监处罚〔2026〕498号",
+          "bxzcf_name": "金华市婺城区枭明纹身店（个体工商户）",
+          "guid": "330703142026060019",
+          "xzcfws_name": "金华市婺城区枭明纹身店（个体工商户）向未成年人提供文身服务案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "武某某",
+          "xzcf_date": "2026-09-11",
+          "orgnode": "金华市市场监督管理局经济技术开发区分局"
+        },
+        {
+          "unid": "330185042026060005",
+          "xzcfws_code": "杭临市监处罚〔2026〕302号",
+          "bxzcf_name": "杭州临安漫酌小酒馆（个体工商户）",
+          "guid": "330185042026060005",
+          "xzcfws_name": "杭州临安漫酌小酒馆允许未成年人进入酒馆并提供酒水案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "相某某",
+          "xzcf_date": "2026-09-11",
+          "orgnode": "杭州市临安区市场监督管理局"
+        },
+        {
+          "unid": "330701000000330701270075144",
+          "xzcfws_code": "金公（交）决字[2026]第330701270075144号",
+          "bxzcf_name": "姜某某",
+          "guid": "3307012700751444652d51875204a358f837dba910b248a",
+          "xzcfws_name": "姜某某摩托车后座乘坐不满十二周岁未成年人、驾驶与准驾车型不符的机动车案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-09-11",
+          "orgnode": "金华市公安局交通管理支队开发区大队"
+        },
+        {
+          "unid": "9133080014773260193308010202610080",
+          "xzcfws_code": "衢烟处[2026]第4024号",
+          "bxzcf_name": "衢州市柯城淑燕食品商行",
+          "guid": "fe7d5f971271491dab948b19c39d3407",
+          "xzcfws_name": "徐某某向未成年人售烟案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "徐某某",
+          "xzcf_date": "2026-09-10",
+          "orgnode": "衢州市烟草专卖局"
+        },
+        {
+          "unid": "330482032026060003",
+          "xzcfws_code": "平市监处罚〔2026〕422号",
+          "bxzcf_name": "平湖市九臣小酒馆（个体工商户）",
+          "guid": "330482032026060003",
+          "xzcfws_name": "平湖市九臣小酒馆（个体工商户）向未成年人售酒案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "翁某某",
+          "xzcf_date": "2026-09-10",
+          "orgnode": "平湖市市场监督管理局"
+        },
+        {
+          "unid": "330381012026070010",
+          "xzcfws_code": "瑞市监处罚〔2026〕1739号",
+          "bxzcf_name": "瑞安市胖东股餐饮店",
+          "guid": "330381012026070010",
+          "xzcfws_name": "瑞安市胖东股餐饮店向未成年人销售酒水案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "金某某",
+          "xzcf_date": "2026-09-09",
+          "orgnode": "瑞安市市场监督管理局"
+        },
+        {
+          "unid": "331024172026070014",
+          "xzcfws_code": "仙市监处罚〔2026〕259号",
+          "bxzcf_name": "仙居县某某餐饮店（个体工商户）",
+          "guid": "331024172026070014",
+          "xzcfws_name": "仙居县某某餐饮店（个体工商户）向未成年人售酒案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "何某某",
+          "xzcf_date": "2026-09-09",
+          "orgnode": "仙居县市场监督管理局"
+        },
+        {
+          "unid": "91330421146609396C3304210202610144",
+          "xzcfws_code": "善烟处[2026]第144号",
+          "bxzcf_name": "嘉善县伯花副食品店",
+          "guid": "871bb44a0e97405098950f64ec874bd1",
+          "xzcfws_name": "姚某向未成年人售烟案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "姚某某",
+          "xzcf_date": "2026-09-08",
+          "orgnode": "嘉善县烟草专卖局"
+        }
+      ],
+      "total": 385,
+      "pageTotal": 39,
+      "pageNo": 1
+    },
+    "traceId": "90F581D70666447AA489BDF2D31A2D2D",
+    "messageType": 2
+  }
+}

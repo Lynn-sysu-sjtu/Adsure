@@ -1,0 +1,117 @@
+{
+  "fetched_at": "2026-09-17T18:00:00+08:00",
+  "request_arguments": {
+    "title": "",
+    "fulltext": "未经审批 网络游戏 行政处罚",
+    "documentAttr": [
+      "判决书",
+      "裁定书"
+    ]
+  },
+  "sha256": "6c692b0263bb8571558d77516e169f3a512acde34e2b267f395f1895252a01d5",
+  "response": {
+    "Message": "成功",
+    "Data": [
+      {
+        "Title": "扬州市文化广电和旅游局、扬州某某网络有限公司非诉行政行为申请执行审查行政裁定书",
+        "Category": [
+          "行政"
+        ],
+        "CaseGrade": [
+          "普通案例"
+        ],
+        "Court": "江苏省扬州市邗江区（县）人民法院",
+        "LastInstanceDate": "2025.02.28",
+        "CaseFlag": "(2025)苏1003行审8号",
+        "CaseClassName": "非诉行政行为申请执行审查",
+        "TrialStep": [
+          "执行"
+        ],
+        "Judge": "王丽@陈慧@李璨",
+        "JudgeDic": [
+          "王丽",
+          "陈慧",
+          "李璨"
+        ],
+        "DocumentAttr": [
+          "裁定书"
+        ],
+        "AgentDic": [],
+        "Criminal": "",
+        "Core": "",
+        "CaseGist": "",
+        "SourceNote": "",
+        "GuidingCaseDoc": "",
+        "IssueDate": "",
+        "CriminalPunish": [
+          "行政",
+          "权责情节",
+          "行政行为种类",
+          "行政处罚",
+          "行政强制",
+          "行政行为效力",
+          "合法",
+          "违法",
+          "行政处罚种类和程序",
+          "警告",
+          "罚款",
+          "没收违法所得"
+        ],
+        "TrialAfter": "\t申请人扬州市文化广电和旅游局于2024年6月14日依据《中华人民共和国未成年人保护法》第一百二十七条的规定，作出(扬)文综罚字[2024]某某号行政处罚决定，决定对被申请人处以警告，没收违法所得人民币33108.18元，并处10万元罚款。被申请人未依法履行义务。根据《中华人民共和国行政强制法》第五十三条的规定，申请人扬州市文化广电和旅游局向本院申请强制执行。",
+        "PlaintiffClaims": "",
+        "DefenseViewpoint": "",
+        "ControversialFocus": "",
+        "Ascertain": "",
+        "Identified": "\t本院依法组成合议庭审查认为，被申请人未经审批运营“屠城迷失-独家复古迷失”网络游戏，未要求未成年人以真实身份信息注册并登录网络游戏的行为，违反了《中华人民共和国未成年人保护法》第七十五条第一款、第二款的规定，依法应予处罚。综上，申请人扬州市文化广电和旅游局于2024年6月14日作出的(扬)文综罚字[2024]某某号行政处罚决定，认定事实清楚，适用法律正确，程序合法，具备法定执行效力。据此，依照《中华人民共和国行政强制法》第五十七条的规定，裁定如下：",
+        "RefereeBasis": "《中华人民共和国未成年人保护法》第七十五条第一款、第二款\n《中华人民共和国行政强制法》第五十七条",
+        "RefereeResult": "\t申请人扬州市文化广电和旅游局向本院申请执行的(扬)文综罚字[2024]某某号行政处罚决定，本院准予强制执行。\n\t本裁定送达后即发生法律效力。",
+        "Accusation": [],
+        "Url": "[北大法宝](https://www.pkulaw.com/pfnl/c7ed112b8012f81626e15a994bc3ee65effccb5f3467b5f7bdfb.html?way=mcp)"
+      },
+      {
+        "Title": "梦某公司与新某公司著作权合同纠纷上诉案",
+        "Category": [
+          "民事",
+          "知识产权与竞争纠纷",
+          "知识产权合同纠纷",
+          "著作权合同纠纷"
+        ],
+        "CaseGrade": [
+          "经典案例",
+          "其他出版物"
+        ],
+        "Court": "广州知识产权法院",
+        "LastInstanceDate": "",
+        "CaseFlag": "（2024）粤73民终1627号",
+        "CaseClassName": "民事二审",
+        "TrialStep": [
+          "二审"
+        ],
+        "Judge": "",
+        "JudgeDic": [],
+        "DocumentAttr": [
+          "判决书"
+        ],
+        "AgentDic": [],
+        "Criminal": "",
+        "Core": "",
+        "CaseGist": "",
+        "SourceNote": "",
+        "GuidingCaseDoc": "",
+        "IssueDate": "",
+        "CriminalPunish": [],
+        "TrialAfter": "",
+        "PlaintiffClaims": "",
+        "DefenseViewpoint": "",
+        "ControversialFocus": "",
+        "Ascertain": "",
+        "Identified": "",
+        "RefereeBasis": "",
+        "RefereeResult": "",
+        "Accusation": [],
+        "Url": "[北大法宝](https://www.pkulaw.com/pfnl/c7ed112b8012f81640114f726b717b848eff641195632feabdfb.html?way=mcp)"
+      }
+    ],
+    "Total": 2
+  }
+}

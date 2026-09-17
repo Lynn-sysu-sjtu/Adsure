@@ -1,0 +1,53 @@
+{
+  "fetched_at": "2026-09-17T17:31:43+08:00",
+  "request": {
+    "xzcfws_name": "赠送",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "331024022025120001",
+          "xzcfws_code": "仙市监处罚〔2026〕18号",
+          "bxzcf_name": "仙居县某电子商务商行（个体工商户）",
+          "guid": "331024022025120001",
+          "xzcfws_name": "仙居县某电子商务商行（个体工商户）赠送三无产品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "吴某某",
+          "xzcf_date": "2026-01-19",
+          "orgnode": "仙居县市场监督管理局"
+        },
+        {
+          "unid": "330824062025050003",
+          "xzcfws_code": "开市监处罚〔2025〕182号",
+          "bxzcf_name": "浙江健一行医药零售连锁有限公司马金药店",
+          "guid": "330824062025050003",
+          "xzcfws_name": "浙江健一行医药零售连锁有限公司马金药店发布赠送药品广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "鹿某某",
+          "xzcf_date": "2025-06-30",
+          "orgnode": "开化县市场监督管理局"
+        }
+      ],
+      "total": 2,
+      "pageTotal": 1,
+      "pageNo": 1
+    },
+    "traceId": "19760533F9EB486AB12E5BCABB11F412",
+    "messageType": 2
+  }
+}

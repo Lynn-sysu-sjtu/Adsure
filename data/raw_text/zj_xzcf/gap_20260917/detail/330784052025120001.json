@@ -1,0 +1,30 @@
+{
+  "fetched_at": "2026-09-17T17:22:40+08:00",
+  "request": {
+    "guid": "330784052025120001",
+    "unid": "330784052025120001"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punish": {
+        "unid": "330784052025120001",
+        "xzcf_zy": "主要违法事实：当事人在其开设的拼多多网店发布了对商品的产地、性能等表示得不准确、清楚、明白的广告。<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;行政处罚种类、依据、内容：当事人发布违法广告的行为违反了《中华人民共和国广告法》第八条第一款之规定，依据《中华人民共和国广告法》第五十九条第一款第（一）项之规定，本局决定责令当事人停止发布违法广告并处以罚款人民币5000元。<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;行政处罚履行方式和期限：当事人自收到行政处罚决定书之日起十五日内，按照行政处罚决定书载明的履行方式履行。",
+        "xzcfws_code": "永市监处罚〔2026〕139号",
+        "bxzcf_name": "周某某",
+        "guid": "330784052025120001",
+        "xzcfws_name": "周某某发布违法广告案",
+        "bxzcf_type": 1,
+        "bxzcf_legalman": "",
+        "xzcf_date": "2026-02-10",
+        "orgnode": "永康市市场监督管理局"
+      }
+    },
+    "traceId": "A0ED86B654744D73BCD2BB9DAFE7FC1A",
+    "messageType": 2
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "case_id": "zj_gap_330782082026030020",
+  "title": "义乌市蜻心品牌运营管理有限公司违反促销行为规定案",
+  "case_number": "义市监处罚〔2026〕1469号",
+  "source_type": "zj_xzcf_open_api_ad_gap_candidate",
+  "source_name": "浙江省行政处罚结果信息公开（公开 API）",
+  "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330782082026030020&unid=330782082026030020",
+  "source_verification_status": "official_api_fulltext_pending_human_review",
+  "source_lookup_priority": "P1",
+  "publish_date": null,
+  "decision_date": "2026-05-13",
+  "penalty_authority": "义乌市市场监督管理局",
+  "party_name": "义乌市蜻心品牌运营管理有限公司",
+  "region": "义乌市",
+  "industry": "未披露（公开决定书未载明具体行业）",
+  "product_or_service": "未披露（公开决定书未载明具体商品/服务）",
+  "ad_channel": null,
+  "risk_dimensions": [
+    "买赠/满减",
+    "促销广告",
+    "赠品或价格表示不清"
+  ],
+  "illegal_claims": [
+    "违反促销行为规定（公开全文未披露具体促销细节）"
+  ],
+  "facts_summary": "2026年3月20日，被处罚人义乌市蜻心品牌运营管理有限公司违反促销行为规定。",
+  "legal_basis": [
+    "《规范促销行为暂行规定》第七条",
+    "《规范促销行为暂行规定》第二十五条",
+    "《中华人民共和国行政处罚法》第二十八条"
+  ],
+  "penalty_result": "当事人违反促销行为规定的行为，已违反了《规范促销行为暂行规定》第七条及第二十条的规定。\n依据《规范促销行为暂行规定》第二十五条及《中华人民共和国行政处罚法》第二十八条第二款的规定，本局决定：\n1.责令改正；\n2.没收违法所得335元；\n3.罚款3000元。",
+  "penalty_amount": 3000.0,
+  "penalty_amount_breakdown": {
+    "total_fine": 3000.0,
+    "confiscated_illegal_gain": 335.0,
+    "total_monetary_penalty": 3335.0,
+    "advertising_related_fine_when_separable": null,
+    "anti_unfair_competition_fine": null
+  },
+  "regulatory_logic": "以下监管逻辑仅概括决定书明示内容：处罚机关依据全文载明的广告/反不正当竞争事实及法条作出处理；场景映射、分项罚款与标题正文一致性仍需人工复核。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "义市监处罚〔2026〕1469号",
+    "促销"
+  ],
+  "vector_text": "这是浙江省行政处罚结果信息公开的一起未披露（公开决定书未载明具体行业）广告处罚候选案例。义乌市蜻心品牌运营管理有限公司发布相关商业宣传。处罚决定书写明：2026年3月20日，被处罚人义乌市蜻心品牌运营管理有限公司违反促销行为规定。处罚结果为：当事人违反促销行为规定的行为，已违反了《规范促销行为暂行规定》第七条及第二十条的规定。依据《规范促销行为暂行规定》第二十五条及《中华人民共和国行政处罚法》第二十八条第二款的规定，本局决定：1.责令改正；2.没收违法所得335元；3.罚款3000元。该记录来自行政机关公开处罚信息全文，仍需人工复核，暂不进入生产 RAG。",
+  "rag_chunk_type": "case_summary_candidate",
+  "scope": "public",
+  "case_nature": "administrative_penalty_decision",
+  "is_admin_penalty_candidate": true,
+  "is_administrative_penalty_fact": true,
+  "gap_scenario_ids": [
+    "s06_gift_promotion"
+  ],
+  "gap_scenario_evidence": {
+    "s06_gift_promotion": [
+      "促销行为规定。\n行政处罚种类、依据、内容：当事人违反促销行为规定的行为，已违反了《规范促销行为暂行规定》第七条及第二十条的规定。\n依据《规范促销行为暂行规定",
+      "违反促销行为规定"
+    ]
+  },
+  "metadata_consistency_notes": [],
+  "review_status": "pending_human_review",
+  "approved_for_rag": false,
+  "human_review_required": true,
+  "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330782082026030020.json",
+  "source_list_raw_paths": [
+    "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__fallback__促销__p1.json"
+  ],
+  "retrieved_at": "2026-09-17T17:54:08+08:00",
+  "data_change_log": [
+    {
+      "ts": "2026-09-17T17:54:08+08:00",
+      "action": "zj_gap_case_search",
+      "note": "浙江公开 API 列表+详情命中 8 缺口强场景词；仅入候选，待人核，不进生产 RAG。"
+    }
+  ]
+}

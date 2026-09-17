@@ -1,0 +1,141 @@
+{
+  "fetched_at": "2026-09-17T17:23:51+08:00",
+  "request": {
+    "xzcfws_name": "虚假宣传",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330108032026050004",
+          "xzcfws_code": "杭高新（滨）市监处罚〔2026〕187号",
+          "bxzcf_name": "刘某某",
+          "guid": "330108032026050004",
+          "xzcfws_name": "刘某某对商品作引人误解的虚假宣传案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-09-16",
+          "orgnode": "杭州市高新区（滨江）市场监督管理局"
+        },
+        {
+          "unid": "330302092026040007",
+          "xzcfws_code": "温鹿市监处罚〔2026〕1757号",
+          "bxzcf_name": "刘某某",
+          "guid": "330302092026040007",
+          "xzcfws_name": "刘某某虚假宣传案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-09-15",
+          "orgnode": "温州市鹿城区市场监督管理局"
+        },
+        {
+          "unid": "330304032026070002",
+          "xzcfws_code": "温瓯市监处罚〔2026〕626号",
+          "bxzcf_name": "翁某某",
+          "guid": "330304032026070002",
+          "xzcfws_name": "翁某某虚假宣传（不正当竞争行为）案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-09-15",
+          "orgnode": "温州市瓯海区市场监督管理局"
+        },
+        {
+          "unid": "330106032026070001",
+          "xzcfws_code": "杭西市监处罚〔2026〕412号",
+          "bxzcf_name": "李某某",
+          "guid": "330106032026070001",
+          "xzcfws_name": "李某某对商品作引人误解的虚假宣传案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-09-15",
+          "orgnode": "杭州市西湖区市场监督管理局"
+        },
+        {
+          "unid": "330781032026060004",
+          "xzcfws_code": "兰市监处罚〔2026〕144号",
+          "bxzcf_name": "范某某",
+          "guid": "330781032026060004",
+          "xzcfws_name": "范某某对商品作引人误解的虚假宣传案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-09-15",
+          "orgnode": "兰溪市市场监督管理局"
+        },
+        {
+          "unid": "330183072026050001",
+          "xzcfws_code": "杭富市监处罚〔2026〕314号",
+          "bxzcf_name": "许某某",
+          "guid": "330183072026050001",
+          "xzcfws_name": "许锐对商品作引人误解的虚假宣传案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "许某某",
+          "xzcf_date": "2026-09-11",
+          "orgnode": "杭州市富阳区市场监督管理局"
+        },
+        {
+          "unid": "332500072025120065",
+          "xzcfws_code": "丽市监处罚〔2026〕110号",
+          "bxzcf_name": "丽水市南明湖旅游文化产业有限公司",
+          "guid": "332500072025120065",
+          "xzcfws_name": "丽水市南明湖旅游文化产业有限公司虚假宣传（不正当竞争）案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "王某某",
+          "xzcf_date": "2026-09-10",
+          "orgnode": "丽水市市场监督管理局"
+        },
+        {
+          "unid": "332502072026070004",
+          "xzcfws_code": "龙市监处罚〔2026〕347号",
+          "bxzcf_name": "龙泉市开烤烧烤店",
+          "guid": "332502072026070004",
+          "xzcfws_name": "龙泉市开烤烧烤店对商品作引人误解的虚假宣传案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "张某某",
+          "xzcf_date": "2026-09-10",
+          "orgnode": "龙泉市市场监督管理局"
+        },
+        {
+          "unid": "330302082026080002",
+          "xzcfws_code": "温鹿市监处罚〔2026〕1730号",
+          "bxzcf_name": "温州市鹿城区南郊囸顺汽配商行",
+          "guid": "330302082026080002",
+          "xzcfws_name": "温州市鹿城区南郊囸顺汽配商行对商品作引人误解的虚假宣传案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "林某某",
+          "xzcf_date": "2026-09-08",
+          "orgnode": "温州市鹿城区市场监督管理局"
+        },
+        {
+          "unid": "330183232026060004",
+          "xzcfws_code": "杭富市监处罚〔2026〕302号",
+          "bxzcf_name": "杭州富阳红尘酒馆（个体工商户）",
+          "guid": "330183232026060004",
+          "xzcfws_name": "杭州富阳红尘酒馆（个体工商户）对商品作引人误解的虚假宣传案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "孙某某",
+          "xzcf_date": "2026-09-07",
+          "orgnode": "杭州市富阳区市场监督管理局"
+        }
+      ],
+      "total": 390,
+      "pageTotal": 39,
+      "pageNo": 1
+    },
+    "traceId": "D83F9D02AF744F57A5FB08B8842882B8",
+    "messageType": 2
+  }
+}

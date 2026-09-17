@@ -1,0 +1,141 @@
+{
+  "fetched_at": "2026-09-17T17:36:48+08:00",
+  "request": {
+    "xzcfws_name": "广告",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "2",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "武义执法局立字〔2026〕第001351号",
+          "xzcfws_code": "武义执法局罚决字〔2026〕第001351号",
+          "bxzcf_name": "周某某",
+          "guid": "ca53380c7e9d4e83af9635410b982e78",
+          "xzcfws_name": "周某某擅自在城市照明设施上张贴、悬挂、设置宣传品、广告案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-09-11",
+          "orgnode": "武义县综合行政执法局"
+        },
+        {
+          "unid": "330206052026060026",
+          "xzcfws_code": "甬仑市监处罚〔2026〕549号",
+          "bxzcf_name": "宁波市鄞州立辉广告传媒有限公司",
+          "guid": "330206052026060026",
+          "xzcfws_name": "宁波市鄞州立辉广告传媒有限公司制作发布违法广告行为案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "魏某某",
+          "xzcf_date": "2026-09-11",
+          "orgnode": "宁波市北仑区市场监督管理局"
+        },
+        {
+          "unid": "330783132026070024",
+          "xzcfws_code": "东市监处罚〔2026〕1138号",
+          "bxzcf_name": "东阳市爱菀服饰有限公司",
+          "guid": "330783132026070024",
+          "xzcfws_name": "东阳市爱菀服饰有限公司广告中含有虚假内容案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "张某某",
+          "xzcf_date": "2026-09-08",
+          "orgnode": "东阳市市场监督管理局"
+        },
+        {
+          "unid": "330481052026060006",
+          "xzcfws_code": "海市监处罚〔2026〕1071号",
+          "bxzcf_name": "海宁潮汇玩广告传媒有限公司",
+          "guid": "330481052026060006",
+          "xzcfws_name": "海宁潮汇玩广告传媒有限公司未按规定办理年度报告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "朱某某",
+          "xzcf_date": "2026-09-08",
+          "orgnode": "海宁市市场监督管理局"
+        },
+        {
+          "unid": "330327072026070310",
+          "xzcfws_code": "苍市监处罚〔2026〕1310号",
+          "bxzcf_name": "苍南县家禾广告设计服务部（个体工商户）",
+          "guid": "330327072026070310",
+          "xzcfws_name": "苍南县家禾广告设计服务部（个体工商户）广告中含有虚假内容案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "林某某",
+          "xzcf_date": "2026-09-07",
+          "orgnode": "苍南县市场监督管理局"
+        },
+        {
+          "unid": "330326072026050002",
+          "xzcfws_code": "平市监处罚〔2026〕752号",
+          "bxzcf_name": "平阳县鹤巢食品有限公司",
+          "guid": "330326072026050002",
+          "xzcfws_name": "平阳县鹤巢食品有限公司广告中含有虚假内容、网上刊载的食品信息与食品标签不一致、生产标签不符合规定的预包装食品案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "朱某某",
+          "xzcf_date": "2026-09-07",
+          "orgnode": "平阳县市场监督管理局"
+        },
+        {
+          "unid": "鄞州综执立字〔2026〕第001348号",
+          "xzcfws_code": "鄞州综执罚决字〔2026〕第001348号",
+          "bxzcf_name": "周某某",
+          "guid": "37fb2cf8fb2c496db7208008358c663e",
+          "xzcfws_name": "周某某擅自在城市照明设施上张贴、悬挂、设置宣传品、广告案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-09-07",
+          "orgnode": "宁波市鄞州区综合行政执法局"
+        },
+        {
+          "unid": "330304042025120005",
+          "xzcfws_code": "温瓯市监处罚〔2026〕607号",
+          "bxzcf_name": "温州市某某家具有限公司",
+          "guid": "330304042025120005",
+          "xzcfws_name": "温州市某某家具有限公司广告中含有虚假内容案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "黎某某",
+          "xzcf_date": "2026-09-06",
+          "orgnode": "温州市瓯海区市场监督管理局"
+        },
+        {
+          "unid": "杭西综执立字〔2026〕第000968号",
+          "xzcfws_code": "杭西综执罚决字〔2026〕第000968号",
+          "bxzcf_name": "杭州博物广告策划有限公司",
+          "guid": "1a0a64e378b2412fbbc6aa733e9ac381",
+          "xzcfws_name": "杭州博物广告策划有限公司未按时拆除临时性大型户外广告设施案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "尹某某",
+          "xzcf_date": "2026-09-04",
+          "orgnode": "杭州市西湖区综合行政执法局"
+        },
+        {
+          "unid": "331082002026070004",
+          "xzcfws_code": "临市监处罚〔2026〕609号",
+          "bxzcf_name": "台州市金智达广告有限公司",
+          "guid": "331082002026070004",
+          "xzcfws_name": "台州市金智达广告有限公司非医疗机构发布医疗广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "任某某",
+          "xzcf_date": "2026-09-03",
+          "orgnode": "临海市市场监督管理局"
+        }
+      ],
+      "total": 2721,
+      "pageTotal": 273,
+      "pageNo": 2
+    },
+    "traceId": "EFDFED97290F44D7A1997307D2A587C8",
+    "messageType": 2
+  }
+}

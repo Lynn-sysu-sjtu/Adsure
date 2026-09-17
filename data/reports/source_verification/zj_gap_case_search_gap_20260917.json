@@ -1,0 +1,2040 @@
+{
+  "generated_at": "2026-09-17T17:54:07+08:00",
+  "batch": "gap_20260917",
+  "date_range": {
+    "begin": "2020-01-01",
+    "end": "2026-09-17"
+  },
+  "compliance": {
+    "robots_gate": true,
+    "min_request_interval_seconds": 3.2,
+    "no_login_cookie_captcha_or_token": true,
+    "candidates_not_production_rag": true
+  },
+  "queries": [
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "互联网广告",
+      "page": 1,
+      "total": 1,
+      "returned": 1,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__互联网广告__p1.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "保健食品",
+      "page": 1,
+      "total": 53,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__保健食品__p1.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "保健食品",
+      "page": 2,
+      "total": 53,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__保健食品__p2.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "化妆品",
+      "page": 1,
+      "total": 3476,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__化妆品__p1.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "化妆品",
+      "page": 2,
+      "total": 3476,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__化妆品__p2.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "医疗用语",
+      "page": 1,
+      "total": 28,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__医疗用语__p1.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "医疗用语",
+      "page": 2,
+      "total": 28,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__医疗用语__p2.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "广告",
+      "page": 1,
+      "total": 2721,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__广告__p1.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "广告",
+      "page": 2,
+      "total": 2721,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__广告__p2.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "绝对化用语",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__绝对化用语__p1.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "虚假宣传",
+      "page": 1,
+      "total": 390,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__虚假宣传__p1.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "虚假宣传",
+      "page": 2,
+      "total": 390,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__虚假宣传__p2.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "虚假广告",
+      "page": 1,
+      "total": 64,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__虚假广告__p1.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "虚假广告",
+      "page": 2,
+      "total": 64,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__虚假广告__p2.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "违法广告",
+      "page": 1,
+      "total": 12,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__违法广告__p1.json"
+    },
+    {
+      "scenario_id": "common",
+      "scenario": "通用兜底",
+      "type": "common_fallback",
+      "keyword": "违法广告",
+      "page": 2,
+      "total": 12,
+      "returned": 2,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__违法广告__p2.json"
+    },
+    {
+      "scenario_id": "s01_minor_protection",
+      "scenario": "未成年人保护",
+      "type": "fallback",
+      "keyword": "儿童",
+      "page": 1,
+      "total": 149,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s01_minor_protection__fallback__儿童__p1.json"
+    },
+    {
+      "scenario_id": "s01_minor_protection",
+      "scenario": "未成年人保护",
+      "type": "fallback",
+      "keyword": "儿童",
+      "page": 2,
+      "total": 149,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s01_minor_protection__fallback__儿童__p2.json"
+    },
+    {
+      "scenario_id": "s01_minor_protection",
+      "scenario": "未成年人保护",
+      "type": "fallback",
+      "keyword": "小学生",
+      "page": 1,
+      "total": 2,
+      "returned": 2,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s01_minor_protection__fallback__小学生__p1.json"
+    },
+    {
+      "scenario_id": "s01_minor_protection",
+      "scenario": "未成年人保护",
+      "type": "fallback",
+      "keyword": "未成年",
+      "page": 1,
+      "total": 385,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s01_minor_protection__fallback__未成年__p1.json"
+    },
+    {
+      "scenario_id": "s01_minor_protection",
+      "scenario": "未成年人保护",
+      "type": "fallback",
+      "keyword": "未成年",
+      "page": 2,
+      "total": 385,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s01_minor_protection__fallback__未成年__p2.json"
+    },
+    {
+      "scenario_id": "s01_minor_protection",
+      "scenario": "未成年人保护",
+      "type": "primary",
+      "keyword": "儿童广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s01_minor_protection__primary__儿童广告__p1.json"
+    },
+    {
+      "scenario_id": "s01_minor_protection",
+      "scenario": "未成年人保护",
+      "type": "primary",
+      "keyword": "未成年人消费",
+      "page": 1,
+      "total": 1,
+      "returned": 1,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s01_minor_protection__primary__未成年人消费__p1.json"
+    },
+    {
+      "scenario_id": "s01_minor_protection",
+      "scenario": "未成年人保护",
+      "type": "primary",
+      "keyword": "诱导未成年人",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s01_minor_protection__primary__诱导未成年人__p1.json"
+    },
+    {
+      "scenario_id": "s02_game_license_antiaddiction",
+      "scenario": "版号/防沉迷",
+      "type": "fallback",
+      "keyword": "实名制",
+      "page": 1,
+      "total": 4,
+      "returned": 4,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s02_game_license_antiaddiction__fallback__实名制__p1.json"
+    },
+    {
+      "scenario_id": "s02_game_license_antiaddiction",
+      "scenario": "版号/防沉迷",
+      "type": "fallback",
+      "keyword": "未实名",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s02_game_license_antiaddiction__fallback__未实名__p1.json"
+    },
+    {
+      "scenario_id": "s02_game_license_antiaddiction",
+      "scenario": "版号/防沉迷",
+      "type": "fallback",
+      "keyword": "游戏",
+      "page": 1,
+      "total": 23,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s02_game_license_antiaddiction__fallback__游戏__p1.json"
+    },
+    {
+      "scenario_id": "s02_game_license_antiaddiction",
+      "scenario": "版号/防沉迷",
+      "type": "fallback",
+      "keyword": "游戏",
+      "page": 2,
+      "total": 23,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s02_game_license_antiaddiction__fallback__游戏__p2.json"
+    },
+    {
+      "scenario_id": "s02_game_license_antiaddiction",
+      "scenario": "版号/防沉迷",
+      "type": "fallback",
+      "keyword": "版号",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s02_game_license_antiaddiction__fallback__版号__p1.json"
+    },
+    {
+      "scenario_id": "s02_game_license_antiaddiction",
+      "scenario": "版号/防沉迷",
+      "type": "fallback",
+      "keyword": "网络游戏",
+      "page": 1,
+      "total": 8,
+      "returned": 8,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s02_game_license_antiaddiction__fallback__网络游戏__p1.json"
+    },
+    {
+      "scenario_id": "s02_game_license_antiaddiction",
+      "scenario": "版号/防沉迷",
+      "type": "fallback",
+      "keyword": "防沉迷",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s02_game_license_antiaddiction__fallback__防沉迷__p1.json"
+    },
+    {
+      "scenario_id": "s02_game_license_antiaddiction",
+      "scenario": "版号/防沉迷",
+      "type": "primary",
+      "keyword": "游戏版号",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s02_game_license_antiaddiction__primary__游戏版号__p1.json"
+    },
+    {
+      "scenario_id": "s02_game_license_antiaddiction",
+      "scenario": "版号/防沉迷",
+      "type": "primary",
+      "keyword": "网络游戏广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s02_game_license_antiaddiction__primary__网络游戏广告__p1.json"
+    },
+    {
+      "scenario_id": "s02_game_license_antiaddiction",
+      "scenario": "版号/防沉迷",
+      "type": "primary",
+      "keyword": "防沉迷广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s02_game_license_antiaddiction__primary__防沉迷广告__p1.json"
+    },
+    {
+      "scenario_id": "s03_platform_rules",
+      "scenario": "平台规则类",
+      "type": "fallback",
+      "keyword": "互联网广告",
+      "page": 1,
+      "total": 1,
+      "returned": 1,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s03_platform_rules__fallback__互联网广告__p1.json"
+    },
+    {
+      "scenario_id": "s03_platform_rules",
+      "scenario": "平台规则类",
+      "type": "fallback",
+      "keyword": "京东广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s03_platform_rules__fallback__京东广告__p1.json"
+    },
+    {
+      "scenario_id": "s03_platform_rules",
+      "scenario": "平台规则类",
+      "type": "fallback",
+      "keyword": "天猫广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s03_platform_rules__fallback__天猫广告__p1.json"
+    },
+    {
+      "scenario_id": "s03_platform_rules",
+      "scenario": "平台规则类",
+      "type": "fallback",
+      "keyword": "小红书广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s03_platform_rules__fallback__小红书广告__p1.json"
+    },
+    {
+      "scenario_id": "s03_platform_rules",
+      "scenario": "平台规则类",
+      "type": "fallback",
+      "keyword": "拼多多",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s03_platform_rules__fallback__拼多多__p1.json"
+    },
+    {
+      "scenario_id": "s03_platform_rules",
+      "scenario": "平台规则类",
+      "type": "fallback",
+      "keyword": "朋友圈广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s03_platform_rules__fallback__朋友圈广告__p1.json"
+    },
+    {
+      "scenario_id": "s03_platform_rules",
+      "scenario": "平台规则类",
+      "type": "fallback",
+      "keyword": "短视频广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s03_platform_rules__fallback__短视频广告__p1.json"
+    },
+    {
+      "scenario_id": "s03_platform_rules",
+      "scenario": "平台规则类",
+      "type": "fallback",
+      "keyword": "网店广告",
+      "page": 1,
+      "total": 1,
+      "returned": 1,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s03_platform_rules__fallback__网店广告__p1.json"
+    },
+    {
+      "scenario_id": "s03_platform_rules",
+      "scenario": "平台规则类",
+      "type": "fallback",
+      "keyword": "美团",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s03_platform_rules__fallback__美团__p1.json"
+    },
+    {
+      "scenario_id": "s03_platform_rules",
+      "scenario": "平台规则类",
+      "type": "primary",
+      "keyword": "信息流广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s03_platform_rules__primary__信息流广告__p1.json"
+    },
+    {
+      "scenario_id": "s03_platform_rules",
+      "scenario": "平台规则类",
+      "type": "primary",
+      "keyword": "抖音广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s03_platform_rules__primary__抖音广告__p1.json"
+    },
+    {
+      "scenario_id": "s03_platform_rules",
+      "scenario": "平台规则类",
+      "type": "primary",
+      "keyword": "直播带货",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s03_platform_rules__primary__直播带货__p1.json"
+    },
+    {
+      "scenario_id": "s04_endorsement",
+      "scenario": "广告代言",
+      "type": "fallback",
+      "keyword": "代言",
+      "page": 1,
+      "total": 4,
+      "returned": 4,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s04_endorsement__fallback__代言__p1.json"
+    },
+    {
+      "scenario_id": "s04_endorsement",
+      "scenario": "广告代言",
+      "type": "fallback",
+      "keyword": "体验官",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s04_endorsement__fallback__体验官__p1.json"
+    },
+    {
+      "scenario_id": "s04_endorsement",
+      "scenario": "广告代言",
+      "type": "fallback",
+      "keyword": "受益者名义",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s04_endorsement__fallback__受益者名义__p1.json"
+    },
+    {
+      "scenario_id": "s04_endorsement",
+      "scenario": "广告代言",
+      "type": "fallback",
+      "keyword": "形象作推荐",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s04_endorsement__fallback__形象作推荐__p1.json"
+    },
+    {
+      "scenario_id": "s04_endorsement",
+      "scenario": "广告代言",
+      "type": "fallback",
+      "keyword": "推荐官",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s04_endorsement__fallback__推荐官__p1.json"
+    },
+    {
+      "scenario_id": "s04_endorsement",
+      "scenario": "广告代言",
+      "type": "fallback",
+      "keyword": "推荐证明",
+      "page": 1,
+      "total": 2,
+      "returned": 2,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s04_endorsement__fallback__推荐证明__p1.json"
+    },
+    {
+      "scenario_id": "s04_endorsement",
+      "scenario": "广告代言",
+      "type": "fallback",
+      "keyword": "网红推荐",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s04_endorsement__fallback__网红推荐__p1.json"
+    },
+    {
+      "scenario_id": "s04_endorsement",
+      "scenario": "广告代言",
+      "type": "primary",
+      "keyword": "代言人广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s04_endorsement__primary__代言人广告__p1.json"
+    },
+    {
+      "scenario_id": "s04_endorsement",
+      "scenario": "广告代言",
+      "type": "primary",
+      "keyword": "广告代言",
+      "page": 1,
+      "total": 3,
+      "returned": 3,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s04_endorsement__primary__广告代言__p1.json"
+    },
+    {
+      "scenario_id": "s04_endorsement",
+      "scenario": "广告代言",
+      "type": "primary",
+      "keyword": "明星代言",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s04_endorsement__primary__明星代言__p1.json"
+    },
+    {
+      "scenario_id": "s05_edible_cosmetics",
+      "scenario": "化妆品可食用",
+      "type": "fallback",
+      "keyword": "化妆品",
+      "page": 1,
+      "total": 3476,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s05_edible_cosmetics__fallback__化妆品__p1.json"
+    },
+    {
+      "scenario_id": "s05_edible_cosmetics",
+      "scenario": "化妆品可食用",
+      "type": "fallback",
+      "keyword": "化妆品",
+      "page": 2,
+      "total": 3476,
+      "returned": 10,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s05_edible_cosmetics__fallback__化妆品__p2.json"
+    },
+    {
+      "scenario_id": "s05_edible_cosmetics",
+      "scenario": "化妆品可食用",
+      "type": "fallback",
+      "keyword": "可以吃",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s05_edible_cosmetics__fallback__可以吃__p1.json"
+    },
+    {
+      "scenario_id": "s05_edible_cosmetics",
+      "scenario": "化妆品可食用",
+      "type": "fallback",
+      "keyword": "可食用",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s05_edible_cosmetics__fallback__可食用__p1.json"
+    },
+    {
+      "scenario_id": "s05_edible_cosmetics",
+      "scenario": "化妆品可食用",
+      "type": "fallback",
+      "keyword": "唇膏",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s05_edible_cosmetics__fallback__唇膏__p1.json"
+    },
+    {
+      "scenario_id": "s05_edible_cosmetics",
+      "scenario": "化妆品可食用",
+      "type": "fallback",
+      "keyword": "润唇膏",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s05_edible_cosmetics__fallback__润唇膏__p1.json"
+    },
+    {
+      "scenario_id": "s05_edible_cosmetics",
+      "scenario": "化妆品可食用",
+      "type": "fallback",
+      "keyword": "食品级",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s05_edible_cosmetics__fallback__食品级__p1.json"
+    },
+    {
+      "scenario_id": "s05_edible_cosmetics",
+      "scenario": "化妆品可食用",
+      "type": "fallback",
+      "keyword": "食用级",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s05_edible_cosmetics__fallback__食用级__p1.json"
+    },
+    {
+      "scenario_id": "s05_edible_cosmetics",
+      "scenario": "化妆品可食用",
+      "type": "primary",
+      "keyword": "儿童化妆品广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s05_edible_cosmetics__primary__儿童化妆品广告__p1.json"
+    },
+    {
+      "scenario_id": "s05_edible_cosmetics",
+      "scenario": "化妆品可食用",
+      "type": "primary",
+      "keyword": "可食用化妆品",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s05_edible_cosmetics__primary__可食用化妆品__p1.json"
+    },
+    {
+      "scenario_id": "s05_edible_cosmetics",
+      "scenario": "化妆品可食用",
+      "type": "primary",
+      "keyword": "食品级化妆品",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s05_edible_cosmetics__primary__食品级化妆品__p1.json"
+    },
+    {
+      "scenario_id": "s06_gift_promotion",
+      "scenario": "买赠规则",
+      "type": "fallback",
+      "keyword": "买一送一",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__fallback__买一送一__p1.json"
+    },
+    {
+      "scenario_id": "s06_gift_promotion",
+      "scenario": "买赠规则",
+      "type": "fallback",
+      "keyword": "买赠",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__fallback__买赠__p1.json"
+    },
+    {
+      "scenario_id": "s06_gift_promotion",
+      "scenario": "买赠规则",
+      "type": "fallback",
+      "keyword": "促销",
+      "page": 1,
+      "total": 2,
+      "returned": 2,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__fallback__促销__p1.json"
+    },
+    {
+      "scenario_id": "s06_gift_promotion",
+      "scenario": "买赠规则",
+      "type": "fallback",
+      "keyword": "促销广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__fallback__促销广告__p1.json"
+    },
+    {
+      "scenario_id": "s06_gift_promotion",
+      "scenario": "买赠规则",
+      "type": "fallback",
+      "keyword": "满减",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__fallback__满减__p1.json"
+    },
+    {
+      "scenario_id": "s06_gift_promotion",
+      "scenario": "买赠规则",
+      "type": "fallback",
+      "keyword": "赠品",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__fallback__赠品__p1.json"
+    },
+    {
+      "scenario_id": "s06_gift_promotion",
+      "scenario": "买赠规则",
+      "type": "fallback",
+      "keyword": "赠送",
+      "page": 1,
+      "total": 2,
+      "returned": 2,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__fallback__赠送__p1.json"
+    },
+    {
+      "scenario_id": "s06_gift_promotion",
+      "scenario": "买赠规则",
+      "type": "fallback",
+      "keyword": "返现",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__fallback__返现__p1.json"
+    },
+    {
+      "scenario_id": "s06_gift_promotion",
+      "scenario": "买赠规则",
+      "type": "primary",
+      "keyword": "买一送一广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__primary__买一送一广告__p1.json"
+    },
+    {
+      "scenario_id": "s06_gift_promotion",
+      "scenario": "买赠规则",
+      "type": "primary",
+      "keyword": "买赠广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__primary__买赠广告__p1.json"
+    },
+    {
+      "scenario_id": "s06_gift_promotion",
+      "scenario": "买赠规则",
+      "type": "primary",
+      "keyword": "满减广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__primary__满减广告__p1.json"
+    },
+    {
+      "scenario_id": "s07_game_cashout",
+      "scenario": "游戏收益/提现",
+      "type": "fallback",
+      "keyword": "提现",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s07_game_cashout__fallback__提现__p1.json"
+    },
+    {
+      "scenario_id": "s07_game_cashout",
+      "scenario": "游戏收益/提现",
+      "type": "fallback",
+      "keyword": "日赚",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s07_game_cashout__fallback__日赚__p1.json"
+    },
+    {
+      "scenario_id": "s07_game_cashout",
+      "scenario": "游戏收益/提现",
+      "type": "fallback",
+      "keyword": "游戏广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s07_game_cashout__fallback__游戏广告__p1.json"
+    },
+    {
+      "scenario_id": "s07_game_cashout",
+      "scenario": "游戏收益/提现",
+      "type": "fallback",
+      "keyword": "看广告赚钱",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s07_game_cashout__fallback__看广告赚钱__p1.json"
+    },
+    {
+      "scenario_id": "s07_game_cashout",
+      "scenario": "游戏收益/提现",
+      "type": "fallback",
+      "keyword": "红包",
+      "page": 1,
+      "total": 4,
+      "returned": 4,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s07_game_cashout__fallback__红包__p1.json"
+    },
+    {
+      "scenario_id": "s07_game_cashout",
+      "scenario": "游戏收益/提现",
+      "type": "fallback",
+      "keyword": "红包提现",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s07_game_cashout__fallback__红包提现__p1.json"
+    },
+    {
+      "scenario_id": "s07_game_cashout",
+      "scenario": "游戏收益/提现",
+      "type": "fallback",
+      "keyword": "赚钱",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s07_game_cashout__fallback__赚钱__p1.json"
+    },
+    {
+      "scenario_id": "s07_game_cashout",
+      "scenario": "游戏收益/提现",
+      "type": "fallback",
+      "keyword": "赚钱游戏",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s07_game_cashout__fallback__赚钱游戏__p1.json"
+    },
+    {
+      "scenario_id": "s07_game_cashout",
+      "scenario": "游戏收益/提现",
+      "type": "primary",
+      "keyword": "日赚广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s07_game_cashout__primary__日赚广告__p1.json"
+    },
+    {
+      "scenario_id": "s07_game_cashout",
+      "scenario": "游戏收益/提现",
+      "type": "primary",
+      "keyword": "游戏提现",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s07_game_cashout__primary__游戏提现__p1.json"
+    },
+    {
+      "scenario_id": "s07_game_cashout",
+      "scenario": "游戏收益/提现",
+      "type": "primary",
+      "keyword": "游戏收益",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s07_game_cashout__primary__游戏收益__p1.json"
+    },
+    {
+      "scenario_id": "s08_data_citation",
+      "scenario": "数据引证",
+      "type": "fallback",
+      "keyword": "下载量",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s08_data_citation__fallback__下载量__p1.json"
+    },
+    {
+      "scenario_id": "s08_data_citation",
+      "scenario": "数据引证",
+      "type": "fallback",
+      "keyword": "临床数据",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s08_data_citation__fallback__临床数据__p1.json"
+    },
+    {
+      "scenario_id": "s08_data_citation",
+      "scenario": "数据引证",
+      "type": "fallback",
+      "keyword": "好评率",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s08_data_citation__fallback__好评率__p1.json"
+    },
+    {
+      "scenario_id": "s08_data_citation",
+      "scenario": "数据引证",
+      "type": "fallback",
+      "keyword": "成交占比",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s08_data_citation__fallback__成交占比__p1.json"
+    },
+    {
+      "scenario_id": "s08_data_citation",
+      "scenario": "数据引证",
+      "type": "fallback",
+      "keyword": "排名",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s08_data_citation__fallback__排名__p1.json"
+    },
+    {
+      "scenario_id": "s08_data_citation",
+      "scenario": "数据引证",
+      "type": "fallback",
+      "keyword": "数据来源",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s08_data_citation__fallback__数据来源__p1.json"
+    },
+    {
+      "scenario_id": "s08_data_citation",
+      "scenario": "数据引证",
+      "type": "fallback",
+      "keyword": "无出处",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s08_data_citation__fallback__无出处__p1.json"
+    },
+    {
+      "scenario_id": "s08_data_citation",
+      "scenario": "数据引证",
+      "type": "fallback",
+      "keyword": "销冠",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s08_data_citation__fallback__销冠__p1.json"
+    },
+    {
+      "scenario_id": "s08_data_citation",
+      "scenario": "数据引证",
+      "type": "fallback",
+      "keyword": "销量",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s08_data_citation__fallback__销量__p1.json"
+    },
+    {
+      "scenario_id": "s08_data_citation",
+      "scenario": "数据引证",
+      "type": "primary",
+      "keyword": "下载量广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s08_data_citation__primary__下载量广告__p1.json"
+    },
+    {
+      "scenario_id": "s08_data_citation",
+      "scenario": "数据引证",
+      "type": "primary",
+      "keyword": "好评率广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s08_data_citation__primary__好评率广告__p1.json"
+    },
+    {
+      "scenario_id": "s08_data_citation",
+      "scenario": "数据引证",
+      "type": "primary",
+      "keyword": "销量虚假广告",
+      "page": 1,
+      "total": 0,
+      "returned": 0,
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/list/s08_data_citation__primary__销量虚假广告__p1.json"
+    }
+  ],
+  "unique_list_hits": 210,
+  "detail_targets": 64,
+  "details": [
+    {
+      "guid": "330108032026050004",
+      "unid": "330108032026050004",
+      "title": "刘某某对商品作引人误解的虚假宣传案",
+      "authority": "杭州市高新区（滨江）市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330108032026050004.json"
+    },
+    {
+      "guid": "330206102026050002",
+      "unid": "330206102026050002",
+      "title": "时垠（上海）生物科技有限公司宁波分公司广告中含有虚假内容案",
+      "authority": "宁波市北仑区市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330206102026050002.json"
+    },
+    {
+      "guid": "330282112026070004",
+      "unid": "330282112026070004",
+      "title": "慈溪市白沙路刘倡倡食品店擅自配制化妆品，经营变质、超过使用期限的化妆品案",
+      "authority": "慈溪市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330282112026070004.json"
+    },
+    {
+      "guid": "330282112026070011",
+      "unid": "330282112026070011",
+      "title": "瑞洲（浙江省宁波）商业管理有限责任公司擅自配制化妆品，经营变质、超过使用期限的化妆品案",
+      "authority": "慈溪市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330282112026070011.json"
+    },
+    {
+      "guid": "330683062026080001",
+      "unid": "330683062026080001",
+      "title": "嵊州市依瑄超市擅自配制化妆品，经营变质、超过使用期限的化妆品案",
+      "authority": "嵊州市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330683062026080001.json"
+    },
+    {
+      "guid": "330921072026070008",
+      "unid": "330921072026070008",
+      "title": "岱山县高亭镇明夕化妆行经营超过使用期限的化妆品案",
+      "authority": "岱山县市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330921072026070008.json"
+    },
+    {
+      "guid": "331003022026060003",
+      "unid": "331003022026060003",
+      "title": "台州市众知文化传媒有限公司广告中含有虚假内容案",
+      "authority": "台州市黄岩区市场监督管理局",
+      "scenario_matches": {
+        "s08_data_citation": [
+          "TOP1,每10个人9个选择建发大平层”、“2023年度销冠 2024年度销冠2025半年度销冠”、“6月椒江大户型建发成交占比超90%”等内容。经查，上述房地产广告所涉数据无出处，系虚构",
+          "广告页面中宣传内容含有“销冠盘 TOP1,每10个人9个选择建发大平层”、“2023年度销冠 2024年度销冠2025半年度销冠”、“6月椒江大户型建发成交占比超90%”等内容。经查，上述房地产广告所涉数据无出处，系虚构。至案发，当事人已主动拆除了上述广告。\n行政处罚种类、依据、内容：当事人受广告主"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/331003022026060003.json"
+    },
+    {
+      "guid": "330106032026070001",
+      "unid": "330106032026070001",
+      "title": "李某某对商品作引人误解的虚假宣传案",
+      "authority": "杭州市西湖区市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330106032026070001.json"
+    },
+    {
+      "guid": "330226052026070003",
+      "unid": "330226052026070003",
+      "title": "宁海县张艳保健养生馆（个体工商户）广告中含有虚假内容案",
+      "authority": "宁海县市场监督管理局",
+      "scenario_matches": {
+        "s03_platform_rules": [
+          "网店上的广告系自行设计制作发布，故广告"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330226052026070003.json"
+    },
+    {
+      "guid": "330227442026060013",
+      "unid": "330227442026060013",
+      "title": "宁波市鄞州福明尤佳米美甲店擅自配制化妆品，经营变质、超过使用期限的化妆品案",
+      "authority": "宁波市鄞州区市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330227442026060013.json"
+    },
+    {
+      "guid": "330302092026040007",
+      "unid": "330302092026040007",
+      "title": "刘某某虚假宣传案",
+      "authority": "温州市鹿城区市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330302092026040007.json"
+    },
+    {
+      "guid": "330304032026070002",
+      "unid": "330304032026070002",
+      "title": "翁某某虚假宣传（不正当竞争行为）案",
+      "authority": "温州市瓯海区市场监督管理局",
+      "scenario_matches": {
+        "s03_platform_rules": [
+          "淘宝店铺某某堂美妆护肤店发布产品广告，宣传"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330304032026070002.json"
+    },
+    {
+      "guid": "330781032026060004",
+      "unid": "330781032026060004",
+      "title": "范某某对商品作引人误解的虚假宣传案",
+      "authority": "兰溪市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330781032026060004.json"
+    },
+    {
+      "guid": "332501042026070001",
+      "unid": "332501042026070001",
+      "title": "丽水市莲都区小雅美妆工作室经营或者进口标签标识不符合规定的化妆品案",
+      "authority": "丽水市莲都区市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/332501042026070001.json"
+    },
+    {
+      "guid": "330226122026070003",
+      "unid": "330226122026070003",
+      "title": "宁海京力包装材料商行广告中含有虚假内容案",
+      "authority": "宁海县市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330226122026070003.json"
+    },
+    {
+      "guid": "330183072026050001",
+      "unid": "330183072026050001",
+      "title": "许锐对商品作引人误解的虚假宣传案",
+      "authority": "杭州市富阳区市场监督管理局",
+      "scenario_matches": {
+        "s03_platform_rules": [
+          "淘宝店铺停止违法行为，依据《浙江省市场监督管理行政处罚裁量基准管理办法》第十三条第二项“之规定，对当事人通过虚假"
+        ],
+        "s08_data_citation": [
+          "刷单人员还对交易进行了虚假的用户评价",
+          "虚假的用户评价"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330183072026050001.json"
+    },
+    {
+      "guid": "330185042026060005",
+      "unid": "330185042026060005",
+      "title": "杭州临安漫酌小酒馆允许未成年人进入酒馆并提供酒水案",
+      "authority": "杭州市临安区市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330185042026060005.json"
+    },
+    {
+      "guid": "330206052026060026",
+      "unid": "330206052026060026",
+      "title": "宁波市鄞州立辉广告传媒有限公司制作发布违法广告行为案",
+      "authority": "宁波市北仑区市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330206052026060026.json"
+    },
+    {
+      "guid": "330482032026060003",
+      "unid": "330482032026060003",
+      "title": "平湖市九臣小酒馆（个体工商户）向未成年人售酒案",
+      "authority": "平湖市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330482032026060003.json"
+    },
+    {
+      "guid": "332500072025120065",
+      "unid": "332500072025120065",
+      "title": "丽水市南明湖旅游文化产业有限公司虚假宣传（不正当竞争）案",
+      "authority": "丽水市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/332500072025120065.json"
+    },
+    {
+      "guid": "332502072026070004",
+      "unid": "332502072026070004",
+      "title": "龙泉市开烤烧烤店对商品作引人误解的虚假宣传案",
+      "authority": "龙泉市市场监督管理局",
+      "scenario_matches": {
+        "s08_data_citation": [
+          "销量为0，在淘宝闪购上标价8.8元/串，销量为7串，京东秒送上标价为8元/串，销量为0。当事人陈述，涉案肉串在店内售价为4元/串，已销售14串，无法提供"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/332502072026070004.json"
+    },
+    {
+      "guid": "330381012026070010",
+      "unid": "330381012026070010",
+      "title": "瑞安市胖东股餐饮店向未成年人销售酒水案",
+      "authority": "瑞安市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330381012026070010.json"
+    },
+    {
+      "guid": "331024172026070014",
+      "unid": "331024172026070014",
+      "title": "仙居县某某餐饮店（个体工商户）向未成年人售酒案",
+      "authority": "仙居县市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/331024172026070014.json"
+    },
+    {
+      "guid": "330302082026080002",
+      "unid": "330302082026080002",
+      "title": "温州市鹿城区南郊囸顺汽配商行对商品作引人误解的虚假宣传案",
+      "authority": "温州市鹿城区市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330302082026080002.json"
+    },
+    {
+      "guid": "330183232026060004",
+      "unid": "330183232026060004",
+      "title": "杭州富阳红尘酒馆（个体工商户）对商品作引人误解的虚假宣传案",
+      "authority": "杭州市富阳区市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330183232026060004.json"
+    },
+    {
+      "guid": "330421112026040009",
+      "unid": "330421112026040009",
+      "title": "嘉善赵前美甲店未取得药品经营许可证经营劣药和发布虚假广告案",
+      "authority": "嘉善县市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330421112026040009.json"
+    },
+    {
+      "guid": "330782482026080016",
+      "unid": "330782482026080016",
+      "title": "义乌市芙沙日用品有限公司发布虚假广告案",
+      "authority": "义乌市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330782482026080016.json"
+    },
+    {
+      "guid": "330282062026040003",
+      "unid": "330282062026040003",
+      "title": "慈溪圣甬口腔门诊部有限公司未经广告审查机关审查发布医疗广告和发布虚假广告的行为案",
+      "authority": "慈溪市市场监督管理局",
+      "scenario_matches": {
+        "s03_platform_rules": [
+          "小红书号上发布医疗广告。当事人发布上述笔记或信息以推荐其诊疗项目或本机构为目的。其中，部分广告宣传"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330282062026040003.json"
+    },
+    {
+      "guid": "331004082026050004",
+      "unid": "331004082026050004",
+      "title": "梁仙聪违反《中华人民共和国广告法》第三十八条第二款规定，利用不满十周岁的未成年人作为广告代言人或违反《中华人民共和国广告法》第三十八条第三款规定，利用自然人、法人或者其他组织作为广告代言人行为案",
+      "authority": "台州市路桥区市场监督管理局",
+      "scenario_matches": {
+        "s03_platform_rules": [
+          "电商平台发布虚假广告。\n行政处罚种类、依据、内容：当事人发布虚假广告，违反了《中华人民共和国广告"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/331004082026050004.json"
+    },
+    {
+      "guid": "330482222026010002",
+      "unid": "330482222026010002",
+      "title": "平湖市庄医森养生馆发布虚假广告案",
+      "authority": "平湖市市场监督管理局",
+      "scenario_matches": {
+        "s03_platform_rules": [
+          "抖音账号自行制作并发布了12则涉案短视频广告。上述广告围绕涉案设备展开宣传，含有以下宣传内容：广告"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330482222026010002.json"
+    },
+    {
+      "guid": "2026072016003622430B68747422F2FA",
+      "unid": "A3306816100002026075027",
+      "title": "张某某未按规定执行住宿实名制案",
+      "authority": "浙江省诸暨市公安局应店街派出所",
+      "scenario_matches": {},
+      "is_market_authority": false,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/2026072016003622430B68747422F2FA.json"
+    },
+    {
+      "guid": "20260720160242146ED51A7F0320FA61",
+      "unid": "A3306816100002026075026",
+      "title": "周某某未按规定执行住宿实名制案",
+      "authority": "浙江省诸暨市公安局应店街派出所",
+      "scenario_matches": {},
+      "is_market_authority": false,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/20260720160242146ED51A7F0320FA61.json"
+    },
+    {
+      "guid": "330783122026030001",
+      "unid": "330783122026030001",
+      "title": "东阳市文匠日用百货有限公司发布虚假广告案",
+      "authority": "东阳市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330783122026030001.json"
+    },
+    {
+      "guid": "330783102026030014",
+      "unid": "330783102026030014",
+      "title": "义乌市飓风电脑职业技能培训学校发布违法广告案",
+      "authority": "东阳市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330783102026030014.json"
+    },
+    {
+      "guid": "330783102026030017",
+      "unid": "330783102026030017",
+      "title": "东阳市果壳日用品有限公司虚假广告案",
+      "authority": "东阳市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330783102026030017.json"
+    },
+    {
+      "guid": "330783102026030022",
+      "unid": "330783102026030022",
+      "title": "东阳市宏航日用品厂虚假广告案",
+      "authority": "东阳市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330783102026030022.json"
+    },
+    {
+      "guid": "330783002026030003",
+      "unid": "330783002026030003",
+      "title": "义乌市赫呈贸易有限公司虚假广告案",
+      "authority": "东阳市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330783002026030003.json"
+    },
+    {
+      "guid": "330782482026050005",
+      "unid": "330782482026050005",
+      "title": "义乌品立服饰有限公司发布虚假广告案",
+      "authority": "义乌市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330782482026050005.json"
+    },
+    {
+      "guid": "330782282026050027",
+      "unid": "330782282026050027",
+      "title": "义乌市君煜饰品厂发布虚假广告案",
+      "authority": "义乌市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330782282026050027.json"
+    },
+    {
+      "guid": "330402132026030002",
+      "unid": "330402132026030002",
+      "title": "嘉兴温故知新网络科技有限公司发布违法广告案",
+      "authority": "嘉兴市南湖区市场监督管理局",
+      "scenario_matches": {
+        "s04_endorsement": [
+          "利用受益者的名义或者形象作推荐、证明",
+          "广告，存在利用受益者的名义或者形象作推荐、证明"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330402132026030002.json"
+    },
+    {
+      "guid": "330782082026030020",
+      "unid": "330782082026030020",
+      "title": "义乌市蜻心品牌运营管理有限公司违反促销行为规定案",
+      "authority": "义乌市市场监督管理局",
+      "scenario_matches": {
+        "s06_gift_promotion": [
+          "促销行为规定。\n行政处罚种类、依据、内容：当事人违反促销行为规定的行为，已违反了《规范促销行为暂行规定》第七条及第二十条的规定。\n依据《规范促销行为暂行规定",
+          "违反促销行为规定"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330782082026030020.json"
+    },
+    {
+      "guid": "330782992025110018",
+      "unid": "330782992025110018",
+      "title": "蔡某某销售侵犯注册商标专用权的游戏卡片案",
+      "authority": "义乌市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330782992025110018.json"
+    },
+    {
+      "guid": "330382032025120001",
+      "unid": "330382032025120001",
+      "title": "乐清市某某服装网店广告中含有虚假内容案",
+      "authority": "乐清市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330382032025120001.json"
+    },
+    {
+      "guid": "6c0823b6-fdd4-474f-a8a2-7937b74bba6c",
+      "unid": "11330106MB1674912G3301063920260002",
+      "title": "擅自上网出版网络游戏案",
+      "authority": "杭州市西湖区文化和广电旅游体育局",
+      "scenario_matches": {},
+      "is_market_authority": false,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/6c0823b6-fdd4-474f-a8a2-7937b74bba6c.json"
+    },
+    {
+      "guid": "330203012026030001",
+      "unid": "330203012026030001",
+      "title": "宁波海曙区璟航室内游戏工作室（个体工商户）销售侵犯注册商标专用权的商品案",
+      "authority": "宁波市海曙区市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330203012026030001.json"
+    },
+    {
+      "guid": "330784052025120001",
+      "unid": "330784052025120001",
+      "title": "周某某发布违法广告案",
+      "authority": "永康市市场监督管理局",
+      "scenario_matches": {
+        "s03_platform_rules": [
+          "拼多多网店发布了对商品的产地、性能等表示得不准确、清楚、明白的广告。\n行政处罚种类、依据、内容：当事人发布违法广告"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330784052025120001.json"
+    },
+    {
+      "guid": "330782062025120014",
+      "unid": "330782062025120014",
+      "title": "黄某某销售侵犯注册商标专用权的游戏纸牌案",
+      "authority": "义乌市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330782062025120014.json"
+    },
+    {
+      "guid": "331024022025120001",
+      "unid": "331024022025120001",
+      "title": "仙居县某电子商务商行（个体工商户）赠送三无产品案",
+      "authority": "仙居县市场监督管理局",
+      "scenario_matches": {
+        "s06_gift_promotion": [
+          "赠品形式随头盔一同发货，产品未进行任何标注，截至案发货值金额共计45元，违法所得0元。\n行政处罚种类、依据、内容：对当事人赠送三无产品的违法行为，依据《浙江省产品质量监督条例》第三十五条的规定"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/331024022025120001.json"
+    },
+    {
+      "guid": "330213240023493fc5f6d5036bd4093a05b37068b02292b",
+      "unid": "330213000000330213240023493",
+      "title": "代某某驾驶载货汽车载物超过最大允许总质量百分之五十以上未达百分之一百案",
+      "authority": "宁波市公安局交通管理支队奉化大队",
+      "scenario_matches": {},
+      "is_market_authority": false,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330213240023493fc5f6d5036bd4093a05b37068b02292b.json"
+    },
+    {
+      "guid": "330483092025080005",
+      "unid": "330483092025080005",
+      "title": "桐乡市云数互联网广告有限公司公司成立后无正当理由超过6个月未开业的，或者开业后自行停业连续6个月以上案",
+      "authority": "桐乡市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330483092025080005.json"
+    },
+    {
+      "guid": "C5A2CF4D290C4A8C9F5BAF7EFFA1A117",
+      "unid": "C5A2CF4D290C4A8C9F5BAF7EFFA1A117",
+      "title": "台州万紫红包装有限责任公司消防控制室未实行二十四小时值班制度案",
+      "authority": "台州湾新区消防救援大队",
+      "scenario_matches": {},
+      "is_market_authority": false,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/C5A2CF4D290C4A8C9F5BAF7EFFA1A117.json"
+    },
+    {
+      "guid": "46a5cde0-6820-4bb4-a2f4-fde5069e692c",
+      "unid": "11330106MB1674912G3301063920250023",
+      "title": "擅自上网出版网络游戏案",
+      "authority": "杭州市西湖区文化和广电旅游体育局",
+      "scenario_matches": {},
+      "is_market_authority": false,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/46a5cde0-6820-4bb4-a2f4-fde5069e692c.json"
+    },
+    {
+      "guid": "330782992025100005",
+      "unid": "330782992025100005",
+      "title": "刘某某销售侵犯注册商标专用权的游戏卡牌案",
+      "authority": "义乌市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330782992025100005.json"
+    },
+    {
+      "guid": "330727122025090003",
+      "unid": "330727122025090003",
+      "title": "磐安县卓翔五金工具厂开展限时减价、折价等价格促销活动未显著标明期限案",
+      "authority": "磐安县市场监督管理局",
+      "scenario_matches": {
+        "s06_gift_promotion": [
+          "促销活动并在标题为“北卓电动升降桌电脑桌学习桌书桌家用办公桌电竞桌子可升降工作台”的商品链接页面上传标注有“限时立减”字样的图片，且链接颜色分类中包含“限时特价”选项，但未在链接页面标明限时立减促销活动的期限",
+          "规范促销行为"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330727122025090003.json"
+    },
+    {
+      "guid": "331081012025050011",
+      "unid": "331081012025050011",
+      "title": "温岭全程眼视光门诊部有限公司违反《中华人民共和国广告法》第三十九条规定，在中小学校、幼儿园内或者利用与中小学生、幼儿有关的物品发布广告行为案",
+      "authority": "温岭市市场监督管理局",
+      "scenario_matches": {
+        "s01_minor_protection": [
+          "幼儿园开展广告"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/331081012025050011.json"
+    },
+    {
+      "guid": "330483082025040048",
+      "unid": "330483082025040048",
+      "title": "桐乡市崇福恩柒音乐酒吧（个体工商户）接待未成年人消费案",
+      "authority": "桐乡市市场监督管理局",
+      "scenario_matches": {},
+      "is_market_authority": true,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330483082025040048.json"
+    },
+    {
+      "guid": "330824062025050003",
+      "unid": "330824062025050003",
+      "title": "浙江健一行医药零售连锁有限公司马金药店发布赠送药品广告案",
+      "authority": "开化县市场监督管理局",
+      "scenario_matches": {
+        "s06_gift_promotion": [
+          "买5得6”的宣传广告。\n行政处罚种类、依据、内容：当事人在浙江省行政区域内发布赠送药品广告的行为违反《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第十一条第（六）项的规定"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330824062025050003.json"
+    },
+    {
+      "guid": "4fd8a5b7-7255-4ef0-b20c-fce893ad83cb",
+      "unid": "11330200MB1501579M3302003920250006",
+      "title": "擅自上网出版网络游戏(含境外著作权人授权的网络游戏)案",
+      "authority": "宁波市文化广电旅游局",
+      "scenario_matches": {},
+      "is_market_authority": false,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/4fd8a5b7-7255-4ef0-b20c-fce893ad83cb.json"
+    },
+    {
+      "guid": "88858ca4-8e13-4f41-9b5e-440906eadfe6",
+      "unid": "11330700MB1676**************240026",
+      "title": "未经批准，擅自上网出版网络游戏",
+      "authority": "金华市文化广电旅游局",
+      "scenario_matches": {},
+      "is_market_authority": false,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/88858ca4-8e13-4f41-9b5e-440906eadfe6.json"
+    },
+    {
+      "guid": "042B5A3FEB214DE7917B783A8C0097A5",
+      "unid": "042B5A3FEB214DE7917B783A8C0097A5",
+      "title": "杭州卡红包装有限公司消防设施、器材、消防安全标志配置、设置不符合标准案",
+      "authority": "杭州钱塘新区消防救援大队",
+      "scenario_matches": {},
+      "is_market_authority": false,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/042B5A3FEB214DE7917B783A8C0097A5.json"
+    },
+    {
+      "guid": "330102292024070002",
+      "unid": "330102292024070002",
+      "title": "徐某某广告代言人在医疗、药品、医疗器械广告中作推荐、证明行为案",
+      "authority": "杭州市上城区市场监督管理局",
+      "scenario_matches": {
+        "s04_endorsement": [
+          "代言费9000元。上述行为已构成《中华人民共和国广告法》第十六条第一款第（四）项“医疗、药品、医疗器械广告不得含有下列内容：利用广告代言人作推荐",
+          "广告不得含有下列内容：利用广告代言人作推荐、证明"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330102292024070002.json"
+    },
+    {
+      "guid": "2d2b96a6158445dc825a1266ca83c4a3",
+      "unid": "台三综执立字〔2024〕第000094号",
+      "title": "三门县永红包子店擅自在街道两侧堆放物料案",
+      "authority": "三门县综合行政执法局",
+      "scenario_matches": {},
+      "is_market_authority": false,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/2d2b96a6158445dc825a1266ca83c4a3.json"
+    },
+    {
+      "guid": "330000132024050001",
+      "unid": "330000132024050001",
+      "title": "廖某某广告代言人在医疗广告中作推荐、证明行为案",
+      "authority": "省市场监管局（省知识产权局）",
+      "scenario_matches": {
+        "s04_endorsement": [
+          "医疗广告中作推荐、证明",
+          "广告中作推荐、证明"
+        ]
+      },
+      "is_market_authority": true,
+      "has_ad_legal_basis": true,
+      "status": "confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330000132024050001.json"
+    },
+    {
+      "guid": "CE89043BDFDE4F6E8BA81D80103C9C0B",
+      "unid": "CE89043BDFDE4F6E8BA81D80103C9C0B",
+      "title": "台州万紫红包装有限责任公司埋压、圈占、遮挡消火栓案",
+      "authority": "台州湾新区消防救援大队",
+      "scenario_matches": {},
+      "is_market_authority": false,
+      "has_ad_legal_basis": false,
+      "status": "not_confirmed",
+      "raw_path": "data/raw_text/zj_xzcf/gap_20260917/detail/CE89043BDFDE4F6E8BA81D80103C9C0B.json"
+    }
+  ],
+  "confirmed_rows": [
+    {
+      "case_id": "zj_gap_331003022026060003",
+      "title": "台州市众知文化传媒有限公司广告中含有虚假内容案",
+      "case_number": "台黄市监处罚〔2026〕278号",
+      "authority": "台州市黄岩区市场监督管理局",
+      "decision_date": "2026-09-16",
+      "scenarios": [
+        "s08_data_citation"
+      ],
+      "amount": 21000.0,
+      "advertising_related_fine": 21000.0,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=331003022026060003&unid=331003022026060003",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/331003022026060003.json",
+      "candidate_path": "data/structured_candidates/zj_gap_331003022026060003.json"
+    },
+    {
+      "case_id": "zj_gap_330226052026070003",
+      "title": "宁海县张艳保健养生馆（个体工商户）广告中含有虚假内容案",
+      "case_number": "宁市监处罚〔2026〕555号",
+      "authority": "宁海县市场监督管理局",
+      "decision_date": "2026-09-15",
+      "scenarios": [
+        "s03_platform_rules"
+      ],
+      "amount": 4500.0,
+      "advertising_related_fine": 1500.0,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330226052026070003&unid=330226052026070003",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330226052026070003.json",
+      "candidate_path": "data/structured_candidates/zj_gap_330226052026070003.json"
+    },
+    {
+      "case_id": "zj_gap_330304032026070002",
+      "title": "翁某某虚假宣传（不正当竞争行为）案",
+      "case_number": "温瓯市监处罚〔2026〕626号",
+      "authority": "温州市瓯海区市场监督管理局",
+      "decision_date": "2026-09-15",
+      "scenarios": [
+        "s03_platform_rules"
+      ],
+      "amount": 600.0,
+      "advertising_related_fine": 600.0,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330304032026070002&unid=330304032026070002",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330304032026070002.json",
+      "candidate_path": "data/structured_candidates/zj_gap_330304032026070002.json"
+    },
+    {
+      "case_id": "zj_gap_330183072026050001",
+      "title": "许锐对商品作引人误解的虚假宣传案",
+      "case_number": "杭富市监处罚〔2026〕314号",
+      "authority": "杭州市富阳区市场监督管理局",
+      "decision_date": "2026-09-11",
+      "scenarios": [
+        "s03_platform_rules",
+        "s08_data_citation"
+      ],
+      "amount": 30000.0,
+      "advertising_related_fine": null,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330183072026050001&unid=330183072026050001",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330183072026050001.json",
+      "candidate_path": "data/structured_candidates/zj_gap_330183072026050001.json"
+    },
+    {
+      "case_id": "zj_gap_330282062026040003",
+      "title": "慈溪圣甬口腔门诊部有限公司未经广告审查机关审查发布医疗广告和发布虚假广告的行为案",
+      "case_number": "慈市监处罚〔2026〕1001号",
+      "authority": "慈溪市市场监督管理局",
+      "decision_date": "2026-08-06",
+      "scenarios": [
+        "s03_platform_rules"
+      ],
+      "amount": 60000.0,
+      "advertising_related_fine": 20000.0,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330282062026040003&unid=330282062026040003",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330282062026040003.json",
+      "candidate_path": "data/structured_candidates/zj_gap_330282062026040003.json"
+    },
+    {
+      "case_id": "zj_gap_331004082026050004",
+      "title": "梁仙聪违反《中华人民共和国广告法》第三十八条第二款规定，利用不满十周岁的未成年人作为广告代言人或违反《中华人民共和国广告法》第三十八条第三款规定，利用自然人、法人或者其他组织作为广告代言人行为案",
+      "case_number": "台路市监处罚〔2026〕322号",
+      "authority": "台州市路桥区市场监督管理局",
+      "decision_date": "2026-07-23",
+      "scenarios": [
+        "s03_platform_rules"
+      ],
+      "amount": 1600.0,
+      "advertising_related_fine": 1600.0,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=331004082026050004&unid=331004082026050004",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/331004082026050004.json",
+      "candidate_path": "data/structured_candidates/zj_gap_331004082026050004.json"
+    },
+    {
+      "case_id": "zj_gap_330482222026010002",
+      "title": "平湖市庄医森养生馆发布虚假广告案",
+      "case_number": "平市监处罚〔2026〕368号",
+      "authority": "平湖市市场监督管理局",
+      "decision_date": "2026-07-22",
+      "scenarios": [
+        "s03_platform_rules"
+      ],
+      "amount": 280000.0,
+      "advertising_related_fine": 280000.0,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330482222026010002&unid=330482222026010002",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330482222026010002.json",
+      "candidate_path": "data/structured_candidates/zj_gap_330482222026010002.json"
+    },
+    {
+      "case_id": "zj_gap_330402132026030002",
+      "title": "嘉兴温故知新网络科技有限公司发布违法广告案",
+      "case_number": "嘉南市监处罚〔2026〕510号",
+      "authority": "嘉兴市南湖区市场监督管理局",
+      "decision_date": "2026-06-22",
+      "scenarios": [
+        "s04_endorsement"
+      ],
+      "amount": 2040.0,
+      "advertising_related_fine": 2040.0,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330402132026030002&unid=330402132026030002",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330402132026030002.json",
+      "candidate_path": "data/structured_candidates/zj_gap_330402132026030002.json"
+    },
+    {
+      "case_id": "zj_gap_330782082026030020",
+      "title": "义乌市蜻心品牌运营管理有限公司违反促销行为规定案",
+      "case_number": "义市监处罚〔2026〕1469号",
+      "authority": "义乌市市场监督管理局",
+      "decision_date": "2026-05-13",
+      "scenarios": [
+        "s06_gift_promotion"
+      ],
+      "amount": 3000.0,
+      "advertising_related_fine": null,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330782082026030020&unid=330782082026030020",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330782082026030020.json",
+      "candidate_path": "data/structured_candidates/zj_gap_330782082026030020.json"
+    },
+    {
+      "case_id": "zj_gap_330784052025120001",
+      "title": "周某某发布违法广告案",
+      "case_number": "永市监处罚〔2026〕139号",
+      "authority": "永康市市场监督管理局",
+      "decision_date": "2026-02-10",
+      "scenarios": [
+        "s03_platform_rules"
+      ],
+      "amount": 5000.0,
+      "advertising_related_fine": 5000.0,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330784052025120001&unid=330784052025120001",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330784052025120001.json",
+      "candidate_path": "data/structured_candidates/zj_gap_330784052025120001.json"
+    },
+    {
+      "case_id": "zj_gap_330727122025090003",
+      "title": "磐安县卓翔五金工具厂开展限时减价、折价等价格促销活动未显著标明期限案",
+      "case_number": "磐市监处罚〔2025〕214号",
+      "authority": "磐安县市场监督管理局",
+      "decision_date": "2025-10-29",
+      "scenarios": [
+        "s06_gift_promotion"
+      ],
+      "amount": 1500.0,
+      "advertising_related_fine": null,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330727122025090003&unid=330727122025090003",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330727122025090003.json",
+      "candidate_path": "data/structured_candidates/zj_gap_330727122025090003.json"
+    },
+    {
+      "case_id": "zj_gap_331081012025050011",
+      "title": "温岭全程眼视光门诊部有限公司违反《中华人民共和国广告法》第三十九条规定，在中小学校、幼儿园内或者利用与中小学生、幼儿有关的物品发布广告行为案",
+      "case_number": "温市监处罚〔2025〕937号",
+      "authority": "温岭市市场监督管理局",
+      "decision_date": "2025-08-04",
+      "scenarios": [
+        "s01_minor_protection"
+      ],
+      "amount": 41710.0,
+      "advertising_related_fine": 1710.0,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=331081012025050011&unid=331081012025050011",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/331081012025050011.json",
+      "candidate_path": "data/structured_candidates/zj_gap_331081012025050011.json"
+    },
+    {
+      "case_id": "zj_gap_330824062025050003",
+      "title": "浙江健一行医药零售连锁有限公司马金药店发布赠送药品广告案",
+      "case_number": "开市监处罚〔2025〕182号",
+      "authority": "开化县市场监督管理局",
+      "decision_date": "2025-06-30",
+      "scenarios": [
+        "s06_gift_promotion"
+      ],
+      "amount": 502.5,
+      "advertising_related_fine": 502.5,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330824062025050003&unid=330824062025050003",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330824062025050003.json",
+      "candidate_path": "data/structured_candidates/zj_gap_330824062025050003.json"
+    },
+    {
+      "case_id": "zj_gap_330102292024070002",
+      "title": "徐某某广告代言人在医疗、药品、医疗器械广告中作推荐、证明行为案",
+      "case_number": "杭上市监处罚〔2024〕505号",
+      "authority": "杭州市上城区市场监督管理局",
+      "decision_date": "2024-08-29",
+      "scenarios": [
+        "s04_endorsement"
+      ],
+      "amount": 9000.0,
+      "advertising_related_fine": 9000.0,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330102292024070002&unid=330102292024070002",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330102292024070002.json",
+      "candidate_path": "data/structured_candidates/zj_gap_330102292024070002.json"
+    },
+    {
+      "case_id": "zj_gap_330000132024050001",
+      "title": "廖某某广告代言人在医疗广告中作推荐、证明行为案",
+      "case_number": "浙市监处罚〔2024〕8号",
+      "authority": "省市场监管局（省知识产权局）",
+      "decision_date": "2024-07-20",
+      "scenarios": [
+        "s04_endorsement"
+      ],
+      "amount": 90000.0,
+      "advertising_related_fine": 90000.0,
+      "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330000132024050001&unid=330000132024050001",
+      "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330000132024050001.json",
+      "candidate_path": "data/structured_candidates/zj_gap_330000132024050001.json"
+    }
+  ]
+}

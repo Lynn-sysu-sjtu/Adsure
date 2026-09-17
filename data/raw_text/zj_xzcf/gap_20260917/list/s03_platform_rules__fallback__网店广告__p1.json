@@ -1,0 +1,42 @@
+{
+  "fetched_at": "2026-09-17T17:31:43+08:00",
+  "request": {
+    "xzcfws_name": "网店广告",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330382032025120001",
+          "xzcfws_code": "乐市监处罚〔2026〕271号",
+          "bxzcf_name": "乐清市某某服装网店",
+          "guid": "330382032025120001",
+          "xzcfws_name": "乐清市某某服装网店广告中含有虚假内容案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "谢某某",
+          "xzcf_date": "2026-04-16",
+          "orgnode": "乐清市市场监督管理局"
+        }
+      ],
+      "total": 1,
+      "pageTotal": 1,
+      "pageNo": 1
+    },
+    "traceId": "F7909FA1E037427CBCD4E64639E474AE",
+    "messageType": 2
+  }
+}

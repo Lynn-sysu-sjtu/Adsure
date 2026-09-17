@@ -1,0 +1,80 @@
+{
+  "case_id": "zj_gap_330727122025090003",
+  "title": "磐安县卓翔五金工具厂开展限时减价、折价等价格促销活动未显著标明期限案",
+  "case_number": "磐市监处罚〔2025〕214号",
+  "source_type": "zj_xzcf_open_api_ad_gap_candidate",
+  "source_name": "浙江省行政处罚结果信息公开（公开 API）",
+  "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330727122025090003&unid=330727122025090003",
+  "source_verification_status": "official_api_fulltext_pending_human_review",
+  "source_lookup_priority": "P1",
+  "publish_date": null,
+  "decision_date": "2025-10-29",
+  "penalty_authority": "磐安县市场监督管理局",
+  "party_name": "磐安县卓翔五金工具厂",
+  "region": "磐安县",
+  "industry": "家具/电商",
+  "product_or_service": "电动升降桌/电脑桌等网店促销商品",
+  "ad_channel": "电商平台",
+  "risk_dimensions": [
+    "买赠/满减",
+    "促销广告",
+    "赠品或价格表示不清"
+  ],
+  "illegal_claims": [
+    "开展限时减价、折价等价格促销活动未显著标明期限",
+    "违反促销行为规定（公开全文未披露具体促销细节）"
+  ],
+  "facts_summary": "当事人在其网店开展平台官方限时促销活动并在标题为“北卓电动升降桌电脑桌学习桌书桌家用办公桌电竞桌子可升降工作台”的商品链接页面上传标注有“限时立减”字样的图片，且链接颜色分类中包含“限时特价”选项，但未在链接页面标明限时立减促销活动的期限的违法行为，于2025年9月15日被本局查获。",
+  "legal_basis": [
+    "《规范促销行为暂行规定》第二十条",
+    "《中华人民共和国价格法》第十三条",
+    "《规范促销行为暂行规定》第二十九条",
+    "《中华人民共和国价格法》第四十二条"
+  ],
+  "penalty_result": "当事人的行为违反了《规范促销行为暂行规定》第二十条和《中华人民共和国价格法》第十三条第一款的规定，依据《规范促销行为暂行规定》第二十九条和《中华人民共和国价格法》第四十二条的规定，本局责令当事人改正违法行为并决定如下：一、没收违法所得425.95元（肆佰贰拾伍元玖角伍分）；二、罚款1500元（壹仟伍佰元整）；综上，罚没款共计1925.95元（壹仟玖佰贰拾伍元玖角伍分），上缴国库。",
+  "penalty_amount": 1500.0,
+  "penalty_amount_breakdown": {
+    "total_fine": 1500.0,
+    "confiscated_illegal_gain": 425.95,
+    "total_monetary_penalty": 1925.95,
+    "advertising_related_fine_when_separable": null,
+    "anti_unfair_competition_fine": null
+  },
+  "regulatory_logic": "以下监管逻辑仅概括决定书明示内容：处罚机关依据全文载明的广告/反不正当竞争事实及法条作出处理；场景映射、分项罚款与标题正文一致性仍需人工复核。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "促销",
+    "磐市监处罚〔2025〕214号"
+  ],
+  "vector_text": "这是浙江省行政处罚结果信息公开的一起家具/电商广告处罚候选案例。磐安县卓翔五金工具厂通过电商平台发布相关宣传。处罚决定书写明：当事人在其网店开展平台官方限时促销活动并在标题为“北卓电动升降桌电脑桌学习桌书桌家用办公桌电竞桌子可升降工作台”的商品链接页面上传标注有“限时立减”字样的图片，且链接颜色分类中包含“限时特价”选项，但未在链接页面标明限时立减促销活动的期限的违法行为，于2025年9月15日被本局查获。处罚结果为：当事人的行为违反了《规范促销行为暂行规定》第二十条和《中华人民共和国价格法》第十三条第一款的规定，依据《规范促销行为暂行规定》第二十九条和《中华人民共和国价格法》第四十二条的规定，本局责令当事人改正违法行为并决定如下：一、没收违法所得425.95元（肆佰贰拾伍元玖角伍分）；二、罚款1500元（壹仟伍佰元整）；综上，罚没款共计1925.95元（壹仟玖佰贰拾伍元……该记录来自行政机关公开处罚信息全文，仍需人工复核，暂不进入生产 RAG。",
+  "rag_chunk_type": "case_summary_candidate",
+  "scope": "public",
+  "case_nature": "administrative_penalty_decision",
+  "is_admin_penalty_candidate": true,
+  "is_administrative_penalty_fact": true,
+  "gap_scenario_ids": [
+    "s06_gift_promotion"
+  ],
+  "gap_scenario_evidence": {
+    "s06_gift_promotion": [
+      "促销活动并在标题为“北卓电动升降桌电脑桌学习桌书桌家用办公桌电竞桌子可升降工作台”的商品链接页面上传标注有“限时立减”字样的图片，且链接颜色分类中包含“限时特价”选项，但未在链接页面标明限时立减促销活动的期限",
+      "规范促销行为"
+    ]
+  },
+  "metadata_consistency_notes": [],
+  "review_status": "pending_human_review",
+  "approved_for_rag": false,
+  "human_review_required": true,
+  "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330727122025090003.json",
+  "source_list_raw_paths": [
+    "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__fallback__促销__p1.json"
+  ],
+  "retrieved_at": "2026-09-17T17:54:08+08:00",
+  "data_change_log": [
+    {
+      "ts": "2026-09-17T17:54:08+08:00",
+      "action": "zj_gap_case_search",
+      "note": "浙江公开 API 列表+详情命中 8 缺口强场景词；仅入候选，待人核，不进生产 RAG。"
+    }
+  ]
+}

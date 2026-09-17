@@ -80,7 +80,7 @@ test-platform-rules:
 	python3 -m unittest tests.test_platform_rules -v
 
 test-video-mvp:
-	.venv-video/bin/python -m unittest tests.test_video_mvp tests.test_video_mvp_v2 tests.test_video_mvp_v3 tests.test_video_feishu_adapter -v
+	.venv-video/bin/python -m unittest tests.test_video_mvp tests.test_video_mvp_v2 tests.test_video_mvp_v3 tests.test_video_feishu_adapter tests.test_video_volc_asr tests.test_video_rapidocr_env -v
 
 test-handoff:
 	$(HANDOFF_PYTHON) -m pytest backend/tests -q

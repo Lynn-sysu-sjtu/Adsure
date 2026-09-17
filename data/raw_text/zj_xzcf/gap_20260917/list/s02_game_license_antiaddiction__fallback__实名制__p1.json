@@ -1,0 +1,75 @@
+{
+  "fetched_at": "2026-09-17T16:45:15+08:00",
+  "request": {
+    "xzcfws_name": "实名制",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "A3306816100002026075026",
+          "xzcfws_code": "诸公(应)行罚决字[2026]05173号",
+          "bxzcf_name": "周某某",
+          "guid": "20260720160242146ED51A7F0320FA61",
+          "xzcfws_name": "周某某未按规定执行住宿实名制案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-07-20",
+          "orgnode": "浙江省诸暨市公安局应店街派出所"
+        },
+        {
+          "unid": "A3306816100002026075027",
+          "xzcfws_code": "诸公(应)行罚决字[2026]05172号",
+          "bxzcf_name": "张某某",
+          "guid": "2026072016003622430B68747422F2FA",
+          "xzcfws_name": "张某某未按规定执行住宿实名制案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-07-20",
+          "orgnode": "浙江省诸暨市公安局应店街派出所"
+        },
+        {
+          "unid": "A3304215200002024055028",
+          "xzcfws_code": "善公(西)行罚决字[2024]00892号",
+          "bxzcf_name": "马某某",
+          "guid": "20240522144450D5C71863E31B798888",
+          "xzcfws_name": "马某某未按照规定执行互联网服务实名制案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2024-05-22",
+          "orgnode": "浙江省嘉善县公安局西塘派出所"
+        },
+        {
+          "unid": "象人社立字〔2023〕第000049号",
+          "xzcfws_code": "象人社罚决字〔2023〕第000049号",
+          "bxzcf_name": "深圳市华达成建筑装饰劳务有限公司",
+          "guid": "0859212F101B434EA8B5F8DB7CBD5371",
+          "xzcfws_name": "深圳市华达成建筑装饰劳务有限公司涉嫌未实行劳动用工实名制管理",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "林某某",
+          "xzcf_date": "2023-09-20",
+          "orgnode": "象山县人社局"
+        }
+      ],
+      "total": 4,
+      "pageTotal": 1,
+      "pageNo": 1
+    },
+    "traceId": "6EDB9C41988B45979D7C44940B572968",
+    "messageType": 2
+  }
+}
