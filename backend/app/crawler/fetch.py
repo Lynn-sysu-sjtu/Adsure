@@ -104,10 +104,11 @@ class Fetcher:
             )
         return self._http
 
-    def _get(self, url: str) -> tuple[int, str]:
-        if self.client is not None:
+    def _request(self, url: str, method: str = "GET",
+                 json_payload=None) -> tuple[int, str]:
+        if self.client is not None and method == "GET":
             return self.client(url)
-        r = self._session().get(url)
+        r = self._session().request(method, url, json=json_payload)
         return r.status_code, r.text
 
     def close(self) -> None:
@@ -115,7 +116,8 @@ class Fetcher:
             self._http.close()
             self._http = None
 
-    def fetch(self, url: str, interval: float | None = None) -> FetchResult:
+    def fetch(self, url: str, interval: float | None = None,
+              method: str = "GET", json_payload=None) -> FetchResult:
         parsed = urlparse(url)
         if parsed.scheme != "https":
             raise ValueError(f"抓取地址必须使用 HTTPS：{url}")
@@ -133,7 +135,7 @@ class Fetcher:
             if waited:
                 logger.debug("为 %s 等待 %.1fs 以满足请求间隔", host, waited)
             try:
-                status, body = self._get(url)
+                status, body = self._request(url, method, json_payload)
             except Exception as exc:
                 if attempt == self.retries or not _is_transient(exc):
                     raise

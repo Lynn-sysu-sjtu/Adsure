@@ -311,3 +311,64 @@ def parse_nppa_tzgs(html: str, base_url: str = "https://www.nppa.gov.cn",
         out.append(Link(url, title))
     logger.info("nppa 列表页解析出 %d 条游戏相关链接", len(out))
     return out
+
+
+# ══════════════════════════════════════════════════════════════
+#  通用 JSON 查询接口源（如 nppa 版号查询、信用中国查询）
+# ══════════════════════════════════════════════════════════════
+# sources.yaml 的 query 段给出 method/url/payload/page_param/items_path/
+# url_field/title_field；这里把分页请求与 JSON 响应解析通用化。
+def json_query_list_urls(cfg: dict, pages: int = 1) -> list[dict]:
+    q = cfg.get("query") or {}
+    specs = []
+    for i in range(1, max(pages, 1) + 1):
+        payload = dict(q.get("payload") or {})
+        if q.get("page_param"):
+            payload[q["page_param"]] = i
+        if q.get("page_size"):
+            payload.setdefault("pageSize", q["page_size"])
+        specs.append({
+            "url": q.get("url"),
+            "method": str(q.get("method", "POST")).upper(),
+            "payload": payload,
+        })
+    return specs
+
+
+def _dig(data, path: str):
+    cur = data
+    for part in (path or "").split("."):
+        if part == "":
+            continue
+        if isinstance(cur, dict):
+            cur = cur.get(part)
+        elif isinstance(cur, list) and part.isdigit():
+            cur = cur[int(part)]
+        else:
+            return None
+    return cur
+
+
+def parse_json_query(body: str, cfg: dict) -> list[Link]:
+    """解析 JSON 查询接口返回，抽 items 的 url/title。"""
+    import json as _json
+    q = cfg.get("query") or {}
+    try:
+        data = _json.loads(body or "{}")
+    except Exception:
+        logger.warning("JSON 查询接口返回非 JSON，跳过")
+        return []
+    items = _dig(data, q.get("items_path", ""))
+    if not isinstance(items, list):
+        return []
+    out = []
+    url_field = q.get("url_field", "url")
+    title_field = q.get("title_field", "title")
+    for it in items:
+        if not isinstance(it, dict):
+            continue
+        u = it.get(url_field)
+        t = it.get(title_field)
+        if u and t:
+            out.append(Link(str(u), str(t)))
+    return out

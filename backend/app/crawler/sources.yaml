@@ -60,6 +60,24 @@ sources:
   request_interval: 3.0
   notes: 列表页静态、详情 href /xxfb/tzgs/YYYYMM/tYYYYMMDD_id.html；robots.txt 为软404（302→/404.html，HTTP200），按
     RFC 9309 视为无 robots，可合规抓取。
+- id: creditchina_query
+  name: 信用中国 · 行政处罚查询接口（P2，待确认公开接口）
+  priority: P2
+  enabled: false
+  base_url: https://www.creditchina.gov.cn
+  list_url: null
+  parser: json_query
+  request_interval: 5.0
+  query:
+    method: POST
+    url: null
+    payload: {}
+    page_param: pageNo
+    page_size: 20
+    items_path: data.list
+    url_field: url
+    title_field: title
+  notes: 需先确认无需登录/验证码的公开查询接口及字段结构，再填 query.url 并启用。
 excluded:
 - id: wenshu
   reason: 需登录与验证码，触碰 AGENTS.md 禁止事项

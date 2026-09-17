@@ -106,6 +106,18 @@ def _discover(source_id: str, args, fetcher) -> list[Link]:
         from app.crawler.parsers import shanghai_list_urls, parse_shanghai_zfxxgkml
         list_urls = shanghai_list_urls(args.pages)
         parse_list = parse_shanghai_zfxxgkml
+    elif parser == "json_query":
+        from app.crawler.parsers import json_query_list_urls, parse_json_query
+        for spec in json_query_list_urls(cfg, args.pages):
+            if not spec.get("url"):
+                print(f"⛔ 源「{source_id}」未配置 query.url。")
+                return links
+            page = fetcher.fetch(spec["url"], method=spec["method"],
+                                 json_payload=spec["payload"])
+            found = parse_json_query(page.raw_html, cfg)
+            print(f"  查询页 → {len(found)} 条链接")
+            links.extend(found)
+        return links
     elif parser == "nppa_tzgs":
         from app.crawler.parsers import nppa_list_urls, parse_nppa_tzgs
         list_urls = nppa_list_urls(args.pages)
