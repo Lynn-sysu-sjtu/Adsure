@@ -22,3 +22,6 @@ data/ingest_runs/crawler_quota.json.tmp
 
 # Local integration instructions may contain private endpoints or credentials.
 API调用方式说明.docx
+
+# Golden video files are distributed out-of-band; cases/*.yaml reference them by sha256.
+datasets/golden/videos/
