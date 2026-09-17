@@ -60,6 +60,11 @@ class LexiconEntry:
     rule_id: str = ""
     """对齐团队既有规则目录（ADLAW-xxx），涵摄层据此找构成要件。"""
 
+    required_materials: tuple[str, ...] = ()
+    """L3 需资质/需授权词命中后要求运营补充的材料清单。
+    与 IP 命中同走「要材料」处置路径：文案写「专利」要专利证书，
+    画面出现米奇要迪士尼授权书 —— 同一个处置模式。L1/L2 词条为空。"""
+
     def applies_to(self, industry: str | None) -> bool:
         if "*" in self.industry:
             return True
@@ -102,6 +107,7 @@ class Lexicon:
                     exempt_hints=tuple(item.get("exempt_hints", [])) + tuple(common_hints),
                     cases=tuple(item.get("cases", [])),
                     rule_id=item.get("rule_id", ""),
+                    required_materials=tuple(item.get("required_materials", [])),
                 )
             )
 
@@ -192,6 +198,7 @@ class Hit:
             "判定要点": self.entry.judgment_points,
             "豁免情形核查": list(self.entry.exempt_hints),
             "参考类案": list(self.entry.cases),
+            "需核验材料": list(self.entry.required_materials),
         }
 
 
