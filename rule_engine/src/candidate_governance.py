@@ -9,6 +9,7 @@ from legal_issue_groups import (
     select_group_representatives,
 )
 from rule_identity import rule_identity
+from rule_scope import platform_scope_matches
 
 
 def merge_parent_candidates(recalled):
@@ -160,7 +161,12 @@ def apply_candidate_quotas(
 
 
 def govern_candidates(recalled, request, group_asset, limit=8):
-    merged = merge_parent_candidates(recalled)
+    applicable = [
+        (rule, hits)
+        for rule, hits in recalled or []
+        if platform_scope_matches(rule, request or {})
+    ]
+    merged = merge_parent_candidates(applicable)
     collapsed = collapse_issue_groups(merged, request or {}, group_asset or {"groups": []})
     ranked = sorted(collapsed, key=candidate_sort_key)
     return apply_candidate_quotas(ranked, limit=max(1, int(limit)))

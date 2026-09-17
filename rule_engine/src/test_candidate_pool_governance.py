@@ -72,7 +72,7 @@ class CandidatePoolGovernanceTests(unittest.TestCase):
         self.assertEqual(["RUID-OPEN", "RUID-DEPT", "RUID-XHS"], ids)
         self.assertNotIn("RUID-DY", ids)
         selected = {rule["rule_uid"]: rule for rule, _ in governed}
-        self.assertEqual(["RUID-DY"], selected["RUID-DEPT"]["supporting_rule_uids"])
+        self.assertNotIn("supporting_rule_uids", selected["RUID-DEPT"])
 
     def test_missing_platform_keeps_only_primary_group_rule(self):
         governed = govern_candidates(

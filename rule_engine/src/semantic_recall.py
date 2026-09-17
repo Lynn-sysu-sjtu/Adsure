@@ -18,6 +18,7 @@ from rule_vector_index import (
     vector_text_hash,
 )
 from rule_identity import rule_identity
+from rule_scope import platform_scope_matches
 
 
 def _normalize(text):
@@ -116,6 +117,8 @@ def _rule_filter_reasons(rule, request, query=""):
         reasons.append("product_category_scope_mismatch")
     if not _has_scope_match(context.get("channels") or context.get("channel"), applies_to.get("channels")):
         reasons.append("channel_scope_mismatch")
+    if not platform_scope_matches(rule, request):
+        reasons.append("platform_scope_mismatch")
 
     preconditions = rule.get("preconditions", {}) or {}
     for field_name in preconditions.get("required_context_fields", []) or []:

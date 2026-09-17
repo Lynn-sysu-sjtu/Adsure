@@ -2,6 +2,7 @@
 """Build the compact allow-listed rule directory used by catalog recall."""
 
 from rule_identity import rule_identity
+from rule_scope import platform_scope_matches
 
 
 DIRECTORY_FIELDS = (
@@ -28,6 +29,8 @@ def build_catalog_directory(rules, request=None):
         recall = rule.get("recall", {}) or {}
         identity = rule_identity(rule)
         rule_id = rule.get("rule_id")
+        if not platform_scope_matches(rule, request or {}):
+            continue
         if not recall.get("catalog_recall_enabled"):
             continue
         if _trigger_layer(rule) != "content":

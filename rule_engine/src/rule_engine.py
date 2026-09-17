@@ -24,6 +24,7 @@ from llm_judgment import (
 )
 from semantic_recall import semantic_recall_rules
 from rule_identity import rule_identity
+from rule_scope import platform_scope_matches
 from subsumption import validate_subsumption_result
 
 
@@ -139,7 +140,7 @@ def _rule_applies_to_context(rule, request):
     industries = applies_to.get("industries") or [rule.get("industry")]
     if industry and industries and "通用" not in industries and industry not in industries:
         return False
-    return True
+    return platform_scope_matches(rule, request)
 
 
 
