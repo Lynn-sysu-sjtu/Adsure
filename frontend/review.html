@@ -3,214 +3,315 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>审心 Adsure · 证据回看</title>
+<title>审心 Adsure · 视频合规自查报告</title>
 <style>
-  /* 视觉沿用本项目 30 页实施方案的排版：宋体标题 + 黑体正文（中文法律文书惯例），
-     时间码一律等宽 —— 它是贯穿全产品的线索，因为这个产品的核心主张就是
-     「一切都要能定位到秒」。 */
+  /* 视觉对齐实施方案 v2 成品页：宋体标题 + 黑体正文，时间码等宽。
+     整个页面只为一件事服务：让人在三秒内看见证据。 */
   :root{
-    --ink:#1b1b1f; --ink-2:#4a4a55; --ink-3:#82828f;
-    --paper:#faf9f7; --card:#ffffff; --line:#e3e1dc;
-    --high:#c0392b; --medium:#d98324; --low:#4a7ab5; --advisory:#82828f;
-    --accent:#2f4f7f;
-    --serif:"Songti SC","SimSun","Noto Serif CJK SC",serif;
+    --ink:#1b2230; --ink-2:#4a5568; --ink-3:#8a90a0;
+    --paper:#f3f4f6; --card:#ffffff; --line:#dfe2e8; --line-2:#e8eaef;
+    --navy:#22385f; --navy-2:#2f4f7f; --navy-soft:#eef2f8;
+    --high:#c0392b; --high-soft:#fbeae8;
+    --verify:#a87a12; --verify-soft:#faf3dd;
+    --advisory:#7a8294;
+    --stage-bg:#eceef2;
+    --serif:"Songti SC","STSong","SimSun","Noto Serif CJK SC",serif;
     --sans:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
     --mono:"SFMono-Regular",Consolas,"Cascadia Mono",monospace;
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --ink:#eceaf0; --ink-2:#b9b7c2; --ink-3:#8a8896;
-      --paper:#16161a; --card:#1e1e24; --line:#33333c;
-      --high:#e5705f; --medium:#e0a355; --low:#7aa8db; --advisory:#8a8896;
-      --accent:#8fb0dd;
+      --ink:#e8eaf0; --ink-2:#b6bac6; --ink-3:#838896;
+      --paper:#15171c; --card:#1d2026; --line:#31353f; --line-2:#2a2e37;
+      --navy:#8fb0dd; --navy-2:#7aa8db; --navy-soft:#232c3d;
+      --high:#e5705f; --high-soft:#3a2522;
+      --verify:#e0b34a; --verify-soft:#383019;
+      --advisory:#9aa1b2;
+      --stage-bg:#22262e;
     }
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  html,body{margin:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);
        font-size:14px;line-height:1.65;-webkit-font-smoothing:antialiased}
   .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .page{max-width:1240px;margin:0 auto;padding:22px 22px 60px}
 
-  header{border-bottom:1px solid var(--line);background:var(--card);
-         padding:14px 20px;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
-  header h1{font-family:var(--serif);font-size:17px;margin:0;font-weight:600;letter-spacing:.02em}
-  .chip{font-size:11px;padding:2px 8px;border:1px solid var(--line);border-radius:99px;
-        color:var(--ink-2);white-space:nowrap}
-  .chip.warn{border-color:var(--medium);color:var(--medium)}
+  /* ── 顶栏 ───────────────────────────────────────────── */
+  .topbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+  .topbar h1{font-family:var(--serif);font-size:19px;margin:0;font-weight:600;letter-spacing:.02em}
+  .chip{font-size:11px;padding:2px 9px;border:1px solid var(--line);border-radius:999px;
+        color:var(--ink-2);white-space:nowrap;background:var(--card)}
+  .chip.warn{border-color:var(--verify);color:var(--verify)}
   .chip.bad{border-color:var(--high);color:var(--high)}
-  .chip.ok{border-color:var(--low);color:var(--low)}
+  .chip.ok{border-color:var(--navy-2);color:var(--navy-2)}
   .spacer{flex:1}
+  button{font-family:var(--sans);font-size:12px;color:var(--ink-2);background:var(--card);
+         border:1px solid var(--line);border-radius:6px;padding:5px 12px;cursor:pointer}
+  button:hover{border-color:var(--navy-2);color:var(--navy)}
 
-  main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
-       gap:18px;padding:18px 20px;max-width:1480px;margin:0 auto;align-items:start}
-  @media (max-width:1000px){ main{grid-template-columns:1fr} }
+  /* ── 空态拖放 ───────────────────────────────────────── */
+  .drop{margin:60px auto;max-width:560px;border:1.5px dashed var(--line);border-radius:12px;
+        background:var(--card);padding:54px 40px;text-align:center;color:var(--ink-2)}
+  .drop.over{border-color:var(--navy-2);background:var(--navy-soft)}
+  .drop .serif-t{font-family:var(--serif);font-size:17px;color:var(--ink);margin:0 0 8px}
+  .drop code{font-size:11px;background:var(--paper);padding:1px 5px;border-radius:4px}
+  .err{color:var(--high);font-size:12px}
 
-  section.panel{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
-  .panel-h{padding:9px 14px;border-bottom:1px solid var(--line);font-family:var(--serif);
-           font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px}
+  /* ── macOS 窗口 ─────────────────────────────────────── */
+  .window{background:var(--card);border:1px solid var(--line);border-radius:12px;
+          box-shadow:0 10px 36px rgba(20,30,50,.10);overflow:hidden}
+  .titlebar{display:flex;align-items:center;gap:12px;background:var(--paper);
+            border-bottom:1px solid var(--line);padding:10px 16px}
+  .dots{display:flex;gap:7px}
+  .dots i{width:11px;height:11px;border-radius:50%;background:#c6cad4;display:block}
+  .win-title{font-size:12.5px;color:var(--ink-2)}
+  .win-title b{color:var(--ink);font-weight:600}
+  .window-body{display:grid;grid-template-columns:minmax(0,1.62fr) minmax(330px,1fr);
+               gap:18px;padding:18px}
+  @media (max-width:960px){ .window-body{grid-template-columns:1fr} }
 
-  /* ── 画面示意区 ───────────────────────────────────────── */
-  .stage-wrap{position:relative;background:#0d0d10;aspect-ratio:16/9;overflow:hidden}
-  .stage-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#0d0d10}
-  .stage{position:absolute;inset:0}
-  .novid{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-         color:#5a5a66;font-size:12px;text-align:center;padding:20px;line-height:1.9}
-  .box{position:absolute;border:2px solid var(--high);border-radius:2px;
-       box-shadow:0 0 0 1px rgba(0,0,0,.45)}
-  .box.ocr{border-color:#e8c44a}
-  .box .tag{position:absolute;left:0;top:-19px;background:rgba(0,0,0,.78);color:#fff;
-            font-size:10px;padding:1px 5px;border-radius:2px;white-space:nowrap;
-            font-family:var(--mono)}
-  .asr-strip{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.82));
-             color:#fff;padding:26px 16px 12px;font-size:13px;text-align:center}
-  .asr-strip .lbl{font-size:10px;opacity:.65;font-family:var(--mono);margin-right:6px}
+  /* ── 左：舞台 + 时间轴 ──────────────────────────────── */
+  .stage-frame{position:relative;width:100%;background:var(--stage-bg);
+               border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .stage-frame video{display:block;width:100%;height:100%;object-fit:fill}
+  .stage-frame video[hidden]{display:none}
+  .stage-frame .novid{display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;
+                      width:100%;height:100%}
+  .novid{color:var(--ink-3);font-size:13px;padding:30px;text-align:center}
+  .novid small{font-size:11px;line-height:1.7;max-width:80%}
+  .stage{position:absolute;inset:0;pointer-events:none}
+  .box{position:absolute;border:2px solid var(--navy-2);border-radius:3px}
+  .box.ocr{border-color:#7d8aa0}
+  .box.risk{border-color:var(--high);box-shadow:0 0 0 1px rgba(192,57,43,.25)}
+  .box.verify{border-color:var(--verify);border-style:solid}
+  .box.ip{border-color:var(--navy);border-width:2.5px;box-shadow:0 0 0 1px rgba(34,56,95,.3)}
+  .box.active{box-shadow:0 0 0 3px rgba(47,79,127,.22)}
+  .box .box-tag{position:absolute;left:-2px;top:-22px;font-size:10.5px;line-height:1;
+                padding:3px 7px;border-radius:3px;white-space:nowrap;
+                background:var(--navy);color:#fff;font-family:var(--mono)}
+  .box .box-text{position:absolute;right:0;bottom:-21px;font-size:10.5px;color:var(--high);
+                 white-space:nowrap;text-shadow:0 0 4px var(--card),0 0 4px var(--card)}
+  .box.verify .box-text{color:var(--verify)}
+  .box.small .box-tag{background:var(--verify)}
+  .asr-strip{position:absolute;left:8%;right:8%;bottom:10px;text-align:center;
+             background:rgba(24,34,54,.72);color:#fff;font-size:13px;line-height:1.5;
+             padding:6px 14px;border-radius:6px;backdrop-filter:blur(2px)}
+  .asr-strip .lbl{display:inline-block;font-size:10px;color:#c4d0e4;border:1px solid #4a5a78;
+                  border-radius:3px;padding:0 5px;margin-right:8px}
+  .stage-watermark{position:absolute;left:10px;bottom:8px;font-size:10.5px;color:var(--ink-3);
+                   pointer-events:none}
 
-  /* ── 走带 ─────────────────────────────────────────────── */
-  .transport{padding:10px 14px;border-top:1px solid var(--line)}
-  .tbar{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-  button{font:inherit;background:var(--card);color:var(--ink);border:1px solid var(--line);
-         border-radius:4px;padding:4px 11px;cursor:pointer}
-  button:hover{border-color:var(--accent);color:var(--accent)}
-  button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .track{position:relative;height:34px;cursor:pointer;user-select:none}
-  .rail{position:absolute;left:0;right:0;top:15px;height:4px;background:var(--line);border-radius:2px}
-  .played{position:absolute;left:0;top:15px;height:4px;background:var(--accent);border-radius:2px}
-  .mark{position:absolute;top:8px;width:3px;height:18px;border-radius:1px;cursor:pointer;
-        transform:translateX(-1px)}
-  .mark:hover{transform:translateX(-1px) scaleY(1.35)}
-  .play-head{position:absolute;top:5px;width:2px;height:24px;background:var(--ink);pointer-events:none}
-  .ticks{display:flex;justify-content:space-between;font-size:10px;color:var(--ink-3);margin-top:2px}
+  .transport{margin-top:26px}
+  .tline-row{display:flex;align-items:center;gap:10px}
+  .tclock{font-size:12px;color:var(--ink-2)}
+  .track{position:relative;height:22px;flex:1;cursor:pointer}
+  .rail{position:absolute;top:9px;left:0;right:0;height:6px;border-radius:99px;background:#d3d7e0}
+  .played{position:absolute;top:9px;left:0;height:6px;border-radius:99px;background:#aeb6c6}
+  .mark{position:absolute;top:4px;width:15px;height:15px;border-radius:50%;transform:translateX(-50%);
+        border:2px solid var(--card);cursor:pointer;z-index:2}
+  .mark:hover{filter:brightness(1.12)}
+  .mark.active{box-shadow:0 0 0 3px rgba(34,56,95,.25)}
+  .play-head{position:absolute;top:1px;bottom:1px;width:3px;background:var(--navy);
+             border-radius:2px;transform:translateX(-50%);z-index:3;pointer-events:none}
+  .play-head::after{content:"";position:absolute;top:-4px;left:50%;transform:translateX(-50%);
+                    width:11px;height:11px;border-radius:50%;background:var(--navy)}
+  .tl-labels{position:relative;height:16px;margin-top:1px}
+  .tl-labels .endlab{position:absolute;top:0;font-size:10.5px;color:var(--ink-3)}
+  .marklab{position:absolute;top:2px;font-size:10.5px;transform:translateX(-50%);color:var(--ink-3)}
+  .marklab.active{color:var(--navy);font-weight:700}
+  .tl-caption{font-size:11.5px;color:var(--ink-3);margin-top:6px}
+  .cost-line{font-size:11px;color:var(--ink-3);margin-top:4px}
 
-  /* ── 风险清单 ─────────────────────────────────────────── */
-  .list{max-height:calc(100vh - 190px);overflow:auto}
-  .item{border-bottom:1px solid var(--line);padding:11px 14px;cursor:pointer}
-  .item:hover{background:rgba(127,127,127,.055)}
-  .item.active{background:rgba(127,127,127,.09);box-shadow:inset 3px 0 0 var(--accent)}
-  .item-h{display:flex;gap:9px;align-items:baseline}
-  .lv{font-size:11px;padding:1px 7px;border-radius:3px;color:#fff;white-space:nowrap;flex:none}
-  .lv.high{background:var(--high)} .lv.medium{background:var(--medium)}
-  .lv.low{background:var(--low)}  .lv.advisory{background:var(--advisory)}
-  .item-t{font-weight:600;flex:1;min-width:0}
-  .tc{font-size:11px;color:var(--ink-3);flex:none}
-  .item-sub{font-size:12px;color:var(--ink-2);margin-top:3px}
+  /* ── 右：风险清单 + 免责框 ──────────────────────────── */
+  .risk-h{font-family:var(--serif);font-size:14px;font-weight:600;padding:2px 2px 10px}
+  .risk-h .sub{font-family:var(--sans);font-size:11px;font-weight:400;color:var(--ink-3);margin-left:8px}
+  .list{display:flex;flex-direction:column;gap:9px;max-height:430px;overflow-y:auto;padding-right:2px}
+  .item{position:relative;background:var(--card);border:1px solid var(--line);border-radius:7px;
+        padding:9px 12px 9px 14px;cursor:pointer;transition:border-color .12s,background .12s}
+  .item::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:2px;
+                background:var(--advisory)}
+  .item.tone-high::before{background:var(--high)}
+  .item.tone-verify::before{background:var(--verify)}
+  .item.tone-ip::before{background:var(--navy)}
+  .item:hover{border-color:var(--navy-2)}
+  .item.active{border-color:var(--navy);background:var(--navy-soft);box-shadow:inset 0 0 0 .5px var(--navy)}
+  .item .l1{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .item .tc{font-family:var(--mono);font-weight:700;font-size:12.5px}
+  .item.tone-high .tc{color:var(--high)} .item.tone-verify .tc{color:var(--verify)}
+  .item.tone-ip .tc{color:var(--navy)} .item.tone-advisory .tc{color:var(--advisory)}
+  .item .src{font-size:11.5px;color:var(--ink-2)}
+  .item .quote{font-size:13px;color:var(--ink)}
+  .item .l2{font-size:11.5px;color:var(--ink-3);margin-top:2px}
 
-  .detail{padding:0 14px 14px;font-size:13px}
-  .six{margin:10px 0 0;border-top:1px dashed var(--line);padding-top:9px}
-  .six dt{font-family:var(--serif);font-size:12px;color:var(--ink-3);margin-top:8px}
-  .six dd{margin:2px 0 0}
-  .mats{margin:9px 0 0;padding:8px 11px;border-left:3px solid var(--medium);
-        background:rgba(217,131,36,.07);font-size:12.5px}
-  .trace{margin-top:9px;font-size:12px}
-  .trace table{border-collapse:collapse;width:100%}
-  .trace td{border-top:1px solid var(--line);padding:4px 6px;vertical-align:top}
-  .trace td:first-child{color:var(--ink-3);white-space:nowrap;font-family:var(--mono);font-size:11px}
-  .ans-yes{color:var(--high)} .ans-unc{color:var(--medium)} .ans-no{color:var(--ink-3)}
-  .cases{margin-top:9px;font-size:12px;color:var(--ink-2)}
-  .cases .c{border-top:1px solid var(--line);padding:5px 0}
-  .cases a{color:var(--accent)}
-  .unverified{color:var(--medium)}
+  .disclaimer-card{margin-top:14px;background:var(--high-soft);border:1px solid #eccfc9;
+                   border-radius:8px;padding:11px 14px}
+  .disclaimer-card h4{margin:0 0 4px;font-size:12.5px;color:var(--high);font-weight:700}
+  .disclaimer-card p{margin:0;font-size:11.5px;line-height:1.7;color:#8f4a42}
 
-  footer{border-top:1px solid var(--line);padding:12px 20px 26px;color:var(--ink-3);
-         font-size:12px;max-width:1480px;margin:0 auto}
-  .drop{margin:60px auto;max-width:620px;text-align:center;border:2px dashed var(--line);
-        border-radius:8px;padding:44px 26px;color:var(--ink-2)}
-  .drop.over{border-color:var(--accent);background:rgba(47,79,127,.06)}
-  .drop code{font-family:var(--mono);font-size:12px;background:rgba(127,127,127,.1);
-             padding:2px 6px;border-radius:3px}
-  .err{color:var(--high)}
+  /* ── 展开：六段式报告 ──────────────────────────────── */
+  .detail-wrap{border-top:1px solid var(--line);padding:18px 20px 22px;background:var(--card)}
+  .detail{border:1px solid var(--line);border-left-width:4px;border-radius:8px;overflow:hidden}
+  .detail.tone-high{border-left-color:var(--high)}
+  .detail.tone-verify,.detail.tone-ip{border-left-color:var(--navy)}
+  .d-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+          background:var(--paper);padding:12px 16px;border-bottom:1px solid var(--line)}
+  .d-time{font-family:var(--mono);font-size:12px;border:1px solid var(--line);border-radius:5px;
+          padding:2px 9px;background:var(--card);color:var(--navy)}
+  .d-title{font-family:var(--serif);font-size:16.5px;font-weight:700;margin:0}
+  .tag{font-size:11px;border-radius:4px;padding:2px 9px;font-weight:600}
+  .tag.high{background:var(--high-soft);color:var(--high)}
+  .tag.verify{background:var(--verify-soft);color:var(--verify)}
+  .tag.advisory{background:#eef0f3;color:var(--advisory)}
+  .d-src{margin-left:auto;font-size:11.5px;color:var(--ink-3)}
+  .d-rows{padding:2px 16px}
+  .d-row{display:grid;grid-template-columns:88px 1fr;gap:14px;padding:13px 0;
+         border-bottom:1px dashed var(--line)}
+  .d-row:last-child{border-bottom:none}
+  .d-row dt{color:var(--ink-3);font-size:12px;padding-top:2px}
+  .d-row dd{margin:0;font-size:13.5px;color:var(--ink)}
+  .quote-box{background:var(--paper);border-left:3px solid var(--navy-2);border-radius:0 6px 6px 0;
+             padding:9px 14px;color:var(--ink-2)}
+  .quote-box em{font-style:normal;color:var(--high);font-weight:600}
+  .mats{margin:12px 16px 4px;background:var(--verify-soft);border:1px solid #ecddb4;
+        border-radius:7px;padding:10px 14px}
+  .mats b{color:var(--verify);font-size:12.5px}
+  .mats ul{margin:6px 0 2px;padding-left:20px;font-size:12.5px}
+  .mats li{margin:2px 0}
+  details.extras{margin:10px 16px 14px;border:1px solid var(--line);border-radius:7px}
+  details.extras summary{cursor:pointer;font-size:12px;color:var(--ink-2);padding:8px 12px;list-style:none}
+  details.extras summary::before{content:"▸ ";color:var(--ink-3)}
+  details.extras[open] summary::before{content:"▾ "}
+  .extras .body{padding:0 12px 10px;font-size:12px;color:var(--ink-2)}
+  .extras table{border-collapse:collapse;width:100%}
+  .extras td{border-top:1px solid var(--line-2);padding:6px 8px;vertical-align:top}
+  .extras .ans-yes{color:var(--high)} .extras .ans-unc{color:var(--verify)}
+  .extras .ans-no{color:var(--navy-2)}
+  .case-row{border-top:1px solid var(--line-2);padding:7px 2px;font-size:12px}
+  .case-row a{color:var(--navy-2)}
+  .unverified{color:var(--verify)}
+  code.inline{font-family:var(--mono);font-size:11px;background:var(--paper);
+              border:1px solid var(--line);border-radius:4px;padding:0 5px}
 </style>
 </head>
 <body>
+<div class="page">
 
-<header>
-  <h1>审心 Adsure · 证据回看</h1>
-  <span class="chip mono" id="c-file">未载入报告</span>
-  <span class="chip" id="c-level" hidden></span>
-  <span class="chip" id="c-src" hidden></span>
-  <span class="chip" id="c-llm" hidden></span>
-  <span class="chip warn" id="c-legal" hidden>词库未经法务复核</span>
-  <span class="spacer"></span>
-  <button id="btn-open">载入报告 JSON</button>
-  <button id="btn-video">载入视频（可选）</button>
-  <input type="file" id="f-report" accept=".json,application/json" hidden>
-  <input type="file" id="f-video" accept="video/*" hidden>
-</header>
-
-<div id="empty">
-  <div class="drop" id="drop">
-    <p style="font-family:var(--serif);font-size:15px;margin:0 0 10px">把报告 JSON 拖到这里</p>
-    <p style="margin:0 0 16px">或点右上角「载入报告 JSON」。</p>
-    <p style="font-size:12px;color:var(--ink-3);margin:0">
-      生成报告：<br>
-      <code>python backend/scripts/run_review.py --out out/report.json</code>
-    </p>
-    <p class="err" id="drop-err" style="margin-top:14px" hidden></p>
-  </div>
-</div>
-
-<main id="app" hidden>
-  <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
-    <section class="panel">
-      <div class="panel-h">
-        画面示意
-        <span class="chip mono" id="c-time">0.00s</span>
-        <span class="spacer"></span>
-        <span class="chip" id="c-dims"></span>
-      </div>
-      <div class="stage-wrap">
-        <video id="vid" hidden playsinline></video>
-        <div class="novid" id="novid">
-          未载入视频文件<br>
-          <span style="font-size:11px">证据框按归一化坐标绘制，与原始画面位置一致；载入视频后会叠加在真实画面上</span>
-        </div>
-        <div class="stage" id="stage"></div>
-      </div>
-      <div class="transport">
-        <div class="tbar">
-          <button id="btn-play">▶ 播放</button>
-          <span class="mono" id="t-cur">0.00</span>
-          <span style="color:var(--ink-3)">/</span>
-          <span class="mono" id="t-dur">0.00</span>
-          <span class="spacer"></span>
-          <span style="font-size:11px;color:var(--ink-3)" id="cost-line"></span>
-        </div>
-        <div class="track" id="track">
-          <div class="rail"></div>
-          <div class="played" id="played"></div>
-          <div class="play-head" id="head"></div>
-        </div>
-        <div class="ticks"><span class="mono">0.00s</span><span class="mono" id="tick-end"></span></div>
-      </div>
-    </section>
+  <div class="topbar">
+    <h1>审心 Adsure · 视频合规自查报告</h1>
+    <span class="chip mono" id="c-file">未载入报告</span>
+    <span class="chip" id="c-level" hidden></span>
+    <span class="chip" id="c-src" hidden></span>
+    <span class="chip" id="c-llm" hidden></span>
+    <span class="chip warn" id="c-legal" hidden>词库未经法务复核</span>
+    <span class="spacer"></span>
+    <button id="btn-open">载入报告 JSON</button>
+    <button id="btn-video">载入视频（可选）</button>
+    <input type="file" id="f-report" accept=".json,application/json" hidden>
+    <input type="file" id="f-video" accept="video/*" hidden>
   </div>
 
-  <section class="panel">
-    <div class="panel-h">
-      风险清单
-      <span class="chip" id="c-counts"></span>
+  <div id="empty">
+    <div class="drop" id="drop">
+      <p class="serif-t">把报告 JSON 拖到这里</p>
+      <p style="margin:0 0 14px">或点右上角「载入报告 JSON」，再可选载入对应视频逐秒回看。</p>
+      <p style="font-size:12px;color:var(--ink-3);margin:0">
+        生成报告：<code>PYTHONPATH=backend .venv-handoff/bin/python backend/scripts/run_review.py --demo --llm mock --out out/report.json</code>
+      </p>
+      <p class="err" id="drop-err" style="margin-top:14px" hidden></p>
     </div>
-    <div class="list" id="list"></div>
-  </section>
-</main>
+  </div>
 
-<footer id="foot" hidden>
-  <div id="disclaimer"></div>
-</footer>
+  <div class="window" id="app" hidden>
+    <div class="titlebar">
+      <span class="dots"><i></i><i></i><i></i></span>
+      <span class="win-title"><b id="win-title">报告</b> · 审核报告</span>
+      <span class="spacer"></span>
+      <span class="chip mono" id="c-time">0.00s</span>
+      <span class="chip" id="c-dims"></span>
+    </div>
+
+    <div class="window-body">
+      <!-- 左：取证舞台 -->
+      <div class="left-col">
+        <div class="stage-frame" id="stage-frame">
+          <video id="vid" hidden playsinline></video>
+          <div class="novid" id="novid">
+            未载入视频文件
+            <small>证据框按归一化坐标绘制，与原始画面位置一致；点右侧任意一条风险即可跳转，载入视频后取证框会叠加在真实画面上。</small>
+          </div>
+          <div class="stage" id="stage"></div>
+          <div class="stage-watermark">画面示意（非真实素材）</div>
+        </div>
+
+        <div class="transport">
+          <div class="tline-row">
+            <button id="btn-play">▶ 播放</button>
+            <span class="tclock mono"><span id="t-cur">0.00</span> / <span id="t-dur">0.00</span>s</span>
+            <div class="track" id="track">
+              <div class="rail"></div>
+              <div class="played" id="played"></div>
+              <div class="play-head" id="head"></div>
+            </div>
+          </div>
+          <div class="tl-labels" id="tl-labels">
+            <span class="endlab" style="left:0">00:00</span>
+            <span class="endlab" style="right:0" id="tick-end">00:30</span>
+          </div>
+          <div class="tl-caption">点任意一个风险点 → 跳到那一秒，画面自动叠上取证框；点右侧任意一条风险 → 同样跳转并高亮对应的框。</div>
+          <div class="cost-line" id="cost-line"></div>
+        </div>
+      </div>
+
+      <!-- 右：风险清单 + 免责 -->
+      <div class="right-col">
+        <div class="risk-h">风险清单 <span id="c-counts"></span><span class="sub" id="c-counts-sub"></span></div>
+        <div class="list" id="list"></div>
+        <div class="disclaimer-card">
+          <h4>本报告为风险自查提示</h4>
+          <p id="disclaimer"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-wrap" id="detail-wrap" hidden></div>
+  </div>
+
+</div>
 
 <script>
 (function(){
   "use strict";
   const $ = id => document.getElementById(id);
-  const LEVELS = {high:"高", medium:"中", low:"低", advisory:"仅提示"};
-  const COLOR = {high:"var(--high)", medium:"var(--medium)", low:"var(--low)", advisory:"var(--advisory)"};
+  const LEVELS = {high:"高", medium:"中", low:"低", advisory:"提示"};
 
-  let R = null;          // 报告
-  let dur = 0, t = 0;    // 时长 / 当前播放头
+  let R = null;
+  let dur = 0, t = 0;
   let playing = false, raf = 0, last = 0;
   let sel = -1;
   const vid = $("vid");
   let hasVideo = false;
 
   const fmt = s => (s ?? 0).toFixed(2) + "s";
+  const mmss = s => {
+    s = Math.max(0, s || 0);
+    return String(Math.floor(s/60)).padStart(2,"0") + ":" +
+           String(Math.floor(s%60)).padStart(2,"0");
+  };
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c =>
+    ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+  // 风险色调：IP 走深蓝、需举证/要材料走琥珀、高危走砖红，其余灰蓝
+  function toneOf(f){
+    const blob = [f.title, f.category, f.source, ...(f.required_materials||[])].join(" ");
+    if(/IP|形象|米奇|卡通|肖像|授权书/.test(blob)) return "ip";
+    if((f.required_materials && f.required_materials.length) || /材料|核验|举证|资质/.test(blob)) return "verify";
+    if(f.level === "high") return "high";
+    if(f.level === "advisory") return "advisory";
+    return f.level === "medium" ? "verify" : "advisory";
+  }
+  const TONE_TAG = {high:["高风险","high"], ip:["需核验","verify"],
+                    verify:["需核验","verify"], advisory:["仅提示","advisory"]};
 
   // ── 载入 ────────────────────────────────────────────────
   function load(json){
@@ -221,7 +322,9 @@
     t = 0; sel = -1; pause();
 
     const m = R.meta || {}, s = R.summary || {};
-    $("c-file").textContent = (m.video && m.video.path) || m.review_id || "报告";
+    const name = (m.video && m.video.path) || m.review_id || "报告";
+    $("win-title").textContent = name;
+    $("c-file").textContent = name;
     const lv = $("c-level");
     lv.hidden = false;
     lv.textContent = "整体 " + (s.level_label || "—");
@@ -239,184 +342,318 @@
     cl.className = "chip" + (real ? "" : " bad");
 
     $("c-legal").hidden = !!m.lexicon_reviewed_by_legal;
-    $("c-dims").textContent = m.video ? `${m.video.width}×${m.video.height}` : "";
-    $("c-counts").textContent = `风险 ${s.risk_count ?? 0} · 仅提示 ${s.advisory_count ?? 0}`;
+    if(m.video && m.video.width && m.video.height){
+      $("c-dims").textContent = `${m.video.width}×${m.video.height}`;
+      $("stage-frame").style.aspectRatio = `${m.video.width} / ${m.video.height}`;
+    }
+    const risks = R.findings.filter(f => f.counts_as_risk);
+    const adv = R.findings.length - risks.length;
+    $("c-counts").textContent = `· ${risks.length} 条`;
+    const byLv = {high:0, medium:0, low:0};
+    risks.forEach(f => { byLv[f.level] = (byLv[f.level]||0) + 1; });
+    $("c-counts-sub").textContent =
+      `高 ${byLv.high||0} · 中 ${byLv.medium||0} · 待核验/低 ${byLv.low||0}` + (adv ? ` · 提示 ${adv}` : "");
     $("t-dur").textContent = dur.toFixed(2);
-    $("tick-end").textContent = fmt(dur);
+    $("tick-end").textContent = mmss(dur);
 
     const c = R.cost || {};
     $("cost-line").textContent = c.frames_sampled
       ? `采样 ${c.frames_sampled} 帧 → 去重 ${c.frames_after_dedup} 帧（削减 ${Math.round((c.dedup_ratio||0)*100)}%）· OCR ${c.ocr_calls} 次`
       : "";
 
-    $("disclaimer").textContent = R.disclaimer || "";
-    $("empty").hidden = true; $("app").hidden = false; $("foot").hidden = false;
+    $("disclaimer").textContent = R.disclaimer ||
+      "不构成侵权 / 违法认定，不构成法律意见。标注为「需核验」的条目请提供材料后由法务复核确认。";
+    $("empty").hidden = true; $("app").hidden = false;
 
-    renderMarks(); renderList(); tick(0);
+    renderMarks(); renderList(); renderLabels();
+    $("detail-wrap").hidden = true;
+    tick(0);
   }
 
-  // ── 时间轴刻点 ──────────────────────────────────────────
+  // ── 时间轴刻点与秒标 ────────────────────────────────────
+  function timedFindings(){
+    return R.findings.map((f,i)=>({f,i})).filter(x => (x.f.t_end || x.f.t_start));
+  }
   function renderMarks(){
     const tr = $("track");
     tr.querySelectorAll(".mark").forEach(n => n.remove());
-    R.findings.forEach((f, i) => {
-      if(!dur) return;
-      if(f.t_end === 0 && f.t_start === 0) return;   // 全片缺失项没有时间点，不画
+    if(!dur) return;
+    timedFindings().forEach(({f,i}) => {
+      const tone = toneOf(f);
+      const color = {high:"var(--high)", verify:"var(--verify)",
+                     ip:"var(--navy)", advisory:"var(--advisory)"}[tone];
       const el = document.createElement("div");
       el.className = "mark";
       el.style.left = (f.t_start / dur * 100) + "%";
-      el.style.background = COLOR[f.level] || COLOR.low;
+      el.style.background = color;
       el.title = `${fmt(f.t_start)} ${f.title}`;
+      el.dataset.i = i;
       el.addEventListener("click", e => { e.stopPropagation(); select(i, true); });
       tr.appendChild(el);
     });
   }
+  function renderLabels(){
+    const box = $("tl-labels");
+    box.querySelectorAll(".marklab").forEach(n => n.remove());
+    if(!dur) return;
+    timedFindings().forEach(({f,i}) => {
+      const el = document.createElement("span");
+      el.className = "marklab";
+      el.dataset.i = i;
+      const pctx = f.t_start / dur * 100;
+      el.style.left = pctx + "%";
+      if(pctx < 7) el.style.transform = "translateX(0)";
+      else if(pctx > 93) el.style.transform = "translateX(-100%)";
+      el.textContent = (f.t_start).toFixed(1) + "s";
+      box.appendChild(el);
+    });
+  }
 
-  // ── 风险清单 ────────────────────────────────────────────
+  // ── 风险清单卡片 ───────────────────────────────────────
+  function quoteOf(f){
+    const rep = f["报告"] || {};
+    const m = [rep["风险表达"], f.title].join(" ").match(/[「『【]([^」』】]+)[」』】]/);
+    return m ? m[1] : "";
+  }
   function renderList(){
     const box = $("list");
     box.innerHTML = "";
     R.findings.forEach((f, i) => {
+      const tone = toneOf(f);
       const it = document.createElement("div");
-      it.className = "item";
+      it.className = `item tone-${tone}`;
       it.dataset.i = i;
-      const rep = f["报告"] || {};
-      it.innerHTML = `
-        <div class="item-h">
-          <span class="lv ${f.level}">${f.level_label || LEVELS[f.level] || ""}</span>
-          <span class="item-t"></span>
-          <span class="tc mono">${f.t_end || f.t_start ? fmt(f.t_start) : "全片"}</span>
-        </div>
-        <div class="item-sub"></div>`;
-      it.querySelector(".item-t").textContent = f.title || "";
-      it.querySelector(".item-sub").textContent = [f.category, f.legal_basis].filter(Boolean).join("　·　");
+      const tc = (f.t_end || f.t_start) ? fmt(f.t_start) : "全片";
+      const quote = quoteOf(f);
+      const sub = [f.category, f.legal_basis].filter(Boolean).join("　·　");
+      it.innerHTML =
+        `<div class="l1">
+           <span class="tc">${esc(tc)}</span>
+           <span class="src">${esc(f.source || "")}</span>
+           <span class="quote">${quote ? "「" + esc(quote) + "」" : esc(f.title || "")}</span>
+         </div>
+         <div class="l2">${esc(sub)}</div>`;
       it.addEventListener("click", () => select(i, true));
       box.appendChild(it);
     });
   }
 
+  // ── 六段式展开 ────────────────────────────────────────
   function detailHTML(f){
+    const tone = toneOf(f);
     const rep = f["报告"] || {};
-    const seg = [
-      ["① 风险定性", rep["风险定性"]], ["② 风险表达", rep["风险表达"]],
-      ["③ 违规类型", rep["违规类型"]], ["④ 法律依据", rep["法律依据"]],
-      ["⑤ 修改建议", rep["修改建议"]], ["⑥ 风险定级", rep["风险定级"]],
-    ];
     const d = document.createElement("div");
-    d.className = "detail";
+    d.className = `detail tone-${tone}`;
 
-    const dl = document.createElement("dl");
-    dl.className = "six";
+    const [tagText, tagCls] = tone === "high" ? ["高风险","high"]
+      : tone === "advisory" ? ["仅提示","advisory"] : ["需核验","verify"];
+    const head = document.createElement("div");
+    head.className = "d-head";
+    const timeText = (f.t_end || f.t_start)
+      ? `${f.t_start.toFixed(2)}s → ${f.t_end.toFixed(2)}s` : "全片";
+    head.innerHTML =
+      `<span class="d-time">${esc(timeText)}</span>
+       <h3 class="d-title">${esc(rep["标题"] || f.title || "")}</h3>
+       <span class="tag ${tagCls}">${tagText}</span>
+       <span class="d-src mono">来源：${esc(f.source || "—")}${
+         (rep["来源"] && rep["来源"] !== f.source) ? " · " + esc(rep["来源"]) : ""
+       }</span>`;
+    d.appendChild(head);
+
+    const rows = document.createElement("div");
+    rows.className = "d-rows";
+    const seg = [
+      ["风险定性", rep["风险定性"]], ["风险表达", rep["风险表达"]],
+      ["违规类型", rep["违规类型"]], ["法律依据", rep["法律依据"]],
+      ["修改建议", rep["修改建议"]], ["风险定级", rep["风险定级"]],
+    ];
     seg.forEach(([k, v]) => {
       if(!v) return;
+      const row = document.createElement("div");
+      row.className = "d-row";
       const dt = document.createElement("dt"); dt.textContent = k;
-      const dd = document.createElement("dd"); dd.textContent = v;
-      dl.append(dt, dd);
+      const dd = document.createElement("dd");
+      if(k === "风险表达"){
+        const qb = document.createElement("div");
+        qb.className = "quote-box";
+        qb.innerHTML = esc(v).replace(/[「『【]([^」』】]+)[」』】]/g,
+                                      '<em>「$1」</em>');
+        dd.appendChild(qb);
+      } else {
+        dd.textContent = v;
+      }
+      row.append(dt, dd);
+      rows.appendChild(row);
     });
-    d.appendChild(dl);
+    d.appendChild(rows);
 
     if(f.required_materials && f.required_materials.length){
       const m = document.createElement("div");
       m.className = "mats";
-      m.innerHTML = "<b>需补材料</b>（材料齐备则可能排除风险）";
+      m.innerHTML = "<b>请提供以下材料交法务核验（材料齐备则解除；无材料则升级为高风险）</b>";
       const ul = document.createElement("ul");
-      ul.style.margin = "5px 0 0"; ul.style.paddingLeft = "18px";
-      f.required_materials.forEach(x => {
-        const li = document.createElement("li"); li.textContent = x; ul.appendChild(li);
+      f.required_materials.forEach((x, i) => {
+        const li = document.createElement("li");
+        const circ = ["①","②","③","④","⑤","⑥"][i] || (i+1)+".";
+        li.textContent = `${circ} ${x}`;
+        ul.appendChild(li);
       });
       m.appendChild(ul); d.appendChild(m);
     }
 
-    if(f.element_trace && f.element_trace.length){
-      const w = document.createElement("div");
-      w.className = "trace";
-      w.innerHTML = "<div style='color:var(--ink-3);font-size:11px;margin-bottom:3px'>"
-                  + "要件逐项判断（定性由代码推导，模型只答事实层）</div>";
-      const tb = document.createElement("table");
-      f.element_trace.forEach(r => {
-        const tr = document.createElement("tr");
-        const a = r["判断"] || "";
-        const cls = a.includes("成立") && !a.includes("不成立") ? "ans-yes"
-                  : a.includes("无法") ? "ans-unc" : "ans-no";
-        const td1 = document.createElement("td"); td1.textContent = r["要件"] || "";
-        const td2 = document.createElement("td");
-        const b = document.createElement("b"); b.className = cls; b.textContent = a;
-        const p = document.createElement("div");
-        p.style.color = "var(--ink-2)"; p.style.marginTop = "1px";
-        p.textContent = r["理由"] || "";
-        td2.append(b, p);
-        tr.append(td1, td2); tb.appendChild(tr);
-      });
-      w.appendChild(tb); d.appendChild(w);
-    }
-
-    if(f.similar_cases && f.similar_cases.length){
-      const w = document.createElement("div");
-      w.className = "cases";
-      w.innerHTML = "<div style='color:var(--ink-3);font-size:11px'>"
-                  + "相似监管实践 —— 仅供理解监管口径，不构成对本素材的事实认定</div>";
-      f.similar_cases.slice(0, 3).forEach(c => {
-        const row = document.createElement("div");
-        row.className = "c";
-        const t1 = document.createElement("div");
-        t1.textContent = c["案例"] || "";
-        const t2 = document.createElement("div");
-        t2.style.fontSize = "11px";
-        t2.textContent = [c["处罚机关"], c["处罚结果"]].filter(Boolean).join("　");
-        const st = document.createElement("span");
-        const ver = (c["核验状态"] || "").startsWith("已核验");
-        st.className = ver ? "" : "unverified";
-        st.textContent = "　[" + (c["核验状态"] || "") + "]";
-        t2.appendChild(st);
-        row.append(t1, t2);
-        if(c["原文出处"]){
-          const a = document.createElement("a");
-          a.href = c["原文出处"]; a.target = "_blank"; a.rel = "noopener noreferrer";
-          a.textContent = "原文出处"; a.style.fontSize = "11px";
-          row.appendChild(a);
-        }
-        w.appendChild(row);
-      });
-      d.appendChild(w);
-    }
+    const extras = [];
+    if(f.element_trace && f.element_trace.length) extras.push(makeTrace(f.element_trace));
+    if(f.similar_cases && f.similar_cases.length) extras.push(makeCases(f.similar_cases));
+    extras.forEach(box => {
+      const det = document.createElement("details");
+      det.className = "extras";
+      const sum = document.createElement("summary");
+      sum.textContent = box.title;
+      det.append(sum, box.body);
+      d.appendChild(det);
+    });
     return d;
+  }
+
+  function makeTrace(rows){
+    const body = document.createElement("div");
+    body.className = "body";
+    const hint = document.createElement("div");
+    hint.style.color = "var(--ink-3)";
+    hint.textContent = "要件逐项判断（定性由代码推导，模型只答事实层）";
+    const tb = document.createElement("table");
+    rows.forEach(r => {
+      const tr = document.createElement("tr");
+      const a = r["判断"] || "";
+      const cls = a.includes("成立") && !a.includes("不成立") ? "ans-yes"
+                : a.includes("无法") ? "ans-unc" : "ans-no";
+      const td1 = document.createElement("td"); td1.textContent = r["要件"] || "";
+      const td2 = document.createElement("td");
+      const b = document.createElement("b"); b.className = cls; b.textContent = a;
+      const p = document.createElement("div");
+      p.style.color = "var(--ink-2)";
+      p.textContent = r["理由"] || "";
+      td2.append(b, p);
+      tr.append(td1, td2); tb.appendChild(tr);
+    });
+    body.append(hint, tb);
+    return {title:`要件判断过程（${rows.length} 项）`, body};
+  }
+
+  function makeCases(cases){
+    const body = document.createElement("div");
+    body.className = "body";
+    const hint = document.createElement("div");
+    hint.style.color = "var(--ink-3)";
+    hint.textContent = "相似监管实践 —— 仅供理解监管口径，不构成对本素材的事实认定";
+    body.appendChild(hint);
+    cases.slice(0, 3).forEach(c => {
+      const row = document.createElement("div");
+      row.className = "case-row";
+      const t1 = document.createElement("div");
+      t1.textContent = c["案例"] || "";
+      const t2 = document.createElement("div");
+      t2.textContent = [c["处罚机关"], c["处罚结果"]].filter(Boolean).join("　");
+      const ver = (c["核验状态"] || "").startsWith("已核验");
+      if(c["核验状态"]){
+        const st = document.createElement("span");
+        st.className = ver ? "" : "unverified";
+        st.textContent = "　[" + c["核验状态"] + "]";
+        t2.appendChild(st);
+      }
+      row.append(t1, t2);
+      if(c["原文出处"]){
+        const a = document.createElement("a");
+        a.href = c["原文出处"]; a.target = "_blank"; a.rel = "noopener noreferrer";
+        a.textContent = "原文出处";
+        row.appendChild(a);
+      }
+      body.appendChild(row);
+    });
+    return {title:`相似监管实践（${Math.min(3, cases.length)} 条）`, body};
   }
 
   function select(i, seek){
     sel = i;
-    [...$("list").children].forEach((el, k) => {
-      el.classList.toggle("active", k === i);
-      const old = el.querySelector(".detail");
-      if(old) old.remove();
-      if(k === i) el.appendChild(detailHTML(R.findings[i]));
-    });
+    [...$("list").children].forEach((el, k) => el.classList.toggle("active", k === i));
+    $("track").querySelectorAll(".mark").forEach(el =>
+      el.classList.toggle("active", Number(el.dataset.i) === i));
+    $("tl-labels").querySelectorAll(".marklab").forEach(el =>
+      el.classList.toggle("active", Number(el.dataset.i) === i));
+
+    const dw = $("detail-wrap");
+    dw.hidden = false;
+    dw.innerHTML = "";
+    dw.appendChild(detailHTML(R.findings[i]));
+
     const f = R.findings[i];
     if(seek && (f.t_start || f.t_end)) seekTo(Math.max(0, f.t_start));
-    $("list").children[i]?.scrollIntoView({block:"nearest", behavior:"smooth"});
+    $("list").children[i]?.scrollIntoView({block:"nearest"});
   }
 
   // ── 画面证据框 ──────────────────────────────────────────
+  function findingCovers(f, e){
+    if(!(t >= f.t_start - .001 && t <= (f.t_end || f.t_start) + .001)) return false;
+    if(/画面|OCR|花字|帧/.test(f.source || "")) return true;
+    // 六段式风险表达里直接提到该文字，也算对应
+    const rep = f["报告"] || {};
+    return (rep["风险表达"] || "").includes(e.text || "");
+  }
   function drawStage(){
     const st = $("stage");
     st.innerHTML = "";
     if(!R) return;
+    const active = sel >= 0 ? R.findings[sel] : null;
+    const activeTone = active ? toneOf(active) : null;
     const live = (R.evidence || []).filter(e => t >= e.t_start - .001 && t <= e.t_end + .001);
 
     live.filter(e => e.bbox).forEach(e => {
-      const b = e.bbox, box = document.createElement("div");
-      box.className = "box ocr";
+      const b = e.bbox;
+      // 未选中时，只有文字本身出现在某条风险表达里的框才标红，
+      // 同屏的无关花字（如「限时特惠」与「根治」同帧）保持中性色
+      const coveringRisk = R.findings.find(f =>
+        f.counts_as_risk && findingCovers(f, e) &&
+        ((f["报告"] || {})["风险表达"] || "").includes(e.text || ""));
+      const activeHit = active && findingCovers(active, e) && /画面|OCR|花字|帧/.test(active.source || "");
+      // L4 必备要素类（字号小/缺失显著性）即使被选中也保持琥珀色：
+      // 它不是违禁内容，是「写了但不显著」，颜色语义不能与「根治」这类违禁词混同
+      const isSalience = !!active && activeHit &&
+        /必备|显著|声明|提示语|警示/.test([active.title, active.category].join(" "));
+      let tone = coveringRisk ? "risk" : "ocr";
+      if(e.font_scale && e.font_scale < 0.025) tone = "verify";
+      if(activeTone === "ip" && activeHit) tone = "ip";
+      else if(activeHit && !isSalience) tone = "risk";
+      else if(activeHit && isSalience) tone = "verify";
+
+      const box = document.createElement("div");
+      box.className = `box ${tone}${activeHit ? " active" : ""}${tone === "verify" ? " small" : ""}`;
       box.style.left = (b.x*100)+"%"; box.style.top = (b.y*100)+"%";
       box.style.width = (b.w*100)+"%"; box.style.height = (b.h*100)+"%";
-      const isRisk = R.findings.some(f =>
-        f.counts_as_risk && t >= f.t_start - .001 && t <= f.t_end + .001 &&
-        (f.source || "").includes("画面"));
-      if(isRisk) box.style.borderColor = "var(--high)";
-      const tag = document.createElement("span");
-      tag.className = "tag";
-      tag.textContent = `${e.t_start.toFixed(2)}s  ${e.text}`;
-      box.appendChild(tag);
+
+      if(tone === "ip"){
+        const tag = document.createElement("span");
+        tag.className = "box-tag";
+        tag.textContent = active.score != null ? `IP · 相似度 ${Number(active.score).toFixed(2)}`
+                                               : "IP · 疑似待核验";
+        box.appendChild(tag);
+      } else {
+        const tag = document.createElement("span");
+        tag.className = "box-text";
+        tag.textContent = e.text || "";
+        box.appendChild(tag);
+      }
       st.appendChild(box);
     });
+
+    // IP 命中但证据流无 bbox（未来 SSCD/VLM 直出场景）：用 finding 自身坐标兜底
+    if(active && activeTone === "ip" && (active.bbox || active.t_start <= t + .001) && active.bbox){
+      const b = active.bbox, box = document.createElement("div");
+      box.className = "box ip active";
+      box.style.left=(b.x*100)+"%"; box.style.top=(b.y*100)+"%";
+      box.style.width=(b.w*100)+"%"; box.style.height=(b.h*100)+"%";
+      box.innerHTML = `<span class="box-tag">IP · 相似度 ${active.score != null ? Number(active.score).toFixed(2) : "待核验"}</span>`;
+      st.appendChild(box);
+    }
 
     const asr = live.filter(e => e.source === "asr");
     if(asr.length){
@@ -473,7 +710,7 @@
     seekTo((e.clientX - r.left) / r.width * dur);
   });
   document.addEventListener("keydown", e => {
-    if(!R || e.target.tagName === "INPUT") return;
+    if(!R || /INPUT|TEXTAREA/.test(e.target.tagName)) return;
     if(e.code === "Space"){ e.preventDefault(); playing ? pause() : play(); }
     if(e.code === "ArrowLeft")  seekTo(t - (e.shiftKey ? 1 : .1));
     if(e.code === "ArrowRight") seekTo(t + (e.shiftKey ? 1 : .1));
@@ -490,9 +727,7 @@
         e.textContent = "读不出来：" + err.message;
       }
     };
-    fr.onerror = () => {
-      const e = $("drop-err"); e.hidden = false; e.textContent = "文件读取失败。";
-    };
+    fr.onerror = () => { const e = $("drop-err"); e.hidden = false; e.textContent = "文件读取失败。"; };
     fr.readAsText(file, "utf-8");
   }
   $("btn-open").addEventListener("click", () => $("f-report").click());
@@ -503,6 +738,7 @@
     if(!f) return;
     vid.src = URL.createObjectURL(f);
     vid.hidden = false; $("novid").hidden = true; hasVideo = true;
+    document.querySelector(".stage-watermark")?.remove();
     vid.addEventListener("timeupdate", () => { if(!playing){ t = vid.currentTime; tick(0);} });
   });
 
@@ -518,10 +754,23 @@
     if(f) readReport(f);
   });
 
-  // 通过 http 提供时可用 ?report=xxx.json 直接载入；file:// 下会被浏览器拦，回落到手动选文件
-  const q = new URLSearchParams(location.search).get("report");
+  // ?report=xxx.json 自动载入；?finding=N&t=12.0 深链直达某条风险
+  // （飞书卡片「查看逐秒证据」跳到具体一秒）
+  const params = new URLSearchParams(location.search);
+  const q = params.get("report");
+  const findingParam = params.get("finding");
+  const tParam = params.get("t");
+  const deepFinding = findingParam === null ? NaN : Number(findingParam);
+  const deepT = tParam === null ? NaN : Number(tParam);
+  function applyDeepLink(){
+    if(Number.isFinite(deepFinding) && R && R.findings[deepFinding]){
+      select(deepFinding, true);
+    } else if(Number.isFinite(deepT) && R){
+      seekTo(deepT);
+    }
+  }
   if(q){
-    fetch(q).then(r => r.json()).then(load).catch(err => {
+    fetch(q).then(r => r.json()).then(j => { load(j); applyDeepLink(); }).catch(err => {
       const e = $("drop-err");
       e.hidden = false;
       e.textContent = "自动载入失败（本地文件直接打开时浏览器会拦截，属正常）：" + err.message;
