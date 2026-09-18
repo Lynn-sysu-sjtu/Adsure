@@ -215,6 +215,17 @@ make serve
 资源不可用会降级到词法；需要将语义能力作为启动硬门禁时再设置
 `CASE_ENGINE_REQUIRE_SEMANTIC=1`。
 
+受控预下载模型缓存（部署机可联网时执行一次，模型写入 HF_HOME）：
+
+```bash
+export HF_HOME=/opt/adsure-rag/models
+export CASE_ENGINE_EMBEDDING_MODEL=BAAI/bge-base-zh-v1.5
+make setup-rag-models     # 等价 bash scripts/setup_rag_models.sh
+```
+
+完成后在离线环境设置 `HF_HUB_OFFLINE=1`、`TRANSFORMERS_OFFLINE=1`，并保持
+`HF_HOME=/opt/adsure-rag/models`。
+
 systemd 示例启用了 `ProtectHome=true`，因此不要依赖部署账号主目录中的模型
 缓存。将完整模型缓存放到 `/opt/adsure-rag/models`，并使用示例配置中的
 `HF_HOME`、`HF_HUB_OFFLINE=1` 和 `TRANSFORMERS_OFFLINE=1`。

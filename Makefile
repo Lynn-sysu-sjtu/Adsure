@@ -108,6 +108,9 @@ preflight-rag:
 smoke-rag:
 	./scripts/smoke_rag_service.sh
 
+setup-rag-models:
+	bash scripts/setup_rag_models.sh
+
 pipeline: fetch extract clean validate chunks sample-chunks test
 
 candidate-pipeline:
