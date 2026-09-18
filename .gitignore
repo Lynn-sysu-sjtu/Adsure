@@ -6,6 +6,8 @@ __pycache__/
 .venv-handoff/
 .venv-handoff-video/
 .env.video.local
+.env.video.volc.example
+.env.video.volc.local
 backend/.env
 data/video_mvp/models/
 .env

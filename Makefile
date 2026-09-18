@@ -3,6 +3,14 @@ HANDOFF_PYTHON ?= .venv-handoff/bin/python
 HANDOFF_OUTPUT ?= data/video_mvp/handoff_review.json
 
 .PHONY: setup setup-semantic setup-handoff setup-handoff-video fetch extract clean import-excel import-sector-docx build-audit-cases validate-audit-cases audit-cases validate chunks semantic-index evaluate-retrieval sample-chunks rule-mapping-queue test test-rag test-audit-contract test-platform-rules test-video-mvp test-handoff case-crawler handoff-review-demo handoff-review-job preflight-rag smoke-rag serve video-mvp video-mvp-cli pipeline candidate-pipeline sector-candidate-pipeline
+video-service:
+	VIDEO_SERVICE_HOST=127.0.0.1 VIDEO_SERVICE_PORT=8520 ./scripts/start_video_service.sh
+
+preflight-video:
+	.venv-video/bin/python -m scripts.preflight_video
+
+smoke-video-service:
+	.venv-video/bin/python scripts/smoke_video_service.py
 
 setup:
 	pip install -r requirements.txt
@@ -80,7 +88,7 @@ test-platform-rules:
 	python3 -m unittest tests.test_platform_rules -v
 
 test-video-mvp:
-	.venv-video/bin/python -m unittest tests.test_video_mvp tests.test_video_mvp_v2 tests.test_video_mvp_v3 tests.test_video_feishu_adapter tests.test_video_volc_asr tests.test_video_rapidocr_env -v
+	.venv-video/bin/python -m unittest tests.test_video_mvp tests.test_video_mvp_v2 tests.test_video_mvp_v3 tests.test_video_feishu_adapter tests.test_video_volc_asr tests.test_video_rapidocr_env tests.test_video_service -v
 
 test-handoff:
 	$(HANDOFF_PYTHON) -m pytest backend/tests -q
