@@ -6,6 +6,7 @@ import unittest
 from pathlib import Path
 
 from run_three_dataset_baseline import (
+    apply_uid_bindings,
     compare_json_case,
     compare_game_case,
     build_limitations,
@@ -120,6 +121,74 @@ class ThreeDatasetBaselineTest(unittest.TestCase):
         comparison = compare_game_case(case, response, diagnostics={})
         self.assertTrue(comparison["risk_match"])
         self.assertEqual(["虚假宣传"], comparison["missing_expected_dimensions"])
+
+
+    def test_apply_uid_bindings_overlays_corrected_uids(self):
+        cases = [
+            {
+                "case_id": "HF-AD-001",
+                "expected": {"must_recall_rule_ids": ["HF-001-001"]},
+            }
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            bindings = Path(directory) / "bindings.json"
+            bindings.write_text(
+                json.dumps(
+                    {
+                        "HF-AD-001": {
+                            "must_recall": {
+                                "HF-001-001": {
+                                    "status": "resolved",
+                                    "uid": "RUID-A",
+                                    "reason": "test",
+                                }
+                            },
+                            "must_not_recall": {},
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+            game = Path(directory) / "game.json"
+            game.write_text(json.dumps({"cases": []}), encoding="utf-8")
+            applied = apply_uid_bindings(cases, bindings, game)
+        self.assertEqual(1, applied)
+        self.assertEqual(["RUID-A"], cases[0]["expected"]["must_recall_rule_uids"])
+        self.assertEqual([], cases[0]["expected"]["must_not_recall_rule_uids"])
+        self.assertEqual(
+            "RUID-A",
+            cases[0]["expected"]["uid_binding_status"]["HF-001-001"]["uid"],
+        )
+
+    def test_apply_uid_bindings_supports_game_mapping(self):
+        cases = [{"case_id": "EVAL-GAME-001", "expected": {}}]
+        with tempfile.TemporaryDirectory() as directory:
+            bindings = Path(directory) / "bindings.json"
+            bindings.write_text(json.dumps({}), encoding="utf-8")
+            game = Path(directory) / "game.json"
+            game.write_text(
+                json.dumps(
+                    {
+                        "cases": [
+                            {
+                                "case_id": "EVAL-GAME-001",
+                                "must_recall_rules": [
+                                    {
+                                        "rule_id": "GAME-FALSE-002",
+                                        "rule_uid": "RUID-GAME",
+                                        "application": "test",
+                                    }
+                                ],
+                                "must_not_recall_rules": [],
+                            }
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+            applied = apply_uid_bindings(cases, bindings, game)
+        self.assertEqual(1, applied)
+        self.assertEqual(["RUID-GAME"], cases[0]["expected"]["must_recall_rule_uids"])
 
 
 if __name__ == "__main__":

@@ -24,6 +24,8 @@ DEFAULT_DATASET_DIR = WORKSPACE_BASE / "测试集"
 DEFAULT_OUTPUT_DIR = PROJECT_BASE / "test_reports" / "three_dataset_baseline"
 RISK_KEYS = ["审核_推荐风险等级", "瀹℃牳_鎺ㄨ崘椋庨櫓绛夌骇"]
 DIMENSION_KEYS = ["审核_推荐违规类型", "瀹℃牳_鎺ㄨ崘杩濊绫诲瀷"]
+DEFAULT_UID_BINDINGS = PROJECT_BASE / "assets" / "json_test_uid_bindings_20260917.json"
+DEFAULT_GAME_UID_MAPPING = PROJECT_BASE / "assets" / "game_test_expected_rule_mapping_20260917.json"
 
 
 def _first_value(data, keys, default=None):
@@ -273,6 +275,74 @@ def build_limitations(semantic_backend):
     return limitations
 
 
+def load_uid_bindings(bindings_path=DEFAULT_UID_BINDINGS, game_mapping_path=DEFAULT_GAME_UID_MAPPING):
+    """Load the corrected UID expectations for the three datasets."""
+    bindings_path = Path(bindings_path)
+    game_mapping_path = Path(game_mapping_path)
+    bindings = json.loads(bindings_path.read_text(encoding="utf-8-sig"))
+    game_mapping = json.loads(game_mapping_path.read_text(encoding="utf-8-sig"))
+    result = {}
+
+    for case_id, payload in bindings.items():
+        must_recall = []
+        must_not_recall = []
+        statuses = {}
+        for rule_id, info in (payload.get("must_recall") or {}).items():
+            status = info.get("status")
+            uid = info.get("uid")
+            statuses[rule_id] = {"status": status, "uid": uid, "reason": info.get("reason")}
+            if uid and status in {"resolved", "replace_expected_rule"}:
+                must_recall.append(uid)
+        for rule_id, info in (payload.get("must_not_recall") or {}).items():
+            uid = info.get("uid")
+            if uid:
+                must_not_recall.append(uid)
+        result[case_id] = {
+            "must_recall_rule_uids": sorted(set(must_recall)),
+            "must_not_recall_rule_uids": sorted(set(must_not_recall)),
+            "binding_source": str(bindings_path),
+            "binding_status": statuses,
+        }
+
+    for case in game_mapping.get("cases", []) or []:
+        case_id = case.get("case_id")
+        if not case_id:
+            continue
+        must_recall = [item.get("rule_uid") for item in (case.get("must_recall_rules") or []) if item.get("rule_uid")]
+        must_not_recall = [item.get("rule_uid") for item in (case.get("must_not_recall_rules") or []) if item.get("rule_uid")]
+        result[case_id] = {
+            "must_recall_rule_uids": sorted(set(must_recall)),
+            "must_not_recall_rule_uids": sorted(set(must_not_recall)),
+            "binding_source": str(game_mapping_path),
+            "binding_status": {
+                item.get("rule_id"): {
+                    "status": "game_expected",
+                    "uid": item.get("rule_uid"),
+                    "reason": item.get("application"),
+                }
+                for item in (case.get("must_recall_rules") or [])
+            },
+        }
+    return result
+
+
+def apply_uid_bindings(cases, bindings_path=DEFAULT_UID_BINDINGS, game_mapping_path=DEFAULT_GAME_UID_MAPPING):
+    """Overlay corrected UID expectations onto the frozen JSON cases."""
+    bindings = load_uid_bindings(bindings_path, game_mapping_path)
+    applied = 0
+    for case in cases:
+        binding = bindings.get(case.get("case_id"))
+        if not binding:
+            continue
+        expected = case.setdefault("expected", {})
+        expected["must_recall_rule_uids"] = binding["must_recall_rule_uids"]
+        expected["must_not_recall_rule_uids"] = binding["must_not_recall_rule_uids"]
+        expected["uid_binding_source"] = binding["binding_source"]
+        expected["uid_binding_status"] = binding["binding_status"]
+        applied += 1
+    return applied
+
+
 def _summarize(results):
     by_dataset = defaultdict(list)
     for item in results:
@@ -292,6 +362,12 @@ def _summarize(results):
                     counter["required_candidate_uid_recall_match"] += bool(comparison.get("required_candidate_uid_recall_match"))
                     counter["required_final_uid_recall_match"] += bool(comparison.get("required_final_uid_recall_match"))
                 counter["forbidden_candidate_uid_recall_match"] += bool(comparison.get("forbidden_candidate_uid_recall_match"))
+                expected_uids = set(item.get("expected", {}).get("must_recall_rule_uids") or [])
+                candidate_uids = set(comparison.get("candidate_rule_uids") or [])
+                final_uids = set(comparison.get("final_rule_uids") or [])
+                counter["expected_uid_slots"] += len(expected_uids)
+                counter["candidate_uid_hits"] += len(expected_uids & candidate_uids)
+                counter["final_uid_hits"] += len(expected_uids & final_uids)
                 counter["required_candidate_recall_match"] += bool(comparison.get("required_candidate_recall_match"))
                 counter["required_final_recall_match"] += bool(comparison.get("required_final_recall_match"))
                 counter["forbidden_candidate_recall_match"] += bool(comparison.get("forbidden_candidate_recall_match"))
@@ -301,9 +377,20 @@ def _summarize(results):
                 counter["dimension_match"] += bool(comparison.get("dimension_match"))
         return {"case_count": len(items), **dict(counter)}
 
+    def with_uid_rates(summary):
+        expected = summary.get("expected_uid_slots", 0)
+        if expected:
+            summary["candidate_uid_recall"] = round(summary["candidate_uid_hits"] / expected, 4)
+            summary["final_uid_recall"] = round(summary["final_uid_hits"] / expected, 4)
+        else:
+            summary["candidate_uid_recall"] = 0.0
+            summary["final_uid_recall"] = 0.0
+        return summary
+
+    all_summary = with_uid_rates(summarize_group(results))
     return {
-        "all": summarize_group(results),
-        "by_dataset": {name: summarize_group(items) for name, items in by_dataset.items()},
+        "all": all_summary,
+        "by_dataset": {name: with_uid_rates(summarize_group(items)) for name, items in by_dataset.items()},
     }
 
 
@@ -429,6 +516,8 @@ def main():
     parser.add_argument("--baseline-name", required=True)
     parser.add_argument("--llm-backend", choices=["mock", "deepseek"], required=True)
     parser.add_argument("--semantic-backend", choices=["local", "zhipu"], default="local")
+    parser.add_argument("--uid-bindings", default=str(DEFAULT_UID_BINDINGS))
+    parser.add_argument("--game-uid-mapping", default=str(DEFAULT_GAME_UID_MAPPING))
     args = parser.parse_args()
 
     if args.normalized_cases:
@@ -437,6 +526,24 @@ def main():
         cases, sources = load_cases(args.dataset_dir)
     if len(cases) != 30:
         raise SystemExit(f"Expected 30 cases, loaded {len(cases)}")
+    applied = apply_uid_bindings(
+        cases,
+        bindings_path=args.uid_bindings,
+        game_mapping_path=args.game_uid_mapping,
+    )
+    sources = list(sources) + [
+        {
+            "file": Path(args.uid_bindings).name,
+            "path": str(Path(args.uid_bindings).resolve()),
+            "sha256": _sha256(Path(args.uid_bindings)),
+        },
+        {
+            "file": Path(args.game_uid_mapping).name,
+            "path": str(Path(args.game_uid_mapping).resolve()),
+            "sha256": _sha256(Path(args.game_uid_mapping)),
+        },
+    ]
+    print(f"applied corrected UID bindings to {applied}/{len(cases)} cases", flush=True)
     report = run_baseline(cases, sources, args.baseline_name, args.llm_backend, args.semantic_backend)
     json_path, csv_path = save_report(report, args.output_dir)
     print(json.dumps(report["summary"], ensure_ascii=False, indent=2))
