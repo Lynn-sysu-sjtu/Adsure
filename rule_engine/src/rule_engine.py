@@ -408,6 +408,16 @@ def _judgment_pool_limit():
     return 8
 
 
+def _fact_recall_limit():
+    raw = os.getenv("ADSURE_FACT_RECALL_LIMIT")
+    if raw not in (None, ""):
+        try:
+            return max(1, int(raw))
+        except ValueError:
+            pass
+    return 10
+
+
 def _select_judgment_recalled(recalled, limit=None):
     # Rank recalled parents for LLM judgment without changing public matches.
     limit = _judgment_pool_limit() if limit is None else max(1, int(limit))
@@ -500,7 +510,7 @@ def _fact_rule_surface(rule):
     return " ".join(parts)
 
 
-def fact_recall_rules(rules, request, context_package=None, limit=5):
+def fact_recall_rules(rules, request, context_package=None, limit=10):
     text = _keyword_text(request)
     claim_hits = _fact_claim_hits(text)
     recalled = []
@@ -1075,7 +1085,12 @@ def audit(payload, base_dir=None, diagnostics=None):
         recall_rules(rules, request, context_package=context_package)
     )
     fact_recalled = _merge_recalled_rules(
-        fact_recall_rules(rules, request, context_package=context_package)
+        fact_recall_rules(
+            rules,
+            request,
+            context_package=context_package,
+            limit=_fact_recall_limit(),
+        )
     )
     recalled = _merge_recalled_rules(content_recalled + fact_recalled)
     group_asset = load_legal_issue_groups(base)

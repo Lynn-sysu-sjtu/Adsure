@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """Tests for governed DeepSeek candidate-pool construction."""
 
+import os
 import unittest
+from unittest.mock import patch
 
 from candidate_governance import govern_candidates
 
@@ -96,9 +98,26 @@ class CandidatePoolGovernanceTests(unittest.TestCase):
             limit=8,
         )
 
-        self.assertLessEqual(sum(rule["recall"]["trigger_layer"] == "fact" for rule, _ in governed), 3)
+        self.assertLessEqual(sum(rule["recall"]["trigger_layer"] == "fact" for rule, _ in governed), 5)
         self.assertLessEqual(sum(bool(rule.get("platform")) for rule, _ in governed), 2)
         self.assertLessEqual(len(governed), 8)
+
+    def test_fact_quota_can_be_overridden_by_env(self):
+        recalled = [
+            (make_rule(f"RUID-FACT-{index}", f"FACT-{index}", layer="fact", source_type="部门规章"), ["fact"])
+            for index in range(6)
+        ]
+        with patch.dict(os.environ, {"ADSURE_MAX_FACT_CANDIDATES": "2"}):
+            governed = govern_candidates(
+                recalled,
+                request={"context": {}},
+                group_asset={"groups": []},
+                limit=8,
+            )
+        self.assertLessEqual(
+            sum(rule["recall"]["trigger_layer"] == "fact" for rule, _ in governed),
+            2,
+        )
 
     def test_open_content_rule_reserves_a_slot_when_ranked_after_noise(self):
         noise = [

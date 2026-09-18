@@ -2,6 +2,7 @@
 """Deterministic governance for the final DeepSeek candidate pool."""
 
 import copy
+import os
 
 from legal_issue_groups import (
     AUTHORITY_RANK,
@@ -9,7 +10,7 @@ from legal_issue_groups import (
     select_group_representatives,
 )
 from rule_identity import rule_identity
-from rule_scope import platform_scope_matches
+from rule_scope import declared_platforms, platform_scope_matches
 from rule_eligibility import judgment_candidate_eligible
 
 
@@ -113,7 +114,7 @@ def _is_fact(rule):
 
 
 def _is_platform(rule):
-    return bool(rule.get("platform") or (rule.get("applies_to") or {}).get("platforms"))
+    return bool(declared_platforms(rule))
 
 
 def _is_open_content(rule):
@@ -167,6 +168,16 @@ def apply_candidate_quotas(
     return selected
 
 
+def _max_fact_candidates():
+    raw = os.getenv("ADSURE_MAX_FACT_CANDIDATES")
+    if raw not in (None, ""):
+        try:
+            return max(1, int(raw))
+        except ValueError:
+            pass
+    return 5
+
+
 def govern_candidates(recalled, request, group_asset, limit=8):
     applicable = [
         (rule, hits)
@@ -176,4 +187,8 @@ def govern_candidates(recalled, request, group_asset, limit=8):
     merged = merge_parent_candidates(applicable)
     collapsed = collapse_issue_groups(merged, request or {}, group_asset or {"groups": []})
     ranked = sorted(collapsed, key=candidate_sort_key)
-    return apply_candidate_quotas(ranked, limit=max(1, int(limit)))
+    return apply_candidate_quotas(
+        ranked,
+        limit=max(1, int(limit)),
+        max_fact=_max_fact_candidates(),
+    )
