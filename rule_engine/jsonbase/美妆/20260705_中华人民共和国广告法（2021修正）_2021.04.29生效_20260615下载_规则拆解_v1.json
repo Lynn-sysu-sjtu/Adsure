@@ -8453,8 +8453,8 @@
         "interpretation_dependency": "",
         "fact_dependency": "需要核实产品实际功效与广告宣称效果是否一致",
         "misjudgment_cost": "高",
-        "default_route": "legal_review_required",
-        "route_reason": "效果真实性判断需结合产品备案信息，误判风险高，需法务审核",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准（2026-09-19）：效果真实性先由运营补充备案、功效检测及同条件对比材料；无法补充则删除前后对比或效果宣称。",
         "route_status": "provisional",
         "route_override": {
           "enabled": false,
@@ -8483,11 +8483,13 @@
         "legal_interpretation_level": "high",
         "fact_verification_level": "heavy",
         "risk_severity": "high",
-        "operator_fixability": "not_self_fixable",
-        "default_route": "legal_review_required",
-        "route_reason": "效果是否虚构需结合产品备案与检测报告等事实核验，且误判风险高，必须法务介入",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准（2026-09-19）：效果真实性先由运营补充备案、功效检测及同条件对比材料；无法补充则删除前后对比或效果宣称。",
         "confidence": "high",
-        "calibration_status": "provisional"
+        "calibration_status": "human_confirmed",
+        "calibrated_at": "2026-09-19T01:51:16+08:00",
+        "calibration_source": "beauty_routing_calibration_20260919"
       }
     },
     {

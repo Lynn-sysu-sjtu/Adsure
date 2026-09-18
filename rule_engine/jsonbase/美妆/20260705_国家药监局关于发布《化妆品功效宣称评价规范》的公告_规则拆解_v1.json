@@ -702,8 +702,8 @@
         "interpretation_dependency": "低",
         "fact_dependency": "高",
         "misjudgment_cost": "高",
-        "default_route": "legal_review_required",
-        "route_reason": "涉及功效宣称的合规性，需法务或专业审核人员判断是否提供试验依据。",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准（2026-09-19）：功效评价试验报告先由运营补充；无法补充则删除对应功效宣称。",
         "route_status": "provisional",
         "route_override": {
           "enabled": false,
@@ -731,11 +731,13 @@
         "legal_interpretation_level": "low",
         "fact_verification_level": "heavy",
         "risk_severity": "high",
-        "operator_fixability": "not_self_fixable",
-        "default_route": "legal_review_required",
-        "route_reason": "规则触发清晰，但需要核验广告主是否提供功效评价试验报告等证明材料，且后果严重，应进入法务复核。",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准（2026-09-19）：功效评价试验报告先由运营补充；无法补充则删除对应功效宣称。",
         "confidence": "high",
-        "calibration_status": "provisional"
+        "calibration_status": "human_confirmed",
+        "calibrated_at": "2026-09-19T01:51:16+08:00",
+        "calibration_source": "beauty_routing_calibration_20260919"
       }
     },
     {

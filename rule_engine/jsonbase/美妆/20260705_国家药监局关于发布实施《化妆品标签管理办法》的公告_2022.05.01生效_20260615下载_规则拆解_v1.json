@@ -883,8 +883,8 @@
         "interpretation_dependency": "",
         "fact_dependency": "配方成分数据",
         "misjudgment_cost": "high",
-        "default_route": "legal_review_required",
-        "route_reason": "需人工或系统核验配方成分与功效宣称的一致性，避免误判",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准（2026-09-19）：配方成分与功效依据先由运营补充；无法补充则修改通用名或功效宣称。",
         "route_status": "provisional",
         "route_override": {
           "enabled": false,
@@ -911,11 +911,13 @@
         "legal_interpretation_level": "medium",
         "fact_verification_level": "heavy",
         "risk_severity": "high",
-        "operator_fixability": "not_self_fixable",
-        "default_route": "legal_review_required",
-        "route_reason": "需要核验配方成分与功效宣称的一致性，涉及专业资料和事实判断，运营难以自行处理，应进入法务复核。",
+        "operator_fixability": "guided_fixable",
+        "default_route": "operator_supply_docs",
+        "route_reason": "人工校准（2026-09-19）：配方成分与功效依据先由运营补充；无法补充则修改通用名或功效宣称。",
         "confidence": "high",
-        "calibration_status": "provisional"
+        "calibration_status": "human_confirmed",
+        "calibrated_at": "2026-09-19T01:51:16+08:00",
+        "calibration_source": "beauty_routing_calibration_20260919"
       }
     },
     {
