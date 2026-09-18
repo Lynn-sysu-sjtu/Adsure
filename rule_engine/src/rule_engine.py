@@ -1162,6 +1162,9 @@ def audit(payload, base_dir=None, diagnostics=None):
             "audit_opinion": final_opinion,
             "rule_judgments": validated_subsumption.judgments,
             "routing": outcome["routing"],
+            "routing_rule_uid": outcome.get("routing_rule_uid"),
+            "routing_rule_id": outcome.get("routing_rule_id"),
+            "routing_reason": outcome.get("routing_reason"),
             "need_legal_review": outcome["routing"] == "\u6cd5\u52a1",
         }
     )
@@ -1219,6 +1222,9 @@ def audit(payload, base_dir=None, diagnostics=None):
             "llm_judgment": llm_judgment,
             "context_package": context_package,
             "routing": outcome["routing"],
+            "routing_rule_uid": outcome.get("routing_rule_uid"),
+            "routing_rule_id": outcome.get("routing_rule_id"),
+            "routing_reason": outcome.get("routing_reason"),
             "审核_审核时间": audit_timestamp,
             "audit_time": audit_timestamp,
         },
