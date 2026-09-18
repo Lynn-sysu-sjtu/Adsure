@@ -39,11 +39,12 @@ datasets/golden/
 ## 3. 工作流
 
 1. **初筛**（机器辅助）：跑 `python datasets/golden/scripts/inventory_existing.py` 生成候选清单，人工挑选并补录外部素材。
-2. **独立双标**：两名标注人各自填一份 YAML（`annotator_a` / `annotator_b`），**不串口径**。
-3. **核对**：跑 `python datasets/golden/scripts/validate_golden.py` 做机械校验后，两人逐条对差异。
-4. **分歧留档**：意见不一致的条目保留双方答案、理由与裁决人结论，写入 `disagreements`，不许只留结论——分歧分布本身是词库/提示词校准的输入。
-5. **状态流转**：`draft → dual_annotated → adjudicated`；只有 `adjudicated` 的条目可进指标计算。
-6. **指标计算**（C2 任务）：对每条 adjudicated 案例跑完整链路，按层统计 §11 各指标。
+2. **预标注草稿**（可选减负）：跑 `python backend/scripts/preannotate_golden.py 视频.mp4 --case-id golden_0001 --industry health_food --annotator 张三 --out datasets/golden/cases/golden_0001.yaml`——引擎自动填好时间区间/bbox/layer/expected，人工只需核对修正 + 补漏报。⚠️ 草稿不改变双标要求：标注人仍须独立判断，不能抄机器答案。
+3. **独立双标**：两名标注人各自填一份 YAML（`annotator_a` / `annotator_b`），**不串口径**。
+4. **核对**：跑 `python datasets/golden/scripts/validate_golden.py` 做机械校验后，两人逐条对差异。
+5. **分歧留档**：意见不一致的条目保留双方答案、理由与裁决人结论，写入 `disagreements`，不许只留结论——分歧分布本身是词库/提示词校准的输入。
+6. **状态流转**：`draft → dual_annotated → adjudicated`；只有 `adjudicated` 的条目可进指标计算。
+7. **指标计算**（C2 任务）：对每条 adjudicated 案例跑完整链路，按层统计 §11 各指标。
 
 ## 4. 与方案指标的对应
 

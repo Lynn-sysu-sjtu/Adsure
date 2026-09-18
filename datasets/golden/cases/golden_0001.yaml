@@ -1,0 +1,61 @@
+case_id: golden_0001
+video:
+  sha256: b9f907eeb8c801fbe9b0bb08c0d8529ce37d0e813d0db1d3e5c5dd6abd10b8b9
+  path: 测试广告视频2.mp4
+  duration_seconds: 5.0
+  source:
+    type: preannotation_draft
+    url: null
+    penalty_case_id: null
+    collected_by: 张三
+industry: health_food
+platform: douyin
+background: ''
+risk_level_overall: high
+annotations:
+- id: pa01
+  source: preannotation
+  channel: asr
+  t_start: 0.46
+  t_end: 0.72
+  text: 口播中出现「最新」；上下文：这是我们的最新产品诞文认则三合一好评如桥客户过一我们的美白精华还不是和狗一…
+  layer: L1
+  expected: needs_facts
+  law_ref: 《广告法》第九条第（三）项
+  penalty_case_id: null
+  uncertain: false
+  note: '[机器预标注 mock] 法律判断已完成，但其中一项构成要件依赖广告素材之外的事实，仅凭素材无法判断：该表述是否指向广告所推销的商品或服务本身（而非仅描述经营者的
+    服务态度、经营理念、企业文化、价值观或目标追求）？'
+mandatory_checks:
+- id: pm02
+  requirement_id: health_food_disclaimer
+  present: false
+  expected: violation
+  note: '[机器预标注] 全片未发现该必备表述'
+- id: pm03
+  requirement_id: ad_identifiability
+  present: false
+  expected: not_applicable
+  note: '[机器预标注] 全片未发现该必备表述'
+ip_ground_truth: []
+label:
+  annotator_a:
+    name: 张三
+    date: '2026-09-19'
+  annotator_b:
+    name: null
+    date: null
+  disagreements: []
+  resolved_by: null
+  status: draft
+_preannotation_meta:
+  generated_at: '2026-09-19T03:48:57'
+  engine: evidence-layer-v1
+  llm_mode: mock
+  cost:
+    frames_sampled: 14
+    frames_after_dedup: 12
+    dedup_ratio: 0.1429
+    ocr_calls: 12
+    asr_calls: 1
+  warning: 机器草稿仅供核对，标注人必须独立判断；漏报需人工补标
