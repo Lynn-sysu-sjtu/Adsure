@@ -89,7 +89,8 @@ class Settings(BaseSettings):
 
     # ── Provider 开关 ────────────────────────────────────────
     asr_provider: Literal["aliyun", "tencent", "volcengine", "funasr_local"] = "aliyun"
-    ocr_provider: Literal["aliyun", "tencent", "baidu", "paddle_local"] = "aliyun"
+    ocr_provider: Literal["aliyun", "tencent", "baidu", "paddle_local",
+                          "openai_compat"] = "aliyun"
     vlm_provider: Literal["volcengine", "qwen", "zhipu", "tarsier_local",
                           "openai_compat", "mock"] = "volcengine"
     llm_provider: Literal["mock", "deepseek", "volcengine"] = "mock"
@@ -141,6 +142,23 @@ class Settings(BaseSettings):
     ocr_access_key_secret: SecretStr = SecretStr("")
     ocr_region: str = "cn-shanghai"
     ocr_endpoint: str = ""
+
+    # 云 OCR（OpenAI 兼容视觉模型路线，与云 VLM 共用凭据）
+    ocr_api_key: SecretStr = Field(
+        default=SecretStr(""),
+        validation_alias=AliasChoices(
+            "OCR_API_KEY", "VIDEO_MVP_CLOUD_API_KEY"),
+    )
+    ocr_cloud_endpoint: str = Field(
+        default="",
+        validation_alias=AliasChoices(
+            "OCR_CLOUD_ENDPOINT", "VIDEO_MVP_CLOUD_BASE_URL"),
+    )
+    ocr_cloud_model: str = Field(
+        default="",
+        validation_alias=AliasChoices(
+            "OCR_CLOUD_MODEL", "VIDEO_MVP_CLOUD_MODEL"),
+    )
 
     # ── VLM / LLM ────────────────────────────────────────────
     # 兼容旧 MVP 的 VIDEO_MVP_CLOUD_* 命名，一份凭据两边可用。

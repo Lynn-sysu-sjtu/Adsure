@@ -78,10 +78,18 @@ def get_ocr_provider(name: str | None = None) -> OCRProvider:
 
         return MockOCRProvider(max_calls=max_calls)
 
+    if name == "openai_compat":
+        from app.pipeline.providers.cloud_ocr import OpenAICompatOCR
+
+        return OpenAICompatOCR(
+            api_key=settings.ocr_api_key.get_secret_value(),
+            endpoint=settings.ocr_cloud_endpoint,
+            model=settings.ocr_cloud_model,
+            max_calls=max_calls,
+        )
+
     raise NotImplementedError(
-        f"OCR provider「{name}」尚未实现。当前可用: mock。\n"
-        "云实现接入时需确认返回文字框坐标（bbox），"
-        "否则 L4 显著性核查无法进行。"
+        f"OCR provider「{name}」尚未实现。当前可用: mock、openai_compat。"
     )
 
 
