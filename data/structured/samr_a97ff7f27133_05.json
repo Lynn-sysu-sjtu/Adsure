@@ -93,5 +93,7 @@
   }
  ],
  "violation_type": "未取得预售许可发布房地产广告且宣传与实际不一致（误导）",
- "source_record_path": "data/structured_candidates/samr_a97ff7f27133_05.json"
+ "also_seen_at": [
+  "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html"
+ ]
 }

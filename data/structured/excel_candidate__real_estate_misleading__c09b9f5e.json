@@ -96,7 +96,6 @@
   }
  ],
  "violation_type": "房地产广告误导",
- "source_record_path": "data/structured_candidates/excel_candidate__real_estate_misleading__c09b9f5e.json",
  "promotion": {
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",

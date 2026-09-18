@@ -88,5 +88,7 @@
   }
  ],
  "violation_type": "虚假广告（涉嫌构成虚假广告罪，移送公安）",
- "source_record_path": "data/structured_candidates/samr_a97ff7f27133_10.json"
+ "also_seen_at": [
+  "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html"
+ ]
 }

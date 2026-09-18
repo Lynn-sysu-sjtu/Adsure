@@ -120,11 +120,13 @@
    "note": "修复规则抽取 facts_summary=t[:80] 截断：用修正后抽取器重写案情/监管逻辑/检索文本，字段逐字来自原文段落，其余字段不动。"
   }
  ],
- "source_record_path": "data/structured_candidates/samr_e13c75951714_06.json",
  "promotion": {
   "promoted_to_production": true,
   "promoted_at": "2026-09-17T10:56:02+08:00",
   "approved_by": "项目负责人（用户 2026-09-17 指令：上海 P1 典型案入生产）",
   "note": "上海P1官方典型案"
- }
+ },
+ "also_seen_at": [
+  "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+ ]
 }

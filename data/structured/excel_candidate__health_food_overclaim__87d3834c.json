@@ -95,7 +95,6 @@
   }
  ],
  "violation_type": "保健食品违规宣传",
- "source_record_path": "data/structured_candidates/excel_candidate__health_food_overclaim__87d3834c.json",
  "promotion": {
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",

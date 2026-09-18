@@ -90,7 +90,6 @@
  "notes": "媒体线索直接入生产（业主审批）：处罚机关/金额/法条来自绝味食品公告与媒体报道，决定书号未核到；待核到官方决定书原文后升级。",
  "owner_note": "处罚机关（长沙市工商局）、金额（60万）、法条（广告法九(七)）来自绝味食品公告与媒体转引；决定书号未核到。",
  "audit_note": "业主审批入生产：绝味食品2017年双11低俗广告处罚案（媒体+公司公告）；决定书号待官方核验。",
- "source_record_path": "data/structured_candidates/juewei_2017_1111_lowbrow_ad_case.json",
  "promotion": {
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T04:13:49+08:00",

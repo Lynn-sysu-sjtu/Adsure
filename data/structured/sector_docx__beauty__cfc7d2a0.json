@@ -99,7 +99,6 @@
    "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
- "source_record_path": "data/structured_candidates/sector_docx__beauty__cfc7d2a0.json",
  "promotion": {
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",

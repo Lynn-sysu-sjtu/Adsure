@@ -90,7 +90,6 @@
   }
  ],
  "violation_type": "绝对化用语",
- "source_record_path": "data/structured_candidates/excel_candidate__absolute_terms__92b4e4d1.json",
  "promotion": {
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",

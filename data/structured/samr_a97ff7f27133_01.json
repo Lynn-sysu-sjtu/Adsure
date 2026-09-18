@@ -98,5 +98,7 @@
   }
  ],
  "violation_type": "直播推销普通食品宣称保健功能及疾病功效（虚假广告）",
- "source_record_path": "data/structured_candidates/samr_a97ff7f27133_01.json"
+ "also_seen_at": [
+  "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html"
+ ]
 }

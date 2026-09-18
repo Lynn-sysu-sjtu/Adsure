@@ -83,7 +83,6 @@
    "note": "经 backend/scripts/crawl_samr.py 抓取存证（raw_html+raw_text），按官方原文结构化入库。"
   }
  ],
- "source_record_path": "data/structured_candidates/samr_2026_netfood_05_miniprogram_patent.json",
  "promotion": {
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T23:48:57+08:00",
