@@ -105,15 +105,17 @@
           "普通化妆品"
         ],
         "vector_text": "化妆品广告中宣传产品可生产、进口或上市销售，但未提及或暗示已取得特殊化妆品注册或普通化妆品备案",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "关键词可能无法覆盖所有暗示上市销售的表述，需语义辅助召回",
-        "trigger_layer": "fact",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 备案、注册证、资质.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -182,7 +184,9 @@
         "route_reason": "规则触发清晰，但需运营提供注册证书或备案凭证等事实材料，无法直接修改文案了事。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "COSM-AD-001",

@@ -1,6 +1,7 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """MVP rule engine flow for Feishu-triggered ad compliance audits."""
 
+import json
 import os
 import re
 from concurrent.futures import ThreadPoolExecutor
@@ -9,6 +10,7 @@ from pathlib import Path
 
 from catalog_recall import catalog_recall_rules
 from candidate_governance import govern_candidates
+from rule_eligibility import content_recall_eligible
 from confirmed_outcome import (
     compose_final_audit_opinion,
     fact_advice_from_final_rules,
@@ -26,6 +28,16 @@ from semantic_recall import semantic_recall_rules
 from rule_identity import rule_identity
 from rule_scope import platform_scope_matches
 from subsumption import validate_subsumption_result
+from issue_tree_mapping import expand_issue_paths
+from issue_tree_runtime import (
+    IssueTreeAssetError,
+    load_runtime_tree,
+    prune_runtime_tree,
+    sha256_file,
+    sha256_json_tree,
+)
+from issue_tree_shadow_recall import recall_issue_tree_shadow
+from issue_tree_rule_selector import select_issue_tree_rules
 
 
 STANDARD_MODE_REASON = "MVP阶段统一使用标准审核模式，极速和深度模式仅预留接口。"
@@ -169,7 +181,7 @@ def _rule_trigger_layer(rule):
 
 
 def _is_content_trigger_rule(rule):
-    return _rule_trigger_layer(rule) == "content"
+    return content_recall_eligible(rule)
 
 
 def _rule_sort_no(rule):
@@ -183,6 +195,8 @@ def _keyword_priority(rule):
     except (TypeError, ValueError):
         return 0
 def _keyword_hits(rule, text):
+    if (rule.get('recall') or {}).get('keyword_enabled') is False:
+        return []
     keyword_signals = (rule.get("detection", {}) or {}).get("keyword_signals", {}) or {}
     hits = []
     for term in keyword_signals.get("hit_terms", []):
@@ -206,7 +220,17 @@ def _fallback_supplement_threshold():
         except ValueError:
             pass
     backend = (os.getenv("ADSURE_SEMANTIC_BACKEND") or "local").lower()
-    return 0.82 if backend in {"embedding", "zhipu", "zhipu_embedding"} else 0.10
+    return 0.55 if backend in {"embedding", "zhipu", "zhipu_embedding"} else 0.10
+
+
+def _fallback_supplement_limit():
+    env_limit = os.getenv("ADSURE_FALLBACK_SEMANTIC_LIMIT")
+    if env_limit not in (None, ""):
+        try:
+            return max(0, int(env_limit))
+        except ValueError:
+            pass
+    return 4
 
 def _no_keyword_semantic_threshold():
     env_threshold = os.getenv("ADSURE_NO_KEYWORD_SEMANTIC_THRESHOLD")
@@ -225,8 +249,10 @@ def recall_rules(
     keyword_limit=8,
     semantic_limit=5,
     fallback_supplement_threshold=None,
-    fallback_supplement_limit=2,
+    fallback_supplement_limit=None,
 ):
+    if fallback_supplement_limit is None:
+        fallback_supplement_limit = _fallback_supplement_limit()
     text = _keyword_text(request)
     content_rules = [rule for rule in rules if _is_content_trigger_rule(rule)]
     recalled = []
@@ -251,7 +277,10 @@ def recall_rules(
         return keyword_recalled
 
     def run_semantic_recall():
-        seen_ids = {rule.get("rule_id") for rule, _ in keyword_recalled}
+        hits_by_identity = {
+            rule_identity(rule) or rule.get("rule_id"): hits
+            for rule, hits in keyword_recalled
+        }
         semantic_recalled = []
 
         def add_semantic_candidates(candidate_rules, limit, threshold=None):
@@ -262,10 +291,14 @@ def recall_rules(
                 threshold=threshold,
                 limit=limit,
             ):
-                rule_id = rule.get("rule_id")
-                if rule_id in seen_ids:
+                identity = rule_identity(rule) or rule.get("rule_id")
+                if identity in hits_by_identity:
+                    existing_hits = hits_by_identity[identity]
+                    for hit in hits:
+                        if hit not in existing_hits:
+                            existing_hits.append(hit)
                     continue
-                seen_ids.add(rule_id)
+                hits_by_identity[identity] = hits
                 semantic_recalled.append((rule, hits))
 
         if keyword_recalled:
@@ -886,6 +919,92 @@ def _judge_with_config(context_package, matched_rules):
     return judge_with_mock_llm(context_package, matched_rules)
 
 
+def _issue_tree_shadow_enabled():
+    return str(os.getenv("ADSURE_ISSUE_TREE_SHADOW_ENABLED") or "").strip().lower() in {
+        "1", "true", "yes", "on"
+    }
+
+
+def _shadow_failure(status, reason_code=""):
+    result = {
+        "enabled": True,
+        "status": status,
+        "selected_issue_paths": [],
+        "affected_main_result": False,
+        "latency_ms": 0,
+    }
+    if reason_code:
+        result["reason_code"] = reason_code
+    return result
+
+
+def _run_issue_tree_shadow(base, request, judgment_context_package, rules):
+    runtime_path = base / "assets" / "issue_tree_runtime_v0.1.json"
+    approved_dir = base / "reports" / "approved_issue_tree_v03"
+    taxonomy_path = approved_dir / "approved_issue_taxonomy_v0.2.json"
+    mapping_path = approved_dir / "approved_rule_issue_mapping_v0.2.json"
+    if not runtime_path.exists() or not taxonomy_path.exists() or not mapping_path.exists():
+        return _shadow_failure("asset_validation_failed", "missing_issue_tree_asset")
+    try:
+        expected_hashes = {
+            "taxonomy": sha256_file(taxonomy_path),
+            "mapping": sha256_file(mapping_path),
+            "jsonbase": sha256_json_tree(base / "jsonbase"),
+        }
+        runtime = load_runtime_tree(runtime_path, expected_hashes=expected_hashes)
+        rules_by_uid = {
+            rule.get("rule_uid"): rule for rule in rules if rule.get("rule_uid")
+        }
+        pruned, prune_rejections = prune_runtime_tree(runtime, rules_by_uid, request)
+        recalled = recall_issue_tree_shadow(
+            judgment_context_package,
+            pruned,
+            timeout=int(os.getenv("ADSURE_ISSUE_TREE_TIMEOUT") or "5"),
+        )
+        mapping_asset = json.loads(mapping_path.read_text(encoding="utf-8-sig"))
+        leaf_ids = [
+            item.get("level_3_issue_id")
+            for item in recalled.get("selected_issue_paths") or []
+            if item.get("level_3_issue_id")
+        ]
+        expanded = expand_issue_paths(
+            leaf_ids,
+            mapping_asset,
+            rules_by_uid,
+            request,
+            uid_redirects=mapping_asset.get("uid_redirects") or {},
+        )
+        try:
+            selection = select_issue_tree_rules(
+                expanded,
+                recalled.get("selected_issue_paths") or [],
+                rules_by_uid,
+                request,
+                judgment_context_package,
+                load_legal_issue_groups(base),
+                semantic_backend=os.getenv("ADSURE_SEMANTIC_BACKEND") or "zhipu",
+                vector_index_path=base / "vectorbase" / "rule_vector_index.json",
+            )
+        except Exception:
+            selection = {
+                "status": "selector_error",
+                "semantic_status": "not_run",
+                "selected_direct_rule_uids": [],
+                "selected_fact_check_rule_uids": [],
+                "selected_actionable_rule_uids": [],
+                "affected_main_result": False,
+            }
+        recalled.update(expanded)
+        recalled["rule_selection"] = selection
+        recalled["prune_rejected_rule_uids"] = prune_rejections
+        return recalled
+    except IssueTreeAssetError as exc:
+        status = "stale_runtime_asset" if str(exc) == "stale_runtime_asset" else "asset_validation_failed"
+        return _shadow_failure(status, str(exc))
+    except Exception:
+        return _shadow_failure("asset_validation_failed", "issue_tree_shadow_internal_error")
+
+
 def _subsumption_fallback_response(request, context_package, audit_timestamp, reason_code):
     opinion = (
         "\u610f\u89c1\u7c7b\u578b\uff1a\u4eba\u5de5\u590d\u6838\n\n"
@@ -947,6 +1066,11 @@ def audit(payload, base_dir=None, diagnostics=None):
     rules = library["data"].get("rules", [])
     context_package = build_context_package(request)
     judgment_context_package = build_judgment_context_package(request, context_package)
+    shadow_result = None
+    if _issue_tree_shadow_enabled():
+        shadow_result = _run_issue_tree_shadow(
+            base, request, judgment_context_package, rules
+        )
     content_recalled = _merge_recalled_rules(
         recall_rules(rules, request, context_package=context_package)
     )
@@ -1007,12 +1131,15 @@ def audit(payload, base_dir=None, diagnostics=None):
                     ],
                 }
             )
-        return _subsumption_fallback_response(
+        response = _subsumption_fallback_response(
             request,
             context_package,
             audit_timestamp,
             reason_code,
         )
+        if shadow_result is not None:
+            response["data"]["issue_tree_shadow_recall"] = shadow_result
+        return response
     matched_rules = validated_subsumption.final_rules
     llm_risk_level = llm_judgment.get("overall_risk_level") or "\u65e0\u660e\u663e\u98ce\u9669"
     outcome = synthesize_confirmed_outcome(matched_rules, llm_risk=llm_risk_level)
@@ -1052,7 +1179,7 @@ def audit(payload, base_dir=None, diagnostics=None):
         "final_risk_reason": "\u4ec5\u57fa\u4e8e\u6db5\u6444\u540e\u7684\u6700\u7ec8\u89c4\u5219\u5408\u6210\u3002",
     }
     risk_level = final_risk_level
-    return {
+    response = {
         "code": 0,
         "msg": "ok",
         "data": {
@@ -1096,4 +1223,6 @@ def audit(payload, base_dir=None, diagnostics=None):
             "audit_time": audit_timestamp,
         },
     }
-
+    if shadow_result is not None:
+        response["data"]["issue_tree_shadow_recall"] = shadow_result
+    return response

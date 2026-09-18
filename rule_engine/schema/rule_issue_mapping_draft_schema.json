@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object",
+  "required": ["schema_version", "asset_status", "mappings"], "additionalProperties": false,
+  "properties": {"schema_version": {"const": "0.1"}, "asset_status": {"enum": ["draft", "approved"]}, "mappings": {"type": "array", "items": {"$ref": "#/$defs/mapping"}}},
+  "$defs": {
+    "review": {"type": "object", "required": ["status", "reviewer", "reviewed_at", "notes"], "properties": {"status": {"enum": ["pending", "approved", "rejected", "needs_revision"]}, "reviewer": {"type": ["string", "null"]}, "reviewed_at": {"type": ["string", "null"]}, "notes": {"type": ["string", "null"]}}, "additionalProperties": false},
+    "evidencePolicy": {"type": "object", "required": ["content", "context", "fact_state", "llm_signal"], "properties": {"content": {"enum": ["can_confirm", "trigger_only", "not_allowed"]}, "context": {"enum": ["scope_only", "support_or_refute", "not_allowed"]}, "fact_state": {"enum": ["support_or_refute", "required_to_confirm", "not_allowed"]}, "llm_signal": {"const": "candidate_only"}}, "additionalProperties": false},
+    "mapping": {"type": "object", "required": ["rule_uid", "rule_id", "source_file", "primary_issue_id", "secondary_issue_ids", "elements", "evidence_policy", "default_terminal_outcome", "proactive_check_ids", "mapping_confidence", "mapping_reason", "review"], "additionalProperties": false, "properties": {
+      "rule_uid": {"type": "string", "minLength": 1}, "rule_id": {"type": "string", "minLength": 1}, "source_file": {"type": "string", "minLength": 1}, "primary_issue_id": {"type": "string", "minLength": 1}, "secondary_issue_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+      "elements": {"type": "array", "items": {"type": "object", "required": ["element_id", "description", "required", "allowed_evidence_sources"], "additionalProperties": false, "properties": {"element_id": {"type": "string", "minLength": 1}, "description": {"type": "string", "minLength": 1}, "required": {"type": "boolean"}, "allowed_evidence_sources": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["content", "context", "fact_state", "llm_signal"]}}}}},
+      "evidence_policy": {"$ref": "#/$defs/evidencePolicy"}, "default_terminal_outcome": {"enum": ["confirmed_violation", "evidence_required", "proactive_check", "no_applicable_rule"]}, "proactive_check_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "mapping_confidence": {"enum": ["high", "medium", "low"]}, "mapping_reason": {"type": "string", "minLength": 1}, "review": {"$ref": "#/$defs/review"}
+    }}
+  }
+}

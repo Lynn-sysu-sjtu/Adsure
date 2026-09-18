@@ -1,0 +1,4702 @@
+{
+  "schema_version": "0.1",
+  "asset_status": "draft",
+  "model": "deepseek-chat",
+  "prompt_version": "all_primary_issue_fingerprint_v01_20260913",
+  "root_id": "EVIDENCE_FACT",
+  "root_name": "证明材料与事实核验",
+  "nodes": [
+    {
+      "issue_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE",
+      "parent_issue_id": "EVIDENCE_FACT",
+      "level": 2,
+      "node_type": "directory",
+      "name": "授权、来源与权属证明",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION",
+      "parent_issue_id": "EVIDENCE_FACT",
+      "level": 2,
+      "node_type": "directory",
+      "name": "数据、统计与引证来源",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING",
+      "parent_issue_id": "EVIDENCE_FACT",
+      "level": 2,
+      "node_type": "directory",
+      "name": "资质、许可与备案材料",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.TEST_RESEARCH",
+      "parent_issue_id": "EVIDENCE_FACT",
+      "level": 2,
+      "node_type": "directory",
+      "name": "测试、实验与研究证明",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE.THIRD_PARTY_RIGHTS_AND_REWARD_PROOF_MISSING",
+      "parent_issue_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE",
+      "name": "第三方权利授权或奖励真实性证明材料缺失",
+      "definition": "广告素材涉及第三方肖像、商标、品牌或合作等内容时未提供授权或合作证明，或涉及用户不消费即可领取福利的活动时未前置提供奖励品真实有效可领取的截屏、录屏等证明材料。",
+      "confidence": "medium",
+      "reason": "两项均属授权、来源与权属证明缺失，行为结构同为未提供相应证明材料，仅素材类型不同，合并为一个问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-25c4457f613caeb9"
+      ],
+      "source_occurrence_uids": [
+        "RUID-25c4457f613caeb9",
+        "RUID-990edd32dd76f1b5"
+      ]
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "parent_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING",
+      "name": "产品资质、许可或备案材料不完整、不一致或未披露",
+      "definition": "广告投放时产品资质材料不完整、与广告内容不一致或未展示披露，包括进口或跨境产品缺少报关单、原产地证明、质检报告、中文标签、审结书或以报关单替代3C证明，珠宝玉石鉴定证书材质与宣传不一致，游戏未提供审批证明或著作权登记证书，普通食品宣称绿色或有机未展示认证证书，化妆品标签与注册备案资料不一致或未披露备案证明、批准文号，保健食品注册证书载明事项不完整、标签说明书与注册备案内容不一致、未标注备案信息或备案号、广告未取得批准文件或与批准文件不一致等情形。",
+      "confidence": "medium",
+      "reason": "均属资质、许可与备案材料在完整性、一致性或披露方面的缺失，法律效果相同，行业与品类差异仅作为适用范围，合并为一个问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-1121cc681df8ab03",
+        "RUID-385390706db3ccb0",
+        "RUID-5f80a73247956422",
+        "RUID-82a8a7c8f78d473e",
+        "RUID-8317b41b0f1c931d",
+        "RUID-9f30f80e4d0db5ff",
+        "RUID-e1dd3bae81fcc2be",
+        "RUID-e355d7fdc592b513",
+        "RUID-f32a3253c4fc02b2",
+        "RUID-fba2b7c4e349d1ee"
+      ],
+      "source_occurrence_uids": [
+        "RUID-1121cc681df8ab03",
+        "RUID-385390706db3ccb0",
+        "RUID-5f80a73247956422",
+        "RUID-82a8a7c8f78d473e",
+        "RUID-8317b41b0f1c931d",
+        "RUID-9f30f80e4d0db5ff",
+        "RUID-e1dd3bae81fcc2be",
+        "RUID-e355d7fdc592b513",
+        "RUID-f32a3253c4fc02b2",
+        "RUID-fba2b7c4e349d1ee"
+      ]
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "parent_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING",
+      "name": "事实性描述、成分材质或专利荣誉认证宣传缺乏证明材料",
+      "definition": "广告素材对产品/服务属性或功效作事实性描述、对成分或材质进行阐释说明，或提及专利、荣誉、获奖、认证、销量荣誉、权威研发单位、效果指数等内容，但未提供真实有效证明材料，或伪造、冒用认证标志等质量标志，或境外专利未提供资质及标明专利信息。",
+      "confidence": "medium",
+      "reason": "均属宣传内容缺乏证明材料或材料不真实，行为结构相同，仅宣传对象不同，合并为一个问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-491c9616141a70d9",
+        "RUID-79375004906866dd",
+        "RUID-beb65843f7e375b1",
+        "RUID-cd55c70db0ea11c3"
+      ],
+      "source_occurrence_uids": [
+        "RUID-491c9616141a70d9",
+        "RUID-79375004906866dd",
+        "RUID-beb65843f7e375b1",
+        "RUID-cd55c70db0ea11c3"
+      ]
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PERSONNEL_CREDENTIAL_CLAIM_LACKING_PROOF",
+      "parent_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING",
+      "name": "机构内人员院校背景或任职宣称未提供证明材料",
+      "definition": "广告中宣称教师、导师、员工、创始人、设计师等机构内人员具有院校背景、名校任职或机构内身份，但未提供学信网查询截图、毕业证书照片等证明材料及在广告主公司任职证明。",
+      "confidence": "high",
+      "reason": "主体为机构内人员资质宣称，行为为未提供证明材料，独立于产品资质与一般事实性描述，单独保留。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.UNQUALIFIED_FOOD_TESTING_INFO_USED",
+      "parent_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING",
+      "name": "使用未取得资质认定的食品检验机构出具的检验信息",
+      "definition": "发布或利用未依法取得资质认定的食品检验机构出具的食品检验信息，欺骗、误导消费者，包括进行等级评定。",
+      "confidence": "high",
+      "reason": "涉及检验机构资质认定这一特定主体资格问题，与一般资质材料缺失不同，单独保留。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-aaf05fea32f34de7",
+        "RUID-e2e8360b7bc53bac"
+      ],
+      "source_occurrence_uids": [
+        "RUID-aaf05fea32f34de7",
+        "RUID-e2e8360b7bc53bac"
+      ]
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.HEALTH_FOOD_ENTERPRISE_STANDARD_LOWER_THAN_NATIONAL",
+      "parent_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING",
+      "name": "保健食品标签标识标注低于食品安全标准的企业标准指标",
+      "definition": "食品符合食品安全标准但不符合食品所标注的企业标准规定的食品安全指标的，构成违规。",
+      "confidence": "high",
+      "reason": "涉及企业标准与食品安全标准之间的指标关系，属特定标准合规问题，单独保留。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-fea3ce72204b2d43"
+      ],
+      "source_occurrence_uids": [
+        "RUID-fea3ce72204b2d43"
+      ]
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.TEST_RESEARCH.EFFICACY_CLAIM_EVIDENCE_MISSING_OR_NONCOMPLIANT",
+      "parent_issue_id": "EVIDENCE_FACT.TEST_RESEARCH",
+      "name": "功效宣称缺少证明材料或评价报告不合规",
+      "definition": "广告文案宣称原料功效或产品功效但未提供文献资料调研、研究数据分析、功效宣称评价试验等证明材料，或化妆品（含牙膏）功效宣称评价报告缺失、信息不完整、格式不规范、结论不明确、未经评价机构签章确认，新功效宣称未提交评价资料，牙膏法定清单内功效未进行功效评价，报告非由符合规定的检验机构按强制性标准或经验证方法出具，外文材料未翻译成标准中文。",
+      "confidence": "medium",
+      "reason": "均属功效宣称缺乏证明材料或评价报告不合规，行为结构相同，仅产品类型与材料形式不同，合并为一个问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-1031d0432864cd9a",
+        "RUID-90e46990938a6dbe",
+        "RUID-b6f89401325ab7d1",
+        "RUID-eb41ab6bd8db8841"
+      ],
+      "source_occurrence_uids": [
+        "RUID-1031d0432864cd9a",
+        "RUID-90e46990938a6dbe",
+        "RUID-b6f89401325ab7d1",
+        "RUID-eb41ab6bd8db8841"
+      ]
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.TEST_RESEARCH.FOOD_OR_MICROBIAL_TESTING_CLAIM_WITHOUT_EVIDENCE",
+      "parent_issue_id": "EVIDENCE_FACT.TEST_RESEARCH",
+      "name": "食品检测机构认证或微生物指标宣称未提供检验证明",
+      "definition": "广告文案提及食品检测机构认证相关内容时未同时提及相关证明材料，或宣称产品微生物指标合格、暗示无菌卫生或涉及微生物指标时未按规范标注或提供相应检验证明，或产品实际微生物指标不符合规定限值。",
+      "confidence": "medium",
+      "reason": "均属食品检测或微生物指标宣称缺乏检验证明，行为结构相同，仅检测对象不同，合并为一个问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-2798fc53480800ac",
+        "RUID-9e2b6ad7519be0ac"
+      ],
+      "source_occurrence_uids": [
+        "RUID-2798fc53480800ac",
+        "RUID-9e2b6ad7519be0ac"
+      ]
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.TEST_RESEARCH.UNVERIFIABLE_SCIENTIFIC_OR_RESEARCH_CLAIM",
+      "parent_issue_id": "EVIDENCE_FACT.TEST_RESEARCH",
+      "name": "使用无法证实或虚构的科研成果、统计资料等证明材料",
+      "definition": "在广告中使用无法证实、虚构、伪造或无法验证的科研成果、统计资料、调查结果、文摘、引用语、实验或数据证明等内容作为证明材料进行宣传。",
+      "confidence": "high",
+      "reason": "属证明材料本身无法证实或虚构，与材料缺失不同，单独保留。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-52852c85f313aa3e",
+        "RUID-5d5be1924f931a81"
+      ],
+      "source_occurrence_uids": [
+        "RUID-52852c85f313aa3e",
+        "RUID-5d5be1924f931a81"
+      ]
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_SOURCE_SCOPE_OR_VALIDITY",
+      "parent_issue_id": "EVIDENCE_FACT.DATA_CITATION",
+      "name": "引证内容未表明出处或未明确适用范围和有效期限",
+      "definition": "广告中使用数据、统计资料、调查结果、文摘、引用语等引证内容，未表明出处，或引证内容有适用范围和有效期限但未明确表示。",
+      "confidence": "high",
+      "reason": "两项均属引证内容出处与适用范围、有效期限的披露缺失，行为结构相同，合并为一个问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-01d5d70f1845dca4",
+        "RUID-8672ca7908a6ffc1"
+      ],
+      "source_occurrence_uids": [
+        "RUID-01d5d70f1845dca4",
+        "RUID-0662931e9588f851",
+        "RUID-8672ca7908a6ffc1",
+        "RUID-d75f8ff6a418a789"
+      ]
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+      "parent_issue_id": "EVIDENCE_FACT.DATA_CITATION",
+      "name": "数据引证或功效宣称未提供证明材料或科学依据",
+      "definition": "广告中使用通过测试、实验、试验、市场调查或市场统计方式取得的数据、统计资料、调查结果等引证内容但未提供对应证明材料，或对产品功效进行宣称但未能提供或体现充分的科学依据，或对产品成分、材质进行阐释说明但未提供相关证明材料。",
+      "confidence": "medium",
+      "reason": "均属引证或功效宣称缺乏证明材料或科学依据，行为结构相同，仅内容类型不同，合并为一个问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-4c6c470923121bc1",
+        "RUID-bf6d6474f6a35028"
+      ],
+      "source_occurrence_uids": [
+        "RUID-4c6c470923121bc1",
+        "RUID-bf6d6474f6a35028"
+      ]
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.FALSE_OR_UNVERIFIABLE_EVIDENCE",
+      "parent_issue_id": "EVIDENCE_FACT.DATA_CITATION",
+      "name": "使用虚构、伪造或无法验证的证明材料",
+      "definition": "广告中使用虚构、伪造或无法验证的科研成果、统计资料、调查结果、文摘、引用语等作为证明材料，或引证内容不真实、不准确，以虚假或引人误解的内容欺骗、误导消费者。",
+      "confidence": "high",
+      "reason": "属证明材料本身虚假或无法验证，与材料缺失不同，单独保留。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-df04b627fbff1398"
+      ],
+      "source_occurrence_uids": [
+        "RUID-922e8a32d47a9d25",
+        "RUID-df04b627fbff1398"
+      ]
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.PUBLISHER_PROVIDES_FALSE_MEDIA_DATA",
+      "parent_issue_id": "EVIDENCE_FACT.DATA_CITATION",
+      "name": "广告发布者提供不真实的覆盖率等资料",
+      "definition": "广告发布者向广告主、广告经营者提供的覆盖率、收视率、点击率、发行量等资料不真实。",
+      "confidence": "high",
+      "reason": "主体为广告发布者，行为为提供不真实媒体数据资料，独立于广告主引证问题，单独保留。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-332081158a520fb8"
+      ],
+      "source_occurrence_uids": [
+        "RUID-332081158a520fb8",
+        "RUID-90f82554bd48bfce",
+        "RUID-b72369e750940989"
+      ]
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.DATA_CITATION_LACKS_OFFICIAL_SOURCE_OR_COMMITMENT",
+      "parent_issue_id": "EVIDENCE_FACT.DATA_CITATION",
+      "name": "数据引证未明示官方来源或未提供真实性承诺函",
+      "definition": "广告中引用数据时未明示官方数据来源，或未提供数据真实性承诺函，或未对数据来源进行二次核查以保证真实性。",
+      "confidence": "high",
+      "reason": "属数据引证来源与真实性承诺的特定要求，独立于一般出处披露，单独保留。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-bf2932a3a0d7ba2b"
+      ],
+      "source_occurrence_uids": [
+        "RUID-bf2932a3a0d7ba2b"
+      ]
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+      "parent_issue_id": "EVIDENCE_FACT.DATA_CITATION",
+      "name": "事实性描述未提供证明材料",
+      "definition": "广告素材中对产品/服务的属性、功效等事实性描述未提供相关证明材料，或描述与材料内容不一致。",
+      "confidence": "high",
+      "reason": "属事实性描述缺乏证明材料或与材料不一致，行为结构独立，单独保留。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-c8991e3c90633f41"
+      ],
+      "source_occurrence_uids": [
+        "RUID-c8991e3c90633f41"
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "rule_uid": "RUID-01d5d70f1845dca4",
+      "rule_id": "GAME-DATA-001",
+      "rule_title": "广告引证内容应真实准确并表明出处",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_SOURCE_SCOPE_OR_VALIDITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-591d1fe2b10c2fc7",
+      "canonical_rule_uid": "RUID-01d5d70f1845dca4",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十一条",
+          "original_text": "广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-01d5d70f1845dca4",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_SOURCE_SCOPE_OR_VALIDITY",
+        "canonical_problem_name": "引证内容未表明出处或未明确适用范围和有效期限",
+        "regulated_action": "citation_must_be_true_accurate_and_sourced",
+        "legal_effect": "truthfulness_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "数据",
+          "统计资料",
+          "调查结果",
+          "文摘",
+          "引用语"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "《广告法》第十一条原文规定广告使用数据、统计资料、调查结果、文摘、引用语等引证内容应当真实、准确并表明出处，有适用范围和有效期限的应明确表示，属于引证内容出处与范围期限标注要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-058b7d8f6e5465f4",
+      "rule_id": "XHS-COSM-001",
+      "rule_title": "普通化妆品功效宣称需提供备案证明",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-6b9a7b9ce806e763",
+      "canonical_rule_uid": "RUID-058b7d8f6e5465f4",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【美妆个护行业投放规则】使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护行业投放规则】使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.",
+          "original_text": "1.普化资质\n宣称有除特化功效之外功效的化妆品，需要提供普通化妆品的备案证明"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-058b7d8f6e5465f4",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "产品资质、许可或备案材料不完整、不一致或未披露",
+        "regulated_action": "ordinary_cosmetic_efficacy_claim_requires_filing_proof",
+        "legal_effect": "qualification_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "普通化妆品",
+          "功效宣称"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "小红书美妆个护行业投放规则原文要求宣称除特化功效之外功效的化妆品需提供普通化妆品备案证明，属于产品资质备案材料缺失问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-0662931e9588f851",
+      "rule_id": "HF-DATA-001",
+      "rule_title": "广告引证内容应真实准确并表明出处",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_SOURCE_SCOPE_OR_VALIDITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-591d1fe2b10c2fc7",
+      "canonical_rule_uid": "RUID-01d5d70f1845dca4",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十一条",
+          "original_text": "广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-0662931e9588f851",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_SOURCE_SCOPE_OR_VALIDITY",
+        "canonical_problem_name": "引证内容未表明出处或未明确适用范围和有效期限",
+        "regulated_action": "citation_must_be_true_accurate_and_sourced",
+        "legal_effect": "truthfulness_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "数据",
+          "统计资料",
+          "调查结果",
+          "文摘",
+          "引用语"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "《广告法》第十一条原文规定广告使用数据、统计资料、调查结果、文摘、引用语等引证内容应当真实、准确并表明出处，有适用范围和有效期限的应明确表示，属于引证内容出处与范围期限标注要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-06ec2b429e927cba",
+      "rule_id": "COSM-DATA-001",
+      "rule_title": "广告中使用数据引证内容需提供证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-45c212e139b04681",
+      "canonical_rule_uid": "RUID-06ec2b429e927cba",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.3",
+          "original_text": "《广告法》第十一条已明确，广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。因此，如您在广告中使用数据引证内容的（通过测试/实验/试验或市场调查/市场统计的方式取得的数据、统计资料、调查结果等内容），需提供对应证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-06ec2b429e927cba",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+        "canonical_problem_name": "数据引证或功效宣称未提供证明材料或科学依据",
+        "regulated_action": "data_citation_requires_supporting_evidence",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "数据引证内容",
+          "测试实验数据",
+          "市场调查统计结果"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "小红书聚光帮助中心文档原文要求广告中使用通过测试/实验/试验或市场调查/市场统计方式取得的数据、统计资料、调查结果等引证内容需提供对应证明材料，属于数据引证缺少证明材料。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-0c1871c3d7b8e462",
+      "rule_id": "GAME-BILI-003",
+      "rule_title": "涉及用户不消费即可领取福利需二次核查奖励品真实性",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE.THIRD_PARTY_RIGHTS_AND_REWARD_PROOF_MISSING",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-30da61844e57fcc1",
+      "canonical_rule_uid": "RUID-0c1871c3d7b8e462",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "7.",
+          "original_text": "涉及用户不消费即可领取某福利的活动情况应当对奖励品进行二次核查如：某游戏广告语是“有一份3280元源石待领取””上线即得神级辅助英雄“等需前置提供奖励品真实有效可领取的截屏或录屏。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-0c1871c3d7b8e462",
+        "target_issue_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE.THIRD_PARTY_RIGHTS_AND_REWARD_PROOF_MISSING",
+        "canonical_problem_name": "第三方权利授权或奖励真实性证明材料缺失",
+        "regulated_action": "reward_authenticity_proof_required",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "游戏广告",
+          "用户不消费即可领取福利活动",
+          "奖励品"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确要求涉及用户不消费即可领取福利的活动应当对奖励品进行二次核查，并前置提供奖励品真实有效可领取的截屏或录屏，属于奖励真实性证明材料缺失问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-1031d0432864cd9a",
+      "rule_id": "COSM-AD-001",
+      "rule_title": "化妆品功效宣称评价报告完整性要求",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.TEST_RESEARCH.EFFICACY_CLAIM_EVIDENCE_MISSING_OR_NONCOMPLIANT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-88379e2f9de73f89",
+      "canonical_rule_uid": "RUID-1031d0432864cd9a",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_国家药监局关于发布《化妆品功效宣称评价规范》的公告_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "CECN",
+          "source_name": "国家药监局关于发布《化妆品功效宣称评价规范》的公告",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十七条",
+          "original_text": "化妆品功效宣称评价试验完成后，应当由承担功效评价的机构出具化妆品功效宣称评价报告。功效宣称评价报告应当信息完整、格式规范、结论明确，并由评价机构签章确认。报告一般应当包括以下内容： （一）化妆品注册人、备案人或境内责任人名称、地址等相关信息； （二）功效宣称评价机构名称、地址等相关信息； （三）产品名称、数量及规格、生产日期或批号、颜色和物态等相关信息； （四）试验项目和依据、试验的开始与完成日期、材料和方法、试验结果、试验结论等相关信息。 采用第十五条第（一）（二）项以外的试验方法的，应当在报告后随附试验方法的完整文本。方法文本、试验报告为外文的，还应当翻译成标准中文。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-1031d0432864cd9a",
+        "target_issue_id": "EVIDENCE_FACT.TEST_RESEARCH.EFFICACY_CLAIM_EVIDENCE_MISSING_OR_NONCOMPLIANT",
+        "canonical_problem_name": "功效宣称缺少证明材料或评价报告不合规",
+        "regulated_action": "efficacy_evaluation_report_completeness_required",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "化妆品注册人",
+          "备案人",
+          "功效宣称评价机构"
+        ],
+        "object_scope": [
+          "化妆品",
+          "功效宣称评价报告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第十七条规定功效宣称评价报告应当信息完整、格式规范、结论明确并由评价机构签章确认，并列举报告内容及外文翻译要求，属于功效宣称评价报告不合规情形。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-1121cc681df8ab03",
+      "rule_id": "COSM-LABEL-001",
+      "rule_title": "化妆品标签内容应与注册备案资料一致",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-464d00da8a7d7fa5",
+      "canonical_rule_uid": "RUID-1121cc681df8ab03",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_化妆品生产经营监督管理办法_2022.01.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "CPM",
+          "source_name": "化妆品生产经营监督管理办法_2022.01.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第三十五条",
+          "original_text": "化妆品的最小销售单元应当有中文标签。标签内容应当与化妆品注册或者备案资料中产品标签样稿一致。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-1121cc681df8ab03",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "产品资质、许可或备案材料不完整、不一致或未披露",
+        "regulated_action": "label_content_consistency_with_filing_required",
+        "legal_effect": "relationship_determination",
+        "actor_scope": [
+          "化妆品生产经营者"
+        ],
+        "object_scope": [
+          "化妆品",
+          "中文标签",
+          "注册或备案资料中产品标签样稿"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第三十五条要求化妆品最小销售单元有中文标签，且标签内容应当与注册或备案资料中产品标签样稿一致，属于产品资质备案材料不一致情形。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-196bab159aa0adb4",
+      "rule_id": "XHS-GAME-ADM-002",
+      "rule_title": "广告素材中事实性描述需提供证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-ab5a618b11f1e99c",
+      "canonical_rule_uid": "RUID-196bab159aa0adb4",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "《广告法》已明确，广告主应当对广告素材的真实性负责，广告经营者、广告发布者依据法律查验有关证明文件，对内容不符或者证明文件不全的广告，广告发布者不得发布。因此，如您在广告素材中针对所推广的产品/服务的属性/功效进行阐释和说明，需提供相关证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-196bab159aa0adb4",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+        "canonical_problem_name": "事实性描述未提供证明材料",
+        "regulated_action": "factual_description_proof_required",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "游戏广告素材",
+          "产品/服务属性或功效的阐释说明"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确广告素材中针对所推广产品/服务的属性/功效进行阐释和说明需提供相关证明材料，属于事实性描述未提供证明材料。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-24587804b9ccbf09",
+      "rule_id": "XHS-COSM-001",
+      "rule_title": "事实性描述需提供证明材料且描述与材料一致",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-448b764ee42ad68d",
+      "canonical_rule_uid": "RUID-24587804b9ccbf09",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.2",
+          "original_text": "《广告法》已明确， 广告主应当对广告素材的真实性负责，广告经营者、广告发布者依据法律查验有关证明文件，对内容不符或者证明文件不全的广告，广告发布者不得发布。因此，如您在广告素材中针对所推广的产品/服务的属性/功效进行阐释和说明，需提供相关证明材料。需注意：广告素材的描述需要与相关材料证明保持一致性，避免出现因【广告素材描述与材料证明不匹配】被审核驳回。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-24587804b9ccbf09",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+        "canonical_problem_name": "事实性描述未提供证明材料",
+        "regulated_action": "factual_description_requires_evidence_and_consistency",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "产品/服务的属性/功效阐释说明"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：广告素材中针对所推广产品/服务的属性/功效进行阐释和说明需提供相关证明材料，且广告素材描述需与材料证明保持一致，避免描述与材料证明不匹配。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-25c4457f613caeb9",
+      "rule_id": "GAME-IP-001",
+      "rule_title": "广告素材涉及第三方合作需提供合作证明/授权",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE.THIRD_PARTY_RIGHTS_AND_REWARD_PROOF_MISSING",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6ccad7f9e610bfdd",
+      "canonical_rule_uid": "RUID-25c4457f613caeb9",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.1",
+          "original_text": "根据⼴告法第三章第三⼗三条、《⺠法典》相关管理规定，⼴告素材不得侵犯注册商标专⽤权、公⺠肖像权等权利。因此，如您在⼴告素材中涉及肖像、商标、第三⽅品牌/合作等内容，请提供相关材料证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-25c4457f613caeb9",
+        "target_issue_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE.THIRD_PARTY_RIGHTS_AND_REWARD_PROOF_MISSING",
+        "canonical_problem_name": "第三方权利授权或奖励真实性证明材料缺失",
+        "regulated_action": "third_party_rights_or_cooperation_requires_authorization_proof",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "肖像",
+          "商标",
+          "第三方品牌/合作"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：广告素材不得侵犯注册商标专用权、公民肖像权等权利，如涉及肖像、商标、第三方品牌/合作等内容，请提供相关材料证明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-2798fc53480800ac",
+      "rule_id": "HF-ADV-001",
+      "rule_title": "食品检测机构证明提及要求",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.TEST_RESEARCH.FOOD_OR_MICROBIAL_TESTING_CLAIM_WITHOUT_EVIDENCE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-461c1f6fc3f4f42d",
+      "canonical_rule_uid": "RUID-2798fc53480800ac",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_小红书《食品行业投放规则》使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书《食品行业投放规则》使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.",
+          "original_text": "1.【⻝品检测机构证明】⻝品⾏业涉及⻝品检测机构认证，需提及相关证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-2798fc53480800ac",
+        "target_issue_id": "EVIDENCE_FACT.TEST_RESEARCH.FOOD_OR_MICROBIAL_TESTING_CLAIM_WITHOUT_EVIDENCE",
+        "canonical_problem_name": "食品检测机构认证或微生物指标宣称未提供检验证明",
+        "regulated_action": "food_testing_institution_claim_requires_evidence_mention",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "食品检测机构认证"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：食品行业涉及食品检测机构认证，需提及相关证明材料。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-332081158a520fb8",
+      "rule_id": "HF-DATA-001",
+      "rule_title": "广告发布者提供的覆盖率、收视率、点击率、发行量等资料应当真实",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.PUBLISHER_PROVIDES_FALSE_MEDIA_DATA",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-37f30d615fe42973",
+      "canonical_rule_uid": "RUID-332081158a520fb8",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十六条",
+          "original_text": "第三十六条 广告发布者向广告主、广告经营者提供的覆盖率、收视率、点击率、发行量等资料应当真实。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-332081158a520fb8",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.PUBLISHER_PROVIDES_FALSE_MEDIA_DATA",
+        "canonical_problem_name": "广告发布者提供不真实的覆盖率等资料",
+        "regulated_action": "publisher_media_data_must_be_true",
+        "legal_effect": "truthfulness_required",
+        "actor_scope": [
+          "广告发布者"
+        ],
+        "object_scope": [
+          "覆盖率",
+          "收视率",
+          "点击率",
+          "发行量等资料"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：广告发布者向广告主、广告经营者提供的覆盖率、收视率、点击率、发行量等资料应当真实。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-34c773e2027400f5",
+      "rule_id": "XHS-HF-001",
+      "rule_title": "珠宝玉石鉴定证书材质一致性规则",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-0f55f6ad494c31b2",
+      "canonical_rule_uid": "RUID-34c773e2027400f5",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "8.",
+          "original_text": "8.珠宝⽟⽯鉴定证书\n需注意，鉴定证书的材质需要与⼴告宣传中保持⼀致性。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-34c773e2027400f5",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "珠宝玉石鉴定证书材质与宣传不一致",
+        "regulated_action": "certificate_material_consistency_required",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "珠宝玉石",
+          "鉴定证书"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第8条明确要求珠宝玉石鉴定证书的材质需与广告宣传中保持一致性，属于产品资质证明材料与广告内容不一致的情形；但track_hint_only标注为保健食品，与原文珠宝玉石品类冲突，故source_scope_conflict=true。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-37b74d27ad064021",
+      "rule_id": "XHS-GAME-COM-004",
+      "rule_title": "广告中成分/材质宣传需提供证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-d5d3b8e7d8df74d3",
+      "canonical_rule_uid": "RUID-37b74d27ad064021",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "依照《广告法》第八条：广告中对商品的性能、功能、产地、用途、质量、成分、价格、生产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明白。因此，如您在广告素材中针对所推广的产品或服务的成分/材质进行阐释和说明的描述，需提供相关成分/材质的证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-37b74d27ad064021",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+        "canonical_problem_name": "成分或材质宣传缺乏证明材料",
+        "regulated_action": "ingredient_material_claim_evidence_required",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "商品成分",
+          "商品材质",
+          "服务成分",
+          "服务材质"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确广告素材中对产品或服务的成分/材质进行阐释和说明的描述需提供相关成分/材质的证明材料，属于事实性描述缺乏证明材料。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-385390706db3ccb0",
+      "rule_id": "HF-FC-001",
+      "rule_title": "保健食品标签说明书内容与注册或备案不一致",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-3db36766f6f70b3c",
+      "canonical_rule_uid": "RUID-385390706db3ccb0",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国食品安全法实施条例（2019修订）_2019.12.01生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "FSLR",
+          "source_name": "中华人民共和国食品安全法实施条例（2019修订）_2019.12.01生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 2,
+          "article": "第六十八条",
+          "original_text": "生产经营的特殊食品的标签、说明书内容与注册或者备案的标签、说明书不一致。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-385390706db3ccb0",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "保健食品标签说明书内容与注册或备案不一致",
+        "regulated_action": "label_instruction_registration_consistency_required",
+        "legal_effect": "registration_required",
+        "actor_scope": [
+          "生产经营者"
+        ],
+        "object_scope": [
+          "特殊食品",
+          "保健食品",
+          "标签",
+          "说明书"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第六十八条明确生产经营的特殊食品的标签、说明书内容与注册或者备案的标签、说明书不一致，属于产品资质备案材料与广告内容不一致的情形。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-3965558bfcc2ec92",
+      "rule_id": "COSM-ADV-001",
+      "rule_title": "广告中宣称教师/导师/员工/创始人/设计师等具有院校背景需提供证明材料及任职证明",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PERSONNEL_CREDENTIAL_CLAIM_LACKING_PROOF",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-3039aa83db3ed40c",
+      "canonical_rule_uid": "RUID-3965558bfcc2ec92",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "10",
+          "original_text": "10.在校任职证明\n需注意，如⼴告中宣称教师/导师/员⼯/创始⼈/设计师等机构内⼈员具有院校背景，需提供证明材料（如学信⽹查询截图、毕业证书照⽚等）及在⼴告主公司任职证明。宣传在名校任职的需提供任职证明及在⼴告主公司任职证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-3965558bfcc2ec92",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PERSONNEL_CREDENTIAL_CLAIM_LACKING_PROOF",
+        "canonical_problem_name": "机构内人员院校背景或任职宣称未提供证明材料",
+        "regulated_action": "personnel_credential_evidence_required",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "教师",
+          "导师",
+          "员工",
+          "创始人",
+          "设计师",
+          "院校背景",
+          "名校任职"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第10条明确广告中宣称教师/导师/员工/创始人/设计师等机构内人员具有院校背景，需提供学信网查询截图、毕业证书照片等证明材料及在广告主公司任职证明，宣传在名校任职的需提供任职证明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-491c9616141a70d9",
+      "rule_id": "COSM-OTHER-001",
+      "rule_title": "销售者不得伪造或者冒用认证标志等质量标志",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-476d3a2031fb6f4a",
+      "canonical_rule_uid": "RUID-491c9616141a70d9",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国产品质量法（2018修正）_2018.12.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "PQL",
+          "source_name": "中华人民共和国产品质量法（2018修正）_2018.12.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十八条",
+          "original_text": "销售者不得伪造或者冒用认证标志等质量标志。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-491c9616141a70d9",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+        "canonical_problem_name": "伪造或冒用认证标志等质量标志",
+        "regulated_action": "forged_or_misused_certification_mark",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "销售者"
+        ],
+        "object_scope": [
+          "认证标志等质量标志"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "《产品质量法》第三十八条原文明确禁止销售者伪造或者冒用认证标志等质量标志，属于对认证标志真实性证明的核验要求，归入证明材料与事实核验。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-4c6c470923121bc1",
+      "rule_id": "XHS-COSM-001",
+      "rule_title": "成分/材质宣传需提供证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-5467038e3224663e",
+      "canonical_rule_uid": "RUID-4c6c470923121bc1",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.4",
+          "original_text": "依照《⼴告法》第⼋条：⼴告中对商品的性能、功能、产地、⽤途、质量、成分、价格、⽣产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明⽩。因此，如您在⼴告素材中针对所推⼴的产品或服务的成分/材质进⾏阐释和说明的描述，需提供相关成分/材质的证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-4c6c470923121bc1",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+        "canonical_problem_name": "成分或材质宣传未提供证明材料",
+        "regulated_action": "ingredient_material_claim_without_evidence",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "产品成分",
+          "产品材质"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "小红书聚光规则1.4原文要求对产品或服务的成分/材质进行阐释和说明的描述需提供相关成分/材质的证明材料，属于成分材质阐释说明缺乏证明材料。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-505e4fef4a8c6cbf",
+      "rule_id": "GAME-PLAT-001",
+      "rule_title": "游戏广告推广需提供游戏软件版号和计算机软件著作权登记证书",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-d0db3b8628d195a6",
+      "canonical_rule_uid": "RUID-505e4fef4a8c6cbf",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_小红书《游戏行业投放规则》使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书《游戏行业投放规则》使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1",
+          "original_text": "物料推广游戏时需同时提供1、《游戏软件版号》2、《计算机软件著作权登记证书》"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-505e4fef4a8c6cbf",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "游戏广告未提供游戏软件版号和计算机软件著作权登记证书",
+        "regulated_action": "game_ad_without_approval_and_copyright_certificate",
+        "legal_effect": "qualification_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "游戏软件版号",
+          "计算机软件著作权登记证书"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "小红书《游戏行业投放规则》原文要求物料推广游戏时需同时提供《游戏软件版号》和《计算机软件著作权登记证书》，属于产品资质材料不完整。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-5195b618e54e4edd",
+      "rule_id": "XHS-PAT-002",
+      "rule_title": "境外专利宣传需提供对应资质并标明专利所在地和号码",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-ba35f2f0b6cf3532",
+      "canonical_rule_uid": "RUID-5195b618e54e4edd",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【聚光】美妆&行业规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【聚光】美妆&行业规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.-part2",
+          "original_text": "（PS：宣称获得境外专利，需提供对应专利资质和翻译件，并表明专利所在地和对应专利号码。）"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-5195b618e54e4edd",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+        "canonical_problem_name": "境外专利宣传未提供资质并标明专利所在地和号码",
+        "regulated_action": "overseas_patent_claim_without_qualification_and_patent_info",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "境外专利"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "小红书【聚光】美妆&行业规范原文要求宣称获得境外专利需提供对应专利资质和翻译件，并表明专利所在地和对应专利号码，属于专利宣传缺乏证明材料及专利信息标明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-52852c85f313aa3e",
+      "rule_id": "HF-FALSE-003",
+      "rule_title": "禁止使用虚构、伪造或无法验证的科研成果等证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.TEST_RESEARCH.UNVERIFIABLE_SCIENTIFIC_OR_RESEARCH_CLAIM",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-1e1f89eb4c97c66d",
+      "canonical_rule_uid": "RUID-52852c85f313aa3e",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十八条",
+          "original_text": "第二十八条 广告以虚假或者引人误解的内容欺骗、误导消费者的，构成虚假广告。 广告有下列情形之一的，为虚假广告： （三）使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-52852c85f313aa3e",
+        "target_issue_id": "EVIDENCE_FACT.TEST_RESEARCH.UNVERIFIABLE_SCIENTIFIC_OR_RESEARCH_CLAIM",
+        "canonical_problem_name": "使用无法证实或虚构的科研成果、统计资料等证明材料",
+        "regulated_action": "use_fabricated_or_unverifiable_scientific_evidence",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "保健食品广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "广告法第二十八条第（三）项原文明确禁止使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料，属于证明材料与事实核验范畴。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-5d5be1924f931a81",
+      "rule_id": "DY-HF-002",
+      "rule_title": "禁止效果保证宣传-无法证实的科学或研究发现",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.TEST_RESEARCH.UNVERIFIABLE_SCIENTIFIC_OR_RESEARCH_CLAIM",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-b0d7f52eedf59c90",
+      "canonical_rule_uid": "RUID-5d5be1924f931a81",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_抖音【滋补保健行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【滋补保健行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.5",
+          "original_text": "含有⽆法证实的所谓“科学或研究发现”、“实验或数据证明”等⽅⾯的内容"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-5d5be1924f931a81",
+        "target_issue_id": "EVIDENCE_FACT.TEST_RESEARCH.UNVERIFIABLE_SCIENTIFIC_OR_RESEARCH_CLAIM",
+        "canonical_problem_name": "使用无法证实或虚构的科研成果、统计资料等证明材料",
+        "regulated_action": "use_unverifiable_scientific_or_research_findings",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "滋补保健品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "抖音滋补保健行业宣传规范3.1.5原文禁止含有无法证实的所谓“科学或研究发现”、“实验或数据证明”等方面的内容，属于证明材料与事实核验范畴。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-5f80a73247956422",
+      "rule_id": "COSM-LABEL-001",
+      "rule_title": "化妆品标签内容应与注册或备案信息一致",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-9f478eb1af7583fe",
+      "canonical_rule_uid": "RUID-5f80a73247956422",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_国家药监局关于发布实施《化妆品标签管理办法》的公告_2022.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "CLM",
+          "source_name": "国家药监局关于发布实施《化妆品标签管理办法》的公告_2022.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第五条",
+          "original_text": "化妆品的最小销售单元应当有标签。标签应当符合相关法律、行政法规、部门规章、强制性国家标准和技术规范要求，标签内容应当合法、真实、完整、准确，并与产品注册或者备案的相关内容一致。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-5f80a73247956422",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "产品资质、许可或备案材料不完整、不一致或未披露",
+        "regulated_action": "label_content_inconsistent_with_registration_or_filing",
+        "legal_effect": "truthfulness_required",
+        "actor_scope": [
+          "化妆品注册人",
+          "化妆品备案人",
+          "广告主"
+        ],
+        "object_scope": [
+          "化妆品"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "化妆品标签管理办法第五条原文要求标签内容合法、真实、完整、准确，并与产品注册或者备案的相关内容一致，属于产品资质备案材料一致性核验。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-6863b929b2f758ca",
+      "rule_id": "HF-APPROVAL-001",
+      "rule_title": "保健食品广告需取得批准文件且内容一致",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-d5be4b84dba43738",
+      "canonical_rule_uid": "RUID-6863b929b2f758ca",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国食品安全法（2025修正）_2025.12.01生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "FSL",
+          "source_name": "中华人民共和国食品安全法（2025修正）_2025.12.01生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第一百四十条",
+          "original_text": "违反本法规定，在广告中对食品作虚假宣传，欺骗消费者，或者发布未取得批准文件、广告内容与批准文件不一致的保健食品广告的，依照《中华人民共和国广告法》的规定给予处罚。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-6863b929b2f758ca",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "产品资质、许可或备案材料不完整、不一致或未披露",
+        "regulated_action": "publish_health_food_ad_without_approval_or_inconsistent_with_approval",
+        "legal_effect": "qualification_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "保健食品广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "食品安全法第一百四十条原文规定发布未取得批准文件、广告内容与批准文件不一致的保健食品广告应受处罚，属于广告批准文件资质材料缺失或不一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-68fa498812603ee9",
+      "rule_id": "XHS-HF-001",
+      "rule_title": "广告中宣称教师/导师/员工/创始人/设计师等具有院校背景需提供证明材料及任职证明",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PERSONNEL_CREDENTIAL_CLAIM_LACKING_PROOF",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-3039aa83db3ed40c",
+      "canonical_rule_uid": "RUID-3965558bfcc2ec92",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "10",
+          "original_text": "10.在校任职证明\n需注意，如⼴告中宣称教师/导师/员⼯/创始⼈/设计师等机构内⼈员具有院校背景，需提供证明材料（如学信⽹查询截图、毕业证书照⽚等）及在⼴告主公司任职证明。宣传在名校任职的需提供任职证明及在⼴告主公司任职证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-68fa498812603ee9",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PERSONNEL_CREDENTIAL_CLAIM_LACKING_PROOF",
+        "canonical_problem_name": "机构内人员院校背景或任职宣称未提供证明材料",
+        "regulated_action": "personnel_credential_claim_requires_proof",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "教师",
+          "导师",
+          "员工",
+          "创始人",
+          "设计师等机构内人员"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第10条明确：广告中宣称教师/导师/员工/创始人/设计师等机构内人员具有院校背景，需提供证明材料（如学信网查询截图、毕业证书照片等）及在广告主公司任职证明；宣传在名校任职的需提供任职证明及在广告主公司任职证明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-691e72d969b379cb",
+      "rule_id": "XHS-COSM-001",
+      "rule_title": "一般贸易进口美容仪器可暂以报关单替代3C证明",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-5d74a6c979e37609",
+      "canonical_rule_uid": "RUID-691e72d969b379cb",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【美妆个护行业投放规则】使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护行业投放规则】使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2",
+          "original_text": "2、⼀般贸易进⼝美容仪器，可⽀持暂以报关单替代3C证明；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-691e72d969b379cb",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "产品资质、许可或备案材料不完整、不一致或未披露",
+        "regulated_action": "imported_beauty_device_3c_substitution_by_customs_declaration",
+        "legal_effect": "qualification_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "一般贸易进口美容仪器"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第2条明确：一般贸易进口美容仪器，可支持暂以报关单替代3C证明，属于产品资质证明材料要求的具体情形。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-708a1b23c613d084",
+      "rule_id": "GAME-PLAT-001",
+      "rule_title": "广告中宣称人员具有院校背景需提供证明材料及任职证明",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PERSONNEL_CREDENTIAL_CLAIM_LACKING_PROOF",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-3039aa83db3ed40c",
+      "canonical_rule_uid": "RUID-3965558bfcc2ec92",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "10",
+          "original_text": "10.在校任职证明\n需注意，如⼴告中宣称教师/导师/员⼯/创始⼈/设计师等机构内⼈员具有院校背景，需提供证明材料（如学信⽹查询截图、毕业证书照⽚等）及在⼴告主公司任职证明。宣传在名校任职的需提供任职证明及在⼴告主公司任职证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-708a1b23c613d084",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PERSONNEL_CREDENTIAL_CLAIM_LACKING_PROOF",
+        "canonical_problem_name": "机构内人员院校背景或任职宣称未提供证明材料",
+        "regulated_action": "personnel_credential_claim_requires_proof",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "教师",
+          "导师",
+          "员工",
+          "创始人",
+          "设计师等机构内人员"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第10条明确：广告中宣称教师/导师/员工/创始人/设计师等机构内人员具有院校背景，需提供证明材料（如学信网查询截图、毕业证书照片等）及在广告主公司任职证明；宣传在名校任职的需提供任职证明及在广告主公司任职证明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-73a6e9de86bd2de0",
+      "rule_id": "XHS-COSM-004",
+      "rule_title": "广告中宣传成分/材质需提供证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-d5d3b8e7d8df74d3",
+      "canonical_rule_uid": "RUID-37b74d27ad064021",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "依照《⼴告法》第⼋条：⼴告中对商品的性能、功能、产地、⽤途、质量、成分、价格、⽣产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明⽩。因此，如您在⼴告素材中针对所推⼴的产品或服务的成分/材质进⾏阐释和说明的描述，需提供相关成分/材质的证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-73a6e9de86bd2de0",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+        "canonical_problem_name": "事实性描述、成分材质或专利荣誉认证宣传缺乏证明材料",
+        "regulated_action": "ingredient_material_claim_requires_proof",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "产品或服务的成分",
+          "产品或服务的材质"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文依据《广告法》第八条，明确如广告素材中针对所推广产品或服务的成分/材质进行阐释和说明的描述，需提供相关成分/材质的证明材料。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-79375004906866dd",
+      "rule_id": "COSM-PAT-001",
+      "rule_title": "美妆广告涉及专利或荣誉宣传应提供真实有效证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-2b3aa28c3094e854",
+      "canonical_rule_uid": "RUID-79375004906866dd",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.6",
+          "original_text": "3.1.6 专利/荣誉/…"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-79375004906866dd",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+        "canonical_problem_name": "事实性描述、成分材质或专利荣誉认证宣传缺乏证明材料",
+        "regulated_action": "patent_or_honor_claim_without_valid_proof",
+        "legal_effect": "substantiation_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "美妆产品广告"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "medium",
+        "reason": "原文3.1.6标题为“美妆广告涉及专利或荣誉宣传应提供真实有效证明材料”，明确要求专利/荣誉宣传须提供真实有效证明材料，归入事实性描述、专利荣誉认证宣传缺乏证明材料节点；因条文原文不完整（仅“3.1.6 专利/荣誉/…”），置信度中等。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-7d0cafae98e5c7f3",
+      "rule_id": "XHS-COSM-001",
+      "rule_title": "广告产品原产地质检证明或报关单配套审结书要求",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-d08921871260e077",
+      "canonical_rule_uid": "RUID-7d0cafae98e5c7f3",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【美妆个护行业投放规则】使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护行业投放规则】使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2",
+          "original_text": "⼴告产品原产地(国)出具的产品质检证明或与报关单配套的审结书（审结书编号需与报关单编号保持⼀致）"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-7d0cafae98e5c7f3",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "产品资质、许可或备案材料不完整、不一致或未披露",
+        "regulated_action": "imported_product_qualification_material_missing_or_inconsistent",
+        "legal_effect": "qualification_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "美妆个护产品广告"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文要求提供广告产品原产地(国)出具的产品质检证明或与报关单配套的审结书（审结书编号需与报关单编号一致），属于进口/跨境产品资质材料要求，归入产品资质、许可或备案材料不完整、不一致或未披露节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8063a9f0e191918a",
+      "rule_id": "XHS-COSM-001",
+      "rule_title": "广告素材涉及第三方合作需提供授权证明",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE.THIRD_PARTY_RIGHTS_AND_REWARD_PROOF_MISSING",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-6ccad7f9e610bfdd",
+      "canonical_rule_uid": "RUID-25c4457f613caeb9",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.1",
+          "original_text": "根据⼴告法第三章第三⼗三条、《⺠法典》相关管理规定，⼴告素材不得侵犯注册商标专⽤权、公⺠肖像权等权利。因此，如您在⼴告素材中涉及肖像、商标、第三⽅品牌/合作等内容，请提供相关材料证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-8063a9f0e191918a",
+        "target_issue_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE.THIRD_PARTY_RIGHTS_AND_REWARD_PROOF_MISSING",
+        "canonical_problem_name": "第三方权利授权或奖励真实性证明材料缺失",
+        "regulated_action": "third_party_rights_or_cooperation_authorization_proof_missing",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "涉及肖像、商标、第三方品牌/合作的广告素材"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确广告素材涉及肖像、商标、第三方品牌/合作等内容时须提供相关材料证明，归入第三方权利授权或奖励真实性证明材料缺失节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-82a8a7c8f78d473e",
+      "rule_id": "HF-MIS-002",
+      "rule_title": "网上刊载的保健食品注册证书或备案凭证信息必须与注册或备案信息一致",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-58c1c02dcbf4188b",
+      "canonical_rule_uid": "RUID-82a8a7c8f78d473e",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_网络食品安全违法行为查处办法（2025修订）_2025.05.01生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "WFSA",
+          "source_name": "网络食品安全违法行为查处办法（2025修订）_2025.05.01生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十七条",
+          "original_text": "（二）网上刊载的非保健食品信息明示或者暗示具有保健功能；网上刊载的保健食品的注册证书或者备案凭证等信息与注册或者备案信息不一致。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-82a8a7c8f78d473e",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "产品资质、许可或备案材料不完整、不一致或未披露",
+        "regulated_action": "health_food_registration_or_filing_info_inconsistent",
+        "legal_effect": "registration_required",
+        "actor_scope": [
+          "网络食品交易第三方平台提供者",
+          "入网食品生产经营者"
+        ],
+        "object_scope": [
+          "保健食品"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文规定网上刊载的保健食品注册证书或备案凭证等信息与注册或备案信息不一致属违规，属于保健食品注册备案材料不一致情形，归入产品资质、许可或备案材料不完整、不一致或未披露节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8317b41b0f1c931d",
+      "rule_id": "HF-虚假宣传-002",
+      "rule_title": "普通食品绿色/有机认证展示要求",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-3a1eded79cacf7c6",
+      "canonical_rule_uid": "RUID-8317b41b0f1c931d",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_淘宝网食品行业管理规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "TB",
+          "source_name": "淘宝网食品行业管理规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "第三条（五）",
+          "original_text": "普通⻝品宣称“绿⾊⻝品、有机⻝品”等内容时，需在主图或详情⻚⾯展示清晰可辨认的认证证书，且认证证书应真实有效"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-8317b41b0f1c931d",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "普通食品绿色或有机认证证书未展示或无效",
+        "regulated_action": "display_valid_green_or_organic_certification",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "平台内经营者"
+        ],
+        "object_scope": [
+          "普通食品"
+        ],
+        "platform_scope": [
+          "淘宝"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第三条（五）要求普通食品宣称“绿色食品、有机食品”时需在主图或详情页面展示清晰可辨认且真实有效的认证证书，属于产品认证资质材料展示与真实性核验，归入产品资质材料不完整或不一致节点；track_hint_only为“保健食品”，但原文明确适用对象为“普通食品”，与track_hint_only冲突，故source_scope_conflict=true。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8672ca7908a6ffc1",
+      "rule_id": "XHS-COSM-003",
+      "rule_title": "广告中使用数据引证内容需提供证明材料并表明出处",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_SOURCE_SCOPE_OR_VALIDITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6156e576e2063b31",
+      "canonical_rule_uid": "RUID-8672ca7908a6ffc1",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "《⼴告法》第⼗⼀条已明确，⼴告使⽤数据、统计资料、调查结果、⽂摘、引⽤语等引证内容的，应当真实、准确，并表明出处。引证内容有适⽤范围和有效期限的，应当明确表示。因此，如您在⼴告中使⽤数据引证内容的（通过测试/实验/试验或市场调查/市场统计的⽅式取得的数据、统计资料、调查结果等内容），需提供对应证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-8672ca7908a6ffc1",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_SOURCE_SCOPE_OR_VALIDITY",
+        "canonical_problem_name": "广告数据引证未提供证明材料或未表明出处",
+        "regulated_action": "provide_evidence_and_source_for_data_citation",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "数据引证内容",
+          "统计资料",
+          "调查结果"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文要求广告使用数据、统计资料、调查结果、文摘、引用语等引证内容应真实准确并表明出处，有适用范围和有效期限的应明确表示，且通过测试/实验/试验或市场调查/市场统计取得的数据需提供对应证明材料，核心为引证内容出处、适用范围与证明材料要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-90e46990938a6dbe",
+      "rule_id": "COSM-AD-001",
+      "rule_title": "化妆品功效宣称必须有充分科学依据",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.TEST_RESEARCH.EFFICACY_CLAIM_EVIDENCE_MISSING_OR_NONCOMPLIANT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c9faaed72189a8cd",
+      "canonical_rule_uid": "RUID-90e46990938a6dbe",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_化妆品监督管理条例_2021.01.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "CSAR",
+          "source_name": "化妆品监督管理条例_2021.01.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 2,
+          "article": "第二十二条",
+          "original_text": "化妆品的功效宣称应当有充分的科学依据。化妆品注册人、备案人应当在国务院药品监督管理部门规定的专门网站公布功效宣称所依据的文献资料、研究数据或者产品功效评价资料的摘要，接受社会监督。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-90e46990938a6dbe",
+        "target_issue_id": "EVIDENCE_FACT.TEST_RESEARCH.EFFICACY_CLAIM_EVIDENCE_MISSING_OR_NONCOMPLIANT",
+        "canonical_problem_name": "化妆品功效宣称缺少充分科学依据或未公布依据摘要",
+        "regulated_action": "substantiate_efficacy_claim_and_publish_basis_summary",
+        "legal_effect": "substantiation_required",
+        "actor_scope": [
+          "化妆品注册人",
+          "化妆品备案人"
+        ],
+        "object_scope": [
+          "化妆品",
+          "功效宣称"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第二十二条要求化妆品功效宣称应当有充分的科学依据，并应在专门网站公布功效宣称所依据的文献资料、研究数据或产品功效评价资料摘要，属于功效宣称证明材料与依据摘要要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-90f82554bd48bfce",
+      "rule_id": "COSM-DATA-001",
+      "rule_title": "广告发布者提供的覆盖率、收视率、点击率、发行量等资料应当真实",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.PUBLISHER_PROVIDES_FALSE_MEDIA_DATA",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-37f30d615fe42973",
+      "canonical_rule_uid": "RUID-332081158a520fb8",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十六条",
+          "original_text": "第三十六条 广告发布者向广告主、广告经营者提供的覆盖率、收视率、点击率、发行量等资料应当真实。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-90f82554bd48bfce",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.PUBLISHER_PROVIDES_FALSE_MEDIA_DATA",
+        "canonical_problem_name": "广告发布者提供不真实的覆盖率收视率点击率发行量等资料",
+        "regulated_action": "provide_true_media_data",
+        "legal_effect": "truthfulness_required",
+        "actor_scope": [
+          "广告发布者"
+        ],
+        "object_scope": [
+          "覆盖率",
+          "收视率",
+          "点击率",
+          "发行量"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第三十六条直接规定广告发布者向广告主、广告经营者提供的覆盖率、收视率、点击率、发行量等资料应当真实，属于广告发布者提供资料真实性核验。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-922e8a32d47a9d25",
+      "rule_id": "GAME-FALSE-003",
+      "rule_title": "禁止虚假广告（使用虚构或无法验证的证明材料）",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.FALSE_OR_UNVERIFIABLE_EVIDENCE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-1e1f89eb4c97c66d",
+      "canonical_rule_uid": "RUID-52852c85f313aa3e",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十八条",
+          "original_text": "第二十八条 广告以虚假或者引人误解的内容欺骗、误导消费者的，构成虚假广告。\n 广告有下列情形之一的，为虚假广告：\n （三）使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-922e8a32d47a9d25",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.FALSE_OR_UNVERIFIABLE_EVIDENCE",
+        "canonical_problem_name": "使用虚构、伪造或无法验证的证明材料",
+        "regulated_action": "use_fabricated_or_unverifiable_evidence",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "科研成果",
+          "统计资料",
+          "调查结果",
+          "文摘",
+          "引用语"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "广告法第二十八条第（三）项原文明确禁止使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料，属于证明材料与事实核验范畴。track_hint_only为游戏，但原文未限定行业，不构成source_scope_conflict。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-990edd32dd76f1b5",
+      "rule_id": "XHS-HF-001",
+      "rule_title": "广告素材涉及第三方合作需提供合作证明/授权",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE.THIRD_PARTY_RIGHTS_AND_REWARD_PROOF_MISSING",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6ccad7f9e610bfdd",
+      "canonical_rule_uid": "RUID-25c4457f613caeb9",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.1",
+          "original_text": "根据⼴告法第三章第三⼗三条、《⺠法典》相关管理规定，⼴告素材不得侵犯注册商标专⽤权、公⺠肖像权等权利。因此，如您在⼴告素材中涉及肖像、商标、第三⽅品牌/合作等内容，请提供相关材料证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-990edd32dd76f1b5",
+        "target_issue_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE.THIRD_PARTY_RIGHTS_AND_REWARD_PROOF_MISSING",
+        "canonical_problem_name": "第三方权利授权或合作证明材料缺失",
+        "regulated_action": "ad_without_third_party_authorization_proof",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "肖像",
+          "商标",
+          "第三方品牌",
+          "第三方合作"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "小红书规则原文要求广告素材涉及肖像、商标、第三方品牌/合作等内容时须提供相关材料证明，属于第三方权利授权证明材料缺失情形。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9e2b6ad7519be0ac",
+      "rule_id": "COSM-MICRO-001",
+      "rule_title": "化妆品微生物指标须符合限值",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.TEST_RESEARCH.FOOD_OR_MICROBIAL_TESTING_CLAIM_WITHOUT_EVIDENCE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-23eb6cf637da4b55",
+      "canonical_rule_uid": "RUID-9e2b6ad7519be0ac",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_附件：化妆品安全技术规范（2015年版）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "附件：化妆品安全技术规范（2015年版）",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "未分条-5",
+          "original_text": "3.3 微生物学指标要求 化妆品中微生物指标应符合表1中规定的限值。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9e2b6ad7519be0ac",
+        "target_issue_id": "EVIDENCE_FACT.TEST_RESEARCH.FOOD_OR_MICROBIAL_TESTING_CLAIM_WITHOUT_EVIDENCE",
+        "canonical_problem_name": "微生物指标宣称未提供检验证明或不符合限值",
+        "regulated_action": "microbial_indicator_claim_without_compliant_testing_evidence",
+        "legal_effect": "substantiation_required",
+        "actor_scope": [
+          "化妆品生产经营者"
+        ],
+        "object_scope": [
+          "化妆品微生物指标"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "medium",
+        "reason": "化妆品安全技术规范原文规定微生物指标应符合限值，广告涉及微生物指标宣称时需核验检验证明，归入微生物指标宣称未提供检验证明节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9e32de4d02d4c3d3",
+      "rule_id": "COSM-虚假宣传-001",
+      "rule_title": "专利/荣誉/销量/研发单位/效果指数虚假宣传",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-0eaecf5c5bb36b1b",
+      "canonical_rule_uid": "RUID-9e32de4d02d4c3d3",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.6",
+          "original_text": "3.1.6 专利/荣誉/销量/研发单位/效果指数虚假\n专利/荣誉/销量/研发单位/效果指数虚假，指创作者在直播/短视频推广商品过程中，宣传商品信息涉及已获得专利认证、荣誉、奖项、某行业/平台/渠道的销量荣誉、权威研发单位、效果指数等信息，但实际无相关证书、授权书、检测报告等证明依据或与真实证明依据情况不符，或未在直播间、视频、商品详情页等展示相关信息的行爲。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9e32de4d02d4c3d3",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+        "canonical_problem_name": "专利荣誉销量研发单位效果指数宣传缺乏证明材料",
+        "regulated_action": "patent_honor_sales_rd_claim_without_proof",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "创作者"
+        ],
+        "object_scope": [
+          "专利认证",
+          "荣誉",
+          "奖项",
+          "销量荣誉",
+          "权威研发单位",
+          "效果指数"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "抖音美妆行业宣传规范原文明确宣传专利、荣誉、销量、研发单位、效果指数等信息但无相关证书、授权书、检测报告等证明依据或与真实情况不符，属于事实性描述或专利荣誉认证宣传缺乏证明材料。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9ecf144ad28c1c77",
+      "rule_id": "XHS-GAME-DAT-003",
+      "rule_title": "广告中使用数据引证内容需提供证明材料并表明出处",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-6156e576e2063b31",
+      "canonical_rule_uid": "RUID-8672ca7908a6ffc1",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "《广告法》第十一条已明确，广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。因此，如您在广告中使用数据引证内容的（通过测试/实验/试验或市场调查/市场统计的方式取得的数据、统计资料、调查结果等内容），需提供对应证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9ecf144ad28c1c77",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+        "canonical_problem_name": "数据引证或功效宣称未提供证明材料或科学依据",
+        "regulated_action": "data_citation_requires_evidence_and_source",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "数据引证内容",
+          "统计资料",
+          "调查结果",
+          "测试实验数据"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处；引证内容有适用范围和有效期限的，应当明确表示；如使用数据引证内容的，需提供对应证明材料。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9f30f80e4d0db5ff",
+      "rule_id": "HF-REG-001",
+      "rule_title": "保健食品注册证书载明事项完整性要求",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-4dbeb3c590e5ad31",
+      "canonical_rule_uid": "RUID-9f30f80e4d0db5ff",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_保健食品注册与备案管理办法（2020修订）_2020.10.23生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "HFR",
+          "source_name": "保健食品注册与备案管理办法（2020修订）_2020.10.23生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第四十一条",
+          "original_text": "第四十一条 保健食品注册证书应当载明产品名称、注册人名称和地址、注册号、颁发日期及有效期、保健功能、功效成分或者标志性成分及含量、产品规格、保质期、适宜人群、不适宜人群、注意事项。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9f30f80e4d0db5ff",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "产品资质、许可或备案材料不完整、不一致或未披露",
+        "regulated_action": "health_food_registration_certificate_must_contain_required_items",
+        "legal_effect": "registration_required",
+        "actor_scope": [
+          "保健食品注册人"
+        ],
+        "object_scope": [
+          "保健食品注册证书"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：保健食品注册证书应当载明产品名称、注册人名称和地址、注册号、颁发日期及有效期、保健功能、功效成分或者标志性成分及含量、产品规格、保质期、适宜人群、不适宜人群、注意事项。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-a01290d271d5ba30",
+      "rule_id": "XHS-COSM-002",
+      "rule_title": "广告素材中事实性描述需提供证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-ab5a618b11f1e99c",
+      "canonical_rule_uid": "RUID-196bab159aa0adb4",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "《⼴告法》已明确， ⼴告主应当对⼴告素材的真实性负责，⼴告经营者、⼴告发布者依据法律查验有关证明⽂件，对内容不符或者证明⽂件不全的⼴告，⼴告发布者不得发布。因此，如您在⼴告素材中针对所推⼴的产品/服务的属性/功效进⾏阐释和说明，需提供相关证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-a01290d271d5ba30",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+        "canonical_problem_name": "事实性描述未提供证明材料",
+        "regulated_action": "factual_description_requires_evidence",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "产品/服务的属性",
+          "产品/服务的功效"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：广告主应当对广告素材的真实性负责，广告经营者、广告发布者依据法律查验有关证明文件，对内容不符或者证明文件不全的广告，广告发布者不得发布；如针对所推广的产品/服务的属性/功效进行阐释和说明，需提供相关证明材料。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-a1e8ade4521be817",
+      "rule_id": "GAME-BILI-005",
+      "rule_title": "涉及数据引证需明示官方数据来源并二次核查",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.DATA_CITATION_LACKS_OFFICIAL_SOURCE_OR_COMMITMENT",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-e9582e9f71717f2c",
+      "canonical_rule_uid": "RUID-a1e8ade4521be817",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "7.",
+          "original_text": "涉及数据引证应当明示官方数据（如：BOSS直聘、51JOB、前程无忧等）某行业官方机构统计，需要对数据来源进行二次核查如：某教育机构推广3D建模师引用了BOSS直聘（官方机构）对该职位的未来发展趋势统计（数据引证），且标明此数据来源于BOSS直聘（数据来源）并前置给到数据真实性的承诺函。诸如此类情况需在广告落地页/唤起APP中说明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-a1e8ade4521be817",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.DATA_CITATION_LACKS_OFFICIAL_SOURCE_OR_COMMITMENT",
+        "canonical_problem_name": "数据引证未明示官方来源或未提供真实性承诺函",
+        "regulated_action": "data_citation_requires_official_source_and_commitment",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "数据引证内容",
+          "官方机构统计数据"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：涉及数据引证应当明示官方数据某行业官方机构统计，需要对数据来源进行二次核查，并标明此数据来源于官方机构并前置给到数据真实性的承诺函，需在广告落地页/唤起APP中说明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-aaf05fea32f34de7",
+      "rule_id": "HF-AD-001",
+      "rule_title": "禁止利用未依法取得资质认定的食品检验信息进行等级评定欺骗误导消费者",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.UNQUALIFIED_FOOD_TESTING_INFO_USED",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ea892660fb3175cc",
+      "canonical_rule_uid": "RUID-aaf05fea32f34de7",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国食品安全法实施条例（2019修订）_2019.12.01生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "FSLR",
+          "source_name": "中华人民共和国食品安全法实施条例（2019修订）_2019.12.01生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 2,
+          "article": "第四十三条",
+          "original_text": "任何单位和个人不得发布未依法取得资质认定的食品检验机构出具的食品检验信息，不得利用上述检验信息对食品、食品生产经营者进行等级评定，欺骗、误导消费者。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-aaf05fea32f34de7",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.UNQUALIFIED_FOOD_TESTING_INFO_USED",
+        "canonical_problem_name": "使用未取得资质认定的食品检验机构出具的检验信息",
+        "regulated_action": "use_unqualified_food_testing_info_for_grading",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "任何单位和个人"
+        ],
+        "object_scope": [
+          "食品",
+          "食品生产经营者",
+          "食品检验信息"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "《食品安全法实施条例》第四十三条原文明确禁止发布未依法取得资质认定的食品检验机构出具的食品检验信息，并禁止利用上述检验信息对食品、食品生产经营者进行等级评定欺骗误导消费者，属于证明材料与事实核验范畴。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b6b43547e816bef8",
+      "rule_id": "XHS-FACT-001",
+      "rule_title": "事实性描述需提供证明材料且描述与材料一致",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-448b764ee42ad68d",
+      "canonical_rule_uid": "RUID-24587804b9ccbf09",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.2",
+          "original_text": "《广告法》已明确， 广告主应当对广告素材的真实性负责，广告经营者、广告发布者依据法律查验有关证明文件，对内容不符或者证明文件不全的广告，广告发布者不得发布。因此，如您在广告素材中针对所推广的产品/服务的属性/功效进行阐释和说明，需提供相关证明材料。需注意：广告素材的描述需要与相关材料证明保持一致性，避免出现因【广告素材描述与材料证明不匹配】被审核驳回。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-b6b43547e816bef8",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+        "canonical_problem_name": "事实性描述未提供证明材料",
+        "regulated_action": "factual_description_without_evidence_or_inconsistent",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "产品/服务的属性",
+          "产品/服务的功效"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "小红书聚光帮助中心规则1.2原文要求广告素材中针对所推广产品/服务的属性/功效进行阐释和说明需提供相关证明材料，且描述需与材料证明保持一致，属于事实性描述缺乏证明材料。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b6f89401325ab7d1",
+      "rule_id": "HF-FC-001",
+      "rule_title": "保健食品声称保健功能应当具有科学依据",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.TEST_RESEARCH.EFFICACY_CLAIM_EVIDENCE_MISSING_OR_NONCOMPLIANT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-854c29055aba9248",
+      "canonical_rule_uid": "RUID-b6f89401325ab7d1",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国食品安全法（2025修正）_2025.12.01生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "FSL",
+          "source_name": "中华人民共和国食品安全法（2025修正）_2025.12.01生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第七十五条",
+          "original_text": "保健食品声称保健功能，应当具有科学依据，不得对人体产生急性、亚急性或者慢性危害。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-b6f89401325ab7d1",
+        "target_issue_id": "EVIDENCE_FACT.TEST_RESEARCH.EFFICACY_CLAIM_EVIDENCE_MISSING_OR_NONCOMPLIANT",
+        "canonical_problem_name": "功效宣称缺少证明材料或评价报告不合规",
+        "regulated_action": "health_function_claim_without_scientific_basis",
+        "legal_effect": "substantiation_required",
+        "actor_scope": [
+          "保健食品生产经营者"
+        ],
+        "object_scope": [
+          "保健食品",
+          "保健功能声称"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "《食品安全法》第七十五条原文规定保健食品声称保健功能应当具有科学依据，属于功效宣称缺少科学依据证明材料。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b72369e750940989",
+      "rule_id": "GAME-DATA-001",
+      "rule_title": "广告发布者提供的覆盖率、收视率、点击率、发行量等资料应当真实",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.PUBLISHER_PROVIDES_FALSE_MEDIA_DATA",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-37f30d615fe42973",
+      "canonical_rule_uid": "RUID-332081158a520fb8",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十六条",
+          "original_text": "第三十六条 广告发布者向广告主、广告经营者提供的覆盖率、收视率、点击率、发行量等资料应当真实。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-b72369e750940989",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.PUBLISHER_PROVIDES_FALSE_MEDIA_DATA",
+        "canonical_problem_name": "广告发布者提供不真实的覆盖率等资料",
+        "regulated_action": "publisher_provides_untrue_media_data",
+        "legal_effect": "truthfulness_required",
+        "actor_scope": [
+          "广告发布者"
+        ],
+        "object_scope": [
+          "覆盖率",
+          "收视率",
+          "点击率",
+          "发行量等资料"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "《广告法》第三十六条原文要求广告发布者向广告主、广告经营者提供的覆盖率、收视率、点击率、发行量等资料应当真实，属于数据资料真实性证明材料问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-beb65843f7e375b1",
+      "rule_id": "HF-COMP-001",
+      "rule_title": "成分/材质宣传需提供证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ac82311934b54fdf",
+      "canonical_rule_uid": "RUID-beb65843f7e375b1",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.4",
+          "original_text": "依照《广告法》第八条：广告中对商品的性能、功能、产地、用途、质量、成分、价格、生产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明白。因此，如您在广告素材中针对所推广的产品或服务的成分/材质进行阐释和说明的描述，需提供相关成分/材质的证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-beb65843f7e375b1",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+        "canonical_problem_name": "成分材质宣传缺乏证明材料",
+        "regulated_action": "ingredient_material_claim_without_evidence",
+        "legal_effect": "substantiation_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "保健食品"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：如您在广告素材中针对所推广的产品或服务的成分/材质进行阐释和说明的描述，需提供相关成分/材质的证明材料。属于对成分/材质作事实性描述但缺乏证明材料，归入EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-bf2932a3a0d7ba2b",
+      "rule_id": "GAME-BILI-004",
+      "rule_title": "游戏广告涉及数据引证需明示官方数据来源并提供承诺函",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.DATA_CITATION_LACKS_OFFICIAL_SOURCE_OR_COMMITMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-061bce53c5f0d51e",
+      "canonical_rule_uid": "RUID-bf2932a3a0d7ba2b",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "涉及数据引证应当明示官方数据（如：BOSS直聘、51JOB、前程无忧等）某行业官方机构统计，需要对数据来源进行二次核查如：某教育机构推广3D建模师引用了BOSS直聘（官方机构）对该职位的未来发展趋势统计（数据引证），且标明此数据来源于BOSS直聘（数据来源）并前置给到数据真实性的承诺函"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-bf2932a3a0d7ba2b",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.DATA_CITATION_LACKS_OFFICIAL_SOURCE_OR_COMMITMENT",
+        "canonical_problem_name": "数据引证未明示官方来源或未提供真实性承诺函",
+        "regulated_action": "data_citation_without_official_source_or_commitment",
+        "legal_effect": "substantiation_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "游戏"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：涉及数据引证应当明示官方数据……标明此数据来源于BOSS直聘（数据来源）并前置给到数据真实性的承诺函。属于数据引证未明示官方来源或未提供真实性承诺函，归入EVIDENCE_FACT.DATA_CITATION.DATA_CITATION_LACKS_OFFICIAL_SOURCE_OR_COMMITMENT。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-bf6d6474f6a35028",
+      "rule_id": "GAME-DATA-001",
+      "rule_title": "广告中使用数据引证内容需提供证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ae9180f46e9ae9de",
+      "canonical_rule_uid": "RUID-bf6d6474f6a35028",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.3",
+          "original_text": "《广告法》第十一条已明确，广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。因此，如您在广告中使用数据引证内容的（通过测试/实验/试验或市场调查/市场统计的方式取得的数据、统计资料、调查结果等内容），需提供对应证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-bf6d6474f6a35028",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+        "canonical_problem_name": "数据引证内容未提供证明材料",
+        "regulated_action": "data_citation_without_evidence",
+        "legal_effect": "substantiation_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "游戏"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：如您在广告中使用数据引证内容的（通过测试/实验/试验或市场调查/市场统计的方式取得的数据、统计资料、调查结果等内容），需提供对应证明材料。属于数据引证未提供证明材料，归入EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-c8991e3c90633f41",
+      "rule_id": "GAME-DATA-001",
+      "rule_title": "事实性描述需提供证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-0c7b952a3c0e22a7",
+      "canonical_rule_uid": "RUID-c8991e3c90633f41",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.2",
+          "original_text": "《广告法》已明确， 广告主应当对广告素材的真实性负责，广告经营者、广告发布者依据法律查验有关证明文件，对内容不符或者证明文件不全的广告，广告发布者不得发布。因此，如您在广告素材中针对所推广的产品/服务的属性/功效进行阐释和说明，需提供相关证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-c8991e3c90633f41",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+        "canonical_problem_name": "事实性描述未提供证明材料",
+        "regulated_action": "factual_description_without_evidence",
+        "legal_effect": "substantiation_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "游戏"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：如您在广告素材中针对所推广的产品/服务的属性/功效进行阐释和说明，需提供相关证明材料。属于事实性描述未提供证明材料，归入EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-cd55c70db0ea11c3",
+      "rule_id": "COSM-虚假宣传-001",
+      "rule_title": "生产者不得伪造或者冒用认证标志等质量标志",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-3a469fe060ccf5bf",
+      "canonical_rule_uid": "RUID-cd55c70db0ea11c3",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国产品质量法（2018修正）_2018.12.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "PQL",
+          "source_name": "中华人民共和国产品质量法（2018修正）_2018.12.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十一条",
+          "original_text": "生产者不得伪造或者冒用认证标志等质量标志。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-cd55c70db0ea11c3",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+        "canonical_problem_name": "伪造或冒用认证标志等质量标志",
+        "regulated_action": "forged_or_misappropriated_certification_mark",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "生产者"
+        ],
+        "object_scope": [
+          "认证标志",
+          "质量标志"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文《产品质量法》第三十一条明确禁止生产者伪造或者冒用认证标志等质量标志，属于对认证标志等质量标志真实性的证明材料与事实核验问题，归入事实性描述、成分材质或专利荣誉认证宣传缺乏证明材料节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-d6e5ebfd1c7b29cf",
+      "rule_id": "GAME-PLAT-001",
+      "rule_title": "成分/材质宣传需提供证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-5467038e3224663e",
+      "canonical_rule_uid": "RUID-4c6c470923121bc1",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.4",
+          "original_text": "依照《⼴告法》第⼋条：⼴告中对商品的性能、功能、产地、⽤途、质量、成分、价格、⽣产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明⽩。因此，如您在⼴告素材中针对所推⼴的产品或服务的成分/材质进⾏阐释和说明的描述，需提供相关成分/材质的证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-d6e5ebfd1c7b29cf",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+        "canonical_problem_name": "成分或材质宣传未提供证明材料",
+        "regulated_action": "ingredient_or_material_claim_without_evidence",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "成分",
+          "材质"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "平台规则原文要求广告素材中对产品或服务的成分/材质进行阐释和说明时需提供相关成分/材质的证明材料，属于事实性描述缺乏证明材料；track_hint_only为游戏，但原文未明示行业，applies_to标注游戏与原文未明示行业存在冲突，故source_scope_conflict为true。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-d75f8ff6a418a789",
+      "rule_id": "COSM-AD-001",
+      "rule_title": "广告引证内容应真实准确并表明出处",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_SOURCE_SCOPE_OR_VALIDITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-591d1fe2b10c2fc7",
+      "canonical_rule_uid": "RUID-01d5d70f1845dca4",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十一条",
+          "original_text": "广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-d75f8ff6a418a789",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_SOURCE_SCOPE_OR_VALIDITY",
+        "canonical_problem_name": "引证内容未表明出处或未明确适用范围和有效期限",
+        "regulated_action": "citation_without_source_or_scope",
+        "legal_effect": "truthfulness_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "数据",
+          "统计资料",
+          "调查结果",
+          "文摘",
+          "引用语"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文《广告法》第十一条要求广告使用数据、统计资料、调查结果、文摘、引用语等引证内容应当真实、准确并表明出处，有适用范围和有效期限的应明确表示，归入引证内容未表明出处或未明确适用范围和有效期限节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-df04b627fbff1398",
+      "rule_id": "COSM-FALSE-003",
+      "rule_title": "虚假广告定义-使用虚构、伪造或无法验证的证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.FALSE_OR_UNVERIFIABLE_EVIDENCE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-59ecc89bc59e7d5d",
+      "canonical_rule_uid": "RUID-df04b627fbff1398",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十八条",
+          "original_text": "第二十八条 广告有下列情形之一的，为虚假广告： （三）使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-df04b627fbff1398",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.FALSE_OR_UNVERIFIABLE_EVIDENCE",
+        "canonical_problem_name": "使用虚构、伪造或无法验证的证明材料",
+        "regulated_action": "use_fictitious_or_unverifiable_evidence",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "科研成果",
+          "统计资料",
+          "调查结果",
+          "文摘",
+          "引用语"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文《广告法》第二十八条第三项明确使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料属于虚假广告，归入使用虚构、伪造或无法验证的证明材料节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e1dd3bae81fcc2be",
+      "rule_id": "HF-LBL-001",
+      "rule_title": "特殊食品标签说明书与注册备案一致",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-65ffc4945a090337",
+      "canonical_rule_uid": "RUID-e1dd3bae81fcc2be",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国食品安全法实施条例（2019修订）_2019.12.01生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "FSLR",
+          "source_name": "中华人民共和国食品安全法实施条例（2019修订）_2019.12.01生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 2,
+          "article": "第三十九条",
+          "original_text": "特殊食品的标签、说明书内容应当与注册或者备案的标签、说明书一致。销售特殊食品，应当核对食品标签、说明书内容是否与注册或者备案的标签、说明书一致，不一致的不得销售。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e1dd3bae81fcc2be",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "特殊食品标签说明书与注册备案不一致",
+        "regulated_action": "special_food_label_consistency_with_registration",
+        "legal_effect": "relationship_determination",
+        "actor_scope": [
+          "特殊食品生产经营者"
+        ],
+        "object_scope": [
+          "特殊食品标签",
+          "特殊食品说明书"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第三十九条要求特殊食品的标签、说明书内容应当与注册或者备案的标签、说明书一致，属于产品资质备案材料与广告内容一致性核验，归入产品资质、许可或备案材料不完整、不一致或未披露。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e2e8360b7bc53bac",
+      "rule_id": "HF-FALSE-001",
+      "rule_title": "禁止发布未取得资质认定的食品检验机构出具的食品检验信息或利用该信息进行等级评定",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.UNQUALIFIED_FOOD_TESTING_INFO_USED",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-062d91a13adb2682",
+      "canonical_rule_uid": "RUID-e2e8360b7bc53bac",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国食品安全法实施条例（2019修订）_2019.12.01生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "FSLR",
+          "source_name": "中华人民共和国食品安全法实施条例（2019修订）_2019.12.01生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 2,
+          "article": "第八十条",
+          "original_text": "第八十条 发布未依法取得资质认定的食品检验机构出具的食品检验信息，或者利用上述检验信息对食品、食品生产经营者进行等级评定，欺骗、误导消费者的，由县级以上人民政府食品安全监督管理部门责令改正，有违法所得的，没收违法所得，并处10万元以上50万元以下罚款；拒不改正的，处50万元以上100万元以下罚款；构成违反治安管理行为的，由公安机关依法给予治安管理处罚。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e2e8360b7bc53bac",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.UNQUALIFIED_FOOD_TESTING_INFO_USED",
+        "canonical_problem_name": "使用未取得资质认定的食品检验机构出具的检验信息",
+        "regulated_action": "use_unqualified_food_testing_information",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "食品生产经营者"
+        ],
+        "object_scope": [
+          "食品检验信息",
+          "食品等级评定"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第八十条禁止发布未依法取得资质认定的食品检验机构出具的食品检验信息或利用该信息进行等级评定，属于证明材料资质不合格问题，与使用未取得资质认定的食品检验机构出具的检验信息节点完全对应。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e355d7fdc592b513",
+      "rule_id": "HF-AD-001",
+      "rule_title": "特殊食品标签说明书内容与注册备案一致",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-18f1da21677dac75",
+      "canonical_rule_uid": "RUID-e355d7fdc592b513",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_（2027年生效！）食品标识监督管理办法_2027.03.16生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "（2027年生效！）食品标识监督管理办法_2027.03.16生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第二十五条",
+          "original_text": "第二十五条 特殊食品的标签、说明书内容应当与注册或者备案的标签、说明书一致。 标签已涵盖说明书全部内容的，可以不另附说明书。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e355d7fdc592b513",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "特殊食品标签说明书内容与注册备案不一致",
+        "regulated_action": "special_food_label_consistency_with_registration",
+        "legal_effect": "relationship_determination",
+        "actor_scope": [
+          "特殊食品生产经营者"
+        ],
+        "object_scope": [
+          "特殊食品标签",
+          "特殊食品说明书"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第二十五条要求特殊食品的标签、说明书内容应当与注册或者备案的标签、说明书一致，属于产品资质备案材料与广告内容一致性核验，归入产品资质、许可或备案材料不完整、不一致或未披露。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-eb41ab6bd8db8841",
+      "rule_id": "COSM-CLAIM-001",
+      "rule_title": "新功效宣称需提交功效宣称评价资料，免予提交情形除外",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.TEST_RESEARCH.EFFICACY_CLAIM_EVIDENCE_MISSING_OR_NONCOMPLIANT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c115827586c51b8b",
+      "canonical_rule_uid": "RUID-eb41ab6bd8db8841",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_国家药监局关于发布《化妆品功效宣称评价规范》的公告_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "CECN",
+          "source_name": "国家药监局关于发布《化妆品功效宣称评价规范》的公告",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十二条",
+          "original_text": "宣称新功效的化妆品，应当根据产品功效宣称的具体情况，进行科学合理的分析。能够通过视觉、嗅觉等感官直接识别或通过物理作用方式发生效果且在标签上明确标识仅具有物理作用的新功效，可免予提交功效宣称评价资料。对于需要提交产品功效宣称评价资料的，应当由化妆品注册和备案检验机构按照强制性国家标准、技术规范规定的试验方法开展产品的功效评价，并出具报告。使用强制性国家标准、技术规范以外的试验方法，应当委托两家及以上的化妆品注册和备案检验机构进行方法验证，经验证符合要求的，方可开展新功效的评价，同时在产品功效宣称评价报告中阐明方法的有效性和可靠性等参数。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-eb41ab6bd8db8841",
+        "target_issue_id": "EVIDENCE_FACT.TEST_RESEARCH.EFFICACY_CLAIM_EVIDENCE_MISSING_OR_NONCOMPLIANT",
+        "canonical_problem_name": "新功效宣称未提交功效宣称评价资料或评价报告不合规",
+        "regulated_action": "new_efficacy_claim_evaluation_report_required",
+        "legal_effect": "substantiation_required",
+        "actor_scope": [
+          "化妆品注册人",
+          "化妆品备案人"
+        ],
+        "object_scope": [
+          "化妆品新功效宣称",
+          "功效宣称评价资料",
+          "功效宣称评价报告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文第十二条规定宣称新功效的化妆品应当提交功效宣称评价资料，需由化妆品注册和备案检验机构按强制性标准或经验证方法出具报告，属于功效宣称缺少证明材料或评价报告不合规。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-ee28f6a1119184c6",
+      "rule_id": "XHS-DATA-001",
+      "rule_title": "广告中使用数据引证内容需提供证明材料",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-45c212e139b04681",
+      "canonical_rule_uid": "RUID-06ec2b429e927cba",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.3",
+          "original_text": "《广告法》第十一条已明确，广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。因此，如您在广告中使用数据引证内容的（通过测试/实验/试验或市场调查/市场统计的方式取得的数据、统计资料、调查结果等内容），需提供对应证明材料。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-ee28f6a1119184c6",
+        "target_issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+        "canonical_problem_name": "数据引证或功效宣称未提供证明材料或科学依据",
+        "regulated_action": "data_citation_requires_supporting_evidence",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "数据引证内容",
+          "统计资料",
+          "调查结果",
+          "测试实验数据"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处；如使用通过测试/实验/试验或市场调查/市场统计方式取得的数据等引证内容，需提供对应证明材料。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-f32a3253c4fc02b2",
+      "rule_id": "XHS-COSM-001",
+      "rule_title": "跨境美容仪器投放需提供报关单/原产地证明+质检报告+中文标签",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-203204b20d297e10",
+      "canonical_rule_uid": "RUID-f32a3253c4fc02b2",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【美妆个护行业投放规则】使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护行业投放规则】使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3",
+          "original_text": "3、跨境美容仪器提供：报关单/原产地证明+质检报告+中⽂标签，暂不收取3C证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-f32a3253c4fc02b2",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "产品资质、许可或备案材料不完整、不一致或未披露",
+        "regulated_action": "cross_border_beauty_device_requires_qualification_materials",
+        "legal_effect": "qualification_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "跨境美容仪器"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：跨境美容仪器提供报关单/原产地证明+质检报告+中文标签，暂不收取3C证明，属于产品资质材料不完整或未披露情形。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-fba2b7c4e349d1ee",
+      "rule_id": "COSM-AD-001",
+      "rule_title": "已备案普通化妆品不得随意改变功效宣称",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-5ae7e5687e1b9475",
+      "canonical_rule_uid": "RUID-fba2b7c4e349d1ee",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_化妆品注册备案管理办法_2021.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "CRM",
+          "source_name": "化妆品注册备案管理办法_2021.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第三十六条",
+          "original_text": "已经备案的普通化妆品，无正当理由不得随意改变产品名称；没有充分的科学依据，不得随意改变功效宣称。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-fba2b7c4e349d1ee",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        "canonical_problem_name": "产品资质、许可或备案材料不完整、不一致或未披露",
+        "regulated_action": "filed_cosmetic_efficacy_claim_must_match_filing",
+        "legal_effect": "relationship_determination",
+        "actor_scope": [
+          "化妆品备案人",
+          "广告主"
+        ],
+        "object_scope": [
+          "已备案普通化妆品",
+          "功效宣称"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "medium",
+        "reason": "原文明确：已经备案的普通化妆品，无正当理由不得随意改变产品名称；没有充分的科学依据，不得随意改变功效宣称。需对比广告功效宣称与备案信息，属于备案材料与广告内容一致性核验。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-fea3ce72204b2d43",
+      "rule_id": "HF-其他-001",
+      "rule_title": "保健食品标签标识不得标注低于食品安全标准的企业标准指标",
+      "root_id": "EVIDENCE_FACT",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.HEALTH_FOOD_ENTERPRISE_STANDARD_LOWER_THAN_NATIONAL",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-82dcd3a3b1ae2139",
+      "canonical_rule_uid": "RUID-fea3ce72204b2d43",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国食品安全法实施条例（2019修订）_2019.12.01生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "FSLR",
+          "source_name": "中华人民共和国食品安全法实施条例（2019修订）_2019.12.01生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 2,
+          "article": "第七十四条",
+          "original_text": "食品生产经营者生产经营的食品符合食品安全标准但不符合食品所标注的企业标准规定的食品安全指标的，由县级以上人民政府食品安全监督管理部门给予警告，并责令食品经营者停止经营该食品，责令食品生产企业改正；拒不停止经营或者改正的，没收不符合企业标准规定的食品安全指标的食品，货值金额不足1万元的，并处1万元以上5万元以下罚款，货值金额1万元以上的，并处货值金额5倍以上10倍以下罚款。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-fea3ce72204b2d43",
+        "target_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.HEALTH_FOOD_ENTERPRISE_STANDARD_LOWER_THAN_NATIONAL",
+        "canonical_problem_name": "保健食品标签标识标注低于食品安全标准的企业标准指标",
+        "regulated_action": "health_food_enterprise_standard_not_lower_than_national",
+        "legal_effect": "administrative_liability",
+        "actor_scope": [
+          "食品生产经营者"
+        ],
+        "object_scope": [
+          "保健食品",
+          "企业标准",
+          "食品安全指标"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "EVIDENCE_FACT",
+        "confidence": "high",
+        "reason": "原文明确：食品符合食品安全标准但不符合食品所标注的企业标准规定的食品安全指标的，由监管部门给予警告、责令停止经营或改正，并可处罚款，属于企业标准指标低于食品安全标准的事实核验。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "canonical_groups": [
+    {
+      "canonical_rule_key": "CRK-061bce53c5f0d51e",
+      "canonical_rule_uid": "RUID-bf2932a3a0d7ba2b",
+      "source_occurrence_uids": [
+        "RUID-bf2932a3a0d7ba2b"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "游戏广告涉及数据引证需明示官方数据来源并提供承诺函",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-062d91a13adb2682",
+      "canonical_rule_uid": "RUID-e2e8360b7bc53bac",
+      "source_occurrence_uids": [
+        "RUID-e2e8360b7bc53bac"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止发布未取得资质认定的食品检验机构出具的食品检验信息或利用该信息进行等级评定",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-0c7b952a3c0e22a7",
+      "canonical_rule_uid": "RUID-c8991e3c90633f41",
+      "source_occurrence_uids": [
+        "RUID-c8991e3c90633f41"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "事实性描述需提供证明材料",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-0eaecf5c5bb36b1b",
+      "canonical_rule_uid": "RUID-9e32de4d02d4c3d3",
+      "source_occurrence_uids": [
+        "RUID-9e32de4d02d4c3d3"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "专利/荣誉/销量/研发单位/效果指数虚假宣传",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-0f55f6ad494c31b2",
+      "canonical_rule_uid": "RUID-34c773e2027400f5",
+      "source_occurrence_uids": [
+        "RUID-34c773e2027400f5"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "珠宝玉石鉴定证书材质一致性规则",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-18f1da21677dac75",
+      "canonical_rule_uid": "RUID-e355d7fdc592b513",
+      "source_occurrence_uids": [
+        "RUID-e355d7fdc592b513"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "特殊食品标签说明书内容与注册备案一致",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-1e1f89eb4c97c66d",
+      "canonical_rule_uid": "RUID-52852c85f313aa3e",
+      "source_occurrence_uids": [
+        "RUID-52852c85f313aa3e",
+        "RUID-922e8a32d47a9d25"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "禁止使用虚构、伪造或无法验证的科研成果等证明材料",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-203204b20d297e10",
+      "canonical_rule_uid": "RUID-f32a3253c4fc02b2",
+      "source_occurrence_uids": [
+        "RUID-f32a3253c4fc02b2"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "跨境美容仪器投放需提供报关单/原产地证明+质检报告+中文标签",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-23eb6cf637da4b55",
+      "canonical_rule_uid": "RUID-9e2b6ad7519be0ac",
+      "source_occurrence_uids": [
+        "RUID-9e2b6ad7519be0ac"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "化妆品微生物指标须符合限值",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-2b3aa28c3094e854",
+      "canonical_rule_uid": "RUID-79375004906866dd",
+      "source_occurrence_uids": [
+        "RUID-79375004906866dd"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "美妆广告涉及专利或荣誉宣传应提供真实有效证明材料",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-3039aa83db3ed40c",
+      "canonical_rule_uid": "RUID-3965558bfcc2ec92",
+      "source_occurrence_uids": [
+        "RUID-3965558bfcc2ec92",
+        "RUID-68fa498812603ee9",
+        "RUID-708a1b23c613d084"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "广告中宣称教师/导师/员工/创始人/设计师等具有院校背景需提供证明材料及任职证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-30da61844e57fcc1",
+      "canonical_rule_uid": "RUID-0c1871c3d7b8e462",
+      "source_occurrence_uids": [
+        "RUID-0c1871c3d7b8e462"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "涉及用户不消费即可领取福利需二次核查奖励品真实性",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-37f30d615fe42973",
+      "canonical_rule_uid": "RUID-332081158a520fb8",
+      "source_occurrence_uids": [
+        "RUID-332081158a520fb8",
+        "RUID-90f82554bd48bfce",
+        "RUID-b72369e750940989"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "广告发布者提供的覆盖率、收视率、点击率、发行量等资料应当真实",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-3a1eded79cacf7c6",
+      "canonical_rule_uid": "RUID-8317b41b0f1c931d",
+      "source_occurrence_uids": [
+        "RUID-8317b41b0f1c931d"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "普通食品绿色/有机认证展示要求",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-3a469fe060ccf5bf",
+      "canonical_rule_uid": "RUID-cd55c70db0ea11c3",
+      "source_occurrence_uids": [
+        "RUID-cd55c70db0ea11c3"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "生产者不得伪造或者冒用认证标志等质量标志",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-3db36766f6f70b3c",
+      "canonical_rule_uid": "RUID-385390706db3ccb0",
+      "source_occurrence_uids": [
+        "RUID-385390706db3ccb0"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "保健食品标签说明书内容与注册或备案不一致",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-448b764ee42ad68d",
+      "canonical_rule_uid": "RUID-24587804b9ccbf09",
+      "source_occurrence_uids": [
+        "RUID-24587804b9ccbf09",
+        "RUID-b6b43547e816bef8"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "事实性描述需提供证明材料且描述与材料一致",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-45c212e139b04681",
+      "canonical_rule_uid": "RUID-06ec2b429e927cba",
+      "source_occurrence_uids": [
+        "RUID-06ec2b429e927cba",
+        "RUID-ee28f6a1119184c6"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "广告中使用数据引证内容需提供证明材料",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-461c1f6fc3f4f42d",
+      "canonical_rule_uid": "RUID-2798fc53480800ac",
+      "source_occurrence_uids": [
+        "RUID-2798fc53480800ac"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "食品检测机构证明提及要求",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-464d00da8a7d7fa5",
+      "canonical_rule_uid": "RUID-1121cc681df8ab03",
+      "source_occurrence_uids": [
+        "RUID-1121cc681df8ab03"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "化妆品标签内容应与注册备案资料一致",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-476d3a2031fb6f4a",
+      "canonical_rule_uid": "RUID-491c9616141a70d9",
+      "source_occurrence_uids": [
+        "RUID-491c9616141a70d9"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "销售者不得伪造或者冒用认证标志等质量标志",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-4dbeb3c590e5ad31",
+      "canonical_rule_uid": "RUID-9f30f80e4d0db5ff",
+      "source_occurrence_uids": [
+        "RUID-9f30f80e4d0db5ff"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "保健食品注册证书载明事项完整性要求",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-5467038e3224663e",
+      "canonical_rule_uid": "RUID-4c6c470923121bc1",
+      "source_occurrence_uids": [
+        "RUID-4c6c470923121bc1",
+        "RUID-d6e5ebfd1c7b29cf"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "成分/材质宣传需提供证明材料",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-58c1c02dcbf4188b",
+      "canonical_rule_uid": "RUID-82a8a7c8f78d473e",
+      "source_occurrence_uids": [
+        "RUID-82a8a7c8f78d473e"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "网上刊载的保健食品注册证书或备案凭证信息必须与注册或备案信息一致",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-591d1fe2b10c2fc7",
+      "canonical_rule_uid": "RUID-01d5d70f1845dca4",
+      "source_occurrence_uids": [
+        "RUID-01d5d70f1845dca4",
+        "RUID-0662931e9588f851",
+        "RUID-d75f8ff6a418a789"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "广告引证内容应真实准确并表明出处",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-59ecc89bc59e7d5d",
+      "canonical_rule_uid": "RUID-df04b627fbff1398",
+      "source_occurrence_uids": [
+        "RUID-df04b627fbff1398"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "虚假广告定义-使用虚构、伪造或无法验证的证明材料",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-5ae7e5687e1b9475",
+      "canonical_rule_uid": "RUID-fba2b7c4e349d1ee",
+      "source_occurrence_uids": [
+        "RUID-fba2b7c4e349d1ee"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "已备案普通化妆品不得随意改变功效宣称",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-5d74a6c979e37609",
+      "canonical_rule_uid": "RUID-691e72d969b379cb",
+      "source_occurrence_uids": [
+        "RUID-691e72d969b379cb"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "一般贸易进口美容仪器可暂以报关单替代3C证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-6156e576e2063b31",
+      "canonical_rule_uid": "RUID-8672ca7908a6ffc1",
+      "source_occurrence_uids": [
+        "RUID-8672ca7908a6ffc1",
+        "RUID-9ecf144ad28c1c77"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "广告中使用数据引证内容需提供证明材料并表明出处",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-65ffc4945a090337",
+      "canonical_rule_uid": "RUID-e1dd3bae81fcc2be",
+      "source_occurrence_uids": [
+        "RUID-e1dd3bae81fcc2be"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "特殊食品标签说明书与注册备案一致",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-6b9a7b9ce806e763",
+      "canonical_rule_uid": "RUID-058b7d8f6e5465f4",
+      "source_occurrence_uids": [
+        "RUID-058b7d8f6e5465f4"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "普通化妆品功效宣称需提供备案证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-6ccad7f9e610bfdd",
+      "canonical_rule_uid": "RUID-25c4457f613caeb9",
+      "source_occurrence_uids": [
+        "RUID-25c4457f613caeb9",
+        "RUID-8063a9f0e191918a",
+        "RUID-990edd32dd76f1b5"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "广告素材涉及第三方合作需提供合作证明/授权",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-82dcd3a3b1ae2139",
+      "canonical_rule_uid": "RUID-fea3ce72204b2d43",
+      "source_occurrence_uids": [
+        "RUID-fea3ce72204b2d43"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "保健食品标签标识不得标注低于食品安全标准的企业标准指标",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-854c29055aba9248",
+      "canonical_rule_uid": "RUID-b6f89401325ab7d1",
+      "source_occurrence_uids": [
+        "RUID-b6f89401325ab7d1"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "保健食品声称保健功能应当具有科学依据",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-88379e2f9de73f89",
+      "canonical_rule_uid": "RUID-1031d0432864cd9a",
+      "source_occurrence_uids": [
+        "RUID-1031d0432864cd9a"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "化妆品功效宣称评价报告完整性要求",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-9f478eb1af7583fe",
+      "canonical_rule_uid": "RUID-5f80a73247956422",
+      "source_occurrence_uids": [
+        "RUID-5f80a73247956422"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "化妆品标签内容应与注册或备案信息一致",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-ab5a618b11f1e99c",
+      "canonical_rule_uid": "RUID-196bab159aa0adb4",
+      "source_occurrence_uids": [
+        "RUID-196bab159aa0adb4",
+        "RUID-a01290d271d5ba30"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "广告素材中事实性描述需提供证明材料",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-ac82311934b54fdf",
+      "canonical_rule_uid": "RUID-beb65843f7e375b1",
+      "source_occurrence_uids": [
+        "RUID-beb65843f7e375b1"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "成分/材质宣传需提供证明材料",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-ae9180f46e9ae9de",
+      "canonical_rule_uid": "RUID-bf6d6474f6a35028",
+      "source_occurrence_uids": [
+        "RUID-bf6d6474f6a35028"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告中使用数据引证内容需提供证明材料",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-b0d7f52eedf59c90",
+      "canonical_rule_uid": "RUID-5d5be1924f931a81",
+      "source_occurrence_uids": [
+        "RUID-5d5be1924f931a81"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止效果保证宣传-无法证实的科学或研究发现",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-ba35f2f0b6cf3532",
+      "canonical_rule_uid": "RUID-5195b618e54e4edd",
+      "source_occurrence_uids": [
+        "RUID-5195b618e54e4edd"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "境外专利宣传需提供对应资质并标明专利所在地和号码",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-c115827586c51b8b",
+      "canonical_rule_uid": "RUID-eb41ab6bd8db8841",
+      "source_occurrence_uids": [
+        "RUID-eb41ab6bd8db8841"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "新功效宣称需提交功效宣称评价资料，免予提交情形除外",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-c9faaed72189a8cd",
+      "canonical_rule_uid": "RUID-90e46990938a6dbe",
+      "source_occurrence_uids": [
+        "RUID-90e46990938a6dbe"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "化妆品功效宣称必须有充分科学依据",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-d08921871260e077",
+      "canonical_rule_uid": "RUID-7d0cafae98e5c7f3",
+      "source_occurrence_uids": [
+        "RUID-7d0cafae98e5c7f3"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告产品原产地质检证明或报关单配套审结书要求",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-d0db3b8628d195a6",
+      "canonical_rule_uid": "RUID-505e4fef4a8c6cbf",
+      "source_occurrence_uids": [
+        "RUID-505e4fef4a8c6cbf"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "游戏广告推广需提供游戏软件版号和计算机软件著作权登记证书",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-d5be4b84dba43738",
+      "canonical_rule_uid": "RUID-6863b929b2f758ca",
+      "source_occurrence_uids": [
+        "RUID-6863b929b2f758ca"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "保健食品广告需取得批准文件且内容一致",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-d5d3b8e7d8df74d3",
+      "canonical_rule_uid": "RUID-37b74d27ad064021",
+      "source_occurrence_uids": [
+        "RUID-37b74d27ad064021",
+        "RUID-73a6e9de86bd2de0"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "广告中成分/材质宣传需提供证明材料",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-e9582e9f71717f2c",
+      "canonical_rule_uid": "RUID-a1e8ade4521be817",
+      "source_occurrence_uids": [
+        "RUID-a1e8ade4521be817"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "涉及数据引证需明示官方数据来源并二次核查",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-ea892660fb3175cc",
+      "canonical_rule_uid": "RUID-aaf05fea32f34de7",
+      "source_occurrence_uids": [
+        "RUID-aaf05fea32f34de7"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止利用未依法取得资质认定的食品检验信息进行等级评定欺骗误导消费者",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "proactive_candidates": [
+    {
+      "rule_uid": "RUID-058b7d8f6e5465f4",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "name": "产品资质、许可或备案材料不完整、不一致或未披露",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护行业投放规则】使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.",
+          "original_text": "1.普化资质\n宣称有除特化功效之外功效的化妆品，需要提供普通化妆品的备案证明"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-06ec2b429e927cba",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+      "name": "数据引证或功效宣称未提供证明材料或科学依据",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.3",
+          "original_text": "《广告法》第十一条已明确，广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。因此，如您在广告中使用数据引证内容的（通过测试/实验/试验或市场调查/市场统计的方式取得的数据、统计资料、调查结果等内容），需提供对应证明材料。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-0c1871c3d7b8e462",
+      "issue_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE.THIRD_PARTY_RIGHTS_AND_REWARD_PROOF_MISSING",
+      "name": "第三方权利授权或奖励真实性证明材料缺失",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "7.",
+          "original_text": "涉及用户不消费即可领取某福利的活动情况应当对奖励品进行二次核查如：某游戏广告语是“有一份3280元源石待领取””上线即得神级辅助英雄“等需前置提供奖励品真实有效可领取的截屏或录屏。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-196bab159aa0adb4",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+      "name": "事实性描述未提供证明材料",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "《广告法》已明确，广告主应当对广告素材的真实性负责，广告经营者、广告发布者依据法律查验有关证明文件，对内容不符或者证明文件不全的广告，广告发布者不得发布。因此，如您在广告素材中针对所推广的产品/服务的属性/功效进行阐释和说明，需提供相关证明材料。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-24587804b9ccbf09",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+      "name": "事实性描述未提供证明材料",
+      "required_evidence": "mixed",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.2",
+          "original_text": "《广告法》已明确， 广告主应当对广告素材的真实性负责，广告经营者、广告发布者依据法律查验有关证明文件，对内容不符或者证明文件不全的广告，广告发布者不得发布。因此，如您在广告素材中针对所推广的产品/服务的属性/功效进行阐释和说明，需提供相关证明材料。需注意：广告素材的描述需要与相关材料证明保持一致性，避免出现因【广告素材描述与材料证明不匹配】被审核驳回。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-34c773e2027400f5",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "name": "珠宝玉石鉴定证书材质与宣传不一致",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "8.",
+          "original_text": "8.珠宝⽟⽯鉴定证书\n需注意，鉴定证书的材质需要与⼴告宣传中保持⼀致性。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-37b74d27ad064021",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "name": "成分或材质宣传缺乏证明材料",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "依照《广告法》第八条：广告中对商品的性能、功能、产地、用途、质量、成分、价格、生产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明白。因此，如您在广告素材中针对所推广的产品或服务的成分/材质进行阐释和说明的描述，需提供相关成分/材质的证明材料。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-3965558bfcc2ec92",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PERSONNEL_CREDENTIAL_CLAIM_LACKING_PROOF",
+      "name": "机构内人员院校背景或任职宣称未提供证明材料",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "10",
+          "original_text": "10.在校任职证明\n需注意，如⼴告中宣称教师/导师/员⼯/创始⼈/设计师等机构内⼈员具有院校背景，需提供证明材料（如学信⽹查询截图、毕业证书照⽚等）及在⼴告主公司任职证明。宣传在名校任职的需提供任职证明及在⼴告主公司任职证明。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-505e4fef4a8c6cbf",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "name": "游戏广告未提供游戏软件版号和计算机软件著作权登记证书",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书《游戏行业投放规则》使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1",
+          "original_text": "物料推广游戏时需同时提供1、《游戏软件版号》2、《计算机软件著作权登记证书》"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-5195b618e54e4edd",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "name": "境外专利宣传未提供资质并标明专利所在地和号码",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【聚光】美妆&行业规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.-part2",
+          "original_text": "（PS：宣称获得境外专利，需提供对应专利资质和翻译件，并表明专利所在地和对应专利号码。）"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-6863b929b2f758ca",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "name": "产品资质、许可或备案材料不完整、不一致或未披露",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "FSL",
+          "source_name": "中华人民共和国食品安全法（2025修正）_2025.12.01生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第一百四十条",
+          "original_text": "违反本法规定，在广告中对食品作虚假宣传，欺骗消费者，或者发布未取得批准文件、广告内容与批准文件不一致的保健食品广告的，依照《中华人民共和国广告法》的规定给予处罚。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-68fa498812603ee9",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PERSONNEL_CREDENTIAL_CLAIM_LACKING_PROOF",
+      "name": "机构内人员院校背景或任职宣称未提供证明材料",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "10",
+          "original_text": "10.在校任职证明\n需注意，如⼴告中宣称教师/导师/员⼯/创始⼈/设计师等机构内⼈员具有院校背景，需提供证明材料（如学信⽹查询截图、毕业证书照⽚等）及在⼴告主公司任职证明。宣传在名校任职的需提供任职证明及在⼴告主公司任职证明。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-691e72d969b379cb",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "name": "产品资质、许可或备案材料不完整、不一致或未披露",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护行业投放规则】使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2",
+          "original_text": "2、⼀般贸易进⼝美容仪器，可⽀持暂以报关单替代3C证明；"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-708a1b23c613d084",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PERSONNEL_CREDENTIAL_CLAIM_LACKING_PROOF",
+      "name": "机构内人员院校背景或任职宣称未提供证明材料",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "10",
+          "original_text": "10.在校任职证明\n需注意，如⼴告中宣称教师/导师/员⼯/创始⼈/设计师等机构内⼈员具有院校背景，需提供证明材料（如学信⽹查询截图、毕业证书照⽚等）及在⼴告主公司任职证明。宣传在名校任职的需提供任职证明及在⼴告主公司任职证明。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-73a6e9de86bd2de0",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "name": "事实性描述、成分材质或专利荣誉认证宣传缺乏证明材料",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "依照《⼴告法》第⼋条：⼴告中对商品的性能、功能、产地、⽤途、质量、成分、价格、⽣产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明⽩。因此，如您在⼴告素材中针对所推⼴的产品或服务的成分/材质进⾏阐释和说明的描述，需提供相关成分/材质的证明材料。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-7d0cafae98e5c7f3",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "name": "产品资质、许可或备案材料不完整、不一致或未披露",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护行业投放规则】使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2",
+          "original_text": "⼴告产品原产地(国)出具的产品质检证明或与报关单配套的审结书（审结书编号需与报关单编号保持⼀致）"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8063a9f0e191918a",
+      "issue_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE.THIRD_PARTY_RIGHTS_AND_REWARD_PROOF_MISSING",
+      "name": "第三方权利授权或奖励真实性证明材料缺失",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.1",
+          "original_text": "根据⼴告法第三章第三⼗三条、《⺠法典》相关管理规定，⼴告素材不得侵犯注册商标专⽤权、公⺠肖像权等权利。因此，如您在⼴告素材中涉及肖像、商标、第三⽅品牌/合作等内容，请提供相关材料证明。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9e32de4d02d4c3d3",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "name": "专利荣誉销量研发单位效果指数宣传缺乏证明材料",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.6",
+          "original_text": "3.1.6 专利/荣誉/销量/研发单位/效果指数虚假\n专利/荣誉/销量/研发单位/效果指数虚假，指创作者在直播/短视频推广商品过程中，宣传商品信息涉及已获得专利认证、荣誉、奖项、某行业/平台/渠道的销量荣誉、权威研发单位、效果指数等信息，但实际无相关证书、授权书、检测报告等证明依据或与真实证明依据情况不符，或未在直播间、视频、商品详情页等展示相关信息的行爲。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9ecf144ad28c1c77",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+      "name": "数据引证或功效宣称未提供证明材料或科学依据",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "《广告法》第十一条已明确，广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。因此，如您在广告中使用数据引证内容的（通过测试/实验/试验或市场调查/市场统计的方式取得的数据、统计资料、调查结果等内容），需提供对应证明材料。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-a01290d271d5ba30",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+      "name": "事实性描述未提供证明材料",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "《⼴告法》已明确， ⼴告主应当对⼴告素材的真实性负责，⼴告经营者、⼴告发布者依据法律查验有关证明⽂件，对内容不符或者证明⽂件不全的⼴告，⼴告发布者不得发布。因此，如您在⼴告素材中针对所推⼴的产品/服务的属性/功效进⾏阐释和说明，需提供相关证明材料。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-a1e8ade4521be817",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.DATA_CITATION_LACKS_OFFICIAL_SOURCE_OR_COMMITMENT",
+      "name": "数据引证未明示官方来源或未提供真实性承诺函",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "7.",
+          "original_text": "涉及数据引证应当明示官方数据（如：BOSS直聘、51JOB、前程无忧等）某行业官方机构统计，需要对数据来源进行二次核查如：某教育机构推广3D建模师引用了BOSS直聘（官方机构）对该职位的未来发展趋势统计（数据引证），且标明此数据来源于BOSS直聘（数据来源）并前置给到数据真实性的承诺函。诸如此类情况需在广告落地页/唤起APP中说明。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b6b43547e816bef8",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.FACTUAL_DESCRIPTION_LACKS_EVIDENCE",
+      "name": "事实性描述未提供证明材料",
+      "required_evidence": "mixed",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.2",
+          "original_text": "《广告法》已明确， 广告主应当对广告素材的真实性负责，广告经营者、广告发布者依据法律查验有关证明文件，对内容不符或者证明文件不全的广告，广告发布者不得发布。因此，如您在广告素材中针对所推广的产品/服务的属性/功效进行阐释和说明，需提供相关证明材料。需注意：广告素材的描述需要与相关材料证明保持一致性，避免出现因【广告素材描述与材料证明不匹配】被审核驳回。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-d6e5ebfd1c7b29cf",
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.FACTUAL_CLAIM_OR_HONOR_CERTIFICATION_LACKING_PROOF",
+      "name": "成分或材质宣传未提供证明材料",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.4",
+          "original_text": "依照《⼴告法》第⼋条：⼴告中对商品的性能、功能、产地、⽤途、质量、成分、价格、⽣产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明⽩。因此，如您在⼴告素材中针对所推⼴的产品或服务的成分/材质进⾏阐释和说明的描述，需提供相关成分/材质的证明材料。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-ee28f6a1119184c6",
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
+      "name": "数据引证或功效宣称未提供证明材料或科学依据",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.3",
+          "original_text": "《广告法》第十一条已明确，广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。因此，如您在广告中使用数据引证内容的（通过测试/实验/试验或市场调查/市场统计的方式取得的数据、统计资料、调查结果等内容），需提供对应证明材料。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ]
+}

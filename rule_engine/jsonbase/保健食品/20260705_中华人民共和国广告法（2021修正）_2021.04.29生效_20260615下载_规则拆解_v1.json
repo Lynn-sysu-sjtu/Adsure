@@ -1961,7 +1961,11 @@
         "confidence": "high",
         "calibration_status": "provisional"
       },
-      "rule_uid": "RUID-5918828973a76530"
+      "rule_uid": "RUID-5918828973a76530",
+      "review_role": "direct",
+      "review_roles": [
+        "direct"
+      ]
     },
     {
       "rule_id": "HF-ADID-001",
@@ -2726,9 +2730,7 @@
         "industries": [
           "保健食品"
         ],
-        "product_categories": [
-          "保健食品"
-        ],
+        "product_categories": [],
         "platforms": [],
         "material_types": [
           "图文文案",
@@ -2736,7 +2738,8 @@
           "详情页文字",
           "直播话术",
           "短视频脚本中的文字内容",
-          "私域文案"
+          "私域文案",
+          "短视频脚本"
         ],
         "channels": [],
         "audiences": []
@@ -2778,7 +2781,12 @@
             "零副作用",
             "根治",
             "彻底治愈",
-            "完全康复"
+            "完全康复",
+            "疗效看得见",
+            "绝对安全",
+            "不会有问题",
+            "全消失",
+            "立竿见影"
           ],
           "regex": [],
           "context_signals": [],
@@ -2794,7 +2802,7 @@
           "安全性断言",
           "虚假宣传"
         ],
-        "vector_text": "本产品保证100%有效?绝对安全无副作用?我们断言这款保健品能根治你的问题?保证?断言?绝对有效?1",
+        "vector_text": "保健食品广告不得对产品功效或安全性作出确定、绝对、无条件的断言或保证。",
         "semantic_enabled": true,
         "semantic_role": "fallback",
         "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
@@ -2823,7 +2831,19 @@
           "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
           "confidence": "low",
           "semantic_recommendations_applied": false
-        }
+        },
+        "semantic_scenarios": [
+          {
+            "scenario_id": "efficacy_guarantee",
+            "vector_text": "保健食品宣称服用几天保证见效，功效必然实现，身体问题全消失，效果立竿见影",
+            "enabled": true
+          },
+          {
+            "scenario_id": "safety_guarantee",
+            "vector_text": "保健食品宣称纯天然所以绝对安全，任何人食用都不会有问题，没有任何副作用",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -3486,9 +3506,7 @@
         "industries": [
           "保健食品"
         ],
-        "product_categories": [
-          "保健食品"
-        ],
+        "product_categories": [],
         "platforms": [],
         "material_types": [
           "图文文案",
@@ -3496,7 +3514,8 @@
           "详情页文字",
           "直播话术",
           "短视频脚本中的文字内容",
-          "私域文案"
+          "私域文案",
+          "短视频脚本"
         ],
         "channels": [],
         "audiences": []
@@ -3539,7 +3558,10 @@
             "我推荐",
             "明星",
             "网红",
-            "专家推荐"
+            "专家推荐",
+            "营养学会专家",
+            "科研机构认证",
+            "权威科研机构认证"
           ],
           "regex": [],
           "context_signals": [],
@@ -3554,7 +3576,7 @@
           "广告代言",
           "推荐证明"
         ],
-        "vector_text": "XX明星推荐本品，亲测有效，我推荐给大家，网红力荐，专家证明，亲身经历，我用过效果很好，代言人推荐，",
+        "vector_text": "保健食品广告不得借个人、专家或机构名义对产品作推荐、认证或效果证明。",
         "semantic_enabled": true,
         "semantic_role": "fallback",
         "semantic_reason": "原vector_text是法条改写，缺乏真实违规文案的多样性，HyDE风格通过堆叠大量代言人推荐表述（明星、专家、消费者、网红、博主等）和效果夸大词，覆盖多种场景，提升语义召回覆盖面。",
@@ -3594,7 +3616,19 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "endorser_recommendation",
+            "vector_text": "保健食品广告借明星、网红、用户或专家名义亲测推荐，声称使用后有效并向消费者作效果证明",
+            "enabled": true
+          },
+          {
+            "scenario_id": "institutional_endorsement",
+            "vector_text": "保健食品广告借科研单位、学术机构、营养学会或行业协会名义作权威推荐、认证或功效证明",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -9820,7 +9854,7 @@
       "dimension": "未成年人保护",
       "applies_to": {
         "industries": [
-          "保健食品"
+          "通用"
         ],
         "product_categories": [
           "保健食品"

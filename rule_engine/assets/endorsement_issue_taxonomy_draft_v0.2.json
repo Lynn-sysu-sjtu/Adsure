@@ -1,0 +1,326 @@
+{
+  "schema_version": "0.2",
+  "asset_status": "draft",
+  "prompt_version": "endorsement_fingerprint_v02_20260912",
+  "model": "deepseek-chat",
+  "nodes": [
+    {
+      "issue_id": "ENDORSEMENT",
+      "parent_issue_id": null,
+      "level": 1,
+      "node_type": "directory",
+      "name": "代言、推荐与证明",
+      "rule_uids": []
+    },
+    {
+      "issue_id": "ENDORSEMENT.RELATION_IDENTIFICATION",
+      "parent_issue_id": "ENDORSEMENT",
+      "level": 2,
+      "node_type": "legal_issue",
+      "name": "代言关系认定",
+      "rule_uids": [
+        "RUID-778e0278994f809d",
+        "RUID-8ebbf6afe08670d5"
+      ],
+      "candidate_clusters": [
+        {
+          "cluster_key": "ENDORSEMENT_RELATION_IDENTIFICATION_LIVE_STREAMING",
+          "canonical_name": "直播营销中广告代言关系与广告主体身份认定",
+          "member_rule_uids": [
+            "RUID-778e0278994f809d",
+            "RUID-8ebbf6afe08670d5"
+          ],
+          "relation": "merge",
+          "recommended_parent": "ENDORSEMENT.RELATION_IDENTIFICATION",
+          "confidence": "high",
+          "reason": "两条规则均依据《互联网广告管理办法》第十九条，针对直播营销场景，法律效果均为关系认定（relationship_determination），受规制行为均为直播营销中广告代言关系或广告主体身份的识别与认定，核心法律要件一致，仅表述侧重点不同，可合并。",
+          "legal_effect": "relationship_determination"
+        }
+      ]
+    },
+    {
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "parent_issue_id": "ENDORSEMENT",
+      "level": 2,
+      "node_type": "legal_issue",
+      "name": "禁止担任代言人的主体",
+      "rule_uids": [
+        "RUID-642c5f9f15eaa889",
+        "RUID-168081152ac6fa9d",
+        "RUID-32fd3325bec319e7",
+        "RUID-343e09b5c1c6b0d2",
+        "RUID-562c1ad835adcb7a",
+        "RUID-59cb40acd393c6ce",
+        "RUID-7f1a9698aaa2cf50",
+        "RUID-8c62d78f59c1cfaa",
+        "RUID-c91fd8d3d70bc247",
+        "RUID-e63b6e0009bccf3e",
+        "RUID-ee8013165a5b8e1d",
+        "RUID-f617819336c87c61",
+        "RUID-fe324abb9130484c",
+        "RUID-92f0e76f37a2a1a1",
+        "RUID-3cb7962acf8d23b3",
+        "RUID-8f08bec265411010",
+        "RUID-f30ed7aec04e8afa",
+        "RUID-a56980eefdeca399",
+        "RUID-d9fff6c6cc6d8670"
+      ],
+      "candidate_clusters": [
+        {
+          "cluster_key": "HEALTH_FOOD_PROHIBITED_SUBJECT",
+          "canonical_name": "保健食品广告禁止利用科研单位、学术机构、专家、患者等名义或形象作推荐、证明",
+          "member_rule_uids": [
+            "RUID-168081152ac6fa9d",
+            "RUID-92f0e76f37a2a1a1"
+          ],
+          "relation": "merge",
+          "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+          "confidence": "medium",
+          "reason": "均针对保健食品广告禁止利用特定机构或专业人士、患者等名义或形象作推荐、证明，受规制行为与法律效果相同；RUID-168081152ac6fa9d存在来源范围冲突，以原文为准。",
+          "legal_effect": "prohibited"
+        },
+        {
+          "cluster_key": "EDU_TRAINING_PROHIBITED_SUBJECT",
+          "canonical_name": "教育培训广告禁止利用特定机构或个人名义、形象作推荐、证明",
+          "member_rule_uids": [
+            "RUID-32fd3325bec319e7",
+            "RUID-7f1a9698aaa2cf50",
+            "RUID-8c62d78f59c1cfaa"
+          ],
+          "relation": "merge",
+          "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+          "confidence": "high",
+          "reason": "均依据广告法第二十四条禁止教育培训广告利用科研单位、学术机构、教育机构、行业协会、专业人士、受益者等名义或形象作推荐、证明，受规制行为与法律效果相同。",
+          "legal_effect": "prohibited"
+        },
+        {
+          "cluster_key": "PESTICIDE_VET_FEED_PROHIBITED_SUBJECT",
+          "canonical_name": "农药、兽药、饲料和饲料添加剂广告禁止利用科研单位、专业人士、用户等名义或形象作推荐、证明",
+          "member_rule_uids": [
+            "RUID-343e09b5c1c6b0d2",
+            "RUID-fe324abb9130484c"
+          ],
+          "relation": "merge",
+          "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+          "confidence": "high",
+          "reason": "均依据广告法第二十一条禁止农药、兽药、饲料和饲料添加剂广告利用科研单位、学术机构、技术推广机构、行业协会、专业人士、用户等名义或形象作推荐、证明，受规制行为与法律效果相同。",
+          "legal_effect": "prohibited"
+        },
+        {
+          "cluster_key": "MINOR_UNDER_10_ENDORSER_PROHIBITED",
+          "canonical_name": "不得利用不满十周岁的未成年人作为广告代言人",
+          "member_rule_uids": [
+            "RUID-3cb7962acf8d23b3",
+            "RUID-562c1ad835adcb7a",
+            "RUID-8f08bec265411010",
+            "RUID-c91fd8d3d70bc247",
+            "RUID-d9fff6c6cc6d8670",
+            "RUID-e63b6e0009bccf3e",
+            "RUID-f30ed7aec04e8afa",
+            "RUID-f617819336c87c61"
+          ],
+          "relation": "merge",
+          "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+          "confidence": "high",
+          "reason": "均禁止利用不满十周岁的未成年人作为广告代言人，受规制行为与法律效果相同；法律与平台规则、渠道差异作为适用范围保留。",
+          "legal_effect": "prohibited"
+        },
+        {
+          "cluster_key": "FALSE_AD_PENALTY_3Y_ENDORSER_PROHIBITED",
+          "canonical_name": "不得利用因虚假广告受行政处罚未满三年的主体作为广告代言人",
+          "member_rule_uids": [
+            "RUID-59cb40acd393c6ce",
+            "RUID-642c5f9f15eaa889",
+            "RUID-ee8013165a5b8e1d"
+          ],
+          "relation": "merge",
+          "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+          "confidence": "high",
+          "reason": "均依据广告法第三十八条禁止利用在虚假广告中作推荐、证明受到行政处罚未满三年的自然人、法人或其他组织作为广告代言人，受规制行为与法律效果相同。",
+          "legal_effect": "prohibited"
+        },
+        {
+          "cluster_key": "COSMETICS_MEDICAL_INSTITUTION_ENDORSEMENT_PROHIBITED",
+          "canonical_name": "化妆品广告禁止利用医疗机构及其工作人员、聘任专家名义或形象作推荐、证明",
+          "member_rule_uids": [
+            "RUID-a56980eefdeca399"
+          ],
+          "relation": "separate",
+          "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+          "confidence": "high",
+          "reason": "针对化妆品品类禁止利用医疗机构及人员名义作推荐、证明，受规制对象与保健食品、教育培训、农药兽药饲料等品类不同，应单独成簇。",
+          "legal_effect": "prohibited"
+        }
+      ]
+    },
+    {
+      "issue_id": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+      "parent_issue_id": "ENDORSEMENT",
+      "level": 2,
+      "node_type": "legal_issue",
+      "name": "特定品类禁止使用推荐人或证明人",
+      "rule_uids": [
+        "RUID-02f4d529f6d0383c",
+        "RUID-07c06c5e0785bdbc",
+        "RUID-d58a892d4bc0c4ac",
+        "RUID-d79610014e487328",
+        "RUID-545f9ad8dd6797c1",
+        "RUID-581e6b801073e750",
+        "RUID-8b4409e0ef5b29d0"
+      ],
+      "candidate_clusters": [
+        {
+          "cluster_key": "HEALTH_FOOD_ENDORSER_PROHIBITED",
+          "canonical_name": "保健食品广告禁止利用广告代言人作推荐、证明",
+          "member_rule_uids": [
+            "RUID-02f4d529f6d0383c",
+            "RUID-07c06c5e0785bdbc",
+            "RUID-545f9ad8dd6797c1",
+            "RUID-581e6b801073e750",
+            "RUID-d58a892d4bc0c4ac",
+            "RUID-d79610014e487328"
+          ],
+          "relation": "merge",
+          "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+          "confidence": "high",
+          "reason": "均为保健食品广告禁止利用广告代言人作推荐、证明，受规制行为与法律效果相同；法律与平台规则差异作为适用范围保留。",
+          "legal_effect": "prohibited"
+        },
+        {
+          "cluster_key": "MILK_POWDER_DOCTOR_ENDORSEMENT_PROHIBITED",
+          "canonical_name": "奶粉及特定营养成分食品广告禁止利用医生形象作证明推荐",
+          "member_rule_uids": [
+            "RUID-8b4409e0ef5b29d0"
+          ],
+          "relation": "separate",
+          "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+          "confidence": "high",
+          "reason": "针对奶粉及特定营养成分食品禁止利用医生形象作证明推荐，受规制对象与保健食品、化妆品等品类不同，应单独成簇。",
+          "legal_effect": "prohibited"
+        }
+      ]
+    },
+    {
+      "issue_id": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+      "parent_issue_id": "ENDORSEMENT",
+      "level": 2,
+      "node_type": "legal_issue",
+      "name": "未经同意使用姓名或形象",
+      "rule_uids": [
+        "RUID-80be4c286d73fac3",
+        "RUID-e7b3e344e40da436",
+        "RUID-0bb184d1ed7e014c",
+        "RUID-95d03473566aa0b5",
+        "RUID-a4231e5bdb7ce08b",
+        "RUID-c434bc40389bb1a2"
+      ],
+      "candidate_clusters": [
+        {
+          "cluster_key": "ENDORSEMENT_CONSENT_FOR_NAME_IMAGE",
+          "canonical_name": "广告中使用他人名义或形象应事先取得书面同意",
+          "member_rule_uids": [
+            "RUID-0bb184d1ed7e014c",
+            "RUID-80be4c286d73fac3",
+            "RUID-95d03473566aa0b5",
+            "RUID-a4231e5bdb7ce08b",
+            "RUID-c434bc40389bb1a2",
+            "RUID-e7b3e344e40da436"
+          ],
+          "relation": "merge",
+          "recommended_parent": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+          "confidence": "high",
+          "reason": "六条规则均围绕广告中使用他人名义或形象需取得同意这一核心要件，受规制行为均为未经同意使用他人名义或形象，法律效果均为consent_required，行业、产品、平台、渠道差异仅作为适用范围保留，不构成实质区分，故合并。",
+          "legal_effect": "consent_required"
+        }
+      ]
+    },
+    {
+      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
+      "parent_issue_id": "ENDORSEMENT",
+      "level": 2,
+      "node_type": "legal_issue",
+      "name": "代言人实际使用义务",
+      "rule_uids": [
+        "RUID-79468f9702e16ad3",
+        "RUID-8c3736290884aeb7",
+        "RUID-94af376237103381",
+        "RUID-b0c92cce2582d347",
+        "RUID-d31f24a1455c5ead"
+      ],
+      "candidate_clusters": [
+        {
+          "cluster_key": "ENDORSEMENT_ACTUAL_USE_DUTY",
+          "canonical_name": "广告代言人实际使用义务",
+          "member_rule_uids": [
+            "RUID-79468f9702e16ad3",
+            "RUID-8c3736290884aeb7",
+            "RUID-94af376237103381",
+            "RUID-b0c92cce2582d347",
+            "RUID-d31f24a1455c5ead"
+          ],
+          "relation": "merge",
+          "recommended_parent": "ENDORSEMENT.ACTUAL_USE_DUTY",
+          "confidence": "high",
+          "reason": "五条规则均指向广告代言人不得为未使用过的商品或未接受过的服务作推荐、证明，受规制行为（未实际使用即代言）与法律效果（actual_use_required）相同，均依据《广告法》第三十八条或第六十一条，属于同一实际使用义务，行业、产品、平台等差异仅作为适用范围保留，不影响归并。",
+          "legal_effect": "actual_use_required"
+        }
+      ]
+    },
+    {
+      "issue_id": "ENDORSEMENT.JOINT_LIABILITY",
+      "parent_issue_id": "ENDORSEMENT",
+      "level": 2,
+      "node_type": "legal_issue",
+      "name": "虚假广告中的连带责任",
+      "rule_uids": [
+        "RUID-05228e503bb54568",
+        "RUID-28d3242b78268125",
+        "RUID-9c8c4a9b0f408ba0",
+        "RUID-9d3516057c6bf874",
+        "RUID-baab8cf4685f20b7"
+      ],
+      "candidate_clusters": [
+        {
+          "cluster_key": "FALSE_AD_JOINT_LIABILITY",
+          "canonical_name": "虚假广告造成消费者损害的连带责任",
+          "member_rule_uids": [
+            "RUID-05228e503bb54568",
+            "RUID-28d3242b78268125",
+            "RUID-9c8c4a9b0f408ba0",
+            "RUID-9d3516057c6bf874",
+            "RUID-baab8cf4685f20b7"
+          ],
+          "relation": "merge",
+          "recommended_parent": "ENDORSEMENT.JOINT_LIABILITY",
+          "confidence": "high",
+          "reason": "五条规则均以虚假广告造成消费者损害为受规制行为，法律效果均为连带责任，核心法律要件一致；行业、产品、平台、渠道差异仅作为适用范围保留，不影响归并。",
+          "legal_effect": "joint_liability"
+        }
+      ]
+    },
+    {
+      "issue_id": "ENDORSEMENT.OTHER",
+      "parent_issue_id": "ENDORSEMENT",
+      "level": 2,
+      "node_type": "legal_issue",
+      "name": "其他代言、推荐与证明问题",
+      "rule_uids": [
+        "RUID-dee30111d39ef7a8"
+      ],
+      "candidate_clusters": [
+        {
+          "cluster_key": "DOCTOR_RECOMMENDATION_WITHOUT_PROOF",
+          "canonical_name": "普通食品涉及医生推荐需提交医生证明",
+          "member_rule_uids": [
+            "RUID-dee30111d39ef7a8"
+          ],
+          "relation": "separate",
+          "confidence": "high",
+          "reason": "候选组仅含一条规则，保留为独立候选。",
+          "recommended_parent": "ENDORSEMENT.OTHER",
+          "legal_effect": "qualification_check"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,466 @@
+{
+  "schema_version": "0.1",
+  "asset_status": "draft",
+  "generated_at": "2026-09-12T04:13:56.219958+00:00",
+  "prompt_version": "legal_issue_taxonomy_v01_20260912",
+  "generation_method": "approved_legal_domain_seed_with_deepseek_full_scan",
+  "source_issue_count": 1214,
+  "scan_fragment_count": 49,
+  "nodes": [
+    {
+      "node_id": "SCOPE_ACCESS",
+      "parent_node_id": null,
+      "level": 1,
+      "name": "适用主体与准入",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "SCOPE_ACCESS.SUBJECT_QUALIFICATION",
+      "parent_node_id": "SCOPE_ACCESS",
+      "level": 2,
+      "name": "主体资格",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "SCOPE_ACCESS.PRODUCT_REGISTRATION",
+      "parent_node_id": "SCOPE_ACCESS",
+      "level": 2,
+      "name": "产品注册备案",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "SCOPE_ACCESS.AD_REVIEW_ACCESS",
+      "parent_node_id": "SCOPE_ACCESS",
+      "level": 2,
+      "name": "广告审查与投放准入",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "SCOPE_ACCESS.SCOPE_CLASSIFICATION",
+      "parent_node_id": "SCOPE_ACCESS",
+      "level": 2,
+      "name": "产品属性与适用范围",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "PROHIBITED_CONTENT",
+      "parent_node_id": null,
+      "level": 1,
+      "name": "禁止投放内容",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "PROHIBITED_CONTENT.PROHIBITED_PRODUCTS",
+      "parent_node_id": "PROHIBITED_CONTENT",
+      "level": 2,
+      "name": "禁投商品与服务",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "PROHIBITED_CONTENT.POLITICAL_SECURITY",
+      "parent_node_id": "PROHIBITED_CONTENT",
+      "level": 2,
+      "name": "政治与国家安全",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "PROHIBITED_CONTENT.VULGAR_SEXUAL_VIOLENT",
+      "parent_node_id": "PROHIBITED_CONTENT",
+      "level": 2,
+      "name": "低俗、色情与暴力内容",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "PROHIBITED_CONTENT.GAMBLING_SUPERSTITION",
+      "parent_node_id": "PROHIBITED_CONTENT",
+      "level": 2,
+      "name": "赌博与迷信内容",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "TRUTHFULNESS",
+      "parent_node_id": null,
+      "level": 1,
+      "name": "宣传真实性",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "TRUTHFULNESS.FALSE_FACT",
+      "parent_node_id": "TRUTHFULNESS",
+      "level": 2,
+      "name": "虚构或不实事实",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "TRUTHFULNESS.MISLEADING_OMISSION",
+      "parent_node_id": "TRUTHFULNESS",
+      "level": 2,
+      "name": "误导与重大遗漏",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "TRUTHFULNESS.MATERIAL_MISMATCH",
+      "parent_node_id": "TRUTHFULNESS",
+      "level": 2,
+      "name": "广告素材与商品服务不一致",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "TRUTHFULNESS.FABRICATED_EFFECT",
+      "parent_node_id": "TRUTHFULNESS",
+      "level": 2,
+      "name": "虚构效果与体验",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "CLAIM_EXPRESSION",
+      "parent_node_id": null,
+      "level": 1,
+      "name": "宣称表达方式",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "CLAIM_EXPRESSION.ABSOLUTE",
+      "parent_node_id": "CLAIM_EXPRESSION",
+      "level": 2,
+      "name": "绝对化用语",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING",
+      "parent_node_id": "CLAIM_EXPRESSION",
+      "level": 2,
+      "name": "比较、排名与唯一性宣称",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT",
+      "parent_node_id": "CLAIM_EXPRESSION",
+      "level": 2,
+      "name": "保证与承诺性表达",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED",
+      "parent_node_id": "CLAIM_EXPRESSION",
+      "level": 2,
+      "name": "模糊、夸张与易误解表达",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "EFFICACY_PERFORMANCE",
+      "parent_node_id": null,
+      "level": 1,
+      "name": "功效与性能宣称",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "EFFICACY_PERFORMANCE.DISEASE_MEDICAL",
+      "parent_node_id": "EFFICACY_PERFORMANCE",
+      "level": 2,
+      "name": "疾病预防治疗与医疗化宣称",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "EFFICACY_PERFORMANCE.HEALTH_COSMETIC_EFFECT",
+      "parent_node_id": "EFFICACY_PERFORMANCE",
+      "level": 2,
+      "name": "保健及化妆品功效宣称",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "EFFICACY_PERFORMANCE.SAFETY_SIDE_EFFECT",
+      "parent_node_id": "EFFICACY_PERFORMANCE",
+      "level": 2,
+      "name": "安全性与副作用宣称",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "EFFICACY_PERFORMANCE.PERFORMANCE_RESULT",
+      "parent_node_id": "EFFICACY_PERFORMANCE",
+      "level": 2,
+      "name": "性能、效果与结果宣称",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "PRICE_PROMOTION",
+      "parent_node_id": null,
+      "level": 1,
+      "name": "价格与促销",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "PRICE_PROMOTION.PRICE_ACCURACY",
+      "parent_node_id": "PRICE_PROMOTION",
+      "level": 2,
+      "name": "价格真实性与准确标示",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "PRICE_PROMOTION.DISCOUNT_LIMIT",
+      "parent_node_id": "PRICE_PROMOTION",
+      "level": 2,
+      "name": "折扣优惠与限制条件",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "PRICE_PROMOTION.GIFT_FREE",
+      "parent_node_id": "PRICE_PROMOTION",
+      "level": 2,
+      "name": "赠送、免费与福利活动",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "PRICE_PROMOTION.PRIZE_PROBABILITY",
+      "parent_node_id": "PRICE_PROMOTION",
+      "level": 2,
+      "name": "抽奖、概率与奖励机制",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "EVIDENCE_FACT",
+      "parent_node_id": null,
+      "level": 1,
+      "name": "证明材料与事实核验",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "EVIDENCE_FACT.DATA_CITATION",
+      "parent_node_id": "EVIDENCE_FACT",
+      "level": 2,
+      "name": "数据、统计与引证来源",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "EVIDENCE_FACT.TEST_RESEARCH",
+      "parent_node_id": "EVIDENCE_FACT",
+      "level": 2,
+      "name": "测试、实验与研究证明",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "EVIDENCE_FACT.QUALIFICATION_FILING",
+      "parent_node_id": "EVIDENCE_FACT",
+      "level": 2,
+      "name": "资质、许可与备案材料",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "EVIDENCE_FACT.AUTHORIZATION_PROVENANCE",
+      "parent_node_id": "EVIDENCE_FACT",
+      "level": 2,
+      "name": "授权、来源与权属证明",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "DISCLOSURE_WARNING",
+      "parent_node_id": null,
+      "level": 1,
+      "name": "信息披露与警示语",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "DISCLOSURE_WARNING.AD_IDENTIFIABILITY",
+      "parent_node_id": "DISCLOSURE_WARNING",
+      "level": 2,
+      "name": "广告可识别性",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "DISCLOSURE_WARNING.STATUTORY_WARNING",
+      "parent_node_id": "DISCLOSURE_WARNING",
+      "level": 2,
+      "name": "法定警示语",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "DISCLOSURE_WARNING.CONDITIONS_LIMITS",
+      "parent_node_id": "DISCLOSURE_WARNING",
+      "level": 2,
+      "name": "适用条件与限制披露",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "DISCLOSURE_WARNING.LABEL_SOURCE",
+      "parent_node_id": "DISCLOSURE_WARNING",
+      "level": 2,
+      "name": "标签、出处与必要信息",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "ENDORSEMENT_REVIEW",
+      "parent_node_id": null,
+      "level": 1,
+      "name": "代言、推荐与用户评价",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "ENDORSEMENT_REVIEW.ENDORSER_ELIGIBILITY",
+      "parent_node_id": "ENDORSEMENT_REVIEW",
+      "level": 2,
+      "name": "代言人资格",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "ENDORSEMENT_REVIEW.PERSONAL_EXPERIENCE",
+      "parent_node_id": "ENDORSEMENT_REVIEW",
+      "level": 2,
+      "name": "真实使用体验",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "ENDORSEMENT_REVIEW.EXPERT_ORGANIZATION",
+      "parent_node_id": "ENDORSEMENT_REVIEW",
+      "level": 2,
+      "name": "专家及机构推荐证明",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "ENDORSEMENT_REVIEW.UGC_BUYER",
+      "parent_node_id": "ENDORSEMENT_REVIEW",
+      "level": 2,
+      "name": "用户评价与买手推广",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "IP_PERSONALITY",
+      "parent_node_id": null,
+      "level": 1,
+      "name": "知识产权与人格权益",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "IP_PERSONALITY.COPYRIGHT_TRADEMARK",
+      "parent_node_id": "IP_PERSONALITY",
+      "level": 2,
+      "name": "著作权与商标权",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "IP_PERSONALITY.PORTRAIT_NAME",
+      "parent_node_id": "IP_PERSONALITY",
+      "level": 2,
+      "name": "肖像、姓名与人格权益",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "IP_PERSONALITY.PATENT_AWARD",
+      "parent_node_id": "IP_PERSONALITY",
+      "level": 2,
+      "name": "专利、奖项与荣誉",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "IP_PERSONALITY.THIRD_PARTY_AUTH",
+      "parent_node_id": "IP_PERSONALITY",
+      "level": 2,
+      "name": "第三方内容授权",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "MINORS_PUBLIC_ORDER",
+      "parent_node_id": null,
+      "level": 1,
+      "name": "未成年人及公序良俗",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "parent_node_id": "MINORS_PUBLIC_ORDER",
+      "level": 2,
+      "name": "未成年人诱导与付费保护",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY",
+      "parent_node_id": "MINORS_PUBLIC_ORDER",
+      "level": 2,
+      "name": "公序良俗",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT",
+      "parent_node_id": "MINORS_PUBLIC_ORDER",
+      "level": 2,
+      "name": "歧视、侮辱与网络暴力",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR",
+      "parent_node_id": "MINORS_PUBLIC_ORDER",
+      "level": 2,
+      "name": "危险行为与不良导向",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "MATERIAL_PLATFORM",
+      "parent_node_id": null,
+      "level": 1,
+      "name": "素材形式与平台规范",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "MATERIAL_PLATFORM.MEDIA_QUALITY",
+      "parent_node_id": "MATERIAL_PLATFORM",
+      "level": 2,
+      "name": "图片、音频与视频质量",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA",
+      "parent_node_id": "MATERIAL_PLATFORM",
+      "level": 2,
+      "name": "版式、字体与安全区域",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "MATERIAL_PLATFORM.FORM_SYMBOL",
+      "parent_node_id": "MATERIAL_PLATFORM",
+      "level": 2,
+      "name": "素材形式与特殊符号",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP",
+      "parent_node_id": "MATERIAL_PLATFORM",
+      "level": 2,
+      "name": "广告位、跳转与落地页",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "WORKFLOW_DUTY",
+      "parent_node_id": null,
+      "level": 1,
+      "name": "投放流程与持续义务",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "WORKFLOW_DUTY.PRE_REVIEW",
+      "parent_node_id": "WORKFLOW_DUTY",
+      "level": 2,
+      "name": "投放前审查",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "WORKFLOW_DUTY.ARCHIVE_RECORD",
+      "parent_node_id": "WORKFLOW_DUTY",
+      "level": 2,
+      "name": "档案与记录保存",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM",
+      "parent_node_id": "WORKFLOW_DUTY",
+      "level": 2,
+      "name": "平台与算法责任",
+      "node_type": "directory"
+    },
+    {
+      "node_id": "WORKFLOW_DUTY.POST_LAUNCH_FULFILLMENT",
+      "parent_node_id": "WORKFLOW_DUTY",
+      "level": 2,
+      "name": "投放后履约与持续核验",
+      "node_type": "directory"
+    }
+  ]
+}

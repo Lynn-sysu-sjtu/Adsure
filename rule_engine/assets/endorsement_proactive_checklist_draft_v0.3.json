@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.2",
+  "asset_status": "draft",
+  "prompt_version": "endorsement_fingerprint_v02_20260912",
+  "model": "deepseek-chat",
+  "checks": [
+    {
+      "check_id": "PC-ENDORSEMENT-d882b281c5c1",
+      "name": "普通食品医生推荐证明核验",
+      "opinion_type": "需补资料",
+      "trigger_conditions": {
+        "industry_or_product_scope": [
+          "general_food"
+        ],
+        "content_signals": [
+          "doctor_recommendation"
+        ],
+        "context_requirement": "待审核文案或投放背景出现医生推荐",
+        "missing_materials_required": true
+      },
+      "required_materials": [
+        "医生身份证明或执业资质",
+        "医生推荐、授权或合作关系材料"
+      ],
+      "source_rule_uids": [
+        "RUID-dee30111d39ef7a8"
+      ],
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书《食品行业投放规则》使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2.",
+          "original_text": "普通食品涉及医生推荐需要提交医生证明。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ]
+}

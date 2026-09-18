@@ -679,10 +679,10 @@
           "标签标识"
         ],
         "vector_text": "本款面霜像糖果一样香甜?这款精华液如药片般浓缩?食品?药品?糖果?饮料?胶囊?药片?口服?食用?化妆",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品. It also has fact signals, so this should be reviewed.",
         "trigger_layer_confidence": "low",
         "trigger_layer_source": "heuristic",
@@ -706,7 +706,9 @@
           "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Missing semantic_reason.",
           "confidence": "low",
           "semantic_recommendations_applied": false
-        }
+        },
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "中",
       "consequence": {
@@ -776,7 +778,9 @@
         "route_reason": "规则触发需结合上下文判断是否构成混淆，但运营可依据明确示例直接修改文案，无需法务介入。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "COSM-002",

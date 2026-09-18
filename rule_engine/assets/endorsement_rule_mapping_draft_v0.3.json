@@ -1,0 +1,2598 @@
+{
+  "schema_version": "0.2",
+  "asset_status": "draft",
+  "prompt_version": "endorsement_fingerprint_v02_20260912",
+  "model": "deepseek-chat",
+  "mappings": [
+    {
+      "rule_uid": "RUID-02f4d529f6d0383c",
+      "rule_id": "HF-001-005",
+      "rule_title": "保健食品广告不得利用广告代言人作推荐、证明",
+      "issue_id": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-18a2831597359ff8",
+      "canonical_rule_uid": "RUID-d79610014e487328",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十八条",
+          "original_text": "第十八条 保健食品广告不得含有下列内容： （五）利用广告代言人作推荐、证明；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-02f4d529f6d0383c",
+        "issue_family": "endorsement_prohibited_by_category",
+        "regulated_action": "use_endorser_for_health_food_recommendation_or_proof",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "advertising_publisher",
+          "endorser"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第十八条"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "canonical_problem_name": "保健食品广告不得利用广告代言人作推荐、证明",
+        "aliases": [
+          "保健食品禁止代言推荐证明"
+        ],
+        "confidence": "high",
+        "reason": "广告法第十八条第五项原文明确保健食品广告不得含有利用广告代言人作推荐、证明的内容。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-05228e503bb54568",
+      "rule_id": "GAME-FALSE-001",
+      "rule_title": "虚假广告造成消费者损害需承担民事责任",
+      "issue_id": "ENDORSEMENT.JOINT_LIABILITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-eb1b4eeac1a9dedb",
+      "canonical_rule_uid": "RUID-05228e503bb54568",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十六条",
+          "original_text": "第五十六条 违反本法规定，发布虚假广告，欺骗、误导消费者，使购买商品或者接受服务的消费者的合法权益受到损害的，由广告主依法承担民事责任。广告经营者、广告发布者不能提供广告主的真实名称、地址和有效联系方式的，消费者可以要求广告经营者、广告发布者先行赔偿。\n 关系消费者生命健康的商品或者服务的虚假广告，造成消费者损害的，其广告经营者、广告发布者、广告代言人应当与广告主承担连带责任。\n 前款规定以外的商品或者服务的虚假广告，造成消费者损害的，其广告经营者、广告发布者、广告代言人，明知或者应知广告虚假仍设计、制作、代理、发布或者作推荐、证明的，应当与广告主承担连带责任。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-05228e503bb54568",
+        "issue_family": "false_advertising_liability",
+        "regulated_action": "false_ad_causing_consumer_damage",
+        "legal_effect": "joint_liability",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "advertising_publisher",
+          "endorser"
+        ],
+        "object_scope": [
+          "game"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第五十六条"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.JOINT_LIABILITY",
+        "canonical_problem_name": "虚假广告造成消费者损害的民事责任与连带责任",
+        "aliases": [
+          "虚假广告连带责任"
+        ],
+        "confidence": "high",
+        "reason": "广告法第五十六条原文规定虚假广告造成消费者损害时广告主承担民事责任，关系生命健康商品或服务的广告经营者、发布者、代言人与广告主承担连带责任，其他商品或服务明知或应知虚假仍作推荐、证明的承担连带责任。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-07c06c5e0785bdbc",
+      "rule_id": "HF-ADV-001",
+      "rule_title": "保健食品广告中禁止广告代言人作推荐、证明",
+      "issue_id": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-84a40a909a27fb59",
+      "canonical_rule_uid": "RUID-07c06c5e0785bdbc",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十一条",
+          "original_text": "第六十一条 广告代言人有下列情形之一的，由市场监督管理部门没收违法所得，并处违法所得一倍以上二倍以下的罚款：\n （一）违反本法第十六条第一款第四项规定，在医疗、药品、医疗器械广告中作推荐、证明的；\n （二）违反本法第十八条第一款第五项规定，在保健食品广告中作推荐、证明的；\n （三）违反本法第三十八条第一款规定，为其未使用过的商品或者未接受过的服务作推荐、证明的；\n （四）明知或者应知广告虚假仍在广告中对商品、服务作推荐、证明的。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-07c06c5e0785bdbc",
+        "issue_family": "ENDORSEMENT_PROHIBITION",
+        "regulated_action": "endorsement_recommendation_proof_in_health_food_ad",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "ad_endorser"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第六十一条"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "canonical_problem_name": "保健食品广告禁止代言人推荐证明",
+        "aliases": [
+          "保健食品广告代言禁止",
+          "保健食品推荐证明禁止"
+        ],
+        "confidence": "high",
+        "reason": "广告法第六十一条第（二）项明确禁止广告代言人在保健食品广告中作推荐、证明，并规定相应罚则。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-0bb184d1ed7e014c",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "广告中使用他人名义或形象需取得书面同意",
+      "issue_id": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-77f7233f5571d77b",
+      "canonical_rule_uid": "RUID-0bb184d1ed7e014c",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十三条",
+          "original_text": "第三十三条 广告主或者广告经营者在广告中使用他人名义或者形象的，应当事先取得其书面同意；使用无民事行为能力人、限制民事行为能力人的名义或者形象的，应当事先取得其监护人的书面同意。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-0bb184d1ed7e014c",
+        "issue_family": "endorsement_consent",
+        "regulated_action": "use_others_name_or_image_without_written_consent",
+        "legal_effect": "consent_required",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent"
+        ],
+        "object_scope": [
+          "game"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第三十三条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+        "canonical_problem_name": "广告中使用他人名义或形象应事先取得书面同意",
+        "aliases": [
+          "广告使用他人名义形象需书面同意"
+        ],
+        "confidence": "high",
+        "reason": "广告法第三十三条原文规定广告主或广告经营者在广告中使用他人名义或形象的应事先取得书面同意，使用无民事行为能力人、限制民事行为能力人的名义或形象应事先取得监护人书面同意。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-168081152ac6fa9d",
+      "rule_id": "HF-虚假宣传-002",
+      "rule_title": "保健食品广告不得利用科研单位、学术机构、技术推广机构、行业协会或者专业人士、用户的名义或者形象作推荐、证明",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-cd28adebe801fb06",
+      "canonical_rule_uid": "RUID-168081152ac6fa9d",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十一条",
+          "original_text": "农药、兽药、饲料和饲料添加剂广告不得含有下列内容：（二）利用科研单位、学术机构、技术推广机构、行业协会或者专业人士、用户的名义或者形象作推荐、证明；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-168081152ac6fa9d",
+        "issue_family": "ENDORSEMENT_PROHIBITION",
+        "regulated_action": "use_of_institution_or_professional_or_user_name_image_for_recommendation_proof",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "research_institution",
+          "academic_institution",
+          "technology_promotion_institution",
+          "industry_association",
+          "professional",
+          "user"
+        ],
+        "object_scope": [
+          "pesticide",
+          "veterinary_drug",
+          "feed",
+          "feed_additive"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第二十一条"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "保健食品广告禁止利用机构或专业人士用户名义形象推荐证明",
+        "aliases": [
+          "保健食品广告禁止机构推荐",
+          "保健食品广告禁止专家用户见证"
+        ],
+        "confidence": "high",
+        "reason": "规则标题与track_hint指向保健食品，但法条原文第二十一条为农药、兽药、饲料和饲料添加剂广告的禁止性规定，未直接涵盖保健食品，存在来源范围冲突，以原文为准。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-28d3242b78268125",
+      "rule_id": "COSM-FALSEADV-003",
+      "rule_title": "虚假广告连带责任-社会团体或个人推荐连带责任",
+      "issue_id": "ENDORSEMENT.JOINT_LIABILITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-42e7670ae7bccdf5",
+      "canonical_rule_uid": "RUID-28d3242b78268125",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "CPL",
+          "source_name": "中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十五条",
+          "original_text": "社会团体或者其他组织、个人在关系消费者生命健康商品或者服务的虚假广告或者其他虚假宣传中向消费者推荐商品或者服务，造成消费者损害的，应当与提供该商品或者服务的经营者承担连带责任。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-28d3242b78268125",
+        "issue_family": "endorsement_joint_liability_false_ad",
+        "regulated_action": "recommend_health_related_goods_in_false_ad",
+        "legal_effect": "joint_liability",
+        "actor_scope": [
+          "social_group",
+          "organization",
+          "individual"
+        ],
+        "object_scope": [
+          "health_related_goods_or_services"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "CPL:第四十五条"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.JOINT_LIABILITY",
+        "canonical_problem_name": "社会团体或个人推荐关系生命健康商品虚假广告的连带责任",
+        "aliases": [
+          "虚假广告连带责任",
+          "推荐人连带责任",
+          "生命健康商品推荐责任"
+        ],
+        "confidence": "high",
+        "reason": "消费者权益保护法第四十五条明确：社会团体或者其他组织、个人在关系消费者生命健康商品或者服务的虚假广告或者其他虚假宣传中向消费者推荐商品或者服务，造成消费者损害的，应当与提供该商品或者服务的经营者承担连带责任。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-32fd3325bec319e7",
+      "rule_id": "GAME-AD-003",
+      "rule_title": "教育、培训广告不得利用特定机构或个人名义作推荐证明",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-cb0f7b0ee20b9cd6",
+      "canonical_rule_uid": "RUID-32fd3325bec319e7",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十四条",
+          "original_text": "第二十四条 教育、培训广告不得含有下列内容：\n （三）利用科研单位、学术机构、教育机构、行业协会、专业人士、受益者的名义或者形象作推荐、证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-32fd3325bec319e7",
+        "issue_family": "endorsement_prohibited_subject",
+        "regulated_action": "use_specific_entity_name_or_image_for_recommendation_or_proof",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "科研单位",
+          "学术机构",
+          "教育机构",
+          "行业协会",
+          "专业人士",
+          "受益者"
+        ],
+        "object_scope": [
+          "education_training"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第二十四条"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "教育培训广告禁止利用特定机构或个人名义作推荐证明",
+        "aliases": [
+          "教育、培训广告不得利用特定机构或个人名义作推荐证明"
+        ],
+        "confidence": "high",
+        "reason": "广告法第二十四条第（三）项明确禁止教育、培训广告利用科研单位、学术机构、教育机构、行业协会、专业人士、受益者的名义或者形象作推荐、证明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-343e09b5c1c6b0d2",
+      "rule_id": "COSM-AD-002",
+      "rule_title": "农药、兽药、饲料和饲料添加剂广告不得利用科研单位等名义作推荐证明",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-e1d55288c1c471db",
+      "canonical_rule_uid": "RUID-343e09b5c1c6b0d2",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十一条",
+          "original_text": "农药、兽药、饲料和饲料添加剂广告不得含有下列内容：（二）利用科研单位、学术机构、技术推广机构、行业协会或者专业人士、用户的名义或者形象作推荐、证明；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-343e09b5c1c6b0d2",
+        "issue_family": "ENDORSEMENT_PROHIBITED_SUBJECT",
+        "regulated_action": "use_specific_subject_for_recommendation_or_testimonial",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "research_institution",
+          "academic_institution",
+          "technology_extension_institution",
+          "industry_association",
+          "professional",
+          "user"
+        ],
+        "object_scope": [
+          "pesticide",
+          "veterinary_drug",
+          "feed",
+          "feed_additive"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第二十一条"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "农药兽药饲料广告禁止利用科研单位等名义作推荐证明",
+        "aliases": [
+          "农药兽药饲料广告代言禁止",
+          "科研单位推荐证明禁止"
+        ],
+        "confidence": "high",
+        "reason": "法条原文明确禁止农药、兽药、饲料和饲料添加剂广告利用科研单位、学术机构、技术推广机构、行业协会或者专业人士、用户的名义或者形象作推荐、证明；track_hint_only为美妆，与法条原文产品类别冲突，以原文为准。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-3cb7962acf8d23b3",
+      "rule_id": "XHS-COSM-002",
+      "rule_title": "不得利用不满10周岁的未成年人作为广告代言人",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-60dd2a7c217bafb3",
+      "canonical_rule_uid": "RUID-3cb7962acf8d23b3",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.1",
+          "original_text": "不得利⽤不满10周岁的未成年⼈作为⼴告代⾔⼈。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-3cb7962acf8d23b3",
+        "issue_family": "ENDORSEMENT_PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "regulated_action": "use_minor_under_10_as_endorser",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "minor_under_10"
+        ],
+        "object_scope": [],
+        "channel_scope": [],
+        "platform_scope": [
+          "小红书"
+        ],
+        "source_type": "platform_rule",
+        "legal_level": 99,
+        "legal_basis_key": [
+          "XHS:1.1"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "canonical_problem_name": "不得利用不满10周岁未成年人作为广告代言人",
+        "aliases": [
+          "未成年人代言禁止",
+          "童星代言禁止"
+        ],
+        "confidence": "high",
+        "reason": "平台规则原文明确不得利用不满10周岁的未成年人作为广告代言人。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-545f9ad8dd6797c1",
+      "rule_id": "XHS-HF-002",
+      "rule_title": "保健食品广告不得利用广告代言人作推荐、证明",
+      "issue_id": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-80d866a41a1f049e",
+      "canonical_rule_uid": "RUID-545f9ad8dd6797c1",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.1",
+          "original_text": "医疗、药品、医疗器械、保健⻝品⼴告不得利⽤⼴告代⾔⼈作推荐、证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-545f9ad8dd6797c1",
+        "issue_family": "ENDORSEMENT_PROHIBITION",
+        "regulated_action": "endorsement_recommendation_proof_in_health_food_ad",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "ad_endorser"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [
+          "xiaohongshu"
+        ],
+        "source_type": "platform_rule",
+        "legal_level": 99,
+        "legal_basis_key": [
+          "XHS:1.1"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "canonical_problem_name": "小红书保健食品广告禁止代言人推荐证明",
+        "aliases": [
+          "小红书保健食品代言禁止",
+          "小红书保健食品推荐证明禁止"
+        ],
+        "confidence": "high",
+        "reason": "小红书聚光帮助中心规则1.1明确医疗、药品、医疗器械、保健食品广告不得利用广告代言人作推荐、证明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-562c1ad835adcb7a",
+      "rule_id": "GAME-AD-003",
+      "rule_title": "禁止利用不满十周岁的未成年人作为广告代言人",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-92407ab2428584c8",
+      "canonical_rule_uid": "RUID-562c1ad835adcb7a",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十八条",
+          "original_text": "违反本法第三十八条第二款规定，利用不满十周岁的未成年人作为广告代言人的"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-562c1ad835adcb7a",
+        "issue_family": "endorsement_prohibited_recommender_by_category",
+        "regulated_action": "use_minor_under_10_as_endorser",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "不满十周岁的未成年人"
+        ],
+        "object_scope": [
+          "advertising_endorsement"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第五十八条"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "canonical_problem_name": "禁止利用不满十周岁的未成年人作为广告代言人",
+        "aliases": [
+          "不满十周岁未成年人不得作为广告代言人"
+        ],
+        "confidence": "high",
+        "reason": "广告法第五十八条援引第三十八条第二款，明确禁止利用不满十周岁的未成年人作为广告代言人。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-581e6b801073e750",
+      "rule_id": "HF-AD-001",
+      "rule_title": "保健食品广告不得利用广告代言人作推荐、证明",
+      "issue_id": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-80d866a41a1f049e",
+      "canonical_rule_uid": "RUID-545f9ad8dd6797c1",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "医疗、药品、医疗器械、保健食品广告不得利用广告代言人作推荐、证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-581e6b801073e750",
+        "issue_family": "ENDORSEMENT_PROHIBITION",
+        "regulated_action": "endorsement_recommendation_proof_in_health_food_ad",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "ad_endorser"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [
+          "juguang_platform"
+        ],
+        "platform_scope": [
+          "xiaohongshu"
+        ],
+        "source_type": "platform_rule",
+        "legal_level": 99,
+        "legal_basis_key": [
+          "XHS:未分条-1"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "canonical_problem_name": "小红书聚光保健食品广告禁止代言人推荐证明",
+        "aliases": [
+          "聚光保健食品代言禁止",
+          "聚光保健食品推荐证明禁止"
+        ],
+        "confidence": "high",
+        "reason": "小红书聚光帮助中心规则未分条-1明确医疗、药品、医疗器械、保健食品广告不得利用广告代言人作推荐、证明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-59cb40acd393c6ce",
+      "rule_id": "GAME-ADV-003",
+      "rule_title": "不得利用因虚假广告受行政处罚未满三年的自然人、法人或其他组织作为广告代言人",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ae65519b2bf111d1",
+      "canonical_rule_uid": "RUID-59cb40acd393c6ce",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十八条",
+          "original_text": "对在虚假广告中作推荐、证明受到行政处罚未满三年的自然人、法人或者其他组织，不得利用其作为广告代言人。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-59cb40acd393c6ce",
+        "issue_family": "endorsement_prohibited_recommender_by_category",
+        "regulated_action": "use_person_penalized_for_false_ad_within_3_years_as_endorser",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "因虚假广告作推荐、证明受到行政处罚未满三年的自然人",
+          "因虚假广告作推荐、证明受到行政处罚未满三年的法人",
+          "因虚假广告作推荐、证明受到行政处罚未满三年的其他组织"
+        ],
+        "object_scope": [
+          "advertising_endorsement"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第三十八条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "canonical_problem_name": "不得利用因虚假广告受行政处罚未满三年的主体作为广告代言人",
+        "aliases": [
+          "虚假广告受处罚未满三年不得作为广告代言人"
+        ],
+        "confidence": "high",
+        "reason": "广告法第三十八条明确规定，对在虚假广告中作推荐、证明受到行政处罚未满三年的自然人、法人或者其他组织，不得利用其作为广告代言人。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-642c5f9f15eaa889",
+      "rule_id": "COSM-ADV-003",
+      "rule_title": "不得利用因虚假广告受行政处罚未满三年的自然人、法人或其他组织作为广告代言人",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ae65519b2bf111d1",
+      "canonical_rule_uid": "RUID-59cb40acd393c6ce",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十八条",
+          "original_text": "对在虚假广告中作推荐、证明受到行政处罚未满三年的自然人、法人或者其他组织，不得利用其作为广告代言人。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-642c5f9f15eaa889",
+        "issue_family": "ENDORSEMENT_PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "regulated_action": "use_person_penalized_for_false_ad_within_3_years_as_endorser",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "natural_person",
+          "legal_person",
+          "other_organization"
+        ],
+        "object_scope": [],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第三十八条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "canonical_problem_name": "不得利用因虚假广告受行政处罚未满三年的主体作为广告代言人",
+        "aliases": [
+          "虚假广告处罚未满三年代言禁止",
+          "受处罚主体代言禁止"
+        ],
+        "confidence": "high",
+        "reason": "法条原文明确对在虚假广告中作推荐、证明受到行政处罚未满三年的自然人、法人或者其他组织，不得利用其作为广告代言人。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-778e0278994f809d",
+      "rule_id": "IAM-ADV-004",
+      "rule_title": "直播营销人员以自己名义或形象推荐商品构成广告代言的责任认定",
+      "issue_id": "ENDORSEMENT.RELATION_IDENTIFICATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-21333478402c7bb5",
+      "canonical_rule_uid": "RUID-778e0278994f809d",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十九条",
+          "original_text": "直播营销人员以自己的名义或者形象对商品、服务作推荐、证明，构成广告代言的，应当依法承担广告代言人的责任和义务。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-778e0278994f809d",
+        "issue_family": "ENDORSEMENT_RELATION_IDENTIFICATION",
+        "regulated_action": "live_streamer_recommend_in_own_name_or_image",
+        "legal_effect": "relationship_determination",
+        "actor_scope": [
+          "live_streamer"
+        ],
+        "object_scope": [],
+        "channel_scope": [
+          "直播"
+        ],
+        "platform_scope": [],
+        "source_type": "regulation",
+        "legal_level": 3,
+        "legal_basis_key": [
+          "IAM:第十九条"
+        ],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.RELATION_IDENTIFICATION",
+        "canonical_problem_name": "直播营销人员以自己名义或形象推荐构成广告代言的认定",
+        "aliases": [
+          "直播营销人员代言认定",
+          "直播推荐构成代言"
+        ],
+        "confidence": "high",
+        "reason": "法规原文明确直播营销人员以自己的名义或者形象对商品、服务作推荐、证明，构成广告代言的，应当依法承担广告代言人的责任和义务。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-79468f9702e16ad3",
+      "rule_id": "COSM-ADV-001",
+      "rule_title": "广告代言人不得为未使用过的美妆商品作推荐、证明",
+      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-5ee28076769a3131",
+      "canonical_rule_uid": "RUID-79468f9702e16ad3",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十一条",
+          "original_text": "广告代言人有下列情形之一的，由市场监督管理部门没收违法所得，并处违法所得一倍以上二倍以下的罚款：……（三）违反本法第三十八条第一款规定，为其未使用过的商品或者未接受过的服务作推荐、证明的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-79468f9702e16ad3",
+        "issue_family": "endorsement_actual_use",
+        "regulated_action": "endorsement_without_actual_use",
+        "legal_effect": "actual_use_required",
+        "actor_scope": [
+          "endorser"
+        ],
+        "object_scope": [
+          "cosmetics"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第六十一条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.ACTUAL_USE_DUTY",
+        "canonical_problem_name": "广告代言人未使用商品作推荐证明",
+        "aliases": [
+          "代言人未使用商品",
+          "未使用商品推荐",
+          "代言人实际使用义务"
+        ],
+        "confidence": "high",
+        "reason": "广告法第六十一条第（三）项明确禁止代言人为未使用过的商品作推荐、证明，对应actual_use_required。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-7f1a9698aaa2cf50",
+      "rule_id": "HF-EDU-003",
+      "rule_title": "教育、培训广告不得利用科研单位、学术机构等名义作推荐、证明",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-f28452ac47cfd3a0",
+      "canonical_rule_uid": "RUID-7f1a9698aaa2cf50",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十四条",
+          "original_text": "第二十四条 教育、培训广告不得含有下列内容： （三）利用科研单位、学术机构、教育机构、行业协会、专业人士、受益者的名义或者形象作推荐、证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-7f1a9698aaa2cf50",
+        "issue_family": "endorsement_prohibited_subject",
+        "regulated_action": "use_institution_or_person_name_for_endorsement",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "research_institution",
+          "academic_institution",
+          "education_institution",
+          "industry_association",
+          "professional",
+          "beneficiary"
+        ],
+        "object_scope": [
+          "education_training"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第二十四条"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "教育培训广告禁止利用特定主体名义作推荐证明",
+        "aliases": [
+          "教育、培训广告不得利用科研单位、学术机构等名义作推荐、证明"
+        ],
+        "confidence": "high",
+        "reason": "广告法第二十四条第三项明确禁止教育、培训广告利用科研单位、学术机构、教育机构、行业协会、专业人士、受益者的名义或者形象作推荐、证明。track_hint_only为保健食品，但法条原文针对教育、培训广告，与track_hint_only冲突，以原文为准。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-80be4c286d73fac3",
+      "rule_id": "COSM-OTHER-004",
+      "rule_title": "广告中未经同意不得使用他人名义或形象",
+      "issue_id": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-eba2ee6cea354ea4",
+      "canonical_rule_uid": "RUID-80be4c286d73fac3",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "第六十八条 广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任： （四）在广告中未经同意使用他人名义或者形象的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-80be4c286d73fac3",
+        "issue_family": "endorsement_consent",
+        "regulated_action": "use_name_image_without_consent",
+        "legal_effect": "consent_required",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "ad_publisher"
+        ],
+        "object_scope": [
+          "general"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第六十八条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+        "canonical_problem_name": "广告未经同意使用他人名义或形象",
+        "aliases": [
+          "未经同意使用名义",
+          "未经同意使用形象",
+          "肖像权侵权"
+        ],
+        "confidence": "high",
+        "reason": "广告法第六十八条第（四）项要求使用他人名义或形象需经同意，对应consent_required。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8b4409e0ef5b29d0",
+      "rule_id": "HF-ADV-002",
+      "rule_title": "奶粉及特定营养成分食品不得利用医生形象做证明推荐",
+      "issue_id": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-9670dded85540201",
+      "canonical_rule_uid": "RUID-8b4409e0ef5b29d0",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_小红书《食品行业投放规则》使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书《食品行业投放规则》使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2.",
+          "original_text": "奶粉行业以及涉及特定营养成分的食品，不得利用医生形象做证明推荐。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-8b4409e0ef5b29d0",
+        "issue_family": "endorsement_prohibited_recommender_by_category",
+        "regulated_action": "use_doctor_image_for_endorsement",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "doctor"
+        ],
+        "object_scope": [
+          "milk_powder"
+        ],
+        "channel_scope": [],
+        "platform_scope": [
+          "xiaohongshu"
+        ],
+        "source_type": "platform_rule",
+        "legal_level": 99,
+        "legal_basis_key": [
+          "XHS:2."
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "canonical_problem_name": "奶粉及特定营养成分食品禁止利用医生形象作证明推荐",
+        "aliases": [
+          "奶粉及特定营养成分食品不得利用医生形象做证明推荐"
+        ],
+        "confidence": "high",
+        "reason": "小红书《食品行业投放规则》使用手册第2条明确奶粉行业以及涉及特定营养成分的食品不得利用医生形象做证明推荐。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8c3736290884aeb7",
+      "rule_id": "GAME-ADV-001",
+      "rule_title": "广告代言人不得为其未使用过的商品或未接受过的服务作推荐、证明",
+      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-9e4cf821d97b52c7",
+      "canonical_rule_uid": "RUID-8c3736290884aeb7",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十八条",
+          "original_text": "广告代言人在广告中对商品、服务作推荐、证明，应当依据事实，符合本法和有关法律、行政法规规定，并不得为其未使用过的商品或者未接受过的服务作推荐、证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-8c3736290884aeb7",
+        "issue_family": "endorsement_actual_use_duty",
+        "regulated_action": "endorse_product_or_service_not_used_or_accepted",
+        "legal_effect": "actual_use_required",
+        "actor_scope": [
+          "广告代言人"
+        ],
+        "object_scope": [
+          "advertised_goods_or_services"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第三十八条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.ACTUAL_USE_DUTY",
+        "canonical_problem_name": "广告代言人不得为未使用过的商品或未接受过的服务作推荐证明",
+        "aliases": [
+          "代言人实际使用义务"
+        ],
+        "confidence": "high",
+        "reason": "广告法第三十八条明确规定，广告代言人不得为其未使用过的商品或者未接受过的服务作推荐、证明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8c62d78f59c1cfaa",
+      "rule_id": "GEN-EDU-003",
+      "rule_title": "教育、培训广告不得利用科研单位、学术机构等名义或形象作推荐、证明",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-85279045122c5569",
+      "canonical_rule_uid": "RUID-8c62d78f59c1cfaa",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十四条",
+          "original_text": "第二十四条 教育、培训广告不得含有下列内容： （三）利用科研单位、学术机构、教育机构、行业协会、专业人士、受益者的名义或者形象作推荐、证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-8c62d78f59c1cfaa",
+        "issue_family": "endorsement_prohibited_subject",
+        "regulated_action": "use_prohibited_subject_for_endorsement",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "ad_publisher"
+        ],
+        "object_scope": [
+          "education_training"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第二十四条"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "教育培训广告利用特定主体名义形象推荐证明",
+        "aliases": [
+          "教育培训禁止推荐主体",
+          "科研单位推荐证明",
+          "受益者推荐证明"
+        ],
+        "confidence": "high",
+        "reason": "广告法第二十四条第（三）项禁止教育培训广告利用科研单位、学术机构、教育机构、行业协会、专业人士、受益者的名义或形象作推荐、证明，对应prohibited。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8ebbf6afe08670d5",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "直播营销中广告主、广告经营者、广告发布者、广告代言人责任认定规则",
+      "issue_id": "ENDORSEMENT.RELATION_IDENTIFICATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-da7fc0ac531454e6",
+      "canonical_rule_uid": "RUID-8ebbf6afe08670d5",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十九条",
+          "original_text": "第十九条 商品销售者或者服务提供者通过互联网直播方式推销商品或者服务，构成商业广告的，应当依法承担广告主的责任和义务。 直播间运营者接受委托提供广告设计、制作、代理、发布服务的，应当依法承担广告经营者、广告发布者的责任和义务。 直播营销人员接受委托提供广告设计、制作、代理、发布服务的，应当依法承担广告经营者、广告发布者的责任和义务。 直播营销人员以自己的名义或者形象对商品、服务作推荐、证明，构成广告代言的，应当依法承担广告代言人的责任和义务。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-8ebbf6afe08670d5",
+        "issue_family": "endorsement_relationship_identification",
+        "regulated_action": "live_streaming_ad_role_determination",
+        "legal_effect": "relationship_determination",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "advertising_publisher",
+          "endorser",
+          "live_stream_operator",
+          "live_stream_marketer"
+        ],
+        "object_scope": [
+          "goods",
+          "services"
+        ],
+        "channel_scope": [
+          "internet_live_streaming"
+        ],
+        "platform_scope": [],
+        "source_type": "regulation",
+        "legal_level": 3,
+        "legal_basis_key": [
+          "IAM:第十九条"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.RELATION_IDENTIFICATION",
+        "canonical_problem_name": "直播营销广告主体身份与责任认定",
+        "aliases": [
+          "直播营销责任认定",
+          "直播广告主体识别"
+        ],
+        "confidence": "high",
+        "reason": "依据《互联网广告管理办法》第十九条，直播推销构成商业广告时需认定广告主、广告经营者、广告发布者、广告代言人身份及责任，属于关系认定。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8f08bec265411010",
+      "rule_id": "XHS-HF-003",
+      "rule_title": "不得利用不满10周岁的未成年人作为广告代言人",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-60dd2a7c217bafb3",
+      "canonical_rule_uid": "RUID-3cb7962acf8d23b3",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.1",
+          "original_text": "不得利⽤不满10周岁的未成年⼈作为⼴告代⾔⼈。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-8f08bec265411010",
+        "issue_family": "endorsement_prohibited_subject",
+        "regulated_action": "use_minor_under_10_as_endorser",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "minor_under_10"
+        ],
+        "object_scope": [],
+        "channel_scope": [],
+        "platform_scope": [
+          "xiaohongshu"
+        ],
+        "source_type": "platform_rule",
+        "legal_level": 99,
+        "legal_basis_key": [
+          "XHS:1.1"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "禁止利用不满10周岁未成年人作为广告代言人",
+        "aliases": [
+          "不得利用不满10周岁的未成年人作为广告代言人"
+        ],
+        "confidence": "high",
+        "reason": "小红书聚光帮助中心文档第1.1条明确不得利用不满10周岁的未成年人作为广告代言人。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-92f0e76f37a2a1a1",
+      "rule_id": "HFAD-011-002",
+      "rule_title": "保健食品广告不得使用科研单位、学术机构、专家、患者等名义作推荐证明",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-32dd754fbef706d0",
+      "canonical_rule_uid": "RUID-92f0e76f37a2a1a1",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法_2020.03.01生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "HFAD",
+          "source_name": "药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法_2020.03.01生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十一条",
+          "original_text": "（二）使用科研单位、学术机构、行业协会或者专家、学者、医师、药师、临床营养师、患者等的名义或者形象作推荐、证明"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-92f0e76f37a2a1a1",
+        "issue_family": "endorsement_prohibited_subject",
+        "regulated_action": "use_institution_or_person_name_for_endorsement",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "research_institution",
+          "academic_institution",
+          "industry_association",
+          "expert",
+          "scholar",
+          "doctor",
+          "pharmacist",
+          "clinical_nutritionist",
+          "patient"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "regulation",
+        "legal_level": 3,
+        "legal_basis_key": [
+          "HFAD:第十一条"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "保健食品广告禁止使用科研单位、学术机构、专家、患者等名义作推荐证明",
+        "aliases": [
+          "保健食品广告不得使用科研单位、学术机构、专家、患者等名义作推荐证明"
+        ],
+        "confidence": "high",
+        "reason": "《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第十一条第二项明确禁止保健食品广告使用科研单位、学术机构、行业协会或者专家、学者、医师、药师、临床营养师、患者等的名义或者形象作推荐、证明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-94af376237103381",
+      "rule_id": "HF-ADV-001",
+      "rule_title": "广告代言人不得为其未使用过的商品或未接受过的服务作推荐证明",
+      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-9e4cf821d97b52c7",
+      "canonical_rule_uid": "RUID-8c3736290884aeb7",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十八条",
+          "original_text": "广告代言人在广告中对商品、服务作推荐、证明，应当依据事实，符合本法和有关法律、行政法规规定，并不得为其未使用过的商品或者未接受过的服务作推荐、证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-94af376237103381",
+        "issue_family": "endorsement_actual_use",
+        "regulated_action": "endorsement_without_actual_use",
+        "legal_effect": "actual_use_required",
+        "actor_scope": [
+          "ad_endorser"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第三十八条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.ACTUAL_USE_DUTY",
+        "canonical_problem_name": "广告代言人未使用商品即推荐证明",
+        "aliases": [
+          "代言人未使用商品",
+          "未使用即代言"
+        ],
+        "confidence": "high",
+        "reason": "广告法第三十八条明确要求广告代言人不得为其未使用过的商品或未接受过的服务作推荐、证明，属于实际使用义务。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-95d03473566aa0b5",
+      "rule_id": "HF-IP-003",
+      "rule_title": "广告中未经同意不得使用他人名义或形象",
+      "issue_id": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-eba2ee6cea354ea4",
+      "canonical_rule_uid": "RUID-80be4c286d73fac3",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任：……（四）在广告中未经同意使用他人名义或者形象的；……"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-95d03473566aa0b5",
+        "issue_family": "endorsement_consent",
+        "regulated_action": "use_name_image_without_consent",
+        "legal_effect": "consent_required",
+        "actor_scope": [
+          "advertiser",
+          "ad_operator",
+          "ad_publisher"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第六十八条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+        "canonical_problem_name": "广告未经同意使用他人名义或形象",
+        "aliases": [
+          "未经同意使用名义",
+          "未经同意使用形象"
+        ],
+        "confidence": "high",
+        "reason": "广告法第六十八条第四项明确在广告中未经同意使用他人名义或者形象属于侵权行为，需承担民事责任，核心为同意要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9c8c4a9b0f408ba0",
+      "rule_id": "HF-FAKE-001",
+      "rule_title": "虚假广告导致消费者损害的责任规则",
+      "issue_id": "ENDORSEMENT.JOINT_LIABILITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-eca5472c7bfeeb14",
+      "canonical_rule_uid": "RUID-9c8c4a9b0f408ba0",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十六条",
+          "original_text": "第五十六条 违反本法规定，发布虚假广告，欺骗、误导消费者，使购买商品或者接受服务的消费者的合法权益受到损害的，由广告主依法承担民事责任。广告经营者、广告发布者不能提供广告主的真实名称、地址和有效联系方式的，消费者可以要求广告经营者、广告发布者先行赔偿。\n 关系消费者生命健康的商品或者服务的虚假广告，造成消费者损害的，其广告经营者、广告发布者、广告代言人应当与广告主承担连带责任。\n 前款规定以外的商品或者服务的虚假广告，造成消费者损害的，其广告经营者、广告发布者、广告代言人，明知或者应知广告虚假仍设计、制作、代理、发布或者作推荐、证明的，应当与广告主承担连带责任。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9c8c4a9b0f408ba0",
+        "issue_family": "false_ad_joint_liability",
+        "regulated_action": "false_ad_causing_damage",
+        "legal_effect": "joint_liability",
+        "actor_scope": [
+          "advertiser",
+          "ad_operator",
+          "ad_publisher",
+          "ad_endorser"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第五十六条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.JOINT_LIABILITY",
+        "canonical_problem_name": "虚假广告造成损害的连带责任",
+        "aliases": [
+          "虚假广告连带责任",
+          "虚假广告民事责任"
+        ],
+        "confidence": "high",
+        "reason": "广告法第五十六条规定虚假广告造成消费者损害时，关系生命健康商品或服务的广告经营者、发布者、代言人应与广告主承担连带责任，属于连带责任规则。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9d3516057c6bf874",
+      "rule_id": "HF-FAKE-001",
+      "rule_title": "虚假广告连带责任（生命健康商品/服务）",
+      "issue_id": "ENDORSEMENT.JOINT_LIABILITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-2b16ab0a724c2d6d",
+      "canonical_rule_uid": "RUID-9d3516057c6bf874",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "CPL",
+          "source_name": "中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十五条",
+          "original_text": "第四十五条 消费者因经营者利用虚假广告或者其他虚假宣传方式提供商品或者服务，其合法权益受到损害的，可以向经营者要求赔偿。广告经营者、发布者发布虚假广告的，消费者可以请求行政主管部门予以惩处。广告经营者、发布者不能提供经营者的真实名称、地址和有效联系方式的，应当承担赔偿责任。\n 广告经营者、发布者设计、制作、发布关系消费者生命健康商品或者服务的虚假广告，造成消费者损害的，应当与提供该商品或者服务的经营者承担连带责任。\n 社会团体或者其他组织、个人在关系消费者生命健康商品或者服务的虚假广告或者其他虚假宣传中向消费者推荐商品或者服务，造成消费者损害的，应当与提供该商品或者服务的经营者承担连带责任。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9d3516057c6bf874",
+        "issue_family": "false_ad_joint_liability",
+        "regulated_action": "false_ad_causing_damage",
+        "legal_effect": "joint_liability",
+        "actor_scope": [
+          "ad_operator",
+          "ad_publisher",
+          "social_group",
+          "organization",
+          "individual"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "CPL:第四十五条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.JOINT_LIABILITY",
+        "canonical_problem_name": "虚假广告造成损害的连带责任",
+        "aliases": [
+          "虚假广告连带责任",
+          "虚假广告民事责任"
+        ],
+        "confidence": "high",
+        "reason": "消费者权益保护法第四十五条规定关系生命健康商品或服务的虚假广告造成损害时，广告经营者、发布者及推荐商品或服务的社会团体、组织、个人应与经营者承担连带责任，属于连带责任规则。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-a4231e5bdb7ce08b",
+      "rule_id": "HF-ADL-001",
+      "rule_title": "广告中使用他人名义或形象需取得书面同意",
+      "issue_id": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-77f7233f5571d77b",
+      "canonical_rule_uid": "RUID-0bb184d1ed7e014c",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十三条",
+          "original_text": "广告主或者广告经营者在广告中使用他人名义或者形象的，应当事先取得其书面同意；使用无民事行为能力人、限制民事行为能力人的名义或者形象的，应当事先取得其监护人的书面同意。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-a4231e5bdb7ce08b",
+        "issue_family": "ENDORSEMENT_CONSENT",
+        "regulated_action": "use_others_name_or_image_in_ad",
+        "legal_effect": "consent_required",
+        "actor_scope": [
+          "advertiser",
+          "ad_operator"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第三十三条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+        "canonical_problem_name": "广告中使用他人名义或形象需取得书面同意",
+        "aliases": [
+          "他人名义或形象使用同意",
+          "书面同意要求"
+        ],
+        "confidence": "high",
+        "reason": "广告法第三十三条明确要求使用他人名义或形象应事先取得书面同意，使用无/限制民事行为能力人名义或形象需监护人书面同意。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-a56980eefdeca399",
+      "rule_id": "DY-COSM-004",
+      "rule_title": "美妆不得利用医疗机构或工作人员名义推荐规则",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-65839bcc53d1e0ec",
+      "canonical_rule_uid": "RUID-a56980eefdeca399",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.4",
+          "original_text": "化妆品不得利用医疗机构及其工作人员、聘任专家的名义、形象作证明或推荐。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-a56980eefdeca399",
+        "issue_family": "endorsement_prohibited_subject",
+        "regulated_action": "use_medical_institution_for_endorsement",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "ad_publisher"
+        ],
+        "object_scope": [
+          "cosmetic"
+        ],
+        "channel_scope": [],
+        "platform_scope": [
+          "抖音"
+        ],
+        "source_type": "platform_rule",
+        "legal_level": 99,
+        "legal_basis_key": [
+          "DY:3.1.4"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "化妆品利用医疗机构或人员名义推荐证明",
+        "aliases": [
+          "医疗机构推荐化妆品",
+          "医生推荐化妆品",
+          "专家推荐化妆品"
+        ],
+        "confidence": "high",
+        "reason": "抖音美妆行业宣传规范3.1.4禁止化妆品利用医疗机构及其工作人员、聘任专家的名义、形象作证明或推荐，对应prohibited。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b0c92cce2582d347",
+      "rule_id": "GAME-ADV-001",
+      "rule_title": "广告代言人不得为其未使用过的商品或未接受过的服务作推荐、证明",
+      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-9e4cf821d97b52c7",
+      "canonical_rule_uid": "RUID-8c3736290884aeb7",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十一条",
+          "original_text": "第六十一条 广告代言人有下列情形之一的，由市场监督管理部门没收违法所得，并处违法所得一倍以上二倍以下的罚款： （一）违反本法第十六条第一款第四项规定，在医疗、药品、医疗器械广告中作推荐、证明的； （二）违反本法第十八条第一款第五项规定，在保健食品广告中作推荐、证明的； （三）违反本法第三十八条第一款规定，为其未使用过的商品或者未接受过的服务作推荐、证明的； （四）明知或者应知广告虚假仍在广告中对商品、服务作推荐、证明的。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-b0c92cce2582d347",
+        "issue_family": "endorsement_actual_use_duty",
+        "regulated_action": "endorsement_without_actual_use",
+        "legal_effect": "actual_use_required",
+        "actor_scope": [
+          "endorser"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第六十一条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": true,
+        "recommended_parent": "ENDORSEMENT.ACTUAL_USE_DUTY",
+        "canonical_problem_name": "广告代言人未使用商品或未接受服务作推荐证明",
+        "aliases": [
+          "代言人未使用商品",
+          "未使用商品推荐证明"
+        ],
+        "confidence": "high",
+        "reason": "依据《广告法》第六十一条第三项，广告代言人不得为其未使用过的商品或未接受过的服务作推荐、证明，属于实际使用义务。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-baab8cf4685f20b7",
+      "rule_id": "COSM-FALSE-001",
+      "rule_title": "虚假广告导致消费者损害的民事责任规则",
+      "issue_id": "ENDORSEMENT.JOINT_LIABILITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-b3a4ccf65ffab46d",
+      "canonical_rule_uid": "RUID-baab8cf4685f20b7",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十六条",
+          "original_text": "第五十六条 违反本法规定，发布虚假广告，欺骗、误导消费者，使购买商品或者接受服务的消费者的合法权益受到损害的，由广告主依法承担民事责任。广告经营者、广告发布者不能提供广告主的真实名称、地址和有效联系方式的，消费者可以要求广告经营者、广告发布者先行赔偿。\n 关系消费者生命健康的商品或者服务的虚假广告，造成消费者损害的，其广告经营者、广告发布者、广告代言人应当与广告主承担连带责任。\n 前款规定以外的商品或者服务的虚假广告，造成消费者损害的，其广告经营者、广告发布者、广告代言人，明知或者应知广告虚假仍设计、制作、代理、发布或者作推荐、证明的，应当与广告主承担连带责任。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-baab8cf4685f20b7",
+        "issue_family": "endorsement_liability",
+        "regulated_action": "false_advertising_causing_harm",
+        "legal_effect": "joint_liability",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "advertising_publisher",
+          "endorser"
+        ],
+        "object_scope": [
+          "goods",
+          "services"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第五十六条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.JOINT_LIABILITY",
+        "canonical_problem_name": "虚假广告致消费者损害的连带责任",
+        "aliases": [
+          "虚假广告民事责任",
+          "广告代言人连带责任"
+        ],
+        "confidence": "high",
+        "reason": "广告法第五十六条明确虚假广告造成消费者损害时，关系生命健康的商品或服务，广告经营者、发布者、代言人与广告主承担连带责任；其他商品或服务，明知或应知虚假仍推荐、证明的承担连带责任。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-c434bc40389bb1a2",
+      "rule_id": "COSM-ADV-001",
+      "rule_title": "广告中使用他人名义或形象需取得书面同意",
+      "issue_id": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-77f7233f5571d77b",
+      "canonical_rule_uid": "RUID-0bb184d1ed7e014c",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十三条",
+          "original_text": "广告主或者广告经营者在广告中使用他人名义或者形象的，应当事先取得其书面同意；使用无民事行为能力人、限制民事行为能力人的名义或者形象的，应当事先取得其监护人的书面同意。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-c434bc40389bb1a2",
+        "issue_family": "endorsement_consent",
+        "regulated_action": "use_others_name_or_image",
+        "legal_effect": "consent_required",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent"
+        ],
+        "object_scope": [
+          "name",
+          "image"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第三十三条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+        "canonical_problem_name": "广告使用他人名义或形象需书面同意",
+        "aliases": [
+          "他人名义形象授权",
+          "肖像姓名使用同意"
+        ],
+        "confidence": "high",
+        "reason": "广告法第三十三条规定广告主或广告经营者使用他人名义或形象应事先取得书面同意；使用无/限制民事行为能力人名义或形象应取得监护人书面同意。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-c91fd8d3d70bc247",
+      "rule_id": "GAME-ADV-002",
+      "rule_title": "不得利用不满十周岁的未成年人作为广告代言人",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6e14e1f737929932",
+      "canonical_rule_uid": "RUID-c91fd8d3d70bc247",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十八条",
+          "original_text": "不得利用不满十周岁的未成年人作为广告代言人。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-c91fd8d3d70bc247",
+        "issue_family": "endorsement_prohibited_subject",
+        "regulated_action": "using_under_10_minor_as_endorser",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "advertising_publisher"
+        ],
+        "object_scope": [
+          "goods",
+          "services"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第三十八条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "利用不满十周岁未成年人作为广告代言人",
+        "aliases": [
+          "不满十周岁代言人",
+          "未成年人代言禁止"
+        ],
+        "confidence": "high",
+        "reason": "依据《广告法》第三十八条，不得利用不满十周岁的未成年人作为广告代言人，属于禁止性规定。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-d31f24a1455c5ead",
+      "rule_id": "COSM-ADV-001",
+      "rule_title": "广告代言人不得为其未使用过的商品作推荐、证明",
+      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-5581b33aad630818",
+      "canonical_rule_uid": "RUID-d31f24a1455c5ead",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十八条",
+          "original_text": "广告代言人在广告中对商品、服务作推荐、证明，应当依据事实，符合本法和有关法律、行政法规规定，并不得为其未使用过的商品或者未接受过的服务作推荐、证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-d31f24a1455c5ead",
+        "issue_family": "endorsement_actual_use",
+        "regulated_action": "endorse_unused_goods_or_services",
+        "legal_effect": "actual_use_required",
+        "actor_scope": [
+          "endorser"
+        ],
+        "object_scope": [
+          "goods",
+          "services"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第三十八条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.ACTUAL_USE_DUTY",
+        "canonical_problem_name": "代言人不得为未使用商品作推荐证明",
+        "aliases": [
+          "代言人使用义务",
+          "未使用商品代言禁止"
+        ],
+        "confidence": "high",
+        "reason": "广告法第三十八条规定广告代言人不得为其未使用过的商品或未接受过的服务作推荐、证明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-d58a892d4bc0c4ac",
+      "rule_id": "HF-AD-001",
+      "rule_title": "保健食品广告不得利用广告代言人作推荐、证明",
+      "issue_id": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-18a2831597359ff8",
+      "canonical_rule_uid": "RUID-d79610014e487328",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十八条",
+          "original_text": "第十八条 保健食品广告不得含有下列内容： （五）利用广告代言人作推荐、证明；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-d58a892d4bc0c4ac",
+        "issue_family": "endorsement_prohibited_by_category",
+        "regulated_action": "use_endorser_for_health_food",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "endorser"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第十八条"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "canonical_problem_name": "保健食品广告禁止代言人推荐证明",
+        "aliases": [
+          "保健食品代言禁止",
+          "保健食品推荐证明禁止"
+        ],
+        "confidence": "high",
+        "reason": "广告法第十八条第五项明确保健食品广告不得含有利用广告代言人作推荐、证明的内容。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-d79610014e487328",
+      "rule_id": "HF-005",
+      "rule_title": "保健食品广告不得利用广告代言人作推荐、证明",
+      "issue_id": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-18a2831597359ff8",
+      "canonical_rule_uid": "RUID-d79610014e487328",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十八条",
+          "original_text": "第十八条 保健食品广告不得含有下列内容：（五）利用广告代言人作推荐、证明；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-d79610014e487328",
+        "issue_family": "ENDORSEMENT_PROHIBITED",
+        "regulated_action": "use_endorser_for_recommendation_or_proof",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "advertiser",
+          "ad_operator",
+          "endorser"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第十八条"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "canonical_problem_name": "保健食品广告不得利用广告代言人作推荐、证明",
+        "aliases": [
+          "保健食品代言禁止",
+          "保健食品推荐证明禁止"
+        ],
+        "confidence": "high",
+        "reason": "广告法第十八条第五项明确禁止保健食品广告利用广告代言人作推荐、证明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-d9fff6c6cc6d8670",
+      "rule_id": "XHS-GAME-ADM-005",
+      "rule_title": "不得利用不满10周岁的未成年人作为广告代言人",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-60dd2a7c217bafb3",
+      "canonical_rule_uid": "RUID-3cb7962acf8d23b3",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "不得利用不满10周岁的未成年人作为广告代言人。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-d9fff6c6cc6d8670",
+        "issue_family": "endorsement_prohibited_subject",
+        "regulated_action": "using_under_10_minor_as_endorser",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "advertising_publisher"
+        ],
+        "object_scope": [
+          "goods",
+          "services"
+        ],
+        "channel_scope": [
+          "聚光平台"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "source_type": "platform_rule",
+        "legal_level": 99,
+        "legal_basis_key": [
+          "XHS:未分条-1"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "利用不满10周岁未成年人作为广告代言人",
+        "aliases": [
+          "不满10周岁代言人",
+          "未成年人代言禁止"
+        ],
+        "confidence": "high",
+        "reason": "依据小红书聚光平台规则，不得利用不满10周岁的未成年人作为广告代言人，与广告法第三十八条一致，属于禁止性规定。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-dee30111d39ef7a8",
+      "rule_id": "HF-ADV-001",
+      "rule_title": "普通食品涉及医生推荐需提交医生证明",
+      "issue_id": null,
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-dca38aab0d997456",
+      "canonical_rule_uid": "RUID-dee30111d39ef7a8",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_小红书《食品行业投放规则》使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书《食品行业投放规则》使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2.",
+          "original_text": "普通食品涉及医生推荐需要提交医生证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-dee30111d39ef7a8",
+        "issue_family": "ENDORSEMENT_DOCTOR_RECOMMENDATION",
+        "regulated_action": "doctor_recommendation_without_proof",
+        "legal_effect": "qualification_check",
+        "actor_scope": [
+          "advertiser",
+          "ad_operator"
+        ],
+        "object_scope": [
+          "general_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [
+          "xiaohongshu"
+        ],
+        "source_type": "platform_rule",
+        "legal_level": 99,
+        "legal_basis_key": [
+          "XHS:2."
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.OTHER",
+        "canonical_problem_name": "普通食品涉及医生推荐需提交医生证明",
+        "aliases": [
+          "医生推荐证明",
+          "医生证明提交"
+        ],
+        "confidence": "high",
+        "reason": "小红书食品行业投放规则要求普通食品涉及医生推荐需提交医生证明，属于平台资质审核要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e63b6e0009bccf3e",
+      "rule_id": "HF-ADV-002",
+      "rule_title": "不得利用不满十周岁的未成年人作为广告代言人",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6e14e1f737929932",
+      "canonical_rule_uid": "RUID-c91fd8d3d70bc247",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十八条",
+          "original_text": "不得利用不满十周岁的未成年人作为广告代言人。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e63b6e0009bccf3e",
+        "issue_family": "ENDORSEMENT_MINOR_PROHIBITED",
+        "regulated_action": "use_minor_under_10_as_endorser",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "advertiser",
+          "ad_operator",
+          "endorser"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第三十八条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "不得利用不满十周岁的未成年人作为广告代言人",
+        "aliases": [
+          "未成年人代言禁止",
+          "不满十周岁代言禁止"
+        ],
+        "confidence": "high",
+        "reason": "广告法第三十八条明确禁止利用不满十周岁的未成年人作为广告代言人。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e7b3e344e40da436",
+      "rule_id": "GAME-OTHER-004",
+      "rule_title": "广告中未经同意不得使用他人名义或形象",
+      "issue_id": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-eba2ee6cea354ea4",
+      "canonical_rule_uid": "RUID-80be4c286d73fac3",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "第六十八条 广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任： （四）在广告中未经同意使用他人名义或者形象的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e7b3e344e40da436",
+        "issue_family": "endorsement_unauthorized_use_of_name_image",
+        "regulated_action": "unauthorized_use_of_other_person_name_or_image_in_ad",
+        "legal_effect": "consent_required",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "ad_publisher"
+        ],
+        "object_scope": [],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第六十八条"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE",
+        "canonical_problem_name": "广告中未经同意使用他人名义或形象",
+        "aliases": [
+          "未经同意使用他人名义",
+          "未经同意使用他人形象",
+          "肖像权侵权",
+          "姓名权侵权"
+        ],
+        "confidence": "high",
+        "reason": "广告法第六十八条第四项明确：在广告中未经同意使用他人名义或者形象的，依法承担民事责任。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-ee8013165a5b8e1d",
+      "rule_id": "HF-ADV-003",
+      "rule_title": "不得利用因虚假广告受行政处罚未满三年的自然人、法人或其他组织作为广告代言人",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ae65519b2bf111d1",
+      "canonical_rule_uid": "RUID-59cb40acd393c6ce",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十八条",
+          "original_text": "对在虚假广告中作推荐、证明受到行政处罚未满三年的自然人、法人或者其他组织，不得利用其作为广告代言人。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-ee8013165a5b8e1d",
+        "issue_family": "endorsement_qualification",
+        "regulated_action": "use_person_with_false_ad_penalty_as_endorser",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "advertising_publisher"
+        ],
+        "object_scope": [
+          "health_food"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第三十八条"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "不得利用因虚假广告受行政处罚未满三年的主体作为广告代言人",
+        "aliases": [
+          "虚假广告处罚未满三年不得代言"
+        ],
+        "confidence": "high",
+        "reason": "广告法第三十八条原文明确禁止利用在虚假广告中作推荐、证明受到行政处罚未满三年的自然人、法人或其他组织作为广告代言人。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-f30ed7aec04e8afa",
+      "rule_id": "GAME-IP-002",
+      "rule_title": "不得利用不满10周岁的未成年人作为广告代言人",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-60dd2a7c217bafb3",
+      "canonical_rule_uid": "RUID-3cb7962acf8d23b3",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260706_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.1",
+          "original_text": "不得利用不满10周岁的未成年人作为广告代言人。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-f30ed7aec04e8afa",
+        "issue_family": "endorsement_prohibited_minor_under_10",
+        "regulated_action": "use_minor_under_10_as_ad_endorser",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "ad_publisher"
+        ],
+        "object_scope": [],
+        "channel_scope": [
+          "聚光广告"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "source_type": "platform_rule",
+        "legal_level": 99,
+        "legal_basis_key": [
+          "XHS:1.1"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "不得利用不满10周岁未成年人作为广告代言人",
+        "aliases": [
+          "未成年人代言",
+          "不满十周岁代言",
+          "儿童代言"
+        ],
+        "confidence": "high",
+        "reason": "小红书聚光帮助中心规则1.1原文：不得利用不满10周岁的未成年人作为广告代言人。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-f617819336c87c61",
+      "rule_id": "COSM-ADV-002",
+      "rule_title": "不得利用不满十周岁的未成年人作为广告代言人",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6e14e1f737929932",
+      "canonical_rule_uid": "RUID-c91fd8d3d70bc247",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十八条",
+          "original_text": "不得利用不满十周岁的未成年人作为广告代言人。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-f617819336c87c61",
+        "issue_family": "endorsement_prohibited_subject",
+        "regulated_action": "use_minor_under_10_as_endorser",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "ad_publisher",
+          "endorser"
+        ],
+        "object_scope": [
+          "general_advertising"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第三十八条"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+        "canonical_problem_name": "不得利用不满十周岁的未成年人作为广告代言人",
+        "aliases": [
+          "童星代言禁止",
+          "未成年人代言年龄限制"
+        ],
+        "confidence": "high",
+        "reason": "广告法第三十八条原文明确禁止利用不满十周岁的未成年人作为广告代言人，属于对代言主体资格的禁止性规定。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-fe324abb9130484c",
+      "rule_id": "GAME-AD-002",
+      "rule_title": "农药、兽药、饲料和饲料添加剂广告不得利用科研单位、学术机构、技术推广机构、行业协会或者专业人士、用户的名义或者形象作推荐、证明",
+      "issue_id": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-47e5bf59cd086567",
+      "canonical_rule_uid": "RUID-fe324abb9130484c",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十一条",
+          "original_text": "第二十一条 农药、兽药、饲料和饲料添加剂广告不得含有下列内容：\n （一）表示功效、安全性的断言或者保证；\n （二）利用科研单位、学术机构、技术推广机构、行业协会或者专业人士、用户的名义或者形象作推荐、证明；\n （三）说明有效率；\n （四）违反安全使用规程的文字、语言或者画面；\n （五）法律、行政法规规定禁止的其他内容。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-fe324abb9130484c",
+        "issue_family": "endorsement_prohibited_recommender_by_category",
+        "regulated_action": "use_professional_or_user_endorsement_in_pesticide_veterinary_feed_ad",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "advertiser",
+          "advertising_agent",
+          "ad_publisher"
+        ],
+        "object_scope": [
+          "pesticide",
+          "veterinary_drug",
+          "feed",
+          "feed_additive"
+        ],
+        "channel_scope": [],
+        "platform_scope": [],
+        "source_type": "law",
+        "legal_level": 1,
+        "legal_basis_key": [
+          "AL:第二十一条"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+        "canonical_problem_name": "农药兽药饲料广告不得利用科研单位等名义或形象作推荐证明",
+        "aliases": [
+          "农药广告禁止推荐证明",
+          "兽药广告禁止推荐证明",
+          "饲料广告禁止推荐证明",
+          "专业人士推荐禁止"
+        ],
+        "confidence": "high",
+        "reason": "广告法第二十一条第二项明确：农药、兽药、饲料和饲料添加剂广告不得利用科研单位、学术机构、技术推广机构、行业协会或者专业人士、用户的名义或者形象作推荐、证明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ]
+}

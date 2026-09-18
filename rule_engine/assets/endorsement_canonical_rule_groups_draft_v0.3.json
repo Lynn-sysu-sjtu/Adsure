@@ -1,0 +1,430 @@
+{
+  "schema_version": "0.2",
+  "asset_status": "draft",
+  "prompt_version": "endorsement_fingerprint_v02_20260912",
+  "model": "deepseek-chat",
+  "groups": [
+    {
+      "canonical_rule_key": "CRK-18a2831597359ff8",
+      "canonical_rule_uid": "RUID-d79610014e487328",
+      "source_occurrence_uids": [
+        "RUID-02f4d529f6d0383c",
+        "RUID-d58a892d4bc0c4ac",
+        "RUID-d79610014e487328"
+      ],
+      "duplicate_count": 3,
+      "source_id": "AL",
+      "canonical_title": "保健食品广告不得利用广告代言人作推荐、证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-21333478402c7bb5",
+      "canonical_rule_uid": "RUID-778e0278994f809d",
+      "source_occurrence_uids": [
+        "RUID-778e0278994f809d"
+      ],
+      "duplicate_count": 1,
+      "source_id": "IAM",
+      "canonical_title": "直播营销人员以自己名义或形象推荐商品构成广告代言的责任认定",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-2b16ab0a724c2d6d",
+      "canonical_rule_uid": "RUID-9d3516057c6bf874",
+      "source_occurrence_uids": [
+        "RUID-9d3516057c6bf874"
+      ],
+      "duplicate_count": 1,
+      "source_id": "CPL",
+      "canonical_title": "虚假广告连带责任（生命健康商品/服务）",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-32dd754fbef706d0",
+      "canonical_rule_uid": "RUID-92f0e76f37a2a1a1",
+      "source_occurrence_uids": [
+        "RUID-92f0e76f37a2a1a1"
+      ],
+      "duplicate_count": 1,
+      "source_id": "HFAD",
+      "canonical_title": "保健食品广告不得使用科研单位、学术机构、专家、患者等名义作推荐证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-42e7670ae7bccdf5",
+      "canonical_rule_uid": "RUID-28d3242b78268125",
+      "source_occurrence_uids": [
+        "RUID-28d3242b78268125"
+      ],
+      "duplicate_count": 1,
+      "source_id": "CPL",
+      "canonical_title": "虚假广告连带责任-社会团体或个人推荐连带责任",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-47e5bf59cd086567",
+      "canonical_rule_uid": "RUID-fe324abb9130484c",
+      "source_occurrence_uids": [
+        "RUID-fe324abb9130484c"
+      ],
+      "duplicate_count": 1,
+      "source_id": "AL",
+      "canonical_title": "农药、兽药、饲料和饲料添加剂广告不得利用科研单位、学术机构、技术推广机构、行业协会或者专业人士、用户的名义或者形象作推荐、证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-5581b33aad630818",
+      "canonical_rule_uid": "RUID-d31f24a1455c5ead",
+      "source_occurrence_uids": [
+        "RUID-d31f24a1455c5ead"
+      ],
+      "duplicate_count": 1,
+      "source_id": "AL",
+      "canonical_title": "广告代言人不得为其未使用过的商品作推荐、证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-5ee28076769a3131",
+      "canonical_rule_uid": "RUID-79468f9702e16ad3",
+      "source_occurrence_uids": [
+        "RUID-79468f9702e16ad3"
+      ],
+      "duplicate_count": 1,
+      "source_id": "AL",
+      "canonical_title": "广告代言人不得为未使用过的美妆商品作推荐、证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-60dd2a7c217bafb3",
+      "canonical_rule_uid": "RUID-3cb7962acf8d23b3",
+      "source_occurrence_uids": [
+        "RUID-3cb7962acf8d23b3",
+        "RUID-8f08bec265411010",
+        "RUID-d9fff6c6cc6d8670",
+        "RUID-f30ed7aec04e8afa"
+      ],
+      "duplicate_count": 4,
+      "source_id": "XHS",
+      "canonical_title": "不得利用不满10周岁的未成年人作为广告代言人",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-65839bcc53d1e0ec",
+      "canonical_rule_uid": "RUID-a56980eefdeca399",
+      "source_occurrence_uids": [
+        "RUID-a56980eefdeca399"
+      ],
+      "duplicate_count": 1,
+      "source_id": "DY",
+      "canonical_title": "美妆不得利用医疗机构或工作人员名义推荐规则",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-6e14e1f737929932",
+      "canonical_rule_uid": "RUID-c91fd8d3d70bc247",
+      "source_occurrence_uids": [
+        "RUID-c91fd8d3d70bc247",
+        "RUID-e63b6e0009bccf3e",
+        "RUID-f617819336c87c61"
+      ],
+      "duplicate_count": 3,
+      "source_id": "AL",
+      "canonical_title": "不得利用不满十周岁的未成年人作为广告代言人",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-77f7233f5571d77b",
+      "canonical_rule_uid": "RUID-0bb184d1ed7e014c",
+      "source_occurrence_uids": [
+        "RUID-0bb184d1ed7e014c",
+        "RUID-a4231e5bdb7ce08b",
+        "RUID-c434bc40389bb1a2"
+      ],
+      "duplicate_count": 3,
+      "source_id": "AL",
+      "canonical_title": "广告中使用他人名义或形象需取得书面同意",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-80d866a41a1f049e",
+      "canonical_rule_uid": "RUID-545f9ad8dd6797c1",
+      "source_occurrence_uids": [
+        "RUID-545f9ad8dd6797c1",
+        "RUID-581e6b801073e750"
+      ],
+      "duplicate_count": 2,
+      "source_id": "XHS",
+      "canonical_title": "保健食品广告不得利用广告代言人作推荐、证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-84a40a909a27fb59",
+      "canonical_rule_uid": "RUID-07c06c5e0785bdbc",
+      "source_occurrence_uids": [
+        "RUID-07c06c5e0785bdbc"
+      ],
+      "duplicate_count": 1,
+      "source_id": "AL",
+      "canonical_title": "保健食品广告中禁止广告代言人作推荐、证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-85279045122c5569",
+      "canonical_rule_uid": "RUID-8c62d78f59c1cfaa",
+      "source_occurrence_uids": [
+        "RUID-8c62d78f59c1cfaa"
+      ],
+      "duplicate_count": 1,
+      "source_id": "AL",
+      "canonical_title": "教育、培训广告不得利用科研单位、学术机构等名义或形象作推荐、证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-92407ab2428584c8",
+      "canonical_rule_uid": "RUID-562c1ad835adcb7a",
+      "source_occurrence_uids": [
+        "RUID-562c1ad835adcb7a"
+      ],
+      "duplicate_count": 1,
+      "source_id": "AL",
+      "canonical_title": "禁止利用不满十周岁的未成年人作为广告代言人",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-9670dded85540201",
+      "canonical_rule_uid": "RUID-8b4409e0ef5b29d0",
+      "source_occurrence_uids": [
+        "RUID-8b4409e0ef5b29d0"
+      ],
+      "duplicate_count": 1,
+      "source_id": "XHS",
+      "canonical_title": "奶粉及特定营养成分食品不得利用医生形象做证明推荐",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-9e4cf821d97b52c7",
+      "canonical_rule_uid": "RUID-8c3736290884aeb7",
+      "source_occurrence_uids": [
+        "RUID-8c3736290884aeb7",
+        "RUID-94af376237103381",
+        "RUID-b0c92cce2582d347"
+      ],
+      "duplicate_count": 3,
+      "source_id": "AL",
+      "canonical_title": "广告代言人不得为其未使用过的商品或未接受过的服务作推荐、证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-ae65519b2bf111d1",
+      "canonical_rule_uid": "RUID-59cb40acd393c6ce",
+      "source_occurrence_uids": [
+        "RUID-59cb40acd393c6ce",
+        "RUID-642c5f9f15eaa889",
+        "RUID-ee8013165a5b8e1d"
+      ],
+      "duplicate_count": 3,
+      "source_id": "AL",
+      "canonical_title": "不得利用因虚假广告受行政处罚未满三年的自然人、法人或其他组织作为广告代言人",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-b3a4ccf65ffab46d",
+      "canonical_rule_uid": "RUID-baab8cf4685f20b7",
+      "source_occurrence_uids": [
+        "RUID-baab8cf4685f20b7"
+      ],
+      "duplicate_count": 1,
+      "source_id": "AL",
+      "canonical_title": "虚假广告导致消费者损害的民事责任规则",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-cb0f7b0ee20b9cd6",
+      "canonical_rule_uid": "RUID-32fd3325bec319e7",
+      "source_occurrence_uids": [
+        "RUID-32fd3325bec319e7"
+      ],
+      "duplicate_count": 1,
+      "source_id": "AL",
+      "canonical_title": "教育、培训广告不得利用特定机构或个人名义作推荐证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-cd28adebe801fb06",
+      "canonical_rule_uid": "RUID-168081152ac6fa9d",
+      "source_occurrence_uids": [
+        "RUID-168081152ac6fa9d"
+      ],
+      "duplicate_count": 1,
+      "source_id": "AL",
+      "canonical_title": "保健食品广告不得利用科研单位、学术机构、技术推广机构、行业协会或者专业人士、用户的名义或者形象作推荐、证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-da7fc0ac531454e6",
+      "canonical_rule_uid": "RUID-8ebbf6afe08670d5",
+      "source_occurrence_uids": [
+        "RUID-8ebbf6afe08670d5"
+      ],
+      "duplicate_count": 1,
+      "source_id": "IAM",
+      "canonical_title": "直播营销中广告主、广告经营者、广告发布者、广告代言人责任认定规则",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-dca38aab0d997456",
+      "canonical_rule_uid": "RUID-dee30111d39ef7a8",
+      "source_occurrence_uids": [
+        "RUID-dee30111d39ef7a8"
+      ],
+      "duplicate_count": 1,
+      "source_id": "XHS",
+      "canonical_title": "普通食品涉及医生推荐需提交医生证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-e1d55288c1c471db",
+      "canonical_rule_uid": "RUID-343e09b5c1c6b0d2",
+      "source_occurrence_uids": [
+        "RUID-343e09b5c1c6b0d2"
+      ],
+      "duplicate_count": 1,
+      "source_id": "AL",
+      "canonical_title": "农药、兽药、饲料和饲料添加剂广告不得利用科研单位等名义作推荐证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-eb1b4eeac1a9dedb",
+      "canonical_rule_uid": "RUID-05228e503bb54568",
+      "source_occurrence_uids": [
+        "RUID-05228e503bb54568"
+      ],
+      "duplicate_count": 1,
+      "source_id": "AL",
+      "canonical_title": "虚假广告造成消费者损害需承担民事责任",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-eba2ee6cea354ea4",
+      "canonical_rule_uid": "RUID-80be4c286d73fac3",
+      "source_occurrence_uids": [
+        "RUID-80be4c286d73fac3",
+        "RUID-95d03473566aa0b5",
+        "RUID-e7b3e344e40da436"
+      ],
+      "duplicate_count": 3,
+      "source_id": "AL",
+      "canonical_title": "广告中未经同意不得使用他人名义或形象",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-eca5472c7bfeeb14",
+      "canonical_rule_uid": "RUID-9c8c4a9b0f408ba0",
+      "source_occurrence_uids": [
+        "RUID-9c8c4a9b0f408ba0"
+      ],
+      "duplicate_count": 1,
+      "source_id": "AL",
+      "canonical_title": "虚假广告导致消费者损害的责任规则",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-f28452ac47cfd3a0",
+      "canonical_rule_uid": "RUID-7f1a9698aaa2cf50",
+      "source_occurrence_uids": [
+        "RUID-7f1a9698aaa2cf50"
+      ],
+      "duplicate_count": 1,
+      "source_id": "AL",
+      "canonical_title": "教育、培训广告不得利用科研单位、学术机构等名义作推荐、证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ]
+}

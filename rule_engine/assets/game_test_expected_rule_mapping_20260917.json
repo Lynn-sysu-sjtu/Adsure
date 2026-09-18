@@ -1,0 +1,198 @@
+{
+  "mapping_version": "2026-09-17.v1",
+  "identity_policy": "rule_uid_is_primary_rule_id_is_compatibility_only",
+  "selection_policy": "Only active content-facing rules that directly support the spreadsheet's core judgment are required. Penalty-only, workflow-only, and merely adjacent rules are excluded.",
+  "cases": [
+    {
+      "case_id": "EVAL-GAME-001",
+      "must_recall_rules": [
+        {
+          "rule_uid": "RUID-a3804876c20d768f",
+          "rule_id": "GAME-FALSE-002",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "《广告法》第28条第2款第2项",
+          "application": "文案称零投入、随时提现，但实际须邀请三名新用户，属于对交易条件有实质影响的不实宣传。"
+        },
+        {
+          "rule_uid": "RUID-922e8a32d47a9d25",
+          "rule_id": "GAME-FALSE-003",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "“日赚300元”“80万用户成功提现”均无据可查",
+          "application": "收益及用户提现数据缺少可核验材料，属于无法验证的证明性宣传。"
+        }
+      ],
+      "must_not_recall_rules": [],
+      "unmapped_expected_provisions": [
+        {"text": "《广告法》第55条", "reason": "处罚条款不作为内容召回主规则。"},
+        {"text": "《互联网广告管理办法》第9条", "reason": "当前 JSONBase 未找到与本案核心提现收益虚假宣传直接对应的有效内容规则。"}
+      ]
+    },
+    {
+      "case_id": "EVAL-GAME-002",
+      "must_recall_rules": [
+        {
+          "rule_uid": "RUID-b60852699e8ddd70",
+          "rule_id": "GEN-ABS-001",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "《广告法》第9条第3项",
+          "application": "“全球最高”“全球最大”“最真实”“全球最强”等属于绝对化用语。"
+        }
+      ],
+      "must_not_recall_rules": [],
+      "unmapped_expected_provisions": [
+        {"text": "B站广告推广平台审核规范（禁止比较性用语）", "reason": "当前 JSONBase 未找到标题和适用条件均直接对应的 B站比较性用语规则。"}
+      ]
+    },
+    {
+      "case_id": "EVAL-GAME-003",
+      "must_recall_rules": [
+        {
+          "rule_uid": "RUID-f376e1be1e207021",
+          "rule_id": "GAME-FALSE-001",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "《广告法》第8条及核心判断中的误导性宣传",
+          "application": "在未披露1.6%出率和90抽保底的情况下使用“超高概率”，会造成误解。"
+        }
+      ],
+      "must_not_recall_rules": [],
+      "unmapped_expected_provisions": [
+        {"text": "付费随机抽取内容应显著明示具体概率和保底机制", "reason": "当前 JSONBase 未找到直接规定抽卡概率公示的有效规则。"},
+        {"text": "小红书《游戏行业投放规则》付费内容须明示概率", "reason": "当前 JSONBase 未找到对应的小红书概率公示规则。"},
+        {"text": "《网络信息内容生态治理规定》第12条（表格所列）", "reason": "现有规则库中的该条规则并非抽卡概率公示义务，不能错误映射。"}
+      ]
+    },
+    {
+      "case_id": "EVAL-GAME-004",
+      "must_recall_rules": [
+        {
+          "rule_uid": "RUID-d8d788b3f89daab3",
+          "rule_id": "GAME-PROT-001",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "以13岁以下受众为主的媒介发布游戏广告",
+          "application": "广告定向面向未成年人，且游戏充值内容可能不利于其身心健康。"
+        },
+        {
+          "rule_uid": "RUID-7497913efe3a276d",
+          "rule_id": "GAME-PROT-002",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "诱导未成年人要求家长付费",
+          "application": "“让爸爸妈妈帮你充值18元”直接劝诱不满十四周岁受众要求家长购买。"
+        }
+      ],
+      "must_not_recall_rules": [],
+      "unmapped_expected_provisions": [
+        {"text": "《未成年人保护法》第74条及防沉迷通知中的定向吸引表述", "reason": "现有对应资产主要是运营审批或防沉迷系统规则，不作为本案广告内容主召回规则。"}
+      ]
+    },
+    {
+      "case_id": "EVAL-GAME-005",
+      "must_recall_rules": [
+        {
+          "rule_uid": "RUID-8c3736290884aeb7",
+          "rule_id": "GAME-ADV-001",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "《广告法》第38条第1款",
+          "application": "代言人宣称每日登录及全服排名，但没有真实使用记录或战绩材料可核验。"
+        },
+        {
+          "rule_uid": "RUID-b60852699e8ddd70",
+          "rule_id": "GEN-ABS-001",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "《广告法》第9条第3项",
+          "application": "“玩过最好玩的手游”属于绝对化用语。"
+        }
+      ],
+      "must_not_recall_rules": [],
+      "unmapped_expected_provisions": [
+        {"text": "《广告法》第38条第3款", "reason": "属于责任条件，不另设为本案内容主召回规则。"}
+      ]
+    },
+    {
+      "case_id": "EVAL-GAME-006",
+      "must_recall_rules": [
+        {
+          "rule_uid": "RUID-f376e1be1e207021",
+          "rule_id": "GAME-FALSE-001",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "《广告法》第28条第2款第2项",
+          "application": "“100%中奖保证”“人人有奖”在高价值奖品概率极低且未披露时形成误导。"
+        }
+      ],
+      "must_not_recall_rules": [],
+      "unmapped_expected_provisions": [
+        {"text": "《反不正当竞争法》第10条所涉有奖销售奖项金额和概率公示", "reason": "当前 JSONBase 未找到直接对应有奖销售概率及总金额公示的有效规则。"},
+        {"text": "《广告法》第8条数据真实要求（表格所列）", "reason": "当前 JSONBase 没有以该条为依据且直接对应本案概率公示的游戏内容规则。"}
+      ]
+    },
+    {
+      "case_id": "EVAL-GAME-007",
+      "must_recall_rules": [
+        {
+          "rule_uid": "RUID-58e192a8dddf575c",
+          "rule_id": "GAME-AD-002",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "无国内版号仍面向国内用户运营并发布广告",
+          "application": "广告主缺少网络游戏运营及广告发布所需行政许可条件。"
+        },
+        {
+          "rule_uid": "RUID-7bb3f201c1db1fd8",
+          "rule_id": "GAME-MP-001",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "防沉迷通知的实名注册要求",
+          "application": "“注册不用实名”直接违反网络游戏账号实名注册制度。"
+        },
+        {
+          "rule_uid": "RUID-c1efc611fdda35b0",
+          "rule_id": "GAME-MP-002",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "绕过青少年防沉迷、全年龄段无限制",
+          "application": "宣传绕过防沉迷与无限制游玩，直接触及未成年人游戏时段时长限制。"
+        }
+      ],
+      "must_not_recall_rules": [],
+      "unmapped_expected_provisions": [
+        {"text": "《未成年人保护法》第74条及《广告法》第9条第10项", "reason": "表格引用较宽泛，现有对应规则不比三条直接规则更适合作为本案主召回身份。"}
+      ]
+    },
+    {
+      "case_id": "EVAL-GAME-008",
+      "must_recall_rules": [],
+      "must_not_recall_rules": [],
+      "unmapped_expected_provisions": [
+        {"text": "小红书《游戏行业投放规则》：棋牌类游戏不支持推广", "reason": "当前 JSONBase 未找到对应的棋牌游戏禁投规则；文案本身无其他明确违法点。"}
+      ]
+    },
+    {
+      "case_id": "EVAL-GAME-009",
+      "must_recall_rules": [],
+      "must_not_recall_rules": [],
+      "unmapped_expected_provisions": [
+        {"text": "B站广告推广平台审核规范：禁止使用比较性用语", "reason": "当前 JSONBase 未找到对应的 B站比较性用语禁用规则。"},
+        {"text": "《广告法》第11条边界核验", "reason": "数据已标示来源且可提供报告；表格将法律层面定义为边界状态，不应强制召回违法规则。"}
+      ]
+    },
+    {
+      "case_id": "EVAL-GAME-010",
+      "must_recall_rules": [
+        {
+          "rule_uid": "RUID-01d5d70f1845dca4",
+          "rule_id": "GAME-DATA-001",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "《广告法》第11条第1款",
+          "application": "多项精确数据未标明统计口径、时间、平台和出处。"
+        },
+        {
+          "rule_uid": "RUID-9ecf144ad28c1c77",
+          "rule_id": "XHS-GAME-DAT-003",
+          "expectation_role": "direct",
+          "basis_from_xlsx": "小红书数据性宣称须可核实",
+          "application": "小红书投放中的数据引证缺少证明材料且未表明出处。"
+        }
+      ],
+      "must_not_recall_rules": [],
+      "unmapped_expected_provisions": [
+        {"text": "《广告法》第28条第2款第2项", "reason": "表格说明在无法提供证明时才可能升级；主评分先使用直接的数据引证规则。"}
+      ]
+    }
+  ]
+}

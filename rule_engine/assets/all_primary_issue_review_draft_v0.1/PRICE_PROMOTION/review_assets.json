@@ -1,0 +1,637 @@
+{
+  "schema_version": "0.1",
+  "asset_status": "draft",
+  "model": "deepseek-chat",
+  "prompt_version": "all_primary_issue_fingerprint_v01_20260913",
+  "root_id": "PRICE_PROMOTION",
+  "root_name": "价格与促销",
+  "nodes": [
+    {
+      "issue_id": "PRICE_PROMOTION.DISCOUNT_LIMIT",
+      "parent_issue_id": "PRICE_PROMOTION",
+      "level": 2,
+      "node_type": "directory",
+      "name": "折扣优惠与限制条件",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "PRICE_PROMOTION.GIFT_FREE",
+      "parent_issue_id": "PRICE_PROMOTION",
+      "level": 2,
+      "node_type": "directory",
+      "name": "赠送、免费与福利活动",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "PRICE_PROMOTION.PRICE_ACCURACY",
+      "parent_issue_id": "PRICE_PROMOTION",
+      "level": 2,
+      "node_type": "directory",
+      "name": "价格真实性与准确标示",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "PRICE_PROMOTION.PRIZE_PROBABILITY",
+      "parent_issue_id": "PRICE_PROMOTION",
+      "level": 2,
+      "node_type": "directory",
+      "name": "抽奖、概率与奖励机制",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "PRICE_PROMOTION.DISCOUNT_LIMIT.DISCOUNT_PROMOTION_TERMS_NOT_DISCLOSED",
+      "parent_issue_id": "PRICE_PROMOTION.DISCOUNT_LIMIT",
+      "name": "打折促销未明示有效期、折扣、优惠条件及具体所得",
+      "definition": "广告涉及商品打折促销活动，但未在广告落地页或唤起APP中明示促销活动的有效期、折扣、优惠条件及最终用户参与购买后具体所得。",
+      "confidence": "high",
+      "reason": "现有节点直接对应折扣优惠与限制条件，行为结构为促销条件披露不完整，保留为独立三级问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-21f1d4da701f1ccf"
+      ],
+      "source_occurrence_uids": [
+        "RUID-21f1d4da701f1ccf"
+      ]
+    },
+    {
+      "issue_id": "PRICE_PROMOTION.GIFT_FREE.GIFT_FREE_REWARD_PROOF_MISSING",
+      "parent_issue_id": "PRICE_PROMOTION.GIFT_FREE",
+      "name": "赠送或免费福利未提供奖励品真实有效可领取证明",
+      "definition": "广告中涉及用户不消费即可领取福利或赠送奖励的表述，但未提供奖励品真实有效、可实际领取的证明。",
+      "confidence": "high",
+      "reason": "现有节点直接对应赠送、免费与福利活动，行为结构为奖励可领取证明缺失，保留为独立三级问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "PRICE_PROMOTION.GIFT_FREE.GIFT_FREE_DISCLOSURE_INCOMPLETE",
+      "parent_issue_id": "PRICE_PROMOTION.GIFT_FREE",
+      "name": "广告附带赠送或免费活动未完整明示赠送要素与参与条件",
+      "definition": "广告中表明推销的商品或服务附带赠送，或涉及赠送、免费等活动的，未明示所附带赠送商品或服务的品种、规格、数量、期限、方式，或未明示参与条件、使用门槛等任一要素。",
+      "confidence": "high",
+      "reason": "现有节点直接对应赠送、免费与福利活动，行为结构为赠送要素与参与条件披露不完整，保留为独立三级问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-648a74f0a007c117",
+        "RUID-aab092aa8071f6cb"
+      ],
+      "source_occurrence_uids": [
+        "RUID-648a74f0a007c117",
+        "RUID-972b12b69bc72106",
+        "RUID-aab092aa8071f6cb",
+        "RUID-c0d8414639b33f16"
+      ]
+    },
+    {
+      "issue_id": "PRICE_PROMOTION.PRICE_ACCURACY.PRICE_ACCURACY_ACTUAL_PAYMENT_MISMATCH",
+      "parent_issue_id": "PRICE_PROMOTION.PRICE_ACCURACY",
+      "name": "宣传售价与实际支付价格不符",
+      "definition": "宣传的商品售价与消费者实际支付价格不符，致使消费者权益受损的虚假宣传行为。",
+      "confidence": "high",
+      "reason": "现有节点直接对应价格真实性与准确标示，行为结构为宣传售价与实际支付不一致，保留为独立三级问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-e82dd36e3a77d579"
+      ],
+      "source_occurrence_uids": [
+        "RUID-e82dd36e3a77d579"
+      ]
+    },
+    {
+      "issue_id": "PRICE_PROMOTION.PRICE_ACCURACY.PRICE_ACCURACY_BASELINE_PRICE_NO_EVIDENCE",
+      "parent_issue_id": "PRICE_PROMOTION.PRICE_ACCURACY",
+      "name": "基准价无真实依据",
+      "definition": "在价格宣传中使用基准价（如原价、价值、吊牌价等）与当前售价进行对比，价格差距过大，且无法提供基准价的真实证明依据。",
+      "confidence": "high",
+      "reason": "现有节点直接对应价格真实性与准确标示，行为结构为基准价缺乏真实依据，保留为独立三级问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-3b1de2e3b266d71a"
+      ],
+      "source_occurrence_uids": [
+        "RUID-3b1de2e3b266d71a"
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "rule_uid": "RUID-21f1d4da701f1ccf",
+      "rule_id": "GAME-BILI-004",
+      "rule_title": "涉及商品打折促销需明示有效期、折扣、优惠条件及具体所得",
+      "root_id": "PRICE_PROMOTION",
+      "issue_id": "PRICE_PROMOTION.DISCOUNT_LIMIT.DISCOUNT_PROMOTION_TERMS_NOT_DISCLOSED",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c619acd2f3a34e2a",
+      "canonical_rule_uid": "RUID-21f1d4da701f1ccf",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "7.",
+          "original_text": "涉及商品打折促销活动等活动应当明示促销活动的有效期、折扣、优惠条件、特卖等，以及最终用户参与购买后具体所得如：某商品立减10元，买1得2（优惠条件）用户可在周末享受此优惠（有效期）购买此商品用户共计可得3样活动商品（具体所得）。诸如此类情况需在广告落地页/唤起APP中说明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-21f1d4da701f1ccf",
+        "target_issue_id": "PRICE_PROMOTION.DISCOUNT_LIMIT.DISCOUNT_PROMOTION_TERMS_NOT_DISCLOSED",
+        "canonical_problem_name": "打折促销未明示有效期、折扣、优惠条件及具体所得",
+        "regulated_action": "discount_promotion_terms_not_disclosed",
+        "legal_effect": "disclosure_required",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "商品打折促销活动"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "PRICE_PROMOTION",
+        "confidence": "high",
+        "reason": "原文明确要求涉及商品打折促销活动应当明示促销活动的有效期、折扣、优惠条件、特卖等，以及最终用户参与购买后具体所得，并需在广告落地页/唤起APP中说明，与目标问题定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-3b1de2e3b266d71a",
+      "rule_id": "COSM-PRICE-002",
+      "rule_title": "基准价无真实依据",
+      "root_id": "PRICE_PROMOTION",
+      "issue_id": "PRICE_PROMOTION.PRICE_ACCURACY.PRICE_ACCURACY_BASELINE_PRICE_NO_EVIDENCE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-44c396bccfb8a71a",
+      "canonical_rule_uid": "RUID-3b1de2e3b266d71a",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.2",
+          "original_text": "基准价⽆真实依据宣传价值1399元的精华⽔，仅售价199元，价格差距过⼤，且⽆法提供售价1399元的证明依据"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-3b1de2e3b266d71a",
+        "target_issue_id": "PRICE_PROMOTION.PRICE_ACCURACY.PRICE_ACCURACY_BASELINE_PRICE_NO_EVIDENCE",
+        "canonical_problem_name": "基准价无真实依据",
+        "regulated_action": "baseline_price_without_evidence",
+        "legal_effect": "substantiation_required",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "基准价宣传",
+          "价格对比宣传"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "PRICE_PROMOTION",
+        "confidence": "high",
+        "reason": "原文明确禁止基准价无真实依据宣传，示例为宣传价值1399元仅售价199元、价格差距过大且无法提供证明依据，与目标问题定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-648a74f0a007c117",
+      "rule_id": "HF-ACC-002",
+      "rule_title": "附带赠送广告应当明示品种、规格、数量、期限和方式",
+      "root_id": "PRICE_PROMOTION",
+      "issue_id": "PRICE_PROMOTION.GIFT_FREE.GIFT_FREE_DISCLOSURE_INCOMPLETE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-a875410027746d15",
+      "canonical_rule_uid": "RUID-648a74f0a007c117",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第八条",
+          "original_text": "广告中表明推销的商品或者服务附带赠送的，应当明示所附带赠送商品或者服务的品种、规格、数量、期限和方式。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-648a74f0a007c117",
+        "target_issue_id": "PRICE_PROMOTION.GIFT_FREE.GIFT_FREE_DISCLOSURE_INCOMPLETE",
+        "canonical_problem_name": "广告附带赠送或免费活动未完整明示赠送要素与参与条件",
+        "regulated_action": "gift_promotion_elements_not_disclosed",
+        "legal_effect": "disclosure_required",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "附带赠送商品或服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "PRICE_PROMOTION",
+        "confidence": "high",
+        "reason": "原文明确要求广告中表明推销的商品或者服务附带赠送的，应当明示所附带赠送商品或者服务的品种、规格、数量、期限和方式，与目标问题定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-972b12b69bc72106",
+      "rule_id": "COSM-ACC-002",
+      "rule_title": "附带赠送广告应当明示品种、规格、数量、期限和方式",
+      "root_id": "PRICE_PROMOTION",
+      "issue_id": "PRICE_PROMOTION.GIFT_FREE.GIFT_FREE_DISCLOSURE_INCOMPLETE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-a875410027746d15",
+      "canonical_rule_uid": "RUID-648a74f0a007c117",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第八条",
+          "original_text": "广告中表明推销的商品或者服务附带赠送的，应当明示所附带赠送商品或者服务的品种、规格、数量、期限和方式。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-972b12b69bc72106",
+        "target_issue_id": "PRICE_PROMOTION.GIFT_FREE.GIFT_FREE_DISCLOSURE_INCOMPLETE",
+        "canonical_problem_name": "广告附带赠送或免费活动未完整明示赠送要素与参与条件",
+        "regulated_action": "gift_promotion_elements_not_disclosed",
+        "legal_effect": "disclosure_required",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "附带赠送商品或服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "PRICE_PROMOTION",
+        "confidence": "high",
+        "reason": "原文明确要求广告中表明推销的商品或者服务附带赠送的，应当明示所附带赠送商品或者服务的品种、规格、数量、期限和方式，与目标问题定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-aab092aa8071f6cb",
+      "rule_id": "GAME-BILI-002",
+      "rule_title": "涉及赠送/免费等活动需明示参与条件与门槛",
+      "root_id": "PRICE_PROMOTION",
+      "issue_id": "PRICE_PROMOTION.GIFT_FREE.GIFT_FREE_DISCLOSURE_INCOMPLETE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-059a2e9c5796a105",
+      "canonical_rule_uid": "RUID-aab092aa8071f6cb",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "7.",
+          "original_text": "涉及赠送/送/免费等活动应当明示参与条件与门槛如：用户需将联通卡开卡后（参与条件）用户使用此卡通过日常的使用B站观看视频、直播等行为，赚取福利点数（使用门槛）从而兑换相应的大会员期限。诸如此类情况需在广告落地页/唤起APP中说明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-aab092aa8071f6cb",
+        "target_issue_id": "PRICE_PROMOTION.GIFT_FREE.GIFT_FREE_DISCLOSURE_INCOMPLETE",
+        "canonical_problem_name": "广告附带赠送或免费活动未完整明示赠送要素与参与条件",
+        "regulated_action": "gift_free_activity_terms_not_disclosed",
+        "legal_effect": "disclosure_required",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "赠送活动",
+          "免费活动",
+          "福利兑换活动"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "PRICE_PROMOTION",
+        "confidence": "high",
+        "reason": "原文明确要求涉及赠送/送/免费等活动应当明示参与条件与门槛，并需在广告落地页/唤起APP中说明，属于赠送免费活动披露不完整。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-c0d8414639b33f16",
+      "rule_id": "GAME-AD-002",
+      "rule_title": "广告中附带赠送应当明示品种、规格、数量、期限和方式",
+      "root_id": "PRICE_PROMOTION",
+      "issue_id": "PRICE_PROMOTION.GIFT_FREE.GIFT_FREE_DISCLOSURE_INCOMPLETE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-a875410027746d15",
+      "canonical_rule_uid": "RUID-648a74f0a007c117",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第八条",
+          "original_text": "广告中表明推销的商品或者服务附带赠送的，应当明示所附带赠送商品或者服务的品种、规格、数量、期限和方式。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-c0d8414639b33f16",
+        "target_issue_id": "PRICE_PROMOTION.GIFT_FREE.GIFT_FREE_DISCLOSURE_INCOMPLETE",
+        "canonical_problem_name": "广告附带赠送或免费活动未完整明示赠送要素与参与条件",
+        "regulated_action": "gift_terms_not_disclosed",
+        "legal_effect": "disclosure_required",
+        "actor_scope": [
+          "广告主",
+          "广告发布者",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "附带赠送商品",
+          "附带赠送服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "PRICE_PROMOTION",
+        "confidence": "high",
+        "reason": "广告法第八条原文明确要求广告中表明推销的商品或者服务附带赠送的，应当明示所附带赠送商品或者服务的品种、规格、数量、期限和方式。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e82dd36e3a77d579",
+      "rule_id": "COSM-PRICE-001",
+      "rule_title": "宣传售价与实际支付价格不符",
+      "root_id": "PRICE_PROMOTION",
+      "issue_id": "PRICE_PROMOTION.PRICE_ACCURACY.PRICE_ACCURACY_ACTUAL_PAYMENT_MISMATCH",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ebe9fe0b658e24b3",
+      "canonical_rule_uid": "RUID-e82dd36e3a77d579",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.2",
+          "original_text": "宣传与实际不⼀致指宣传的商品售价与消费者实际⽀付价格不符，致使消费者权益受损的虚假宣传⾏为"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e82dd36e3a77d579",
+        "target_issue_id": "PRICE_PROMOTION.PRICE_ACCURACY.PRICE_ACCURACY_ACTUAL_PAYMENT_MISMATCH",
+        "canonical_problem_name": "宣传售价与实际支付价格不符",
+        "regulated_action": "advertised_price_actual_payment_mismatch",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "商品售价宣传",
+          "实际支付价格"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "PRICE_PROMOTION",
+        "confidence": "high",
+        "reason": "原文明确禁止宣传的商品售价与消费者实际支付价格不符，致使消费者权益受损的虚假宣传行为。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e990073bbb155ad2",
+      "rule_id": "GAME-BILI-003",
+      "rule_title": "游戏广告涉及赠送福利需提供奖励品真实有效证明",
+      "root_id": "PRICE_PROMOTION",
+      "issue_id": "PRICE_PROMOTION.GIFT_FREE.GIFT_FREE_REWARD_PROOF_MISSING",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-cea5b14c29763cbc",
+      "canonical_rule_uid": "RUID-e990073bbb155ad2",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "涉及用户不消费即可领取某福利的活动情况应当对奖励品进行二次核查如：某游戏广告语是“有一份3280元源石待领取””上线即得神级辅助英雄“等需前置提供奖励品真实有效可领取的截屏或录屏"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e990073bbb155ad2",
+        "target_issue_id": "PRICE_PROMOTION.GIFT_FREE.GIFT_FREE_REWARD_PROOF_MISSING",
+        "canonical_problem_name": "赠送或免费福利未提供奖励品真实有效可领取证明",
+        "regulated_action": "gift_free_reward_proof_missing",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "不消费即可领取福利活动",
+          "奖励品"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "PRICE_PROMOTION",
+        "confidence": "high",
+        "reason": "原文明确要求涉及用户不消费即可领取某福利的活动应当对奖励品进行二次核查，并前置提供奖励品真实有效可领取的截屏或录屏。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "canonical_groups": [
+    {
+      "canonical_rule_key": "CRK-059a2e9c5796a105",
+      "canonical_rule_uid": "RUID-aab092aa8071f6cb",
+      "source_occurrence_uids": [
+        "RUID-aab092aa8071f6cb"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "涉及赠送/免费等活动需明示参与条件与门槛",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-44c396bccfb8a71a",
+      "canonical_rule_uid": "RUID-3b1de2e3b266d71a",
+      "source_occurrence_uids": [
+        "RUID-3b1de2e3b266d71a"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "基准价无真实依据",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-a875410027746d15",
+      "canonical_rule_uid": "RUID-648a74f0a007c117",
+      "source_occurrence_uids": [
+        "RUID-648a74f0a007c117",
+        "RUID-972b12b69bc72106",
+        "RUID-c0d8414639b33f16"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "附带赠送广告应当明示品种、规格、数量、期限和方式",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-c619acd2f3a34e2a",
+      "canonical_rule_uid": "RUID-21f1d4da701f1ccf",
+      "source_occurrence_uids": [
+        "RUID-21f1d4da701f1ccf"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "涉及商品打折促销需明示有效期、折扣、优惠条件及具体所得",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-cea5b14c29763cbc",
+      "canonical_rule_uid": "RUID-e990073bbb155ad2",
+      "source_occurrence_uids": [
+        "RUID-e990073bbb155ad2"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "游戏广告涉及赠送福利需提供奖励品真实有效证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-ebe9fe0b658e24b3",
+      "canonical_rule_uid": "RUID-e82dd36e3a77d579",
+      "source_occurrence_uids": [
+        "RUID-e82dd36e3a77d579"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "宣传售价与实际支付价格不符",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "proactive_candidates": [
+    {
+      "rule_uid": "RUID-e990073bbb155ad2",
+      "issue_id": "PRICE_PROMOTION.GIFT_FREE.GIFT_FREE_REWARD_PROOF_MISSING",
+      "name": "赠送或免费福利未提供奖励品真实有效可领取证明",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "涉及用户不消费即可领取某福利的活动情况应当对奖励品进行二次核查如：某游戏广告语是“有一份3280元源石待领取””上线即得神级辅助英雄“等需前置提供奖励品真实有效可领取的截屏或录屏"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ]
+}

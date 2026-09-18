@@ -10,6 +10,7 @@ from legal_issue_groups import (
 )
 from rule_identity import rule_identity
 from rule_scope import platform_scope_matches
+from rule_eligibility import judgment_candidate_eligible
 
 
 def merge_parent_candidates(recalled):
@@ -128,6 +129,7 @@ def apply_candidate_quotas(
     max_fact=3,
     max_platform=2,
     reserve_open_content=1,
+    reserve_semantic=2,
 ):
     selected = []
     selected_uids = set()
@@ -155,6 +157,11 @@ def apply_candidate_quotas(
         if open_candidates:
             try_add(open_candidates[0])
 
+    if reserve_semantic:
+        semantic_candidates = [item for item in ranked if "semantic" in _channels(item[1])]
+        for item in semantic_candidates[: max(0, int(reserve_semantic))]:
+            try_add(item)
+
     for item in ranked:
         try_add(item)
     return selected
@@ -164,7 +171,7 @@ def govern_candidates(recalled, request, group_asset, limit=8):
     applicable = [
         (rule, hits)
         for rule, hits in recalled or []
-        if platform_scope_matches(rule, request or {})
+        if platform_scope_matches(rule, request or {}) and judgment_candidate_eligible(rule)
     ]
     merged = merge_parent_candidates(applicable)
     collapsed = collapse_issue_groups(merged, request or {}, group_asset or {"groups": []})

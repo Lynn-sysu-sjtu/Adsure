@@ -766,14 +766,16 @@
         ],
         "vector_text": "法律、行政法规规定广告中应当明示的内容，应当显著、清晰表示。",
         "semantic_enabled": false,
-        "semantic_role": "fallback",
+        "semantic_role": "disabled",
         "semantic_reason": "本规则为兜底规则，具体明示内容需结合其他法规，关键词召回不适用。",
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 明示、显著、清晰.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "中",
       "consequence": {
@@ -841,7 +843,12 @@
         "route_reason": "规则为兜底条款，需法务结合其他法规判断具体明示内容，运营无法自行处理。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "review_role": "supporting_basis",
+      "review_roles": [
+        "supporting_basis"
+      ],
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "COSM-OTH-001",
@@ -10987,7 +10994,7 @@
       "dimension": "未成年人保护",
       "applies_to": {
         "industries": [
-          "美妆"
+          "通用"
         ],
         "product_categories": [
           "化妆品"
@@ -11064,10 +11071,10 @@
           "媒介限制"
         ],
         "vector_text": "儿童频道化妆品广告青少年杂志美妆广告小学生护肤品推广中学生彩妆推荐少儿化妆品促销针对未成年人的化妆品",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "该规则核心是媒介受众是否针对未成年人，而非文案本身，但违规场景常伴随特定受众关键词，适合语义召回作为关键词的补充，覆盖更多变体表达。",
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、医疗、大众传播媒介、未成年人、第一.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
@@ -11099,7 +11106,9 @@
           "change_summary": "将法条式描述改写为真实违规广告文案集合，包含多种媒介场景和受众关键词。",
           "confidence": "high",
           "semantic_recommendations_applied": false
-        }
+        },
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -11169,7 +11178,12 @@
         "route_reason": "需要运营确认媒介是否针对未成年人，补充媒介受众定位信息后即可判断，无需法务介入。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "review_role": "supporting_basis",
+      "review_roles": [
+        "supporting_basis"
+      ],
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "COSM-001-001",
@@ -11431,10 +11445,10 @@
           "变相广告"
         ],
         "vector_text": "以新闻报道形式发布美妆广告，未标注广告字样?在短视频脚本中以个人体验分享形式变相推广产品，未声明广告",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 医疗、广告可识别、软文.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
@@ -11457,7 +11471,9 @@
           "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
           "confidence": "low",
           "semantic_recommendations_applied": false
-        }
+        },
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "中",
       "consequence": {
@@ -11527,7 +11543,12 @@
         "route_reason": "可识别性判断依赖语义和上下文，运营难以自行准确判断，需法务确认是否构成变相广告或未标注广告",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "review_role": "supporting_basis",
+      "review_roles": [
+        "supporting_basis"
+      ],
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "COSM-ADID-002",

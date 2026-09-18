@@ -99,14 +99,16 @@
         ],
         "vector_text": "化妆品广告中涉及禁用组分、禁用成分、禁用物质的宣称，需确保配方中未使用禁用组分",
         "semantic_enabled": false,
-        "semantic_role": "fallback",
+        "semantic_role": "disabled",
         "semantic_reason": "",
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、宣称.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -174,7 +176,9 @@
         "route_reason": "规则触发需结合配方资料核验，事实核验成本高且后果严重，应进入法务复核",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "COSM-FORMULA-002",
@@ -407,14 +411,16 @@
         ],
         "vector_text": "化妆品广告中涉及防腐剂、防晒剂、着色剂、染发剂的宣称，需确保这些组分属于准用组分且使用符合规定",
         "semantic_enabled": false,
-        "semantic_role": "fallback",
+        "semantic_role": "disabled",
         "semantic_reason": "",
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、宣称.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -482,7 +488,9 @@
         "route_reason": "规则触发需结合配方核验，事实核验依赖备案信息，且误判后果严重，应进入法务复核。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "COSM-MICRO-001",
@@ -720,14 +728,16 @@
         ],
         "vector_text": "化妆品广告中涉及有害物质、重金属、不含汞铅等宣称，需确保产品有害物质符合限值",
         "semantic_enabled": false,
-        "semantic_role": "fallback",
+        "semantic_role": "disabled",
         "semantic_reason": "",
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、宣称.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -795,7 +805,9 @@
         "route_reason": "规则触发需结合文案宣称判断，且必须核验产品有害物质检验报告，运营无法自行确认，应要求补充资料",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "COSM-LABEL-001",
@@ -872,14 +884,16 @@
         ],
         "vector_text": "化妆品广告中涉及使用条件、注意事项的宣称，需确保产品标签按要求标注",
         "semantic_enabled": false,
-        "semantic_role": "fallback",
+        "semantic_role": "disabled",
         "semantic_reason": "",
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 化妆品、宣称.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "中",
       "consequence": {
@@ -947,7 +961,12 @@
         "route_reason": "规则触发需结合广告文案是否提及使用条件或注意事项来判断，且需核验产品标签是否合规标注，运营可先补充标签信息后再决定是否需法务介入。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "review_role": "proactive_check",
+      "review_roles": [
+        "proactive_check"
+      ],
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "COSM-CHILD-001",
@@ -1413,7 +1432,7 @@
           "article": "未分条-35",
           "legal_level": 3,
           "role": "based_on",
-          "text": "1. 总量8%（以巯基乙酸计） ， pH6-9.5 2. 总量 11%（以巯基乙酸计） ，pH6-9.5 含巯基乙酸酯； 按用法说明使用； 防止儿童抓拿；仅供专业使用；需作如下说明： 避免接触眼睛； 如果产品不慎入眼， 应立即用大量水冲洗，并找医生处治"
+          "text": "化妆品限用组分表，序号25（2）巯基乙酸酯类（Thioglycollic acid esters）。适用及（或）使用范围：烫发产品；1.一般用；2.专业用。化妆品使用时的最大允许浓度：1.总量8%（以巯基乙酸计），pH6-9.5；2.总量11%（以巯基乙酸计），pH6-9.5。其他限制和要求及标签事项：含巯基乙酸酯；按用法说明使用；防止儿童抓拿；仅供专业使用；需作如下说明：避免接触眼睛；如果产品不慎入眼，应立即用大量水冲洗，并找医生处治。"
         }
       ],
       "hierarchy": {
@@ -1563,6 +1582,12 @@
         "route_reason": "规则涉及多种准用组分的浓度限制和标签标注要求，需要法务结合具体产品成分、浓度及标签内容进行合规判断，且风险高，运营难以自行处理。",
         "confidence": "high",
         "calibration_status": "provisional"
+      },
+      "source_repair": {
+        "status": "verified",
+        "source": "D:/G-Vibe coding/广告合规审查智能体/知识图谱/docs/后期加工法规文件/附件：化妆品安全技术规范（2015年版）.pdf",
+        "locator": "PDF 第113页（印刷页106），化妆品限用组分表，序号25（2）巯基乙酸酯类",
+        "sha256": "297423d38d692410d9da3cc922fa6a707fa097c52d124b6c0c5e973edeb9d1be"
       }
     },
     {

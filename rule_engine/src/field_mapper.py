@@ -46,6 +46,7 @@ INDUSTRY_FIELDS = {
 MATERIAL_TYPE_NORMALIZATION = {
     "图文": "图文文案",
     "短视频": "短视频脚本",
+    "视频": "短视频脚本中的文字内容",
     "Banner": "Banner文字",
     "详情页": "详情页文字",
     "直播话术": "直播话术",

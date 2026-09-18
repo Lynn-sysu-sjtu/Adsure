@@ -821,8 +821,8 @@
           "同意"
         ],
         "vector_text": "发送短信推送优惠活动，订阅邮件获取每日推荐，未经同意发送营销信息，推送广告短信，发送商业邮件，未经请",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "该规则涉及消费者同意，关键词难以覆盖所有商业性信息发送的表述，语义召回可有效召回各种变体表述，适合作为主要召回方式。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
@@ -855,12 +855,14 @@
           "vector_text_clipped_at": "20260715_001248",
           "vector_text_clipped_from_length": 286
         },
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 促销、清晰. It also has fact signals, so this should be reviewed.",
         "trigger_layer_confidence": "low",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "中",
       "consequence": {
@@ -930,7 +932,9 @@
         "route_reason": "规则触发清晰，运营可直接删除或补充同意声明，无需法务介入",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "HF-FAKE-001",

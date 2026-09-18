@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.3",
+  "asset_status": "draft",
+  "corrections": [
+    {
+      "action": "merge_duplicate_issue",
+      "removed_issue_id": "ENDORSEMENT_REVIEW.ENDORSER_ELIGIBILITY.FALSE_RECOMMENDATION_JOINT_LIABILITY",
+      "kept_issue_id": "ENDORSEMENT_REVIEW.EXPERT_ORGANIZATION.LIABILITY_FOR_FALSE_ENDORSEMENT",
+      "reason": "两个节点同名且由同一条规则支撑；移除无独立法源的重复次问题节点，保留《中华人民共和国消费者权益保护法》第四十五条对应节点。",
+      "rule_uid": "RUID-28d3242b78268125",
+      "source_issue_ids": [
+        "COSM.FALSE_ADVERTISING.FALSE_RECOMMENDATION_LIABILITY",
+        "GEN.ENDORSEMENT.UNVERIFIED_ENDORSEMENT"
+      ]
+    }
+  ]
+}

@@ -391,7 +391,8 @@
         "route_reason": "规则触发清晰，运营可直接判断品牌名称是否为纯符号或纯形容语句，无需法务介入。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "platform_gate": "exact"
     },
     {
       "rule_id": "GAME-BILI-003",
@@ -2827,7 +2828,8 @@
         "route_reason": "规则触发清晰，仅需判断文案是否描述跳转至第三方APP，运营可直接修改或删除违规表述。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "platform_gate": "exact"
     },
     {
       "rule_id": "GAME-BILI-008",

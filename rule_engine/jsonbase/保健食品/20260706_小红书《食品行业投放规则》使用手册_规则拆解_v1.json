@@ -1372,7 +1372,7 @@
         "tags": [],
         "vector_text": "保健食品投放小红书笔记，没有资质也发种草文，软文推广保健品，个人号发保健食品测评，无蓝帽子标识宣传功效，普通食品冒充保健食品，笔记类物料未报备，非官方渠道推广保健品，素人账号发保健品推荐，规避平台审核的保健品文案，保健品笔记不带资质标签，小红书保健品投放违规，食品行业物料投放规则笔记类型，保健食品笔记类物料违规投放",
         "semantic_enabled": false,
-        "semantic_role": "fallback",
+        "semantic_role": "disabled",
         "semantic_reason": "规则为章节标题，无具体内容，但语义召回可覆盖保健食品笔记投放的常见违规表达，适合作为fallback辅助关键词召回",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
@@ -1401,12 +1401,14 @@
           "confidence": "medium",
           "semantic_recommendations_applied": false
         },
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、普通食品、种草、软文.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "",
       "consequence": {
@@ -1470,7 +1472,9 @@
         "route_reason": "规则为章节标题，无具体内容，无法自动执行，需法务判断是否可形成规则及适用边界",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "XHS-HF-001",

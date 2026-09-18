@@ -269,8 +269,8 @@
           "游戏内容"
         ],
         "vector_text": "繁体字异体字错别字拼音缩写不规范汉字火星文生僻字自造字谐音字网络用语非标准简体港台用语日韩汉字乱码符",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "文字规范违规难以通过固定关键词完全覆盖，需语义理解判断是否属于不规范使用，因此适合语义召回作为主要方式。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
@@ -305,12 +305,14 @@
           "vector_text_clipped_at": "20260715_001248",
           "vector_text_clipped_from_length": 486
         },
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传. It also has workflow signals, so this should be reviewed.",
         "trigger_layer_confidence": "low",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "中",
       "consequence": {
@@ -374,7 +376,9 @@
         "route_reason": "文字规范判断需结合多部法规及例外情形，运营难以自行把握边界，建议法务复核。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "GAME-POL-001",

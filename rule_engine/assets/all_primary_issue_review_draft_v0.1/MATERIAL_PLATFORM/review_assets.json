@@ -1,0 +1,3200 @@
+{
+  "schema_version": "0.1",
+  "asset_status": "draft",
+  "model": "deepseek-chat",
+  "prompt_version": "all_primary_issue_fingerprint_v01_20260913",
+  "root_id": "MATERIAL_PLATFORM",
+  "root_name": "素材形式与平台规范",
+  "nodes": [
+    {
+      "issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL",
+      "parent_issue_id": "MATERIAL_PLATFORM",
+      "level": 2,
+      "node_type": "directory",
+      "name": "素材形式与特殊符号",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA",
+      "parent_issue_id": "MATERIAL_PLATFORM",
+      "level": 2,
+      "node_type": "directory",
+      "name": "版式、字体与安全区域",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY",
+      "parent_issue_id": "MATERIAL_PLATFORM",
+      "level": 2,
+      "node_type": "directory",
+      "name": "图片、音频与视频质量",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP",
+      "parent_issue_id": "MATERIAL_PLATFORM",
+      "level": 2,
+      "node_type": "directory",
+      "name": "广告位、跳转与落地页",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.TEXT_EXPRESSION_NON_STANDARD",
+      "parent_issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL",
+      "name": "文字表达不规范",
+      "definition": "广告素材中的文字表达不符合规范要求，包括游戏文字无正当理由使用繁体字、异体字、错别字、拼音缩写等不规范表达，以及弹幕广告文案直接填写网址链接或使用特殊符号、颜文字。",
+      "confidence": "high",
+      "reason": "将游戏文字使用不规范、弹幕广告文案直接填写网址链接、弹幕广告文案使用特殊符号或颜文字合并，均为素材文字表达形式不规范，行为结构相同。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-13f780a32f47cf3e",
+        "RUID-1694a44a93daa824",
+        "RUID-fb4d81b8975ab278"
+      ],
+      "source_occurrence_uids": [
+        "RUID-13f780a32f47cf3e",
+        "RUID-1694a44a93daa824",
+        "RUID-fb4d81b8975ab278"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.TITLE_QUALITY_TEST_TEXT",
+      "parent_issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL",
+      "name": "标题含画质/音质测试文字",
+      "definition": "视频标题不可出现画质/音质测试及相关文字。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为标题含特定测试文字，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-fef57b66f9181737"
+      ],
+      "source_occurrence_uids": [
+        "RUID-fef57b66f9181737"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.BRAND_AVATAR_LOGO_INCONSISTENT",
+      "parent_issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL",
+      "name": "品牌头像/Logo与官方不一致或无关",
+      "definition": "品牌头像需上传商户的品牌logo（无logo商户可自行制作图片体现品牌名称），Logo应清晰、体现网站唯一性，并与客户官方网站LOGO一致，不可出现与当前广告无关的其他商户LOGO；品牌空间头像需与品牌头像保持一致，品牌空间昵称需与品牌名称保持一致。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为品牌头像/Logo与官方不一致或无关，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-494650d9bf9ffdab",
+        "RUID-d441086123801e11"
+      ],
+      "source_occurrence_uids": [
+        "RUID-494650d9bf9ffdab",
+        "RUID-d441086123801e11"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.PROHIBITED_EMOJI_MEME_MATERIAL",
+      "parent_issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL",
+      "name": "使用禁止的表情包素材",
+      "definition": "图片不可使用诸如熊猫头的劣质、模糊、暴漫风格、低像素、图形锯齿、负面情绪等表情包（套娃式表情包）。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为使用禁止的表情包素材，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-3251745daeec0c85"
+      ],
+      "source_occurrence_uids": [
+        "RUID-3251745daeec0c85"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.PREPACKAGED_FOOD_LABEL_FORMAT_VIOLATION",
+      "parent_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA",
+      "name": "预包装食品标签强制标示事项格式违规",
+      "definition": "预包装食品标签强制标示事项的文字、符号、数字高度未达到规定的最小尺寸要求，繁体字、拼音或外文字高大于相应规范汉字字高，或未使用与背景颜色对比明显的文字、符号、数字、图案进行标注导致无法清晰识读。",
+      "confidence": "high",
+      "reason": "将预包装食品标签最小字号不足、字高比例违规、对比不明显合并，均为预包装食品标签强制标示事项的版式格式违规，行为结构相同。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-aa578d91dfc33a05",
+        "RUID-e9057a51bd3657d8",
+        "RUID-f36541e80f9aab3d"
+      ],
+      "source_occurrence_uids": [
+        "RUID-aa578d91dfc33a05",
+        "RUID-e9057a51bd3657d8",
+        "RUID-f36541e80f9aab3d"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_LAYOUT_VIOLATION",
+      "parent_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA",
+      "name": "广告图片排版与字体违规",
+      "definition": "广告图片排版杂乱无序、元素过于密集或集中堆砌，出现内容不清晰、画质较低的游戏图片，广告文案上下留白不足，字体种类超过三种，或字体占据图片主体80%以上。",
+      "confidence": "high",
+      "reason": "将广告排版杂乱或元素密集、广告文案上下留白不足、广告图片文案字体种类超限、广告图片字体大小占据主体超限合并，均为广告图片排版与字体呈现违规，行为结构相同。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-1f43355cf9658054",
+        "RUID-94fc1e79a6c5a7be",
+        "RUID-9b1bb3de9b16753e",
+        "RUID-b3b25d351e38b6ca"
+      ],
+      "source_occurrence_uids": [
+        "RUID-1f43355cf9658054",
+        "RUID-94fc1e79a6c5a7be",
+        "RUID-9b1bb3de9b16753e",
+        "RUID-b3b25d351e38b6ca"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_SAFE_AREA_OCCLUSION",
+      "parent_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA",
+      "name": "广告图片内容遮挡或重叠安全区文案",
+      "definition": "广告图片素材中的文案、人物等内容遮挡、重叠广告位特定文案区域，违反图片安全区要求。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为遮挡或重叠安全区文案，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-97a664a9f4ef8007"
+      ],
+      "source_occurrence_uids": [
+        "RUID-97a664a9f4ef8007"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_BACKGROUND_COLOR_PROHIBITED",
+      "parent_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA",
+      "name": "广告图片使用禁止的淡色系底色",
+      "definition": "广告图片底色使用白色、灰色、浅灰色等近似白色的淡色系。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为使用禁止的淡色系底色，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-639f78d709ca446e"
+      ],
+      "source_occurrence_uids": [
+        "RUID-639f78d709ca446e"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.SPLASH_LANDING_EMBEDDED_DOWNLOAD_BANNER_AREA",
+      "parent_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA",
+      "name": "闪屏广告落地页嵌入式下载banner面积超限",
+      "definition": "闪屏广告落地页一跳页面中直接嵌入式下载banner展示面积超过屏幕的1/3。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为落地页嵌入式下载banner面积超限，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-f9353d7f574decd9"
+      ],
+      "source_occurrence_uids": [
+        "RUID-f9353d7f574decd9"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.IMAGE_QUALITY_VIOLATION",
+      "parent_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY",
+      "name": "图片质量违规",
+      "definition": "广告图片存在劣质、模糊、低像素、图形锯齿等质量问题，或使用高饱和度颜色叠加图片底色。",
+      "confidence": "high",
+      "reason": "将图片质量低劣、高饱和度颜色叠加图片底色合并，均为图片质量或视觉呈现违规，行为结构相同。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-d9e4c4f2b252bc02"
+      ],
+      "source_occurrence_uids": [
+        "RUID-d9e4c4f2b252bc02"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.AUDIO_QUALITY_VIOLATION",
+      "parent_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY",
+      "name": "音频质量违规",
+      "definition": "常规有声视频投稿音频须完整且正常无杂音，不可出现突兀或造成用户听觉不适的声音，包括但不限于爆破音、尖叫声等。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为音频质量违规，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-9147f31dbf337628"
+      ],
+      "source_occurrence_uids": [
+        "RUID-9147f31dbf337628"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.VIDEO_QUALITY_DEFECT",
+      "parent_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY",
+      "name": "视频质量缺陷",
+      "definition": "视频广告内容存在模糊不清、空白帧、画面静止不动或声话不同步等质量问题。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为视频质量缺陷，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-1355745c2673f96e"
+      ],
+      "source_occurrence_uids": [
+        "RUID-1355745c2673f96e"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_VISUAL_QUALITY_VIOLATION",
+      "parent_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY",
+      "name": "GIF素材视觉质量违规",
+      "definition": "GIF广告素材存在整体色调过亮或过暗、模糊、掉帧等视觉质量问题，或出现杂乱元素重复叠加、前后展示无序、快速跳帧、快速闪回或快速转场导致画面混乱、内容不清。",
+      "confidence": "high",
+      "reason": "将GIF广告素材视觉质量问题、GIF广告素材视觉混乱合并，均为GIF素材视觉质量违规，行为结构相同。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-b8d97544149d8f81",
+        "RUID-ecacd468734a482b"
+      ],
+      "source_occurrence_uids": [
+        "RUID-b8d97544149d8f81",
+        "RUID-ecacd468734a482b"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_BLACK_WHITE_SCREEN_VIOLATION",
+      "parent_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY",
+      "name": "GIF素材黑白屏违规",
+      "definition": "GIF素材的第一帧画面不得为黑屏或白屏，且不得使用黑白屏展示转切画面。",
+      "confidence": "high",
+      "reason": "将GIF素材首帧黑白屏、GIF素材使用黑白屏转切画面合并，均为GIF素材黑白屏使用违规，行为结构相同。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-5603aa906833325e",
+        "RUID-58dfcb0528020be4"
+      ],
+      "source_occurrence_uids": [
+        "RUID-5603aa906833325e",
+        "RUID-58dfcb0528020be4"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_CONTENT_INCOMPLETE_OR_SINGLE",
+      "parent_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY",
+      "name": "GIF素材内容单一或不完整",
+      "definition": "GIF广告素材内容为单一游戏试玩视频截图，形式过于单一或寓意不明，如仅图片加滑动弹幕或单个元素无任何情景展示，或展示不完整，出现动作或场景展示未完成，或出现半张脸、半段字等不完整画面。",
+      "confidence": "high",
+      "reason": "将GIF素材为单一游戏试玩视频截图、GIF广告素材形式单一或寓意不明、GIF广告素材展示不完整合并，均为GIF素材内容单一或不完整，行为结构相同。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-07f6b71a54a0cb3f",
+        "RUID-09fd975914800f53",
+        "RUID-14905cc1e81b22d4"
+      ],
+      "source_occurrence_uids": [
+        "RUID-07f6b71a54a0cb3f",
+        "RUID-09fd975914800f53",
+        "RUID-14905cc1e81b22d4"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_LINK_PLATFORM_REQUIREMENT",
+      "parent_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP",
+      "name": "落地页链接不符合平台指定要求",
+      "definition": "广告落地页链接未按平台要求指向指定地址，包括手游广告iOS端未链接至App Store、安卓端未链接至平台内链，品牌链接未指向平台允许的H5品牌官网、账号空间、会员购列表页或IP详情页，缺少品牌链接、链接无法访问，或未提供链接、链接信息不完整导致无法核实链接目标。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为落地页链接不符合平台指定要求，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-6c1b712f431c6b0d",
+        "RUID-80d816a2ebffe900",
+        "RUID-84166ade0e7accf3",
+        "RUID-fe103568a13aac16",
+        "RUID-fe1de6c6adfa8d2f"
+      ],
+      "source_occurrence_uids": [
+        "RUID-6c1b712f431c6b0d",
+        "RUID-80d816a2ebffe900",
+        "RUID-84166ade0e7accf3",
+        "RUID-fe103568a13aac16",
+        "RUID-fe1de6c6adfa8d2f"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_CONTENT_IRRELEVANT",
+      "parent_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP",
+      "name": "视频与落地页内容不相关",
+      "definition": "视频落地页与展示视频缺乏强相关性。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为视频与落地页内容不相关，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-9da5df84d5616427"
+      ],
+      "source_occurrence_uids": [
+        "RUID-9da5df84d5616427"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_PRODUCT_UNAVAILABLE_FALSE_PROMOTION",
+      "parent_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP",
+      "name": "落地页商品全部下架或售罄的虚假宣传",
+      "definition": "广告落地页的商品购买详情页存在全部下架或售罄的情况。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为落地页商品全部下架或售罄的虚假宣传，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-5c8f7c68de9d723a"
+      ],
+      "source_occurrence_uids": [
+        "RUID-5c8f7c68de9d723a"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_JUMP_THIRD_PARTY_APP",
+      "parent_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP",
+      "name": "落地页一跳跳出至第三方APP",
+      "definition": "视频落地页一跳跳出至第三方APP。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为落地页一跳跳出至第三方APP，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-0aa92e46809d6596"
+      ],
+      "source_occurrence_uids": [
+        "RUID-0aa92e46809d6596"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_INTERFERE_NORMAL_BROWSING",
+      "parent_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP",
+      "name": "弹窗或悬浮窗口干扰用户正常浏览",
+      "definition": "弹窗、悬浮窗口等遮挡内容、强制展示或无法跳过，影响用户正常浏览落地页或正常使用网络，包括落地页一跳页面出现不可关闭弹窗、弹窗面积超过屏幕1/3、出现悬浮窗口等情形。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为弹窗或悬浮窗口干扰用户正常浏览，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-1929b02368fe6f69",
+        "RUID-9e46af623109be68"
+      ],
+      "source_occurrence_uids": [
+        "RUID-1929b02368fe6f69",
+        "RUID-9e46af623109be68"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_CLOSE_MARK_ONE_CLICK",
+      "parent_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP",
+      "name": "弹出或开屏广告未显著标明关闭标志或未确保一键关闭",
+      "definition": "以弹出、开屏等形式发布互联网广告，未显著标明关闭标志或未确保一键关闭，包括没有关闭标志、计时结束才能关闭、关闭标志虚假或不可清晰辨识、难以定位、须两次以上点击、关闭后继续弹出等情形。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为弹出或开屏广告未显著标明关闭标志或未确保一键关闭，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-940cb0473df3a483",
+        "RUID-b84cbfe33cb22ef7"
+      ],
+      "source_occurrence_uids": [
+        "RUID-940cb0473df3a483",
+        "RUID-a6cc05cef258c1d6",
+        "RUID-b84cbfe33cb22ef7"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.SPLASH_AD_FREQUENCY_LIMIT",
+      "parent_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP",
+      "name": "闪屏广告同一素材投放天数超限",
+      "definition": "游戏广告主在B站投放闪屏广告时，同一素材在一个自然月内的投放天数超过平台规定的3天上限。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为闪屏广告同一素材投放天数超限，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-df9eb506c4bca178"
+      ],
+      "source_occurrence_uids": [
+        "RUID-df9eb506c4bca178"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.OUTDOOR_AD_PROHIBITED_SETTING",
+      "parent_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP",
+      "name": "户外广告设置禁止情形",
+      "definition": "在法律法规明确禁止的设施、区域或影响公共安全、市容市貌的情形下设置户外广告。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为户外广告设置禁止情形，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-c08e33f9fb96f267"
+      ],
+      "source_occurrence_uids": [
+        "RUID-c08e33f9fb96f267"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.CREATIVE_TARGETING_NETWORK_WIFI",
+      "parent_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP",
+      "name": "创意定向网络非WiFi",
+      "definition": "广告创意定向信息中网络未定向WiFi。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为创意定向网络非WiFi，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-eb53b958809d45f9"
+      ],
+      "source_occurrence_uids": [
+        "RUID-eb53b958809d45f9"
+      ]
+    },
+    {
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.GIF_CREATIVE_PLACEMENT_GROUP",
+      "parent_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP",
+      "name": "GIF素材未投放在GIF专用广告位组",
+      "definition": "GIF素材创意投放未选择GIF专用广告位组。",
+      "confidence": "high",
+      "reason": "现有问题独立，行为为GIF素材未投放在GIF专用广告位组，无同类可合并项。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-541c7a96fa51d83e"
+      ],
+      "source_occurrence_uids": [
+        "RUID-541c7a96fa51d83e"
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "rule_uid": "RUID-07f6b71a54a0cb3f",
+      "rule_id": "GAME-BILI-003",
+      "rule_title": "GIF广告素材需展示完整，不可出现不完整画面",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_CONTENT_INCOMPLETE_OR_SINGLE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-28e38bfe4d3b19a0",
+      "canonical_rule_uid": "RUID-07f6b71a54a0cb3f",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "素材需展示完整 不可出现动作或场景展示未完成或 gif 出现半张脸 半段字等不完整画面"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-07f6b71a54a0cb3f",
+        "target_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_CONTENT_INCOMPLETE_OR_SINGLE",
+        "canonical_problem_name": "GIF素材内容单一或不完整",
+        "regulated_action": "gif_material_must_show_complete_content",
+        "legal_effect": "required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "GIF广告素材"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“素材需展示完整 不可出现动作或场景展示未完成或 gif 出现半张脸 半段字等不完整画面”直接对应GIF素材内容不完整问题，归入MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_CONTENT_INCOMPLETE_OR_SINGLE。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-09fd975914800f53",
+      "rule_id": "GAME-BILI-001",
+      "rule_title": "GIF广告素材形式不可过于单一或寓意不明",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_CONTENT_INCOMPLETE_OR_SINGLE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ede41e105dddc2d1",
+      "canonical_rule_uid": "RUID-09fd975914800f53",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "素材形式不可过于单一 寓意不明 如仅图片 + 滑动弹幕 或为单个元素无任何情景展示"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-09fd975914800f53",
+        "target_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_CONTENT_INCOMPLETE_OR_SINGLE",
+        "canonical_problem_name": "GIF素材内容单一或不完整",
+        "regulated_action": "gif_material_must_not_be_single_or_ambiguous",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "GIF广告素材"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“素材形式不可过于单一 寓意不明 如仅图片 + 滑动弹幕 或为单个元素无任何情景展示”直接对应GIF素材内容单一问题，归入MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_CONTENT_INCOMPLETE_OR_SINGLE。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-0aa92e46809d6596",
+      "rule_id": "GAME-BILI-007",
+      "rule_title": "inline视频广告基本规范-落地页跳转限制",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_JUMP_THIRD_PARTY_APP",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-01b978edf4005cb8",
+      "canonical_rule_uid": "RUID-0aa92e46809d6596",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2.",
+          "original_text": "ᶊ视频落地页仅可为巨幕或首页包含视频，不得一跳跳出至第三方 APP"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-0aa92e46809d6596",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_JUMP_THIRD_PARTY_APP",
+        "canonical_problem_name": "落地页一跳跳出至第三方APP",
+        "regulated_action": "landing_page_must_not_jump_to_third_party_app",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "视频落地页"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“视频落地页仅可为巨幕或首页包含视频，不得一跳跳出至第三方 APP”直接对应落地页一跳跳出第三方APP问题，归入MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_JUMP_THIRD_PARTY_APP。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-1355745c2673f96e",
+      "rule_id": "GAME-BILI-001",
+      "rule_title": "inline视频广告基本规范-视频质量要求",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.VIDEO_QUALITY_DEFECT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-7f11163127ab9d5e",
+      "canonical_rule_uid": "RUID-1355745c2673f96e",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2.",
+          "original_text": "ᶃ视频需要清晰、流畅、完整，不得出现模糊不清、包含空白帧、画面静止不动、声话不同步的情况"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-1355745c2673f96e",
+        "target_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.VIDEO_QUALITY_DEFECT",
+        "canonical_problem_name": "视频质量缺陷",
+        "regulated_action": "video_must_be_clear_fluent_and_complete",
+        "legal_effect": "required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "视频广告素材"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“视频需要清晰、流畅、完整，不得出现模糊不清、包含空白帧、画面静止不动、声话不同步的情况”直接对应视频质量缺陷问题，归入MATERIAL_PLATFORM.MEDIA_QUALITY.VIDEO_QUALITY_DEFECT。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-13f780a32f47cf3e",
+      "rule_id": "GAME-BILI-001",
+      "rule_title": "弹幕广告文案禁止使用特殊符号和颜文字",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.TEXT_EXPRESSION_NON_STANDARD",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-27b810d20092a5e8",
+      "canonical_rule_uid": "RUID-13f780a32f47cf3e",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "4.",
+          "original_text": "弹幕⼴告⽂案中不可出现特殊符号 颜⽂字"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-13f780a32f47cf3e",
+        "target_issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.TEXT_EXPRESSION_NON_STANDARD",
+        "canonical_problem_name": "文字表达不规范",
+        "regulated_action": "prohibit_special_symbols_and_kaomoji_in_danmaku_ad_copy",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "弹幕广告文案"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“弹幕⼴告⽂案中不可出现特殊符号 颜⽂字”明确禁止弹幕广告文案使用特殊符号和颜文字，属于文字表达不规范，归入MATERIAL_PLATFORM.FORM_SYMBOL.TEXT_EXPRESSION_NON_STANDARD。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-14905cc1e81b22d4",
+      "rule_id": "GAME-BILI-002",
+      "rule_title": "GIF广告素材不可为单一游戏试玩视频截图",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_CONTENT_INCOMPLETE_OR_SINGLE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-7cd75d38efa0032a",
+      "canonical_rule_uid": "RUID-14905cc1e81b22d4",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "素材不可为单一游戏试玩视频截图"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-14905cc1e81b22d4",
+        "target_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_CONTENT_INCOMPLETE_OR_SINGLE",
+        "canonical_problem_name": "GIF素材内容单一或不完整",
+        "regulated_action": "prohibit_single_game_trial_video_screenshot_as_gif_material",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "GIF素材"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“素材不可为单一游戏试玩视频截图”明确禁止GIF素材为单一游戏试玩视频截图，属于GIF素材内容单一，归入MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_CONTENT_INCOMPLETE_OR_SINGLE。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-1694a44a93daa824",
+      "rule_id": "GAME-LANG-001",
+      "rule_title": "移动游戏应规范使用文字",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.TEXT_EXPRESSION_NON_STANDARD",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-fa36566e34489232",
+      "canonical_rule_uid": "RUID-1694a44a93daa824",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_关于印发《移动游戏内容规范（2016年版）》的通知音数协字【2016】第005号_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "关于印发《移动游戏内容规范（2016年版）》的通知 音数协字【2016】第005号",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第四条",
+          "original_text": "第四条  移动游戏应按照《中华人民共和国国家通用语言文字法》、《出版物汉字使用管理规定》、《关于进一步规范出版物文字使用的通知》等规定，规范使用文字。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-1694a44a93daa824",
+        "target_issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.TEXT_EXPRESSION_NON_STANDARD",
+        "canonical_problem_name": "文字表达不规范",
+        "regulated_action": "require_standard_use_of_characters_in_mobile_games",
+        "legal_effect": "required",
+        "actor_scope": [
+          "移动游戏运营者"
+        ],
+        "object_scope": [
+          "移动游戏文字内容"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "medium",
+        "reason": "原文“移动游戏应按照……规范使用文字”要求规范使用文字，属于文字表达不规范，归入MATERIAL_PLATFORM.FORM_SYMBOL.TEXT_EXPRESSION_NON_STANDARD；条文为开放解释型，具体情形需结合其他规定判断。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-1929b02368fe6f69",
+      "rule_id": "GAME-BILI-003",
+      "rule_title": "闪屏广告落地页一跳页面禁止悬浮窗口",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_INTERFERE_NORMAL_BROWSING",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-9250fa81464b8cc9",
+      "canonical_rule_uid": "RUID-1929b02368fe6f69",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.",
+          "original_text": "闪屏落地页一跳页面不可出现悬浮窗口"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-1929b02368fe6f69",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_INTERFERE_NORMAL_BROWSING",
+        "canonical_problem_name": "弹窗或悬浮窗口干扰用户正常浏览",
+        "regulated_action": "prohibit_floating_window_on_splash_landing_page_first_jump",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "闪屏广告落地页一跳页面"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“闪屏落地页一跳页面不可出现悬浮窗口”明确禁止悬浮窗口，属于悬浮窗口干扰用户正常浏览，归入MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_INTERFERE_NORMAL_BROWSING。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-1f43355cf9658054",
+      "rule_id": "GAME-FONT-001",
+      "rule_title": "图片内容字体使用数量限制",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_LAYOUT_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-5fdf6cb33cac1081",
+      "canonical_rule_uid": "RUID-1f43355cf9658054",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "6.",
+          "original_text": "6.关于图⽚内容字体使⽤的规定\n图⽚⽂案建议不使⽤超过三种字体"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-1f43355cf9658054",
+        "target_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_LAYOUT_VIOLATION",
+        "canonical_problem_name": "广告图片排版与字体违规",
+        "regulated_action": "limit_font_type_count_in_image_copy",
+        "legal_effect": "required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "图片文案",
+          "Banner文字",
+          "详情页文字"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“图⽚⽂案建议不使⽤超过三种字体”直接对应广告图片排版与字体违规中“字体种类超过三种”的规范要求，属于素材形式与平台规范。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-3251745daeec0c85",
+      "rule_id": "GAME-BILI-005",
+      "rule_title": "创意大字报表情包使用限制",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.PROHIBITED_EMOJI_MEME_MATERIAL",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-f69cb6e96bc31289",
+      "canonical_rule_uid": "RUID-3251745daeec0c85",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "7.",
+          "original_text": "图⽚不可使⽤诸如熊猫头的劣质、模糊、暴漫⻛格、低像素、图形锯⻮、负⾯情绪等表情包（套娃式表情包）"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-3251745daeec0c85",
+        "target_issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.PROHIBITED_EMOJI_MEME_MATERIAL",
+        "canonical_problem_name": "使用禁止的表情包素材",
+        "regulated_action": "prohibit_use_of_low_quality_emoji_meme_material",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "图片",
+          "图文文案",
+          "Banner文字"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“图⽚不可使⽤诸如熊猫头的劣质、模糊、暴漫⻛格、低像素、图形锯⻮、负⾯情绪等表情包（套娃式表情包）”与“使用禁止的表情包素材”定义完全一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-494650d9bf9ffdab",
+      "rule_id": "GAME-BILI-004",
+      "rule_title": "品牌空间头像需与品牌头像保持一致，品牌空间昵称与品牌名称保持一致",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.BRAND_AVATAR_LOGO_INCONSISTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-bce28d87384bf994",
+      "canonical_rule_uid": "RUID-494650d9bf9ffdab",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "品牌空间头像需与品牌头像保持⼀致、品牌空间昵称与品牌名称保持⼀致"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-494650d9bf9ffdab",
+        "target_issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.BRAND_AVATAR_LOGO_INCONSISTENT",
+        "canonical_problem_name": "品牌头像/Logo与官方不一致或无关",
+        "regulated_action": "ensure_brand_space_avatar_and_nickname_consistency",
+        "legal_effect": "required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "品牌空间头像",
+          "品牌空间昵称"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“品牌空间头像需与品牌头像保持⼀致、品牌空间昵称与品牌名称保持⼀致”对应品牌头像/Logo与官方不一致或无关节点中品牌空间头像与昵称一致性要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-541c7a96fa51d83e",
+      "rule_id": "GAME-BILI-008",
+      "rule_title": "创意投放需为GIF专用广告位组",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.GIF_CREATIVE_PLACEMENT_GROUP",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-d9451768c1bbd635",
+      "canonical_rule_uid": "RUID-541c7a96fa51d83e",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "创意投放需为 GIF 专用广告位组"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-541c7a96fa51d83e",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.GIF_CREATIVE_PLACEMENT_GROUP",
+        "canonical_problem_name": "GIF素材未投放在GIF专用广告位组",
+        "regulated_action": "place_gif_creative_in_gif_specific_ad_slot_group",
+        "legal_effect": "required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "GIF素材"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“创意投放需为 GIF 专用广告位组”与GIF素材未投放在GIF专用广告位组节点定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-5603aa906833325e",
+      "rule_id": "GAME-BILI-006",
+      "rule_title": "GIF广告素材不可通过黑白屏展示转切画面",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_BLACK_WHITE_SCREEN_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-7e16ed34ca69e435",
+      "canonical_rule_uid": "RUID-5603aa906833325e",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "素材不可通过黑白屏展示转切画面"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-5603aa906833325e",
+        "target_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_BLACK_WHITE_SCREEN_VIOLATION",
+        "canonical_problem_name": "GIF素材黑白屏违规",
+        "regulated_action": "prohibit_gif_black_white_screen_transition",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "GIF广告素材"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“素材不可通过黑白屏展示转切画面”明确禁止GIF素材使用黑白屏转切，属于素材形式与平台规范下的GIF素材黑白屏违规。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-58dfcb0528020be4",
+      "rule_id": "GAME-BILI-005",
+      "rule_title": "起飞与内部业务方GIF素材不可出现第一帧黑白屏",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_BLACK_WHITE_SCREEN_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-39d2d9763e1f3256",
+      "canonical_rule_uid": "RUID-58dfcb0528020be4",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "起飞与内部业务方 GIF 素材不可出现第一帧黑白屏"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-58dfcb0528020be4",
+        "target_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_BLACK_WHITE_SCREEN_VIOLATION",
+        "canonical_problem_name": "GIF素材黑白屏违规",
+        "regulated_action": "prohibit_gif_first_frame_black_white_screen",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "GIF广告素材"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“起飞与内部业务方 GIF 素材不可出现第一帧黑白屏”明确禁止GIF素材第一帧为黑白屏，属于素材形式与平台规范下的GIF素材黑白屏违规。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-5c8f7c68de9d723a",
+      "rule_id": "GAME-URL-004",
+      "rule_title": "广告落地页不得存在全部下架或售罄情况",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_PRODUCT_UNAVAILABLE_FALSE_PROMOTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-525e5d7593af8382",
+      "canonical_rule_uid": "RUID-5c8f7c68de9d723a",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "4.",
+          "original_text": "商品购买详情页不得存在全部下架或售罄的情况"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-5c8f7c68de9d723a",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_PRODUCT_UNAVAILABLE_FALSE_PROMOTION",
+        "canonical_problem_name": "落地页商品全部下架或售罄的虚假宣传",
+        "regulated_action": "prohibit_landing_page_all_delisted_or_sold_out",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "广告落地页商品购买详情页"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“商品购买详情页不得存在全部下架或售罄的情况”明确禁止落地页商品全部下架或售罄，属于素材形式与平台规范下的落地页商品不可用虚假宣传。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-639f78d709ca446e",
+      "rule_id": "GAME-BILI-004",
+      "rule_title": "创意大字报底色颜色限制",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_BACKGROUND_COLOR_PROHIBITED",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-046fac3d111bfdd7",
+      "canonical_rule_uid": "RUID-639f78d709ca446e",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "7.",
+          "original_text": "图⽚底⾊不可使⽤⽩⾊、灰⾊、浅灰⾊等近似⽩⾊的淡⾊系"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-639f78d709ca446e",
+        "target_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_BACKGROUND_COLOR_PROHIBITED",
+        "canonical_problem_name": "广告图片使用禁止的淡色系底色",
+        "regulated_action": "prohibit_light_background_color",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "广告图片"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“图片底色不可使用白色、灰色、浅灰色等近似白色的淡色系”明确禁止广告图片使用淡色系底色，属于素材形式与平台规范下的广告图片底色限制。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-6c1b712f431c6b0d",
+      "rule_id": "GAME-BILI-004",
+      "rule_title": "手游广告落地页iOS端需链接至App Store，安卓端需链接至B站游戏开放平台内链",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_LINK_PLATFORM_REQUIREMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-867e202c191ab5a2",
+      "canonical_rule_uid": "RUID-6c1b712f431c6b0d",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "手游广告落地页ios端需链接至appstore；安卓端必须链接至bilibili游戏开放平台内链"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-6c1b712f431c6b0d",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_LINK_PLATFORM_REQUIREMENT",
+        "canonical_problem_name": "落地页链接不符合平台指定要求",
+        "regulated_action": "landing_page_link_platform_requirement",
+        "legal_effect": "required",
+        "actor_scope": [
+          "手游广告主"
+        ],
+        "object_scope": [
+          "手游广告落地页链接"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文明确要求手游广告落地页iOS端需链接至App Store，安卓端必须链接至B站游戏开放平台内链，属于落地页链接不符合平台指定要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-80d816a2ebffe900",
+      "rule_id": "GAME-URL-002",
+      "rule_title": "手游广告落地页iOS端需链接至App Store",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_LINK_PLATFORM_REQUIREMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-5077ec66cb1d430a",
+      "canonical_rule_uid": "RUID-80d816a2ebffe900",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "4.",
+          "original_text": "手游广告落地页ios端需链接至appstore"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-80d816a2ebffe900",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_LINK_PLATFORM_REQUIREMENT",
+        "canonical_problem_name": "落地页链接不符合平台指定要求",
+        "regulated_action": "landing_page_link_platform_requirement",
+        "legal_effect": "required",
+        "actor_scope": [
+          "手游广告主"
+        ],
+        "object_scope": [
+          "手游广告落地页链接"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文明确要求手游广告落地页iOS端需链接至App Store，属于落地页链接不符合平台指定要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-84166ade0e7accf3",
+      "rule_id": "GAME-PLATFORM-001",
+      "rule_title": "手游广告落地页iOS需链接至App Store，安卓需链接至B站游戏开放平台内链",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_LINK_PLATFORM_REQUIREMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-68a142967504ed61",
+      "canonical_rule_uid": "RUID-84166ade0e7accf3",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.-part1",
+          "original_text": "手游广告落地页ios端需链接至appstore；安卓端必须链接至bilibili游戏开放平台内链"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-84166ade0e7accf3",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_LINK_PLATFORM_REQUIREMENT",
+        "canonical_problem_name": "落地页链接不符合平台指定要求",
+        "regulated_action": "landing_page_link_platform_requirement",
+        "legal_effect": "required",
+        "actor_scope": [
+          "手游广告主"
+        ],
+        "object_scope": [
+          "手游广告落地页链接"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文明确要求手游广告落地页iOS端需链接至App Store，安卓端必须链接至B站游戏开放平台内链，属于落地页链接不符合平台指定要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9147f31dbf337628",
+      "rule_id": "GAME-BILI-002",
+      "rule_title": "inline视频广告基本规范-音频质量要求",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.AUDIO_QUALITY_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-9d33c4002433ce4b",
+      "canonical_rule_uid": "RUID-9147f31dbf337628",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2.",
+          "original_text": "ᶄ对于常规有声视频投稿，须完整且正常无杂音，不可出现突兀或造成用户听觉不适的声音，包括但不限于爆破音、尖叫声等"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9147f31dbf337628",
+        "target_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.AUDIO_QUALITY_VIOLATION",
+        "canonical_problem_name": "音频质量违规",
+        "regulated_action": "audio_quality_violation",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "常规有声视频投稿者"
+        ],
+        "object_scope": [
+          "常规有声视频音频"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文明确要求常规有声视频投稿须完整且正常无杂音，不可出现突兀或造成用户听觉不适的声音，包括但不限于爆破音、尖叫声等，属于音频质量违规。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-940cb0473df3a483",
+      "rule_id": "IAM-AD-001",
+      "rule_title": "弹出广告应显著标明关闭标志并确保一键关闭",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_CLOSE_MARK_ONE_CLICK",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-856f2da2be9feef0",
+      "canonical_rule_uid": "RUID-940cb0473df3a483",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十条",
+          "original_text": "第十条 以弹出等形式发布互联网广告，广告主、广告发布者应当显著标明关闭标志，确保一键关闭，不得有下列情形：\n （一）没有关闭标志或者计时结束才能关闭广告；\n （二）关闭标志虚假、不可清晰辨识或者难以定位等，为关闭广告设置障碍；\n （三）关闭广告须经两次以上点击；\n （四）在浏览同一页面、同一文档过程中，关闭后继续弹出广告，影响用户正常使用网络；\n （五）其他影响一键关闭的行为。\n 启动互联网应用程序时展示、发布的开屏广告适用前款规定。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-940cb0473df3a483",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_CLOSE_MARK_ONE_CLICK",
+        "canonical_problem_name": "弹出或开屏广告未显著标明关闭标志或未确保一键关闭",
+        "regulated_action": "popup_ad_close_mark_and_one_click_close",
+        "legal_effect": "required",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "弹出广告",
+          "开屏广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文第十条明确以弹出等形式发布互联网广告应显著标明关闭标志、确保一键关闭，并列举无关闭标志、计时结束才能关闭、关闭标志虚假不可辨识难以定位、须两次以上点击、关闭后继续弹出等禁止情形，开屏广告适用前款规定；与允许节点中“弹出或开屏广告未显著标明关闭标志或未确保一键关闭”定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-94fc1e79a6c5a7be",
+      "rule_id": "GAME-BILI-002",
+      "rule_title": "创意大字报文案位置限制",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_LAYOUT_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-9e95b6012f43409f",
+      "canonical_rule_uid": "RUID-94fc1e79a6c5a7be",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "7.",
+          "original_text": "⽂案不可顶天⽴地，需上下留余"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-94fc1e79a6c5a7be",
+        "target_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_LAYOUT_VIOLATION",
+        "canonical_problem_name": "广告图片排版与字体违规",
+        "regulated_action": "ad_copy_vertical_margin_requirement",
+        "legal_effect": "required",
+        "actor_scope": [],
+        "object_scope": [
+          "广告文案"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "medium",
+        "reason": "原文“文案不可顶天立地，需上下留余”属于广告图片排版留白要求，与允许节点“广告图片排版与字体违规”中“广告文案上下留白不足”最接近；原文未量化，属开放解释型。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-97a664a9f4ef8007",
+      "rule_id": "GAME-IMG-001",
+      "rule_title": "图片安全区规定：文案人物不可遮挡重叠广告位特定文案",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_SAFE_AREA_OCCLUSION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-e251aaa3a59780ec",
+      "canonical_rule_uid": "RUID-97a664a9f4ef8007",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "5.",
+          "original_text": "5.关于图⽚安全区的规定\n图⽚内容（⽂案、⼈物等）不可遮挡、重叠（如：焦点图位创意内容遮挡⼴告位特定⽂案）"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-97a664a9f4ef8007",
+        "target_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_SAFE_AREA_OCCLUSION",
+        "canonical_problem_name": "广告图片内容遮挡或重叠安全区文案",
+        "regulated_action": "ad_image_content_occlusion_of_safe_area_copy",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "图片内容",
+          "广告位特定文案"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“图片内容（文案、人物等）不可遮挡、重叠（如：焦点图位创意内容遮挡广告位特定文案）”与允许节点“广告图片内容遮挡或重叠安全区文案”定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9b1bb3de9b16753e",
+      "rule_id": "GAME-OTHER-002",
+      "rule_title": "游戏类广告内容排版不可杂乱无章或元素密集堆砌",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_LAYOUT_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-efcb28dba048c6f5",
+      "canonical_rule_uid": "RUID-9b1bb3de9b16753e",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.-part1",
+          "original_text": "广告内容排版不可杂乱无序、元素不可过于密集或集中堆砌，禁止出现内容不清晰、画质较低的游戏图片"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9b1bb3de9b16753e",
+        "target_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_LAYOUT_VIOLATION",
+        "canonical_problem_name": "广告图片排版与字体违规",
+        "regulated_action": "ad_layout_not_cluttered_or_overcrowded",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "广告内容排版",
+          "游戏图片"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“广告内容排版不可杂乱无序、元素不可过于密集或集中堆砌，禁止出现内容不清晰、画质较低的游戏图片”与允许节点“广告图片排版与字体违规”中“排版杂乱无序、元素过于密集或集中堆砌，出现内容不清晰、画质较低的游戏图片”一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9da5df84d5616427",
+      "rule_id": "GAME-BILI-006",
+      "rule_title": "inline视频广告基本规范-落地页与视频强相关性要求",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_CONTENT_IRRELEVANT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-8b3b6b574aa3ccd2",
+      "canonical_rule_uid": "RUID-9da5df84d5616427",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2.",
+          "original_text": "ᶉ视频落地页必须与展示视频有强相关性"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9da5df84d5616427",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_CONTENT_IRRELEVANT",
+        "canonical_problem_name": "视频与落地页内容不相关",
+        "regulated_action": "landing_page_video_strong_relevance_required",
+        "legal_effect": "required",
+        "actor_scope": [],
+        "object_scope": [
+          "视频落地页",
+          "展示视频"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“视频落地页必须与展示视频有强相关性”直接对应落地页与视频内容相关性要求，归入MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_CONTENT_IRRELEVANT。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9e46af623109be68",
+      "rule_id": "GAME-BILI-001",
+      "rule_title": "闪屏广告落地页一跳页面弹窗面积限制",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_INTERFERE_NORMAL_BROWSING",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-cb46d90b7ba8540a",
+      "canonical_rule_uid": "RUID-9e46af623109be68",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.",
+          "original_text": "闪屏落地页一跳页面不可出现不可关闭弹窗，且弹窗面积不得超过屏幕1/3"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9e46af623109be68",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_INTERFERE_NORMAL_BROWSING",
+        "canonical_problem_name": "弹窗或悬浮窗口干扰用户正常浏览",
+        "regulated_action": "splash_landing_popup_closable_and_area_limit",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "闪屏落地页一跳页面弹窗"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“闪屏落地页一跳页面不可出现不可关闭弹窗，且弹窗面积不得超过屏幕1/3”对应弹窗干扰正常浏览的禁止情形，归入MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_INTERFERE_NORMAL_BROWSING。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-a6cc05cef258c1d6",
+      "rule_id": "IAM-POP-001",
+      "rule_title": "弹出广告应显著标明关闭标志并确保一键关闭",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_CLOSE_MARK_ONE_CLICK",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-856f2da2be9feef0",
+      "canonical_rule_uid": "RUID-940cb0473df3a483",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十条",
+          "original_text": "第十条 以弹出等形式发布互联网广告，广告主、广告发布者应当显著标明关闭标志，确保一键关闭，不得有下列情形：\n （一）没有关闭标志或者计时结束才能关闭广告；\n （二）关闭标志虚假、不可清晰辨识或者难以定位等，为关闭广告设置障碍；\n （三）关闭广告须经两次以上点击；\n （四）在浏览同一页面、同一文档过程中，关闭后继续弹出广告，影响用户正常使用网络；\n （五）其他影响一键关闭的行为。\n 启动互联网应用程序时展示、发布的开屏广告适用前款规定。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-a6cc05cef258c1d6",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_CLOSE_MARK_ONE_CLICK",
+        "canonical_problem_name": "弹出或开屏广告未显著标明关闭标志或未确保一键关闭",
+        "regulated_action": "popup_ad_close_mark_and_one_click_close_required",
+        "legal_effect": "required",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "弹出广告",
+          "开屏广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文第十条明确弹出广告、开屏广告应显著标明关闭标志并确保一键关闭，并列举禁止情形，直接对应MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_CLOSE_MARK_ONE_CLICK。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-aa578d91dfc33a05",
+      "rule_id": "HF-LABEL-001",
+      "rule_title": "预包装食品标签强制标示事项对比明显要求",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.PREPACKAGED_FOOD_LABEL_FORMAT_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-e0b8409d6cb2a73a",
+      "canonical_rule_uid": "RUID-aa578d91dfc33a05",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_（2027年生效！）食品标识监督管理办法_2027.03.16生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "（2027年生效！）食品标识监督管理办法_2027.03.16生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十二条",
+          "original_text": "第十二条 预包装食品标签强制标示事项应当使用与背景颜色对比明显的文字、符号、数字、图案进行标注，其中生产日期、保质期到期日应当以白底黑字等对比明显的形式标注，保证清晰识读。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-aa578d91dfc33a05",
+        "target_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.PREPACKAGED_FOOD_LABEL_FORMAT_VIOLATION",
+        "canonical_problem_name": "预包装食品标签强制标示事项格式违规",
+        "regulated_action": "prepackaged_food_label_contrast_and_legibility_required",
+        "legal_effect": "required",
+        "actor_scope": [],
+        "object_scope": [
+          "预包装食品标签强制标示事项",
+          "生产日期",
+          "保质期到期日"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文第十二条要求预包装食品标签强制标示事项使用与背景颜色对比明显的文字、符号、数字、图案标注，生产日期、保质期到期日以白底黑字等对比明显形式标注，保证清晰识读，对应预包装食品标签格式违规节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b3b25d351e38b6ca",
+      "rule_id": "GAME-BILI-001",
+      "rule_title": "创意大字报字体大小限制",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_LAYOUT_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-207180c076ed0d27",
+      "canonical_rule_uid": "RUID-b3b25d351e38b6ca",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "7.",
+          "original_text": "字体不可站图⽚主体的80%"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-b3b25d351e38b6ca",
+        "target_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.AD_IMAGE_LAYOUT_VIOLATION",
+        "canonical_problem_name": "广告图片排版与字体违规",
+        "regulated_action": "font_size_exceeds_image_subject_ratio",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "图文文案",
+          "Banner文字"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“字体不可站图⽚主体的80%”明确限制广告图片中字体占图片主体的比例，属于广告图片排版与字体违规（字体占据图片主体80%以上）的规范要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b84cbfe33cb22ef7",
+      "rule_id": "GAME-ADID-001",
+      "rule_title": "互联网广告应显著标明关闭标志并确保一键关闭",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_CLOSE_MARK_ONE_CLICK",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c5b781532bf074e0",
+      "canonical_rule_uid": "RUID-b84cbfe33cb22ef7",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十四条",
+          "original_text": "利用互联网发布、发送广告，不得影响用户正常使用网络。在互联网页面以弹出等形式发布的广告，应当显著标明关闭标志，确保一键关闭。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-b84cbfe33cb22ef7",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.POPUP_CLOSE_MARK_ONE_CLICK",
+        "canonical_problem_name": "弹出或开屏广告未显著标明关闭标志或未确保一键关闭",
+        "regulated_action": "popup_ad_missing_close_mark_or_one_click_close",
+        "legal_effect": "required",
+        "actor_scope": [],
+        "object_scope": [
+          "图文文案",
+          "Banner文字",
+          "详情页文字",
+          "直播话术",
+          "短视频脚本中的文字内容",
+          "私域文案"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“在互联网页面以弹出等形式发布的广告，应当显著标明关闭标志，确保一键关闭”直接对应弹出/开屏广告关闭标志与一键关闭要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b8d97544149d8f81",
+      "rule_id": "GAME-BILI-004",
+      "rule_title": "GIF广告素材整体色调不可过亮过暗、模糊、掉帧",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_VISUAL_QUALITY_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-862881c81fbee54c",
+      "canonical_rule_uid": "RUID-b8d97544149d8f81",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "素材整体色调不可过亮过暗 模糊 掉帧等"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-b8d97544149d8f81",
+        "target_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_VISUAL_QUALITY_VIOLATION",
+        "canonical_problem_name": "GIF素材视觉质量违规",
+        "regulated_action": "gif_material_brightness_blur_frame_drop_violation",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "GIF素材"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“素材整体色调不可过亮过暗 模糊 掉帧等”明确针对GIF素材视觉质量，与GIF素材视觉质量违规定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-c08e33f9fb96f267",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "户外广告设置禁止情形",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.OUTDOOR_AD_PROHIBITED_SETTING",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-b29a5df2e504768c",
+      "canonical_rule_uid": "RUID-c08e33f9fb96f267",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十二条",
+          "original_text": "第四十二条 有下列情形之一的，不得设置户外广告：\n （一）利用交通安全设施、交通标志的；\n （二）影响市政公共设施、交通安全设施、交通标志、消防设施、消防安全标志使用的；\n （三）妨碍生产或者人民生活，损害市容市貌的；\n （四）在国家机关、文物保护单位、风景名胜区等的建筑控制地带，或者县级以上地方人民政府禁止设置户外广告的区域设置的。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-c08e33f9fb96f267",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.OUTDOOR_AD_PROHIBITED_SETTING",
+        "canonical_problem_name": "户外广告设置禁止情形",
+        "regulated_action": "outdoor_ad_prohibited_setting",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [],
+        "platform_scope": [],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文第四十二条明确列举不得设置户外广告的具体情形，属于户外广告设置禁止情形，与当前节点定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-d441086123801e11",
+      "rule_id": "GAME-BILI-001",
+      "rule_title": "品牌头像需上传商户品牌logo，体现网站唯一性，且与官方logo一致",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.BRAND_AVATAR_LOGO_INCONSISTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-35521def18bb69ca",
+      "canonical_rule_uid": "RUID-d441086123801e11",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "品牌头像需上传商户的品牌logo（⽆logo商户可⾃⾏制作图⽚来体现品牌名称），Logo体现⽹站唯⼀性；客户LOGO需要清晰，与客户官⽅⽹站LOGO⼀致，不可出现与当前⼴告⽆关的其他商户LOGO"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-d441086123801e11",
+        "target_issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.BRAND_AVATAR_LOGO_INCONSISTENT",
+        "canonical_problem_name": "品牌头像/Logo与官方不一致或无关",
+        "regulated_action": "brand_avatar_logo_consistency",
+        "legal_effect": "required",
+        "actor_scope": [
+          "商户"
+        ],
+        "object_scope": [
+          "品牌头像",
+          "品牌logo"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文明确要求品牌头像需上传商户品牌logo，Logo体现网站唯一性，需清晰且与客户官方网站LOGO一致，不可出现与当前广告无关的其他商户LOGO，属于素材形式与平台规范中的品牌头像/Logo一致性要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-d9e4c4f2b252bc02",
+      "rule_id": "GAME-BILI-003",
+      "rule_title": "创意大字报颜色饱和度限制",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.IMAGE_QUALITY_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-2e381e59620f33ef",
+      "canonical_rule_uid": "RUID-d9e4c4f2b252bc02",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "7.",
+          "original_text": "图⽚不可使⽤⾼饱和度颜⾊叠加图⽚底⾊"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-d9e4c4f2b252bc02",
+        "target_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.IMAGE_QUALITY_VIOLATION",
+        "canonical_problem_name": "图片质量违规",
+        "regulated_action": "prohibit_high_saturation_color_overlay",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "广告图片底色"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“图片不可使用高饱和度颜色叠加图片底色”属于图片质量违规定义中明确列举的“使用高饱和度颜色叠加图片底色”情形。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-df9eb506c4bca178",
+      "rule_id": "GAME-BILI-005",
+      "rule_title": "闪屏广告同一素材当月投放天数限制",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.SPLASH_AD_FREQUENCY_LIMIT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ecf1c09e8ea56c95",
+      "canonical_rule_uid": "RUID-df9eb506c4bca178",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.",
+          "original_text": "闪屏物料同一素材当月投放不得超过3天"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-df9eb506c4bca178",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.SPLASH_AD_FREQUENCY_LIMIT",
+        "canonical_problem_name": "闪屏广告同一素材投放天数超限",
+        "regulated_action": "splash_ad_same_creative_monthly_days_limit",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "游戏广告主"
+        ],
+        "object_scope": [
+          "闪屏物料",
+          "同一素材"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“闪屏物料同一素材当月投放不得超过3天”与闪屏广告同一素材投放天数超限节点定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e9057a51bd3657d8",
+      "rule_id": "HF-LABEL-001",
+      "rule_title": "预包装食品标签强制标示事项最小字号要求",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.PREPACKAGED_FOOD_LABEL_FORMAT_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-d0ddfe9ec6584070",
+      "canonical_rule_uid": "RUID-e9057a51bd3657d8",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_（2027年生效！）食品标识监督管理办法_2027.03.16生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "（2027年生效！）食品标识监督管理办法_2027.03.16生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十三条",
+          "original_text": "第十三条 预包装食品标签强制标示事项应当使用高度不小于1.8毫米的文字、符号、数字进行标注，且字体的高度与宽度比值应当不大于3。 预包装食品包装最大表面面积大于150平方厘米的，营养成分表以外的文字、符号、数字高度应当不小于2.0毫米；最大表面面积大于400平方厘米的，营养成分表以外的文字、符号、数字高度应当不小于2.5毫米。 生产日期和保质期到期日的字体高度应当不小于3.0毫米，但是预包装食品包装最大表面面积小于35平方厘米的，生产日期和保质期到期日的字体高度应当不小于2.0毫米。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e9057a51bd3657d8",
+        "target_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.PREPACKAGED_FOOD_LABEL_FORMAT_VIOLATION",
+        "canonical_problem_name": "预包装食品标签强制标示事项格式违规",
+        "regulated_action": "prepackaged_food_label_minimum_font_size",
+        "legal_effect": "required",
+        "actor_scope": [],
+        "object_scope": [
+          "预包装食品标签强制标示事项",
+          "生产日期",
+          "保质期到期日"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文规定预包装食品标签强制标示事项文字、符号、数字高度不小于1.8毫米等最小尺寸要求，与预包装食品标签强制标示事项格式违规节点定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-eb53b958809d45f9",
+      "rule_id": "GAME-BILI-008",
+      "rule_title": "inline视频广告基本规范-创意定向网络要求",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.CREATIVE_TARGETING_NETWORK_WIFI",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-a43072408474c7b1",
+      "canonical_rule_uid": "RUID-eb53b958809d45f9",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2.",
+          "original_text": "ᶋ创意定向信息，网络必须定向 WiFi"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-eb53b958809d45f9",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.CREATIVE_TARGETING_NETWORK_WIFI",
+        "canonical_problem_name": "创意定向网络非WiFi",
+        "regulated_action": "creative_targeting_network_must_be_wifi",
+        "legal_effect": "required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "创意定向信息"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文明确要求“创意定向信息，网络必须定向 WiFi”，属于素材形式与平台规范下的创意定向网络要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-ecacd468734a482b",
+      "rule_id": "GAME-BILI-007",
+      "rule_title": "GIF广告素材不可杂乱元素重复叠加、前后无序且快速跳帧、快速闪回、快速转场",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_VISUAL_QUALITY_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-623eeaa5a8acb346",
+      "canonical_rule_uid": "RUID-ecacd468734a482b",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "素材不可杂乱元素重复叠加 前后展示无序且快速跳帧 快速闪回 快速转场"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-ecacd468734a482b",
+        "target_issue_id": "MATERIAL_PLATFORM.MEDIA_QUALITY.GIF_VISUAL_QUALITY_VIOLATION",
+        "canonical_problem_name": "GIF素材视觉质量违规",
+        "regulated_action": "gif_material_no_chaotic_overlay_or_rapid_frame_switching",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "GIF素材"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“素材不可杂乱元素重复叠加 前后展示无序且快速跳帧 快速闪回 快速转场”对应GIF素材视觉质量违规中的杂乱元素重复叠加、快速跳帧、快速闪回或快速转场导致画面混乱。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-f36541e80f9aab3d",
+      "rule_id": "HF-001",
+      "rule_title": "预包装食品标签强制标示事项文字使用规范",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.PREPACKAGED_FOOD_LABEL_FORMAT_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-513b310d1dd85785",
+      "canonical_rule_uid": "RUID-f36541e80f9aab3d",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_（2027年生效！）食品标识监督管理办法_2027.03.16生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "（2027年生效！）食品标识监督管理办法_2027.03.16生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十一条",
+          "original_text": "第十一条 预包装食品标签强制标示事项使用的文字应当为规范汉字，可以同时使用与标注内容有对应关系的繁体字、拼音和外文，但是使用的繁体字、拼音和外文字高不得大于相应内容的规范汉字字高。少数民族文字的使用按照国家有关规定执行。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-f36541e80f9aab3d",
+        "target_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.PREPACKAGED_FOOD_LABEL_FORMAT_VIOLATION",
+        "canonical_problem_name": "预包装食品标签强制标示事项格式违规",
+        "regulated_action": "prepackaged_food_label_mandatory_text_format_compliance",
+        "legal_effect": "required",
+        "actor_scope": [
+          "食品生产经营者"
+        ],
+        "object_scope": [
+          "预包装食品标签强制标示事项"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文规定预包装食品标签强制标示事项文字应为规范汉字，繁体字、拼音和外文字高不得大于相应规范汉字字高，对应预包装食品标签强制标示事项格式违规。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-f9353d7f574decd9",
+      "rule_id": "GAME-BILI-002",
+      "rule_title": "闪屏广告落地页一跳页面嵌入式下载banner面积限制",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.SPLASH_LANDING_EMBEDDED_DOWNLOAD_BANNER_AREA",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-07779cab87d0617e",
+      "canonical_rule_uid": "RUID-f9353d7f574decd9",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.",
+          "original_text": "闪屏落地页一跳页面直接嵌入式下载banner展示面积不可超过屏幕1/3"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-f9353d7f574decd9",
+        "target_issue_id": "MATERIAL_PLATFORM.LAYOUT_SAFE_AREA.SPLASH_LANDING_EMBEDDED_DOWNLOAD_BANNER_AREA",
+        "canonical_problem_name": "闪屏广告落地页嵌入式下载banner面积超限",
+        "regulated_action": "splash_landing_embedded_download_banner_area_limit",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "闪屏落地页一跳页面嵌入式下载banner"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文明确“闪屏落地页一跳页面直接嵌入式下载banner展示面积不可超过屏幕1/3”，对应闪屏广告落地页嵌入式下载banner面积超限。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-fb4d81b8975ab278",
+      "rule_id": "GAME-BILI-003",
+      "rule_title": "弹幕广告文案不得直接填写网址链接",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.TEXT_EXPRESSION_NON_STANDARD",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-8e94c0b95c4914ce",
+      "canonical_rule_uid": "RUID-fb4d81b8975ab278",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "4.",
+          "original_text": "弹幕⼴告⽂案不可直接填写⽹址链接"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-fb4d81b8975ab278",
+        "target_issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.TEXT_EXPRESSION_NON_STANDARD",
+        "canonical_problem_name": "弹幕广告文案直接填写网址链接",
+        "regulated_action": "prohibit_url_link_in_danmaku_ad_copy",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "弹幕广告文案"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“弹幕⼴告⽂案不可直接填写⽹址链接”明确禁止弹幕广告文案直接填写网址链接，属于文字表达不规范中的特殊符号/链接表达问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-fe103568a13aac16",
+      "rule_id": "GAME-BILI-003",
+      "rule_title": "品牌链接仅可为H5品牌官网、B站账号空间、会员购列表页/IP详情页",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_LINK_PLATFORM_REQUIREMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-d277c687b77b033d",
+      "canonical_rule_uid": "RUID-fe103568a13aac16",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "品牌链接仅可为H5品牌官⽹、或B站账号空间、会员购列表⻚/IP详情⻚"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-fe103568a13aac16",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_LINK_PLATFORM_REQUIREMENT",
+        "canonical_problem_name": "品牌链接不符合平台指定要求",
+        "regulated_action": "restrict_brand_link_to_designated_types",
+        "legal_effect": "scope_limitation",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "品牌链接"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“品牌链接仅可为H5品牌官⽹、或B站账号空间、会员购列表⻚/IP详情⻚”明确限定品牌链接可指向的地址类型，属于落地页链接不符合平台指定要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-fe1de6c6adfa8d2f",
+      "rule_id": "GAME-URL-003",
+      "rule_title": "手游广告落地页安卓端需链接至B站游戏开放平台内链",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_LINK_PLATFORM_REQUIREMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-bb556576ff0ac413",
+      "canonical_rule_uid": "RUID-fe1de6c6adfa8d2f",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "4.",
+          "original_text": "手游广告落地页安卓端必须链接至bilibili游戏开放平台内链"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-fe1de6c6adfa8d2f",
+        "target_issue_id": "MATERIAL_PLATFORM.PLACEMENT_JUMP.LANDING_PAGE_LINK_PLATFORM_REQUIREMENT",
+        "canonical_problem_name": "手游广告落地页安卓端未链接至平台内链",
+        "regulated_action": "require_android_landing_page_link_to_platform_internal",
+        "legal_effect": "required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "手游广告落地页"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“手游广告落地页安卓端必须链接至bilibili游戏开放平台内链”明确要求安卓端落地页链接至平台内链，属于落地页链接不符合平台指定要求。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-fef57b66f9181737",
+      "rule_id": "GAME-BILI-005",
+      "rule_title": "inline视频广告基本规范-标题禁止画质/音质测试文字",
+      "root_id": "MATERIAL_PLATFORM",
+      "issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.TITLE_QUALITY_TEST_TEXT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-0151e5169a709336",
+      "canonical_rule_uid": "RUID-fef57b66f9181737",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2.",
+          "original_text": "ᶈ视频标题不可出现画质 / 音质测试及相关文字"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-fef57b66f9181737",
+        "target_issue_id": "MATERIAL_PLATFORM.FORM_SYMBOL.TITLE_QUALITY_TEST_TEXT",
+        "canonical_problem_name": "视频标题含画质/音质测试文字",
+        "regulated_action": "prohibit_quality_test_text_in_video_title",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "视频标题"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MATERIAL_PLATFORM",
+        "confidence": "high",
+        "reason": "原文“ᶈ视频标题不可出现画质 / 音质测试及相关文字”明确禁止视频标题出现画质/音质测试文字，与标题含画质/音质测试文字节点完全对应。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "canonical_groups": [
+    {
+      "canonical_rule_key": "CRK-0151e5169a709336",
+      "canonical_rule_uid": "RUID-fef57b66f9181737",
+      "source_occurrence_uids": [
+        "RUID-fef57b66f9181737"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "inline视频广告基本规范-标题禁止画质/音质测试文字",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-01b978edf4005cb8",
+      "canonical_rule_uid": "RUID-0aa92e46809d6596",
+      "source_occurrence_uids": [
+        "RUID-0aa92e46809d6596"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "inline视频广告基本规范-落地页跳转限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-046fac3d111bfdd7",
+      "canonical_rule_uid": "RUID-639f78d709ca446e",
+      "source_occurrence_uids": [
+        "RUID-639f78d709ca446e"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "创意大字报底色颜色限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-07779cab87d0617e",
+      "canonical_rule_uid": "RUID-f9353d7f574decd9",
+      "source_occurrence_uids": [
+        "RUID-f9353d7f574decd9"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "闪屏广告落地页一跳页面嵌入式下载banner面积限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-207180c076ed0d27",
+      "canonical_rule_uid": "RUID-b3b25d351e38b6ca",
+      "source_occurrence_uids": [
+        "RUID-b3b25d351e38b6ca"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "创意大字报字体大小限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-27b810d20092a5e8",
+      "canonical_rule_uid": "RUID-13f780a32f47cf3e",
+      "source_occurrence_uids": [
+        "RUID-13f780a32f47cf3e"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "弹幕广告文案禁止使用特殊符号和颜文字",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-28e38bfe4d3b19a0",
+      "canonical_rule_uid": "RUID-07f6b71a54a0cb3f",
+      "source_occurrence_uids": [
+        "RUID-07f6b71a54a0cb3f"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "GIF广告素材需展示完整，不可出现不完整画面",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-2e381e59620f33ef",
+      "canonical_rule_uid": "RUID-d9e4c4f2b252bc02",
+      "source_occurrence_uids": [
+        "RUID-d9e4c4f2b252bc02"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "创意大字报颜色饱和度限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-35521def18bb69ca",
+      "canonical_rule_uid": "RUID-d441086123801e11",
+      "source_occurrence_uids": [
+        "RUID-d441086123801e11"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "品牌头像需上传商户品牌logo，体现网站唯一性，且与官方logo一致",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-39d2d9763e1f3256",
+      "canonical_rule_uid": "RUID-58dfcb0528020be4",
+      "source_occurrence_uids": [
+        "RUID-58dfcb0528020be4"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "起飞与内部业务方GIF素材不可出现第一帧黑白屏",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-5077ec66cb1d430a",
+      "canonical_rule_uid": "RUID-80d816a2ebffe900",
+      "source_occurrence_uids": [
+        "RUID-80d816a2ebffe900"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "手游广告落地页iOS端需链接至App Store",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-513b310d1dd85785",
+      "canonical_rule_uid": "RUID-f36541e80f9aab3d",
+      "source_occurrence_uids": [
+        "RUID-f36541e80f9aab3d"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "预包装食品标签强制标示事项文字使用规范",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-525e5d7593af8382",
+      "canonical_rule_uid": "RUID-5c8f7c68de9d723a",
+      "source_occurrence_uids": [
+        "RUID-5c8f7c68de9d723a"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告落地页不得存在全部下架或售罄情况",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-5fdf6cb33cac1081",
+      "canonical_rule_uid": "RUID-1f43355cf9658054",
+      "source_occurrence_uids": [
+        "RUID-1f43355cf9658054"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "图片内容字体使用数量限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-623eeaa5a8acb346",
+      "canonical_rule_uid": "RUID-ecacd468734a482b",
+      "source_occurrence_uids": [
+        "RUID-ecacd468734a482b"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "GIF广告素材不可杂乱元素重复叠加、前后无序且快速跳帧、快速闪回、快速转场",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-68a142967504ed61",
+      "canonical_rule_uid": "RUID-84166ade0e7accf3",
+      "source_occurrence_uids": [
+        "RUID-84166ade0e7accf3"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "手游广告落地页iOS需链接至App Store，安卓需链接至B站游戏开放平台内链",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-7cd75d38efa0032a",
+      "canonical_rule_uid": "RUID-14905cc1e81b22d4",
+      "source_occurrence_uids": [
+        "RUID-14905cc1e81b22d4"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "GIF广告素材不可为单一游戏试玩视频截图",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-7e16ed34ca69e435",
+      "canonical_rule_uid": "RUID-5603aa906833325e",
+      "source_occurrence_uids": [
+        "RUID-5603aa906833325e"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "GIF广告素材不可通过黑白屏展示转切画面",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-7f11163127ab9d5e",
+      "canonical_rule_uid": "RUID-1355745c2673f96e",
+      "source_occurrence_uids": [
+        "RUID-1355745c2673f96e"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "inline视频广告基本规范-视频质量要求",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-856f2da2be9feef0",
+      "canonical_rule_uid": "RUID-940cb0473df3a483",
+      "source_occurrence_uids": [
+        "RUID-940cb0473df3a483",
+        "RUID-a6cc05cef258c1d6"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "弹出广告应显著标明关闭标志并确保一键关闭",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-862881c81fbee54c",
+      "canonical_rule_uid": "RUID-b8d97544149d8f81",
+      "source_occurrence_uids": [
+        "RUID-b8d97544149d8f81"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "GIF广告素材整体色调不可过亮过暗、模糊、掉帧",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-867e202c191ab5a2",
+      "canonical_rule_uid": "RUID-6c1b712f431c6b0d",
+      "source_occurrence_uids": [
+        "RUID-6c1b712f431c6b0d"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "手游广告落地页iOS端需链接至App Store，安卓端需链接至B站游戏开放平台内链",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-8b3b6b574aa3ccd2",
+      "canonical_rule_uid": "RUID-9da5df84d5616427",
+      "source_occurrence_uids": [
+        "RUID-9da5df84d5616427"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "inline视频广告基本规范-落地页与视频强相关性要求",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-8e94c0b95c4914ce",
+      "canonical_rule_uid": "RUID-fb4d81b8975ab278",
+      "source_occurrence_uids": [
+        "RUID-fb4d81b8975ab278"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "弹幕广告文案不得直接填写网址链接",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-9250fa81464b8cc9",
+      "canonical_rule_uid": "RUID-1929b02368fe6f69",
+      "source_occurrence_uids": [
+        "RUID-1929b02368fe6f69"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "闪屏广告落地页一跳页面禁止悬浮窗口",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-9d33c4002433ce4b",
+      "canonical_rule_uid": "RUID-9147f31dbf337628",
+      "source_occurrence_uids": [
+        "RUID-9147f31dbf337628"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "inline视频广告基本规范-音频质量要求",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-9e95b6012f43409f",
+      "canonical_rule_uid": "RUID-94fc1e79a6c5a7be",
+      "source_occurrence_uids": [
+        "RUID-94fc1e79a6c5a7be"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "创意大字报文案位置限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-a43072408474c7b1",
+      "canonical_rule_uid": "RUID-eb53b958809d45f9",
+      "source_occurrence_uids": [
+        "RUID-eb53b958809d45f9"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "inline视频广告基本规范-创意定向网络要求",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-b29a5df2e504768c",
+      "canonical_rule_uid": "RUID-c08e33f9fb96f267",
+      "source_occurrence_uids": [
+        "RUID-c08e33f9fb96f267"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "户外广告设置禁止情形",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-bb556576ff0ac413",
+      "canonical_rule_uid": "RUID-fe1de6c6adfa8d2f",
+      "source_occurrence_uids": [
+        "RUID-fe1de6c6adfa8d2f"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "手游广告落地页安卓端需链接至B站游戏开放平台内链",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-bce28d87384bf994",
+      "canonical_rule_uid": "RUID-494650d9bf9ffdab",
+      "source_occurrence_uids": [
+        "RUID-494650d9bf9ffdab"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "品牌空间头像需与品牌头像保持一致，品牌空间昵称与品牌名称保持一致",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-c5b781532bf074e0",
+      "canonical_rule_uid": "RUID-b84cbfe33cb22ef7",
+      "source_occurrence_uids": [
+        "RUID-b84cbfe33cb22ef7"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "互联网广告应显著标明关闭标志并确保一键关闭",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-cb46d90b7ba8540a",
+      "canonical_rule_uid": "RUID-9e46af623109be68",
+      "source_occurrence_uids": [
+        "RUID-9e46af623109be68"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "闪屏广告落地页一跳页面弹窗面积限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-d0ddfe9ec6584070",
+      "canonical_rule_uid": "RUID-e9057a51bd3657d8",
+      "source_occurrence_uids": [
+        "RUID-e9057a51bd3657d8"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "预包装食品标签强制标示事项最小字号要求",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-d277c687b77b033d",
+      "canonical_rule_uid": "RUID-fe103568a13aac16",
+      "source_occurrence_uids": [
+        "RUID-fe103568a13aac16"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "品牌链接仅可为H5品牌官网、B站账号空间、会员购列表页/IP详情页",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-d9451768c1bbd635",
+      "canonical_rule_uid": "RUID-541c7a96fa51d83e",
+      "source_occurrence_uids": [
+        "RUID-541c7a96fa51d83e"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "创意投放需为GIF专用广告位组",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-e0b8409d6cb2a73a",
+      "canonical_rule_uid": "RUID-aa578d91dfc33a05",
+      "source_occurrence_uids": [
+        "RUID-aa578d91dfc33a05"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "预包装食品标签强制标示事项对比明显要求",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-e251aaa3a59780ec",
+      "canonical_rule_uid": "RUID-97a664a9f4ef8007",
+      "source_occurrence_uids": [
+        "RUID-97a664a9f4ef8007"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "图片安全区规定：文案人物不可遮挡重叠广告位特定文案",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-ecf1c09e8ea56c95",
+      "canonical_rule_uid": "RUID-df9eb506c4bca178",
+      "source_occurrence_uids": [
+        "RUID-df9eb506c4bca178"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "闪屏广告同一素材当月投放天数限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-ede41e105dddc2d1",
+      "canonical_rule_uid": "RUID-09fd975914800f53",
+      "source_occurrence_uids": [
+        "RUID-09fd975914800f53"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "GIF广告素材形式不可过于单一或寓意不明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-efcb28dba048c6f5",
+      "canonical_rule_uid": "RUID-9b1bb3de9b16753e",
+      "source_occurrence_uids": [
+        "RUID-9b1bb3de9b16753e"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "游戏类广告内容排版不可杂乱无章或元素密集堆砌",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-f69cb6e96bc31289",
+      "canonical_rule_uid": "RUID-3251745daeec0c85",
+      "source_occurrence_uids": [
+        "RUID-3251745daeec0c85"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "创意大字报表情包使用限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-fa36566e34489232",
+      "canonical_rule_uid": "RUID-1694a44a93daa824",
+      "source_occurrence_uids": [
+        "RUID-1694a44a93daa824"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "移动游戏应规范使用文字",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "proactive_candidates": []
+}

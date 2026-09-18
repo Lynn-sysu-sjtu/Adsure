@@ -258,7 +258,7 @@
           "article": "3.1.3",
           "legal_level": null,
           "role": "based_on",
-          "text": "3.1.3 功效严重虚…"
+          "text": "3.1.3 功效严重虚假宣传。宣传售卖商品对重大疾病有效果（含暗示宣传，常见重大疾病如恶性肿瘤、尿毒症、瘫痪等），属于重大疾病的功效类严重虚假宣传。注：重大疾病以国家规定36种重大疾病作为参考。不得宣传滋补保健类商品可以治疗、治愈、缓解重大疾病。"
         }
       ],
       "hierarchy": {
@@ -402,6 +402,12 @@
         "route_reason": "规则涉及'严重虚假'这一开放法律概念，需法务结合产品实际功效与备案资料进行边界判断，且后果风险高，运营无法自行处理。",
         "confidence": "high",
         "calibration_status": "provisional"
+      },
+      "source_repair": {
+        "status": "verified",
+        "source": "D:/G-Vibe coding/广告合规审查智能体/知识图谱/jsonbase/保健食品/20260706_抖音【滋补保健行业宣传规范】实施细则_规则拆解_v1.json",
+        "locator": "同源规则 RUID-cf387407d6592cbf，条款 3.1.3",
+        "sha256": "faa3b4c769e7a0d7ad6520b5c9f6d4cfd3947af3454fe5898bb05c477e24de3e"
       }
     },
     {
@@ -647,7 +653,7 @@
           "article": "3.1.5",
           "legal_level": null,
           "role": "based_on",
-          "text": "3.1.5 效果保证"
+          "text": "3.1.5 效果保证：含有表示产品功能、功效、安全性的断言或者保证，含有使用该产品能获得健康的表述；含有无法证实的所谓“科学或研究发现”“实验或数据证明”等方面的内容；含有“100%有效”“无效退款”“保险公司保险”“安全”“零风险”“无毒副作用”“无依赖”等内容；夸大功能或扩大适宜人群范围，明示或者暗示适合所有症状及所有人群。"
         }
       ],
       "hierarchy": {
@@ -794,6 +800,12 @@
         "route_reason": "规则触发清晰，关键词匹配即可判定，运营可直接删除或替换违规表述，无需法务介入。",
         "confidence": "high",
         "calibration_status": "provisional"
+      },
+      "source_repair": {
+        "status": "verified",
+        "source": "D:/G-Vibe coding/广告合规审查智能体/知识图谱/jsonbase/保健食品/20260706_抖音【滋补保健行业宣传规范】实施细则_规则拆解_v1.json",
+        "locator": "同源条款 3.1.5，规则 RUID-641399c020e7deee、RUID-5d5be1924f931a81、RUID-3c268b6928ff21d7、RUID-278023772cf0a00e",
+        "sha256": "47239c2750257cbe86fdd86ad0c15d4d6f13fca9e72b148f31c9e6f66dc8ae65"
       }
     },
     {
@@ -1407,7 +1419,7 @@
           "article": "3.1",
           "legal_level": null,
           "role": "based_on",
-          "text": "3.1 虚假宣传"
+          "text": "3.1 虚假宣传。包括商品大小、重量、数量等信息与购物车商品信息不一致；宣传商品对重大疾病有效或可以治疗、治愈、缓解重大疾病；虚假或夸大宣传丰胸、壮阳、减肥及其他医疗功效；含有产品功能、功效、安全性的断言或者保证，或无法证实的科学、研究、实验、数据证明；使用与实际情况不符并可能欺骗、误导消费者的唯一性、绝对化或排他性用语。"
         }
       ],
       "hierarchy": {
@@ -1543,6 +1555,12 @@
         "route_reason": "虚假宣传判断依赖事实核查和法务解释，运营无法自行处理，且后果严重，必须进入法务复核。",
         "confidence": "high",
         "calibration_status": "provisional"
+      },
+      "source_repair": {
+        "status": "verified",
+        "source": "D:/G-Vibe coding/广告合规审查智能体/知识图谱/jsonbase/保健食品/20260706_抖音【滋补保健行业宣传规范】实施细则_规则拆解_v1.json",
+        "locator": "3.1 虚假宣传及同源子条款 3.1.2—3.1.6",
+        "sha256": "f171b211f04f1cb45c0be1cfee56562e019583d982b53e0fa32c07e07ce4a2fc"
       }
     },
     {

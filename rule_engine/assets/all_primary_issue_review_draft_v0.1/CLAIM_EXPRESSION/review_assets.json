@@ -1,0 +1,3289 @@
+{
+  "schema_version": "0.1",
+  "asset_status": "draft",
+  "model": "deepseek-chat",
+  "prompt_version": "all_primary_issue_fingerprint_v01_20260913",
+  "root_id": "CLAIM_EXPRESSION",
+  "root_name": "宣称表达方式",
+  "nodes": [
+    {
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE",
+      "parent_issue_id": "CLAIM_EXPRESSION",
+      "level": 2,
+      "node_type": "directory",
+      "name": "绝对化用语",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED",
+      "parent_issue_id": "CLAIM_EXPRESSION",
+      "level": 2,
+      "node_type": "directory",
+      "name": "模糊、夸张与易误解表达",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING",
+      "parent_issue_id": "CLAIM_EXPRESSION",
+      "level": 2,
+      "node_type": "directory",
+      "name": "比较、排名与唯一性宣称",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT",
+      "parent_issue_id": "CLAIM_EXPRESSION",
+      "level": 2,
+      "node_type": "directory",
+      "name": "保证与承诺性表达",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+      "parent_issue_id": "CLAIM_EXPRESSION.ABSOLUTE",
+      "name": "使用绝对化用语",
+      "definition": "在商品或服务广告宣传中，使用‘最高’‘最科学’‘最先进’‘最佳’‘国家级’‘全网第一’‘100%’‘绝对’‘祛除’‘瓦解’‘修复’等唯一性、排他性或无法证明的绝对化用语，对商品或服务的名称、制法、成分、效用、性能或效果进行描述或保证，可能构成欺骗、误导或虚假宣传。",
+      "confidence": "high",
+      "reason": "现有节点直接对应绝对化用语，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-0d2f1071b5f33116",
+        "RUID-22f270203a1937a7",
+        "RUID-4b714eff2e3993ca",
+        "RUID-590793dde45e460f",
+        "RUID-770045974521f8d2",
+        "RUID-79ddc3d35625acfc",
+        "RUID-90f0f330fbd84ecb",
+        "RUID-97c034528fab40c3",
+        "RUID-99f84f14d05a5e71",
+        "RUID-c8d9714e6134eb2e"
+      ],
+      "source_occurrence_uids": [
+        "RUID-0d2f1071b5f33116",
+        "RUID-22f270203a1937a7",
+        "RUID-4b714eff2e3993ca",
+        "RUID-590793dde45e460f",
+        "RUID-770045974521f8d2",
+        "RUID-79ddc3d35625acfc",
+        "RUID-90f0f330fbd84ecb",
+        "RUID-97c034528fab40c3",
+        "RUID-99f84f14d05a5e71",
+        "RUID-c8d9714e6134eb2e"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.PROFESSIONAL_TERM_IN_PRODUCT_NAME",
+      "parent_issue_id": "CLAIM_EXPRESSION.ABSOLUTE",
+      "name": "产品名称含专业词汇",
+      "definition": "产品自身名称中包含‘专业’一词，且该词作为产品名称的一部分进行宣传。",
+      "confidence": "high",
+      "reason": "现有节点直接对应产品名称含专业词汇，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-151ff85a22769a18",
+        "RUID-36253635404eb86d",
+        "RUID-9053f15ae7d1f26c"
+      ],
+      "source_occurrence_uids": [
+        "RUID-151ff85a22769a18",
+        "RUID-36253635404eb86d",
+        "RUID-9053f15ae7d1f26c"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.UNVERIFIABLE_EXAGGERATED_CLAIMS",
+      "parent_issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED",
+      "name": "美妆产品广告使用夸张且无法证实的表述",
+      "definition": "美妆产品广告宣传中使用过于夸张且无法证实的表述，涉及产品效果、安全性、生效时间等，可能欺骗或误导消费者。",
+      "confidence": "high",
+      "reason": "现有节点直接对应美妆产品广告夸张且无法证实的表述，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-0a8f5ac2099e43dc"
+      ],
+      "source_occurrence_uids": [
+        "RUID-0a8f5ac2099e43dc"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.SPECIAL_COSMETICS_IRRELEVANT_TERMS",
+      "parent_issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED",
+      "name": "特殊化妆品宣传使用关联性不大且难以理解的词汇",
+      "definition": "在特殊化妆品宣传中使用与产品特性无关联且消费者不易理解的词汇，如解码、数码、智能、红外线等，可能误导消费者。",
+      "confidence": "high",
+      "reason": "现有节点直接对应特殊化妆品宣传使用关联性不大且难以理解的词汇，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-f73c8833a0756e63"
+      ],
+      "source_occurrence_uids": [
+        "RUID-f73c8833a0756e63"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.INSTANT_EFFECT_EXAGGERATION",
+      "parent_issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED",
+      "name": "广告夸张描述即时效果",
+      "definition": "广告宣传中使用“一抹变白”等即时性词汇暗示显著效果，构成过度夸大描述，可能误导消费者。",
+      "confidence": "high",
+      "reason": "现有节点直接对应广告夸张描述即时效果，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-bcb6c9922752c7fb"
+      ],
+      "source_occurrence_uids": [
+        "RUID-bcb6c9922752c7fb"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.INACCURATE_UNCLEAR_AD_CONTENT",
+      "parent_issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED",
+      "name": "广告内容不准确、不清楚、不明白",
+      "definition": "广告中对商品或服务的性能、功能、产地、用途、质量、成分、价格、生产者、有效期限、允诺等有表示，但表述不准确、不清楚、不明白，可能误导消费者。",
+      "confidence": "high",
+      "reason": "现有节点直接对应广告内容不准确、不清楚、不明白，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-1df3b8f441844b18"
+      ],
+      "source_occurrence_uids": [
+        "RUID-1df3b8f441844b18",
+        "RUID-9793691079021702"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.PROFESSIONAL_TERM_MISUSE",
+      "parent_issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED",
+      "name": "广告中不当使用“专业”等专业词汇描述产品",
+      "definition": "在广告文案中使用“专业”等专业词汇描述产品功效或产品本身，但该词不属于产品名称的一部分，且可能误导消费者；描述品牌、品牌形象、品牌创始人等可使用。",
+      "confidence": "high",
+      "reason": "现有节点直接对应广告中不当使用“专业”等专业词汇描述产品，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-1add2e34601629ae"
+      ],
+      "source_occurrence_uids": [
+        "RUID-1add2e34601629ae"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.CHILDREN_COSMETICS_FOOD_TERMS",
+      "parent_issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED",
+      "name": "儿童化妆品广告使用食品级、可食用等词语或食品图案",
+      "definition": "儿童化妆品商品描述中使用“食品级”、“可食用”等词语或与食品有关的图案，可能误导消费者认为产品可食用。",
+      "confidence": "high",
+      "reason": "现有节点直接对应儿童化妆品广告使用食品级、可食用等词语或食品图案，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-3d7a48f0743963a7"
+      ],
+      "source_occurrence_uids": [
+        "RUID-3d7a48f0743963a7"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_DISPARAGE_OTHERS",
+      "parent_issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING",
+      "name": "贬低其他生产经营者商品或服务",
+      "definition": "广告或商业宣传中，通过直接对比、暗示性语言、负面评价等方式，贬低其他生产经营者的商品或服务，包括贬低同类商品、宣称自身商品优于竞品等恶意对比行为。",
+      "confidence": "high",
+      "reason": "现有节点直接对应贬低其他生产经营者商品或服务，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-11072b7051c09786",
+        "RUID-122b5cc5e88c8091",
+        "RUID-206bcad9a421f1c0",
+        "RUID-6d9c73f1813c036b",
+        "RUID-a84471acc8e7063d"
+      ],
+      "source_occurrence_uids": [
+        "RUID-11072b7051c09786",
+        "RUID-122b5cc5e88c8091",
+        "RUID-206bcad9a421f1c0",
+        "RUID-6d9c73f1813c036b",
+        "RUID-8c758db2232b92cf",
+        "RUID-a84471acc8e7063d"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_KNOCKOFF_CLAIM",
+      "parent_issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING",
+      "name": "无依据宣传平替概念",
+      "definition": "宣传某商品是知名度较高商品的平替，但依据仅为同一生产线、同一研发团队、销售渠道等与商品本身效果无关的非核心因素，未提供核心成分或效果对比等实质依据，可能构成不正当竞争或误导。",
+      "confidence": "high",
+      "reason": "现有节点直接对应无依据宣传平替概念，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-53d23422f47c0ba1"
+      ],
+      "source_occurrence_uids": [
+        "RUID-53d23422f47c0ba1"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_HEALTH_FOOD_COMPARISON",
+      "parent_issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING",
+      "name": "保健食品广告与药品或其他保健食品比较",
+      "definition": "保健食品广告中含有与药品、其他保健食品进行比较的内容。",
+      "confidence": "high",
+      "reason": "现有节点直接对应保健食品广告与药品或其他保健食品比较，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-26ed403d02be2461"
+      ],
+      "source_occurrence_uids": [
+        "RUID-26ed403d02be2461",
+        "RUID-354bf29f565043fa",
+        "RUID-4974507cb1230803"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.ABSOLUTE_EFFECT_SAFETY_GUARANTEE",
+      "parent_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT",
+      "name": "绝对化效果或安全保证承诺",
+      "definition": "广告中对商品或服务的功效、效果或安全性作出绝对化、保证性承诺，使用“100%有效”“无效退款”“安全”“零风险”“无毒副作用”“无依赖”“极速”“速效”“超强”“××天见效”“全面”“永久”“极致”“完美”“根除”“纯天然”“0添加”等禁止或无法证实的表述。",
+      "confidence": "high",
+      "reason": "现有节点直接对应绝对化效果或安全保证承诺，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-1c246de1b3125c73",
+        "RUID-3c268b6928ff21d7",
+        "RUID-5f89865ecd76debb",
+        "RUID-641399c020e7deee"
+      ],
+      "source_occurrence_uids": [
+        "RUID-1c246de1b3125c73",
+        "RUID-3c268b6928ff21d7",
+        "RUID-5f89865ecd76debb",
+        "RUID-641399c020e7deee"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EDUCATION_TRAINING_GUARANTEE",
+      "parent_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT",
+      "name": "教育培训广告效果保证性承诺",
+      "definition": "在教育、培训广告中对升学、通过考试、获得学位学历或者合格证书，或者对教育、培训的效果作出明示或者暗示的保证性承诺。",
+      "confidence": "high",
+      "reason": "现有节点直接对应教育培训广告效果保证性承诺，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-283a7be5c1a9d37a"
+      ],
+      "source_occurrence_uids": [
+        "RUID-283a7be5c1a9d37a",
+        "RUID-56eb9dfe9ffbe1a8",
+        "RUID-98e4024f640b4790"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.INVESTMENT_RETURN_GUARANTEE",
+      "parent_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT",
+      "name": "招商广告对未来效果、收益作出保证性承诺",
+      "definition": "在招商等有投资回报预期的商品或服务广告中，对未来效果、收益或相关情况作出保证性承诺，明示或暗示保本、无风险或保收益等，国家另有规定的除外。",
+      "confidence": "high",
+      "reason": "现有节点直接对应招商广告对未来效果、收益作出保证性承诺，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-f84a8a0611f0a322"
+      ],
+      "source_occurrence_uids": [
+        "RUID-791e3022c0811b5f",
+        "RUID-d14f6a0aca24cf85",
+        "RUID-f84a8a0611f0a322"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.INDUCEMENT_COMPREHENSIVE_EVALUATION_GUARANTEE",
+      "parent_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT",
+      "name": "保健食品广告诱导性、综合性评价或保证性内容",
+      "definition": "保健食品广告中含有热销、抢购、试用、家庭必备、免费治疗、免费赠送等诱导性内容，评比、排序、推荐、指定、选用、获奖等综合性评价内容，无效退款、保险公司保险等保证性内容，或怂恿消费者任意、过量使用保健食品的内容，即构成违规。",
+      "confidence": "high",
+      "reason": "现有节点直接对应保健食品广告诱导性、综合性评价或保证性内容，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-46a3b2929ec38ac1"
+      ],
+      "source_occurrence_uids": [
+        "RUID-46a3b2929ec38ac1"
+      ]
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+      "parent_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT",
+      "name": "产品效果保证性承诺",
+      "definition": "广告中对产品功效、效果或使用结果作出明示或暗示的保证性承诺，包括保证见效、绝对有效、无效退款、包好、根治、特定时间或次数达到特定效果等，且缺乏数据支撑或超出合理范围。",
+      "confidence": "high",
+      "reason": "现有节点直接对应产品效果保证性承诺，保留为独立问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-503970617d0d84f1",
+        "RUID-8a7b2709bed97422",
+        "RUID-95a30e7866d1ecf2",
+        "RUID-98a02d5814c51abf",
+        "RUID-f5ec77e12b20c051",
+        "RUID-f95c371e0e68eee3",
+        "RUID-fd8cb4eea586643c"
+      ],
+      "source_occurrence_uids": [
+        "RUID-503970617d0d84f1",
+        "RUID-8a7b2709bed97422",
+        "RUID-95a30e7866d1ecf2",
+        "RUID-98a02d5814c51abf",
+        "RUID-f5ec77e12b20c051",
+        "RUID-f95c371e0e68eee3",
+        "RUID-fd8cb4eea586643c"
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "rule_uid": "RUID-0a8f5ac2099e43dc",
+      "rule_id": "XHS-COSM-003",
+      "rule_title": "美妆产品广告不得使用夸张且无法证实的表述",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.UNVERIFIABLE_EXAGGERATED_CLAIMS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-139bc76f517bad8a",
+      "canonical_rule_uid": "RUID-0a8f5ac2099e43dc",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【聚光】美妆&行业规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【聚光】美妆&行业规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.-part1",
+          "original_text": "化妆品广告的内容应当真实、合法，不得含有虚假或者引人误解的内容，不得欺骗、误导消费者【核心】：广告宣传中不得对产品/服务使用过于夸张且无法证实的表述，从产品、效果、安全性、生效时间等诱导消费者购买。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-0a8f5ac2099e43dc",
+        "target_issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.UNVERIFIABLE_EXAGGERATED_CLAIMS",
+        "canonical_problem_name": "美妆产品广告使用夸张且无法证实的表述",
+        "regulated_action": "use_exaggerated_unverifiable_claims",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "化妆品"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确：广告宣传中不得对产品/服务使用过于夸张且无法证实的表述，从产品、效果、安全性、生效时间等诱导消费者购买，与目标节点定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-0d2f1071b5f33116",
+      "rule_id": "DY-COSM-002",
+      "rule_title": "化妆品商品不得使用绝对化用语宣传功效",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-8a7eb43677f0426e",
+      "canonical_rule_uid": "RUID-0d2f1071b5f33116",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【化妆品类】商品虚假宣传细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【化妆品类】商品虚假宣传细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2.",
+          "original_text": "使用绝对化用语进行商品宣传。常见违规情形：宣传商品可「祛除」斑点、「瓦解」斑点、「祛除」红血丝、「修复」细胞。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-0d2f1071b5f33116",
+        "target_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+        "canonical_problem_name": "使用绝对化用语",
+        "regulated_action": "use_absolute_superlative_terms",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "化妆品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确：使用绝对化用语进行商品宣传，常见违规情形包括宣传商品可「祛除」斑点、「瓦解」斑点、「祛除」红血丝、「修复」细胞，与绝对化用语节点定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-11072b7051c09786",
+      "rule_id": "GAME-OTHER-003",
+      "rule_title": "广告中不得贬低其他生产经营者的商品或服务",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_DISPARAGE_OTHERS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-0f00c3175a19e67f",
+      "canonical_rule_uid": "RUID-11072b7051c09786",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "第六十八条 广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任： （三）贬低其他生产经营者的商品、服务的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-11072b7051c09786",
+        "target_issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_DISPARAGE_OTHERS",
+        "canonical_problem_name": "贬低其他生产经营者商品或服务",
+        "regulated_action": "disparage_other_business_products",
+        "legal_effect": "civil_liability",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确：广告主、广告经营者、广告发布者贬低其他生产经营者的商品、服务的，依法承担民事责任，与贬低其他生产经营者商品或服务节点定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-122b5cc5e88c8091",
+      "rule_id": "DY-COSM-005",
+      "rule_title": "不得恶意贬低第三方进行不正当竞争",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_DISPARAGE_OTHERS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-04cfba5b5e6d7585",
+      "canonical_rule_uid": "RUID-122b5cc5e88c8091",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_抖音【化妆品类】商品虚假宣传细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【化妆品类】商品虚假宣传细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "恶意贬低第三⽅：在商品宣传过程中通过 “贬低” ⼀⽅ “夸赞”另⼀⽅，以达到宣传商品的⽬的，属于恶意对⽐⾏为。常见违规情形：达⼈分享A品牌⾯霜，却将B品牌⾯霜扔进垃圾桶。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-122b5cc5e88c8091",
+        "target_issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_DISPARAGE_OTHERS",
+        "canonical_problem_name": "贬低其他生产经营者商品或服务",
+        "regulated_action": "disparage_third_party_in_comparison",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "化妆品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确：恶意贬低第三方，在商品宣传过程中通过贬低一方夸赞另一方以达到宣传目的，属于恶意对比行为，与贬低其他生产经营者商品或服务节点定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-151ff85a22769a18",
+      "rule_id": "XHS-COSM-006",
+      "rule_title": "专业词汇描述管控规则",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.PROFESSIONAL_TERM_IN_PRODUCT_NAME",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ee393bab764d294d",
+      "canonical_rule_uid": "RUID-151ff85a22769a18",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【美妆个护行业投放规则】使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护行业投放规则】使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "6.",
+          "original_text": "仅卡控产品自身的名称涉及“专业”，如：产品名称为【施华蔻专业染发剂】"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-151ff85a22769a18",
+        "target_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.PROFESSIONAL_TERM_IN_PRODUCT_NAME",
+        "canonical_problem_name": "产品名称含专业词汇",
+        "regulated_action": "professional_term_in_product_name",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "美妆个护",
+          "产品名称"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确：仅卡控产品自身的名称涉及“专业”，如产品名称为【施华蔻专业染发剂】，属于宣称表达方式中的产品名称含专业词汇。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-1add2e34601629ae",
+      "rule_id": "XHS-虚假宣传-001",
+      "rule_title": "禁止使用专业词汇描述产品功效或产品本身",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.PROFESSIONAL_TERM_MISUSE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-9c2d777d4a711810",
+      "canonical_rule_uid": "RUID-1add2e34601629ae",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【美妆个护行业投放规则】使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护行业投放规则】使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2",
+          "original_text": "禁止使用“专业”词汇描述所推产品的功效或产品本身；在描述品牌/品牌形象/品牌创始人等可使用"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-1add2e34601629ae",
+        "target_issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.PROFESSIONAL_TERM_MISUSE",
+        "canonical_problem_name": "广告中不当使用“专业”等专业词汇描述产品",
+        "regulated_action": "misuse_professional_term_in_ad",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "化妆品",
+          "产品功效",
+          "产品本身"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确：禁止使用“专业”词汇描述所推产品的功效或产品本身；在描述品牌/品牌形象/品牌创始人等可使用，属于宣称表达方式中的专业词汇不当使用。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-1c246de1b3125c73",
+      "rule_id": "COSM-虚假宣传-001",
+      "rule_title": "美妆宣传禁止使用虚假性保证词语",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.ABSOLUTE_EFFECT_SAFETY_GUARANTEE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-f2f320b1dafb131c",
+      "canonical_rule_uid": "RUID-1c246de1b3125c73",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "（3）宣传虚假性保证",
+          "original_text": "（3）宣传虚假性保证\n常⻅违规词：极速、速效、超强、××天⻅效、××周期⻅效、全⾯、全⽅位、全天候、⽆限、永久、极\n致、超凡、完美、根除、祛除、换肤、去除皱纹、100%、纯天然、0添加、不含任何化学成分。\n注：慎⽤此类词语，例如若要宣传「6⼤0添加」类表述，⼀定要表述清楚不含哪6⼤成分。若产品只添\n加部分天然产物成分的化妆品，则不可⽤以下词语进⾏宣传：纯天然、全天然、100%天然、不含任\n何化学成分、⽆添加、0添加、0⻛险、⽆副作⽤、绝对安全等。\n夸⼤性词意\n“专业”可适⽤于在专业店或经专业培训⼈员使⽤的染发类、烫发类、指（趾）甲类等产品，但⽤于其\n他产品则属夸⼤性词意。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-1c246de1b3125c73",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.ABSOLUTE_EFFECT_SAFETY_GUARANTEE",
+        "canonical_problem_name": "绝对化效果或安全保证承诺",
+        "regulated_action": "absolute_effect_safety_guarantee",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "化妆品",
+          "染发类",
+          "烫发类",
+          "指（趾）甲类"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确列出禁止使用的虚假性保证词语：极速、速效、超强、××天见效、全面、永久、极致、完美、根除、祛除、100%、纯天然、0添加、绝对安全等，属于宣称表达方式中的绝对化效果或安全保证承诺。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-1df3b8f441844b18",
+      "rule_id": "HF-ACC-001",
+      "rule_title": "广告内容应当准确、清楚、明白",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.INACCURATE_UNCLEAR_AD_CONTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-28f06a3b52254629",
+      "canonical_rule_uid": "RUID-1df3b8f441844b18",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第八条",
+          "original_text": "广告中对商品的性能、功能、产地、用途、质量、成分、价格、生产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明白。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-1df3b8f441844b18",
+        "target_issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.INACCURATE_UNCLEAR_AD_CONTENT",
+        "canonical_problem_name": "广告内容不准确、不清楚、不明白",
+        "regulated_action": "inaccurate_unclear_ad_content",
+        "legal_effect": "truthfulness_required",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "保健食品",
+          "商品性能",
+          "商品功能",
+          "商品产地",
+          "商品用途",
+          "商品质量",
+          "商品成分",
+          "商品价格",
+          "商品生产者",
+          "商品有效期限",
+          "商品允诺"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确：广告中对商品的性能、功能、产地、用途、质量、成分、价格、生产者、有效期限、允诺等有表示的，应当准确、清楚、明白，属于宣称表达方式中的广告内容不准确、不清楚、不明白。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-206bcad9a421f1c0",
+      "rule_id": "DY-COSM-UNFAIR-001",
+      "rule_title": "禁止恶意贬低第三方或同类商品",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_DISPARAGE_OTHERS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-0b9b046b2dbfbd5f",
+      "canonical_rule_uid": "RUID-206bcad9a421f1c0",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.3",
+          "original_text": "在宣传商品过程中，不得出现贬低同类商品、对某同类商品表达负面感触或出现负面行为，或宣称分享的商品优于某同类商品等行为。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-206bcad9a421f1c0",
+        "target_issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_DISPARAGE_OTHERS",
+        "canonical_problem_name": "贬低其他生产经营者商品或服务",
+        "regulated_action": "disparage_competitor_products",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "美妆行业经营者"
+        ],
+        "object_scope": [
+          "同类商品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确禁止在宣传商品过程中出现贬低同类商品、对某同类商品表达负面感触或负面行为，或宣称分享的商品优于某同类商品等行为，属于比较宣传中贬低他人的宣称表达方式。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-22f270203a1937a7",
+      "rule_id": "DY-COSM-004",
+      "rule_title": "宣传红血丝需避免绝对化用语且与商详页一致",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-2e0538308c247b70",
+      "canonical_rule_uid": "RUID-22f270203a1937a7",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【化妆品类】商品虚假宣传细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【化妆品类】商品虚假宣传细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.-part1",
+          "original_text": "「红⾎丝」可以宣传吗？应该注意什么？A：可以宣传，但需要避免使⽤绝对化⽤语进⾏宣传，同时要注意与商详⻚的宣传点保持⼀致。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-22f270203a1937a7",
+        "target_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+        "canonical_problem_name": "使用绝对化用语",
+        "regulated_action": "use_absolute_superlative_terms",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "化妆品经营者"
+        ],
+        "object_scope": [
+          "化妆品",
+          "红血丝相关宣传"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确宣传红血丝可以宣传但需要避免使用绝对化用语进行宣传，同时要注意与商详页的宣传点保持一致，核心禁止点为绝对化用语。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-26ed403d02be2461",
+      "rule_id": "HF-CP-001",
+      "rule_title": "保健食品广告不得与药品、其他保健食品进行比较",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_HEALTH_FOOD_COMPARISON",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-8c06dec3494a18b3",
+      "canonical_rule_uid": "RUID-26ed403d02be2461",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十八条",
+          "original_text": "第十八条 保健食品广告不得含有下列内容： （四）与药品、其他保健食品进行比较；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-26ed403d02be2461",
+        "target_issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_HEALTH_FOOD_COMPARISON",
+        "canonical_problem_name": "保健食品广告与药品或其他保健食品比较",
+        "regulated_action": "compare_health_food_with_drugs_or_other_health_food",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "保健食品广告主"
+        ],
+        "object_scope": [
+          "保健食品",
+          "药品",
+          "其他保健食品"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文第十八条明确保健食品广告不得含有与药品、其他保健食品进行比较的内容，属于比较宣传的宣称表达方式。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-283a7be5c1a9d37a",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "教育、培训广告不得含有保证性承诺",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EDUCATION_TRAINING_GUARANTEE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-dfeb22eb9e355032",
+      "canonical_rule_uid": "RUID-283a7be5c1a9d37a",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十四条",
+          "original_text": "第二十四条 教育、培训广告不得含有下列内容：\n （一）对升学、通过考试、获得学位学历或者合格证书，或者对教育、培训的效果作出明示或者暗示的保证性承诺；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-283a7be5c1a9d37a",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EDUCATION_TRAINING_GUARANTEE",
+        "canonical_problem_name": "教育培训广告效果保证性承诺",
+        "regulated_action": "make_education_training_guarantee_commitment",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "教育、培训广告主"
+        ],
+        "object_scope": [
+          "教育、培训服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文第二十四条明确教育、培训广告不得对升学、通过考试、获得学位学历或者合格证书，或者对教育、培训的效果作出明示或者暗示的保证性承诺；但 track_hint_only 为游戏，原文明示行业为教育、培训，与 track_hint_only 冲突，故 source_scope_conflict=true。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-354bf29f565043fa",
+      "rule_id": "HF-001-004",
+      "rule_title": "保健食品广告不得与药品、其他保健食品进行比较",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_HEALTH_FOOD_COMPARISON",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-8c06dec3494a18b3",
+      "canonical_rule_uid": "RUID-26ed403d02be2461",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十八条",
+          "original_text": "第十八条 保健食品广告不得含有下列内容： （四）与药品、其他保健食品进行比较；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-354bf29f565043fa",
+        "target_issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_HEALTH_FOOD_COMPARISON",
+        "canonical_problem_name": "保健食品广告与药品或其他保健食品比较",
+        "regulated_action": "health_food_ad_comparison_with_drugs_or_other_health_food",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "保健食品广告主"
+        ],
+        "object_scope": [
+          "保健食品"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文《广告法》第十八条明确：保健食品广告不得含有与药品、其他保健食品进行比较的内容，属于宣称表达方式中的比较宣传。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-36253635404eb86d",
+      "rule_id": "XHS-COSM-001",
+      "rule_title": "美妆个护广告中“专业”词汇使用限制",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.PROFESSIONAL_TERM_IN_PRODUCT_NAME",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-7ab39b504ff9f12f",
+      "canonical_rule_uid": "RUID-36253635404eb86d",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【美妆个护】广告内容规范调整_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护】广告内容规范调整",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "PDF",
+          "original_text": "“专业”词汇描述仅卡控产品自身的名称涉及“专业”，如：产品名称为【施华蔻专业染发剂】"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-36253635404eb86d",
+        "target_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.PROFESSIONAL_TERM_IN_PRODUCT_NAME",
+        "canonical_problem_name": "产品名称含专业词汇",
+        "regulated_action": "product_name_containing_professional_term",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "美妆个护广告主"
+        ],
+        "object_scope": [
+          "美妆个护"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确“专业”词汇描述仅卡控产品自身的名称涉及“专业”，如产品名称为【施华蔻专业染发剂】，属于产品名称含专业词汇的宣称表达。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-3c268b6928ff21d7",
+      "rule_id": "DY-HF-003",
+      "rule_title": "禁止效果保证宣传-绝对化效果及安全承诺",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.ABSOLUTE_EFFECT_SAFETY_GUARANTEE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-805e28d42234032b",
+      "canonical_rule_uid": "RUID-3c268b6928ff21d7",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_抖音【滋补保健行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【滋补保健行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.5",
+          "original_text": "含有“100%有效”、“⽆效退款”、“保险公司保险”、“安全”、“零⻛险”、“⽆毒副作⽤”、“⽆依赖”等内容的"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-3c268b6928ff21d7",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.ABSOLUTE_EFFECT_SAFETY_GUARANTEE",
+        "canonical_problem_name": "绝对化效果或安全保证承诺",
+        "regulated_action": "absolute_effect_or_safety_guarantee_claim",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "滋补保健品广告主"
+        ],
+        "object_scope": [
+          "滋补保健品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确禁止含有“100%有效”“无效退款”“保险公司保险”“安全”“零风险”“无毒副作用”“无依赖”等内容，属于绝对化效果或安全保证承诺。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-3d7a48f0743963a7",
+      "rule_id": "COSM-TB-004",
+      "rule_title": "儿童化妆品商品描述禁止使用“食品级”“可食用”等词语或食品有关图案",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.CHILDREN_COSMETICS_FOOD_TERMS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-9d7f05b6dab38d9d",
+      "canonical_rule_uid": "RUID-3d7a48f0743963a7",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_淘宝网化妆品行业管理规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "TB",
+          "source_name": "淘宝网化妆品行业管理规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "第五条",
+          "original_text": "商品描述中不得使用“食品级”、“可食用”等词语或者食品有关的图案。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-3d7a48f0743963a7",
+        "target_issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.CHILDREN_COSMETICS_FOOD_TERMS",
+        "canonical_problem_name": "儿童化妆品广告使用食品级、可食用等词语或食品图案",
+        "regulated_action": "children_cosmetics_using_food_grade_or_edible_terms_or_food_patterns",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "儿童化妆品经营者"
+        ],
+        "object_scope": [
+          "儿童化妆品"
+        ],
+        "platform_scope": [
+          "淘宝"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确商品描述中不得使用“食品级”“可食用”等词语或者食品有关的图案，属于儿童化妆品广告误导性表述。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-46a3b2929ec38ac1",
+      "rule_id": "HFAD-011-006",
+      "rule_title": "保健食品广告不得含有热销抢购、评比推荐、无效退款等诱导性或保证性内容",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.INDUCEMENT_COMPREHENSIVE_EVALUATION_GUARANTEE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-b7890da955c1d378",
+      "canonical_rule_uid": "RUID-46a3b2929ec38ac1",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法_2020.03.01生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "HFAD",
+          "source_name": "药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法_2020.03.01生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十一条",
+          "original_text": "（六）含有\"热销、抢购、试用\"\"家庭必备、免费治疗、免费赠送\"等诱导性内容，\"评比、排序、推荐、指定、选用、获奖\"等综合性评价内容，\"无效退款、保险公司保险\"等保证性内容，怂恿消费者任意、过量使用药品、保健食品和特殊医学用途配方食品的内容"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-46a3b2929ec38ac1",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.INDUCEMENT_COMPREHENSIVE_EVALUATION_GUARANTEE",
+        "canonical_problem_name": "保健食品广告诱导性、综合性评价或保证性内容",
+        "regulated_action": "prohibited_inducement_comprehensive_evaluation_guarantee_content",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "保健食品",
+          "特殊医学用途配方食品",
+          "药品",
+          "医疗器械"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文第十一条（六）明确禁止保健食品广告含有“热销、抢购、试用”“家庭必备、免费治疗、免费赠送”等诱导性内容，“评比、排序、推荐、指定、选用、获奖”等综合性评价内容，“无效退款、保险公司保险”等保证性内容，以及怂恿消费者任意、过量使用的内容，属于宣称表达方式中的保证性承诺与诱导性内容规制。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-4974507cb1230803",
+      "rule_id": "HF-004",
+      "rule_title": "保健食品广告不得与药品、其他保健食品进行比较",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_HEALTH_FOOD_COMPARISON",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-8c06dec3494a18b3",
+      "canonical_rule_uid": "RUID-26ed403d02be2461",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十八条",
+          "original_text": "第十八条 保健食品广告不得含有下列内容：（四）与药品、其他保健食品进行比较；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-4974507cb1230803",
+        "target_issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_HEALTH_FOOD_COMPARISON",
+        "canonical_problem_name": "保健食品广告与药品或其他保健食品比较",
+        "regulated_action": "prohibited_comparison_with_drugs_or_other_health_foods",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "保健食品"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文广告法第十八条（四）明确保健食品广告不得含有与药品、其他保健食品进行比较的内容，属于宣称表达方式中的比较宣传规制。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-4b714eff2e3993ca",
+      "rule_id": "DY-HF-001",
+      "rule_title": "禁止使用广告极限词",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-645d51a30a63c0cf",
+      "canonical_rule_uid": "RUID-4b714eff2e3993ca",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_抖音【滋补保健行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【滋补保健行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.6",
+          "original_text": "3.1.6 使⽤⼴告极…"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-4b714eff2e3993ca",
+        "target_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+        "canonical_problem_name": "使用绝对化用语",
+        "regulated_action": "prohibited_absolute_superlative_terms",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "创作者",
+          "商家"
+        ],
+        "object_scope": [
+          "滋补保健商品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "medium",
+        "reason": "原文3.1.6明确禁止使用广告极限词，属于宣称表达方式中的绝对化用语规制；原文截断，仅可依据标题与条款编号确认禁止极限词。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-503970617d0d84f1",
+      "rule_id": "COSM-虚假宣传-001",
+      "rule_title": "美妆商品效果保证宣传禁止规则",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-43a8796e2c650f1c",
+      "canonical_rule_uid": "RUID-503970617d0d84f1",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.2",
+          "original_text": "3.1.2 效果保证\n效果保证宣传，指创作者进⾏商品分享时，对商品功效、服务售后或培训效果进⾏虚假或夸⼤的保证性承诺，可能产⽣引⼈误解的营销推⼴⾏为。\n美妆品类常⻅的违规情形如下：\n出现对产品功效、效果、收益等的断⾔或保证。\n在⽆依据、⽆证明的情况下，对使⽤产品、服务后的未来功效、效果、安全性作出明示或暗示的保证性承诺。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-503970617d0d84f1",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+        "canonical_problem_name": "产品效果保证性承诺",
+        "regulated_action": "prohibited_effect_guarantee_commitment",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "创作者"
+        ],
+        "object_scope": [
+          "美妆商品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文3.1.2明确禁止对商品功效、服务售后或培训效果进行虚假或夸大的保证性承诺，包括对产品功效、效果、收益等的断言或保证，以及在无依据、无证明情况下对未来功效、效果、安全性作出明示或暗示的保证性承诺，属于宣称表达方式中的效果保证性承诺规制。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-53d23422f47c0ba1",
+      "rule_id": "DY-COSM-UNFAIR-002",
+      "rule_title": "禁止过度宣传平替",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_KNOCKOFF_CLAIM",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-85ca3b0d1ec6da1f",
+      "canonical_rule_uid": "RUID-53d23422f47c0ba1",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.3",
+          "original_text": "借用研发团队、生产线、销售渠道或其他非成分相关的因素，宣传两个商品/品牌之间存在某种替代关系。"
+        },
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.3",
+          "original_text": "借用其他知名度相对较高、品牌影响力相对较大的商品/品牌，与当前所分享商品的市场地位、或商品效果进行混淆，致使其他用户对当前所分享商品的效果产生不实认知。"
+        },
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.3",
+          "original_text": "若存在介绍两款及以上商品成分相同或差异的情形，不得将产品的功能归集到对比产品相同的成分的一种或几种。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-53d23422f47c0ba1",
+        "target_issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_KNOCKOFF_CLAIM",
+        "canonical_problem_name": "无依据宣传平替概念",
+        "regulated_action": "unsubstantiated_knockoff_claim",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "美妆行业经营者"
+        ],
+        "object_scope": [
+          "美妆商品",
+          "美妆品牌"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文3.3明确禁止借用研发团队、生产线、销售渠道或其他非成分相关因素宣传两个商品/品牌之间存在替代关系，以及借用知名度较高品牌与当前商品市场地位或效果混淆，属于无依据宣传平替概念，归入比较排名类宣称表达。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-56eb9dfe9ffbe1a8",
+      "rule_id": "GEN-EDU-001",
+      "rule_title": "教育、培训广告不得含有对升学、通过考试等效果的保证性承诺",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EDUCATION_TRAINING_GUARANTEE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-dfeb22eb9e355032",
+      "canonical_rule_uid": "RUID-283a7be5c1a9d37a",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十四条",
+          "original_text": "第二十四条 教育、培训广告不得含有下列内容： （一）对升学、通过考试、获得学位学历或者合格证书，或者对教育、培训的效果作出明示或者暗示的保证性承诺；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-56eb9dfe9ffbe1a8",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EDUCATION_TRAINING_GUARANTEE",
+        "canonical_problem_name": "教育培训广告效果保证性承诺",
+        "regulated_action": "education_training_guarantee_commitment",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "教育、培训广告主"
+        ],
+        "object_scope": [
+          "教育",
+          "培训"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "广告法第二十四条明确禁止教育培训广告对升学、通过考试、获得学位学历或合格证书，或对教育、培训效果作出明示或暗示的保证性承诺，属于保证性承诺类宣称表达；但track_hint_only为美妆，原文明示行业为通用/教育培训，与文件存放位置冲突，故source_scope_conflict=true。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-590793dde45e460f",
+      "rule_id": "XHS-ABS-001",
+      "rule_title": "化妆品宣传禁止使用绝对化用语",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-868a9df5a2ec50db",
+      "canonical_rule_uid": "RUID-590793dde45e460f",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【美妆个护行业投放规则】使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护行业投放规则】使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2.",
+          "original_text": "2.【不得使⽤绝对化⽤语】:化妆品宣传禁⽌名称、制法、成分、效⽤或者性能描述中涉及绝对化的表述，如：最新创造/发明、⽆添加、出现纯天然（只可宣传包含的成分为纯天然）、纯植物、全⽅位、特级等."
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-590793dde45e460f",
+        "target_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+        "canonical_problem_name": "使用绝对化用语",
+        "regulated_action": "use_absolute_superlative_terms",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "化妆品经营者"
+        ],
+        "object_scope": [
+          "化妆品"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文2.明确化妆品宣传禁止在名称、制法、成分、效用或性能描述中使用绝对化表述，如最新创造/发明、无添加、纯天然、纯植物、全方位、特级等，属于使用绝对化用语。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-5f89865ecd76debb",
+      "rule_id": "HF-虚假宣传-005",
+      "rule_title": "滋补保健商品不得进行效果保证宣传",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.ABSOLUTE_EFFECT_SAFETY_GUARANTEE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-88bb9922e55de838",
+      "canonical_rule_uid": "RUID-5f89865ecd76debb",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_抖音【滋补保健行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【滋补保健行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.5",
+          "original_text": "含有表示产品功能、功效、安全性的断言或者保证，含有使用该产品能获得健康的表述；含有无法证实的所谓“科学或研究发现”、“实验或数据证明”等方面的内容；含有“100%有效”、“无效退款”、“保险公司保险”、“安全”、“零风险”、“无毒副作用”、“无依赖”等内容的；夸大功能或扩大适宜人群范围，明示或者暗示适合所有症状及所有人群"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-5f89865ecd76debb",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.ABSOLUTE_EFFECT_SAFETY_GUARANTEE",
+        "canonical_problem_name": "绝对化效果或安全保证承诺",
+        "regulated_action": "absolute_effect_safety_guarantee",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "滋补保健商品经营者"
+        ],
+        "object_scope": [
+          "传统滋补",
+          "营养保健/特医食品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文3.1.5禁止含有表示产品功能、功效、安全性的断言或保证，禁止无法证实的科学或研究发现、实验或数据证明，禁止100%有效、无效退款、保险公司保险、安全、零风险、无毒副作用、无依赖等内容，属于绝对化效果或安全保证承诺。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-641399c020e7deee",
+      "rule_id": "DY-HF-001",
+      "rule_title": "禁止效果保证宣传-断言或保证产品功能功效安全性",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.ABSOLUTE_EFFECT_SAFETY_GUARANTEE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-3d13c3552790a6a7",
+      "canonical_rule_uid": "RUID-641399c020e7deee",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_抖音【滋补保健行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【滋补保健行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.5",
+          "original_text": "含有表示产品功能、功效、安全性的断⾔或者保证，含有使⽤该产品能获得健康的表述"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-641399c020e7deee",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.ABSOLUTE_EFFECT_SAFETY_GUARANTEE",
+        "canonical_problem_name": "绝对化效果或安全保证承诺",
+        "regulated_action": "prohibit_absolute_function_efficacy_safety_guarantee",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "保健食品经营者",
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "滋补保健品",
+          "保健食品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文3.1.5明确禁止含有表示产品功能、功效、安全性的断言或者保证，以及使用该产品能获得健康的表述，属于对功效安全性的绝对化保证承诺，归入宣称表达方式下的保证性承诺节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-6d9c73f1813c036b",
+      "rule_id": "DY-COSM-001",
+      "rule_title": "禁止恶意贬低第三方进行对比宣传",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_DISPARAGE_OTHERS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-0f79f5cae1c00fc1",
+      "canonical_rule_uid": "RUID-6d9c73f1813c036b",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【化妆品类】商品虚假宣传细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【化妆品类】商品虚假宣传细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.-part1",
+          "original_text": "在商品宣传过程中通过 “贬低” ⼀⽅ “夸赞”另⼀⽅，以达到宣传商品的⽬的，属于恶意对⽐⾏为。常⻅违规情形：达⼈分享A品牌⾯霜，却将B品牌⾯霜扔进垃圾桶。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-6d9c73f1813c036b",
+        "target_issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_DISPARAGE_OTHERS",
+        "canonical_problem_name": "贬低其他生产经营者商品或服务",
+        "regulated_action": "prohibit_disparaging_comparative_advertising",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "化妆品经营者",
+          "达人",
+          "广告主"
+        ],
+        "object_scope": [
+          "化妆品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确禁止通过贬低一方夸赞另一方进行恶意对比宣传，并列举将竞品扔进垃圾桶等违规情形，属于比较宣传中贬低其他生产经营者商品或服务。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-770045974521f8d2",
+      "rule_id": "COSM-ADEX-001",
+      "rule_title": "禁止使用广告极限词",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-f1a03cd78a5b45fe",
+      "canonical_rule_uid": "RUID-770045974521f8d2",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.5",
+          "original_text": "3.1.5 使⽤⼴告极…"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-770045974521f8d2",
+        "target_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+        "canonical_problem_name": "使用绝对化用语",
+        "regulated_action": "prohibit_absolute_superlative_terms",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "美妆行业经营者",
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "美妆产品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "medium",
+        "reason": "原文3.1.5明确禁止使用广告极限词，虽原文截断但标题与条款指向广告极限词，归入宣称表达方式下的使用绝对化用语节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-791e3022c0811b5f",
+      "rule_id": "HF-AD-001",
+      "rule_title": "招商广告不得对未来效果、收益等作出保证性承诺",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.INVESTMENT_RETURN_GUARANTEE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-64960070bbcbc8c0",
+      "canonical_rule_uid": "RUID-f84a8a0611f0a322",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十五条",
+          "original_text": "招商等有投资回报预期的商品或者服务广告，应当对可能存在的风险以及风险责任承担有合理提示或者警示，并不得含有下列内容：（一）对未来效果、收益或者与其相关的情况作出保证性承诺，明示或者暗示保本、无风险或者保收益等，国家另有规定的除外；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-791e3022c0811b5f",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.INVESTMENT_RETURN_GUARANTEE",
+        "canonical_problem_name": "招商广告对未来效果、收益作出保证性承诺",
+        "regulated_action": "prohibit_investment_return_guarantee_commitment",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "招商等有投资回报预期的商品或服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文广告法第二十五条禁止招商等有投资回报预期广告对未来效果、收益作保证性承诺，归入保证性承诺节点；但track_hint_only为保健食品，而原文明示对象为招商等有投资回报预期的商品或服务，与保健食品行业提示冲突，故source_scope_conflict=true。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-79ddc3d35625acfc",
+      "rule_id": "DY-COSM-001",
+      "rule_title": "美妆行业禁止使用广告极限词",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6b6a08aecbb67fe2",
+      "canonical_rule_uid": "RUID-79ddc3d35625acfc",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.5",
+          "original_text": "3.1.5 使用广告极限词\n使用广告极限词，指电商作者在商品宣传的过程中，使用与实际情况不符的、对消费者造成欺骗或误导的词汇。\n美妆品类常见违规情形如下："
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-79ddc3d35625acfc",
+        "target_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+        "canonical_problem_name": "使用绝对化用语",
+        "regulated_action": "use_absolute_superlative_terms",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "电商作者"
+        ],
+        "object_scope": [
+          "美妆商品宣传"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文3.1.5明确禁止在商品宣传过程中使用与实际情况不符、对消费者造成欺骗或误导的广告极限词，属于宣称表达方式中的绝对化用语问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8a7b2709bed97422",
+      "rule_id": "HF-AD-001",
+      "rule_title": "滋补保健行业禁止效果保证宣传",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-a0e5f57616a025f6",
+      "canonical_rule_uid": "RUID-8a7b2709bed97422",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_抖音【滋补保健行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【滋补保健行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.5",
+          "original_text": "3.1.5 效果保证"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-8a7b2709bed97422",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+        "canonical_problem_name": "产品效果保证性承诺",
+        "regulated_action": "make_effect_guarantee_commitment",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "滋补保健商品宣传"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "medium",
+        "reason": "原文仅标题“3.1.5 效果保证”，未明确具体禁止表述，但标题指向效果保证类宣称，归入效果保证性承诺节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8c758db2232b92cf",
+      "rule_id": "COSM-OTHER-003",
+      "rule_title": "广告中不得贬低其他生产经营者的商品或服务",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_DISPARAGE_OTHERS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-0f00c3175a19e67f",
+      "canonical_rule_uid": "RUID-11072b7051c09786",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "第六十八条 广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任： （三）贬低其他生产经营者的商品、服务的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-8c758db2232b92cf",
+        "target_issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_DISPARAGE_OTHERS",
+        "canonical_problem_name": "贬低其他生产经营者商品或服务",
+        "regulated_action": "disparage_other_business_operators",
+        "legal_effect": "civil_liability",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "其他生产经营者的商品、服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文第六十八条第三项明确贬低其他生产经营者的商品、服务应承担民事责任，属于比较排名类宣称表达方式。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9053f15ae7d1f26c",
+      "rule_id": "XHS-AD-001",
+      "rule_title": "美妆个护广告中“专业”词汇使用限制",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.PROFESSIONAL_TERM_IN_PRODUCT_NAME",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-cef67a37888a78bc",
+      "canonical_rule_uid": "RUID-9053f15ae7d1f26c",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_小红书【美妆个护】广告内容规范调整_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护】广告内容规范调整",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "“专业”词汇描述仅卡控产品自身的名称涉及“专业”，如：产品名称为【施华蔻专业染发剂】"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9053f15ae7d1f26c",
+        "target_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.PROFESSIONAL_TERM_IN_PRODUCT_NAME",
+        "canonical_problem_name": "产品名称含专业词汇",
+        "regulated_action": "use_professional_term_in_product_name",
+        "legal_effect": "scope_limitation",
+        "actor_scope": [],
+        "object_scope": [
+          "美妆个护产品名称"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确“专业”词汇描述仅卡控产品自身的名称涉及“专业”，属于产品名称含专业词汇的宣称表达限制。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-90f0f330fbd84ecb",
+      "rule_id": "XHS-AD-001",
+      "rule_title": "美妆广告禁止使用绝对化用语",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-eee8c1499f2761d2",
+      "canonical_rule_uid": "RUID-90f0f330fbd84ecb",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【聚光】美妆&行业规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【聚光】美妆&行业规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "6",
+          "original_text": "美妆产品⼴告宣传中不得涉及对产品/服务绝对化的表述"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-90f0f330fbd84ecb",
+        "target_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+        "canonical_problem_name": "使用绝对化用语",
+        "regulated_action": "use_absolute_superlative_terms",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "美妆广告主",
+          "美妆广告发布者"
+        ],
+        "object_scope": [
+          "美妆产品",
+          "美妆服务"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确：美妆产品广告宣传中不得涉及对产品/服务绝对化的表述，属于宣称表达方式中的绝对化用语问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-95a30e7866d1ecf2",
+      "rule_id": "XHS-COSM-001",
+      "rule_title": "不得涉及承诺保证",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-39dc7192da384243",
+      "canonical_rule_uid": "RUID-95a30e7866d1ecf2",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【美妆个护行业投放规则】使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护行业投放规则】使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.",
+          "original_text": "【不得涉及承诺保证】：宣传产品时不得对产品效果做出明示或者暗示的保证性承诺，达到不符合常识的效果，⽐如宣传”精华能⼀天美⽩”"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-95a30e7866d1ecf2",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+        "canonical_problem_name": "产品效果保证性承诺",
+        "regulated_action": "make_effect_guarantee_commitment",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "美妆个护广告主",
+          "美妆个护广告发布者"
+        ],
+        "object_scope": [
+          "美妆个护产品"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确：宣传产品时不得对产品效果做出明示或者暗示的保证性承诺，达到不符合常识的效果，比如宣传“精华能一天美白”，属于产品效果保证性承诺。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9793691079021702",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "广告内容应当准确、清楚、明白",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.INACCURATE_UNCLEAR_AD_CONTENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-28f06a3b52254629",
+      "canonical_rule_uid": "RUID-1df3b8f441844b18",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第八条",
+          "original_text": "广告中对商品的性能、功能、产地、用途、质量、成分、价格、生产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明白。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9793691079021702",
+        "target_issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.INACCURATE_UNCLEAR_AD_CONTENT",
+        "canonical_problem_name": "广告内容不准确、不清楚、不明白",
+        "regulated_action": "make_inaccurate_unclear_ad_content",
+        "legal_effect": "truthfulness_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "商品",
+          "服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确：广告中对商品的性能、功能、产地、用途、质量、成分、价格、生产者、有效期限、允诺等或者对服务的内容、提供者、形式、质量、价格、允诺等有表示的，应当准确、清楚、明白，属于宣称表达方式中的不准确、不清楚、不明白问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-97c034528fab40c3",
+      "rule_id": "HF-ABS-001",
+      "rule_title": "禁止使用广告极限词（绝对化用语）",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6e706f824938bd1d",
+      "canonical_rule_uid": "RUID-97c034528fab40c3",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_抖音【滋补保健行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【滋补保健行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.6",
+          "original_text": "使用广告极限词，指电商作者在商品宣传的过程中，使用与实际情况不符的、对消费者造成欺骗或误导的词汇。滋补保健品类常见违规情形如下：含有“最高技术”、“最科学”、“最先进”、“最佳”、“国家级产品”、“填补国内空白”等唯一性、绝对化或排他性的用语和表述。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-97c034528fab40c3",
+        "target_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+        "canonical_problem_name": "使用绝对化用语",
+        "regulated_action": "use_absolute_superlative_terms",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "电商作者"
+        ],
+        "object_scope": [
+          "滋补保健商品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确：使用广告极限词，指电商作者在商品宣传的过程中，使用与实际情况不符的、对消费者造成欺骗或误导的词汇，滋补保健品类常见违规情形包括“最高技术”“最科学”“最先进”“最佳”“国家级产品”“填补国内空白”等唯一性、绝对化或排他性的用语和表述。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-98a02d5814c51abf",
+      "rule_id": "COSM-FC-001",
+      "rule_title": "化妆品类商品不得过度承诺",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-42c85cb5edb95ac6",
+      "canonical_rule_uid": "RUID-98a02d5814c51abf",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【化妆品类】商品虚假宣传细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【化妆品类】商品虚假宣传细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2.",
+          "original_text": "2.不得过度承诺："
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-98a02d5814c51abf",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+        "canonical_problem_name": "产品效果保证性承诺",
+        "regulated_action": "excessive_effect_commitment",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "化妆品经营者"
+        ],
+        "object_scope": [
+          "化妆品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "medium",
+        "reason": "原文仅载明“2.不得过度承诺：”，属对商品效果作出过度承诺的禁止性规定，归入效果保证性承诺节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-98e4024f640b4790",
+      "rule_id": "HF-EDU-001",
+      "rule_title": "教育、培训广告不得含有对升学、通过考试等效果的保证性承诺",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EDUCATION_TRAINING_GUARANTEE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-dfeb22eb9e355032",
+      "canonical_rule_uid": "RUID-283a7be5c1a9d37a",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十四条",
+          "original_text": "第二十四条 教育、培训广告不得含有下列内容： （一）对升学、通过考试、获得学位学历或者合格证书，或者对教育、培训的效果作出明示或者暗示的保证性承诺；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-98e4024f640b4790",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EDUCATION_TRAINING_GUARANTEE",
+        "canonical_problem_name": "教育培训广告效果保证性承诺",
+        "regulated_action": "education_training_effect_guarantee",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "教育、培训广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "广告法第二十四条明确禁止教育培训广告对升学、通过考试、获得学位学历或合格证书及培训效果作保证性承诺；track_hint_only为保健食品，与原文教育、培训广告明示行业冲突，故source_scope_conflict=true。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-99f84f14d05a5e71",
+      "rule_id": "DY-COSM-003",
+      "rule_title": "禁止使用过度承诺词汇描述化妆品效果",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-8ec6b8979a879882",
+      "canonical_rule_uid": "RUID-99f84f14d05a5e71",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【化妆品类】商品虚假宣传细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【化妆品类】商品虚假宣传细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.-part1",
+          "original_text": "避免使⽤「祛除、修复、瓦解、彻底解决」等词汇来形容商品效果。结合语境，可以将上述词汇修改为「淡化、改善、促进、有助于、缓解、维稳」等。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-99f84f14d05a5e71",
+        "target_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+        "canonical_problem_name": "使用绝对化用语",
+        "regulated_action": "use_absolute_effect_terms",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "化妆品经营者"
+        ],
+        "object_scope": [
+          "化妆品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确禁止使用“祛除、修复、瓦解、彻底解决”等词汇形容商品效果，属绝对化、排他性效果用语，归入使用绝对化用语节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-a84471acc8e7063d",
+      "rule_id": "GAME-OTHER-001",
+      "rule_title": "广告不得贬低其他生产经营者的商品或者服务",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_DISPARAGE_OTHERS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-8c4d147c466b8dad",
+      "canonical_rule_uid": "RUID-a84471acc8e7063d",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十三条",
+          "original_text": "第十三条 广告不得贬低其他生产经营者的商品或者服务。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-a84471acc8e7063d",
+        "target_issue_id": "CLAIM_EXPRESSION.COMPARATIVE_RANKING.COMPARATIVE_RANKING_DISPARAGE_OTHERS",
+        "canonical_problem_name": "贬低其他生产经营者商品或服务",
+        "regulated_action": "disparage_other_business_products",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "广告法第十三条明确禁止广告贬低其他生产经营者的商品或服务；track_hint_only为游戏，与原文未限定行业的通用广告规则不一致，故source_scope_conflict=true。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-bcb6c9922752c7fb",
+      "rule_id": "XHS-夸张描述-001",
+      "rule_title": "不得使用夸张描述：精华一抹变白",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.INSTANT_EFFECT_EXAGGERATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c2267e1056f93b74",
+      "canonical_rule_uid": "RUID-bcb6c9922752c7fb",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【美妆个护行业投放规则】使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【美妆个护行业投放规则】使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "3.【不得使⽤夸张描述】:⼴告宣传过程中不得涉及过度夸⼤的描述，如“”精华⼀抹变⽩”"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-bcb6c9922752c7fb",
+        "target_issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.INSTANT_EFFECT_EXAGGERATION",
+        "canonical_problem_name": "广告夸张描述即时效果",
+        "regulated_action": "prohibit_exaggerated_instant_effect_description",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "美妆个护",
+          "精华类产品"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确禁止广告宣传过程中涉及过度夸大的描述，如“精华一抹变白”，属于对即时效果的夸张描述，归入宣称表达方式下的广告夸张描述即时效果。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-c8d9714e6134eb2e",
+      "rule_id": "HF-绝对化用语-001",
+      "rule_title": "滋补保健商品不得使用广告极限词",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-88d3942b9fb23e31",
+      "canonical_rule_uid": "RUID-c8d9714e6134eb2e",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_抖音【滋补保健行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【滋补保健行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.6",
+          "original_text": "含有“最高技术”、“最科学”、“最先进”、“最佳”、“国家级产品”、“填补国内空白”等唯一性、绝对化或排他性的用语和表述。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-c8d9714e6134eb2e",
+        "target_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+        "canonical_problem_name": "使用绝对化用语",
+        "regulated_action": "prohibit_absolute_superlative_terms",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "传统滋补",
+          "营养保健/特医食品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确禁止含有“最高技术”“最科学”“最先进”“最佳”“国家级产品”“填补国内空白”等唯一性、绝对化或排他性的用语和表述，归入宣称表达方式下的使用绝对化用语。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-d14f6a0aca24cf85",
+      "rule_id": "COSM-AD-001",
+      "rule_title": "招商广告不得对未来效果、收益等作出保证性承诺",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.INVESTMENT_RETURN_GUARANTEE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-64960070bbcbc8c0",
+      "canonical_rule_uid": "RUID-f84a8a0611f0a322",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十五条",
+          "original_text": "第二十五条 招商等有投资回报预期的商品或者服务广告，应当对可能存在的风险以及风险责任承担有合理提示或者警示，并不得含有下列内容： （一）对未来效果、收益或者与其相关的情况作出保证性承诺，明示或者暗示保本、无风险或者保收益等，国家另有规定的除外；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-d14f6a0aca24cf85",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.INVESTMENT_RETURN_GUARANTEE",
+        "canonical_problem_name": "招商广告对未来效果、收益作出保证性承诺",
+        "regulated_action": "prohibit_investment_return_guarantee_commitment",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "招商等有投资回报预期的商品或服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文为广告法第二十五条，禁止招商等有投资回报预期的商品或服务广告对未来效果、收益作出保证性承诺；track_hint_only为美妆，但原文明示行业为招商投资类，与美妆提示冲突，故source_scope_conflict=true。规则本质属于宣称表达方式下的保证性承诺，归入招商广告投资回报保证承诺。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-f5ec77e12b20c051",
+      "rule_id": "COSM-虚假宣传-001",
+      "rule_title": "禁止无数据支撑的效果保证宣传",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-eda6c16cf00c1d7a",
+      "canonical_rule_uid": "RUID-f5ec77e12b20c051",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "（2）",
+          "original_text": "无任何数据支撑或实验证明的情况下，承诺使用xx时间可以达到xx效果、一洗就白等保证性表述。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-f5ec77e12b20c051",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+        "canonical_problem_name": "产品效果保证性承诺",
+        "regulated_action": "prohibit_effect_guarantee_without_evidence",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "美妆产品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确禁止无任何数据支撑或实验证明的情况下，承诺使用xx时间可以达到xx效果、一洗就白等保证性表述，归入宣称表达方式下的产品效果保证性承诺。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-f73c8833a0756e63",
+      "rule_id": "COSM-虚假宣传-002",
+      "rule_title": "特殊化妆品超范围宣传-宣传关联性不大且难以理解的词汇",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.SPECIAL_COSMETICS_IRRELEVANT_TERMS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-2f1e775f8e993bb3",
+      "canonical_rule_uid": "RUID-f73c8833a0756e63",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "（2）",
+          "original_text": "宣传关联性不⼤且难以理解的词汇\n宣传与产品的特性没有关联、且消费者不易理解的词语，如解码、数码、智能、红外线等。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-f73c8833a0756e63",
+        "target_issue_id": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.SPECIAL_COSMETICS_IRRELEVANT_TERMS",
+        "canonical_problem_name": "特殊化妆品宣传使用关联性不大且难以理解的词汇",
+        "regulated_action": "use_irrelevant_unintelligible_terms_in_special_cosmetics_advertising",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "特殊化妆品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确禁止在特殊化妆品宣传中使用与产品特性无关联且消费者不易理解的词汇（如解码、数码、智能、红外线等），属于宣称表达方式中的模糊夸张表述，与目标节点定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-f84a8a0611f0a322",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "招商广告不得对未来效果、收益等作出保证性承诺",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.INVESTMENT_RETURN_GUARANTEE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-64960070bbcbc8c0",
+      "canonical_rule_uid": "RUID-f84a8a0611f0a322",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十五条",
+          "original_text": "第二十五条 招商等有投资回报预期的商品或者服务广告，应当对可能存在的风险以及风险责任承担有合理提示或者警示，并不得含有下列内容： （一）对未来效果、收益或者与其相关的情况作出保证性承诺，明示或者暗示保本、无风险或者保收益等，国家另有规定的除外；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-f84a8a0611f0a322",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.INVESTMENT_RETURN_GUARANTEE",
+        "canonical_problem_name": "招商广告对未来效果、收益作出保证性承诺",
+        "regulated_action": "make_guaranteed_promise_on_future_effects_or_returns_in_investment_advertising",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "招商等有投资回报预期的商品或服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "《广告法》第二十五条明确禁止招商等有投资回报预期的商品或服务广告对未来效果、收益或相关情况作出保证性承诺，明示或暗示保本、无风险或保收益，属于宣称表达方式中的保证性承诺。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-f95c371e0e68eee3",
+      "rule_id": "COSM-ADPRO-001",
+      "rule_title": "美妆行业禁止效果保证宣传",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-49786576b4627039",
+      "canonical_rule_uid": "RUID-f95c371e0e68eee3",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.2",
+          "original_text": "3.1.2 效果保证"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-f95c371e0e68eee3",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+        "canonical_problem_name": "产品效果保证性承诺",
+        "regulated_action": "make_effect_guarantee_commitment_in_cosmetics_advertising",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "美妆产品"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "medium",
+        "reason": "原文标题为“3.1.2 效果保证”，明确禁止美妆行业效果保证宣传，属于对产品功效、效果作出保证性承诺，归入效果保证性承诺节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-fd8cb4eea586643c",
+      "rule_id": "XHS-COSM-002",
+      "rule_title": "美妆产品广告不得对产品效果做出时间性保证承诺",
+      "root_id": "CLAIM_EXPRESSION",
+      "issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-87fcb7986e5e5ec4",
+      "canonical_rule_uid": "RUID-fd8cb4eea586643c",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【聚光】美妆&行业规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【聚光】美妆&行业规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.-part1",
+          "original_text": "化妆品广告的内容应当真实、合法，不得含有虚假或者引人误解的内容，不得欺骗、误导消费者【核心】化妆品没有绝对安全，不得对产品、成分的安全性做出承诺。且化妆品效果因人而异，不得对产品、成分等做出无法证实的效果承诺"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-fd8cb4eea586643c",
+        "target_issue_id": "CLAIM_EXPRESSION.GUARANTEE_COMMITMENT.EFFECT_GUARANTEE_COMMITMENT",
+        "canonical_problem_name": "产品效果保证性承诺",
+        "regulated_action": "make_unverifiable_effect_or_safety_guarantee_in_cosmetics_advertising",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "化妆品"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "CLAIM_EXPRESSION",
+        "confidence": "high",
+        "reason": "原文明确化妆品不得对产品、成分的安全性做出承诺，不得对产品、成分等做出无法证实的效果承诺，属于效果保证性承诺，归入对应节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "canonical_groups": [
+    {
+      "canonical_rule_key": "CRK-04cfba5b5e6d7585",
+      "canonical_rule_uid": "RUID-122b5cc5e88c8091",
+      "source_occurrence_uids": [
+        "RUID-122b5cc5e88c8091"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "不得恶意贬低第三方进行不正当竞争",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-0b9b046b2dbfbd5f",
+      "canonical_rule_uid": "RUID-206bcad9a421f1c0",
+      "source_occurrence_uids": [
+        "RUID-206bcad9a421f1c0"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止恶意贬低第三方或同类商品",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-0f00c3175a19e67f",
+      "canonical_rule_uid": "RUID-11072b7051c09786",
+      "source_occurrence_uids": [
+        "RUID-11072b7051c09786",
+        "RUID-8c758db2232b92cf"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "广告中不得贬低其他生产经营者的商品或服务",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-0f79f5cae1c00fc1",
+      "canonical_rule_uid": "RUID-6d9c73f1813c036b",
+      "source_occurrence_uids": [
+        "RUID-6d9c73f1813c036b"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止恶意贬低第三方进行对比宣传",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-139bc76f517bad8a",
+      "canonical_rule_uid": "RUID-0a8f5ac2099e43dc",
+      "source_occurrence_uids": [
+        "RUID-0a8f5ac2099e43dc"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "美妆产品广告不得使用夸张且无法证实的表述",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-28f06a3b52254629",
+      "canonical_rule_uid": "RUID-1df3b8f441844b18",
+      "source_occurrence_uids": [
+        "RUID-1df3b8f441844b18",
+        "RUID-9793691079021702"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "广告内容应当准确、清楚、明白",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-2e0538308c247b70",
+      "canonical_rule_uid": "RUID-22f270203a1937a7",
+      "source_occurrence_uids": [
+        "RUID-22f270203a1937a7"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "宣传红血丝需避免绝对化用语且与商详页一致",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-2f1e775f8e993bb3",
+      "canonical_rule_uid": "RUID-f73c8833a0756e63",
+      "source_occurrence_uids": [
+        "RUID-f73c8833a0756e63"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "特殊化妆品超范围宣传-宣传关联性不大且难以理解的词汇",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-39dc7192da384243",
+      "canonical_rule_uid": "RUID-95a30e7866d1ecf2",
+      "source_occurrence_uids": [
+        "RUID-95a30e7866d1ecf2"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "不得涉及承诺保证",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-3d13c3552790a6a7",
+      "canonical_rule_uid": "RUID-641399c020e7deee",
+      "source_occurrence_uids": [
+        "RUID-641399c020e7deee"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止效果保证宣传-断言或保证产品功能功效安全性",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-42c85cb5edb95ac6",
+      "canonical_rule_uid": "RUID-98a02d5814c51abf",
+      "source_occurrence_uids": [
+        "RUID-98a02d5814c51abf"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "化妆品类商品不得过度承诺",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-43a8796e2c650f1c",
+      "canonical_rule_uid": "RUID-503970617d0d84f1",
+      "source_occurrence_uids": [
+        "RUID-503970617d0d84f1"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "美妆商品效果保证宣传禁止规则",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-49786576b4627039",
+      "canonical_rule_uid": "RUID-f95c371e0e68eee3",
+      "source_occurrence_uids": [
+        "RUID-f95c371e0e68eee3"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "美妆行业禁止效果保证宣传",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-645d51a30a63c0cf",
+      "canonical_rule_uid": "RUID-4b714eff2e3993ca",
+      "source_occurrence_uids": [
+        "RUID-4b714eff2e3993ca"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止使用广告极限词",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-64960070bbcbc8c0",
+      "canonical_rule_uid": "RUID-f84a8a0611f0a322",
+      "source_occurrence_uids": [
+        "RUID-791e3022c0811b5f",
+        "RUID-d14f6a0aca24cf85",
+        "RUID-f84a8a0611f0a322"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "招商广告不得对未来效果、收益等作出保证性承诺",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-6b6a08aecbb67fe2",
+      "canonical_rule_uid": "RUID-79ddc3d35625acfc",
+      "source_occurrence_uids": [
+        "RUID-79ddc3d35625acfc"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "美妆行业禁止使用广告极限词",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-6e706f824938bd1d",
+      "canonical_rule_uid": "RUID-97c034528fab40c3",
+      "source_occurrence_uids": [
+        "RUID-97c034528fab40c3"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止使用广告极限词（绝对化用语）",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-7ab39b504ff9f12f",
+      "canonical_rule_uid": "RUID-36253635404eb86d",
+      "source_occurrence_uids": [
+        "RUID-36253635404eb86d"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "美妆个护广告中“专业”词汇使用限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-805e28d42234032b",
+      "canonical_rule_uid": "RUID-3c268b6928ff21d7",
+      "source_occurrence_uids": [
+        "RUID-3c268b6928ff21d7"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止效果保证宣传-绝对化效果及安全承诺",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-85ca3b0d1ec6da1f",
+      "canonical_rule_uid": "RUID-53d23422f47c0ba1",
+      "source_occurrence_uids": [
+        "RUID-53d23422f47c0ba1"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止过度宣传平替",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-868a9df5a2ec50db",
+      "canonical_rule_uid": "RUID-590793dde45e460f",
+      "source_occurrence_uids": [
+        "RUID-590793dde45e460f"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "化妆品宣传禁止使用绝对化用语",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-87fcb7986e5e5ec4",
+      "canonical_rule_uid": "RUID-fd8cb4eea586643c",
+      "source_occurrence_uids": [
+        "RUID-fd8cb4eea586643c"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "美妆产品广告不得对产品效果做出时间性保证承诺",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-88bb9922e55de838",
+      "canonical_rule_uid": "RUID-5f89865ecd76debb",
+      "source_occurrence_uids": [
+        "RUID-5f89865ecd76debb"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "滋补保健商品不得进行效果保证宣传",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-88d3942b9fb23e31",
+      "canonical_rule_uid": "RUID-c8d9714e6134eb2e",
+      "source_occurrence_uids": [
+        "RUID-c8d9714e6134eb2e"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "滋补保健商品不得使用广告极限词",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-8a7eb43677f0426e",
+      "canonical_rule_uid": "RUID-0d2f1071b5f33116",
+      "source_occurrence_uids": [
+        "RUID-0d2f1071b5f33116"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "化妆品商品不得使用绝对化用语宣传功效",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-8c06dec3494a18b3",
+      "canonical_rule_uid": "RUID-26ed403d02be2461",
+      "source_occurrence_uids": [
+        "RUID-26ed403d02be2461",
+        "RUID-354bf29f565043fa",
+        "RUID-4974507cb1230803"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "保健食品广告不得与药品、其他保健食品进行比较",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-8c4d147c466b8dad",
+      "canonical_rule_uid": "RUID-a84471acc8e7063d",
+      "source_occurrence_uids": [
+        "RUID-a84471acc8e7063d"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告不得贬低其他生产经营者的商品或者服务",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-8ec6b8979a879882",
+      "canonical_rule_uid": "RUID-99f84f14d05a5e71",
+      "source_occurrence_uids": [
+        "RUID-99f84f14d05a5e71"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止使用过度承诺词汇描述化妆品效果",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-9c2d777d4a711810",
+      "canonical_rule_uid": "RUID-1add2e34601629ae",
+      "source_occurrence_uids": [
+        "RUID-1add2e34601629ae"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止使用专业词汇描述产品功效或产品本身",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-9d7f05b6dab38d9d",
+      "canonical_rule_uid": "RUID-3d7a48f0743963a7",
+      "source_occurrence_uids": [
+        "RUID-3d7a48f0743963a7"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "儿童化妆品商品描述禁止使用“食品级”“可食用”等词语或食品有关图案",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-a0e5f57616a025f6",
+      "canonical_rule_uid": "RUID-8a7b2709bed97422",
+      "source_occurrence_uids": [
+        "RUID-8a7b2709bed97422"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "滋补保健行业禁止效果保证宣传",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-b7890da955c1d378",
+      "canonical_rule_uid": "RUID-46a3b2929ec38ac1",
+      "source_occurrence_uids": [
+        "RUID-46a3b2929ec38ac1"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "保健食品广告不得含有热销抢购、评比推荐、无效退款等诱导性或保证性内容",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-c2267e1056f93b74",
+      "canonical_rule_uid": "RUID-bcb6c9922752c7fb",
+      "source_occurrence_uids": [
+        "RUID-bcb6c9922752c7fb"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "不得使用夸张描述：精华一抹变白",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-cef67a37888a78bc",
+      "canonical_rule_uid": "RUID-9053f15ae7d1f26c",
+      "source_occurrence_uids": [
+        "RUID-9053f15ae7d1f26c"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "美妆个护广告中“专业”词汇使用限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-dfeb22eb9e355032",
+      "canonical_rule_uid": "RUID-283a7be5c1a9d37a",
+      "source_occurrence_uids": [
+        "RUID-283a7be5c1a9d37a",
+        "RUID-56eb9dfe9ffbe1a8",
+        "RUID-98e4024f640b4790"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "教育、培训广告不得含有保证性承诺",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-eda6c16cf00c1d7a",
+      "canonical_rule_uid": "RUID-f5ec77e12b20c051",
+      "source_occurrence_uids": [
+        "RUID-f5ec77e12b20c051"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止无数据支撑的效果保证宣传",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-ee393bab764d294d",
+      "canonical_rule_uid": "RUID-151ff85a22769a18",
+      "source_occurrence_uids": [
+        "RUID-151ff85a22769a18"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "专业词汇描述管控规则",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-eee8c1499f2761d2",
+      "canonical_rule_uid": "RUID-90f0f330fbd84ecb",
+      "source_occurrence_uids": [
+        "RUID-90f0f330fbd84ecb"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "美妆广告禁止使用绝对化用语",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-f1a03cd78a5b45fe",
+      "canonical_rule_uid": "RUID-770045974521f8d2",
+      "source_occurrence_uids": [
+        "RUID-770045974521f8d2"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止使用广告极限词",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-f2f320b1dafb131c",
+      "canonical_rule_uid": "RUID-1c246de1b3125c73",
+      "source_occurrence_uids": [
+        "RUID-1c246de1b3125c73"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "美妆宣传禁止使用虚假性保证词语",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "proactive_candidates": []
+}

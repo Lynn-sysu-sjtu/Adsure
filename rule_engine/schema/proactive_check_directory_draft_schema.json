@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "type": "object",
+  "required": ["schema_version", "asset_status", "checks"], "additionalProperties": false,
+  "properties": {"schema_version": {"const": "0.1"}, "asset_status": {"enum": ["draft", "approved"]}, "checks": {"type": "array", "items": {"$ref": "#/$defs/check"}}},
+  "$defs": {
+    "review": {"type": "object", "required": ["status", "reviewer", "reviewed_at", "notes"], "properties": {"status": {"enum": ["pending", "approved", "rejected", "needs_revision"]}, "reviewer": {"type": ["string", "null"]}, "reviewed_at": {"type": ["string", "null"]}, "notes": {"type": ["string", "null"]}}, "additionalProperties": false},
+    "check": {"type": "object", "required": ["check_id", "name", "check_type", "track", "trigger_issue_ids", "applicability", "trigger_conditions", "requirement", "required_materials", "basis_rule_uids", "default_status", "default_severity", "review"], "additionalProperties": false, "properties": {
+      "check_id": {"type": "string", "pattern": "^(GEN|GAME|COSM|HF)\\.[A-Z0-9_.]+$"}, "name": {"type": "string", "minLength": 1}, "check_type": {"enum": ["fact_verification", "qualification", "disclosure", "workflow"]}, "track": {"enum": ["通用", "游戏", "美妆", "保健食品"]}, "trigger_issue_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+      "applicability": {"type": "object", "required": ["industries", "platforms", "material_types"], "additionalProperties": false, "properties": {"industries": {"type": "array", "items": {"type": "string"}}, "platforms": {"type": "array", "items": {"type": "string"}}, "material_types": {"type": "array", "items": {"type": "string"}}}},
+      "trigger_conditions": {"type": "object", "required": ["all", "any", "exclude"], "additionalProperties": false, "properties": {"all": {"type": "array", "items": {"type": "string"}}, "any": {"type": "array", "items": {"type": "string"}}, "exclude": {"type": "array", "items": {"type": "string"}}}},
+      "requirement": {"type": "string", "minLength": 1}, "required_materials": {"type": "array", "items": {"type": "string", "minLength": 1}}, "core_support": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["source_field", "evidence"], "additionalProperties": false, "properties": {"source_field": {"enum": ["title", "legal_basis", "applies_to", "rule_applicability"]}, "evidence": {"type": "string", "minLength": 1}}}}, "basis_rule_uids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "default_status": {"enum": ["需要核验", "已满足", "不适用"]}, "default_severity": {"enum": ["高", "中", "低"]}, "review": {"$ref": "#/$defs/review"}
+    }}
+  }
+}

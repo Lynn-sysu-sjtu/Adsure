@@ -1,0 +1,200 @@
+{
+  "schema_version": "0.2",
+  "asset_status": "draft",
+  "prompt_version": "endorsement_fingerprint_v02_20260912",
+  "model": "deepseek-chat",
+  "fingerprints": [
+    {
+      "rule_uid": "RUID-07c06c5e0785bdbc",
+      "issue_family": "endorsement_prohibited",
+      "regulated_action": "endorsement_recommendation_proof_in_health_food_ad",
+      "legal_effect": "prohibited",
+      "actor_scope": [
+        "endorser"
+      ],
+      "object_scope": [
+        "health_food"
+      ],
+      "channel_scope": [],
+      "platform_scope": [],
+      "source_type": "法规",
+      "legal_level": 1,
+      "legal_basis_key": [
+        "AL:第六十一条"
+      ],
+      "evidence_requirement": "content",
+      "source_scope_conflict": false,
+      "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "canonical_problem_name": "保健食品广告禁止代言人推荐证明",
+      "aliases": [
+        "保健食品广告代言禁止",
+        "保健食品推荐证明禁止"
+      ],
+      "confidence": "high",
+      "reason": "广告法第六十一条明确禁止广告代言人在保健食品广告中作推荐、证明，并规定罚则。"
+    },
+    {
+      "rule_uid": "RUID-168081152ac6fa9d",
+      "issue_family": "endorsement_prohibited",
+      "regulated_action": "use_of_institution_or_professional_or_user_name_image_for_recommendation_proof",
+      "legal_effect": "prohibited",
+      "actor_scope": [
+        "research_institution",
+        "academic_institution",
+        "technology_promotion_institution",
+        "industry_association",
+        "professional",
+        "user"
+      ],
+      "object_scope": [
+        "health_food"
+      ],
+      "channel_scope": [],
+      "platform_scope": [],
+      "source_type": "法规",
+      "legal_level": 1,
+      "legal_basis_key": [
+        "AL:第二十一条"
+      ],
+      "evidence_requirement": "content",
+      "source_scope_conflict": false,
+      "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "canonical_problem_name": "保健食品广告禁止利用机构或专业人士用户名义形象推荐证明",
+      "aliases": [
+        "保健食品广告禁止专家推荐",
+        "保健食品广告禁止用户见证"
+      ],
+      "confidence": "high",
+      "reason": "规则标题和track_hint指向保健食品，但法条原文为农药、兽药、饲料和饲料添加剂广告，存在适用范围冲突，以原文为准。"
+    },
+    {
+      "rule_uid": "RUID-3a05f44ab24c9a6e",
+      "issue_family": "endorsement_relationship_identification",
+      "regulated_action": "live_streamer_endorsement_liability_determination",
+      "legal_effect": "relationship_determination",
+      "actor_scope": [
+        "live_streamer"
+      ],
+      "object_scope": [
+        "health_food"
+      ],
+      "channel_scope": [
+        "直播"
+      ],
+      "platform_scope": [],
+      "source_type": "法规",
+      "legal_level": 3,
+      "legal_basis_key": [
+        "IAM:第十九条"
+      ],
+      "evidence_requirement": "context",
+      "source_scope_conflict": false,
+      "recommended_parent": "ENDORSEMENT.RELATION_IDENTIFICATION",
+      "canonical_problem_name": "直播营销人员广告代言责任认定",
+      "aliases": [
+        "直播代言责任认定",
+        "直播营销人员推荐证明责任"
+      ],
+      "confidence": "high",
+      "reason": "互联网广告管理办法第十九条规定直播营销人员以自己名义或形象推荐、证明构成广告代言的，承担广告代言人责任。"
+    },
+    {
+      "rule_uid": "RUID-545f9ad8dd6797c1",
+      "issue_family": "endorsement_prohibited",
+      "regulated_action": "endorsement_recommendation_proof_in_health_food_ad",
+      "legal_effect": "prohibited",
+      "actor_scope": [
+        "endorser"
+      ],
+      "object_scope": [
+        "health_food"
+      ],
+      "channel_scope": [],
+      "platform_scope": [
+        "小红书"
+      ],
+      "source_type": "平台规则",
+      "legal_level": 99,
+      "legal_basis_key": [
+        "XHS:1.1"
+      ],
+      "evidence_requirement": "content",
+      "source_scope_conflict": false,
+      "recommended_parent": "ENDORSEMENT.PROHIBITED_SUBJECT",
+      "canonical_problem_name": "小红书保健食品广告禁止代言人推荐证明",
+      "aliases": [
+        "小红书保健食品代言禁止",
+        "小红书保健食品推荐证明禁止"
+      ],
+      "confidence": "high",
+      "reason": "小红书平台规则1.1明确保健食品广告不得利用广告代言人作推荐、证明。"
+    },
+    {
+      "rule_uid": "RUID-581e6b801073e750",
+      "issue_family": "endorsement_prohibition",
+      "regulated_action": "endorsement_recommendation_proof",
+      "legal_effect": "prohibited",
+      "actor_scope": [
+        "endorser"
+      ],
+      "object_scope": [
+        "health_food"
+      ],
+      "channel_scope": [
+        "聚光平台"
+      ],
+      "platform_scope": [
+        "小红书"
+      ],
+      "source_type": "platform_rule",
+      "legal_level": 99,
+      "legal_basis_key": [
+        "XHS:未分条-1"
+      ],
+      "evidence_requirement": "content",
+      "source_scope_conflict": false,
+      "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+      "canonical_problem_name": "保健食品广告不得利用广告代言人作推荐、证明",
+      "aliases": [
+        "保健食品代言禁止",
+        "保健食品推荐证明禁止"
+      ],
+      "confidence": "high",
+      "reason": "平台规则原文明确：医疗、药品、医疗器械、保健食品广告不得利用广告代言人作推荐、证明。"
+    },
+    {
+      "rule_uid": "RUID-7f1a9698aaa2cf50",
+      "issue_family": "endorsement_prohibition",
+      "regulated_action": "endorsement_recommendation_proof",
+      "legal_effect": "prohibited",
+      "actor_scope": [
+        "research_institution",
+        "academic_institution",
+        "education_institution",
+        "industry_association",
+        "professional",
+        "beneficiary"
+      ],
+      "object_scope": [
+        "education_training"
+      ],
+      "channel_scope": [],
+      "platform_scope": [],
+      "source_type": "law",
+      "legal_level": 1,
+      "legal_basis_key": [
+        "AL:第二十四条"
+      ],
+      "evidence_requirement": "content",
+      "source_scope_conflict": false,
+      "recommended_parent": "ENDORSEMENT.PROHIBITED_RECOMMENDER_BY_CATEGORY",
+      "canonical_problem_name": "教育、培训广告不得利用科研单位、学术机构等名义作推荐、证明",
+      "aliases": [
+        "教育培训广告推荐证明禁止",
+        "教育培训广告代言禁止"
+      ],
+      "confidence": "high",
+      "reason": "广告法第二十四条原文明确教育、培训广告不得利用科研单位、学术机构、教育机构、行业协会、专业人士、受益者的名义或者形象作推荐、证明；track_hint_only为保健食品，与法条原文冲突，以原文为准。"
+    }
+  ]
+}

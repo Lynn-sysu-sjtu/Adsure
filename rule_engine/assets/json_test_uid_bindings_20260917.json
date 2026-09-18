@@ -1,0 +1,110 @@
+{
+  "HF-AD-001": {"must_recall": {
+    "HF-001-001": {"status":"resolved","uid":"RUID-d65bef32d08d3476","reason":"广告法第十七条：文案直接声称治疗糖尿病。"},
+    "HF-002": {"status":"resolved","uid":"RUID-b2af3e129ef8e342","reason":"广告法第十八条（二）：保健食品宣称治疗糖尿病。"},
+    "DY-HF-002": {"status":"replace_expected_rule","uid":"RUID-79f7ff14a5af24ee","reason":"旧ID分别为丰胸与研究数据，均不适用；改用抖音3.1.4治疗类功效条文，明确列出糖尿病。"}
+  },"must_not_recall": {}},
+  "HF-AD-002": {"must_recall": {
+    "HF-001": {"status":"resolved","uid":"RUID-4d7b4ffb626c816b","reason":"广告法第十八条（一）：100%有效是功效断言。"},
+    "HF-虚假宣传-001": {"status":"invalid_expectation","uid":null,"reason":"同ID的第二十一条实际规范农药等，不能将其套用保健食品；其他同ID条文也不吻合。"},
+    "HF-虚假宣传-003": {"status":"invalid_expectation","uid":null,"reason":"第二十一条（三）有效率限制规范农药等，不能照搬到保健食品。"},
+    "XHS-HF-005": {"status":"invalid_expectation","uid":null,"reason":"该规则只管话题标签中的疾病词，本案既无疾病词亦无话题。"}
+  },"must_not_recall": {}},
+  "HF-AD-003": {"must_recall": {
+    "HF-005": {"status":"resolved","uid":"RUID-d79610014e487328","reason":"广告法第十八条（五）：专家亲测推荐属于代言推荐证明。"},
+    "HF-虚假宣传-002": {"status":"invalid_expectation","uid":null,"reason":"该ID的第二十一条（二）规范农药等，不适用于保健食品；其他同ID平台规则也不对应背书。"},
+    "HFAD-011-002": {"status":"resolved","uid":"RUID-92f0e76f37a2a1a1","reason":"保健食品广告审查暂行规定第十一条（二）明确禁止专家、科研机构推荐证明。"},
+    "DY-HF-004": {"status":"invalid_expectation","uid":null,"reason":"抖音3.1.5的该UID限制夸大功效或扩大适宜人群，不是专家/机构背书；预期引用条文不支持此ID。"}
+  },"must_not_recall": {}},
+  "HF-AD-004": {"must_recall": {
+    "HF-ACC-002": {"status":"resolved","uid":"RUID-648a74f0a007c117","reason":"广告法第八条明确要求附带赠送明示品种、规格、数量、期限和方式。"},
+    "TB-HF-003": {"status":"invalid_expectation","uid":null,"reason":"淘宝该规则管食品功效描述真实性，不涉及买赠信息。"}
+  },"must_not_recall": {}},
+  "HF-AD-005": {"must_recall": {
+    "HF-001-001": {"status":"resolved","uid":"RUID-d65bef32d08d3476","reason":"广告法第十七条：专治失眠和胃病、替代药物属于疾病治疗及药品混淆。"},
+    "HF-001": {"status":"resolved","uid":"RUID-4d7b4ffb626c816b","reason":"广告法第十八条（一）：比药更管用及疗效看得见属于功效保证。"},
+    "HF-006": {"status":"fact_check_only","uid":null,"channel":"workflow","reason":"显著标明本品不能代替药物须核对整份最终物料；单条截取文案未足以断定展示是否缺失。"},
+    "HF-LBL-002": {"status":"invalid_expectation","uid":null,"reason":"该规则管销售时食品和药品混放，非文案将保健食品与药品混淆。"},
+    "XHS-HF-002": {"status":"invalid_expectation","uid":null,"reason":"该ID候选为普通食品功效或酒类动作、代言，本案是保健食品治疗与药品替代宣称。"}
+  },"must_not_recall": {}},
+  "HF-AD-006": {"must_recall": {
+    "HF-002": {"status":"resolved","uid":"RUID-b2af3e129ef8e342","reason":"广告法第十八条（二）：抗癌、远离肿瘤涉及疾病预防治疗。"},
+    "HF-001": {"status":"resolved","uid":"RUID-4d7b4ffb626c816b","reason":"广告法第十八条（一）：绝对安全、任何人都不会有问题属于安全保证。"},
+    "HFAD-011-005": {"status":"resolved","uid":"RUID-c2426548e3dec9be","reason":"保健食品广告审查暂行规定第十一条（五）明确禁止天然因此安全的保证。"},
+    "XHS-HF-001": {"status":"invalid_expectation","uid":null,"reason":"现有同ID规则分属生鲜/普通食品、准入、证据材料等，未有对应本案保健食品抗癌文案的唯一条文。"},
+    "XHS-HF-005": {"status":"invalid_expectation","uid":null,"reason":"话题疾病词规则不适用无话题标签的本案正文。"}
+  },"must_not_recall": {}},
+  "HF-AD-007": {"must_recall": {
+    "HF-001": {"status":"resolved","uid":"RUID-4d7b4ffb626c816b","reason":"广告法第十八条（一）：三天见效、全消失属于功效保证。"},
+    "HF-虚假宣传-001": {"status":"invalid_expectation","uid":null,"reason":"同ID的广告法第二十一条规范农药等，不适用于保健食品；其余候选不匹配本案。"},
+    "DY-HF-001": {"status":"unresolved","uid":null,"reason":"同ID包含抖音2.1.1、3.1.4、3.1.5、3.1.6等多条；‘效果立竿见影’不足以确认旧答案想指其中哪条。"},
+    "DY-HF-003": {"status":"resolved","uid":"RUID-3c268b6928ff21d7","reason":"抖音3.1.5绝对化效果保证；‘腰酸腿疼全消失’承诺确定疗效，另一个同ID是壮阳条文。"},
+    "HF-MED-001": {"status":"invalid_expectation","uid":null,"reason":"该抖音医疗功效细则举耳鼻喉、头发、呼吸系统，不对应本案腰腿疼的具体条文。"}
+  },"must_not_recall": {}},
+  "HF-AD-008": {"must_recall": {
+    "HF-REG-001": {"status":"fact_check_only","uid":null,"channel":"fact","reason":"蓝帽认证、进口身份需要核对注册备案与证书；现有同ID条文是注册资料或证书记载事项。"},
+    "HF-ADPRE-001": {"status":"fact_check_only","uid":null,"channel":"workflow","reason":"发布前审查属于审批流程，不能只看这段文案判定是否已经审查。"},
+    "TB-HF-002": {"status":"invalid_expectation","uid":null,"reason":"淘宝该规则只规定临期食品标注，文案未涉及保质期。"},
+    "TB-HF-003": {"status":"invalid_expectation","uid":null,"reason":"淘宝该规则是食品功效真实性，本案主要是认证与进口身份待核；‘年轻好状态’不足以直接认定虚假。"}
+  },"must_not_recall": {}},
+  "HF-AD-009": {"must_recall": {},"must_not_recall": {
+    "HF-001-001": {"status":"resolved","uid":"RUID-d65bef32d08d3476","reason":"广告法第十七条疾病治疗禁止；本案无疾病治疗。"},
+    "HF-002": {"status":"resolved","uid":"RUID-b2af3e129ef8e342","reason":"广告法第十八条（二）疾病功效禁止；本案无疾病功效。"},
+    "HF-虚假宣传-003": {"status":"invalid_expectation","uid":null,"reason":"该ID的有效率条文属于农药等，其他同ID候选也无法确定唯一应禁止的规则。"},
+    "TB-HF-002": {"status":"resolved","uid":"RUID-14ae1924362706e1","reason":"淘宝临期食品标注规则；本案无临期食品。"}
+  }},
+  "HF-AD-010": {"must_recall": {},"must_not_recall": {
+    "HF-001-001": {"status":"resolved","uid":"RUID-d65bef32d08d3476","reason":"广告法第十七条疾病治疗禁止；本案是普通营养记录。"},
+    "HF-002": {"status":"resolved","uid":"RUID-b2af3e129ef8e342","reason":"广告法第十八条（二）疾病治疗禁止；本案无疾病疗效。"},
+    "XHS-HF-001": {"status":"unresolved","uid":null,"reason":"同ID有11个不同规则，旧答案未给具体条文，无法唯一确定禁止召回 UID。"},
+    "XHS-HF-002": {"status":"unresolved","uid":null,"reason":"同ID涉及普通食品、酒水动作及保健食品代言，旧答案未给具体条文。"},
+    "XHS-HF-005": {"status":"resolved","uid":"RUID-e23cb34f2d4b0364","reason":"小红书话题疾病词规则，本案没有疾病话题。"}
+  }},
+  "BEAUTY-AD-001": {"must_recall": {
+    "ADLAW-017": {"status":"replace_expected_rule","uid":"RUID-1e455acefad683e3","reason":"原ID未入库；通用广告法第十七条完整条文与测试条文一致，医疗用语适用。"},
+    "ADLAW-028": {"status":"fact_check_only","uid":null,"channel":"fact","reason":"第二十八条虚假广告需要核验产品属性/功效事实；仅凭‘杀菌消炎’不能证明数据或效果虚假。"},
+    "TENCENT-COSM-GENERAL-2": {"status":"unresolved","uid":null,"reason":"腾讯广告候选快照条文未精确入当前jsonbase；公众号、手册、挂纸也未证实是腾讯付费广告流量。"}
+  },"must_not_recall": {}},
+  "BEAUTY-AD-002": {"must_recall": {
+    "ADLAW-009-03": {"status":"replace_expected_rule","uid":"RUID-b60852699e8ddd70","reason":"原ID未入库；广告法第九条（三）与‘国家级、最佳’用语及现行通用规则一致。"},
+    "BILI-HUOHUA-ABSOLUTE-II": {"status":"unresolved","uid":null,"reason":"B站花火候选快照未精确入库，不能将其他平台绝对化规则替代。"}
+  },"must_not_recall": {}},
+  "BEAUTY-AD-003": {"must_recall": {
+    "ADLAW-011-02": {"status":"replace_expected_rule","uid":"RUID-5b2a03e0fd190b3e","reason":"广告法第十一条引证数据真实、准确、表明出处；99%数据与当前通用条文一致。"},
+    "ADLAW-028": {"status":"replace_expected_rule","uid":"RUID-d958618a8503a8de","reason":"广告法第二十八条完整条文与现行通用规则一致；‘永不反弹’效果保证具误导风险，数据真实性另须核验。"},
+    "XHS-JG-COSM-EFFECT-2.1.3": {"status":"unresolved","uid":null,"reason":"小红书聚光2.1.3候选快照未精确入库；现有美妆行业条款来自不同文件。"},
+    "XHS-JG-DATA-2.8": {"status":"unresolved","uid":null,"reason":"小红书聚光2.8候选快照未精确入库，不能仅以主题相似的1.3条替代。"}
+  },"must_not_recall": {}},
+  "BEAUTY-AD-004": {"must_recall": {
+    "ADLAW-028": {"status":"fact_check_only","uid":null,"channel":"fact","reason":"普通精华备案功效未提供，第二十八条的实际备案不符须先核验。"},
+    "DOUYIN-COSM-EFFICACY-2.1.1": {"status":"unresolved","uid":null,"reason":"测试引用的抖音化妆行业2.1.1快照未精确入库，现有抖音美妆2.1.1为商品宣传信息真实性义务，不能混同。"}
+  },"must_not_recall": {}},
+  "BEAUTY-AD-005": {"must_recall": {
+    "DOUYIN-COSM-GUARANTEE-2.1.2": {"status":"unresolved","uid":null,"reason":"测试引用抖音化妆品行业修订通知2.1.2快照未精确入库；现有同序号属其他文件和责任条文。"}
+  },"must_not_recall": {}},
+  "BEAUTY-AD-006": {"must_recall": {
+    "ADLAW-011-02": {"status":"replace_expected_rule","uid":"RUID-5b2a03e0fd190b3e","reason":"广告法第十一条：临床验证及99%为引证数据，需真实准确表明出处。"},
+    "ADLAW-028": {"status":"fact_check_only","uid":null,"channel":"fact","reason":"医院医生与统计数据是否虚构或无法验证，需核验身份、授权和报告，不能仅凭文案认定虚假。"},
+    "TENCENT-COSM-ENDORSEMENT-3": {"status":"unresolved","uid":null,"reason":"腾讯广告候选快照第3项未精确入库，且投放平台需确认。"},
+    "TENCENT-COSM-DATA-5": {"status":"unresolved","uid":null,"reason":"腾讯广告候选快照第5项未精确入库，不能改用不同文件条款。"}
+  },"must_not_recall": {}},
+  "BEAUTY-AD-007": {"must_recall": {
+    "ADLAW-028": {"status":"fact_check_only","uid":null,"channel":"fact","reason":"第二十八条是否虚构前后对比效果需核对图片及使用条件，单纯文案不足以证实虚假。"},
+    "BILI-HUOHUA-COMPARE-VIII": {"status":"unresolved","uid":null,"reason":"B站花火八、对比图候选快照未精确入库，需核对实际图像及平台投放。"}
+  },"must_not_recall": {}},
+  "BEAUTY-AD-008": {"must_recall": {
+    "BILI-HUOHUA-PATENT-III": {"status":"unresolved","uid":null,"reason":"B站花火三、专利内容候选快照未精确入库；当前广告法第十二条专利号规则是另一个ID，不能冒称同一平台规则。"}
+  },"must_not_recall": {}},
+  "BEAUTY-AD-009": {"must_recall": {},"must_not_recall": {
+    "ADLAW-017": {"status":"replace_expected_rule","uid":"RUID-1e455acefad683e3","reason":"广告法第十七条医疗用语禁令，温和清洁无医疗用语。"},
+    "ADLAW-028": {"status":"replace_expected_rule","uid":"RUID-d958618a8503a8de","reason":"广告法第二十八条虚假广告禁令，正常保湿描述不应触发。"},
+    "DOUYIN-COSM-EFFICACY-2.1.1": {"status":"unresolved","uid":null,"reason":"所引抖音候选快照条文未精确入库，禁止项不能改成其他2.1.1。"},
+    "DOUYIN-COSM-GUARANTEE-2.1.2": {"status":"unresolved","uid":null,"reason":"所引抖音候选快照条文未精确入库。"}
+  }},
+  "BEAUTY-AD-010": {"must_recall": {},"must_not_recall": {
+    "ADLAW-017": {"status":"replace_expected_rule","uid":"RUID-1e455acefad683e3","reason":"广告法第十七条医疗用语禁令，文案仅描述色泽。"},
+    "ADLAW-009-03": {"status":"replace_expected_rule","uid":"RUID-b60852699e8ddd70","reason":"广告法第九条（三）绝对化用语禁令，文案没有国家级、最高级、最佳。"},
+    "XHS-JG-COSM-EFFECT-2.1.3": {"status":"unresolved","uid":null,"reason":"小红书聚光候选快照2.1.3未精确入库。"},
+    "XHS-JG-COMPARE-2.15": {"status":"unresolved","uid":null,"reason":"小红书聚光候选快照2.15未精确入库，色泽实拍不等于前后对比。"}
+  }}
+}

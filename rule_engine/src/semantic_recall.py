@@ -18,6 +18,7 @@ from rule_vector_index import (
     vector_text_hash,
 )
 from rule_identity import rule_identity
+from rule_eligibility import content_recall_eligible
 from rule_scope import platform_scope_matches
 
 
@@ -170,6 +171,8 @@ def _applicable_semantic_vectors(rules, request, query):
     for rule in rules:
         recall = rule.get("recall", {}) or {}
         reasons = []
+        if not content_recall_eligible(rule):
+            reasons.append("content_recall_ineligible")
         if not recall.get("semantic_enabled"):
             reasons.append("semantic_disabled")
         if (recall.get("semantic_role") or "fallback") == "disabled":

@@ -93,10 +93,10 @@
           "游戏准入"
         ],
         "vector_text": "无需实名注册，即开即玩?免实名认证，畅玩无阻?未实名?无需实名?免实名?跳过实名?无需身份信息?实名",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、未成年人、清晰. It also has fact signals, so this should be reviewed.",
         "trigger_layer_confidence": "medium",
         "trigger_layer_source": "heuristic",
@@ -120,7 +120,9 @@
           "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
           "confidence": "low",
           "semantic_recommendations_applied": false
-        }
+        },
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -189,7 +191,9 @@
         "route_reason": "规则触发清晰，关键词和语义明确，运营可直接删除或替换违规表述，无需法务介入。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "GAME-USER-002",
@@ -260,8 +264,8 @@
           "游戏限制"
         ],
         "vector_text": "游客模式无限畅玩，游客体验不限时，免登录无限玩，无需注册可充值，游客账号可付费，每天都能游客体验，同",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "规则涉及具体限制条件（时长、充值、重复使用），关键词可能无法覆盖所有变体，语义召回可捕捉类似表达",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
@@ -291,12 +295,14 @@
           "vector_text_clipped_at": "20260715_001248",
           "vector_text_clipped_from_length": 118
         },
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、未成年人、清晰、限时.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "中",
       "consequence": {
@@ -366,7 +372,9 @@
         "route_reason": "规则触发清晰，运营可直接根据关键词和语义判断并修改文案，无需法务介入。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "GAME-TIME-001",

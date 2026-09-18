@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "asset_status", "generated_at", "source_snapshot", "issues"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "asset_status": {"enum": ["draft", "approved"]},
+    "generated_at": {"type": "string"},
+    "source_snapshot": {"type": "object", "required": ["rule_count", "jsonbase_sha256"], "properties": {"rule_count": {"type": "integer", "minimum": 0}, "jsonbase_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": true},
+    "issues": {"type": "array", "items": {"$ref": "#/$defs/issue"}}
+  },
+  "$defs": {
+    "review": {"type": "object", "required": ["status", "reviewer", "reviewed_at", "notes"], "properties": {"status": {"enum": ["pending", "approved", "rejected", "needs_revision"]}, "reviewer": {"type": ["string", "null"]}, "reviewed_at": {"type": ["string", "null"]}, "notes": {"type": ["string", "null"]}}, "additionalProperties": false},
+    "evidencePolicy": {"type": "object", "required": ["content", "context", "fact_state", "llm_signal"], "properties": {"content": {"enum": ["can_confirm", "trigger_only", "not_allowed"]}, "context": {"enum": ["scope_only", "support_or_refute", "not_allowed"]}, "fact_state": {"enum": ["support_or_refute", "required_to_confirm", "not_allowed"]}, "llm_signal": {"const": "candidate_only"}}, "additionalProperties": false},
+    "issue": {"type": "object", "required": ["issue_id", "name", "track", "parent_issue_id", "issue_path", "definition", "in_scope", "out_of_scope", "claim_types", "default_evidence_policy", "candidate_rule_uids", "review", "generation"], "additionalProperties": false, "properties": {
+      "issue_id": {"type": "string", "pattern": "^(GEN|GAME|COSM|HF)\\.[A-Z0-9_.]+$"}, "name": {"type": "string", "minLength": 1}, "track": {"enum": ["通用", "游戏", "美妆", "保健食品"]}, "parent_issue_id": {"type": ["string", "null"]},
+      "issue_path": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}, "definition": {"type": "string", "minLength": 1}, "in_scope": {"type": "array", "items": {"type": "string"}}, "out_of_scope": {"type": "array", "items": {"type": "string"}},
+      "claim_types": {"type": "array", "items": {"type": "string", "minLength": 1}}, "default_evidence_policy": {"$ref": "#/$defs/evidencePolicy"}, "candidate_rule_uids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "review": {"$ref": "#/$defs/review"},
+      "generation": {"type": "object", "required": ["model", "prompt_version", "confidence", "reason"], "properties": {"model": {"const": "deepseek-chat"}, "prompt_version": {"type": "string", "minLength": 1}, "confidence": {"enum": ["high", "medium", "low"]}, "reason": {"type": "string", "minLength": 1}}, "additionalProperties": false}
+    }}
+  }
+}

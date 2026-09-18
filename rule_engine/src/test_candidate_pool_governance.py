@@ -113,6 +113,25 @@ class CandidatePoolGovernanceTests(unittest.TestCase):
         )
         self.assertIn("RUID-OPEN", [rule["rule_uid"] for rule, _ in governed])
 
+    def test_semantic_branch_reserves_two_slots_inside_fixed_pool(self):
+        noise = [
+            (make_rule(f"RUID-NOISE-{index}", f"NOISE-{index}", source_type="法律"), ["keyword"])
+            for index in range(10)
+        ]
+        semantic = [
+            (make_rule("RUID-SEM-1", "SEM-1", source_type="规范性文件"), ["semantic_embedding_cached:0.618"]),
+            (make_rule("RUID-SEM-2", "SEM-2", source_type="规范性文件"), ["semantic_embedding_cached:0.575"]),
+        ]
+        governed = govern_candidates(
+            noise + semantic,
+            request={"context": {}},
+            group_asset={"groups": []},
+            limit=8,
+        )
+        ids = [rule["rule_uid"] for rule, _ in governed]
+        self.assertEqual(8, len(governed))
+        self.assertIn("RUID-SEM-1", ids)
+        self.assertIn("RUID-SEM-2", ids)
     def test_parent_scenarios_are_merged_before_governance(self):
         governed = govern_candidates(
             [(self.open_rule, ["semantic:a"]), (dict(self.open_rule), ["semantic:b"])],

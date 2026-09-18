@@ -8,6 +8,7 @@ from datetime import datetime
 from pathlib import Path
 
 from rule_identity import rule_identity
+from rule_eligibility import content_recall_eligible
 
 
 PROJECT_BASE = Path(__file__).resolve().parents[1]
@@ -68,6 +69,8 @@ def semantic_vector_records(rule):
 def _semantic_rule_records(rules):
     records = []
     for rule in rules:
+        if not content_recall_eligible(rule):
+            continue
         recall = rule.get("recall", {}) or {}
         trigger_layer = recall.get("trigger_layer") or "content"
         semantic_role = recall.get("semantic_role") or "fallback"

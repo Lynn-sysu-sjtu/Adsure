@@ -85,7 +85,8 @@
             "跳过实名",
             "不实名",
             "游客模式",
-            "免注册"
+            "免注册",
+            "注册不用实名"
           ],
           "regex": [],
           "context_signals": [],
@@ -128,7 +129,24 @@
           "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 3 column 18 (char 58)",
           "confidence": "low",
           "semantic_recommendations_applied": false
-        }
+        },
+        "semantic_scenarios": [
+          {
+            "scenario_id": "bypass_real_name",
+            "vector_text": "免实名账号可避开防沉迷并供全年龄用户无限制游玩。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "no_real_name_registration",
+            "vector_text": "声称注册不需要实名信息也能正常游玩。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "guest_mode_without_verification",
+            "vector_text": "提供游客模式绕开身份核验并长期使用。",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -260,7 +278,9 @@
             "无限玩",
             "全天可玩",
             "无时间限制",
-            "未成年人畅玩"
+            "未成年人畅玩",
+            "绕过防沉迷",
+            "全时段无限制"
           ],
           "regex": [],
           "context_signals": [],
@@ -315,7 +335,24 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "bypass_anti_addiction",
+            "vector_text": "游戏宣传绕过防沉迷、全时段无限制畅玩。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "unlimited_minor_playtime",
+            "vector_text": "声称未成年人可全天在线且没有时长限制。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "late_night_minor_login",
+            "vector_text": "允许未成年人深夜登录并继续参与游戏活动。",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {

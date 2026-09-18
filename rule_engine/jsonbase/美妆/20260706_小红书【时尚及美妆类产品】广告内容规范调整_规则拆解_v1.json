@@ -212,7 +212,8 @@
         "route_reason": "规则触发清晰，关键词明确，运营可直接删除或替换违规表述，无需法务介入。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "platform_gate": "exact"
     },
     {
       "rule_id": "XHS-COSM-001",

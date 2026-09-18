@@ -1,0 +1,7 @@
+{
+  "redirect_version": "2026-09-17.v1",
+  "redirects": {
+    "RUID-c8d9714e6134eb2e": "RUID-97c034528fab40c3"
+  },
+  "reason": "The canonical record has the complete 3.1.6 source text, a specific source locator, richer detection criteria, examples, and existing semantic metadata."
+}

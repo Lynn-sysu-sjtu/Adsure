@@ -311,7 +311,24 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "undisclosed_gacha_probability",
+            "vector_text": "抽卡活动宣称限定角色超高概率，却未披露具体出率和保底次数。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "misleading_guaranteed_prize",
+            "vector_text": "将随机抽奖宣传为充值后必得限定大奖。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "high_value_prize_probability_hidden",
+            "vector_text": "高价值奖品进入奖池却隐瞒极低抽取概率。",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -1184,7 +1201,12 @@
             "出处",
             "来源",
             "有效期",
-            "适用范围"
+            "适用范围",
+            "好评率",
+            "下载量",
+            "活跃度",
+            "统计口径",
+            "数据出处"
           ],
           "regex": [],
           "context_signals": [],
@@ -1200,7 +1222,7 @@
           "出处标注",
           "游戏广告"
         ],
-        "vector_text": "下载量突破1000万！90%玩家都说好！根据最新统计，我们的游戏排名第一。数据来源？不告诉你。调查显示，80%用户推荐。引用专家的话：这款游戏太棒了。出处？忘了写。有效期？不知道。反正就是牛！",
+        "vector_text": "广告引用下载量、玩家比例、排名或调查结果但未标明数据出处、适用范围或有效期限，需要核验来源与真实性。",
         "semantic_enabled": true,
         "semantic_role": "fallback",
         "semantic_reason": "该规则涉及引证内容需标注出处和有效期，违规文案常省略这些信息，语义召回可覆盖多种未标注出处的表达方式。",
@@ -3858,7 +3880,7 @@
           "article": "第十八条",
           "legal_level": 1,
           "role": "based_on",
-          "text": "第十八条 保健食品广告不得含有下列内容： （六）法律、行政法规规定禁止的其他内容。"
+          "text": "第十八条 保健食品广告不得含有下列内容：（六）法律、行政法规规定禁止的其他内容。"
         }
       ],
       "hierarchy": {
@@ -3883,7 +3905,7 @@
         ],
         "vector_text": "保健食品广告不能有法律禁止的内容，比如虚假宣传、夸大功效、暗示治疗、使用绝对化用语、利用国家机关名义、损害未成年人身心健康、含有诱导性表述、违反广告法其他规定等。任何违反相关法律法规的表述都不行。",
         "semantic_enabled": false,
-        "semantic_role": "fallback",
+        "semantic_role": "disabled",
         "semantic_reason": "该规则是兜底条款，无具体检测内容，但语义召回可以覆盖常见的违规表述类型，作为fallback辅助关键词召回。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
@@ -3911,12 +3933,14 @@
           "confidence": "medium",
           "semantic_recommendations_applied": false
         },
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、夸大、宣传、未成年人、治疗.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "中",
       "consequence": {
@@ -3984,7 +4008,18 @@
         "route_reason": "该规则为兜底条款，无法自动判定，需法务结合其他法律法规进行解释和适用",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "review_role": "supporting_basis",
+      "review_roles": [
+        "supporting_basis"
+      ],
+      "source_repair": {
+        "status": "verified",
+        "source": "rule_engine/jsonbase/游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+        "locator": "《中华人民共和国广告法》第十八条第（六）项",
+        "sha256": "9ca6f92474ce5ed9e929e69e6c66905080c96648711c679cc44e6d90cb7f968a"
+      },
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "HF-001-007",
@@ -7923,7 +7958,24 @@
           "change_summary": "将原规则性描述改写为大量真实违规广告文案的集合，覆盖多种信息类型和表达方式，提升语义召回覆盖面。",
           "confidence": "high",
           "semantic_recommendations_applied": false
-        }
+        },
+        "semantic_scenarios": [
+          {
+            "scenario_id": "hidden_withdrawal_condition",
+            "vector_text": "提现宣称到账却隐瞒等级门槛和领取条件。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "fabricated_game_income",
+            "vector_text": "宣传玩游戏可持续赚钱但收益数据系虚构。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "misleading_payout_access",
+            "vector_text": "声称红包随时可提实际需连续任务或充值。",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -8122,7 +8174,24 @@
         "trigger_layer_confidence": "medium",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "unverifiable_payout_users",
+            "vector_text": "宣称数万玩家成功提现却无法提供可核验记录。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "unverifiable_income_data",
+            "vector_text": "引用高额收益统计但未说明来源且无法验证。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "unsupported_user_success_claim",
+            "vector_text": "以用户成功案例证明赚钱效果却无真实材料。",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -9282,7 +9351,24 @@
         "trigger_layer_confidence": "low",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "spokesperson_unverified_daily_login",
+            "vector_text": "代言人自称每天登录却无法提供实际体验记录。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "spokesperson_unverified_ranking",
+            "vector_text": "主播声称长期占据榜首但无本人游戏数据佐证。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "spokesperson_missing_play_records",
+            "vector_text": "明星推荐游戏却缺少真实试玩和使用证明。",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -9914,9 +10000,7 @@
         "industries": [
           "游戏"
         ],
-        "product_categories": [
-          "网络游戏"
-        ],
+        "product_categories": [],
         "platforms": [],
         "material_types": [
           "图文文案",
@@ -9936,8 +10020,7 @@
       },
       "preconditions": {
         "required_context_fields": [
-          "媒介类型",
-          "受众群体"
+          "content"
         ],
         "logic": "媒介类型为针对未成年人的大众传播媒介"
       },
@@ -9968,7 +10051,10 @@
           "hit_terms": [
             "未成年人",
             "大众传播媒介",
-            "网络游戏广告"
+            "网络游戏广告",
+            "小学生",
+            "13岁以下",
+            "十三岁以下"
           ],
           "regex": [],
           "context_signals": [
@@ -10024,7 +10110,24 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "minor_audience_game_ad",
+            "vector_text": "以小学生和十三岁以下儿童为主要受众投放游戏充值广告。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "child_interest_account_targeting",
+            "vector_text": "用儿童角色和低龄话术定向吸引未成年人下载。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "minor_media_recharge_promotion",
+            "vector_text": "面向未成年人传播游戏广告并突出充值奖励。",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -10135,7 +10238,7 @@
       },
       "preconditions": {
         "required_context_fields": [
-          "目标受众年龄"
+          "content"
         ],
         "logic": "广告针对不满十四周岁的未成年人"
       },
@@ -10222,7 +10325,24 @@
         "trigger_layer_confidence": "low",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "parent_recharge_inducement",
+            "vector_text": "小学生游戏广告让爸爸妈妈帮忙充值获得角色和装备。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "peer_pressure_parent_purchase",
+            "vector_text": "用同学都有制造攀比压力让孩子催家长购买。",
+            "enabled": true
+          },
+          {
+            "scenario_id": "child_game_item_purchase",
+            "vector_text": "以变强解锁奖励劝低龄用户让父母付费。",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "高",
       "consequence": {
@@ -13138,10 +13258,10 @@
           "比较广告"
         ],
         "vector_text": "广告中声称'某游戏不如本游戏好玩'?广告中直接贬低竞争对手的游戏质量?贬低?不如?差于?劣于?竞争对",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、比较、虚假、贬低.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
@@ -13165,7 +13285,9 @@
           "change_summary": "fallback_after_deepseek_error: DeepSeek returned invalid JSON after retries: Unterminated string starting at: line 4 column 20 (char 74)",
           "confidence": "low",
           "semantic_recommendations_applied": false
-        }
+        },
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "中",
       "consequence": {
@@ -13235,7 +13357,12 @@
         "route_reason": "贬低判断需结合上下文和比较内容，运营需补充比较对象和具体表述以确认是否构成贬低",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "review_role": "supporting_basis",
+      "review_roles": [
+        "supporting_basis"
+      ],
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "GAME-OTHER-004",

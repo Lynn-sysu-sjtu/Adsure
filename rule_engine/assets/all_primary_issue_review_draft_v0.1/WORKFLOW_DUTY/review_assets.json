@@ -1,0 +1,1032 @@
+{
+  "schema_version": "0.1",
+  "asset_status": "draft",
+  "model": "deepseek-chat",
+  "prompt_version": "all_primary_issue_fingerprint_v01_20260913",
+  "root_id": "WORKFLOW_DUTY",
+  "root_name": "投放流程与持续义务",
+  "nodes": [
+    {
+      "issue_id": "WORKFLOW_DUTY.ARCHIVE_RECORD",
+      "parent_issue_id": "WORKFLOW_DUTY",
+      "level": 2,
+      "node_type": "directory",
+      "name": "档案与记录保存",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM",
+      "parent_issue_id": "WORKFLOW_DUTY",
+      "level": 2,
+      "node_type": "directory",
+      "name": "平台与算法责任",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "WORKFLOW_DUTY.POST_LAUNCH_FULFILLMENT",
+      "parent_issue_id": "WORKFLOW_DUTY",
+      "level": 2,
+      "node_type": "directory",
+      "name": "投放后履约与持续核验",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "WORKFLOW_DUTY.PRE_REVIEW",
+      "parent_issue_id": "WORKFLOW_DUTY",
+      "level": 2,
+      "node_type": "directory",
+      "name": "投放前审查",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "WORKFLOW_DUTY.ARCHIVE_RECORD.ADVERTISER_SELF_PUBLISHED_INTERNET_AD_ARCHIVE_NONCOMPLIANCE",
+      "parent_issue_id": "WORKFLOW_DUTY.ARCHIVE_RECORD",
+      "name": "广告主自行发布互联网广告未依法建立、更新或保存广告档案",
+      "definition": "广告主自行发布互联网广告时，未依法建立广告档案、未及时更新档案，或档案保存时间自广告发布行为终了之日起不足三年。",
+      "confidence": "high",
+      "reason": "现有节点已直接挂在该二级节点下，行为主体、行为结构与法律效果单一，无需拆分或合并。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-524e9337947da736"
+      ],
+      "source_occurrence_uids": [
+        "RUID-524e9337947da736",
+        "RUID-8718ea02adca8268"
+      ]
+    },
+    {
+      "issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_MARKETING_AD_RESPONSIBLE_PARTY",
+      "parent_issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM",
+      "name": "直播营销广告责任主体认定",
+      "definition": "直播营销中推销商品或服务构成商业广告时，相关主体承担广告主、广告经营者、广告发布者或广告代言人责任。",
+      "confidence": "high",
+      "reason": "该节点聚焦直播营销场景下广告责任主体的认定，属于平台与算法责任项下的责任主体识别问题，与具体平台或行业差异无关。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-8ebbf6afe08670d5"
+      ],
+      "source_occurrence_uids": [
+        "RUID-8ebbf6afe08670d5"
+      ]
+    },
+    {
+      "issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_PLATFORM_AGREEMENT_REVIEW_OBLIGATION",
+      "parent_issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM",
+      "name": "直播营销平台未签订协议或未履行审核义务",
+      "definition": "直播营销平台未与直播营销人员服务机构、直播间运营者签订协议，或未履行对直播营销内容、商品和服务的真实性、合法性审核义务。",
+      "confidence": "high",
+      "reason": "该节点描述直播营销平台在协议签订与内容审核方面的义务违反，行为主体与法律效果明确，无需按平台或行业拆分。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-2b43bb63b372daa9"
+      ],
+      "source_occurrence_uids": [
+        "RUID-2b43bb63b372daa9"
+      ]
+    },
+    {
+      "issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_PLATFORM_RULES_CONVENTION",
+      "parent_issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM",
+      "name": "直播营销平台未制定并公开管理规则和平台公约",
+      "definition": "直播营销平台未依据相关法律法规和国家有关规定，制定并公开网络直播营销管理规则、平台公约。",
+      "confidence": "high",
+      "reason": "该节点聚焦直播营销平台制定并公开管理规则和平台公约的义务，行为结构单一，无需合并或拆分。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-0d8a9d9648fff864"
+      ],
+      "source_occurrence_uids": [
+        "RUID-0d8a9d9648fff864"
+      ]
+    },
+    {
+      "issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_PLATFORM_NEGATIVE_CATALOG",
+      "parent_issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM",
+      "name": "直播营销平台未制定商品和服务负面目录",
+      "definition": "直播营销平台未制定直播营销商品和服务负面目录，或目录未列明法律法规规定的禁止生产销售、禁止网络交易、禁止商业推销宣传以及不适宜以直播形式营销的商品和服务类别，或未根据法律法规变化及时更新目录。",
+      "confidence": "high",
+      "reason": "该节点描述直播营销平台在负面目录制定与更新方面的义务违反，行为主体与法律效果明确，无需按行业或品类拆分。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-49a657f73fdc7067"
+      ],
+      "source_occurrence_uids": [
+        "RUID-49a657f73fdc7067"
+      ]
+    },
+    {
+      "issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_PLATFORM_ASSIST_FALSE_PROMOTION",
+      "parent_issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM",
+      "name": "直播营销平台为虚假或引人误解的商业宣传提供帮助或便利条件",
+      "definition": "直播营销平台不得为直播间运营者、直播营销人员虚假或者引人误解的商业宣传提供帮助、便利条件。",
+      "confidence": "high",
+      "reason": "该节点聚焦直播营销平台为虚假宣传提供帮助或便利条件的行为，行为结构与法律效果单一，无需合并。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-5d3efd1b7f6c6c7e"
+      ],
+      "source_occurrence_uids": [
+        "RUID-5d3efd1b7f6c6c7e"
+      ]
+    },
+    {
+      "issue_id": "WORKFLOW_DUTY.POST_LAUNCH_FULFILLMENT.FALSE_AD_CIVIL_LIABILITY",
+      "parent_issue_id": "WORKFLOW_DUTY.POST_LAUNCH_FULFILLMENT",
+      "name": "虚假广告民事责任与连带责任",
+      "definition": "发布虚假广告或进行虚假宣传，欺骗、误导消费者，使购买商品或接受服务的消费者合法权益受到损害的，广告主/经营者依法承担民事责任；关系消费者生命健康的商品或服务的虚假广告造成损害的，广告经营者、发布者、代言人、社会团体或其他组织、个人与广告主/经营者承担连带责任；其他商品或服务，广告经营者、发布者、代言人明知或应知广告虚假仍设计、制作、代理、发布或作推荐、证明的，承担连带责任；创作者因虚假夸大描述、不实信息等虚假宣传行为引发消费者投诉或售后问题的，与商家向消费者承担连带责任；消费者可以向经营者要求赔偿。",
+      "confidence": "high",
+      "reason": "该节点已直接挂在该二级节点下，涵盖虚假广告民事责任与连带责任的完整边界，无需按行业或平台拆分。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-9c8c4a9b0f408ba0",
+        "RUID-9d3516057c6bf874"
+      ],
+      "source_occurrence_uids": [
+        "RUID-9c8c4a9b0f408ba0",
+        "RUID-9d3516057c6bf874"
+      ]
+    },
+    {
+      "issue_id": "WORKFLOW_DUTY.PRE_REVIEW.LIVE_STREAMING_ADVERTISER_RESPONSIBILITY",
+      "parent_issue_id": "WORKFLOW_DUTY.PRE_REVIEW",
+      "name": "直播营销广告主责任认定",
+      "definition": "商品销售者或服务提供者通过互联网直播方式推销商品或服务，构成商业广告时，未依法承担广告主责任和义务。",
+      "confidence": "high",
+      "reason": "该节点聚焦直播营销中广告主责任的认定，属于投放前审查项下的责任主体识别问题，无需按平台或行业拆分。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-1465ef255748ed7f"
+      ],
+      "source_occurrence_uids": [
+        "RUID-1465ef255748ed7f"
+      ]
+    },
+    {
+      "issue_id": "WORKFLOW_DUTY.PRE_REVIEW.LIVE_STREAMING_OPERATOR_ADVERTISER_RESPONSIBILITY",
+      "parent_issue_id": "WORKFLOW_DUTY.PRE_REVIEW",
+      "name": "直播营销人员/直播间运营者广告经营者发布者责任认定",
+      "definition": "直播营销人员或直播间运营者接受委托提供广告设计、制作、代理、发布服务时，未依法承担广告经营者、广告发布者责任和义务。",
+      "confidence": "high",
+      "reason": "该节点聚焦直播营销人员或直播间运营者在广告经营者、发布者责任方面的认定，行为主体与法律效果明确，无需合并。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-1f35f8ba14b5df30",
+        "RUID-ae8005e6a4b8473b"
+      ],
+      "source_occurrence_uids": [
+        "RUID-1f35f8ba14b5df30",
+        "RUID-ae8005e6a4b8473b"
+      ]
+    },
+    {
+      "issue_id": "WORKFLOW_DUTY.PRE_REVIEW.UNAUTHORIZED_MODIFICATION_AFTER_AD_REVIEW",
+      "parent_issue_id": "WORKFLOW_DUTY.PRE_REVIEW",
+      "name": "广告审查通过后未经重新审查修改发布",
+      "definition": "广告内容经审查通过后，未经重新审查即进行剪辑、拼接、修改并发布。",
+      "confidence": "high",
+      "reason": "该节点聚焦广告审查通过后未经重新审查修改发布的行为，行为结构与法律效果单一，无需合并。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-1bf2bad28a9824d9"
+      ],
+      "source_occurrence_uids": [
+        "RUID-1bf2bad28a9824d9"
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "rule_uid": "RUID-0d8a9d9648fff864",
+      "rule_id": "LMM-2021-007-001",
+      "rule_title": "直播营销平台应制定并公开管理规则和平台公约",
+      "root_id": "WORKFLOW_DUTY",
+      "issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_PLATFORM_RULES_CONVENTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-f33c2f6aed01f30d",
+      "canonical_rule_uid": "RUID-0d8a9d9648fff864",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_网络直播营销管理办法（试行）_2021.05.25生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "LMM",
+          "source_name": "网络直播营销管理办法（试行）_2021.05.25生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第七条",
+          "original_text": "直播营销平台应当依据相关法律法规和国家有关规定，制定并公开网络直播营销管理规则、平台公约。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-0d8a9d9648fff864",
+        "target_issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_PLATFORM_RULES_CONVENTION",
+        "canonical_problem_name": "直播营销平台未制定并公开管理规则和平台公约",
+        "regulated_action": "live_platform_fail_to_formulate_and_publish_management_rules_and_convention",
+        "legal_effect": "required",
+        "actor_scope": [
+          "直播营销平台"
+        ],
+        "object_scope": [
+          "网络直播营销管理规则",
+          "平台公约"
+        ],
+        "platform_scope": [
+          "直播营销平台"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "WORKFLOW_DUTY",
+        "confidence": "high",
+        "reason": "原文第七条明确要求直播营销平台依据相关法律法规和国家有关规定，制定并公开网络直播营销管理规则、平台公约，属于投放流程与持续义务中的平台规则制定与公开义务。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-1465ef255748ed7f",
+      "rule_id": "IAM-ADV-001",
+      "rule_title": "直播营销构成商业广告时广告主责任认定",
+      "root_id": "WORKFLOW_DUTY",
+      "issue_id": "WORKFLOW_DUTY.PRE_REVIEW.LIVE_STREAMING_ADVERTISER_RESPONSIBILITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-325113c5ba9ad272",
+      "canonical_rule_uid": "RUID-1465ef255748ed7f",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十九条",
+          "original_text": "商品销售者或者服务提供者通过互联网直播方式推销商品或者服务，构成商业广告的，应当依法承担广告主的责任和义务。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-1465ef255748ed7f",
+        "target_issue_id": "WORKFLOW_DUTY.PRE_REVIEW.LIVE_STREAMING_ADVERTISER_RESPONSIBILITY",
+        "canonical_problem_name": "直播营销广告主责任认定",
+        "regulated_action": "live_streaming_advertiser_responsibility_determination",
+        "legal_effect": "relationship_determination",
+        "actor_scope": [
+          "商品销售者",
+          "服务提供者"
+        ],
+        "object_scope": [
+          "通过互联网直播方式推销商品或服务",
+          "构成商业广告的直播营销"
+        ],
+        "platform_scope": [
+          "互联网直播"
+        ],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "WORKFLOW_DUTY",
+        "confidence": "high",
+        "reason": "原文第十九条规定商品销售者或者服务提供者通过互联网直播方式推销商品或者服务，构成商业广告的，应当依法承担广告主的责任和义务，属于直播营销广告责任主体认定。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-1bf2bad28a9824d9",
+      "rule_id": "GAME-ADREVIEW-002",
+      "rule_title": "游戏广告内容不得剪辑拼接修改",
+      "root_id": "WORKFLOW_DUTY",
+      "issue_id": "WORKFLOW_DUTY.PRE_REVIEW.UNAUTHORIZED_MODIFICATION_AFTER_AD_REVIEW",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-350755a02bca1f78",
+      "canonical_rule_uid": "RUID-1bf2bad28a9824d9",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第七条",
+          "original_text": "对须经审查的互联网广告，应当严格按照审查通过的内容发布，不得剪辑、拼接、修改。已经审查通过的广告内容需要改动的，应当重新申请广告审查。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-1bf2bad28a9824d9",
+        "target_issue_id": "WORKFLOW_DUTY.PRE_REVIEW.UNAUTHORIZED_MODIFICATION_AFTER_AD_REVIEW",
+        "canonical_problem_name": "广告审查通过后未经重新审查修改发布",
+        "regulated_action": "publish_ad_after_unauthorized_modification_without_re_review",
+        "legal_effect": "workflow_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "须经审查的互联网广告",
+          "已审查通过的广告内容"
+        ],
+        "platform_scope": [
+          "互联网广告"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "WORKFLOW_DUTY",
+        "confidence": "high",
+        "reason": "原文第七条明确要求对须经审查的互联网广告严格按照审查通过的内容发布，不得剪辑、拼接、修改；已经审查通过的广告内容需要改动的，应当重新申请广告审查，属于投放流程与持续义务中的审查后修改重新审查义务。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-1f35f8ba14b5df30",
+      "rule_id": "IAM-ADV-002",
+      "rule_title": "直播营销中直播间运营者广告经营者/发布者责任认定",
+      "root_id": "WORKFLOW_DUTY",
+      "issue_id": "WORKFLOW_DUTY.PRE_REVIEW.LIVE_STREAMING_OPERATOR_ADVERTISER_RESPONSIBILITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-dbf7f5b70ba8988a",
+      "canonical_rule_uid": "RUID-1f35f8ba14b5df30",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十九条",
+          "original_text": "直播间运营者接受委托提供广告设计、制作、代理、发布服务的，应当依法承担广告经营者、广告发布者的责任和义务。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-1f35f8ba14b5df30",
+        "target_issue_id": "WORKFLOW_DUTY.PRE_REVIEW.LIVE_STREAMING_OPERATOR_ADVERTISER_RESPONSIBILITY",
+        "canonical_problem_name": "直播营销人员/直播间运营者广告经营者发布者责任认定",
+        "regulated_action": "live_streaming_operator_advertiser_publisher_responsibility_determination",
+        "legal_effect": "relationship_determination",
+        "actor_scope": [
+          "直播间运营者"
+        ],
+        "object_scope": [
+          "接受委托提供广告设计、制作、代理、发布服务"
+        ],
+        "platform_scope": [
+          "互联网直播"
+        ],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "WORKFLOW_DUTY",
+        "confidence": "high",
+        "reason": "原文第十九条规定直播间运营者接受委托提供广告设计、制作、代理、发布服务的，应当依法承担广告经营者、广告发布者的责任和义务，属于直播营销广告责任主体认定。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-2b43bb63b372daa9",
+      "rule_id": "LMM-2021-007-002",
+      "rule_title": "直播营销平台应与相关方签订协议并履行审核义务",
+      "root_id": "WORKFLOW_DUTY",
+      "issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_PLATFORM_AGREEMENT_REVIEW_OBLIGATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6c439227f3849bd7",
+      "canonical_rule_uid": "RUID-2b43bb63b372daa9",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_网络直播营销管理办法（试行）_2021.05.25生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "LMM",
+          "source_name": "网络直播营销管理办法（试行）_2021.05.25生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第七条",
+          "original_text": "直播营销平台应当与直播营销人员服务机构、直播间运营者签订协议，要求其规范直播营销人员招募、培训、管理流程，履行对直播营销内容、商品和服务的真实性、合法性审核义务。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-2b43bb63b372daa9",
+        "target_issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_PLATFORM_AGREEMENT_REVIEW_OBLIGATION",
+        "canonical_problem_name": "直播营销平台未签订协议或未履行审核义务",
+        "regulated_action": "live_platform_agreement_and_review_obligation",
+        "legal_effect": "required",
+        "actor_scope": [
+          "直播营销平台"
+        ],
+        "object_scope": [
+          "直播营销人员服务机构",
+          "直播间运营者",
+          "直播营销内容",
+          "商品和服务"
+        ],
+        "platform_scope": [
+          "直播营销平台"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "WORKFLOW_DUTY",
+        "confidence": "high",
+        "reason": "原文第七条明确要求直播营销平台与直播营销人员服务机构、直播间运营者签订协议，并履行对直播营销内容、商品和服务的真实性、合法性审核义务，属于投放流程与持续义务中的平台协议与审核义务。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-49a657f73fdc7067",
+      "rule_id": "LMM-2021-007-003",
+      "rule_title": "直播营销平台应制定直播营销商品和服务负面目录",
+      "root_id": "WORKFLOW_DUTY",
+      "issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_PLATFORM_NEGATIVE_CATALOG",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-2daf20ccc48e3bab",
+      "canonical_rule_uid": "RUID-49a657f73fdc7067",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_网络直播营销管理办法（试行）_2021.05.25生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "LMM",
+          "source_name": "网络直播营销管理办法（试行）_2021.05.25生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第七条",
+          "original_text": "直播营销平台应当制定直播营销商品和服务负面目录，列明法律法规规定的禁止生产销售、禁止网络交易、禁止商业推销宣传以及不适宜以直播形式营销的商品和服务类别。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-49a657f73fdc7067",
+        "target_issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_PLATFORM_NEGATIVE_CATALOG",
+        "canonical_problem_name": "直播营销平台未制定商品和服务负面目录",
+        "regulated_action": "live_platform_negative_catalog_obligation",
+        "legal_effect": "required",
+        "actor_scope": [
+          "直播营销平台"
+        ],
+        "object_scope": [
+          "直播营销商品和服务负面目录",
+          "禁止生产销售商品和服务类别",
+          "禁止网络交易商品和服务类别",
+          "禁止商业推销宣传商品和服务类别",
+          "不适宜以直播形式营销的商品和服务类别"
+        ],
+        "platform_scope": [
+          "直播营销平台"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "WORKFLOW_DUTY",
+        "confidence": "high",
+        "reason": "原文第七条明确要求直播营销平台制定直播营销商品和服务负面目录并列明特定类别，属于投放流程与持续义务中的平台负面目录制定义务。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-524e9337947da736",
+      "rule_id": "IAM-ADV-003",
+      "rule_title": "广告主自行发布广告需建立并保存广告档案",
+      "root_id": "WORKFLOW_DUTY",
+      "issue_id": "WORKFLOW_DUTY.ARCHIVE_RECORD.ADVERTISER_SELF_PUBLISHED_INTERNET_AD_ARCHIVE_NONCOMPLIANCE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-9b8ad0e608e5c28a",
+      "canonical_rule_uid": "RUID-524e9337947da736",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十三条",
+          "original_text": "第十三条 广告主自行发布互联网广告的，广告发布行为应当符合法律法规的要求，建立广告档案并及时更新。相关档案保存时间自广告发布行为终了之日起不少于三年。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-524e9337947da736",
+        "target_issue_id": "WORKFLOW_DUTY.ARCHIVE_RECORD.ADVERTISER_SELF_PUBLISHED_INTERNET_AD_ARCHIVE_NONCOMPLIANCE",
+        "canonical_problem_name": "广告主自行发布互联网广告未依法建立、更新或保存广告档案",
+        "regulated_action": "advertiser_self_published_internet_ad_archive",
+        "legal_effect": "workflow_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "互联网广告",
+          "广告档案"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "WORKFLOW_DUTY",
+        "confidence": "high",
+        "reason": "原文第十三条明确要求广告主自行发布互联网广告时建立广告档案并及时更新，档案保存时间自广告发布行为终了之日起不少于三年，属于投放流程与持续义务中的广告档案建立与保存义务。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-5d3efd1b7f6c6c7e",
+      "rule_id": "COSM-AD-001",
+      "rule_title": "直播营销平台不得为虚假或引人误解的商业宣传提供帮助或便利条件",
+      "root_id": "WORKFLOW_DUTY",
+      "issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_PLATFORM_ASSIST_FALSE_PROMOTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-81484034876659aa",
+      "canonical_rule_uid": "RUID-5d3efd1b7f6c6c7e",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_网络直播营销管理办法（试行）_2021.05.25生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "LMM",
+          "source_name": "网络直播营销管理办法（试行）_2021.05.25生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十一条",
+          "original_text": "直播营销平台不得为直播间运营者、直播营销人员虚假或者引人误解的商业宣传提供帮助、便利条件。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-5d3efd1b7f6c6c7e",
+        "target_issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_PLATFORM_ASSIST_FALSE_PROMOTION",
+        "canonical_problem_name": "直播营销平台为虚假或引人误解的商业宣传提供帮助或便利条件",
+        "regulated_action": "live_platform_assist_false_promotion",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "直播营销平台"
+        ],
+        "object_scope": [
+          "虚假或者引人误解的商业宣传"
+        ],
+        "platform_scope": [
+          "直播营销平台"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "WORKFLOW_DUTY",
+        "confidence": "high",
+        "reason": "原文第十一条明确禁止直播营销平台为直播间运营者、直播营销人员虚假或者引人误解的商业宣传提供帮助、便利条件，属于投放流程与持续义务中的平台禁止性义务。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8718ea02adca8268",
+      "rule_id": "IAM-ADV-003",
+      "rule_title": "广告主自行发布广告需建立档案并保存不少于三年",
+      "root_id": "WORKFLOW_DUTY",
+      "issue_id": "WORKFLOW_DUTY.ARCHIVE_RECORD.ADVERTISER_SELF_PUBLISHED_INTERNET_AD_ARCHIVE_NONCOMPLIANCE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-9b8ad0e608e5c28a",
+      "canonical_rule_uid": "RUID-524e9337947da736",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十三条",
+          "original_text": "第十三条 广告主自行发布互联网广告的，广告发布行为应当符合法律法规的要求，建立广告档案并及时更新。相关档案保存时间自广告发布行为终了之日起不少于三年。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-8718ea02adca8268",
+        "target_issue_id": "WORKFLOW_DUTY.ARCHIVE_RECORD.ADVERTISER_SELF_PUBLISHED_INTERNET_AD_ARCHIVE_NONCOMPLIANCE",
+        "canonical_problem_name": "广告主自行发布互联网广告未依法建立、更新或保存广告档案",
+        "regulated_action": "advertiser_self_published_internet_ad_archive_establish_update_retain",
+        "legal_effect": "workflow_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "互联网广告档案"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "WORKFLOW_DUTY",
+        "confidence": "high",
+        "reason": "原文第十三条明确要求广告主自行发布互联网广告时建立广告档案并及时更新，档案保存时间自广告发布行为终了之日起不少于三年，属于投放流程与持续义务中的档案记录义务。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8ebbf6afe08670d5",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "直播营销中广告主、广告经营者、广告发布者、广告代言人责任认定规则",
+      "root_id": "WORKFLOW_DUTY",
+      "issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_MARKETING_AD_RESPONSIBLE_PARTY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-7c39cbf6ccb4b223",
+      "canonical_rule_uid": "RUID-8ebbf6afe08670d5",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十九条",
+          "original_text": "第十九条 商品销售者或者服务提供者通过互联网直播方式推销商品或者服务，构成商业广告的，应当依法承担广告主的责任和义务。 直播间运营者接受委托提供广告设计、制作、代理、发布服务的，应当依法承担广告经营者、广告发布者的责任和义务。 直播营销人员接受委托提供广告设计、制作、代理、发布服务的，应当依法承担广告经营者、广告发布者的责任和义务。 直播营销人员以自己的名义或者形象对商品、服务作推荐、证明，构成广告代言的，应当依法承担广告代言人的责任和义务。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-8ebbf6afe08670d5",
+        "target_issue_id": "WORKFLOW_DUTY.PLATFORM_ALGORITHM.LIVE_MARKETING_AD_RESPONSIBLE_PARTY",
+        "canonical_problem_name": "直播营销广告责任主体认定",
+        "regulated_action": "live_marketing_ad_responsible_party_determination",
+        "legal_effect": "relationship_determination",
+        "actor_scope": [
+          "商品销售者",
+          "服务提供者",
+          "直播间运营者",
+          "直播营销人员"
+        ],
+        "object_scope": [
+          "互联网直播营销商业广告"
+        ],
+        "platform_scope": [
+          "互联网直播"
+        ],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "WORKFLOW_DUTY",
+        "confidence": "high",
+        "reason": "原文第十九条规定商品销售者或服务提供者通过互联网直播推销构成商业广告时承担广告主责任，直播间运营者、直播营销人员接受委托承担广告经营者、发布者责任，以自己名义或形象推荐证明构成广告代言的承担代言人责任，属于直播营销广告责任主体认定。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9c8c4a9b0f408ba0",
+      "rule_id": "HF-FAKE-001",
+      "rule_title": "虚假广告导致消费者损害的责任规则",
+      "root_id": "WORKFLOW_DUTY",
+      "issue_id": "WORKFLOW_DUTY.POST_LAUNCH_FULFILLMENT.FALSE_AD_CIVIL_LIABILITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-4d1316d5f37e56c7",
+      "canonical_rule_uid": "RUID-9c8c4a9b0f408ba0",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十六条",
+          "original_text": "第五十六条 违反本法规定，发布虚假广告，欺骗、误导消费者，使购买商品或者接受服务的消费者的合法权益受到损害的，由广告主依法承担民事责任。广告经营者、广告发布者不能提供广告主的真实名称、地址和有效联系方式的，消费者可以要求广告经营者、广告发布者先行赔偿。\n 关系消费者生命健康的商品或者服务的虚假广告，造成消费者损害的，其广告经营者、广告发布者、广告代言人应当与广告主承担连带责任。\n 前款规定以外的商品或者服务的虚假广告，造成消费者损害的，其广告经营者、广告发布者、广告代言人，明知或者应知广告虚假仍设计、制作、代理、发布或者作推荐、证明的，应当与广告主承担连带责任。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9c8c4a9b0f408ba0",
+        "target_issue_id": "WORKFLOW_DUTY.POST_LAUNCH_FULFILLMENT.FALSE_AD_CIVIL_LIABILITY",
+        "canonical_problem_name": "虚假广告民事责任与连带责任",
+        "regulated_action": "false_ad_civil_liability_and_joint_liability",
+        "legal_effect": "civil_liability",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者",
+          "广告代言人"
+        ],
+        "object_scope": [
+          "虚假广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "WORKFLOW_DUTY",
+        "confidence": "high",
+        "reason": "原文第五十六条规定发布虚假广告欺骗误导消费者造成损害的广告主民事责任、广告经营者发布者先行赔偿及关系生命健康商品或服务虚假广告的连带责任，属于投放后虚假广告民事责任与连带责任。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9d3516057c6bf874",
+      "rule_id": "HF-FAKE-001",
+      "rule_title": "虚假广告连带责任（生命健康商品/服务）",
+      "root_id": "WORKFLOW_DUTY",
+      "issue_id": "WORKFLOW_DUTY.POST_LAUNCH_FULFILLMENT.FALSE_AD_CIVIL_LIABILITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-36d12e4c6574c0be",
+      "canonical_rule_uid": "RUID-9d3516057c6bf874",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "CPL",
+          "source_name": "中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十五条",
+          "original_text": "第四十五条 消费者因经营者利用虚假广告或者其他虚假宣传方式提供商品或者服务，其合法权益受到损害的，可以向经营者要求赔偿。广告经营者、发布者发布虚假广告的，消费者可以请求行政主管部门予以惩处。广告经营者、发布者不能提供经营者的真实名称、地址和有效联系方式的，应当承担赔偿责任。\n 广告经营者、发布者设计、制作、发布关系消费者生命健康商品或者服务的虚假广告，造成消费者损害的，应当与提供该商品或者服务的经营者承担连带责任。\n 社会团体或者其他组织、个人在关系消费者生命健康商品或者服务的虚假广告或者其他虚假宣传中向消费者推荐商品或者服务，造成消费者损害的，应当与提供该商品或者服务的经营者承担连带责任。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9d3516057c6bf874",
+        "target_issue_id": "WORKFLOW_DUTY.POST_LAUNCH_FULFILLMENT.FALSE_AD_CIVIL_LIABILITY",
+        "canonical_problem_name": "虚假广告民事责任与连带责任",
+        "regulated_action": "false_ad_civil_liability_and_joint_liability",
+        "legal_effect": "civil_liability",
+        "actor_scope": [
+          "经营者",
+          "广告经营者",
+          "广告发布者",
+          "社会团体",
+          "其他组织",
+          "个人"
+        ],
+        "object_scope": [
+          "虚假广告",
+          "虚假宣传"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "WORKFLOW_DUTY",
+        "confidence": "high",
+        "reason": "原文第四十五条规定消费者因虚假广告或虚假宣传受损可向经营者要求赔偿，广告经营者发布者不能提供经营者真实信息应承担赔偿责任，关系生命健康商品或服务虚假广告的广告经营者发布者及推荐者承担连带责任，属于投放后虚假广告民事责任与连带责任。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-ae8005e6a4b8473b",
+      "rule_id": "IAM-ADV-003",
+      "rule_title": "直播营销人员广告经营者/发布者责任认定",
+      "root_id": "WORKFLOW_DUTY",
+      "issue_id": "WORKFLOW_DUTY.PRE_REVIEW.LIVE_STREAMING_OPERATOR_ADVERTISER_RESPONSIBILITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-a53ac01de9073f26",
+      "canonical_rule_uid": "RUID-ae8005e6a4b8473b",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十九条",
+          "original_text": "直播营销人员接受委托提供广告设计、制作、代理、发布服务的，应当依法承担广告经营者、广告发布者的责任和义务。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-ae8005e6a4b8473b",
+        "target_issue_id": "WORKFLOW_DUTY.PRE_REVIEW.LIVE_STREAMING_OPERATOR_ADVERTISER_RESPONSIBILITY",
+        "canonical_problem_name": "直播营销人员/直播间运营者广告经营者发布者责任认定",
+        "regulated_action": "live_streamer_ad_service_responsibility",
+        "legal_effect": "relationship_determination",
+        "actor_scope": [
+          "直播营销人员"
+        ],
+        "object_scope": [
+          "广告设计、制作、代理、发布服务"
+        ],
+        "platform_scope": [
+          "直播"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "WORKFLOW_DUTY",
+        "confidence": "high",
+        "reason": "原文第十九条明确直播营销人员接受委托提供广告设计、制作、代理、发布服务时，应依法承担广告经营者、广告发布者的责任和义务，属于直播营销广告责任主体认定，归入投放流程与持续义务下的直播营销人员/直播间运营者广告经营者发布者责任认定节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "canonical_groups": [
+    {
+      "canonical_rule_key": "CRK-2daf20ccc48e3bab",
+      "canonical_rule_uid": "RUID-49a657f73fdc7067",
+      "source_occurrence_uids": [
+        "RUID-49a657f73fdc7067"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "直播营销平台应制定直播营销商品和服务负面目录",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-325113c5ba9ad272",
+      "canonical_rule_uid": "RUID-1465ef255748ed7f",
+      "source_occurrence_uids": [
+        "RUID-1465ef255748ed7f"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "直播营销构成商业广告时广告主责任认定",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-350755a02bca1f78",
+      "canonical_rule_uid": "RUID-1bf2bad28a9824d9",
+      "source_occurrence_uids": [
+        "RUID-1bf2bad28a9824d9"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "游戏广告内容不得剪辑拼接修改",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-36d12e4c6574c0be",
+      "canonical_rule_uid": "RUID-9d3516057c6bf874",
+      "source_occurrence_uids": [
+        "RUID-9d3516057c6bf874"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "虚假广告连带责任（生命健康商品/服务）",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-4d1316d5f37e56c7",
+      "canonical_rule_uid": "RUID-9c8c4a9b0f408ba0",
+      "source_occurrence_uids": [
+        "RUID-9c8c4a9b0f408ba0"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "虚假广告导致消费者损害的责任规则",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-6c439227f3849bd7",
+      "canonical_rule_uid": "RUID-2b43bb63b372daa9",
+      "source_occurrence_uids": [
+        "RUID-2b43bb63b372daa9"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "直播营销平台应与相关方签订协议并履行审核义务",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-7c39cbf6ccb4b223",
+      "canonical_rule_uid": "RUID-8ebbf6afe08670d5",
+      "source_occurrence_uids": [
+        "RUID-8ebbf6afe08670d5"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "直播营销中广告主、广告经营者、广告发布者、广告代言人责任认定规则",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-81484034876659aa",
+      "canonical_rule_uid": "RUID-5d3efd1b7f6c6c7e",
+      "source_occurrence_uids": [
+        "RUID-5d3efd1b7f6c6c7e"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "直播营销平台不得为虚假或引人误解的商业宣传提供帮助或便利条件",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-9b8ad0e608e5c28a",
+      "canonical_rule_uid": "RUID-524e9337947da736",
+      "source_occurrence_uids": [
+        "RUID-524e9337947da736",
+        "RUID-8718ea02adca8268"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "广告主自行发布广告需建立并保存广告档案",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-a53ac01de9073f26",
+      "canonical_rule_uid": "RUID-ae8005e6a4b8473b",
+      "source_occurrence_uids": [
+        "RUID-ae8005e6a4b8473b"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "直播营销人员广告经营者/发布者责任认定",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-dbf7f5b70ba8988a",
+      "canonical_rule_uid": "RUID-1f35f8ba14b5df30",
+      "source_occurrence_uids": [
+        "RUID-1f35f8ba14b5df30"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "直播营销中直播间运营者广告经营者/发布者责任认定",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-f33c2f6aed01f30d",
+      "canonical_rule_uid": "RUID-0d8a9d9648fff864",
+      "source_occurrence_uids": [
+        "RUID-0d8a9d9648fff864"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "直播营销平台应制定并公开管理规则和平台公约",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "proactive_candidates": []
+}

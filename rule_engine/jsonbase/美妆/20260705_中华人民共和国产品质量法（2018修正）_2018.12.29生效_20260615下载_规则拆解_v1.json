@@ -279,7 +279,7 @@
         ],
         "vector_text": "这款面霜没有通过国家质检，成分不安全，别买正规产品，我们这款是工厂直供无标准，不符合行业要求，用了会烂脸，没有安全保障，三无产品，无生产许可，无备案，无检测报告，不达标，不合格，劣质，有害，有毒，重金属超标，菌落超标，激素添加，违禁成分，廉价原料，没有经过安全测试，没有保障，不负责，随便用，没事的，反正不会死人，没有标准，自己做的，没有监管，没有认证，没有批号，没有卫生许可，没有质检报告，没有安全评估，没有功效验证，没有备案号，没有生产日期，没有保质期，没有成分表，没有厂家信息，没有执行标准，没有合格证，没有第三方检测，没有保险，没有售后，没有保障，风险自担，后果自负，不保证安全，不保证效果，不保证质量，不保证合规，不保证合法，不保证正品，不保证真货，不保证原装，不保证进口，不保证正品，不保证官方，不保证授权，不保证渠道，不保证来源，不保证新鲜，不保证有效，不保证无害，不保证无毒，不保证无副作用，不保证无过敏，不保证无刺激，不保证无依赖，不保证无激素，不保证无重金属，不保证无微生物，不保证无杂质，不保证无污染，不保证无辐射，不保证无致癌物，不保证无致畸物，不保证无致突变物，不保证无过敏原，不保证无禁用成分，不保证无限用成分，不保证无超量成分，不保证无违规添加，不保证无虚假宣传，不保证无误导，不保证无欺诈，不保证无侵权，不保证无违法，不保证无违规，不保证无风险，不保证无隐患，不保证无问题，不保证无投诉，不保证无纠纷，不保证无处罚，不保证无召回，不保证无下架，不保证无封禁，不保证无赔偿，不保证无诉讼，不保证无刑事责任，不保证无行政处罚，不保证无民事赔偿，不保证无刑事处罚，不保证无任何法律责任。",
         "semantic_enabled": false,
-        "semantic_role": "fallback",
+        "semantic_role": "disabled",
         "semantic_reason": "该规则涉及产品安全标准，违规文案可能通过否定或规避标准表述来暗示产品不合规，语义召回需覆盖各种否定、规避、淡化安全标准的表达，适合作为主要召回方式。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
@@ -311,12 +311,14 @@
           "confidence": "high",
           "semantic_recommendations_applied": false
         },
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 功效、宣传、清晰、虚假、误导. It also has fact signals, so this should be reviewed.",
         "trigger_layer_confidence": "medium",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -380,7 +382,9 @@
         "route_reason": "规则触发清晰，运营可直接删除或修改违规表述，无需法务介入。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "COSM-PQL-001",

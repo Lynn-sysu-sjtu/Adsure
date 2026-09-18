@@ -2,6 +2,7 @@
 """Build the compact allow-listed rule directory used by catalog recall."""
 
 from rule_identity import rule_identity
+from rule_eligibility import content_recall_eligible
 from rule_scope import platform_scope_matches
 
 
@@ -26,6 +27,8 @@ def build_catalog_directory(rules, request=None):
     directory = []
     seen_ids = set()
     for rule in rules:
+        if not content_recall_eligible(rule):
+            continue
         recall = rule.get("recall", {}) or {}
         identity = rule_identity(rule)
         rule_id = rule.get("rule_id")

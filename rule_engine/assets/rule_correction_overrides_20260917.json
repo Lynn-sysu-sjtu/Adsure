@@ -1,0 +1,78 @@
+{
+  "override_version": "2026-09-17.v1",
+  "rules": {
+    "RUID-abcddf44be8c7b73": {
+      "expected_before": {"applies_to.industries": ["\u4fdd\u5065\u98df\u54c1"]},
+      "changes": {"applies_to.industries": ["\u901a\u7528"]}
+    },
+    "RUID-4a6d2c4fc4cc871e": {
+      "expected_before": {"applies_to.industries": ["\u7f8e\u5986"]},
+      "changes": {
+        "applies_to.industries": ["\u901a\u7528"],
+        "review_role": "supporting_basis",
+        "review_roles": ["supporting_basis"]
+      }
+    },
+    "RUID-5918828973a76530": {
+      "changes": {"review_role": "direct", "review_roles": ["direct"]}
+    },
+    "RUID-11072b7051c09786": {
+      "changes": {"review_role": "supporting_basis", "review_roles": ["supporting_basis"]}
+    },
+    "RUID-5aa5c8f2aa831518": {
+      "changes": {"review_role": "supporting_basis", "review_roles": ["supporting_basis"]}
+    },
+    "RUID-6003a44f5ad562ab": {
+      "changes": {"review_role": "supporting_basis", "review_roles": ["supporting_basis"]}
+    },
+    "RUID-444e62477f0779b1": {
+      "changes": {"review_role": "supporting_basis", "review_roles": ["supporting_basis"]}
+    },
+    "RUID-ec56d205b19873b0": {
+      "changes": {"review_role": "proactive_check", "review_roles": ["proactive_check"]}
+    },
+    "RUID-60197dfa6e387977": {
+      "changes": {
+        "review_role": "proactive_check",
+        "review_roles": ["proactive_check"],
+        "applies_to.platforms": ["\u5c0f\u7ea2\u4e66"],
+        "platform_gate": "exact"
+      }
+    },
+    "RUID-ba33920c2d3dd6a9": {
+      "changes": {
+        "review_role": "proactive_check",
+        "review_roles": ["proactive_check"],
+        "applies_to.platforms": ["\u5c0f\u7ea2\u4e66"],
+        "platform_gate": "exact"
+      }
+    },
+    "RUID-b288979a746ecc79": {
+      "changes": {"review_role": "direct", "review_roles": ["direct", "fact_check"]}
+    },
+    "RUID-fba2b7c4e349d1ee": {
+      "changes": {
+        "review_role": "proactive_check",
+        "review_roles": ["proactive_check", "fact_check"]
+      }
+    },
+    "RUID-8a102844838a7107": {
+      "changes": {"applies_to.platforms": ["B\u7ad9"], "platform_gate": "exact"}
+    },
+    "RUID-0aa92e46809d6596": {
+      "changes": {"applies_to.platforms": ["B\u7ad9"], "platform_gate": "exact"}
+    },
+    "RUID-fe1de6c6adfa8d2f": {
+      "changes": {"applies_to.platforms": ["B\u7ad9"], "platform_gate": "exact"}
+    },
+    "RUID-7d0cafae98e5c7f3": {
+      "changes": {"applies_to.platforms": ["\u5c0f\u7ea2\u4e66"], "platform_gate": "exact"}
+    },
+    "RUID-2d6b54805a05b56a": {
+      "changes": {"applies_to.platforms": ["\u5c0f\u7ea2\u4e66"], "platform_gate": "exact"}
+    },
+    "RUID-e255eaff8d3be92b": {
+      "changes": {"applies_to.platforms": ["\u6dd8\u5b9d"], "platform_gate": "exact"}
+    }
+  }
+}

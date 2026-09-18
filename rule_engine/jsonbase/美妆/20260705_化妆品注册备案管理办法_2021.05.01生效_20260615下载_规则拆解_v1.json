@@ -211,7 +211,13 @@
         "route_reason": "需要运营提供备案信息和科学依据资料，无法直接判断是否违规，故要求补充资料后由法务复核。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "review_role": "proactive_check",
+      "review_roles": [
+        "proactive_check",
+        "fact_check"
+      ],
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "COSM-REG-001",

@@ -1191,14 +1191,16 @@
         ],
         "vector_text": "滋补保健商品宣传使用最高技术、最科学、最佳等绝对化用语",
         "semantic_enabled": false,
-        "semantic_role": "fallback",
+        "semantic_role": "disabled",
         "semantic_reason": "关键词明确，无需语义",
-        "trigger_layer": "content",
+        "trigger_layer": "disabled",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、最佳、绝对化.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -1262,7 +1264,10 @@
         "route_reason": "关键词明确，运营可直接删除或替换绝对化用语，无需法务介入。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "duplicate_source",
+      "canonical_rule_uid": "RUID-97c034528fab40c3",
+      "direct_conclusion_enabled": false
     }
   ],
   "memory_rules": [],

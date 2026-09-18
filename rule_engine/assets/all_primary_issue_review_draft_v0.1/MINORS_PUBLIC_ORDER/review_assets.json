@@ -1,0 +1,4699 @@
+{
+  "schema_version": "0.1",
+  "asset_status": "draft",
+  "model": "deepseek-chat",
+  "prompt_version": "all_primary_issue_fingerprint_v01_20260913",
+  "root_id": "MINORS_PUBLIC_ORDER",
+  "root_name": "未成年人及公序良俗",
+  "nodes": [
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER",
+      "level": 2,
+      "node_type": "directory",
+      "name": "危险行为与不良导向",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER",
+      "level": 2,
+      "node_type": "directory",
+      "name": "歧视、侮辱与网络暴力",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER",
+      "level": 2,
+      "node_type": "directory",
+      "name": "未成年人诱导与付费保护",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER",
+      "level": 2,
+      "node_type": "directory",
+      "name": "公序良俗",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_IMITATE_UNSAFE_BEHAVIOR",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR",
+      "name": "针对不满十四周岁未成年人的广告含有可能引发模仿不安全行为的内容",
+      "definition": "针对不满十四周岁未成年人的广告中含有可能引发其模仿不安全行为的内容。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为主体为针对不满十四周岁未成年人的广告，法律效果为禁止含有可能引发模仿不安全行为的内容，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-0d8f5061f6488228",
+        "RUID-f0f0856a9d04a11c"
+      ],
+      "source_occurrence_uids": [
+        "RUID-0d8f5061f6488228",
+        "RUID-64a370e789faaee2",
+        "RUID-cafa3f4b27d5f03d",
+        "RUID-f0f0856a9d04a11c"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_IMITATE_ILLEGAL_CRIME",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR",
+      "name": "游戏内容诱发未成年人模仿违法犯罪",
+      "definition": "移动游戏内容含有诱发未成年人模仿违法犯罪行为或妨害未成年人身心健康的内容，包括宣扬犯罪、美化罪犯、鼓励偷窃抢劫、宣扬吸毒贩毒等行为。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为游戏内容诱发未成年人模仿违法犯罪，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-95d3a0fa0a69003b"
+      ],
+      "source_occurrence_uids": [
+        "RUID-95d3a0fa0a69003b"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_UNHEALTHY_GAME_AD",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR",
+      "name": "发布不利于未成年人身心健康的网络游戏广告",
+      "definition": "在针对未成年人的大众传播媒介上发布或宣传不利于未成年人身心健康的网络游戏广告，广告内容包含暴力、血腥、色情、赌博、成瘾性设计等元素，可能诱导未成年人沉迷或产生不良行为，且未明确标注或提示未成年人慎入或不宜。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为发布不利于未成年人身心健康的网络游戏广告，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-c5808d29f88b5958",
+        "RUID-eb350ea9104aebf5"
+      ],
+      "source_occurrence_uids": [
+        "RUID-724598440ad3ee63",
+        "RUID-c5808d29f88b5958",
+        "RUID-d8d788b3f89daab3",
+        "RUID-eb350ea9104aebf5"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_ALCOHOL_TOBACCO",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR",
+      "name": "表现未成年人饮酒抽烟或出现烟草道具",
+      "definition": "游戏内容中具体表现未成年人饮酒、抽烟等行为，或出现烟草这一道具。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为表现未成年人饮酒抽烟或出现烟草道具，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-b0582382434a6009"
+      ],
+      "source_occurrence_uids": [
+        "RUID-b0582382434a6009"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DISCRIMINATION_AGAINST_GROUPS",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT",
+      "name": "广告歧视、侮辱特定群体",
+      "definition": "广告或推广内容中包含针对特定人群、地域或社会弱势群体（如妇女、儿童、老人、残疾人等）的歧视、侮辱、贬低或嘲弄性表述，损害其身心健康或诱导负面态度。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为广告歧视、侮辱特定群体，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-c0c1a05c8235f35e"
+      ],
+      "source_occurrence_uids": [
+        "RUID-4d9c5ede0fe82416",
+        "RUID-c0c1a05c8235f35e"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DEFAMATION_INSULT_INDIVIDUALS",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT",
+      "name": "广告侮辱或诽谤他人",
+      "definition": "广告内容含有侮辱或诽谤他人的表述，包括恶意嘲笑侮辱、使用政治人物或公众人物姓名谐音、表现他人缺陷、传播虚假事实损害名誉、侵犯肖像权或隐私等侵害他人合法权益的行为。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为广告侮辱或诽谤他人，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-fb811992cbdc1f06"
+      ],
+      "source_occurrence_uids": [
+        "RUID-fb811992cbdc1f06"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DISPARAGEMENT_OF_COMPETITORS",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT",
+      "name": "贬低其他生产经营者商品或服务",
+      "definition": "广告中对其他生产经营者的商品或服务进行贬低性描述，包括直接贬低或通过对比暗示贬低，违反广告法关于不得贬低其他生产经营者商品或服务的规定。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为贬低其他生产经营者商品或服务，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-5918828973a76530",
+        "RUID-dce90b5f625bee86"
+      ],
+      "source_occurrence_uids": [
+        "RUID-5918828973a76530",
+        "RUID-dce90b5f625bee86"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.HARM_TO_MINORS",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT",
+      "name": "广告对未成年人有害内容",
+      "definition": "广告文字中包含可能对未成年人身心健康造成伤害的内容，包括但不限于欺凌、侮辱、诽谤、威胁或恶意损害形象等网络欺凌行为；在针对未成年人的互联网媒介上发布不利于未成年人身心健康的网络游戏广告。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为广告对未成年人有害内容，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-01b39646c8648c9e",
+        "RUID-04db0a8c2279c669",
+        "RUID-b75b91c99b520702"
+      ],
+      "source_occurrence_uids": [
+        "RUID-01b39646c8648c9e",
+        "RUID-04db0a8c2279c669",
+        "RUID-460a768faea8c607",
+        "RUID-86044d3bf113b134",
+        "RUID-9958b8bfdfdb7349",
+        "RUID-b75b91c99b520702"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_DISTORTS_HISTORY_CULTURE",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY",
+      "name": "广告篡改历史文化传统",
+      "definition": "广告内容践踏民族优秀文化遗产或恶意篡改重大历史、文化事件及代表人物形象，包括危害社会公德或者民族优秀文化传统的内容，如违背基本道德要求、表现污秽粗俗言行、损害文物古迹、歧视弱势群体、混淆是非善恶、宣扬腐化生活方式、权钱交易、篡改历史、宣扬男尊女卑、否定民族精神等。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为广告篡改历史文化传统，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-5b15fd6e1e0913ca"
+      ],
+      "source_occurrence_uids": [
+        "RUID-5b15fd6e1e0913ca"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_CONTENT_UNHEALTHY_PRESENTATION",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY",
+      "name": "广告内容表现形式不健康",
+      "definition": "广告内容虽可能真实，但以不健康的表现形式表达，违背社会主义精神文明建设或弘扬中华民族优秀传统文化的要求，包括含有色情、暴力、歧视等违反社会公序良俗的内容。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为广告内容表现形式不健康，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-b92d0e1dd3dff9ca",
+        "RUID-ebf8324f6cd39cb5",
+        "RUID-ff8c8eb6ace92487"
+      ],
+      "source_occurrence_uids": [
+        "RUID-b92d0e1dd3dff9ca",
+        "RUID-ebf8324f6cd39cb5",
+        "RUID-ff8c8eb6ace92487"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_PROMOTES_BAD_VALUES",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY",
+      "name": "宣扬或肯定不良价值观",
+      "definition": "广告内容宣扬或肯定不良的家庭观、婚恋观、利益观，如鼓励不忠、拜金、不劳而获等。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为宣扬或肯定不良价值观，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-c3c886ea36eb011b"
+      ],
+      "source_occurrence_uids": [
+        "RUID-c3c886ea36eb011b"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_IMPROPER_DISASTER_COMMENT",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY",
+      "name": "不当评述自然灾害、重大事故等灾难",
+      "definition": "广告内容对自然灾害、重大事故等灾难进行不当评述，如调侃、歪曲事实等。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为不当评述自然灾害、重大事故等灾难，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-8e84fbe9ca82f28c"
+      ],
+      "source_occurrence_uids": [
+        "RUID-8e84fbe9ca82f28c"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_INDUCEMENT_OVERCONSUMPTION",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "name": "诱导未成年人过度消费或劝诱购买",
+      "definition": "广告包含针对未成年人的充值诱导话术或引导消费内容，诱导未成年人进行不理性或过度消费；针对不满十四周岁未成年人的广告中含有劝诱其要求家长购买商品或服务的内容；保健食品广告直接或间接诱导未成年人购买。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为诱导未成年人过度消费或劝诱购买，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-7497913efe3a276d"
+      ],
+      "source_occurrence_uids": [
+        "RUID-7497913efe3a276d",
+        "RUID-e6bfda83a13e7ec9",
+        "RUID-f1e8b2c942ed7d9f"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PAYMENT_LIMIT_CIRCUMVENTION",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "name": "未成年人付费金额超限或绕过付费限制宣传",
+      "definition": "广告宣传未成年人可无限制充值、充值金额超过法定上限，或宣传未满8周岁用户可付费，或宣传游戏无付费限制、可任意充值；未说明或暗示对用户年龄进行验证，可能导致未成年人绕过充值限制。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为未成年人付费金额超限或绕过付费限制宣传，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-04c04468c9b89961",
+        "RUID-e3588a6dbe726282"
+      ],
+      "source_occurrence_uids": [
+        "RUID-04c04468c9b89961",
+        "RUID-e3588a6dbe726282"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ANTI_ADDICTION_CIRCUMVENTION",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "name": "宣传绕过防沉迷系统或违反时段时长限制",
+      "definition": "广告宣传内容与未成年人游戏时段和时长限制相抵触，宣传可绕过防沉迷系统、未实名注册即可游玩、游客体验模式违反限制、可在每日二十二时至次日八时向未成年人提供服务，或提供诱导未成年人沉迷的网络游戏产品和服务。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为宣传绕过防沉迷系统或违反时段时长限制，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-2bea34dd82777eae",
+        "RUID-430a1b69712f7e5e",
+        "RUID-b26a1ea6f5e937a6",
+        "RUID-c1efc611fdda35b0",
+        "RUID-ead6e10661afdcc1"
+      ],
+      "source_occurrence_uids": [
+        "RUID-2bea34dd82777eae",
+        "RUID-430a1b69712f7e5e",
+        "RUID-b26a1ea6f5e937a6",
+        "RUID-c1efc611fdda35b0",
+        "RUID-ead6e10661afdcc1"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "name": "广告内容针对或指向未成年人",
+      "definition": "广告内容通过受众指向、语境暗示、使用未成年人形象或儿童化语言、卡通形象、低龄化场景等方式明确针对或指向未成年人，包括针对不满十四周岁未成年人的广告、在高风险行业广告中出现未成年人相关元素、向未成年人及其监护人推销指定商品或服务、未经同意发送商业性信息，以及展示可能引导未成年人饮酒的KOL饮酒动作。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为广告内容针对或指向未成年人，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-2aaed6cd35fa133d",
+        "RUID-2b2947f368984e5b",
+        "RUID-9dfe543e12eb73b6",
+        "RUID-a8c4374f2de3ec85",
+        "RUID-e363c8b2cfbf1915",
+        "RUID-e9129bbc59cd80cd"
+      ],
+      "source_occurrence_uids": [
+        "RUID-2aaed6cd35fa133d",
+        "RUID-2b2947f368984e5b",
+        "RUID-9dfe543e12eb73b6",
+        "RUID-a8c4374f2de3ec85",
+        "RUID-b645638fe503638d",
+        "RUID-e363c8b2cfbf1915",
+        "RUID-e9129bbc59cd80cd"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "name": "在针对未成年人的媒介上发布禁止类广告",
+      "definition": "在针对未成年人的大众传播媒介或网站、网页、互联网应用程序、公众号等互联网媒介上，发布医疗、药品、保健食品、特殊医学用途配方食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为在针对未成年人的媒介上发布禁止类广告，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-4a6d2c4fc4cc871e",
+        "RUID-50e1960c3642e5b5",
+        "RUID-abcddf44be8c7b73"
+      ],
+      "source_occurrence_uids": [
+        "RUID-4a6d2c4fc4cc871e",
+        "RUID-50e1960c3642e5b5",
+        "RUID-53734cf5bc93c2fc",
+        "RUID-6ed749d90af32615",
+        "RUID-abcddf44be8c7b73",
+        "RUID-d71213830d7a7b52",
+        "RUID-efcd3c918ce2cb2b"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PROHIBITED_GOODS_SERVICES",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "name": "向未成年人宣传或销售禁止类商品和服务",
+      "definition": "广告内容包含向未成年人销售烟、酒、彩票或兑付彩票奖金的表述或诱导；向未成年人宣传管制刀具或可能致人严重伤害的器具，或提供销售、赠送渠道；向未成年人发送任何形式的烟草广告。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为向未成年人宣传或销售禁止类商品和服务，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-6aaf675cf32e4e3d",
+        "RUID-72984d1a67761dd1",
+        "RUID-838a8c63391b101f"
+      ],
+      "source_occurrence_uids": [
+        "RUID-6aaf675cf32e4e3d",
+        "RUID-72984d1a67761dd1",
+        "RUID-838a8c63391b101f"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_DISSEMINATION",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "name": "向未成年人传播或发布危害其身心健康的内容",
+      "definition": "广告或网络信息内容含有暴力、色情、赌博、不良价值观、诱导危险行为、违反社会公德、诱导不良嗜好、早恋、抽烟酗酒、打架斗殴、滥用毒品、鼓励同居结婚、人物造型过分夸张怪异等可能危害或损害未成年人身心健康的内容。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为向未成年人传播或发布危害其身心健康的内容，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-0e71dab0d661b022",
+        "RUID-181d60bae9ec03dc",
+        "RUID-caf8152961e23940",
+        "RUID-d9b1702b27c275b6"
+      ],
+      "source_occurrence_uids": [
+        "RUID-0e71dab0d661b022",
+        "RUID-181d60bae9ec03dc",
+        "RUID-87f9acdc104348ff",
+        "RUID-caf8152961e23940",
+        "RUID-d9b1702b27c275b6"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_WARNING",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "name": "可能影响未成年人身心健康内容的显著提示义务",
+      "definition": "出版、发布、传播或直播营销包含可能影响未成年人身心健康内容的网络信息，未以显著方式作出提示，或直播营销平台未建立健全未成年人保护机制。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为可能影响未成年人身心健康内容的显著提示义务，法律效果为要求显著提示，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-6439163a7e2b34c8"
+      ],
+      "source_occurrence_uids": [
+        "RUID-6439163a7e2b34c8"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PERSONAL_INFO_PROCESSING",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "name": "违规处理未成年人个人信息",
+      "definition": "处理不满十四周岁未成年人个人信息未征得监护人同意，或处理未成年人个人信息未遵循合法、正当、必要原则。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为违规处理未成年人个人信息，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-c8ba974830e0c03a"
+      ],
+      "source_occurrence_uids": [
+        "RUID-c8ba974830e0c03a"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ACCESS_RESTRICTION_VIOLATION",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "name": "违反未成年人禁入限入规定或未核验年龄",
+      "definition": "广告内容涉及游戏场所或电子游戏设备时，违反未成年人禁入/限入规定，包括允许未成年人进入不适宜场所、在非法定节假日向未成年人提供电子游戏设备、未设置显著禁入限入标志，或难以判明购买者是否为未成年人时未要求出示身份证件核验年龄。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为违反未成年人禁入限入规定或未核验年龄，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-a0a3175230952dcd"
+      ],
+      "source_occurrence_uids": [
+        "RUID-a0a3175230952dcd"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_LIVE_STREAM_ACCOUNT_REGISTRATION",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "name": "未成年人网络直播账号注册违规",
+      "definition": "为未成年人提供网络直播发布者账号注册服务时，未征得监护人同意、未进行身份认证，或为未满十六周岁未成年人提供账号注册服务。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为未成年人网络直播账号注册违规，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-ebab4818abe63984"
+      ],
+      "source_occurrence_uids": [
+        "RUID-ebab4818abe63984",
+        "RUID-fbafdc0ec2ab90be"
+      ]
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+      "parent_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT",
+      "name": "学校、幼儿园内商业广告活动及利用特定载体发布广告",
+      "definition": "在中小学校、幼儿园内开展广告活动，利用教材、教辅材料、练习册、文具、教具、校服、校车等载体发布或变相发布广告，播放、张贴或散发商业广告，或安排未成年人参加商业性活动、向未成年人及其监护人推销指定商品和服务。",
+      "confidence": "high",
+      "reason": "现有节点定义明确，行为结构为学校、幼儿园内商业广告活动及利用特定载体发布广告，法律效果为禁止，独立成节点。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-044f5746d4430f02",
+        "RUID-22cc6a32785cd9c7",
+        "RUID-4f1b9d757dc9177c",
+        "RUID-e8abab502b7c26d5"
+      ],
+      "source_occurrence_uids": [
+        "RUID-044f5746d4430f02",
+        "RUID-22cc6a32785cd9c7",
+        "RUID-31c47669db6fa8b9",
+        "RUID-4f1b9d757dc9177c",
+        "RUID-99c453d4e7a8b3ac",
+        "RUID-bb561b594a8add93",
+        "RUID-e8abab502b7c26d5"
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "rule_uid": "RUID-01b39646c8648c9e",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "禁止通过广告文字对未成年人实施网络欺凌",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.HARM_TO_MINORS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-44ad5fe6c0c662ed",
+      "canonical_rule_uid": "RUID-01b39646c8648c9e",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第七十七条",
+          "original_text": "任何组织或者个人不得通过网络以文字、图片、音视频等形式，对未成年人实施侮辱、诽谤、威胁或者恶意损害形象等网络欺凌行为。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-01b39646c8648c9e",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.HARM_TO_MINORS",
+        "canonical_problem_name": "广告对未成年人有害内容",
+        "regulated_action": "cyberbullying_against_minors",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "任何组织或者个人"
+        ],
+        "object_scope": [
+          "网络文字、图片、音视频形式的广告内容"
+        ],
+        "platform_scope": [
+          "网络"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "《未成年人保护法》第七十七条原文明确禁止通过网络以文字、图片、音视频等形式对未成年人实施侮辱、诽谤、威胁或者恶意损害形象等网络欺凌行为，与 HARM_TO_MINORS 节点定义中“广告文字中包含可能对未成年人身心健康造成伤害的内容，包括但不限于欺凌、侮辱、诽谤、威胁或恶意损害形象等网络欺凌行为”直接对应。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-044f5746d4430f02",
+      "rule_id": "GAME-ADLOC-001",
+      "rule_title": "禁止在中小学校、幼儿园内开展广告活动",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-1c0bbc1f7c19da11",
+      "canonical_rule_uid": "RUID-044f5746d4430f02",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十九条",
+          "original_text": "第三十九条 不得在中小学校、幼儿园内开展广告活动，不得利用中小学生和幼儿的教材、教辅材料、练习册、文具、教具、校服、校车等发布或者变相发布广告，但公益广告除外。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-044f5746d4430f02",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+        "canonical_problem_name": "学校、幼儿园内商业广告活动及利用特定载体发布广告",
+        "regulated_action": "advertising_in_schools_or_on_school_materials",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "中小学校、幼儿园内广告活动",
+          "教材、教辅材料、练习册、文具、教具、校服、校车等载体上的广告"
+        ],
+        "platform_scope": [
+          "中小学校",
+          "幼儿园"
+        ],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "《广告法》第三十九条原文明确禁止在中小学校、幼儿园内开展广告活动，禁止利用教材、教辅材料、练习册、文具、教具、校服、校车等发布或变相发布广告，与 MINOR_SCHOOL_COMMERCIAL_ACTIVITY 节点定义完全对应。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-04c04468c9b89961",
+      "rule_id": "GAME-MP-003",
+      "rule_title": "未成年人付费服务限制",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PAYMENT_LIMIT_CIRCUMVENTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c9ba6f7cc3035ce5",
+      "canonical_rule_uid": "RUID-04c04468c9b89961",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "三",
+          "original_text": "三 、规范向未成年人提供付费服务。网络游戏企业须采取有效措施，限制未成年人使用与其民事行为能力不符的付费服务。网络游戏企业不得为未满8周岁的用户提供游戏付费服务。同一网络游戏企业所提供的游戏付费服务，8周岁以上未满16周岁的用户，单次充值金额不得超过50元人民币，每月充值金额累计不得超过200元人民币；16周岁以上未满18周岁的用户，单次充值金额不得超过100元人民币，每月充值金额累计不得超过400元人民币。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-04c04468c9b89961",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PAYMENT_LIMIT_CIRCUMVENTION",
+        "canonical_problem_name": "未成年人付费金额超限或绕过付费限制宣传",
+        "regulated_action": "minor_payment_limit_violation",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "网络游戏企业"
+        ],
+        "object_scope": [
+          "向未成年人提供的游戏付费服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "《国家新闻出版署关于防止未成年人沉迷网络游戏的通知》第三条原文明确禁止为未满8周岁用户提供付费服务，并规定8-16周岁单次不超过50元、每月不超过200元，16-18周岁单次不超过100元、每月不超过400元，与 MINOR_PAYMENT_LIMIT_CIRCUMVENTION 节点定义中“宣传未成年人可无限制充值、充值金额超过法定上限，或宣传未满8周岁用户可付费”直接对应。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-04db0a8c2279c669",
+      "rule_id": "GAME-OTH-001",
+      "rule_title": "广告不得损害未成年人身心健康",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.HARM_TO_MINORS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c24b806361fe4dd9",
+      "canonical_rule_uid": "RUID-04db0a8c2279c669",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十条",
+          "original_text": "第十条 广告不得损害未成年人和残疾人的身心健康。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-04db0a8c2279c669",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.HARM_TO_MINORS",
+        "canonical_problem_name": "广告对未成年人有害内容",
+        "regulated_action": "ad_harm_to_minor_physical_mental_health",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "广告内容"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "medium",
+        "reason": "《广告法》第十条原文明确广告不得损害未成年人和残疾人的身心健康，属于未成年人保护范畴；因原文为概括性禁止，具体表现需结合场景判断，故归入 HARM_TO_MINORS 节点，置信度中等。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-0d8f5061f6488228",
+      "rule_id": "HF-PRO-003",
+      "rule_title": "针对不满十四周岁未成年人的广告不得含有可能引发模仿不安全行为的内容",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_IMITATE_UNSAFE_BEHAVIOR",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-05764ee6b0b8cbda",
+      "canonical_rule_uid": "RUID-0d8f5061f6488228",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十条",
+          "original_text": "针对不满十四周岁的未成年人的商品或者服务的广告不得含有下列内容：（二）可能引发其模仿不安全行为。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-0d8f5061f6488228",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_IMITATE_UNSAFE_BEHAVIOR",
+        "canonical_problem_name": "针对不满十四周岁未成年人的广告含有可能引发模仿不安全行为的内容",
+        "regulated_action": "prohibit_minor_imitation_unsafe_behavior_content",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "针对不满十四周岁未成年人的商品或服务广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "广告法第四十条原文明确：针对不满十四周岁的未成年人的商品或者服务的广告不得含有‘可能引发其模仿不安全行为’的内容，与目标节点定义一致。track_hint_only为保健食品，但原文未限定行业，不构成source_scope_conflict。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-0e71dab0d661b022",
+      "rule_id": "GAME-PROT-002",
+      "rule_title": "网络服务提供者对含有危害未成年人身心健康内容的信息应立即停止传输并处置",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_DISSEMINATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-45b30edd15547eee",
+      "canonical_rule_uid": "RUID-0e71dab0d661b022",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第八十条",
+          "original_text": "网络服务提供者发现用户发布、传播含有危害未成年人身心健康内容的信息的，应当立即停止传输相关信息，采取删除、屏蔽、断开链接等处置措施，保存有关记录，并向网信、公安等部门报告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-0e71dab0d661b022",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_DISSEMINATION",
+        "canonical_problem_name": "向未成年人传播或发布危害其身心健康的内容",
+        "regulated_action": "stop_transmission_and_dispose_harmful_content_to_minors",
+        "legal_effect": "workflow_required",
+        "actor_scope": [
+          "网络服务提供者"
+        ],
+        "object_scope": [
+          "含有危害未成年人身心健康内容的信息"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "未成年人保护法第八十条原文规定网络服务提供者发现用户发布、传播含有危害未成年人身心健康内容的信息应立即停止传输并采取删除、屏蔽、断开链接等处置措施，属于向未成年人传播危害身心健康内容的处置义务，归入MINOR_HARMFUL_CONTENT_DISSEMINATION。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-181d60bae9ec03dc",
+      "rule_id": "GAME-PROT-001",
+      "rule_title": "物料不得涉及不利于未成年身心健康相关的内容",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_DISSEMINATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-8988044778ce62d5",
+      "canonical_rule_uid": "RUID-181d60bae9ec03dc",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_小红书《游戏行业投放规则》使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书《游戏行业投放规则》使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "4",
+          "original_text": "4、【不得涉及未成年不良导向内容】物料不得涉及不利于未成年⼈身⼼健康相关的内容"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-181d60bae9ec03dc",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_DISSEMINATION",
+        "canonical_problem_name": "向未成年人传播或发布危害其身心健康的内容",
+        "regulated_action": "prohibit_material_harmful_to_minor_health",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "游戏行业投放物料"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "小红书《游戏行业投放规则》第4条原文明确物料不得涉及不利于未成年人身心健康相关的内容，属于向未成年人传播危害身心健康内容的禁止性规则，归入MINOR_HARMFUL_CONTENT_DISSEMINATION。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-22cc6a32785cd9c7",
+      "rule_id": "GAME-AD-003",
+      "rule_title": "禁止利用校服、教材等发布或变相发布商业广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-931de853f8730a15",
+      "canonical_rule_uid": "RUID-22cc6a32785cd9c7",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十三条",
+          "original_text": "任何组织或者个人不得刊登、播放、张贴或者散发含有危害未成年人身心健康内容的广告；不得在学校、幼儿园播放、张贴或者散发商业广告；不得利用校服、教材等发布或者变相发布商业广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-22cc6a32785cd9c7",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+        "canonical_problem_name": "学校、幼儿园内商业广告活动及利用特定载体发布广告",
+        "regulated_action": "prohibit_commercial_ads_in_schools_and_on_school_materials",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "任何组织或者个人"
+        ],
+        "object_scope": [
+          "含有危害未成年人身心健康内容的广告",
+          "学校、幼儿园内商业广告",
+          "利用校服、教材等发布或变相发布的商业广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "未成年人保护法第五十三条原文明确不得在学校、幼儿园播放、张贴或者散发商业广告，不得利用校服、教材等发布或者变相发布商业广告，与MINOR_SCHOOL_COMMERCIAL_ACTIVITY节点定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-2aaed6cd35fa133d",
+      "rule_id": "GAME-AD-002",
+      "rule_title": "禁止发布针对不满十四周岁的未成年人的商品或者服务的广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-1fe7731df31a8f75",
+      "canonical_rule_uid": "RUID-2aaed6cd35fa133d",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十八条",
+          "original_text": "违反本法第四十条第二款规定，发布针对不满十四周岁的未成年人的商品或者服务的广告的"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-2aaed6cd35fa133d",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+        "canonical_problem_name": "广告内容针对或指向未成年人",
+        "regulated_action": "prohibit_advertising_targeting_under_14_minors",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "针对不满十四周岁的未成年人的商品或者服务的广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "广告法第五十八条援引第四十条第二款，明确禁止发布针对不满十四周岁的未成年人的商品或者服务的广告，属于针对未成年人的广告指向识别问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-2b2947f368984e5b",
+      "rule_id": "GAME-RISK-001",
+      "rule_title": "高风险内容（含游戏）严禁出现任何未成年人相关元素",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-5180bcdeb5eee024",
+      "canonical_rule_uid": "RUID-2b2947f368984e5b",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.",
+          "original_text": "1.⾼⻛险内容（⾦融、游戏、酒类、医疗、OTC药品、医疗器械等）严禁出现任何未成年⼈相关元素；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-2b2947f368984e5b",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+        "canonical_problem_name": "广告内容针对或指向未成年人",
+        "regulated_action": "prohibit_minor_elements_in_high_risk_ads",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "高风险内容（金融、游戏、酒类、医疗、OTC药品、医疗器械等）广告"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "B站广告推广平台审核规范（二）第1条明确高风险内容（含游戏）严禁出现任何未成年人相关元素，属于广告中出现未成年人相关元素的指向识别问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-2bea34dd82777eae",
+      "rule_id": "GAME-ML-001",
+      "rule_title": "不得向未成年人提供诱导沉迷的网络游戏产品和服务",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ANTI_ADDICTION_CIRCUMVENTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-aa0b08af0c252e16",
+      "canonical_rule_uid": "RUID-2bea34dd82777eae",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第七十四条",
+          "original_text": "网络产品和服务提供者不得向未成年人提供诱导其沉迷的产品和服务。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-2bea34dd82777eae",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ANTI_ADDICTION_CIRCUMVENTION",
+        "canonical_problem_name": "宣传绕过防沉迷系统或违反时段时长限制",
+        "regulated_action": "prohibit_inducing_minor_game_addiction",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "网络产品和服务提供者"
+        ],
+        "object_scope": [
+          "诱导未成年人沉迷的网络游戏产品和服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "未成年人保护法第七十四条明确网络产品和服务提供者不得向未成年人提供诱导其沉迷的产品和服务，对应防沉迷相关宣传问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-31c47669db6fa8b9",
+      "rule_id": "GAME-AD-002",
+      "rule_title": "禁止在学校、幼儿园播放、张贴或散发商业广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-931de853f8730a15",
+      "canonical_rule_uid": "RUID-22cc6a32785cd9c7",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十三条",
+          "original_text": "任何组织或者个人不得刊登、播放、张贴或者散发含有危害未成年人身心健康内容的广告；不得在学校、幼儿园播放、张贴或者散发商业广告；不得利用校服、教材等发布或者变相发布商业广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-31c47669db6fa8b9",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+        "canonical_problem_name": "学校、幼儿园内商业广告活动及利用特定载体发布广告",
+        "regulated_action": "prohibit_commercial_ads_in_schools_and_kindergartens",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "任何组织或者个人"
+        ],
+        "object_scope": [
+          "含有危害未成年人身心健康内容的广告",
+          "学校、幼儿园内播放、张贴或散发的商业广告",
+          "利用校服、教材等发布或变相发布的商业广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "未成年人保护法第五十三条明确禁止在学校、幼儿园播放、张贴或散发商业广告，以及利用校服、教材等发布或变相发布商业广告，需结合投放场所判断。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-430a1b69712f7e5e",
+      "rule_id": "GAME-AD-003",
+      "rule_title": "游戏广告不得宣传向未成年人提供夜间服务",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ANTI_ADDICTION_CIRCUMVENTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-98cda8e531a98d99",
+      "canonical_rule_uid": "RUID-430a1b69712f7e5e",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第七十五条",
+          "original_text": "第七十五条 网络游戏服务提供者不得在每日二十二时至次日八时向未成年人提供网络游戏服务。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-430a1b69712f7e5e",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ANTI_ADDICTION_CIRCUMVENTION",
+        "canonical_problem_name": "宣传绕过防沉迷系统或违反时段时长限制",
+        "regulated_action": "advertise_offering_online_game_service_to_minors_during_2200_0800",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "网络游戏服务提供者"
+        ],
+        "object_scope": [
+          "网络游戏服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "《未成年人保护法》第七十五条原文明确禁止网络游戏服务提供者在每日二十二时至次日八时向未成年人提供网络游戏服务，广告不得宣传该行为，属于未成年人防沉迷时段时长限制的规避宣传。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-460a768faea8c607",
+      "rule_id": "COSM-OTH-001",
+      "rule_title": "广告不得损害未成年人身心健康",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.HARM_TO_MINORS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c24b806361fe4dd9",
+      "canonical_rule_uid": "RUID-04db0a8c2279c669",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十条",
+          "original_text": "第十条 广告不得损害未成年人和残疾人的身心健康。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-460a768faea8c607",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.HARM_TO_MINORS",
+        "canonical_problem_name": "广告对未成年人有害内容",
+        "regulated_action": "publish_ad_harmful_to_minors_physical_mental_health",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "《广告法》第十条原文明确广告不得损害未成年人和残疾人的身心健康，属于未成年人及公序良俗项下对未成年人有害内容的禁止性规定。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-4a6d2c4fc4cc871e",
+      "rule_id": "COSM-OTH-001",
+      "rule_title": "禁止在针对未成年人的大众传播媒介上发布化妆品广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-f93bc62a042fc7f3",
+      "canonical_rule_uid": "RUID-4a6d2c4fc4cc871e",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十七条",
+          "original_text": "违反本法第四十条第一款规定，在针对未成年人的大众传播媒介上发布医疗、药品、保健食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告的。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-4a6d2c4fc4cc871e",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+        "canonical_problem_name": "在针对未成年人的媒介上发布禁止类广告",
+        "regulated_action": "publish_cosmetic_ad_on_media_targeting_minors",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "化妆品广告"
+        ],
+        "platform_scope": [
+          "针对未成年人的大众传播媒介"
+        ],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "《广告法》第五十七条原文明确禁止在针对未成年人的大众传播媒介上发布化妆品等广告，属于针对未成年人媒介的禁止类广告发布限制。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-4d9c5ede0fe82416",
+      "rule_id": "COSM-OTH-002",
+      "rule_title": "广告不得损害残疾人身心健康",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DISCRIMINATION_AGAINST_GROUPS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c24b806361fe4dd9",
+      "canonical_rule_uid": "RUID-04db0a8c2279c669",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十条",
+          "original_text": "第十条 广告不得损害未成年人和残疾人的身心健康。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-4d9c5ede0fe82416",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DISCRIMINATION_AGAINST_GROUPS",
+        "canonical_problem_name": "广告歧视、侮辱特定群体",
+        "regulated_action": "publish_ad_harmful_to_disabled_persons_physical_mental_health",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "medium",
+        "reason": "《广告法》第十条原文明确广告不得损害残疾人的身心健康，涉及对残疾人这一特定群体的保护，归入未成年人及公序良俗项下歧视侮辱特定群体问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-4f1b9d757dc9177c",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "学校、幼儿园不得安排未成年人参加商业性活动",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c1f3ae50049509d4",
+      "canonical_rule_uid": "RUID-4f1b9d757dc9177c",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十八条",
+          "original_text": "学校、幼儿园不得安排未成年人参加商业性活动，不得向未成年人及其父母或者其他监护人推销或者要求其购买指定的商品和服务。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-4f1b9d757dc9177c",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+        "canonical_problem_name": "学校、幼儿园内商业广告活动及利用特定载体发布广告",
+        "regulated_action": "school_kindergarten_arranging_minors_commercial_activities",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "学校",
+          "幼儿园"
+        ],
+        "object_scope": [
+          "未成年人",
+          "商业性活动",
+          "指定商品和服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "《未成年人保护法》第三十八条原文明确禁止学校、幼儿园安排未成年人参加商业性活动，不得向未成年人及其父母或者其他监护人推销或者要求其购买指定的商品和服务，直接对应学校幼儿园内商业广告活动节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-50e1960c3642e5b5",
+      "rule_id": "GAME-未成年人保护-001",
+      "rule_title": "禁止在未成年人互联网媒介上发布不利于未成年人身心健康的网络游戏广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6c9cd54bb62046a5",
+      "canonical_rule_uid": "RUID-50e1960c3642e5b5",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十二条",
+          "original_text": "在针对未成年人的网站、网页、互联网应用程序、公众号等互联网媒介上不得发布医疗、药品、保健食品、特殊医学用途配方食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-50e1960c3642e5b5",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+        "canonical_problem_name": "在针对未成年人的媒介上发布禁止类广告",
+        "regulated_action": "publishing_prohibited_game_ads_on_minor_media",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告发布者",
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "网络游戏广告",
+          "不利于未成年人身心健康的网络游戏广告"
+        ],
+        "platform_scope": [
+          "网站",
+          "网页",
+          "互联网应用程序",
+          "公众号"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "《互联网广告管理办法》第十二条原文明确在针对未成年人的网站、网页、互联网应用程序、公众号等互联网媒介上不得发布不利于未成年人身心健康的网络游戏广告，对应在针对未成年人的媒介上发布禁止类广告节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-53734cf5bc93c2fc",
+      "rule_id": "IAM-MP-001",
+      "rule_title": "禁止在未成年人互联网媒介上发布化妆品广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6c9cd54bb62046a5",
+      "canonical_rule_uid": "RUID-50e1960c3642e5b5",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十二条",
+          "original_text": "在针对未成年人的网站、网页、互联网应用程序、公众号等互联网媒介上不得发布医疗、药品、保健食品、特殊医学用途配方食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-53734cf5bc93c2fc",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+        "canonical_problem_name": "在针对未成年人的媒介上发布禁止类广告",
+        "regulated_action": "publishing_cosmetic_ads_on_minor_media",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告发布者",
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "化妆品广告"
+        ],
+        "platform_scope": [
+          "网站",
+          "网页",
+          "互联网应用程序",
+          "公众号"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "《互联网广告管理办法》第十二条原文明确在针对未成年人的互联网媒介上不得发布化妆品广告，对应在针对未成年人的媒介上发布禁止类广告节点；track_hint_only为美妆，但原文列举的化妆品广告属于该条禁止类广告之一，行业提示与原文列举一致，不构成实质冲突，但按规则要求标注source_scope_conflict。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-5918828973a76530",
+      "rule_id": "HF-AD-001",
+      "rule_title": "广告不得贬低其他生产经营者的商品或者服务",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DISPARAGEMENT_OF_COMPETITORS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-8c4d147c466b8dad",
+      "canonical_rule_uid": "RUID-5918828973a76530",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十三条",
+          "original_text": "第十三条 广告不得贬低其他生产经营者的商品或者服务。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-5918828973a76530",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DISPARAGEMENT_OF_COMPETITORS",
+        "canonical_problem_name": "贬低其他生产经营者商品或服务",
+        "regulated_action": "disparaging_other_business_operators_goods_or_services",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "其他生产经营者的商品或者服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": true,
+        "suggested_root_id": "PROHIBITED_CONTENT",
+        "confidence": "high",
+        "reason": "《广告法》第十三条原文明确广告不得贬低其他生产经营者的商品或者服务，本质属于禁止投放内容中的贬低竞争对手，不属于未成年人及公序良俗范畴，故root_scope_conflict为true并建议归入PROHIBITED_CONTENT；但当前允许节点中最接近者为MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DISPARAGEMENT_OF_COMPETITORS。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-5b15fd6e1e0913ca",
+      "rule_id": "GAME-SOC-001",
+      "rule_title": "禁止危害社会公德或民族优秀文化传统的内容",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_DISTORTS_HISTORY_CULTURE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c2dad57060f1e0d5",
+      "canonical_rule_uid": "RUID-5b15fd6e1e0913ca",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_关于印发《移动游戏内容规范（2016年版）》的通知音数协字【2016】第005号_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "关于印发《移动游戏内容规范（2016年版）》的通知 音数协字【2016】第005号",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十四条",
+          "original_text": "第十四条  移动游戏不得含有“危害社会公德或者民族优秀文化传统”的内容，包括但不限于：\n（一）违背爱祖国、爱人民、爱劳动、爱科学、爱社会主义的基本道德要求。\n（二）刻意表现斗殴、脏话、随地吐痰等污秽、粗俗、低级、下流的言行。\n（三）侵占、损害、破坏我国文物、名胜古迹、政府办公场所、地标性建筑等。\n（四）表现嘲弄、歧视、侮辱妇女、儿童、老人、残疾人等社会弱势群体。\n（五）混淆是非、善恶、美丑界限，或表现其他不利于构建和谐社会的情节。\n（六）宣扬金钱至上、挥霍无度、换妻游戏、婚外情、一夜情、养情人、包二奶、傍大款等腐化、寄生生活方式。\n（七）宣扬以权谋私、权钱交易、权色交易等。\n（八）践踏民族优秀文化遗产和恶意篡改重大历史、文化事件及代表人物形象。\n（九）宣扬宗法观念、男尊女卑、一夫多妻、一妻多夫等内容。\n（十）弱化、诋毁、否定中华民族优秀文化传统的历史地位和存在价值，将民族优秀文化传统虚无化、庸俗化，宣扬与民族优秀文化传统相悖的世界观、历史观、价值观。\n（十一）诋毁或者否认以爱国主义为核心的团结统一、爱好和平、勤劳勇敢、自强不息的伟大民族精神。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-5b15fd6e1e0913ca",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_DISTORTS_HISTORY_CULTURE",
+        "canonical_problem_name": "广告篡改历史文化传统",
+        "regulated_action": "prohibit_content_harming_social_morality_or_national_culture",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "移动游戏运营者"
+        ],
+        "object_scope": [
+          "移动游戏内容"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第十四条明确禁止移动游戏含有危害社会公德或者民族优秀文化传统的内容，并列举践踏民族优秀文化遗产、恶意篡改重大历史、文化事件及代表人物形象等情形，与目标节点定义高度对应。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-6439163a7e2b34c8",
+      "rule_id": "LMM-MP-001",
+      "rule_title": "直播营销平台未成年人保护提示义务",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_WARNING",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-82787b5254f48efb",
+      "canonical_rule_uid": "RUID-6439163a7e2b34c8",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_网络直播营销管理办法（试行）_2021.05.25生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "LMM",
+          "source_name": "网络直播营销管理办法（试行）_2021.05.25生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十二条",
+          "original_text": "直播营销平台应当建立健全未成年人保护机制，注重保护未成年人身心健康。网络直播营销中包含可能影响未成年人身心健康内容的，直播营销平台应当在信息展示前以显著方式作出提示。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-6439163a7e2b34c8",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_WARNING",
+        "canonical_problem_name": "可能影响未成年人身心健康内容的显著提示义务",
+        "regulated_action": "require_prominent_warning_for_minor_harmful_content_in_live_marketing",
+        "legal_effect": "warning_required",
+        "actor_scope": [
+          "直播营销平台"
+        ],
+        "object_scope": [
+          "网络直播营销信息"
+        ],
+        "platform_scope": [
+          "直播营销平台"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第十二条要求直播营销平台建立健全未成年人保护机制，对包含可能影响未成年人身心健康内容的网络直播营销信息在展示前以显著方式作出提示，与目标节点定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-64a370e789faaee2",
+      "rule_id": "COSM-AD-003",
+      "rule_title": "针对不满十四周岁未成年人的广告不得含有可能引发模仿不安全行为的内容",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_IMITATE_UNSAFE_BEHAVIOR",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-05764ee6b0b8cbda",
+      "canonical_rule_uid": "RUID-0d8f5061f6488228",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十条",
+          "original_text": "针对不满十四周岁的未成年人的商品或者服务的广告不得含有下列内容：（二）可能引发其模仿不安全行为。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-64a370e789faaee2",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_IMITATE_UNSAFE_BEHAVIOR",
+        "canonical_problem_name": "针对不满十四周岁未成年人的广告含有可能引发模仿不安全行为的内容",
+        "regulated_action": "prohibit_ad_content_inducing_minors_to_imitate_unsafe_behavior",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "针对不满十四周岁未成年人的商品或服务广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文广告法第四十条明确针对不满十四周岁的未成年人的商品或者服务的广告不得含有可能引发其模仿不安全行为的内容，与目标节点定义完全对应。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-6aaf675cf32e4e3d",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "禁止向未成年人销售烟、酒、彩票及兑付奖金",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PROHIBITED_GOODS_SERVICES",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-4819d224938f37a1",
+      "canonical_rule_uid": "RUID-6aaf675cf32e4e3d",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十九条",
+          "original_text": "第五十九条 学校、幼儿园周边不得设置烟、酒、彩票销售网点。禁止向未成年人销售烟、酒、彩票或者兑付彩票奖金。烟、酒和彩票经营者应当在显著位置设置不向未成年人销售烟、酒或者彩票的标志；对难以判明是否是未成年人的，应当要求其出示身份证件。 任何人不得在学校、幼儿园和其他未成年人集中活动的公共场所吸烟、饮酒。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-6aaf675cf32e4e3d",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PROHIBITED_GOODS_SERVICES",
+        "canonical_problem_name": "向未成年人宣传或销售禁止类商品和服务",
+        "regulated_action": "prohibit_selling_tobacco_alcohol_lottery_to_minors",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "烟、酒和彩票经营者"
+        ],
+        "object_scope": [
+          "烟",
+          "酒",
+          "彩票",
+          "彩票奖金"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文未成年人保护法第五十九条明确禁止向未成年人销售烟、酒、彩票或者兑付彩票奖金，并要求设置标志及核验身份证件，与目标节点定义中向未成年人宣传或销售禁止类商品和服务一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-6ed749d90af32615",
+      "rule_id": "IAM-HF-001",
+      "rule_title": "禁止在未成年人媒介上发布保健食品广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6c9cd54bb62046a5",
+      "canonical_rule_uid": "RUID-50e1960c3642e5b5",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "IAM",
+          "source_name": "互联网广告管理办法_2023.05.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十二条",
+          "original_text": "在针对未成年人的网站、网页、互联网应用程序、公众号等互联网媒介上不得发布医疗、药品、保健食品、特殊医学用途配方食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-6ed749d90af32615",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+        "canonical_problem_name": "在针对未成年人的媒介上发布禁止类广告",
+        "regulated_action": "publish_prohibited_ad_on_minor_media",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "保健食品广告",
+          "医疗广告",
+          "药品广告",
+          "特殊医学用途配方食品广告",
+          "医疗器械广告",
+          "化妆品广告",
+          "酒类广告",
+          "美容广告",
+          "不利于未成年人身心健康的网络游戏广告"
+        ],
+        "platform_scope": [
+          "针对未成年人的网站",
+          "针对未成年人的网页",
+          "针对未成年人的互联网应用程序",
+          "针对未成年人的公众号"
+        ],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第十二条明确禁止在针对未成年人的网站、网页、互联网应用程序、公众号等互联网媒介上发布保健食品等广告，属于针对未成年人媒介的禁止类广告发布，归入MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-724598440ad3ee63",
+      "rule_id": "GAME-OTH-001",
+      "rule_title": "禁止在针对未成年人的大众传播媒介上发布不利于未成年人身心健康的网络游戏广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_UNHEALTHY_GAME_AD",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-f93bc62a042fc7f3",
+      "canonical_rule_uid": "RUID-4a6d2c4fc4cc871e",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十七条",
+          "original_text": "违反本法第四十条第一款规定，在针对未成年人的大众传播媒介上发布医疗、药品、保健食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告的。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-724598440ad3ee63",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_UNHEALTHY_GAME_AD",
+        "canonical_problem_name": "发布不利于未成年人身心健康的网络游戏广告",
+        "regulated_action": "publish_unhealthy_game_ad_to_minors",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "不利于未成年人身心健康的网络游戏广告"
+        ],
+        "platform_scope": [
+          "针对未成年人的大众传播媒介"
+        ],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第五十七条援引第四十条第一款，禁止在针对未成年人的大众传播媒介上发布不利于未成年人身心健康的网络游戏广告，直接对应MINORS_UNHEALTHY_GAME_AD。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-72984d1a67761dd1",
+      "rule_id": "COSM-AD-002",
+      "rule_title": "禁止向未成年人发送任何形式的烟草广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PROHIBITED_GOODS_SERVICES",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-362fac8904400132",
+      "canonical_rule_uid": "RUID-72984d1a67761dd1",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十二条",
+          "original_text": "禁止向未成年人发送任何形式的烟草广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-72984d1a67761dd1",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PROHIBITED_GOODS_SERVICES",
+        "canonical_problem_name": "向未成年人宣传或销售禁止类商品和服务",
+        "regulated_action": "send_tobacco_ad_to_minors",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "烟草广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第二十二条明确禁止向未成年人发送任何形式的烟草广告，归入MINOR_PROHIBITED_GOODS_SERVICES；但track_hint_only为美妆，与原文烟草广告品类不一致，source_scope_conflict=true。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-7497913efe3a276d",
+      "rule_id": "GAME-PROT-002",
+      "rule_title": "针对不满十四周岁未成年人的商品或服务广告不得劝诱其要求家长购买",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_INDUCEMENT_OVERCONSUMPTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-87082850c7b52449",
+      "canonical_rule_uid": "RUID-7497913efe3a276d",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十条",
+          "original_text": "针对不满十四周岁的未成年人的商品或者服务的广告不得含有下列内容：（一）劝诱其要求家长购买广告商品或者服务；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-7497913efe3a276d",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_INDUCEMENT_OVERCONSUMPTION",
+        "canonical_problem_name": "诱导未成年人过度消费或劝诱购买",
+        "regulated_action": "induce_minor_to_ask_parents_to_buy",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "针对不满十四周岁未成年人的商品或服务广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第四十条明确针对不满十四周岁未成年人的商品或服务广告不得劝诱其要求家长购买，对应MINOR_INDUCEMENT_OVERCONSUMPTION。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-838a8c63391b101f",
+      "rule_id": "GAME-OTH-001",
+      "rule_title": "禁止向未成年人提供管制刀具或可能致人严重伤害的器具",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PROHIBITED_GOODS_SERVICES",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-410d83688cf8bd10",
+      "canonical_rule_uid": "RUID-838a8c63391b101f",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十条",
+          "original_text": "第六十条 禁止向未成年人提供、销售管制刀具或者其他可能致人严重伤害的器具等物品。经营者难以判明购买者是否是未成年人的，应当要求其出示身份证件。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-838a8c63391b101f",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PROHIBITED_GOODS_SERVICES",
+        "canonical_problem_name": "向未成年人宣传或销售禁止类商品和服务",
+        "regulated_action": "provide_or_sell_controlled_knives_to_minors",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "经营者"
+        ],
+        "object_scope": [
+          "管制刀具",
+          "可能致人严重伤害的器具"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第六十条明确禁止向未成年人提供、销售管制刀具或者其他可能致人严重伤害的器具等物品，并要求难以判明购买者是否为未成年人时核验身份证件，属于向未成年人提供禁止类物品的规则。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-86044d3bf113b134",
+      "rule_id": "HF-未成年人保护-001",
+      "rule_title": "广告不得损害未成年人身心健康",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.HARM_TO_MINORS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c24b806361fe4dd9",
+      "canonical_rule_uid": "RUID-04db0a8c2279c669",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十条",
+          "original_text": "第十条 广告不得损害未成年人和残疾人的身心健康。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-86044d3bf113b134",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.HARM_TO_MINORS",
+        "canonical_problem_name": "广告对未成年人有害内容",
+        "regulated_action": "ad_harm_minors_physical_mental_health",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "广告法第十条原文明确广告不得损害未成年人和残疾人的身心健康，属于未成年人保护及公序良俗范畴。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-87f9acdc104348ff",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "禁止发布含有危害未成年人身心健康内容的广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_DISSEMINATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-931de853f8730a15",
+      "canonical_rule_uid": "RUID-22cc6a32785cd9c7",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十三条",
+          "original_text": "任何组织或者个人不得刊登、播放、张贴或者散发含有危害未成年人身心健康内容的广告；不得在学校、幼儿园播放、张贴或者散发商业广告；不得利用校服、教材等发布或者变相发布商业广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-87f9acdc104348ff",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_DISSEMINATION",
+        "canonical_problem_name": "向未成年人传播或发布危害其身心健康的内容",
+        "regulated_action": "publish_ad_harmful_to_minors",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "任何组织或者个人"
+        ],
+        "object_scope": [
+          "含有危害未成年人身心健康内容的广告",
+          "学校、幼儿园商业广告",
+          "利用校服、教材等发布或变相发布的商业广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "未成年人保护法第五十三条原文明确禁止刊登、播放、张贴或者散发含有危害未成年人身心健康内容的广告，并禁止在学校、幼儿园及利用校服、教材等发布或变相发布商业广告。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-8e84fbe9ca82f28c",
+      "rule_id": "GAME-OTH-003",
+      "rule_title": "禁止不当评述自然灾害、重大事故等灾难",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_IMPROPER_DISASTER_COMMENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-15156580700491e8",
+      "canonical_rule_uid": "RUID-8e84fbe9ca82f28c",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_网络信息内容生态治理规定_2020.03.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "NICE",
+          "source_name": "网络信息内容生态治理规定_2020.03.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第七条",
+          "original_text": "网络信息内容生产者应当采取措施，防范和抵制制作、复制、发布含有下列内容的不良信息：(三)不当评述自然灾害、重大事故等灾难的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-8e84fbe9ca82f28c",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_IMPROPER_DISASTER_COMMENT",
+        "canonical_problem_name": "不当评述自然灾害、重大事故等灾难",
+        "regulated_action": "improper_comment_on_disasters",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "网络信息内容生产者"
+        ],
+        "object_scope": [
+          "网络信息内容"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "网络信息内容生态治理规定第七条原文将不当评述自然灾害、重大事故等灾难列为不良信息，属于公序良俗范畴。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-95d3a0fa0a69003b",
+      "rule_id": "GAME-PROT-001",
+      "rule_title": "移动游戏不得含有诱发未成年人模仿违法犯罪行为的内容",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_IMITATE_ILLEGAL_CRIME",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ab47877f92b045e8",
+      "canonical_rule_uid": "RUID-95d3a0fa0a69003b",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_关于印发《移动游戏内容规范（2016年版）》的通知音数协字【2016】第005号_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "关于印发《移动游戏内容规范（2016年版）》的通知 音数协字【2016】第005号",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十五条",
+          "original_text": "第十五条  移动游戏不得含有诱发未成年人模仿违反社会公德、违法犯罪的行为的内容以及妨害未成年人身心健康的内容，包括但不限于：（一）宣扬违法、犯罪，含有诱使未成年人模仿学习的内容：1.详细表现、描述犯罪手段、方法和细节，诱发或鼓动未成年人模仿犯罪；2.美化罪犯形象，易引起未成年人对罪犯同情或赞赏；3.宣扬以不正当手段侵害国家、集体和私人财产，如：扮演盗贼角色、实施偷窃、骗取、抢夺或抢劫等行为；4.表现罪犯逃脱法律制裁，藐视法律尊严，如设置洗罪功能、贿赂、劫狱等;5.宣扬或具体表现黑社会性质的组织及其行为；6.鼓动、诱导、奖励恶意PK。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-95d3a0fa0a69003b",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_IMITATE_ILLEGAL_CRIME",
+        "canonical_problem_name": "游戏内容诱发未成年人模仿违法犯罪",
+        "regulated_action": "game_content_inducing_minors_to_imitate_illegal_crime",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "移动游戏内容提供者"
+        ],
+        "object_scope": [
+          "移动游戏内容"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第十五条明确禁止移动游戏含有诱发未成年人模仿违反社会公德、违法犯罪行为的内容，并列举宣扬违法犯罪、美化罪犯、宣扬侵害财产、表现罪犯逃脱法律制裁、宣扬黑社会组织、鼓动恶意PK等具体情形，与目标节点定义高度一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9958b8bfdfdb7349",
+      "rule_id": "COSM-OTHER-001",
+      "rule_title": "广告中不得损害未成年人或残疾人的身心健康",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.HARM_TO_MINORS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-592f6044682f7ab1",
+      "canonical_rule_uid": "RUID-b75b91c99b520702",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "第六十八条 广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任： （一）在广告中损害未成年人或者残疾人的身心健康的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9958b8bfdfdb7349",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.HARM_TO_MINORS",
+        "canonical_problem_name": "广告对未成年人有害内容",
+        "regulated_action": "ad_harming_minors_physical_mental_health",
+        "legal_effect": "civil_liability",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "广告内容"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "context",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "medium",
+        "reason": "原文第六十八条明确广告中损害未成年人身心健康的应承担民事责任，属于未成年人保护范畴；但track_hint_only标注为美妆，而原文为广告法通用条款，未限定美妆行业，故source_scope_conflict=true。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-99c453d4e7a8b3ac",
+      "rule_id": "HF-ADLOC-001",
+      "rule_title": "禁止在中小学校、幼儿园内开展广告活动",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-1c0bbc1f7c19da11",
+      "canonical_rule_uid": "RUID-044f5746d4430f02",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十九条",
+          "original_text": "不得在中小学校、幼儿园内开展广告活动，不得利用中小学生和幼儿的教材、教辅材料、练习册、文具、教具、校服、校车等发布或者变相发布广告，但公益广告除外。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-99c453d4e7a8b3ac",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+        "canonical_problem_name": "学校、幼儿园内商业广告活动及利用特定载体发布广告",
+        "regulated_action": "advertising_in_schools_and_kindergartens",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "广告活动",
+          "教材",
+          "教辅材料",
+          "练习册",
+          "文具",
+          "教具",
+          "校服",
+          "校车"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "context",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第三十九条明确禁止在中小学校、幼儿园内开展广告活动及利用教材等载体发布或变相发布广告，与目标节点定义一致；但track_hint_only标注为保健食品，原文为广告法通用条款未限定行业，故source_scope_conflict=true。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-9dfe543e12eb73b6",
+      "rule_id": "XHS-HF-002",
+      "rule_title": "酒水行业笔记不得展示KOL饮酒动作",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-722849a6acc2274d",
+      "canonical_rule_uid": "RUID-9dfe543e12eb73b6",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260706_小红书《食品行业投放规则》使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书《食品行业投放规则》使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2",
+          "original_text": "平台是不会卡控成年人饮酒的，但是酒水行业不可以展示kol饮酒动作哦，易引导其他未成年人饮酒或其他不好的影响"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-9dfe543e12eb73b6",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+        "canonical_problem_name": "广告内容针对或指向未成年人",
+        "regulated_action": "kol_alcohol_drinking_display_in_alcohol_notes",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "酒水行业投放者"
+        ],
+        "object_scope": [
+          "酒水行业笔记",
+          "KOL饮酒动作"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "medium",
+        "reason": "原文明确酒水行业不可展示KOL饮酒动作，理由是易引导未成年人饮酒，属于未成年人保护范畴；但track_hint_only标注为保健食品，原文为酒水行业规则，故source_scope_conflict=true。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-a0a3175230952dcd",
+      "rule_id": "GAME-MN-001",
+      "rule_title": "游戏场所及设备对未成年人的禁入/限入规定",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ACCESS_RESTRICTION_VIOLATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-0a84ebf1c664faed",
+      "canonical_rule_uid": "RUID-a0a3175230952dcd",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十八条",
+          "original_text": "第五十八条 学校、幼儿园周边不得设置营业性娱乐场所、酒吧、互联网上网服务营业场所等不适宜未成年人活动的场所。营业性歌舞娱乐场所、酒吧、互联网上网服务营业场所等不适宜未成年人活动场所的经营者，不得允许未成年人进入；游艺娱乐场所设置的电子游戏设备，除国家法定节假日外，不得向未成年人提供。经营者应当在显著位置设置未成年人禁入、限入标志；对难以判明是否是未成年人的，应当要求其出示身份证件。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-a0a3175230952dcd",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ACCESS_RESTRICTION_VIOLATION",
+        "canonical_problem_name": "违反未成年人禁入限入规定或未核验年龄",
+        "regulated_action": "minor_access_restriction_violation",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "营业性歌舞娱乐场所经营者",
+          "酒吧经营者",
+          "互联网上网服务营业场所经营者",
+          "游艺娱乐场所经营者"
+        ],
+        "object_scope": [
+          "营业性娱乐场所",
+          "酒吧",
+          "互联网上网服务营业场所",
+          "电子游戏设备"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第五十八条明确：不适宜未成年人活动场所经营者不得允许未成年人进入；游艺娱乐场所电子游戏设备除国家法定节假日外不得向未成年人提供；应设置禁入限入标志；难以判明年龄时应要求出示身份证件。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-a8c4374f2de3ec85",
+      "rule_id": "GAME-BILI-001",
+      "rule_title": "游戏广告不得出现未成年人相关元素",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-124a19003178d2f5",
+      "canonical_rule_uid": "RUID-a8c4374f2de3ec85",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "高风险内容（金融、游戏、酒类、医疗、OTC药品、医疗器械等）严禁出现任何未成年人相关元素"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-a8c4374f2de3ec85",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+        "canonical_problem_name": "广告内容针对或指向未成年人",
+        "regulated_action": "minor_related_elements_in_high_risk_game_ads",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "游戏广告主",
+          "游戏广告发布者"
+        ],
+        "object_scope": [
+          "游戏广告",
+          "金融广告",
+          "酒类广告",
+          "医疗广告",
+          "OTC药品广告",
+          "医疗器械广告"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "平台规则原文明确：高风险内容（金融、游戏、酒类、医疗、OTC药品、医疗器械等）严禁出现任何未成年人相关元素。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-abcddf44be8c7b73",
+      "rule_id": "HF-PRO-001",
+      "rule_title": "针对未成年人的大众传播媒介上不得发布保健食品广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-37b491e24823cd83",
+      "canonical_rule_uid": "RUID-abcddf44be8c7b73",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十条",
+          "original_text": "在针对未成年人的大众传播媒介上不得发布医疗、药品、保健食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-abcddf44be8c7b73",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+        "canonical_problem_name": "在针对未成年人的媒介上发布禁止类广告",
+        "regulated_action": "prohibited_ads_on_minor_targeted_media",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "医疗广告",
+          "药品广告",
+          "保健食品广告",
+          "医疗器械广告",
+          "化妆品广告",
+          "酒类广告",
+          "美容广告",
+          "不利于未成年人身心健康的网络游戏广告"
+        ],
+        "platform_scope": [
+          "针对未成年人的大众传播媒介"
+        ],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "广告法第四十条原文明确：在针对未成年人的大众传播媒介上不得发布医疗、药品、保健食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b0582382434a6009",
+      "rule_id": "GAME-PROT-003",
+      "rule_title": "移动游戏不得含有其他危害未成年人身心健康的内容",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_ALCOHOL_TOBACCO",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-bdc861ded7c57987",
+      "canonical_rule_uid": "RUID-b0582382434a6009",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_关于印发《移动游戏内容规范（2016年版）》的通知音数协字【2016】第005号_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "关于印发《移动游戏内容规范（2016年版）》的通知 音数协字【2016】第005号",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十五条",
+          "original_text": "第十五条  移动游戏不得含有诱发未成年人模仿违反社会公德、违法犯罪的行为的内容以及妨害未成年人身心健康的内容，包括但不限于：（三）宣扬其他危害未成年人身心健康的内容：1.集中表现格调低俗的内容；2.具体表现未成年人饮酒、抽烟等行为，或在游戏中出现烟草这一道具；3.具体表现未成年人出入不适宜未成年人活动的场所；4.鼓励未成年人同居、结婚等不适宜未成年人的行为。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-b0582382434a6009",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_ALCOHOL_TOBACCO",
+        "canonical_problem_name": "表现未成年人饮酒抽烟或出现烟草道具",
+        "regulated_action": "minor_alcohol_tobacco_depiction_in_game",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "移动游戏运营者",
+          "移动游戏内容提供者"
+        ],
+        "object_scope": [
+          "移动游戏内容",
+          "未成年人饮酒抽烟行为",
+          "烟草道具",
+          "未成年人出入不适宜场所",
+          "鼓励未成年人同居结婚",
+          "格调低俗内容"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第十五条明确移动游戏不得含有诱发未成年人模仿违反社会公德、违法犯罪行为及妨害未成年人身心健康的内容，其中第（三）项列举具体表现未成年人饮酒、抽烟等行为或出现烟草道具、出入不适宜场所、鼓励同居结婚等。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b26a1ea6f5e937a6",
+      "rule_id": "GAME-TIME-001",
+      "rule_title": "未成年人游戏时段和时长限制",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ANTI_ADDICTION_CIRCUMVENTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-2231c11a6f159276",
+      "canonical_rule_uid": "RUID-b26a1ea6f5e937a6",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "未分条-1",
+          "original_text": "每日22时至次日8时，网络游戏企业不得以任何形式为未成年人提供游戏服务。网络游戏企业向未成年人提供游戏服务的时长，法定节假日每日累计不得超过3小时，其他时间每日累计不得超过1.5小时。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-b26a1ea6f5e937a6",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ANTI_ADDICTION_CIRCUMVENTION",
+        "canonical_problem_name": "宣传绕过防沉迷系统或违反时段时长限制",
+        "regulated_action": "advertise_game_service_to_minors_outside_allowed_time_or_duration",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "网络游戏企业"
+        ],
+        "object_scope": [
+          "网络游戏服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文规定每日22时至次日8时不得以任何形式为未成年人提供游戏服务，法定节假日每日累计不得超过3小时，其他时间每日累计不得超过1.5小时；广告宣传内容若与未成年人游戏时段和时长限制相抵触，即落入该节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b645638fe503638d",
+      "rule_id": "COSM-PRV-001",
+      "rule_title": "未经消费者同意不得发送商业性信息",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-287c3b8cc275f2bf",
+      "canonical_rule_uid": "RUID-e9129bbc59cd80cd",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "CPL",
+          "source_name": "中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十九条",
+          "original_text": "经营者未经消费者同意或者请求，或者消费者明确表示拒绝的，不得向其发送商业性信息。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-b645638fe503638d",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+        "canonical_problem_name": "广告内容针对或指向未成年人",
+        "regulated_action": "send_commercial_message_without_consumer_consent",
+        "legal_effect": "consent_required",
+        "actor_scope": [
+          "经营者"
+        ],
+        "object_scope": [
+          "商业性信息"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "medium",
+        "reason": "原文为未经消费者同意或请求、或消费者明确拒绝时不得发送商业性信息，未明示未成年人或公序良俗；track_hint_only为美妆，与未成年人及公序良俗主题不一致，故source_scope_conflict=true；在允许节点中最接近向未成年人及其监护人发送商业性信息的情形。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b75b91c99b520702",
+      "rule_id": "GAME-OTHER-001",
+      "rule_title": "广告中不得损害未成年人或残疾人的身心健康",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.HARM_TO_MINORS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-592f6044682f7ab1",
+      "canonical_rule_uid": "RUID-b75b91c99b520702",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "第六十八条 广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任： （一）在广告中损害未成年人或者残疾人的身心健康的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-b75b91c99b520702",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.HARM_TO_MINORS",
+        "canonical_problem_name": "广告对未成年人有害内容",
+        "regulated_action": "harm_minors_physical_or_mental_health_in_advertising",
+        "legal_effect": "civil_liability",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "广告内容"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文明确广告中损害未成年人或者残疾人身心健康的应依法承担民事责任，直接对应未成年人及公序良俗下广告对未成年人有害内容。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b92d0e1dd3dff9ca",
+      "rule_id": "COSM-GEN-001",
+      "rule_title": "广告应当真实、合法，以健康的表现形式表达广告内容",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_CONTENT_UNHEALTHY_PRESENTATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-a4bd51ad3f7f6f35",
+      "canonical_rule_uid": "RUID-b92d0e1dd3dff9ca",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三条",
+          "original_text": "广告应当真实、合法，以健康的表现形式表达广告内容，符合社会主义精神文明建设和弘扬中华民族优秀传统文化的要求。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-b92d0e1dd3dff9ca",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_CONTENT_UNHEALTHY_PRESENTATION",
+        "canonical_problem_name": "广告内容表现形式不健康",
+        "regulated_action": "express_ad_content_in_unhealthy_form",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "广告内容"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "medium",
+        "reason": "原文要求广告真实、合法，以健康的表现形式表达，符合社会主义精神文明建设及弘扬中华民族优秀传统文化要求；track_hint_only为美妆，与未成年人及公序良俗主题不一致，故source_scope_conflict=true；该原则性规定最接近广告内容表现形式不健康节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-bb561b594a8add93",
+      "rule_id": "COSM-ADLOC-001",
+      "rule_title": "禁止在中小学校、幼儿园内开展广告活动及利用特定载体发布广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-1c0bbc1f7c19da11",
+      "canonical_rule_uid": "RUID-044f5746d4430f02",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十九条",
+          "original_text": "不得在中小学校、幼儿园内开展广告活动，不得利用中小学生和幼儿的教材、教辅材料、练习册、文具、教具、校服、校车等发布或者变相发布广告，但公益广告除外。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-bb561b594a8add93",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+        "canonical_problem_name": "学校、幼儿园内商业广告活动及利用特定载体发布广告",
+        "regulated_action": "advertising_in_schools_and_using_school_materials",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "中小学校、幼儿园内广告活动",
+          "中小学生和幼儿的教材、教辅材料、练习册、文具、教具、校服、校车等载体广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "广告法第三十九条明确禁止在中小学校、幼儿园内开展广告活动，禁止利用教材、教辅材料、练习册、文具、教具、校服、校车等发布或变相发布广告（公益广告除外）。原文未限定行业，track_hint_only为美妆，与原文不冲突但行业标注过窄，source_scope_conflict=true。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-c0c1a05c8235f35e",
+      "rule_id": "GAME-OTH-006",
+      "rule_title": "禁止煽动人群歧视、地域歧视等",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DISCRIMINATION_AGAINST_GROUPS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-7265a03d857ee0fe",
+      "canonical_rule_uid": "RUID-c0c1a05c8235f35e",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_网络信息内容生态治理规定_2020.03.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "NICE",
+          "source_name": "网络信息内容生态治理规定_2020.03.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第七条",
+          "original_text": "网络信息内容生产者应当采取措施，防范和抵制制作、复制、发布含有下列内容的不良信息：(六)煽动人群歧视、地域歧视等的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-c0c1a05c8235f35e",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DISCRIMINATION_AGAINST_GROUPS",
+        "canonical_problem_name": "广告歧视、侮辱特定群体",
+        "regulated_action": "inciting_group_or_regional_discrimination",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "网络信息内容生产者"
+        ],
+        "object_scope": [
+          "煽动人群歧视、地域歧视等的不良信息"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "网络信息内容生态治理规定第七条第六项禁止制作、复制、发布煽动人群歧视、地域歧视等的不良信息，属于公序良俗范畴。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-c1efc611fdda35b0",
+      "rule_id": "GAME-MP-002",
+      "rule_title": "未成年人游戏时段时长限制",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ANTI_ADDICTION_CIRCUMVENTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-bbc49ae807179795",
+      "canonical_rule_uid": "RUID-c1efc611fdda35b0",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "二",
+          "original_text": "二 、严格控制未成年人使用网络游戏时段、时长。每日22时至次日8时，网络游戏企业不得以任何形式为未成年人提供游戏服务。网络游戏企业向未成年人提供游戏服务的时长，法定节假日每日累计不得超过3小时，其他时间每日累计不得超过1.5小时。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-c1efc611fdda35b0",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ANTI_ADDICTION_CIRCUMVENTION",
+        "canonical_problem_name": "宣传绕过防沉迷系统或违反时段时长限制",
+        "regulated_action": "violating_minor_game_time_and_duration_limits",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "网络游戏企业"
+        ],
+        "object_scope": [
+          "每日22时至次日8时向未成年人提供游戏服务",
+          "法定节假日每日累计超过3小时",
+          "其他时间每日累计超过1.5小时"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "国家新闻出版署关于防止未成年人沉迷网络游戏的通知第二条明确未成年人游戏时段时长限制，广告不得宣传违反该限制的内容。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-c3c886ea36eb011b",
+      "rule_id": "GAME-OTH-002",
+      "rule_title": "禁止宣扬或肯定不良的家庭观、婚恋观、利益观",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_PROMOTES_BAD_VALUES",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-73dd3cb36f2b494e",
+      "canonical_rule_uid": "RUID-c3c886ea36eb011b",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "禁⽌宣扬或者肯定不良的家庭观、婚恋观、利益观"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-c3c886ea36eb011b",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_PROMOTES_BAD_VALUES",
+        "canonical_problem_name": "宣扬或肯定不良价值观",
+        "regulated_action": "promoting_or_affirming_bad_family_marriage_or_interest_values",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [
+          "不良的家庭观、婚恋观、利益观"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "B站广告推广平台审核规范（二）第3条禁止宣扬或者肯定不良的家庭观、婚恋观、利益观，属于公序良俗范畴。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-c5808d29f88b5958",
+      "rule_id": "GAME-PROT-001",
+      "rule_title": "禁止宣传不利于未成年人身心健康的游戏",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_UNHEALTHY_GAME_AD",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c332db758bb7447b",
+      "canonical_rule_uid": "RUID-c5808d29f88b5958",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "6.",
+          "original_text": "禁止宣传或介绍不利于未成年人身心健康的游戏；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-c5808d29f88b5958",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_UNHEALTHY_GAME_AD",
+        "canonical_problem_name": "发布不利于未成年人身心健康的网络游戏广告",
+        "regulated_action": "prohibit_promoting_unhealthy_game_for_minors",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "不利于未成年人身心健康的游戏"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文明确禁止宣传或介绍不利于未成年人身心健康的游戏，属于未成年人保护范畴，与目标节点定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-c8ba974830e0c03a",
+      "rule_id": "GAME-PRV-001",
+      "rule_title": "处理不满十四周岁未成年人个人信息需征得监护人同意",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PERSONAL_INFO_PROCESSING",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6349ed95ddc3326b",
+      "canonical_rule_uid": "RUID-c8ba974830e0c03a",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第七十二条",
+          "original_text": "第七十二条 信息处理者通过网络处理未成年人个人信息的，应当遵循合法、正当和必要的原则。处理不满十四周岁未成年人个人信息的，应当征得未成年人的父母或者其他监护人同意，但法律、行政法规另有规定的除外。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-c8ba974830e0c03a",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PERSONAL_INFO_PROCESSING",
+        "canonical_problem_name": "违规处理未成年人个人信息",
+        "regulated_action": "require_guardian_consent_for_minor_personal_info",
+        "legal_effect": "consent_required",
+        "actor_scope": [
+          "信息处理者"
+        ],
+        "object_scope": [
+          "不满十四周岁未成年人个人信息"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文规定处理不满十四周岁未成年人个人信息应征得监护人同意，与目标节点定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-caf8152961e23940",
+      "rule_id": "GAME-OTH-001",
+      "rule_title": "禁止人物造型过分夸张怪异对未成年人有不良影响",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_DISSEMINATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-0bd7f915e6fbc45a",
+      "canonical_rule_uid": "RUID-caf8152961e23940",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.",
+          "original_text": "禁⽌⼈物造型过分夸张怪异，对未成年⼈有不良影响"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-caf8152961e23940",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_DISSEMINATION",
+        "canonical_problem_name": "向未成年人传播或发布危害其身心健康的内容",
+        "regulated_action": "prohibit_exaggerated_bizarre_character_design_harmful_to_minors",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "人物造型过分夸张怪异的内容"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "medium",
+        "reason": "原文禁止人物造型过分夸张怪异对未成年人有不良影响，属于向未成年人传播危害其身心健康内容，与目标节点定义中‘人物造型过分夸张怪异’表述一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-cafa3f4b27d5f03d",
+      "rule_id": "GAME-PROT-003",
+      "rule_title": "针对不满十四周岁未成年人的商品或服务广告不得含有可能引发其模仿不安全行为的内容",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_IMITATE_UNSAFE_BEHAVIOR",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-05764ee6b0b8cbda",
+      "canonical_rule_uid": "RUID-0d8f5061f6488228",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十条",
+          "original_text": "针对不满十四周岁的未成年人的商品或者服务的广告不得含有下列内容：（二）可能引发其模仿不安全行为。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-cafa3f4b27d5f03d",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_IMITATE_UNSAFE_BEHAVIOR",
+        "canonical_problem_name": "针对不满十四周岁未成年人的广告含有可能引发模仿不安全行为的内容",
+        "regulated_action": "prohibit_content_inducing_minors_imitate_unsafe_behavior",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "针对不满十四周岁未成年人的商品或服务广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文明确针对不满十四周岁未成年人的商品或服务广告不得含有可能引发其模仿不安全行为的内容，与目标节点定义完全一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-d71213830d7a7b52",
+      "rule_id": "COSM-AD-001",
+      "rule_title": "针对未成年人的大众传播媒介上不得发布化妆品广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-37b491e24823cd83",
+      "canonical_rule_uid": "RUID-abcddf44be8c7b73",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十条",
+          "original_text": "在针对未成年人的大众传播媒介上不得发布医疗、药品、保健食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-d71213830d7a7b52",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+        "canonical_problem_name": "在针对未成年人的媒介上发布禁止类广告",
+        "regulated_action": "publish_cosmetic_ad_on_minor_targeted_mass_media",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "化妆品",
+          "化妆品广告"
+        ],
+        "platform_scope": [
+          "针对未成年人的大众传播媒介"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "广告法第四十条原文明确：在针对未成年人的大众传播媒介上不得发布医疗、药品、保健食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。该规则针对化妆品广告在针对未成年人的大众传播媒介上的发布行为，属于未成年人保护范畴，归入MINORS_PUBLIC_ORDER下最接近的禁止类广告媒介节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-d8d788b3f89daab3",
+      "rule_id": "GAME-PROT-001",
+      "rule_title": "针对未成年人的大众传播媒介上不得发布不利于未成年人身心健康的网络游戏广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_UNHEALTHY_GAME_AD",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-37b491e24823cd83",
+      "canonical_rule_uid": "RUID-abcddf44be8c7b73",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十条",
+          "original_text": "在针对未成年人的大众传播媒介上不得发布医疗、药品、保健食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-d8d788b3f89daab3",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_UNHEALTHY_GAME_AD",
+        "canonical_problem_name": "发布不利于未成年人身心健康的网络游戏广告",
+        "regulated_action": "publish_unhealthy_online_game_ad_on_minor_targeted_mass_media",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "网络游戏",
+          "网络游戏广告"
+        ],
+        "platform_scope": [
+          "针对未成年人的大众传播媒介"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "广告法第四十条原文明确禁止在针对未成年人的大众传播媒介上发布不利于未成年人身心健康的网络游戏广告。该规则核心为不利于未成年人身心健康的网络游戏广告，与MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_UNHEALTHY_GAME_AD定义一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-d9b1702b27c275b6",
+      "rule_id": "GAME-MP-001",
+      "rule_title": "禁止表现未成年人早恋及不良行为",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_DISSEMINATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-793ecc1c2ba0530f",
+      "canonical_rule_uid": "RUID-d9b1702b27c275b6",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2.",
+          "original_text": "禁止表现未成年人早恋的，以及抽烟酗酒、打架斗殴、滥用毒品等不良行为；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-d9b1702b27c275b6",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_HARMFUL_CONTENT_DISSEMINATION",
+        "canonical_problem_name": "向未成年人传播或发布危害其身心健康的内容",
+        "regulated_action": "display_minors_early_love_or_bad_behavior",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "游戏广告内容",
+          "未成年人相关表现内容"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "B站广告推广平台审核规范（二）第2条原文：禁止表现未成年人早恋的，以及抽烟酗酒、打架斗殴、滥用毒品等不良行为。该规则禁止表现未成年人早恋及抽烟酗酒、打架斗殴、滥用毒品等不良行为，属于向未成年人传播危害其身心健康内容，归入MINORS_PUBLIC_ORDER下最接近节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-dce90b5f625bee86",
+      "rule_id": "HF-IP-002",
+      "rule_title": "广告中不得贬低其他生产经营者的商品或服务",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DISPARAGEMENT_OF_COMPETITORS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-f14a425a146c65fb",
+      "canonical_rule_uid": "RUID-dce90b5f625bee86",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任：……（三）贬低其他生产经营者的商品、服务的；……"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-dce90b5f625bee86",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DISPARAGEMENT_OF_COMPETITORS",
+        "canonical_problem_name": "贬低其他生产经营者商品或服务",
+        "regulated_action": "disparage_other_business_operators_goods_or_services",
+        "legal_effect": "civil_liability",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "其他生产经营者的商品",
+          "其他生产经营者的服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": true,
+        "suggested_root_id": "PROHIBITED_CONTENT",
+        "confidence": "high",
+        "reason": "广告法第六十八条原文规定贬低其他生产经营者的商品、服务的应依法承担民事责任。该规则本质为禁止贬低竞争对手，属于禁止投放内容/宣传真实性范畴，不属于未成年人及公序良俗，故root_scope_conflict=true，建议归入PROHIBITED_CONTENT；但当前允许节点中最接近者为MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DISPARAGEMENT_OF_COMPETITORS。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e3588a6dbe726282",
+      "rule_id": "GAME-PAY-001",
+      "rule_title": "未成年人付费服务限制",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PAYMENT_LIMIT_CIRCUMVENTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-d2f25d702ca49d3f",
+      "canonical_rule_uid": "RUID-e3588a6dbe726282",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "未分条-1",
+          "original_text": "网络游戏企业不得为未满8周岁的用户提供游戏付费服务。同一网络游戏企业所提供的游戏付费服务，8周岁以上未满16周岁的用户，单次充值金额不得超过50元人民币，每月充值金额累计不得超过200元人民币；16周岁以上未满18周岁的用户，单次充值金额不得超过100元人民币，每月充值金额累计不得超过400元人民币。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e3588a6dbe726282",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_PAYMENT_LIMIT_CIRCUMVENTION",
+        "canonical_problem_name": "未成年人付费金额超限或绕过付费限制宣传",
+        "regulated_action": "minor_payment_limit_circumvention",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "网络游戏企业"
+        ],
+        "object_scope": [
+          "游戏付费服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文明确网络游戏企业不得为未满8周岁用户提供付费服务，并对8-16周岁、16-18周岁用户设定单次及每月充值金额上限，属于未成年人付费金额超限或绕过付费限制宣传的规制范围。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e363c8b2cfbf1915",
+      "rule_id": "XHS-HF-006",
+      "rule_title": "酒水行业不得展示KOL饮酒动作",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-3f3fd9848d9d58d6",
+      "canonical_rule_uid": "RUID-e363c8b2cfbf1915",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_小红书《食品行业投放规则》使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书《食品行业投放规则》使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "平台是不会卡控成年人饮酒的，但是酒水行业不可以展示kol饮酒动作哦，易引导其他未成年人饮酒或其他不好的影响"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e363c8b2cfbf1915",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+        "canonical_problem_name": "广告内容针对或指向未成年人",
+        "regulated_action": "minor_targeted_advertising_identification",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "酒水行业广告主"
+        ],
+        "object_scope": [
+          "酒水",
+          "KOL饮酒动作"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": true,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文明确酒水行业不可以展示KOL饮酒动作，易引导未成年人饮酒，属于展示可能引导未成年人饮酒的KOL饮酒动作；但track_hint_only为保健食品，applies_to行业为保健食品而品类为酒水，存在行业与品类不一致的source_scope_conflict。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e6bfda83a13e7ec9",
+      "rule_id": "COSM-AD-002",
+      "rule_title": "针对不满十四周岁未成年人的广告不得劝诱其要求家长购买",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_INDUCEMENT_OVERCONSUMPTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-87082850c7b52449",
+      "canonical_rule_uid": "RUID-7497913efe3a276d",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十条",
+          "original_text": "针对不满十四周岁的未成年人的商品或者服务的广告不得含有下列内容：（一）劝诱其要求家长购买广告商品或者服务；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e6bfda83a13e7ec9",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_INDUCEMENT_OVERCONSUMPTION",
+        "canonical_problem_name": "诱导未成年人过度消费或劝诱购买",
+        "regulated_action": "minor_inducement_overconsumption",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "针对不满十四周岁未成年人的商品或服务广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文明确针对不满十四周岁未成年人的商品或服务广告不得含有劝诱其要求家长购买广告商品或者服务的内容，属于诱导未成年人过度消费或劝诱购买。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e8abab502b7c26d5",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "禁止在中小学校、幼儿园内或利用与中小学生、幼儿有关的物品发布广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-35e087fa574fea09",
+      "canonical_rule_uid": "RUID-e8abab502b7c26d5",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十八条",
+          "original_text": "违反本法第三十九条规定，在中小学校、幼儿园内或者利用与中小学生、幼儿有关的物品发布广告的"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e8abab502b7c26d5",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_SCHOOL_COMMERCIAL_ACTIVITY",
+        "canonical_problem_name": "学校、幼儿园内商业广告活动及利用特定载体发布广告",
+        "regulated_action": "minor_school_commercial_activity",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "中小学校、幼儿园内广告",
+          "与中小学生、幼儿有关的物品"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "context",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文明确禁止在中小学校、幼儿园内或者利用与中小学生、幼儿有关的物品发布广告，属于学校、幼儿园内商业广告活动及利用特定载体发布广告。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e9129bbc59cd80cd",
+      "rule_id": "HF-PRI-001",
+      "rule_title": "未经消费者同意不得发送商业性信息",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-287c3b8cc275f2bf",
+      "canonical_rule_uid": "RUID-e9129bbc59cd80cd",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "CPL",
+          "source_name": "中华人民共和国消费者权益保护法（2013修正）_2014.03.15生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第二十九条",
+          "original_text": "经营者未经消费者同意或者请求，或者消费者明确表示拒绝的，不得向其发送商业性信息。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e9129bbc59cd80cd",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_IDENTIFICATION",
+        "canonical_problem_name": "未经消费者同意发送商业性信息",
+        "regulated_action": "send_commercial_message_without_consent",
+        "legal_effect": "consent_required",
+        "actor_scope": [
+          "经营者"
+        ],
+        "object_scope": [
+          "商业性信息"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": true,
+        "suggested_root_id": "SCOPE_ACCESS",
+        "confidence": "medium",
+        "reason": "原文为消费者权益保护法第二十九条，禁止未经消费者同意或请求、或消费者明确表示拒绝时发送商业性信息，本质属于适用主体与准入/同意管理，不属于未成年人及公序良俗；但当前允许节点中最接近者为向未成年人及其监护人发送商业性信息相关节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-ead6e10661afdcc1",
+      "rule_id": "GAME-USER-002",
+      "rule_title": "游客体验模式限制",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ANTI_ADDICTION_CIRCUMVENTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-9214bef0477aaf1c",
+      "canonical_rule_uid": "RUID-ead6e10661afdcc1",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "国家新闻出版署关于防止未成年人沉迷网络游戏的通知_2019.11.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "未分条-1",
+          "original_text": "网络游戏企业可以对其游戏服务设置不超过1小时的游客体验模式。在游客体验模式下，用户无须实名注册，不能充值和付费消费。对使用同一硬件设备的用户，网络游戏企业在15天内不得重复提供游客体验模式。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-ead6e10661afdcc1",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_ANTI_ADDICTION_CIRCUMVENTION",
+        "canonical_problem_name": "宣传绕过防沉迷系统或违反时段时长限制",
+        "regulated_action": "circumvent_anti_addiction_or_guest_mode_limits",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "网络游戏企业"
+        ],
+        "object_scope": [
+          "游客体验模式",
+          "实名注册",
+          "充值付费消费"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文规定游客体验模式不超过1小时、无须实名注册、不能充值和付费消费，且15天内不得重复提供；广告宣传不得与未成年人游戏时段、时长及防沉迷限制相抵触。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-eb350ea9104aebf5",
+      "rule_id": "GAME-BILI-002",
+      "rule_title": "游戏广告不得宣传不利于未成年人身心健康的游戏",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_UNHEALTHY_GAME_AD",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-85d26e1d317c2a21",
+      "canonical_rule_uid": "RUID-eb350ea9104aebf5",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_B站广告推广平台审核规范（二）_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范（二）",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "禁止宣传或介绍不利于未成年人身心健康的游戏"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-eb350ea9104aebf5",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_UNHEALTHY_GAME_AD",
+        "canonical_problem_name": "发布不利于未成年人身心健康的网络游戏广告",
+        "regulated_action": "promote_unhealthy_game_harmful_to_minors",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "游戏广告"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "B站广告推广平台审核规范原文禁止宣传或介绍不利于未成年人身心健康的游戏，属于未成年人保护相关禁止投放内容。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-ebab4818abe63984",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "禁止为未满十六周岁未成年人提供网络直播发布者账号注册服务",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_LIVE_STREAM_ACCOUNT_REGISTRATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-8fdd800705d9bcd4",
+      "canonical_rule_uid": "RUID-ebab4818abe63984",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第七十六条",
+          "original_text": "第七十六条 网络直播服务提供者不得为未满十六周岁的未成年人提供网络直播发布者账号注册服务；为年满十六周岁的未成年人提供网络直播发布者账号注册服务时，应当对其身份信息进行认证，并征得其父母或者其他监护人同意。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-ebab4818abe63984",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_LIVE_STREAM_ACCOUNT_REGISTRATION",
+        "canonical_problem_name": "未成年人网络直播账号注册违规",
+        "regulated_action": "provide_live_stream_account_registration_to_minors",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "网络直播服务提供者"
+        ],
+        "object_scope": [
+          "网络直播发布者账号注册服务"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "未成年人保护法第七十六条明确禁止为未满十六周岁未成年人提供网络直播发布者账号注册服务，为年满十六周岁者提供服务须身份认证并征得监护人同意。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-ebf8324f6cd39cb5",
+      "rule_id": "GAME-GEN-001",
+      "rule_title": "广告内容应当真实、合法、健康，符合社会主义精神文明和传统文化要求",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_CONTENT_UNHEALTHY_PRESENTATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-37581f713e309194",
+      "canonical_rule_uid": "RUID-ebf8324f6cd39cb5",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三条",
+          "original_text": "广告应当真实、合法，以健康的表现形式表达广告内容，符合社会主义精神文明建设和弘扬中华民族优秀传统文化的要求。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-ebf8324f6cd39cb5",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_CONTENT_UNHEALTHY_PRESENTATION",
+        "canonical_problem_name": "广告内容表现形式不健康",
+        "regulated_action": "ad_content_unhealthy_presentation",
+        "legal_effect": "required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "广告内容"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "medium",
+        "reason": "原文第三条要求广告应当真实、合法，以健康的表现形式表达广告内容，符合社会主义精神文明建设和弘扬中华民族优秀传统文化的要求，属于公序良俗项下广告内容表现形式不健康的原则性规定。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-efcd3c918ce2cb2b",
+      "rule_id": "HF-001-001",
+      "rule_title": "禁止在针对未成年人的大众传播媒介上发布保健食品广告",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-f93bc62a042fc7f3",
+      "canonical_rule_uid": "RUID-4a6d2c4fc4cc871e",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第五十七条",
+          "original_text": "违反本法第四十条第一款规定，在针对未成年人的大众传播媒介上发布医疗、药品、保健食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告的。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-efcd3c918ce2cb2b",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_TARGETED_ADVERTISING_PROHIBITED_MEDIA",
+        "canonical_problem_name": "在针对未成年人的媒介上发布禁止类广告",
+        "regulated_action": "publish_prohibited_ads_on_minor_targeted_media",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "保健食品广告",
+          "医疗广告",
+          "药品广告",
+          "医疗器械广告",
+          "化妆品广告",
+          "酒类广告",
+          "美容广告",
+          "不利于未成年人身心健康的网络游戏广告"
+        ],
+        "platform_scope": [
+          "针对未成年人的大众传播媒介"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第五十七条明确禁止在针对未成年人的大众传播媒介上发布医疗、药品、保健食品、医疗器械、化妆品、酒类、美容广告以及不利于未成年人身心健康的网络游戏广告。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-f0f0856a9d04a11c",
+      "rule_id": "GAME-OTH-008",
+      "rule_title": "禁止可能引发未成年人模仿不安全行为和违反社会公德行为、诱导未成年人不良嗜好的内容",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_IMITATE_UNSAFE_BEHAVIOR",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-84690702e2541553",
+      "canonical_rule_uid": "RUID-f0f0856a9d04a11c",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_网络信息内容生态治理规定_2020.03.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "NICE",
+          "source_name": "网络信息内容生态治理规定_2020.03.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第七条",
+          "original_text": "网络信息内容生产者应当采取措施，防范和抵制制作、复制、发布含有下列内容的不良信息：(八)可能引发未成年人模仿不安全行为和违反社会公德行为、诱导未成年人不良嗜好等的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-f0f0856a9d04a11c",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DANGEROUS_BEHAVIOR.MINORS_IMITATE_UNSAFE_BEHAVIOR",
+        "canonical_problem_name": "针对不满十四周岁未成年人的广告含有可能引发模仿不安全行为的内容",
+        "regulated_action": "content_inducing_minors_imitate_unsafe_behavior",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "网络信息内容生产者"
+        ],
+        "object_scope": [
+          "可能引发未成年人模仿不安全行为和违反社会公德行为、诱导未成年人不良嗜好的内容"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第七条第八项明确禁止制作、复制、发布可能引发未成年人模仿不安全行为和违反社会公德行为、诱导未成年人不良嗜好的内容。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-f1e8b2c942ed7d9f",
+      "rule_id": "HF-PRO-002",
+      "rule_title": "针对不满十四周岁未成年人的广告不得劝诱要求家长购买",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_INDUCEMENT_OVERCONSUMPTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-87082850c7b52449",
+      "canonical_rule_uid": "RUID-7497913efe3a276d",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第四十条",
+          "original_text": "针对不满十四周岁的未成年人的商品或者服务的广告不得含有下列内容：（一）劝诱其要求家长购买广告商品或者服务；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-f1e8b2c942ed7d9f",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_INDUCEMENT_OVERCONSUMPTION",
+        "canonical_problem_name": "诱导未成年人过度消费或劝诱购买",
+        "regulated_action": "induce_minors_request_parents_to_purchase",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "针对不满十四周岁的未成年人的商品或者服务的广告"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第四十条第一项明确禁止针对不满十四周岁的未成年人的商品或者服务的广告含有劝诱其要求家长购买广告商品或者服务的内容。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-fb811992cbdc1f06",
+      "rule_id": "GAME-OTHER-001",
+      "rule_title": "移动游戏不得含有侮辱或诽谤他人、侵害他人合法权益的内容",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DEFAMATION_INSULT_INDIVIDUALS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-d06516eac904289d",
+      "canonical_rule_uid": "RUID-fb811992cbdc1f06",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_关于印发《移动游戏内容规范（2016年版）》的通知音数协字【2016】第005号_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "关于印发《移动游戏内容规范（2016年版）》的通知 音数协字【2016】第005号",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第十三条",
+          "original_text": "第十三条  移动游戏不得含有“侮辱或者诽谤他人，侵害他人合法权益”的内容，包括但不限于：（一）以语言或手势、动作对他人进行恶意嘲笑和侮辱。（二）恶意使用政治人物、社会公众人物的姓名或姓名的谐音。（三）刻意表现他人在生理、精神方面的缺陷，侵害他人人格尊严。（四）传播虚假事实致使他人名誉受到损害、蒙受耻辱。（五）非法或不尊重地使用他人肖像等，侵犯他人肖像权。（六）传播他人隐私，干扰他人私生活。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-fb811992cbdc1f06",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.DISCRIMINATION_INSULT.DEFAMATION_INSULT_INDIVIDUALS",
+        "canonical_problem_name": "广告侮辱或诽谤他人",
+        "regulated_action": "prohibit_insult_defamation_infringement",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "移动游戏运营者"
+        ],
+        "object_scope": [
+          "移动游戏内容"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第十三条明确禁止移动游戏含有侮辱或者诽谤他人、侵害他人合法权益的内容，并列举恶意嘲笑侮辱、使用政治人物或公众人物姓名谐音、表现他人缺陷、传播虚假事实损害名誉、侵犯肖像权、传播隐私等情形，与目标节点定义高度一致。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-fbafdc0ec2ab90be",
+      "rule_id": "GAME-AD-002",
+      "rule_title": "为年满十六周岁未成年人提供网络直播发布者账号注册服务需身份认证并征得监护人同意",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_LIVE_STREAM_ACCOUNT_REGISTRATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-8fdd800705d9bcd4",
+      "canonical_rule_uid": "RUID-ebab4818abe63984",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "ML",
+          "source_name": "中华人民共和国未成年人保护法（2024修正）_2024.04.26生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第七十六条",
+          "original_text": "第七十六条 网络直播服务提供者不得为未满十六周岁的未成年人提供网络直播发布者账号注册服务；为年满十六周岁的未成年人提供网络直播发布者账号注册服务时，应当对其身份信息进行认证，并征得其父母或者其他监护人同意。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-fbafdc0ec2ab90be",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.MINOR_INDUCEMENT.MINOR_LIVE_STREAM_ACCOUNT_REGISTRATION",
+        "canonical_problem_name": "未成年人网络直播账号注册违规",
+        "regulated_action": "restrict_minor_live_stream_account_registration",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "网络直播服务提供者"
+        ],
+        "object_scope": [
+          "网络直播发布者账号注册服务"
+        ],
+        "platform_scope": [
+          "网络直播平台"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "high",
+        "reason": "原文第七十六条明确禁止为未满十六周岁未成年人提供网络直播发布者账号注册服务，为年满十六周岁未成年人提供时须身份认证并征得监护人同意，与目标节点定义完全对应。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-ff8c8eb6ace92487",
+      "rule_id": "COSM-001-003",
+      "rule_title": "化妆品标签禁止违反社会公序良俗的内容",
+      "root_id": "MINORS_PUBLIC_ORDER",
+      "issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_CONTENT_UNHEALTHY_PRESENTATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6892f8dc09e1e580",
+      "canonical_rule_uid": "RUID-ff8c8eb6ace92487",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_化妆品监督管理条例_2021.01.01生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "CSAR",
+          "source_name": "化妆品监督管理条例_2021.01.01生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 2,
+          "article": "第三十七条",
+          "original_text": "化妆品标签禁止标注下列内容：（三）违反社会公序良俗的内容；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-ff8c8eb6ace92487",
+        "target_issue_id": "MINORS_PUBLIC_ORDER.PUBLIC_MORALITY.AD_CONTENT_UNHEALTHY_PRESENTATION",
+        "canonical_problem_name": "广告内容表现形式不健康",
+        "regulated_action": "prohibit_offend_public_order_good_customs",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "化妆品生产经营者"
+        ],
+        "object_scope": [
+          "化妆品标签"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "MINORS_PUBLIC_ORDER",
+        "confidence": "medium",
+        "reason": "原文第三十七条禁止化妆品标签标注违反社会公序良俗的内容，属于公序良俗范畴；目标节点定义涵盖违反社会公序良俗的内容，为当前允许节点中最接近者。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "canonical_groups": [
+    {
+      "canonical_rule_key": "CRK-05764ee6b0b8cbda",
+      "canonical_rule_uid": "RUID-0d8f5061f6488228",
+      "source_occurrence_uids": [
+        "RUID-0d8f5061f6488228",
+        "RUID-64a370e789faaee2",
+        "RUID-cafa3f4b27d5f03d"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "针对不满十四周岁未成年人的广告不得含有可能引发模仿不安全行为的内容",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-0a84ebf1c664faed",
+      "canonical_rule_uid": "RUID-a0a3175230952dcd",
+      "source_occurrence_uids": [
+        "RUID-a0a3175230952dcd"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "游戏场所及设备对未成年人的禁入/限入规定",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-0bd7f915e6fbc45a",
+      "canonical_rule_uid": "RUID-caf8152961e23940",
+      "source_occurrence_uids": [
+        "RUID-caf8152961e23940"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止人物造型过分夸张怪异对未成年人有不良影响",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-124a19003178d2f5",
+      "canonical_rule_uid": "RUID-a8c4374f2de3ec85",
+      "source_occurrence_uids": [
+        "RUID-a8c4374f2de3ec85"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "游戏广告不得出现未成年人相关元素",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-15156580700491e8",
+      "canonical_rule_uid": "RUID-8e84fbe9ca82f28c",
+      "source_occurrence_uids": [
+        "RUID-8e84fbe9ca82f28c"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止不当评述自然灾害、重大事故等灾难",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-1c0bbc1f7c19da11",
+      "canonical_rule_uid": "RUID-044f5746d4430f02",
+      "source_occurrence_uids": [
+        "RUID-044f5746d4430f02",
+        "RUID-99c453d4e7a8b3ac",
+        "RUID-bb561b594a8add93"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "禁止在中小学校、幼儿园内开展广告活动",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-1fe7731df31a8f75",
+      "canonical_rule_uid": "RUID-2aaed6cd35fa133d",
+      "source_occurrence_uids": [
+        "RUID-2aaed6cd35fa133d"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止发布针对不满十四周岁的未成年人的商品或者服务的广告",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-2231c11a6f159276",
+      "canonical_rule_uid": "RUID-b26a1ea6f5e937a6",
+      "source_occurrence_uids": [
+        "RUID-b26a1ea6f5e937a6"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "未成年人游戏时段和时长限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-287c3b8cc275f2bf",
+      "canonical_rule_uid": "RUID-e9129bbc59cd80cd",
+      "source_occurrence_uids": [
+        "RUID-b645638fe503638d",
+        "RUID-e9129bbc59cd80cd"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "未经消费者同意不得发送商业性信息",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-35e087fa574fea09",
+      "canonical_rule_uid": "RUID-e8abab502b7c26d5",
+      "source_occurrence_uids": [
+        "RUID-e8abab502b7c26d5"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止在中小学校、幼儿园内或利用与中小学生、幼儿有关的物品发布广告",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-362fac8904400132",
+      "canonical_rule_uid": "RUID-72984d1a67761dd1",
+      "source_occurrence_uids": [
+        "RUID-72984d1a67761dd1"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止向未成年人发送任何形式的烟草广告",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-37581f713e309194",
+      "canonical_rule_uid": "RUID-ebf8324f6cd39cb5",
+      "source_occurrence_uids": [
+        "RUID-ebf8324f6cd39cb5"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告内容应当真实、合法、健康，符合社会主义精神文明和传统文化要求",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-37b491e24823cd83",
+      "canonical_rule_uid": "RUID-abcddf44be8c7b73",
+      "source_occurrence_uids": [
+        "RUID-abcddf44be8c7b73",
+        "RUID-d71213830d7a7b52",
+        "RUID-d8d788b3f89daab3"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "针对未成年人的大众传播媒介上不得发布保健食品广告",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-3f3fd9848d9d58d6",
+      "canonical_rule_uid": "RUID-e363c8b2cfbf1915",
+      "source_occurrence_uids": [
+        "RUID-e363c8b2cfbf1915"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "酒水行业不得展示KOL饮酒动作",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-410d83688cf8bd10",
+      "canonical_rule_uid": "RUID-838a8c63391b101f",
+      "source_occurrence_uids": [
+        "RUID-838a8c63391b101f"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止向未成年人提供管制刀具或可能致人严重伤害的器具",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-44ad5fe6c0c662ed",
+      "canonical_rule_uid": "RUID-01b39646c8648c9e",
+      "source_occurrence_uids": [
+        "RUID-01b39646c8648c9e"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止通过广告文字对未成年人实施网络欺凌",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-45b30edd15547eee",
+      "canonical_rule_uid": "RUID-0e71dab0d661b022",
+      "source_occurrence_uids": [
+        "RUID-0e71dab0d661b022"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "网络服务提供者对含有危害未成年人身心健康内容的信息应立即停止传输并处置",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-4819d224938f37a1",
+      "canonical_rule_uid": "RUID-6aaf675cf32e4e3d",
+      "source_occurrence_uids": [
+        "RUID-6aaf675cf32e4e3d"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止向未成年人销售烟、酒、彩票及兑付奖金",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-5180bcdeb5eee024",
+      "canonical_rule_uid": "RUID-2b2947f368984e5b",
+      "source_occurrence_uids": [
+        "RUID-2b2947f368984e5b"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "高风险内容（含游戏）严禁出现任何未成年人相关元素",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-592f6044682f7ab1",
+      "canonical_rule_uid": "RUID-b75b91c99b520702",
+      "source_occurrence_uids": [
+        "RUID-9958b8bfdfdb7349",
+        "RUID-b75b91c99b520702"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "广告中不得损害未成年人或残疾人的身心健康",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-6349ed95ddc3326b",
+      "canonical_rule_uid": "RUID-c8ba974830e0c03a",
+      "source_occurrence_uids": [
+        "RUID-c8ba974830e0c03a"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "处理不满十四周岁未成年人个人信息需征得监护人同意",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-6892f8dc09e1e580",
+      "canonical_rule_uid": "RUID-ff8c8eb6ace92487",
+      "source_occurrence_uids": [
+        "RUID-ff8c8eb6ace92487"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "化妆品标签禁止违反社会公序良俗的内容",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-6c9cd54bb62046a5",
+      "canonical_rule_uid": "RUID-50e1960c3642e5b5",
+      "source_occurrence_uids": [
+        "RUID-50e1960c3642e5b5",
+        "RUID-53734cf5bc93c2fc",
+        "RUID-6ed749d90af32615"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "禁止在未成年人互联网媒介上发布不利于未成年人身心健康的网络游戏广告",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-722849a6acc2274d",
+      "canonical_rule_uid": "RUID-9dfe543e12eb73b6",
+      "source_occurrence_uids": [
+        "RUID-9dfe543e12eb73b6"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "酒水行业笔记不得展示KOL饮酒动作",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-7265a03d857ee0fe",
+      "canonical_rule_uid": "RUID-c0c1a05c8235f35e",
+      "source_occurrence_uids": [
+        "RUID-c0c1a05c8235f35e"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止煽动人群歧视、地域歧视等",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-73dd3cb36f2b494e",
+      "canonical_rule_uid": "RUID-c3c886ea36eb011b",
+      "source_occurrence_uids": [
+        "RUID-c3c886ea36eb011b"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止宣扬或肯定不良的家庭观、婚恋观、利益观",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-793ecc1c2ba0530f",
+      "canonical_rule_uid": "RUID-d9b1702b27c275b6",
+      "source_occurrence_uids": [
+        "RUID-d9b1702b27c275b6"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止表现未成年人早恋及不良行为",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-82787b5254f48efb",
+      "canonical_rule_uid": "RUID-6439163a7e2b34c8",
+      "source_occurrence_uids": [
+        "RUID-6439163a7e2b34c8"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "直播营销平台未成年人保护提示义务",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-84690702e2541553",
+      "canonical_rule_uid": "RUID-f0f0856a9d04a11c",
+      "source_occurrence_uids": [
+        "RUID-f0f0856a9d04a11c"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止可能引发未成年人模仿不安全行为和违反社会公德行为、诱导未成年人不良嗜好的内容",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-85d26e1d317c2a21",
+      "canonical_rule_uid": "RUID-eb350ea9104aebf5",
+      "source_occurrence_uids": [
+        "RUID-eb350ea9104aebf5"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "游戏广告不得宣传不利于未成年人身心健康的游戏",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-87082850c7b52449",
+      "canonical_rule_uid": "RUID-7497913efe3a276d",
+      "source_occurrence_uids": [
+        "RUID-7497913efe3a276d",
+        "RUID-e6bfda83a13e7ec9",
+        "RUID-f1e8b2c942ed7d9f"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "针对不满十四周岁未成年人的商品或服务广告不得劝诱其要求家长购买",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-8988044778ce62d5",
+      "canonical_rule_uid": "RUID-181d60bae9ec03dc",
+      "source_occurrence_uids": [
+        "RUID-181d60bae9ec03dc"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "物料不得涉及不利于未成年身心健康相关的内容",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-8c4d147c466b8dad",
+      "canonical_rule_uid": "RUID-5918828973a76530",
+      "source_occurrence_uids": [
+        "RUID-5918828973a76530"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告不得贬低其他生产经营者的商品或者服务",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-8fdd800705d9bcd4",
+      "canonical_rule_uid": "RUID-ebab4818abe63984",
+      "source_occurrence_uids": [
+        "RUID-ebab4818abe63984",
+        "RUID-fbafdc0ec2ab90be"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "禁止为未满十六周岁未成年人提供网络直播发布者账号注册服务",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-9214bef0477aaf1c",
+      "canonical_rule_uid": "RUID-ead6e10661afdcc1",
+      "source_occurrence_uids": [
+        "RUID-ead6e10661afdcc1"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "游客体验模式限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-931de853f8730a15",
+      "canonical_rule_uid": "RUID-22cc6a32785cd9c7",
+      "source_occurrence_uids": [
+        "RUID-22cc6a32785cd9c7",
+        "RUID-31c47669db6fa8b9",
+        "RUID-87f9acdc104348ff"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "禁止利用校服、教材等发布或变相发布商业广告",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-98cda8e531a98d99",
+      "canonical_rule_uid": "RUID-430a1b69712f7e5e",
+      "source_occurrence_uids": [
+        "RUID-430a1b69712f7e5e"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "游戏广告不得宣传向未成年人提供夜间服务",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-a4bd51ad3f7f6f35",
+      "canonical_rule_uid": "RUID-b92d0e1dd3dff9ca",
+      "source_occurrence_uids": [
+        "RUID-b92d0e1dd3dff9ca"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告应当真实、合法，以健康的表现形式表达广告内容",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-aa0b08af0c252e16",
+      "canonical_rule_uid": "RUID-2bea34dd82777eae",
+      "source_occurrence_uids": [
+        "RUID-2bea34dd82777eae"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "不得向未成年人提供诱导沉迷的网络游戏产品和服务",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-ab47877f92b045e8",
+      "canonical_rule_uid": "RUID-95d3a0fa0a69003b",
+      "source_occurrence_uids": [
+        "RUID-95d3a0fa0a69003b"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "移动游戏不得含有诱发未成年人模仿违法犯罪行为的内容",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-bbc49ae807179795",
+      "canonical_rule_uid": "RUID-c1efc611fdda35b0",
+      "source_occurrence_uids": [
+        "RUID-c1efc611fdda35b0"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "未成年人游戏时段时长限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-bdc861ded7c57987",
+      "canonical_rule_uid": "RUID-b0582382434a6009",
+      "source_occurrence_uids": [
+        "RUID-b0582382434a6009"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "移动游戏不得含有其他危害未成年人身心健康的内容",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-c1f3ae50049509d4",
+      "canonical_rule_uid": "RUID-4f1b9d757dc9177c",
+      "source_occurrence_uids": [
+        "RUID-4f1b9d757dc9177c"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "学校、幼儿园不得安排未成年人参加商业性活动",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-c24b806361fe4dd9",
+      "canonical_rule_uid": "RUID-04db0a8c2279c669",
+      "source_occurrence_uids": [
+        "RUID-04db0a8c2279c669",
+        "RUID-460a768faea8c607",
+        "RUID-4d9c5ede0fe82416",
+        "RUID-86044d3bf113b134"
+      ],
+      "duplicate_count": 4,
+      "canonical_title": "广告不得损害未成年人身心健康",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-c2dad57060f1e0d5",
+      "canonical_rule_uid": "RUID-5b15fd6e1e0913ca",
+      "source_occurrence_uids": [
+        "RUID-5b15fd6e1e0913ca"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止危害社会公德或民族优秀文化传统的内容",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-c332db758bb7447b",
+      "canonical_rule_uid": "RUID-c5808d29f88b5958",
+      "source_occurrence_uids": [
+        "RUID-c5808d29f88b5958"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "禁止宣传不利于未成年人身心健康的游戏",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-c9ba6f7cc3035ce5",
+      "canonical_rule_uid": "RUID-04c04468c9b89961",
+      "source_occurrence_uids": [
+        "RUID-04c04468c9b89961"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "未成年人付费服务限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-d06516eac904289d",
+      "canonical_rule_uid": "RUID-fb811992cbdc1f06",
+      "source_occurrence_uids": [
+        "RUID-fb811992cbdc1f06"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "移动游戏不得含有侮辱或诽谤他人、侵害他人合法权益的内容",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-d2f25d702ca49d3f",
+      "canonical_rule_uid": "RUID-e3588a6dbe726282",
+      "source_occurrence_uids": [
+        "RUID-e3588a6dbe726282"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "未成年人付费服务限制",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-f14a425a146c65fb",
+      "canonical_rule_uid": "RUID-dce90b5f625bee86",
+      "source_occurrence_uids": [
+        "RUID-dce90b5f625bee86"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告中不得贬低其他生产经营者的商品或服务",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-f93bc62a042fc7f3",
+      "canonical_rule_uid": "RUID-4a6d2c4fc4cc871e",
+      "source_occurrence_uids": [
+        "RUID-4a6d2c4fc4cc871e",
+        "RUID-724598440ad3ee63",
+        "RUID-efcd3c918ce2cb2b"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "禁止在针对未成年人的大众传播媒介上发布化妆品广告",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "proactive_candidates": []
+}

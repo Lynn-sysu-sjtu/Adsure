@@ -739,10 +739,10 @@
           "显著提示"
         ],
         "vector_text": "这款美妆产品适合12岁小女孩使用，快来买吧；儿童专用美妆，宝宝也能用；青少年护肤神器，学生党必备；未",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "该规则涉及开放概念'可能影响未成年人身心健康'，关键词难以覆盖所有违规表达，语义召回可有效识别面向未成年人的美妆产品营销话术，包括诱导消费、暗示安全等软性违规表述。",
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 显著、未成年人.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
@@ -775,7 +775,9 @@
           "change_summary": "将原规则摘要式文本改写为仿真违规文案集合，覆盖多种面向未成年人的美妆产品营销话术，并增加诱导消费、安全暗示等软性表达。",
           "confidence": "high",
           "semantic_recommendations_applied": false
-        }
+        },
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -843,7 +845,9 @@
         "route_reason": "判断内容是否'可能影响未成年人身心健康'属于开放法律概念，且违规后果严重，运营难以自行判断，需法务复核。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "LMM-FALSE-001",

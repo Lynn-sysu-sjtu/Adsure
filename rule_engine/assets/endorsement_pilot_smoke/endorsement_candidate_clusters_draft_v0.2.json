@@ -1,0 +1,64 @@
+{
+  "schema_version": "0.2",
+  "asset_status": "draft",
+  "prompt_version": "endorsement_fingerprint_v02_20260912",
+  "model": "deepseek-chat",
+  "clusters": [
+    {
+      "cluster_key": "ENDORSEMENT_PROHIBITED_HEALTH_FOOD",
+      "canonical_name": "保健食品广告不得利用广告代言人作推荐、证明",
+      "member_rule_uids": [
+        "RUID-581e6b801073e750"
+      ],
+      "relation": "separate",
+      "confidence": "high",
+      "reason": "受规制行为同为代言推荐证明且法律效果同为禁止，但对象范围不同：本规则针对保健食品，另一规则针对教育、培训，适用范围差异应保留，不得合并。",
+      "legal_effect": "prohibited"
+    },
+    {
+      "cluster_key": "ENDORSEMENT_PROHIBITED_EDUCATION_TRAINING",
+      "canonical_name": "教育、培训广告不得利用科研单位、学术机构等名义作推荐、证明",
+      "member_rule_uids": [
+        "RUID-7f1a9698aaa2cf50"
+      ],
+      "relation": "separate",
+      "confidence": "high",
+      "reason": "受规制行为同为代言推荐证明且法律效果同为禁止，但对象范围为教育、培训，且行为主体范围（科研单位、学术机构、行业协会、专业人士、受益者等）与保健食品规则不同，适用范围差异应保留，不得合并。",
+      "legal_effect": "prohibited"
+    },
+    {
+      "cluster_key": "ENDORSEMENT_PROHIBITED_HEALTH_FOOD",
+      "canonical_name": "保健食品广告禁止代言人推荐证明",
+      "member_rule_uids": [
+        "RUID-07c06c5e0785bdbc",
+        "RUID-545f9ad8dd6797c1"
+      ],
+      "relation": "merge",
+      "confidence": "high",
+      "reason": "两条规则均针对保健食品广告中广告代言人作推荐、证明的行为，受规制行为（endorsement_recommendation_proof_in_health_food_ad）、法律效果（prohibited）、行为主体（endorser）及对象（health_food）完全一致。平台差异（小红书）仅作为适用范围保留，不影响核心法律要件同一性，故可合并。",
+      "legal_effect": "prohibited"
+    },
+    {
+      "cluster_key": "USE_OF_INSTITUTION_OR_PROFESSIONAL_OR_USER_NAME_IMAGE_FOR_RECOMMENDATION_PROOF",
+      "canonical_name": "保健食品广告禁止利用机构或专业人士用户名义形象推荐证明",
+      "member_rule_uids": [
+        "RUID-168081152ac6fa9d"
+      ],
+      "relation": "separate",
+      "confidence": "high",
+      "reason": "候选组仅含一条规则，保留为独立候选。",
+      "legal_effect": "prohibited"
+    },
+    {
+      "cluster_key": "LIVE_STREAMER_ENDORSEMENT_LIABILITY_DETERMINATION",
+      "canonical_name": "直播营销人员广告代言责任认定",
+      "member_rule_uids": [
+        "RUID-3a05f44ab24c9a6e"
+      ],
+      "relation": "separate",
+      "confidence": "high",
+      "reason": "候选组仅含一条规则，保留为独立候选。",
+      "legal_effect": "relationship_determination"
+    }
+  ]
+}

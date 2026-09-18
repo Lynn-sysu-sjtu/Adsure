@@ -110,8 +110,8 @@
           "推销"
         ],
         "vector_text": "学校组织学生参加游戏推广活动，幼儿园安排小朋友参与商业演出，学校要求家长购买指定游戏点卡，幼儿园推销",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "规则涉及学校/幼儿园组织未成年人参与商业活动，关键词可能无法覆盖所有变体，语义召回可捕获多种表述",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
@@ -142,12 +142,14 @@
           "vector_text_clipped_at": "20260715_001248",
           "vector_text_clipped_from_length": 144
         },
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 代言、促销、未成年人、清晰.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -216,7 +218,9 @@
         "route_reason": "规则触发清晰，运营可直接判断文案是否涉及学校或幼儿园组织未成年人参与商业活动，无需法务介入。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "GAME-PROTECT-001",
@@ -1401,8 +1405,8 @@
           "安全健康"
         ],
         "vector_text": "无需安全认证，适合所有未成年人使用；不达标也安全；无标准无注意事项；危害健康也没事；游戏机不按标准生",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "原vector_text是法条改写，不像真实违规文案；HyDE改写后覆盖了多种违规表达和规避说法，适合语义召回",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
@@ -1434,12 +1438,14 @@
           "vector_text_clipped_at": "20260715_001248",
           "vector_text_clipped_from_length": 152
         },
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 宣传、明示、显著、未成年人.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -1507,7 +1513,9 @@
         "route_reason": "规则触发需结合产品是否属于游戏游艺设备及是否涉及未成年人，运营需补充产品标准符合性说明或注意事项标注情况，再判断是否违规。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "GAME-MN-001",
@@ -1589,8 +1597,8 @@
           "限入标志"
         ],
         "vector_text": "欢迎所有年龄玩家来店畅玩电子游戏；节假日期间未成年人免费体验电子游戏设备；不限年龄，小朋友也能玩；周",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "该规则涉及未成年人禁入/限入的具体场景，关键词可能无法覆盖所有变体表述，语义召回可有效捕捉各种暗示未成年人可进入或未设置标志的违规文案。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
@@ -1623,12 +1631,14 @@
           "vector_text_clipped_at": "20260715_001248",
           "vector_text_clipped_from_length": 322
         },
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 免费、宣传、显著、未成年人、清晰.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -1698,7 +1708,9 @@
         "route_reason": "规则触发清晰，运营可直接根据文案是否提及禁入/限入规定或暗示未成年人随意进入进行判断并修改，无需法务介入或补充资料。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "GAME-AD-001",
@@ -1784,7 +1796,7 @@
         ],
         "vector_text": "未成年人买烟特惠，学生购酒打折，青少年彩票兑奖，未成年可领奖金，向未成年人出售香烟，卖给小孩酒水，学生彩票兑付，未成年人专属烟酒促销，青少年彩票中奖兑付，未成年烟酒销售，学生彩票奖金领取",
         "semantic_enabled": false,
-        "semantic_role": "fallback",
+        "semantic_role": "disabled",
         "semantic_reason": "该规则关键词明确，但语义召回可覆盖更多变体表达，如'学生'、'青少年'、'小孩'等替代词，以及'特惠'、'打折'、'促销'等诱导性表述，适合作为primary召回以补充关键词遗漏。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
@@ -1812,12 +1824,14 @@
           "confidence": "high",
           "semantic_recommendations_applied": false
         },
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 促销、公共场所、显著、未成年人、清晰.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -1888,7 +1902,9 @@
         "route_reason": "规则触发清晰，关键词可直接命中，运营可删除或替换违规表述，无需法务介入",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "GAME-OTH-001",
@@ -2537,8 +2553,8 @@
           "运营资质"
         ],
         "vector_text": "全新手游《XX》今日公测，快来下载！《XX》游戏不删档测试开启，立即注册。火爆开服，无需预约直接玩！上线即送VIP，登录领豪礼。游戏已开放下载，点击即玩。首服开启，万人同服。不删档内测，数据永久保留。快来加入战斗，无需等待！",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "该规则涉及版号审批，属于强事实核验，但广告文案中常出现宣传运营状态而未提版号的违规表达，语义召回可辅助关键词覆盖更多变体。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
@@ -2568,12 +2584,14 @@
           "confidence": "high",
           "semantic_recommendations_applied": false
         },
-        "trigger_layer": "fact",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule mainly depends on filing, qualification, proof, data, or materials verification: 版号、证明、证明文件、资质.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -2646,7 +2664,9 @@
         "route_reason": "规则触发需结合广告是否宣传运营状态判断，但核心问题是版号事实核验，运营无法自行判断，需先要求补充版号证明文件。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "GAME-AD-002",
@@ -3109,8 +3129,8 @@
           "年龄限制"
         ],
         "vector_text": "未满十六周岁可以开直播吗？十六岁以下也能注册直播账号！欢迎小朋友来当主播！未成年人直播账号注册服务，",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "该规则涉及明确年龄限制，关键词可能遗漏变体表述，语义召回可覆盖暗示性文案。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
@@ -3139,12 +3159,14 @@
           "vector_text_clipped_at": "20260715_001248",
           "vector_text_clipped_from_length": 71
         },
-        "trigger_layer": "content",
+        "trigger_layer": "workflow",
         "trigger_layer_reason": "Rule is mainly triggered by ad-copy wording or content risk signals: 未成年人、清晰.",
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "高",
       "consequence": {
@@ -3213,7 +3235,9 @@
         "route_reason": "规则触发清晰，运营可直接删除或修改违规表述，无需法务介入。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     },
     {
       "rule_id": "GAME-AD-002",
@@ -3872,8 +3896,8 @@
           "禁止内容"
         ],
         "vector_text": "未成年人自杀自残教程，暴力血腥游戏画面，色情赌博内容，毒品诱导，危害未成年人身心健康，快来玩这个游戏，刺激暴力，未成年人专属福利，赌博赢金币，色情角色，自杀挑战，自残任务，暴力升级，血腥杀戮，毒品交易，赌博上瘾，色情诱惑，未成年人保护法禁止内容，立即停止传输，删除屏蔽断开链接，网信公安报告，危害未成年人身心健康的信息，用户发布传播，立即处置，保存记录，报告网信公安，暴力色情赌博毒品自杀自残，危害未成年人，身心健康，禁止内容，违规广告，诱导未成年人，暴力血腥，色情赌博，毒品自杀，自残挑战，未成年人保护，立即停止，传输处置，删除屏蔽，断开链接，保存记录，报告网信，公安部门，危害内容，未成年人身心健康，暴力色情，赌博毒品，自杀自残，违规文案，立即停止传输，采取处置措施，保存记录，报告网信公安，危害未成年人身心健康的内容，暴力血腥场景，色情赌博诱导，毒品自杀自残，未成年人保护法，第八十条，网络服务提供者，发现用户发布传播，立即停止传输，删除屏蔽断开链接，保存记录，报告网信公安，危害未成年人身心健康的信息，暴力色情赌博毒品自杀自残，未成年人，身心健康，禁止内容，违规广告，诱导未成年人，暴力血腥，色情赌博，毒品自杀，自残挑战，未成年人保护，立即停止，传输处置，删除屏蔽，断开链接，保存记录，报告网信，公安部门，危害内容，未成年人身心健康，暴力色情，赌博毒品，自杀自残，违规文案，立即停止传输，采取处置措施，保存记录，报告网信公安，危害未成年人身心健康的内容，暴力血腥场景，色情赌博诱导，毒品自杀自残，未成年人保护法，第八十条，网络服务提供者，发现用户发布传播，立即停止传输，删除屏蔽断开链接，保存记录，报告网信公安",
-        "semantic_enabled": true,
-        "semantic_role": "fallback",
+        "semantic_enabled": false,
+        "semantic_role": "disabled",
         "semantic_reason": "原vector_text偏向法条摘要，HyDE改写后模拟了真实违规广告中可能出现的危害未成年人身心健康的表达，包括暴力、色情、赌博、毒品、自杀自残等关键词和场景，适合语义召回隐晦或变体表达。",
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
@@ -3913,7 +3937,9 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "keyword_enabled": false,
+        "catalog_recall_enabled": false
       },
       "risk_level": "critical",
       "consequence": {
@@ -3986,7 +4012,9 @@
         "route_reason": "规则涉及'危害未成年人身心健康'这一开放法律概念，解释难度高，且违规后果严重，必须由法务复核确认是否构成违规。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "asset_disposition": "workflow_reference",
+      "direct_conclusion_enabled": false
     }
   ],
   "memory_rules": [],

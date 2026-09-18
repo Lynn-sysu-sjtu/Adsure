@@ -1325,7 +1325,8 @@
         "route_reason": "规则明确，运营可直接检查落地页链接是否为B站内链并修改。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "platform_gate": "exact"
     },
     {
       "rule_id": "GAME-URL-004",

@@ -74,7 +74,7 @@
           "article": "1.",
           "legal_level": null,
           "role": "based_on",
-          "text": "1.普通化妆品"
+          "text": "非特殊用途化妆品宣传特殊功效：没有取得特殊用途化妆品资质的商品，不可以宣传特殊功效，否则会被判定为违规。"
         }
       ],
       "hierarchy": {
@@ -208,6 +208,12 @@
         "route_reason": "需要法务判断普通化妆品定义及特殊功效范围，且需核验商品备案信息，误判后果严重，应进入法务复核。",
         "confidence": "high",
         "calibration_status": "provisional"
+      },
+      "source_repair": {
+        "status": "verified",
+        "source": "D:/G-Vibe coding/广告合规审查智能体/知识图谱/jsonbase/美妆/20260706_抖音【化妆品类】商品虚假宣传细则_规则拆解_v1.json",
+        "locator": "同源规则 RUID-a6f6803a76ae8fee，条款 1.",
+        "sha256": "d4c0590897e19cfa099fa2941619467c013a05b427923e8397d82980208b7c94"
       }
     },
     {
@@ -582,7 +588,12 @@
         "route_reason": "需要运营提供产品备案或注册信息才能判断是否超范围，运营无法自行判断，但法务无需直接介入，先由运营补充资料。",
         "confidence": "high",
         "calibration_status": "provisional"
-      }
+      },
+      "review_role": "direct",
+      "review_roles": [
+        "direct",
+        "fact_check"
+      ]
     },
     {
       "rule_id": "COSM-FC-001",

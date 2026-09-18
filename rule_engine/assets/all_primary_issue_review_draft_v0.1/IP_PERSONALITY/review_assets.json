@@ -1,0 +1,1792 @@
+{
+  "schema_version": "0.1",
+  "asset_status": "draft",
+  "model": "deepseek-chat",
+  "prompt_version": "all_primary_issue_fingerprint_v01_20260913",
+  "root_id": "IP_PERSONALITY",
+  "root_name": "知识产权与人格权益",
+  "nodes": [
+    {
+      "issue_id": "IP_PERSONALITY.COPYRIGHT_TRADEMARK",
+      "parent_issue_id": "IP_PERSONALITY",
+      "level": 2,
+      "node_type": "directory",
+      "name": "著作权与商标权",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD",
+      "parent_issue_id": "IP_PERSONALITY",
+      "level": 2,
+      "node_type": "directory",
+      "name": "专利、奖项与荣誉",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "IP_PERSONALITY.PORTRAIT_NAME",
+      "parent_issue_id": "IP_PERSONALITY",
+      "level": 2,
+      "node_type": "directory",
+      "name": "肖像、姓名与人格权益",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH",
+      "parent_issue_id": "IP_PERSONALITY",
+      "level": 2,
+      "node_type": "directory",
+      "name": "第三方内容授权",
+      "definition": "",
+      "rule_uids": [],
+      "source_occurrence_uids": []
+    },
+    {
+      "issue_id": "IP_PERSONALITY.COPYRIGHT_TRADEMARK.GAME_AD_CREATIVE_PLAGIARISM_OF_GAME_ELEMENTS",
+      "parent_issue_id": "IP_PERSONALITY.COPYRIGHT_TRADEMARK",
+      "name": "游戏广告创意抄袭其他游戏元素",
+      "definition": "游戏广告创意中出现抄袭其他游戏元素（如技能栏、装备、场景、人物属性栏等）的情况。",
+      "confidence": "high",
+      "reason": "保留原节点，属于著作权与商标权项下的著作权侵权问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-5c1b488604c3bbd0"
+      ],
+      "source_occurrence_uids": [
+        "RUID-5c1b488604c3bbd0"
+      ]
+    },
+    {
+      "issue_id": "IP_PERSONALITY.COPYRIGHT_TRADEMARK.HEALTH_FOOD_OTHER_TRADEMARK_AREA_OR_COMBINATION",
+      "parent_issue_id": "IP_PERSONALITY.COPYRIGHT_TRADEMARK",
+      "name": "保健食品其他商标面积超限或与产品名称连用",
+      "definition": "保健食品标签或广告中，使用产品名称中商标名对应商标以外的其他商标时，该商标面积超过产品名称面积的四分之一，或大于产品名称中商标名面积，或与产品名称连用，可能误导消费者认为其为产品名称的一部分。",
+      "confidence": "high",
+      "reason": "保留原节点，属于著作权与商标权项下的商标使用规范问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-c226537b266f59c9"
+      ],
+      "source_occurrence_uids": [
+        "RUID-c226537b266f59c9"
+      ]
+    },
+    {
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT",
+      "parent_issue_id": "IP_PERSONALITY.PATENT_AWARD",
+      "name": "广告中假冒他人专利或谎称取得专利权",
+      "definition": "广告中假冒他人专利，或未取得专利权而谎称取得专利权，包括声称拥有专利但专利不存在、不属于广告主、未获授权，或宣称的专利资质与实际持有的专利证书不一致等情形。",
+      "confidence": "high",
+      "reason": "保留原节点，属于专利、奖项与荣誉项下的专利虚假宣传问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-249bfcb434f03453",
+        "RUID-46d9c6e9b306dbb7",
+        "RUID-6de71a28bbfbccf5"
+      ],
+      "source_occurrence_uids": [
+        "RUID-249bfcb434f03453",
+        "RUID-46d9c6e9b306dbb7",
+        "RUID-6de71a28bbfbccf5",
+        "RUID-717465e2f14e362b",
+        "RUID-98e77b57a7749728",
+        "RUID-cbbaf4aee0850090"
+      ]
+    },
+    {
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.UNAUTHORIZED_OR_INVALID_PATENT_ADVERTISING",
+      "parent_issue_id": "IP_PERSONALITY.PATENT_AWARD",
+      "name": "使用未授权或失效专利作广告",
+      "definition": "在广告中使用未授予专利权的专利申请，或者已经终止、撤销、无效的专利进行宣传。",
+      "confidence": "high",
+      "reason": "保留原节点，属于专利、奖项与荣誉项下的专利有效性宣传问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-4516cb8da41523b8"
+      ],
+      "source_occurrence_uids": [
+        "RUID-4516cb8da41523b8",
+        "RUID-4e15cdfcaeb4af48",
+        "RUID-7923f93fa0c7393d"
+      ]
+    },
+    {
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE",
+      "parent_issue_id": "IP_PERSONALITY.PATENT_AWARD",
+      "name": "专利广告未标注专利号和专利种类",
+      "definition": "广告中涉及专利产品、专利方法或专利技术宣传时，未清晰、完整、准确、规范地标注专利号和专利种类。",
+      "confidence": "high",
+      "reason": "保留原节点，属于专利、奖项与荣誉项下的专利标注规范问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-50818349cdf87f85",
+        "RUID-7db1b561921569b6",
+        "RUID-88bde5d1fe0aa54d"
+      ],
+      "source_occurrence_uids": [
+        "RUID-50818349cdf87f85",
+        "RUID-7db1b561921569b6",
+        "RUID-88bde5d1fe0aa54d",
+        "RUID-94523973a33e2e4e",
+        "RUID-b4e721c02d7dbf5c"
+      ]
+    },
+    {
+      "issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_CHARACTER_OR_REAL_PERSON_IN_GAME_PROMOTION",
+      "parent_issue_id": "IP_PERSONALITY.PORTRAIT_NAME",
+      "name": "游戏推广中未经授权使用人物形象、原作内容或真实人物姓名",
+      "definition": "在游戏推广中未经授权使用真实人物影视形象、二次元形象、原作故事情节、真实人物姓名，或歪曲丑化人物形象、使用兄贵元素、随意剪切人物形象改变原型。",
+      "confidence": "high",
+      "reason": "保留原节点，属于肖像、姓名与人格权益项下的游戏推广侵权问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-a60ec2c81f57c041"
+      ],
+      "source_occurrence_uids": [
+        "RUID-a60ec2c81f57c041"
+      ]
+    },
+    {
+      "issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_NAME_OR_IMAGE_IN_AD",
+      "parent_issue_id": "IP_PERSONALITY.PORTRAIT_NAME",
+      "name": "广告中未经同意使用他人名义或形象",
+      "definition": "在广告中使用他人名义或形象，未事先取得权利人（或其监护人）的同意或书面同意，且未提供相应授权证明，依法应承担民事责任。",
+      "confidence": "high",
+      "reason": "保留原节点，属于肖像、姓名与人格权益项下的姓名肖像授权问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-0bb184d1ed7e014c",
+        "RUID-80be4c286d73fac3",
+        "RUID-95d03473566aa0b5",
+        "RUID-e7b3e344e40da436"
+      ],
+      "source_occurrence_uids": [
+        "RUID-0bb184d1ed7e014c",
+        "RUID-80be4c286d73fac3",
+        "RUID-95d03473566aa0b5",
+        "RUID-a4231e5bdb7ce08b",
+        "RUID-e7b3e344e40da436"
+      ]
+    },
+    {
+      "issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH.THIRD_PARTY_AUTH_MISSING",
+      "parent_issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH",
+      "name": "广告素材涉及第三方内容未提供授权证明",
+      "definition": "广告素材中使用或展示第三方内容（包括但不限于肖像、商标、品牌标识、游戏元素、其他平台博主内容等），未提供相应授权证明或合作证明。",
+      "confidence": "high",
+      "reason": "保留原节点，属于第三方内容授权项下的授权缺失问题。",
+      "level": 3,
+      "node_type": "legal_issue",
+      "rule_uids": [
+        "RUID-c23965025c739d8f"
+      ],
+      "source_occurrence_uids": [
+        "RUID-c23965025c739d8f"
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "rule_uid": "RUID-0bb184d1ed7e014c",
+      "rule_id": "GAME-AD-001",
+      "rule_title": "广告中使用他人名义或形象需取得书面同意",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_NAME_OR_IMAGE_IN_AD",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ffc090cc7f7b65c3",
+      "canonical_rule_uid": "RUID-0bb184d1ed7e014c",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十三条",
+          "original_text": "第三十三条 广告主或者广告经营者在广告中使用他人名义或者形象的，应当事先取得其书面同意；使用无民事行为能力人、限制民事行为能力人的名义或者形象的，应当事先取得其监护人的书面同意。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-0bb184d1ed7e014c",
+        "target_issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_NAME_OR_IMAGE_IN_AD",
+        "canonical_problem_name": "广告中未经同意使用他人名义或形象",
+        "regulated_action": "use_others_name_or_image_without_written_consent",
+        "legal_effect": "consent_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "他人名义",
+          "他人形象",
+          "无民事行为能力人名义或形象",
+          "限制民事行为能力人名义或形象"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "广告法第三十三条原文明确：广告主或广告经营者在广告中使用他人名义或者形象的，应当事先取得其书面同意；使用无民事行为能力人、限制民事行为能力人的名义或者形象的，应当事先取得其监护人的书面同意。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-21bbfdd0c18d269e",
+      "rule_id": "XHS-COSM-001",
+      "rule_title": "广告素材涉及第三方合作需提供合作证明/授权",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH.THIRD_PARTY_AUTH_MISSING",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-4b38442db9dd9085",
+      "canonical_rule_uid": "RUID-21bbfdd0c18d269e",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "根据⼴告法第三章第三⼗三条、《⺠法典》相关管理规定，⼴告素材不得侵犯注册商标专⽤权、公⺠肖像权等权利。因此，如您在⼴告素材中涉及肖像、商标、第三⽅品牌/合作等内容，请提供相关材料证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-21bbfdd0c18d269e",
+        "target_issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH.THIRD_PARTY_AUTH_MISSING",
+        "canonical_problem_name": "广告素材涉及第三方内容未提供授权证明",
+        "regulated_action": "use_third_party_content_without_authorization_proof",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "肖像",
+          "商标",
+          "第三方品牌",
+          "第三方合作内容"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "小红书平台规则原文明确：广告素材不得侵犯注册商标专用权、公民肖像权等权利；如广告素材中涉及肖像、商标、第三方品牌/合作等内容，请提供相关材料证明。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-249bfcb434f03453",
+      "rule_id": "HF-IP-001",
+      "rule_title": "广告中不得假冒他人专利",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-025419d63d693056",
+      "canonical_rule_uid": "RUID-249bfcb434f03453",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任：……（二）假冒他人专利的；……"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-249bfcb434f03453",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT",
+        "canonical_problem_name": "广告中假冒他人专利或谎称取得专利权",
+        "regulated_action": "fake_others_patent_in_advertising",
+        "legal_effect": "civil_liability",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "他人专利"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "广告法第六十八条原文明确：广告主、广告经营者、广告发布者违反本法规定，假冒他人专利的，依法承担民事责任。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-4516cb8da41523b8",
+      "rule_id": "COSM-PAT-003",
+      "rule_title": "禁止使用未授权专利申请或已失效专利作广告",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.UNAUTHORIZED_OR_INVALID_PATENT_ADVERTISING",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c98b6982df14685e",
+      "canonical_rule_uid": "RUID-4516cb8da41523b8",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十二条",
+          "original_text": "禁止使用未授予专利权的专利申请和已经终止、撤销、无效的专利作广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-4516cb8da41523b8",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.UNAUTHORIZED_OR_INVALID_PATENT_ADVERTISING",
+        "canonical_problem_name": "使用未授权或失效专利作广告",
+        "regulated_action": "advertise_with_unauthorized_or_invalid_patent",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "未授予专利权的专利申请",
+          "已经终止的专利",
+          "已经撤销的专利",
+          "已经无效的专利"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "广告法第十二条原文明确：禁止使用未授予专利权的专利申请和已经终止、撤销、无效的专利作广告。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-46d9c6e9b306dbb7",
+      "rule_id": "GAME-PAT-002",
+      "rule_title": "未取得专利权的，不得在广告中谎称取得专利权",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-bc89fedbb9b07a32",
+      "canonical_rule_uid": "RUID-46d9c6e9b306dbb7",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十二条",
+          "original_text": "未取得专利权的，不得在广告中谎称取得专利权。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-46d9c6e9b306dbb7",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT",
+        "canonical_problem_name": "广告中假冒他人专利或谎称取得专利权",
+        "regulated_action": "falsely_claim_patent_right_in_ad",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "《中华人民共和国广告法（2021修正）》第十二条原文：未取得专利权的，不得在广告中谎称取得专利权。属于专利资质虚假宣称，归入IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-495934a5b91e69ef",
+      "rule_id": "GAME-IP-001",
+      "rule_title": "游戏素材使用第三方游戏元素需提供授权证明",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH.THIRD_PARTY_AUTH_MISSING",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-e17f23bdef131636",
+      "canonical_rule_uid": "RUID-495934a5b91e69ef",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_小红书《游戏行业投放规则》使用手册_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书《游戏行业投放规则》使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2",
+          "original_text": "游戏素材若使⽤或模仿第三⽅游戏的⼈物形象、场景、标志性logo或代表性图标等作为物料或物料元素——需提供与第三⽅合作证明/授权"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-495934a5b91e69ef",
+        "target_issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH.THIRD_PARTY_AUTH_MISSING",
+        "canonical_problem_name": "广告素材涉及第三方内容未提供授权证明",
+        "regulated_action": "use_third_party_game_elements_without_authorization",
+        "legal_effect": "evidence_required",
+        "actor_scope": [],
+        "object_scope": [
+          "第三方游戏人物形象",
+          "第三方游戏场景",
+          "第三方游戏标志性logo",
+          "第三方游戏代表性图标"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "小红书《游戏行业投放规则》使用手册第2条原文：游戏素材若使用或模仿第三方游戏的人物形象、场景、标志性logo或代表性图标等作为物料或物料元素——需提供与第三方合作证明/授权。属于第三方内容授权证明缺失，归入IP_PERSONALITY.THIRD_PARTY_AUTH.THIRD_PARTY_AUTH_MISSING。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-4e15cdfcaeb4af48",
+      "rule_id": "GAME-PAT-003",
+      "rule_title": "禁止使用未授予专利权的专利申请和已经终止、撤销、无效的专利作广告",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.UNAUTHORIZED_OR_INVALID_PATENT_ADVERTISING",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c98b6982df14685e",
+      "canonical_rule_uid": "RUID-4516cb8da41523b8",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十二条",
+          "original_text": "禁止使用未授予专利权的专利申请和已经终止、撤销、无效的专利作广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-4e15cdfcaeb4af48",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.UNAUTHORIZED_OR_INVALID_PATENT_ADVERTISING",
+        "canonical_problem_name": "使用未授权或失效专利作广告",
+        "regulated_action": "advertise_with_unauthorized_or_invalid_patent",
+        "legal_effect": "prohibited",
+        "actor_scope": [],
+        "object_scope": [],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "《中华人民共和国广告法（2021修正）》第十二条原文：禁止使用未授予专利权的专利申请和已经终止、撤销、无效的专利作广告。属于使用未授权或失效专利宣传，归入IP_PERSONALITY.PATENT_AWARD.UNAUTHORIZED_OR_INVALID_PATENT_ADVERTISING。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-50818349cdf87f85",
+      "rule_id": "XHS-PAT-001",
+      "rule_title": "广告中涉及专利宣传必须标注专利号和专利种类",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-305fc7fbf3f5b905",
+      "canonical_rule_uid": "RUID-50818349cdf87f85",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【聚光】美妆&行业规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【聚光】美妆&行业规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.-part2",
+          "original_text": "广告法明确规定，广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类。未取得专利权的，不得在广告中谎称取得专利权。禁止使用未授予专利权的专利申请和已经终止、撤销、无效的专利作广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-50818349cdf87f85",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE",
+        "canonical_problem_name": "专利广告未标注专利号和专利种类",
+        "regulated_action": "patent_ad_without_patent_number_and_type",
+        "legal_effect": "disclosure_required",
+        "actor_scope": [],
+        "object_scope": [],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "小红书【聚光】美妆&行业规范第3.-part2条原文：广告法明确规定，广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类。未取得专利权的，不得在广告中谎称取得专利权。禁止使用未授予专利权的专利申请和已经终止、撤销、无效的专利作广告。核心明确要求为标注专利号和专利种类，归入IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-5c1b488604c3bbd0",
+      "rule_id": "GAME-IP-002",
+      "rule_title": "游戏类广告创意不得抄袭其他游戏元素",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.COPYRIGHT_TRADEMARK.GAME_AD_CREATIVE_PLAGIARISM_OF_GAME_ELEMENTS",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-df9ece39510af047",
+      "canonical_rule_uid": "RUID-5c1b488604c3bbd0",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.-part1",
+          "original_text": "创意中不允许出现抄袭其它游戏元素的情况（例如技能栏、装备、场景、人物属性栏等）"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-5c1b488604c3bbd0",
+        "target_issue_id": "IP_PERSONALITY.COPYRIGHT_TRADEMARK.GAME_AD_CREATIVE_PLAGIARISM_OF_GAME_ELEMENTS",
+        "canonical_problem_name": "游戏广告创意抄袭其他游戏元素",
+        "regulated_action": "game_ad_creative_plagiarism_of_other_game_elements",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "游戏广告创意",
+          "游戏元素（技能栏、装备、场景、人物属性栏等）"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "原文：创意中不允许出现抄袭其它游戏元素的情况（例如技能栏、装备、场景、人物属性栏等）。该规则针对游戏广告创意抄袭其他游戏元素，属于知识产权范畴，归入IP_PERSONALITY下游戏广告创意抄袭节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-6de71a28bbfbccf5",
+      "rule_id": "COSM-OTHER-002",
+      "rule_title": "广告中不得假冒他人专利",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-f442ea399c378136",
+      "canonical_rule_uid": "RUID-6de71a28bbfbccf5",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "第六十八条 广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任： （二）假冒他人专利的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-6de71a28bbfbccf5",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT",
+        "canonical_problem_name": "广告中假冒他人专利",
+        "regulated_action": "advertising_counterfeiting_others_patent",
+        "legal_effect": "civil_liability",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "专利"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "原文：广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任：（二）假冒他人专利的。该规则针对假冒他人专利的侵权行为，属于知识产权范畴，归入IP_PERSONALITY下假冒他人专利节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-717465e2f14e362b",
+      "rule_id": "HF-IP-002",
+      "rule_title": "未取得专利权不得在广告中谎称取得专利权",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-bc89fedbb9b07a32",
+      "canonical_rule_uid": "RUID-46d9c6e9b306dbb7",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十二条",
+          "original_text": "未取得专利权的，不得在广告中谎称取得专利权。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-717465e2f14e362b",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT",
+        "canonical_problem_name": "未取得专利权谎称取得专利权",
+        "regulated_action": "falsely_claiming_patent_right_without_obtaining",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "专利"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "原文：未取得专利权的，不得在广告中谎称取得专利权。该规则针对谎称取得专利权的行为，属于知识产权范畴，归入IP_PERSONALITY下假冒专利或谎称取得专利权节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-7923f93fa0c7393d",
+      "rule_id": "HF-IP-003",
+      "rule_title": "禁止使用未授权专利申请或已终止/撤销/无效专利作广告",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.UNAUTHORIZED_OR_INVALID_PATENT_ADVERTISING",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-c98b6982df14685e",
+      "canonical_rule_uid": "RUID-4516cb8da41523b8",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十二条",
+          "original_text": "禁止使用未授予专利权的专利申请和已经终止、撤销、无效的专利作广告。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-7923f93fa0c7393d",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.UNAUTHORIZED_OR_INVALID_PATENT_ADVERTISING",
+        "canonical_problem_name": "使用未授权或失效专利作广告",
+        "regulated_action": "advertising_with_unauthorized_or_invalid_patent",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "专利申请",
+          "已终止、撤销、无效的专利"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "原文：禁止使用未授予专利权的专利申请和已经终止、撤销、无效的专利作广告。该规则针对使用未授权或失效专利作广告，属于知识产权范畴，归入IP_PERSONALITY下使用未授权或失效专利作广告节点。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-7db1b561921569b6",
+      "rule_id": "XHS-COSM-005",
+      "rule_title": "美妆产品广告涉及专利内容需标明专利号及专利种类",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-bfbfb2d20f6efc12",
+      "canonical_rule_uid": "RUID-7db1b561921569b6",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_小红书【聚光】美妆&行业规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书【聚光】美妆&行业规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.-part1",
+          "original_text": "美妆产品广告宣传中涉及专利相关内容时，需清晰、无误、完整、准确、规范的标明专利号及专利种类，不得使用未取得、未授予、已终止或无效的专利内容"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-7db1b561921569b6",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE",
+        "canonical_problem_name": "专利广告未标注专利号和专利种类",
+        "regulated_action": "patent_advertising_missing_patent_number_and_type",
+        "legal_effect": "disclosure_required",
+        "actor_scope": [],
+        "object_scope": [
+          "美妆产品广告",
+          "专利相关内容"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "原文明确要求美妆产品广告宣传中涉及专利相关内容时，需清晰、无误、完整、准确、规范的标明专利号及专利种类，不得使用未取得、未授予、已终止或无效的专利内容，属于专利广告未标注专利号和专利种类问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-80be4c286d73fac3",
+      "rule_id": "COSM-OTHER-004",
+      "rule_title": "广告中未经同意不得使用他人名义或形象",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_NAME_OR_IMAGE_IN_AD",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-28e6ff43d3fefc55",
+      "canonical_rule_uid": "RUID-80be4c286d73fac3",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "第六十八条 广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任： （四）在广告中未经同意使用他人名义或者形象的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-80be4c286d73fac3",
+        "target_issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_NAME_OR_IMAGE_IN_AD",
+        "canonical_problem_name": "广告中未经同意使用他人名义或形象",
+        "regulated_action": "unauthorized_use_of_name_or_image_in_ad",
+        "legal_effect": "consent_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "他人名义",
+          "他人形象"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "原文第六十八条明确在广告中未经同意使用他人名义或者形象的，依法承担民事责任，属于未经同意使用他人名义或形象问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-88bde5d1fe0aa54d",
+      "rule_id": "COSM-PAT-001",
+      "rule_title": "广告中涉及专利产品/方法须标明专利号和专利种类",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-737e5d2ac3bc5c05",
+      "canonical_rule_uid": "RUID-88bde5d1fe0aa54d",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十二条",
+          "original_text": "广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-88bde5d1fe0aa54d",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE",
+        "canonical_problem_name": "专利广告未标注专利号和专利种类",
+        "regulated_action": "patent_advertising_missing_patent_number_and_type",
+        "legal_effect": "disclosure_required",
+        "actor_scope": [],
+        "object_scope": [
+          "专利产品",
+          "专利方法"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "原文第十二条明确广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类，属于专利广告未标注专利号和专利种类问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-94523973a33e2e4e",
+      "rule_id": "GAME-PAT-001",
+      "rule_title": "广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-737e5d2ac3bc5c05",
+      "canonical_rule_uid": "RUID-88bde5d1fe0aa54d",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十二条",
+          "original_text": "广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-94523973a33e2e4e",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE",
+        "canonical_problem_name": "专利广告未标注专利号和专利种类",
+        "regulated_action": "patent_advertising_missing_patent_number_and_type",
+        "legal_effect": "disclosure_required",
+        "actor_scope": [],
+        "object_scope": [
+          "专利产品",
+          "专利方法"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "原文第十二条明确广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类，属于专利广告未标注专利号和专利种类问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-95d03473566aa0b5",
+      "rule_id": "HF-IP-003",
+      "rule_title": "广告中未经同意不得使用他人名义或形象",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_NAME_OR_IMAGE_IN_AD",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-46b0539d5bb2274b",
+      "canonical_rule_uid": "RUID-95d03473566aa0b5",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任：……（四）在广告中未经同意使用他人名义或者形象的；……"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-95d03473566aa0b5",
+        "target_issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_NAME_OR_IMAGE_IN_AD",
+        "canonical_problem_name": "广告中未经同意使用他人名义或形象",
+        "regulated_action": "unauthorized_use_of_others_name_or_image_in_ad",
+        "legal_effect": "civil_liability",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "他人名义",
+          "他人形象"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "原文第六十八条明确将“在广告中未经同意使用他人名义或者形象的”列为侵权行为并依法承担民事责任，属于人格权益中未经同意使用他人名义或形象的情形。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-98e77b57a7749728",
+      "rule_id": "GAME-OTHER-002",
+      "rule_title": "广告中不得假冒他人专利",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-f442ea399c378136",
+      "canonical_rule_uid": "RUID-6de71a28bbfbccf5",
+      "is_canonical_occurrence": false,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "第六十八条 广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任： （二）假冒他人专利的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-98e77b57a7749728",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT",
+        "canonical_problem_name": "广告中假冒他人专利",
+        "regulated_action": "fake_others_patent_in_ad",
+        "legal_effect": "civil_liability",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "他人专利"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "原文第六十八条明确将“假冒他人专利的”列为侵权行为并依法承担民事责任，属于知识产权中假冒他人专利的情形。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-a4231e5bdb7ce08b",
+      "rule_id": "HF-ADL-001",
+      "rule_title": "广告中使用他人名义或形象需取得书面同意",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_NAME_OR_IMAGE_IN_AD",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ffc090cc7f7b65c3",
+      "canonical_rule_uid": "RUID-0bb184d1ed7e014c",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第三十三条",
+          "original_text": "广告主或者广告经营者在广告中使用他人名义或者形象的，应当事先取得其书面同意；使用无民事行为能力人、限制民事行为能力人的名义或者形象的，应当事先取得其监护人的书面同意。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-a4231e5bdb7ce08b",
+        "target_issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_NAME_OR_IMAGE_IN_AD",
+        "canonical_problem_name": "广告中使用他人名义或形象需取得书面同意",
+        "regulated_action": "use_others_name_or_image_without_written_consent",
+        "legal_effect": "consent_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者"
+        ],
+        "object_scope": [
+          "他人名义",
+          "他人形象",
+          "无民事行为能力人名义或形象",
+          "限制民事行为能力人名义或形象"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "原文第三十三条明确要求广告中使用他人名义或形象应事先取得书面同意，使用无/限制民事行为能力人名义或形象应取得监护人书面同意，属于人格权益中未经同意使用他人名义或形象的情形。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-a60ec2c81f57c041",
+      "rule_id": "GAME-IP-001",
+      "rule_title": "动漫影视剪辑二创类广告不得使用未授权人物形象及原作内容",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_CHARACTER_OR_REAL_PERSON_IN_GAME_PROMOTION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-217ca868d23bc562",
+      "canonical_rule_uid": "RUID-a60ec2c81f57c041",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260706_B站广告推广平台审核规范_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "BILI",
+          "source_name": "B站广告推广平台审核规范",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "1.-part1",
+          "original_text": "不可使用未授权的人物形象（包含真实人物影视形象或二次元形象，如唐国强、雷军、葛平）、原作内容（故事情节）等；文案不可使用未授权的真实人物姓名（如唐国强、雷军、葛平）；不可歪曲丑化人物形象；不可使用兄贵元素推广；不可随意剪切人物形象，改变人物原型"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-a60ec2c81f57c041",
+        "target_issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_CHARACTER_OR_REAL_PERSON_IN_GAME_PROMOTION",
+        "canonical_problem_name": "游戏推广中未经授权使用人物形象、原作内容或真实人物姓名",
+        "regulated_action": "unauthorized_use_of_character_or_real_person_in_game_promotion",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "未授权人物形象",
+          "真实人物影视形象",
+          "二次元形象",
+          "原作内容",
+          "故事情节",
+          "未授权真实人物姓名",
+          "人物形象"
+        ],
+        "platform_scope": [
+          "B站"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "原文明确禁止动漫影视剪辑二创类广告使用未授权人物形象、原作内容、未授权真实人物姓名，禁止歪曲丑化人物形象、使用兄贵元素、随意剪切改变人物原型，属于人格权益与知识产权中未经授权使用人物形象、原作内容或真实人物姓名的情形。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-b4e721c02d7dbf5c",
+      "rule_id": "HF-IP-001",
+      "rule_title": "广告中涉及专利产品/方法须标明专利号和专利种类",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-737e5d2ac3bc5c05",
+      "canonical_rule_uid": "RUID-88bde5d1fe0aa54d",
+      "is_canonical_occurrence": false,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十二条",
+          "original_text": "广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-b4e721c02d7dbf5c",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE",
+        "canonical_problem_name": "专利广告未标注专利号和专利种类",
+        "regulated_action": "patent_advertising_missing_patent_number_and_type",
+        "legal_effect": "disclosure_required",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "专利产品",
+          "专利方法"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "《中华人民共和国广告法（2021修正）》第十二条原文：广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类。属于专利广告披露义务，归入专利资质类问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-c226537b266f59c9",
+      "rule_id": "HF-LABEL-002",
+      "rule_title": "保健食品其他商标面积限制规则",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.COPYRIGHT_TRADEMARK.HEALTH_FOOD_OTHER_TRADEMARK_AREA_OR_COMBINATION",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-6f68225bffa7826b",
+      "canonical_rule_uid": "RUID-c226537b266f59c9",
+      "is_canonical_occurrence": true,
+      "track": "保健食品",
+      "source_file": "保健食品/20260705_（2027年生效！）食品标识监督管理办法_2027.03.16生效_20260617下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "GEN",
+          "source_name": "（2027年生效！）食品标识监督管理办法_2027.03.16生效_20260617下载",
+          "source_type": "法规",
+          "legal_level": 3,
+          "article": "第二十八条",
+          "original_text": "第二十八条 使用产品名称中商标名对应商标以外的商标，该商标的面积不得大于产品名称面积的四分之一，且小于产品名称中商标名面积，不得与产品名称连用，不得引人误解其为产品名称的一部分。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-c226537b266f59c9",
+        "target_issue_id": "IP_PERSONALITY.COPYRIGHT_TRADEMARK.HEALTH_FOOD_OTHER_TRADEMARK_AREA_OR_COMBINATION",
+        "canonical_problem_name": "保健食品其他商标面积超限或与产品名称连用",
+        "regulated_action": "health_food_other_trademark_area_or_combination",
+        "legal_effect": "scope_limitation",
+        "actor_scope": [
+          "保健食品生产经营者"
+        ],
+        "object_scope": [
+          "保健食品标签",
+          "保健食品广告",
+          "产品名称中商标名对应商标以外的其他商标"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "《食品标识监督管理办法》第二十八条原文：使用产品名称中商标名对应商标以外的商标，该商标的面积不得大于产品名称面积的四分之一，且小于产品名称中商标名面积，不得与产品名称连用，不得引人误解其为产品名称的一部分。属于商标使用限制，归入商标类问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-c23965025c739d8f",
+      "rule_id": "DY-COSM-003",
+      "rule_title": "美妆不得展示其他平台博主笔记/视频分享规则",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH.THIRD_PARTY_AUTH_MISSING",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-da504e180375a8dd",
+      "canonical_rule_uid": "RUID-c23965025c739d8f",
+      "is_canonical_occurrence": true,
+      "track": "美妆",
+      "source_file": "美妆/20260706_抖音【美妆行业宣传规范】实施细则_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "DY",
+          "source_name": "抖音【美妆行业宣传规范】实施细则",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "3.1.4",
+          "original_text": "未经筛选过滤直接展示其他平台博主的笔记内容/视频分享。此行为可能会涉及肖像侵权、诱导第三方等违规行为，不可分享此类内容"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-c23965025c739d8f",
+        "target_issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH.THIRD_PARTY_AUTH_MISSING",
+        "canonical_problem_name": "广告素材涉及第三方内容未提供授权证明",
+        "regulated_action": "third_party_content_unauthorized_use",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "其他平台博主的笔记内容",
+          "其他平台博主的视频分享"
+        ],
+        "platform_scope": [
+          "抖音"
+        ],
+        "evidence_requirement": "content",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "抖音【美妆行业宣传规范】实施细则3.1.4原文：未经筛选过滤直接展示其他平台博主的笔记内容/视频分享。此行为可能会涉及肖像侵权、诱导第三方等违规行为，不可分享此类内容。涉及第三方内容授权，归入第三方授权缺失问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-cbbaf4aee0850090",
+      "rule_id": "COSM-PAT-002",
+      "rule_title": "禁止在广告中谎称取得专利权",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-bc89fedbb9b07a32",
+      "canonical_rule_uid": "RUID-46d9c6e9b306dbb7",
+      "is_canonical_occurrence": false,
+      "track": "美妆",
+      "source_file": "美妆/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第十二条",
+          "original_text": "未取得专利权的，不得在广告中谎称取得专利权。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-cbbaf4aee0850090",
+        "target_issue_id": "IP_PERSONALITY.PATENT_AWARD.FALSE_PATENT_QUALIFICATION_OR_FABRICATED_PATENT",
+        "canonical_problem_name": "广告中假冒他人专利或谎称取得专利权",
+        "regulated_action": "false_patent_qualification_or_fabricated_patent",
+        "legal_effect": "prohibited",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "专利权"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "《中华人民共和国广告法（2021修正）》第十二条原文：未取得专利权的，不得在广告中谎称取得专利权。属于专利资质虚假宣称，需结合事实核验，归入假冒或谎称专利问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-e7b3e344e40da436",
+      "rule_id": "GAME-OTHER-004",
+      "rule_title": "广告中未经同意不得使用他人名义或形象",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_NAME_OR_IMAGE_IN_AD",
+      "mapping_type": "legal_issue",
+      "canonical_rule_key": "CRK-ad034e6f352381d8",
+      "canonical_rule_uid": "RUID-e7b3e344e40da436",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "AL",
+          "source_name": "中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载",
+          "source_type": "法规",
+          "legal_level": 1,
+          "article": "第六十八条",
+          "original_text": "第六十八条 广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任： （四）在广告中未经同意使用他人名义或者形象的；"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-e7b3e344e40da436",
+        "target_issue_id": "IP_PERSONALITY.PORTRAIT_NAME.UNAUTHORIZED_USE_OF_NAME_OR_IMAGE_IN_AD",
+        "canonical_problem_name": "广告中未经同意使用他人名义或形象",
+        "regulated_action": "unauthorized_use_of_others_name_or_image_in_ad",
+        "legal_effect": "civil_liability",
+        "actor_scope": [
+          "广告主",
+          "广告经营者",
+          "广告发布者"
+        ],
+        "object_scope": [
+          "他人名义",
+          "他人形象"
+        ],
+        "platform_scope": [],
+        "evidence_requirement": "fact",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "《广告法》第六十八条第（四）项原文明确：在广告中未经同意使用他人名义或者形象的，依法承担民事责任，直接对应未经同意使用他人名义或形象问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-fd7410c9d02fdc94",
+      "rule_id": "XHS-GAME-ADM-001",
+      "rule_title": "广告素材涉及第三方合作需提供合作证明/授权",
+      "root_id": "IP_PERSONALITY",
+      "issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH.THIRD_PARTY_AUTH_MISSING",
+      "mapping_type": "proactive_check",
+      "canonical_rule_key": "CRK-a039cfaf1115c8a8",
+      "canonical_rule_uid": "RUID-fd7410c9d02fdc94",
+      "is_canonical_occurrence": true,
+      "track": "游戏",
+      "source_file": "游戏/20260705_小红书聚光帮助中心-文档_规则拆解_v1.json",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "根据广告法第三章第三十三条、《民法典》相关管理规定，广告素材不得侵犯注册商标专用权、公民肖像权等权利。因此，如您在广告素材中涉及肖像、商标、第三方品牌/合作等内容，请提供相关材料证明。"
+        }
+      ],
+      "fingerprint": {
+        "rule_uid": "RUID-fd7410c9d02fdc94",
+        "target_issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH.THIRD_PARTY_AUTH_MISSING",
+        "canonical_problem_name": "广告素材涉及第三方内容未提供授权证明",
+        "regulated_action": "third_party_content_without_authorization_proof",
+        "legal_effect": "evidence_required",
+        "actor_scope": [
+          "广告主"
+        ],
+        "object_scope": [
+          "肖像",
+          "商标",
+          "第三方品牌/合作内容"
+        ],
+        "platform_scope": [
+          "小红书"
+        ],
+        "evidence_requirement": "mixed",
+        "source_scope_conflict": false,
+        "root_scope_conflict": false,
+        "suggested_root_id": "IP_PERSONALITY",
+        "confidence": "high",
+        "reason": "小红书聚光平台规则原文明确：广告素材涉及肖像、商标、第三方品牌/合作等内容，请提供相关材料证明，对应第三方内容未提供授权证明问题。"
+      },
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "canonical_groups": [
+    {
+      "canonical_rule_key": "CRK-025419d63d693056",
+      "canonical_rule_uid": "RUID-249bfcb434f03453",
+      "source_occurrence_uids": [
+        "RUID-249bfcb434f03453"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告中不得假冒他人专利",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-217ca868d23bc562",
+      "canonical_rule_uid": "RUID-a60ec2c81f57c041",
+      "source_occurrence_uids": [
+        "RUID-a60ec2c81f57c041"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "动漫影视剪辑二创类广告不得使用未授权人物形象及原作内容",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-28e6ff43d3fefc55",
+      "canonical_rule_uid": "RUID-80be4c286d73fac3",
+      "source_occurrence_uids": [
+        "RUID-80be4c286d73fac3"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告中未经同意不得使用他人名义或形象",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-305fc7fbf3f5b905",
+      "canonical_rule_uid": "RUID-50818349cdf87f85",
+      "source_occurrence_uids": [
+        "RUID-50818349cdf87f85"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告中涉及专利宣传必须标注专利号和专利种类",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-46b0539d5bb2274b",
+      "canonical_rule_uid": "RUID-95d03473566aa0b5",
+      "source_occurrence_uids": [
+        "RUID-95d03473566aa0b5"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告中未经同意不得使用他人名义或形象",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-4b38442db9dd9085",
+      "canonical_rule_uid": "RUID-21bbfdd0c18d269e",
+      "source_occurrence_uids": [
+        "RUID-21bbfdd0c18d269e"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告素材涉及第三方合作需提供合作证明/授权",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-6f68225bffa7826b",
+      "canonical_rule_uid": "RUID-c226537b266f59c9",
+      "source_occurrence_uids": [
+        "RUID-c226537b266f59c9"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "保健食品其他商标面积限制规则",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-737e5d2ac3bc5c05",
+      "canonical_rule_uid": "RUID-88bde5d1fe0aa54d",
+      "source_occurrence_uids": [
+        "RUID-88bde5d1fe0aa54d",
+        "RUID-94523973a33e2e4e",
+        "RUID-b4e721c02d7dbf5c"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "广告中涉及专利产品/方法须标明专利号和专利种类",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-a039cfaf1115c8a8",
+      "canonical_rule_uid": "RUID-fd7410c9d02fdc94",
+      "source_occurrence_uids": [
+        "RUID-fd7410c9d02fdc94"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告素材涉及第三方合作需提供合作证明/授权",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-ad034e6f352381d8",
+      "canonical_rule_uid": "RUID-e7b3e344e40da436",
+      "source_occurrence_uids": [
+        "RUID-e7b3e344e40da436"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "广告中未经同意不得使用他人名义或形象",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-bc89fedbb9b07a32",
+      "canonical_rule_uid": "RUID-46d9c6e9b306dbb7",
+      "source_occurrence_uids": [
+        "RUID-46d9c6e9b306dbb7",
+        "RUID-717465e2f14e362b",
+        "RUID-cbbaf4aee0850090"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "未取得专利权的，不得在广告中谎称取得专利权",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-bfbfb2d20f6efc12",
+      "canonical_rule_uid": "RUID-7db1b561921569b6",
+      "source_occurrence_uids": [
+        "RUID-7db1b561921569b6"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "美妆产品广告涉及专利内容需标明专利号及专利种类",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-c98b6982df14685e",
+      "canonical_rule_uid": "RUID-4516cb8da41523b8",
+      "source_occurrence_uids": [
+        "RUID-4516cb8da41523b8",
+        "RUID-4e15cdfcaeb4af48",
+        "RUID-7923f93fa0c7393d"
+      ],
+      "duplicate_count": 3,
+      "canonical_title": "禁止使用未授权专利申请或已失效专利作广告",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-da504e180375a8dd",
+      "canonical_rule_uid": "RUID-c23965025c739d8f",
+      "source_occurrence_uids": [
+        "RUID-c23965025c739d8f"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "美妆不得展示其他平台博主笔记/视频分享规则",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-df9ece39510af047",
+      "canonical_rule_uid": "RUID-5c1b488604c3bbd0",
+      "source_occurrence_uids": [
+        "RUID-5c1b488604c3bbd0"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "游戏类广告创意不得抄袭其他游戏元素",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-e17f23bdef131636",
+      "canonical_rule_uid": "RUID-495934a5b91e69ef",
+      "source_occurrence_uids": [
+        "RUID-495934a5b91e69ef"
+      ],
+      "duplicate_count": 1,
+      "canonical_title": "游戏素材使用第三方游戏元素需提供授权证明",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-f442ea399c378136",
+      "canonical_rule_uid": "RUID-6de71a28bbfbccf5",
+      "source_occurrence_uids": [
+        "RUID-6de71a28bbfbccf5",
+        "RUID-98e77b57a7749728"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "广告中不得假冒他人专利",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "canonical_rule_key": "CRK-ffc090cc7f7b65c3",
+      "canonical_rule_uid": "RUID-0bb184d1ed7e014c",
+      "source_occurrence_uids": [
+        "RUID-0bb184d1ed7e014c",
+        "RUID-a4231e5bdb7ce08b"
+      ],
+      "duplicate_count": 2,
+      "canonical_title": "广告中使用他人名义或形象需取得书面同意",
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ],
+  "proactive_candidates": [
+    {
+      "rule_uid": "RUID-21bbfdd0c18d269e",
+      "issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH.THIRD_PARTY_AUTH_MISSING",
+      "name": "广告素材涉及第三方内容未提供授权证明",
+      "required_evidence": "mixed",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "根据⼴告法第三章第三⼗三条、《⺠法典》相关管理规定，⼴告素材不得侵犯注册商标专⽤权、公⺠肖像权等权利。因此，如您在⼴告素材中涉及肖像、商标、第三⽅品牌/合作等内容，请提供相关材料证明。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-495934a5b91e69ef",
+      "issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH.THIRD_PARTY_AUTH_MISSING",
+      "name": "广告素材涉及第三方内容未提供授权证明",
+      "required_evidence": "fact",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书《游戏行业投放规则》使用手册",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "2",
+          "original_text": "游戏素材若使⽤或模仿第三⽅游戏的⼈物形象、场景、标志性logo或代表性图标等作为物料或物料元素——需提供与第三⽅合作证明/授权"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    },
+    {
+      "rule_uid": "RUID-fd7410c9d02fdc94",
+      "issue_id": "IP_PERSONALITY.THIRD_PARTY_AUTH.THIRD_PARTY_AUTH_MISSING",
+      "name": "广告素材涉及第三方内容未提供授权证明",
+      "required_evidence": "mixed",
+      "source_details": [
+        {
+          "source_id": "XHS",
+          "source_name": "小红书聚光帮助中心 - 文档",
+          "source_type": "平台规则",
+          "legal_level": 99,
+          "article": "未分条-1",
+          "original_text": "根据广告法第三章第三十三条、《民法典》相关管理规定，广告素材不得侵犯注册商标专用权、公民肖像权等权利。因此，如您在广告素材中涉及肖像、商标、第三方品牌/合作等内容，请提供相关材料证明。"
+        }
+      ],
+      "review": {
+        "status": "pending",
+        "notes": null
+      }
+    }
+  ]
+}
