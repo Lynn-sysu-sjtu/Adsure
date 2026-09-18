@@ -30,3 +30,6 @@ datasets/golden/videos/
 
 # SSCD model weights (94MB, download separately)
 data/ip_models/
+
+# IP reference index (runtime artifact)
+data/ip_models/reference_index.json
