@@ -89,7 +89,6 @@
  "notes": "媒体线索直接入生产（业主审批）：金额87万为媒体口径；处罚机关/决定书号/日期均未核到，保持空值不编造；待官方核验后修正。",
  "owner_note": "仅媒体口径（87万）；处罚机关、决定书号、决定日期未核到，保持空值。",
  "audit_note": "业主审批入生产：Ubras“躺赢职场”内衣广告案（媒体线索）；要素不全，待官方核验。",
- "source_record_path": "data/structured_candidates/ubras_2021_lingering_in_workplace_ad_case.json",
  "promotion": {
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T04:13:49+08:00",

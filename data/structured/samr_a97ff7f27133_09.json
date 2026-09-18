@@ -110,5 +110,7 @@
   }
  ],
  "violation_type": "发布医药类违法广告（虚假宣传）",
- "source_record_path": "data/structured_candidates/samr_a97ff7f27133_09.json"
+ "also_seen_at": [
+  "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html"
+ ]
 }

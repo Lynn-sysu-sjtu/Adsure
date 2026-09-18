@@ -96,7 +96,6 @@
   }
  ],
  "violation_type": "涉医疗宣传",
- "source_record_path": "data/structured_candidates/excel_candidate__food_medical_claim__b0e7e8a2.json",
  "promotion": {
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",

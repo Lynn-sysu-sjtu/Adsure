@@ -97,7 +97,6 @@
   }
  ],
  "violation_type": "广告可识别性不足",
- "source_record_path": "data/structured_candidates/excel_candidate__native_health_ad__8cc0903c.json",
  "promotion": {
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",

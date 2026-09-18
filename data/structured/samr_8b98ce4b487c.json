@@ -166,7 +166,6 @@
   "review_date": "2026-09-17",
   "review_notes": "crawler 自动入库：官方 P0/P1 页面存证，规则抽取，待法务抽检。"
  },
- "source_record_path": "/Users/lcdat/Documents/广告合规AI/data/structured_candidates/samr_8b98ce4b487c.json",
  "promotion": {
   "promoted_to_production": true,
   "promoted_at": "2026-09-17T14:32:00+08:00",

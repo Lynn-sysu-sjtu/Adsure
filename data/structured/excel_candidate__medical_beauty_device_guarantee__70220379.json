@@ -94,7 +94,6 @@
   }
  ],
  "violation_type": "医疗广告违规",
- "source_record_path": "data/structured_candidates/excel_candidate__medical_beauty_device_guarantee__70220379.json",
  "promotion": {
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",

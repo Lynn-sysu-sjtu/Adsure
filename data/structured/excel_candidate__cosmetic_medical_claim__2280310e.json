@@ -98,7 +98,6 @@
   }
  ],
  "violation_type": "化妆品医疗化宣传",
- "source_record_path": "data/structured_candidates/excel_candidate__cosmetic_medical_claim__2280310e.json",
  "promotion": {
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",

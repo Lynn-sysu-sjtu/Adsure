@@ -87,7 +87,6 @@
     }
   ],
   "promoted_to_production_at": "2026-09-17T21:23:56+08:00",
-  "source_record_path": "data/structured_candidates/zj_gap_330102292024070002.json",
   "promotion": {
     "promoted_to_production": true,
     "promoted_at": "2026-09-17T21:23:56+08:00",
