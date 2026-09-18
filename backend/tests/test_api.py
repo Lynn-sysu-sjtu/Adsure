@@ -172,3 +172,96 @@ def test_feishu_response_aggregates_same_rule():
     assert len(abs_rules) == 1
     assert "国家级" in abs_rules[0]["match_reason"]
     assert "全网第一" in abs_rules[0]["match_reason"]
+
+
+# ── 裁决回流（手册 Step6）────────────────────────────────────
+
+
+@pytest.fixture()
+def completed_job(client, monkeypatch):
+    """造一个已完成审核的 job（直接写 report.json，绕过引擎）。"""
+    c, tmp = client
+    import app.api as api_mod
+    job_id = "a" * 32
+    d = tmp / "jobs" / job_id
+    d.mkdir(parents=True)
+    report = _sample_report()
+    (d / "report.json").write_text(json.dumps(report, ensure_ascii=False),
+                                   encoding="utf-8")
+    (d / "job.json").write_text(json.dumps(
+        {"job_id": job_id, "status": "completed", "audit_response_ready": True}),
+        encoding="utf-8")
+    monkeypatch.setattr(api_mod, "FEEDBACK_ROOT", tmp / "feedback")
+    import app.feedback as fb
+    monkeypatch.setattr(fb, "FEEDBACK_ROOT", tmp / "feedback")
+    return c, tmp, job_id
+
+
+def test_adjudication_records_false_positive(completed_job):
+    c, tmp, job_id = completed_job
+    r = c.post(f"/api/jobs/{job_id}/adjudication", json={
+        "finding_index": 0, "action": "false_positive",
+        "reason": "属客观分级描述", "adjudicator": "法务-张某",
+        "matched_text": "国家级"})
+    assert r.status_code == 201
+    body = r.json()
+    assert body["feedback_kind"] == "lexicon"
+    assert body["status"] == "recorded"
+    # 落盘校验
+    fb = tmp / "feedback" / "lexicon_feedback.jsonl"
+    assert fb.exists()
+    rec = json.loads(fb.read_text(encoding="utf-8").splitlines()[0])
+    assert rec["action"] == "false_positive"
+    assert rec["job_id"] == job_id
+    assert rec["matched_text"] == "国家级"
+    assert rec["context"]  # 从报告带过来的原始表达
+
+
+def test_adjudication_ip_confirmed_goes_to_ip_file(completed_job):
+    c, tmp, job_id = completed_job
+    r = c.post(f"/api/jobs/{job_id}/adjudication", json={
+        "finding_index": 1, "action": "ip_confirmed",
+        "ip_id": "disney_mickey", "entity_name": "米奇老鼠",
+        "adjudicator": "法务-李某"})
+    assert r.status_code == 201
+    assert r.json()["feedback_kind"] == "ip"
+    assert (tmp / "feedback" / "ip_feedback.jsonl").exists()
+
+
+def test_adjudication_rejects_bad_index_and_action(completed_job):
+    c, _, job_id = completed_job
+    r1 = c.post(f"/api/jobs/{job_id}/adjudication",
+                json={"finding_index": 99, "action": "false_positive"})
+    assert r1.status_code == 400
+    r2 = c.post(f"/api/jobs/{job_id}/adjudication",
+                json={"finding_index": 0, "action": "随便"})
+    assert r2.status_code == 400
+
+
+def test_adjudication_requires_report(completed_job, monkeypatch):
+    c, tmp, _ = completed_job
+    import app.api as api_mod
+    empty = tmp / "jobs" / ("b" * 32)
+    empty.mkdir(parents=True)
+    (empty / "job.json").write_text("{}", encoding="utf-8")
+    r = c.post(f"/api/jobs/{'b'*32}/adjudication",
+               json={"finding_index": 0, "action": "false_positive"})
+    assert r.status_code == 409
+
+
+def test_adjudication_feedback_drives_lexicon_suggestions(completed_job):
+    """端到端：两条同类误报 → 聚合建议计数=2（词库校准的输入）。"""
+    from app.feedback import load_feedback, build_lexicon_suggestions
+    c, tmp, job_id = completed_job
+    for i in range(2):
+        r = c.post(f"/api/jobs/{job_id}/adjudication", json={
+            "finding_index": 0, "action": "false_positive",
+            "reason": "属客观分级描述", "matched_text": "国家级",
+            "adjudicator": f"法务-{i}"})
+        assert r.status_code == 201
+    recs = load_feedback("lexicon", root=tmp / "feedback")
+    sugs = build_lexicon_suggestions(recs)
+    assert len(sugs) == 1
+    assert sugs[0].term == "国家级"
+    assert sugs[0].reason_count == 2
+    assert sugs[0].suggestion_type == "add_whitelist_context"

@@ -42,6 +42,13 @@ from app.reasoning.report import DISCLAIMER, Report, finding_from_hit, finding_f
 from app.reasoning.subsume import MockLLMProvider, Subsumer, get_llm_provider
 from app.rules.mandatory import load_default_checker
 from app.rules.matcher import load_default_matcher
+from app.feedback import (
+    AdjudicationRecord,
+    save_adjudication,
+)
+from app.feedback import FEEDBACK_ROOT as _DEFAULT_FEEDBACK_ROOT
+
+FEEDBACK_ROOT = _DEFAULT_FEEDBACK_ROOT
 
 logger = logging.getLogger(__name__)
 
@@ -624,6 +631,56 @@ def create_app() -> FastAPI:
     @application.get("/api/jobs/{job_id}/report")
     def report(job_id: str) -> JSONResponse:
         return JSONResponse(_read_json(_job_dir(job_id) / "report.json"))
+
+    @application.post("/api/jobs/{job_id}/adjudication", status_code=201)
+    def adjudicate(job_id: str, body: dict) -> dict[str, Any]:
+        """法务裁决回流（手册 Step6：裁决结果沉淀回规则库/类案库/IP 底库）。
+
+        body: {"finding_index": 0, "action": "false_positive",
+               "reason": "...", "adjudicator": "法务-张某"}
+        action 枚举见 app.feedback.AdjudicationRecord。
+        裁决的定位字段（title/t_start/source/matched_text）从已生成的
+        report.json 读取，防止调用方传错导致回流数据对不上原始证据。
+        """
+        directory = _job_dir(job_id)
+        report_path = directory / "report.json"
+        if not report_path.is_file():
+            raise HTTPException(status_code=409, detail="报告尚未生成，无法裁决")
+        findings = _read_json(report_path).get("findings", [])
+        idx = body.get("finding_index")
+        if not isinstance(idx, int) or not (0 <= idx < len(findings)):
+            raise HTTPException(
+                status_code=400,
+                detail=f"finding_index 必须是 0–{len(findings)-1} 的整数")
+        action = body.get("action", "")
+        allowed = {"confirmed_violation", "false_positive", "missed_risk",
+                   "not_applicable", "needs_more_evidence",
+                   "ip_confirmed", "ip_rejected"}
+        if action not in allowed:
+            raise HTTPException(status_code=400,
+                                detail=f"action 必须是：{'、'.join(sorted(allowed))}")
+
+        f = findings[idx]
+        rep = f.get("报告", {})
+        record = AdjudicationRecord(
+            job_id=job_id,
+            finding_index=idx,
+            title=f.get("title", ""),
+            t_start=float(f.get("t_start", 0) or 0),
+            t_end=float(f.get("t_end", 0) or 0),
+            source=f.get("source", ""),
+            action=action,
+            reason=str(body.get("reason", ""))[:2000],
+            adjudicator=str(body.get("adjudicator", ""))[:100],
+            ip_id=body.get("ip_id"),
+            entity_name=body.get("entity_name"),
+            matched_text=body.get("matched_text", ""),
+            context=rep.get("风险表达", ""),
+        )
+        path = save_adjudication(record, root=FEEDBACK_ROOT)
+        return {"status": "recorded", "feedback_file": path.name,
+                "feedback_kind": record.feedback_kind,
+                "adjudicated_at": record.adjudicated_at}
 
     @application.get("/api/jobs/{job_id}/report-page")
     def report_page(job_id: str) -> FileResponse:
