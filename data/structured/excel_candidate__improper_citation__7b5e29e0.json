@@ -4,8 +4,8 @@
  "case_number": "（2019）鄂1281行初20号",
  "source_type": "manual_compilation_pending_source_verification",
  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4815ceb8f9d51cbc9c0199517dbecbd7cbdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "decision_date": "2019-06-18",
  "penalty_authority": "广州市哈雷日用品有限公司与赤壁市市场监督管理局",
@@ -21,7 +21,7 @@
  "illegal_claims": [
   "对0.3μm颗粒物的过滤效果大于95%"
  ],
- "facts_summary": "在口罩产品包装上标注“对0.3μm颗粒物的过滤效果大于95%”，未真实、准确标注数据来源的试验条件，且未标明出处",
+ "facts_summary": "原告广州市哈雷日用品有限公司（以下简称哈雷公司）不服被告赤壁市市场监督管理局（以下简称赤壁市市监局）以及咸宁市人民政府（咸宁市政府）行政处罚决定一案，于2019年3月26日向本院提起行政诉讼。本院于2019年4月16日立案后，于2019年4月22日向被告送达了起诉状副本及应诉通知书。本院依法组成合议庭，于2019年5月30日公开开庭审理了本案。原告的委托代理人刘德华、刘小云、被告赤壁市市监局副局长杨勇及委托代理人宋洪涛、邓楚方到庭参加诉讼。本案现已审理终结。\n经审理查明，2018年3月23日，被告赤壁市市监局在日常检查中发现，原告生产并在沃尔玛（湖北）商业零售有限公司赤壁河北大道分店销售的哈雷活性炭高防护口罩产品包装上“对0.3μm颗粒物的过滤效果大于95%\"、哈雷3D口罩产品包装上“BFE过滤效率99%\"等内容不真实、不准确地标注实验数据来源条件，且未标明出处的行为，涉嫌违反《中华人民共和国广告法》第十一条第二款之规定，对原告立案调查。2018年7月3日，被告赤壁市市监局向原告邮寄送达了赤工商询字【2018】第B-19号《询问通知书》，原告于2018年7月13日向被告赤壁市市监局邮寄提交了说明情况的资料；2018年9月18日，被告赤壁市市监局依法向原告送达了赤壁工商听告字（2018）S-19号《行政处罚听证告知书》，应原告申请，于2018年10月11日召开听证会；2018年11月23日，被告赤壁市市监局作出赤壁工商处字（2018）S-19号行政处罚决定，“责令原告停止发布广告，并对原告处以60000元的行政处罚\"，且依法向原告送达赤壁工商处字（2018）S-19号《行政处罚决定书》。原告不服被告赤壁市市监局作出的赤壁工商处字（2018）S-19号《行政处罚决定书》，于2019年1月11日向被告咸宁市政府提交行政复议申请书；同年1月14日，被告咸宁市政府向原告送达《提出答复通知书》；2019年1月24日，被告赤壁市市监局提交行政复议答复书；2019年3月11日，被告咸宁市政府作出的咸政复【2019】5号《行政复议决定书》，维持被告赤壁市市监局作出的赤壁工商处字（2018）S-19号《行政处罚决定书》，并送达给原告以及被告赤壁市市监局。原告不服被告咸宁市政府作出的咸政复【2019】5号《行政复议决定书》，遂诉至本院。",
  "legal_basis": [
   "《广告法》第十一条第二款、第五十九条第一款第（二）项"
  ],
@@ -33,17 +33,24 @@
   "广告引证内容不真实、不准确",
   "广告引证内容不规范"
  ],
- "vector_text": "这是一起人工整理的广告引证内容不真实、不准确候选案例。案件事实显示，经营者在口罩产品包装上标注“对0.3μm颗粒物的过滤效果大于95%”，未真实、准确标注数据来源的试验条件，且未标明出处 处罚依据记载为《广告法》第十一条第二款、第五十九条第一款第（二）项，处理结果为罚款60000元（一审变更为20000元）；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告广州市哈雷日用品有限公司（以下简称哈雷公司）不服被告赤壁市市场监督管理局（以下简称赤壁市市监局）以及咸宁市人民政府（咸宁市政府）行政处罚决定一案，于2019年3月26日向本院提起行政诉讼。本院于2019年4月16日立案后，于2019年4月22日向被告送达了起诉状副本及应诉通知书。本院依法组成合议庭，于2019年5月30日公开开庭审理了本案。原告的委托代理人刘德华、刘小云、被告赤壁市市监局副局长杨勇及委托代理人宋洪涛、邓楚方到庭参加诉讼。本案现已审理终结。涉案广告宣称：对0.3μm颗粒物的过滤效果大于95%。",
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
  "owner_approval": {
@@ -74,6 +81,11 @@
   {
    "action": "fill_violation_type",
    "note": "从 risk_dimensions 首项派生：广告引证内容不规范"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "violation_type": "广告引证内容不规范",
@@ -82,5 +94,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在口罩产品包装上标注“对0.3μm颗粒物的过滤效果大于95%”，未真实、准确标注数据来源的试验条件，且未标明出处",
+    "vector_text": "这是一起人工整理的广告引证内容不真实、不准确候选案例。案件事实显示，经营者在口罩产品包装上标注“对0.3μm颗粒物的过滤效果大于95%”，未真实、准确标注数据来源的试验条件，且未标明出处 处罚依据记载为《广告法》第十一条第二款、第五十九条第一款第（二）项，处理结果为罚款60000元（一审变更为20000元）；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2019)鄂1281行初20号",
+  "pkulaw_court": "湖北省赤壁市人民法院(原湖北省蒲圻市人民法院)",
+  "pkulaw_title": "广州市哈雷日用品有限公司与赤壁市市场监督管理局、咸宁市人民政府质量监督检验检疫行政管理:其他(质量监督)一审行政判决书",
+  "last_instance_date": "2019.06.18",
+  "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4815ceb8f9d51cbc9c0199517dbecbd7cbdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2019_鄂1281行初20号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
 }

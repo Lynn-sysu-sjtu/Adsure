@@ -1,0 +1,87 @@
+{
+ "case_id": "samr_2026_netfood_06_special_medical_mixing",
+ "title": "天津市市场监管综合行政执法总队查处京东大药房（天津）有限公司万全道分公司网络销售特医食品及保健食品混放案",
+ "source_type": "official_typical_case",
+ "source_name": "国家市场监督管理总局",
+ "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html",
+ "source_verification_status": "source_verified",
+ "original_decision_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html",
+ "original_decision_url_status": "official_page",
+ "source_lookup_priority": "P0",
+ "publish_date": "2026-09-07",
+ "decision_date": null,
+ "penalty_authority": "天津市市场监管综合行政执法总队",
+ "party_name": "京东大药房（天津）有限公司万全道分公司",
+ "region": "天津市",
+ "industry": "保健食品",
+ "violation_type": "特医食品/保健食品网络销售管理违规（混放）",
+ "case_nature": "administrative_penalty_decision",
+ "is_admin_penalty_candidate": true,
+ "product_or_service": "特殊医学用途特定全营养配方食品（速熠素 特殊医学用途肿瘤全营养配方食品）、保健食品",
+ "ad_channel": "京东秒送平台（线上销售）",
+ "risk_dimensions": [
+  "食品标签违法",
+  "平台准入/资质不符",
+  "其他"
+ ],
+ "illegal_claims": [
+  "速熠素 特殊医学用途肿瘤全营养配方食品",
+  "保健食品与普通食品混放销售"
+ ],
+ "facts_summary": "2025年12月至2026年3月，当事人通过京东秒送平台线上销售特殊医学用途特定全营养配方食品，并将保健食品与普通食品混放销售，违反《食品安全法》第一百二十六条第一款等规定，涉及特医食品和保健食品的专区专柜销售要求。",
+ "legal_basis": [
+  "《中华人民共和国食品安全法》第一百二十六条第一款",
+  "《中华人民共和国食品安全法实施条例》第六十九条第（五）项",
+  "《网络食品安全违法行为查处办法》第四十一条第二款",
+  "《中华人民共和国行政处罚法》第二十八条第一款"
+ ],
+ "penalty_result": "责令改正违法行为，给予警告并罚款3万元",
+ "penalty_amount": 30000,
+ "regulatory_logic": "网络销售特殊医学用途配方食品与保健食品须专区专柜、不得混放；平台经营者在资质与陈列管理上负有合规义务。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "特殊医学用途配方食品",
+  "特医食品",
+  "保健食品",
+  "混放销售",
+  "京东秒送",
+  "专区专柜",
+  "罚款3万",
+  "天津"
+ ],
+ "vector_text": "这是一起线上平台销售特医食品与保健食品混放被罚的案例。京东秒送渠道销售“速熠素”特医食品并与普通食品混放，违反专区专柜要求。监管警告并罚款3万元。场景特征：特医食品、保健食品、网络销售混放。",
+ "rag_chunk_type": "case_summary",
+ "scope": "public",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "raw_text_path": "data/raw_text/samr_c083e410ff3d.json",
+ "raw_html_path": "data/raw_html/samr_c083e410ff3d.html",
+ "source_lookup_query": "京东大药房（天津）有限公司万全道分公司 特医食品/保健食品网络销售管理违规（混放）",
+ "legal_basis_provenance": {
+  "case_source_text": "总局典型案例原文引用",
+  "specific_articles_published_by_case_source": true,
+  "mapping_status": "official_case_source",
+  "warning": "法条引用来自总局典型案例原文。"
+ },
+ "legal_basis_details": [],
+ "audit": {
+  "review_status": "approved",
+  "approved_for_rag": true,
+  "reviewer": "codex-crawler-ingest",
+  "review_date": "2026-09-15",
+  "review_notes": "总局P0官方典型案，crawler存证+人工结构化；罚则/机关/金额均出自官方原文。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T23:48:57+08:00",
+   "action": "crawler_ingest_official",
+   "note": "经 backend/scripts/crawl_samr.py 抓取存证（raw_html+raw_text），按官方原文结构化入库。"
+  }
+ ],
+ "source_record_path": "data/structured_candidates/samr_2026_netfood_06_special_medical_mixing.json",
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T23:48:57+08:00",
+  "approved_by": "codex-crawler-ingest (官方P0典型案)"
+ }
+}

@@ -6,8 +6,8 @@
  "decision_date": "2025-05-13",
  "source_type": "manual_docx_sector_report_pending_source_verification",
  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20615d6c9a6eb87b0d33c1b8e5a1ff06c96bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "penalty_authority": null,
  "party_name": "某某公司等",
@@ -34,7 +34,7 @@
  "illegal_claims": [
   "xx盛典"
  ],
- "facts_summary": "游戏《xxxx》宣传“xx盛典”活动可抽取稀有道具，玩家充值12429元仅获得一件稀有武器，主张虚假宣传。法院认定两被告已在官网公示抽奖概率，原告系自愿消费",
+ "facts_summary": "本院经审查认为，郭某在案涉游戏项下签订的《用户协议》明确约定，“协议是由用户(以下简称为“您”)与某某公司1及旗下各关联公司及第三方合作公司(以下简称为“我们”)就XY游戏平台所提供的游戏产品及服务所订立的协议。”可以看出，无论某某公司1是否是案涉游戏服务的实际提供方，都应当是《用户协议》所指向的“我们”。《用户协议》明确约定产生纠纷应当提交“提交我们公司注册所在地有管辖权的人民法院诉讼解决”。本院经审查，某某公司1注册地在上海市徐汇区，上海市徐汇区人民法院对本案有管辖权。综上，依照《中华人民共和国民事诉讼法》第三十五条、第一百三十条第一款，《最高人民法院关于适用〈中华人民共和国民事诉讼法〉的解释》第二百七十六条规定，裁定如下：",
  "legal_basis": [
   "《消费者权益保护法》第五十五条"
  ],
@@ -52,18 +52,25 @@
   "xx盛典"
  ],
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "source_lookup_query": "（2025）沪0104民初7362号 郭某诉某某公司等服务合同纠纷案",
- "vector_text": "【赛道】游戏。【场景】官网。【宣称】xx盛典。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏抽奖概率争议，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《消费者权益保护法》第五十五条。。【依据】《消费者权益保护法》第五十五条。【结果】驳回原告诉讼请求。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。本院经审查认为，郭某在案涉游戏项下签订的《用户协议》明确约定，“协议是由用户(以下简称为“您”)与某某公司1及旗下各关联公司及第三方合作公司(以下简称为“我们”)就XY游戏平台所提供的游戏产品及服务所订立的协议。”可以看出，无论某某公司1是否是案涉游戏服务的实际提供方，都应当是《用户协议》所指向的“我们”。《用户协议》明确约定产生纠纷应当提交“提交我们公司注册所在地有管辖权的人民法院诉讼解决”。本院经审查，某某公司1注册地在上海市徐汇区，上海市徐汇区人民法院对本案有管辖权。综上，依照《中华人民共和国民事诉讼法》第三十五条、第一百三十条第一款，《最高人民法院关于适用〈中华人民共和国民事诉讼法〉的解释》第二百七十六条规定，裁定如下：涉案广告宣称：xx盛典。",
  "raw_text_path": "data/raw_text/case_library_docx__游戏广告合规案例库.json",
  "owner_approval": {
   "approved": true,
@@ -89,6 +96,11 @@
     "illegal_claims"
    ],
    "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "source_record_path": "data/structured_candidates/sector_docx__game__53e9096b.json",
@@ -96,5 +108,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "游戏《xxxx》宣传“xx盛典”活动可抽取稀有道具，玩家充值12429元仅获得一件稀有武器，主张虚假宣传。法院认定两被告已在官网公示抽奖概率，原告系自愿消费",
+    "vector_text": "【赛道】游戏。【场景】官网。【宣称】xx盛典。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏抽奖概率争议，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《消费者权益保护法》第五十五条。。【依据】《消费者权益保护法》第五十五条。【结果】驳回原告诉讼请求。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2025)沪0104民初7362号",
+  "pkulaw_court": "上海市徐汇区人民法院",
+  "pkulaw_title": "郭某与某某公司等服务合同纠纷一审民事裁定书",
+  "last_instance_date": "2025.04.03",
+  "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20615d6c9a6eb87b0d33c1b8e5a1ff06c96bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2025_沪0104民初7362号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "本院认为(回退)"
+  ]
+ },
+ "human_review_required": true
 }

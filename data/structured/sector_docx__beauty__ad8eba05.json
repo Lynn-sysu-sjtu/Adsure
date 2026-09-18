@@ -6,8 +6,8 @@
  "decision_date": "2021-09-16",
  "source_type": "manual_docx_sector_report_pending_source_verification",
  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206c0fd8b425bb92d342c7388671576614ebdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "penalty_authority": null,
  "party_name": "河南维颜化妆品有限公司网络购物",
@@ -33,7 +33,7 @@
   "377烟酰胺亮肤精华液",
   "美白、祛斑、提亮肤色"
  ],
- "facts_summary": "在拼多多销售“377烟酰胺亮肤精华液”（普通化妆品，生产许可证粤妆20160687），网页宣传“美白、祛斑、提亮肤色”等特殊用途功效",
+ "facts_summary": "原告陈剑力因与被告河南维颜化妆品有限公司(以下简称维颜公司)信息网络买卖合同纠纷一案，本院于2021年3月23日立案后，维颜公司在答辩期内提出管辖权异议，本院裁定驳回维颜公司的管辖权异议申请，维颜公司不服上诉至莆田市中级人民法院，莆田市中级人民法院裁定驳回上诉，维持原裁定。其后，本院依法适用简易程序，公开开庭进行了审理。原告陈剑力到庭参加诉讼，被告维颜公司经本院传票传唤，无正当理由拒不到庭参加诉讼。本案现已审理终结。\n本院经审理认定事实如下：维颜美妆专营店系维颜公司在拼多多平台上开设的网店，经营范围为一般项目：化妆品批发；化妆品零售；日用杂品销售。陈剑力于2021年3月6号在维颜美妆专营店上以单价69.9元的价格购买了377烟酰胺亮肤精华液28瓶，总价1947.2元(优惠10元)。维颜公司通过韵达快递将该些化妆品运送至陈剑力指定的“福建莆田市荔城区××镇××”地址。维颜公司在销售该化妆品的网页上宣传“美白、祛斑、提亮肤色”、“看得见的美白效果”、“100倍熊果苷焕白能量”、“美白效果真的好”、“美白淡斑有理有据”等等。该化妆品的生产许可证为：粤妆20160687，为普通化妆品。陈剑力收到该化妆品后，以维颜公司销售的该化妆品系普通化妆品，并不是特殊化妆品，没有商家所诉的有美白祛斑功效，其未取得特殊用途化妆品备案证号，为非特殊用途化妆品宣传特殊用途，构成虚假宣传，其行为违反了《中华人民共和国广告法》、《最高人民法院关于审理食品药品纠纷案件适用法律若干问题的规定》为由，向本院提起诉讼。案经审理，因维颜公司未到庭，致本院无法组织调解。",
  "legal_basis": [
   "《消费者权益保护法》第五十五条第一款"
  ],
@@ -50,18 +50,25 @@
   "美白、祛斑、提亮肤色"
  ],
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "source_lookup_query": "（2021）闽0304民初1796号 陈剑力诉河南维颜化妆品有限公司网络购物合同纠纷案",
- "vector_text": "【赛道】美妆。【场景】其他。【宣称】377烟酰胺亮肤精华液；美白、祛斑、提亮肤色。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及普通化妆品宣传特殊用途功效，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《消费者权益保护法》第五十五条第一款。。【依据】《消费者权益保护法》第五十五条第一款。【结果】退还货款1947.2元并三倍赔偿5841.6元。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告陈剑力因与被告河南维颜化妆品有限公司(以下简称维颜公司)信息网络买卖合同纠纷一案，本院于2021年3月23日立案后，维颜公司在答辩期内提出管辖权异议，本院裁定驳回维颜公司的管辖权异议申请，维颜公司不服上诉至莆田市中级人民法院，莆田市中级人民法院裁定驳回上诉，维持原裁定。其后，本院依法适用简易程序，公开开庭进行了审理。原告陈剑力到庭参加诉讼，被告维颜公司经本院传票传唤，无正当理由拒不到庭参加诉讼。本案现已审理终结。\n本院经审理认定事实如下：维颜美妆专营店系维颜公司在拼多多平台上开设的网店，经营范围为一般项目：化妆品批发；化妆品零售；日用杂品销售。陈剑力于2021年3月6号在维颜美妆专营店上以单价69.9元的价格购买了377烟酰胺亮肤精华液28瓶，总价1947.2元(优惠10元)。涉案广告宣称：377烟酰胺亮肤精华液；美白、祛斑、提亮肤色。",
  "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
  "owner_approval": {
   "approved": true,
@@ -87,6 +94,11 @@
     "illegal_claims"
    ],
    "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "source_record_path": "data/structured_candidates/sector_docx__beauty__ad8eba05.json",
@@ -94,5 +106,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在拼多多销售“377烟酰胺亮肤精华液”（普通化妆品，生产许可证粤妆20160687），网页宣传“美白、祛斑、提亮肤色”等特殊用途功效",
+    "vector_text": "【赛道】美妆。【场景】其他。【宣称】377烟酰胺亮肤精华液；美白、祛斑、提亮肤色。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及普通化妆品宣传特殊用途功效，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《消费者权益保护法》第五十五条第一款。。【依据】《消费者权益保护法》第五十五条第一款。【结果】退还货款1947.2元并三倍赔偿5841.6元。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2021)闽0304民初1796号",
+  "pkulaw_court": "福建省莆田市荔城区人民法院",
+  "pkulaw_title": "陈剑力、河南维颜化妆品有限公司网络购物合同纠纷民事一审民事判决书",
+  "last_instance_date": "2021.09.16",
+  "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206c0fd8b425bb92d342c7388671576614ebdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2021_闽0304民初1796号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
 }

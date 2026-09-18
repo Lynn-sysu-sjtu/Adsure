@@ -6,8 +6,8 @@
  "decision_date": "2020-12-29",
  "source_type": "manual_docx_sector_report_pending_source_verification",
  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/c05aeed05a57db0a4cfbb2483cffd8b16e41fd185959120fbdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "penalty_authority": "青岛天地和装饰设计有限公司诉青岛市市北区市场监督管理局",
  "party_name": null,
@@ -32,7 +32,7 @@
  "illegal_claims": [
   "材料最放心、效果最完美、质量最无忧"
  ],
- "facts_summary": "在经营场所展板使用“材料最放心、效果最完美、质量最无忧”等绝对化用语进行广告宣传，广告费用570元",
+ "facts_summary": "原告青岛天地和装饰设计有限公司诉被告青岛市市北区市场监督管理局行政处罚一案，本院受理后在法定期限内向被告送达起诉状副本和应诉通知书，并依法组成合议庭于2020年12月24日公开开庭审理本案。原告委托代理人陈书山，被告副局长王晓哲、委托代理人陈浩、冯晓东到庭参加诉讼。本案现已审理终结。\n经审理查明，2018年5月3日，被告执法人员现场检查时发现原告在其经营场所大厅内摆放了宣传展板，宣传内容中使用了“材料最放心、效果最完美、价格最省钱、装修最省力、售后最省心、服务最贴心、质量最无忧”等宣传用语，被告对现场宣传展板进行拍照录像留存。被告对原告法定代表人赵勇进行询问，并制作询问笔录，在笔录中赵勇承认展板是公司制作并摆放宣传的。当日，被告正式立案调查。5月7日、5月15日、6月28日，被告再次对原告公司法定代表人赵勇进行询问。在5月7日的笔录中，赵勇称展板是2017年10月份开始摆放在现场的，展板主要目的是为了宣传公司的实力规模和业务。5月17日的笔录中，赵勇称展板是原告公司委托制作公司制作的，制作了19块，费用570元，并提供了制作展板的收据。2018年7月30日经被告机关负责人批准，办案期限予以延长三十日。调查完毕后，经被告集体研究讨论决定对原告作出罚款20万元的行政处罚。2018年7月30日，被告向原告下达青北市监广听告字〔2018〕73号《行政处罚告知书》并送达原告，告知原告陈述、申辩和要求举行听证的权利，原告逾期未申请听证。8月3日，被告针对原告违法行为作出青北市监广处字(2018)71号《行政处罚决定书》，责令原告停止发布广告，决定处以罚款20万元。《行政处罚决定书》直接送达和邮寄送达原告拒收，被告依法在青岛日报登报予以公告送达。原告不服青北市监广处字(2018)71号《行政处罚决定书》，向青岛市市北区人民政府申请行政复议。2019年1月24日，青岛市市北区人民政府作出北政复决字〔2018〕38号《行政复议决定书》，认为原告违法行为轻微，被告作出20万元的处罚明显不当，遂撤销被告作出的青北市监广处字(2018)71号《行政处罚决定书》，责令被告重新作出行政行为，被告重新对案件进行调查。因原告此时已不正常经营，无法取得联系，致使案件暂时无法调查，2019年4月1日经被告负责人批准中止案件调查。2019年6月，原告向被告申请办理公司注销业务，被告立即恢复案件调查。因恢复调查后仍无法正常联系原告，经被告负责人集体讨论决定继续延期九个月。案件调查终结后，被告执法人员撰写案件调查终结报告，连同案件材料交审核机构审核，经被告负责人集体讨论决定，维持对原告违法行为的认定，将本案罚款金额减少为10万元。2020年3月24日，被告依法作出《行政处罚听证告知书》，因仍无法联系到原告负责人，通过市北政务网予以公告送达，原告逾期未申请听证。2020年6月3日，被告依法作出青北市监广处字〔2020〕72号《行政处罚决定书》，处罚决定书认定原告在广告展板中使用“材料最放心”等“最佳”用语违反了《广告法》第九条第三项的规定，依据《广告法》第五十七条第一款及《青岛市工商行政管理局<广告法>行政处罚裁量基准》的规定，应当进行最低20万元的处罚。但鉴于青岛市市北区人民政府复议认为原告违法情节轻微，社会影响及危害程度比较小，执法调查中积极配合，撤销了原行政处罚，参照《山东省市场监督管理行政处罚裁量基准(试行)》，鉴于当事人广告费用为570元，属于情节较轻的违法行为，决定罚款10万元。被告通过市北政务网和在办公场所张贴的方式向原告公告送达《行政处罚决定书》。",
  "legal_basis": [
   "《广告法》第九条第（三）项、第五十七条第一款"
  ],
@@ -48,18 +48,25 @@
   "材料最放心、效果最完美、质量最无忧"
  ],
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "source_lookup_query": "（2020）鲁0203行初204号 青岛天地和装饰设计有限公司诉青岛市市北区市场监督管理局行政处罚案",
- "vector_text": "【赛道】美妆。【场景】其他。【宣称】材料最放心、效果最完美、质量最无忧。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告使用绝对化用语，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第九条第（三）项、第五十七条第一款。。【依据】《广告法》第九条第（三）项、第五十七条第一款。【结果】罚款100000元。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告青岛天地和装饰设计有限公司诉被告青岛市市北区市场监督管理局行政处罚一案，本院受理后在法定期限内向被告送达起诉状副本和应诉通知书，并依法组成合议庭于2020年12月24日公开开庭审理本案。原告委托代理人陈书山，被告副局长王晓哲、委托代理人陈浩、冯晓东到庭参加诉讼。本案现已审理终结。\n经审理查明，2018年5月3日，被告执法人员现场检查时发现原告在其经营场所大厅内摆放了宣传展板，宣传内容中使用了“材料最放心、效果最完美、价格最省钱、装修最省力、售后最省心、服务最贴心、质量最无忧”等宣传用语，被告对现场宣传展板进行拍照录像留存。被告对原告法定代表人赵勇进行询问，并制作询问笔录，在笔录中赵勇承认展板是公司制作并摆放宣传的。当日，被告正式立案调查。涉案广告宣称：材料最放心、效果最完美、质量最无忧。",
  "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
  "owner_approval": {
   "approved": true,
@@ -85,6 +92,11 @@
     "illegal_claims"
    ],
    "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "source_record_path": "data/structured_candidates/sector_docx__beauty__6091c23e.json",
@@ -92,5 +104,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在经营场所展板使用“材料最放心、效果最完美、质量最无忧”等绝对化用语进行广告宣传，广告费用570元",
+    "vector_text": "【赛道】美妆。【场景】其他。【宣称】材料最放心、效果最完美、质量最无忧。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告使用绝对化用语，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第九条第（三）项、第五十七条第一款。。【依据】《广告法》第九条第（三）项、第五十七条第一款。【结果】罚款100000元。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2020)鲁0203行初204号",
+  "pkulaw_court": "山东省青岛市市北区人民法院",
+  "pkulaw_title": "青岛天地和装饰设计有限公司与青岛市市北区市场监督管理局质量监督检验检疫行政管理:其他(质量监督)一审行政判决书",
+  "last_instance_date": "2020.12.29",
+  "source_url": "https://www.pkulaw.com/pfnl/c05aeed05a57db0a4cfbb2483cffd8b16e41fd185959120fbdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2020_鲁0203行初204号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
 }

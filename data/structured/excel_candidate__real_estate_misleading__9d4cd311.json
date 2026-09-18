@@ -4,8 +4,8 @@
  "case_number": "（2024）鲁1302行审499号",
  "source_type": "manual_compilation_pending_source_verification",
  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81668a4a0228b7069ab22ebe9f3843240a9bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "decision_date": "2024-11-28",
  "penalty_authority": "临沂市市场监督管理局",
@@ -23,7 +23,7 @@
  "illegal_claims": [
   "将引入北京某某学校、某某师大附中等国内优质教育资源"
  ],
- "facts_summary": "在微信公众号发布含有“将引入北京某某学校、某某师大附中等国内优质教育资源”等误导宣传内容的房地产广告",
+ "facts_summary": "申请人临沂市市场监督管理局向本院申请强制执行临市监处罚〔2023〕某-某某某号《行政处罚决定书》确定的罚款。本院受理后，依法组成合议庭进行了审查，本案现已审查终结。\n经审查查明，2024年4月1日，申请人临沂市市场监督管理局对被申请人某某(临沂)地产开发有限公司作出临市监处罚〔2023〕某-某某某号《行政处罚决定书》。主要内容为：一、被申请人其作为账号主体的微信公众号“某某临沂城际空间站”发布含有“将引入北京某某学校、某某师大附中、某某师大附中等国内优质教育资源”等误导宣传内容的房地产广告的行为，违反了《中华人民共和国广告法》第二十六条第四项的规定，因没有广告费，符合《山东省市场监督管理行政处罚裁量基准》第七章第十五条第二款第一项的情形，依据《中华人民共和国广告法》第五十八条第一款第八项的规定，对被申请人处罚款100000元；二、被申请人与5名举报人签订的购买某某紫御公馆小区《山东省新建商品房买卖合同(预售)》第二十条约定“1.因出卖人的原因，买受人未能在该商品房交付之日起365日内取得该商品房房屋产权证(不动产权证)的，双方同意按照下列第2中方式处理。2.买受人不退房，逾期超过90日出卖人按已付房价款的0.1%一次性向买受人支付违约金。上述90日期限应扣除非出卖人原因导致的逾期时间”，存在利用格式条款免除或减轻自己责任的行为，违反了《合同违法行为监督处理办法》第九条第四项的规定，因持续一年以上及采用格式条款订立合同的数量为886份，符合《山东省市场监督管理行政处罚裁量基准》第十五章第十八条第二款第四项的情形，因被申请人在调查取证中积极配合，如实提供有关证据材料，符合《山东省市场监督管理局行使行政处罚裁量权适用规则》第十一条第六项的情形，依据《合同违法行为监督处理办法》第十二条的规定，决定对被申请人处以警告，罚款7000元。综上，责令被申请人改正违法行为，并处以1.警告；2.罚款107000元。2024年4月3日，申请人向被申请人直接送达上述行政处罚决定书并依法告知被申请人申请行政复议或者提起行政诉讼的权利。\n被申请人不服该处罚决定，于2024年5月25日向临沂市人民政府提出行政复议申请。临沂市人民政府于2024年9月5日作出临政复决字〔2024〕某某某号《行政复议决定书》，维持临沂市市场监督管理局作出的临市监处罚〔2023〕某-某某某号《行政处罚决定书》。该复议决定生效后，被申请人未缴纳罚款。2024年10月9日，申请人作出临市监罚催〔2024〕3-001号《行政处罚决定履行催告书》，并于同年10月21日直接送达至被申请人。催告期满后被申请人仍未履行行政处罚决定确定的义务，申请人临沂市市场监督管理局向本院申请强制执行。",
  "legal_basis": [
   "《广告法》第二十六条第四项、第五十八条第一款第八项"
  ],
@@ -38,17 +38,24 @@
   "虚假宣传",
   "微信公众号"
  ],
- "vector_text": "这是一起人工整理的房地产升值承诺、规划误导候选案例。案件事实显示，经营者在微信公众号发布含有“将引入北京某某学校、某某师大附中等国内优质教育资源”等误导宣传内容的房地产广告 处罚依据记载为《广告法》第二十六条第四项、第五十八条第一款第八项，处理结果为罚款100000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。申请人临沂市市场监督管理局向本院申请强制执行临市监处罚〔2023〕某-某某某号《行政处罚决定书》确定的罚款。本院受理后，依法组成合议庭进行了审查，本案现已审查终结。\n经审查查明，2024年4月1日，申请人临沂市市场监督管理局对被申请人某某(临沂)地产开发有限公司作出临市监处罚〔2023〕某-某某某号《行政处罚决定书》。主要内容为：一、被申请人其作为账号主体的微信公众号“某某临沂城际空间站”发布含有“将引入北京某某学校、某某师大附中、某某师大附中等国内优质教育资源”等误导宣传内容的房地产广告的行为，违反了《中华人民共和国广告法》第二十六条第四项的规定，因没有广告费，符合《山东省市场监督管理行政处罚裁量基准》第七章第十五条第二款第一项的情形，依据《中华人民共和国广告法》第五十八条第一款第八项的规定，对被申请人处罚款涉案广告宣称：将引入北京某某学校、某某师大附中等国内优质教育资源。",
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
  "owner_approval": {
@@ -79,6 +86,11 @@
   {
    "action": "fill_violation_type",
    "note": "从 risk_dimensions 首项派生：房地产广告误导"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "violation_type": "房地产广告误导",
@@ -87,5 +99,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在微信公众号发布含有“将引入北京某某学校、某某师大附中等国内优质教育资源”等误导宣传内容的房地产广告",
+    "vector_text": "这是一起人工整理的房地产升值承诺、规划误导候选案例。案件事实显示，经营者在微信公众号发布含有“将引入北京某某学校、某某师大附中等国内优质教育资源”等误导宣传内容的房地产广告 处罚依据记载为《广告法》第二十六条第四项、第五十八条第一款第八项，处理结果为罚款100000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2024)鲁1302行审499号",
+  "pkulaw_court": "山东省临沂市兰山区人民法院",
+  "pkulaw_title": "临沂市市场监督管理局与某某（临沂）地产开发有限公司非诉行政行为申请执行审查裁定书",
+  "last_instance_date": "2024.11.28",
+  "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81668a4a0228b7069ab22ebe9f3843240a9bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2024_鲁1302行审499号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
 }

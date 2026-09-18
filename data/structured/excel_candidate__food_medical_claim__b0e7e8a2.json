@@ -4,8 +4,8 @@
  "case_number": "（2016）浙0483民初6906号",
  "source_type": "manual_compilation_pending_source_verification",
  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b157d5a37102974c36a5298b7f455c1fbdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "decision_date": "2016-10-18",
  "penalty_authority": null,
@@ -24,7 +24,7 @@
   "降低癌症的发生几率",
   "长期食用可保健、美颜、增强抵抗力"
  ],
- "facts_summary": "在1号店销售有机蔬菜，网页宣称“降低癌症的发生几率”“长期食用可保健、美颜、增强抵抗力”等涉及疾病预防、治疗功能内容",
+ "facts_summary": "原告李宗胜诉被告江苏一号农场科技股份有限公司产品责任纠纷一案，于2016年9月12日向本院起诉，诉请：1、被告赔偿原告三倍金额3024元，并支付打印费、复印费、交通费以及律师咨询费等418元，合计3442元；2、被告承担本案诉讼费用。本院依法适用简易程序，于2016年10月18日公开开庭审理了本案，现已审理终结。\n本院经审理查明：2016年4月11日，原告在1号店网络交易平台上购买了由被告销售的有机新鲜蔬菜套装6套（每套蔬菜3KG，8个品种任意搭配），单价168元/套，总价1008元。当时被告在网页上宣称：“研究表明有机蔬菜主要营养成分含量远远高于普通蔬菜，××、美容，丰富纤维助消化、排出毒素，钙有人体生命元素美誉，××的风险，铁预防贫血，锌增强免疫力”，“有机食材无化学残留、无转基因技术、不反季节种植，不破坏人体免疫力，××、降低癌症的发生几率”，“虽然有机食品比普通食品贵，但物有所值。长期食用可保健、美颜、增强抵抗力，××，是一份很好的健康投资”。2016年4月12日被告发货，13日原告收到货物。原告认为被告涉嫌虚假宣传，向常州市金坛区市场监督管理局进行举报。该局向原告发送答复函称：经该局调查，江苏一号农场科技股份有限公司于2015年1月起至2016年5月止，在其官方网站（www.001farm.com）及其租用的纽海电子商务（上海）有限公司运营的网络交易平台上设立的一号店（www.yhd.com）网页上，宣称其产品有治疗美容等功能，涉及十个品种。根据调查，该局认为上述行为已违反了《中华人民共和国食品安全法》第七十三条第一款及《中华人民共和国广告法》第十七条的规定，依据《中华人民共和国食品安全法》第一百四十条及《中华人民共和国广告法》第五十八条的规定以及《中华人民共和国行政处罚法》第二十七条的规定，决定责令江苏一号农场科技股份有限公司停止发布违法广告，并对其处以罚款70000元上缴国库。",
  "legal_basis": [
   "《食品安全法》第七十三条第一款、《广告法》第十七条、《消费者权益保护法》第五十五条"
  ],
@@ -40,17 +40,24 @@
   "网页",
   "降低癌症的发生几率"
  ],
- "vector_text": "这是一起人工整理的普通食品宣称疾病预防、治疗功能候选案例。案件事实显示，经营者在1号店销售有机蔬菜，网页宣称“降低癌症的发生几率”“长期食用可保健、美颜、增强抵抗力”等涉及疾病预防、治疗功能内容 处罚依据记载为《食品安全法》第七十三条第一款、《广告法》第十七条、《消费者权益保护法》第五十五条，处理结果为赔偿原告三倍金额3024元（市场监督管理局另处罚款70000元）；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告李宗胜诉被告江苏一号农场科技股份有限公司产品责任纠纷一案，于2016年9月12日向本院起诉，诉请：1、被告赔偿原告三倍金额3024元，并支付打印费、复印费、交通费以及律师咨询费等418元，合计3442元；2、被告承担本案诉讼费用。本院依法适用简易程序，于2016年10月18日公开开庭审理了本案，现已审理终结。\n本院经审理查明：2016年4月11日，原告在1号店网络交易平台上购买了由被告销售的有机新鲜蔬菜套装6套（每套蔬菜3KG，8个品种任意搭配），单价168元/套，总价1008元。涉案广告宣称：降低癌症的发生几率；长期食用可保健、美颜、增强抵抗力。",
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
  "owner_approval": {
@@ -81,6 +88,11 @@
   {
    "action": "fill_violation_type",
    "note": "从 risk_dimensions 首项派生：涉医疗宣传"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "violation_type": "涉医疗宣传",
@@ -89,5 +101,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在1号店销售有机蔬菜，网页宣称“降低癌症的发生几率”“长期食用可保健、美颜、增强抵抗力”等涉及疾病预防、治疗功能内容",
+    "vector_text": "这是一起人工整理的普通食品宣称疾病预防、治疗功能候选案例。案件事实显示，经营者在1号店销售有机蔬菜，网页宣称“降低癌症的发生几率”“长期食用可保健、美颜、增强抵抗力”等涉及疾病预防、治疗功能内容 处罚依据记载为《食品安全法》第七十三条第一款、《广告法》第十七条、《消费者权益保护法》第五十五条，处理结果为赔偿原告三倍金额3024元（市场监督管理局另处罚款70000元）；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2016)浙0483民初6906号",
+  "pkulaw_court": "浙江省桐乡市人民法院",
+  "pkulaw_title": "李宗胜诉江苏一号农场科技股份有限公司产品责任纠纷案",
+  "last_instance_date": "2016.10.18",
+  "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b157d5a37102974c36a5298b7f455c1fbdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2016_浙0483民初6906号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
 }

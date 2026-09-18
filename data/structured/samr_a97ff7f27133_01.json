@@ -1,0 +1,102 @@
+{
+ "title": "江苏省徐州市邳州市市场监管局查处徐州多赢记文化传媒有限公司违法广告案",
+ "publish_date": "2026-07-21",
+ "penalty_authority": "邳州市市场监管局",
+ "party_name": "徐州多赢记文化传媒有限公司",
+ "industry": "保健食品",
+ "product_or_service": "movefree氨糖软骨素、Purmeo帕米奥养胃益生菌胶囊等普通食品（直播推销）",
+ "ad_channel": "",
+ "risk_dimensions": [
+  "虚假宣传",
+  "广告内容真实性"
+ ],
+ "illegal_claims": [
+  "改善骨关节",
+  "杀灭幽门螺旋杆菌"
+ ],
+ "facts_summary": "经查，徐州多赢记文化传媒有限公司选用王某某以直播方式推销movefree氨糖软骨素、Purmeo帕米奥养胃益生菌胶囊等普通食品时，在发布的广告中宣称具有“改善骨关节”等保健功能以及“杀灭幽门螺旋杆菌”等疾病功效。2026年1月，邳州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款62.91万元的行政处罚；对广告代言人王某某作出罚没款10.99万元的行政处罚。",
+ "legal_basis": [
+  "《中华人民共和国广告法》"
+ ],
+ "penalty_result": "2026年1月，邳州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款62.91万元的行政处罚；",
+ "penalty_amount": 629100,
+ "regulatory_logic": "2026年1月，邳州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款62.91万元的行政处罚；",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "改善骨关节",
+  "杀灭幽门螺旋杆菌",
+  "邳州市市场监管局"
+ ],
+ "vector_text": "这是一起市场监管部门查处的广告违法案例。经查，徐州多赢记文化传媒有限公司选用王某某以直播方式推销movefree氨糖软骨素、Purmeo帕米奥养胃益生菌胶囊等普通食品时，在发布的广告中宣称具有“改善骨关节”等保健功能以及“杀灭幽门螺旋杆菌”等疾病功效。2026年1月，邳州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款62.91万元的行政处罚；对广告代言人王某某作出罚没款10.99万元的行政处罚。涉案广告宣称：改善骨关节；杀灭幽门螺旋杆菌。处理结果：2026年1月，邳州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款62.91万元的行政处罚；",
+ "legal_basis_inferred": [
+  "《中华人民共和国广告法》"
+ ],
+ "case_id": "samr_a97ff7f27133_01",
+ "source_type": "official_typical_case",
+ "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html",
+ "raw_text_path": "data/raw_text/samr_a97ff7f27133.json",
+ "source_name": "国家市场监督管理总局",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "human_review_required": true,
+ "extraction_quotes": {},
+ "extraction_dropped": [],
+ "rule_extracted": {
+  "title": "江苏省徐州市邳州市市场监管局查处徐州多赢记文化传媒有限公司违法广告案",
+  "penalty_authority": "邳州市市场监管局",
+  "party_name": "徐州多赢记文化传媒有限公司",
+  "illegal_claims": [
+   "改善骨关节",
+   "杀灭幽门螺旋杆菌"
+  ],
+  "industry": "保健食品",
+  "facts_summary": "经查，徐州多赢记文化传媒有限公司选用王某某以直播方式推销movefree氨糖软骨素、Purmeo帕米奥养胃益生菌胶囊等普通食品时，在发布的广告中宣称具有“改善骨关节”等保健功能以及“杀灭幽门螺旋杆菌”等疾病功效。2026年1月，邳州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款62.91万元的行政处罚；对广告代言人王某某作出罚没款10.99万元的行政处罚。",
+  "vector_text": "这是一起市场监管部门查处的广告违法案例。经查，徐州多赢记文化传媒有限公司选用王某某以直播方式推销movefree氨糖软骨素、Purmeo帕米奥养胃益生菌胶囊等普通食品时，在发布的广告中宣称具有“改善骨关节”等保健功能以及“杀灭幽门螺旋杆菌”等疾病功效。2026年1月，邳州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款62.91万元的行政处罚；对广告代言人王某某作出罚没款10.99万元的行政处罚。涉案广告宣称：改善骨关节；杀灭幽门螺旋杆菌。处理结果：2026年1月，邳州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款62.91万元的行政处罚；",
+  "keywords": [
+   "改善骨关节",
+   "杀灭幽门螺旋杆菌",
+   "邳州市市场监管局"
+  ],
+  "regulatory_logic": "2026年1月，邳州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款62.91万元的行政处罚；"
+ },
+ "raw_html_path": "data/raw_html/samr_a97ff7f27133.html",
+ "fetched_at": "2026-09-15T16:34:17.844372+00:00",
+ "content_sha256": "88d36c4370ae5e18d34857ff8e72413d57eb0fb147e2715bc0b938a21830e583",
+ "segment_index": 1,
+ "segment_title": "江苏省徐州市邳州市市场监管局查处徐州多赢记文化传媒有限公司违法广告案",
+ "topic_relevance": "ad",
+ "source_verification_status": "source_verified",
+ "original_decision_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html",
+ "original_decision_url_status": "official_page",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-16 指令 B：crawler 民生违法广告候选转生产）",
+  "approved_at": "2026-09-16T01:40:26+08:00",
+  "override_source_verification": true,
+  "source_verification_status_kept": "official_page_extracted",
+  "original_decision_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html",
+  "note": "总局民生领域违法广告典型案例（官方页面存证）；字段缺口：法条仅到法规名（无条号，来自通报原文），待人工补条号；罚款金额未在通报原文抽出，待人工补。"
+ },
+ "audit": {
+  "review_status": "approved",
+  "approved_for_rag": true,
+  "reviewer": "项目负责人（用户 2026-09-16 指令 B：crawler 民生违法广告候选转生产）",
+  "review_date": "2026-09-16",
+  "review_notes": "业主审批转生产（B）；官方P0页面提取，缺口：法条仅到法规名（无条号，来自通报原文），待人工补条号；罚款金额未在通报原文抽出，待人工补"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-16T01:40:26+08:00",
+   "action": "owner_approval_promote_crawler_official",
+   "note": "crawler 民生违法广告候选转生产；法条/金额等缺口保留待人工补。"
+  },
+  {
+   "ts": "2026-09-17T11:50:27+08:00",
+   "action": "backfill_full_case_narrative",
+   "note": "修复规则抽取 facts_summary=t[:80] 截断：用修正后抽取器重写案情/监管逻辑/检索文本，字段逐字来自原文段落，其余字段不动。"
+  }
+ ],
+ "violation_type": "直播推销普通食品宣称保健功能及疾病功效（虚假广告）",
+ "source_record_path": "data/structured_candidates/samr_a97ff7f27133_01.json"
+}

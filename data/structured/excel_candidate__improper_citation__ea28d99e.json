@@ -4,8 +4,8 @@
  "case_number": "（2018）鄂1223行初3号",
  "source_type": "manual_compilation_pending_source_verification",
  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/95b2ca8d4055fce1dcea56d9f15c9a243995b93dc4f3f5d4bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "decision_date": "2018-05-31",
  "penalty_authority": "广东雪洁日化用品有限公司与崇阳县工商行政管理局",
@@ -21,7 +21,7 @@
  "illegal_claims": [
   "抑菌丝99%抑菌"
  ],
- "facts_summary": "在牙刷标签上标注“抑菌丝99%抑菌”，引用数据未标明出处",
+ "facts_summary": "原告广东雪洁日化用品有限公司诉被告崇阳县工商局、咸宁市人民政府工商行政处罚一案，于2017年11月20日向本院提起行政诉讼。本院于2018年1月10日立案后，于2018年1月12日向被告送达了起诉状副本及应诉通知书。本院依法组成合议庭，于2018年3月27日公开开庭审理了本案。原告广东雪洁日化用品有限公司的委托代理人魏伟、周宗涛，被告崇阳县工商局的副局长曾高柔及委托代理人赵敏文、周光华，被告咸宁市人民政府的委托代理人刘翀、张奇到庭参加诉讼。本案现已审理终结。\n经审理查明，自2015年11月份以来，原告广东雪洁日化用品有限公司通过武汉经销商向武汉中商平价超市连锁有限责任公司崇阳店销售由其生产的“青蛙”牌双效优+系列987(条码：6908011929874)、520(条码：6908011925203)牙刷，该牙刷标签上均标注由“抑菌丝99%抑菌”的内容，广东雪洁日化用品有限公司引用上述数据，未按要求标明出处。2017年5月16日，被告崇阳县工商行政管理局以原告广东雪洁日化用品有限公司发布的广告内容违反了《中华人民共和国广告法》第十一条第二款，属于广告引证内容未表明出处的行为为由对其作出崇工商处字〔2017〕55号行政处罚决定，责令原告广东雪洁日化用品有限公司停止发布上述违法广告，并罚款70000元。原告广东雪洁日化用品有限公司不服该处罚决定，于2017年8月3日向咸宁市人民政府提起行政复议，咸宁市人民政府于2017年9月18日作出咸政复(2017)64号行政复议决定：维持崇阳县工商局作出的《行政处罚决定书》(崇工商处字〔2017〕55号)。原告不服，于2017年11月20日向本院提起行政诉讼。",
  "legal_basis": [
   "《广告法》第十一条第二款、第五十九条第（二）项"
  ],
@@ -34,17 +34,24 @@
   "广告引证内容不规范",
   "抑菌丝99%抑菌"
  ],
- "vector_text": "这是一起人工整理的广告引证内容不真实、不准确候选案例。案件事实显示，经营者在牙刷标签上标注“抑菌丝99%抑菌”，引用数据未标明出处 处罚依据记载为《广告法》第十一条第二款、第五十九条第（二）项，处理结果为罚款70000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告广东雪洁日化用品有限公司诉被告崇阳县工商局、咸宁市人民政府工商行政处罚一案，于2017年11月20日向本院提起行政诉讼。本院于2018年1月10日立案后，于2018年1月12日向被告送达了起诉状副本及应诉通知书。本院依法组成合议庭，于2018年3月27日公开开庭审理了本案。原告广东雪洁日化用品有限公司的委托代理人魏伟、周宗涛，被告崇阳县工商局的副局长曾高柔及委托代理人赵敏文、周光华，被告咸宁市人民政府的委托代理人刘翀、张奇到庭参加诉讼。本案现已审理终结。涉案广告宣称：抑菌丝99%抑菌。",
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
  "owner_approval": {
@@ -75,6 +82,11 @@
   {
    "action": "fill_violation_type",
    "note": "从 risk_dimensions 首项派生：广告引证内容不规范"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "violation_type": "广告引证内容不规范",
@@ -83,5 +95,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在牙刷标签上标注“抑菌丝99%抑菌”，引用数据未标明出处",
+    "vector_text": "这是一起人工整理的广告引证内容不真实、不准确候选案例。案件事实显示，经营者在牙刷标签上标注“抑菌丝99%抑菌”，引用数据未标明出处 处罚依据记载为《广告法》第十一条第二款、第五十九条第（二）项，处理结果为罚款70000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2018)鄂1223行初3号",
+  "pkulaw_court": "湖北省崇阳县人民法院",
+  "pkulaw_title": "广东雪洁日化用品有限公司与崇阳县工商行政管理局、咸宁市人民政府工商行政管理(工商)一审行政判决书",
+  "last_instance_date": "2018.05.31",
+  "source_url": "https://www.pkulaw.com/pfnl/95b2ca8d4055fce1dcea56d9f15c9a243995b93dc4f3f5d4bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2018_鄂1223行初3号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
 }

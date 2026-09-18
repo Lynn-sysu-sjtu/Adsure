@@ -6,8 +6,8 @@
  "decision_date": "2025-08-19",
  "source_type": "manual_docx_sector_report_pending_source_verification",
  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816da4e4eb27a170be33b0a767aee23bac2bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "penalty_authority": "重庆市市场监督管理局",
  "party_name": "重庆某生物科技有限公司",
@@ -36,7 +36,7 @@
  "illegal_claims": [
   "生血补气，美容养颜，修护心脑血管，增强免疫力"
  ],
- "facts_summary": "在抖音平台发布视频宣传化妆品和保健品，同时在办公区板展中宣称大鲵复合蛋白肽产品具有“生血补气，美容养颜，修护心脑血管，增强免疫力”等功效，未能提供任何依据",
+ "facts_summary": "申请执行人重庆市市场监督管理局于2025年8月1日向本院申请强制执行渝市监处罚〔2025〕1号《行政处罚决定书》中未履行的5万元罚款及加处罚款5万元。本院受理后，依法组成合议庭进行了合法性审查，本案现已审查终结。\n经审查，本院认为，《中华人民共和国反不正当竞争法》第八条第一款规定，经营者不得对其商品的性能、功能、质量、销售状况、用户评价、曾获荣誉等作虚假或者引人误解的商业宣传，欺骗、误导消费者。被执行人的虚假宣传行为，违反了《中华人民共和国反不正当竞争法》第八条第一款的规定，应承担相应的法律责任。被执行人虽有虚假宣传行为，但范围较小，且积极配合调查如实陈述违法事实并主动提供证据材料，具有减轻处罚的情节。《中华人民共和国反不正当竞争法》第二十条第一款规定，经营者违反本法第八条规定对其商品作虚假或者引人误解的商业宣传，或者通过组织虚假交易等方式帮助其他经营者进行虚假或者引人误解的商业宣传的，由监督检查部门责令停止违法行为，处二十万元以上一百万元以下的罚款；情节严重的，处一百万元以上二百万元以下的罚款，可以吊销营业执照。申请执行人依据前述规定作出的渝市监处罚〔2025〕1号《行政处罚决定书》，事实清楚、证据充分，适用法律、法规正确，程序合法，无超越职权和滥用职权的行为，依法应予执行。",
  "legal_basis": [
   "《反不正当竞争法》第八条第一款、第二十条第一款"
  ],
@@ -55,18 +55,25 @@
   "生血补气，美容养颜，修护心脑血管，增强免疫力"
  ],
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "source_lookup_query": "（2025）渝0112行审1486号 重庆市市场监督管理局申请执行重庆某生物科技有限公司行政处罚案",
- "vector_text": "【赛道】美妆。【场景】视频宣传、办公区板展、抖音、视频。【宣称】生血补气，美容养颜，修护心脑血管，增强免疫力。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品保健品虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《反不正当竞争法》第八条第一款、第二十条第一款。。【依据】《反不正当竞争法》第八条第一款、第二十条第一款。【结果】罚款50000元。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。申请执行人重庆市市场监督管理局于2025年8月1日向本院申请强制执行渝市监处罚〔2025〕1号《行政处罚决定书》中未履行的5万元罚款及加处罚款5万元。本院受理后，依法组成合议庭进行了合法性审查，本案现已审查终结。\n经审查，本院认为，《中华人民共和国反不正当竞争法》第八条第一款规定，经营者不得对其商品的性能、功能、质量、销售状况、用户评价、曾获荣誉等作虚假或者引人误解的商业宣传，欺骗、误导消费者。被执行人的虚假宣传行为，违反了《中华人民共和国反不正当竞争法》第八条第一款的规定，应承担相应的法律责任。被执行人虽有虚假宣传行为，但范围较小，且积极配合调查如实陈述违法事实并主动提供证据材料，具有减轻处罚的情节。涉案广告宣称：生血补气，美容养颜，修护心脑血管，增强免疫力。",
  "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
  "owner_approval": {
   "approved": true,
@@ -92,6 +99,11 @@
     "illegal_claims"
    ],
    "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "source_record_path": "data/structured_candidates/sector_docx__beauty__801cf8d6.json",
@@ -99,5 +111,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在抖音平台发布视频宣传化妆品和保健品，同时在办公区板展中宣称大鲵复合蛋白肽产品具有“生血补气，美容养颜，修护心脑血管，增强免疫力”等功效，未能提供任何依据",
+    "vector_text": "【赛道】美妆。【场景】视频宣传、办公区板展、抖音、视频。【宣称】生血补气，美容养颜，修护心脑血管，增强免疫力。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品保健品虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《反不正当竞争法》第八条第一款、第二十条第一款。。【依据】《反不正当竞争法》第八条第一款、第二十条第一款。【结果】罚款50000元。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2025)渝0112行审1486号",
+  "pkulaw_court": "重庆市渝北区人民法院",
+  "pkulaw_title": "重庆市市场监督管理局;重庆某生物科技有限公司罚款行政非诉审查行政裁定书",
+  "last_instance_date": "2025.08.19",
+  "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816da4e4eb27a170be33b0a767aee23bac2bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2025_渝0112行审1486号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
 }

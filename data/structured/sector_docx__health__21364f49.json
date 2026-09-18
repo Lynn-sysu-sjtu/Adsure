@@ -6,8 +6,8 @@
  "decision_date": "2016-12-21",
  "source_type": "manual_docx_sector_report_pending_source_verification",
  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc460234a415b0ae3be91940b849c90355fbdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "penalty_authority": "义乌市爽爽戒烟咨询服务站诉义乌市市场监督管理局",
  "party_name": null,
@@ -34,7 +34,7 @@
   "提高免疫机能",
   "清咽"
  ],
- "facts_summary": "在经营场所发放宣传资料，宣传“清咽糖”（普通食品糖果）具有“提高免疫机能”“清咽”等保健功能",
+ "facts_summary": "上诉人义乌市爽爽戒烟咨询服务站（以下简称爽爽戒烟站）因行政处罚一案，不服义乌市人民法院作出的(2016)浙0782行初66号行政判决，向本院提起上诉。\n本院认为，根据《食品广告发布暂行规定》的规定，普通食品广告不得宣传保健功能，也不得借助宣传某些成分的作用明示或者暗示其保健作用。本案中，上诉人爽爽戒烟站在多种资料中宣传其经营的普通食品“清咽糖”具有保健功能，违法事实清楚。被上诉人义乌市市场监督管理局经立案、调查、询问、听证告知、听证等程序，对上诉人作出处罚决定，并无不当。被上诉人义乌市人民政府作出的行政复议决定适用法律正确，符合法定程序。上诉人的上诉理由不能成立，本院不予支持。根据《中华人民共和国行政诉讼法》第八十九条第一款第（一）项之规定，判决如下：",
  "legal_basis": [
   "《食品广告发布暂行规定》第十三条、第十五条"
  ],
@@ -52,18 +52,25 @@
   "清咽"
  ],
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "source_lookup_query": "（2016）浙07行终370号 义乌市爽爽戒烟咨询服务站诉义乌市市场监督管理局行政处罚案",
- "vector_text": "【赛道】保健品。【场景】其他。【宣称】清咽糖；提高免疫机能；清咽。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及普通食品宣传保健功能，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《食品广告发布暂行规定》第十三条、第十五条。。【依据】《食品广告发布暂行规定》第十三条、第十五条。【结果】罚款1400元。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。上诉人义乌市爽爽戒烟咨询服务站（以下简称爽爽戒烟站）因行政处罚一案，不服义乌市人民法院作出的(2016)浙0782行初66号行政判决，向本院提起上诉。\n本院认为，根据《食品广告发布暂行规定》的规定，普通食品广告不得宣传保健功能，也不得借助宣传某些成分的作用明示或者暗示其保健作用。本案中，上诉人爽爽戒烟站在多种资料中宣传其经营的普通食品“清咽糖”具有保健功能，违法事实清楚。被上诉人义乌市市场监督管理局经立案、调查、询问、听证告知、听证等程序，对上诉人作出处罚决定，并无不当。被上诉人义乌市人民政府作出的行政复议决定适用法律正确，符合法定程序。上诉人的上诉理由不能成立，本院不予支持。根据《中华人民共和国行政诉讼法》第八十九条第一款第（一）项之规定，判决如下：涉案广告宣称：清咽糖；提高免疫机能；清咽。",
  "raw_text_path": "data/raw_text/case_library_docx__保健食品广告合规案例库.json",
  "owner_approval": {
   "approved": true,
@@ -89,6 +96,11 @@
     "illegal_claims"
    ],
    "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "source_record_path": "data/structured_candidates/sector_docx__health__21364f49.json",
@@ -96,5 +108,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在经营场所发放宣传资料，宣传“清咽糖”（普通食品糖果）具有“提高免疫机能”“清咽”等保健功能",
+    "vector_text": "【赛道】保健品。【场景】其他。【宣称】清咽糖；提高免疫机能；清咽。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及普通食品宣传保健功能，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《食品广告发布暂行规定》第十三条、第十五条。。【依据】《食品广告发布暂行规定》第十三条、第十五条。【结果】罚款1400元。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2016)浙07行终370号",
+  "pkulaw_court": "浙江省金华市中级人民法院",
+  "pkulaw_title": "义乌市爽爽戒烟咨询服务站与义乌市市场监督管理局等处罚上诉案",
+  "last_instance_date": "2016.12.21",
+  "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc460234a415b0ae3be91940b849c90355fbdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2016_浙07行终370号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "本院认为(回退)"
+  ]
+ },
+ "human_review_required": true
 }

@@ -4,8 +4,8 @@
  "case_number": "（2016）京0111民初14505号",
  "source_type": "manual_compilation_pending_source_verification",
  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f330438601503d329e9c4550aa025add05bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "decision_date": "2016-11-22",
  "penalty_authority": null,
@@ -26,7 +26,7 @@
   "降血糖、降血脂",
   "对糖尿病、高血压、高血脂、冠心病、中风等病人都有辅助治疗作用"
  ],
- "facts_summary": "销售“京之源无糖有机黑苦荞”，宣传彩页记载“有利于胰岛素的分泌”“降血糖、降血脂”“对糖尿病、高血压、高血脂、冠心病、中风等病人都有辅助治疗作用”",
+ "facts_summary": "原告孙玉民与被告京之源（北京）农业有限公司北潞园分公司（以下简称京之源北潞园分公司）、被告京之源（北京）农业有限公司（以下简称京之源公司）买卖合同纠纷一案，本院受理后，依法由审判员栾林林独任审判，公开开庭进行了审理。原告孙玉民、被告京之源（北京）农业有限公司委托代理人陈玉林到庭参加诉讼。被告京之源（北京）农业有限公司北潞园分公司经本院合法送达未到庭参加诉讼，本案依法缺席审理。本案现已审理终结。\n经审理查明，2016年5月8日原告在京之源北潞园分店两次购买京之源无糖有机黑苦荞14袋，每袋装2盒，单价每袋236元，共计价款3304元。每袋苦荞茶中均附京之源公司的宣传彩页，记载“黑苦荞茶富含黄酮化合物，有利于胰岛素的分泌，持续饮用黑苦荞茶可以使高的血糖降低、低的血糖升高，正常的血糖不变。生物类黄酮能有效活血化瘀、抗栓塞、降血脂、降低胆固醇、降低血糖，使血液成分得到净化，改善微循环、降低毛细血管的脆性，降低其通透性，能够修复受损的血管壁。京之源黑苦荞茶经第三方检测芦丁含量高达2.5%，芦丁具有降血糖、降血脂，增强人体免疫力的作用，对糖尿病、高血压、高血脂、冠心病、中风等病人都有辅助治疗作用。有机、无糖检测中心检测结果：京之源黑苦荞茶已通过京之源农产品质量检测中心检测，同时通过第三方谱尼测试的安全检测。”\n原告向房山区食品药品监督管理局举报被告京之源北潞园分公司，房山区食品药品监督管理局对京之源北潞园分公司作出行政处罚，处罚理由为：京之源北潞园分公司经营销售的京之源黑苦荞茶，外包装上印有“无糖有机”字样，未在食品标签上注明糖的含量，该食品包装中有一份说明书，宣称“富含黄酮化合物，活血化瘀、抗栓塞、将血脂、降低胆固醇、降低血糖”等宣传功效的说明，违反了食品安全法规定，属于经营标签不符合规定的预包装食品及经营标签、说明书涉及疾病预防、治疗功能的食品的违法行为。\n被告京之源北潞园分公司系京之源公司的分公司。原告对购买的14袋产品，自行拆开2袋使用，另12袋包装完好。\n以上事实，有原告提供的发票、购物小票、产品实物、房山区食品药品监督管理局的政府信息公开答复书及当事人陈述、庭审笔录在案佐证，且经庭审质证，可以作为认定本案事实的依据。",
  "legal_basis": [
   "《食品安全法》第七十一条、第七十三条、第一百四十八条第二款"
  ],
@@ -43,17 +43,24 @@
   "有利于胰岛素的分泌",
   "降血糖、降血脂"
  ],
- "vector_text": "这是一起人工整理的普通食品宣称疾病预防、治疗功能候选案例。案件事实显示，经营者销售“京之源无糖有机黑苦荞”，宣传彩页记载“有利于胰岛素的分泌”“降血糖、降血脂”“对糖尿病、高血压、高血脂、冠心病、中风等病人都有辅助治疗作用” 处罚依据记载为《食品安全法》第七十一条、第七十三条、第一百四十八条第二款，处理结果为退还货款2832元、赔偿33040元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告孙玉民与被告京之源（北京）农业有限公司北潞园分公司（以下简称京之源北潞园分公司）、被告京之源（北京）农业有限公司（以下简称京之源公司）买卖合同纠纷一案，本院受理后，依法由审判员栾林林独任审判，公开开庭进行了审理。原告孙玉民、被告京之源（北京）农业有限公司委托代理人陈玉林到庭参加诉讼。被告京之源（北京）农业有限公司北潞园分公司经本院合法送达未到庭参加诉讼，本案依法缺席审理。本案现已审理终结。\n经审理查明，2016年5月8日原告在京之源北潞园分店两次购买京之源无糖有机黑苦荞14袋，每袋装2盒，单价每袋236元，共计价款3304元。每袋苦荞茶中均附京之源公司的宣传彩页，记载“黑苦荞茶富含黄酮化合物，有利于胰岛素的分泌，持续饮用黑苦荞茶可以使高的血糖降低、低的血糖升高，正常的血糖不变。涉案广告宣称：京之源无糖有机黑苦荞；有利于胰岛素的分泌；降血糖、降血脂；对糖尿病、高血压、高血脂、冠心病、中风等病人都有辅助治疗作用。",
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
  "owner_approval": {
@@ -84,6 +91,11 @@
   {
    "action": "fill_violation_type",
    "note": "从 risk_dimensions 首项派生：涉医疗宣传"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "violation_type": "涉医疗宣传",
@@ -92,5 +104,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "销售“京之源无糖有机黑苦荞”，宣传彩页记载“有利于胰岛素的分泌”“降血糖、降血脂”“对糖尿病、高血压、高血脂、冠心病、中风等病人都有辅助治疗作用”",
+    "vector_text": "这是一起人工整理的普通食品宣称疾病预防、治疗功能候选案例。案件事实显示，经营者销售“京之源无糖有机黑苦荞”，宣传彩页记载“有利于胰岛素的分泌”“降血糖、降血脂”“对糖尿病、高血压、高血脂、冠心病、中风等病人都有辅助治疗作用” 处罚依据记载为《食品安全法》第七十一条、第七十三条、第一百四十八条第二款，处理结果为退还货款2832元、赔偿33040元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2016)京0111民初14505号",
+  "pkulaw_court": "北京市房山区人民法院",
+  "pkulaw_title": "孙玉民诉京之源（北京）农业有限公司北潞园分公司买卖合同纠纷案",
+  "last_instance_date": "2016.11.22",
+  "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f330438601503d329e9c4550aa025add05bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2016_京0111民初14505号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
 }

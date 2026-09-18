@@ -1,0 +1,112 @@
+{
+ "title": "浙江省义乌市市场监管局查处义乌厚物电子商务有限公司违法广告案",
+ "publish_date": "2026-07-21",
+ "penalty_authority": "义乌市市场监管局",
+ "party_name": "义乌厚物电子商务有限公司",
+ "industry": "通用",
+ "product_or_service": "涉案商品（电商网络销售广告）",
+ "ad_channel": "",
+ "risk_dimensions": [
+  "虚假宣传",
+  "广告内容真实性"
+ ],
+ "illegal_claims": [
+  "纯钛保温杯",
+  "过15天茶水可以保持新鲜美味",
+  "SMEK肩颈贴",
+  "腰椎间盘突出",
+  "腰疼",
+  "腰肌劳损"
+ ],
+ "facts_summary": "经查，义乌厚物电子商务有限公司通过互联网发布的“纯钛保温杯”普通商品广告中含有“过15天茶水可以保持新鲜美味”等虚假内容；在发布的“SMEK肩颈贴”普通商品广告中宣称具有治疗“腰椎间盘突出”“腰疼”“腰肌劳损”等疾病功效。2026年2月，义乌市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款52.96万元的行政处罚。",
+ "legal_basis": [
+  "《中华人民共和国广告法》"
+ ],
+ "penalty_result": "2026年2月，义乌市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款52.96万元的行政处罚。",
+ "penalty_amount": 529600,
+ "regulatory_logic": "2026年2月，义乌市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款52.96万元的行政处罚。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "纯钛保温杯",
+  "过15天茶水可以保持新鲜美味",
+  "SMEK肩颈贴",
+  "义乌市市场监管局"
+ ],
+ "vector_text": "这是一起市场监管部门查处的广告违法案例。经查，义乌厚物电子商务有限公司通过互联网发布的“纯钛保温杯”普通商品广告中含有“过15天茶水可以保持新鲜美味”等虚假内容；在发布的“SMEK肩颈贴”普通商品广告中宣称具有治疗“腰椎间盘突出”“腰疼”“腰肌劳损”等疾病功效。2026年2月，义乌市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款52.96万元的行政处罚。涉案广告宣称：纯钛保温杯；过15天茶水可以保持新鲜美味；SMEK肩颈贴；腰椎间盘突出；腰疼。处理结果：2026年2月，义乌市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款52.96万元的行政处罚。",
+ "legal_basis_inferred": [
+  "《中华人民共和国广告法》"
+ ],
+ "case_id": "samr_a97ff7f27133_02",
+ "source_type": "official_typical_case",
+ "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html",
+ "raw_text_path": "data/raw_text/samr_a97ff7f27133.json",
+ "source_name": "国家市场监督管理总局",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "human_review_required": true,
+ "extraction_quotes": {},
+ "extraction_dropped": [],
+ "rule_extracted": {
+  "title": "浙江省义乌市市场监管局查处义乌厚物电子商务有限公司违法广告案",
+  "penalty_authority": "义乌市市场监管局",
+  "party_name": "义乌厚物电子商务有限公司",
+  "illegal_claims": [
+   "纯钛保温杯",
+   "过15天茶水可以保持新鲜美味",
+   "SMEK肩颈贴",
+   "腰椎间盘突出",
+   "腰疼",
+   "腰肌劳损"
+  ],
+  "industry": "通用",
+  "facts_summary": "经查，义乌厚物电子商务有限公司通过互联网发布的“纯钛保温杯”普通商品广告中含有“过15天茶水可以保持新鲜美味”等虚假内容；在发布的“SMEK肩颈贴”普通商品广告中宣称具有治疗“腰椎间盘突出”“腰疼”“腰肌劳损”等疾病功效。2026年2月，义乌市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款52.96万元的行政处罚。",
+  "vector_text": "这是一起市场监管部门查处的广告违法案例。经查，义乌厚物电子商务有限公司通过互联网发布的“纯钛保温杯”普通商品广告中含有“过15天茶水可以保持新鲜美味”等虚假内容；在发布的“SMEK肩颈贴”普通商品广告中宣称具有治疗“腰椎间盘突出”“腰疼”“腰肌劳损”等疾病功效。2026年2月，义乌市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款52.96万元的行政处罚。涉案广告宣称：纯钛保温杯；过15天茶水可以保持新鲜美味；SMEK肩颈贴；腰椎间盘突出；腰疼。处理结果：2026年2月，义乌市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款52.96万元的行政处罚。",
+  "keywords": [
+   "纯钛保温杯",
+   "过15天茶水可以保持新鲜美味",
+   "SMEK肩颈贴",
+   "义乌市市场监管局"
+  ],
+  "regulatory_logic": "2026年2月，义乌市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚没款52.96万元的行政处罚。"
+ },
+ "raw_html_path": "data/raw_html/samr_a97ff7f27133.html",
+ "fetched_at": "2026-09-15T16:34:17.844372+00:00",
+ "content_sha256": "88d36c4370ae5e18d34857ff8e72413d57eb0fb147e2715bc0b938a21830e583",
+ "segment_index": 2,
+ "segment_title": "浙江省义乌市市场监管局查处义乌厚物电子商务有限公司违法广告案",
+ "topic_relevance": "ad",
+ "source_verification_status": "source_verified",
+ "original_decision_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html",
+ "original_decision_url_status": "official_page",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-16 指令 B：crawler 民生违法广告候选转生产）",
+  "approved_at": "2026-09-16T01:40:26+08:00",
+  "override_source_verification": true,
+  "source_verification_status_kept": "official_page_extracted",
+  "original_decision_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html",
+  "note": "总局民生领域违法广告典型案例（官方页面存证）；字段缺口：法条仅到法规名（无条号，来自通报原文），待人工补条号；罚款金额未在通报原文抽出，待人工补。"
+ },
+ "audit": {
+  "review_status": "approved",
+  "approved_for_rag": true,
+  "reviewer": "项目负责人（用户 2026-09-16 指令 B：crawler 民生违法广告候选转生产）",
+  "review_date": "2026-09-16",
+  "review_notes": "业主审批转生产（B）；官方P0页面提取，缺口：法条仅到法规名（无条号，来自通报原文），待人工补条号；罚款金额未在通报原文抽出，待人工补"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-16T01:40:26+08:00",
+   "action": "owner_approval_promote_crawler_official",
+   "note": "crawler 民生违法广告候选转生产；法条/金额等缺口保留待人工补。"
+  },
+  {
+   "ts": "2026-09-17T11:50:27+08:00",
+   "action": "backfill_full_case_narrative",
+   "note": "修复规则抽取 facts_summary=t[:80] 截断：用修正后抽取器重写案情/监管逻辑/检索文本，字段逐字来自原文段落，其余字段不动。"
+  }
+ ],
+ "violation_type": "发布违法广告（虚假宣传）",
+ "source_record_path": "data/structured_candidates/samr_a97ff7f27133_02.json"
+}

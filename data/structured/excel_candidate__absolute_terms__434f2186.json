@@ -4,8 +4,8 @@
  "case_number": "（2016）豫0104行初138号",
  "source_type": "manual_compilation_pending_source_verification",
  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f38e42b7a6be5b3e7b6b6e22dd204210f9bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "decision_date": "2016-12-23",
  "penalty_authority": "郑州尚之泉文化传播有限公司与郑州市工商行政管理局",
@@ -22,7 +22,7 @@
   "汇聚顶级现代收藏品",
   "顶级"
  ],
- "facts_summary": "在经营场所摆放“汇聚顶级现代收藏品”印刷品广告，使用“顶级”绝对化用语",
+ "facts_summary": "原告郑州尚之泉文化传播有限公司不服被告郑州市工商行政管理局金水分局工商管理行政处罚一案，于2016年9月6日向本院提起行政诉讼。本院于2016年9月6日立案后，于2016年9月12日向被告送达了起诉状副本及应诉通知书。本院依法组成合议庭，于2016年10月9日公开开庭审理了本案。原告郑州尚之泉文化传播有限公司法定代表人赵青滢的委托代理人刘晓博、被告郑州市工商行政管理局金水分局法定代表人李珉的委托代理人肖梦姣、张国利到庭参加诉讼。本案现已审理终结。\n经审理查明，2015年12月24日，被告在原告位于郑州市金水区花园路39号4号楼13层1307室的经营场所检查时，发现原告现场陈列商品的柜台上摆放展示有“汇聚顶级现代收藏品”字样的宣传彩页；被告向原告发出了行政执法检查告知书；被告现场提取显示“汇聚顶级现代收藏品”字样宣传彩页4张，原告公司展厅经理崔啊娇在上述宣传彩页上签名并注明“这是我公司印制的印刷品广告”字样及加盖原告公司印章；被告制作的现场笔录检查情况载明：“执法人员出示执法证并告知后进入现场检查，现场摆放有郑州尚之泉文化传播有限公司营业执照，据现场负责人崔啊娇讲他们公司自成立起主要销售纪念钞、纪念币和名人字画，现场柜台和墙壁上摆放、悬挂有纪念钞、纪念币和名人字画以及‘汇聚顶级现代收藏品’等印刷品广告。”当日，被告向原告发出询问通知书。2015年12月28日，原告单位展厅经理崔啊娇到被告单位接受询问（调查）时称原告公司于2015年8月17日成立，自成立之日起，自行设计制作了“汇聚顶级现代收藏品”等印刷品广告，便于客户了解收藏品市场。就上述内容，崔啊娇出具了陈述书一份。2016年1月25日，崔啊娇又向被告出具陈述书一份，陈述事由为：“我公司自2015年8月17日成立之日起，只自行印制了‘汇聚顶级现代收藏品’广告页6张，便于客户了解收藏品市场，并未给客户带来损失，现我公司已经认识到这些广告违反了广告法规，我公司一定积极配合工商机构处理，今后我公司一定合法经营，希望工商机关从轻处理。”2016年1月26日，被告就拟做出行政处罚的事实、理由、依据及处罚内容，向原告发出郑工商金水听告字[2016]15001号行政处罚听证告知书2016年1月28日，原告向被告提出听证申请。2016年2月14日，被告决定于2016年2月23日对该案举行听证并向原告发出郑工商金水听字[2016]002号行政处罚听证告知书。被告于2016年2月22日发出听证公告。2016年2月23日，被告就该案举行听证，被告办案人员陈述了查明的违法事实、证据、依据及行政处罚建议，原告委托代理人进行了陈述和申辩，双方各自提交了相关证据，进行了辩论和陈述。2016年3月14日，被告对原告作出郑工商金水处字[2016]15001号行政处罚决定书，该决定书认定原告自2015年8月17日始，为便于客户了解收藏品市场，自行设计制作了“汇聚顶级现代收藏品”等印刷品广告，原告发布的印刷品广告内容含有“顶级”等绝对化用语，违反了《中华人民共和国广告法》第九条第（三）项的规定。依据《中华人民共和国广告法》第五十七条第（一）项规定，责令原告停止发布违法广告，决定对原告处以罚款200000元。该处罚决定书于2016年3月15日送达原告。原告不服，向本院提起行政诉讼。",
  "legal_basis": [
   "《广告法》第九条第（三）项、第五十七条第（一）项"
  ],
@@ -35,17 +35,24 @@
   "汇聚顶级现代收藏品",
   "顶级"
  ],
- "vector_text": "这是一起人工整理的绝对化用语候选案例。案件事实显示，经营者在经营场所摆放“汇聚顶级现代收藏品”印刷品广告，使用“顶级”绝对化用语 处罚依据记载为《广告法》第九条第（三）项、第五十七条第（一）项，处理结果为罚款200000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告郑州尚之泉文化传播有限公司不服被告郑州市工商行政管理局金水分局工商管理行政处罚一案，于2016年9月6日向本院提起行政诉讼。本院于2016年9月6日立案后，于2016年9月12日向被告送达了起诉状副本及应诉通知书。本院依法组成合议庭，于2016年10月9日公开开庭审理了本案。原告郑州尚之泉文化传播有限公司法定代表人赵青滢的委托代理人刘晓博、被告郑州市工商行政管理局金水分局法定代表人李珉的委托代理人肖梦姣、张国利到庭参加诉讼。本案现已审理终结。\n经审理查明，2015年12月24日，被告在原告位于郑州市金水区花园路39号4号楼13层1307室的经营场所检查时，发现原告现场陈列商品的柜台上摆放展示有“汇聚顶级现代收藏品”字样的宣传彩页；被告向原告发出了行政执法检查告知书；涉案广告宣称：汇聚顶级现代收藏品；顶级。",
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
  "owner_approval": {
@@ -76,6 +83,11 @@
   {
    "action": "fill_violation_type",
    "note": "从 risk_dimensions 首项派生：绝对化用语"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "violation_type": "绝对化用语",
@@ -84,5 +96,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在经营场所摆放“汇聚顶级现代收藏品”印刷品广告，使用“顶级”绝对化用语",
+    "vector_text": "这是一起人工整理的绝对化用语候选案例。案件事实显示，经营者在经营场所摆放“汇聚顶级现代收藏品”印刷品广告，使用“顶级”绝对化用语 处罚依据记载为《广告法》第九条第（三）项、第五十七条第（一）项，处理结果为罚款200000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2016)豫0104行初138号",
+  "pkulaw_court": "河南省郑州市管城回族区人民法院",
+  "pkulaw_title": "郑州尚之泉文化传播有限公司诉郑州市工商行政管理局金水分局处罚案",
+  "last_instance_date": "2016.12.23",
+  "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f38e42b7a6be5b3e7b6b6e22dd204210f9bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2016_豫0104行初138号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
 }

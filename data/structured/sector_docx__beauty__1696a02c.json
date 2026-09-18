@@ -6,8 +6,8 @@
  "decision_date": "2018-07-17",
  "source_type": "manual_docx_sector_report_pending_source_verification",
  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f35a75c97955e195f4565ff65a8eb52fd3bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "penalty_authority": null,
  "party_name": "广州舒美生物科技有限公司产品责任纠纷案",
@@ -34,7 +34,7 @@
   "瞬间美白",
   "全身美白"
  ],
- "facts_summary": "在阿里巴巴销售“雅诗泉全身美白乳”（非特殊用途化妆品），网页宣传“瞬间美白”“全身美白”等功效，未取得特殊用途化妆品批准文号",
+ "facts_summary": "原告毛冉冉诉被告广州娇比萃化妆品有限公司（以下简称娇比萃公司）、广州芊植本草化妆品有限公司（以下简称芊植本草公司）产品责任纠纷一案，本院于2018年4月26日立案受理后，原告毛冉冉申请撤回对被告芊植本草公司的起诉,本院予以准许。本案依法由审判员黄玮适用小额诉讼程序于2018年6月5日公开开庭进行了审理。原告毛冉冉到庭参加诉讼，被告娇比萃公司经本院传票传唤，无正当理由拒不到庭参加诉讼。本案现已审理终结。\n经审理查明：2017年11月，原告通过阿里巴巴电商平台在被告娇比萃公司处购买名为“雅诗泉全身美白乳”的产品50瓶，单价18元/瓶，合计900元。该产品在网页宣传上写有“功效：营养滋润、美白、保湿、补水、收缩毛孔”、“瞬间美白”、“主要功效：身体美白”“全身美白”等字样，该产品外包装盒上印有“美白补水”等字样。涉案产品在宣传网页上明确标有“特殊用途化妆品：否”字样，外包装盒未标识特殊用途化妆品批准文号。原告收货后认为涉案产品系普通化妆品却宣称有美白等功效，属虚假广告宣传，遂向本院提起诉讼。本案纠纷发生后，原告与被告娇比萃公司之间已完成退货退款。\n上述事实，有原告提供的网页交易快照、产品订单信息、物流快递信息、产品实物和照片，以及原告的陈述等证据予以证实，足以认定。",
  "legal_basis": [
   "《食品安全法》第一百四十八条第二款（参照适用）"
  ],
@@ -52,18 +52,25 @@
   "全身美白"
  ],
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "source_lookup_query": "（2018）鄂0105民初1791号 毛冉冉诉广州舒美生物科技有限公司产品责任纠纷案",
- "vector_text": "【赛道】美妆。【场景】其他。【宣称】雅诗泉全身美白乳；瞬间美白；全身美白。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《食品安全法》第一百四十八条第二款（参照适用）。。【依据】《食品安全法》第一百四十八条第二款（参照适用）。【结果】十倍赔偿9000元。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告毛冉冉诉被告广州娇比萃化妆品有限公司（以下简称娇比萃公司）、广州芊植本草化妆品有限公司（以下简称芊植本草公司）产品责任纠纷一案，本院于2018年4月26日立案受理后，原告毛冉冉申请撤回对被告芊植本草公司的起诉,本院予以准许。本案依法由审判员黄玮适用小额诉讼程序于2018年6月5日公开开庭进行了审理。原告毛冉冉到庭参加诉讼，被告娇比萃公司经本院传票传唤，无正当理由拒不到庭参加诉讼。本案现已审理终结。\n经审理查明：2017年11月，原告通过阿里巴巴电商平台在被告娇比萃公司处购买名为“雅诗泉全身美白乳”的产品50瓶，单价18元/瓶，合计900元。该产品在网页宣传上写有“功效：营养滋润、美白、保湿、补水、收缩毛孔”、“瞬间美白”、“主要功效：身体美白”“全身美白”等字样，该产品外包装盒上印有“美白补水”等字样。涉案广告宣称：雅诗泉全身美白乳；瞬间美白；全身美白。",
  "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
  "owner_approval": {
   "approved": true,
@@ -89,6 +96,11 @@
     "illegal_claims"
    ],
    "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "source_record_path": "data/structured_candidates/sector_docx__beauty__1696a02c.json",
@@ -96,5 +108,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在阿里巴巴销售“雅诗泉全身美白乳”（非特殊用途化妆品），网页宣传“瞬间美白”“全身美白”等功效，未取得特殊用途化妆品批准文号",
+    "vector_text": "【赛道】美妆。【场景】其他。【宣称】雅诗泉全身美白乳；瞬间美白；全身美白。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《食品安全法》第一百四十八条第二款（参照适用）。。【依据】《食品安全法》第一百四十八条第二款（参照适用）。【结果】十倍赔偿9000元。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2018)鄂0105民初1791号",
+  "pkulaw_court": "湖北省武汉市汉阳区人民法院",
+  "pkulaw_title": "毛冉冉与广州娇比萃化妆品有限公司、广州芊植本草化妆品有限公司产品责任纠纷一审民事判决书",
+  "last_instance_date": "2018.07.17",
+  "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f35a75c97955e195f4565ff65a8eb52fd3bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2018_鄂0105民初1791号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
 }

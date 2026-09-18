@@ -4,8 +4,8 @@
  "case_number": "（2017）豫1528行审92号",
  "source_type": "manual_compilation_pending_source_verification",
  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3c0ef6e961415cf81af9f3f5ec489322dbdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "decision_date": "2017-06-13",
  "penalty_authority": null,
@@ -24,7 +24,7 @@
   "韩国彩泥化妆品",
   "名人、患者名义夸大疗效"
  ],
- "facts_summary": "利用电视设备发布韩国彩泥（化妆品）广告专题栏目，利用名人、患者名义夸大疗效，虚假宣传，误导消费者",
+ "facts_summary": "申请执行人息县工商管理和质量技术监督局向本院申请强制执行其对息县广播电视台作出的息工商质监罚决字（2016）第40号行政处罚决定书一案，本院受理后，依法组成合议庭对申请执行人息县工商管理和质量技术监督局作出的行政行为进行了审查。现已审查终结。\n经审理查明，息县广播电视台利用自有的电视设备发布韩国彩泥（化妆品）广告专题（栏）目，广告中有利用名人、患者名义夸大疗效，虚假宣传，误导消费者。息县广播电视台利用电视形式擅自发布虚假化妆品广告的行为违反了《中华人民共和国广告法》第二十八条的规定。息县工商管理和质量技术监督局对此立案查处，于2016年5月4日作出息工商质监听告字（2016）第33号《行政处罚听证告知书》，并于当日依法送达。息县工商管理和质量技术监督局根据《中华人民共和国广告法》第五十\n五条第一款之规定，于2016年5月13日对其作出息工商质监罚决字（2016）第40号行政处罚决定，给予1、停止发布虚假广告行为；2、罚款200000元，并于同日向被申请执行人依法送达。息县工商管理和质量技术监督局对息县广播电视台作出处罚后，被申请执行人未能自觉履行。在法定期限内，息县广播电视台未申请行政复议，也未提起行政诉讼。息县工商管理和质量技术监督局于2016年11月29日依法对息县广播电视台进行了催告通知。现息县工商管理和质量技术监督局向本院申请强制执行该处罚决定。",
  "legal_basis": [
   "《广告法》第二十八条、第五十五条第一款"
  ],
@@ -38,17 +38,24 @@
   "平台广告合规",
   "电视"
  ],
- "vector_text": "这是一起人工整理的直播带货违法广告候选案例。案件事实显示，经营者利用电视设备发布韩国彩泥（化妆品）广告专题栏目，利用名人、患者名义夸大疗效，虚假宣传，误导消费者 处罚依据记载为《广告法》第二十八条、第五十五条第一款，处理结果为罚款200000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。申请执行人息县工商管理和质量技术监督局向本院申请强制执行其对息县广播电视台作出的息工商质监罚决字（2016）第40号行政处罚决定书一案，本院受理后，依法组成合议庭对申请执行人息县工商管理和质量技术监督局作出的行政行为进行了审查。现已审查终结。\n经审理查明，息县广播电视台利用自有的电视设备发布韩国彩泥（化妆品）广告专题（栏）目，广告中有利用名人、患者名义夸大疗效，虚假宣传，误导消费者。息县广播电视台利用电视形式擅自发布虚假化妆品广告的行为违反了《中华人民共和国广告法》第二十八条的规定。息县工商管理和质量技术监督局对此立案查处，于2016年5月4日作出息工商质监听告字（2016）第33号《行政处罚听证告知书》，并于当日依法送达。涉案广告宣称：韩国彩泥化妆品；名人、患者名义夸大疗效。",
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
  "owner_approval": {
@@ -79,6 +86,11 @@
   {
    "action": "fill_violation_type",
    "note": "从 risk_dimensions 首项派生：直播带货违法广告"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "violation_type": "直播带货违法广告",
@@ -87,5 +99,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "利用电视设备发布韩国彩泥（化妆品）广告专题栏目，利用名人、患者名义夸大疗效，虚假宣传，误导消费者",
+    "vector_text": "这是一起人工整理的直播带货违法广告候选案例。案件事实显示，经营者利用电视设备发布韩国彩泥（化妆品）广告专题栏目，利用名人、患者名义夸大疗效，虚假宣传，误导消费者 处罚依据记载为《广告法》第二十八条、第五十五条第一款，处理结果为罚款200000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2017)豫1528行审92号",
+  "pkulaw_court": "河南省息县人民法院",
+  "pkulaw_title": "息县工商管理和质量技术监督局诉息县广播电视台处罚决定书案",
+  "last_instance_date": "2017.06.13",
+  "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3c0ef6e961415cf81af9f3f5ec489322dbdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2017_豫1528行审92号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
 }

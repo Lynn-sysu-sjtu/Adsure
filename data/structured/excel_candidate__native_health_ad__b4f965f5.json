@@ -4,8 +4,8 @@
  "case_number": "（2017）鄂0103行审86号",
  "source_type": "manual_compilation_pending_source_verification",
  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3396f5eb8032c97407b7eb5f473f83a72bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "decision_date": "2017-11-20",
  "penalty_authority": "武汉市工商行政管理局",
@@ -23,7 +23,7 @@
  "illegal_claims": [
   "报纸健康养生知识变相广告"
  ],
- "facts_summary": "在报纸上发布医疗、药品、保健食品等广告，以介绍健康、养生知识等形式变相发布广告",
+ "facts_summary": "申请执行人于2017年11月15日向本院申请执行武工商处[2017]3号《武汉市工商行政管理局行政处罚决定书》，本院依法进行了审查，现已审查终结。\n经审查查明，申请执行人于2017年4月17日向被执行人送达的武工商处[2017]3号《武汉市工商行政管理局行政处罚决定书》载明：经调查核实：2016年11月至2017年2月，当事人（即本案被执行人）在武汉晨报上发布有乐居华庭装饰、生活家家居、双星名人秋款中老年健步鞋、武汉骨科医院、便携式空气净化器、鑫绎尚装饰、御品膳食通、古方黑膏药、武汉顶吉整形医院、武汉美莱口腔医院、武汉华美口腔医院、湖北家庭服务职业培训基地、武汉市汉口医院康复医学科、新长江CBD中心、武汉协和医院儿科、常青春牌睡得安胶囊、武汉胃肠医院、武汉结石病医院、汉口知名中医肛肠医院、武汉东大肛肠医院、江南美装饰集团、九珍堂虫草直销惠、武汉德亚口腔门诊部、深度装饰等24条广告。我局先后四次向当事人下达了《限期提供证据通知书》，要求当事人提供以上广告的合同、付款凭证、发票、记账凭证复印件等材料，但当事人在规定的时限内没有如实提供相关材料。\n当事人发布上述各类广告中存在在医疗广告中含有保证治愈或者隐含保证治愈的情形如武汉东大肛肠医院广告中宣传“我们用的是微创技术，痛苦小，恢复也快”，医疗器械广告宣称治疗功效如古方黑膏药广告宣传“通过穴位敷贴，可活血活血化瘀，有助于缓解颈腰椎退行性骨节病等引起的疼痛”；医疗广告存在篡改医疗广告审查证明、利用患者名义作虚假疗效证明、涉及医疗技术如武汉华美口腔医院广告出现“数千名缺牙患者报名，都想在年前把缺牙问题解决，还有患者表示‘一直想做进口的种植牙，又担心花钱多，现在终于好了’”以及患者手竖大拇指夸赞的照片，还出现“自武汉市引进‘CHEESE激光美学种植’技术，可为……”等宣传；武汉顶吉整形医院、武汉市汉口医院康复医学科、武汉协和医院儿科等广告未见医疗广告审查证明；在普通用品、商品广告宣传中使用数据、价格不能准确表明出处、来源、宣称保健功效，如双星名人秋款中老年健步鞋广告中宣传“市场价498元／双，回馈价198元／双”，“…就能反复按摩穴位，逐步疏通经络，调节气血，从而起到健身祛病，延年益寿的作用”；在房地产广告中对规划或者建设中的交通、商业、文化教育设施以及其他市政条件作误导宣传，如新长江CBD中心广告中宣传“武汉CBD承载着城市商业活动中心的功能，也是武汉地标性建筑和高端住宅之所在。近年未CBD板块的高速建设，使其区域价值及城市功能地位不断提升，板块内楼盘呈现一路量价齐升趋势”；在食品、保健食品广告中宣称治疗功效如常青春牌睡得安胶囊广告宣称“当晚服用，睡好觉”；生活家家居等房产装修广告未见广告提示字样，没有清楚、明白表示服务的内容。\n2017年3月30日，本局依法向当事人送达了工商听告字[2017]第5号《听证告知书》，告知当事人拟作出行政处罚的事实、理由和依据，同时告知当事人依法享有听证的权利，当事人在法定期限内未申请举行听证。本局认为当事人发布以上广告属于发布违法广告的行为。\n依据《广告法》第五十八条“有下列行为之一的，由工商行政管理部门责令停止发布广告……（一）违反本法第十六条规定发布医疗、药品、医疗器械广告的；（二）违反本法第十七条规定，在广告中涉及疾病治疗功能，以及使用医疗用语或者易使推销的商品与药品、医疗器械相混淆的用语的；（三）违反本法第十八条规定发布保健食品广告的……（八）违反本法第二十六条规定发布房地产广告的；",
  "legal_basis": [
   "《广告法》第十九条、第五十八条、第五十九条"
  ],
@@ -38,17 +38,24 @@
   "涉医疗宣传",
   "报纸"
  ],
- "vector_text": "这是一起人工整理的软文、健康科普变相广告候选案例。案件事实显示，经营者在报纸上发布医疗、药品、保健食品等广告，以介绍健康、养生知识等形式变相发布广告 处罚依据记载为《广告法》第十九条、第五十八条、第五十九条，处理结果为罚款200000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。申请执行人于2017年11月15日向本院申请执行武工商处[2017]3号《武汉市工商行政管理局行政处罚决定书》，本院依法进行了审查，现已审查终结。\n经审查查明，申请执行人于2017年4月17日向被执行人送达的武工商处[2017]3号《武汉市工商行政管理局行政处罚决定书》载明：经调查核实：2016年11月至2017年2月，当事人（即本案被执行人）在武汉晨报上发布有乐居华庭装饰、生活家家居、双星名人秋款中老年健步鞋、武汉骨科医院、便携式空气净化器、鑫绎尚装饰、御品膳食通、古方黑膏药、武汉顶吉整形医院、武汉美莱口腔医院、武汉华美口腔医院、湖北家庭服务职业培训基地、武汉市汉口医院康复医学科、新长江CBD中心、武汉协和医院儿科、常青春牌睡得安胶囊、武汉胃肠医院、武汉结石病医院、汉口知名中医肛肠医院、武汉东大肛肠医院、江南涉案广告宣称：报纸健康养生知识变相广告。",
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
  "owner_approval": {
@@ -79,6 +86,11 @@
   {
    "action": "fill_violation_type",
    "note": "从 risk_dimensions 首项派生：广告可识别性不足"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "violation_type": "广告可识别性不足",
@@ -87,5 +99,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在报纸上发布医疗、药品、保健食品等广告，以介绍健康、养生知识等形式变相发布广告",
+    "vector_text": "这是一起人工整理的软文、健康科普变相广告候选案例。案件事实显示，经营者在报纸上发布医疗、药品、保健食品等广告，以介绍健康、养生知识等形式变相发布广告 处罚依据记载为《广告法》第十九条、第五十八条、第五十九条，处理结果为罚款200000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2017)鄂0103行审86号",
+  "pkulaw_court": "湖北省武汉市江汉区人民法院",
+  "pkulaw_title": "武汉市工商行政管理局、武汉长江日报传媒集团有限公司武汉晨报分公司非诉执行审查行政裁定书",
+  "last_instance_date": "2017.11.20",
+  "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3396f5eb8032c97407b7eb5f473f83a72bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2017_鄂0103行审86号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
 }

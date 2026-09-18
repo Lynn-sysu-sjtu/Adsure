@@ -1,0 +1,85 @@
+{
+ "case_id": "samr_2026_netfood_01_ai_virtual_host",
+ "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+ "source_type": "official_typical_case",
+ "source_name": "国家市场监督管理总局",
+ "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html",
+ "source_verification_status": "source_verified",
+ "original_decision_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html",
+ "original_decision_url_status": "official_page",
+ "source_lookup_priority": "P0",
+ "publish_date": "2026-09-07",
+ "decision_date": null,
+ "penalty_authority": "北京市昌平区市场监督管理局",
+ "party_name": "北京双泰元贸易有限公司",
+ "region": "北京市昌平区",
+ "industry": "保健食品",
+ "violation_type": "普通食品宣传保健功能（虚假宣传）",
+ "case_nature": "administrative_penalty_decision",
+ "is_admin_penalty_candidate": true,
+ "product_or_service": "普通食品“某全安粉”",
+ "ad_channel": "电商平台直播间（AI虚拟人直播带货）",
+ "risk_dimensions": [
+  "虚假宣传",
+  "功效无依据",
+  "直播带货违法广告"
+ ],
+ "illegal_claims": [
+  "有助于提高免疫力",
+  "喝了之后抵抗力会有所提升"
+ ],
+ "facts_summary": "2026年4月，当事人在电商平台营养保健专营店直播间利用AI虚拟人直播带货，对普通食品“某全安粉”宣传“有助于提高免疫力”“喝了之后抵抗力会有所提升”等保健功效，误导消费者，违反《反不正当竞争法》。系2026年2月《直播电商监督管理办法》施行后北京市查处的首个AI虚拟人直播带货虚假宣传典型案。",
+ "legal_basis": [
+  "《中华人民共和国反不正当竞争法》",
+  "《直播电商监督管理办法》"
+ ],
+ "penalty_result": "责令立即停止违法行为，罚款5000元",
+ "penalty_amount": 5000,
+ "regulatory_logic": "AI虚拟人直播带货宣传普通食品保健功能，虚构功效误导消费者，属于虚假宣传；AI虚拟人不能成为虚假宣传的挡箭牌。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "AI虚拟人",
+  "直播带货",
+  "普通食品",
+  "保健功能",
+  "提高免疫力",
+  "虚假宣传",
+  "罚款5000元",
+  "昌平"
+ ],
+ "vector_text": "这是一起利用AI虚拟人直播带货对普通食品宣传保健功能、构成虚假宣传被处罚的案例。直播间称某普通食品“有助于提高免疫力”，但无依据。监管责令停止并罚款5000元。场景特征：AI虚拟人直播、普通食品保健功能、功效无依据。",
+ "rag_chunk_type": "case_summary",
+ "scope": "public",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "raw_text_path": "data/raw_text/samr_c083e410ff3d.json",
+ "raw_html_path": "data/raw_html/samr_c083e410ff3d.html",
+ "source_lookup_query": "北京双泰元贸易有限公司 普通食品宣传保健功能（虚假宣传）",
+ "legal_basis_provenance": {
+  "case_source_text": "总局典型案例原文引用",
+  "specific_articles_published_by_case_source": true,
+  "mapping_status": "official_case_source",
+  "warning": "法条引用来自总局典型案例原文。"
+ },
+ "legal_basis_details": [],
+ "audit": {
+  "review_status": "approved",
+  "approved_for_rag": true,
+  "reviewer": "codex-crawler-ingest",
+  "review_date": "2026-09-15",
+  "review_notes": "总局P0官方典型案，crawler存证+人工结构化；罚则/机关/金额均出自官方原文。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T23:48:57+08:00",
+   "action": "crawler_ingest_official",
+   "note": "经 backend/scripts/crawl_samr.py 抓取存证（raw_html+raw_text），按官方原文结构化入库。"
+  }
+ ],
+ "source_record_path": "data/structured_candidates/samr_2026_netfood_01_ai_virtual_host.json",
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T23:48:57+08:00",
+  "approved_by": "codex-crawler-ingest (官方P0典型案)"
+ }
+}

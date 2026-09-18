@@ -1,0 +1,92 @@
+{
+ "case_id": "samr_2026_netfood_05_miniprogram_patent",
+ "title": "潍坊市市场监管局查处潍坊易北特生物科技有限公司微信小程序发布违法广告案",
+ "source_type": "official_typical_case",
+ "source_name": "国家市场监督管理总局",
+ "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html",
+ "source_verification_status": "source_verified",
+ "original_decision_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html",
+ "original_decision_url_status": "official_page",
+ "source_lookup_priority": "P0",
+ "publish_date": "2026-09-07",
+ "decision_date": null,
+ "penalty_authority": "潍坊市市场监督管理局",
+ "party_name": "潍坊易北特生物科技有限公司",
+ "region": "山东省潍坊市",
+ "industry": "保健食品",
+ "violation_type": "普通食品功效无依据+谎称专利（虚假广告）",
+ "case_nature": "administrative_penalty_decision",
+ "is_admin_penalty_candidate": true,
+ "product_or_service": "随饴复合肽粉固体饮料、卷曲乳杆菌CZ02三联益生菌冻干粉固体饮料等普通食品",
+ "ad_channel": "微信小程序",
+ "risk_dimensions": [
+  "虚假宣传",
+  "功效无依据",
+  "广告引证内容不规范",
+  "广告内容真实性"
+ ],
+ "illegal_claims": [
+  "能够调节肠壁对葡萄糖和脂肪的吸收、促进脂肪分解加速肠胃蠕动",
+  "改善卵子质量滋养巢体，改善、缓解焦虑",
+  "调节菌群平衡、防护坏菌入侵、清除炎症因子、免疫自身守护",
+  "抗氧化物质",
+  "未取得专利谎称已取得专利"
+ ],
+ "facts_summary": "2024年12月至2026年3月，当事人通过微信小程序发布多款普通食品固体饮料广告，宣称调节肠壁吸收、改善卵子质量、调节菌群平衡、免疫守护等功效，无法提供检验检测报告，并在未取得专利权的情况下谎称已取得专利，违反《广告法》第四条第一款、第十二条第二款、第二十八条第二款。",
+ "legal_basis": [
+  "《中华人民共和国广告法》第四条第一款",
+  "《中华人民共和国广告法》第十二条第二款",
+  "《中华人民共和国广告法》第二十八条第二款",
+  "《中华人民共和国广告法》第五十五条第一款",
+  "《中华人民共和国行政处罚法》第二十九条"
+ ],
+ "penalty_result": "罚款8.33万元",
+ "penalty_amount": 83300,
+ "regulatory_logic": "微信小程序发布普通食品广告宣称多项健康功效却无检验报告支持，且未取得专利谎称已取得专利，构成虚假广告；新兴线上载体同样受广告法约束。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "微信小程序",
+  "普通食品",
+  "固体饮料",
+  "功效无依据",
+  "谎称专利",
+  "虚假广告",
+  "罚款8.33万",
+  "潍坊"
+ ],
+ "vector_text": "这是一起微信小程序发布普通食品广告、功效无依据且谎称已取得专利被罚的案例。固体饮料广告宣称调节糖脂吸收、改善卵子质量、免疫守护等，无检验报告，并谎称专利。监管罚款8.33万元。场景特征：微信小程序、普通食品功效、专利谎称。",
+ "rag_chunk_type": "case_summary",
+ "scope": "public",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "raw_text_path": "data/raw_text/samr_c083e410ff3d.json",
+ "raw_html_path": "data/raw_html/samr_c083e410ff3d.html",
+ "source_lookup_query": "潍坊易北特生物科技有限公司 普通食品功效无依据+谎称专利（虚假广告）",
+ "legal_basis_provenance": {
+  "case_source_text": "总局典型案例原文引用",
+  "specific_articles_published_by_case_source": true,
+  "mapping_status": "official_case_source",
+  "warning": "法条引用来自总局典型案例原文。"
+ },
+ "legal_basis_details": [],
+ "audit": {
+  "review_status": "approved",
+  "approved_for_rag": true,
+  "reviewer": "codex-crawler-ingest",
+  "review_date": "2026-09-15",
+  "review_notes": "总局P0官方典型案，crawler存证+人工结构化；罚则/机关/金额均出自官方原文。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T23:48:57+08:00",
+   "action": "crawler_ingest_official",
+   "note": "经 backend/scripts/crawl_samr.py 抓取存证（raw_html+raw_text），按官方原文结构化入库。"
+  }
+ ],
+ "source_record_path": "data/structured_candidates/samr_2026_netfood_05_miniprogram_patent.json",
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T23:48:57+08:00",
+  "approved_by": "codex-crawler-ingest (官方P0典型案)"
+ }
+}

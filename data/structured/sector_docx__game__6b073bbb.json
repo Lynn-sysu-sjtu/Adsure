@@ -6,8 +6,8 @@
  "decision_date": "2024-06-05",
  "source_type": "manual_docx_sector_report_pending_source_verification",
  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f8168b48bff323e66ba1e52896fa0f88d9d1bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "penalty_authority": null,
  "party_name": "杭州某公司",
@@ -34,7 +34,7 @@
  "illegal_claims": [
   "军需"
  ],
- "facts_summary": "5E对战平台“军需”盲盒抽奖活动，吴某充值约14.8万元开启16590次宝箱、郝某充值约31.1万元开启211522次宝箱，主张概率虚假。法院组织现场勘验后台代码，确认概率无异常，市场监管局执法笔录也确认产出概率与展示概率误差在合理范围内",
+ "facts_summary": "原告吴某、原告郝某与被告杭州某有限公司(以下简称某公司)网络服务合同纠纷一案，本院于2024年3月4日立案后，依法适用简易程序，于2024年5月28日公开开庭进行了审理。原告吴某、原告郝某委托诉讼代理人田晓芳、被告某公司委托诉讼代理人倪佳伦到庭参加诉讼。本案现已审理终结。\n根据经审查确认有效的证据以及当事人的陈述，本院认定案件事实如下：\n某公司系5E对战平台的运营商，其于2020年7月上线涉案“军需”活动，旨在向用户销售《反恐精英；全球攻势》(简称“CSGO”)游戏饰品皮肤。其中，该游戏系国外游戏商运营，并非某公司运营。用户参与涉案“军需”活动，须先通过www.csgo.com.cn或steam商店下载该游戏，后由用户登陆5E对战平台账号并同时捆绑steam账户。用户向平台充值购买平台通用虚拟货币“5E币”，后兑换成涉案“军需”活动的虚拟道具，以开启游戏饰品皮肤宝箱，并根据相关公示的活动规则向用户发放开启宝箱后所获物品，用户可自主选择相关物品的处置方式，包括：取回、置换和升级。\n《5E对战平台服务条款》约定，向用户提供“5E对战平台”产品及服务的平台服务提供方为某公司。平台游戏是该平台搭载的由第三方负责运营的游戏的统称。某公司向用户提供产品和服务本身属于商业行为，用户有权自主决定是否根据本平台自行确定的收费项目(包括但不限于购买虚拟道具的使用权以及接受其他增值服务等各类收费项目)及收费标准支付相应的费用，以获得相应的产品和服务。如用户不按相应标准支付相应费用的，用户将无法获得相应的产品和服务。用户使用法定货币进行充值购买虚拟币或兑换游戏虚拟道具及其他增值服务的，用户所购买的虚拟币或兑换的游戏虚拟道具及其他增值服务将不能退还或兑换成法定货币，用户也不可通过其他方式将其兑换成法定货币，但法律另有强制性规定的除外。通过本平台进行游戏应从官方渠道事先进行游戏下载，以确保相关游戏开发者、运营商的合法权益。例如：CSGO(反恐精英：全球攻势)游戏，应通过www.csgo.com.cn或steam商店下载，用户在使用本平台账号登陆的同时还应捆绑steam账户以便平台进行鉴权，为用户正常提供技术服务支持。\n《5E对战平台充值协议》约定，“5E币”是5E对战平台向用户提供的用于在该平台上进行相关消费的虚拟币，用户可以用“5E币”兑换虚拟道具、物品等该平台上产品或服务，具体可兑换产品和服务对应相应的产品、服务页面说明，并将兑换的虚拟道具、物品在5E对战平台内使用。平台虚拟代币的充值属于在线交付的充值类商品，因其特殊属性不适用《消费者权益保护法》中有关反悔权及网络购买商品七日无理由退货等条款的约束，用户一旦充值成功，充值即确定完成，平台不提供退还或逆向兑换服务。用户参与涉案军需活动时需要阅读《军需玩法规则》，并点选同意后才能参与活动。其中《军需玩法规则》约定，平台点击顶部导航栏“军需”即可进入，5E豆可用于平台“商城”进行兑换所需要的军需物品，军需依照稀有品质不同，所需开启的货币数量要求不同，越稀有的军需，军需内物品品质下限与上限都会提升。置换是指背包内可选择置换“通用弹药”或“活动弹药”，平台会依据当前参考品质以品质越高返比越高的规则进行置换。每件物品的置换价格是顺应市场变化随时变化的，以实际获得时显示的数量为最终依据，兑换商城获得的物品无法被置换。取回是指取回后5E对战平台将会第一时间为用户处理，以确保用户最终能获得饰品奖励。",
  "legal_basis": [
   "《民法典》第一百四十八条"
  ],
@@ -52,18 +52,25 @@
   "军需"
  ],
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "source_lookup_query": "（2024）浙0192民初1779号 吴某、郝某诉杭州某公司网络服务合同纠纷案",
- "vector_text": "【赛道】游戏。【场景】其他。【宣称】军需。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及盲盒抽奖概率真实性验证，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十八条。。【依据】《民法典》第一百四十八条。【结果】驳回原告诉讼请求。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告吴某、原告郝某与被告杭州某有限公司(以下简称某公司)网络服务合同纠纷一案，本院于2024年3月4日立案后，依法适用简易程序，于2024年5月28日公开开庭进行了审理。原告吴某、原告郝某委托诉讼代理人田晓芳、被告某公司委托诉讼代理人倪佳伦到庭参加诉讼。本案现已审理终结。\n根据经审查确认有效的证据以及当事人的陈述，本院认定案件事实如下：\n某公司系5E对战平台的运营商，其于2020年7月上线涉案“军需”活动，旨在向用户销售《反恐精英；全球攻势》(简称“CSGO”)游戏饰品皮肤。其中，该游戏系国外游戏商运营，并非某公司运营。用户参与涉案“军需”活动，须先通过www.csgo.com.cn或steam商店下载该游戏，后由用户登陆5E对战平台账号并同时捆绑steam账户。涉案广告宣称：军需。",
  "raw_text_path": "data/raw_text/case_library_docx__游戏广告合规案例库.json",
  "owner_approval": {
   "approved": true,
@@ -89,6 +96,11 @@
     "illegal_claims"
    ],
    "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "source_record_path": "data/structured_candidates/sector_docx__game__6b073bbb.json",
@@ -96,5 +108,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "5E对战平台“军需”盲盒抽奖活动，吴某充值约14.8万元开启16590次宝箱、郝某充值约31.1万元开启211522次宝箱，主张概率虚假。法院组织现场勘验后台代码，确认概率无异常，市场监管局执法笔录也确认产出概率与展示概率误差在合理范围内",
+    "vector_text": "【赛道】游戏。【场景】其他。【宣称】军需。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及盲盒抽奖概率真实性验证，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十八条。。【依据】《民法典》第一百四十八条。【结果】驳回原告诉讼请求。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2024)浙0192民初1779号",
+  "pkulaw_court": "杭州互联网法院",
+  "pkulaw_title": "吴某;杭州某有限公司;王某;郝某网络服务合同纠纷一审民事判决书",
+  "last_instance_date": "2024.06.05",
+  "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f8168b48bff323e66ba1e52896fa0f88d9d1bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2024_浙0192民初1779号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
 }

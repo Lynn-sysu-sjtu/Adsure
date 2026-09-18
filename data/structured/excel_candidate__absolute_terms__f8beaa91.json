@@ -4,8 +4,8 @@
  "case_number": "（2019）浙03行终112号",
  "source_type": "manual_compilation_pending_source_verification",
  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
- "source_url": null,
- "source_verification_status": "pending_source_lookup",
+ "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4bff23556f1015e296b48ed794677b765bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
  "publish_date": null,
  "decision_date": "2019-05-09",
  "penalty_authority": "温州经济技术开发区海城叶挺亮洁具配件厂与温州市市场监督管理局",
@@ -21,7 +21,7 @@
  "illegal_claims": [
   "采用国际最先进的重力浇铸工艺"
  ],
- "facts_summary": "在阿里巴巴网店销售产品时使用“采用国际最先进的重力浇铸工艺”绝对化用语",
+ "facts_summary": "上诉人温州经济技术开发区海城叶挺亮洁具配件厂（以下简称“叶挺亮洁具厂\"）因与被上诉人温州市市场监督管理局（以下简称“温州市市监局\"）工商行政处罚一案，不服温州市鹿城区人民法院（2018）浙0302行初254号行政判决，向本院提起上诉。本院于2019年2月12日受理后，依法组成合议庭审理了本案。现已审理终结。\n本院认为：《中华人民共和国广告法》（2015年修订）第九条规定，广告不得有下列情形：……（三）使用“国家级\"、“最高级\"、“最佳\"等用语。该法第五十七条规定，有下列行为之一的，由工商行政管理部门责令停止发布广告，对广告主处二十万元以上一百万元以下的罚款：（一）发布有本法第九条、第十条规定的禁止情形的广告的。《中华人民共和国行政处罚法》第二十七条第一款规定，当事人有下列情形之一的，应当依法从轻或者减轻行政处罚：（一）主动消除或者减轻违法行为危害后果的。本案中，上诉人在其阿里巴巴网店发布广告时，采用了绝对化用语，已违反了《中华人民共和国广告法》第九条第（三）项的规定。被上诉人根据该违法事实，并综合考虑上诉人主动减轻违法行为危害后果等因素，在法定标准以下予以减轻处罚，符合上述法律规定。上诉人主张其行为没有造成危害后果，应适用行政处罚法第二十七条第二款的规定不予处罚，但其发布违法广告的时间约三个月，且因此被他人投诉，又不配合相关调查，不符合前款关于没有造成危害后果而不予行政处罚的条件，故对其主张本院不予支持。被上诉人提交的讨论记录等证据足以证实其在作出被诉处罚决定前，已经过案件审理委员会讨论，故对上诉人关于被诉处罚决定未经集体讨论程序违法的主张，本院亦不予采纳。至于上诉人所称的其他地方市场监督管理部门对绝对化用语违法广告只处以数百元至数千元不等的行政处罚，涉及其他行政处罚案件的合法性问题，与本案并无关联，不影响本案的处理。综上，被诉处罚决定证据确凿，适用法律正确，符合法定程序，依法应予支持。原审法院据此判决驳回上诉人的诉讼请求，亦无不当，本院依法予以维持。上诉人的上诉理由缺乏事实和法律依据，对其上诉请求本院不予支持。据此，依照《中华人民共和国行政诉讼法》第八十九条第一款第（一）项的规定，判决如下：",
  "legal_basis": [
   "《广告法》第九条第（三）项、第五十七条第（一）项"
  ],
@@ -34,17 +34,24 @@
   "阿里巴巴网店",
   "网店"
  ],
- "vector_text": "这是一起人工整理的绝对化用语候选案例。案件事实显示，经营者在阿里巴巴网店销售产品时使用“采用国际最先进的重力浇铸工艺”绝对化用语 处罚依据记载为《广告法》第九条第（三）项、第五十七条第（一）项，处理结果为罚款80000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。上诉人温州经济技术开发区海城叶挺亮洁具配件厂（以下简称“叶挺亮洁具厂\"）因与被上诉人温州市市场监督管理局（以下简称“温州市市监局\"）工商行政处罚一案，不服温州市鹿城区人民法院（2018）浙0302行初254号行政判决，向本院提起上诉。本院于2019年2月12日受理后，依法组成合议庭审理了本案。现已审理终结。\n本院认为：《中华人民共和国广告法》（2015年修订）第九条规定，广告不得有下列情形：……（三）使用“国家级\"、“最高级\"、“最佳\"等用语。该法第五十七条规定，有下列行为之一的，由工商行政管理部门责令停止发布广告，对广告主处二十万元以上一百万元以下的罚款：（一）发布有本法第九条、第十条规定的禁止情形的广告的。涉案广告宣称：采用国际最先进的重力浇铸工艺。",
  "rag_chunk_type": "case_summary",
- "review_status": "approved",
- "approved_for_rag": true,
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
  "audit": {
-  "review_status": "approved",
+  "review_status": "pending_pkulaw_human_review",
   "reviewer": "项目负责人（用户 2026-09-15 指令）",
   "review_date": "2026-09-15",
   "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
-  "approved_for_rag": true
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
  },
  "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
  "owner_approval": {
@@ -75,6 +82,11 @@
   {
    "action": "fill_violation_type",
    "note": "从 risk_dimensions 首项派生：绝对化用语"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
   }
  ],
  "violation_type": "绝对化用语",
@@ -83,5 +95,54 @@
   "promoted_to_production": true,
   "promoted_at": "2026-09-15T03:41:10+08:00",
   "approved_by": "项目负责人（用户 2026-09-15 指令）"
- }
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在阿里巴巴网店销售产品时使用“采用国际最先进的重力浇铸工艺”绝对化用语",
+    "vector_text": "这是一起人工整理的绝对化用语候选案例。案件事实显示，经营者在阿里巴巴网店销售产品时使用“采用国际最先进的重力浇铸工艺”绝对化用语 处罚依据记载为《广告法》第九条第（三）项、第五十七条第（一）项，处理结果为罚款80000元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2019)浙03行终112号",
+  "pkulaw_court": "浙江省温州市中级人民法院",
+  "pkulaw_title": "温州经济技术开发区海城叶挺亮洁具配件厂、温州市市场监督管理局工商行政管理(工商)二审行政判决书",
+  "last_instance_date": "2019.05.09",
+  "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4bff23556f1015e296b48ed794677b765bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2019_浙03行终112号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "本院认为(回退)"
+  ]
+ },
+ "human_review_required": true
 }
