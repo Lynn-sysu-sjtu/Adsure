@@ -1,8 +1,8 @@
 # Ads Penalty RAG（广告合规 AI 案例库）
 
-面向广告合规审核的行政处罚案例库与规则 RAG 基础工程。仓库将官方处罚材料、待核验候选材料和规则引擎测试物料严格分开，提供可重复执行的导入、清洗、校验、切片和本地检索链路。
+面向广告合规审核的行政处罚案例库与规则 RAG 服务。仓库将官方处罚材料、待核验候选材料和规则引擎测试物料严格分开，提供可重复执行的导入、清洗、校验、切片、本地检索和多租户 HTTP 服务。
 
-当前版本已完成离线数据流水线、Excel/DOCX 候选案例导入、行业候选切片、`/audit` 回归测试数据、飞书/法务工作台联调契约和北大法宝 MCP 的安全配置；尚未提供可部署的 HTTP 服务、Embedding 或生产向量数据库。
+当前版本已完成离线数据流水线、Excel/DOCX 候选案例导入、行业候选切片、`/audit` 回归测试数据、飞书/法务工作台联调契约、可部署的 HTTP 检索服务和北大法宝 MCP 的安全配置；尚未提供 Embedding 或生产向量数据库。
 
 ## 快速开始
 
@@ -27,9 +27,14 @@ python3 -m unittest discover -s tests -v
 | 官方案例流水线 | 获取、正文提取、LLM/Mock 清洗、字段校验、RAG 切片 | `make pipeline` |
 | 候选案例导入 | Excel 与行业 DOCX 导入；候选数据不进入生产库 | `make candidate-pipeline`、`make sector-candidate-pipeline` |
 | 本地检索 | `case_summary` 与 `regulatory_logic` 两类切片，中文 BM25 词法召回 | `python3 src/test_retrieval.py --query "保健品 会销 降血压"` |
+| 案例检索 API | `POST /cases/retrieve`、`GET /health`、环境变量 Key 鉴权、生产/候选索引隔离；保留 `/search` 兼容路由 | `make serve` |
 | 审核回归数据 | 20 条真实广告文案测试集及独立校验 | `make audit-cases` |
 | 联调设计 | 飞书状态机、规则引擎与案例库的请求、响应、边界与验收口径 | `docs/案例库接入接口确认稿.md` |
 | 权威法律检索 | 项目级北大法宝 MCP 配置与可复用安装器；凭证仅由环境变量注入 | `docs/北大法宝MCP接入.md`、`tools/pkulaw_mcp/install.py` |
+
+当前 production 已完整结构化同一市场监管总局公开页中的 10 起典型案例，
+生成 20 个检索切片；公开页未披露具体法条编号，因此仍保留“广告法有关规定”
+并等待规则映射复核，不自行补写条款。
 
 ## 数据边界与入库规则
 
@@ -60,6 +65,17 @@ make audit-cases
 
 # 只运行本地检索
 make test
+
+# 启动生产索引接口（默认 127.0.0.1:8505）；Key 必须由部署环境注入
+export ADSURE_API_KEY="<通过安全渠道生成的随机 Key>"
+export CASE_ENGINE_INDEX_SCOPE="production"
+make serve
+
+# 运行 RAG API、租户隔离和空结果降级测试
+make test-rag
+
+# 服务启动后执行健康检查和正式接口冒烟；凭证只从环境变量读取
+make smoke-rag
 ```
 
 LLM 清洗支持 Mock、OpenAI 和 Anthropic：
@@ -74,9 +90,12 @@ python3 src/clean_cases.py --mode anthropic
 
 ## 当前系统边界
 
-- 已实现的是本地文件流水线和 BM25 词法检索；`vector_text` 是检索素材，不代表已部署向量库。
-- 当前没有 Flask、FastAPI 或 `POST /cases/retrieve` 路由；接口契约是队友可据以实现的目标设计，不能表述为已上线服务。
+- 已实现本地文件流水线、BM25 排序、FastAPI `POST /cases/retrieve` 与 `GET /health`；BM25 原始 `score` 不冒充 0—1 相似度。
+- API Key 优先从 `ADSURE_API_KEY` 读取，并兼容旧的 `CASE_ENGINE_API_KEY`；默认索引范围为 `production`，候选联调必须显式设置 `CASE_ENGINE_INDEX_SCOPE=candidate`。
 - 生产环境只能使用 `production_chunks.json`；候选索引仅可在隔离联调环境中显式启用，且必须返回候选态标记。
+- 飞书法务工作台正式调用 `POST /cases/retrieve`；`POST /search` 仅作为已有多租户调用方的兼容路由保留，不是本轮飞书联调主契约。
+- 正式召回在 BM25 打分前执行来源、审核状态和行业兼容过滤；生产索引为空时不回退候选库。
+- 健康检查同时验证索引与服务端 Key 配置，响应携带脱敏请求追踪 ID 和索引版本。
 - 实际访问官方页面时，必须遵守 `allowed_domains`、robots 和访问频率限制；不得绕过登录、验证码或调用非公开接口。
 
 ## 项目结构
@@ -100,7 +119,8 @@ tools/pkulaw_mcp/            可复用 MCP 配置安装与本地审计工具
 
 ## 联调与文档入口
 
-- [案例库接入接口确认稿](docs/案例库接入接口确认稿.md)：当前唯一接口口径，区分 `/audit` 与未来的 `/cases/retrieve`。
+- [RAG 服务部署与联调](docs/RAG服务部署与联调.md)：`/cases/retrieve`、`/health`、8505 部署和验收口径。
+- [案例库接入接口确认稿](docs/案例库接入接口确认稿.md)：法务工作台正式 `/cases/retrieve` 契约。
 - [案例库联调说明](docs/案例库联调说明.md)：系统边界、数据开关、验收步骤和问题记录模板。
 - [北大法宝 MCP 接入](docs/北大法宝MCP接入.md)：四个只读检索服务的环境变量配置与验收方式。
 - [北大法宝 MCP 安装器](tools/pkulaw_mcp/README.md)：将安全的 MCP 配置合并进其他 Codex 项目，不接收或写入 Token。
@@ -119,6 +139,13 @@ make audit-cases
 
 合并后优先完成三项工作：
 
-1. 以 `production_chunks.json` 为唯一生产索引，实现带输入校验和候选态隔离的 `/cases/retrieve` 服务适配层。
-2. 补齐官方详情页来源并完成逐条人工审核，才允许候选案例迁入正式库。
-3. 由部署环境安全注入接口凭证；仓库只保留变量名和无敏感值的示例配置。
+1. 持续补齐官方详情页来源并完成逐条人工审核，才允许更多候选案例迁入正式库。
+2. 将 `mapped_rule_ids` 的人工复核结果补回已核验案例。
+3. 由部署环境安全注入和轮换接口凭证；仓库只保留变量名和无敏感值的示例配置。
+
+执行 `make rule-mapping-queue` 可生成正式案例人工映射队列；该队列只汇总已核验
+证据，不自动猜测规则 ID 或具体法条。
+
+部署前可执行 `ADSURE_API_KEY="<仅在当前 shell 注入>" make preflight-rag`。
+正式索引为空、原文缺失、误启候选索引或 Key 缺失时预检会失败；systemd
+服务也已配置相同的启动前阻断检查。

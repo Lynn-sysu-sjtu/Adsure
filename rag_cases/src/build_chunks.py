@@ -13,6 +13,27 @@ DEFAULT_REPORTS_DIR = Path("data/reports")
 MANUAL_CANDIDATE_SOURCE_TYPE = "manual_compilation_pending_source_verification"
 SECTOR_CANDIDATE_SOURCE_TYPE = "manual_docx_sector_report_pending_source_verification"
 OFFLINE_SAMPLE_SOURCE_TYPE = "offline_sample"
+COMMON_PRODUCTION_REQUIRED_FIELDS = [
+    "case_id",
+    "title",
+    "source_name",
+    "raw_text_path",
+    "risk_dimensions",
+    "facts_summary",
+    "vector_text",
+    "legal_basis",
+    "illegal_claims",
+    "regulatory_logic",
+]
+OFFICIAL_PRODUCTION_REQUIRED_FIELDS = [
+    "publish_date",
+    "penalty_authority",
+    "party_name",
+    "industry",
+    "product_or_service",
+    "penalty_result",
+    "violation_type",
+]
 
 
 def unique_list(values: list) -> list:
@@ -20,7 +41,11 @@ def unique_list(values: list) -> list:
 
 
 def base_metadata(case: dict) -> dict:
+    scope = case.get("scope", "public")
+    tenant_id = case.get("tenant_id") if scope == "tenant" else None
     return {
+        "scope": scope,
+        "tenant_id": tenant_id,
         "source_type": case.get("source_type", ""),
         "sector": case.get("sector", ""),
         "sector_cn": case.get("sector_cn", ""),
@@ -44,10 +69,14 @@ def base_metadata(case: dict) -> dict:
 
 def chunk_from_case(case: dict, chunk_type: str, text: str) -> dict:
     chunk_id = f"{case['case_id']}__{chunk_type}"
+    scope = case.get("scope", "public")
+    tenant_id = case.get("tenant_id") if scope == "tenant" else None
     chunk = {
         "chunk_id": chunk_id,
         "case_id": case["case_id"],
         "chunk_type": chunk_type,
+        "scope": scope,
+        "tenant_id": tenant_id,
         "title": case.get("title", ""),
         "source_name": case.get("source_name", ""),
         "source_url": case.get("source_url", ""),
@@ -124,6 +153,11 @@ def has_value(value) -> bool:
 
 def production_exclusion_reasons(case: dict) -> list[str]:
     reasons = []
+    scope = case.get("scope", "public")
+    if scope not in {"public", "tenant"}:
+        reasons.append("scope_not_public_or_tenant")
+    if scope == "tenant" and not has_value(case.get("tenant_id")):
+        reasons.append("tenant_scope_missing_tenant_id")
     source_type = case.get("source_type")
     if source_type == OFFLINE_SAMPLE_SOURCE_TYPE:
         reasons.append("source_type_offline_sample")
@@ -131,15 +165,22 @@ def production_exclusion_reasons(case: dict) -> list[str]:
         reasons.append("source_type_manual_compilation_pending_source_verification")
     if source_type == SECTOR_CANDIDATE_SOURCE_TYPE:
         reasons.append("source_type_manual_docx_sector_report_pending_source_verification")
-    if not valid_source_url(case.get("source_url")):
-        reasons.append("source_url_not_verified_http_https")
-    if case.get("source_verification_status") != "source_verified":
-        reasons.append("source_verification_status_not_source_verified")
+    if scope == "tenant":
+        if case.get("source_verification_status") not in {"source_verified", "tenant_verified"}:
+            reasons.append("tenant_source_verification_status_not_verified")
+    else:
+        if not valid_source_url(case.get("source_url")):
+            reasons.append("source_url_not_verified_http_https")
+        if case.get("source_verification_status") != "source_verified":
+            reasons.append("source_verification_status_not_source_verified")
     if not approved_for_rag(case):
         reasons.append("audit_not_approved_for_rag")
     if review_status(case) not in {"approved", "reviewed"}:
         reasons.append("review_status_not_approved_or_reviewed")
-    for field in ["legal_basis", "illegal_claims", "regulatory_logic"]:
+    required_fields = list(COMMON_PRODUCTION_REQUIRED_FIELDS)
+    if source_type == "official_typical_case":
+        required_fields.extend(OFFICIAL_PRODUCTION_REQUIRED_FIELDS)
+    for field in required_fields:
         if not has_value(case.get(field)):
             reasons.append(f"missing_{field}")
     return reasons

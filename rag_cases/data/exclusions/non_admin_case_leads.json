@@ -1,0 +1,16 @@
+{
+  "updated_at": "2026-07-20",
+  "items": [
+    {
+      "lead_id": "one_yuan_grab_ten_thousand_primogems",
+      "title": "‘1元抢一万原石’案件",
+      "case_nature": "civil_unfair_competition_dispute",
+      "excluded_from": [
+        "administrative_penalty_cases",
+        "candidate_chunks",
+        "production_chunks"
+      ],
+      "reason": "该案属于民事不正当竞争纠纷，不是行政处罚案件，不存在行政处罚决定书。"
+    }
+  ]
+}

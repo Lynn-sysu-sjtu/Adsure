@@ -1,0 +1,70 @@
+{
+  "case_id": "mihoyo_2014_2520140214",
+  "title": "上海米哈游网络科技股份有限公司随机抽取及无证网络游戏经营处罚案（官方辅助披露）",
+  "case_number": "第2520140214号",
+  "source_type": "manual_compilation_pending_source_verification",
+  "source_name": "中国证监会预先披露的米哈游招股说明书（官方辅助证据，非处罚决定书原件）",
+  "source_url": "https://www.csrc.gov.cn/csrc/c101803/c1007028/content.shtml",
+  "source_page_url": "https://www.csrc.gov.cn/csrc/c101803/c1007028/content.shtml",
+  "source_page_reference": "招股说明书页码1-1-199至1-1-200（PDF第199至200页）",
+  "source_verification_status": "official_auxiliary_evidence_only",
+  "original_decision_url": null,
+  "original_decision_url_status": "not_found",
+  "source_lookup_priority": "P1",
+  "source_lookup_query": "第2520140214号 上海市文化市场行政执法总队 米哈游 行政处罚决定书",
+  "publish_date": "2017-02-17",
+  "decision_date": "2014-07-22",
+  "penalty_authority": "上海市文化市场行政执法总队",
+  "party_name": "上海米哈游网络科技股份有限公司",
+  "region": "上海市",
+  "industry": "游戏",
+  "sector": "game",
+  "sector_cn": "游戏",
+  "violation_type": "无证经营并以随机抽取方式诱导投入游戏虚拟货币",
+  "case_nature": "administrative_penalty_with_official_auxiliary_evidence",
+  "is_admin_penalty_candidate": true,
+  "product_or_service": "网络游戏产品和服务",
+  "ad_channel": "网络游戏运营",
+  "risk_dimensions": [
+    "游戏抽奖概率公示",
+    "概率规则透明度",
+    "平台准入/资质不符"
+  ],
+  "illegal_claims": [
+    "以随机抽取的偶然方式诱导用户投入网络游戏虚拟货币后获得游戏产品和服务"
+  ],
+  "facts_summary": "中国证监会预先披露的米哈游招股说明书记载：2014年7月22日，上海市文化市场行政执法总队作出第2520140214号行政处罚决定，认定公司未取得《网络文化经营许可证》擅自从事网络游戏上网经营活动，并以随机抽取方式诱导用户投入游戏虚拟货币后获得游戏产品和服务。",
+  "legal_basis": [
+    "招股说明书未披露具体处罚依据，待取得处罚决定书原文核验"
+  ],
+  "penalty_result": "没收违法所得人民币16408元，并罚款人民币20000元",
+  "penalty_amount": 20000,
+  "illegal_income_confiscated": 16408,
+  "regulatory_logic": "候选证据显示，网络游戏经营者同时存在经营资质缺失和随机抽取付费机制问题。该记录仅用于检索相似的付费抽取、概率机制和游戏经营资质风险；由于未取得处罚决定书原文，不推定具体法律条款。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "米哈游",
+    "第2520140214号",
+    "随机抽取",
+    "游戏虚拟货币",
+    "网络文化经营许可证",
+    "抽卡",
+    "概率",
+    "没收违法所得16408元",
+    "罚款20000元"
+  ],
+  "vector_text": "网络游戏经营者未取得网络文化经营许可即开展网络游戏经营，并设置投入游戏虚拟货币后通过随机抽取获得游戏产品和服务的机制。官方招股书辅助披露显示，文化执法机关作出没收违法所得和罚款的行政处罚；该案例可用于检索抽卡、爆率、随机奖励及游戏经营资质风险，但处罚法条仍待决定书原文核验。",
+  "rag_chunk_type": "case_summary",
+  "scope": "public",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "raw_text_path": "data/raw_text/mihoyo_ipo_2017_penalty_disclosure.json",
+  "notes": "已核验证监会官方披露页和PDF；当前证据是发行人招股说明书中的处罚披露，不是处罚决定书原件，只进入候选索引。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "待补上海市文化市场行政执法总队处罚决定书原文及处罚依据。",
+    "approved_for_rag": false
+  }
+}

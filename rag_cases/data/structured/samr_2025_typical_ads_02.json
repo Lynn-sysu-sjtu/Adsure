@@ -1,0 +1,53 @@
+{
+  "case_id": "samr_2025_typical_ads_02",
+  "title": "广州市海珠区市场监管局查处那拉尊驼（广州）乳业有限公司违法广告案",
+  "source_type": "official_typical_case",
+  "source_name": "市场监管总局",
+  "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html",
+  "publish_date": "2026-01-31",
+  "decision_date": "2025-12",
+  "penalty_authority": "广东省广州市海珠区市场监管局",
+  "party_name": "那拉尊驼（广州）乳业有限公司",
+  "region": "广东省广州市海珠区",
+  "industry": "普通食品",
+  "violation_type": "普通食品疾病治疗功效及虚假宣传",
+  "product_or_service": "驼乳粉",
+  "ad_channel": "",
+  "risk_dimensions": [
+    "虚假宣传",
+    "普通食品疾病治疗功效宣传",
+    "广告引证内容不规范"
+  ],
+  "illegal_claims": [
+    "一带一路签约项目",
+    "有相关省份优惠销售名额",
+    "改善肺结节、降血糖、降脂降压"
+  ],
+  "facts_summary": "那拉尊驼（广州）乳业有限公司发布驼乳粉普通食品广告，使用虚假项目信息和优惠名额信息，宣称改善肺结节、降血糖、降脂降压，并存在未真实、准确使用引证内容的行为。2025年12月，广州市海珠区市场监管局罚款45万元。",
+  "legal_basis": [
+    "《中华人民共和国广告法》有关规定"
+  ],
+  "penalty_result": "罚款45万元",
+  "penalty_amount": 450000,
+  "regulatory_logic": "普通食品广告不得虚构项目背景和优惠名额，不得宣称疾病预防、治疗功效，广告引证内容还应当真实、准确。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "驼乳粉",
+    "降血糖",
+    "降脂降压",
+    "肺结节",
+    "引证内容"
+  ],
+  "vector_text": "经营者在驼乳粉普通食品广告中虚构签约项目和优惠名额，宣称产品可以改善肺结节、降血糖及降脂降压，并不真实准确地使用引证内容，监管机关据此认定广告违法。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "approved",
+  "source_verification_status": "source_verified",
+  "approved_for_rag": true,
+  "raw_html_path": "data/raw_html/samr_typical_ads__2ad160ae3056.json",
+  "raw_text_path": "data/raw_text/samr_typical_ads__2ad160ae3056.json",
+  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。",
+  "audit": {
+    "review_status": "approved",
+    "approved_for_rag": true
+  }
+}

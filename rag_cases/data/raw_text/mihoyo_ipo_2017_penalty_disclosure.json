@@ -1,0 +1,28 @@
+{
+  "evidence_id": "mihoyo_ipo_2017_penalty_disclosure",
+  "title": "上海米哈游网络科技股份有限公司招股说明书中的两次行政处罚披露",
+  "source_name": "中国证券监督管理委员会预先披露文件",
+  "source_page_url": "https://www.csrc.gov.cn/csrc/c101803/c1007028/content.shtml",
+  "source_pdf_url": "https://www.csrc.gov.cn/csrc/c101803/c1007028/1007028/files/%E4%B8%8A%E6%B5%B7%E7%B1%B3%E5%93%88%E6%B8%B8%E7%BD%91%E7%BB%9C%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%E9%A6%96%E6%AC%A1%E5%85%AC%E5%BC%80%E5%8F%91%E8%A1%8C%E8%82%A1%E7%A5%A8%E6%8B%9B%E8%82%A1%E8%AF%B4%E6%98%8E%E4%B9%A6%EF%BC%88%E7%94%B3%E6%8A%A5%E7%A8%BF2017%E5%B9%B42%E6%9C%8817%E6%97%A5%E6%8A%A5%E9%80%81%EF%BC%89.pdf",
+  "source_pages": "招股说明书页码1-1-199至1-1-200（PDF第199至200页）",
+  "evidence_type": "official_auxiliary_disclosure_not_original_penalty_decision",
+  "original_penalty_decision_urls_found": 0,
+  "extraction_date": "2026-07-20",
+  "disclosures": [
+    {
+      "decision_number": "第2520140214号",
+      "decision_date": "2014-07-22",
+      "penalty_authority": "上海市文化市场行政执法总队",
+      "facts": "未取得《网络文化经营许可证》擅自从事网络游戏上网经营活动，并诱导网络游戏用户投入网络游戏虚拟货币后以随机抽取的偶然方式获得网络游戏产品和服务。",
+      "penalty_result": "没收违法所得人民币16408元，并罚款人民币20000元。"
+    },
+    {
+      "decision_number": "第2520150399号",
+      "decision_date": "2016-01-25",
+      "penalty_authority": "上海市文化市场行政执法总队",
+      "facts": "以随机抽取的偶然方式诱导网络游戏用户投入网络游戏虚拟货币获取网络游戏产品，并且未对网络游戏用户使用有效身份证件进行实名注册。",
+      "penalty_result": "责令改正，并从轻罚款人民币20000元。"
+    }
+  ],
+  "verification_note": "证监会页面确认该PDF为发行人招股说明书预先披露附件。处罚事实来自发行人披露，不是上海市文化市场行政执法总队公开的处罚决定书原件；具体处罚依据仍待原决定书核验。"
+}

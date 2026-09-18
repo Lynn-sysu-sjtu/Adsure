@@ -1,0 +1,26 @@
+{
+  "evidence_id": "coconut_group_penalty_leads_user_research",
+  "title": "椰树集团相关处罚线索及官方原文核验状态",
+  "source_type": "user_supplied_research_note",
+  "recorded_date": "2026-07-20",
+  "official_lookup_entry_urls": [
+    "https://amr.hainan.gov.cn/",
+    "https://e-register.amr.hainan.gov.cn:1888/",
+    "https://www.gsxt.gov.cn/index.html",
+    "https://www.creditchina.gov.cn/"
+  ],
+  "original_penalty_decision_urls_found": 0,
+  "leads": [
+    {
+      "lead_id": "coconut_group_2021_recruitment_ad",
+      "description": "2021年招聘广告处罚线索",
+      "verification_status": "pending_official_source_lookup"
+    },
+    {
+      "lead_id": "coconut_group_2024_coconut_juice_rubbing_ad",
+      "description": "2024年‘用椰汁擦乳’广告处罚线索",
+      "verification_status": "pending_official_source_lookup"
+    }
+  ],
+  "verification_note": "现有链接仅为官方查询入口，不是具体案件的处罚决定书页面。未取得正式原文前，不确认具体处罚主体、处罚机关、决定书编号、法律依据、处罚金额或处罚结果。"
+}

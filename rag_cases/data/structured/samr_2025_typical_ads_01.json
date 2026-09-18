@@ -1,0 +1,53 @@
+{
+  "case_id": "samr_2025_typical_ads_01",
+  "title": "广州市番禺区市场监管局查处广州简美健康科技有限公司违法广告案",
+  "source_type": "official_typical_case",
+  "source_name": "市场监管总局",
+  "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html",
+  "publish_date": "2026-01-31",
+  "decision_date": "2025-11",
+  "penalty_authority": "广东省广州市番禺区市场监管局",
+  "party_name": "广州简美健康科技有限公司",
+  "region": "广东省广州市番禺区",
+  "industry": "健康产品",
+  "violation_type": "疾病治疗功效及虚假宣传",
+  "product_or_service": "儿童叶黄素、润眼丸、护眼灯、眼鼻通益生菌等普通商品",
+  "ad_channel": "",
+  "risk_dimensions": [
+    "虚假宣传",
+    "疾病治疗功效宣传"
+  ],
+  "illegal_claims": [
+    "促进眼角膜修复",
+    "有效预防近视，去检查视力已经4.9了！",
+    "适合过敏性鼻炎",
+    "过敏体质得到全面改善",
+    "brieye长期与8位国际权威眼科医生组成顾问团"
+  ],
+  "facts_summary": "广州简美健康科技有限公司发布多款普通商品广告，广告含有涉及疾病预防、治疗功效的内容及虚假专家顾问团信息。2025年11月，广州市番禺区市场监管局对当事人作出罚款60万元的行政处罚。",
+  "legal_basis": [
+    "《中华人民共和国广告法》有关规定"
+  ],
+  "penalty_result": "罚款60万元",
+  "penalty_amount": 600000,
+  "regulatory_logic": "普通商品广告不得宣称疾病预防、治疗功效，也不得使用虚假的国际权威眼科医生顾问团信息误导消费者。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "儿童护眼",
+    "预防近视",
+    "过敏性鼻炎",
+    "虚假专家"
+  ],
+  "vector_text": "经营者为儿童叶黄素、护眼灯和益生菌等普通商品发布广告，宣称可以预防近视、改善过敏体质并虚构国际权威医生顾问团，监管机关认定存在疾病功效宣传和虚假宣传风险。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "approved",
+  "source_verification_status": "source_verified",
+  "approved_for_rag": true,
+  "raw_html_path": "data/raw_html/samr_typical_ads__2ad160ae3056.json",
+  "raw_text_path": "data/raw_text/samr_typical_ads__2ad160ae3056.json",
+  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。",
+  "audit": {
+    "review_status": "approved",
+    "approved_for_rag": true
+  }
+}

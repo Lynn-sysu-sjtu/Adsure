@@ -1,0 +1,50 @@
+{
+  "case_id": "samr_2025_typical_ads_07",
+  "title": "安徽省六安市市场监管局查处安徽康桥置业有限公司违法广告案",
+  "source_type": "official_typical_case",
+  "source_name": "市场监管总局",
+  "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html",
+  "publish_date": "2026-01-31",
+  "decision_date": "2025-11",
+  "penalty_authority": "安徽省六安市市场监管局",
+  "party_name": "安徽康桥置业有限公司",
+  "region": "安徽省六安市",
+  "industry": "房地产",
+  "violation_type": "房地产广告误导及升值承诺",
+  "product_or_service": "房地产项目",
+  "ad_channel": "",
+  "risk_dimensions": [
+    "房地产广告误导",
+    "升值承诺"
+  ],
+  "illegal_claims": [
+    "将未纳入规划的交通、商业、医疗等设施作为宣传内容",
+    "升值承诺"
+  ],
+  "facts_summary": "安徽康桥置业有限公司发布房地产广告，将未纳入规划的交通、商业、医疗等设施作为宣传内容，并作出升值承诺，误导购房者。2025年11月，安徽省六安市市场监管局罚款15万元。",
+  "legal_basis": [
+    "《中华人民共和国广告法》有关规定"
+  ],
+  "penalty_result": "罚款15万元",
+  "penalty_amount": 150000,
+  "regulatory_logic": "房地产广告不得把未纳入规划的配套设施作为确定宣传内容，也不得作出升值承诺误导购房者。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "房地产广告",
+    "规划外配套",
+    "升值承诺",
+    "误导购房者"
+  ],
+  "vector_text": "房地产经营者在广告中宣传未纳入规划的交通、商业和医疗配套设施，并向购房者作出升值承诺，市场监管部门认定相关内容具有误导性并依法处罚。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "approved",
+  "source_verification_status": "source_verified",
+  "approved_for_rag": true,
+  "raw_html_path": "data/raw_html/samr_typical_ads__2ad160ae3056.json",
+  "raw_text_path": "data/raw_text/samr_typical_ads__2ad160ae3056.json",
+  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。",
+  "audit": {
+    "review_status": "approved",
+    "approved_for_rag": true
+  }
+}

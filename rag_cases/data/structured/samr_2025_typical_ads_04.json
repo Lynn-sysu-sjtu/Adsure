@@ -1,0 +1,49 @@
+{
+  "case_id": "samr_2025_typical_ads_04",
+  "title": "呼和浩特市赛罕区市场监管局查处内蒙古草之楼生物科技有限公司违法广告案",
+  "source_type": "official_typical_case",
+  "source_name": "市场监管总局",
+  "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html",
+  "publish_date": "2026-01-31",
+  "decision_date": "2025-12",
+  "penalty_authority": "内蒙古自治区呼和浩特市赛罕区市场监管局",
+  "party_name": "内蒙古草之楼生物科技有限公司",
+  "region": "内蒙古自治区呼和浩特市赛罕区",
+  "industry": "普通食品",
+  "violation_type": "普通食品疾病治疗功效宣传",
+  "product_or_service": "有机紫苏籽油α—亚麻酸",
+  "ad_channel": "直播",
+  "risk_dimensions": [
+    "普通食品疾病治疗功效宣传",
+    "直播带货违法广告"
+  ],
+  "illegal_claims": [
+    "改善、缓解、抗癌"
+  ],
+  "facts_summary": "内蒙古草之楼生物科技有限公司以直播形式发布有机紫苏籽油α—亚麻酸普通食品广告，广告含有“改善、缓解、抗癌”等涉及疾病预防、治疗功效的内容。2025年12月，呼和浩特市赛罕区市场监管局罚款20万元。",
+  "legal_basis": [
+    "《中华人民共和国广告法》有关规定"
+  ],
+  "penalty_result": "罚款20万元",
+  "penalty_amount": 200000,
+  "regulatory_logic": "普通食品直播广告不得使用改善、缓解、抗癌等涉及疾病预防、治疗功效的宣传内容。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "普通食品",
+    "紫苏籽油",
+    "直播",
+    "抗癌"
+  ],
+  "vector_text": "经营者通过直播为有机紫苏籽油普通食品发布广告，使用改善、缓解和抗癌等疾病预防治疗功效表述，监管机关认定普通食品广告不得作此类疾病功效宣传。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "approved",
+  "source_verification_status": "source_verified",
+  "approved_for_rag": true,
+  "raw_html_path": "data/raw_html/samr_typical_ads__2ad160ae3056.json",
+  "raw_text_path": "data/raw_text/samr_typical_ads__2ad160ae3056.json",
+  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。",
+  "audit": {
+    "review_status": "approved",
+    "approved_for_rag": true
+  }
+}

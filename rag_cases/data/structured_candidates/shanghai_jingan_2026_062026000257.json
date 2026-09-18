@@ -1,0 +1,152 @@
+{
+  "case_id": "shanghai_jingan_2026_062026000257",
+  "title": "上海市静安区市场监督管理局查处上海百事得电子有限公司发布违背社会良好风尚广告案",
+  "case_number": "沪市监静处〔2026〕062026000257号",
+  "institution_code": "2071343018",
+  "source_type": "manual_compilation_pending_source_verification",
+  "source_name": "上海市静安区市场监督管理局行政处罚决定书（用户提供文本）",
+  "source_url": "https://mp.weixin.qq.com/s/liRoPfi8qiBPXoxx6uEnyQ?scene=1",
+  "secondary_source_urls": [
+    "https://zh.wikisource.org/zh/行政处罚决定书（沪市监静处〔2026〕062026000257号）",
+    "https://sdxw.iqilu.com/w/article/YS0yMS0xNzMwMTcwMQ.html",
+    "https://m.21jingji.com/article/20260715/herald/0226c71d175d7e3bb65acfc1cd0fce30.html"
+  ],
+  "source_verification_status": "pending_official_source_lookup",
+  "original_decision_url": null,
+  "original_decision_url_status": "not_found",
+  "official_lookup_entry_urls": [
+    "https://scjgj.sh.gov.cn/",
+    "https://www.gsxt.gov.cn/index.html"
+  ],
+  "source_lookup_priority": "P1",
+  "source_lookup_query": "沪市监静处〔2026〕062026000257号 上海百事得电子有限公司",
+  "publish_date": null,
+  "decision_date": null,
+  "penalty_authority": "上海市静安区市场监督管理局",
+  "party_name": "上海百事得电子有限公司",
+  "unified_social_credit_code": "913101147032069026",
+  "legal_representative": "黄飞彪",
+  "registered_address": "上海市嘉定区封周路655号14幢201室J1990",
+  "actual_business_address": "上海市徐汇区漕溪北路41号汇嘉大厦27E座",
+  "region": "上海市静安区",
+  "industry": "通用",
+  "sector": "general",
+  "sector_cn": "通用",
+  "violation_type": "发布违背社会良好风尚广告",
+  "case_nature": "administrative_penalty_decision",
+  "is_admin_penalty_candidate": true,
+  "product_or_service": "罗技GPW三代8K无线游戏鼠标礼赠套装",
+  "ad_channel": "抖音短视频",
+  "risk_dimensions": [
+    "违背社会良好风尚",
+    "侮辱消费者",
+    "网络营销风险",
+    "消费者权益争议"
+  ],
+  "illegal_claims": [
+    "当我一降价，你还不是像狗一样跑过来"
+  ],
+  "facts_summary": "2026年3月25日至26日，上海百事得电子有限公司作为广告主和获授权的抖音号“罗技”（LogitechChina）运营方，为推广其“罗技G官方旗舰店”销售的GPW三代鼠标，自行制作并发布含有“当我一降价，你还不是像狗一样跑过来”的降价促销视频。监管机关认定该文案客观上贬低、侮辱消费者人格，属于违背社会良好风尚的广告内容。",
+  "legal_basis": [
+    "《中华人民共和国广告法》第三条",
+    "《中华人民共和国广告法》第九条第（七）项",
+    "《中华人民共和国广告法》第五十七条第（一）项",
+    "《关于规范市场监督管理行政处罚裁量权的指导意见》第十四条第（二）项"
+  ],
+  "penalty_result": "责令停止发布广告、消除影响，并罚款人民币20万元",
+  "penalty_amount": 200000,
+  "regulatory_logic": "运营方利用品牌抖音号发布促销视频并将流量导向其自营旗舰店，属于为推销商品而发布广告的广告主。广告以将消费者比作“狗”的文案吸睛引流，客观上贬低、侮辱消费者人格，即使创意来自热门模板、发布人员越过内部审核且企业无主观故意，也不改变内容违背社会良好风尚的违法性质。及时删除、配合调查和完善审核流程只作为从轻处罚情节。",
+  "mapped_rule_ids": [
+    "ADLAW-003",
+    "ADLAW-009-07"
+  ],
+  "liability_rule_ids": [
+    "ADLAW-057-01"
+  ],
+  "possible_liability_rule_ids": [],
+  "legal_basis_details": [
+    {
+      "rule_id": "ADLAW-003",
+      "law_name": "中华人民共和国广告法",
+      "article": "第三条",
+      "paragraph": null,
+      "item": null,
+      "rule_type": "general_principle",
+      "rule_summary": "广告应当真实、合法，以健康的表现形式表达广告内容，并符合社会主义精神文明建设和弘扬中华民族优秀传统文化的要求。",
+      "rule_text_mode": "normalized_summary_not_verbatim",
+      "relation": "explicitly_cited_applicable_rule",
+      "mapping_basis": "user_supplied_penalty_decision_text",
+      "mapping_review_status": "verified_against_user_supplied_decision_text",
+      "version_date": "2021-04-29",
+      "effective_status": "有效",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    },
+    {
+      "rule_id": "ADLAW-009-07",
+      "law_name": "中华人民共和国广告法",
+      "article": "第九条",
+      "paragraph": "第一款",
+      "item": "第七项",
+      "rule_type": "content_prohibition",
+      "rule_summary": "广告不得妨碍社会公共秩序或者违背社会良好风尚。",
+      "rule_text_mode": "normalized_summary_not_verbatim",
+      "relation": "explicitly_cited_applicable_rule",
+      "mapping_basis": "user_supplied_penalty_decision_text",
+      "mapping_review_status": "verified_against_user_supplied_decision_text",
+      "version_date": "2021-04-29",
+      "effective_status": "有效",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    },
+    {
+      "rule_id": "ADLAW-057-01",
+      "law_name": "中华人民共和国广告法",
+      "article": "第五十七条",
+      "paragraph": "第一款",
+      "item": "第一项",
+      "rule_type": "liability",
+      "rule_summary": "发布具有本法第九条、第十条规定禁止情形的广告，适用本项规定的行政责任。",
+      "rule_text_mode": "normalized_summary_not_verbatim",
+      "relation": "explicitly_cited_liability_rule",
+      "mapping_basis": "user_supplied_penalty_decision_text",
+      "mapping_review_status": "verified_against_user_supplied_decision_text",
+      "version_date": "2021-04-29",
+      "effective_status": "有效",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    }
+  ],
+  "legal_basis_provenance": {
+    "case_source_text": "用户提供的行政处罚决定书全文明确载明《中华人民共和国广告法》第三条、第九条第（七）项和第五十七条第（一）项。",
+    "specific_articles_published_by_case_source": true,
+    "mapping_status": "explicit_in_user_supplied_decision_text_pending_official_source_url",
+    "official_source_url_status": "pending_lookup",
+    "warning": "当前source_url为微信文章，另有维基文库及媒体转载可供交叉核对；未定位到政府或国家企业信用信息公示系统的决定书直链，因此仅进入候选索引。"
+  },
+  "keywords": [
+    "罗技",
+    "上海百事得电子有限公司",
+    "抖音",
+    "LogitechChina",
+    "侮辱消费者",
+    "违背社会良好风尚",
+    "公序良俗",
+    "广告法第九条第七项",
+    "罚款20万元"
+  ],
+  "vector_text": "经营者受品牌方授权运营抖音官方账号，并将账号流量导向其自营旗舰店。为推广游戏鼠标降价促销，运营人员在短视频广告中使用“当我一降价，你还不是像狗一样跑过来”的文案，借热门模板吸睛引流。该表达将消费者作侮辱性比喻，监管机关认定其违背社会良好风尚，责令停止发布、消除影响并罚款20万元。",
+  "rag_chunk_type": "case_summary",
+  "scope": "public",
+  "review_status": "pending_review",
+  "approved_for_rag": false,
+  "raw_text_path": "data/raw_text/shanghai_jingan_2026_062026000257_user_supplied.json",
+  "notes": "用户提供决定书全文，案号、主体、违法内容、明确法条和处罚结果已结构化；未提供决定书落款日期，publish_date与decision_date保留为空，不作推断。截至2026年7月20日，处罚决定书官方原文直达链接核验结果为0条；需取得上海市静安区市场监督管理局或国家企业信用信息公示系统正式页面并经人工复核后，方可转入production RAG。",
+  "audit": {
+    "review_status": "pending_review",
+    "reviewer": "",
+    "review_date": "",
+    "review_notes": "事实和法条已按用户提供决定书全文整理；官方来源URL待核验。",
+    "approved_for_rag": false
+  }
+}
