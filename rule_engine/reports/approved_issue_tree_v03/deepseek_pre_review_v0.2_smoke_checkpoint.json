@@ -1,0 +1,98 @@
+{
+  "prompt_version": "rule_uid_pre_review_v02_20260916",
+  "reviews": {
+    "RUID-0d04e2d8e22cb3f2": {
+      "mapped": {
+        "AI建议适用赛道": "通用",
+        "AI建议保留问题ID": "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.INACCURATE_UNCLEAR_AD_CONTENT",
+        "AI建议删除问题ID": "TRUTHFULNESS.MATERIAL_MISMATCH.AD_CONTENT_MISMATCH_WITH_PRODUCT_INFO",
+        "AI建议最终映射角色": "direct",
+        "AI建议最终审核链路": "普通文案召回",
+        "AI建议资产处置": "调整映射",
+        "AI建议提交争议池": "是",
+        "AI置信度": "high",
+        "AI判断理由": "《广告法》第八条要求广告中对商品性能、功能、产地、用途、质量、成分、价格、生产者、有效期限、允诺等的表示应当准确、清楚、明白，规制的是广告内容表述本身不准确、不清楚、不明白，与候选问题 CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.INACCURATE_UNCLEAR_AD_CONTENT 的定义直接对应，属于可直接支持个案疑似违规的 direct 规则，仅凭文案即可初步判断，走普通文案召回。当前另一问题 TRUTHFULNESS.MATERIAL_MISMATCH.AD_CONTENT_MISMATCH_WITH_PRODUCT_INFO 要求广告宣传内容与商品详情页、标签、鉴定证书等实际信息不一致，属于事实比对，第八条原文并未直接规定与商品信息不一致，故应解除该映射。规则本身为通用广告内容准确性要求，不限于保健食品或美妆，建议赛道调整为通用。",
+        "AI人工复核重点": "确认是否保留 TRUTHFULNESS.MATERIAL_MISMATCH.AD_CONTENT_MISMATCH_WITH_PRODUCT_INFO 的映射，以及赛道是否应从保健食品/美妆调整为通用。",
+        "AI模型与提示词版本": "deepseek-chat / rule_uid_pre_review_v02_20260916"
+      },
+      "raw": {
+        "rule_uid": "RUID-0d04e2d8e22cb3f2",
+        "suggested_track": "通用",
+        "keep_issue_ids": [
+          "CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.INACCURATE_UNCLEAR_AD_CONTENT"
+        ],
+        "remove_issue_ids": [
+          "TRUTHFULNESS.MATERIAL_MISMATCH.AD_CONTENT_MISMATCH_WITH_PRODUCT_INFO"
+        ],
+        "mapping_role": "direct",
+        "audit_route": "普通文案召回",
+        "asset_disposition": "调整映射",
+        "submit_dispute": true,
+        "confidence": "high",
+        "reason": "《广告法》第八条要求广告中对商品性能、功能、产地、用途、质量、成分、价格、生产者、有效期限、允诺等的表示应当准确、清楚、明白，规制的是广告内容表述本身不准确、不清楚、不明白，与候选问题 CLAIM_EXPRESSION.AMBIGUOUS_EXAGGERATED.INACCURATE_UNCLEAR_AD_CONTENT 的定义直接对应，属于可直接支持个案疑似违规的 direct 规则，仅凭文案即可初步判断，走普通文案召回。当前另一问题 TRUTHFULNESS.MATERIAL_MISMATCH.AD_CONTENT_MISMATCH_WITH_PRODUCT_INFO 要求广告宣传内容与商品详情页、标签、鉴定证书等实际信息不一致，属于事实比对，第八条原文并未直接规定与商品信息不一致，故应解除该映射。规则本身为通用广告内容准确性要求，不限于保健食品或美妆，建议赛道调整为通用。",
+        "human_review_focus": "确认是否保留 TRUTHFULNESS.MATERIAL_MISMATCH.AD_CONTENT_MISMATCH_WITH_PRODUCT_INFO 的映射，以及赛道是否应从保健食品/美妆调整为通用。"
+      }
+    },
+    "RUID-0d2c183fce92c214": {
+      "mapped": {
+        "AI建议适用赛道": "保健食品",
+        "AI建议保留问题ID": "EFFICACY_PERFORMANCE.HEALTH_COSMETIC_EFFECT.HEALTH_FOOD_FUNCTION_CLAIM_NONCOMPLIANT",
+        "AI建议删除问题ID": "TRUTHFULNESS.MISLEADING_OMISSION.FALSE_ADVERTISING_GENERAL",
+        "AI建议最终映射角色": "direct",
+        "AI建议最终审核链路": "普通文案召回",
+        "AI建议资产处置": "调整映射",
+        "AI建议提交争议池": "是",
+        "AI置信度": "high",
+        "AI判断理由": "规则原文为《保健食品注册与备案管理办法》第五十八条，规制对象是保健食品的通用名，禁止通用名含有保健功能名称或与表述产品保健功能相关的文字等。该规制行为已被现行候选问题 EFFICACY_PERFORMANCE.HEALTH_COSMETIC_EFFECT.HEALTH_FOOD_FUNCTION_CLAIM_NONCOMPLIANT 的定义直接覆盖（其定义明确包含“通用名中含有保健功能名称或相关文字”），因此保留该问题ID，映射角色为 direct，审核链路为普通文案召回。当前问题ID中的 SCOPE_ACCESS.PRODUCT_REGISTRATION.HEALTH_FOOD_REGISTRATION_FILING_COMPLIANCE 已不在现行ID列表中，不再保留；TRUTHFULNESS.MISLEADING_OMISSION.FALSE_ADVERTISING_GENERAL 为虚假广告兜底条款，规则原文未直接指向虚假或引人误解广告的一般情形，属于过度映射，应解除。规则标题与原文一致，仅涉及保健食品通用名，不涉及游戏、美妆或普通食品，故建议赛道为保健食品。",
+        "AI人工复核重点": "需人工确认：1）该规则是否仅用于保健食品通用名审核，还是可扩展至广告文案中出现的保健功能相关文字；2）原 SCOPE_ACCESS.PRODUCT_REGISTRATION.HEALTH_FOOD_REGISTRATION_FILING_COMPLIANCE 已移除，是否需要另建注册备案合规类规则资产。",
+        "AI模型与提示词版本": "deepseek-chat / rule_uid_pre_review_v02_20260916"
+      },
+      "raw": {
+        "rule_uid": "RUID-0d2c183fce92c214",
+        "suggested_track": "保健食品",
+        "keep_issue_ids": [
+          "EFFICACY_PERFORMANCE.HEALTH_COSMETIC_EFFECT.HEALTH_FOOD_FUNCTION_CLAIM_NONCOMPLIANT"
+        ],
+        "remove_issue_ids": [
+          "TRUTHFULNESS.MISLEADING_OMISSION.FALSE_ADVERTISING_GENERAL"
+        ],
+        "mapping_role": "direct",
+        "audit_route": "普通文案召回",
+        "asset_disposition": "调整映射",
+        "submit_dispute": true,
+        "confidence": "high",
+        "reason": "规则原文为《保健食品注册与备案管理办法》第五十八条，规制对象是保健食品的通用名，禁止通用名含有保健功能名称或与表述产品保健功能相关的文字等。该规制行为已被现行候选问题 EFFICACY_PERFORMANCE.HEALTH_COSMETIC_EFFECT.HEALTH_FOOD_FUNCTION_CLAIM_NONCOMPLIANT 的定义直接覆盖（其定义明确包含“通用名中含有保健功能名称或相关文字”），因此保留该问题ID，映射角色为 direct，审核链路为普通文案召回。当前问题ID中的 SCOPE_ACCESS.PRODUCT_REGISTRATION.HEALTH_FOOD_REGISTRATION_FILING_COMPLIANCE 已不在现行ID列表中，不再保留；TRUTHFULNESS.MISLEADING_OMISSION.FALSE_ADVERTISING_GENERAL 为虚假广告兜底条款，规则原文未直接指向虚假或引人误解广告的一般情形，属于过度映射，应解除。规则标题与原文一致，仅涉及保健食品通用名，不涉及游戏、美妆或普通食品，故建议赛道为保健食品。",
+        "human_review_focus": "需人工确认：1）该规则是否仅用于保健食品通用名审核，还是可扩展至广告文案中出现的保健功能相关文字；2）原 SCOPE_ACCESS.PRODUCT_REGISTRATION.HEALTH_FOOD_REGISTRATION_FILING_COMPLIANCE 已移除，是否需要另建注册备案合规类规则资产。"
+      }
+    },
+    "RUID-0cb2e6f90ecd2a85": {
+      "mapped": {
+        "AI建议适用赛道": "美妆",
+        "AI建议保留问题ID": "",
+        "AI建议删除问题ID": "",
+        "AI建议最终映射角色": "proactive_check",
+        "AI建议最终审核链路": "proactive_check",
+        "AI建议资产处置": "待讨论",
+        "AI建议提交争议池": "是",
+        "AI置信度": "medium",
+        "AI判断理由": "规则原文针对2021年1月1日前取得特化注册备案的育发产品，要求收取育发特化注册证产品资质后，方可在过渡期内进行育发产品投放推广和育发功效宣传。其规制行为是育发产品投放前需核验特化注册证资质，属于投放前主动补验资质的情形，映射角色应为proactive_check，审核链路为proactive_check。但现行允许问题目录中没有与育发产品特化注册证资质核验直接对应的问题节点，故keep_issue_ids为空、asset_disposition为待讨论并提交争议。",
+        "AI人工复核重点": "需人工确认育发产品特化注册证资质核验应归入哪个现行问题节点，或是否需要新增产品注册备案类问题ID。",
+        "AI模型与提示词版本": "deepseek-chat / rule_uid_pre_review_v02_20260916"
+      },
+      "raw": {
+        "rule_uid": "RUID-0cb2e6f90ecd2a85",
+        "suggested_track": "美妆",
+        "keep_issue_ids": [],
+        "remove_issue_ids": [],
+        "mapping_role": "proactive_check",
+        "audit_route": "proactive_check",
+        "asset_disposition": "待讨论",
+        "submit_dispute": true,
+        "confidence": "medium",
+        "reason": "规则原文针对2021年1月1日前取得特化注册备案的育发产品，要求收取育发特化注册证产品资质后，方可在过渡期内进行育发产品投放推广和育发功效宣传。其规制行为是育发产品投放前需核验特化注册证资质，属于投放前主动补验资质的情形，映射角色应为proactive_check，审核链路为proactive_check。但现行允许问题目录中没有与育发产品特化注册证资质核验直接对应的问题节点，故keep_issue_ids为空、asset_disposition为待讨论并提交争议。",
+        "human_review_focus": "需人工确认育发产品特化注册证资质核验应归入哪个现行问题节点，或是否需要新增产品注册备案类问题ID。"
+      }
+    }
+  },
+  "errors": {}
+}
