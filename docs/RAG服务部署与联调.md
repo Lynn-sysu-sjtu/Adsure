@@ -210,6 +210,30 @@ export CASE_ENGINE_EMBEDDING_ALLOW_DOWNLOAD="0"
 make serve
 ```
 
+
+## 向量编码器：智谱 BigModel embedding API（2026-09-20 起默认）
+
+生产语义向量默认改为智谱 API，不再要求在服务器缓存 bge 模型：
+
+- `CASE_ENGINE_EMBEDDING_PROVIDER=zhipu`
+- `CASE_ENGINE_EMBEDDING_MODEL=embedding-3`
+- `CASE_ENGINE_EMBEDDING_DIMENSIONS=2048`（可用 dimensions 参数调整，索引与查询必须一致）
+- `ZHIPU_API_KEY` 放入 `/etc/adsure/rag-secret.env`（或 `CASE_ENGINE_EMBEDDING_API_KEY`）
+- endpoint 默认 `https://open.bigmodel.cn/api/paas/v4/embeddings`，可用 `ZHIPU_BASE_URL` 覆盖
+
+切到智谱后必须用同一编码器重建生产语义索引（旧索引为 bge 768 维，维度/模型不一致时
+`/health` 与预检会报告 `model_mismatch` 并降级 lexical，不会用错向量）：
+
+```bash
+set -a; . /etc/adsure/rag-secret.env; . deploy/rag.env.example; set +a
+make setup-rag-models                 # 连通性校验（API 模式不下载模型）
+.venv-video/bin/python -m src.semantic_index   --chunks-path data/chunks/production_chunks.json   --index-path data/chunks/production_semantic_index.json   --model "$CASE_ENGINE_EMBEDDING_MODEL" --allow-download
+CASE_ENGINE_REQUIRE_SEMANTIC=1 make preflight-rag
+```
+
+切回本地 bge：`CASE_ENGINE_EMBEDDING_PROVIDER=local`、
+`CASE_ENGINE_EMBEDDING_MODEL=BAAI/bge-base-zh-v1.5`，并按下方 HF_HOME 流程预下载。
+
 默认禁止服务运行时下载模型。部署前应通过受控流程准备模型缓存；若只安装
 `requirements.txt`，将 `CASE_ENGINE_RETRIEVAL_MODE=lexical`。混合模式下语义
 资源不可用会降级到词法；需要将语义能力作为启动硬门禁时再设置

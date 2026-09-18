@@ -3,15 +3,17 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import os
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable
 
 
-DEFAULT_MODEL_NAME = (
-    "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-)
+DEFAULT_MODEL_NAME = "BAAI/bge-base-zh-v1.5"
+ZHIPU_DEFAULT_BASE_URL = "https://open.bigmodel.cn/api/paas/v4"
+ZHIPU_DEFAULT_MODEL = "embedding-3"
+ZHIPU_DEFAULT_DIMENSIONS = 2048
 DEFAULT_CHUNKS_PATH = Path("data/chunks/production_chunks.json")
 DEFAULT_INDEX_PATH = Path("data/chunks/production_semantic_index.json")
 
@@ -92,6 +94,108 @@ def model_encoder(
     return encode
 
 
+def _normalize_rows(rows: list[list[float]]) -> list[list[float]]:
+    normalized = []
+    for row in rows:
+        norm = math.sqrt(sum(float(v) * float(v) for v in row))
+        if norm > 0:
+            normalized.append([float(v) / norm for v in row])
+        else:
+            normalized.append([float(v) for v in row])
+    return normalized
+
+
+def zhipu_encoder(
+    *,
+    api_key: str,
+    model: str = ZHIPU_DEFAULT_MODEL,
+    dimensions: int = ZHIPU_DEFAULT_DIMENSIONS,
+    base_url: str = ZHIPU_DEFAULT_BASE_URL,
+    batch_size: int = 32,
+) -> Callable[[list[str]], list[list[float]]]:
+    """Embed texts via the Zhipu (BigModel) embedding API.
+
+    The API is stateless, so this works both when building the index and
+    when encoding live queries. Vectors are L2-normalized client-side so
+    stored dot products remain cosine similarities, matching local models.
+    """
+    import httpx
+
+    if not api_key:
+        raise ValueError("智谱 embedding 需要配置 ZHIPU_API_KEY / CASE_ENGINE_EMBEDDING_API_KEY")
+
+    def encode(texts: list[str]) -> list[list[float]]:
+        if not texts:
+            return []
+        collected: list[tuple[int, list[float]]] = []
+        with httpx.Client(
+            trust_env=False,
+            timeout=httpx.Timeout(60, connect=10),
+            follow_redirects=False,
+        ) as client:
+            for start in range(0, len(texts), batch_size):
+                batch = texts[start : start + batch_size]
+                payload: dict = {"model": model, "input": batch}
+                if dimensions:
+                    payload["dimensions"] = int(dimensions)
+                response = client.post(
+                    base_url.rstrip("/") + "/embeddings",
+                    headers={
+                        "Authorization": f"Bearer {api_key}",
+                        "Content-Type": "application/json",
+                    },
+                    json=payload,
+                )
+                response.raise_for_status()
+                body = response.json()
+                data = body.get("data")
+                if not isinstance(data, list) or len(data) != len(batch):
+                    raise ValueError("智谱 embedding 响应数量与请求不一致")
+                for item in data:
+                    vector = item.get("embedding")
+                    if not isinstance(vector, list) or not vector:
+                        raise ValueError("智谱 embedding 响应缺少 embedding")
+                    collected.append((int(item.get("index", 0)), [float(v) for v in vector]))
+        collected.sort(key=lambda pair: pair[0])
+        rows = [vector for _, vector in collected]
+        if len(rows) != len(texts):
+            raise ValueError("智谱 embedding 返回数量与文本数量不一致")
+        return _normalize_rows(rows)
+
+    return encode
+
+
+def embedding_provider() -> str:
+    return os.getenv("CASE_ENGINE_EMBEDDING_PROVIDER", "local").strip().lower()
+
+
+def configured_encoder(
+    model_name: str,
+    *,
+    local_files_only: bool = True,
+) -> Callable[[list[str]], list[list[float]]]:
+    """Select the encoder from environment configuration.
+
+    provider=zhipu (or a ``zhipu/`` model prefix) routes to the BigModel
+    embedding API; anything else keeps the local sentence-transformers path.
+    """
+    provider = embedding_provider()
+    if provider == "zhipu" or str(model_name).startswith("zhipu/"):
+        resolved_model = (
+            model_name.split("/", 1)[1]
+            if str(model_name).startswith("zhipu/")
+            else (model_name if model_name != DEFAULT_MODEL_NAME else ZHIPU_DEFAULT_MODEL)
+        )
+        return zhipu_encoder(
+            api_key=os.getenv("ZHIPU_API_KEY") or os.getenv("CASE_ENGINE_EMBEDDING_API_KEY", ""),
+            model=os.getenv("CASE_ENGINE_ZHIPU_EMBEDDING_MODEL", resolved_model),
+            dimensions=int(os.getenv("CASE_ENGINE_EMBEDDING_DIMENSIONS", str(ZHIPU_DEFAULT_DIMENSIONS))),
+            base_url=os.getenv("ZHIPU_BASE_URL", ZHIPU_DEFAULT_BASE_URL),
+            batch_size=int(os.getenv("CASE_ENGINE_EMBEDDING_BATCH_SIZE", "32")),
+        )
+    return model_encoder(model_name, local_files_only=local_files_only)
+
+
 def build_index(
     chunks: list[dict],
     *,
@@ -99,7 +203,7 @@ def build_index(
     encoder: Callable[[list[str]], list[list[float]]] | None = None,
     local_files_only: bool = True,
 ) -> dict:
-    resolved_encoder = encoder or model_encoder(
+    resolved_encoder = encoder or configured_encoder(
         model_name,
         local_files_only=local_files_only,
     )
@@ -210,7 +314,7 @@ class SemanticIndex:
 
     def _resolved_encoder(self) -> Callable[[list[str]], list[list[float]]]:
         if self._encoder is None:
-            self._encoder = model_encoder(
+            self._encoder = configured_encoder(
                 self.model_name,
                 local_files_only=self.local_files_only,
             )

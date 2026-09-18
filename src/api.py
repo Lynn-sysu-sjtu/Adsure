@@ -819,8 +819,19 @@ class CaseRepository:
                             != "1"
                         ),
                     )
+                expected_embedding_model = os.getenv("CASE_ENGINE_EMBEDDING_MODEL", "")
                 if self.semantic_index is None:
                     self.semantic_status = "missing_index"
+                elif (
+                    expected_embedding_model
+                    and self.semantic_index.model_name
+                    and self.semantic_index.model_name != expected_embedding_model
+                ):
+                    self.semantic_status = (
+                        f"model_mismatch_index={self.semantic_index.model_name}"
+                        f"_configured={expected_embedding_model}"
+                    )
+                    self.semantic_index = None
                 elif (
                     self.semantic_index.chunk_fingerprint
                     != chunks_fingerprint(self.chunks)

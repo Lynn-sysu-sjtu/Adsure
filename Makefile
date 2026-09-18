@@ -111,6 +111,9 @@ smoke-rag:
 setup-rag-models:
 	bash scripts/setup_rag_models.sh
 
+test-embedding:
+	.venv-video/bin/python -m unittest tests.test_zhipu_embedding -v
+
 pipeline: fetch extract clean validate chunks sample-chunks test
 
 candidate-pipeline:
