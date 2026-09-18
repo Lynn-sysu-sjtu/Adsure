@@ -17,6 +17,58 @@ from .schemas import (
 SERVICE_VERSION = "video-extractor/0.1.0"
 
 
+def _normalize_audio_status(audio: dict) -> str:
+    """Map pipeline audio status to the production coverage vocabulary."""
+    status = str(audio.get("status", "unknown"))
+    track_results = audio.get("track_results") or []
+    if status in {"no_audio_track"}:
+        return "no_audio_track"
+    if status in {"failed"} and not track_results:
+        return "asr_not_installed"
+    if status in {"failed", "partial"}:
+        return "asr_failed"
+    if status == "silent":
+        return "audio_track_silent"
+    if status == "disabled":
+        return "asr_disabled"
+    if status == "transcribed":
+        return "transcribed"
+    return status or "unknown"
+
+
+def _normalize_frames_status(visual: dict) -> str:
+    status = str(visual.get("status", "unknown"))
+    if status == "sampled_complete":
+        return "sampled_complete"
+    if visual.get("sampling_complete") is False or visual.get("omitted_candidates"):
+        return "frame_sampling_incomplete"
+    if status in {"incomplete", "not_complete"}:
+        return "frame_sampling_incomplete"
+    if not visual:
+        return "frames_not_executed"
+    return status or "unknown"
+
+
+def _normalize_semantic_status(semantic: dict) -> str:
+    status = str(semantic.get("status", "unknown"))
+    provider = (semantic.get("provider") or {}).get("provider", "")
+    if status in {"analyzed"}:
+        return "analyzed"
+    if status in {"consent_required"}:
+        return "cloud_unauthorized"
+    if status in {"not_connected"}:
+        if provider in {"ollama"}:
+            return "local_vlm_not_ready"
+        return "vlm_not_configured"
+    if status in {"partial"}:
+        return "cloud_call_partial"
+    if status in {"failed"} or semantic.get("errors"):
+        return "cloud_call_failed"
+    if status in {"disabled"}:
+        return "vlm_disabled"
+    return status or "unknown"
+
+
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -133,13 +185,17 @@ def to_evidence_bundle(*, record_id: str, request_id: str, material_id: str,
     semantic = report.get("visual_semantics") or {"status": "not_executed"}
     overall = "complete" if report.get("analysis_status") == "completed" else (
         "partial" if units else "not_proven")
+    audio_status = _normalize_audio_status(audio)
+    frames_status = _normalize_frames_status(visual)
+    semantic_status = _normalize_semantic_status(semantic)
+    ocr_executed = any(u.source_type == "frame_ocr" for u in units)
     coverage = Coverage(
         overall=overall,
-        audio=CoverageItem(status=str(audio.get("status", "unknown")), details=audio),
-        frames=CoverageItem(status=str(visual.get("status", "unknown")), details=visual),
-        ocr=CoverageItem(status="executed" if any(u.source_type == "frame_ocr" for u in units) else "not_executed",
+        audio=CoverageItem(status=audio_status, details=audio),
+        frames=CoverageItem(status=frames_status, details=visual),
+        ocr=CoverageItem(status="executed" if ocr_executed else "ocr_not_executed",
                          details={"engine": visual.get("engine", ""), "sample_count": visual.get("sample_count")}),
-        visual_semantics=CoverageItem(status=str(semantic.get("status", "unknown")), details=semantic),
+        visual_semantics=CoverageItem(status=semantic_status, details=semantic),
         rule_engine=CoverageItem(status="not_called", details={}),
     )
     return EvidenceBundle(
@@ -164,9 +220,8 @@ def to_evidence_bundle(*, record_id: str, request_id: str, material_id: str,
 
 def extract_video(*, record_id: str, request_id: str, material_id: str,
                   video_path: Path, work_dir: Path, industry: str, platform: str,
-                  product_category: str) -> EvidenceBundle:
+                  product_category: str, cloud_consent_endpoint: str = "") -> EvidenceBundle:
     work_dir.mkdir(parents=True, exist_ok=True)
-    # Local-only by default. Explicit cloud consent is a separate request field in the service API.
     os.environ.setdefault("VIDEO_MVP_OCR_ENGINE", os.getenv("VIDEO_MVP_OCR_ENGINE", "rapidocr"))
     report = analyze_video(
         video_path,
@@ -178,7 +233,7 @@ def extract_video(*, record_id: str, request_id: str, material_id: str,
         sample_interval=float(os.getenv("VIDEO_SERVICE_SAMPLE_INTERVAL", "0.5")),
         max_frames=int(os.getenv("VIDEO_SERVICE_MAX_FRAMES", "1800")),
         asr_mode="auto",
-        cloud_consent_endpoint="",
+        cloud_consent_endpoint=cloud_consent_endpoint,
     )
     evidence_path = work_dir / "evidence.json"
     evidence_payload = json.loads(evidence_path.read_text(encoding="utf-8"))

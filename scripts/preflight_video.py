@@ -30,8 +30,12 @@ try:
 except Exception as exc:
     errors.append(f"SQLite 不可用：{exc}")
 need(bool(os.getenv("VIDEO_SERVICE_API_KEY")), "未配置 VIDEO_SERVICE_API_KEY")
+warnings=[]
+if not os.getenv("RULE_ENGINE_URL"):
+    warnings.append("未配置 RULE_ENGINE_URL：任务只能产出证据（partial），不产出最终审核结果")
 if errors:
     print("Video service preflight failed:")
     for item in errors: print("-", item)
     raise SystemExit(1)
+for item in warnings: print(f"warning: {item}")
 print(f"Video service preflight ok: data={data} free_bytes={free}")

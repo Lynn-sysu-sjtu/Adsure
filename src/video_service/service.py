@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import hmac
+import logging
 import os
+import re
 import shutil
 import time
 import uuid
@@ -17,6 +19,21 @@ from .worker import BackgroundWorker
 
 DEFAULT_ROOT = Path(os.getenv("VIDEO_SERVICE_DATA_DIR", Path.cwd() / "data" / "video_service"))
 SERVICE_VERSION = "video-service/0.1.0"
+LOGGER = logging.getLogger("video_service")
+
+_SECRET_PATTERNS = (
+    re.compile(r"(?i)(api[_-]?key|x-api-key|authorization|token|secret)[\"'\s:=]+([A-Za-z0-9_\-\.]{12,})"),
+    re.compile(r"(ark-[A-Za-z0-9\-]{20,})"),
+)
+
+
+def scrub(message: str) -> str:
+    """Remove credentials from anything written to logs."""
+    cleaned = str(message)
+    cleaned = _SECRET_PATTERNS[0].sub(
+        lambda m: m.group(0)[: m.start(2) - m.start()] + "[REDACTED]", cleaned)
+    cleaned = _SECRET_PATTERNS[1].sub("[REDACTED]", cleaned)
+    return cleaned
 
 
 def data_root() -> Path:
@@ -68,6 +85,22 @@ def disk_status(root: Path) -> dict:
             "min_free_bytes": min_free, "ok": usage.free >= min_free}
 
 
+def rule_engine_status() -> dict:
+    """Lightweight connectivity probe; never blocks readiness on auth mismatch."""
+    import httpx
+    base_url = os.getenv("RULE_ENGINE_URL", "").rstrip("/")
+    if not base_url:
+        return {"url_configured": False, "status": "not_configured"}
+    try:
+        with httpx.Client(trust_env=False, timeout=httpx.Timeout(3, connect=2),
+                          follow_redirects=False) as client:
+            response = client.get(base_url + "/health")
+        return {"url_configured": True, "status": "reachable" if response.status_code < 500 else "error",
+                "http_status": response.status_code}
+    except Exception as exc:
+        return {"url_configured": True, "status": "unreachable", "error": type(exc).__name__}
+
+
 def create_app() -> FastAPI:
     root = data_root()
     root.mkdir(parents=True, exist_ok=True)
@@ -82,7 +115,12 @@ def create_app() -> FastAPI:
 
     @app.middleware("http")
     async def scrub_secrets(request: Request, call_next):
-        response = await call_next(request)
+        LOGGER.info("request %s %s", request.method, scrub(str(request.url.path)))
+        try:
+            response = await call_next(request)
+        except Exception:
+            LOGGER.exception("unhandled error path=%s", scrub(request.url.path))
+            raise
         return response
 
     @app.get("/health")
@@ -97,7 +135,7 @@ def create_app() -> FastAPI:
             "models": model_status(),
             "data_dir": {"path": str(root), "writable": os.access(root, os.W_OK)},
             "jobs_db": {"path": str(root / "jobs.sqlite3"), "ready": db_ok},
-            "rule_engine": {"url_configured": bool(os.getenv("RULE_ENGINE_URL")), "status": "not_checked"},
+            "rule_engine": rule_engine_status(),
             "disk": disk_status(root),
         }
         required = [checks["data_dir"]["writable"], db_ok, checks["disk"]["ok"]]
@@ -112,6 +150,7 @@ def create_app() -> FastAPI:
         industry: str = Form("通用"),
         platform: str = Form(""),
         product_category: str = Form(""),
+        cloud_consent_endpoint: str = Form(""),
         dedupe_by_hash: bool = Form(True),
     ):
         require_key(x_api_key)
@@ -151,7 +190,8 @@ def create_app() -> FastAPI:
                                            record_id=record_id, material_id=material_id,
                                            dedupe_by_hash=dedupe_by_hash,
                                            options={"industry": industry, "platform": platform,
-                                                    "product_category": product_category})
+                                                    "product_category": product_category,
+                                                    "cloud_consent_endpoint": cloud_consent_endpoint})
         if duplicated and destination.exists():
             destination.unlink(missing_ok=True)
         return {"job_id": job["job_id"], "request_id": job["request_id"], "record_id": job["record_id"],

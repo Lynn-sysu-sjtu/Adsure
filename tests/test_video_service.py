@@ -88,3 +88,107 @@ class RuleClientTests(unittest.TestCase):
         self.assertEqual("failed",result.status); self.assertEqual("rule_engine_unavailable",result.error_code)
 
 if __name__=="__main__": unittest.main()
+
+
+class CoverageNormalizationTests(unittest.TestCase):
+    def test_audio_status_vocabulary(self):
+        from src.video_service.extractor import _normalize_audio_status
+        self.assertEqual("no_audio_track", _normalize_audio_status({"status": "no_audio_track"}))
+        self.assertEqual("asr_failed", _normalize_audio_status({"status": "failed", "track_results": [{}]}))
+        self.assertEqual("asr_not_installed", _normalize_audio_status({"status": "failed"}))
+        self.assertEqual("transcribed", _normalize_audio_status({"status": "transcribed"}))
+        self.assertEqual("audio_track_silent", _normalize_audio_status({"status": "silent"}))
+
+    def test_frames_and_semantic_status_vocabulary(self):
+        from src.video_service.extractor import _normalize_frames_status, _normalize_semantic_status
+        self.assertEqual("frame_sampling_incomplete",
+                         _normalize_frames_status({"sampling_complete": False}))
+        self.assertEqual("sampled_complete",
+                         _normalize_frames_status({"status": "sampled_complete"}))
+        self.assertEqual("cloud_unauthorized",
+                         _normalize_semantic_status({"status": "consent_required"}))
+        self.assertEqual("vlm_not_configured",
+                         _normalize_semantic_status({"status": "not_connected", "provider": {}}))
+        self.assertEqual("cloud_call_failed",
+                         _normalize_semantic_status({"status": "failed"}))
+        self.assertEqual("analyzed",
+                         _normalize_semantic_status({"status": "analyzed"}))
+
+
+class SecretScrubTests(unittest.TestCase):
+    def test_scrub_removes_credentials(self):
+        from src.video_service.service import scrub
+        self.assertIn("[REDACTED]", scrub("x-api-key: c2e5d832-b25a-4d19-b745"))
+        self.assertIn("[REDACTED]", scrub("ark-73c53569-500c-48aa-aa61-631326802f3a"))
+        self.assertEqual("/api/video/jobs", scrub("/api/video/jobs"))
+
+
+class CleanupProtectionTests(unittest.TestCase):
+    def test_cleanup_never_removes_active_jobs(self):
+        import json, subprocess, sys
+        from src.video_service.store import JobStore
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root/"jobs").mkdir(parents=True)
+            (root/"uploads").mkdir()
+            store = JobStore(root/"jobs.sqlite3")
+            video = root/"a.mp4"; video.write_bytes(b"x")
+            active, _ = store.create_job(source_path=video, file_sha256="h1",
+                                         record_id="active", material_id="", dedupe_by_hash=False)
+            done, _ = store.create_job(source_path=video, file_sha256="h2",
+                                       record_id="done", material_id="", dedupe_by_hash=False)
+            store.finish(done["job_id"], "completed", {"job_id": done["job_id"]}, [], None)
+            for job in (active, done):
+                (root/"jobs"/job["job_id"]).mkdir(exist_ok=True)
+            # Run cleanup with failed-days=0 and success-days=0
+            result = subprocess.run(
+                [sys.executable, "scripts/cleanup_video_jobs.py",
+                 "--data-dir", str(root), "--success-days", "0", "--failed-days", "0"],
+                capture_output=True, text=True, cwd=str(ROOT))
+            self.assertEqual(0, result.returncode, result.stderr)
+            # Active job directory must survive; completed is removed.
+            self.assertTrue((root/"jobs"/active["job_id"]).exists())
+            self.assertFalse((root/"jobs"/done["job_id"]).exists())
+
+
+class EvidenceSchemaTests(unittest.TestCase):
+    def test_bundle_round_trip_includes_required_fields(self):
+        payload = bundle("rec-schema").model_dump(mode="json")
+        for field in ("record_id", "request_id", "material_id", "material_type",
+                      "file_sha256", "evidence_units", "coverage", "warnings",
+                      "extractor_version"):
+            self.assertIn(field, payload)
+        for section in ("audio", "frames", "ocr", "visual_semantics", "rule_engine"):
+            self.assertIn(section, payload["coverage"])
+
+
+class SecurityTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+        env = {"VIDEO_SERVICE_DATA_DIR": str(self.root),
+               "VIDEO_SERVICE_API_KEY": "test-key",
+               "VIDEO_SERVICE_MIN_FREE_BYTES": "1",
+               "VIDEO_SERVICE_MAX_BYTES": "100"}
+        env_patch = patch.dict("os.environ", env, clear=False)
+        env_patch.start()
+        self.addCleanup(env_patch.stop)
+        from src.video_service.service import create_app
+        self.client = TestClient(create_app())
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_oversized_file_rejected(self):
+        headers = {"X-API-Key": "test-key"}
+        mp4 = (ROOT / "tests/fixtures/sample_ad.mp4").read_bytes()  # 16KB > 100 bytes
+        response = self.client.post(
+            "/api/video/jobs", headers=headers,
+            files={"video": ("big.mp4", mp4, "video/mp4")})
+        self.assertEqual(413, response.status_code)
+
+    def test_path_traversal_job_id_rejected(self):
+        headers = {"X-API-Key": "test-key"}
+        for bad in ["../etc/passwd", "a" * 31, "a" * 33, "a" * 32 + "/x", "%2e%2e"]:
+            response = self.client.get(f"/api/video/jobs/{bad}", headers=headers)
+            self.assertEqual(404, response.status_code, bad)

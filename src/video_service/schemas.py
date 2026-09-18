@@ -81,6 +81,7 @@ class RuleEngineResult(BaseModel):
     status: Literal["completed", "failed", "skipped"]
     request_id: str
     response: Optional[dict[str, Any]] = None
+    request_payload: Optional[dict[str, Any]] = None
     error_code: Optional[str] = None
     error_message: Optional[str] = None
     attempts: int = 0

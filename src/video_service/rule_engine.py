@@ -52,6 +52,7 @@ def invoke_rule_engine(bundle: EvidenceBundle) -> RuleEngineResult:
     base_url = os.getenv("RULE_ENGINE_URL", "").rstrip("/")
     if not base_url:
         return RuleEngineResult(status="skipped", request_id=bundle.request_id,
+                                request_payload=payload,
                                 error_code="rule_engine_not_configured",
                                 error_message="RULE_ENGINE_URL 未配置；不得输出最终审核结论")
     api_key = os.getenv("RULE_ENGINE_API_KEY", "")
@@ -79,11 +80,12 @@ def invoke_rule_engine(bundle: EvidenceBundle) -> RuleEngineResult:
             if body.get("code") != 0:
                 raise RuntimeError(f"rule_engine_code_{body.get('code')}")
             return RuleEngineResult(status="completed", request_id=bundle.request_id,
-                                    response=body, attempts=attempt)
+                                    response=body, request_payload=payload, attempts=attempt)
         except Exception as exc:
             last_error = f"{type(exc).__name__}:{str(exc)[:200]}"
             if attempt < attempts:
                 time.sleep(min(2 ** (attempt - 1), 4))
     return RuleEngineResult(status="failed", request_id=bundle.request_id,
+                            request_payload=payload,
                             error_code="rule_engine_unavailable",
                             error_message=last_error, attempts=attempts)

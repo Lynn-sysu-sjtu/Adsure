@@ -67,6 +67,18 @@ def process_once(store: JobStore, data_root: Path) -> bool:
     options = json.loads(job.get("options_json") or "{}")
     bundle = None
     rule_result = None
+    # Continuous heartbeat so a long ASR/OCR pass is never marked stale.
+    heartbeat_stop = threading.Event()
+
+    def _beat():
+        while not heartbeat_stop.wait(float(os.getenv("VIDEO_SERVICE_HEARTBEAT_INTERVAL", "15"))):
+            try:
+                store.heartbeat(job["job_id"])
+            except Exception:
+                pass
+
+    beat_thread = threading.Thread(target=_beat, name=f"hb-{job['job_id'][:8]}", daemon=True)
+    beat_thread.start()
     try:
         validate_video_file(source)
         max_bytes = int(os.getenv("VIDEO_SERVICE_MAX_BYTES", str(512 * 1024 * 1024)))
@@ -82,8 +94,20 @@ def process_once(store: JobStore, data_root: Path) -> bool:
             industry=options.get("industry") or os.getenv("VIDEO_SERVICE_INDUSTRY", "通用"),
             platform=options.get("platform") or os.getenv("VIDEO_SERVICE_PLATFORM", ""),
             product_category=options.get("product_category", ""),
+            cloud_consent_endpoint=options.get("cloud_consent_endpoint", ""),
         )
+        store.heartbeat(job["job_id"])
         rule_result = invoke_rule_engine(bundle)
+        # Persist the redacted rule-engine exchange for audit.
+        (work_dir / "rule_engine_exchange.json").write_text(json.dumps({
+            "request_id": rule_result.request_id,
+            "attempts": rule_result.attempts,
+            "status": rule_result.status,
+            "error_code": rule_result.error_code,
+            "request_payload": rule_result.request_payload,
+            "response_keys": list((rule_result.response or {}).keys()),
+        }, ensure_ascii=False, indent=2), encoding="utf-8")
+        store.heartbeat(job["job_id"])
         if rule_result.status == "completed":
             bundle.coverage.rule_engine.status = "completed"
         elif rule_result.status == "skipped":
@@ -104,6 +128,9 @@ def process_once(store: JobStore, data_root: Path) -> bool:
             store.finish(job["job_id"], fallback, result, bundle.warnings, error)
         else:
             store.requeue_or_fail(job["job_id"], error)
+    finally:
+        heartbeat_stop.set()
+        beat_thread.join(timeout=2)
     return True
 
 
