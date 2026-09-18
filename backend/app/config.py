@@ -90,7 +90,8 @@ class Settings(BaseSettings):
     # ── Provider 开关 ────────────────────────────────────────
     asr_provider: Literal["aliyun", "tencent", "volcengine", "funasr_local"] = "aliyun"
     ocr_provider: Literal["aliyun", "tencent", "baidu", "paddle_local"] = "aliyun"
-    vlm_provider: Literal["volcengine", "qwen", "zhipu", "tarsier_local"] = "volcengine"
+    vlm_provider: Literal["volcengine", "qwen", "zhipu", "tarsier_local",
+                          "openai_compat", "mock"] = "volcengine"
     llm_provider: Literal["mock", "deepseek", "volcengine"] = "mock"
 
     # ── ASR ──────────────────────────────────────────────────
@@ -142,9 +143,22 @@ class Settings(BaseSettings):
     ocr_endpoint: str = ""
 
     # ── VLM / LLM ────────────────────────────────────────────
-    vlm_api_key: SecretStr = SecretStr("")
-    vlm_endpoint: str = ""
-    vlm_model: str = ""
+    # 兼容旧 MVP 的 VIDEO_MVP_CLOUD_* 命名，一份凭据两边可用。
+    vlm_api_key: SecretStr = Field(
+        default=SecretStr(""),
+        validation_alias=AliasChoices(
+            "VLM_API_KEY", "VIDEO_MVP_CLOUD_API_KEY"),
+    )
+    vlm_endpoint: str = Field(
+        default="",
+        validation_alias=AliasChoices(
+            "VLM_ENDPOINT", "VIDEO_MVP_CLOUD_BASE_URL"),
+    )
+    vlm_model: str = Field(
+        default="",
+        validation_alias=AliasChoices(
+            "VLM_MODEL", "VIDEO_MVP_CLOUD_MODEL"),
+    )
     # 兼容既有 .env 的 LEX_DEEPSEEK_* 命名 —— 迁就现有约定，
     # 而不是要求改一份别的地方也在用的配置文件。
     llm_api_key: SecretStr = Field(

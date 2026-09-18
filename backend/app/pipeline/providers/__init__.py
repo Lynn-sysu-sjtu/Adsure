@@ -95,6 +95,18 @@ def get_vlm_provider(name: str | None = None) -> VLMProvider:
 
         return MockVLMProvider(max_calls=max_calls)
 
+    if name == "openai_compat":
+        from app.pipeline.providers.cloud_vlm import OpenAICompatVLM
+
+        return OpenAICompatVLM(
+            api_key=settings.vlm_api_key.get_secret_value(),
+            endpoint=settings.vlm_endpoint,
+            model=settings.vlm_model,
+            max_calls=max_calls,
+            batch_size=settings.pipeline.vlm_batch_size
+            if hasattr(settings.pipeline, "vlm_batch_size") else 4,
+        )
+
     raise NotImplementedError(
-        f"VLM provider「{name}」尚未实现。当前可用: mock。"
+        f"VLM provider「{name}」尚未实现。当前可用: mock、openai_compat。"
     )
