@@ -27,3 +27,6 @@ API调用方式说明.docx
 
 # Golden video files are distributed out-of-band; cases/*.yaml reference them by sha256.
 datasets/golden/videos/
+
+# SSCD model weights (94MB, download separately)
+data/ip_models/
