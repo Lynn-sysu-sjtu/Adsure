@@ -1,0 +1,141 @@
+{
+  "fetched_at": "2026-09-17T17:36:48+08:00",
+  "request": {
+    "xzcfws_name": "保健食品",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "2",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330327052025100004",
+          "xzcfws_code": "苍市监处罚〔2025〕1184号",
+          "bxzcf_name": "苍南县永民药店有限公司",
+          "guid": "330327052025100004",
+          "xzcfws_name": "苍南县永民药店有限公司经营过期的医疗器械和保健食品与普通食品混放销售案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "许某某",
+          "xzcf_date": "2025-11-18",
+          "orgnode": "苍南县市场监督管理局"
+        },
+        {
+          "unid": "332522012025060008",
+          "xzcfws_code": "青市监处罚〔2025〕245号",
+          "bxzcf_name": "青田县某某餐饮有限公司",
+          "guid": "332522012025060008",
+          "xzcfws_name": "青田县某某餐饮有限公司在餐饮服务中添加保健食品原料案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "倪某某",
+          "xzcf_date": "2025-11-07",
+          "orgnode": "青田县市场监督管理局"
+        },
+        {
+          "unid": "330503142025070003",
+          "xzcfws_code": "湖吴市监处罚〔2025〕555号",
+          "bxzcf_name": "湖州广播电视商务有限公司",
+          "guid": "330503142025070003",
+          "xzcfws_name": "湖州广播电视商务有限公司违法发布保健食品广告行为案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "周某某",
+          "xzcf_date": "2025-11-04",
+          "orgnode": "湖州市吴兴区市场监督管理局"
+        },
+        {
+          "unid": "330421072025060006",
+          "xzcfws_code": "善市监处罚〔2025〕269号",
+          "bxzcf_name": "浙江爱库奇生物科技有限公司",
+          "guid": "330421072025060006",
+          "xzcfws_name": "浙江爱库奇生物科技有限公司对保健食品以外的其他食品广告宣传其具有特定保健功能和经营标注虚假生产日期的食品案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "朱某某",
+          "xzcf_date": "2025-10-31",
+          "orgnode": "嘉善县市场监督管理局"
+        },
+        {
+          "unid": "330122012025060003",
+          "xzcfws_code": "桐市监处罚〔2025〕511号",
+          "bxzcf_name": "桐庐县桐君街道骋华保健食品商行",
+          "guid": "330122012025060003",
+          "xzcfws_name": "桐庐县桐君街道骋华保健食品商行对商品的性能、功能、质量、销售状况、用户评价、曾获荣誉等作虚假或者引人误解的商业宣传案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "赵某某",
+          "xzcf_date": "2025-10-24",
+          "orgnode": "桐庐县市场监督管理局"
+        },
+        {
+          "unid": "33038125072514240370",
+          "xzcfws_code": "瑞卫医罚〔2025〕62号",
+          "bxzcf_name": "瑞安市张奎妹保健食品店",
+          "guid": "7a41-2b55-49d9-a376-edd4adeafa80",
+          "xzcfws_name": "瑞安市张奎妹保健食品店未取得《医疗机构执业许可证》擅自执业案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "张某某",
+          "xzcf_date": "2025-10-16",
+          "orgnode": "瑞安市卫生健康局"
+        },
+        {
+          "unid": "330328022025050010",
+          "xzcfws_code": "文市监处罚〔2025〕215号",
+          "bxzcf_name": "文成县亲和保健食品店",
+          "guid": "330328022025050010",
+          "xzcfws_name": "文成县亲和保健食品店销售超过保质期的食品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "胡某某",
+          "xzcf_date": "2025-09-26",
+          "orgnode": "文成县市场监督管理局"
+        },
+        {
+          "unid": "330881042025060041",
+          "xzcfws_code": "江市监处罚〔2025〕325号",
+          "bxzcf_name": "江山市晓星草药铺",
+          "guid": "330881042025060041",
+          "xzcfws_name": "江山市晓星草药铺用列入保健食品原料目录的原料生产普通食品、对商品的性能功能等作虚假或引人误解的商业宣传案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "王某某",
+          "xzcf_date": "2025-09-09",
+          "orgnode": "江山市市场监督管理局"
+        },
+        {
+          "unid": "330329022025060001",
+          "xzcfws_code": "泰市监处罚〔2025〕77号",
+          "bxzcf_name": "泰顺县建顺保健食品店",
+          "guid": "330329022025060001",
+          "xzcfws_name": "泰顺县建顺保健食品店使用医疗用语及使用非食品原料生产销售散装食品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "李某某",
+          "xzcf_date": "2025-08-20",
+          "orgnode": "泰顺县市场监督管理局"
+        },
+        {
+          "unid": "331081152025050004",
+          "xzcfws_code": "温市监处罚〔2025〕482号",
+          "bxzcf_name": "温岭市石桥头大春保健食品店",
+          "guid": "331081152025050004",
+          "xzcfws_name": "温岭市石桥头大春保健食品店销售超过保质期的食品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "杨某某",
+          "xzcf_date": "2025-06-25",
+          "orgnode": "温岭市市场监督管理局"
+        }
+      ],
+      "total": 53,
+      "pageTotal": 6,
+      "pageNo": 2
+    },
+    "traceId": "1428A813A188430A883C713354384096",
+    "messageType": 2
+  }
+}

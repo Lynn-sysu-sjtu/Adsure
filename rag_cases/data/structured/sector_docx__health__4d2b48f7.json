@@ -1,0 +1,170 @@
+{
+ "case_id": "sector_docx__health__4d2b48f7",
+ "title": "丽水市莲都区运祥日用品商行诉丽水市市场监督管理局案",
+ "case_number": "（2020）浙1102行初42号",
+ "court": "丽水市莲都区人民法院",
+ "decision_date": "2020-09-08",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "保健食品广告合规案例库.docx",
+ "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46880fb6572044a25388f6504cb63f2a4bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
+ "publish_date": null,
+ "penalty_authority": "丽水市莲都区运祥日用品商行诉丽水市市场监督管理局",
+ "party_name": "案",
+ "region": "丽水市莲都区",
+ "industry": "保健食品 / 保健品 / 普通食品",
+ "sector": "health",
+ "sector_cn": "保健品",
+ "violation_type": "会销保健品虚假宣传",
+ "case_nature": "civil_dispute_with_regulatory_signal",
+ "source_lookup_priority": "P1",
+ "is_admin_penalty_candidate": false,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "health"
+ ],
+ "product_or_service": "精微多纤宝",
+ "ad_channel": "视频",
+ "risk_dimensions": [
+  "保健品违规宣传",
+  "会销虚假宣传",
+  "疾病治疗功效宣传",
+  "老年人营销风险"
+ ],
+ "illegal_claims": [
+  "精微多纤宝"
+ ],
+ "facts_summary": "原告丽水市莲都区运祥日用品商行因不服被告丽水市市场监督管理局作出的行政处罚决定及被告丽水市人民政府作出的行政复议决定，向本院起诉。本院于2020年5月19日受理后，依法组成合议庭，于2020年7月3日公开开庭进行了审理。原告丽水市莲都区运祥日用品商行的委托代理人蒋轲，被告丽水市市场监督管理局的出庭负责人赵伟杰及委托代理人季昌满、吴汝锋，被告丽水市人民政府的委托代理人丁加伟、陈秋韵到庭参加诉讼。本案现已审理终结。\n经审理查明，2019年7月11日，被告丽水市市场监督管理局根据群众反映，在对位于丽水市莲都区中东路小转盘地下室电梯口右边门面何运强开设的丽水市莲都区运祥日用品商行进行现场检查，发现其通过连续多日播放视频讲座，免费发放产品试吃，分享体验感受等方式，向老年人宣传推销“精微多纤宝\"，宣称该产品对炎症、“三高\"、糖尿病、癌症等多种疾病具有治疗和预防功效，怂恿现场老年人进行购买。因原告行为涉嫌虚假宣传销售，2019年7月17日被告丽水市市场监督管理局予以立案调查，2019年10月15日，被告丽水市市场监督管理局向当事人电子送达了丽市监听告字〔2019〕05号《行政处罚听证告知书》。原告提出请求减免罚款的申辩意见，并要求听证。被告于当月24日举行了听证。2019年11月14日，被告丽水市市场监督管理局作出丽市监案[2019]30号行政处罚决定。原告不服，于2019年12月2日向被告丽水市人民政府申请行政复议，丽水市人民政府依法予以受理，并于同年3月26日作出丽政复[2020]3号行政复议决定，维持了丽水市市场监督管理局的行政处罚决定。原告不服，遂诉至本院。\n另查明，经营者何运强于2018年4月9日登记注册成立丽水市莲都区运祥健康信息咨询服务部，2019年2月21日将名称变更为丽水市莲都区祥瑞广告策划工作室，2019年5月6日将名称变更为丽水市莲都区运祥日用品商行。其经营范围包括日用品、食品、食用农产品（不含蔬菜、冷鲜肉、水产品和豆制品（不含豆浆））、保健食品等。该商行系网络传媒新零售公司加盟店，以新零售团购、签到送礼以及免费健康体检等方式吸引招徕老年顾客。2019年6月底，原告开始销售精微多纤宝产品。根据查获的该产品包装显示，原告销售的精微多纤宝属于固体饮料类普通食品，其主要产品成分为藜麦、盐藻、蛋白核小球藻、黄精、淡竹叶、葛根、杏仁、沙棘、桑叶等。至案发时止，原告共取得销售货款人民币16932元。原告现已退还全部货款并停止营业。",
+ "legal_basis": [
+  "《中华人民共和国反不正当竞争法》第八条第一款（虚假宣传）"
+ ],
+ "penalty_result": "责令立即停止违法行为，罚款450000元。",
+ "penalty_amount": 450000,
+ "regulatory_logic": "保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销保健品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《中华人民共和国反不正当竞争法》第八条第一款（虚假宣传）。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "health",
+  "保健品",
+  "会销保健品虚假宣传",
+  "保健品违规宣传",
+  "会销虚假宣传",
+  "疾病治疗功效宣传",
+  "老年人营销风险",
+  "精微多纤宝"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
+ "notes": "由用户提供的分赛道DOCX案例库导入；已归档原文，但缺少官方source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "pending_pkulaw_human_review",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
+ },
+ "source_lookup_query": "（2020）浙1102行初42号 丽水市莲都区运祥日用品商行诉丽水市市场监督管理局案",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告丽水市莲都区运祥日用品商行因不服被告丽水市市场监督管理局作出的行政处罚决定及被告丽水市人民政府作出的行政复议决定，向本院起诉。本院于2020年5月19日受理后，依法组成合议庭，于2020年7月3日公开开庭进行了审理。原告丽水市莲都区运祥日用品商行的委托代理人蒋轲，被告丽水市市场监督管理局的出庭负责人赵伟杰及委托代理人季昌满、吴汝锋，被告丽水市人民政府的委托代理人丁加伟、陈秋韵到庭参加诉讼。本案现已审理终结。涉案广告宣称：精微多纤宝。",
+ "raw_text_path": "data/raw_text/case_library_docx__保健食品广告合规案例库.json",
+ "decision_highlights": "利用会议、讲座方式对普通食品进行虚假宣传，欺骗误导消费者，构成不正当竞争行为；退款及停止营业属于查处后所为，不属于主动消除危害后果；针对老年群体虚假宣传，处罚45万元在法定幅度内。",
+ "source_documents": [
+  {
+   "source_name": "保健食品广告合规案例库.docx",
+   "raw_text_path": "data/raw_text/case_library_docx__保健食品广告合规案例库.json",
+   "verification_status": "pending_source_lookup"
+  }
+ ],
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
+  }
+ ],
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T03:41:10+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）"
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "原告通过免费健康体验、签到送礼物等形式聚集老年消费者，播放视频讲座、口头宣传“精微多纤宝”（固体饮料类普通食品）对糖尿病、高血压、高血脂、高血糖、慢性病等多种疾病具有治疗或预防作用，共取得销售货款16932元，后已退还全部货款并停止营业。",
+    "vector_text": "【赛道】保健品。【场景】视频。【宣称】精微多纤宝。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及会销保健品虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《中华人民共和国反不正当竞争法》第八条第一款（虚假宣传）。。【依据】《中华人民共和国反不正当竞争法》第八条第一款（虚假宣传）。【结果】责令立即停止违法行为，罚款450000元。。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2020)浙1102行初42号",
+  "pkulaw_court": "浙江省丽水市莲都区人民法院",
+  "pkulaw_title": "丽水市莲都区运祥日用品商行与丽水市市场监督管理局、丽水市人民政府行政监察(监察)一审行政判决书",
+  "last_instance_date": "2020.09.08",
+  "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46880fb6572044a25388f6504cb63f2a4bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2020_浙1102行初42号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
+}

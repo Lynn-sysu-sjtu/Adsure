@@ -1,0 +1,19 @@
+{
+  "fetched_at": "2026-09-17T20:03:27+08:00",
+  "source_name": "北大法宝（pkulaw.com，经 MCP 检索）",
+  "tool": "get_case_list",
+  "request_arguments": {
+    "documentAttr": [
+      "判决书",
+      "裁定书"
+    ],
+    "title": "广告",
+    "fulltext": "化妆品 可食用"
+  },
+  "sha256": "7435bca14004ccebde85b3d97bbc573d01cc710e243d7a07f24874852678d960",
+  "response": {
+    "Message": "未找到数据",
+    "Data": [],
+    "Total": 0
+  }
+}

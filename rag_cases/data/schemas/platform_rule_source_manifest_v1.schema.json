@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://adsure.local/schemas/platform_rule_source_manifest_v1.schema.json",
+  "title": "Adsure Platform Rule Source Manifest v1",
+  "type": "object",
+  "required": ["manifest_id", "collected_at", "catalog_status", "source_count", "sources", "release_gate"],
+  "properties": {
+    "manifest_id": {"type": "string", "minLength": 1},
+    "collected_at": {"type": "string", "minLength": 1},
+    "catalog_status": {"const": "candidate_only_not_for_production"},
+    "source_count": {"type": "integer", "minimum": 1},
+    "release_gate": {"type": "string", "minLength": 1},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "platform",
+          "document_title",
+          "source_url",
+          "manual_verification_url",
+          "collected_at",
+          "capture_format",
+          "capture_method",
+          "raw_path",
+          "raw_text_path",
+          "raw_sha256",
+          "raw_size_bytes",
+          "snapshot_completeness",
+          "final_http_status",
+          "review_status",
+          "effective_status"
+        ],
+        "properties": {
+          "source_id": {"type": "string", "minLength": 1},
+          "platform": {"type": "string", "minLength": 1},
+          "document_title": {"type": "string", "minLength": 1},
+          "source_url": {"type": "string", "format": "uri"},
+          "manual_verification_url": {"type": "string", "format": "uri"},
+          "collected_at": {"type": "string", "minLength": 1},
+          "page_update_date": {"type": ["string", "null"]},
+          "capture_format": {"enum": ["html", "pdf"]},
+          "capture_method": {"const": "direct_public_download_no_login"},
+          "raw_path": {"type": "string", "minLength": 1},
+          "raw_headers_path": {"type": "string", "minLength": 1},
+          "raw_text_path": {"type": "string", "minLength": 1},
+          "raw_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "raw_size_bytes": {"type": "integer", "minimum": 1},
+          "extracted_text_length": {"type": "integer", "minimum": 0},
+          "snapshot_completeness": {
+            "enum": ["downloaded_page_text_extracted", "dynamic_html_shell_only"]
+          },
+          "final_http_status": {"const": 200},
+          "review_status": {"const": "pending_human_review"},
+          "effective_status": {"const": "pending_effective_review"},
+          "notes": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

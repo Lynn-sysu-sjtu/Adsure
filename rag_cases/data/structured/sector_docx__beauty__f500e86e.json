@@ -1,0 +1,158 @@
+{
+ "case_id": "sector_docx__beauty__f500e86e",
+ "title": "驻马店市晨钟生物科技有限公司诉平顶山市工商行政管理局新华分局行政处罚案",
+ "case_number": "（2016）豫04行终126号",
+ "court": "河南省平顶山市中级人民法院",
+ "decision_date": "2016-07-13",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+ "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4161855fd1f70238718e64d4e31006a68bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
+ "publish_date": null,
+ "penalty_authority": "驻马店市晨钟生物科技有限公司诉平顶山市工商行政管理局",
+ "party_name": "新华分局",
+ "region": "河南省平顶山",
+ "industry": "化妆品 / 医疗美容 / 美妆",
+ "sector": "beauty",
+ "sector_cn": "美妆",
+ "violation_type": "化妆品标签虚假宣传",
+ "case_nature": "administrative_litigation_review",
+ "source_lookup_priority": "P0",
+ "is_admin_penalty_candidate": true,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "beauty"
+ ],
+ "product_or_service": "巨型一号",
+ "ad_channel": "其他",
+ "risk_dimensions": [
+  "虚假宣传"
+ ],
+ "illegal_claims": [
+  "巨型一号",
+  "抑制黑色素细胞生成"
+ ],
+ "facts_summary": "上诉人驻马店市晨钟生物科技有限公司因工商行政处罚一案，不服河南省宝丰县人民法院（2015）宝行初字第55号行政判决，向本院提起上诉。本院依法组成合议庭，公开开庭审理了本案。上诉人驻马店市晨钟生物科技有限公司（以下简称晨钟有限公司）的委托代理人乔新键、张磊，被上诉人平顶山市工商行政管理局新华分局（以下简称新华工商分局）副局长刘涛及其诉讼代表人段聚良的委托代理人黄晓兴、王兴党到庭参加诉讼。本案现已审理终结。\n本院认为，一、《中华人民共和国反不正当竞争法》第三条规定：“……县级以上人民政府工商行政管理部门对不正当竞争行为进行监督检查；……”、《化妆品卫生监督管理条例》（卫生部令第3号）第二十九条规定：“……违反本条例第十四条有关广告管理的行政处罚，由工商行政管理部门决定。……”。本案，被上诉人新华工商分局根据上述法律、法规规定具有管辖权；二、《中华人民共和国反不正当竞争法》第九条规定：“经营者不得利用广告或者其他方法，对商品的质量、制作成分、性能、用途、生产者、有效期限、产地等作引人误解的虚假宣传；……”、《河南省反不正当竞争条例》第十三条规定：“经营者不得利用广告或者其他方法，对商品的质量、制作成分、性能、用途、生产者、生产日期、有效期限、产地、价格及服务内容、形式等作虚假或引人误解的宣传；……本条第一款所称其他方法主要是指：……（三）在商品包装、装潢、样品、说明书上作说明；……”。本案，上诉人晨钟公司在其产品包装上标注“抑制黑色素细胞生成”，是在非特殊用途化妆品上宣传特殊用途化妆品功效，属于作引人误解的虚假宣传。被上诉人新华工商分局所作行政处罚决定，认定事实清楚，证据确凿，适用法律、法规正确，符合法定程序。原审判决认定事实清楚，适用法律正确，审判程序合法，应予维持。上诉人晨钟公司的上诉理由不能成立，本院不予支持。依照《中华人民共和国行政诉讼法》第八十九条第一款第（一）项的规定，判决如下：",
+ "legal_basis": [
+  "《反不正当竞争法》第九条、第二十四条"
+ ],
+ "penalty_result": "罚款40000元",
+ "penalty_amount": null,
+ "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品标签虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《反不正当竞争法》第九条、第二十四条。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "beauty",
+  "美妆",
+  "化妆品标签虚假宣传",
+  "虚假宣传",
+  "巨型一号",
+  "抑制黑色素细胞生成"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
+ "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "pending_pkulaw_human_review",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
+ },
+ "source_lookup_query": "（2016）豫04行终126号 驻马店市晨钟生物科技有限公司诉平顶山市工商行政管理局新华分局行政处罚案",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。上诉人驻马店市晨钟生物科技有限公司因工商行政处罚一案，不服河南省宝丰县人民法院（2015）宝行初字第55号行政判决，向本院提起上诉。本院依法组成合议庭，公开开庭审理了本案。上诉人驻马店市晨钟生物科技有限公司（以下简称晨钟有限公司）的委托代理人乔新键、张磊，被上诉人平顶山市工商行政管理局新华分局（以下简称新华工商分局）副局长刘涛及其诉讼代表人段聚良的委托代理人黄晓兴、王兴党到庭参加诉讼。本案现已审理终结。\n本院认为，一、《中华人民共和国反不正当竞争法》第三条规定：“……县级以上人民政府工商行政管理部门对不正当竞争行为进行监督检查；……”、《化妆品卫生监督管理条例》（卫生部令第3号）第二十九条规定：“……违反本条例第十四条有关广告管理的行政处罚，由工商行政管理部门决定。……”。涉案广告宣称：巨型一号；抑制黑色素细胞生成。",
+ "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
+  }
+ ],
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T03:41:10+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）"
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在“巨型一号”丝瓜水美肤液（非特殊用途化妆品）外包装上标注“抑制黑色素细胞生成”等特殊用途功效宣传",
+    "vector_text": "【赛道】美妆。【场景】其他。【宣称】巨型一号；抑制黑色素细胞生成。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品标签虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《反不正当竞争法》第九条、第二十四条。。【依据】《反不正当竞争法》第九条、第二十四条。【结果】罚款40000元。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2016)豫04行终126号",
+  "pkulaw_court": "河南省平顶山市中级人民法院",
+  "pkulaw_title": "驻马店市晨钟生物科技有限公司与平顶山市工商行政管理局新华分局工商行政管理二审行政判决书",
+  "last_instance_date": "2016.07.13",
+  "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4161855fd1f70238718e64d4e31006a68bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2016_豫04行终126号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "本院认为(回退)"
+  ]
+ },
+ "human_review_required": true
+}

@@ -1,0 +1,739 @@
+{
+  "schema_id": "ads_review_base_v4",
+  "source_snapshot_name": "※审心广告物料合规审核台 v4.base",
+  "table_id": "tblL8R7yL1rCeU7m",
+  "table_name": "数据表",
+  "records": [
+    {
+      "case_id": "REAL-GAME-001",
+      "case_name": "游戏充值奖励允诺不清",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "充三元送一只狗，充六元送神兽白虎，充十元就送召唤月灵",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①游戏·物料类型": "短视频",
+        "①游戏·产品品类": "其他",
+        "①游戏·投放平台": [
+          "抖音"
+        ],
+        "①游戏·游戏名称": "赤沙龙城",
+        "①游戏·物料涉及场景": "买量短视频",
+        "①运营·补充背景资料": "输入所述产品或服务类别：网络游戏"
+      },
+      "human_reference": {
+        "expected_risk_level": "高",
+        "expected_routing": "法务",
+        "expected_violation_types": [
+          "虚假宣传"
+        ],
+        "human_reason": "文案将充值金额与特定奖励直接对应，未说明随机抽取或其他限制条件，可能使用户误解奖励获取方式。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__game__19894e09",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-GAME-002",
+      "case_name": "盲盒概率鉴定背书宣称",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "商品概率经司法鉴定真实有效，请放心购买",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①游戏·物料类型": "图文",
+        "①游戏·产品品类": "其他",
+        "①游戏·投放平台": [
+          "其他"
+        ],
+        "①游戏·物料涉及场景": "APP和小程序主页面",
+        "①运营·补充背景资料": "输入所述产品或服务类别：盲盒；原始投放渠道：APP、小程序"
+      },
+      "human_reference": {
+        "expected_risk_level": "高",
+        "expected_routing": "法务",
+        "expected_violation_types": [
+          "虚假宣传",
+          "引证内容不规范"
+        ],
+        "human_reason": "文案以司法鉴定为概率真实性背书；鉴定范围和实时运行概率是否一致属于关键事实，需法务核验。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__game__d9a46e29",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-GAME-003",
+      "case_name": "游戏福利码奖励条件不清",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "888888仙玉+经验丹+六阶仙器8",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①游戏·物料类型": "其他",
+        "①游戏·产品品类": "其他",
+        "①游戏·投放平台": [
+          "其他"
+        ],
+        "①游戏·游戏名称": "大话西游归来",
+        "①游戏·物料涉及场景": "福利码推广",
+        "①运营·补充背景资料": "输入所述产品或服务类别：网络游戏"
+      },
+      "human_reference": {
+        "expected_risk_level": "中",
+        "expected_routing": "运营补资料",
+        "expected_violation_types": [
+          "虚假宣传"
+        ],
+        "human_reason": "文案列出可领取道具但未说明兑换、账号、时间或概率条件，需要补充完整活动规则后判断。",
+        "notes": "边界模糊案例；原候选材料记载法院认为表达不够清楚准确，但未认定达到欺诈程度。"
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__game__4cff4dd4",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-GAME-004",
+      "case_name": "游戏超高爆率宣传",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "超高爆率乐翻天",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①游戏·物料类型": "其他",
+        "①游戏·产品品类": "休闲",
+        "①游戏·投放平台": [
+          "其他"
+        ],
+        "①游戏·物料涉及场景": "游戏推广",
+        "①运营·补充背景资料": "输入所述产品或服务类别：捕鱼游戏；证明材料情况：暂无"
+      },
+      "human_reference": {
+        "expected_risk_level": "中",
+        "expected_routing": "运营补资料",
+        "expected_violation_types": [
+          "虚假宣传"
+        ],
+        "human_reason": "“超高爆率”涉及可验证的游戏概率或效果，需补充概率公示、运行规则和证明材料。",
+        "notes": "边界模糊案例；原候选材料记载法院将其理解为可能达到的效果。"
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__game__b5daf3c4",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-GAME-005",
+      "case_name": "游戏专属客服单独宣称",
+      "fields": {
+        "①运营·行业领域": "游戏",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "专属客服",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①游戏·物料类型": "其他",
+        "①游戏·产品品类": "其他",
+        "①游戏·投放平台": [
+          "其他"
+        ],
+        "①游戏·物料涉及场景": "VIP特权专区",
+        "①运营·补充背景资料": "输入所述产品或服务类别：网络游戏"
+      },
+      "human_reference": {
+        "expected_risk_level": "低",
+        "expected_routing": "运营",
+        "expected_violation_types": [
+          "其他"
+        ],
+        "human_reason": "仅看“专属客服”这一条物料，未出现明显违法用语；仍应保证服务对象、条件和实际履行与宣传一致。",
+        "notes": "低风险边界样本；不能据此替代对完整VIP权益页面和实际履约情况的核验。"
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__game__cc400e61",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-COSM-001",
+      "case_name": "美妆产品杀菌消炎医疗用语",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "杀菌、消炎、镇痛",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①美妆·物料类型": "图文",
+        "①美妆·产品品类": "其他",
+        "①美妆·投放平台": [
+          "微信",
+          "其他"
+        ],
+        "①美妆·核心宣称功效": "杀菌、消炎、镇痛",
+        "①美妆·物料涉及场景": "公众号、手册和挂纸宣传",
+        "①运营·补充背景资料": "输入所述产品或服务类别：美容产品；原始投放渠道：微信公众号、线下"
+      },
+      "human_reference": {
+        "expected_risk_level": "高",
+        "expected_routing": "法务",
+        "expected_violation_types": [
+          "涉医疗宣传",
+          "虚假宣传"
+        ],
+        "human_reason": "化妆品或美容产品使用杀菌、消炎、镇痛等疾病治疗或医疗作用用语，存在明显医疗化宣传风险。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__beauty__5560f828",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-COSM-002",
+      "case_name": "美妆服务多项最高级表述",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "材料最放心、效果最完美、质量最无忧",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①美妆·物料类型": "图文",
+        "①美妆·产品品类": "其他",
+        "①美妆·投放平台": [
+          "其他"
+        ],
+        "①美妆·核心宣称功效": "效果最完美",
+        "①美妆·物料涉及场景": "经营场所展板",
+        "①运营·补充背景资料": "输入所述产品或服务类别：美容服务；原始投放渠道：线下"
+      },
+      "human_reference": {
+        "expected_risk_level": "高",
+        "expected_routing": "法务",
+        "expected_violation_types": [
+          "绝对化用语"
+        ],
+        "human_reason": "文案连续使用“最放心”“最完美”“最无忧”等最高级、保证性表达，绝对化用语风险明显。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__beauty__6091c23e",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-COSM-003",
+      "case_name": "面膜渗透力倍数功效宣称",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "渗透力高达70倍",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①美妆·物料类型": "详情页",
+        "①美妆·产品品类": "护肤",
+        "①美妆·投放平台": [
+          "其他"
+        ],
+        "①美妆·产品备案名称": "舒盈补水保湿蚕丝玻尿酸面膜",
+        "①美妆·核心宣称功效": "渗透力高达70倍",
+        "①运营·补充背景资料": "输入所述产品或服务类别：面膜；原始投放渠道：天猫；证明材料情况：暂无"
+      },
+      "human_reference": {
+        "expected_risk_level": "中",
+        "expected_routing": "运营补资料",
+        "expected_violation_types": [
+          "虚假宣传",
+          "引证内容不规范"
+        ],
+        "human_reason": "量化倍数功效需要明确比较基准、测试方法和证明材料，现有信息不足以验证“70倍”。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__beauty__80f1858a",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-COSM-004",
+      "case_name": "普通化妆品美白祛斑宣称",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "美白、祛斑、提亮肤色",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①美妆·物料类型": "详情页",
+        "①美妆·产品品类": "护肤",
+        "①美妆·投放平台": [
+          "其他"
+        ],
+        "①美妆·产品备案名称": "377烟酰胺亮肤精华液",
+        "①美妆·核心宣称功效": "美白、祛斑、提亮肤色",
+        "①运营·补充背景资料": "输入所述产品或服务类别：精华液；原始投放渠道：拼多多；是否特殊化妆品：否"
+      },
+      "human_reference": {
+        "expected_risk_level": "高",
+        "expected_routing": "法务",
+        "expected_violation_types": [
+          "虚假宣传"
+        ],
+        "human_reason": "现有候选材料记载产品为普通化妆品，网页却宣传美白、祛斑等特殊功效，需核验备案和功效依据。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__beauty__ad8eba05",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-COSM-005",
+      "case_name": "普通化妆品防晒功效宣称",
+      "fields": {
+        "①运营·行业领域": "美妆",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "防晒",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①美妆·物料类型": "详情页",
+        "①美妆·产品品类": "护肤",
+        "①美妆·投放平台": [
+          "其他"
+        ],
+        "①美妆·核心宣称功效": "防晒",
+        "①运营·补充背景资料": "输入所述产品或服务类别：化妆品；原始投放渠道：天猫；是否特殊化妆品：否；证明材料情况：暂无"
+      },
+      "human_reference": {
+        "expected_risk_level": "中",
+        "expected_routing": "运营补资料",
+        "expected_violation_types": [
+          "虚假宣传"
+        ],
+        "human_reason": "防晒属于需要结合产品注册备案和功效评价判断的宣称，现有输入需补充产品资质及证明材料。",
+        "notes": "缺少事实材料样本。"
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__beauty__b7712cbc",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-HF-001",
+      "case_name": "普通食品包装宣称预防肿瘤",
+      "fields": {
+        "①运营·行业领域": "保健食品",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "具有增强免疫力，延缓衰老，预防心脑血管硬化，抑制肿瘤发生和生长等作用",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①保健食品·物料类型": "其他",
+        "①保健食品·产品品类": "其他",
+        "①保健食品·投放平台": [
+          "其他"
+        ],
+        "①保健食品·核心宣称功效": [
+          "增强免疫力"
+        ],
+        "①保健食品·物料涉及场景": "包装标签",
+        "①运营·补充背景资料": "输入所述产品或服务类别：食用农产品；原始投放渠道：线下"
+      },
+      "human_reference": {
+        "expected_risk_level": "高",
+        "expected_routing": "法务",
+        "expected_violation_types": [
+          "涉医疗宣传",
+          "虚假宣传"
+        ],
+        "human_reason": "食用农产品包装宣称预防心脑血管疾病、抑制肿瘤等疾病预防治疗功能，风险明显。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__health__47adc1ea",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-HF-002",
+      "case_name": "普通食品朋友圈宣称治疗癌症",
+      "fields": {
+        "①运营·行业领域": "保健食品",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "治疗肝癌、肺癌、结肠癌等80%-90%癌症病类",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①保健食品·物料类型": "图文",
+        "①保健食品·产品品类": "其他",
+        "①保健食品·投放平台": [
+          "微信"
+        ],
+        "①保健食品·物料涉及场景": "朋友圈推广",
+        "①运营·补充背景资料": "输入所述产品或服务类别：果汁饮品；原始投放渠道：微信朋友圈；产品属性：普通食品"
+      },
+      "human_reference": {
+        "expected_risk_level": "高",
+        "expected_routing": "法务",
+        "expected_violation_types": [
+          "涉医疗宣传",
+          "虚假宣传"
+        ],
+        "human_reason": "普通食品直接宣称可治疗多种癌症，属于明显的疾病治疗功效宣传。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__health__d8460228",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-HF-003",
+      "case_name": "会销普通食品逆转慢性病宣称",
+      "fields": {
+        "①运营·行业领域": "保健食品",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "逆转衰老，消除多种老年慢性病",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①保健食品·物料类型": "图文",
+        "①保健食品·产品品类": "其他",
+        "①保健食品·投放平台": [
+          "其他"
+        ],
+        "①保健食品·物料涉及场景": "PPT会销",
+        "①运营·补充背景资料": "输入所述产品或服务类别：普通食品；原始投放渠道：线下会销"
+      },
+      "human_reference": {
+        "expected_risk_level": "高",
+        "expected_routing": "法务",
+        "expected_violation_types": [
+          "涉医疗宣传",
+          "虚假宣传"
+        ],
+        "human_reason": "普通食品通过会销宣称能够逆转衰老、消除慢性病，涉及疾病治疗和无法证实的功效承诺。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__health__70bd40e0",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-HF-004",
+      "case_name": "保健食品清除血管斑块宣称",
+      "fields": {
+        "①运营·行业领域": "保健食品",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "清除血液垃圾斑块，针对心脑血管疾病及症状作用明显",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①保健食品·物料类型": "图文",
+        "①保健食品·产品品类": "其他",
+        "①保健食品·投放平台": [
+          "其他"
+        ],
+        "①保健食品·产品备案名称": "欣方牌瑞雪胶囊",
+        "①保健食品·物料涉及场景": "横幅和海报",
+        "①运营·补充背景资料": "输入所述产品或服务类别：保健食品；原始投放渠道：线下"
+      },
+      "human_reference": {
+        "expected_risk_level": "高",
+        "expected_routing": "法务",
+        "expected_violation_types": [
+          "涉医疗宣传",
+          "虚假宣传"
+        ],
+        "human_reason": "保健食品宣称清除斑块并对心脑血管疾病作用明显，超出一般保健功能并涉及疾病治疗暗示。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__health__df7e40d5",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-HF-005",
+      "case_name": "保健食品批准功能对照样本",
+      "fields": {
+        "①运营·行业领域": "保健食品",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "补充钙",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①保健食品·物料类型": "其他",
+        "①保健食品·产品品类": "维生素/矿物质",
+        "①保健食品·投放平台": [
+          "其他"
+        ],
+        "①保健食品·产品备案名称": "奇宇牌钙咀嚼片",
+        "①保健食品·核心宣称功效": [
+          "营养素补充剂"
+        ],
+        "①运营·补充背景资料": "输入所述产品或服务类别：保健食品；原始投放渠道：线下；批准功能：补充钙"
+      },
+      "human_reference": {
+        "expected_risk_level": "无明显风险",
+        "expected_routing": "运营",
+        "expected_violation_types": [],
+        "human_reason": "现有候选材料明确记载该产品批准功能为“补充钙”，单独使用该表述未见明显疾病治疗或夸大功效内容。",
+        "notes": "无明显风险对照样本；仅评价当前单条物料，不覆盖原案例中的其他标签表述。"
+      },
+      "provenance": {
+        "derived_from_case_id": "sector_docx__health__f92a771c",
+        "source_type": "manual_docx_sector_report_pending_source_verification",
+        "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-GEN-001",
+      "case_name": "服务品牌第一宣称",
+      "fields": {
+        "①运营·行业领域": "通用",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "阳光车导专车私导第一品牌",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①运营·补充背景资料": "输入所述产品或服务类别：旅游服务；原始投放渠道：官网"
+      },
+      "human_reference": {
+        "expected_risk_level": "高",
+        "expected_routing": "法务",
+        "expected_violation_types": [
+          "绝对化用语"
+        ],
+        "human_reason": "“第一品牌”属于排名和最高级表达，需要审查绝对化用语风险及客观依据。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "excel_candidate__absolute_terms__1c28d555",
+        "source_type": "manual_compilation_pending_source_verification",
+        "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-GEN-002",
+      "case_name": "房地产固定回报承诺",
+      "fields": {
+        "①运营·行业领域": "通用",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "在微信公众号发布广告，含有前五年固定回报（分别为6%、6%、7%、8%、9%）等升值承诺内容",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①运营·补充背景资料": "输入所述产品或服务类别：房地产；原始投放渠道：微信公众号"
+      },
+      "human_reference": {
+        "expected_risk_level": "高",
+        "expected_routing": "法务",
+        "expected_violation_types": [
+          "虚假宣传"
+        ],
+        "human_reason": "房地产广告明确承诺固定比例回报和升值收益，存在投资回报承诺及误导风险。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "excel_candidate__real_estate_misleading__c7de0984",
+        "source_type": "manual_compilation_pending_source_verification",
+        "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-GEN-003",
+      "case_name": "医疗统计数据未标出处",
+      "fields": {
+        "①运营·行业领域": "通用",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "我国每年肝癌发生病例占全球肝癌发生病例的55%",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①运营·补充背景资料": "输入所述产品或服务类别：医疗科技服务；原始投放渠道：微信公众号；证明材料情况：暂无"
+      },
+      "human_reference": {
+        "expected_risk_level": "中",
+        "expected_routing": "运营补资料",
+        "expected_violation_types": [
+          "引证内容不规范"
+        ],
+        "human_reason": "文案使用精确统计数据但现有物料未提供出处、适用年份和统计口径，需要补充可核验来源。",
+        "notes": "缺少事实材料样本。"
+      },
+      "provenance": {
+        "derived_from_case_id": "excel_candidate__improper_citation__f79ab438",
+        "source_type": "manual_compilation_pending_source_verification",
+        "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-GEN-004",
+      "case_name": "理疗产品抑制癌细胞宣称",
+      "fields": {
+        "①运营·行业领域": "通用",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "抑制癌细胞",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①运营·补充背景资料": "输入所述产品或服务类别：电热褥垫；原始投放渠道：线下会销"
+      },
+      "human_reference": {
+        "expected_risk_level": "高",
+        "expected_routing": "法务",
+        "expected_violation_types": [
+          "涉医疗宣传",
+          "虚假宣传"
+        ],
+        "human_reason": "普通理疗产品直接使用抑制癌细胞的疾病治疗功效表述，存在明显医疗宣传和虚假功效风险。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "excel_candidate__false_misleading_claim__a55ab6a8",
+        "source_type": "manual_compilation_pending_source_verification",
+        "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    },
+    {
+      "case_id": "REAL-GEN-005",
+      "case_name": "食品治疗白血病宣称",
+      "fields": {
+        "①运营·行业领域": "通用",
+        "①运营·紧急程度": "普通",
+        "①运营·物料内容": "对治疗白血病有很好疗效",
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+        "①运营·补充背景资料": "输入所述产品或服务类别：蛹虫草产品；原始投放渠道：航空期刊"
+      },
+      "human_reference": {
+        "expected_risk_level": "高",
+        "expected_routing": "法务",
+        "expected_violation_types": [
+          "涉医疗宣传",
+          "虚假宣传"
+        ],
+        "human_reason": "食品或普通商品宣称对白血病具有治疗效果，容易与药品相混淆并涉及疾病治疗功效。",
+        "notes": ""
+      },
+      "provenance": {
+        "derived_from_case_id": "excel_candidate__live_commerce_ad__a298aa7b",
+        "source_type": "manual_compilation_pending_source_verification",
+        "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+        "source_url": null,
+        "source_verification_status": "pending_source_lookup",
+        "review_status": "pending_review",
+        "approved_for_rag": false,
+        "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。"
+      }
+    }
+  ]
+}

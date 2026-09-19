@@ -1,0 +1,42 @@
+{
+  "fetched_at": "2026-09-17T17:23:51+08:00",
+  "request": {
+    "xzcfws_name": "互联网广告",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330483092025080005",
+          "xzcfws_code": "桐市监处罚〔2025〕1891号",
+          "bxzcf_name": "桐乡市云数互联网广告有限公司",
+          "guid": "330483092025080005",
+          "xzcfws_name": "桐乡市云数互联网广告有限公司公司成立后无正当理由超过6个月未开业的，或者开业后自行停业连续6个月以上案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "曹某某",
+          "xzcf_date": "2025-12-19",
+          "orgnode": "桐乡市市场监督管理局"
+        }
+      ],
+      "total": 1,
+      "pageTotal": 1,
+      "pageNo": 1
+    },
+    "traceId": "03243F775D8F4925BECD2A32E6051FA8",
+    "messageType": 2
+  }
+}

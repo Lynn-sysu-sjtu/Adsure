@@ -1,0 +1,242 @@
+# ══════════════════════════════════════════════════════════════
+#  L3 · 需资质 / 需授权词库（起始版本，未经法务复核）
+#
+#  与 L1/L2 的区别：这类表述**不一定违法**，真假取决于手上有没有
+#  相应资质/授权材料。命中后走「要材料」处置路径（needs_facts），
+#  材料齐备且与广告内容相符 → 解除；无材料或材料对不上 → 升级风险。
+#
+#  IP 命中复用同一条路径：画面出现米奇 → 要迪士尼授权书，
+#  与文案写「发明专利」→ 要专利证书是同一个处置模式。
+#
+#  法条依据只用《广告法》第四条（真实性）、第十一条（行政许可相符、
+#  引证内容真实准确）、第十二条（专利广告）。具体专项资质管理办法
+#  由法务在复核时补充，本文件不凭印象写。
+# ══════════════════════════════════════════════════════════════
+
+meta:
+  layer: L3
+  kind: terms
+  name: 需资质需授权词
+  version: "0.1.0-draft"
+  reviewed_by_legal: false
+
+law_texts:
+  ad_law_4: >-
+    广告不得含有虚假或者引人误解的内容，不得欺骗、误导消费者。
+  ad_law_11: >-
+    广告内容涉及的事项需要取得行政许可的，应当与许可的内容相符合。
+    广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，
+    应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，
+    应当明确表示。
+  ad_law_12: >-
+    广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类。
+    未取得专利权的，不得在广告中谎称取得专利权。
+    禁止使用未授予专利权的专利申请和已经终止、撤销、无效的专利作广告。
+
+entries:
+  # ── 专利类（广告法第十二条有专门的标明义务）─────────────────
+  - term: 发明专利
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第十二条"
+    law_text_ref: ad_law_12
+    risk: medium
+    required_materials:
+      - 发明专利证书（含专利号，广告中应同时标明专利号与专利种类）
+      - 专利当前有效证明（按期缴纳年费记录）
+      - 专利权人身份证明或合法使用授权
+    judgment_points: "核验是否真实取得、是否在有效期内；广告是否同时标明专利号和专利种类；仅提交专利申请受理通知不等于取得专利权。"
+
+  - term: 实用新型专利
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第十二条"
+    law_text_ref: ad_law_12
+    risk: medium
+    required_materials:
+      - 实用新型专利证书（含专利号）
+      - 专利当前有效证明
+      - 专利权属或合法使用授权
+    judgment_points: "同发明专利：须已授权且有效，标明专利号与种类；申请中、已终止、被宣告无效的不得作广告。"
+
+  - term: 外观设计专利
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第十二条"
+    law_text_ref: ad_law_12
+    risk: medium
+    required_materials:
+      - 外观设计专利证书（含专利号）
+      - 专利当前有效证明
+      - 专利权属或合法使用授权
+    judgment_points: "同发明专利；注意外观设计专利保护的是形状图案，不得据此宣传产品功能效果。"
+
+  - term: 专利产品
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第十二条"
+    law_text_ref: ad_law_12
+    risk: medium
+    required_materials:
+      - 对应专利证书及专利号
+      - 该产品落入专利保护范围的说明
+      - 专利当前有效证明
+    judgment_points: "笼统宣称「专利产品」但无法对应到具体有效专利的，按需核验处理。"
+
+  # ── 商标 / 授权类 ─────────────────────────────────────────
+  - term: 注册商标
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第四条、第十一条"
+    law_text_ref: ad_law_4
+    risk: low
+    required_materials:
+      - 商标注册证（核定使用商品/服务类别与广告商品一致）
+      - 非权利人自身使用时提供商标使用授权链
+      - 商标当前有效证明
+    judgment_points: "注册商标专用权以核定类别为限；实际使用标志应与核准注册标志一致。"
+
+  - term: 官方授权
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第四条"
+    law_text_ref: ad_law_4
+    risk: medium
+    required_materials:
+      - 权利人或其有权主体出具的授权书
+      - 授权范围、授权期限与授权地域证明
+      - 授权链条完整（涉及多级代理时逐级可溯）
+    judgment_points: "核验授权主体是否真实有权、授权是否覆盖本次投放的平台/地域/期限；自称「官方」但无授权链的升级为虚假宣传风险。"
+
+  - term: 独家授权
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第四条"
+    law_text_ref: ad_law_4
+    risk: high
+    required_materials:
+      - 明确约定独家/排他范围的授权协议
+      - 授权期限与地域证明
+      - 授权方权属证明
+    judgment_points: "「独家」是可证伪的强事实主张，须有明确独家条款；普通经销/代理关系不足以支撑。"
+
+  - term: 总代理
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第四条"
+    law_text_ref: ad_law_4
+    risk: medium
+    required_materials:
+      - 总代理/总经销授权协议（含层级、地域、期限）
+      - 授权方权属或授权资格证明
+    judgment_points: "核验「总」的范围（全国/区域）与广告表述是否一致、是否在期限内。"
+
+  # ── 认证 / 标志类（行政许可与第三方认证）──────────────────
+  - term: 3C认证
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第十一条"
+    law_text_ref: ad_law_11
+    risk: medium
+    required_materials:
+      - 强制性产品认证证书（CCC）
+      - 证书在有效期内且覆盖广告型号
+      - 认证标志使用合规证明
+    judgment_points: "CCC 目录内产品以实际获证型号为准；证书暂停/撤销/过期的不得宣称。"
+
+  - term: 有机产品
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第十一条"
+    law_text_ref: ad_law_11
+    risk: medium
+    required_materials:
+      - 有机产品认证证书（有效期内、覆盖实际产品）
+      - 有机码/追溯凭证
+      - 认证机构资质证明
+    judgment_points: "「有机」属认证标志宣称，无有效认证不得使用；注意普通食品不得借有机暗示保健或治疗功效。"
+
+  - term: 绿色食品
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第十一条"
+    law_text_ref: ad_law_11
+    risk: low
+    required_materials:
+      - 绿色食品标志使用证书（有效期内）
+      - 许可产量/产品范围覆盖证明
+    judgment_points: "核验标志使用权期限与编号；不得超范围使用或在非许可产品上标示。"
+
+  - term: 中华老字号
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第四条、第十一条"
+    law_text_ref: ad_law_4
+    risk: low
+    required_materials:
+      - 中华老字号认定文件/授牌证明
+      - 主体一致性证明（认定主体与广告主为同一主体或合法承继）
+    judgment_points: "认定有明确主体，门店加盟、商标受让不等于自动取得老字号身份。"
+
+  - term: 地理标志
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第十一条"
+    law_text_ref: ad_law_11
+    risk: low
+    required_materials:
+      - 地理标志专用标志使用资格/核准文件
+      - 产品产自特定地域并符合相应标准的证明
+    judgment_points: "产地不在保护范围或未获使用资格的不得标示。"
+
+  - term: ISO9001认证
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第十一条"
+    law_text_ref: ad_law_11
+    risk: low
+    required_materials:
+      - ISO9001 质量管理体系认证证书（有效期内）
+      - 认证范围覆盖广告所涉产品/服务的证明
+      - 认证机构资质证明
+    judgment_points: "体系认证不证明产品本身性能；广告不得据此作产品质量/效果的引申宣称。"
+
+  - term: 保险公司承保
+    level: L3
+    industry: ["*"]
+    law_ref: "《广告法》第四条"
+    law_text_ref: ad_law_4
+    risk: medium
+    required_materials:
+      - 保险合同或承保确认函（承保公司、险种、责任范围、期限）
+      - 投保主体与广告主一致的证明
+    judgment_points: "「承保」不得表述为「保证赔付/零风险」；核验险种责任是否覆盖广告承诺的内容。"
+
+  # ── 保健食品资质（行业专项）────────────────────────────────
+  - term: 国食健字
+    level: L3
+    industry: ["health_food"]
+    law_ref: "《广告法》第十一条"
+    law_text_ref: ad_law_11
+    risk: medium
+    required_materials:
+      - 保健食品注册证书（国食健字批准文号）或备案凭证
+      - 批准功能与广告宣称功能一致的对照说明
+      - 注册/备案当前有效证明
+    judgment_points: "保健食品宣称的功能必须与批准/备案功能完全一致；超出范围或暗示疾病治疗的转 L1/L2 处理，不是补材料能解除的。"
+
+  - term: 健字号
+    level: L3
+    industry: ["health_food"]
+    law_ref: "《广告法》第十一条"
+    law_text_ref: ad_law_11
+    risk: medium
+    required_materials:
+      - 保健食品注册证书或备案凭证（批准文号）
+      - 广告主与注册人/备案人一致或合法授权证明
+    judgment_points: "俗称「蓝帽子/健字号」，以实际批件为准；普通食品不得使用此类表述。"
+
+# ── 刻意不放进 L3 的两类（提请法务复核时决定去向）──────────────
+# 1. 「国家免检产品」：免检制度已废止，宣称即违法，应进 L1/L2 而非要材料。
+# 2. 「中国驰名商标」：《商标法》第十四条第五款明确不得用于广告宣传，
+#    属禁止性规定，不是补商标证能解决的，应进 L1/L2。

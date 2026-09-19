@@ -1,0 +1,30 @@
+{
+  "fetched_at": "2026-09-17T17:34:00+08:00",
+  "request": {
+    "guid": "CE89043BDFDE4F6E8BA81D80103C9C0B",
+    "unid": "CE89043BDFDE4F6E8BA81D80103C9C0B"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punish": {
+        "unid": "CE89043BDFDE4F6E8BA81D80103C9C0B",
+        "xzcf_zy": "2023年10月25日，台州湾新区消防救援大队发现当事人台州万紫红包装有限责任公司埋压、圈占、遮挡消火栓的行为，属于较轻违法情形，根据《中华人民共和国消防法》第六十条第一款第四项的规定，对当事人作出如下行政处罚决定：给予台州万紫红包装有限责任公司罚款人民币伍仟元整的处罚，限你单位自收到本决定书之日起十五日内凭台州市本级政府非税收入缴款单到浙江政务服务网公共支付平台缴纳罚款。",
+        "xzcfws_code": "台新消行罚决字〔2023〕第000179号",
+        "bxzcf_name": "台州万紫红包装有限责任公司",
+        "guid": "CE89043BDFDE4F6E8BA81D80103C9C0B",
+        "xzcfws_name": "台州万紫红包装有限责任公司埋压、圈占、遮挡消火栓案",
+        "bxzcf_type": 2,
+        "bxzcf_legalman": "卢某某",
+        "xzcf_date": "2023-11-13",
+        "orgnode": "台州湾新区消防救援大队"
+      }
+    },
+    "traceId": "7652F416C7924D05BEE7BE1073BBB9B9",
+    "messageType": 2
+  }
+}

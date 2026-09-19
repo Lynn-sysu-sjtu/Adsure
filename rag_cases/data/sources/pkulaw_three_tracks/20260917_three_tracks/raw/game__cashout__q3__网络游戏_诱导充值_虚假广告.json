@@ -1,0 +1,17 @@
+{
+  "fetched_at": "2026-09-17T20:35:42+08:00",
+  "request_arguments": {
+    "title": "广告",
+    "fulltext": "网络游戏 诱导充值 虚假广告",
+    "documentAttr": [
+      "判决书",
+      "裁定书"
+    ]
+  },
+  "sha256": "7435bca14004ccebde85b3d97bbc573d01cc710e243d7a07f24874852678d960",
+  "response": {
+    "Message": "未找到数据",
+    "Data": [],
+    "Total": 0
+  }
+}

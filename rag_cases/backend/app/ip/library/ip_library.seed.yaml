@@ -1,0 +1,198 @@
+# ══════════════════════════════════════════════════════════════════════
+#  高危 IP 实体库 · 起始清单（讨论底稿）
+#  来源：实施方案 v2 第五节建议清单，需与法务共同确认（§14 事项②）
+#
+#  ⚠️ reviewed_by_legal=false：本文件只能用于工程联调，法务确认前
+#     不得用于对外报告。哪些权利主体进库、各需什么授权材料，是法律判断。
+#
+#  参考图放 library/images/<ip_id>/，reference_images 写相对路径；
+#  图片仅内部特征比对、不对外分发；是否只存 embedding 不存原图待权衡
+#  （方案 §12 风险登记册）。
+# ══════════════════════════════════════════════════════════════════════
+
+meta:
+  name: 高危 IP 起始清单
+  version: "0.1.0-seed"
+  reviewed_by_legal: false
+
+# 授权材料默认三件套；个别主体需要特殊材料时在条目里覆盖。
+_x_anchor_materials: &materials
+  - 权利人或其授权主体出具的官方授权书
+  - 授权范围与期限证明
+  - 授权地域证明（覆盖本次投放地域）
+_x_anchor_law: &law
+  - 《中华人民共和国著作权法》第十条
+  - 《中华人民共和国商标法》第五十七条
+
+entries:
+  # ── 国际动漫 IP ─────────────────────────────────────────────
+  - ip_id: disney_mickey
+    name_cn: 米奇老鼠
+    name_en: Mickey Mouse
+    aliases: [米老鼠]
+    rights_holder: The Walt Disney Company
+    library_type: high_risk_public
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: disney_princess
+    name_cn: 迪士尼公主系列
+    rights_holder: The Walt Disney Company
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: disney_pixar
+    name_cn: 皮克斯动画角色
+    name_en: Pixar
+    rights_holder: The Walt Disney Company / Pixar
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: marvel
+    name_cn: 漫威超级英雄
+    name_en: Marvel
+    rights_holder: Marvel (The Walt Disney Company)
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: star_wars
+    name_cn: 星球大战角色
+    name_en: Star Wars
+    rights_holder: Lucasfilm (The Walt Disney Company)
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: pokemon_pikachu
+    name_cn: 皮卡丘
+    name_en: Pikachu
+    aliases: [宝可梦, 精灵宝可梦]
+    rights_holder: The Pokémon Company
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: sanrio_hello_kitty
+    name_cn: Hello Kitty
+    name_en: Hello Kitty
+    rights_holder: 三丽鸥 Sanrio
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: sanrio_kuromi
+    name_cn: 库洛米
+    name_en: Kuromi
+    rights_holder: 三丽鸥 Sanrio
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: ultraman
+    name_cn: 奥特曼
+    name_en: Ultraman
+    rights_holder: 圆谷制作 Tsuburaya Productions
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: peppa_pig
+    name_cn: 小猪佩奇
+    name_en: Peppa Pig
+    rights_holder: Entertainment One
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: spongebob
+    name_cn: 海绵宝宝
+    name_en: SpongeBob SquarePants
+    rights_holder: Paramount / Nickelodeon
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: crayon_shinchan
+    name_cn: 蜡笔小新
+    name_en: Crayon Shin-chan
+    rights_holder: 臼井仪人 / 双叶社 / SHIN-EI 动画
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: transformers
+    name_cn: 变形金刚
+    name_en: Transformers
+    rights_holder: Hasbro / 多美 Tomy
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: lego
+    name_cn: 乐高
+    name_en: LEGO
+    rights_holder: LEGO 集团
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: medium
+    note_to_legal: 积木玩具外观与商标权利边界需法务确认
+
+  # ── 国内动漫 IP ─────────────────────────────────────────────
+  - ip_id: pleasant_goat
+    name_cn: 喜羊羊与灰太狼
+    rights_holder: 广东原创动力文化传播有限公司
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: boonie_bears
+    name_cn: 熊出没
+    aliases: [熊大, 熊二, 光头强]
+    rights_holder: 华强方特（深圳）动漫有限公司
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: high
+
+  - ip_id: big_head_son
+    name_cn: 大头儿子和小头爸爸
+    rights_holder: 央视动漫集团有限公司等
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: medium
+    note_to_legal: 该 IP 存在历史权属争议，引用主体需法务核实
+
+  - ip_id: nezha
+    name_cn: 哪吒之魔童降世形象
+    aliases: [魔童哪吒]
+    rights_holder: 可可豆动画 / 光线影业
+    law_ref: *law
+    required_materials: *materials
+    reference_images: []
+    risk: medium
+    note_to_legal: 「哪吒」神话形象本身公有领域，受保护的是具体美术表达，入库边界需法务确认
+
+  # ── 待法务补充（暂不建条目，避免凭技术判断乱入库）────────────
+  # · 奢侈品 logo / 知名运动品牌 / 常被蹭的快消品牌（商标类，清单待法务定）
+  # · 知名艺术作品、地标建筑
+  # · 名人肖像（叠加 PIPL 合规，见方案 §12）

@@ -1,0 +1,141 @@
+{
+  "fetched_at": "2026-09-17T16:45:15+08:00",
+  "request": {
+    "xzcfws_name": "未成年",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "2",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "11330602580366139P3306020120260020",
+          "xzcfws_code": "绍越文综罚字〔2026〕20号",
+          "bxzcf_name": "绍兴市越城区星耀网吧",
+          "guid": "81a82d70-27b3-4bfb-9523-b9bdb1e20d50",
+          "xzcfws_name": "接纳未成年人进入营业场所案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "戴某某",
+          "xzcf_date": "2026-09-07",
+          "orgnode": "绍兴市越城区文化广电旅游局"
+        },
+        {
+          "unid": "330185042026050012",
+          "xzcfws_code": "杭临市监处罚〔2026〕289号",
+          "bxzcf_name": "杭州临安时光艾特咖啡店",
+          "guid": "330185042026050012",
+          "xzcfws_name": "杭州临安时光艾特咖啡店允许未成年人进入并提供酒水案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "王某某",
+          "xzcf_date": "2026-09-07",
+          "orgnode": "杭州市临安区市场监督管理局"
+        },
+        {
+          "unid": "9133021214447452033302120202610274",
+          "xzcfws_code": "鄞烟处[2026]第274号",
+          "bxzcf_name": "宁波市鄞州中河家园食品店",
+          "guid": "7787133c8f6148229bcdb07c14cc10e6",
+          "xzcfws_name": "朱某某向未成年人售烟、在学校、幼儿园周边设置售烟网点案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "朱某某",
+          "xzcf_date": "2026-09-04",
+          "orgnode": "宁波市鄞州区烟草专卖局"
+        },
+        {
+          "unid": "331002000000331002200087997",
+          "xzcfws_code": "台公（交）决字[2026]第331002200087997号",
+          "bxzcf_name": "周某某",
+          "guid": "3310022000879971ed96fb6792e45aabff2d9653dae6790",
+          "xzcfws_name": "周某某驾驶有其他改装、拼装、加装情形的电动自行车上道路行驶；驾驶人或者搭载人未佩戴安全头盔，或者搭载六周岁以下未成年人未使用儿童座椅、驾驶电动自行车超速行驶、案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-09-02",
+          "orgnode": "台州市公安局交通管理支队直属一大队"
+        },
+        {
+          "unid": "330881012026070003",
+          "xzcfws_code": "江市监处罚〔2026〕385号",
+          "bxzcf_name": "江山市日光隐酒吧（个体工商户）",
+          "guid": "330881012026070003",
+          "xzcfws_name": "江山市日光隐酒吧（个体工商户）接纳未成年人进入酒吧案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "邹某某",
+          "xzcf_date": "2026-09-01",
+          "orgnode": "江山市市场监督管理局"
+        },
+        {
+          "unid": "330881012026060003",
+          "xzcfws_code": "江市监处罚〔2026〕382号",
+          "bxzcf_name": "江山市小黑唇饮品店（个体工商户）",
+          "guid": "330881012026060003",
+          "xzcfws_name": "江山市小黑唇饮品店（个体工商户）违规接纳未成年人进入并向未成年人销售酒案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "徐某某",
+          "xzcf_date": "2026-09-01",
+          "orgnode": "江山市市场监督管理局"
+        },
+        {
+          "unid": "91330110143805957M3301100202610307",
+          "xzcfws_code": "余烟处[2026]第0380号",
+          "bxzcf_name": "杭州余杭区余杭街道毅佳超市",
+          "guid": "b0255ec61fd943fc9b7f7020a29df73a",
+          "xzcfws_name": "周某某向未成年人售烟案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "周某某",
+          "xzcf_date": "2026-08-28",
+          "orgnode": "杭州市余杭区烟草专卖局"
+        },
+        {
+          "unid": "91330110143805957M3301100202610267",
+          "xzcfws_code": "余烟处[2026]第0378号",
+          "bxzcf_name": "方某某",
+          "guid": "3ce7162ecfb34dfca8af49cbabf86030",
+          "xzcfws_name": "方某某销售非法生产的电子烟产品、雾化物、电子烟用烟碱、向未成年人出售电子烟产品案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-08-28",
+          "orgnode": "杭州市余杭区烟草专卖局"
+        },
+        {
+          "unid": "1133020573017541953302050420260017",
+          "xzcfws_code": "甬北文广旅罚字〔2026〕17号",
+          "bxzcf_name": "宁波市江北诺梦歌舞厅",
+          "guid": "df713d97-7181-427d-9d9d-ab4c0670cecb",
+          "xzcfws_name": "营业性歌舞娱乐场所不适宜未成年人活动场所的经营者允许未成年人进入、娱乐场所实施《娱乐场所管理条例》第十四条禁止行为案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "刘某某",
+          "xzcf_date": "2026-08-28",
+          "orgnode": "宁波市江北区文化广电旅游局"
+        },
+        {
+          "unid": "330621000000330621290034080",
+          "xzcfws_code": "绍柯公（交）决字[2026]第330621290034080号",
+          "bxzcf_name": "徐某某",
+          "guid": "330621290034080c8c65d7b5c8d465da8cf9685dfe20026",
+          "xzcfws_name": "徐某某驾驶人或者搭载人未佩戴安全头盔，或者搭载六周岁以下未成年人未使用儿童座椅、驾驶拆除或者改变限速装置导致最高时速超过强制性国家标准的电动自行车上道路行驶案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-08-27",
+          "orgnode": "绍兴市公安局柯桥区分局交通警察大队"
+        }
+      ],
+      "total": 385,
+      "pageTotal": 39,
+      "pageNo": 2
+    },
+    "traceId": "6A5716AAEFC84EFF8D2D1F90CE1B490F",
+    "messageType": 2
+  }
+}

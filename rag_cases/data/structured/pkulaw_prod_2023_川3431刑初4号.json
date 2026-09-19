@@ -1,0 +1,111 @@
+{
+  "case_id": "pkulaw_prod_2023_川3431刑初4号",
+  "title": "唐某杰等虚假广告案",
+  "case_number": "(2023)川3431刑初4号",
+  "court": "四川省昭觉县人民法院",
+  "decision_date": "2024-02-27",
+  "source_type": "pkulaw_mcp_judicial_reference",
+  "source_name": "北大法宝（pkulaw.com，经 MCP 检索）",
+  "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2068ec8d911ffa00de46f04a820a3b63e2fbdfb.html?way=mcp",
+  "source_verification_status": "third_party_judicial_database_fulltext_pending_official_decision_lookup",
+  "publish_date": null,
+  "penalty_authority": "",
+  "party_name": "",
+  "region": "四川省昭觉县人民法院",
+  "industry": "保健食品",
+  "sector": "health_food",
+  "product_or_service": "平台规则",
+  "ad_channel": "裁判文书涉及广告/宣传渠道（详见事实摘要）",
+  "risk_dimensions": [
+    "用户评价/种草误导",
+    "平台广告合规"
+  ],
+  "illegal_claims": [
+    "平台规则",
+    "短视频食品宣传",
+    "小红书保健品",
+    "网店普通食品",
+    "保健食品直播带货",
+    "抖音养生广告"
+  ],
+  "facts_summary": "唐某杰等虚假广告案\n['刑事', '破坏社会主义市场经济秩序罪', '扰乱市场秩序罪', '虚假广告罪']\n刑事一审\n\n\n\n\n\n\n\n",
+  "legal_basis": [],
+  "penalty_result": "",
+  "penalty_amount": null,
+  "regulatory_logic": "平台规则相关裁判/非诉执行参考。北大法宝案例MCP返回的第三方法律数据库裁判文书；可用于规则理解和司法审查口径，不等同于行政机关原始处罚决定书。 适用说明：同赛道同题组案例。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "保健食品/食品医疗化",
+    "唐某杰等虚假广告案",
+    "平台规则",
+    "短视频食品宣传",
+    "小红书保健品",
+    "网店普通食品",
+    "保健食品直播带货",
+    "抖音养生广告"
+  ],
+  "vector_text": "这是一条北大法宝裁判案例参考，赛道为保健食品/食品医疗化，风险题为平台规则。案号(2023)川3431刑初4号，法院四川省昭觉县人民法院，裁判日期2024-02-27。唐某杰等虚假广告案\n['刑事', '破坏社会主义市场经济秩序罪', '扰乱市场秩序罪', '虚假广告罪']\n刑事一审\n\n\n\n\n\n\n\n。证据边界：北大法宝案例MCP返回的第三方法律数据库裁判文书；可用于规则理解和司法审查口径，不等同于行政机关原始处罚决定书。 场景检索词：保健食品直播带货、小红书保健品、抖音养生广告、短视频食品宣传、网店普通食品",
+  "rag_chunk_type": "case_summary",
+  "scope": "public",
+  "review_status": "approved",
+  "approved_for_rag": true,
+  "case_nature": "criminal_reference",
+  "reference_classification": "criminal_reference",
+  "track_id": "health",
+  "topic_id": "platform",
+  "topic_name": "平台规则",
+  "applicability_note": "同赛道同题组案例。",
+  "raw_text_path": "data/sources/pkulaw_gap_search/20260917_gap10/raw/get_case_list__s03_platform_rules__kw1_广告_直播带货_虚假广告_处罚.json",
+  "judicial_raw_text_path": "data/sources/pkulaw_gap_search/20260917_gap10/raw/get_case_list__s03_platform_rules__kw1_广告_直播带货_虚假广告_处罚.json",
+  "is_litigation_reference": true,
+  "is_official_administrative_penalty_fact": false,
+  "human_review_required": true,
+  "source_tier_note": "北大法宝案例MCP返回的第三方法律数据库裁判文书；可用于规则理解和司法审查口径，不等同于行政机关原始处罚决定书。",
+  "promoted_to_production_at": "2026-09-17T21:23:56+08:00",
+  "promotion": {
+    "promoted_to_production": true,
+    "promoted_at": "2026-09-17T21:23:56+08:00",
+    "promoted_by": "owner_instruction_codex",
+    "decision": "业主指令加入生产RAG；按第三方案例参考身份入库。",
+    "source_tier": "third_party_judicial_reference"
+  },
+  "owner_approval": {
+    "approved": true,
+    "approved_for_rag": true,
+    "approved_by": "owner_instruction",
+    "approved_at": "2026-09-17T21:23:56+08:00",
+    "override_source_verification": true,
+    "decision": "用户明确要求加入生产RAG；保留第三方裁判参考标记。"
+  },
+  "audit": {
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "reviewer": "owner_instruction_codex",
+    "review_date": "2026-09-17",
+    "review_notes": "北大法宝案例MCP返回的第三方法律数据库裁判文书；可用于规则理解和司法审查口径，不等同于行政机关原始处罚决定书。"
+  },
+  "data_change_log": [
+    {
+      "ts": "2026-09-17T21:23:56+08:00",
+      "action": "promote_pkulaw_judicial_reference_to_production_rag",
+      "note": "按业主指令入库；不得作为官方处罚事实直接引用。"
+    },
+    {
+      "ts": "2026-09-17T00:00:00+08:00",
+      "action": "normalize_industry_for_rag_filter",
+      "note": "将赛道名称标准化为 API 支持的行业枚举：美妆/游戏/保健食品。"
+    },
+    {
+      "ts": "2026-09-17T00:00:00+08:00",
+      "action": "enrich_topic_query_terms",
+      "note": "为三赛道八题组生产RAG召回补充标准化场景词、平台词和风险词。"
+    }
+  ],
+  "rag_query_terms": [
+    "保健食品直播带货",
+    "小红书保健品",
+    "抖音养生广告",
+    "短视频食品宣传",
+    "网店普通食品"
+  ]
+}

@@ -1,0 +1,104 @@
+meta:
+  version: 0.1.0
+  cases_per_hour: 100
+  default_request_interval: 3.0
+sources:
+- id: samr_typical_cases
+  name: 国家市场监督管理总局 · 广告监管典型案例
+  priority: P0
+  enabled: false
+  base_url: https://www.samr.gov.cn
+  list_url: null
+  parser: null
+  request_interval: 3.0
+  notes: 结构规整、权威、量不大但质量高，适合先把整条链路跑通。 规则目录里引用的几条法条原文即来自该站点。
+- id: creditchina
+  name: 信用中国 · 行政处罚公示
+  priority: P2
+  enabled: false
+  base_url: https://www.creditchina.gov.cn
+  list_url: null
+  parser: creditchina
+  request_interval: 5.0
+  notes: 实测反爬（HTTP 412）且多为前端渲染；须人工确认存在无需登录/验证码、静态可直抓的公开页或接口后才可启用。未确认前不得启用，避免被当作高频请求。
+- id: local_samr
+  name: 上海市市场监督管理局 · 行政处罚典型案例（P1）
+  priority: P1
+  enabled: true
+  base_url: https://scjgj.sh.gov.cn
+  list_url: https://scjgj.sh.gov.cn/1073/index.html
+  parser: shanghai_zfxxgkml
+  request_interval: 3.0
+  notes: 已确认静态列表页 /1073/index.html 与详情页 /1073/YYYYMMDD/<hex>.html；按广告主题过滤，商业秘密/电动自行车/儿童质量等非广告类跳过。
+- id: nrta_cac
+  name: 网信办/广电总局 · 游戏未成年人、版号、防沉迷通报（P0/P1）
+  priority: P1
+  enabled: false
+  base_url: null
+  list_url: null
+  parser: nrta_cac
+  request_interval: 3.0
+  notes: 覆盖 EVAL-GAME-004/007（未成年人保护、诱导消费、版号缺失、绕过防沉迷、实名制）。总局/市监典型案无此类；需人工确认网信办(cac.gov.cn)/广电总局(nrta.gov.cn)公开静态通报页后启用并写
+    parser。
+- id: local_samr_penalty_detail
+  name: 地方市监局 · 行政处罚决定书全文（P1，补促销/资质/代言）
+  priority: P1
+  enabled: false
+  base_url: null
+  list_url: null
+  parser: local_samr
+  request_interval: 3.0
+  notes: 覆盖 HF-AD-004（买赠信息不完整）、HF-AD-008（食品信息与资质不一致）、EVAL-GAME-005（广告代言人）。需人工给一个公开静态的处罚决定书列表页
+    URL 后启用。
+- id: nppa
+  name: 国家新闻出版署 · 通知公示（游戏版号/未成年人/防沉迷，P0/P1）
+  priority: P1
+  enabled: true
+  base_url: https://www.nppa.gov.cn
+  list_url: https://www.nppa.gov.cn/xxfb/tzgs/
+  parser: nppa_tzgs
+  request_interval: 3.0
+  notes: 列表页静态、详情 href /xxfb/tzgs/YYYYMM/tYYYYMMDD_id.html；robots.txt 为软404（302→/404.html，HTTP200），按
+    RFC 9309 视为无 robots，可合规抓取。
+- id: creditchina_query
+  name: 信用中国 · 行政处罚查询接口（P2，待确认公开接口）
+  priority: P2
+  enabled: false
+  base_url: https://www.creditchina.gov.cn
+  list_url: null
+  parser: json_query
+  request_interval: 5.0
+  query:
+    method: POST
+    url: null
+    payload: {}
+    page_param: pageNo
+    page_size: 20
+    items_path: data.list
+    url_field: url
+    title_field: title
+  notes: 需先确认无需登录/验证码的公开查询接口及字段结构，再填 query.url 并启用。
+excluded:
+- id: wenshu
+  reason: 需登录与验证码，触碰 AGENTS.md 禁止事项
+- id: law_firm_articles
+  reason: 仅 P3 口径参考，不得作为处罚事实来源
+- id: local_samr
+  name: 地方市场监督管理局 · 行政处罚信息公开（P1）
+  priority: P1
+  enabled: false
+  base_url: null
+  list_url: null
+  parser: local_samr
+  request_interval: 3.0
+  notes: 首选 P1。地方局处罚公示为栏目页+分页，各局结构不同；启用前须人工打开 确认列表页与详情页结构（避免对着 404 反复请求），确认后填 base_url/list_url
+    并启用。示例候选：浙江省市场监管局、上海市静安区市场监管局等。
+- id: creditchina
+  name: 信用中国 · 行政处罚公示（P2）
+  priority: P2
+  enabled: false
+  base_url: https://www.creditchina.gov.cn
+  list_url: null
+  parser: creditchina
+  request_interval: 5.0
+  notes: 实测反爬（HTTP 412）且多为前端渲染；须人工确认存在无需登录/验证码、 静态可直抓的公开页或接口后才可启用。未确认前不得启用，避免被当作高频请求。

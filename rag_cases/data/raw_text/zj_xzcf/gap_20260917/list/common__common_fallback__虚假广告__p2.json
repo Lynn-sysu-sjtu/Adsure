@@ -1,0 +1,141 @@
+{
+  "fetched_at": "2026-09-17T17:36:48+08:00",
+  "request": {
+    "xzcfws_name": "虚假广告",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "2",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330482212026020001",
+          "xzcfws_code": "平市监处罚〔2026〕333号",
+          "bxzcf_name": "平湖市聚贤服装有限公司",
+          "guid": "330482212026020001",
+          "xzcfws_name": "平湖市聚贤服装有限公司发布虚假广告及销售以不合格产品冒充合格产品案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "周某某",
+          "xzcf_date": "2026-06-22",
+          "orgnode": "平湖市市场监督管理局"
+        },
+        {
+          "unid": "330782422026050018",
+          "xzcfws_code": "义市监处罚〔2026〕1747号",
+          "bxzcf_name": "皮某某",
+          "guid": "330782422026050018",
+          "xzcfws_name": "皮某某发布虚假广告案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-06-04",
+          "orgnode": "义乌市市场监督管理局"
+        },
+        {
+          "unid": "330800002026030003",
+          "xzcfws_code": "衢市监处罚〔2026〕24号",
+          "bxzcf_name": "衢州诚炜网络科技有限公司",
+          "guid": "330800002026030003",
+          "xzcfws_name": "衢州诚炜网络科技有限公司发布虚假广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "魏某某",
+          "xzcf_date": "2026-05-26",
+          "orgnode": "衢州市市场监督管理局"
+        },
+        {
+          "unid": "330481022026010005",
+          "xzcfws_code": "海市监处罚〔2026〕527号",
+          "bxzcf_name": "嘉兴梁菁医疗科技有限公司",
+          "guid": "330481022026010005",
+          "xzcfws_name": "嘉兴梁菁医疗科技有限公司发布虚假广告、未经审查发布医疗广告、经营标签不符合医疗器械监督管理条例规定案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "沈某某",
+          "xzcf_date": "2026-05-22",
+          "orgnode": "海宁市市场监督管理局"
+        },
+        {
+          "unid": "330782422026040008",
+          "xzcfws_code": "义市监处罚〔2026〕1492号",
+          "bxzcf_name": "吴某某",
+          "guid": "330782422026040008",
+          "xzcfws_name": "吴某某发布虚假广告案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-05-13",
+          "orgnode": "义乌市市场监督管理局"
+        },
+        {
+          "unid": "330283042026030008",
+          "xzcfws_code": "甬奉市监处罚〔2026〕187号",
+          "bxzcf_name": "华药栈大健康产业（宁波）有限公司",
+          "guid": "330283042026030008",
+          "xzcfws_name": "华药栈大健康产业（宁波）有限公司违反规定在广告中使用医疗用语和虚假广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "李某某",
+          "xzcf_date": "2026-04-21",
+          "orgnode": "宁波市奉化区市场监督管理局"
+        },
+        {
+          "unid": "330421102025120001",
+          "xzcfws_code": "善市监处罚〔2026〕432号",
+          "bxzcf_name": "嘉善县陶庄镇潘霞副食品店",
+          "guid": "330421102025120001",
+          "xzcfws_name": "嘉善县陶庄镇潘霞副食品店发布虚假广告、违规生产经营自酿酒及未按规定建立并遵守进货查验记录和销售记录制度案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "潘某某",
+          "xzcf_date": "2026-04-01",
+          "orgnode": "嘉善县市场监督管理局"
+        },
+        {
+          "unid": "330782202025120019",
+          "xzcfws_code": "义市监处罚〔2026〕990号",
+          "bxzcf_name": "义乌厚物电子商务有限公司",
+          "guid": "330782202025120019",
+          "xzcfws_name": "义乌厚物电子商务有限公司发布虚假广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "周某某",
+          "xzcf_date": "2026-03-30",
+          "orgnode": "义乌市市场监督管理局"
+        },
+        {
+          "unid": "330482212025120013",
+          "xzcfws_code": "平市监处罚〔2026〕189号",
+          "bxzcf_name": "平湖市凯晓服饰网店（个体工商户）",
+          "guid": "330482212025120013",
+          "xzcfws_name": "平湖市凯晓服饰网店（个体工商户）发布虚假广告销售以不合格产品冒充合格产品的羽绒服案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "胡某某",
+          "xzcf_date": "2026-03-25",
+          "orgnode": "平湖市市场监督管理局"
+        },
+        {
+          "unid": "330782202025050019",
+          "xzcfws_code": "义市监处罚〔2026〕655号",
+          "bxzcf_name": "义乌厚物电子商务有限公司",
+          "guid": "330782202025050019",
+          "xzcfws_name": "义乌厚物电子商务有限公司发布虚假广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "周某某",
+          "xzcf_date": "2026-02-28",
+          "orgnode": "义乌市市场监督管理局"
+        }
+      ],
+      "total": 64,
+      "pageTotal": 7,
+      "pageNo": 2
+    },
+    "traceId": "74FAC16E4E9A4A3F945B4BFD7F971B90",
+    "messageType": 2
+  }
+}

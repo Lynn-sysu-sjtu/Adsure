@@ -116,6 +116,20 @@ risk_dimensions 枚举：
             report["cases"][0]["errors"],
         )
 
+    def test_production_case_without_violation_type_needs_review(self):
+        self.write_case("missing_violation_type")
+
+        report = validate_cases.run(
+            structured_dir=self.structured_dir,
+            reports_dir=self.reports_dir,
+            prompt_path=self.prompt_path,
+        )
+
+        self.assertIn(
+            "violation_type_missing_needs_review",
+            report["cases"][0]["issues"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

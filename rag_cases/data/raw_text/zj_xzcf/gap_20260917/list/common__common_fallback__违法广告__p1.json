@@ -1,0 +1,141 @@
+{
+  "fetched_at": "2026-09-17T17:23:51+08:00",
+  "request": {
+    "xzcfws_name": "违法广告",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330206052026060026",
+          "xzcfws_code": "甬仑市监处罚〔2026〕549号",
+          "bxzcf_name": "宁波市鄞州立辉广告传媒有限公司",
+          "guid": "330206052026060026",
+          "xzcfws_name": "宁波市鄞州立辉广告传媒有限公司制作发布违法广告行为案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "魏某某",
+          "xzcf_date": "2026-09-11",
+          "orgnode": "宁波市北仑区市场监督管理局"
+        },
+        {
+          "unid": "330783102026030014",
+          "xzcfws_code": "东市监处罚〔2026〕861号",
+          "bxzcf_name": "义乌市飓风电脑职业技能培训学校",
+          "guid": "330783102026030014",
+          "xzcfws_name": "义乌市飓风电脑职业技能培训学校发布违法广告案",
+          "bxzcf_type": 3,
+          "bxzcf_legalman": "盛某某",
+          "xzcf_date": "2026-07-10",
+          "orgnode": "东阳市市场监督管理局"
+        },
+        {
+          "unid": "330402132026030002",
+          "xzcfws_code": "嘉南市监处罚〔2026〕510号",
+          "bxzcf_name": "嘉兴温故知新网络科技有限公司",
+          "guid": "330402132026030002",
+          "xzcfws_name": "嘉兴温故知新网络科技有限公司发布违法广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "倪某某",
+          "xzcf_date": "2026-06-22",
+          "orgnode": "嘉兴市南湖区市场监督管理局"
+        },
+        {
+          "unid": "330784052025120001",
+          "xzcfws_code": "永市监处罚〔2026〕139号",
+          "bxzcf_name": "周某某",
+          "guid": "330784052025120001",
+          "xzcfws_name": "周某某发布违法广告案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-02-10",
+          "orgnode": "永康市市场监督管理局"
+        },
+        {
+          "unid": "330782082025090053",
+          "xzcfws_code": "义市监处罚〔2025〕3468号",
+          "bxzcf_name": "义乌市龚颖家居用品有限公司",
+          "guid": "330782082025090053",
+          "xzcfws_name": "义乌市龚颖家居用品有限公司发布违法广告及销售不符合国家标准的商品案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "郑某某",
+          "xzcf_date": "2025-12-24",
+          "orgnode": "义乌市市场监督管理局"
+        },
+        {
+          "unid": "330100112025080001",
+          "xzcfws_code": "杭市监处罚〔2025〕36号",
+          "bxzcf_name": "杭州青碧品牌管理有限公司",
+          "guid": "330100112025080001",
+          "xzcfws_name": "杭州青碧品牌管理有限公司发布违法广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "姜某某",
+          "xzcf_date": "2025-11-27",
+          "orgnode": "杭州市市场监督管理局"
+        },
+        {
+          "unid": "330100022025050002",
+          "xzcfws_code": "杭市监处罚〔2025〕31号",
+          "bxzcf_name": "杭州成就未来文化传媒有限公司",
+          "guid": "330100022025050002",
+          "xzcfws_name": "杭州成就未来文化传媒有限公司发布违法广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "张某某",
+          "xzcf_date": "2025-09-29",
+          "orgnode": "杭州市市场监督管理局"
+        },
+        {
+          "unid": "330102302024120005",
+          "xzcfws_code": "杭上市监处罚〔2025〕478号",
+          "bxzcf_name": "杭州熠桐升晖健康科技有限公司",
+          "guid": "330102302024120005",
+          "xzcfws_name": "杭州熠桐升晖健康科技有限公司发布违法广告、违法经营药品案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "王某某",
+          "xzcf_date": "2025-08-20",
+          "orgnode": "杭州市上城区市场监督管理局"
+        },
+        {
+          "unid": "330102222024110007",
+          "xzcfws_code": "杭上市监处罚〔2025〕336号",
+          "bxzcf_name": "杭州吾曜电子商务有限公司",
+          "guid": "330102222024110007",
+          "xzcfws_name": "杭州吾曜电子商务有限公司发布违法广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "刘某某",
+          "xzcf_date": "2025-07-10",
+          "orgnode": "杭州市上城区市场监督管理局"
+        },
+        {
+          "unid": "330105022024110004",
+          "xzcfws_code": "杭拱市监处罚〔2025〕140号",
+          "bxzcf_name": "杭州迅犹贸易有限公司",
+          "guid": "330105022024110004",
+          "xzcfws_name": "杭州迅犹贸易有限公司发布违法广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "杨某某",
+          "xzcf_date": "2025-03-26",
+          "orgnode": "杭州市拱墅区市场监督管理局"
+        }
+      ],
+      "total": 12,
+      "pageTotal": 2,
+      "pageNo": 1
+    },
+    "traceId": "EAD9E7A7DEFA4B47BD36D6F59C4B04AF",
+    "messageType": 2
+  }
+}

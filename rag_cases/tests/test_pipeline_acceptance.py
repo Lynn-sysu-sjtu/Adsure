@@ -15,6 +15,7 @@ class PipelineAcceptanceTests(unittest.TestCase):
             "data/raw_html",
             "data/raw_text",
             "data/structured",
+            "data/structured_candidates",
             "data/structured_samples",
             "data/chunks",
             "data/reports",
@@ -95,6 +96,7 @@ sources:
         )
         chunk_paths = build_chunks.run(
             structured_dir=self.root / "data/structured",
+            structured_candidates_dir=self.root / "data/structured_candidates",
             structured_samples_dir=self.root / "data/structured_samples",
             chunks_dir=self.root / "data/chunks",
         )
@@ -162,6 +164,7 @@ sources:
 
         chunk_paths = build_chunks.run(
             structured_dir=self.root / "data/structured",
+            structured_candidates_dir=self.root / "data/structured_candidates",
             chunks_dir=chunks_dir,
         )
 

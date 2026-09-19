@@ -1,0 +1,158 @@
+{
+ "case_id": "sector_docx__game__cc400e61",
+ "title": "王某诉北京某公司网络服务合同纠纷案",
+ "case_number": "（2023）京0491民初1062号",
+ "court": "北京互联网法院",
+ "decision_date": "2024-01-15",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+ "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061767ba1d02c380b353edb4e5beaf18a0bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
+ "publish_date": null,
+ "penalty_authority": "北京市石景山区市监局",
+ "party_name": "北京某公司",
+ "region": "北京互联网法",
+ "industry": "游戏",
+ "sector": "game",
+ "sector_cn": "游戏",
+ "violation_type": "游戏VIP权益宣传不明确",
+ "case_nature": "civil_dispute_with_regulatory_signal",
+ "source_lookup_priority": "P1",
+ "is_admin_penalty_candidate": false,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "game"
+ ],
+ "product_or_service": "专属客服",
+ "ad_channel": "其他",
+ "risk_dimensions": [
+  "虚假宣传"
+ ],
+ "illegal_claims": [
+  "专属客服",
+  "专属GM服务"
+ ],
+ "facts_summary": "原告王某与被告北京某公司(以下简称某公司)网络服务合同纠纷一案，本院2023年1月16日受理后，依法适用普通程序，公开开庭进行了独任审理。原告王某，被告某公司委托诉讼代理人郭某在线参加了诉讼。本案现已审理终结。\n本院认为，当事人对自己提出的主张，有责任提供证据。原告在被告运营的网络游戏使用游戏服务并消费，双方之间成立网络服务合同关系，系双方真实意思表示，形式和内容不违背法律、行政法规的强制性规定，应为合法有效。\n原告主张其游戏账号达到VIP8级消费额度却未能获得被告宣传的“专属GM服务”，被告行为属于欺诈消费行为，要求被告退还三个游戏账号的充值款项并进行三倍赔偿。本院认为，被告作为游戏服务提供者，在持续提供游戏服务的过程中应当尽可能保证其宣传服务内容的明确性，避免消费者产生疑惑或误解，但同时，在出现“某公司VIP特权专区”针对VIP8、VIP9的“专属客服”内容未做明确区分后，是否足以造成充值损失甚至导致合同目的全部不能实现，需要结合具体情况具体分析。本案中，根据原告提交的证据，能够证明在“某公司VIP特权专区”宣传界面及某游戏客服中心回复“专属客服”页面对于VIP8的“专属客服”内容说明不明确，使消费者产生一定误解，但并不导致游戏中断、无法运行等严重情形，该误导不足以达到全部合同目的无法实现的程度。事实上，根据被告提交的证据，在原告向12315平台举报之后，其依然持续进行长时间的游戏消费行为，足以证明被告向原告提供了基本的游戏服务。同时，游戏用户消费目的亦非仅限于接受专属客服服务，而是在游戏过程中享受乐趣。本案中，原告在2021年12月其游戏账号×××.com已升级为VIP8级之前以及举报之后，其已经在操作游戏的过程中获得、体验了被告提供的游戏服务，且被告在被举报后及时对宣传页面进行了修改，对其中专属客服方式进行了明确，消除了误解，对于修改之后原告的消费行为并不存在误导。现原告仅因一个账号未享受“专属客服”方式之一的“专属GM服务”要求退还三个账号全部充值款金额并进行三倍赔偿，没有事实基础和法律依据，本院不予支持。被告对VIP8“专属客服”的宣传内容存在误导，消费者在游戏过程中未能充分享受到“专属客服”的所有服务方式，体验感有所下降，根据行政处罚决定，行政机关已就该行为对被告作出了10万元罚款的行政处罚，该处罚系根据反不正当竞争法的规定作出的，该行政处罚决定并非本案确定被告承担退还原告全部充值金额并进行三倍赔偿民事赔偿责任的唯一依据。\n需要指出的是，游戏服务提供者对游戏用户的反馈和意见，应及时进行有效处理。正是因为游戏用户的反馈和意见，才促进了游戏服务的不断优化和调整。被告作为游戏服务提供者，在发现“专属服务”宣传使消费者产生误解后应及时进行修改，减少给游戏用户带来的不良体验。\n综上所述，依照《中华人民共和国民事诉讼法》第六十七条之规定，判决如下：",
+ "legal_basis": [
+  "《反不正当竞争法》第二十条第一款"
+ ],
+ "penalty_result": "北京市石景山区市监局罚款100000元（民事诉讼驳回原告诉讼请求）",
+ "penalty_amount": null,
+ "regulatory_logic": "游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏VIP权益宣传不明确，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《反不正当竞争法》第二十条第一款。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "game",
+  "游戏",
+  "游戏VIP权益宣传不明确",
+  "虚假宣传",
+  "专属客服",
+  "专属GM服务"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
+ "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "pending_pkulaw_human_review",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
+ },
+ "source_lookup_query": "（2023）京0491民初1062号 王某诉北京某公司网络服务合同纠纷案",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告王某与被告北京某公司(以下简称某公司)网络服务合同纠纷一案，本院2023年1月16日受理后，依法适用普通程序，公开开庭进行了独任审理。原告王某，被告某公司委托诉讼代理人郭某在线参加了诉讼。本案现已审理终结。\n本院认为，当事人对自己提出的主张，有责任提供证据。原告在被告运营的网络游戏使用游戏服务并消费，双方之间成立网络服务合同关系，系双方真实意思表示，形式和内容不违背法律、行政法规的强制性规定，应为合法有效。\n原告主张其游戏账号达到VIP8级消费额度却未能获得被告宣传的“专属GM服务”，被告行为属于欺诈消费行为，要求被告退还三个游戏账号的充值款项并进行三倍赔偿。涉案广告宣称：专属客服；专属GM服务。",
+ "raw_text_path": "data/raw_text/case_library_docx__游戏广告合规案例库.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
+  }
+ ],
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T03:41:10+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）"
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "游戏VIP特权专区宣传vip8和vip9均享有“专属客服”，但vip8不享受“专属GM服务”。北京市石景山区市监局以虚假宣传对该公司罚款10万元。法院认定被告对vip8权益说明不明确使消费者产生误解，但误导不足以达到全部合同目的无法实现的程度",
+    "vector_text": "【赛道】游戏。【场景】其他。【宣称】专属客服；专属GM服务。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏VIP权益宣传不明确，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《反不正当竞争法》第二十条第一款。。【依据】《反不正当竞争法》第二十条第一款。【结果】北京市石景山区市监局罚款100000元（民事诉讼驳回原告诉讼请求）。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2023)京0491民初1062号",
+  "pkulaw_court": "北京互联网法院",
+  "pkulaw_title": "王某与北京某公司网络服务合同纠纷一审民事判决书",
+  "last_instance_date": "2024.01.15",
+  "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061767ba1d02c380b353edb4e5beaf18a0bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2023_京0491民初1062号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "本院认为(回退)"
+  ]
+ },
+ "human_review_required": true
+}

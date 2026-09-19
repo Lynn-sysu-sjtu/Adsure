@@ -1,0 +1,141 @@
+{
+  "fetched_at": "2026-09-17T17:36:48+08:00",
+  "request": {
+    "xzcfws_name": "虚假宣传",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "2",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330282132026060004",
+          "xzcfws_code": "慈市监处罚〔2026〕1172号",
+          "bxzcf_name": "宁波扬佳制冷设备有限公司",
+          "guid": "330282132026060004",
+          "xzcfws_name": "宁波扬佳制冷设备有限公司伪造、冒用能源效率标识或者利用能源效率标识进行虚假宣传的行为案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "沈某某",
+          "xzcf_date": "2026-09-07",
+          "orgnode": "慈溪市市场监督管理局"
+        },
+        {
+          "unid": "330211092026060003",
+          "xzcfws_code": "甬镇市监处罚〔2026〕228号",
+          "bxzcf_name": "尚某某",
+          "guid": "330211092026060003",
+          "xzcfws_name": "尚某某对商品作引人误解的虚假宣传案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-09-04",
+          "orgnode": "宁波市镇海区市场监督管理局"
+        },
+        {
+          "unid": "332522012026060003",
+          "xzcfws_code": "青市监处罚〔2026〕461号",
+          "bxzcf_name": "青田县泥巴小院火锅店",
+          "guid": "332522012026060003",
+          "xzcfws_name": "青田县泥巴小院火锅店对商品作引人误解的虚假宣传案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "夏某某",
+          "xzcf_date": "2026-09-03",
+          "orgnode": "青田县市场监督管理局"
+        },
+        {
+          "unid": "331082122026060017",
+          "xzcfws_code": "临市监处罚〔2026〕608号",
+          "bxzcf_name": "临海市馨旺西式快餐店（个体工商户）",
+          "guid": "331082122026060017",
+          "xzcfws_name": "临海市馨旺西式快餐店（个体工商户）对商品作引人误解的虚假宣传案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "张某某",
+          "xzcf_date": "2026-09-01",
+          "orgnode": "临海市市场监督管理局"
+        },
+        {
+          "unid": "331082122026060018",
+          "xzcfws_code": "临市监处罚〔2026〕607号",
+          "bxzcf_name": "临海市酵时烘焙坊",
+          "guid": "331082122026060018",
+          "xzcfws_name": "临海市酵时烘焙坊对商品作引人误解的虚假宣传案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "徐某某",
+          "xzcf_date": "2026-09-01",
+          "orgnode": "临海市市场监督管理局"
+        },
+        {
+          "unid": "330282012026070001",
+          "xzcfws_code": "慈市监处罚〔2026〕1120号",
+          "bxzcf_name": "宁波市芮德电器有限公司",
+          "guid": "330282012026070001",
+          "xzcfws_name": "宁波市芮德电器有限公司利用能源效率标识进行虚假宣传的行为案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "王某某",
+          "xzcf_date": "2026-08-31",
+          "orgnode": "慈溪市市场监督管理局"
+        },
+        {
+          "unid": "331082022026070012",
+          "xzcfws_code": "临市监处罚〔2026〕600号",
+          "bxzcf_name": "临海市庆优餐饮店（个体工商户）",
+          "guid": "331082022026070012",
+          "xzcfws_name": "临海市庆优餐饮店（个体工商户）对商品作引人误解的虚假宣传案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "胡某某",
+          "xzcf_date": "2026-08-31",
+          "orgnode": "临海市市场监督管理局"
+        },
+        {
+          "unid": "330282012026070002",
+          "xzcfws_code": "慈市监处罚〔2026〕1117号",
+          "bxzcf_name": "宁波永雪制冷设备有限公司",
+          "guid": "330282012026070002",
+          "xzcfws_name": "宁波永雪制冷设备有限公司利用能源效率标识进行虚假宣传的行为案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "陈某某",
+          "xzcf_date": "2026-08-31",
+          "orgnode": "慈溪市市场监督管理局"
+        },
+        {
+          "unid": "330702162026080002",
+          "xzcfws_code": "金婺市监处罚〔2026〕394号",
+          "bxzcf_name": "金华市婺城区吾将行贸易商行",
+          "guid": "330702162026080002",
+          "xzcfws_name": "金华市婺城区吾将行贸易商行经营者利用广告或者其他方法，对商品作引人误解的虚假宣传（广告违法行为）案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "王某某",
+          "xzcf_date": "2026-08-29",
+          "orgnode": "金华市婺城区市场监督管理局"
+        },
+        {
+          "unid": "330282122026070001",
+          "xzcfws_code": "慈市监处罚〔2026〕1114号",
+          "bxzcf_name": "宁波顺来电器有限公司",
+          "guid": "330282122026070001",
+          "xzcfws_name": "宁波顺来电器有限公司伪造、冒用能源效率标识或者利用能源效率标识进行虚假宣传的行为案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "郑某某",
+          "xzcf_date": "2026-08-28",
+          "orgnode": "慈溪市市场监督管理局"
+        }
+      ],
+      "total": 390,
+      "pageTotal": 39,
+      "pageNo": 2
+    },
+    "traceId": "43A5BDC4EEA44E64B4C9500DA668BFD5",
+    "messageType": 2
+  }
+}

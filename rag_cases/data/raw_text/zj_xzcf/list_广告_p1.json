@@ -1,0 +1,126 @@
+{
+  "roles": null,
+  "permissions": null,
+  "success": true,
+  "message": null,
+  "code": "200",
+  "data": {
+    "punishList": [
+      {
+        "unid": "330206102026050002",
+        "xzcfws_code": "甬仑市监处罚〔2026〕558号",
+        "bxzcf_name": "时垠（上海）生物科技有限公司宁波分公司",
+        "guid": "330206102026050002",
+        "xzcfws_name": "时垠（上海）生物科技有限公司宁波分公司广告中含有虚假内容案",
+        "bxzcf_type": 2,
+        "bxzcf_legalman": "闪某某",
+        "xzcf_date": "2026-09-16",
+        "orgnode": "宁波市北仑区市场监督管理局"
+      },
+      {
+        "unid": "331003022026060003",
+        "xzcfws_code": "台黄市监处罚〔2026〕278号",
+        "bxzcf_name": "台州市众知文化传媒有限公司",
+        "guid": "331003022026060003",
+        "xzcfws_name": "台州市众知文化传媒有限公司广告中含有虚假内容案",
+        "bxzcf_type": 2,
+        "bxzcf_legalman": "陶某某",
+        "xzcf_date": "2026-09-16",
+        "orgnode": "台州市黄岩区市场监督管理局"
+      },
+      {
+        "unid": "武义执法局立字〔2026〕第001421号",
+        "xzcfws_code": "武义执法局罚决字〔2026〕第001421号",
+        "bxzcf_name": "谢某某",
+        "guid": "fe74cd5636484ff9bf28b383d6c5cfbd",
+        "xzcfws_name": "谢某某擅自在城市照明设施上张贴、悬挂、设置宣传品、广告案",
+        "bxzcf_type": 1,
+        "bxzcf_legalman": "",
+        "xzcf_date": "2026-09-15",
+        "orgnode": "武义县综合行政执法局"
+      },
+      {
+        "unid": "新昌综执立字〔2026〕第000763号",
+        "xzcfws_code": "新昌综执罚决字〔2026〕第000763-2号",
+        "bxzcf_name": "杨某某",
+        "guid": "da213e216ad14692addba809290f3794",
+        "xzcfws_name": "杨某某在城市道路擅自散发商业性广告案",
+        "bxzcf_type": 1,
+        "bxzcf_legalman": "",
+        "xzcf_date": "2026-09-15",
+        "orgnode": "新昌县综合行政执法局"
+      },
+      {
+        "unid": "330226052026070003",
+        "xzcfws_code": "宁市监处罚〔2026〕555号",
+        "bxzcf_name": "宁海县张艳保健养生馆（个体工商户）",
+        "guid": "330226052026070003",
+        "xzcfws_name": "宁海县张艳保健养生馆（个体工商户）广告中含有虚假内容案",
+        "bxzcf_type": 4,
+        "bxzcf_legalman": "张某某",
+        "xzcf_date": "2026-09-15",
+        "orgnode": "宁海县市场监督管理局"
+      },
+      {
+        "unid": "鄞州综执立字〔2026〕第001416号",
+        "xzcfws_code": "鄞州综执罚决字〔2026〕第001416号",
+        "bxzcf_name": "张某某",
+        "guid": "b3b0edcb629e4c5b9112d253a965911e",
+        "xzcfws_name": "张某某擅自在城市照明设施上张贴、悬挂、设置宣传品、广告案",
+        "bxzcf_type": 1,
+        "bxzcf_legalman": "",
+        "xzcf_date": "2026-09-15",
+        "orgnode": "宁波市鄞州区综合行政执法局"
+      },
+      {
+        "unid": "余综执立字〔2026〕第000752号",
+        "xzcfws_code": "余综执罚决字〔2026〕第000752号",
+        "bxzcf_name": "郑某某",
+        "guid": "20133fbf40b44af0bba188e73e9af22e",
+        "xzcfws_name": "郑某某擅自在城市照明设施上张贴广告案",
+        "bxzcf_type": 1,
+        "bxzcf_legalman": "",
+        "xzcf_date": "2026-09-14",
+        "orgnode": "余姚市综合行政执法局"
+      },
+      {
+        "unid": "泉政立字〔2026〕第000031号",
+        "xzcfws_code": "泉政罚决字〔2026〕第000031号",
+        "bxzcf_name": "武义县明涵早餐店",
+        "guid": "f66ffd23e0104ea09c5c2c32e5bbf209",
+        "xzcfws_name": "武义县明涵早餐店户外广告设施以及非广告的户外设施不符合城市容貌标准案",
+        "bxzcf_type": 4,
+        "bxzcf_legalman": "何某某",
+        "xzcf_date": "2026-09-14",
+        "orgnode": "武义县泉溪镇人民政府"
+      },
+      {
+        "unid": "330226122026070003",
+        "xzcfws_code": "宁市监处罚〔2026〕550号",
+        "bxzcf_name": "宁海京力包装材料商行",
+        "guid": "330226122026070003",
+        "xzcfws_name": "宁海京力包装材料商行广告中含有虚假内容案",
+        "bxzcf_type": 4,
+        "bxzcf_legalman": "X某某",
+        "xzcf_date": "2026-09-14",
+        "orgnode": "宁海县市场监督管理局"
+      },
+      {
+        "unid": "温综执立字〔2026〕第000812号",
+        "xzcfws_code": "温综执罚决字〔2026〕第000812号",
+        "bxzcf_name": "黄某某",
+        "guid": "be4d9dd8c94d41e8b19aa4faf53d617c",
+        "xzcfws_name": "黄某某擅自在城市照明设施上张贴广告案",
+        "bxzcf_type": 1,
+        "bxzcf_legalman": "",
+        "xzcf_date": "2026-09-11",
+        "orgnode": "温岭市综合行政执法局"
+      }
+    ],
+    "total": 2436,
+    "pageTotal": 244,
+    "pageNo": 1
+  },
+  "traceId": "5F0E062EC16747B4982893AE6D56A034",
+  "messageType": 2
+}

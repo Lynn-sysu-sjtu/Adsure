@@ -1,0 +1,76 @@
+{
+ "case_id": "sector_docx__health__21364f49",
+ "queried_case_number": "（2016）浙07行终370号",
+ "source_name": "北大法宝（pkulaw.com，经 MCP 检索）",
+ "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc460234a415b0ae3be91940b849c90355fbdfb.html?way=mcp",
+ "source_tier_note": "权威法律数据库第三方来源，非行政机关一手公开；入库保持候选态待人核",
+ "mcp_endpoint": "https://apim-gateway.pkulaw.com/mcp-case",
+ "fetched_at": "2026-09-17T14:48:59+08:00",
+ "sha256": "fc96b06775d92044c0206465ec82780f8fdaf153e36b9af169777ffe23872727",
+ "record": {
+  "Title": "义乌市爽爽戒烟咨询服务站与义乌市市场监督管理局等处罚上诉案",
+  "Category": [
+   "行政",
+   "行政行为",
+   "行政处罚"
+  ],
+  "CaseGrade": [
+   "普通案例"
+  ],
+  "Court": "浙江省金华市中级人民法院",
+  "LastInstanceDate": "2016.12.21",
+  "CaseFlag": "(2016)浙07行终370号",
+  "CaseClassName": "行政二审",
+  "TrialStep": [
+   "二审"
+  ],
+  "Judge": "单晓剑@郦东均@朱鸣",
+  "JudgeDic": [
+   "单晓剑",
+   "郦东均",
+   "朱鸣"
+  ],
+  "DocumentAttr": [
+   "判决书"
+  ],
+  "AgentDic": [],
+  "Criminal": "",
+  "Core": "",
+  "CaseGist": "",
+  "SourceNote": "",
+  "GuidingCaseDoc": "",
+  "IssueDate": "",
+  "CriminalPunish": [
+   "行政",
+   "权责情节",
+   "行政行为种类",
+   "行政处罚",
+   "行政复议",
+   "行政行为效力",
+   "合法",
+   "违法",
+   "行政处罚种类和程序",
+   "罚款",
+   "诉讼关键词",
+   "证据",
+   "证明",
+   "证据确凿",
+   "审判程序",
+   "维持原判",
+   "改判",
+   "发回重审",
+   "其他行政诉讼关键词",
+   "听证"
+  ],
+  "TrialAfter": "\t上诉人义乌市爽爽戒烟咨询服务站（以下简称爽爽戒烟站）因行政处罚一案，不服义乌市人民法院作出的(2016)浙0782行初66号行政判决，向本院提起上诉。",
+  "PlaintiffClaims": "",
+  "DefenseViewpoint": "",
+  "ControversialFocus": "",
+  "Ascertain": "",
+  "Identified": "\t本院认为，根据《食品广告发布暂行规定》的规定，普通食品广告不得宣传保健功能，也不得借助宣传某些成分的作用明示或者暗示其保健作用。本案中，上诉人爽爽戒烟站在多种资料中宣传其经营的普通食品“清咽糖”具有保健功能，违法事实清楚。被上诉人义乌市市场监督管理局经立案、调查、询问、听证告知、听证等程序，对上诉人作出处罚决定，并无不当。被上诉人义乌市人民政府作出的行政复议决定适用法律正确，符合法定程序。上诉人的上诉理由不能成立，本院不予支持。根据《中华人民共和国行政诉讼法》第八十九条第一款第（一）项之规定，判决如下：",
+  "RefereeBasis": "《食品广告发布暂行规定》\n《中华人民共和国行政诉讼法》第八十九条第一款第（一）项",
+  "RefereeResult": "\t驳回上诉，维持原判。二审案件受理费50元，由上诉人义乌市爽爽戒烟咨询服务站负担。\n\t本判决为终审判决。",
+  "Accusation": [],
+  "Url": "[北大法宝](https://www.pkulaw.com/pfnl/a6bdb3332ec0adc460234a415b0ae3be91940b849c90355fbdfb.html?way=mcp)"
+ }
+}

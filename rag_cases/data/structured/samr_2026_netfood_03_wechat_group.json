@@ -1,0 +1,89 @@
+{
+ "case_id": "samr_2026_netfood_03_wechat_group",
+ "title": "江阴市市场监管局查处江阴市澄江街道嗨优日用品商行帮助其他经营者虚假宣传案",
+ "source_type": "official_typical_case",
+ "source_name": "国家市场监督管理总局",
+ "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html",
+ "source_verification_status": "source_verified",
+ "original_decision_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html",
+ "original_decision_url_status": "official_page",
+ "source_lookup_priority": "P0",
+ "publish_date": "2026-09-07",
+ "decision_date": null,
+ "penalty_authority": "江阴市市场监督管理局",
+ "party_name": "江阴市澄江街道嗨优日用品商行",
+ "region": "江苏省江阴市",
+ "industry": "保健食品",
+ "violation_type": "帮助其他经营者虚假宣传（会销/社群营销）",
+ "case_nature": "administrative_penalty_decision",
+ "is_admin_penalty_candidate": true,
+ "product_or_service": "火麻茶、鳄鱼肉等普通食品及初级农产品",
+ "ad_channel": "微信会员群转发宣传文案与直播二维码",
+ "risk_dimensions": [
+  "虚假宣传",
+  "会销虚假宣传",
+  "老年人营销风险",
+  "功效无依据"
+ ],
+ "illegal_claims": [
+  "润肠通便，明目保肝，改善睡眠",
+  "冻龄养颜",
+  "增强免疫力"
+ ],
+ "facts_summary": "当事人以赠送鸡蛋、洗衣液吸引老年消费者，组建18个微信会员群，群内转发商品宣传文案和直播二维码，将多款普通食品、初级农产品虚构或夸大为具有特定功效或疗效（如火麻茶“润肠通便，明目保肝，改善睡眠”、鳄鱼肉“冻龄养颜”“增强免疫力”），且无法提供功效依据，构成帮助其他经营者虚假宣传，违反《反不正当竞争法》第九条第二款等规定。",
+ "legal_basis": [
+  "《中华人民共和国反不正当竞争法》第九条第二款",
+  "《中华人民共和国反不正当竞争法》第二十五条第一款",
+  "《网络反不正当竞争暂行规定》第八条第二款",
+  "《网络反不正当竞争暂行规定》第三十四条"
+ ],
+ "penalty_result": "责令立即停止违法行为，罚款20万元",
+ "penalty_amount": 200000,
+ "regulatory_logic": "通过微信会员群帮助他人夸大普通食品功效、针对老年群体实施误导营销，即使不是广告主，帮助虚假宣传同样违法。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "微信会员群",
+  "会销",
+  "老年人",
+  "普通食品",
+  "火麻茶",
+  "增强免疫力",
+  "帮助虚假宣传",
+  "罚款20万",
+  "江阴"
+ ],
+ "vector_text": "这是一起通过微信会员群帮助其他经营者对普通食品做虚假功效宣传、被罚20万的案例。运营方以赠礼吸引用户进群，转发火麻茶“润肠通便明目保肝”、鳄鱼肉“冻龄养颜增强免疫力”等文案，无功效依据。场景特征：微信社群、会销、帮助虚假宣传。",
+ "rag_chunk_type": "case_summary",
+ "scope": "public",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "raw_text_path": "data/raw_text/samr_c083e410ff3d.json",
+ "raw_html_path": "data/raw_html/samr_c083e410ff3d.html",
+ "source_lookup_query": "江阴市澄江街道嗨优日用品商行 帮助其他经营者虚假宣传（会销/社群营销）",
+ "legal_basis_provenance": {
+  "case_source_text": "总局典型案例原文引用",
+  "specific_articles_published_by_case_source": true,
+  "mapping_status": "official_case_source",
+  "warning": "法条引用来自总局典型案例原文。"
+ },
+ "legal_basis_details": [],
+ "audit": {
+  "review_status": "approved",
+  "approved_for_rag": true,
+  "reviewer": "codex-crawler-ingest",
+  "review_date": "2026-09-15",
+  "review_notes": "总局P0官方典型案，crawler存证+人工结构化；罚则/机关/金额均出自官方原文。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T23:48:57+08:00",
+   "action": "crawler_ingest_official",
+   "note": "经 backend/scripts/crawl_samr.py 抓取存证（raw_html+raw_text），按官方原文结构化入库。"
+  }
+ ],
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T23:48:57+08:00",
+  "approved_by": "codex-crawler-ingest (官方P0典型案)"
+ }
+}

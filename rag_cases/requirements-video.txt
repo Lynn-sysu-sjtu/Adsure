@@ -1,0 +1,5 @@
+-r requirements.txt
+faster-whisper>=1.2,<2
+opencc-python-reimplemented>=0.1.7,<1
+sherpa-onnx>=1.12,<2
+pypdf>=5,<7

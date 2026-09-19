@@ -1,0 +1,160 @@
+{
+ "case_id": "sector_docx__game__54a80f6c",
+ "title": "刘某诉某科技公司网络服务合同纠纷案",
+ "case_number": "（2025）京0491民初7134号",
+ "court": "北京互联网法院",
+ "decision_date": "2025-05-27",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+ "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206744b860d9baa30382394346eb63bd706bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
+ "publish_date": null,
+ "penalty_authority": null,
+ "party_name": "某科技公司",
+ "region": "北京互联网法",
+ "industry": "游戏",
+ "sector": "game",
+ "sector_cn": "游戏",
+ "violation_type": "游戏抽奖概率争议",
+ "case_nature": "judicial_reference_not_admin_penalty",
+ "source_lookup_priority": "P2",
+ "is_admin_penalty_candidate": false,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "game"
+ ],
+ "product_or_service": "魔法礼物",
+ "ad_channel": "APP",
+ "risk_dimensions": [
+  "游戏抽奖概率公示",
+  "概率规则透明度",
+  "消费者权益争议"
+ ],
+ "illegal_claims": [
+  "魔法礼物"
+ ],
+ "facts_summary": "原告刘某与被告北京某玩在线科技有限公司(以下简称某科技公司)网络服务合同纠纷一案，本院于2025年3月6日立案后，依法适用简易程序，公开开庭进行审理。原告刘某、被告某科技公司的委托诉讼代理人曹某到庭参加诉讼，本案现已审理终结。\n本院认为，原告在被告运营的某玩平台注册账号并进行充值、抽奖、打赏，原告与被告之间成立网络服务合同关系。\n关于原告请求返还充值款项的诉讼请求。本案中，根据双方均认可的《某玩用户协议》第六条第一款第五项，用户确认，除法律法规明确规定或本协议另有约定外，用户已充值的金额不能以任何理由退购。本案中，首先，针对原告充值而支付的价款，被告已按约交付等比例兑换的“钻石”。其次，针对原告实施的抽奖行为，系原告先向被告完成充值获得“钻石”等虚拟货币后，再通过支付虚拟货币在系统提供的虚拟奖池抽奖，以获得随机奖品的行为。根据被告提交的证据显示，被告已向原告提供对应的小概率礼物，原告获得的礼物整体已经超过原告消耗的钻石数量。最后，原告表示已经将相应礼物打赏给主播，原告已实际从中获得相应的精神利益，目前原告充值金额已经消耗完毕，已无返还的可能。\n原告虽主张被告具有欺诈行为及诱导消费行为，但其提交的充值记录及礼物说明、礼物记录显示其已通过活动抽奖获得相应对价虚拟礼物商品，未能证明该礼物抽奖概率与所宣传不符，亦无法证明被告存在欺诈故意。原告作为完全民事行为能力人，应当对自己的情感、财产具有合理的支配和掌控能力。因此，本院认定原告与被告形成的是网络服务合同法律关系，原告在被告平台的消费行为属于有效法律行为。被告亦已按照合同约定履行完毕相应的网络服务义务，且已在爱情魔法限额说明中为避免用户过度开启，对各爵位爱情魔法开启次数做了一定限制，尽到了合理提示义务。故对于原告主张被告返还充值打赏款项的诉讼请求，缺乏事实和法律依据，本院不予支持。\n综上所述，依照《中华人民共和国民法典》第一百四十三条，《中华人民共和国民事诉讼法》第六十七条第一款之规定，判决如下：",
+ "legal_basis": [
+  "《民法典》第一百四十三条"
+ ],
+ "penalty_result": "驳回诉讼请求",
+ "penalty_amount": null,
+ "regulatory_logic": "游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏抽奖概率争议，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十三条。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "game",
+  "游戏",
+  "游戏抽奖概率争议",
+  "游戏抽奖概率公示",
+  "概率规则透明度",
+  "消费者权益争议",
+  "魔法礼物"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
+ "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "pending_pkulaw_human_review",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
+ },
+ "source_lookup_query": "（2025）京0491民初7134号 刘某诉某科技公司网络服务合同纠纷案",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告刘某与被告北京某玩在线科技有限公司(以下简称某科技公司)网络服务合同纠纷一案，本院于2025年3月6日立案后，依法适用简易程序，公开开庭进行审理。原告刘某、被告某科技公司的委托诉讼代理人曹某到庭参加诉讼，本案现已审理终结。\n本院认为，原告在被告运营的某玩平台注册账号并进行充值、抽奖、打赏，原告与被告之间成立网络服务合同关系。\n关于原告请求返还充值款项的诉讼请求。本案中，根据双方均认可的《某玩用户协议》第六条第一款第五项，用户确认，除法律法规明确规定或本协议另有约定外，用户已充值的金额不能以任何理由退购。本案中，首先，针对原告充值而支付的价款，被告已按约交付等比例兑换的“钻石”。涉案广告宣称：魔法礼物。",
+ "raw_text_path": "data/raw_text/case_library_docx__游戏广告合规案例库.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
+  }
+ ],
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T03:41:10+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）"
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "玩APP“魔法礼物”抽奖活动，玩家充值约10万元后主张实际概率与公示不符。法院认定被告已按公示概率设置放回式抽奖模型，原告获得虚拟礼物整体已超过消耗钻石数量",
+    "vector_text": "【赛道】游戏。【场景】APP。【宣称】魔法礼物。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏抽奖概率争议，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十三条。。【依据】《民法典》第一百四十三条。【结果】驳回诉讼请求。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2025)京0491民初7134号",
+  "pkulaw_court": "北京互联网法院",
+  "pkulaw_title": "刘某与某科技有限公司网络服务合同纠纷一审民事判决书",
+  "last_instance_date": "2025.05.27",
+  "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206744b860d9baa30382394346eb63bd706bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2025_京0491民初7134号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "本院认为(回退)"
+  ]
+ },
+ "human_review_required": true
+}

@@ -1,0 +1,81 @@
+{
+  "case_id": "zj_gap_330282062026040003",
+  "title": "慈溪圣甬口腔门诊部有限公司未经广告审查机关审查发布医疗广告和发布虚假广告的行为案",
+  "case_number": "慈市监处罚〔2026〕1001号",
+  "source_type": "zj_xzcf_open_api_ad_gap_candidate",
+  "source_name": "浙江省行政处罚结果信息公开（公开 API）",
+  "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330282062026040003&unid=330282062026040003",
+  "source_verification_status": "official_api_fulltext_pending_human_review",
+  "source_lookup_priority": "P1",
+  "publish_date": null,
+  "decision_date": "2026-08-06",
+  "penalty_authority": "慈溪市市场监督管理局",
+  "party_name": "慈溪圣甬口腔门诊部有限公司",
+  "region": "慈溪市",
+  "industry": "医疗/医药",
+  "product_or_service": "口腔门诊诊疗项目医疗广告",
+  "ad_channel": "小红书",
+  "risk_dimensions": [
+    "平台广告合规",
+    "电商平台广告",
+    "虚假/误导广告"
+  ],
+  "illegal_claims": [
+    "未经广告审查机关审查，在小红书官方账号发布医疗广告",
+    "平台医疗广告内容无法提供依据且与事实不符"
+  ],
+  "facts_summary": "当事人在未经广告审查机关审查的情况下在其名所有的两个官方小红书号上发布医疗广告。当事人发布上述笔记或信息以推荐其诊疗项目或本机构为目的。其中，部分广告宣传涉及的内容，当事人无法提供依据且与事实不符。",
+  "legal_basis": [
+    "《中华人民共和国广告法》第四十六条",
+    "《中华人民共和国广告法》第五十八条",
+    "《中华人民共和国广告法》第二十八条",
+    "《中华人民共和国广告法》第四条"
+  ],
+  "penalty_result": "当事人通过小红书号发布未经广告审查机关审查的医疗广告，其行为违反了《中华人民共和国广告法》第四十六条之规定，根据《中华人民共和国广告法》第五十八条第一款第十四项之规定，责令停止发布广告并在相应范围内消除影响，决定减轻处罚如下：罚款40000元；当事人发布的部分医疗广告涉及的宣传当事人无法提供相应依据且与事实不符，构成《中华人民共和国广告法》第二十八条第一款和第二款第二项所指的虚假广告。其行为违反了《中华人民共和国广告法》第四条第一款之规定，属发布虚假广告的行为。根据《中华人民共和国广告法》第五十八条第一款第一项之规定，对当事人发布虚假广告的行为，责令停止发布广告并在相应范围内消除影响，决定减轻处罚如下：罚款20000元；以上共计罚款60000元。",
+  "penalty_amount": 60000.0,
+  "penalty_amount_breakdown": {
+    "total_fine": 60000.0,
+    "confiscated_illegal_gain": null,
+    "total_monetary_penalty": 60000.0,
+    "advertising_related_fine_when_separable": 20000.0,
+    "anti_unfair_competition_fine": null
+  },
+  "regulatory_logic": "以下监管逻辑仅概括决定书明示内容：处罚机关依据全文载明的广告/反不正当竞争事实及法条作出处理；场景映射、分项罚款与标题正文一致性仍需人工复核。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "慈市监处罚〔2026〕1001号",
+    "虚假广告"
+  ],
+  "vector_text": "这是浙江省行政处罚结果信息公开的一起医疗/医药广告处罚候选案例。慈溪圣甬口腔门诊部有限公司通过小红书发布相关宣传。处罚决定书写明：当事人在未经广告审查机关审查的情况下在其名所有的两个官方小红书号上发布医疗广告。当事人发布上述笔记或信息以推荐其诊疗项目或本机构为目的。其中，部分广告宣传涉及的内容，当事人无法提供依据且与事实不符。处罚结果为：当事人通过小红书号发布未经广告审查机关审查的医疗广告，其行为违反了《中华人民共和国广告法》第四十六条之规定，根据《中华人民共和国广告法》第五十八条第一款第十四项之规定，责令停止发布广告并在相应范围内消除影响，决定减轻处罚如下：罚款40000元；当事人发布的部分医疗广告涉及的宣传当事人无法提供相应依据且与事实不符，构成《中华人民共和国广告法》第二十八条第一款和……该记录来自行政机关公开处罚信息全文，仍需人工复核，暂不进入生产 RAG。",
+  "rag_chunk_type": "case_summary_candidate",
+  "scope": "public",
+  "case_nature": "administrative_penalty_decision",
+  "is_admin_penalty_candidate": true,
+  "is_administrative_penalty_fact": true,
+  "gap_scenario_ids": [
+    "s03_platform_rules"
+  ],
+  "gap_scenario_evidence": {
+    "s03_platform_rules": [
+      "小红书号上发布医疗广告。当事人发布上述笔记或信息以推荐其诊疗项目或本机构为目的。其中，部分广告宣传"
+    ]
+  },
+  "metadata_consistency_notes": [
+    "同一决定书同时处理未经审查发布医疗广告和虚假广告；分项罚款见 penalty_amount_breakdown。"
+  ],
+  "review_status": "pending_human_review",
+  "approved_for_rag": false,
+  "human_review_required": true,
+  "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330282062026040003.json",
+  "source_list_raw_paths": [
+    "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__虚假广告__p1.json"
+  ],
+  "retrieved_at": "2026-09-17T17:54:08+08:00",
+  "data_change_log": [
+    {
+      "ts": "2026-09-17T17:54:08+08:00",
+      "action": "zj_gap_case_search",
+      "note": "浙江公开 API 列表+详情命中 8 缺口强场景词；仅入候选，待人核，不进生产 RAG。"
+    }
+  ]
+}

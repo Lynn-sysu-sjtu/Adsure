@@ -1,0 +1,82 @@
+{
+  "case_id": "zj_gap_330304032026070002",
+  "title": "翁某某虚假宣传（不正当竞争行为）案",
+  "case_number": "温瓯市监处罚〔2026〕626号",
+  "source_type": "zj_xzcf_open_api_ad_gap_candidate",
+  "source_name": "浙江省行政处罚结果信息公开（公开 API）",
+  "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330304032026070002&unid=330304032026070002",
+  "source_verification_status": "official_api_fulltext_pending_human_review",
+  "source_lookup_priority": "P1",
+  "publish_date": null,
+  "decision_date": "2026-09-15",
+  "penalty_authority": "温州市瓯海区市场监督管理局",
+  "party_name": "翁某某",
+  "region": "温州市瓯海区",
+  "industry": "化妆品",
+  "product_or_service": "润嘉丽普通化妆品",
+  "ad_channel": "淘宝",
+  "risk_dimensions": [
+    "平台广告合规",
+    "电商平台广告",
+    "虚假/误导广告"
+  ],
+  "illegal_claims": [
+    "普通化妆品宣称“袪黄改善暗沉”功效",
+    "普通化妆品实际功效为保湿、舒缓，却作超出实际功效的宣传"
+  ],
+  "facts_summary": "经查明，当事人已取得个体营业执照，2024年6月7日其在淘宝平台以个人名义注册经营淘宝店铺某某堂美妆护肤店，主要销售化妆品。当事人在经营化妆品期间，未建立并执行进货查验记录制度。当事人从2025年1月至2025年7月在其淘宝店铺某某堂美妆护肤店发布产品广告，宣传其经营的润嘉丽产品具有袪黄改善暗沉功效，该产品为普通化妆品，实际功效是保湿和舒缓。该广告制作发布费用为200元，截止调查终结时，当事人已经停止发布该广告。",
+  "legal_basis": [
+    "《化妆品监督管理条例》第三十八条",
+    "《中华人民共和国反不正当竞争法》第九条",
+    "《网络反不正当竞争暂行规定》第八条",
+    "《中华人民共和国广告法》第二十八条",
+    "《化妆品生产经营监督管理办法》第六十二条",
+    "《中华人民共和国反不正当竞争法》第二十五条",
+    "《中华人民共和国广告法》第五十五条"
+  ],
+  "penalty_result": "当事人上述行为违反了《化妆品监督管理条例》第三十八条、《中华人民共和国反不正当竞争法》第九条第一款，《网络反不正当竞争暂行规定》第八条第一款第（一）项，《中华人民共和国广告法》第二十八条第二款第（二）项之规定，属于违法行为。根据《化妆品生产经营监督管理办法》第六十二条、《中华人民共和国反不正当竞争法》第二十五条第二款，《中华人民共和国广告法》第五十五条第一款之规定，责令当事人改正违法行为，决定对当事人处罚如下： 1、对当事人未按规定建立进货查验记录制度的违法行为，不予行政处罚； 2、对当事人发布虚假广告行为，处罚款人民币600元，上缴财政。",
+  "penalty_amount": 600.0,
+  "penalty_amount_breakdown": {
+    "total_fine": 600.0,
+    "confiscated_illegal_gain": null,
+    "total_monetary_penalty": 600.0,
+    "advertising_related_fine_when_separable": 600.0,
+    "anti_unfair_competition_fine": 600.0
+  },
+  "regulatory_logic": "以下监管逻辑仅概括决定书明示内容：处罚机关依据全文载明的广告/反不正当竞争事实及法条作出处理；场景映射、分项罚款与标题正文一致性仍需人工复核。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "温瓯市监处罚〔2026〕626号",
+    "虚假宣传"
+  ],
+  "vector_text": "这是浙江省行政处罚结果信息公开的一起化妆品广告处罚候选案例。翁某某通过淘宝发布相关宣传。处罚决定书写明：经查明，当事人已取得个体营业执照，2024年6月7日其在淘宝平台以个人名义注册经营淘宝店铺某某堂美妆护肤店，主要销售化妆品。当事人在经营化妆品期间，未建立并执行进货查验记录制度。当事人从2025年1月至2025年7月在其淘宝店铺某某堂美妆护肤店发布产品广告，宣传其经营的润嘉丽产品具有袪黄改善暗沉功效，该产品为普通化妆品，实际功效是保湿和舒缓。该广告制作发布费用为200元，截止调查终结时，当事人已经停止发布该广告。处罚结果为：当事人上述行为违反了《化妆品监督管理条例》第三十八条、《中华人民共和国反不正当竞争法》第九条第一款，《网络反不正当竞争暂行规定》第八条第一款第（一）项，《中华人民共和国广告法》第二十八条第二款第（二）项之规定，属于违法行为。根据《化妆品生产经营监督管理办法》第六十二条、《中华人民共和国反不正当竞争法》第二十五条第二款，《中华人民共和国广告法》第五十五条第一款……该记录来自行政机关公开处罚信息全文，仍需人工复核，暂不进入生产 RAG。",
+  "rag_chunk_type": "case_summary_candidate",
+  "scope": "public",
+  "case_nature": "administrative_penalty_decision",
+  "is_admin_penalty_candidate": true,
+  "is_administrative_penalty_fact": true,
+  "gap_scenario_ids": [
+    "s03_platform_rules"
+  ],
+  "gap_scenario_evidence": {
+    "s03_platform_rules": [
+      "淘宝店铺某某堂美妆护肤店发布产品广告，宣传"
+    ]
+  },
+  "metadata_consistency_notes": [],
+  "review_status": "pending_human_review",
+  "approved_for_rag": false,
+  "human_review_required": true,
+  "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330304032026070002.json",
+  "source_list_raw_paths": [
+    "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__虚假宣传__p1.json"
+  ],
+  "retrieved_at": "2026-09-17T17:54:08+08:00",
+  "data_change_log": [
+    {
+      "ts": "2026-09-17T17:54:08+08:00",
+      "action": "zj_gap_case_search",
+      "note": "浙江公开 API 列表+详情命中 8 缺口强场景词；仅入候选，待人核，不进生产 RAG。"
+    }
+  ]
+}

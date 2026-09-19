@@ -1,0 +1,160 @@
+{
+ "case_id": "sector_docx__game__a5b354d7",
+ "title": "赵剑磊诉三七互娱（上海）科技有限公司等网络服务合同纠纷案",
+ "case_number": "（2020）粤0192民初22669号",
+ "court": "广州互联网法院",
+ "decision_date": "2020-07-23",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+ "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
+ "publish_date": null,
+ "penalty_authority": null,
+ "party_name": "三七互娱（上海）科技有限公司等",
+ "region": "广州互联网法",
+ "industry": "游戏",
+ "sector": "game",
+ "sector_cn": "游戏",
+ "violation_type": "游戏广告虚假宣传",
+ "case_nature": "judicial_reference_not_admin_penalty",
+ "source_lookup_priority": "P2",
+ "is_admin_penalty_candidate": false,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "game"
+ ],
+ "product_or_service": "游戏《暗黑起源》",
+ "ad_channel": "其他",
+ "risk_dimensions": [
+  "广告内容真实性",
+  "虚假宣传",
+  "奖励承诺不准确"
+ ],
+ "illegal_claims": [
+  "没有VIP，一切装备可掉落"
+ ],
+ "facts_summary": "原告赵剑磊与被告三七互娱（上海）科技有限公司（以下简称三七互娱公司）、安徽三七网络科技有限公司（以下简称安徽三七公司）网络服务合同纠纷一案，本院于2020年4月30日立案后，依法适用简易程序，公开开庭进行了审理。原告赵剑磊及其委托诉讼代理人谭斌，被告三七互娱公司的委托诉讼代理人何志旋、鲁永峰，被告安徽三七公司的委托诉讼代理人鲁永峰在线参加诉讼。本案现已审理终结。\n本院认为，安徽三七公司为案涉游戏的运营方，赵剑磊注册游戏账号登录游戏进行充值、消费，双方成立网络服务合同。赵剑磊以三七互娱公司、安徽三七公司存在误导消费和欺诈为由，要求“退一赔三\"并赔偿公证费等。根据《中华人民共和国消费者权益保护法》第五十五条规定，经营者提供商品或者服务有欺诈行为的，应当按照消费者的要求增加赔偿其受到的损失，增加赔偿的金额为消费者购买商品的价款或者接受服务的费用的三倍。故本案的主要争议问题是，三七互娱公司、安徽三七公司的行为是否构成欺诈。欺诈，是指一方当事人故意告知对方虚假情况，或者故意隐瞒真实情况，诱使对方当事人作出错误意思表示的行为，其构成要件包括存在故意告知虚假情况或者故意隐瞒真实情况的行为、相对人因此陷于错误而作出意思表示、存在欺诈故意等。根据案件查明事实，首先，赵剑磊主张三七互娱公司、安徽三七公司通过发布虚假广告的方式进行诱导和欺诈，但未能提供证据证明三七互娱公司或安徽三七公司发布了相关广告；其次，设置一定的VIP等级，并设定相应的升级条件和特权，是网络游戏的常见做法。作为一个具有完全行为能力的成年人，赵剑磊在登录案涉游戏进行充值消费之初，就应当知道该游戏设有VIP等级、相应特权以及充值的最低数额等事实，但其不但没有及时提出异议，相反在2020年2月9日至3月7日近一个月的时间内，多次登录游戏，并进行充值、消费，截至赵剑磊提起本案诉讼时止，案涉账号的VIP等级已达到14级。即使在通过公证保存本案起诉证据之后，案涉游戏账号仍有多次登录游戏以及充值消费的记录。赵剑磊一方面主张受到欺诈和误导，另一方面却不断进行游戏充值消费，显然不符合常理。因此，赵剑磊的上述行为，应视为其已接受了案涉游戏的相关设定。赵剑磊在明知案涉游戏存在相关设定的情况下进行的多次充值消费，是其真实的意思表示，并非因欺诈误导陷于错误而作出的错误意思表示。综上，赵剑磊主张其受到三七互娱公司、安徽三七公司的欺诈和误导，缺乏事实依据，本院不予确认，对其据此提出的相关诉讼请求，本院不予支持。\n依照《中华人民共和国民事诉讼法》第六十四条第一款，《最高人民法院关于适用〈中华人民共和国民事诉讼法〉的解释》第九十条之规定，判决如下：",
+ "legal_basis": [
+  "《消费者权益保护法》第五十五条"
+ ],
+ "penalty_result": "驳回诉讼请求",
+ "penalty_amount": null,
+ "regulatory_logic": "游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏广告虚假宣传，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《消费者权益保护法》第五十五条。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "game",
+  "游戏",
+  "游戏广告虚假宣传",
+  "广告内容真实性",
+  "虚假宣传",
+  "奖励承诺不准确",
+  "没有VIP，一切装备可掉落"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
+ "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "pending_pkulaw_human_review",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
+ },
+ "source_lookup_query": "（2020）粤0192民初22669号 赵剑磊诉三七互娱（上海）科技有限公司等网络服务合同纠纷案",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告赵剑磊与被告三七互娱（上海）科技有限公司（以下简称三七互娱公司）、安徽三七网络科技有限公司（以下简称安徽三七公司）网络服务合同纠纷一案，本院于2020年4月30日立案后，依法适用简易程序，公开开庭进行了审理。原告赵剑磊及其委托诉讼代理人谭斌，被告三七互娱公司的委托诉讼代理人何志旋、鲁永峰，被告安徽三七公司的委托诉讼代理人鲁永峰在线参加诉讼。本案现已审理终结。\n本院认为，安徽三七公司为案涉游戏的运营方，赵剑磊注册游戏账号登录游戏进行充值、消费，双方成立网络服务合同。赵剑磊以三七互娱公司、安徽三七公司存在误导消费和欺诈为由，要求“退一赔三\"并赔偿公证费等。涉案广告宣称：没有VIP，一切装备可掉落。",
+ "raw_text_path": "data/raw_text/case_library_docx__游戏广告合规案例库.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
+  }
+ ],
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T03:41:10+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）"
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "游戏《暗黑起源》广告宣传“没有VIP，一切装备可掉落”，实际游戏内有商城、特权、VIP等级设置。玩家充值116017元后主张虚假宣传。法院认定玩家在明知游戏设定的情况下多次充值消费，不构成欺诈",
+    "vector_text": "【赛道】游戏。【场景】其他。【宣称】没有VIP，一切装备可掉落。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏广告虚假宣传，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《消费者权益保护法》第五十五条。。【依据】《消费者权益保护法》第五十五条。【结果】驳回诉讼请求。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2020)粤0192民初22669号",
+  "pkulaw_court": "广州互联网法院",
+  "pkulaw_title": "赵剑磊与三七互娱（上海）科技有限公司、安徽三七网络科技有限公司网络服务合同纠纷一审民事判决书",
+  "last_instance_date": "2020.07.23",
+  "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2020_粤0192民初22669号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "本院认为(回退)"
+  ]
+ },
+ "human_review_required": true
+}

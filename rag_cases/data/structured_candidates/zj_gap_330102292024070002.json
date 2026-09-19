@@ -1,0 +1,81 @@
+{
+  "case_id": "zj_gap_330102292024070002",
+  "title": "徐某某广告代言人在医疗、药品、医疗器械广告中作推荐、证明行为案",
+  "case_number": "杭上市监处罚〔2024〕505号",
+  "source_type": "zj_xzcf_open_api_ad_gap_candidate",
+  "source_name": "浙江省行政处罚结果信息公开（公开 API）",
+  "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330102292024070002&unid=330102292024070002",
+  "source_verification_status": "official_api_fulltext_pending_human_review",
+  "source_lookup_priority": "P1",
+  "publish_date": null,
+  "decision_date": "2024-08-29",
+  "penalty_authority": "杭州市上城区市场监督管理局",
+  "party_name": "徐某某",
+  "region": "杭州市上城区",
+  "industry": "医疗/医药",
+  "product_or_service": "医疗广告（公开全文未披露具体产品/服务名称）",
+  "ad_channel": null,
+  "risk_dimensions": [
+    "医疗广告推荐证明",
+    "广告代言",
+    "推荐证明"
+  ],
+  "illegal_claims": [
+    "在医疗、药品、医疗器械广告中作推荐、证明"
+  ],
+  "facts_summary": "经调查，当事人利用自身的知名度与一医疗单位签订《合作协议》、《肖像权使用协议书》，拍摄宣传其单位产品。当事人获得广告代言费9000元。上述行为已构成《中华人民共和国广告法》第十六条第一款第（四）项“医疗、药品、医疗器械广告不得含有下列内容：利用广告代言人作推荐、证明；”所指行为。",
+  "legal_basis": [
+    "《中华人民共和国广告法》第十六条",
+    "《中华人民共和国广告法》第六十一条"
+  ],
+  "penalty_result": "当事人利用自身的知名度与一医疗单位签订《合作协议》、《肖像权使用协议书》，拍摄宣传其单位产品，违反了《中华人民共和国广告法》第十六条第一款第（四）项的规定，根据《中华人民共和国广告法》第六十一条第一款第（一）项的规定，决定对当事人违法行为作：1.没收违法所得9000元；2.罚款9000元。（共计壹万捌仟元整）",
+  "penalty_amount": 9000.0,
+  "penalty_amount_breakdown": {
+    "total_fine": 9000.0,
+    "confiscated_illegal_gain": 9000.0,
+    "total_monetary_penalty": 18000.0,
+    "advertising_related_fine_when_separable": 9000.0,
+    "anti_unfair_competition_fine": null
+  },
+  "regulatory_logic": "以下监管逻辑仅概括决定书明示内容：处罚机关依据全文载明的广告/反不正当竞争事实及法条作出处理；场景映射、分项罚款与标题正文一致性仍需人工复核。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "代言",
+    "广告代言",
+    "推荐证明",
+    "杭上市监处罚〔2024〕505号"
+  ],
+  "vector_text": "这是浙江省行政处罚结果信息公开的一起医疗/医药广告处罚候选案例。徐某某发布相关商业宣传。处罚决定书写明：经调查，当事人利用自身的知名度与一医疗单位签订《合作协议》、《肖像权使用协议书》，拍摄宣传其单位产品。当事人获得广告代言费9000元。上述行为已构成《中华人民共和国广告法》第十六条第一款第（四）项“医疗、药品、医疗器械广告不得含有下列内容：利用广告代言人作推荐、证明；”所指行为。处罚结果为：当事人利用自身的知名度与一医疗单位签订《合作协议》、《肖像权使用协议书》，拍摄宣传其单位产品，违反了《中华人民共和国广告法》第十六条第一款第（四）项的规定，根据《中华人民共和国广告法》第六十一条第一款第（一）项的规定，决定对当事人违法行为作：1.没收违法所得9000元；2.罚款9000元。（共计壹万捌仟元整）该记录来自行政机关公开处罚信息全文，仍需人工复核，暂不进入生产 RAG。",
+  "rag_chunk_type": "case_summary_candidate",
+  "scope": "public",
+  "case_nature": "administrative_penalty_decision",
+  "is_admin_penalty_candidate": true,
+  "is_administrative_penalty_fact": true,
+  "gap_scenario_ids": [
+    "s04_endorsement"
+  ],
+  "gap_scenario_evidence": {
+    "s04_endorsement": [
+      "代言费9000元。上述行为已构成《中华人民共和国广告法》第十六条第一款第（四）项“医疗、药品、医疗器械广告不得含有下列内容：利用广告代言人作推荐",
+      "广告不得含有下列内容：利用广告代言人作推荐、证明"
+    ]
+  },
+  "metadata_consistency_notes": [],
+  "review_status": "pending_human_review",
+  "approved_for_rag": false,
+  "human_review_required": true,
+  "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330102292024070002.json",
+  "source_list_raw_paths": [
+    "data/raw_text/zj_xzcf/gap_20260917/list/s04_endorsement__fallback__代言__p1.json",
+    "data/raw_text/zj_xzcf/gap_20260917/list/s04_endorsement__fallback__推荐证明__p1.json",
+    "data/raw_text/zj_xzcf/gap_20260917/list/s04_endorsement__primary__广告代言__p1.json"
+  ],
+  "retrieved_at": "2026-09-17T17:54:08+08:00",
+  "data_change_log": [
+    {
+      "ts": "2026-09-17T17:54:08+08:00",
+      "action": "zj_gap_case_search",
+      "note": "浙江公开 API 列表+详情命中 8 缺口强场景词；仅入候选，待人核，不进生产 RAG。"
+    }
+  ]
+}

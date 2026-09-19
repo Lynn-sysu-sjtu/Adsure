@@ -1,0 +1,156 @@
+{
+ "case_id": "sector_docx__game__e9a15585",
+ "title": "闻某诉广州某公司网络服务合同纠纷案",
+ "case_number": "（2025）粤0192民初19683号",
+ "court": "广州互联网法院",
+ "decision_date": "2025-09-02",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+ "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81683c924c68d235621ae3b162aa7446dd3bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
+ "publish_date": null,
+ "penalty_authority": null,
+ "party_name": "广州某公司",
+ "region": "广州互联网法",
+ "industry": "游戏",
+ "sector": "game",
+ "sector_cn": "游戏",
+ "violation_type": "游戏充值诱导消费争议",
+ "case_nature": "judicial_reference_not_admin_penalty",
+ "source_lookup_priority": "P2",
+ "is_admin_penalty_candidate": false,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "game"
+ ],
+ "product_or_service": "游戏《三国志·战棋版》",
+ "ad_channel": "其他",
+ "risk_dimensions": [
+  "虚假宣传"
+ ],
+ "illegal_claims": [
+  "游戏《三国志·战棋版》玩家充值7.5万元后主张游戏内弹窗限时优惠等利用心理暗示促使其冲动消费，抽奖概率不透明"
+ ],
+ "facts_summary": "原告闻涛与被告广州某有限公司(以下简称某公司)网络服务合同纠纷一案，本院于2025年7月15日立案后，依法适用简易程序，于2025年8月29日开庭进行了审理。原告闻某、被告某公司的委托诉讼代理人蒋X在线参加诉讼。本案现已审理终结。\n本院认为，本案系网络服务合同纠纷。闻某在案涉游戏中注册成为用户，某公司作为游戏运营商为闻某提供游戏服务，双方之间成立网络服务合同关系。本案争议焦点为：闻某是否有权要求某公司退还充值款。\n《中华人民共和国民法典》第一百四十八条规定：“一方以欺诈手段，使对方在违背真实意思的情况下实施的民事法律行为，受欺诈方有权请求人民法院或者仲裁机构予以撤销。”《最高人民法院关于适用〈中华人民共和国民法典〉总则编若干问题的解释》第二十一条规定：“故意告知虚假情况，或者负有告知义务的人故意隐瞒真实情况，致使当事人基于错误认识作出意思表示的，人民法院可以认定为民法典第一百四十八条、第一百四十九条规定的欺诈。”本案中，闻某主张某公司存在诱导充值行为，且未公示抽奖概率，进而要求退款，实质是认为其在游戏内的充值行为非真实意思表示，某公司的行为构成欺诈。对此本院认为：首先，案涉游戏内的购买弹窗、限时优惠活动，多为游戏举办的限时优惠、充值奖励等玩法规则，系游戏内激励玩家充值、体验游戏的奖励制度，属于游戏运营商的正常经营行为，未违反法律法规的强制性规定。未有证据显示游戏内设置的奖励活动虚假，致使用户产生误解而作出错误意思表示。其次，闻某主张案涉游戏在玩家付费后获得道具的概率不透明，并未提交任何证据，某公司提交了相反证据予以反驳，故对闻某的相关主张，本院不予采信。再次，闻某作为成年人，应当具有独立判断和理解案涉游戏充值规则，并合理处分其个人财产的能力。某公司已在案涉游戏页面公示了充值规则，闻某的充值行为是在其充分了解相应规则后，基于其真实意思表示作出的行为。现有证据不能证明某公司故意告知虚假情况，或负有告知义务但隐瞒真实情况，导致闻某基于错误认识作出意思表示。最后，对闻某的充值行为，某公司均已以提供游戏内道具的方式履行提供相应服务的义务，闻某也已事实上享受X公司提供的游戏服务并获得相应游戏体验。案涉网络服务合同已实际履行完毕。闻某在合同履行完毕后无正当理由要求灵犀互娱公司退回已消耗的充值款项，缺乏依据。综上所述，闻某关于灵犀互娱公司构成欺诈并要求退还充值款的主张缺乏事实与法律依据，本院依法不予支持。\n依照《中华人民共和国民法典》第一百四十八条，《中华人民共和国民事诉讼法》第六十七条第一款，《最高人民法院关于适用〈中华人民共和国民法典〉总则编若干问题的解释》第二十一条之规定，判决如下：",
+ "legal_basis": [
+  "《民法典》第一百四十八条"
+ ],
+ "penalty_result": "驳回诉讼请求",
+ "penalty_amount": null,
+ "regulatory_logic": "游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏充值诱导消费争议，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十八条。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "game",
+  "游戏",
+  "游戏充值诱导消费争议",
+  "虚假宣传",
+  "游戏《三国志·战棋版》玩家充值7.5万元后主张游戏内弹窗限时优惠等利用心理暗示促使其冲动消费，抽奖概率不透明"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
+ "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "pending_pkulaw_human_review",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
+ },
+ "source_lookup_query": "（2025）粤0192民初19683号 闻某诉广州某公司网络服务合同纠纷案",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告闻涛与被告广州某有限公司(以下简称某公司)网络服务合同纠纷一案，本院于2025年7月15日立案后，依法适用简易程序，于2025年8月29日开庭进行了审理。原告闻某、被告某公司的委托诉讼代理人蒋X在线参加诉讼。本案现已审理终结。\n本院认为，本案系网络服务合同纠纷。闻某在案涉游戏中注册成为用户，某公司作为游戏运营商为闻某提供游戏服务，双方之间成立网络服务合同关系。本案争议焦点为：闻某是否有权要求某公司退还充值款。\n《中华人民共和国民法典》第一百四十八条规定：“一方以欺诈手段，使对方在违背真实意思的情况下实施的民事法律行为，受欺诈方有权请求人民法院或者仲裁机构予以撤销。涉案广告宣称：游戏《三国志·战棋版》玩家充值7.5万元后主张游戏内弹窗限时优惠等利用心理暗示促使其冲动消费，抽奖概率不透明。",
+ "raw_text_path": "data/raw_text/case_library_docx__游戏广告合规案例库.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
+  }
+ ],
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T03:41:10+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）"
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "游戏《三国志·战棋版》玩家充值7.5万元后主张游戏内弹窗限时优惠等利用心理暗示促使其冲动消费，抽奖概率不透明。法院认定游戏内的充值奖励活动系正常经营行为，未违反强制性规定，原告作为成年人具有独立判断能力",
+    "vector_text": "【赛道】游戏。【场景】其他。【宣称】游戏《三国志·战棋版》玩家充值7.5万元后主张游戏内弹窗限时优惠等利用心理暗示促使其冲动消费，抽奖概率不透明。【风险】游戏广告对充值奖励、抽奖概率或福利码获取条件作出宣传时，应准确、清楚说明限制条件；本案涉及游戏充值诱导消费争议，相关表达可能造成消费者对奖励或概率规则的误解，报告列明依据为《民法典》第一百四十八条。。【依据】《民法典》第一百四十八条。【结果】驳回诉讼请求。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2025)粤0192民初19683号",
+  "pkulaw_court": "广州互联网法院",
+  "pkulaw_title": "闻涛;广州灵犀互动娱乐有限公司网络服务合同纠纷一审民事判决书",
+  "last_instance_date": "2025.09.02",
+  "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81683c924c68d235621ae3b162aa7446dd3bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2025_粤0192民初19683号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "本院认为(回退)"
+  ]
+ },
+ "human_review_required": true
+}

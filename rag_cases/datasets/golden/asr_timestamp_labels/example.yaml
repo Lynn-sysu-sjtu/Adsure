@@ -1,0 +1,16 @@
+# 示例标签（占位值，非实测）。复制后改名，逐条人工听音核对。
+# 每条 case 的 phrase 必须能在转写文本中找到；找不到会记 FAIL（那是识别召回问题）。
+job_id: "REPLACE_WITH_JOB_ID"
+audio: "data/video_mvp/jobs/REPLACE/source.mp4"
+asr_raw: "data/video_mvp/jobs/REPLACE/asr_raw.json"
+annotator: 待填
+date: "2026-09-17"
+note: 示例占位，禁止作为指标引用
+
+cases:
+  - phrase: 国家级          # 人工听到该短语第一个字出现的秒数
+    true_start: 3.20
+    true_end: 4.00
+  - phrase: 销量第一
+    true_start: 20.40
+    true_end: 21.20

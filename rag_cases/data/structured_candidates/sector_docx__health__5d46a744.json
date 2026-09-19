@@ -1,63 +1,97 @@
 {
-  "case_id": "sector_docx__health__5d46a744",
-  "title": "佛山市南海区益尔康保健品商行诉佛山市南海区市场监督管理局行政处罚案",
-  "case_number": "（2020）粤06行终286号",
-  "court": "广东省佛山市中级人民法院",
-  "decision_date": "2020-06-28",
-  "source_type": "manual_docx_sector_report_pending_source_verification",
-  "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
-  "source_url": null,
-  "source_verification_status": "pending_source_lookup",
-  "publish_date": null,
-  "penalty_authority": "佛山市南海区益尔康保健品商行诉佛山市南海区市场监督管理局",
-  "party_name": null,
-  "region": "广东省佛山市",
-  "industry": "保健食品 / 保健品 / 普通食品",
-  "sector": "health",
-  "sector_cn": "保健品",
-  "violation_type": "保健食品广告虚假宣传",
-  "case_nature": "administrative_litigation_review",
-  "source_lookup_priority": "P0",
-  "is_admin_penalty_candidate": true,
-  "is_litigation_reference": true,
-  "duplicate_group_id": null,
-  "related_sectors": [
-    "health"
-  ],
-  "product_or_service": "灵芝孢子油软胶囊",
-  "ad_channel": "视频",
-  "risk_dimensions": [
-    "虚假宣传"
-  ],
-  "illegal_claims": [
-    "灵芝孢子油软胶囊"
-  ],
-  "facts_summary": "在经营场所播放宣传视频和组织试吃交流活动，宣传“灵芝孢子油软胶囊”（保健食品）可以预防甚至治疗心脏病、心绞痛、肿瘤、高血压、糖尿病等多种疾病",
-  "legal_basis": [
-    "《广告法》第十八条第一款第（二）项、第五十八条第一款第（三）项"
-  ],
-  "penalty_result": "罚款150000元",
-  "penalty_amount": null,
-  "regulatory_logic": "保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及保健食品广告虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《广告法》第十八条第一款第（二）项、第五十八条第一款第（三）项。",
-  "mapped_rule_ids": [],
-  "keywords": [
-    "health",
-    "保健品",
-    "保健食品广告虚假宣传",
-    "虚假宣传",
-    "灵芝孢子油软胶囊"
-  ],
-  "rag_chunk_type": "case_summary",
-  "review_status": "pending_review",
-  "approved_for_rag": false,
-  "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
-  "audit": {
-    "review_status": "pending_review",
-    "reviewer": "",
-    "review_date": "",
-    "review_notes": "Imported from DOCX sector report; source_url pending verification.",
-    "approved_for_rag": false
-  },
-  "source_lookup_query": "（2020）粤06行终286号 佛山市南海区益尔康保健品商行诉佛山市南海区市场监督管理局行政处罚案",
-  "vector_text": "【赛道】保健品。【场景】视频。【宣称】灵芝孢子油软胶囊。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及保健食品广告虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《广告法》第十八条第一款第（二）项、第五十八条第一款第（三）项。。【依据】《广告法》第十八条第一款第（二）项、第五十八条第一款第（三）项。【结果】罚款150000元。"
+ "case_id": "sector_docx__health__5d46a744",
+ "title": "佛山市南海区益尔康保健品商行诉佛山市南海区市场监督管理局行政处罚案",
+ "case_number": "（2020）粤06行终286号",
+ "court": "广东省佛山市中级人民法院",
+ "decision_date": "2020-06-28",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+ "source_url": null,
+ "source_verification_status": "pending_source_lookup",
+ "publish_date": null,
+ "penalty_authority": "佛山市南海区益尔康保健品商行诉佛山市南海区市场监督管理局",
+ "party_name": null,
+ "region": "广东省佛山市",
+ "industry": "保健食品 / 保健品 / 普通食品",
+ "sector": "health",
+ "sector_cn": "保健品",
+ "violation_type": "保健食品广告虚假宣传",
+ "case_nature": "administrative_litigation_review",
+ "source_lookup_priority": "P0",
+ "is_admin_penalty_candidate": true,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "health"
+ ],
+ "product_or_service": "灵芝孢子油软胶囊",
+ "ad_channel": "视频",
+ "risk_dimensions": [
+  "虚假宣传"
+ ],
+ "illegal_claims": [
+  "灵芝孢子油软胶囊"
+ ],
+ "facts_summary": "在经营场所播放宣传视频和组织试吃交流活动，宣传“灵芝孢子油软胶囊”（保健食品）可以预防甚至治疗心脏病、心绞痛、肿瘤、高血压、糖尿病等多种疾病",
+ "legal_basis": [
+  "《广告法》第十八条第一款第（二）项、第五十八条第一款第（三）项"
+ ],
+ "penalty_result": "罚款150000元",
+ "penalty_amount": null,
+ "regulatory_logic": "保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及保健食品广告虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《广告法》第十八条第一款第（二）项、第五十八条第一款第（三）项。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "health",
+  "保健品",
+  "保健食品广告虚假宣传",
+  "虚假宣传",
+  "灵芝孢子油软胶囊"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "approved",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": true
+ },
+ "source_lookup_query": "（2020）粤06行终286号 佛山市南海区益尔康保健品商行诉佛山市南海区市场监督管理局行政处罚案",
+ "vector_text": "【赛道】保健品。【场景】视频。【宣称】灵芝孢子油软胶囊。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及保健食品广告虚假宣传，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《广告法》第十八条第一款第（二）项、第五十八条第一款第（三）项。。【依据】《广告法》第十八条第一款第（二）项、第五十八条第一款第（三）项。【结果】罚款150000元。",
+ "source_documents": [
+  {
+   "source_name": "保健食品广告合规案例库.docx",
+   "raw_text_path": "data/raw_text/case_library_docx__保健食品广告合规案例库.json",
+   "verification_status": "pending_source_lookup"
+  }
+ ],
+ "raw_text_path": "data/raw_text/case_library_docx__保健食品广告合规案例库.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  }
+ ]
 }

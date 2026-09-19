@@ -1,0 +1,53 @@
+{
+  "fetched_at": "2026-09-17T16:45:15+08:00",
+  "request": {
+    "xzcfws_name": "小学生",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "331081012025050011",
+          "xzcfws_code": "温市监处罚〔2025〕937号",
+          "bxzcf_name": "温岭全程眼视光门诊部有限公司",
+          "guid": "331081012025050011",
+          "xzcfws_name": "温岭全程眼视光门诊部有限公司违反《中华人民共和国广告法》第三十九条规定，在中小学校、幼儿园内或者利用与中小学生、幼儿有关的物品发布广告行为案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "何某某",
+          "xzcf_date": "2025-08-04",
+          "orgnode": "温岭市市场监督管理局"
+        },
+        {
+          "unid": "330227502023110001",
+          "xzcfws_code": "甬鄞市监处罚〔2023〕1342号",
+          "bxzcf_name": "宁波市鄞州区东钱湖镇中心小学",
+          "guid": "330227502023110001",
+          "xzcfws_name": "宁波市鄞州区东钱湖镇中心小学生产销售致病性微生物、农药残留、兽药残留、重金属、污染物质以及其他危害人体健康的物质含量超过食品安全标准限量的食品案",
+          "bxzcf_type": 3,
+          "bxzcf_legalman": "曹某某",
+          "xzcf_date": "2023-12-28",
+          "orgnode": "宁波市鄞州区市场监督管理局"
+        }
+      ],
+      "total": 2,
+      "pageTotal": 1,
+      "pageNo": 1
+    },
+    "traceId": "8501C8E2CC30418BA85A38D381EA4E13",
+    "messageType": 2
+  }
+}

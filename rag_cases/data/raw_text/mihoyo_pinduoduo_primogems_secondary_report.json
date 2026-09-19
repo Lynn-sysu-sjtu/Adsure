@@ -1,0 +1,19 @@
+{
+  "evidence_id": "mihoyo_pinduoduo_primogems_secondary_report",
+  "title": "米哈游诉上海寻梦信息技术有限公司1元抢一万原石不正当竞争案媒体报道",
+  "source_type": "credible_media_report_not_judgment",
+  "recorded_date": "2026-07-21",
+  "source_name": "游民星空转引米哈游法务部消息",
+  "source_url": "https://www.gamersky.com/news/202508/1971153.shtml",
+  "reported_facts": {
+    "plaintiff": "米哈游",
+    "defendant": "上海寻梦信息技术有限公司（拼多多）",
+    "promotion": "1元抢一万原石",
+    "actual_benefit": "用户不能获得《原神》游戏内原石，只能参与平台内部抽奖或娱乐补贴金活动",
+    "first_instance": "认定构成虚假宣传不正当竞争，判赔35万元",
+    "second_instance_court": "浙江省高级人民法院",
+    "second_instance": "维持虚假宣传认定，并认定构成仿冒混淆；判令停止侵权、刊登声明消除影响，赔偿经济损失及合理费用共100万元"
+  },
+  "primary_judgment_found": false,
+  "verification_note": "未取得二审判决书原文。该材料仅用于民事不正当竞争辅助案例，不得进入行政处罚语料或表述为行政罚款。"
+}
