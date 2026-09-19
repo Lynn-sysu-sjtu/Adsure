@@ -2,8 +2,10 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from src.preflight_rag import check_production_readiness
+from src.semantic_index import chunks_fingerprint
 
 
 class RagPreflightTests(unittest.TestCase):
@@ -74,6 +76,7 @@ class RagPreflightTests(unittest.TestCase):
             json.dumps([chunk], ensure_ascii=False),
             encoding="utf-8",
         )
+        return chunk
 
     def test_valid_production_catalog_passes(self):
         self.write_valid_catalog()
@@ -154,6 +157,140 @@ class RagPreflightTests(unittest.TestCase):
         self.assertTrue(
             any(error.startswith("语义检索未就绪") for error in required_errors)
         )
+
+    def write_semantic_index(
+        self,
+        chunk,
+        *,
+        model: str = "embedding-3",
+        dimension: int = 2048,
+    ):
+        payload = {
+            "index_type": "dense_sentence_embedding",
+            "model_name": model,
+            "dimension": dimension,
+            "normalized": True,
+            "chunk_fingerprint": chunks_fingerprint([chunk]),
+            "document_count": 1,
+            "documents": [
+                {
+                    "chunk_id": chunk["chunk_id"],
+                    "case_id": chunk["case_id"],
+                    "embedding": [0.0] * dimension,
+                }
+            ],
+        }
+        (self.data_dir / "chunks/production_semantic_index.json").write_text(
+            json.dumps(payload, ensure_ascii=False),
+            encoding="utf-8",
+        )
+
+    def zhipu_kwargs(self, **overrides):
+        kwargs = {
+            "retrieval_mode": "hybrid",
+            "require_semantic": True,
+            "embedding_provider": "zhipu",
+            "embedding_model": "embedding-3",
+            "embedding_dimensions": 2048,
+            "embedding_api_key": "test-zhipu-key",
+        }
+        kwargs.update(overrides)
+        return kwargs
+
+    def test_zhipu_without_api_key_fails(self):
+        chunk = self.write_valid_catalog()
+        self.write_semantic_index(chunk)
+
+        _summary, errors = check_production_readiness(
+            self.data_dir,
+            "production",
+            "test-secret",
+            **self.zhipu_kwargs(embedding_api_key=""),
+        )
+
+        self.assertTrue(
+            any("ZHIPU_API_KEY" in error for error in errors),
+            errors,
+        )
+
+    def test_zhipu_index_model_mismatch_fails(self):
+        chunk = self.write_valid_catalog()
+        self.write_semantic_index(chunk, model="BAAI/bge-base-zh-v1.5")
+
+        _summary, errors = check_production_readiness(
+            self.data_dir,
+            "production",
+            "test-secret",
+            **self.zhipu_kwargs(),
+        )
+
+        self.assertTrue(
+            any("语义索引模型不匹配" in error for error in errors),
+            errors,
+        )
+
+    def test_zhipu_index_dimension_mismatch_fails(self):
+        chunk = self.write_valid_catalog()
+        self.write_semantic_index(chunk, dimension=768)
+
+        _summary, errors = check_production_readiness(
+            self.data_dir,
+            "production",
+            "test-secret",
+            **self.zhipu_kwargs(),
+        )
+
+        self.assertTrue(
+            any("语义索引维度不匹配" in error for error in errors),
+            errors,
+        )
+
+    def test_zhipu_index_matching_embedding_3_passes(self):
+        chunk = self.write_valid_catalog()
+        self.write_semantic_index(chunk)
+
+        encoder = lambda texts: [[0.0] * 2048 for _ in texts]  # noqa: E731
+        with mock.patch("src.semantic_index.configured_encoder", return_value=encoder):
+            summary, errors = check_production_readiness(
+                self.data_dir,
+                "production",
+                "test-secret",
+                **self.zhipu_kwargs(),
+            )
+
+        self.assertEqual(errors, [])
+        self.assertEqual(summary["embedding_provider"], "zhipu")
+        self.assertEqual(summary["embedding_model"], "embedding-3")
+        self.assertEqual(summary["embedding_dimension"], 2048)
+        self.assertEqual(summary["semantic_index_model"], "embedding-3")
+        self.assertEqual(summary["semantic_index_dimension"], 2048)
+        self.assertEqual(summary["semantic_status"], "ready")
+        self.assertEqual(summary["effective_retrieval_mode"], "hybrid")
+
+    def test_zhipu_api_failure_fails_instead_of_silent_lexical(self):
+        chunk = self.write_valid_catalog()
+        self.write_semantic_index(chunk)
+
+        def broken_encoder(texts):
+            raise RuntimeError("zhipu api unavailable")
+
+        with mock.patch(
+            "src.semantic_index.configured_encoder",
+            return_value=broken_encoder,
+        ):
+            summary, errors = check_production_readiness(
+                self.data_dir,
+                "production",
+                "test-secret",
+                **self.zhipu_kwargs(),
+            )
+
+        self.assertTrue(
+            any(error.startswith("语义检索未就绪") for error in errors),
+            errors,
+        )
+        self.assertTrue(summary["semantic_status"].startswith("model_error"))
+        self.assertNotEqual(summary["semantic_status"], "ready")
 
 
 if __name__ == "__main__":

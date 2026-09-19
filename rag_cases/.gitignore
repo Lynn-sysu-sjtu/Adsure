@@ -7,6 +7,9 @@ __pycache__/
 .venv-handoff-video/
 .env.video.local
 backend/.env
+.env.zhipu.local
+# 模板文件需要入库，否则队友看不到怎么填 key。
+!.env.zhipu.local.example
 data/video_mvp/models/
 .env
 .DS_Store

@@ -40,4 +40,10 @@ cp deploy/video.env.example /etc/adsure/video.env
 ./scripts/start_video_service.sh
 ```
 
+模型文件不在 Git 中，Linux 服务器上执行：
+
+```bash
+bash scripts/setup_video_models.sh
+```
+
 完整部署说明见 `docs/视频素材解析服务部署.md`。

@@ -1020,6 +1020,52 @@ def create_app(
         resolved_retrieval_mode,
         resolved_min_semantic_score,
     )
+
+    require_semantic = os.getenv("CASE_ENGINE_REQUIRE_SEMANTIC", "0") == "1"
+    embedding_provider = os.getenv(
+        "CASE_ENGINE_EMBEDDING_PROVIDER", "local"
+    ).strip().lower()
+    if require_semantic or (
+        embedding_provider == "zhipu"
+        and resolved_retrieval_mode in {"semantic", "hybrid"}
+    ):
+        if (
+            repository.semantic_status != "ready"
+            or repository.effective_retrieval_mode != resolved_retrieval_mode
+        ):
+            raise RuntimeError(
+                "语义检索未就绪，拒绝启动："
+                f"requested={resolved_retrieval_mode}, "
+                f"status={repository.semantic_status}"
+            )
+        expected_model = os.getenv(
+            "CASE_ENGINE_EMBEDDING_MODEL",
+            "embedding-3" if embedding_provider == "zhipu" else "BAAI/bge-base-zh-v1.5",
+        )
+        expected_dimension = int(
+            os.getenv(
+                "CASE_ENGINE_EMBEDDING_DIMENSIONS",
+                "2048" if embedding_provider == "zhipu" else "768",
+            )
+        )
+        actual_model = (
+            repository.semantic_index.model_name
+            if repository.semantic_index is not None
+            else None
+        )
+        actual_dimension = (
+            repository.semantic_index.dimension
+            if repository.semantic_index is not None
+            else None
+        )
+        if actual_model != expected_model or actual_dimension != expected_dimension:
+            raise RuntimeError(
+                "语义索引配置不匹配，拒绝启动："
+                f"provider={embedding_provider}, "
+                f"expected_model={expected_model}, actual_model={actual_model}, "
+                f"expected_dimension={expected_dimension}, "
+                f"actual_dimension={actual_dimension}"
+            )
     platform_rule_repository = PlatformRuleRepository(
         resolved_data_dir
         / "rules"
@@ -1335,4 +1381,24 @@ def create_app(
     return application
 
 
-app = create_app()
+_APP: FastAPI | None = None
+
+
+def eager_app() -> FastAPI:
+    """按需构建 ASGI 应用（供 ``uvicorn src.api:app`` 使用）。
+
+    语义检索未就绪时 :func:`create_app` 会抛 ``RuntimeError``，生产启动因此
+    被拦住。这里用 PEP 562 的模块级 ``__getattr__`` 延迟到真正取 ``app`` 时才
+    构建，预检 / 评测脚本 import 本模块读取 ``CaseRepository`` 时不会被启动闸门
+    打断，从而仍能打印完整的案例数与切片数报告。
+    """
+    global _APP
+    if _APP is None:
+        _APP = create_app()
+    return _APP
+
+
+def __getattr__(name: str):
+    if name == "app":
+        return eager_app()
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
