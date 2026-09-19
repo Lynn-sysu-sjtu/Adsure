@@ -1,0 +1,53 @@
+{
+  "fetched_at": "2026-09-17T17:31:43+08:00",
+  "request": {
+    "xzcfws_name": "推荐证明",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330102292024070002",
+          "xzcfws_code": "杭上市监处罚〔2024〕505号",
+          "bxzcf_name": "徐某某",
+          "guid": "330102292024070002",
+          "xzcfws_name": "徐某某广告代言人在医疗、药品、医疗器械广告中作推荐、证明行为案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2024-08-29",
+          "orgnode": "杭州市上城区市场监督管理局"
+        },
+        {
+          "unid": "330000132024050001",
+          "xzcfws_code": "浙市监处罚〔2024〕8号",
+          "bxzcf_name": "廖某某",
+          "guid": "330000132024050001",
+          "xzcfws_name": "廖某某广告代言人在医疗广告中作推荐、证明行为案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2024-07-20",
+          "orgnode": "省市场监管局（省知识产权局）"
+        }
+      ],
+      "total": 2,
+      "pageTotal": 1,
+      "pageNo": 1
+    },
+    "traceId": "EE9B0DCB46B34C69906B8977ACB0D639",
+    "messageType": 2
+  }
+}

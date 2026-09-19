@@ -1,0 +1,55 @@
+{
+  "source_id": "douyin_beauty_rules_notice_2022_05_10",
+  "platform": "抖音电商",
+  "document_title": "关于《美妆行业宣传规范》修订的公示通知（2022.5.10）",
+  "source_url": "https://school.jinritemai.com/doudian/wap/article/aHUMNYPLL4Lk",
+  "manual_verification_url": "https://school.jinritemai.com/doudian/wap/article/aHUMNYPLL4Lk",
+  "collected_at": "2026-09-04T15:02:22.942905Z",
+  "page_update_date": "2022-05-10",
+  "capture_format": "html",
+  "capture_method": "direct_public_download_no_login",
+  "raw_path": "data/platform_rules/raw_html/2026-09-04/douyin_beauty_rules_2022.html",
+  "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/douyin_beauty_rules_2022.headers.txt",
+  "raw_sha256": "03e27b4d2a32f726f34c8ed921364e8263b2a4b9ba10d8a37272091f200a67e5",
+  "raw_size_bytes": 28436,
+  "extracted_text": "",
+  "verified_visible_excerpts": [
+    {
+      "candidate_id": "DOUYIN-COSM-EFFICACY-2.1.1",
+      "locator": "二、禁止夸大、虚假宣传或描述—2.1.1",
+      "text": "推广化妆品类商品时，需严格按照商品注册、备案的功效范围宣传。"
+    },
+    {
+      "candidate_id": "DOUYIN-COSM-GUARANTEE-2.1.2",
+      "locator": "二、禁止夸大、虚假宣传或描述—2.1.2",
+      "text": "禁止在无依据、无证明的情况下，对未来功效、效果、安全性作出保证性承诺。"
+    },
+    {
+      "candidate_id": "DOUYIN-COSM-PROOF-2.3",
+      "locator": "二、禁止夸大、虚假宣传或描述—2.3",
+      "text": "宣传专利、荣誉、销量、权威研发单位、效果指数等信息时，需展示相关证明材料。"
+    },
+    {
+      "candidate_id": "DOUYIN-COSM-ATTRIBUTE-2.4",
+      "locator": "二、禁止夸大、虚假宣传或描述—2.4",
+      "text": "应确保化妆品成分、含量、产地、规格等描述与商品详情页或实际商品保持一致。"
+    }
+  ],
+  "extracted_text_length": 0,
+  "snapshot_completeness": "dynamic_html_shell_only",
+  "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+  "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+  "review_status": "pending_human_review",
+  "effective_status": "pending_effective_review",
+  "intended_use": "platform_rule_candidate",
+  "notes": [
+    "公示页面称规则预计于2022-05-17生效；正式适用状态仍需平台运营复核。"
+  ],
+  "http_status_chain": [
+    302,
+    302,
+    200
+  ],
+  "final_http_status": 200,
+  "content_type": "text/html; charset=utf-8"
+}

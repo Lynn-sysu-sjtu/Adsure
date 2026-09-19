@@ -1,0 +1,119 @@
+{
+  "fetched_at": "2026-09-17T16:45:15+08:00",
+  "request": {
+    "xzcfws_name": "网络游戏",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "11330106MB1674912G3301063920260002",
+          "xzcfws_code": "杭西文综罚字〔2026〕2号",
+          "bxzcf_name": "杭州迈萃网络科技有限公司",
+          "guid": "6c0823b6-fdd4-474f-a8a2-7937b74bba6c",
+          "xzcfws_name": "擅自上网出版网络游戏案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "陈某某",
+          "xzcf_date": "2026-04-16",
+          "orgnode": "杭州市西湖区文化和广电旅游体育局"
+        },
+        {
+          "unid": "11330106MB1674912G3301063920250023",
+          "xzcfws_code": "杭西文综罚字〔2025〕23号",
+          "bxzcf_name": "杭州山灰猫网络科技有限公司",
+          "guid": "46a5cde0-6820-4bb4-a2f4-fde5069e692c",
+          "xzcfws_name": "擅自上网出版网络游戏案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "李某某",
+          "xzcf_date": "2025-12-11",
+          "orgnode": "杭州市西湖区文化和广电旅游体育局"
+        },
+        {
+          "unid": "11330200MB1501579M3302003920250006",
+          "xzcfws_code": "甬文广旅罚字〔2025〕6号",
+          "bxzcf_name": "宁波嘻道网络科技有限公司",
+          "guid": "4fd8a5b7-7255-4ef0-b20c-fce893ad83cb",
+          "xzcfws_name": "擅自上网出版网络游戏(含境外著作权人授权的网络游戏)案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "庄某某",
+          "xzcf_date": "2025-04-09",
+          "orgnode": "宁波市文化广电旅游局"
+        },
+        {
+          "unid": "11330700MB1676**************240026",
+          "xzcfws_code": "金文广旅罚字〔2024〕26号",
+          "bxzcf_name": "金华市手里见曰网络科技工作室(个人独资)",
+          "guid": "88858ca4-8e13-4f41-9b5e-440906eadfe6",
+          "xzcfws_name": "未经批准，擅自上网出版网络游戏",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "张某某",
+          "xzcf_date": "2025-01-15",
+          "orgnode": "金华市文化广电旅游局"
+        },
+        {
+          "unid": "11330100MB167495573301003920240019",
+          "xzcfws_code": "杭文综罚字〔2024〕19号",
+          "bxzcf_name": "徐某某",
+          "guid": "434680d8-e77b-412a-a373-8a56a1266391",
+          "xzcfws_name": "未经批准，擅自上网出版网络游戏案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2024-10-31",
+          "orgnode": "杭州市文化广电旅游局"
+        },
+        {
+          "unid": "11330329MB1574671L3303293920240010",
+          "xzcfws_code": "泰文综罚字〔2024〕7号",
+          "bxzcf_name": "叶某某",
+          "guid": "3cffcfcc-f0c5-4ab6-95d5-69ea49718a67",
+          "xzcfws_name": "擅自上网出版网络游戏(含境外著作权人授权的网络游戏)案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2024-09-19",
+          "orgnode": "泰顺县文化和广电旅游体育局"
+        },
+        {
+          "unid": "11330106MB1674912G3301063920240001",
+          "xzcfws_code": "杭西文综罚字〔2024〕1号",
+          "bxzcf_name": "杭州甜柒网络科技有限公司",
+          "guid": "be7beee8-0ba2-43e2-9041-2414dbf30858",
+          "xzcfws_name": "擅自上网出版网络游戏(含境外著作权人授权的网络游戏)案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "冯某某",
+          "xzcf_date": "2024-01-30",
+          "orgnode": "杭州市西湖区文化和广电旅游体育局"
+        },
+        {
+          "unid": "11331004MB166549393310043920240005",
+          "xzcfws_code": "（路）文罚字〔2024〕1号",
+          "bxzcf_name": "台州市路桥坏坏信息技术咨询工作室",
+          "guid": "378e6bfe-aba3-403e-b8e6-9187239b6d8c",
+          "xzcfws_name": "未经批准擅自上网出版网络游戏案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "曹某某",
+          "xzcf_date": "2024-01-29",
+          "orgnode": "台州市路桥区文化和广电旅游体育局"
+        }
+      ],
+      "total": 8,
+      "pageTotal": 1,
+      "pageNo": 1
+    },
+    "traceId": "5555290B516F4D8EB5308CD9D12ACC11",
+    "messageType": 2
+  }
+}

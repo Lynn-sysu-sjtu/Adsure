@@ -1,0 +1,1239 @@
+{
+  "schema_id": "ads_review_base_v4",
+  "source_snapshot_name": "※审心广告物料合规审核台 v4.base",
+  "table_id": "tblL8R7yL1rCeU7m",
+  "table_name": "数据表",
+  "field_count": 58,
+  "primary_key_field_id": "fldlt1NlVZ",
+  "primary_key_field_name": "①运营·物料编号",
+  "fields": [
+    {
+      "field_id": "fld3TOGEm7",
+      "name": "①保健食品·产品品类",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optI243fka",
+          "name": "维生素/矿物质"
+        },
+        {
+          "id": "optrilTHcc",
+          "name": "益生菌/膳食纤维"
+        },
+        {
+          "id": "optuHBJdfK",
+          "name": "蛋白粉/氨基酸"
+        },
+        {
+          "id": "optbUZuw2s",
+          "name": "鱼油/卵磷脂"
+        },
+        {
+          "id": "optg0UU58s",
+          "name": "中草药提取"
+        },
+        {
+          "id": "optZNHGaRM",
+          "name": "营养代餐"
+        },
+        {
+          "id": "optPOA9y3f",
+          "name": "运动补给"
+        },
+        {
+          "id": "optS7aprsl",
+          "name": "其他"
+        }
+      ]
+    },
+    {
+      "field_id": "fldRCOFdQC",
+      "name": "①保健食品·产品备案名称",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldEsFCAt2",
+      "name": "①保健食品·批准文号",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldCmb7USy",
+      "name": "①保健食品·投放平台",
+      "type": 4,
+      "ui_type": "MultiSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optdrWROJZ",
+          "name": "抖音"
+        },
+        {
+          "id": "optlntsfEE",
+          "name": "小红书"
+        },
+        {
+          "id": "optilNgrEn",
+          "name": "微信"
+        },
+        {
+          "id": "optNLBcy9m",
+          "name": "B站"
+        },
+        {
+          "id": "opt1Jqnlgf",
+          "name": "淘宝"
+        },
+        {
+          "id": "optPfzYCM4",
+          "name": "天猫"
+        },
+        {
+          "id": "optKqjhFIs",
+          "name": "京东"
+        },
+        {
+          "id": "opteMFIleC",
+          "name": "拼多多"
+        },
+        {
+          "id": "optG5pc22p",
+          "name": "微博"
+        },
+        {
+          "id": "optfLrmi2G",
+          "name": "快手"
+        },
+        {
+          "id": "optuO3reTY",
+          "name": "视频号"
+        },
+        {
+          "id": "optd18zoiU",
+          "name": "其他"
+        }
+      ]
+    },
+    {
+      "field_id": "fldClOGbeP",
+      "name": "①保健食品·核心宣称功效",
+      "type": 4,
+      "ui_type": "MultiSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optBGGvObS",
+          "name": "增强免疫力"
+        },
+        {
+          "id": "optMqLk0we",
+          "name": "辅助降血脂"
+        },
+        {
+          "id": "optSeaCJtA",
+          "name": "辅助降血糖"
+        },
+        {
+          "id": "optJN39Lc1",
+          "name": "抗氧化"
+        },
+        {
+          "id": "optaNZx0Cw",
+          "name": "辅助改善记忆"
+        },
+        {
+          "id": "optUeyZQAE",
+          "name": "缓解视疲劳"
+        },
+        {
+          "id": "opt6RnmPZC",
+          "name": "促进排铅"
+        },
+        {
+          "id": "optfyBWWDd",
+          "name": "清咽"
+        },
+        {
+          "id": "optCCJGElm",
+          "name": "辅助降血压"
+        },
+        {
+          "id": "optjavwd2Y",
+          "name": "改善睡眠"
+        },
+        {
+          "id": "optFpD4Afx",
+          "name": "促进泌乳"
+        },
+        {
+          "id": "optqwpDA2Y",
+          "name": "缓解体力疲劳"
+        },
+        {
+          "id": "optubFGOEA",
+          "name": "提高缺氧耐受力"
+        },
+        {
+          "id": "optaPlfjx7",
+          "name": "对辐射危害有辅助保护功能"
+        },
+        {
+          "id": "optuayuV71",
+          "name": "减肥"
+        },
+        {
+          "id": "optLATh6IW",
+          "name": "改善生长发育"
+        },
+        {
+          "id": "optmdFt4Ri",
+          "name": "增加骨密度"
+        },
+        {
+          "id": "opt9w16w1s",
+          "name": "改善营养性贫血"
+        },
+        {
+          "id": "optvSxNju1",
+          "name": "对化学性肝损伤的辅助保护"
+        },
+        {
+          "id": "optpKmCjd3",
+          "name": "祛痤疮"
+        },
+        {
+          "id": "optM442XBO",
+          "name": "祛黄褐斑"
+        },
+        {
+          "id": "opt9l3v9io",
+          "name": "改善皮肤水分"
+        },
+        {
+          "id": "opt1nXC133",
+          "name": "改善皮肤油分"
+        },
+        {
+          "id": "optxh1wFtw",
+          "name": "调节肠道菌群"
+        },
+        {
+          "id": "opt1FufUAf",
+          "name": "促进消化"
+        },
+        {
+          "id": "optq9ADvgy",
+          "name": "通便"
+        },
+        {
+          "id": "opt535VKx8",
+          "name": "对胃黏膜损伤有辅助保护"
+        },
+        {
+          "id": "optgxJG5OA",
+          "name": "营养素补充剂"
+        }
+      ]
+    },
+    {
+      "field_id": "fldUYNS8P0",
+      "name": "①保健食品·物料涉及场景",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldg9R7JAd",
+      "name": "①保健食品·物料类型",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optM4UWzC2",
+          "name": "图文"
+        },
+        {
+          "id": "optEogQBiE",
+          "name": "短视频"
+        },
+        {
+          "id": "optmpo34UM",
+          "name": "直播话术"
+        },
+        {
+          "id": "optN5vhH0q",
+          "name": "Banner"
+        },
+        {
+          "id": "optKE7muk0",
+          "name": "详情页"
+        },
+        {
+          "id": "optBiHuOEY",
+          "name": "其他"
+        }
+      ]
+    },
+    {
+      "field_id": "fldnrodFtQ",
+      "name": "①游戏·IP名称",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldmUFEPyk",
+      "name": "①游戏·产品品类",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optYkITeaN",
+          "name": "MMO"
+        },
+        {
+          "id": "optWUJQcuB",
+          "name": "MOBA"
+        },
+        {
+          "id": "optQry9Xk2",
+          "name": "卡牌"
+        },
+        {
+          "id": "optGUcKauA",
+          "name": "二次元"
+        },
+        {
+          "id": "optsIeo3BV",
+          "name": "SLG"
+        },
+        {
+          "id": "opt6MIlhSx",
+          "name": "休闲"
+        },
+        {
+          "id": "optyCGPR1f",
+          "name": "射击"
+        },
+        {
+          "id": "optDOA8loX",
+          "name": "其他"
+        }
+      ]
+    },
+    {
+      "field_id": "fldNoZflBB",
+      "name": "①游戏·投放平台",
+      "type": 4,
+      "ui_type": "MultiSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "opt1oLU0Mb",
+          "name": "抖音"
+        },
+        {
+          "id": "opt8l0PaXF",
+          "name": "B站"
+        },
+        {
+          "id": "optas0T6Ny",
+          "name": "微信"
+        },
+        {
+          "id": "optH8E8588",
+          "name": "TapTap"
+        },
+        {
+          "id": "optwjcFy81",
+          "name": "微博"
+        },
+        {
+          "id": "opteevF0wh",
+          "name": "快手"
+        },
+        {
+          "id": "optmKjDZEp",
+          "name": "视频号"
+        },
+        {
+          "id": "optrxHZALA",
+          "name": "其他"
+        }
+      ]
+    },
+    {
+      "field_id": "fldEBpbXqs",
+      "name": "①游戏·游戏名称",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fld01OUfCj",
+      "name": "①游戏·物料涉及场景",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldRU2Xffl",
+      "name": "①游戏·物料类型",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optmAcZJpS",
+          "name": "图文"
+        },
+        {
+          "id": "optR5vY5cu",
+          "name": "短视频"
+        },
+        {
+          "id": "optq5oxO9t",
+          "name": "直播话术"
+        },
+        {
+          "id": "optWPfZwhA",
+          "name": "Banner"
+        },
+        {
+          "id": "optJUfLyV0",
+          "name": "详情页"
+        },
+        {
+          "id": "optVZMO5Yj",
+          "name": "其他"
+        }
+      ]
+    },
+    {
+      "field_id": "fldY4XGK66",
+      "name": "①美妆·产品品类",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "opt2pR7Dwj",
+          "name": "护肤"
+        },
+        {
+          "id": "optaAet2Xp",
+          "name": "彩妆"
+        },
+        {
+          "id": "optmlVAruS",
+          "name": "香水"
+        },
+        {
+          "id": "optqDDeqfO",
+          "name": "个护"
+        },
+        {
+          "id": "optfqD2OvD",
+          "name": "美容仪器"
+        },
+        {
+          "id": "optbhEf6ez",
+          "name": "其他"
+        }
+      ]
+    },
+    {
+      "field_id": "fldlWUG75n",
+      "name": "①美妆·产品备案名称",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldVbkvWj2",
+      "name": "①美妆·投放平台",
+      "type": 4,
+      "ui_type": "MultiSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "opt13tinTy",
+          "name": "抖音"
+        },
+        {
+          "id": "opt0m6P0Ph",
+          "name": "小红书"
+        },
+        {
+          "id": "opttjKv6xB",
+          "name": "微信"
+        },
+        {
+          "id": "optAseZRbb",
+          "name": "B站"
+        },
+        {
+          "id": "optRQdBDOL",
+          "name": "淘宝"
+        },
+        {
+          "id": "optLTix8qg",
+          "name": "微博"
+        },
+        {
+          "id": "optu4WoW29",
+          "name": "快手"
+        },
+        {
+          "id": "optY72jaNx",
+          "name": "视频号"
+        },
+        {
+          "id": "optK8PQZEe",
+          "name": "其他"
+        }
+      ]
+    },
+    {
+      "field_id": "fldiXzDrvA",
+      "name": "①美妆·核心宣称功效",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldF4c1wY9",
+      "name": "①美妆·物料涉及场景",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldzFeB10c",
+      "name": "①美妆·物料类型",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "opt5q7oAmG",
+          "name": "图文"
+        },
+        {
+          "id": "optqN2aUvS",
+          "name": "短视频"
+        },
+        {
+          "id": "optGqest1t",
+          "name": "直播话术"
+        },
+        {
+          "id": "optwIgedec",
+          "name": "Banner"
+        },
+        {
+          "id": "optNoi3sjm",
+          "name": "详情页"
+        },
+        {
+          "id": "opttfTCNmp",
+          "name": "其他"
+        },
+        {
+          "id": "opt1329724837",
+          "name": "Banner文字"
+        }
+      ]
+    },
+    {
+      "field_id": "fldXNTcRhf",
+      "name": "①运营·提交人",
+      "type": 1003,
+      "ui_type": "CreatedUser",
+      "is_primary": false,
+      "writable": false,
+      "options": []
+    },
+    {
+      "field_id": "fldKJIAsv5",
+      "name": "①运营·提交时间",
+      "type": 5,
+      "ui_type": "DateTime",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldC25Km1i",
+      "name": "①运营·物料内容",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldlt1NlVZ",
+      "name": "①运营·物料编号",
+      "type": 1005,
+      "ui_type": "AutoNumber",
+      "is_primary": false,
+      "writable": false,
+      "options": []
+    },
+    {
+      "field_id": "fldYKc8PiY",
+      "name": "①运营·物料附件",
+      "type": 17,
+      "ui_type": "Attachment",
+      "is_primary": false,
+      "writable": false,
+      "options": []
+    },
+    {
+      "field_id": "fldKMw3I1g",
+      "name": "①运营·紧急程度",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optQm1trlq",
+          "name": "普通"
+        },
+        {
+          "id": "opto4XZ7Wt",
+          "name": "加急"
+        }
+      ]
+    },
+    {
+      "field_id": "fldFIQNu2G",
+      "name": "①运营·行业领域",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optqMxnMlm",
+          "name": "美妆"
+        },
+        {
+          "id": "optMIatBrG",
+          "name": "游戏"
+        },
+        {
+          "id": "opt3uZz3r9",
+          "name": "保健食品"
+        },
+        {
+          "id": "opt144763319",
+          "name": "通用"
+        }
+      ]
+    },
+    {
+      "field_id": "fldHKxpAva",
+      "name": "①运营·补充背景资料",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldTRj1qbU",
+      "name": "②AI预审·修改建议",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldjK6nJNb",
+      "name": "②AI预审·命中要点",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldNNqFggt",
+      "name": "②AI预审·时间",
+      "type": 5,
+      "ui_type": "DateTime",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldrMZJULR",
+      "name": "②AI预审·运营修改记录",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fld1fktheF",
+      "name": "②AI预审·运营是否采纳建议",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optS4O2Ae5",
+          "name": "全部采纳"
+        },
+        {
+          "id": "optGDXDHrR",
+          "name": "部分采纳"
+        },
+        {
+          "id": "optPo337pG",
+          "name": "未采纳"
+        },
+        {
+          "id": "optscWHQdH",
+          "name": "未使用预审"
+        }
+      ]
+    },
+    {
+      "field_id": "fld2mEkmV0",
+      "name": "②AI预审·风险等级",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "opt1DExWSu",
+          "name": "高"
+        },
+        {
+          "id": "optDhoKOK5",
+          "name": "中"
+        },
+        {
+          "id": "optpcb2KaD",
+          "name": "低"
+        },
+        {
+          "id": "optKSWkn2l",
+          "name": "无明显风险"
+        }
+      ]
+    },
+    {
+      "field_id": "fldSED7wqP",
+      "name": "③AI审核·关键实体抽取",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldPmkySLH",
+      "name": "③AI审核·备案核查结果",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldVutRKdU",
+      "name": "③AI审核·审核意见",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldntZorMD",
+      "name": "③AI审核·审核时间",
+      "type": 5,
+      "ui_type": "DateTime",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldueU5cp2",
+      "name": "③AI审核·审核模式",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "opt4ICW3aQ",
+          "name": "极速"
+        },
+        {
+          "id": "optmomfe7b",
+          "name": "标准"
+        },
+        {
+          "id": "optF40g5hT",
+          "name": "深度"
+        }
+      ]
+    },
+    {
+      "field_id": "fldxEeS7EI",
+      "name": "③AI审核·平台规则预检",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldjUzRSwK",
+      "name": "③AI审核·推荐违规类型",
+      "type": 4,
+      "ui_type": "MultiSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optgL0Gusc",
+          "name": "绝对化用语"
+        },
+        {
+          "id": "optpwcG48g",
+          "name": "虚假宣传"
+        },
+        {
+          "id": "optURSjBBb",
+          "name": "功效超备案"
+        },
+        {
+          "id": "optDgYukRt",
+          "name": "涉医疗宣传"
+        },
+        {
+          "id": "optlNF7JOV",
+          "name": "数据引用不规范"
+        },
+        {
+          "id": "optQiHCMQr",
+          "name": "概率造假"
+        },
+        {
+          "id": "optxuBcfJL",
+          "name": "未成年人保护"
+        },
+        {
+          "id": "optQVw5KvW",
+          "name": "版号缺失"
+        },
+        {
+          "id": "optRhn4EQZ",
+          "name": "AIGC未标识"
+        },
+        {
+          "id": "optrM3IBVl",
+          "name": "许可证缺失"
+        },
+        {
+          "id": "optaHwkGHY",
+          "name": "广告不可识别"
+        },
+        {
+          "id": "opt79F8axF",
+          "name": "大小字误导"
+        },
+        {
+          "id": "opt9XESdkj",
+          "name": "擦边低俗"
+        },
+        {
+          "id": "optd7Svved",
+          "name": "IP侵权"
+        },
+        {
+          "id": "optd6L1bjT",
+          "name": "其他"
+        },
+        {
+          "id": "opt1595936449",
+          "name": "虚假广告"
+        },
+        {
+          "id": "opt221729862",
+          "name": "广告法第九条违禁词"
+        },
+        {
+          "id": "opt253308377",
+          "name": "虚假广告（无美白特证）"
+        },
+        {
+          "id": "opt1139323461",
+          "name": "化妆品功效宣称违规"
+        },
+        {
+          "id": "optrkFsOIb",
+          "name": "价格促销误导"
+        },
+        {
+          "id": "opttXBqyf0",
+          "name": "平台准入/资质不符"
+        },
+        {
+          "id": "opt5okuMKu",
+          "name": "广告代言不合规"
+        },
+        {
+          "id": "optXAkyTnt",
+          "name": "广告可识别性不足"
+        },
+        {
+          "id": "optu4c0yIV",
+          "name": "引证内容不规范"
+        },
+        {
+          "id": "optkwsuuXN",
+          "name": "用户评价/种草误导"
+        },
+        {
+          "id": "opt548549433",
+          "name": "警示语缺失"
+        },
+        {
+          "id": "opt284841421",
+          "name": "标签标识不规范"
+        },
+        {
+          "id": "opt1199934721",
+          "name": "社会良好风尚"
+        }
+      ]
+    },
+    {
+      "field_id": "fldNtwI5uf",
+      "name": "③AI审核·推荐风险等级",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optrcBtyQR",
+          "name": "高"
+        },
+        {
+          "id": "optyW05PYR",
+          "name": "中"
+        },
+        {
+          "id": "optBr0xF4e",
+          "name": "低"
+        }
+      ]
+    },
+    {
+      "field_id": "fldAMxWlsu",
+      "name": "③AI审核·模式推荐理由",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldtwNRZOF",
+      "name": "③AI审核·高风险词命中",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldxRsNp9y",
+      "name": "④法务·AI意见评价",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optCRit5Yv",
+          "name": "同意无补充"
+        },
+        {
+          "id": "optOFu4waa",
+          "name": "同意有补充"
+        },
+        {
+          "id": "optzIklxnc",
+          "name": "驳回"
+        }
+      ]
+    },
+    {
+      "field_id": "fld2LWQaTP",
+      "name": "④法务·复核人",
+      "type": 11,
+      "ui_type": "User",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldZvZpbGi",
+      "name": "④法务·复核时间",
+      "type": 5,
+      "ui_type": "DateTime",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldfPJO8Hh",
+      "name": "④法务·异议字段",
+      "type": 4,
+      "ui_type": "MultiSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optB02bVIg",
+          "name": "风险等级"
+        },
+        {
+          "id": "optF8HrXdL",
+          "name": "违规类型"
+        },
+        {
+          "id": "optOU7JgEr",
+          "name": "高风险词识别"
+        },
+        {
+          "id": "optCHLWmDM",
+          "name": "备案核查"
+        },
+        {
+          "id": "optXiHHunJ",
+          "name": "法条依据"
+        },
+        {
+          "id": "optShpF2fc",
+          "name": "修改建议"
+        },
+        {
+          "id": "optCpk0r8e",
+          "name": "整体推理逻辑"
+        },
+        {
+          "id": "optjKIJpPi",
+          "name": "其他"
+        }
+      ]
+    },
+    {
+      "field_id": "fldxiDSbou",
+      "name": "④法务·批注",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldOxJOTrM",
+      "name": "④法务·最终修改意见",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldSV6l3Za",
+      "name": "④法务·物料裁决",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optdQ3DoaQ",
+          "name": "通过"
+        },
+        {
+          "id": "opttnGx9tD",
+          "name": "不通过"
+        }
+      ]
+    },
+    {
+      "field_id": "fld1TIHdKU",
+      "name": "④法务·补充或驳回理由",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldVPhxdWv",
+      "name": "④法务·驳回正确判定",
+      "type": 1,
+      "ui_type": "Text",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldxq3XpvX",
+      "name": "⑤流转·反馈类型",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "optxY3pnF3",
+          "name": "refine"
+        },
+        {
+          "id": "optRsSrTo0",
+          "name": "override"
+        },
+        {
+          "id": "opt5jKQteM",
+          "name": "无"
+        }
+      ]
+    },
+    {
+      "field_id": "fldO7Mi1N9",
+      "name": "⑤流转·当前状态",
+      "type": 3,
+      "ui_type": "SingleSelect",
+      "is_primary": false,
+      "writable": true,
+      "options": [
+        {
+          "id": "opttOUWt3S",
+          "name": "运营起草"
+        },
+        {
+          "id": "opteq4ihen",
+          "name": "AI预审中"
+        },
+        {
+          "id": "optEzFHxNt",
+          "name": "运营修改中"
+        },
+        {
+          "id": "opt2vnHMzn",
+          "name": "待法务复核"
+        },
+        {
+          "id": "optNMbS3JV",
+          "name": "已通过"
+        },
+        {
+          "id": "optTP46pG7",
+          "name": "需修改"
+        },
+        {
+          "id": "optbHl50K9",
+          "name": "已上线"
+        },
+        {
+          "id": "optzEd7D0W",
+          "name": "已撤回"
+        },
+        {
+          "id": "opt2132406044",
+          "name": "待运营修改"
+        }
+      ]
+    },
+    {
+      "field_id": "fldgsigPen",
+      "name": "⑤流转·是否进入大脑沉淀",
+      "type": 7,
+      "ui_type": "Checkbox",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldLOCx1X6",
+      "name": "⑤流转·轮次",
+      "type": 2,
+      "ui_type": "Number",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldbBGXIH1",
+      "name": "⑤流转·驳回次数",
+      "type": 2,
+      "ui_type": "Number",
+      "is_primary": false,
+      "writable": true,
+      "options": []
+    },
+    {
+      "field_id": "fldN09kAmv",
+      "name": "创建时间",
+      "type": 1001,
+      "ui_type": "CreatedTime",
+      "is_primary": false,
+      "writable": false,
+      "options": []
+    }
+  ]
+}

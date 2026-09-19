@@ -22,7 +22,7 @@ sources:
     base_url: "https://www.samr.gov.cn"
     list_urls: []
     detail_urls:
-      - "https://www.samr.gov.cn/xw/df/202205/t20220528_347385.html"
+      - "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
       # TODO: 继续补足经人工核验的 19 条市场监管总局/地方市场监管局/信用中国官方详情页 URL。
       # 只填写真实官方详情页；不要填写媒体报道、律所文章或搜索结果页。
     allowed_domains:

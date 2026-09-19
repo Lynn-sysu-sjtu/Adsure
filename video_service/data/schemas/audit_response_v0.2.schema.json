@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "审心规则引擎审核响应 schema v0.2",
+  "description": "规则引擎 /audit 返回给飞书状态机的响应结构。v0.2 修订：(1) 移除 审核_平台规则预检 的 required 约束（飞书侧不消费该字段）；(2) 修正 审核_推荐风险等级 enum，去掉不适用的‘无明显风险’；(3) matched_rules 每条规则新增必填字段 default_routing，供路由决策使用。",
+  "type": "object",
+  "required": ["code", "msg", "data"],
+  "additionalProperties": false,
+  "properties": {
+    "code": {
+      "type": "integer",
+      "description": "0 表示成功；-1 表示规则引擎可识别错误。code 非 0 时，data 可为 null，飞书侧将标记为引擎不可用并重试。"
+    },
+    "msg": {
+      "type": "string",
+      "description": "响应说明或错误原因。成功时可为空字符串。"
+    },
+    "data": {
+      "type": ["object", "null"],
+      "description": "code=0 时必须为 object；code 非 0 时可为 null。",
+      "required": [
+        "request_id",
+        "resolved_mode",
+        "mode_reason",
+        "预审_风险等级",
+        "预审_命中要点",
+        "预审_修改建议",
+        "预审_时间",
+        "审核_审核意见",
+        "审核_关键实体抽取",
+        "审核_高风险词命中",
+        "审核_备案核查结果",
+        "审核_推荐违规类型",
+        "审核_推荐风险等级",
+        "matched_rules",
+        "审核_审核时间",
+        "routing",
+        "audit_time"
+      ],
+      "additionalProperties": true,
+      "properties": {
+
+        "request_id": {
+          "type": "string",
+          "description": "对应飞书 record_id，原样回传，用于飞书侧幂等校验。"
+        },
+
+        "resolved_mode": {
+          "type": "string",
+          "enum": ["标准", "极速", "深度"],
+          "description": "MVP 阶段固定返回‘标准’。"
+        },
+
+        "mode_reason": {
+          "type": "string",
+          "description": "模式选择理由，MVP 阶段可为空字符串。"
+        },
+
+        "预审_风险等级": {
+          "type": "string",
+          "enum": ["高", "中", "低", "无明显风险"],
+          "description": "运营可见的风险定级。"
+        },
+
+        "预审_命中要点": {
+          "type": "string",
+          "description": "运营可见的一句话风险摘要，80 字以内。"
+        },
+
+        "预审_修改建议": {
+          "type": "string",
+          "description": "运营可见的简明修改建议，100 字以内。"
+        },
+
+        "预审_时间": {
+          "type": "integer",
+          "description": "毫秒时间戳，对应多维表格 ②AI预审·时间 字段。"
+        },
+
+        "审核_审核意见": {
+          "type": "string",
+          "description": "法务可见的六段式完整审核报告：①风险定性 ②违禁词鉴别 ③违规类型 ④法律依据 ⑤修改建议 ⑥风险定级。"
+        },
+
+        "审核_关键实体抽取": {
+          "type": "string",
+          "description": "品牌名、产品名、功效词、平台名，逗号分隔。"
+        },
+
+        "审核_高风险词命中": {
+          "type": "string",
+          "description": "命中的违禁词或高风险词，逗号分隔；无则填‘无’。飞书侧会自动去除 regex:... 格式的表达式，建议引擎直接返回字面词。"
+        },
+
+        "审核_备案核查结果": {
+          "type": "string",
+          "description": "备案/版号核查结论。MVP 阶段若未接入核查，填写形式提示即可，例如：‘已收到批准文号，实质核查待接入’。"
+        },
+
+        "审核_推荐违规类型": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "违规类型标签数组，例如 [\"绝对化用语\", \"虚假功效宣称\"]。"
+        },
+
+        "审核_推荐风险等级": {
+          "type": "string",
+          "enum": ["高", "中", "低"],
+          "description": "法务视角的推荐风险等级。注意：不含‘无明显风险’，该值仅适用于 预审_风险等级。"
+        },
+
+        "审核_审核时间": {
+          "type": "integer",
+          "description": "毫秒时间戳，对应多维表格 ③AI审核·审核时间 字段。"
+        },
+
+        "audit_time": {
+          "type": "integer",
+          "description": "毫秒时间戳，与 审核_审核时间 含义相同，二者取其一即可；飞书侧优先读取此字段，缺失时回落到 审核_审核时间。"
+        },
+
+        "routing": {
+          "type": "string",
+          "enum": ["运营", "法务"],
+          "description": "顶层路由决策。飞书侧映射规则：'运营' → '待运营修改'，'法务' → '待法务复核'。若 matched_rules 中任一条规则的 default_routing 为 '法务'，飞书侧将以规则引擎优先覆盖此字段。'运营补资料' 路由不通过此字段，而通过 matched_rules[].default_routing 传递。"
+        },
+
+        "matched_rules": {
+          "type": "array",
+          "description": "本次命中的规则列表。飞书侧用于：(1) 路由决策（读取每条规则的 default_routing）；(2) 在 LLM prompt 中拼接命中规则上下文。",
+          "items": {
+            "type": "object",
+            "required": [
+              "rule_id",
+              "title",
+              "dimension",
+              "risk_level",
+              "judgment",
+              "match_reason",
+              "default_routing"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "rule_id": {
+                "type": "string",
+                "description": "规则唯一标识，例如 REG-BEAUTY-001。"
+              },
+              "title": {
+                "type": "string",
+                "description": "规则标题，例如‘化妆品禁用绝对化用语’。"
+              },
+              "dimension": {
+                "type": "string",
+                "description": "规则维度/分类标签。"
+              },
+              "risk_level": {
+                "type": "string",
+                "description": "该规则对应的风险等级，建议与 预审_风险等级 枚举一致。"
+              },
+              "judgment": {
+                "type": "string",
+                "description": "该规则的判定结论，例如‘命中广告法第 9 条相关风险候选’。"
+              },
+              "match_reason": {
+                "type": "string",
+                "description": "命中该规则的具体原因，直接说明触发词或物料片段。飞书侧会自动过滤 regex:... 表达式，建议引擎直接返回可读文字。"
+              },
+              "default_routing": {
+                "type": "string",
+                "enum": ["运营", "法务", "运营补资料"],
+                "description": "【飞书侧必读字段】该规则建议的路由方向。飞书侧路由决策优先级：matched_rules 中有任一‘法务’ → 整体走法务；有‘运营补资料’且无‘法务’ → 走运营补资料；否则由顶层 routing 决定。"
+              },
+              "rule_uid": {
+                "type": "string",
+                "description": "可选。规则引擎内部 UUID，可用于跨版本追踪。"
+              },
+              "legal_basis": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "可选。命中的法律条款，例如 [\"《广告法》第 9 条第（三）项\"]。"
+              },
+              "applicability_status": {
+                "type": "string",
+                "enum": ["confirmed_violation", "needs_fact_verification"],
+                "description": "可选。是否已确认违规，或需要核实事实后判断。"
+              },
+              "confidence": {
+                "type": ["number", "null"],
+                "minimum": 0,
+                "maximum": 1,
+                "description": "可选。命中置信度，0~1。"
+              },
+              "material_evidence":    { "type": "string", "description": "可选。物料中作为证据的原文片段。" },
+              "satisfied_elements":   { "type": "array", "items": { "type": "string" }, "description": "可选。已满足的违规构成要素。" },
+              "unsatisfied_elements": { "type": "array", "items": { "type": "string" }, "description": "可选。未满足的违规构成要素。" },
+              "missing_facts":        { "type": "array", "items": { "type": "string" }, "description": "可选。需要补充核实的事实列表。" },
+              "applicability_reason": { "type": "string", "description": "可选。规则适用性判断理由。" },
+              "serial_no":            { "type": ["integer", "null"], "description": "可选。规则序号，用于展示排序。" }
+            }
+          }
+        },
+
+        "context_package": {
+          "type": "object",
+          "description": "可选。规则引擎内部上下文重建结果，飞书侧不读取，可用于调试。"
+        },
+
+        "审核_平台规则预检": {
+          "type": "string",
+          "description": "可选。平台规则预检结果（如抖音/小红书平台层面风险）。当前飞书侧不消费此字段、不回写多维表格，仅保留作为未来扩展。如引擎提供，请纳入 审核_审核意见 的第③段一并呈现。"
+        }
+      }
+    }
+  }
+}

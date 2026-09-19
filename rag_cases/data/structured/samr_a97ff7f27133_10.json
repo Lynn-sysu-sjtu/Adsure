@@ -1,0 +1,94 @@
+{
+ "title": "江西省景德镇市市场监管局查处熊某某违法广告案",
+ "publish_date": "2026-07-21",
+ "penalty_authority": "景德镇市市场监管局",
+ "party_name": "熊某某",
+ "industry": "通用",
+ "product_or_service": "现代仿古瓷（冒充古董瓷直播推销）",
+ "ad_channel": "",
+ "risk_dimensions": [
+  "虚假宣传"
+ ],
+ "illegal_claims": [
+  "将现代仿古瓷宣传成古董瓷",
+  "以虚假或者引人误解的内容欺骗误导消费者"
+ ],
+ "facts_summary": "经查，自然人熊某某在景德镇昌江区某村镇场地搭建直播间进行直播推销，并在主页中精心制作多条广告，以虚假或者引人误解的内容欺骗误导消费者，将现代仿古瓷宣传成古董瓷销往新加坡、马来西亚等地。2026年4月，因涉案金额较大，涉嫌构成虚假广告罪，景德镇市市场监管局依据《中华人民共和国广告法》有关规定，将该案移送公安机关立案侦查。",
+ "legal_basis": [
+  "《中华人民共和国广告法》"
+ ],
+ "penalty_result": "涉案金额较大，涉嫌构成虚假广告罪，移送公安机关立案侦查",
+ "penalty_amount": null,
+ "regulatory_logic": "经查，自然人熊某某在景德镇昌江区某村镇场地搭建直播间进行直播推销，并在主页中精心制作多条广告，以虚假或者引人误解的内容欺骗误导消费者，将现代仿古瓷宣传成古董瓷销往新加坡、马来西亚等地。2026年4月，因涉案金额较大，涉嫌构成虚假广告罪，景德镇市市场监管局依据《中华人民共和国广告法》有关规定，将该案移送公安机关立案侦查。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "景德镇市市场监管局"
+ ],
+ "vector_text": "这是一起市场监管部门查处的广告违法案例。经查，自然人熊某某在景德镇昌江区某村镇场地搭建直播间进行直播推销，并在主页中精心制作多条广告，以虚假或者引人误解的内容欺骗误导消费者，将现代仿古瓷宣传成古董瓷销往新加坡、马来西亚等地。2026年4月，因涉案金额较大，涉嫌构成虚假广告罪，景德镇市市场监管局依据《中华人民共和国广告法》有关规定，将该案移送公安机关立案侦查。",
+ "legal_basis_inferred": [
+  "《中华人民共和国广告法》"
+ ],
+ "case_id": "samr_a97ff7f27133_10",
+ "source_type": "official_typical_case",
+ "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html",
+ "raw_text_path": "data/raw_text/samr_a97ff7f27133.json",
+ "source_name": "国家市场监督管理总局",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "human_review_required": true,
+ "extraction_quotes": {},
+ "extraction_dropped": [],
+ "rule_extracted": {
+  "title": "江西省景德镇市市场监管局查处熊某某违法广告案",
+  "penalty_authority": "景德镇市市场监管局",
+  "industry": "通用",
+  "facts_summary": "经查，自然人熊某某在景德镇昌江区某村镇场地搭建直播间进行直播推销，并在主页中精心制作多条广告，以虚假或者引人误解的内容欺骗误导消费者，将现代仿古瓷宣传成古董瓷销往新加坡、马来西亚等地。2026年4月，因涉案金额较大，涉嫌构成虚假广告罪，景德镇市市场监管局依据《中华人民共和国广告法》有关规定，将该案移送公安机关立案侦查。",
+  "vector_text": "这是一起市场监管部门查处的广告违法案例。经查，自然人熊某某在景德镇昌江区某村镇场地搭建直播间进行直播推销，并在主页中精心制作多条广告，以虚假或者引人误解的内容欺骗误导消费者，将现代仿古瓷宣传成古董瓷销往新加坡、马来西亚等地。2026年4月，因涉案金额较大，涉嫌构成虚假广告罪，景德镇市市场监管局依据《中华人民共和国广告法》有关规定，将该案移送公安机关立案侦查。",
+  "keywords": [
+   "景德镇市市场监管局"
+  ],
+  "regulatory_logic": "经查，自然人熊某某在景德镇昌江区某村镇场地搭建直播间进行直播推销，并在主页中精心制作多条广告，以虚假或者引人误解的内容欺骗误导消费者，将现代仿古瓷宣传成古董瓷销往新加坡、马来西亚等地。2026年4月，因涉案金额较大，涉嫌构成虚假广告罪，景德镇市市场监管局依据《中华人民共和国广告法》有关规定，将该案移送公安机关立案侦查。"
+ },
+ "raw_html_path": "data/raw_html/samr_a97ff7f27133.html",
+ "fetched_at": "2026-09-15T16:34:17.844372+00:00",
+ "content_sha256": "88d36c4370ae5e18d34857ff8e72413d57eb0fb147e2715bc0b938a21830e583",
+ "segment_index": 10,
+ "segment_title": "江西省景德镇市市场监管局查处熊某某违法广告案",
+ "topic_relevance": "ad",
+ "source_verification_status": "source_verified",
+ "original_decision_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html",
+ "original_decision_url_status": "official_page",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-16 指令 B：crawler 民生违法广告候选转生产）",
+  "approved_at": "2026-09-16T01:40:26+08:00",
+  "override_source_verification": true,
+  "source_verification_status_kept": "official_page_extracted",
+  "original_decision_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html",
+  "note": "总局民生领域违法广告典型案例（官方页面存证）；字段缺口：法条仅到法规名（无条号，来自通报原文），待人工补条号；罚款金额未在通报原文抽出，待人工补；当事人未抽出（个人类，已脱敏）。"
+ },
+ "audit": {
+  "review_status": "approved",
+  "approved_for_rag": true,
+  "reviewer": "项目负责人（用户 2026-09-16 指令 B：crawler 民生违法广告候选转生产）",
+  "review_date": "2026-09-16",
+  "review_notes": "业主审批转生产（B）；官方P0页面提取，缺口：法条仅到法规名（无条号，来自通报原文），待人工补条号；罚款金额未在通报原文抽出，待人工补；当事人未抽出（个人类，已脱敏）"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-16T01:40:26+08:00",
+   "action": "owner_approval_promote_crawler_official",
+   "note": "crawler 民生违法广告候选转生产；法条/金额等缺口保留待人工补。"
+  },
+  {
+   "ts": "2026-09-17T11:50:27+08:00",
+   "action": "backfill_full_case_narrative",
+   "note": "修复规则抽取 facts_summary=t[:80] 截断：用修正后抽取器重写案情/监管逻辑/检索文本，字段逐字来自原文段落，其余字段不动。"
+  }
+ ],
+ "violation_type": "虚假广告（涉嫌构成虚假广告罪，移送公安）",
+ "also_seen_at": [
+  "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html"
+ ]
+}

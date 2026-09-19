@@ -1,9 +1,8 @@
 import argparse
 import json
-import math
-import re
-from collections import Counter
 from pathlib import Path
+
+from src.retrieval import bm25_scores, tokenize
 
 
 DEFAULT_CHUNKS_PATH = Path("__auto__")
@@ -26,38 +25,6 @@ SECTOR_QUERY_TERMS = [
     "抑制肿瘤",
     "心脑血管",
 ]
-
-
-def tokenize(text: str) -> list[str]:
-    words = re.findall(r"[A-Za-z0-9_]+|[\u4e00-\u9fff]", text.lower())
-    bigrams = [words[i] + words[i + 1] for i in range(len(words) - 1)]
-    return words + bigrams
-
-
-def bm25_scores(query: str, chunks: list[dict]) -> list[tuple[float, dict]]:
-    tokenized_docs = [tokenize(chunk.get("text", "")) for chunk in chunks]
-    doc_lengths = [len(tokens) for tokens in tokenized_docs]
-    avgdl = sum(doc_lengths) / len(doc_lengths) if doc_lengths else 0
-    df: Counter[str] = Counter()
-    for tokens in tokenized_docs:
-        df.update(set(tokens))
-
-    query_terms = tokenize(query)
-    scores = []
-    k1 = 1.5
-    b = 0.75
-    total_docs = len(chunks)
-    for chunk, tokens, doc_len in zip(chunks, tokenized_docs, doc_lengths):
-        tf = Counter(tokens)
-        score = 0.0
-        for term in query_terms:
-            if term not in tf:
-                continue
-            idf = math.log(1 + (total_docs - df[term] + 0.5) / (df[term] + 0.5))
-            denom = tf[term] + k1 * (1 - b + b * doc_len / (avgdl or 1))
-            score += idf * tf[term] * (k1 + 1) / denom
-        scores.append((score, chunk))
-    return sorted(scores, key=lambda item: item[0], reverse=True)
 
 
 def search(

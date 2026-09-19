@@ -1,0 +1,141 @@
+{
+  "fetched_at": "2026-09-17T17:36:48+08:00",
+  "request": {
+    "xzcfws_name": "化妆品",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "2",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "331004072026050011",
+          "xzcfws_code": "台路市监处罚〔2026〕412号",
+          "bxzcf_name": "台州市路桥然然美发工作室（个体工商户）",
+          "guid": "331004072026050011",
+          "xzcfws_name": "台州市路桥然然美发工作室（个体工商户）擅自配制化妆品，经营变质、超过使用期限的化妆品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "王某某",
+          "xzcf_date": "2026-09-10",
+          "orgnode": "台州市路桥区市场监督管理局"
+        },
+        {
+          "unid": "330206022026050012",
+          "xzcfws_code": "甬仑市监处罚〔2026〕535号",
+          "bxzcf_name": "沐琛（宁波）商贸有限公司",
+          "guid": "330206022026050012",
+          "xzcfws_name": "沐琛（宁波）商贸有限公司擅自配制化妆品，经营变质、超过使用期限的化妆品案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "王某某",
+          "xzcf_date": "2026-09-09",
+          "orgnode": "宁波市北仑区市场监督管理局"
+        },
+        {
+          "unid": "330481022026060052",
+          "xzcfws_code": "海市监处罚〔2026〕1223号",
+          "bxzcf_name": "嘉兴水初妍化妆品科技有限公司",
+          "guid": "330481022026060052",
+          "xzcfws_name": "嘉兴水初妍化妆品科技有限公司未按规定办理年度报告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "刘某某",
+          "xzcf_date": "2026-09-09",
+          "orgnode": "海宁市市场监督管理局"
+        },
+        {
+          "unid": "330281092026070009",
+          "xzcfws_code": "余市监处罚〔2026〕992号",
+          "bxzcf_name": "余姚市陈琳慧食品店（个体工商户）",
+          "guid": "330281092026070009",
+          "xzcfws_name": "余姚市陈琳慧食品店（个体工商户）擅自配制化妆品，经营变质、超过使用期限的化妆品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "陈某某",
+          "xzcf_date": "2026-09-08",
+          "orgnode": "余姚市市场监督管理局"
+        },
+        {
+          "unid": "330522202026060006",
+          "xzcfws_code": "长市监处罚〔2026〕1086号",
+          "bxzcf_name": "长兴虹星桥平平副食便利店",
+          "guid": "330522202026060006",
+          "xzcfws_name": "长兴虹星桥平平副食便利店擅自配制化妆品，经营变质、超过使用期限的化妆品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "周某某",
+          "xzcf_date": "2026-09-08",
+          "orgnode": "长兴县市场监督管理局"
+        },
+        {
+          "unid": "330681152026060006",
+          "xzcfws_code": "诸市监处罚〔2026〕1037号",
+          "bxzcf_name": "浙江九篱畔生物科技有限公司",
+          "guid": "330681152026060006",
+          "xzcfws_name": "浙江九篱畔生物科技有限公司未按照生产质量规范生产化妆品案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "章某某",
+          "xzcf_date": "2026-09-08",
+          "orgnode": "诸暨市市场监督管理局"
+        },
+        {
+          "unid": "330227162026030003",
+          "xzcfws_code": "甬鄞市监处罚〔2026〕1080号",
+          "bxzcf_name": "宁波甬臻越创电子商务有限公司",
+          "guid": "330227162026030003",
+          "xzcfws_name": "宁波甬臻越创电子商务有限公司经营或者进口未经注册、备案的化妆品案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "尤某某",
+          "xzcf_date": "2026-09-04",
+          "orgnode": "宁波市鄞州区市场监督管理局"
+        },
+        {
+          "unid": "331021142026060003",
+          "xzcfws_code": "玉市监处罚〔2026〕330号",
+          "bxzcf_name": "玉环某某美容店",
+          "guid": "331021142026060003",
+          "xzcfws_name": "玉环某某美容店经营或者进口未经注册、备案的化妆品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "林某某",
+          "xzcf_date": "2026-09-04",
+          "orgnode": "玉环市市场监督管理局"
+        },
+        {
+          "unid": "330503142026030003",
+          "xzcfws_code": "湖吴市监处罚〔2026〕582号",
+          "bxzcf_name": "湖州开森化妆品科技有限公司",
+          "guid": "330503142026030003",
+          "xzcfws_name": "湖州开森化妆品科技有限公司未按生产质量管理规范组织生产、未经许可生产化妆品等案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "吴某某",
+          "xzcf_date": "2026-09-04",
+          "orgnode": "湖州市吴兴区市场监督管理局"
+        },
+        {
+          "unid": "330381422026060029",
+          "xzcfws_code": "瑞市监处罚〔2026〕1705号",
+          "bxzcf_name": "瑞安市维国化妆品店",
+          "guid": "330381422026060029",
+          "xzcfws_name": "瑞安市维国化妆品店经营超过使用期限的化妆品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "杨某某",
+          "xzcf_date": "2026-09-03",
+          "orgnode": "瑞安市市场监督管理局"
+        }
+      ],
+      "total": 3476,
+      "pageTotal": 348,
+      "pageNo": 2
+    },
+    "traceId": "39571A5C772C47EDB829A96860CD9432",
+    "messageType": 2
+  }
+}

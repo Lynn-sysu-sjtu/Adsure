@@ -1,0 +1,3803 @@
+{
+  "summary": {
+    "lexical": {
+      "risk_questions": 26,
+      "questions_with_any_expected_hit": 6,
+      "top1_expected_questions": 5,
+      "expected_slots": 130,
+      "expected_slot_hits": 13
+    },
+    "hybrid": {
+      "risk_questions": 26,
+      "questions_with_any_expected_hit": 19,
+      "top1_expected_questions": 13,
+      "expected_slots": 130,
+      "expected_slot_hits": 49
+    },
+    "semantic": {
+      "risk_questions": 26,
+      "questions_with_any_expected_hit": 18,
+      "top1_expected_questions": 13,
+      "expected_slots": 130,
+      "expected_slot_hits": 45
+    }
+  },
+  "semantic_status": {
+    "lexical": "disabled",
+    "hybrid": "ready",
+    "semantic": "ready"
+  },
+  "rows": [
+    {
+      "id": "BEAUTY-AD-001",
+      "industry": "美妆",
+      "name": "化妆品医疗用语",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2021_苏03行终63号",
+        "pkulaw_prod_2017_豫1528行审92号",
+        "pkulaw_prod_2019_鲁1424行审75号",
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2018_鄂0103行审29号"
+      ],
+      "lexical_actual_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审30号",
+        "pkulaw_prod_2018_鄂0103行审29号"
+      ],
+      "lexical_hit_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审29号"
+      ],
+      "lexical_results": [
+        {
+          "case_id": "pkulaw_prod_2018_鄂0103行审30号",
+          "title": "武汉市工商行政管理局、武汉广播广告传播有限公司非诉执行审查行政裁定书",
+          "score": 21.279455,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4cfdfa063ff173bf259eeb36152257ac1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_鄂0103行审29号",
+          "title": "武汉市工商行政管理局、武汉电视广告传播有限公司非诉执行审查行政裁定书",
+          "score": 19.350371,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc494247d4c1de7e13f7b85925703cc9712bdfb.html?way=mcp"
+        }
+      ],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审29号",
+        "pkulaw_prod_2018_鄂0103行审30号",
+        "pkulaw_prod_2021_苏03行终63号",
+        "pkulaw_prod_2022_豫01行终792号",
+        "pkulaw_prod_2018_鄂0103行审47号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2021_苏03行终63号",
+        "pkulaw_prod_2018_鄂0103行审29号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2018_鄂0103行审29号",
+          "title": "武汉市工商行政管理局、武汉电视广告传播有限公司非诉执行审查行政裁定书",
+          "score": 0.875885,
+          "similarity": 0.484186,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc494247d4c1de7e13f7b85925703cc9712bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_鄂0103行审30号",
+          "title": "武汉市工商行政管理局、武汉广播广告传播有限公司非诉执行审查行政裁定书",
+          "score": 0.845161,
+          "similarity": 0.458136,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4cfdfa063ff173bf259eeb36152257ac1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2021_苏03行终63号",
+          "title": "徐州宇彤医疗器械有限公司第一分公司与徐州市泉山区市场监督管理局行政处罚二审行政判决书",
+          "score": 0.45,
+          "similarity": 0.543384,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c05aeed05a57db0ad1256443bcc49100c88a87bcdf2e77abbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_豫01行终792号",
+          "title": "郑州市中原区市场监督管理局与常某建行政处罚二审行政判决书",
+          "score": 0.435714,
+          "similarity": 0.541161,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2069962d3c4756365caab09a53626bd74cdbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_鄂0103行审47号",
+          "title": "武汉市工商行政管理局、武汉广播广告传媒有限公司非诉执行审查行政裁定书",
+          "score": 0.422308,
+          "similarity": 0.536552,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc422213d393121af55c0bd17a3be804454bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2021_苏03行终63号",
+        "pkulaw_prod_2022_豫01行终792号",
+        "pkulaw_prod_2018_鄂0103行审47号",
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2018_琼0105行初169号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2021_苏03行终63号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2021_苏03行终63号",
+          "title": "徐州宇彤医疗器械有限公司第一分公司与徐州市泉山区市场监督管理局行政处罚二审行政判决书",
+          "score": 0.543384,
+          "similarity": 0.543384,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c05aeed05a57db0ad1256443bcc49100c88a87bcdf2e77abbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_豫01行终792号",
+          "title": "郑州市中原区市场监督管理局与常某建行政处罚二审行政判决书",
+          "score": 0.541161,
+          "similarity": 0.541161,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2069962d3c4756365caab09a53626bd74cdbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_鄂0103行审47号",
+          "title": "武汉市工商行政管理局、武汉广播广告传媒有限公司非诉执行审查行政裁定书",
+          "score": 0.536552,
+          "similarity": 0.536552,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc422213d393121af55c0bd17a3be804454bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.519462,
+          "similarity": 0.519462,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_琼0105行初169号",
+          "title": "海南伊佳医疗美容医院有限公司与海口市龙华区工商行政管理局、海南省海口市工商行政管理局行政复议一审行政判决书",
+          "score": 0.515245,
+          "similarity": 0.515245,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4bc81cccca77f770e936bb1ec32636e13bdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "BEAUTY-AD-002",
+      "industry": "美妆",
+      "name": "B站商单绝对化宣称",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2024_沪7101行初94号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2022_豫01行终792号",
+        "pkulaw_prod_2018_浙0108民初3781号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "zj_gap_330304032026070002",
+        "pkulaw_prod_2024_沪7101行初94号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2024_沪7101行初94号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2018_浙0108民初3781号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.45,
+          "similarity": 0.552437,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.435714,
+          "similarity": 0.545887,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.422308,
+          "similarity": 0.520765,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "zj_gap_330304032026070002",
+          "title": "翁某某虚假宣传（不正当竞争行为）案",
+          "score": 0.409701,
+          "similarity": 0.494218,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330304032026070002&unid=330304032026070002"
+        },
+        {
+          "case_id": "pkulaw_prod_2024_沪7101行初94号",
+          "title": "上海美狄莎思美奇商贸有限公司与上海市长宁区市场监督管理局等罚款一审行政判决书",
+          "score": 0.397826,
+          "similarity": 0.492899,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20621c1f1241d285a0f61db36c08ee821e8bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "zj_gap_330304032026070002",
+        "pkulaw_prod_2024_沪7101行初94号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2024_沪7101行初94号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2018_浙0108民初3781号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.552437,
+          "similarity": 0.552437,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.545887,
+          "similarity": 0.545887,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.520765,
+          "similarity": 0.520765,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "zj_gap_330304032026070002",
+          "title": "翁某某虚假宣传（不正当竞争行为）案",
+          "score": 0.494218,
+          "similarity": 0.494218,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330304032026070002&unid=330304032026070002"
+        },
+        {
+          "case_id": "pkulaw_prod_2024_沪7101行初94号",
+          "title": "上海美狄莎思美奇商贸有限公司与上海市长宁区市场监督管理局等罚款一审行政判决书",
+          "score": 0.492899,
+          "similarity": 0.492899,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20621c1f1241d285a0f61db36c08ee821e8bdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "BEAUTY-AD-003",
+      "industry": "美妆",
+      "name": "小红书七天美白与99%数据",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2024_沪7101行初94号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2022_豫01行终792号",
+        "pkulaw_prod_2018_浙0108民初3781号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "zj_gap_330304032026070002",
+        "pkulaw_prod_2022_豫01行终792号",
+        "pkulaw_prod_2025_苏0282行审5号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2022_豫01行终792号",
+        "pkulaw_prod_2018_浙0108民初3781号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.45,
+          "similarity": 0.596885,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.435714,
+          "similarity": 0.584027,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "zj_gap_330304032026070002",
+          "title": "翁某某虚假宣传（不正当竞争行为）案",
+          "score": 0.422308,
+          "similarity": 0.557441,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330304032026070002&unid=330304032026070002"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_豫01行终792号",
+          "title": "郑州市中原区市场监督管理局与常某建行政处罚二审行政判决书",
+          "score": 0.409701,
+          "similarity": 0.541387,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2069962d3c4756365caab09a53626bd74cdbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.397826,
+          "similarity": 0.535647,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "zj_gap_330304032026070002",
+        "pkulaw_prod_2022_豫01行终792号",
+        "pkulaw_prod_2025_苏0282行审5号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2022_豫01行终792号",
+        "pkulaw_prod_2018_浙0108民初3781号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.596885,
+          "similarity": 0.596885,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.584027,
+          "similarity": 0.584027,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "zj_gap_330304032026070002",
+          "title": "翁某某虚假宣传（不正当竞争行为）案",
+          "score": 0.557441,
+          "similarity": 0.557441,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330304032026070002&unid=330304032026070002"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_豫01行终792号",
+          "title": "郑州市中原区市场监督管理局与常某建行政处罚二审行政判决书",
+          "score": 0.541387,
+          "similarity": 0.541387,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2069962d3c4756365caab09a53626bd74cdbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.535647,
+          "similarity": 0.535647,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "BEAUTY-AD-004",
+      "industry": "美妆",
+      "name": "普通化妆品超备案功效",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2023_川0504行审1号",
+        "pkulaw_prod_2018_琼0105行初169号",
+        "pkulaw_prod_2020_鄂1223行审52号"
+      ],
+      "lexical_actual_case_ids": [
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2023_川0504行审1号",
+        "pkulaw_prod_2018_琼0105行初169号",
+        "pkulaw_prod_2016_粤0111民初9365号"
+      ],
+      "lexical_hit_case_ids": [
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2023_川0504行审1号",
+        "pkulaw_prod_2018_琼0105行初169号"
+      ],
+      "lexical_results": [
+        {
+          "case_id": "pkulaw_prod_2018_苏0508行初268号",
+          "title": "苏州开禧医药有限公司与苏州市吴江区市场监督管理局行政处罚一审行政判决书",
+          "score": 53.594812,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc48709858208ea3254d8a61eeeb1a2e3acbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 38.792009,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_川0504行审1号",
+          "title": "泸州市龙马潭区市场监督管理局与泸州韩美整形美容有限公司非诉行政行为申请执行审查裁定书",
+          "score": 38.471911,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20656343c43191029c4e05c65833e1580a2bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_琼0105行初169号",
+          "title": "海南伊佳医疗美容医院有限公司与海口市龙华区工商行政管理局、海南省海口市工商行政管理局行政复议一审行政判决书",
+          "score": 38.045819,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4bc81cccca77f770e936bb1ec32636e13bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 38.02514,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        }
+      ],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2023_川0504行审1号",
+        "pkulaw_prod_2018_琼0105行初169号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2023_川0504行审1号",
+        "pkulaw_prod_2018_琼0105行初169号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.98254,
+          "similarity": 0.586662,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.929097,
+          "similarity": 0.549636,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_苏0508行初268号",
+          "title": "苏州开禧医药有限公司与苏州市吴江区市场监督管理局行政处罚一审行政判决书",
+          "score": 0.911184,
+          "similarity": 0.492622,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc48709858208ea3254d8a61eeeb1a2e3acbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_川0504行审1号",
+          "title": "泸州市龙马潭区市场监督管理局与泸州韩美整形美容有限公司非诉行政行为申请执行审查裁定书",
+          "score": 0.908297,
+          "similarity": 0.514657,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20656343c43191029c4e05c65833e1580a2bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_琼0105行初169号",
+          "title": "海南伊佳医疗美容医院有限公司与海口市龙华区工商行政管理局、海南省海口市工商行政管理局行政复议一审行政判决书",
+          "score": 0.887366,
+          "similarity": 0.511199,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4bc81cccca77f770e936bb1ec32636e13bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "zj_gap_330304032026070002",
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "pkulaw_prod_2023_川0504行审1号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2023_川0504行审1号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.586662,
+          "similarity": 0.586662,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.549636,
+          "similarity": 0.549636,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "zj_gap_330304032026070002",
+          "title": "翁某某虚假宣传（不正当竞争行为）案",
+          "score": 0.539506,
+          "similarity": 0.539506,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330304032026070002&unid=330304032026070002"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.535799,
+          "similarity": 0.535799,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_川0504行审1号",
+          "title": "泸州市龙马潭区市场监督管理局与泸州韩美整形美容有限公司非诉行政行为申请执行审查裁定书",
+          "score": 0.514657,
+          "similarity": 0.514657,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20656343c43191029c4e05c65833e1580a2bdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "BEAUTY-AD-005",
+      "industry": "美妆",
+      "name": "儿童化妆品可食用宣称",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2016_粤0111民初6335号",
+        "pkulaw_prod_2016_粤0111民初6336号",
+        "pkulaw_prod_2014_杨民一_民_初字第4713号",
+        "pkulaw_prod_2017_鄂0103行审61号",
+        "pkulaw_prod_2018_鄂0103行审46号"
+      ],
+      "lexical_actual_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审46号"
+      ],
+      "lexical_hit_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审46号"
+      ],
+      "lexical_results": [
+        {
+          "case_id": "pkulaw_prod_2018_鄂0103行审46号",
+          "title": "武汉市工商行政管理局、武汉电视广告传媒有限公司非诉执行审查行政裁定书",
+          "score": 46.040095,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4266582377894124be99fed0d314d6bf2bdfb.html?way=mcp"
+        }
+      ],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审46号",
+        "zj_gap_330304032026070002",
+        "pkulaw_prod_2021_苏03行终63号",
+        "pkulaw_prod_2025_豫行申1293号",
+        "pkulaw_prod_2020_苏8601行初134号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审46号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2018_鄂0103行审46号",
+          "title": "武汉市工商行政管理局、武汉电视广告传媒有限公司非诉执行审查行政裁定书",
+          "score": 0.992742,
+          "similarity": 0.545405,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4266582377894124be99fed0d314d6bf2bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "zj_gap_330304032026070002",
+          "title": "翁某某虚假宣传（不正当竞争行为）案",
+          "score": 0.435714,
+          "similarity": 0.498397,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330304032026070002&unid=330304032026070002"
+        },
+        {
+          "case_id": "pkulaw_prod_2021_苏03行终63号",
+          "title": "徐州宇彤医疗器械有限公司第一分公司与徐州市泉山区市场监督管理局行政处罚二审行政判决书",
+          "score": 0.422308,
+          "similarity": 0.490349,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c05aeed05a57db0ad1256443bcc49100c88a87bcdf2e77abbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_豫行申1293号",
+          "title": "某笔业公司、平顶山市新华区市监局罚款再审审查和审判监督行政裁定书",
+          "score": 0.409701,
+          "similarity": 0.485087,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816cb3359036aebe64e681a125898f2fce2bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2020_苏8601行初134号",
+          "title": "徐州宇彤医疗器械有限公司第一分公司与徐州市泉山区市场监督管理局行政处罚一审行政判决书",
+          "score": 0.397826,
+          "similarity": 0.481184,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c05aeed05a57db0afd8fce357649b7c540112e8becb7256abdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审46号",
+        "zj_gap_330304032026070002",
+        "pkulaw_prod_2021_苏03行终63号",
+        "pkulaw_prod_2025_豫行申1293号",
+        "pkulaw_prod_2020_苏8601行初134号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审46号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2018_鄂0103行审46号",
+          "title": "武汉市工商行政管理局、武汉电视广告传媒有限公司非诉执行审查行政裁定书",
+          "score": 0.545405,
+          "similarity": 0.545405,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4266582377894124be99fed0d314d6bf2bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "zj_gap_330304032026070002",
+          "title": "翁某某虚假宣传（不正当竞争行为）案",
+          "score": 0.498397,
+          "similarity": 0.498397,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330304032026070002&unid=330304032026070002"
+        },
+        {
+          "case_id": "pkulaw_prod_2021_苏03行终63号",
+          "title": "徐州宇彤医疗器械有限公司第一分公司与徐州市泉山区市场监督管理局行政处罚二审行政判决书",
+          "score": 0.490349,
+          "similarity": 0.490349,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c05aeed05a57db0ad1256443bcc49100c88a87bcdf2e77abbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_豫行申1293号",
+          "title": "某笔业公司、平顶山市新华区市监局罚款再审审查和审判监督行政裁定书",
+          "score": 0.485087,
+          "similarity": 0.485087,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816cb3359036aebe64e681a125898f2fce2bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2020_苏8601行初134号",
+          "title": "徐州宇彤医疗器械有限公司第一分公司与徐州市泉山区市场监督管理局行政处罚一审行政判决书",
+          "score": 0.481184,
+          "similarity": 0.481184,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c05aeed05a57db0afd8fce357649b7c540112e8becb7256abdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "BEAUTY-AD-006",
+      "industry": "美妆",
+      "name": "医生推荐与临床数据",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2021_苏03行终63号",
+        "pkulaw_prod_2017_豫1528行审92号",
+        "pkulaw_prod_2019_鲁1424行审75号",
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2018_鄂0103行审29号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "pkulaw_prod_2022_豫01行终792号",
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2018_琼0105行初169号"
+      ],
+      "hybrid_hit_case_ids": [],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.45,
+          "similarity": 0.574673,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.435714,
+          "similarity": 0.566938,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_豫01行终792号",
+          "title": "郑州市中原区市场监督管理局与常某建行政处罚二审行政判决书",
+          "score": 0.422308,
+          "similarity": 0.561129,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2069962d3c4756365caab09a53626bd74cdbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.409701,
+          "similarity": 0.542449,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_琼0105行初169号",
+          "title": "海南伊佳医疗美容医院有限公司与海口市龙华区工商行政管理局、海南省海口市工商行政管理局行政复议一审行政判决书",
+          "score": 0.397826,
+          "similarity": 0.539773,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4bc81cccca77f770e936bb1ec32636e13bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "pkulaw_prod_2022_豫01行终792号",
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2018_琼0105行初169号"
+      ],
+      "semantic_hit_case_ids": [],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.574673,
+          "similarity": 0.574673,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.566938,
+          "similarity": 0.566938,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_豫01行终792号",
+          "title": "郑州市中原区市场监督管理局与常某建行政处罚二审行政判决书",
+          "score": 0.561129,
+          "similarity": 0.561129,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2069962d3c4756365caab09a53626bd74cdbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.542449,
+          "similarity": 0.542449,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_琼0105行初169号",
+          "title": "海南伊佳医疗美容医院有限公司与海口市龙华区工商行政管理局、海南省海口市工商行政管理局行政复议一审行政判决书",
+          "score": 0.539773,
+          "similarity": 0.539773,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4bc81cccca77f770e936bb1ec32636e13bdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "BEAUTY-AD-007",
+      "industry": "美妆",
+      "name": "B站前后效果对比",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2024_沪7101行初94号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2022_豫01行终792号",
+        "pkulaw_prod_2018_浙0108民初3781号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2023_川0504行审1号",
+        "pkulaw_prod_2018_苏0508行初268号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2018_浙0108民初3781号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.45,
+          "similarity": 0.572808,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.435714,
+          "similarity": 0.535234,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.422308,
+          "similarity": 0.52434,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_川0504行审1号",
+          "title": "泸州市龙马潭区市场监督管理局与泸州韩美整形美容有限公司非诉行政行为申请执行审查裁定书",
+          "score": 0.409701,
+          "similarity": 0.50733,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20656343c43191029c4e05c65833e1580a2bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_苏0508行初268号",
+          "title": "苏州开禧医药有限公司与苏州市吴江区市场监督管理局行政处罚一审行政判决书",
+          "score": 0.397826,
+          "similarity": 0.493538,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc48709858208ea3254d8a61eeeb1a2e3acbdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2023_川0504行审1号",
+        "pkulaw_prod_2018_苏0508行初268号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2018_浙0108民初3781号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.572808,
+          "similarity": 0.572808,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.535234,
+          "similarity": 0.535234,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.52434,
+          "similarity": 0.52434,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_川0504行审1号",
+          "title": "泸州市龙马潭区市场监督管理局与泸州韩美整形美容有限公司非诉行政行为申请执行审查裁定书",
+          "score": 0.50733,
+          "similarity": 0.50733,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20656343c43191029c4e05c65833e1580a2bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_苏0508行初268号",
+          "title": "苏州开禧医药有限公司与苏州市吴江区市场监督管理局行政处罚一审行政判决书",
+          "score": 0.493538,
+          "similarity": 0.493538,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc48709858208ea3254d8a61eeeb1a2e3acbdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "BEAUTY-AD-008",
+      "industry": "美妆",
+      "name": "B站专利宣称缺失专利号",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2024_沪7101行初94号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2022_豫01行终792号",
+        "pkulaw_prod_2018_浙0108民初3781号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2023_川0504行审1号",
+        "pkulaw_prod_2018_苏0508行初268号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2018_浙0108民初3781号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.45,
+          "similarity": 0.531964,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.435714,
+          "similarity": 0.526569,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.422308,
+          "similarity": 0.519839,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_川0504行审1号",
+          "title": "泸州市龙马潭区市场监督管理局与泸州韩美整形美容有限公司非诉行政行为申请执行审查裁定书",
+          "score": 0.409701,
+          "similarity": 0.504788,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20656343c43191029c4e05c65833e1580a2bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_苏0508行初268号",
+          "title": "苏州开禧医药有限公司与苏州市吴江区市场监督管理局行政处罚一审行政判决书",
+          "score": 0.397826,
+          "similarity": 0.503009,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc48709858208ea3254d8a61eeeb1a2e3acbdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2025_苏0282行审5号",
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2023_川0504行审1号",
+        "pkulaw_prod_2018_苏0508行初268号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2018_苏0508行初268号",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2018_浙0108民初3781号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.531964,
+          "similarity": 0.531964,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.526569,
+          "similarity": 0.526569,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.519839,
+          "similarity": 0.519839,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_川0504行审1号",
+          "title": "泸州市龙马潭区市场监督管理局与泸州韩美整形美容有限公司非诉行政行为申请执行审查裁定书",
+          "score": 0.504788,
+          "similarity": 0.504788,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20656343c43191029c4e05c65833e1580a2bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_苏0508行初268号",
+          "title": "苏州开禧医药有限公司与苏州市吴江区市场监督管理局行政处罚一审行政判决书",
+          "score": 0.503009,
+          "similarity": 0.503009,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc48709858208ea3254d8a61eeeb1a2e3acbdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "BEAUTY-AD-009",
+      "industry": "美妆",
+      "name": "正常样例：与备案一致的清洁保湿介绍",
+      "normal": true,
+      "expected_production_case_ids": [],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2025_苏0282行审5号",
+        "zj_gap_330304032026070002",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "pkulaw_prod_2018_苏0508行初268号"
+      ],
+      "hybrid_hit_case_ids": [],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.45,
+          "similarity": 0.587248,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "zj_gap_330304032026070002",
+          "title": "翁某某虚假宣传（不正当竞争行为）案",
+          "score": 0.435714,
+          "similarity": 0.568311,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330304032026070002&unid=330304032026070002"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.422308,
+          "similarity": 0.566138,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.409701,
+          "similarity": 0.56368,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_苏0508行初268号",
+          "title": "苏州开禧医药有限公司与苏州市吴江区市场监督管理局行政处罚一审行政判决书",
+          "score": 0.397826,
+          "similarity": 0.537853,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc48709858208ea3254d8a61eeeb1a2e3acbdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2025_苏0282行审5号",
+        "zj_gap_330304032026070002",
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "pkulaw_prod_2018_苏0508行初268号"
+      ],
+      "semantic_hit_case_ids": [],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.587248,
+          "similarity": 0.587248,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "zj_gap_330304032026070002",
+          "title": "翁某某虚假宣传（不正当竞争行为）案",
+          "score": 0.568311,
+          "similarity": 0.568311,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330304032026070002&unid=330304032026070002"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.566138,
+          "similarity": 0.566138,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.56368,
+          "similarity": 0.56368,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_苏0508行初268号",
+          "title": "苏州开禧医药有限公司与苏州市吴江区市场监督管理局行政处罚一审行政判决书",
+          "score": 0.537853,
+          "similarity": 0.537853,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc48709858208ea3254d8a61eeeb1a2e3acbdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "BEAUTY-AD-010",
+      "industry": "美妆",
+      "name": "正常样例：已显著标注广告的体验分享",
+      "normal": true,
+      "expected_production_case_ids": [],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "zj_gap_330304032026070002",
+        "samr_a97ff7f27133_10",
+        "pkulaw_prod_2025_苏0282行审5号"
+      ],
+      "hybrid_hit_case_ids": [],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.45,
+          "similarity": 0.539048,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.435714,
+          "similarity": 0.532512,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "zj_gap_330304032026070002",
+          "title": "翁某某虚假宣传（不正当竞争行为）案",
+          "score": 0.422308,
+          "similarity": 0.516909,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330304032026070002&unid=330304032026070002"
+        },
+        {
+          "case_id": "samr_a97ff7f27133_10",
+          "title": "江西省景德镇市市场监管局查处熊某某违法广告案",
+          "score": 0.409701,
+          "similarity": 0.487685,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.397826,
+          "similarity": 0.480355,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2016_粤0111民初9365号",
+        "pkulaw_prod_2018_浙0108民初3781号",
+        "zj_gap_330304032026070002",
+        "samr_a97ff7f27133_10",
+        "pkulaw_prod_2025_苏0282行审5号"
+      ],
+      "semantic_hit_case_ids": [],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2016_粤0111民初9365号",
+          "title": "林福平诉建德市艾氏贸易有限公司网络购物合同纠纷案",
+          "score": 0.539048,
+          "similarity": 0.539048,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3b73250e76ee6e0e1b0c12c6539d2a6a1bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_浙0108民初3781号",
+          "title": "上海上美化妆品有限公司与广州欧博化妆品有限公司、广州市爱莲化妆品有限公司不正当竞争纠纷一审民事判决书",
+          "score": 0.532512,
+          "similarity": 0.532512,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc46825ec1f2e42f72c4bdabd60a7af1373bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "zj_gap_330304032026070002",
+          "title": "翁某某虚假宣传（不正当竞争行为）案",
+          "score": 0.516909,
+          "similarity": 0.516909,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330304032026070002&unid=330304032026070002"
+        },
+        {
+          "case_id": "samr_a97ff7f27133_10",
+          "title": "江西省景德镇市市场监管局查处熊某某违法广告案",
+          "score": 0.487685,
+          "similarity": 0.487685,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏0282行审5号",
+          "title": "宜兴市市场监督管理局、孙某非诉行政行为申请执行审查行政裁定书",
+          "score": 0.480355,
+          "similarity": 0.480355,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061bb206486886d8367d4e091f52ca3a3bbdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "HF-AD-001",
+      "industry": "保健食品",
+      "name": "疾病预防与治疗功效宣称",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2014_杨民一_民_初字第4713号",
+        "pkulaw_prod_2018_鄂0103行审20号",
+        "pkulaw_prod_2017_鄂0103行审61号",
+        "pkulaw_prod_2017_鄂0103行审32号",
+        "pkulaw_prod_2018_沪7101民初597号"
+      ],
+      "lexical_actual_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审20号",
+        "samr_e13c75951714_04",
+        "samr_e13c75951714_03"
+      ],
+      "lexical_hit_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审20号"
+      ],
+      "lexical_results": [
+        {
+          "case_id": "pkulaw_prod_2018_鄂0103行审20号",
+          "title": "武汉市工商行政管理局、武汉广播广告传播有限公司非诉执行审查行政裁定书",
+          "score": 38.963952,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3024c14ce1b8f6f7c12996a12e4df9e4dbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 35.302096,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_03",
+          "title": "“垦道生活”品牌门店虚假宣传案",
+          "score": 31.693802,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        }
+      ],
+      "hybrid_actual_case_ids": [
+        "samr_e13c75951714_04",
+        "samr_e13c75951714_03",
+        "pkulaw_prod_2018_鄂0103行审20号",
+        "samr_2025_typical_ads_05",
+        "samr_2026_netfood_02_meeting_cure_sangao"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审20号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.975282,
+          "similarity": 0.654402,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_03",
+          "title": "“垦道生活”品牌门店虚假宣传案",
+          "score": 0.91983,
+          "similarity": 0.575526,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_鄂0103行审20号",
+          "title": "武汉市工商行政管理局、武汉广播广告传播有限公司非诉执行审查行政裁定书",
+          "score": 0.858427,
+          "similarity": 0.530946,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3024c14ce1b8f6f7c12996a12e4df9e4dbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.435714,
+          "similarity": 0.62563,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.422308,
+          "similarity": 0.605094,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "samr_e13c75951714_04",
+        "samr_2025_typical_ads_05",
+        "samr_2026_netfood_02_meeting_cure_sangao",
+        "samr_e13c75951714_03",
+        "samr_2026_netfood_01_ai_virtual_host"
+      ],
+      "semantic_hit_case_ids": [],
+      "semantic_results": [
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.654402,
+          "similarity": 0.654402,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.62563,
+          "similarity": 0.62563,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.605094,
+          "similarity": 0.605094,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_03",
+          "title": "“垦道生活”品牌门店虚假宣传案",
+          "score": 0.575526,
+          "similarity": 0.575526,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_01_ai_virtual_host",
+          "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+          "score": 0.574713,
+          "similarity": 0.574713,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        }
+      ]
+    },
+    {
+      "id": "HF-AD-002",
+      "industry": "保健食品",
+      "name": "功效保证与有效率承诺",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2020_浙1102行初41号",
+        "pkulaw_prod_2019_京0105行初623号",
+        "pkulaw_prod_2023_渝0101行初112号",
+        "pkulaw_prod_2019_粤71行终1769号",
+        "pkulaw_prod_2019_鄂1281行初20号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2026_netfood_01_ai_virtual_host",
+        "samr_2025_typical_ads_01",
+        "samr_2026_netfood_02_meeting_cure_sangao",
+        "samr_e13c75951714_04"
+      ],
+      "hybrid_hit_case_ids": [],
+      "hybrid_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.45,
+          "similarity": 0.655401,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_01_ai_virtual_host",
+          "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+          "score": 0.435714,
+          "similarity": 0.653552,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_01",
+          "title": "广州市番禺区市场监管局查处广州简美健康科技有限公司违法广告案",
+          "score": 0.422308,
+          "similarity": 0.623864,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.409701,
+          "similarity": 0.609992,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.397826,
+          "similarity": 0.596002,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2026_netfood_01_ai_virtual_host",
+        "samr_2025_typical_ads_01",
+        "samr_2026_netfood_02_meeting_cure_sangao",
+        "samr_e13c75951714_04"
+      ],
+      "semantic_hit_case_ids": [],
+      "semantic_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.655401,
+          "similarity": 0.655401,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_01_ai_virtual_host",
+          "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+          "score": 0.653552,
+          "similarity": 0.653552,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_01",
+          "title": "广州市番禺区市场监管局查处广州简美健康科技有限公司违法广告案",
+          "score": 0.623864,
+          "similarity": 0.623864,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.609992,
+          "similarity": 0.609992,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.596002,
+          "similarity": 0.596002,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        }
+      ]
+    },
+    {
+      "id": "HF-AD-003",
+      "industry": "保健食品",
+      "name": "科研机构与专家背书",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审47号",
+        "pkulaw_prod_2018_鄂0103行审20号",
+        "pkulaw_prod_2017_鄂0103行审32号",
+        "pkulaw_prod_2017_鄂0103行审61号",
+        "pkulaw_prod_2020_云2301行初88号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_e13c75951714_04",
+        "samr_2026_netfood_02_meeting_cure_sangao",
+        "samr_2026_netfood_01_ai_virtual_host",
+        "samr_2025_typical_ads_01"
+      ],
+      "hybrid_hit_case_ids": [],
+      "hybrid_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.45,
+          "similarity": 0.700039,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.435714,
+          "similarity": 0.643403,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.422308,
+          "similarity": 0.634449,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_01_ai_virtual_host",
+          "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+          "score": 0.409701,
+          "similarity": 0.593834,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_01",
+          "title": "广州市番禺区市场监管局查处广州简美健康科技有限公司违法广告案",
+          "score": 0.397826,
+          "similarity": 0.589255,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_e13c75951714_04",
+        "samr_2026_netfood_02_meeting_cure_sangao",
+        "samr_2026_netfood_01_ai_virtual_host",
+        "samr_2025_typical_ads_01"
+      ],
+      "semantic_hit_case_ids": [],
+      "semantic_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.700039,
+          "similarity": 0.700039,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.643403,
+          "similarity": 0.643403,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.634449,
+          "similarity": 0.634449,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_01_ai_virtual_host",
+          "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+          "score": 0.593834,
+          "similarity": 0.593834,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_01",
+          "title": "广州市番禺区市场监管局查处广州简美健康科技有限公司违法广告案",
+          "score": 0.589255,
+          "similarity": 0.589255,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        }
+      ]
+    },
+    {
+      "id": "HF-AD-004",
+      "industry": "保健食品",
+      "name": "买赠活动信息不完整",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2016_沪0112行初10号",
+        "pkulaw_prod_2019_鄂0881行审17号",
+        "pkulaw_prod_2016_沪01行终473号",
+        "pkulaw_prod_2016_豫09行终68号",
+        "pkulaw_prod_2014_管行初字第9号"
+      ],
+      "lexical_actual_case_ids": [
+        "pkulaw_prod_2016_沪01行终473号",
+        "pkulaw_prod_2014_管行初字第9号",
+        "pkulaw_prod_2019_鄂0881行审17号",
+        "pkulaw_prod_2016_沪0112行初10号",
+        "pkulaw_prod_2016_豫09行终68号"
+      ],
+      "lexical_hit_case_ids": [
+        "pkulaw_prod_2016_沪0112行初10号",
+        "pkulaw_prod_2019_鄂0881行审17号",
+        "pkulaw_prod_2016_沪01行终473号",
+        "pkulaw_prod_2016_豫09行终68号",
+        "pkulaw_prod_2014_管行初字第9号"
+      ],
+      "lexical_results": [
+        {
+          "case_id": "pkulaw_prod_2016_沪01行终473号",
+          "title": "戴亚俊诉上海市闵行区市场监督管理局工商一案",
+          "score": 88.772152,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4b04b9d58aacc570af91f3e402f05efa9bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2014_管行初字第9号",
+          "title": "韩政华诉郑州市工商行政管理局管城分局撤销立案",
+          "score": 88.414609,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f38b3300c0b0ce91df7a32cbfac9813f47bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2019_鄂0881行审17号",
+          "title": "钟祥市市场监督管理局与丰县凯立克电动车有限公司非诉执行审查行政裁定书",
+          "score": 88.06528,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc491bc9112ef31bdc4096952e2c92a446ebdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_沪0112行初10号",
+          "title": "戴亚俊与上海市闵行区市场监督管理局工商行政判决书案",
+          "score": 87.082743,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3cdf4092f620a738df5f07fa4b578d422bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_豫09行终68号",
+          "title": "白象食品股份有限公司与范县工商行政管理和质量技术监督局、范县人民政府工商行政管理行政判决书案",
+          "score": 85.149723,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f39ab177ce140fa836b6f13a7fc6c48a13bdfb.html?way=mcp"
+        }
+      ],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2014_管行初字第9号",
+        "pkulaw_prod_2019_鄂0881行审17号",
+        "pkulaw_prod_2016_沪01行终473号",
+        "pkulaw_prod_2016_沪0112行初10号",
+        "pkulaw_prod_2016_豫09行终68号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2016_沪0112行初10号",
+        "pkulaw_prod_2019_鄂0881行审17号",
+        "pkulaw_prod_2016_沪01行终473号",
+        "pkulaw_prod_2016_豫09行终68号",
+        "pkulaw_prod_2014_管行初字第9号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2014_管行初字第9号",
+          "title": "韩政华诉郑州市工商行政管理局管城分局撤销立案",
+          "score": 0.983871,
+          "similarity": 0.646634,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f38b3300c0b0ce91df7a32cbfac9813f47bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2019_鄂0881行审17号",
+          "title": "钟祥市市场监督管理局与丰县凯立克电动车有限公司非诉执行审查行政裁定书",
+          "score": 0.968254,
+          "similarity": 0.626692,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc491bc9112ef31bdc4096952e2c92a446ebdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_沪01行终473号",
+          "title": "戴亚俊诉上海市闵行区市场监督管理局工商一案",
+          "score": 0.947826,
+          "similarity": 0.594819,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4b04b9d58aacc570af91f3e402f05efa9bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_沪0112行初10号",
+          "title": "戴亚俊与上海市闵行区市场监督管理局工商行政判决书案",
+          "score": 0.93392,
+          "similarity": 0.597028,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3cdf4092f620a738df5f07fa4b578d422bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_豫09行终68号",
+          "title": "白象食品股份有限公司与范县工商行政管理和质量技术监督局、范县人民政府工商行政管理行政判决书案",
+          "score": 0.91569,
+          "similarity": 0.599936,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f39ab177ce140fa836b6f13a7fc6c48a13bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2014_管行初字第9号",
+        "pkulaw_prod_2019_鄂0881行审17号",
+        "pkulaw_prod_2016_豫09行终68号",
+        "pkulaw_prod_2016_沪0112行初10号",
+        "pkulaw_prod_2016_沪01行终473号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2016_沪0112行初10号",
+        "pkulaw_prod_2019_鄂0881行审17号",
+        "pkulaw_prod_2016_沪01行终473号",
+        "pkulaw_prod_2016_豫09行终68号",
+        "pkulaw_prod_2014_管行初字第9号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2014_管行初字第9号",
+          "title": "韩政华诉郑州市工商行政管理局管城分局撤销立案",
+          "score": 0.646634,
+          "similarity": 0.646634,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f38b3300c0b0ce91df7a32cbfac9813f47bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2019_鄂0881行审17号",
+          "title": "钟祥市市场监督管理局与丰县凯立克电动车有限公司非诉执行审查行政裁定书",
+          "score": 0.626692,
+          "similarity": 0.626692,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc491bc9112ef31bdc4096952e2c92a446ebdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_豫09行终68号",
+          "title": "白象食品股份有限公司与范县工商行政管理和质量技术监督局、范县人民政府工商行政管理行政判决书案",
+          "score": 0.599936,
+          "similarity": 0.599936,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f39ab177ce140fa836b6f13a7fc6c48a13bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_沪0112行初10号",
+          "title": "戴亚俊与上海市闵行区市场监督管理局工商行政判决书案",
+          "score": 0.597028,
+          "similarity": 0.597028,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f3cdf4092f620a738df5f07fa4b578d422bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2016_沪01行终473号",
+          "title": "戴亚俊诉上海市闵行区市场监督管理局工商一案",
+          "score": 0.594819,
+          "similarity": 0.594819,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4b04b9d58aacc570af91f3e402f05efa9bdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "HF-AD-005",
+      "industry": "保健食品",
+      "name": "保健食品与药品混淆",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2014_杨民一_民_初字第4713号",
+        "pkulaw_prod_2018_鄂0103行审20号",
+        "pkulaw_prod_2017_鄂0103行审61号",
+        "pkulaw_prod_2017_鄂0103行审32号",
+        "pkulaw_prod_2018_沪7101民初597号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2025_typical_ads_06",
+        "samr_2025_typical_ads_01",
+        "samr_e13c75951714_04",
+        "samr_2026_netfood_02_meeting_cure_sangao"
+      ],
+      "hybrid_hit_case_ids": [],
+      "hybrid_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.45,
+          "similarity": 0.634944,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_06",
+          "title": "浙江省杭州市市场监管局查处杭州青碧品牌管理有限公司违法广告案",
+          "score": 0.435714,
+          "similarity": 0.608163,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_01",
+          "title": "广州市番禺区市场监管局查处广州简美健康科技有限公司违法广告案",
+          "score": 0.422308,
+          "similarity": 0.596661,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.409701,
+          "similarity": 0.594436,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.397826,
+          "similarity": 0.590115,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2025_typical_ads_06",
+        "samr_2025_typical_ads_01",
+        "samr_e13c75951714_04",
+        "samr_2026_netfood_02_meeting_cure_sangao"
+      ],
+      "semantic_hit_case_ids": [],
+      "semantic_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.634944,
+          "similarity": 0.634944,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_06",
+          "title": "浙江省杭州市市场监管局查处杭州青碧品牌管理有限公司违法广告案",
+          "score": 0.608163,
+          "similarity": 0.608163,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_01",
+          "title": "广州市番禺区市场监管局查处广州简美健康科技有限公司违法广告案",
+          "score": 0.596661,
+          "similarity": 0.596661,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.594436,
+          "similarity": 0.594436,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.590115,
+          "similarity": 0.590115,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        }
+      ]
+    },
+    {
+      "id": "HF-AD-006",
+      "industry": "保健食品",
+      "name": "小红书疾病暗示与食品安全保证",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2020_浙1102行初41号",
+        "pkulaw_prod_2020_浙1102行初42号",
+        "pkulaw_prod_2023_冀0929刑初154号",
+        "pkulaw_prod_2023_川3431刑初4号",
+        "pkulaw_prod_2020_粤0307刑初2702号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2026_netfood_01_ai_virtual_host",
+        "samr_e13c75951714_04",
+        "samr_2026_netfood_02_meeting_cure_sangao",
+        "samr_e13c75951714_01"
+      ],
+      "hybrid_hit_case_ids": [],
+      "hybrid_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.45,
+          "similarity": 0.701599,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_01_ai_virtual_host",
+          "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+          "score": 0.435714,
+          "similarity": 0.648486,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.422308,
+          "similarity": 0.605118,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.409701,
+          "similarity": 0.596988,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_01",
+          "title": "“国科优选”经销商利用私域直播虚假宣传案（一）",
+          "score": 0.397826,
+          "similarity": 0.592098,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2026_netfood_01_ai_virtual_host",
+        "samr_e13c75951714_04",
+        "samr_2026_netfood_02_meeting_cure_sangao",
+        "samr_e13c75951714_01"
+      ],
+      "semantic_hit_case_ids": [],
+      "semantic_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.701599,
+          "similarity": 0.701599,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_01_ai_virtual_host",
+          "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+          "score": 0.648486,
+          "similarity": 0.648486,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.605118,
+          "similarity": 0.605118,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.596988,
+          "similarity": 0.596988,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_01",
+          "title": "“国科优选”经销商利用私域直播虚假宣传案（一）",
+          "score": 0.592098,
+          "similarity": 0.592098,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        }
+      ]
+    },
+    {
+      "id": "HF-AD-007",
+      "industry": "保健食品",
+      "name": "抖音滋补保健夸大效果",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2020_浙1102行初41号",
+        "pkulaw_prod_2020_浙1102行初42号",
+        "pkulaw_prod_2023_冀0929刑初154号",
+        "pkulaw_prod_2023_川3431刑初4号",
+        "pkulaw_prod_2020_粤0307刑初2702号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2026_netfood_02_meeting_cure_sangao",
+        "samr_2026_netfood_03_wechat_group",
+        "samr_2026_netfood_01_ai_virtual_host",
+        "samr_e13c75951714_04"
+      ],
+      "hybrid_hit_case_ids": [],
+      "hybrid_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.45,
+          "similarity": 0.638897,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.435714,
+          "similarity": 0.617077,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_03_wechat_group",
+          "title": "江阴市市场监管局查处江阴市澄江街道嗨优日用品商行帮助其他经营者虚假宣传案",
+          "score": 0.422308,
+          "similarity": 0.616709,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_01_ai_virtual_host",
+          "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+          "score": 0.409701,
+          "similarity": 0.609584,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.397826,
+          "similarity": 0.573827,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2026_netfood_02_meeting_cure_sangao",
+        "samr_2026_netfood_03_wechat_group",
+        "samr_2026_netfood_01_ai_virtual_host",
+        "samr_e13c75951714_04"
+      ],
+      "semantic_hit_case_ids": [],
+      "semantic_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.638897,
+          "similarity": 0.638897,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.617077,
+          "similarity": 0.617077,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_03_wechat_group",
+          "title": "江阴市市场监管局查处江阴市澄江街道嗨优日用品商行帮助其他经营者虚假宣传案",
+          "score": 0.616709,
+          "similarity": 0.616709,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_01_ai_virtual_host",
+          "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+          "score": 0.609584,
+          "similarity": 0.609584,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.573827,
+          "similarity": 0.573827,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        }
+      ]
+    },
+    {
+      "id": "HF-AD-008",
+      "industry": "保健食品",
+      "name": "淘宝食品信息与资质不一致",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2018_鄂0103行审21号",
+        "pkulaw_prod_2018_鄂0103行审11号",
+        "pkulaw_prod_2018_鄂0103行审12号",
+        "pkulaw_prod_2017_鄂0103行审32号",
+        "pkulaw_prod_2018_鄂0103行审47号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2026_netfood_02_meeting_cure_sangao",
+        "samr_2026_netfood_01_ai_virtual_host",
+        "samr_e13c75951714_04",
+        "samr_2025_typical_ads_01"
+      ],
+      "hybrid_hit_case_ids": [],
+      "hybrid_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.45,
+          "similarity": 0.667436,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.435714,
+          "similarity": 0.597618,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_01_ai_virtual_host",
+          "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+          "score": 0.422308,
+          "similarity": 0.592848,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.409701,
+          "similarity": 0.585872,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_01",
+          "title": "广州市番禺区市场监管局查处广州简美健康科技有限公司违法广告案",
+          "score": 0.397826,
+          "similarity": 0.574569,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2026_netfood_02_meeting_cure_sangao",
+        "samr_2026_netfood_01_ai_virtual_host",
+        "samr_e13c75951714_04",
+        "samr_2025_typical_ads_01"
+      ],
+      "semantic_hit_case_ids": [],
+      "semantic_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.667436,
+          "similarity": 0.667436,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+          "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+          "score": 0.597618,
+          "similarity": 0.597618,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_01_ai_virtual_host",
+          "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+          "score": 0.592848,
+          "similarity": 0.592848,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.585872,
+          "similarity": 0.585872,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_01",
+          "title": "广州市番禺区市场监管局查处广州简美健康科技有限公司违法广告案",
+          "score": 0.574569,
+          "similarity": 0.574569,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        }
+      ]
+    },
+    {
+      "id": "HF-AD-009",
+      "industry": "保健食品",
+      "name": "正常样例：合规功效与警示语",
+      "normal": true,
+      "expected_production_case_ids": [],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2026_netfood_07_poisonous_fake_approval",
+        "pkulaw_prod_2018_沪7101民初597号",
+        "samr_a97ff7f27133_07",
+        "samr_e13c75951714_04"
+      ],
+      "hybrid_hit_case_ids": [],
+      "hybrid_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.45,
+          "similarity": 0.680666,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_07_poisonous_fake_approval",
+          "title": "广西富川瑶族自治县市场监管局移送富川倪三炙保健用品商店销售有毒有害食品及假冒保健食品批准文号案",
+          "score": 0.435714,
+          "similarity": 0.659946,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_沪7101民初597号",
+          "title": "黄锦与冠县百惠灵芝专业合作社、杭州阿里巴巴广告有限公司网络购物合同纠纷一审民事判决书",
+          "score": 0.422308,
+          "similarity": 0.656287,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4d52a13badc26b1aef03c4cb88c70eebbbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "samr_a97ff7f27133_07",
+          "title": "海南省海口市市场监管局查处荟生（海南）健康产业有限公司违法广告案",
+          "score": 0.409701,
+          "similarity": 0.654246,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.397826,
+          "similarity": 0.647805,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2026_netfood_07_poisonous_fake_approval",
+        "pkulaw_prod_2018_沪7101民初597号",
+        "samr_a97ff7f27133_07",
+        "samr_e13c75951714_04"
+      ],
+      "semantic_hit_case_ids": [],
+      "semantic_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.680666,
+          "similarity": 0.680666,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_07_poisonous_fake_approval",
+          "title": "广西富川瑶族自治县市场监管局移送富川倪三炙保健用品商店销售有毒有害食品及假冒保健食品批准文号案",
+          "score": 0.659946,
+          "similarity": 0.659946,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "pkulaw_prod_2018_沪7101民初597号",
+          "title": "黄锦与冠县百惠灵芝专业合作社、杭州阿里巴巴广告有限公司网络购物合同纠纷一审民事判决书",
+          "score": 0.656287,
+          "similarity": 0.656287,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc4d52a13badc26b1aef03c4cb88c70eebbbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "samr_a97ff7f27133_07",
+          "title": "海南省海口市市场监管局查处荟生（海南）健康产业有限公司违法广告案",
+          "score": 0.654246,
+          "similarity": 0.654246,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.647805,
+          "similarity": 0.647805,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        }
+      ]
+    },
+    {
+      "id": "HF-AD-010",
+      "industry": "保健食品",
+      "name": "正常样例：小红书营养补充介绍",
+      "normal": true,
+      "expected_production_case_ids": [],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2025_typical_ads_01",
+        "samr_e13c75951714_04",
+        "samr_2026_netfood_01_ai_virtual_host",
+        "samr_a97ff7f27133_07"
+      ],
+      "hybrid_hit_case_ids": [],
+      "hybrid_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.45,
+          "similarity": 0.664075,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_01",
+          "title": "广州市番禺区市场监管局查处广州简美健康科技有限公司违法广告案",
+          "score": 0.435714,
+          "similarity": 0.612964,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.422308,
+          "similarity": 0.611637,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_01_ai_virtual_host",
+          "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+          "score": 0.409701,
+          "similarity": 0.605936,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_a97ff7f27133_07",
+          "title": "海南省海口市市场监管局查处荟生（海南）健康产业有限公司违法广告案",
+          "score": 0.397826,
+          "similarity": 0.601258,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "samr_2025_typical_ads_05",
+        "samr_2025_typical_ads_01",
+        "samr_e13c75951714_04",
+        "samr_2026_netfood_01_ai_virtual_host",
+        "samr_a97ff7f27133_07"
+      ],
+      "semantic_hit_case_ids": [],
+      "semantic_results": [
+        {
+          "case_id": "samr_2025_typical_ads_05",
+          "title": "重庆市两江新区市场监管局查处重庆林晖泰商务信息咨询有限公司违法广告案",
+          "score": 0.664075,
+          "similarity": 0.664075,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_2025_typical_ads_01",
+          "title": "广州市番禺区市场监管局查处广州简美健康科技有限公司违法广告案",
+          "score": 0.612964,
+          "similarity": 0.612964,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html"
+        },
+        {
+          "case_id": "samr_e13c75951714_04",
+          "title": "上海老糖友健康科技发展有限公司虚假宣传案",
+          "score": 0.611637,
+          "similarity": 0.611637,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://scjgj.sh.gov.cn/1073/20251014/2c984a7299dbc4280199e13c75951714.html"
+        },
+        {
+          "case_id": "samr_2026_netfood_01_ai_virtual_host",
+          "title": "北京市昌平区市场监管局查处北京双泰元贸易有限公司AI虚拟人直播带货虚假宣传普通食品保健功能案",
+          "score": 0.605936,
+          "similarity": 0.605936,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html"
+        },
+        {
+          "case_id": "samr_a97ff7f27133_07",
+          "title": "海南省海口市市场监管局查处荟生（海南）健康产业有限公司违法广告案",
+          "score": 0.601258,
+          "similarity": 0.601258,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html"
+        }
+      ]
+    },
+    {
+      "id": "EVAL-GAME-001",
+      "industry": "游戏",
+      "name": "虚假宣传（夸大游戏收益）",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2025_粤0192民初9279号",
+        "pkulaw_prod_2026_京0491民初4964号",
+        "pkulaw_prod_2026_琼96民终807号",
+        "pkulaw_prod_2025_京04民终1390号",
+        "pkulaw_prod_2023_琼96民终6628号"
+      ],
+      "lexical_actual_case_ids": [
+        "pkulaw_prod_2025_粤0192民初9279号"
+      ],
+      "lexical_hit_case_ids": [
+        "pkulaw_prod_2025_粤0192民初9279号"
+      ],
+      "lexical_results": [
+        {
+          "case_id": "pkulaw_prod_2025_粤0192民初9279号",
+          "title": "许福渊等与上海以尚网络技术有限公司网络服务合同纠纷一审民事判决书",
+          "score": 83.44194,
+          "similarity": null,
+          "retrieval_method": "fielded_bm25_v2",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b0f29108a37ed6053b79166e81a09114bdfb.html?way=mcp"
+        }
+      ],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2025_粤0192民初9279号",
+        "pkulaw_prod_2026_京0491民初4964号",
+        "pkulaw_prod_2025_粤0305民初5978号",
+        "pkulaw_prod_2023_琼96民终6628号",
+        "pkulaw_prod_2025_京04民终1390号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2025_粤0192民初9279号",
+        "pkulaw_prod_2026_京0491民初4964号",
+        "pkulaw_prod_2025_京04民终1390号",
+        "pkulaw_prod_2023_琼96民终6628号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2025_粤0192民初9279号",
+          "title": "许福渊等与上海以尚网络技术有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.897468,
+          "similarity": 0.567813,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b0f29108a37ed6053b79166e81a09114bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_京0491民初4964号",
+          "title": "郑某与北京某公司网络服务合同纠纷",
+          "score": 0.45,
+          "similarity": 0.673469,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816be0c94d881bc40669772443d0a31fe49bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_粤0305民初5978号",
+          "title": "深圳某有限公司、李某网络服务合同纠纷一审判决书",
+          "score": 0.435714,
+          "similarity": 0.660019,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b7d76cdc6faf181541ff3e7a08b36280bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_琼96民终6628号",
+          "title": "朱某伟、海南某公司合同纠纷民事二审民事判决书",
+          "score": 0.422308,
+          "similarity": 0.654407,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20672d7d192c61ee75af944dba1f347f539bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_京04民终1390号",
+          "title": "上海某公司;袁茂斌;北京某公司网络服务合同纠纷二审民事判决书",
+          "score": 0.409701,
+          "similarity": 0.631952,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b82b57b17c164aca56085ee1cf99da66bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2026_京0491民初4964号",
+        "pkulaw_prod_2025_粤0305民初5978号",
+        "pkulaw_prod_2023_琼96民终6628号",
+        "pkulaw_prod_2025_京04民终1390号",
+        "pkulaw_prod_2026_琼96民终807号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2026_京0491民初4964号",
+        "pkulaw_prod_2026_琼96民终807号",
+        "pkulaw_prod_2025_京04民终1390号",
+        "pkulaw_prod_2023_琼96民终6628号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2026_京0491民初4964号",
+          "title": "郑某与北京某公司网络服务合同纠纷",
+          "score": 0.673469,
+          "similarity": 0.673469,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816be0c94d881bc40669772443d0a31fe49bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_粤0305民初5978号",
+          "title": "深圳某有限公司、李某网络服务合同纠纷一审判决书",
+          "score": 0.660019,
+          "similarity": 0.660019,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b7d76cdc6faf181541ff3e7a08b36280bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_琼96民终6628号",
+          "title": "朱某伟、海南某公司合同纠纷民事二审民事判决书",
+          "score": 0.654407,
+          "similarity": 0.654407,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20672d7d192c61ee75af944dba1f347f539bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_京04民终1390号",
+          "title": "上海某公司;袁茂斌;北京某公司网络服务合同纠纷二审民事判决书",
+          "score": 0.631952,
+          "similarity": 0.631952,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b82b57b17c164aca56085ee1cf99da66bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_琼96民终807号",
+          "title": "戴卓科;海南盛昌网络科技有限公司网络服务合同纠纷二审民事判决书",
+          "score": 0.601721,
+          "similarity": 0.601721,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816428afbd185c977ce65010e4447a20676bdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "EVAL-GAME-002",
+      "industry": "游戏",
+      "name": "绝对化用语",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2024_川14行终29号",
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2023_赣1104民初2952号",
+        "pkulaw_prod_2024_浙0192民初1779号",
+        "pkulaw_prod_2025_琼9023民初5336号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2022_沪0115民初13290号之一",
+        "pkulaw_prod_2026_沪0114行审1号",
+        "pkulaw_prod_2025_苏1003行审8号",
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2024_沪0114执2986号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2022_沪0115民初13290号之一",
+          "title": "腾讯科技（成都）有限公司等诉佛山市南海区北笙网络科技有限责任公司等其他不正当竞争纠纷案",
+          "score": 0.45,
+          "similarity": 0.546098,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206c2d25d5d743715a22c29829e4e8e5fc6bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_沪0114行审1号",
+          "title": "上海市嘉定区某局与王某非诉行政行为执行审查一案",
+          "score": 0.435714,
+          "similarity": 0.536906,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816df2c619a81b2d9aa962a83d1ffa47232bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏1003行审8号",
+          "title": "扬州市文化广电和旅游局、扬州某某网络有限公司非诉行政行为申请执行审查行政裁定书",
+          "score": 0.422308,
+          "similarity": 0.514688,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81626e15a994bc3ee65effccb5f3467b5f7bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_粤0192民初1448号",
+          "title": "王越、广州鑫晨网络科技有限公司等网络服务合同纠纷民事一审民事判决书",
+          "score": 0.409701,
+          "similarity": 0.510569,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206fd83f1e429d8c757a7bacc3e254bc132bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2024_沪0114执2986号",
+          "title": "某某局与某某公司申请执行罚款决定执行裁定书",
+          "score": 0.397826,
+          "similarity": 0.507782,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061f98a71a1cfb1048c457adf3a2db858cbdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2022_沪0115民初13290号之一",
+        "pkulaw_prod_2026_沪0114行审1号",
+        "pkulaw_prod_2025_苏1003行审8号",
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2024_沪0114执2986号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2022_沪0115民初13290号之一",
+          "title": "腾讯科技（成都）有限公司等诉佛山市南海区北笙网络科技有限责任公司等其他不正当竞争纠纷案",
+          "score": 0.546098,
+          "similarity": 0.546098,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206c2d25d5d743715a22c29829e4e8e5fc6bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_沪0114行审1号",
+          "title": "上海市嘉定区某局与王某非诉行政行为执行审查一案",
+          "score": 0.536906,
+          "similarity": 0.536906,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816df2c619a81b2d9aa962a83d1ffa47232bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏1003行审8号",
+          "title": "扬州市文化广电和旅游局、扬州某某网络有限公司非诉行政行为申请执行审查行政裁定书",
+          "score": 0.514688,
+          "similarity": 0.514688,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81626e15a994bc3ee65effccb5f3467b5f7bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_粤0192民初1448号",
+          "title": "王越、广州鑫晨网络科技有限公司等网络服务合同纠纷民事一审民事判决书",
+          "score": 0.510569,
+          "similarity": 0.510569,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206fd83f1e429d8c757a7bacc3e254bc132bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2024_沪0114执2986号",
+          "title": "某某局与某某公司申请执行罚款决定执行裁定书",
+          "score": 0.507782,
+          "similarity": 0.507782,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061f98a71a1cfb1048c457adf3a2db858cbdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "EVAL-GAME-003",
+      "industry": "游戏",
+      "name": "概率未公示；误导性宣传",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2024_川14行终29号",
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2023_赣1104民初2952号",
+        "pkulaw_prod_2024_浙0192民初1779号",
+        "pkulaw_prod_2025_琼9023民初5336号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2026_琼96民终807号",
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2025_粤0192民初9279号",
+        "pkulaw_prod_2026_京0491民初4964号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2020_粤0192民初22669号",
+          "title": "赵剑磊与三七互娱（上海）科技有限公司、安徽三七网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.45,
+          "similarity": 0.53736,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_琼96民终807号",
+          "title": "戴卓科;海南盛昌网络科技有限公司网络服务合同纠纷二审民事判决书",
+          "score": 0.435714,
+          "similarity": 0.537243,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816428afbd185c977ce65010e4447a20676bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_粤0192民初1448号",
+          "title": "王越、广州鑫晨网络科技有限公司等网络服务合同纠纷民事一审民事判决书",
+          "score": 0.422308,
+          "similarity": 0.534666,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206fd83f1e429d8c757a7bacc3e254bc132bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_粤0192民初9279号",
+          "title": "许福渊等与上海以尚网络技术有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.409701,
+          "similarity": 0.529872,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b0f29108a37ed6053b79166e81a09114bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_京0491民初4964号",
+          "title": "郑某与北京某公司网络服务合同纠纷",
+          "score": 0.397826,
+          "similarity": 0.527259,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816be0c94d881bc40669772443d0a31fe49bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2026_琼96民终807号",
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2025_粤0192民初9279号",
+        "pkulaw_prod_2026_京0491民初4964号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2020_粤0192民初22669号",
+          "title": "赵剑磊与三七互娱（上海）科技有限公司、安徽三七网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.53736,
+          "similarity": 0.53736,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_琼96民终807号",
+          "title": "戴卓科;海南盛昌网络科技有限公司网络服务合同纠纷二审民事判决书",
+          "score": 0.537243,
+          "similarity": 0.537243,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816428afbd185c977ce65010e4447a20676bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_粤0192民初1448号",
+          "title": "王越、广州鑫晨网络科技有限公司等网络服务合同纠纷民事一审民事判决书",
+          "score": 0.534666,
+          "similarity": 0.534666,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206fd83f1e429d8c757a7bacc3e254bc132bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_粤0192民初9279号",
+          "title": "许福渊等与上海以尚网络技术有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.529872,
+          "similarity": 0.529872,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b0f29108a37ed6053b79166e81a09114bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_京0491民初4964号",
+          "title": "郑某与北京某公司网络服务合同纠纷",
+          "score": 0.527259,
+          "similarity": 0.527259,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816be0c94d881bc40669772443d0a31fe49bdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "EVAL-GAME-004",
+      "industry": "游戏",
+      "name": "未成年人保护违规；诱导未成年人消费",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2022_沪0115民初13290号之一",
+        "pkulaw_prod_2024_鄂0802行审14号",
+        "pkulaw_prod_2024_鄂0802行审13号",
+        "pkulaw_prod_2025_苏1003行审8号",
+        "pkulaw_prod_2025_川0104民初20301号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2025_川0104民初20301号",
+        "pkulaw_prod_2024_鄂0802行审14号",
+        "pkulaw_prod_2025_苏1003行审8号",
+        "pkulaw_prod_2022_沪0115民初13290号之一",
+        "pkulaw_prod_2026_沪0114行审1号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2022_沪0115民初13290号之一",
+        "pkulaw_prod_2024_鄂0802行审14号",
+        "pkulaw_prod_2025_苏1003行审8号",
+        "pkulaw_prod_2025_川0104民初20301号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2025_川0104民初20301号",
+          "title": "深圳市某某科技股份有限公司与黄某某不正当竞争纠纷",
+          "score": 0.45,
+          "similarity": 0.565349,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81624f42cb7c5d018bf19330414933d0f86bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2024_鄂0802行审14号",
+          "title": "荆门市文化和旅游局与海南晴天玩网络科技有限公司荆门某某公司非诉行政行为申请执行审查裁定书",
+          "score": 0.435714,
+          "similarity": 0.560744,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f8160e7fca32cb7798a6f565b705fb51b880bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏1003行审8号",
+          "title": "扬州市文化广电和旅游局、扬州某某网络有限公司非诉行政行为申请执行审查行政裁定书",
+          "score": 0.422308,
+          "similarity": 0.559996,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81626e15a994bc3ee65effccb5f3467b5f7bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_沪0115民初13290号之一",
+          "title": "腾讯科技（成都）有限公司等诉佛山市南海区北笙网络科技有限责任公司等其他不正当竞争纠纷案",
+          "score": 0.409701,
+          "similarity": 0.553504,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206c2d25d5d743715a22c29829e4e8e5fc6bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_沪0114行审1号",
+          "title": "上海市嘉定区某局与王某非诉行政行为执行审查一案",
+          "score": 0.397826,
+          "similarity": 0.5428,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816df2c619a81b2d9aa962a83d1ffa47232bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2025_川0104民初20301号",
+        "pkulaw_prod_2024_鄂0802行审14号",
+        "pkulaw_prod_2025_苏1003行审8号",
+        "pkulaw_prod_2022_沪0115民初13290号之一",
+        "pkulaw_prod_2026_沪0114行审1号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2022_沪0115民初13290号之一",
+        "pkulaw_prod_2024_鄂0802行审14号",
+        "pkulaw_prod_2025_苏1003行审8号",
+        "pkulaw_prod_2025_川0104民初20301号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2025_川0104民初20301号",
+          "title": "深圳市某某科技股份有限公司与黄某某不正当竞争纠纷",
+          "score": 0.565349,
+          "similarity": 0.565349,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81624f42cb7c5d018bf19330414933d0f86bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2024_鄂0802行审14号",
+          "title": "荆门市文化和旅游局与海南晴天玩网络科技有限公司荆门某某公司非诉行政行为申请执行审查裁定书",
+          "score": 0.560744,
+          "similarity": 0.560744,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f8160e7fca32cb7798a6f565b705fb51b880bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏1003行审8号",
+          "title": "扬州市文化广电和旅游局、扬州某某网络有限公司非诉行政行为申请执行审查行政裁定书",
+          "score": 0.559996,
+          "similarity": 0.559996,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81626e15a994bc3ee65effccb5f3467b5f7bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_沪0115民初13290号之一",
+          "title": "腾讯科技（成都）有限公司等诉佛山市南海区北笙网络科技有限责任公司等其他不正当竞争纠纷案",
+          "score": 0.553504,
+          "similarity": 0.553504,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206c2d25d5d743715a22c29829e4e8e5fc6bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_沪0114行审1号",
+          "title": "上海市嘉定区某局与王某非诉行政行为执行审查一案",
+          "score": 0.5428,
+          "similarity": 0.5428,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816df2c619a81b2d9aa962a83d1ffa47232bdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "EVAL-GAME-005",
+      "industry": "游戏",
+      "name": "广告代言人规范违规；绝对化用语",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2025_粤0192民初9279号",
+        "pkulaw_prod_2018_鄂0103行审11号",
+        "pkulaw_prod_2024_川14行终29号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2022_沪0115民初13290号之一",
+        "pkulaw_prod_2025_粤0305民初5978号",
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2023_赣1104民初2952号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2020_粤0192民初22669号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2020_粤0192民初22669号",
+          "title": "赵剑磊与三七互娱（上海）科技有限公司、安徽三七网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.45,
+          "similarity": 0.650311,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_沪0115民初13290号之一",
+          "title": "腾讯科技（成都）有限公司等诉佛山市南海区北笙网络科技有限责任公司等其他不正当竞争纠纷案",
+          "score": 0.435714,
+          "similarity": 0.612842,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206c2d25d5d743715a22c29829e4e8e5fc6bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_粤0305民初5978号",
+          "title": "深圳某有限公司、李某网络服务合同纠纷一审判决书",
+          "score": 0.422308,
+          "similarity": 0.605569,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b7d76cdc6faf181541ff3e7a08b36280bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_粤0192民初1448号",
+          "title": "王越、广州鑫晨网络科技有限公司等网络服务合同纠纷民事一审民事判决书",
+          "score": 0.409701,
+          "similarity": 0.589741,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206fd83f1e429d8c757a7bacc3e254bc132bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_赣1104民初2952号",
+          "title": "朱某伟与江西某某信息技术有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.397826,
+          "similarity": 0.583778,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20600b8aab4f11e3a02309fafe0df7cc609bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2022_沪0115民初13290号之一",
+        "pkulaw_prod_2025_粤0305民初5978号",
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2023_赣1104民初2952号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2020_粤0192民初22669号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2020_粤0192民初22669号",
+          "title": "赵剑磊与三七互娱（上海）科技有限公司、安徽三七网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.650311,
+          "similarity": 0.650311,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_沪0115民初13290号之一",
+          "title": "腾讯科技（成都）有限公司等诉佛山市南海区北笙网络科技有限责任公司等其他不正当竞争纠纷案",
+          "score": 0.612842,
+          "similarity": 0.612842,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206c2d25d5d743715a22c29829e4e8e5fc6bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_粤0305民初5978号",
+          "title": "深圳某有限公司、李某网络服务合同纠纷一审判决书",
+          "score": 0.605569,
+          "similarity": 0.605569,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b7d76cdc6faf181541ff3e7a08b36280bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_粤0192民初1448号",
+          "title": "王越、广州鑫晨网络科技有限公司等网络服务合同纠纷民事一审民事判决书",
+          "score": 0.589741,
+          "similarity": 0.589741,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206fd83f1e429d8c757a7bacc3e254bc132bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_赣1104民初2952号",
+          "title": "朱某伟与江西某某信息技术有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.583778,
+          "similarity": 0.583778,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f20600b8aab4f11e3a02309fafe0df7cc609bdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "EVAL-GAME-006",
+      "industry": "游戏",
+      "name": "有奖销售违规；虚假宣传（\"100%中奖\"误导）",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2025_粤0192民初9279号",
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2022_粤0192民初12251号",
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2019_浙0482民初402号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2022_粤0192民初12251号",
+        "pkulaw_prod_2026_京0491民初4964号",
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2026_琼96民终807号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2022_粤0192民初12251号",
+        "pkulaw_prod_2020_粤0192民初22669号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2022_粤0192民初12251号",
+          "title": "李春霞、广州三七网络科技有限公司网络服务合同纠纷民事一审民事判决书",
+          "score": 0.45,
+          "similarity": 0.618556,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/95b2ca8d4055fce1bbea74fe4a108e2e20481b9010801e28bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_京0491民初4964号",
+          "title": "郑某与北京某公司网络服务合同纠纷",
+          "score": 0.435714,
+          "similarity": 0.608173,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816be0c94d881bc40669772443d0a31fe49bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2020_粤0192民初22669号",
+          "title": "赵剑磊与三七互娱（上海）科技有限公司、安徽三七网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.422308,
+          "similarity": 0.605619,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_粤0192民初1448号",
+          "title": "王越、广州鑫晨网络科技有限公司等网络服务合同纠纷民事一审民事判决书",
+          "score": 0.409701,
+          "similarity": 0.588364,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206fd83f1e429d8c757a7bacc3e254bc132bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_琼96民终807号",
+          "title": "戴卓科;海南盛昌网络科技有限公司网络服务合同纠纷二审民事判决书",
+          "score": 0.397826,
+          "similarity": 0.586201,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816428afbd185c977ce65010e4447a20676bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2022_粤0192民初12251号",
+        "pkulaw_prod_2026_京0491民初4964号",
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2026_琼96民终807号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2022_粤0192民初12251号",
+        "pkulaw_prod_2020_粤0192民初22669号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2022_粤0192民初12251号",
+          "title": "李春霞、广州三七网络科技有限公司网络服务合同纠纷民事一审民事判决书",
+          "score": 0.618556,
+          "similarity": 0.618556,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/95b2ca8d4055fce1bbea74fe4a108e2e20481b9010801e28bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_京0491民初4964号",
+          "title": "郑某与北京某公司网络服务合同纠纷",
+          "score": 0.608173,
+          "similarity": 0.608173,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816be0c94d881bc40669772443d0a31fe49bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2020_粤0192民初22669号",
+          "title": "赵剑磊与三七互娱（上海）科技有限公司、安徽三七网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.605619,
+          "similarity": 0.605619,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_粤0192民初1448号",
+          "title": "王越、广州鑫晨网络科技有限公司等网络服务合同纠纷民事一审民事判决书",
+          "score": 0.588364,
+          "similarity": 0.588364,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206fd83f1e429d8c757a7bacc3e254bc132bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_琼96民终807号",
+          "title": "戴卓科;海南盛昌网络科技有限公司网络服务合同纠纷二审民事判决书",
+          "score": 0.586201,
+          "similarity": 0.586201,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816428afbd185c977ce65010e4447a20676bdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "EVAL-GAME-007",
+      "industry": "游戏",
+      "name": "版号缺失宣传；绕过未成年人防沉迷；违反实名制要求",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2025_苏1003行审8号",
+        "pkulaw_prod_2026_沪0114行审1号",
+        "pkulaw_prod_2025_沪02行终518号",
+        "pkulaw_prod_2024_沪0114执2986号",
+        "pkulaw_prod_2022_沪0115民初13290号之一"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2026_沪0114行审1号",
+        "pkulaw_prod_2025_苏1003行审8号",
+        "pkulaw_prod_2024_沪0114执2986号",
+        "pkulaw_prod_2025_沪02行终518号",
+        "pkulaw_prod_2022_沪0115民初13290号之一"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2025_苏1003行审8号",
+        "pkulaw_prod_2026_沪0114行审1号",
+        "pkulaw_prod_2025_沪02行终518号",
+        "pkulaw_prod_2024_沪0114执2986号",
+        "pkulaw_prod_2022_沪0115民初13290号之一"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2026_沪0114行审1号",
+          "title": "上海市嘉定区某局与王某非诉行政行为执行审查一案",
+          "score": 0.45,
+          "similarity": 0.646116,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816df2c619a81b2d9aa962a83d1ffa47232bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏1003行审8号",
+          "title": "扬州市文化广电和旅游局、扬州某某网络有限公司非诉行政行为申请执行审查行政裁定书",
+          "score": 0.435714,
+          "similarity": 0.618717,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81626e15a994bc3ee65effccb5f3467b5f7bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2024_沪0114执2986号",
+          "title": "某某局与某某公司申请执行罚款决定执行裁定书",
+          "score": 0.422308,
+          "similarity": 0.616202,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061f98a71a1cfb1048c457adf3a2db858cbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_沪02行终518号",
+          "title": "上海市浦东新区人民政府,上海市浦东新区文化体育和旅游局法律法规有明确名称的其他行政行为／事项一案",
+          "score": 0.409701,
+          "similarity": 0.610921,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816a27d12e139a423cf4a8ce652aa0c3832bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_沪0115民初13290号之一",
+          "title": "腾讯科技（成都）有限公司等诉佛山市南海区北笙网络科技有限责任公司等其他不正当竞争纠纷案",
+          "score": 0.397826,
+          "similarity": 0.592231,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206c2d25d5d743715a22c29829e4e8e5fc6bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2026_沪0114行审1号",
+        "pkulaw_prod_2025_苏1003行审8号",
+        "pkulaw_prod_2024_沪0114执2986号",
+        "pkulaw_prod_2025_沪02行终518号",
+        "pkulaw_prod_2022_沪0115民初13290号之一"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2025_苏1003行审8号",
+        "pkulaw_prod_2026_沪0114行审1号",
+        "pkulaw_prod_2025_沪02行终518号",
+        "pkulaw_prod_2024_沪0114执2986号",
+        "pkulaw_prod_2022_沪0115民初13290号之一"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2026_沪0114行审1号",
+          "title": "上海市嘉定区某局与王某非诉行政行为执行审查一案",
+          "score": 0.646116,
+          "similarity": 0.646116,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816df2c619a81b2d9aa962a83d1ffa47232bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏1003行审8号",
+          "title": "扬州市文化广电和旅游局、扬州某某网络有限公司非诉行政行为申请执行审查行政裁定书",
+          "score": 0.618717,
+          "similarity": 0.618717,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81626e15a994bc3ee65effccb5f3467b5f7bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2024_沪0114执2986号",
+          "title": "某某局与某某公司申请执行罚款决定执行裁定书",
+          "score": 0.616202,
+          "similarity": 0.616202,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061f98a71a1cfb1048c457adf3a2db858cbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_沪02行终518号",
+          "title": "上海市浦东新区人民政府,上海市浦东新区文化体育和旅游局法律法规有明确名称的其他行政行为／事项一案",
+          "score": 0.610921,
+          "similarity": 0.610921,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816a27d12e139a423cf4a8ce652aa0c3832bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_沪0115民初13290号之一",
+          "title": "腾讯科技（成都）有限公司等诉佛山市南海区北笙网络科技有限责任公司等其他不正当竞争纠纷案",
+          "score": 0.592231,
+          "similarity": 0.592231,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206c2d25d5d743715a22c29829e4e8e5fc6bdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "EVAL-GAME-008",
+      "industry": "游戏",
+      "name": "仅违反小红书平台规则（棋牌类游戏不支持推广）",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2025_粤0192民初9279号",
+        "pkulaw_prod_2023_赣1104民初2952号",
+        "pkulaw_prod_2025_粤0305民初5978号",
+        "pkulaw_prod_2024_川14行终29号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2026_沪0114行审1号",
+        "pkulaw_prod_2025_粤0305民初5978号",
+        "pkulaw_prod_2024_沪0114执2986号",
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2023_粤0192民初1448号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2025_粤0305民初5978号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2026_沪0114行审1号",
+          "title": "上海市嘉定区某局与王某非诉行政行为执行审查一案",
+          "score": 0.45,
+          "similarity": 0.631408,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816df2c619a81b2d9aa962a83d1ffa47232bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_粤0305民初5978号",
+          "title": "深圳某有限公司、李某网络服务合同纠纷一审判决书",
+          "score": 0.435714,
+          "similarity": 0.628736,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b7d76cdc6faf181541ff3e7a08b36280bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2024_沪0114执2986号",
+          "title": "某某局与某某公司申请执行罚款决定执行裁定书",
+          "score": 0.422308,
+          "similarity": 0.617146,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061f98a71a1cfb1048c457adf3a2db858cbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2020_粤0192民初22669号",
+          "title": "赵剑磊与三七互娱（上海）科技有限公司、安徽三七网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.409701,
+          "similarity": 0.604248,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_粤0192民初1448号",
+          "title": "王越、广州鑫晨网络科技有限公司等网络服务合同纠纷民事一审民事判决书",
+          "score": 0.397826,
+          "similarity": 0.602832,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206fd83f1e429d8c757a7bacc3e254bc132bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2026_沪0114行审1号",
+        "pkulaw_prod_2025_粤0305民初5978号",
+        "pkulaw_prod_2024_沪0114执2986号",
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2023_粤0192民初1448号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2025_粤0305民初5978号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2026_沪0114行审1号",
+          "title": "上海市嘉定区某局与王某非诉行政行为执行审查一案",
+          "score": 0.631408,
+          "similarity": 0.631408,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816df2c619a81b2d9aa962a83d1ffa47232bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_粤0305民初5978号",
+          "title": "深圳某有限公司、李某网络服务合同纠纷一审判决书",
+          "score": 0.628736,
+          "similarity": 0.628736,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b7d76cdc6faf181541ff3e7a08b36280bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2024_沪0114执2986号",
+          "title": "某某局与某某公司申请执行罚款决定执行裁定书",
+          "score": 0.617146,
+          "similarity": 0.617146,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f2061f98a71a1cfb1048c457adf3a2db858cbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2020_粤0192民初22669号",
+          "title": "赵剑磊与三七互娱（上海）科技有限公司、安徽三七网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.604248,
+          "similarity": 0.604248,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2023_粤0192民初1448号",
+          "title": "王越、广州鑫晨网络科技有限公司等网络服务合同纠纷民事一审民事判决书",
+          "score": 0.602832,
+          "similarity": 0.602832,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206fd83f1e429d8c757a7bacc3e254bc132bdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "EVAL-GAME-009",
+      "industry": "游戏",
+      "name": "违反B站平台规则（比较性用语）；广告法层面边界状态",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2024_川14行终29号",
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2023_赣1104民初2952号",
+        "pkulaw_prod_2024_浙0192民初1779号",
+        "pkulaw_prod_2025_琼9023民初5336号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2025_粤0305民初5978号",
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2026_琼96民终807号",
+        "pkulaw_prod_2026_沪0114行审1号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2023_粤0192民初1448号",
+          "title": "王越、广州鑫晨网络科技有限公司等网络服务合同纠纷民事一审民事判决书",
+          "score": 0.45,
+          "similarity": 0.535256,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206fd83f1e429d8c757a7bacc3e254bc132bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_粤0305民初5978号",
+          "title": "深圳某有限公司、李某网络服务合同纠纷一审判决书",
+          "score": 0.435714,
+          "similarity": 0.519809,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b7d76cdc6faf181541ff3e7a08b36280bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2020_粤0192民初22669号",
+          "title": "赵剑磊与三七互娱（上海）科技有限公司、安徽三七网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.422308,
+          "similarity": 0.510971,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_琼96民终807号",
+          "title": "戴卓科;海南盛昌网络科技有限公司网络服务合同纠纷二审民事判决书",
+          "score": 0.409701,
+          "similarity": 0.509685,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816428afbd185c977ce65010e4447a20676bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_沪0114行审1号",
+          "title": "上海市嘉定区某局与王某非诉行政行为执行审查一案",
+          "score": 0.397826,
+          "similarity": 0.506228,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816df2c619a81b2d9aa962a83d1ffa47232bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2025_粤0305民初5978号",
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2026_琼96民终807号",
+        "pkulaw_prod_2026_沪0114行审1号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2023_粤0192民初1448号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2023_粤0192民初1448号",
+          "title": "王越、广州鑫晨网络科技有限公司等网络服务合同纠纷民事一审民事判决书",
+          "score": 0.535256,
+          "similarity": 0.535256,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/08df102e7c10f206fd83f1e429d8c757a7bacc3e254bc132bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_粤0305民初5978号",
+          "title": "深圳某有限公司、李某网络服务合同纠纷一审判决书",
+          "score": 0.519809,
+          "similarity": 0.519809,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816b7d76cdc6faf181541ff3e7a08b36280bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2020_粤0192民初22669号",
+          "title": "赵剑磊与三七互娱（上海）科技有限公司、安徽三七网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.510971,
+          "similarity": 0.510971,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_琼96民终807号",
+          "title": "戴卓科;海南盛昌网络科技有限公司网络服务合同纠纷二审民事判决书",
+          "score": 0.509685,
+          "similarity": 0.509685,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816428afbd185c977ce65010e4447a20676bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_沪0114行审1号",
+          "title": "上海市嘉定区某局与王某非诉行政行为执行审查一案",
+          "score": 0.506228,
+          "similarity": 0.506228,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816df2c619a81b2d9aa962a83d1ffa47232bdfb.html?way=mcp"
+        }
+      ]
+    },
+    {
+      "id": "EVAL-GAME-010",
+      "industry": "游戏",
+      "name": "数据引用不规范",
+      "normal": false,
+      "expected_production_case_ids": [
+        "pkulaw_prod_2024_川14行终29号",
+        "pkulaw_prod_2023_粤0192民初1448号",
+        "pkulaw_prod_2023_赣1104民初2952号",
+        "pkulaw_prod_2024_浙0192民初1779号",
+        "pkulaw_prod_2025_琼9023民初5336号"
+      ],
+      "lexical_actual_case_ids": [],
+      "lexical_hit_case_ids": [],
+      "lexical_results": [],
+      "hybrid_actual_case_ids": [
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2026_沪0114行审1号",
+        "pkulaw_prod_2025_琼9023民初5336号",
+        "pkulaw_prod_2022_粤0192民初12251号",
+        "pkulaw_prod_2025_苏1003行审8号"
+      ],
+      "hybrid_hit_case_ids": [
+        "pkulaw_prod_2025_琼9023民初5336号"
+      ],
+      "hybrid_results": [
+        {
+          "case_id": "pkulaw_prod_2020_粤0192民初22669号",
+          "title": "赵剑磊与三七互娱（上海）科技有限公司、安徽三七网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.45,
+          "similarity": 0.539279,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_沪0114行审1号",
+          "title": "上海市嘉定区某局与王某非诉行政行为执行审查一案",
+          "score": 0.435714,
+          "similarity": 0.53218,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816df2c619a81b2d9aa962a83d1ffa47232bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_琼9023民初5336号",
+          "title": "陈锫镪;海南盛昌网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.422308,
+          "similarity": 0.503746,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816c2b32aa6e5c637105e9596d10a7f87b5bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_粤0192民初12251号",
+          "title": "李春霞、广州三七网络科技有限公司网络服务合同纠纷民事一审民事判决书",
+          "score": 0.409701,
+          "similarity": 0.499377,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/95b2ca8d4055fce1bbea74fe4a108e2e20481b9010801e28bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏1003行审8号",
+          "title": "扬州市文化广电和旅游局、扬州某某网络有限公司非诉行政行为申请执行审查行政裁定书",
+          "score": 0.397826,
+          "similarity": 0.498371,
+          "retrieval_method": "hybrid_rrf_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81626e15a994bc3ee65effccb5f3467b5f7bdfb.html?way=mcp"
+        }
+      ],
+      "semantic_actual_case_ids": [
+        "pkulaw_prod_2020_粤0192民初22669号",
+        "pkulaw_prod_2026_沪0114行审1号",
+        "pkulaw_prod_2025_琼9023民初5336号",
+        "pkulaw_prod_2022_粤0192民初12251号",
+        "pkulaw_prod_2025_苏1003行审8号"
+      ],
+      "semantic_hit_case_ids": [
+        "pkulaw_prod_2025_琼9023民初5336号"
+      ],
+      "semantic_results": [
+        {
+          "case_id": "pkulaw_prod_2020_粤0192民初22669号",
+          "title": "赵剑磊与三七互娱（上海）科技有限公司、安徽三七网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.539279,
+          "similarity": 0.539279,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc447bc17425893b37a2e04de7c2eeeaccfbdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2026_沪0114行审1号",
+          "title": "上海市嘉定区某局与王某非诉行政行为执行审查一案",
+          "score": 0.53218,
+          "similarity": 0.53218,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816df2c619a81b2d9aa962a83d1ffa47232bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_琼9023民初5336号",
+          "title": "陈锫镪;海南盛昌网络科技有限公司网络服务合同纠纷一审民事判决书",
+          "score": 0.503746,
+          "similarity": 0.503746,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f816c2b32aa6e5c637105e9596d10a7f87b5bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2022_粤0192民初12251号",
+          "title": "李春霞、广州三七网络科技有限公司网络服务合同纠纷民事一审民事判决书",
+          "score": 0.499377,
+          "similarity": 0.499377,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/95b2ca8d4055fce1bbea74fe4a108e2e20481b9010801e28bdfb.html?way=mcp"
+        },
+        {
+          "case_id": "pkulaw_prod_2025_苏1003行审8号",
+          "title": "扬州市文化广电和旅游局、扬州某某网络有限公司非诉行政行为申请执行审查行政裁定书",
+          "score": 0.498371,
+          "similarity": 0.498371,
+          "retrieval_method": "dense_semantic_v1",
+          "source_url": "https://www.pkulaw.com/pfnl/c7ed112b8012f81626e15a994bc3ee65effccb5f3467b5f7bdfb.html?way=mcp"
+        }
+      ]
+    }
+  ]
+}

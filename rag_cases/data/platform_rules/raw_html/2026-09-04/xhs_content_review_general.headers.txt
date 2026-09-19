@@ -1,0 +1,22 @@
+HTTP/2 200 
+date: Fri, 04 Sep 2026 14:52:24 GMT
+content-type: text/html; charset=UTF-8
+content-length: 18952
+server: nginx
+set-cookie: acw_tc=0a00074d17885335447645576e276680cee3c8fda3734414756a765cce67e9;path=/;HttpOnly;Max-Age=1800
+cache-control: no-cache
+etag: "488187961"
+last-modified: Thu, 03 Sep 2026 13:41:15 GMT
+server-timing: beforeHtml;dur=0.07,getAppConfig;dur=0.03,setHeader;dur=0.02,judgeCacheTime;dur=0.02
+x-biz-id: 
+x-content-type-options: nosniff
+x-download-options: noopen
+x-edith-status: none
+x-fe-app: feaurora
+x-fe-status: online
+x-html-version: 5.2.704
+x-readtime: 1
+x-xss-protection: 1; mode=block
+access-control-allow-headers: DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization,XHS-REQUEST-TIME-1
+xhs-real-ip: 240e:b8f:bbd8:5700:3d18:d5aa:8bd3:a4ce
+

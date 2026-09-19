@@ -1,58 +1,90 @@
 {
-  "case_id": "excel_candidate__food_medical_claim__fd2c4c40",
-  "title": "孙玉民与京之源（北京）农业有限公司北潞园分公司等买卖合同纠纷案",
-  "case_number": "（2016）京0111民初14505号",
-  "source_type": "manual_compilation_pending_source_verification",
-  "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
-  "source_url": null,
-  "source_verification_status": "pending_source_lookup",
-  "publish_date": null,
-  "decision_date": "2016-11-22",
-  "penalty_authority": null,
-  "party_name": "京之源（北京）农业有限公司北潞园分公司等",
-  "region": "北京市房山区",
-  "court": "北京市房山区人民法院",
-  "industry": "普通食品",
-  "product_or_service": "京之源无糖有机黑苦荞",
-  "ad_channel": null,
-  "risk_dimensions": [
-    "涉医疗宣传",
-    "普通食品疾病治疗功效宣传",
-    "虚假宣传"
-  ],
-  "illegal_claims": [
-    "京之源无糖有机黑苦荞",
-    "有利于胰岛素的分泌",
-    "降血糖、降血脂",
-    "对糖尿病、高血压、高血脂、冠心病、中风等病人都有辅助治疗作用"
-  ],
-  "facts_summary": "销售“京之源无糖有机黑苦荞”，宣传彩页记载“有利于胰岛素的分泌”“降血糖、降血脂”“对糖尿病、高血压、高血脂、冠心病、中风等病人都有辅助治疗作用”",
-  "legal_basis": [
-    "《食品安全法》第七十一条、第七十三条、第一百四十八条第二款"
-  ],
-  "penalty_result": "退还货款2832元、赔偿33040元",
-  "penalty_amount": null,
-  "regulatory_logic": "该候选案例显示，广告内容属于普通食品宣称疾病预防、治疗功能场景，相关宣传可能影响消费者判断，涉及《食品安全法》第七十一条、第七十三条、第一百四十八条第二款，需核验官方来源后确认监管认定。",
-  "mapped_rule_ids": [],
-  "keywords": [
-    "普通食品宣称疾病预防、治疗功能",
-    "涉医疗宣传",
-    "普通食品疾病治疗功效宣传",
-    "虚假宣传",
-    "京之源无糖有机黑苦荞",
-    "有利于胰岛素的分泌",
-    "降血糖、降血脂"
-  ],
-  "vector_text": "这是一起人工整理的普通食品宣称疾病预防、治疗功能候选案例。案件事实显示，经营者销售“京之源无糖有机黑苦荞”，宣传彩页记载“有利于胰岛素的分泌”“降血糖、降血脂”“对糖尿病、高血压、高血脂、冠心病、中风等病人都有辅助治疗作用” 处罚依据记载为《食品安全法》第七十一条、第七十三条、第一百四十八条第二款，处理结果为退还货款2832元、赔偿33040元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
-  "rag_chunk_type": "case_summary",
-  "review_status": "pending_review",
-  "approved_for_rag": false,
-  "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
-  "audit": {
-    "review_status": "pending_review",
-    "reviewer": "",
-    "review_date": "",
-    "review_notes": "Imported from Excel manual compilation; source_url pending verification.",
-    "approved_for_rag": false
+ "case_id": "excel_candidate__food_medical_claim__fd2c4c40",
+ "title": "孙玉民与京之源（北京）农业有限公司北潞园分公司等买卖合同纠纷案",
+ "case_number": "（2016）京0111民初14505号",
+ "source_type": "manual_compilation_pending_source_verification",
+ "source_name": "40个十大类违法广告行政处罚案例汇总表.xlsx",
+ "source_url": null,
+ "source_verification_status": "pending_source_lookup",
+ "publish_date": null,
+ "decision_date": "2016-11-22",
+ "penalty_authority": null,
+ "party_name": "京之源（北京）农业有限公司北潞园分公司等",
+ "region": "北京市房山区",
+ "court": "北京市房山区人民法院",
+ "industry": "普通食品",
+ "product_or_service": "京之源无糖有机黑苦荞",
+ "ad_channel": null,
+ "risk_dimensions": [
+  "涉医疗宣传",
+  "普通食品疾病治疗功效宣传",
+  "虚假宣传"
+ ],
+ "illegal_claims": [
+  "京之源无糖有机黑苦荞",
+  "有利于胰岛素的分泌",
+  "降血糖、降血脂",
+  "对糖尿病、高血压、高血脂、冠心病、中风等病人都有辅助治疗作用"
+ ],
+ "facts_summary": "销售“京之源无糖有机黑苦荞”，宣传彩页记载“有利于胰岛素的分泌”“降血糖、降血脂”“对糖尿病、高血压、高血脂、冠心病、中风等病人都有辅助治疗作用”",
+ "legal_basis": [
+  "《食品安全法》第七十一条、第七十三条、第一百四十八条第二款"
+ ],
+ "penalty_result": "退还货款2832元、赔偿33040元",
+ "penalty_amount": null,
+ "regulatory_logic": "该候选案例显示，广告内容属于普通食品宣称疾病预防、治疗功能场景，相关宣传可能影响消费者判断，涉及《食品安全法》第七十一条、第七十三条、第一百四十八条第二款，需核验官方来源后确认监管认定。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "普通食品宣称疾病预防、治疗功能",
+  "涉医疗宣传",
+  "普通食品疾病治疗功效宣传",
+  "虚假宣传",
+  "京之源无糖有机黑苦荞",
+  "有利于胰岛素的分泌",
+  "降血糖、降血脂"
+ ],
+ "vector_text": "这是一起人工整理的普通食品宣称疾病预防、治疗功能候选案例。案件事实显示，经营者销售“京之源无糖有机黑苦荞”，宣传彩页记载“有利于胰岛素的分泌”“降血糖、降血脂”“对糖尿病、高血压、高血脂、冠心病、中风等病人都有辅助治疗作用” 处罚依据记载为《食品安全法》第七十一条、第七十三条、第一百四十八条第二款，处理结果为退还货款2832元、赔偿33040元；该内容仅用于候选检索，需补充可核验 source_url 后才能进入生产 RAG。",
+ "rag_chunk_type": "case_summary",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "notes": "Excel人工检索候选案例，缺少source_url，需后续根据案号或官方公开页面补充来源链接后方可进入production RAG。",
+ "audit": {
+  "review_status": "approved",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": true
+ },
+ "raw_text_path": "data/raw_text/case_library_xlsx__40个十大类违法广告行政处罚案例汇总表.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "action": "fill_violation_type",
+   "note": "从 risk_dimensions 首项派生：涉医疗宣传"
   }
+ ],
+ "violation_type": "涉医疗宣传"
 }

@@ -1,0 +1,53 @@
+{
+  "fetched_at": "2026-09-17T17:36:48+08:00",
+  "request": {
+    "xzcfws_name": "违法广告",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "2",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330782062024080006",
+          "xzcfws_code": "义市监处罚〔2025〕462号",
+          "bxzcf_name": "义乌市硕鑫日用百货有限公司",
+          "guid": "330782062024080006",
+          "xzcfws_name": "义乌市硕鑫日用百货有限公司发布违法广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "高某某",
+          "xzcf_date": "2025-03-26",
+          "orgnode": "义乌市市场监督管理局"
+        },
+        {
+          "unid": "330782062024080016",
+          "xzcfws_code": "义市监处罚〔2024〕2684号",
+          "bxzcf_name": "张某某",
+          "guid": "330782062024080016",
+          "xzcfws_name": "张某某发布违法广告案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2024-10-31",
+          "orgnode": "义乌市市场监督管理局"
+        }
+      ],
+      "total": 12,
+      "pageTotal": 2,
+      "pageNo": 2
+    },
+    "traceId": "CFEBBBACF5AF4798B39550E0FEBD6673",
+    "messageType": 2
+  }
+}

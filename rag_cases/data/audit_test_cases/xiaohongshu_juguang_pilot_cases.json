@@ -1,0 +1,133 @@
+[
+  {
+    "case_id": "XHS-PILOT-FOOD-001",
+    "case_name": "普通食品疾病功效表达",
+    "input_payload": {
+      "record_id": "rec_xhs_food_001",
+      "industry": "保健食品",
+      "product_category": "普通食品固体饮料",
+      "platform": ["小红书"],
+      "platform_scene": "聚光",
+      "material_type": "图文",
+      "title": "日常营养饮品",
+      "content": "每天一杯，辅助降血糖",
+      "assets": [
+        {"asset_id": "cover", "type": "image", "analysis_status": "completed", "extracted_text": "日常营养饮品"}
+      ],
+      "has_landing_page": false,
+      "qualifications": {}
+    },
+    "expected": {
+      "verdict": "needs_revision",
+      "rule_ids": ["XHS-JG-FOOD-EFFICACY-001"]
+    }
+  },
+  {
+    "case_id": "XHS-PILOT-FOOD-002",
+    "case_name": "普通食品中性描述但试点规则未发布",
+    "input_payload": {
+      "record_id": "rec_xhs_food_002",
+      "industry": "保健食品",
+      "product_category": "普通食品饮料",
+      "platform": ["小红书"],
+      "platform_scene": "聚光",
+      "material_type": "图文",
+      "title": "清爽口感",
+      "content": "柠檬风味，冷藏后饮用口感更佳",
+      "assets": [
+        {"asset_id": "cover", "type": "image", "analysis_status": "completed", "extracted_text": "柠檬风味"}
+      ],
+      "has_landing_page": false,
+      "qualifications": {}
+    },
+    "expected": {
+      "verdict": "needs_materials",
+      "rule_ids": []
+    }
+  },
+  {
+    "case_id": "XHS-PILOT-GAME-001",
+    "case_name": "游戏绝对化表述且缺少资质",
+    "input_payload": {
+      "record_id": "rec_xhs_game_001",
+      "industry": "游戏",
+      "product_category": "网络游戏",
+      "platform": ["小红书"],
+      "platform_scene": "聚光",
+      "material_type": "图文",
+      "title": "顶级画质大作",
+      "content": "全网第一的沉浸体验",
+      "assets": [
+        {"asset_id": "cover", "type": "image", "analysis_status": "completed", "extracted_text": "顶级画质"}
+      ],
+      "has_landing_page": false,
+      "qualifications": {}
+    },
+    "expected": {
+      "verdict": "manual_review_required",
+      "rule_ids": ["XHS-JG-GAME-ABS-001", "XHS-JG-GAME-QUAL-001"]
+    }
+  },
+  {
+    "case_id": "XHS-PILOT-GAME-002",
+    "case_name": "游戏文案中性但缺少版号",
+    "input_payload": {
+      "record_id": "rec_xhs_game_002",
+      "industry": "游戏",
+      "product_category": "手机游戏",
+      "platform": ["小红书"],
+      "platform_scene": "聚光",
+      "material_type": "图文",
+      "content": "探索新的地图和角色故事",
+      "assets": [
+        {"asset_id": "cover", "type": "image", "analysis_status": "completed", "extracted_text": "探索新地图"}
+      ],
+      "has_landing_page": false,
+      "qualifications": {"游戏软件著作权": "已提供"}
+    },
+    "expected": {
+      "verdict": "needs_materials",
+      "rule_ids": ["XHS-JG-GAME-QUAL-001"]
+    }
+  },
+  {
+    "case_id": "XHS-PILOT-COVERAGE-001",
+    "case_name": "图文物料未提供图片OCR",
+    "input_payload": {
+      "record_id": "rec_xhs_cover_001",
+      "industry": "美妆",
+      "product_category": "护肤",
+      "platform": ["小红书"],
+      "platform_scene": "聚光",
+      "material_type": "图文",
+      "content": "轻盈肤感，适合日常使用",
+      "assets": [],
+      "has_landing_page": false,
+      "qualifications": {}
+    },
+    "expected": {
+      "verdict": "needs_materials",
+      "unchecked_contains": "图片/OCR"
+    }
+  },
+  {
+    "case_id": "XHS-PILOT-SCOPE-001",
+    "case_name": "蒲公英场景不在首期范围",
+    "input_payload": {
+      "record_id": "rec_xhs_scope_001",
+      "industry": "美妆",
+      "product_category": "护肤",
+      "platform": ["小红书"],
+      "platform_scene": "蒲公英",
+      "material_type": "图文",
+      "content": "达人合作笔记",
+      "assets": [],
+      "has_landing_page": false,
+      "qualifications": {}
+    },
+    "expected": {
+      "verdict": "out_of_scope",
+      "coverage_status": "out_of_scope"
+    }
+  }
+]

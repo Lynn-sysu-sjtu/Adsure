@@ -1,0 +1,160 @@
+{
+ "case_id": "sector_docx__beauty__21f65a16",
+ "title": "毛冉冉诉深圳市龙岗区亿发日贸易商行网络购物合同纠纷案",
+ "case_number": "（2018）鄂0105民初5389号",
+ "court": "武汉市汉阳区人民法院",
+ "decision_date": "2019-01-14",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+ "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc485a403d6afa317d0fe8ffe2c4b87c6c0bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
+ "publish_date": null,
+ "penalty_authority": null,
+ "party_name": "深圳市龙岗区亿发日贸易商行网络购物",
+ "region": "武汉市汉阳区",
+ "industry": "化妆品 / 医疗美容 / 美妆",
+ "sector": "beauty",
+ "sector_cn": "美妆",
+ "violation_type": "化妆品广告虚假宣传",
+ "case_nature": "judicial_reference_not_admin_penalty",
+ "source_lookup_priority": "P2",
+ "is_admin_penalty_candidate": false,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "beauty"
+ ],
+ "product_or_service": "大长今白里透红套装",
+ "ad_channel": "其他",
+ "risk_dimensions": [
+  "虚假宣传"
+ ],
+ "illegal_claims": [
+  "大长今白里透红套装",
+  "美白",
+  "祛斑"
+ ],
+ "facts_summary": "原告毛冉冉诉被告深圳市龙岗区亿发日贸易商行（以下简称亿发日贸易商行）网络购物合同纠纷一案，本院于2018年11月13日立案受理后，本案依法由审判员黄玮适用小额诉讼程序于2018年12月18日公开开庭进行了审理。原告毛冉冉到庭参加诉讼，被告亿发日贸易商行经本院传票传唤，无正当理由拒不到庭参加诉讼，本院依法缺席审理。本案现已审理终结。\n经审理查明：2018年9月11日，原告通过电商平台阿里巴巴在销售商亿发日贸易商行处购买名为“特价批发大长今白里透红套装美白祛斑二合一护肤化妆品”的产品60套，单价22元/套，共计1,320元。该产品在网页宣传上写有“美白”、“祛斑”等字样，产品外包装盒及瓶身上也印有“美白”、“祛斑”等字样。涉案产品在宣传网页上明确标有“特殊用途化妆品：否”字样，但宣传网页上同时标有“生产许可证号：国妆特字G20140695”字样。产品外包装上标明“生产许可证：XK16-1083452”字样，与网页宣传不符。产品外包装上还标有“特殊卫妆准字：（2003）第1893号”字样。同时，涉案产品外包装上还标明“韩国尚芝（国际）化妆品集团监制、广州丽婷化妆品有限公司授权、深圳市韩品美素化妆品有限公司出品”字样。收货后原告认为涉案产品系普通化妆品却宣称有美白、祛斑等功效，属虚假广告宣传，违反了国家相关法律法规，欺骗、误导了原告，原告的合法权益受到了损害，要求被告赔偿原告货款3倍金额。本案纠纷发生后，原告与被告之间已完成退货退款。\n另查明：经本院在国家药品监督管理局网站上查询得知，“国妆特字G20140695”并非涉案产品的批准文号，也未查询到“特殊卫妆准字：（2003）第1893号”的相关信息。\n再查明：原告曾就涉案产品向广州市***区食品药品监督管理局投诉举报，该局向原告出具“穗云食药监举复[2018]1783号”《关于对广州市丽婷化妆品有限公司生产“大长今白里透红套装美白祛斑二合一护肤化妆品”调查情况的回复》，其上载明：“我局认为现无证据证明广州婷丽化妆品有限公司存在生产‘大长今白里透红套装美白祛斑二合一护肤化妆品’的情况；该公司现场负责人反映从未与深圳市龙岗区亿发日贸易商行有过任何的贸易来往，该公司从未销售过此产品。”\n上述事实，有原告提供的网页交易快照、产品订单信息、物流快递信息、产品实物及照片、调查回复函，及原告的陈述等证据予以证实，足以认定。",
+ "legal_basis": [
+  "《消费者权益保护法》第五十五条第一款"
+ ],
+ "penalty_result": "三倍赔偿3960元",
+ "penalty_amount": null,
+ "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《消费者权益保护法》第五十五条第一款。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "beauty",
+  "美妆",
+  "化妆品广告虚假宣传",
+  "虚假宣传",
+  "大长今白里透红套装",
+  "美白",
+  "祛斑"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
+ "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "pending_pkulaw_human_review",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
+ },
+ "source_lookup_query": "（2018）鄂0105民初5389号 毛冉冉诉深圳市龙岗区亿发日贸易商行网络购物合同纠纷案",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告毛冉冉诉被告深圳市龙岗区亿发日贸易商行（以下简称亿发日贸易商行）网络购物合同纠纷一案，本院于2018年11月13日立案受理后，本案依法由审判员黄玮适用小额诉讼程序于2018年12月18日公开开庭进行了审理。原告毛冉冉到庭参加诉讼，被告亿发日贸易商行经本院传票传唤，无正当理由拒不到庭参加诉讼，本院依法缺席审理。本案现已审理终结。\n经审理查明：2018年9月11日，原告通过电商平台阿里巴巴在销售商亿发日贸易商行处购买名为“特价批发大长今白里透红套装美白祛斑二合一护肤化妆品”的产品60套，单价22元/套，共计1,320元。该产品在网页宣传上写有“美白”、“祛斑”等字样，产品外包装盒及瓶身上也印有“美白”、“祛斑”等字样。涉案广告宣称：大长今白里透红套装；美白；祛斑。",
+ "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
+  }
+ ],
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T03:41:10+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）"
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在阿里巴巴销售“大长今白里透红套装”（普通化妆品），网页和包装宣传“美白”“祛斑”功效，产品批准文号与实际不符",
+    "vector_text": "【赛道】美妆。【场景】其他。【宣称】大长今白里透红套装；美白；祛斑。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《消费者权益保护法》第五十五条第一款。。【依据】《消费者权益保护法》第五十五条第一款。【结果】三倍赔偿3960元。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2018)鄂0105民初5389号",
+  "pkulaw_court": "湖北省武汉市汉阳区人民法院",
+  "pkulaw_title": "毛冉冉与深圳市龙岗区亿发日贸易商行网络购物合同纠纷一审民事判决书",
+  "last_instance_date": "2019.01.14",
+  "source_url": "https://www.pkulaw.com/pfnl/a6bdb3332ec0adc485a403d6afa317d0fe8ffe2c4b87c6c0bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2018_鄂0105民初5389号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
+}

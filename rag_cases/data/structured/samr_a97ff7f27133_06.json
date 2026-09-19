@@ -1,0 +1,105 @@
+{
+ "title": "浙江省温州市市场监管局查处温州盈科食品有限公司违法广告案",
+ "publish_date": "2026-07-21",
+ "penalty_authority": "温州市市场监管局",
+ "party_name": "温州盈科食品有限公司",
+ "industry": "保健食品",
+ "product_or_service": "涉案食品（食品企业网络广告）",
+ "ad_channel": "",
+ "risk_dimensions": [
+  "虚假宣传",
+  "广告内容真实性"
+ ],
+ "illegal_claims": [
+  "2024年休闲鸭舌全国销量第一",
+  "全国销量第一"
+ ],
+ "facts_summary": "经查，温州盈科食品有限公司以门店海报、直播等形式发布含有“2024年休闲鸭舌全国销量第一”等引证内容的广告，且上述“全国销量第一”等市场调研结论缺乏充分依据。2026年2月，温州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚款20万元的行政处罚。",
+ "legal_basis": [
+  "《中华人民共和国广告法》"
+ ],
+ "penalty_result": "2026年2月，温州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚款20万元的行政处罚。",
+ "penalty_amount": 200000,
+ "regulatory_logic": "2026年2月，温州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚款20万元的行政处罚。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "2024年休闲鸭舌全国销量第一",
+  "全国销量第一",
+  "温州市市场监管局"
+ ],
+ "vector_text": "这是一起市场监管部门查处的广告违法案例。经查，温州盈科食品有限公司以门店海报、直播等形式发布含有“2024年休闲鸭舌全国销量第一”等引证内容的广告，且上述“全国销量第一”等市场调研结论缺乏充分依据。2026年2月，温州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚款20万元的行政处罚。涉案广告宣称：2024年休闲鸭舌全国销量第一；全国销量第一。处理结果：2026年2月，温州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚款20万元的行政处罚。",
+ "legal_basis_inferred": [
+  "《中华人民共和国广告法》"
+ ],
+ "case_id": "samr_a97ff7f27133_06",
+ "source_type": "official_typical_case",
+ "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html",
+ "raw_text_path": "data/raw_text/samr_a97ff7f27133.json",
+ "source_name": "国家市场监督管理总局",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "human_review_required": true,
+ "extraction_quotes": {},
+ "extraction_dropped": [],
+ "rule_extracted": {
+  "title": "浙江省温州市市场监管局查处温州盈科食品有限公司违法广告案",
+  "penalty_authority": "温州市市场监管局",
+  "party_name": "温州盈科食品有限公司",
+  "penalty_amount": 200000,
+  "illegal_claims": [
+   "2024年休闲鸭舌全国销量第一",
+   "全国销量第一"
+  ],
+  "industry": "保健食品",
+  "facts_summary": "经查，温州盈科食品有限公司以门店海报、直播等形式发布含有“2024年休闲鸭舌全国销量第一”等引证内容的广告，且上述“全国销量第一”等市场调研结论缺乏充分依据。2026年2月，温州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚款20万元的行政处罚。",
+  "vector_text": "这是一起市场监管部门查处的广告违法案例。经查，温州盈科食品有限公司以门店海报、直播等形式发布含有“2024年休闲鸭舌全国销量第一”等引证内容的广告，且上述“全国销量第一”等市场调研结论缺乏充分依据。2026年2月，温州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚款20万元的行政处罚。涉案广告宣称：2024年休闲鸭舌全国销量第一；全国销量第一。处理结果：2026年2月，温州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚款20万元的行政处罚。",
+  "keywords": [
+   "2024年休闲鸭舌全国销量第一",
+   "全国销量第一",
+   "温州市市场监管局"
+  ],
+  "regulatory_logic": "2026年2月，温州市市场监管局依据《中华人民共和国广告法》有关规定，对当事人作出罚款20万元的行政处罚。"
+ },
+ "raw_html_path": "data/raw_html/samr_a97ff7f27133.html",
+ "fetched_at": "2026-09-15T16:34:17.844372+00:00",
+ "content_sha256": "88d36c4370ae5e18d34857ff8e72413d57eb0fb147e2715bc0b938a21830e583",
+ "segment_index": 6,
+ "segment_title": "浙江省温州市市场监管局查处温州盈科食品有限公司违法广告案",
+ "topic_relevance": "ad",
+ "source_verification_status": "source_verified",
+ "original_decision_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html",
+ "original_decision_url_status": "official_page",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-16 指令 B：crawler 民生违法广告候选转生产）",
+  "approved_at": "2026-09-16T01:40:26+08:00",
+  "override_source_verification": true,
+  "source_verification_status_kept": "official_page_extracted",
+  "original_decision_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html",
+  "note": "总局民生领域违法广告典型案例（官方页面存证）；字段缺口：法条仅到法规名（无条号，来自通报原文），待人工补条号。"
+ },
+ "audit": {
+  "review_status": "approved",
+  "approved_for_rag": true,
+  "reviewer": "项目负责人（用户 2026-09-16 指令 B：crawler 民生违法广告候选转生产）",
+  "review_date": "2026-09-16",
+  "review_notes": "业主审批转生产（B）；官方P0页面提取，缺口：法条仅到法规名（无条号，来自通报原文），待人工补条号"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-16T01:40:26+08:00",
+   "action": "owner_approval_promote_crawler_official",
+   "note": "crawler 民生违法广告候选转生产；法条/金额等缺口保留待人工补。"
+  },
+  {
+   "ts": "2026-09-17T11:50:27+08:00",
+   "action": "backfill_full_case_narrative",
+   "note": "修复规则抽取 facts_summary=t[:80] 截断：用修正后抽取器重写案情/监管逻辑/检索文本，字段逐字来自原文段落，其余字段不动。"
+  }
+ ],
+ "violation_type": "发布食品类违法广告（虚假宣传）",
+ "also_seen_at": [
+  "https://www.samr.gov.cn/xw/zj/art/2026/art_fa68b35c13f449218736a97ff7f27133.html"
+ ]
+}

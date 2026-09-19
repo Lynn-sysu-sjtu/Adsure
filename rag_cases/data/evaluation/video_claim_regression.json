@@ -1,0 +1,30 @@
+{
+  "label_status":"engineering_regression_not_legal_gold",
+  "cases":[
+    {"id":"core","text":"国家级品质最佳选择","industry":"一般行业","expected":["absolute_core"]},
+    {"id":"unicode","text":"國 家 級品質","industry":"一般行业","expected":["absolute_core"]},
+    {"id":"exception_scope","text":"第一步了解产品，我们的销量全网第一","industry":"一般行业","expected":["absolute_context"]},
+    {"id":"generic_medical","text":"本产品根治糖尿病","industry":"一般行业","expected":["medical_claim"]},
+    {"id":"food_medical","text":"吃这个食品降血糖","industry":"普通食品","expected":["medical_claim"]},
+    {"id":"safety","text":"安全无害而且没有任何副作用","industry":"化妆品","expected":["safety_guarantee"]},
+    {"id":"duration_effect","text":"七天变白十斤也能减掉","industry":"化妆品","expected":["quantified_effect"]},
+    {"id":"rate","text":"我们产品有效率９９％","industry":"一般行业","expected":["quantified_effect"]},
+    {"id":"authority","text":"政府指定产品","industry":"一般行业","expected":["authority_endorsement"]},
+    {"id":"investment","text":"这项投资稳赚不赔","industry":"金融投资","expected":["investment_return"]},
+    {"id":"exam","text":"现在报名保证通过","industry":"教育培训","expected":["education_guarantee"]},
+    {"id":"derogatory","text":"客户还不是和狗一样跑过来","industry":"化妆品","expected":["derogatory_expression"]},
+    {"id":"plain","text":"本品含维生素C请按说明使用","industry":"普通食品","expected":[]},
+    {"id":"newest","text":"这是我们的最新产品","industry":"化妆品","expected":[]},
+    {"id":"battery","text":"电量100%","industry":"一般行业","expected":[]},
+    {"id":"warning","text":"保健食品不是药物，不能代替药物治疗疾病","industry":"保健食品","expected":[]},
+    {"id":"negation","text":"本品不能治疗疾病","industry":"普通食品","expected":[]},
+    {"id":"denial","text":"我们不保证有效","industry":"一般行业","expected":[]},
+    {"id":"ordinary_superlative","text":"第一时间了解最新款一级能效冰箱","industry":"一般行业","expected":[]},
+    {"id":"medical_scope","text":"本药用于治疗疾病","industry":"药品","expected":[]},
+    {"id":"mixed_negation","text":"不是国家级产品，但我们全网第一","industry":"一般行业","expected":["absolute_context"]},
+    {"id":"game_gift","text":"登录领20抽，2个S级角色免费领","industry":"一般行业","expected":["promotional_offer"]},
+    {"id":"retail_gift","text":"新品活动买二送一","industry":"一般行业","expected":["promotional_offer"]},
+    {"id":"free_wifi","text":"场内提供免费无线网络","industry":"一般行业","expected":[]},
+    {"id":"no_free_gift","text":"本品不能免费领取","industry":"一般行业","expected":[]}
+  ]
+}

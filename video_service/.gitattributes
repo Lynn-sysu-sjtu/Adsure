@@ -1,0 +1,16 @@
+# Keep evidence and rule files stable across Windows/Linux checkouts.
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.csv text eol=lf
+
+# 证据 / 原始抓取文件必须逐字节保存：manifest 记录了 SHA256，
+# 任何换行符转换（Windows autocrlf、text=auto 等）都会让来源校验失败。
+# 注意：这些规则必须放在上面的 text 规则之后，后者会覆盖前者。
+data/platform_rules/raw_html/** -text
+data/platform_rules/raw_text/** -text
+data/platform_rules/raw_files/** -text
+datasets/golden/** -text

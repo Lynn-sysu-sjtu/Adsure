@@ -1,0 +1,141 @@
+{
+  "fetched_at": "2026-09-17T17:23:51+08:00",
+  "request": {
+    "xzcfws_name": "虚假广告",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330421112026040009",
+          "xzcfws_code": "善市监处罚〔2026〕713号",
+          "bxzcf_name": "嘉善赵前美甲店",
+          "guid": "330421112026040009",
+          "xzcfws_name": "嘉善赵前美甲店未取得药品经营许可证经营劣药和发布虚假广告案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "赵某某",
+          "xzcf_date": "2026-09-01",
+          "orgnode": "嘉善县市场监督管理局"
+        },
+        {
+          "unid": "330782482026080016",
+          "xzcfws_code": "义市监处罚〔2026〕3657号",
+          "bxzcf_name": "义乌市芙沙日用品有限公司",
+          "guid": "330782482026080016",
+          "xzcfws_name": "义乌市芙沙日用品有限公司发布虚假广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "吴某某",
+          "xzcf_date": "2026-08-31",
+          "orgnode": "义乌市市场监督管理局"
+        },
+        {
+          "unid": "330282062026040003",
+          "xzcfws_code": "慈市监处罚〔2026〕1001号",
+          "bxzcf_name": "慈溪圣甬口腔门诊部有限公司",
+          "guid": "330282062026040003",
+          "xzcfws_name": "慈溪圣甬口腔门诊部有限公司未经广告审查机关审查发布医疗广告和发布虚假广告的行为案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "瞿某某",
+          "xzcf_date": "2026-08-06",
+          "orgnode": "慈溪市市场监督管理局"
+        },
+        {
+          "unid": "330482222026010002",
+          "xzcfws_code": "平市监处罚〔2026〕368号",
+          "bxzcf_name": "平湖市庄医森养生馆（个体工商户）",
+          "guid": "330482222026010002",
+          "xzcfws_name": "平湖市庄医森养生馆发布虚假广告案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "张某某",
+          "xzcf_date": "2026-07-22",
+          "orgnode": "平湖市市场监督管理局"
+        },
+        {
+          "unid": "330783122026030001",
+          "xzcfws_code": "东市监处罚〔2026〕855号",
+          "bxzcf_name": "东阳市文匠日用百货有限公司",
+          "guid": "330783122026030001",
+          "xzcfws_name": "东阳市文匠日用百货有限公司发布虚假广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "叶某某",
+          "xzcf_date": "2026-07-11",
+          "orgnode": "东阳市市场监督管理局"
+        },
+        {
+          "unid": "330783102026030017",
+          "xzcfws_code": "东市监处罚〔2026〕854号",
+          "bxzcf_name": "东阳市果壳日用品有限公司",
+          "guid": "330783102026030017",
+          "xzcfws_name": "东阳市果壳日用品有限公司虚假广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "戴某某",
+          "xzcf_date": "2026-07-10",
+          "orgnode": "东阳市市场监督管理局"
+        },
+        {
+          "unid": "330783102026030022",
+          "xzcfws_code": "东市监处罚〔2026〕849号",
+          "bxzcf_name": "东阳市宏航日用品厂",
+          "guid": "330783102026030022",
+          "xzcfws_name": "东阳市宏航日用品厂虚假广告案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "李某某",
+          "xzcf_date": "2026-07-10",
+          "orgnode": "东阳市市场监督管理局"
+        },
+        {
+          "unid": "330783002026030003",
+          "xzcfws_code": "东市监处罚〔2026〕850号",
+          "bxzcf_name": "义乌市赫呈贸易有限公司",
+          "guid": "330783002026030003",
+          "xzcfws_name": "义乌市赫呈贸易有限公司虚假广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "汪某某",
+          "xzcf_date": "2026-07-09",
+          "orgnode": "东阳市市场监督管理局"
+        },
+        {
+          "unid": "330782482026050005",
+          "xzcfws_code": "义市监处罚〔2026〕2211号",
+          "bxzcf_name": "义乌品立服饰有限公司",
+          "guid": "330782482026050005",
+          "xzcfws_name": "义乌品立服饰有限公司发布虚假广告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "徐某某",
+          "xzcf_date": "2026-07-08",
+          "orgnode": "义乌市市场监督管理局"
+        },
+        {
+          "unid": "330782282026050027",
+          "xzcfws_code": "义市监处罚〔2026〕2182号",
+          "bxzcf_name": "义乌市君煜饰品厂",
+          "guid": "330782282026050027",
+          "xzcfws_name": "义乌市君煜饰品厂发布虚假广告案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "司某某",
+          "xzcf_date": "2026-07-07",
+          "orgnode": "义乌市市场监督管理局"
+        }
+      ],
+      "total": 64,
+      "pageTotal": 7,
+      "pageNo": 1
+    },
+    "traceId": "13E462D94129437CA412FE7AD5C9BFED",
+    "messageType": 2
+  }
+}

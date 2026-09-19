@@ -1,0 +1,172 @@
+{
+  "case_id": "samr_2025_typical_ads_02",
+  "title": "广州市海珠区市场监管局查处那拉尊驼（广州）乳业有限公司违法广告案",
+  "source_type": "official_typical_case",
+  "source_name": "市场监管总局",
+  "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_b7802ad0a4dc407ea1b10a8a53a5792f.html",
+  "publish_date": "2026-01-31",
+  "decision_date": "2025-12",
+  "penalty_authority": "广东省广州市海珠区市场监管局",
+  "party_name": "那拉尊驼（广州）乳业有限公司",
+  "region": "广东省广州市海珠区",
+  "industry": "普通食品",
+  "violation_type": "普通食品疾病治疗功效及虚假宣传",
+  "product_or_service": "驼乳粉",
+  "ad_channel": "",
+  "risk_dimensions": [
+    "虚假宣传",
+    "普通食品疾病治疗功效宣传",
+    "广告引证内容不规范"
+  ],
+  "illegal_claims": [
+    "一带一路签约项目",
+    "有相关省份优惠销售名额",
+    "改善肺结节、降血糖、降脂降压"
+  ],
+  "facts_summary": "那拉尊驼（广州）乳业有限公司发布驼乳粉普通食品广告，使用虚假项目信息和优惠名额信息，宣称改善肺结节、降血糖、降脂降压，并存在未真实、准确使用引证内容的行为。2025年12月，广州市海珠区市场监管局罚款45万元。",
+  "legal_basis": [
+    "《中华人民共和国广告法》有关规定"
+  ],
+  "penalty_result": "罚款45万元",
+  "penalty_amount": 450000,
+  "regulatory_logic": "普通食品广告不得虚构项目背景和优惠名额，不得宣称疾病预防、治疗功效，广告引证内容还应当真实、准确。",
+  "mapped_rule_ids": [
+    "ADLAW-011-02",
+    "ADLAW-017",
+    "ADLAW-028"
+  ],
+  "keywords": [
+    "驼乳粉",
+    "降血糖",
+    "降脂降压",
+    "肺结节",
+    "引证内容"
+  ],
+  "vector_text": "经营者在驼乳粉普通食品广告中虚构签约项目和优惠名额，宣称产品可以改善肺结节、降血糖及降脂降压，并不真实准确地使用引证内容，监管机关据此认定广告违法。",
+  "rag_chunk_type": "case_summary",
+  "review_status": "approved",
+  "source_verification_status": "source_verified",
+  "approved_for_rag": true,
+  "raw_html_path": "data/raw_html/samr_typical_ads__2ad160ae3056.json",
+  "raw_text_path": "data/raw_text/samr_typical_ads__2ad160ae3056.json",
+  "notes": "市场监管总局公开页仅载明依据《中华人民共和国广告法》有关规定，未公布具体条款编号。 具体条款映射为依据官方摘要事实作出的待法律复核推定，不代表处罚决定书已明确引用。",
+  "audit": {
+    "review_status": "approved",
+    "approved_for_rag": true
+  },
+  "possible_liability_rule_ids": [
+    "ADLAW-059-02",
+    "ADLAW-058-02",
+    "ADLAW-055"
+  ],
+  "legal_basis_details": [
+    {
+      "rule_id": "ADLAW-011-02",
+      "law_name": "中华人民共和国广告法",
+      "article": "第十一条",
+      "paragraph": "第二款",
+      "item": null,
+      "rule_type": "citation_requirement",
+      "rule_summary": "广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确并表明出处；有适用范围和有效期限的，应当明确表示。",
+      "rule_text_mode": "normalized_summary_not_verbatim",
+      "relation": "applicable_rule_inferred",
+      "mapping_basis": "official_summary_fact_pattern",
+      "mapping_review_status": "pending_legal_review",
+      "version_date": "2021-04-29",
+      "effective_status": "有效",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    },
+    {
+      "rule_id": "ADLAW-017",
+      "law_name": "中华人民共和国广告法",
+      "article": "第十七条",
+      "paragraph": null,
+      "item": null,
+      "rule_type": "content_prohibition",
+      "rule_summary": "除医疗、药品、医疗器械广告外，其他广告不得涉及疾病治疗功能，也不得使用医疗用语或者易使商品与药品、医疗器械相混淆的用语。",
+      "rule_text_mode": "normalized_summary_not_verbatim",
+      "relation": "applicable_rule_inferred",
+      "mapping_basis": "official_summary_fact_pattern",
+      "mapping_review_status": "pending_legal_review",
+      "version_date": "2021-04-29",
+      "effective_status": "有效",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    },
+    {
+      "rule_id": "ADLAW-028",
+      "law_name": "中华人民共和国广告法",
+      "article": "第二十八条",
+      "paragraph": null,
+      "item": null,
+      "rule_type": "false_advertising",
+      "rule_summary": "广告以虚假或者引人误解的内容欺骗、误导消费者的，构成虚假广告。",
+      "rule_text_mode": "normalized_summary_not_verbatim",
+      "relation": "applicable_rule_inferred",
+      "mapping_basis": "official_summary_fact_pattern",
+      "mapping_review_status": "pending_legal_review",
+      "version_date": "2021-04-29",
+      "effective_status": "有效",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    },
+    {
+      "rule_id": "ADLAW-059-02",
+      "law_name": "中华人民共和国广告法",
+      "article": "第五十九条",
+      "paragraph": "第一款",
+      "item": "第二项",
+      "rule_type": "liability",
+      "rule_summary": "广告引证内容违反本法第十一条规定的，适用本项规定的行政责任。",
+      "rule_text_mode": "normalized_summary_not_verbatim",
+      "relation": "possible_liability_inferred",
+      "mapping_basis": "official_summary_fact_pattern",
+      "mapping_review_status": "pending_legal_review",
+      "version_date": "2021-04-29",
+      "effective_status": "有效",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    },
+    {
+      "rule_id": "ADLAW-058-02",
+      "law_name": "中华人民共和国广告法",
+      "article": "第五十八条",
+      "paragraph": "第一款",
+      "item": "第二项",
+      "rule_type": "liability",
+      "rule_summary": "违反本法第十七条，在广告中涉及疾病治疗功能或者使用相关医疗用语，适用本项规定的行政责任。",
+      "rule_text_mode": "normalized_summary_not_verbatim",
+      "relation": "possible_liability_inferred",
+      "mapping_basis": "official_summary_fact_pattern",
+      "mapping_review_status": "pending_legal_review",
+      "version_date": "2021-04-29",
+      "effective_status": "有效",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    },
+    {
+      "rule_id": "ADLAW-055",
+      "law_name": "中华人民共和国广告法",
+      "article": "第五十五条",
+      "paragraph": null,
+      "item": null,
+      "rule_type": "liability",
+      "rule_summary": "发布虚假广告的，由市场监督管理部门依法责令停止发布、消除影响并处罚款；严重情形适用更高处罚。",
+      "rule_text_mode": "normalized_summary_not_verbatim",
+      "relation": "possible_liability_inferred",
+      "mapping_basis": "official_summary_fact_pattern",
+      "mapping_review_status": "pending_legal_review",
+      "version_date": "2021-04-29",
+      "effective_status": "有效",
+      "source_name": "国家市场监督管理总局",
+      "source_url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_5474cf75173c45d6a0379730fb4e8d97.html"
+    }
+  ],
+  "legal_basis_provenance": {
+    "case_source_text": "《中华人民共和国广告法》有关规定",
+    "specific_articles_published_by_case_source": false,
+    "mapping_status": "inferred_pending_legal_review",
+    "warning": "具体条款为依据官方摘要事实作出的适用性映射，不代表处罚机关在决定书中明确引用。"
+  }
+}

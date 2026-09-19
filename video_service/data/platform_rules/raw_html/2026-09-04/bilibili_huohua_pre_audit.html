@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="zh-Hans" class="env-mobile"><head>
+  <meta charset="utf-8">
+  <meta httpequiv="Content-Type" content="text/html; charset=utf-8">
+  <meta httpequiv="Cache-Control" content="no-transform">
+  <meta name="renderer" content="webkit">
+  <link rel="dns-prefetch" href="//s1.hdslb.com">
+  <link rel="dns-prefetch" href="//i0.hdslb.com">
+  <link rel="dns-prefetch" href="//i1.hdslb.com">
+  <link rel="dns-prefetch" href="//api.bilibili.com">
+  <link rel="dns-prefetch" href="//i2.hdslb.com">
+  <link rel="dns-prefetch" href="//static.hdslb.com">
+  <link rel="dns-prefetch" href="//activity.hdslb.comm">
+  <meta name="applicable-device" content="mobile">
+  <meta name="theme-color" content="#de698c">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="force-rendering" content="webkit">
+  <meta name="full-screen" content="true">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="apple-touch-icon" href="https://static.hdslb.com/mobile/img/app_logo.png">
+  <script src="https://activity.hdslb.com/blackboard/static/5f57b396dd5d4d64cd7821de45ca266e/polyfill.min.js" crossorigin="anonymous"></script>
+  <script src="//s1.hdslb.com/bfs/activity-seed/activity/plat/h5/plat.global.min.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script>
+    var defaultFontSize = (function adapt(designWidth, rem2px) {
+      var d = window.document.createElement("p");
+      d.style.width = "1rem";
+      d.style.display = "none";
+      var head = window.document.getElementsByTagName("head")[0];
+      head.appendChild(d);
+      var defaultFontSize = parseFloat(getComputedStyle(d).width);
+      return defaultFontSize;
+    })(750, 100);
+    if (window.NodeList && !NodeList.prototype.forEach) {
+      NodeList.prototype.forEach = Array.prototype.forEach;
+    }
+  </script>
+  <style>
+#app, #fixed-root {
+  position: relative;
+  overflow: hidden;
+}
+  </style>
+  <!-- ssr_content -->
+
+<script>
+// change ua
+(function() {
+  if (location.search.indexOf('plat=h5') > -1 && location.search.indexOf('__activity-plat-preview=1') > -1) {
+    Object.defineProperty(window.navigator, 'userAgent', {
+      value: 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+      configurable: true
+    });
+    console.info(window.navigator);
+  }
+})();
+
+</script>
+<title>花火稿件前置审核规范总则</title><meta name="keywords" content="undefined"><meta name="description" content="undefined"><meta name="spm_prefix" content="888.77741">
+      <script type="text/javascript">
+        var msource;
+        try {
+          var u = new URL(location.href);
+          var sp = u.searchParams;
+          msource = sp.get('msource') || sp.get('from') || sp.get('source_from') || sp.get('from_module')
+        }
+        catch(e){console.warn('get page source from query failed', e)}
+        window.activity = {id: 75532, spmId: '888.77741'};
+        window.reportMsgObj = {};
+        
+        var ua = window.navigator.userAgent
+        var buvidMatch = ua.match(/Buvid\/([a-zA-Z0-9]+)/)
+        var appBuvid = buvidMatch && buvidMatch.length > 0 ? buvidMatch[1] : ''
+        window.reportConfig = {
+          sample: 1,
+          extMsgs: {
+            appBuvid: appBuvid,
+          },
+          scrollTracker: true,
+          msgObjects: 'reportMsgObj',
+          pvMsg: {msource: msource},
+          errorTracker: true
+        };
+      </script>
+    <script src="//s1.hdslb.com/bfs/seed/log/report/log-reporter.js"></script>
+          <script src="https://s1.hdslb.com/bfs/activity-seed/activity/activity/activity-report.js"></srcipt></script><style>.plat-fixed-box-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0,.5);
+}
+
+.fullpage-wrapper .plat-section-outter-box {
+  overflow: auto;
+}
+
+.plat-fixed-outter-box {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: fixed;
+  display: block;
+}
+.plat-fixed-inner-box {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.plat-position-inner-box {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.plat-position-outter-box {
+  box-sizing: border-box;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: auto;  
+}
+
+.plat-position-outter-box .t-background-video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.plat-section-outter-box {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: block;
+}
+/* #body-mobile .plat-section-outter-box {
+  margin: -1px 0 0;
+} */
+
+.plat-section-space {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.plat-section-inner-box {
+  position: relative;
+  height: 100%;
+}
+
+
+
+.t-background-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#body-mobile .t-background-image, .mobile .t-background-image {
+  background-size: 100% auto;
+}
+
+.env-mobile .t-background-image, .mobile .t-background-image {
+  background-size: 100% 100%;
+}
+.fp-enabled .t-background-image, .fullpage .mobile .t-background-image {
+  background-size: cover;
+}
+
+</style><script type="text/javascript" data-tag src="//activity.hdslb.com/blackboard/static/5f57b396dd5d4d64cd7821de45ca266e/vue.min.js" crossorigin="anonymous"></script><link href="//activity.hdslb.com/blackboard/platcomps/plat-components/h5-baseinfo/0.1.17/index.css" data-tag type="text/css" rel="stylesheet"><link href="//activity.hdslb.com/blackboard/platcomps/plat-components/h5-rich-text2/0.0.17/index.css" data-tag type="text/css" rel="stylesheet"></head>
+
+<body>
+  <div id="act-fav-entry"></div>
+  <div id="fixed-root"></div>
+  <article id="app" class="tpl-wrap"><section style="min-width:6.50rem" data-anchor="PMHnPd2qEqRs" data-fid="MHnPd2qEqRs" data-size="650px|undefined" class="plat-section-outter-box container-wrapper"><div class="t-space-container plat-section-space" style="width:6.50rem"><div id="MHnPd2qEqRs" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module" data-container="section" data-version="0.0.17" data-module="h5-rich-text2"></div></div></section></article>
+  <div id="script"></div>
+<script>
+  window.__BILIACT_ENV__ = "H5";
+  window.__initialState = {"GlobalConfig":{"animation":{"schemes":{},"bindMap":{}},"events":{"schemes":{},"eventMap":{}}},"BaseInfo":{"__activity_id":75532,"headerTemplate":"header","jumpUrl":"","shareCloseRequire":false,"sharePicture":"","shareText":"","title":"花火稿件前置审核规范总则"},"h5-rich-text2":[{"diableRemParse":true,"htmlObj":{"dangerHtml":"<p style=\"text-align:center;\"></p>\n<p></p>\n<p style=\"text-align:center;\"><span style=\"font-size: 24px;\">花火稿件审核规范总则</span></p>\n<p></p>\n<p></p>\n<p>&nbsp;<span style=\"font-size: 24px;\"><strong>一、概述</strong></span><br></p>\n<p><span style=\"font-size: 16px;\">为了保护用户的财产和信息安全，bilibili禁止发布含有恶意营销或不符合推广流程的内容、危害未成年人的内容、恐怖血暴引人不适的内容、色情低俗的内容。不提倡使用带有强烈情感宣泄的词汇和语句，通过带有攻击侮辱意味的口头禅、网络用语、粗口等表达观点态度。同时也希望UP主们带来更加优质的内容，通过作品公平竞争，不使用不正当手段诱导用户参与影响稿件数据。</span></p>\n<p><span style=\"font-size: 16px;\">详细《哔哩哔哩创作公约》请查看：</span><a href=\"https://member.bilibili.com/platform/treaty?search=q0\" target=\"_self\"><span style=\"font-size: 16px;\">https://member.bilibili.com/platform/treaty?search=q0</span></a>&nbsp;</p>\n<p></p>\n<p><span style=\"font-size: 16px;\">除上述内容外，花火广告审核还会对花火商业推广稿件进行检查。对不规范稿件进行驳回汇总。在相关数据的支持下，统计周期内主要高频驳回问题稿件主要分为以下几类：绝对化（用语）、专利数据类、高风险行业（三品一械）、酒类、虚假（夸大）宣传类、未成年类、侵权类以及对比诱导类（此类常见于化妆品推广）。</span></p>\n<p><span style=\"font-size: 16px;\"><br>本文主要汇总了以上各类问题的常见驳回形式以供参考，并在商业视频制作的过程中对不规范内容进行规避。</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>二、绝对化（用语）</strong></span><br></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>根据《中华人民共和国广告法》（简称广告法）第二章第九条第三项规定：“广告中不得使用“国家级”、“最高级”、“最佳”等用语”；而在审核稿件过程中，违规问题点主要体现在商推范围内使用绝对化（用语），关联推广产品并且无法通过外部进行查证，以至于对消费者认知造成一定影响 <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、使用广告法明令禁止（“国家级”、“最高级”、“最佳”）的词语<br>2、使用带有绝对化意义的绝对词，且没有提交相关佐证<br>常见绝对化（用语）： </span></p>\n<img src=\"https://i0.hdslb.com/bfs/activity-plat/static/e2080d153bdf4de08d62649fad2c59be/l0MKcBXkdM_w607_h731.png\" alt=\"undefined\" style=\"height: undefined;width: undefined\"/>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>注意事项：</strong><br>在商推部分禁止使用明令禁止的绝对词（“国家级”、“最高级”、“最佳”） 关联产品进行推广；使用非明令禁止类绝对词 请提前提供与使用绝对词相符的主流大众媒体报道作为佐证<strong>，广告审核侧会根据实际稿件情况进行判断。</strong></span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>三、专利数据类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>根据广告法第二章第十一、十二条规定 ：“广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类，未取得专利权的，不得在广告中谎称取得专利权，禁止使用未授予专利权的专利申请和已经终止、撤销、无效的专利作广告。” <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、稿件商推部分提及专利没有按照法律规定标明专利号和专利种类<br>2、稿件提及专利数量、种类 和提供的相关证明不匹配<br>3、部分高危词汇（独创、独有、独具、独家等）涉及专利 ，没有按照要求提供相关证明<br>4、涉及产品功效的具体数据类内容，没有提供对应的数据证明<br><br><strong>注意事项：</strong><br>涉及专利问题请在视频简介或视频中提到专利的部分提供与稿件内容相符的专利号，并且将其标明在视频、稿件文字信息中的某一处；涉及产品功效性数据，尤其是接近于临界点区间（99%-100%）的数据，请提供与之一致的详细第三方证明报告，且检测项目和稿件中提及的保持一致</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>四、高风险行业</strong></span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>1、三品一械</strong></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>广告法第四章第四十六条规定：“发布医疗、药品、医疗器械、农药、兽药和保健食品广告，以及法律、行政法规规定应当进行审查的其他广告，应当在发布前由有关部门（以下称广告审查机关）对广告内容进行审查；未经审查，不得发布。”<br>广告法第三章第四十四条规定：“利用互联网从事广告活动，适用本法的各项规定。”<br>故平台审核时要求：视频封面以及视频中涉及对商品服务、功效、材质等进行描述、使用的，应当提供相应的广审文件；且广审内容应当与视频内容相一致<br>其余细节规定详见前台</span><a href=\"https://www.bilibili.com/blackboard/activity-QLKVrsgdYA.html\" target=\"_self\"><span style=\"font-size: 16px;\">花火商单视频审核管理规范</span></a><span style=\"font-size: 16px;\">，此处不再赘述 <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、稿件内对推广商品服务、功效、材质等进行描述、使用，却无法提供相对应的广审文件，也未在视频中备注广告批准文号<br>2、提供广审文件类型、内容与视频内容不一致的（通常情况下图片广审文件和视频广审文件混淆提供）<br>3、仅仅备注广告批准文号，未给到对应广审文件<br>4、三品一械类稿件未按照相关法律法规的硬性要求注明相关警示标语（相关标语内容可参考下文备注一） <strong> </strong></span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>备注一 三品一械医疗广告警示标语法规</strong></span></p>\n<h2><span style=\"font-size: 16px;\">1、药品标语可参考广告法第十六条：“药品广告的内容不得与国务院药品监督管理部门批准的说明书不一致，并应当显著标明禁忌、不良反应。处方药广告应当显著标明<strong>“本广告仅供医学药学专业人士阅读”</strong>，非处方药广告应当显著标明<strong>“请按药品说明书或者在药师指导下购买和使用””</strong></span></h2>\n<h2><span style=\"font-size: 16px;\">2、医疗器械标语可参考广告法第十六条：“推荐给个人自用的医疗器械的广告，应当显著标明<strong>“请仔细阅读产品说明书或者在医务人员的指导下购买和使用”</strong>。医疗器械产品注册证明文件中有禁忌内容、注意事项的，广告中应当显著标明<strong>“禁忌内容或者注意事项详见说明书””</strong></span></h2>\n<h2><span style=\"font-size: 16px;\">3、保健品标语可参考《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第七条：“保健食品广告应当显著标明<strong>“保健食品不是药物，不能代替药物治疗疾病”</strong>，声明本品不能代替药物，并显著标明保健食品标志、适宜人群和不适宜人群”</span></h2>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>2.  医疗用语</strong><br><strong>审核依据：</strong><br>根据 广告法第二章第十七条规定：“除医疗、药品、医疗器械广告外，禁止其他任何广告涉及疾病治疗功能，并不得使用医疗用语或者易使推销的商品与药品、医疗器械相混淆的用语。”故在非三品一械稿件中禁止使用医疗类用语进行产品推广<br> </span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、涉及疾病诊断和治疗的内容，包括：使用医学名称及诊疗科目名称，如中医、西医、中西结合、妇科、五官科、牙科、儿科、内科、外科使用各种疾病名称及疾病的医疗用语，如医疗、医治、治疗、治愈、康复等；含有疾病诊断方法和手段的用词，如体检、化验、CT、B超、验血等；含有疾病治疗方法和手段的用词，如抗病毒、手术、手术名称、注射、化疗、理疗、整形等；含有表述疾病症状改善的用词，如退烧、退热、止痛、止咳等。<br>2、属于医疗术语或医疗用语的，如消炎、抗炎、活血、解毒、抗敏、脱敏祛瘀等。<br>3、除消毒用品及具有特殊功能的日化用品以外，在其他化妆品以及其它直接适用于人体的商品广告中使用抗菌、抑菌、除菌、灭菌等。</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>备注二 视频广审</strong><br>因为目前平台三品一械广告 绝大部分首次上传稿件时都会涉及到对推广商品的服务描述，所以只要在商推部分涉及，就需要提供与涉及内容完全一致的广审文件。故一般来说视频广审文件样式如下： </span></p>\n<img src=\"https://i0.hdslb.com/bfs/activity-plat/static/e2080d153bdf4de08d62649fad2c59be/KU8ckZDnbv_w753_h766.png\" alt=\"undefined\" style=\"height: undefined;width: undefined\"/>\n<p style=\"text-align:center;\">图一&nbsp;</p>\n<p></p>\n<img src=\"https://i0.hdslb.com/bfs/activity-plat/static/e2080d153bdf4de08d62649fad2c59be/TYMn5Vfiu4_w880_h37.png\" alt=\"undefined\" style=\"height: undefined;width: undefined\"/>\n<p style=\"text-align:center;\">图二&nbsp;</p>\n<p></p>\n<p><span style=\"font-size: 16px;\">注意点：广审文件必须含有审查机关盖章，并且必须附有广告样件，样件样式可参考图二，包含视频时间段——画面——字幕——旁白（bgm），具体其他的样式会根据实际情况进行判定。 <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>注意事项：</strong><br>对于三品一械类商推，只要涉及到对推广商品服务、功效、材质等进行描述、使用的，就需要提供与之一致的广审文件，并且将广告批准文号标明在视频中 。</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>五、酒类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>根据&lt;中华人民共和国广告法&gt;关于对酒类广告的规定:<br>第二十三条　“酒类广告不得含有下列内容：（一）诱导、怂恿饮酒或者宣传无节制饮酒；（二）出现饮酒的动作；（三）表现驾驶车、船、飞机等活动；（四）明示或者暗示饮酒有消除紧张和焦虑、增加体力等功效” <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、含有碰杯干杯、饮酒动作<br>2、未添加“未成年人不得饮酒”警示标语<br>3、含有诱导怂恿宣传无节制饮酒的画面或者话术<br><br><strong>注意事项：</strong><br>酒类商单不得含有喝酒干杯碰杯动作，必须添加未成年人不得饮酒的警示标语，以及不得呈现广告法中其他涉及未成年人明令禁止的部分</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>六、未成年类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>根据最新修行的&lt;中华人民共和国广告法&gt;中关于未成年人的相关规定:<br>第十条 “广告不得损害未成年人和残疾人的身心健康。”<br>第二十二条 “禁止在大众传播媒介或者公共场所、公共交通工具、户外发布烟草广告。禁止向未成年人发送任何形式的烟草广告。”<br>第三十八条 “广告代言人在广告中对商品、服务作推荐、证明，应当依据事实，符合本法和有关法律、行政法规规定，并不得为其未使用过的商品或者未接受过的服务作推荐、证明。不得利用不满十周岁的未成年人作为广告代言人。”<br>第三十九条 “不得在中小学校、幼儿园内开展广告活动，不得利用中小学生和幼儿的教材、教辅材料、练习册、文具、教具、校服、校车等发布或者变相发布广告，但公益广告除外。”<br>第四十条 “在针对未成年人的大众传播媒介上不得发布医疗、药品、保健食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。针对不满十四周岁的未成年人的商品或者服务的广告不得含有下列内容：(一)劝诱其要求家长购买广告商品或者服务(二)可能引发其模仿不安全行为” <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见问题点:</strong><br>1、酒类 药品 医疗器械 保健食品   金融等高风险行业中出现未成年元素<br>2、稿件中未满10周岁未成年人作为主体代言推广商品<br>3、稿件中出现有害未成年身心健康的元素（例如毒品、儿童邪典、低俗、不正三观等）<br><br><strong>注意事项：</strong><br>未成年人类作为监管巡查的重点目标，此类商单在审核过程中从严把控，商单应遵循：避免10周岁以下未成年人单独出镜，进行商推且应不涉及高风险行业内容；涉及未成年人的推广应符合其身心健康且社会主义核心价值观。  </span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>七、侵权类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong> </span></p>\n<p><span style=\"font-size: 16px;\">根据&lt;中华人民共和国广告法&gt;关于对广告侵权的规定:</span></p>\n<p><span style=\"font-size: 16px;\">第十三条　广告不得贬低其他生产经营者的商品或者服务。</span></p>\n<p><span style=\"font-size: 16px;\">第六十九条　广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任：</span></p>\n<p><span style=\"font-size: 16px;\">   （一）在广告中损害未成年人或者残疾人的身心健康的；</span></p>\n<p><span style=\"font-size: 16px;\">   （二）假冒他人专利的；</span></p>\n<p><span style=\"font-size: 16px;\">   （三）贬低其他生产经营者的商品、服务的；</span></p>\n<p><span style=\"font-size: 16px;\">   （四）在广告中未经同意使用他人名义或者形象的；</span></p>\n<p><span style=\"font-size: 16px;\">   （五）其他侵犯他人合法民事权益的。</span></p>\n<p><span style=\"font-size: 16px;\">其余审核依据包括但不仅仅局限于《著作权法》、《商标法》、《专利法》、《民法典》等法律法规</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong></span></p>\n<p><span style=\"font-size: 16px;\">1、商推中未经同意使用他人名义、肖像或形象进行推广。</span></p>\n<p><span style=\"font-size: 16px;\">2、商推中未经同意使用他人素材、知识产权内容进行推广。</span></p>\n<p><span style=\"font-size: 16px;\">3、未经许可使用他人的商标或中国驰名商标等涉及侵犯商标权的行为</span></p>\n<p><span style=\"font-size: 16px;\">4、未经许可拉踩、贬低其他品牌行为</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>注意事项：</strong></span></p>\n<p><span style=\"font-size: 16px;\">就商单的侵权部分来看，主要的问题点集中在无授权使用名人名义形象进行推广、拉踩其他品牌导致侵犯了名誉权、以及违反知识产权保护相关法律法规的一系列做法。需要注意的是，如果客户在稿件中需准备好相匹配的授权文件，以便审核流程的通畅。</span></p>\n<p><span style=\"font-size: 16px;\">此外，对于商推中使用影视剧、综艺、up主片段等进行二次创作，创作内容为重新改编、改变了原意，那么在一定程度上”有可能不构成侵权“。同时在有可能改变原意的情况下，建议在末尾添加“？”以表明仅为揣测 ，具体需以最终审核意见为准。</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>八、诱导类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong> </span></p>\n<p><span style=\"font-size: 16px;\">根据</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\">&lt;化妆品监督管理条例&gt;关于对化妆品广告的规定:</span></p>\n<p><span style=\"font-size: 16px;\">第四十三条　化妆品广告的内容应当真实、合法。</span></p>\n<p><span style=\"font-size: 16px;\">化妆品广告不得明示或者暗示产品具有医疗作用，不得含有虚假或者引人误解的内容，不得欺骗、误导消费者。</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\">《中华人民共和国广告法》</span></p>\n<p><span style=\"font-size: 16px;\">第二十八条　广告以虚假或者引人误解的内容欺骗、误导消费者的，构成虚假广告。</span></p>\n<p><span style=\"font-size: 16px;\">　　广告有下列情形之一的，为虚假广告：</span></p>\n<p><span style=\"font-size: 16px;\">　　（一）商品或者服务不存在的；</span></p>\n<p><span style=\"font-size: 16px;\">　　（二）商品的性能、功能、产地、用途、质量、规格、成分、价格、生产者、有效期限、销售状况、曾获荣誉等信息，或者服务的内容、提供者、形式、质量、价格、销售状况、曾获荣誉等信息，以及与商品或者服务有关的允诺等信息与实际情况不符，对购买行为有实质性影响的；</span></p>\n<p><span style=\"font-size: 16px;\">　　（三）使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料的；</span></p>\n<p><span style=\"font-size: 16px;\">　　（四）虚构使用商品或者接受服务的效果的；</span></p>\n<p><span style=\"font-size: 16px;\">　　（五）以虚假或者引人误解的内容欺骗、误导消费者的其他情形。</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong></span></p>\n<p><span style=\"font-size: 16px;\">1、功效性化妆品广告封面使用前后对比图，来展示使用效果，暗示使用该产品后一定能达到程度上改善。</span></p>\n<p><span style=\"font-size: 16px;\">2、借由使用病理图或者患处放大图，来达到暗示医疗用语，误导消费者的地步</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>注意事项：</strong></span></p>\n<p><span style=\"font-size: 16px;\">鉴于化妆品的效果和时限是影响消费者购买的重要因素之一，对购买行为有实质性影响，而不是每个消费者都能达到对比图中所展示的效果，因此稿件中若含有使用前后的对比图及病理图，极易构成对消费者的误导，从而产生被认定为虚假广告的风险。因此客户因尽量避免对前后功效对比图以及病理图对比的使用，遵守相关的法律法规</span></p>\n"},"headTitle":"","lineHeight":26,"_asyncData":{},"@woodman/node":"MHnPd2qEqRs","id":"MHnPd2qEqRs"}],"firstScreenResource":[],"h5-baseinfo":[{"_asyncData":{}}]};
+
+  window.__BILIACT_MODULES__ = {"root":{"config":{"_asyncData":{}},"boxConfig":{},"framework":"core","id":"root","info":"模板配置","parent":null,"source":"library","tag":"h5-baseinfo","values":{"_asyncData":{}},"version":"0.1.17"},"MHnPd2qEqRs":{"id":"MHnPd2qEqRs","tag":"h5-rich-text2","version":"0.0.17","info":"富文本","parent":"Body","config":{"diableRemParse":true,"htmlObj":{"dangerHtml":"<p style=\"text-align:center;\"></p>\n<p></p>\n<p style=\"text-align:center;\"><span style=\"font-size: 24px;\">花火稿件审核规范总则</span></p>\n<p></p>\n<p></p>\n<p>&nbsp;<span style=\"font-size: 24px;\"><strong>一、概述</strong></span><br></p>\n<p><span style=\"font-size: 16px;\">为了保护用户的财产和信息安全，bilibili禁止发布含有恶意营销或不符合推广流程的内容、危害未成年人的内容、恐怖血暴引人不适的内容、色情低俗的内容。不提倡使用带有强烈情感宣泄的词汇和语句，通过带有攻击侮辱意味的口头禅、网络用语、粗口等表达观点态度。同时也希望UP主们带来更加优质的内容，通过作品公平竞争，不使用不正当手段诱导用户参与影响稿件数据。</span></p>\n<p><span style=\"font-size: 16px;\">详细《哔哩哔哩创作公约》请查看：</span><a href=\"https://member.bilibili.com/platform/treaty?search=q0\" target=\"_self\"><span style=\"font-size: 16px;\">https://member.bilibili.com/platform/treaty?search=q0</span></a>&nbsp;</p>\n<p></p>\n<p><span style=\"font-size: 16px;\">除上述内容外，花火广告审核还会对花火商业推广稿件进行检查。对不规范稿件进行驳回汇总。在相关数据的支持下，统计周期内主要高频驳回问题稿件主要分为以下几类：绝对化（用语）、专利数据类、高风险行业（三品一械）、酒类、虚假（夸大）宣传类、未成年类、侵权类以及对比诱导类（此类常见于化妆品推广）。</span></p>\n<p><span style=\"font-size: 16px;\"><br>本文主要汇总了以上各类问题的常见驳回形式以供参考，并在商业视频制作的过程中对不规范内容进行规避。</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>二、绝对化（用语）</strong></span><br></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>根据《中华人民共和国广告法》（简称广告法）第二章第九条第三项规定：“广告中不得使用“国家级”、“最高级”、“最佳”等用语”；而在审核稿件过程中，违规问题点主要体现在商推范围内使用绝对化（用语），关联推广产品并且无法通过外部进行查证，以至于对消费者认知造成一定影响 <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、使用广告法明令禁止（“国家级”、“最高级”、“最佳”）的词语<br>2、使用带有绝对化意义的绝对词，且没有提交相关佐证<br>常见绝对化（用语）： </span></p>\n<img src=\"https://i0.hdslb.com/bfs/activity-plat/static/e2080d153bdf4de08d62649fad2c59be/l0MKcBXkdM_w607_h731.png\" alt=\"undefined\" style=\"height: undefined;width: undefined\"/>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>注意事项：</strong><br>在商推部分禁止使用明令禁止的绝对词（“国家级”、“最高级”、“最佳”） 关联产品进行推广；使用非明令禁止类绝对词 请提前提供与使用绝对词相符的主流大众媒体报道作为佐证<strong>，广告审核侧会根据实际稿件情况进行判断。</strong></span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>三、专利数据类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>根据广告法第二章第十一、十二条规定 ：“广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类，未取得专利权的，不得在广告中谎称取得专利权，禁止使用未授予专利权的专利申请和已经终止、撤销、无效的专利作广告。” <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、稿件商推部分提及专利没有按照法律规定标明专利号和专利种类<br>2、稿件提及专利数量、种类 和提供的相关证明不匹配<br>3、部分高危词汇（独创、独有、独具、独家等）涉及专利 ，没有按照要求提供相关证明<br>4、涉及产品功效的具体数据类内容，没有提供对应的数据证明<br><br><strong>注意事项：</strong><br>涉及专利问题请在视频简介或视频中提到专利的部分提供与稿件内容相符的专利号，并且将其标明在视频、稿件文字信息中的某一处；涉及产品功效性数据，尤其是接近于临界点区间（99%-100%）的数据，请提供与之一致的详细第三方证明报告，且检测项目和稿件中提及的保持一致</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>四、高风险行业</strong></span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>1、三品一械</strong></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>广告法第四章第四十六条规定：“发布医疗、药品、医疗器械、农药、兽药和保健食品广告，以及法律、行政法规规定应当进行审查的其他广告，应当在发布前由有关部门（以下称广告审查机关）对广告内容进行审查；未经审查，不得发布。”<br>广告法第三章第四十四条规定：“利用互联网从事广告活动，适用本法的各项规定。”<br>故平台审核时要求：视频封面以及视频中涉及对商品服务、功效、材质等进行描述、使用的，应当提供相应的广审文件；且广审内容应当与视频内容相一致<br>其余细节规定详见前台</span><a href=\"https://www.bilibili.com/blackboard/activity-QLKVrsgdYA.html\" target=\"_self\"><span style=\"font-size: 16px;\">花火商单视频审核管理规范</span></a><span style=\"font-size: 16px;\">，此处不再赘述 <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、稿件内对推广商品服务、功效、材质等进行描述、使用，却无法提供相对应的广审文件，也未在视频中备注广告批准文号<br>2、提供广审文件类型、内容与视频内容不一致的（通常情况下图片广审文件和视频广审文件混淆提供）<br>3、仅仅备注广告批准文号，未给到对应广审文件<br>4、三品一械类稿件未按照相关法律法规的硬性要求注明相关警示标语（相关标语内容可参考下文备注一） <strong> </strong></span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>备注一 三品一械医疗广告警示标语法规</strong></span></p>\n<h2><span style=\"font-size: 16px;\">1、药品标语可参考广告法第十六条：“药品广告的内容不得与国务院药品监督管理部门批准的说明书不一致，并应当显著标明禁忌、不良反应。处方药广告应当显著标明<strong>“本广告仅供医学药学专业人士阅读”</strong>，非处方药广告应当显著标明<strong>“请按药品说明书或者在药师指导下购买和使用””</strong></span></h2>\n<h2><span style=\"font-size: 16px;\">2、医疗器械标语可参考广告法第十六条：“推荐给个人自用的医疗器械的广告，应当显著标明<strong>“请仔细阅读产品说明书或者在医务人员的指导下购买和使用”</strong>。医疗器械产品注册证明文件中有禁忌内容、注意事项的，广告中应当显著标明<strong>“禁忌内容或者注意事项详见说明书””</strong></span></h2>\n<h2><span style=\"font-size: 16px;\">3、保健品标语可参考《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第七条：“保健食品广告应当显著标明<strong>“保健食品不是药物，不能代替药物治疗疾病”</strong>，声明本品不能代替药物，并显著标明保健食品标志、适宜人群和不适宜人群”</span></h2>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>2.  医疗用语</strong><br><strong>审核依据：</strong><br>根据 广告法第二章第十七条规定：“除医疗、药品、医疗器械广告外，禁止其他任何广告涉及疾病治疗功能，并不得使用医疗用语或者易使推销的商品与药品、医疗器械相混淆的用语。”故在非三品一械稿件中禁止使用医疗类用语进行产品推广<br> </span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、涉及疾病诊断和治疗的内容，包括：使用医学名称及诊疗科目名称，如中医、西医、中西结合、妇科、五官科、牙科、儿科、内科、外科使用各种疾病名称及疾病的医疗用语，如医疗、医治、治疗、治愈、康复等；含有疾病诊断方法和手段的用词，如体检、化验、CT、B超、验血等；含有疾病治疗方法和手段的用词，如抗病毒、手术、手术名称、注射、化疗、理疗、整形等；含有表述疾病症状改善的用词，如退烧、退热、止痛、止咳等。<br>2、属于医疗术语或医疗用语的，如消炎、抗炎、活血、解毒、抗敏、脱敏祛瘀等。<br>3、除消毒用品及具有特殊功能的日化用品以外，在其他化妆品以及其它直接适用于人体的商品广告中使用抗菌、抑菌、除菌、灭菌等。</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>备注二 视频广审</strong><br>因为目前平台三品一械广告 绝大部分首次上传稿件时都会涉及到对推广商品的服务描述，所以只要在商推部分涉及，就需要提供与涉及内容完全一致的广审文件。故一般来说视频广审文件样式如下： </span></p>\n<img src=\"https://i0.hdslb.com/bfs/activity-plat/static/e2080d153bdf4de08d62649fad2c59be/KU8ckZDnbv_w753_h766.png\" alt=\"undefined\" style=\"height: undefined;width: undefined\"/>\n<p style=\"text-align:center;\">图一&nbsp;</p>\n<p></p>\n<img src=\"https://i0.hdslb.com/bfs/activity-plat/static/e2080d153bdf4de08d62649fad2c59be/TYMn5Vfiu4_w880_h37.png\" alt=\"undefined\" style=\"height: undefined;width: undefined\"/>\n<p style=\"text-align:center;\">图二&nbsp;</p>\n<p></p>\n<p><span style=\"font-size: 16px;\">注意点：广审文件必须含有审查机关盖章，并且必须附有广告样件，样件样式可参考图二，包含视频时间段——画面——字幕——旁白（bgm），具体其他的样式会根据实际情况进行判定。 <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>注意事项：</strong><br>对于三品一械类商推，只要涉及到对推广商品服务、功效、材质等进行描述、使用的，就需要提供与之一致的广审文件，并且将广告批准文号标明在视频中 。</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>五、酒类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>根据&lt;中华人民共和国广告法&gt;关于对酒类广告的规定:<br>第二十三条　“酒类广告不得含有下列内容：（一）诱导、怂恿饮酒或者宣传无节制饮酒；（二）出现饮酒的动作；（三）表现驾驶车、船、飞机等活动；（四）明示或者暗示饮酒有消除紧张和焦虑、增加体力等功效” <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、含有碰杯干杯、饮酒动作<br>2、未添加“未成年人不得饮酒”警示标语<br>3、含有诱导怂恿宣传无节制饮酒的画面或者话术<br><br><strong>注意事项：</strong><br>酒类商单不得含有喝酒干杯碰杯动作，必须添加未成年人不得饮酒的警示标语，以及不得呈现广告法中其他涉及未成年人明令禁止的部分</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>六、未成年类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>根据最新修行的&lt;中华人民共和国广告法&gt;中关于未成年人的相关规定:<br>第十条 “广告不得损害未成年人和残疾人的身心健康。”<br>第二十二条 “禁止在大众传播媒介或者公共场所、公共交通工具、户外发布烟草广告。禁止向未成年人发送任何形式的烟草广告。”<br>第三十八条 “广告代言人在广告中对商品、服务作推荐、证明，应当依据事实，符合本法和有关法律、行政法规规定，并不得为其未使用过的商品或者未接受过的服务作推荐、证明。不得利用不满十周岁的未成年人作为广告代言人。”<br>第三十九条 “不得在中小学校、幼儿园内开展广告活动，不得利用中小学生和幼儿的教材、教辅材料、练习册、文具、教具、校服、校车等发布或者变相发布广告，但公益广告除外。”<br>第四十条 “在针对未成年人的大众传播媒介上不得发布医疗、药品、保健食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。针对不满十四周岁的未成年人的商品或者服务的广告不得含有下列内容：(一)劝诱其要求家长购买广告商品或者服务(二)可能引发其模仿不安全行为” <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见问题点:</strong><br>1、酒类 药品 医疗器械 保健食品   金融等高风险行业中出现未成年元素<br>2、稿件中未满10周岁未成年人作为主体代言推广商品<br>3、稿件中出现有害未成年身心健康的元素（例如毒品、儿童邪典、低俗、不正三观等）<br><br><strong>注意事项：</strong><br>未成年人类作为监管巡查的重点目标，此类商单在审核过程中从严把控，商单应遵循：避免10周岁以下未成年人单独出镜，进行商推且应不涉及高风险行业内容；涉及未成年人的推广应符合其身心健康且社会主义核心价值观。  </span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>七、侵权类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong> </span></p>\n<p><span style=\"font-size: 16px;\">根据&lt;中华人民共和国广告法&gt;关于对广告侵权的规定:</span></p>\n<p><span style=\"font-size: 16px;\">第十三条　广告不得贬低其他生产经营者的商品或者服务。</span></p>\n<p><span style=\"font-size: 16px;\">第六十九条　广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任：</span></p>\n<p><span style=\"font-size: 16px;\">   （一）在广告中损害未成年人或者残疾人的身心健康的；</span></p>\n<p><span style=\"font-size: 16px;\">   （二）假冒他人专利的；</span></p>\n<p><span style=\"font-size: 16px;\">   （三）贬低其他生产经营者的商品、服务的；</span></p>\n<p><span style=\"font-size: 16px;\">   （四）在广告中未经同意使用他人名义或者形象的；</span></p>\n<p><span style=\"font-size: 16px;\">   （五）其他侵犯他人合法民事权益的。</span></p>\n<p><span style=\"font-size: 16px;\">其余审核依据包括但不仅仅局限于《著作权法》、《商标法》、《专利法》、《民法典》等法律法规</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong></span></p>\n<p><span style=\"font-size: 16px;\">1、商推中未经同意使用他人名义、肖像或形象进行推广。</span></p>\n<p><span style=\"font-size: 16px;\">2、商推中未经同意使用他人素材、知识产权内容进行推广。</span></p>\n<p><span style=\"font-size: 16px;\">3、未经许可使用他人的商标或中国驰名商标等涉及侵犯商标权的行为</span></p>\n<p><span style=\"font-size: 16px;\">4、未经许可拉踩、贬低其他品牌行为</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>注意事项：</strong></span></p>\n<p><span style=\"font-size: 16px;\">就商单的侵权部分来看，主要的问题点集中在无授权使用名人名义形象进行推广、拉踩其他品牌导致侵犯了名誉权、以及违反知识产权保护相关法律法规的一系列做法。需要注意的是，如果客户在稿件中需准备好相匹配的授权文件，以便审核流程的通畅。</span></p>\n<p><span style=\"font-size: 16px;\">此外，对于商推中使用影视剧、综艺、up主片段等进行二次创作，创作内容为重新改编、改变了原意，那么在一定程度上”有可能不构成侵权“。同时在有可能改变原意的情况下，建议在末尾添加“？”以表明仅为揣测 ，具体需以最终审核意见为准。</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>八、诱导类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong> </span></p>\n<p><span style=\"font-size: 16px;\">根据</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\">&lt;化妆品监督管理条例&gt;关于对化妆品广告的规定:</span></p>\n<p><span style=\"font-size: 16px;\">第四十三条　化妆品广告的内容应当真实、合法。</span></p>\n<p><span style=\"font-size: 16px;\">化妆品广告不得明示或者暗示产品具有医疗作用，不得含有虚假或者引人误解的内容，不得欺骗、误导消费者。</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\">《中华人民共和国广告法》</span></p>\n<p><span style=\"font-size: 16px;\">第二十八条　广告以虚假或者引人误解的内容欺骗、误导消费者的，构成虚假广告。</span></p>\n<p><span style=\"font-size: 16px;\">　　广告有下列情形之一的，为虚假广告：</span></p>\n<p><span style=\"font-size: 16px;\">　　（一）商品或者服务不存在的；</span></p>\n<p><span style=\"font-size: 16px;\">　　（二）商品的性能、功能、产地、用途、质量、规格、成分、价格、生产者、有效期限、销售状况、曾获荣誉等信息，或者服务的内容、提供者、形式、质量、价格、销售状况、曾获荣誉等信息，以及与商品或者服务有关的允诺等信息与实际情况不符，对购买行为有实质性影响的；</span></p>\n<p><span style=\"font-size: 16px;\">　　（三）使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料的；</span></p>\n<p><span style=\"font-size: 16px;\">　　（四）虚构使用商品或者接受服务的效果的；</span></p>\n<p><span style=\"font-size: 16px;\">　　（五）以虚假或者引人误解的内容欺骗、误导消费者的其他情形。</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong></span></p>\n<p><span style=\"font-size: 16px;\">1、功效性化妆品广告封面使用前后对比图，来展示使用效果，暗示使用该产品后一定能达到程度上改善。</span></p>\n<p><span style=\"font-size: 16px;\">2、借由使用病理图或者患处放大图，来达到暗示医疗用语，误导消费者的地步</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>注意事项：</strong></span></p>\n<p><span style=\"font-size: 16px;\">鉴于化妆品的效果和时限是影响消费者购买的重要因素之一，对购买行为有实质性影响，而不是每个消费者都能达到对比图中所展示的效果，因此稿件中若含有使用前后的对比图及病理图，极易构成对消费者的误导，从而产生被认定为虚假广告的风险。因此客户因尽量避免对前后功效对比图以及病理图对比的使用，遵守相关的法律法规</span></p>\n"},"headTitle":"","lineHeight":26,"_asyncData":{}},"framework":"vanilla","source":"library","boxConfig":{"spaceTop":0,"spaceBottom":0,"spaceLeft":0,"spaceRight":0,"width":"650px","isFirstScreen":true},"values":{"diableRemParse":true,"htmlObj":{"dangerHtml":"<p style=\"text-align:center;\"></p>\n<p></p>\n<p style=\"text-align:center;\"><span style=\"font-size: 24px;\">花火稿件审核规范总则</span></p>\n<p></p>\n<p></p>\n<p>&nbsp;<span style=\"font-size: 24px;\"><strong>一、概述</strong></span><br></p>\n<p><span style=\"font-size: 16px;\">为了保护用户的财产和信息安全，bilibili禁止发布含有恶意营销或不符合推广流程的内容、危害未成年人的内容、恐怖血暴引人不适的内容、色情低俗的内容。不提倡使用带有强烈情感宣泄的词汇和语句，通过带有攻击侮辱意味的口头禅、网络用语、粗口等表达观点态度。同时也希望UP主们带来更加优质的内容，通过作品公平竞争，不使用不正当手段诱导用户参与影响稿件数据。</span></p>\n<p><span style=\"font-size: 16px;\">详细《哔哩哔哩创作公约》请查看：</span><a href=\"https://member.bilibili.com/platform/treaty?search=q0\" target=\"_self\"><span style=\"font-size: 16px;\">https://member.bilibili.com/platform/treaty?search=q0</span></a>&nbsp;</p>\n<p></p>\n<p><span style=\"font-size: 16px;\">除上述内容外，花火广告审核还会对花火商业推广稿件进行检查。对不规范稿件进行驳回汇总。在相关数据的支持下，统计周期内主要高频驳回问题稿件主要分为以下几类：绝对化（用语）、专利数据类、高风险行业（三品一械）、酒类、虚假（夸大）宣传类、未成年类、侵权类以及对比诱导类（此类常见于化妆品推广）。</span></p>\n<p><span style=\"font-size: 16px;\"><br>本文主要汇总了以上各类问题的常见驳回形式以供参考，并在商业视频制作的过程中对不规范内容进行规避。</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>二、绝对化（用语）</strong></span><br></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>根据《中华人民共和国广告法》（简称广告法）第二章第九条第三项规定：“广告中不得使用“国家级”、“最高级”、“最佳”等用语”；而在审核稿件过程中，违规问题点主要体现在商推范围内使用绝对化（用语），关联推广产品并且无法通过外部进行查证，以至于对消费者认知造成一定影响 <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、使用广告法明令禁止（“国家级”、“最高级”、“最佳”）的词语<br>2、使用带有绝对化意义的绝对词，且没有提交相关佐证<br>常见绝对化（用语）： </span></p>\n<img src=\"https://i0.hdslb.com/bfs/activity-plat/static/e2080d153bdf4de08d62649fad2c59be/l0MKcBXkdM_w607_h731.png\" alt=\"undefined\" style=\"height: undefined;width: undefined\"/>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>注意事项：</strong><br>在商推部分禁止使用明令禁止的绝对词（“国家级”、“最高级”、“最佳”） 关联产品进行推广；使用非明令禁止类绝对词 请提前提供与使用绝对词相符的主流大众媒体报道作为佐证<strong>，广告审核侧会根据实际稿件情况进行判断。</strong></span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>三、专利数据类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>根据广告法第二章第十一、十二条规定 ：“广告使用数据、统计资料、调查结果、文摘、引用语等引证内容的，应当真实、准确，并表明出处。引证内容有适用范围和有效期限的，应当明确表示。广告中涉及专利产品或者专利方法的，应当标明专利号和专利种类，未取得专利权的，不得在广告中谎称取得专利权，禁止使用未授予专利权的专利申请和已经终止、撤销、无效的专利作广告。” <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、稿件商推部分提及专利没有按照法律规定标明专利号和专利种类<br>2、稿件提及专利数量、种类 和提供的相关证明不匹配<br>3、部分高危词汇（独创、独有、独具、独家等）涉及专利 ，没有按照要求提供相关证明<br>4、涉及产品功效的具体数据类内容，没有提供对应的数据证明<br><br><strong>注意事项：</strong><br>涉及专利问题请在视频简介或视频中提到专利的部分提供与稿件内容相符的专利号，并且将其标明在视频、稿件文字信息中的某一处；涉及产品功效性数据，尤其是接近于临界点区间（99%-100%）的数据，请提供与之一致的详细第三方证明报告，且检测项目和稿件中提及的保持一致</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>四、高风险行业</strong></span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>1、三品一械</strong></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>广告法第四章第四十六条规定：“发布医疗、药品、医疗器械、农药、兽药和保健食品广告，以及法律、行政法规规定应当进行审查的其他广告，应当在发布前由有关部门（以下称广告审查机关）对广告内容进行审查；未经审查，不得发布。”<br>广告法第三章第四十四条规定：“利用互联网从事广告活动，适用本法的各项规定。”<br>故平台审核时要求：视频封面以及视频中涉及对商品服务、功效、材质等进行描述、使用的，应当提供相应的广审文件；且广审内容应当与视频内容相一致<br>其余细节规定详见前台</span><a href=\"https://www.bilibili.com/blackboard/activity-QLKVrsgdYA.html\" target=\"_self\"><span style=\"font-size: 16px;\">花火商单视频审核管理规范</span></a><span style=\"font-size: 16px;\">，此处不再赘述 <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、稿件内对推广商品服务、功效、材质等进行描述、使用，却无法提供相对应的广审文件，也未在视频中备注广告批准文号<br>2、提供广审文件类型、内容与视频内容不一致的（通常情况下图片广审文件和视频广审文件混淆提供）<br>3、仅仅备注广告批准文号，未给到对应广审文件<br>4、三品一械类稿件未按照相关法律法规的硬性要求注明相关警示标语（相关标语内容可参考下文备注一） <strong> </strong></span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>备注一 三品一械医疗广告警示标语法规</strong></span></p>\n<h2><span style=\"font-size: 16px;\">1、药品标语可参考广告法第十六条：“药品广告的内容不得与国务院药品监督管理部门批准的说明书不一致，并应当显著标明禁忌、不良反应。处方药广告应当显著标明<strong>“本广告仅供医学药学专业人士阅读”</strong>，非处方药广告应当显著标明<strong>“请按药品说明书或者在药师指导下购买和使用””</strong></span></h2>\n<h2><span style=\"font-size: 16px;\">2、医疗器械标语可参考广告法第十六条：“推荐给个人自用的医疗器械的广告，应当显著标明<strong>“请仔细阅读产品说明书或者在医务人员的指导下购买和使用”</strong>。医疗器械产品注册证明文件中有禁忌内容、注意事项的，广告中应当显著标明<strong>“禁忌内容或者注意事项详见说明书””</strong></span></h2>\n<h2><span style=\"font-size: 16px;\">3、保健品标语可参考《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第七条：“保健食品广告应当显著标明<strong>“保健食品不是药物，不能代替药物治疗疾病”</strong>，声明本品不能代替药物，并显著标明保健食品标志、适宜人群和不适宜人群”</span></h2>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>2.  医疗用语</strong><br><strong>审核依据：</strong><br>根据 广告法第二章第十七条规定：“除医疗、药品、医疗器械广告外，禁止其他任何广告涉及疾病治疗功能，并不得使用医疗用语或者易使推销的商品与药品、医疗器械相混淆的用语。”故在非三品一械稿件中禁止使用医疗类用语进行产品推广<br> </span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、涉及疾病诊断和治疗的内容，包括：使用医学名称及诊疗科目名称，如中医、西医、中西结合、妇科、五官科、牙科、儿科、内科、外科使用各种疾病名称及疾病的医疗用语，如医疗、医治、治疗、治愈、康复等；含有疾病诊断方法和手段的用词，如体检、化验、CT、B超、验血等；含有疾病治疗方法和手段的用词，如抗病毒、手术、手术名称、注射、化疗、理疗、整形等；含有表述疾病症状改善的用词，如退烧、退热、止痛、止咳等。<br>2、属于医疗术语或医疗用语的，如消炎、抗炎、活血、解毒、抗敏、脱敏祛瘀等。<br>3、除消毒用品及具有特殊功能的日化用品以外，在其他化妆品以及其它直接适用于人体的商品广告中使用抗菌、抑菌、除菌、灭菌等。</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>备注二 视频广审</strong><br>因为目前平台三品一械广告 绝大部分首次上传稿件时都会涉及到对推广商品的服务描述，所以只要在商推部分涉及，就需要提供与涉及内容完全一致的广审文件。故一般来说视频广审文件样式如下： </span></p>\n<img src=\"https://i0.hdslb.com/bfs/activity-plat/static/e2080d153bdf4de08d62649fad2c59be/KU8ckZDnbv_w753_h766.png\" alt=\"undefined\" style=\"height: undefined;width: undefined\"/>\n<p style=\"text-align:center;\">图一&nbsp;</p>\n<p></p>\n<img src=\"https://i0.hdslb.com/bfs/activity-plat/static/e2080d153bdf4de08d62649fad2c59be/TYMn5Vfiu4_w880_h37.png\" alt=\"undefined\" style=\"height: undefined;width: undefined\"/>\n<p style=\"text-align:center;\">图二&nbsp;</p>\n<p></p>\n<p><span style=\"font-size: 16px;\">注意点：广审文件必须含有审查机关盖章，并且必须附有广告样件，样件样式可参考图二，包含视频时间段——画面——字幕——旁白（bgm），具体其他的样式会根据实际情况进行判定。 <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>注意事项：</strong><br>对于三品一械类商推，只要涉及到对推广商品服务、功效、材质等进行描述、使用的，就需要提供与之一致的广审文件，并且将广告批准文号标明在视频中 。</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>五、酒类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>根据&lt;中华人民共和国广告法&gt;关于对酒类广告的规定:<br>第二十三条　“酒类广告不得含有下列内容：（一）诱导、怂恿饮酒或者宣传无节制饮酒；（二）出现饮酒的动作；（三）表现驾驶车、船、飞机等活动；（四）明示或者暗示饮酒有消除紧张和焦虑、增加体力等功效” <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong><br>1、含有碰杯干杯、饮酒动作<br>2、未添加“未成年人不得饮酒”警示标语<br>3、含有诱导怂恿宣传无节制饮酒的画面或者话术<br><br><strong>注意事项：</strong><br>酒类商单不得含有喝酒干杯碰杯动作，必须添加未成年人不得饮酒的警示标语，以及不得呈现广告法中其他涉及未成年人明令禁止的部分</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>六、未成年类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong><br>根据最新修行的&lt;中华人民共和国广告法&gt;中关于未成年人的相关规定:<br>第十条 “广告不得损害未成年人和残疾人的身心健康。”<br>第二十二条 “禁止在大众传播媒介或者公共场所、公共交通工具、户外发布烟草广告。禁止向未成年人发送任何形式的烟草广告。”<br>第三十八条 “广告代言人在广告中对商品、服务作推荐、证明，应当依据事实，符合本法和有关法律、行政法规规定，并不得为其未使用过的商品或者未接受过的服务作推荐、证明。不得利用不满十周岁的未成年人作为广告代言人。”<br>第三十九条 “不得在中小学校、幼儿园内开展广告活动，不得利用中小学生和幼儿的教材、教辅材料、练习册、文具、教具、校服、校车等发布或者变相发布广告，但公益广告除外。”<br>第四十条 “在针对未成年人的大众传播媒介上不得发布医疗、药品、保健食品、医疗器械、化妆品、酒类、美容广告，以及不利于未成年人身心健康的网络游戏广告。针对不满十四周岁的未成年人的商品或者服务的广告不得含有下列内容：(一)劝诱其要求家长购买广告商品或者服务(二)可能引发其模仿不安全行为” <br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见问题点:</strong><br>1、酒类 药品 医疗器械 保健食品   金融等高风险行业中出现未成年元素<br>2、稿件中未满10周岁未成年人作为主体代言推广商品<br>3、稿件中出现有害未成年身心健康的元素（例如毒品、儿童邪典、低俗、不正三观等）<br><br><strong>注意事项：</strong><br>未成年人类作为监管巡查的重点目标，此类商单在审核过程中从严把控，商单应遵循：避免10周岁以下未成年人单独出镜，进行商推且应不涉及高风险行业内容；涉及未成年人的推广应符合其身心健康且社会主义核心价值观。  </span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>七、侵权类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong> </span></p>\n<p><span style=\"font-size: 16px;\">根据&lt;中华人民共和国广告法&gt;关于对广告侵权的规定:</span></p>\n<p><span style=\"font-size: 16px;\">第十三条　广告不得贬低其他生产经营者的商品或者服务。</span></p>\n<p><span style=\"font-size: 16px;\">第六十九条　广告主、广告经营者、广告发布者违反本法规定，有下列侵权行为之一的，依法承担民事责任：</span></p>\n<p><span style=\"font-size: 16px;\">   （一）在广告中损害未成年人或者残疾人的身心健康的；</span></p>\n<p><span style=\"font-size: 16px;\">   （二）假冒他人专利的；</span></p>\n<p><span style=\"font-size: 16px;\">   （三）贬低其他生产经营者的商品、服务的；</span></p>\n<p><span style=\"font-size: 16px;\">   （四）在广告中未经同意使用他人名义或者形象的；</span></p>\n<p><span style=\"font-size: 16px;\">   （五）其他侵犯他人合法民事权益的。</span></p>\n<p><span style=\"font-size: 16px;\">其余审核依据包括但不仅仅局限于《著作权法》、《商标法》、《专利法》、《民法典》等法律法规</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong></span></p>\n<p><span style=\"font-size: 16px;\">1、商推中未经同意使用他人名义、肖像或形象进行推广。</span></p>\n<p><span style=\"font-size: 16px;\">2、商推中未经同意使用他人素材、知识产权内容进行推广。</span></p>\n<p><span style=\"font-size: 16px;\">3、未经许可使用他人的商标或中国驰名商标等涉及侵犯商标权的行为</span></p>\n<p><span style=\"font-size: 16px;\">4、未经许可拉踩、贬低其他品牌行为</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>注意事项：</strong></span></p>\n<p><span style=\"font-size: 16px;\">就商单的侵权部分来看，主要的问题点集中在无授权使用名人名义形象进行推广、拉踩其他品牌导致侵犯了名誉权、以及违反知识产权保护相关法律法规的一系列做法。需要注意的是，如果客户在稿件中需准备好相匹配的授权文件，以便审核流程的通畅。</span></p>\n<p><span style=\"font-size: 16px;\">此外，对于商推中使用影视剧、综艺、up主片段等进行二次创作，创作内容为重新改编、改变了原意，那么在一定程度上”有可能不构成侵权“。同时在有可能改变原意的情况下，建议在末尾添加“？”以表明仅为揣测 ，具体需以最终审核意见为准。</span></p>\n<p></p>\n<p><span style=\"font-size: 24px;\"><strong>八、诱导类</strong></span><span style=\"font-size: 16px;\"><br></span></p>\n<p><span style=\"font-size: 16px;\"><strong>审核依据：</strong> </span></p>\n<p><span style=\"font-size: 16px;\">根据</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\">&lt;化妆品监督管理条例&gt;关于对化妆品广告的规定:</span></p>\n<p><span style=\"font-size: 16px;\">第四十三条　化妆品广告的内容应当真实、合法。</span></p>\n<p><span style=\"font-size: 16px;\">化妆品广告不得明示或者暗示产品具有医疗作用，不得含有虚假或者引人误解的内容，不得欺骗、误导消费者。</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\">《中华人民共和国广告法》</span></p>\n<p><span style=\"font-size: 16px;\">第二十八条　广告以虚假或者引人误解的内容欺骗、误导消费者的，构成虚假广告。</span></p>\n<p><span style=\"font-size: 16px;\">　　广告有下列情形之一的，为虚假广告：</span></p>\n<p><span style=\"font-size: 16px;\">　　（一）商品或者服务不存在的；</span></p>\n<p><span style=\"font-size: 16px;\">　　（二）商品的性能、功能、产地、用途、质量、规格、成分、价格、生产者、有效期限、销售状况、曾获荣誉等信息，或者服务的内容、提供者、形式、质量、价格、销售状况、曾获荣誉等信息，以及与商品或者服务有关的允诺等信息与实际情况不符，对购买行为有实质性影响的；</span></p>\n<p><span style=\"font-size: 16px;\">　　（三）使用虚构、伪造或者无法验证的科研成果、统计资料、调查结果、文摘、引用语等信息作证明材料的；</span></p>\n<p><span style=\"font-size: 16px;\">　　（四）虚构使用商品或者接受服务的效果的；</span></p>\n<p><span style=\"font-size: 16px;\">　　（五）以虚假或者引人误解的内容欺骗、误导消费者的其他情形。</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>问题稿件常见不合规问题点：</strong></span></p>\n<p><span style=\"font-size: 16px;\">1、功效性化妆品广告封面使用前后对比图，来展示使用效果，暗示使用该产品后一定能达到程度上改善。</span></p>\n<p><span style=\"font-size: 16px;\">2、借由使用病理图或者患处放大图，来达到暗示医疗用语，误导消费者的地步</span></p>\n<p></p>\n<p><span style=\"font-size: 16px;\"><strong>注意事项：</strong></span></p>\n<p><span style=\"font-size: 16px;\">鉴于化妆品的效果和时限是影响消费者购买的重要因素之一，对购买行为有实质性影响，而不是每个消费者都能达到对比图中所展示的效果，因此稿件中若含有使用前后的对比图及病理图，极易构成对消费者的误导，从而产生被认定为虚假广告的风险。因此客户因尽量避免对前后功效对比图以及病理图对比的使用，遵守相关的法律法规</span></p>\n"},"headTitle":"","lineHeight":26,"_asyncData":{}}}};
+  window.__BILIACT_STRUCTURE__ = {"root":{"children":["MHnPd2qEqRs"],"depth":0,"id":"app","parent":null},"fixed":{"children":[],"depth":0,"id":"body","parent":null},"MHnPd2qEqRs":{"id":"MHnPd2qEqRs","parent":"root","depth":1,"children":[]}}
+  </script>
+
+  <script>
+  !(function(doc, win, designWidth, rem2px) {
+    function recalc() {
+      var clientWidth = win.innerWidth || doc.documentElement.clientWidth || doc.body.clientWidth;
+      if (!clientWidth) return;
+      if (clientWidth < 750) {
+        window.__BaseFontSize = (clientWidth / designWidth) * rem2px;
+        docEl.style.fontSize =
+          (((clientWidth / designWidth) * rem2px) / defaultFontSize) *
+            100 +
+          "%";
+      } else {
+        docEl.style.fontSize = "625%";
+      }
+    };
+    var docEl = doc.documentElement;
+    var resizeEvt =
+        "orientationchange" in window ? "orientationchange" : "resize";
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    recalc();
+    // reset rem unit on page resize
+    window.addEventListener('pageshow', function (e) {
+      if (e.persisted) {
+        recalc()
+      }
+    })
+    window.addEventListener('load', recalc)
+    setTimeout(recalc, 500);
+  })(document, window, 750, 100);
+  setTimeout(function () {
+    window.dispatchEvent(new Event('scroll'))
+  }, 500)
+  window.addEventListener('click', function() {
+    window.BiliActEvents && window.BiliActEvents.emit('PLATC_TAB_CLICK');
+  });
+  </script>
+  <script type="text/javascript">
+    !function(){function n(){function a(){clearTimeout(c);c=setTimeout(function(){return b.scroll()},5)}var b=this;this.init();var c;if(window.BiliActEvents)window.BiliActEvents.on("PLATC_TAB_CLICK",a);else setTimeout(function(){if(window.BiliActEvents)window.BiliActEvents.on("PLATC_TAB_CLICK",a)},1E3);window.addEventListener("scroll",a);window.addEventListener("touchmove",a);window.addEventListener("wheel",a);this.onscroll=a;this.removeScroll=function(){window.removeEventListener("scroll",
+a);window.removeEventListener("touchmove",a);window.removeEventListener("wheel",a)}}function p(a,b){if(!v.test(a))return a;var c=a.split("?"),h=c.shift().replace(/(https?:)?\/\/i(\\d)/,"https://i"+3*Math.random()),d=h.match(w);if(!(d&&0<d.length))return a;d=d[1];var e=(x||b)&&m,f=/png|jpe?g|webp/.test(d);c=0<c.length?"?".concat(c.join("?")):"";return f&&(b||e)?"".concat(h,"@").concat(b,".").concat(e?"webp":d).concat(c):a}function y(a){for(var b=0;null!==a;)b+=a.offsetTop,a=a.offsetParent;return b}
+function q(a,b){if(r[a])return b&&b();var c=new Image;c.onload=function(){b&&b();r[a]=!0;c=null};c.onerror=function(){b&&b("error")};c.src=a}var x=/Windows\\s*Phone|Android|iPhone|iPad|PlayBook|Mobile|Tablet/.test(window.navigator.userAgent),m=!1,v=/^(https?:)?\/\/(uat-)?(i|s)\d\.hdslb\.com\/bfs\//i;try{m=0===document.createElement("canvas").toDataURL("image/webp").indexOf("data:image/webp")}catch(a){m=!1}n.prototype={domList:[],init:function(){this.getLoadDom();this.scroll()},scroll:function(){for(var a=
+document.body.scrollTop||document.documentElement.scrollTop,b=window.innerHeight||document.documentElement.clientHeight,c=this.domList,h=c.length,d=-1,e=function(){var f=c[d],g=f.dom;if(g){var k=y(g);k+(g.clientHeight||g.scrollHeight)>=a-2.5*b&&k<=a+2.5*b&&null!==g.offsetParent&&(q(f.url,function(l){if("string"===typeof l)return console.warn(f.url,"\u52a0\u8f7d\u5931\u8d25"),!1;"img"===f.tagName?g.src=f.url:g.style.backgroundImage="url(".concat(f.url,")")}),c.splice(d,1),--d,--h)}};++d<h;)e();0>=
+h.length&&this.removeScroll()},getLoadDom:function(){var a=this,b=Array.prototype.slice.call(document.body.querySelectorAll(".t-lazyload-image,[data-src]")),c=b.length;if(0<c)for(var h=function(e){e=b[e];var f=e.getAttribute("data-src"),g=e.getAttribute("data-bfs");e.className=e.className.replace("t-lazyload-image","");e.removeAttribute("data-src");e.removeAttribute("data-bfs");if(!f)return"continue";var k=[];g&&g.split("_").forEach(function(l){var z=l.substr(l.length-1,1);0<=["h","w","q","e","s"].indexOf(z[0])&&
+k.push(l)});a.domList.push({url:p(f,k.join("_")),tagName:e.tagName.toLowerCase(),dom:e})},d=0;d<c;d+=1)h(d)}};var w=/\/[^@]+\.([a-z]+)$/i,r={};window.PlatLazyLoad||(window.PlatLazyLoad=new n);var t=window.__initialState.firstScreenResource,u=t.length;t.forEach(function(a){q(p(a,[]),function(){u--;if(0>=u&&window.performance&&window.performance.timing){var b=(new Date).getTime();window.__activityTiming={firstscreenfinish:b};window.performance.timing.firstscreenfinish=b}window.PlatLazyLoad.scroll()})})}();
+  </script>
+  <script src="//static.hdslb.com/js/jquery.min.js"></script>
+  <script type="text/javascript" src="//interface.bilibili.com/serverdate.js"></script>
+  <script type="text/javascript" src="//activity.hdslb.com/blackboard/static/20200929/8a3e1fa14e30dc3be9c5324f604e5991/boxsize.01.js?v=1.0" crossorigin="anonymous"></script>
+  <script>
+    window.addEventListener('load', function(){window.__BILIACT_RUNTIME__ && window.__BILIACT_RUNTIME__.start()})
+  </script>
+
+
+<script>window.__pageType = '2';</script><script type="text/javascript" data-tag src="//activity.hdslb.com/blackboard/act-build-long-12f13fa5b8f9d76ca6a5a91422a18983/core.a199776abc0fd15b63d4.min.js" crossorigin="anonymous"></script><script type="text/javascript" data-tag src="//activity.hdslb.com/blackboard/static/20221208/ec9c95c5da262958eec2a88b54ad8bf6/runtimec6eb9b721918df3d5245.umd.min.js" defer crossorigin="anonymous"></script><script type="text/javascript" data-tag src="//activity.hdslb.com/blackboard/platcomps/plat-components/h5-baseinfo/0.1.17/index.js" defer crossorigin="anonymous"></script><script type="text/javascript" data-tag src="//activity.hdslb.com/blackboard/platcomps/plat-components/h5-rich-text2/0.0.17/index.js" defer crossorigin="anonymous"></script></body></html>

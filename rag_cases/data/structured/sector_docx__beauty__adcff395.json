@@ -1,0 +1,155 @@
+{
+ "case_id": "sector_docx__beauty__adcff395",
+ "title": "郑州市中原区市场监督管理局诉河南聚美化妆品公司行政处罚案",
+ "case_number": "（2021）豫01行终177号",
+ "court": "郑州市中级人民法院",
+ "decision_date": "2021-02-19",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+ "source_url": "https://www.pkulaw.com/pfnl/c05aeed05a57db0a05402266a441410b057942473fb3ef43bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
+ "publish_date": null,
+ "penalty_authority": "郑州市中原区市场监督管理局",
+ "party_name": "河南聚美化妆品公司",
+ "region": "郑州市中级人",
+ "industry": "化妆品 / 医疗美容 / 美妆",
+ "sector": "beauty",
+ "sector_cn": "美妆",
+ "violation_type": "处罚对象认定错误",
+ "case_nature": "administrative_litigation_review",
+ "source_lookup_priority": "P0",
+ "is_admin_penalty_candidate": true,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "beauty"
+ ],
+ "product_or_service": "医美服务",
+ "ad_channel": "微信朋友圈",
+ "risk_dimensions": [
+  "虚假宣传"
+ ],
+ "illegal_claims": [
+  "微信朋友圈医美虚假广告"
+ ],
+ "facts_summary": "上诉人郑州市中原区市场监督管理局因被上诉人河南聚美化妆品销售有限公司撤销行政处罚决定一案，不服河南省郑州市中原区人民法院(2020)豫0102行初200号行政判决，向本院提起上诉。本院依法组成合议庭审理了本案，现已审理终结。\n本院认为，对行政机关作出的行政处罚进行司法审查应当首先评判是否由被处罚人实施了某种行为，之后才涉及该行为是否违法以及是否罚当其过的评判问题。本案中，上诉人提交的证据并不能证明系以被上诉人河南聚美化妆品销售有限公司的名义发布广告。另外，广告内容也未显示同被上诉人河南聚美化妆品销售有限公司经营范围存在关联，故并不能仅仅基于常运建是河南聚美化妆品销售有限公司的法定代表人或广告中显示“聚美”字样而推定被上诉人河南聚美化妆品销售有限公司发布广告。综上，上诉人郑州市中原区市场监督管理局作出的处罚决定认定事清不清，一审判决予以撤销的判决结果并无不当。上诉人的上诉请求不能成立，本院不予支持。依照《中华人民共和国行政诉讼法》第八十九条第一款第一项之规定，判决如下",
+ "legal_basis": [
+  "《广告法》第五十五条"
+ ],
+ "penalty_result": "撤销行政处罚决定",
+ "penalty_amount": null,
+ "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及处罚对象认定错误，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第五十五条。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "beauty",
+  "美妆",
+  "处罚对象认定错误",
+  "虚假宣传"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
+ "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "pending_pkulaw_human_review",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
+ },
+ "source_lookup_query": "（2021）豫01行终177号 郑州市中原区市场监督管理局诉河南聚美化妆品公司行政处罚案",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。上诉人郑州市中原区市场监督管理局因被上诉人河南聚美化妆品销售有限公司撤销行政处罚决定一案，不服河南省郑州市中原区人民法院(2020)豫0102行初200号行政判决，向本院提起上诉。本院依法组成合议庭审理了本案，现已审理终结。\n本院认为，对行政机关作出的行政处罚进行司法审查应当首先评判是否由被处罚人实施了某种行为，之后才涉及该行为是否违法以及是否罚当其过的评判问题。本案中，上诉人提交的证据并不能证明系以被上诉人河南聚美化妆品销售有限公司的名义发布广告。另外，广告内容也未显示同被上诉人河南聚美化妆品销售有限公司经营范围存在关联，故并不能仅仅基于常运建是河南聚美化妆品销售有限公司的法定代表人或广告中显示“聚美”字样而推定被上诉人河南聚美化妆品销售有限公司发布广告。涉案广告宣称：微信朋友圈医美虚假广告。",
+ "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
+  }
+ ],
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T03:41:10+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）"
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "法定代表人通过微信朋友圈发布医美虚假广告。法院认定市监局未能证明系以公司名义发布广告，撤销处罚决定",
+    "vector_text": "【赛道】美妆。【场景】微信朋友圈。【宣称】法定代表人通过微信朋友圈发布医美虚假广告。法院认定市监局未能证明系以公司名义发布广告，撤销处罚决定。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及处罚对象认定错误，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《广告法》第五十五条。。【依据】《广告法》第五十五条。【结果】撤销行政处罚决定。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2021)豫01行终177号",
+  "pkulaw_court": "河南省郑州市中级人民法院",
+  "pkulaw_title": "郑州市中原区市场监督管理局、河南聚美化妆品销售有限公司质量监督检验检疫行政管理:其他(质量监督)二审行政判决书",
+  "last_instance_date": "2021.02.19",
+  "source_url": "https://www.pkulaw.com/pfnl/c05aeed05a57db0a05402266a441410b057942473fb3ef43bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2021_豫01行终177号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "本院认为(回退)"
+  ]
+ },
+ "human_review_required": true
+}

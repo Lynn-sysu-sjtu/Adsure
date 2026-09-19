@@ -14,6 +14,79 @@ from typing import Any
 DEFAULT_CANDIDATES_DIR = Path("data/structured_candidates")
 DEFAULT_OUTPUT_PATH = Path("data/audit_test_cases/real_mvp_cases_v0.1.json")
 DEFAULT_REPORT_PATH = Path("data/reports/audit_test_case_selection_report.md")
+DEFAULT_BASE_SCHEMA_PATH = Path("data/schemas/ads_review_base_v4_fields.json")
+DEFAULT_BASE_CASES_PATH = Path("data/audit_test_cases/base_v4_test_cases.json")
+DEFAULT_BASE_BATCH_PATH = Path("data/audit_test_cases/base_v4_batch_create.json")
+DEFAULT_BASE_SMOKE_CASES_PATH = Path(
+    "data/audit_test_cases/base_v4_smoke_5_test_cases.json"
+)
+DEFAULT_BASE_SMOKE_BATCH_PATH = Path(
+    "data/audit_test_cases/base_v4_smoke_5_batch_create.json"
+)
+
+BASE_SMOKE_CASE_IDS = (
+    "REAL-GAME-001",
+    "REAL-COSM-001",
+    "REAL-HF-002",
+    "REAL-GEN-001",
+    "REAL-HF-005",
+)
+
+BASE_BATCH_FIELDS = (
+    "①运营·行业领域",
+    "①运营·紧急程度",
+    "①运营·补充背景资料",
+    "①运营·物料内容",
+    "①游戏·IP名称",
+    "①游戏·物料类型",
+    "①游戏·产品品类",
+    "①游戏·投放平台",
+    "①游戏·游戏名称",
+    "①游戏·物料涉及场景",
+    "①美妆·物料类型",
+    "①美妆·产品品类",
+    "①美妆·投放平台",
+    "①美妆·产品备案名称",
+    "①美妆·核心宣称功效",
+    "①美妆·物料涉及场景",
+    "①保健食品·物料类型",
+    "①保健食品·产品品类",
+    "①保健食品·投放平台",
+    "①保健食品·产品备案名称",
+    "①保健食品·批准文号",
+    "①保健食品·核心宣称功效",
+    "①保健食品·物料涉及场景",
+    "⑤流转·当前状态",
+    "⑤流转·轮次",
+)
+
+PRODUCT_CATEGORY_BY_CASE = {
+    "REAL-GAME-001": "其他",
+    "REAL-GAME-002": "其他",
+    "REAL-GAME-003": "其他",
+    "REAL-GAME-004": "休闲",
+    "REAL-GAME-005": "其他",
+    "REAL-COSM-001": "其他",
+    "REAL-COSM-002": "其他",
+    "REAL-COSM-003": "护肤",
+    "REAL-COSM-004": "护肤",
+    "REAL-COSM-005": "护肤",
+    "REAL-HF-001": "其他",
+    "REAL-HF-002": "其他",
+    "REAL-HF-003": "其他",
+    "REAL-HF-004": "其他",
+    "REAL-HF-005": "维生素/矿物质",
+}
+
+HEALTH_CLAIMS_BY_CASE = {
+    "REAL-HF-001": ["增强免疫力"],
+    "REAL-HF-005": ["营养素补充剂"],
+}
+
+PLATFORM_ALIASES = {
+    "微信公众号": "微信",
+    "微信朋友圈": "微信",
+}
 
 
 @dataclass(frozen=True)
@@ -396,6 +469,7 @@ def build_case(selection: Selection, source: dict[str, Any]) -> dict[str, Any]:
             "source_verification_status": source.get("source_verification_status"),
             "review_status": source.get("review_status"),
             "approved_for_rag": bool(source.get("approved_for_rag", False)),
+            "owner_approval": source.get("owner_approval"),
             "use_limit": "仅用于/audit规则引擎测试；原候选案例待来源核验，不得视为已确认处罚事实。",
         },
     }
@@ -403,6 +477,239 @@ def build_case(selection: Selection, source: dict[str, Any]) -> dict[str, Any]:
 
 def build_dataset(candidates_dir: Path) -> list[dict[str, Any]]:
     return [build_case(item, load_candidate(candidates_dir, item.source_case_id)) for item in SELECTIONS]
+
+
+def schema_field_map(schema: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    return {
+        str(field["name"]): field
+        for field in schema.get("fields", [])
+        if isinstance(field, dict) and field.get("name")
+    }
+
+
+def option_names(field: dict[str, Any]) -> set[str]:
+    return {
+        str(option["name"])
+        for option in field.get("options", [])
+        if isinstance(option, dict) and option.get("name")
+    }
+
+
+def validate_base_value(
+    field_name: str,
+    value: Any,
+    fields: dict[str, dict[str, Any]],
+) -> None:
+    field = fields.get(field_name)
+    if field is None:
+        raise ValueError(f"Base v4 field not found: {field_name}")
+    if not field.get("writable"):
+        raise ValueError(f"Base v4 field is read-only: {field_name}")
+    ui_type = field.get("ui_type")
+    options = option_names(field)
+    if ui_type == "SingleSelect" and value not in options:
+        raise ValueError(f"{field_name}: unknown option {value!r}")
+    if ui_type == "MultiSelect" and (
+        not isinstance(value, list) or any(item not in options for item in value)
+    ):
+        raise ValueError(f"{field_name}: invalid multi-select value {value!r}")
+    if ui_type == "Text" and not isinstance(value, str):
+        raise ValueError(f"{field_name}: text value required")
+    if ui_type == "Number" and (
+        not isinstance(value, (int, float)) or isinstance(value, bool)
+    ):
+        raise ValueError(f"{field_name}: number value required")
+
+
+def normalized_platforms(
+    original: tuple[str, ...],
+    field: dict[str, Any],
+) -> list[str]:
+    allowed = option_names(field)
+    normalized: list[str] = []
+    unsupported = False
+    for platform in original:
+        mapped = PLATFORM_ALIASES.get(platform, platform)
+        if mapped in allowed:
+            normalized.append(mapped)
+        else:
+            unsupported = True
+    if unsupported and "其他" in allowed:
+        normalized.append("其他")
+    return list(dict.fromkeys(normalized))
+
+
+def text_from_extra(selection: Selection, key: str) -> str:
+    value = selection.extras.get(key)
+    if isinstance(value, list):
+        return "、".join(str(item) for item in value if item)
+    return str(value or "")
+
+
+def supplemental_background(
+    selection: Selection,
+    normalized_platform: list[str] | None,
+) -> str:
+    parts = [selection.supplement.strip()] if selection.supplement.strip() else []
+    parts.append(f"输入所述产品或服务类别：{selection.product_category}")
+    if normalized_platform is None or set(normalized_platform) != set(selection.platform):
+        parts.append(f"原始投放渠道：{'、'.join(selection.platform)}")
+    for key in ("产品属性", "是否特殊化妆品", "证明材料情况", "批准功能"):
+        value = text_from_extra(selection, key)
+        if value:
+            parts.append(f"{key}：{value}")
+    return "；".join(parts)
+
+
+def build_base_record_fields(
+    selection: Selection,
+    schema: dict[str, Any],
+) -> dict[str, Any]:
+    fields = schema_field_map(schema)
+    record: dict[str, Any] = {
+        "①运营·行业领域": selection.industry,
+        "①运营·紧急程度": selection.urgency,
+        "①运营·物料内容": selection.content,
+        "⑤流转·当前状态": "运营起草",
+        "⑤流转·轮次": 1,
+    }
+    normalized_platform: list[str] | None = None
+
+    if selection.industry == "游戏":
+        prefix = "①游戏"
+        platform_field = f"{prefix}·投放平台"
+        normalized_platform = normalized_platforms(
+            selection.platform,
+            fields[platform_field],
+        )
+        record.update(
+            {
+                f"{prefix}·物料类型": selection.material_type,
+                f"{prefix}·产品品类": PRODUCT_CATEGORY_BY_CASE[selection.case_id],
+                platform_field: normalized_platform,
+            }
+        )
+        game_name = text_from_extra(selection, "游戏名称")
+        scene = text_from_extra(selection, "物料涉及场景")
+        if game_name:
+            record[f"{prefix}·游戏名称"] = game_name
+        if scene:
+            record[f"{prefix}·物料涉及场景"] = scene
+    elif selection.industry == "美妆":
+        prefix = "①美妆"
+        platform_field = f"{prefix}·投放平台"
+        normalized_platform = normalized_platforms(
+            selection.platform,
+            fields[platform_field],
+        )
+        record.update(
+            {
+                f"{prefix}·物料类型": selection.material_type,
+                f"{prefix}·产品品类": PRODUCT_CATEGORY_BY_CASE[selection.case_id],
+                platform_field: normalized_platform,
+            }
+        )
+        filing_name = text_from_extra(selection, "产品备案名称")
+        claims = text_from_extra(selection, "核心宣称功效")
+        scene = text_from_extra(selection, "物料涉及场景")
+        if filing_name:
+            record[f"{prefix}·产品备案名称"] = filing_name
+        if claims:
+            record[f"{prefix}·核心宣称功效"] = claims
+        if scene:
+            record[f"{prefix}·物料涉及场景"] = scene
+    elif selection.industry == "保健食品":
+        prefix = "①保健食品"
+        platform_field = f"{prefix}·投放平台"
+        normalized_platform = normalized_platforms(
+            selection.platform,
+            fields[platform_field],
+        )
+        record.update(
+            {
+                f"{prefix}·物料类型": selection.material_type,
+                f"{prefix}·产品品类": PRODUCT_CATEGORY_BY_CASE[selection.case_id],
+                platform_field: normalized_platform,
+            }
+        )
+        if selection.case_id in {"REAL-HF-004", "REAL-HF-005"}:
+            filing_name = text_from_extra(selection, "产品备案名称")
+            if filing_name:
+                record[f"{prefix}·产品备案名称"] = filing_name
+        claims = HEALTH_CLAIMS_BY_CASE.get(selection.case_id, [])
+        if claims:
+            record[f"{prefix}·核心宣称功效"] = claims
+        scene = text_from_extra(selection, "物料涉及场景")
+        if scene:
+            record[f"{prefix}·物料涉及场景"] = scene
+
+    record["①运营·补充背景资料"] = supplemental_background(
+        selection,
+        normalized_platform,
+    )
+    for field_name, value in record.items():
+        validate_base_value(field_name, value, fields)
+    return record
+
+
+def build_base_cases(
+    canonical_cases: list[dict[str, Any]],
+    schema: dict[str, Any],
+) -> dict[str, Any]:
+    selections = {selection.case_id: selection for selection in SELECTIONS}
+    return {
+        "schema_id": schema["schema_id"],
+        "source_snapshot_name": schema["source_snapshot_name"],
+        "table_id": schema["table_id"],
+        "table_name": schema["table_name"],
+        "records": [
+            {
+                "case_id": case["case_id"],
+                "case_name": case["case_name"],
+                "fields": build_base_record_fields(
+                    selections[case["case_id"]],
+                    schema,
+                ),
+                "human_reference": case["human_reference"],
+                "provenance": case["provenance"],
+            }
+            for case in canonical_cases
+        ],
+    }
+
+
+def build_base_batch(base_cases: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "fields": list(BASE_BATCH_FIELDS),
+        "rows": [
+            [
+                record["fields"].get(field_name)
+                for field_name in BASE_BATCH_FIELDS
+            ]
+            for record in base_cases["records"]
+        ],
+    }
+
+
+def select_base_cases(
+    base_cases: dict[str, Any],
+    case_ids: tuple[str, ...],
+) -> dict[str, Any]:
+    records_by_id = {
+        record["case_id"]: record
+        for record in base_cases["records"]
+    }
+    missing = [case_id for case_id in case_ids if case_id not in records_by_id]
+    if missing:
+        raise ValueError(f"Base smoke cases not found: {', '.join(missing)}")
+    return {
+        key: value
+        for key, value in base_cases.items()
+        if key != "records"
+    } | {
+        "purpose": "Base v4 五条冒烟检验样例；fields 用于输入，human_reference 用于核对结果。",
+        "records": [records_by_id[case_id] for case_id in case_ids],
+    }
 
 
 def write_report(cases: list[dict[str, Any]], report_path: Path) -> None:
@@ -457,6 +764,31 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--candidates-dir", type=Path, default=DEFAULT_CANDIDATES_DIR)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT_PATH)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT_PATH)
+    parser.add_argument(
+        "--base-schema",
+        type=Path,
+        default=DEFAULT_BASE_SCHEMA_PATH,
+    )
+    parser.add_argument(
+        "--base-cases-output",
+        type=Path,
+        default=DEFAULT_BASE_CASES_PATH,
+    )
+    parser.add_argument(
+        "--base-batch-output",
+        type=Path,
+        default=DEFAULT_BASE_BATCH_PATH,
+    )
+    parser.add_argument(
+        "--base-smoke-cases-output",
+        type=Path,
+        default=DEFAULT_BASE_SMOKE_CASES_PATH,
+    )
+    parser.add_argument(
+        "--base-smoke-batch-output",
+        type=Path,
+        default=DEFAULT_BASE_SMOKE_BATCH_PATH,
+    )
     return parser.parse_args()
 
 
@@ -465,8 +797,34 @@ def main() -> int:
     cases = build_dataset(args.candidates_dir)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(cases, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    schema = json.loads(args.base_schema.read_text(encoding="utf-8"))
+    base_cases = build_base_cases(cases, schema)
+    base_batch = build_base_batch(base_cases)
+    smoke_cases = select_base_cases(base_cases, BASE_SMOKE_CASE_IDS)
+    smoke_batch = build_base_batch(smoke_cases)
+    args.base_cases_output.parent.mkdir(parents=True, exist_ok=True)
+    args.base_cases_output.write_text(
+        json.dumps(base_cases, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    args.base_batch_output.write_text(
+        json.dumps(base_batch, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    args.base_smoke_cases_output.write_text(
+        json.dumps(smoke_cases, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    args.base_smoke_batch_output.write_text(
+        json.dumps(smoke_batch, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     write_report(cases, args.report)
     print(f"Built {len(cases)} /audit test cases: {args.output}")
+    print(f"Built Base v4 test records: {args.base_cases_output}")
+    print(f"Built Base v4 batch payload: {args.base_batch_output}")
+    print(f"Built Base v4 five-case smoke set: {args.base_smoke_cases_output}")
+    print(f"Built Base v4 five-row smoke batch: {args.base_smoke_batch_output}")
     print(f"Selection report: {args.report}")
     return 0
 

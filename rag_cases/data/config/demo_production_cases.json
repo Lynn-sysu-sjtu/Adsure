@@ -1,0 +1,16 @@
+{
+  "schema_id": "adsure_demo_production_allowlist_v1",
+  "enabled": true,
+  "purpose": "competition_demo_retrieval_only",
+  "case_ids": [
+    "mihoyo_2016_2520150399",
+    "shanghai_jingan_2026_062026000257",
+    "sector_docx__health__d8460228"
+  ],
+  "safety_boundary": {
+    "demo_only": true,
+    "not_for_production_factual_use": true,
+    "preserve_original_source_verification_status": true,
+    "note": "仅为比赛演示的指定案例召回；不改写原候选案例的来源核验与审核状态。"
+  }
+}

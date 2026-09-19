@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://adsure.local/schemas/platform_precheck_response_v1.schema.json",
+  "title": "Adsure Platform Precheck Response v1",
+  "type": "object",
+  "required": ["platform_precheck", "审核_平台规则预检"],
+  "properties": {
+    "审核_平台规则预检": {"type": "string"},
+    "platform_precheck": {
+      "type": "object",
+      "required": [
+        "platform",
+        "scene",
+        "policy_snapshot_id",
+        "catalog_status",
+        "production_ready",
+        "verdict",
+        "verdict_label",
+        "coverage_status",
+        "unchecked_materials",
+        "findings",
+        "checked_at",
+        "disclaimer"
+      ],
+      "properties": {
+        "platform": {"const": "小红书"},
+        "scene": {"type": "string"},
+        "policy_snapshot_id": {"type": ["string", "null"]},
+        "catalog_status": {"type": "string"},
+        "production_ready": {"type": "boolean"},
+        "verdict": {
+          "enum": [
+            "block_publish",
+            "needs_revision",
+            "needs_materials",
+            "manual_review_required",
+            "no_risk_found_within_coverage",
+            "out_of_scope"
+          ]
+        },
+        "verdict_label": {
+          "enum": ["禁止发布", "需修改", "待补充材料", "待法务复核", "预检未发现风险"]
+        },
+        "coverage_status": {
+          "enum": ["complete", "partial", "rules_unavailable", "out_of_scope"]
+        },
+        "unchecked_materials": {"type": "array", "items": {"type": "string"}},
+        "checked_rule_ids": {"type": "array", "items": {"type": "string"}},
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "finding_id",
+              "rule_id",
+              "rule_id_type",
+              "title",
+              "risk_dimension",
+              "severity",
+              "action",
+              "review_status",
+              "evidence",
+              "missing_evidence",
+              "reason",
+              "suggestion",
+              "source"
+            ]
+          }
+        },
+        "checked_at": {"type": "string"},
+        "disclaimer": {"type": "string"}
+      }
+    }
+  }
+}

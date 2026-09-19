@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://adsure.local/schemas/platform_rule_v1.schema.json",
+  "title": "Adsure Platform Rule Catalog v1",
+  "type": "object",
+  "required": ["catalog_id", "platform", "catalog_status", "collected_at", "rules"],
+  "properties": {
+    "catalog_id": {"type": "string", "minLength": 1},
+    "platform": {"const": "小红书"},
+    "scene": {"type": "string"},
+    "catalog_status": {"enum": ["pilot_not_production", "production"]},
+    "collected_at": {"type": "string", "minLength": 1},
+    "source_snapshot_path": {"type": "string"},
+    "rule_id_notice": {"type": "string"},
+    "production_gate": {"type": "string"},
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rule_id",
+          "title",
+          "platform",
+          "scene_scope",
+          "industry_scope",
+          "material_scope",
+          "rule_type",
+          "risk_dimension",
+          "rule_text",
+          "decision_logic",
+          "required_evidence",
+          "default_action",
+          "severity",
+          "source_name",
+          "source_url",
+          "source_locator",
+          "raw_text_path",
+          "content_hash",
+          "effective_status",
+          "review_status"
+        ],
+        "properties": {
+          "rule_id": {"type": "string", "pattern": "^XHS-"},
+          "title": {"type": "string", "minLength": 1},
+          "platform": {"const": "小红书"},
+          "scene_scope": {"type": "array", "items": {"type": "string"}},
+          "industry_scope": {"type": "array", "items": {"type": "string"}},
+          "product_category_scope": {"type": "array", "items": {"type": "string"}},
+          "material_scope": {"type": "array", "items": {"type": "string"}},
+          "rule_type": {"type": "string", "minLength": 1},
+          "risk_dimension": {"type": "string", "minLength": 1},
+          "rule_text": {"type": "string", "minLength": 1},
+          "decision_logic": {
+            "type": "object",
+            "required": ["type"],
+            "properties": {
+              "type": {"enum": ["manual", "terms", "required_evidence"]},
+              "terms": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "required_evidence": {"type": "array", "items": {"type": "string"}},
+          "default_action": {
+            "enum": ["禁止发布", "需修改", "待补充材料", "待法务复核", "预检未发现风险"]
+          },
+          "severity": {"enum": ["high", "medium", "low", "info"]},
+          "source_name": {"type": "string", "minLength": 1},
+          "source_url": {"type": "string", "format": "uri"},
+          "source_locator": {"type": "string", "minLength": 1},
+          "source_update_date": {"type": ["string", "null"]},
+          "raw_text_path": {"type": "string", "minLength": 1},
+          "content_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "effective_status": {
+            "enum": ["active", "pending_effective_review", "superseded", "withdrawn"]
+          },
+          "review_status": {
+            "enum": ["pending_legal_review", "approved_for_pilot", "approved", "rejected"]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/video/jobs",
+    "headers": {"X-API-Key": "***"},
+    "form": {
+      "record_id": "feishu_record_001",
+      "material_id": "material_001",
+      "industry": "美妆",
+      "platform": "小红书",
+      "product_category": "粉底液",
+      "dedupe_by_hash": "true"
+    },
+    "file": "multipart video/mp4; extension/MIME/header/size/duration validated"
+  },
+  "evidence_response": {
+    "record_id": "feishu_record_001",
+    "request_id": "feishu_record_001",
+    "material_id": "material_001",
+    "material_type": "video",
+    "file_sha256": "64-hex-sha256",
+    "evidence_units": [
+      {
+        "evidence_id": "ev_...",
+        "source_type": "audio_transcript",
+        "text": "这遮瑕力还有谁",
+        "start_ms": 6900,
+        "end_ms": 8580,
+        "frame_id": null,
+        "bbox": null,
+        "confidence": 0.96,
+        "provider": "faster-whisper/medium",
+        "provider_version": "1.2.1",
+        "review_status": "pending_human_review",
+        "ref": {"kind": "audio", "path": "asr_raw.json", "sha256": null, "frame_id": null}
+      },
+      {
+        "evidence_id": "ev_...",
+        "source_type": "frame_ocr",
+        "text": "登录领20抽",
+        "start_ms": 44300,
+        "end_ms": 44300,
+        "frame_id": "frame_00000088",
+        "bbox": {"x": 0.20, "y": 0.70, "width": 0.45, "height": 0.08, "coordinate_system": "top_left_normalized"},
+        "confidence": 0.98,
+        "provider": "RapidOCR/ONNXRuntime",
+        "provider_version": "rapidocr-onnxruntime/1.4.4",
+        "review_status": "pending_human_review",
+        "ref": {"kind": "frame", "path": "frames/frame_00000088.jpg", "sha256": "frame-sha256", "frame_id": "frame_00000088"}
+      },
+      {
+        "evidence_id": "ev_visual_...",
+        "source_type": "visual_observation",
+        "text": "画面展示评论区样式的用户评价，人物身份未确认。",
+        "start_ms": 3000,
+        "end_ms": 7500,
+        "frame_id": "frame_00000006",
+        "bbox": null,
+        "confidence": null,
+        "provider": "doubao-seed-2-1-pro-260915",
+        "provider_version": null,
+        "review_status": "model_observation_unverified",
+        "ref": {"kind": "frame", "path": "frames/frame_00000006.jpg", "sha256": null, "frame_id": "frame_00000006"}
+      }
+    ],
+    "coverage": {
+      "overall": "partial",
+      "audio": {"status": "transcribed", "details": {}},
+      "frames": {"status": "sampled_complete", "details": {}},
+      "ocr": {"status": "executed", "details": {}},
+      "visual_semantics": {"status": "analyzed", "details": {}},
+      "rule_engine": {"status": "completed", "details": {}}
+    },
+    "warnings": ["机器证据不构成最终法律结论。"],
+    "extractor_version": {
+      "service": "video-extractor/0.1.0",
+      "version": "video-mvp-report/v3",
+      "asr": {"provider": "faster-whisper/medium + SenseVoice"},
+      "ocr": {"engine": "RapidOCR/ONNXRuntime"},
+      "vlm": {"provider": "doubao-seed-2-1-pro-260915"}
+    }
+  },
+  "result_response_rule_engine": {
+    "job_id": "32-hex-id",
+    "status": "completed",
+    "rule_engine": {
+      "status": "completed",
+      "request_id": "feishu_record_001",
+      "attempts": 1,
+      "response": {"code": 0, "msg": "ok", "data": {}}
+    }
+  },
+  "status_enum": ["queued", "processing", "completed", "partial", "failed"],
+  "units": {
+    "time": "milliseconds since start",
+    "bbox": "normalized x,y,width,height; top-left origin; 0..1"
+  }
+}

@@ -1,0 +1,138 @@
+[
+  {
+    "evaluation_id": "positive_food_disease_claim",
+    "request": {
+      "content": "驼乳粉改善肺结节、降血糖、降脂降压",
+      "industry": "保健食品",
+      "platform": [],
+      "claim_spans": ["改善肺结节", "降血糖", "降脂降压"],
+      "product_category": "普通食品",
+      "risk_dimensions": ["普通食品疾病治疗功效宣传"],
+      "matched_rule_ids": ["ADLAW-017"],
+      "ad_channel": "",
+      "top_k": 3
+    },
+    "expected_first_case_id": "samr_2025_typical_ads_02"
+  },
+  {
+    "evaluation_id": "positive_absolute_and_state_authority",
+    "request": {
+      "content": "世界最强，使用国家机关工作人员形象",
+      "industry": "通用",
+      "platform": [],
+      "claim_spans": ["世界最强", "国家机关工作人员形象"],
+      "product_category": "",
+      "risk_dimensions": ["绝对化用语"],
+      "matched_rule_ids": ["ADLAW-009-03"],
+      "ad_channel": "",
+      "top_k": 3
+    },
+    "expected_first_case_id": "samr_2025_typical_ads_05"
+  },
+  {
+    "evaluation_id": "positive_real_estate",
+    "request": {
+      "content": "楼盘承诺升值，宣传未纳入规划的交通和医疗配套",
+      "industry": "通用",
+      "platform": [],
+      "claim_spans": ["承诺升值", "未纳入规划的交通和医疗配套"],
+      "product_category": "房地产",
+      "risk_dimensions": ["房地产广告误导", "升值承诺"],
+      "matched_rule_ids": ["ADLAW-026-01", "ADLAW-026-04"],
+      "ad_channel": "",
+      "top_k": 3
+    },
+    "expected_first_case_id": "samr_2025_typical_ads_07"
+  },
+  {
+    "evaluation_id": "positive_prescription_drug_science_content",
+    "request": {
+      "content": "以健康科普形式向公众宣传处方药三七脂肝丸",
+      "industry": "通用",
+      "platform": [],
+      "claim_spans": ["健康科普宣传处方药"],
+      "product_category": "处方药",
+      "risk_dimensions": ["变相广告"],
+      "matched_rule_ids": ["ADLAW-015-02"],
+      "ad_channel": "健康科普",
+      "top_k": 3
+    },
+    "expected_first_case_id": "samr_2025_typical_ads_10"
+  },
+  {
+    "evaluation_id": "positive_unreviewed_medical_device_ad",
+    "request": {
+      "content": "直播发布未经审查的医疗器械广告",
+      "industry": "通用",
+      "platform": ["直播"],
+      "claim_spans": ["未经审查的医疗器械广告"],
+      "product_category": "医疗器械",
+      "risk_dimensions": ["医疗器械广告违规"],
+      "matched_rule_ids": ["ADLAW-046"],
+      "ad_channel": "直播",
+      "top_k": 3
+    },
+    "expected_first_case_id": "samr_2025_typical_ads_08"
+  },
+  {
+    "evaluation_id": "negative_benign_nutrition_copy",
+    "request": {
+      "content": "含有多种营养成分，适合中老年人日常食用",
+      "industry": "保健食品",
+      "platform": ["抖音"],
+      "claim_spans": [],
+      "product_category": "",
+      "risk_dimensions": [],
+      "matched_rule_ids": [],
+      "ad_channel": "",
+      "top_k": 3
+    },
+    "expected_case_ids": []
+  },
+  {
+    "evaluation_id": "negative_unsupported_sales_claim",
+    "request": {
+      "content": "本产品全网销量第一，三天见效",
+      "industry": "保健食品",
+      "platform": [],
+      "claim_spans": [],
+      "product_category": "",
+      "risk_dimensions": [],
+      "matched_rule_ids": [],
+      "ad_channel": "",
+      "top_k": 3
+    },
+    "expected_case_ids": []
+  },
+  {
+    "evaluation_id": "negative_benign_cosmetic_copy",
+    "request": {
+      "content": "淡化细纹、修护屏障、温和不刺激",
+      "industry": "美妆",
+      "platform": ["小红书"],
+      "claim_spans": [],
+      "product_category": "化妆品",
+      "risk_dimensions": [],
+      "matched_rule_ids": [],
+      "ad_channel": "",
+      "top_k": 3
+    },
+    "expected_case_ids": []
+  },
+  {
+    "evaluation_id": "semantic_only_prescription_drug_paraphrase",
+    "request": {
+      "content": "用养生文章向大众推广只能凭处方购买的药物",
+      "industry": "通用",
+      "platform": [],
+      "claim_spans": [],
+      "product_category": "处方药",
+      "risk_dimensions": [],
+      "matched_rule_ids": [],
+      "ad_channel": "",
+      "top_k": 3
+    },
+    "expected_case_ids": [],
+    "expected_hybrid_first_case_id": "samr_2025_typical_ads_10"
+  }
+]

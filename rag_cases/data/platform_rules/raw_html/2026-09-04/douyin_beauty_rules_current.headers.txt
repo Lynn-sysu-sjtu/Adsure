@@ -1,0 +1,75 @@
+HTTP/2 302 
+server: Tengine
+content-type: text/html
+location: https://school.jinritemai.com/doudian/web/article/110681?from=baiying_main&from_school=1&should_full_screen=1&should_hide_bottom_nav=1
+date: Fri, 04 Sep 2026 14:52:25 GMT
+proxy-status: 0000201302026000
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-tt-trace-host: 017a1bc625754bc40790c86df4d8ee4cdf07eda368df08701b1b9ca805a02024f3c45f89e3e6669572e2155a18f63e863fafac86a58b00e308ae9b2580e60e3d10
+x-tt-trace-tag: id=03;cdn-cache=miss;type=dyn
+x-tt-trace-id: 00-2609042252253E1B13019DE907FF0743-309C1C6573E5658C-00
+x-tt-logid: 202609042252253E1B13019DE907FF0743
+reporting-endpoints: slardar-endpoint="https://mon.zijieapi.com/monitor_browser/collect/batch/security/?bid=doudian_school_wap"
+content-security-policy: report-to slardar-endpoint; connect-src 'self' *.byted.org *.idouyinvod.com:* *.volcsiriusbd.com:* *.volcsirius.com:* *.tt.x.bsgslb.cn:* *.dy.zzcdnx.com:* *.qc.bsccdn.net:* *.smtcdns.com:* *.ugslb.com:* *.livehwc3.cn:* *.smtcdns.net:* *.bytefcdnrd.com:* *.ksyungslb.com:* *.ksyungslb2.com:* *.ourdvsss.com:* *.tbcache.com:* *.jomodns.com:* *.douyincdn.com:* *.ixigua.com:* *.bdxigualive.com:* *.pstatp.com:* *.douyinliving.com:* *.picovr.com:* *.huoshanlive.com:* *.ihuoshanlive.com:* *.volccdn.com:* *.bestv.com.cn:* *.bytefcdn.com:* *.douyinvod.com:* *.qnqcdn.net:* *.bytescm.com *.bytetos.com *.ibytedapm.com *.zijieapi.com *.snssdk.com *.bytedance.com *.bytedance.net *.pstatp.com *.bytednsdoc.com *.bytegoofy.com *.byted-static.com *.yhgfb-cn-static.com api.feelgood.cn hm.baidu.com *.toutiao.com *.bytetcc.com *.jinritemai.com *.feishu.cn *.ecombdvod.com huatuo.cn.goofy.app www.google-analytics.com *.toutiaostatic.com *.ecombdstatic.com *.weilayun.com:* *.saxysec.com:* *.saxyit.com:* *.saxydc.com:* *.sjxysec.com:* *.sjxydc.com:* *.hiecheimaetu.com:* *.ppio.cloud:*; frame-ancestors 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' 'report-sample' data: blob: 'nonce-b246392c2e7c4e3cd6813f49d7401c6f-argus' 'strict-dynamic' *.bytescm.com *.bytetos.com *.ibytedapm.com *.zijieapi.com *.snssdk.com *.bytedance.com *.bytedance.net *.pstatp.com *.bytednsdoc.com *.bytegoofy.com *.byted-static.com *.yhgfb-cn-static.com http: https:;upgrade-insecure-requests;
+via: cache44.l2nu20-8[39,0], ens-dynamic8.cn9658[51,0]
+server-timing: cdn-cache;desc=MISS,edge;dur=12,origin;dur=39
+timing-allow-origin: *
+eagleid: b628820e17885335456575644e
+
+HTTP/2 302 
+server: Tengine
+content-type: text/html; charset=UTF-8
+date: Fri, 04 Sep 2026 14:52:26 GMT
+cache-control: no-cache
+location: /doudian/web/articlev0/110681?from=baiying_main&from_school=1&should_full_screen=1&should_hide_bottom_nav=1
+server-timing: inner; dur=95,bd-edenx-server-loader-article_$; dur=71.000099, bd-edenx-server-loader;decs="SSR"; dur=72.000027, bd-edenx-server-handle-request; dur=73.999882
+x-bytefaas-execution-duration: 77.35
+x-bytefaas-request-id: 20260904225226601CD038CEC182B83BDA
+x-ggw-config-version: 14062015
+x-gw-dst-psm: goofy_ssr.cn.3078587
+x-modernjs-render: server
+x-powered-by: Goofy Node
+x-processed-by: Modern.js
+x-tt-logid: 20260904225226601CD038CEC182B83BDA
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-tt-trace-host: 017a1bc625754bc40790c86df4d8ee4cdf4c5f5d2dc097a64cabfc412aae9597eeebf4f2ffde3ca942d28719d5a0073a8251b6927cc2ff4d1112b1acc65a0f72353ed96321fba1dabdfe63a09831f553aa85728daf7f785675ea688a087f27d88cfef2c1d2a3295584d99fdc1c539e36c3
+x-tt-trace-tag: id=03;cdn-cache=miss;type=dyn
+x-tt-trace-id: 00-260904225226601CD038CEC182B83BDA-1A9D4FB87BE94FFA-00
+content-security-policy: report-to slardar-endpoint; connect-src 'self' *.byte.org *.idouyinvod.com:* *.volcsiriusbd.com:* *.volcsirius.com:* *.tt.x.bsgslb.cn:* *.dy.zzcdnx.com:* *.qc.bsccdn.net:* *.smtcdns.com:* *.ugslb.com:* *.livehwc3.cn:* *.smtcdns.net:* *.bytefcdnrd.com:* *.ksyungslb.com:* *.ksyungslb2.com:* *.ourdvsss.com:* *.tbcache.com:* *.jomodns.com:* *.douyincdn.com:* *.ixigua.com:* *.bdxigualive.com:* *.pstatp.com:* *.douyinliving.com:* *.picovr.com:* *.huoshanlive.com:* *.ihuoshanlive.com:* *.volccdn.com:* *.bestv.com.cn:* *.bytefcdn.com:* *.douyinvod.com:* *.qnqcdn.net:* *.bytescm.com *.bytetos.com *.ibytedapm.com *.zijieapi.com *.snssdk.com *.bytedance.com *.bytedance.net *.pstatp.com *.bytednsdoc.com *.bytegoofy.com *.byted-static.com *.yhgfb-cn-static.com hm.baidu.com api.feelgood.cn *.toutiao.com *.feishu.cn *.ecombdvod.com *.bytetcc.com retcode-us-west-1.arms.aliyuncs.com ws: *.gstatic-cache.com *.xdtsmart.com utq.quanhu66.com *.ecombdstatic.com cdnml.global-cache.online www.google-analytics.com decision.etc4.com *.jinritemai.com data: *.toutiaostatic.com huatuo.cn.goofy.app *.weilayun.com:* *.saxysec.com:* *.saxyit.com:* *.saxydc.com:* *.sjxysec.com:* *.sjxydc.com:* *.hiecheimaetu.com:* *.ppio.cloud:*; frame-ancestors 'self' *.school.jinritemai.com *.jinritemai.com *.oceanengine.com *.bytedance.net; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' 'report-sample' data: blob: 'nonce-4e03c0155ae11f1ef35c05e9141142fc-argus' 'strict-dynamic' *.bytescm.com *.bytetos.com *.ibytedapm.com *.zijieapi.com *.snssdk.com *.bytedance.com *.bytedance.net *.pstatp.com *.bytednsdoc.com *.bytegoofy.com *.byted-static.com *.yhgfb-cn-static.com http: https:; upgrade-insecure-requests ;
+reporting-endpoints: slardar-endpoint="https://mon.zijieapi.com/monitor_browser/collect/batch/security/?bid=doudian_school_pc"
+x-content-type-options: nosniff
+via: cache44.l2nu20-8[120,0], ens-dynamic8.cn9658[130,0]
+server-timing: cdn-cache;desc=MISS,edge;dur=10,origin;dur=120
+timing-allow-origin: *
+eagleid: b628820e17885335460357150e
+
+HTTP/2 200 
+server: Tengine
+content-type: text/html; charset=utf-8
+date: Fri, 04 Sep 2026 14:52:26 GMT
+cache-control: no-cache
+vary: Accept-Encoding, Accept-Encoding
+x-bytefaas-enable-stream: true
+x-bytefaas-execution-duration: 77.60
+x-bytefaas-request-id: 20260904225226B07E44393B3E6AF82E21
+x-content-type-options: nosniff
+x-download-options: noopen
+x-ggw-asgw-psm: goofy.deploy.ggw.asgw.2001.338210
+x-ggw-config-version: 14062015
+x-gw-dst-psm: goofy_ssr.cn.338210
+x-powered-by: Goofy Node
+x-tt-logid: 20260904225226B07E44393B3E6AF82E21
+x-xss-protection: 1; mode=block
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+server-timing: inner; dur=92
+x-tt-trace-host: 017a1bc625754bc40790c86df4d8ee4cdff3aca53fee4ee5cbd2bc2235f6321e61508f296d92e5d1ce6b1e17049765dc26aa4bdf4bfcfd64affb5db87248cdb00731fce7b658261ebca4d5b9c19be1c460cc807f55c3143700a03809096048c21ce1351aa5308987b9b4182e969bff342f
+x-tt-trace-tag: id=03;cdn-cache=miss;type=dyn
+x-tt-trace-id: 00-260904225226B07E44393B3E6AF82E21-092D812A788A9F66-00
+content-security-policy: report-to slardar-endpoint; connect-src 'self' *.byte.org *.idouyinvod.com:* *.volcsiriusbd.com:* *.volcsirius.com:* *.tt.x.bsgslb.cn:* *.dy.zzcdnx.com:* *.qc.bsccdn.net:* *.smtcdns.com:* *.ugslb.com:* *.livehwc3.cn:* *.smtcdns.net:* *.bytefcdnrd.com:* *.ksyungslb.com:* *.ksyungslb2.com:* *.ourdvsss.com:* *.tbcache.com:* *.jomodns.com:* *.douyincdn.com:* *.ixigua.com:* *.bdxigualive.com:* *.pstatp.com:* *.douyinliving.com:* *.picovr.com:* *.huoshanlive.com:* *.ihuoshanlive.com:* *.volccdn.com:* *.bestv.com.cn:* *.bytefcdn.com:* *.douyinvod.com:* *.qnqcdn.net:* *.bytescm.com *.bytetos.com *.ibytedapm.com *.zijieapi.com *.snssdk.com *.bytedance.com *.bytedance.net *.pstatp.com *.bytednsdoc.com *.bytegoofy.com *.byted-static.com *.yhgfb-cn-static.com hm.baidu.com api.feelgood.cn *.toutiao.com *.feishu.cn *.ecombdvod.com *.bytetcc.com retcode-us-west-1.arms.aliyuncs.com ws: *.gstatic-cache.com *.xdtsmart.com utq.quanhu66.com *.ecombdstatic.com cdnml.global-cache.online www.google-analytics.com decision.etc4.com *.jinritemai.com data: *.toutiaostatic.com huatuo.cn.goofy.app *.weilayun.com:* *.saxysec.com:* *.saxyit.com:* *.saxydc.com:* *.sjxysec.com:* *.sjxydc.com:* *.hiecheimaetu.com:* *.ppio.cloud:*; frame-ancestors 'self' *.school.jinritemai.com *.jinritemai.com *.oceanengine.com *.bytedance.net; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' 'report-sample' data: blob: 'nonce-ba71f742eed88c2fdc055da3b83f800d-argus' 'strict-dynamic' *.bytescm.com *.bytetos.com *.ibytedapm.com *.zijieapi.com *.snssdk.com *.bytedance.com *.bytedance.net *.pstatp.com *.bytednsdoc.com *.bytegoofy.com *.byted-static.com *.yhgfb-cn-static.com http: https:; upgrade-insecure-requests ;
+reporting-endpoints: slardar-endpoint="https://mon.zijieapi.com/monitor_browser/collect/batch/security/?bid=doudian_school_pc"
+x-content-type-options: nosniff
+via: cache10.l2nu20-8[136,0], ens-dynamic8.cn9658[157,0]
+server-timing: cdn-cache;desc=MISS,edge;dur=21,origin;dur=136
+timing-allow-origin: *
+eagleid: b628820e17885335461897731e
+

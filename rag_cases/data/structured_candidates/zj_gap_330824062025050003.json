@@ -1,0 +1,78 @@
+{
+  "case_id": "zj_gap_330824062025050003",
+  "title": "浙江健一行医药零售连锁有限公司马金药店发布赠送药品广告案",
+  "case_number": "开市监处罚〔2025〕182号",
+  "source_type": "zj_xzcf_open_api_ad_gap_candidate",
+  "source_name": "浙江省行政处罚结果信息公开（公开 API）",
+  "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330824062025050003&unid=330824062025050003",
+  "source_verification_status": "official_api_fulltext_pending_human_review",
+  "source_lookup_priority": "P1",
+  "publish_date": null,
+  "decision_date": "2025-06-30",
+  "penalty_authority": "开化县市场监督管理局",
+  "party_name": "浙江健一行医药零售连锁有限公司马金药店",
+  "region": "开化县",
+  "industry": "药品零售",
+  "product_or_service": "葡萄糖酸钙锌口服溶液药品买赠广告",
+  "ad_channel": "经营场所宣传",
+  "risk_dimensions": [
+    "买赠/满减",
+    "促销广告",
+    "赠品或价格表示不清"
+  ],
+  "illegal_claims": [
+    "发布“买5得6”等买赠/赠送宣传广告",
+    "发布赠送药品广告"
+  ],
+  "facts_summary": "2025年3月，当事人在经营场所内发布了葡萄糖酸钙锌口服溶液“买5得6”的宣传广告。",
+  "legal_basis": [
+    "《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第十一条",
+    "《中华人民共和国行政处罚法》第二十八条",
+    "《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第二十八条"
+  ],
+  "penalty_result": "当事人在浙江省行政区域内发布赠送药品广告的行为违反《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第十一条第（六）项的规定，依据《中华人民共和国行政处罚法》第二十八条第二款及《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第二十八条的规定，本局决定对当事人从轻处罚如下：一、罚款502.5元；二、没收违法所得1005元。",
+  "penalty_amount": 502.5,
+  "penalty_amount_breakdown": {
+    "total_fine": 502.5,
+    "confiscated_illegal_gain": 1005.0,
+    "total_monetary_penalty": 1507.5,
+    "advertising_related_fine_when_separable": 502.5,
+    "anti_unfair_competition_fine": null
+  },
+  "regulatory_logic": "以下监管逻辑仅概括决定书明示内容：处罚机关依据全文载明的广告/反不正当竞争事实及法条作出处理；场景映射、分项罚款与标题正文一致性仍需人工复核。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "开市监处罚〔2025〕182号",
+    "赠送"
+  ],
+  "vector_text": "这是浙江省行政处罚结果信息公开的一起药品零售广告处罚候选案例。浙江健一行医药零售连锁有限公司马金药店通过经营场所宣传发布相关宣传。处罚决定书写明：2025年3月，当事人在经营场所内发布了葡萄糖酸钙锌口服溶液“买5得6”的宣传广告。处罚结果为：当事人在浙江省行政区域内发布赠送药品广告的行为违反《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第十一条第（六）项的规定，依据《中华人民共和国行政处罚法》第二十八条第二款及《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第二十八条的规定，本局决定对当事人从轻处罚如下：一、罚款502.5元；二、没收违法所得1005……该记录来自行政机关公开处罚信息全文，仍需人工复核，暂不进入生产 RAG。",
+  "rag_chunk_type": "case_summary_candidate",
+  "scope": "public",
+  "case_nature": "administrative_penalty_decision",
+  "is_admin_penalty_candidate": true,
+  "is_administrative_penalty_fact": true,
+  "gap_scenario_ids": [
+    "s06_gift_promotion"
+  ],
+  "gap_scenario_evidence": {
+    "s06_gift_promotion": [
+      "买5得6”的宣传广告。\n行政处罚种类、依据、内容：当事人在浙江省行政区域内发布赠送药品广告的行为违反《药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法》第十一条第（六）项的规定"
+    ]
+  },
+  "metadata_consistency_notes": [],
+  "review_status": "pending_human_review",
+  "approved_for_rag": false,
+  "human_review_required": true,
+  "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330824062025050003.json",
+  "source_list_raw_paths": [
+    "data/raw_text/zj_xzcf/gap_20260917/list/s06_gift_promotion__fallback__赠送__p1.json"
+  ],
+  "retrieved_at": "2026-09-17T17:54:08+08:00",
+  "data_change_log": [
+    {
+      "ts": "2026-09-17T17:54:08+08:00",
+      "action": "zj_gap_case_search",
+      "note": "浙江公开 API 列表+详情命中 8 缺口强场景词；仅入候选，待人核，不进生产 RAG。"
+    }
+  ]
+}

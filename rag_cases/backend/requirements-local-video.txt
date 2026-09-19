@@ -1,0 +1,6 @@
+-r ../requirements-handoff.txt
+
+# Only needed when backend/scripts/review_video.py performs its own local
+# inference.  Reading an existing src/video_mvp job does not need these.
+faster-whisper>=1.1,<2
+rapidocr-onnxruntime>=1.4,<2

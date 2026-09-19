@@ -1,0 +1,141 @@
+{
+  "fetched_at": "2026-09-17T17:31:43+08:00",
+  "request": {
+    "xzcfws_name": "游戏",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "2",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330782362025070011",
+          "xzcfws_code": "义市监处罚〔2025〕2504号",
+          "bxzcf_name": "K某某",
+          "guid": "330782362025070011",
+          "xzcfws_name": "K某某销售侵犯注册商标专用权的游戏手柄案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2025-09-19",
+          "orgnode": "义乌市市场监督管理局"
+        },
+        {
+          "unid": "11330900MB195773643309000320250007",
+          "xzcfws_code": "舟文综罚字〔2025〕6号",
+          "bxzcf_name": "舟山星际之城电子游艺有限公司",
+          "guid": "480e842a-4904-4f7b-b0e2-1e66cdf0d0e3",
+          "xzcfws_name": "游艺娱乐场所设置未经文化主管部门内容核查的游戏游艺设备案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "王某某",
+          "xzcf_date": "2025-09-09",
+          "orgnode": "舟山市文化和广电旅游体育局"
+        },
+        {
+          "unid": "23DEA882DB0D482C9986A51C26EABB46",
+          "xzcfws_code": "温龙消行罚决字〔2025〕第000096号",
+          "bxzcf_name": "温州市龙湾蒲州炫技天空电子游戏厅",
+          "guid": "23DEA882DB0D482C9986A51C26EABB46",
+          "xzcfws_name": "温州市龙湾蒲州炫技天空电子游戏厅消防设施、器材、消防安全标志未保持完好有效案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "吴某某",
+          "xzcf_date": "2025-07-11",
+          "orgnode": "温州市龙湾区消防救援大队"
+        },
+        {
+          "unid": "11330200MB1501579M3302003920250006",
+          "xzcfws_code": "甬文广旅罚字〔2025〕6号",
+          "bxzcf_name": "宁波嘻道网络科技有限公司",
+          "guid": "4fd8a5b7-7255-4ef0-b20c-fce893ad83cb",
+          "xzcfws_name": "擅自上网出版网络游戏(含境外著作权人授权的网络游戏)案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "庄某某",
+          "xzcf_date": "2025-04-09",
+          "orgnode": "宁波市文化广电旅游局"
+        },
+        {
+          "unid": "11330200MB1501579M3302000320240095",
+          "xzcfws_code": "甬文广旅罚字﹝2024﹞95号",
+          "bxzcf_name": "宁波海曙游布娱乐有限公司",
+          "guid": "0dd64e48-f374-4559-962e-505037ba57c3",
+          "xzcfws_name": "游艺娱乐场所设置未经文化主管部门内容核查的游戏游艺设备",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "许某某",
+          "xzcf_date": "2025-03-04",
+          "orgnode": "宁波市文化广电旅游局"
+        },
+        {
+          "unid": "11330700MB1676**************240026",
+          "xzcfws_code": "金文广旅罚字〔2024〕26号",
+          "bxzcf_name": "金华市手里见曰网络科技工作室(个人独资)",
+          "guid": "88858ca4-8e13-4f41-9b5e-440906eadfe6",
+          "xzcfws_name": "未经批准，擅自上网出版网络游戏",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "张某某",
+          "xzcf_date": "2025-01-15",
+          "orgnode": "金华市文化广电旅游局"
+        },
+        {
+          "unid": "330481092024080007",
+          "xzcfws_code": "海市监处罚〔2024〕1500号",
+          "bxzcf_name": "海宁市闽兴电子游戏房",
+          "guid": "330481092024080007",
+          "xzcfws_name": "海宁市闽兴电子游戏房未按规定办理年度报告案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "陈某某",
+          "xzcf_date": "2024-12-23",
+          "orgnode": "海宁市市场监督管理局"
+        },
+        {
+          "unid": "11330100MB167495573301003920240019",
+          "xzcfws_code": "杭文综罚字〔2024〕19号",
+          "bxzcf_name": "徐某某",
+          "guid": "434680d8-e77b-412a-a373-8a56a1266391",
+          "xzcfws_name": "未经批准，擅自上网出版网络游戏案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2024-10-31",
+          "orgnode": "杭州市文化广电旅游局"
+        },
+        {
+          "unid": "11330329MB1574671L3303293920240010",
+          "xzcfws_code": "泰文综罚字〔2024〕7号",
+          "bxzcf_name": "叶某某",
+          "guid": "3cffcfcc-f0c5-4ab6-95d5-69ea49718a67",
+          "xzcfws_name": "擅自上网出版网络游戏(含境外著作权人授权的网络游戏)案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2024-09-19",
+          "orgnode": "泰顺县文化和广电旅游体育局"
+        },
+        {
+          "unid": "11330782MB168601613307820320240076",
+          "xzcfws_code": "（义）文综罚字〔2024〕73号",
+          "bxzcf_name": "义乌市天极游艺娱乐厅",
+          "guid": "88b4f60f-2ee3-425a-b8c5-4e3c342729ee",
+          "xzcfws_name": "游艺娱乐场所设置的电子游戏机在国家法定节假日外向未成年人提供案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "杜某某",
+          "xzcf_date": "2024-07-03",
+          "orgnode": "义乌市文化和广电旅游体育局"
+        }
+      ],
+      "total": 23,
+      "pageTotal": 3,
+      "pageNo": 2
+    },
+    "traceId": "A9FB7886BCF44B8590420F15CDEDAF6B",
+    "messageType": 2
+  }
+}

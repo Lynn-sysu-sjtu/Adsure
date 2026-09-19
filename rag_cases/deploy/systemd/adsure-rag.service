@@ -1,0 +1,23 @@
+[Unit]
+Description=Adsure RAG Service
+After=network.target
+
+[Service]
+Type=simple
+User=adsure
+Group=adsure
+WorkingDirectory=/opt/adsure-rag
+EnvironmentFile=/etc/adsure/rag.env
+EnvironmentFile=-/etc/adsure/rag-secret.env
+ExecStartPre=/opt/adsure-rag/.venv/bin/python -m src.preflight_rag
+ExecStart=/opt/adsure-rag/.venv/bin/uvicorn src.api:app --host 127.0.0.1 --port 8505
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/adsure-rag/data
+
+[Install]
+WantedBy=multi-user.target

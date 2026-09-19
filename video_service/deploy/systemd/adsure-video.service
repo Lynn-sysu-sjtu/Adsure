@@ -1,0 +1,28 @@
+[Unit]
+Description=Adsure video evidence parsing service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=adsure
+Group=adsure
+WorkingDirectory=/opt/adsure-video-review
+EnvironmentFile=/etc/adsure/video.env
+ExecStartPre=/opt/adsure-video-review/.venv-video/bin/python -m scripts.preflight_video
+ExecStart=/opt/adsure-video-review/.venv-video/bin/python -m uvicorn src.video_service.service:app --host ${VIDEO_SERVICE_HOST} --port ${VIDEO_SERVICE_PORT} --workers 1
+Restart=on-failure
+RestartSec=5
+TimeoutStartSec=120
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/var/lib/adsure-video
+CPUQuota=200%
+MemoryMax=4G
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target

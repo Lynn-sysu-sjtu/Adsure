@@ -1,0 +1,89 @@
+{
+ "case_id": "samr_2026_netfood_02_meeting_cure_sangao",
+ "title": "深圳市市场监管局罗湖监管局查处深圳市万丹通健康管理有限公司虚假宣传普通食品治愈“三高”案",
+ "source_type": "official_typical_case",
+ "source_name": "国家市场监督管理总局",
+ "source_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html",
+ "source_verification_status": "source_verified",
+ "original_decision_url": "https://www.samr.gov.cn/xw/zj/art/2026/art_7c21a79272864a4382acc083e410ff3d.html",
+ "original_decision_url_status": "official_page",
+ "source_lookup_priority": "P0",
+ "publish_date": "2026-09-07",
+ "decision_date": null,
+ "penalty_authority": "深圳市市场监督管理局罗湖监管局",
+ "party_name": "深圳市万丹通健康管理有限公司",
+ "region": "广东省深圳市",
+ "industry": "保健食品",
+ "violation_type": "普通食品宣称疾病治疗功效（虚假宣传）",
+ "case_nature": "administrative_penalty_decision",
+ "is_admin_penalty_candidate": true,
+ "product_or_service": "养生酒、玛咖牡蛎肽、能量复合肽等普通食品",
+ "ad_channel": "产品宣讲会（面向老年消费者的会议营销）",
+ "risk_dimensions": [
+  "虚假宣传",
+  "普通食品疾病治疗功效宣传",
+  "老年人营销风险",
+  "会销虚假宣传",
+  "医疗用语"
+ ],
+ "illegal_claims": [
+  "食用产品20天可治愈“三高”",
+  "消除关节疼痛",
+  "治好肺结节"
+ ],
+ "facts_summary": "当事人通过产品宣讲会面向老年消费者集中营销，虚构养生酒、玛咖牡蛎肽、能量复合肽等普通食品具有疾病治疗、身体调理功效，声称食用20天可治愈“三高”、消除关节疼痛、治好肺结节，并虚构慢性病康复案例，导致老年消费者停用降压药出现脑出血等健康问题，违反《反不正当竞争法》第九条。",
+ "legal_basis": [
+  "《中华人民共和国反不正当竞争法》第九条",
+  "《中华人民共和国反不正当竞争法》第二十五条第一款",
+  "《中华人民共和国行政处罚法》第五条第二款"
+ ],
+ "penalty_result": "责令立即停止违法行为，罚款25万元",
+ "penalty_amount": 250000,
+ "regulatory_logic": "以会议营销向老年群体宣称普通食品可治愈“三高”等疾病，虚构疗效致消费者停药延误治疗，属于欺骗、误导消费者的虚假商业宣传，从重处理。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "会销",
+  "老年人",
+  "普通食品",
+  "治愈三高",
+  "肺结节",
+  "疾病治疗",
+  "虚假宣传",
+  "罚款25万",
+  "罗湖"
+ ],
+ "vector_text": "这是一起面向银发消费群体会议营销、把普通食品吹成能治愈“三高”等疾病的虚假宣传案。宣讲会声称养生酒、玛咖牡蛎肽等食用20天可治好肺结节、消除关节疼痛，并虚构康复案例。监管责令停止并罚款25万元。场景特征：会销、普通食品疾病治疗功效、虚构疗效。",
+ "rag_chunk_type": "case_summary",
+ "scope": "public",
+ "review_status": "approved",
+ "approved_for_rag": true,
+ "raw_text_path": "data/raw_text/samr_c083e410ff3d.json",
+ "raw_html_path": "data/raw_html/samr_c083e410ff3d.html",
+ "source_lookup_query": "深圳市万丹通健康管理有限公司 普通食品宣称疾病治疗功效（虚假宣传）",
+ "legal_basis_provenance": {
+  "case_source_text": "总局典型案例原文引用",
+  "specific_articles_published_by_case_source": true,
+  "mapping_status": "official_case_source",
+  "warning": "法条引用来自总局典型案例原文。"
+ },
+ "legal_basis_details": [],
+ "audit": {
+  "review_status": "approved",
+  "approved_for_rag": true,
+  "reviewer": "codex-crawler-ingest",
+  "review_date": "2026-09-15",
+  "review_notes": "总局P0官方典型案，crawler存证+人工结构化；罚则/机关/金额均出自官方原文。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T23:48:57+08:00",
+   "action": "crawler_ingest_official",
+   "note": "经 backend/scripts/crawl_samr.py 抓取存证（raw_html+raw_text），按官方原文结构化入库。"
+  }
+ ],
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T23:48:57+08:00",
+  "approved_by": "codex-crawler-ingest (官方P0典型案)"
+ }
+}

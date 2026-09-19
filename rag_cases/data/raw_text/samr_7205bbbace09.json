@@ -1,0 +1,8 @@
+{
+  "case_id": "samr_7205bbbace09",
+  "source_url": "https://scjgj.sh.gov.cn/1073/20210316/51ca34918d3844af81de7205bbbace09.html",
+  "fetched_at": "2026-09-17T06:28:42.491101+00:00",
+  "user_agent": "AdsureCaseBot/0.1 (+ad-compliance research; non-commercial)",
+  "sha256": "023b8debf24faeb00618badb8b1e1d368f343107e6bf705eee89eab048708cf7",
+  "text": "Template not found for name \"json://{\\\"siteId\\\":\\\"0019\\\",\\\"category\\\":\\\"content\\\",\\\"tags\\\":\\\"pt\\\",\\\"name\\\":\\\"default\\\"}\".\nThe name was interpreted by this TemplateLoader: MultiTemplateLoader(loader1 = com.wdit.modules.cms.publish.freemarker.TemplateLoader(baseDir=\"/\", canonicalBasePath=\"/\"), loader2 = ClassTemplateLoader(resourceLoaderClass=org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer, basePackagePath=\"\" /* relatively to resourceLoaderClass pkg */))."
+}

@@ -1,0 +1,75 @@
+{
+  "fetched_at": "2026-09-17T17:31:43+08:00",
+  "request": {
+    "xzcfws_name": "红包",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "C5A2CF4D290C4A8C9F5BAF7EFFA1A117",
+          "xzcfws_code": "台新消行罚决字〔2025〕第000018号",
+          "bxzcf_name": "台州万紫红包装有限责任公司",
+          "guid": "C5A2CF4D290C4A8C9F5BAF7EFFA1A117",
+          "xzcfws_name": "台州万紫红包装有限责任公司消防控制室未实行二十四小时值班制度案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "卢某某",
+          "xzcf_date": "2025-12-18",
+          "orgnode": "台州湾新区消防救援大队"
+        },
+        {
+          "unid": "042B5A3FEB214DE7917B783A8C0097A5",
+          "xzcfws_code": "钱塘消行罚决字〔2024〕第000209号",
+          "bxzcf_name": "杭州卡红包装有限公司",
+          "guid": "042B5A3FEB214DE7917B783A8C0097A5",
+          "xzcfws_name": "杭州卡红包装有限公司消防设施、器材、消防安全标志配置、设置不符合标准案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "高某某",
+          "xzcf_date": "2024-11-05",
+          "orgnode": "杭州钱塘新区消防救援大队"
+        },
+        {
+          "unid": "台三综执立字〔2024〕第000094号",
+          "xzcfws_code": "台三综执罚决字〔2024〕第000094号",
+          "bxzcf_name": "三门县永红包子店",
+          "guid": "2d2b96a6158445dc825a1266ca83c4a3",
+          "xzcfws_name": "三门县永红包子店擅自在街道两侧堆放物料案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "汪某某",
+          "xzcf_date": "2024-08-12",
+          "orgnode": "三门县综合行政执法局"
+        },
+        {
+          "unid": "CE89043BDFDE4F6E8BA81D80103C9C0B",
+          "xzcfws_code": "台新消行罚决字〔2023〕第000179号",
+          "bxzcf_name": "台州万紫红包装有限责任公司",
+          "guid": "CE89043BDFDE4F6E8BA81D80103C9C0B",
+          "xzcfws_name": "台州万紫红包装有限责任公司埋压、圈占、遮挡消火栓案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "卢某某",
+          "xzcf_date": "2023-11-13",
+          "orgnode": "台州湾新区消防救援大队"
+        }
+      ],
+      "total": 4,
+      "pageTotal": 1,
+      "pageNo": 1
+    },
+    "traceId": "5D30F7FAEE2448F6B06FE505525E490B",
+    "messageType": 2
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "snapshot_id": "xhs_juguang_public_search_snapshot_2026_08_29",
+  "platform": "小红书",
+  "collected_at": "2026-08-29T00:00:00+08:00",
+  "capture_method": "public_help_center_visible_search_results",
+  "snapshot_completeness": "search_result_excerpt_only",
+  "robots_note": "仅使用无需登录的公开帮助中心可见页面；未绕过验证码、登录或非公开接口。",
+  "copyright_note": "仅保存用于溯源的短摘录和结构化摘要，不保存完整页面正文。",
+  "sources": [
+    {
+      "source_key": "juguang_content_review_general",
+      "source_name": "小红书聚光帮助中心",
+      "document_title": "内容审核规则总则",
+      "source_url": "https://ad.xiaohongshu.com/next_help/home",
+      "source_locator": "站内搜索：内容审核规则总则；新手必看/物料审核规范",
+      "source_update_date": "2026-03-23",
+      "observed_excerpt": "小红书有权对广告内容进行审核，未通过审核的广告不得发布。",
+      "content_hash": "9e8ef50e6836dab908d165aeda043f4eab3318b5793a97248bcfe99a46889e1b",
+      "verification_status": "public_page_visible_excerpt_verified"
+    },
+    {
+      "source_key": "juguang_food_rules",
+      "source_name": "小红书聚光帮助中心",
+      "document_title": "食品行业规则&投放规则",
+      "source_url": "https://ad.xiaohongshu.com/next_help/home",
+      "source_locator": "站内搜索：食品行业规则 保健食品；新手必看/物料审核规范",
+      "source_update_date": "2025-12-30",
+      "observed_excerpt": "普通食品宣传不得涉及功效夸大，不得宣传超出饱腹以外的功效。",
+      "content_hash": "74dbe0a18baf3303218c5bca77bd1f211d86588a6d4274957ad58b239c5325ac",
+      "verification_status": "public_page_visible_excerpt_verified"
+    },
+    {
+      "source_key": "juguang_game_qualification",
+      "source_name": "小红书聚光帮助中心",
+      "document_title": "互联网行业规则",
+      "source_url": "https://ad.xiaohongshu.com/next_help/home",
+      "source_locator": "站内搜索：游戏行业投放规则；游戏行业高频问题2&3",
+      "source_update_date": "2025-12-30",
+      "observed_excerpt": "推广具体游戏应上传游戏软著和游戏版号，材料不齐不支持投放。",
+      "content_hash": "6520170fa6c56bbab3533aa2d2eb96a8c09e378f2f3b7d085dede90603622c76",
+      "verification_status": "public_page_visible_excerpt_verified"
+    },
+    {
+      "source_key": "juguang_game_absolute_claim",
+      "source_name": "小红书聚光帮助中心",
+      "document_title": "互联网行业规则",
+      "source_url": "https://ad.xiaohongshu.com/next_help/home",
+      "source_locator": "站内搜索：游戏行业投放规则；游戏行业高频问题1",
+      "source_update_date": "2025-12-30",
+      "observed_excerpt": "首款游戏、顶级画质等绝对化表述需删除或提供证明。",
+      "content_hash": "c2f86125ac0fb28bbfdcce14438bf3855407a80b67ee2a5c56fcbe5de04bacfe",
+      "verification_status": "public_page_visible_excerpt_verified"
+    },
+    {
+      "source_key": "juguang_beauty_hair_change",
+      "source_name": "小红书聚光帮助中心",
+      "document_title": "美妆行业规则",
+      "source_url": "https://ad.xiaohongshu.com/next_help/home",
+      "source_locator": "站内搜索：美妆行业规则；规则调整内容",
+      "source_update_date": "2026-06-22",
+      "observed_excerpt": "原育发产品资质及育发功效宣传规则于2026年调整。",
+      "content_hash": "71c7b80994f12b2c7ccc0993aa9114b8a9a79d544aac588906ce1b6c047e0e89",
+      "verification_status": "excerpt_incomplete_pending_full_rule_review"
+    },
+    {
+      "source_key": "professional_account_qualification",
+      "source_name": "小红书聚光帮助中心",
+      "document_title": "【变更】专业号认证规则规范",
+      "source_url": "https://ad.xiaohongshu.com/next_help/docs/195c5fe505c71b4b0335a2fe0d61d8e0",
+      "source_locator": "七、行业准入及禁入规则；7.1行业资质原则",
+      "source_update_date": "2026-08-02",
+      "observed_excerpt": "行业资质应由认证主体自己持有，并与申请行业匹配且在有效期内。",
+      "content_hash": "10f944a81a0684eeb4bef234a1e0f2e6016144ce3013a9c429292cd858e7e8f6",
+      "verification_status": "public_page_visible_excerpt_verified"
+    }
+  ],
+  "limitations": [
+    "帮助中心详情采用动态渲染，当前快照仅包含公开搜索结果和可见详情短摘录。",
+    "进入生产前必须保存具体规则详情页或官方导出件，并由平台运营与法务双人复核。",
+    "页面没有明确生效日期时不得以更新时间推定生效日期。"
+  ]
+}

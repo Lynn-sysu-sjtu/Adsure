@@ -1,0 +1,561 @@
+# ══════════════════════════════════════════════════════════════════════
+#  L1 · 绝对化用语词库
+#  法律依据：《广告法》第九条第（三）项 + 《广告绝对化用语执法指南》(2023)
+# ══════════════════════════════════════════════════════════════════════
+#
+# ⚠️ 本文件是**起始版本，必须经法务复核后才能用于对外输出**。
+#    真正的词库应当从行政处罚决定书里反向挖掘（见 tasks 方案 3.1 节）——
+#    被真实处罚过的表述，比任何人凭印象列的词都准，而且自带类案证据。
+#
+# ── 字段说明 ──────────────────────────────────────────────────────────
+#   term              命中词面
+#   level             L1 固定
+#   industry          适用行业，["*"] 表示通用
+#   law_ref           法条出处（写进报告的「法律依据」段，必须真实可查）
+#   law_text          法条原文摘录（喂给 LLM，禁止它自己编法条）
+#   judgment_points   判定要点，指导 LLM 复判该看什么
+#   whitelist_contexts  白名单语境：命中词若落在这些短语内，直接抑制，不报风险
+#   exempt_hints      豁免线索：不能自动抑制，但要提示 LLM 重点核查是否属豁免情形
+#   cases             关联类案 id（对接王亦澄类案库，现为占位）
+#   risk              high / medium / low
+#
+# ── 《广告绝对化用语执法指南》的五类豁免情形（白名单设计的依据）──────
+#   ① 不指向所推销的商品/服务的
+#   ② 仅表明服务态度、经营理念、企业文化、价值观、目标追求的
+#   ③ 表示时间或空间顺序的（"第一时间""第一步""第一排"）
+#   ④ 依据国家标准/行业标准对商品等级、类别作客观描述的（"特级""一级"）
+#   ⑤ 有充分证据证明其真实性的（"销量第一"附可查证第三方数据）
+#
+#   ③④ 可以靠白名单语境自动抑制；①②⑤ 依赖上下文与举证材料，
+#   只能交给 LLM 复判 + 要求运营补材料，所以放进 exempt_hints。
+# ══════════════════════════════════════════════════════════════════════
+
+meta:
+  layer: L1
+  kind: terms
+  name: 绝对化用语
+  version: "0.1.0-draft"
+  reviewed_by_legal: false          # ⚠️ 法务复核前不得用于对外报告
+  primary_law: "《中华人民共和国广告法》第九条第（三）项"
+  guideline: "《广告绝对化用语执法指南》（市场监管总局，2023）"
+
+# 通用法条文本，条目里用 law_text_ref 引用，避免重复几十遍
+law_texts:
+  ad_law_9_3: >-
+    《中华人民共和国广告法》第九条：广告不得有下列情形：……
+    （三）使用"国家级"、"最高级"、"最佳"等用语；……
+  ad_law_28: >-
+    《中华人民共和国广告法》第二十八条：广告以虚假或者引人误解的内容欺骗、误导消费者的，
+    构成虚假广告。……（二）商品的性能、功能、产地、用途、质量、规格、成分、价格、生产者、
+    有效期限、销售状况、曾获荣誉等信息……与实际情况不符，对购买行为有实质性影响的。
+
+# 全局豁免提示，所有 L1 条目共用
+common_exempt_hints:
+  - "该表述是否指向所推销的商品/服务？若仅描述企业价值观、服务态度、目标追求，可能不适用第九条第三项"
+  - "是否属于国家标准或行业标准中的等级、类别名称？若是，属客观描述"
+  - "是否有可查证的第三方数据支撑？若有充分证据证明真实性，需结合证据材料判断"
+
+entries:
+  # ── "国家级 / 世界级" 家族 ──────────────────────────────────────────
+  - term: 国家级
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "法条明文列举的用语，指向商品/服务时基本无抗辩空间。"
+    whitelist_contexts:
+      - 国家级自然保护区
+      - 国家级非物质文化遗产
+      - 国家级高新技术企业
+      - 国家级经济技术开发区
+      - 国家级实验室
+      - 国家级重点实验室
+      - 国家级科技企业孵化器
+      - 国家级龙头企业
+    cases: []
+    risk: high
+
+  - term: 世界级
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "属「等用语」涵盖范围，与「国家级」同类处理。"
+    whitelist_contexts: []
+    cases: []
+    risk: high
+
+  - term: 国际级
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "同「世界级」。"
+    whitelist_contexts: []
+    cases: []
+    risk: high
+
+  # ── "最X" 家族 ──────────────────────────────────────────────────────
+  # 这是误报重灾区：「最新款」合法、「最好用」违法，差别全在"最"字后面接什么。
+  # 所以每条都必须带上下文交给 LLM 复判，不能命中即定性。
+  - term: 最高级
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "法条明文列举。"
+    whitelist_contexts: []
+    cases: []
+    risk: high
+
+  - term: 最佳
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "法条明文列举。注意「最佳观赏期」「最佳食用日期」等客观描述可能属豁免。"
+    whitelist_contexts:
+      - 最佳食用日期
+      - 最佳观赏期
+      - 最佳赏味期
+    cases: []
+    risk: high
+
+  - term: 最好
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "指向商品质量时违规。注意口语中「最好先……」表建议，非质量断言。"
+    whitelist_contexts: []
+    exempt_hints:
+      - "是否为「最好先」「最好不要」这类表建议的用法？若是，非质量断言"
+    cases: []
+    risk: high
+
+  - term: 最优
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    whitelist_contexts:
+      - 最优解
+    cases: []
+    risk: high
+
+  - term: 最强
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    whitelist_contexts: []
+    cases: []
+    risk: high
+
+  - term: 最先进
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    whitelist_contexts: []
+    cases: []
+    risk: high
+
+  - term: 最专业
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    whitelist_contexts: []
+    cases: []
+    risk: high
+
+  - term: 最有效
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "同时可能触发功效宣称问题，注意与 L2 行业禁用语交叉。"
+    whitelist_contexts: []
+    cases: []
+    risk: high
+
+  - term: 最便宜
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    whitelist_contexts: []
+    cases: []
+    risk: high
+
+  - term: 最低价
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "价格类绝对化用语，同时可能触及价格欺诈相关规定。"
+    whitelist_contexts: []
+    cases: []
+    risk: high
+
+  - term: 史上最低
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    whitelist_contexts: []
+    cases: []
+    risk: high
+
+  - term: 最受欢迎
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    exempt_hints:
+      - "是否附有可查证的第三方销量/评选数据？"
+    cases: []
+    risk: high
+
+  # 以下几条误报率偏高，靠 whitelist_contexts 抑制常见的客观描述用法。
+  # 收录它们是因为漏检的代价（真违规没查出来）远大于误报的代价（LLM 复判掉）。
+  - term: 最大
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "需区分「规模最大」（排名断言）与「最大限度」（程度副词）。"
+    whitelist_contexts:
+      - 最大限度
+      - 最大程度
+      - 最大化
+      - 最大值
+      - 最大公约数
+      - 最大功率
+      - 最大承重
+    cases: []
+    risk: medium
+
+  - term: 最高
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "「最高级」已单列。此条覆盖「品质最高」等排名断言。"
+    whitelist_contexts:
+      - 最高气温
+      - 最高时速
+      - 最高限额
+      - 最高人民法院
+      - 最高检
+      - 最高温度
+    cases: []
+    risk: medium
+
+  - term: 最低
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "「最低价」已单列。此条覆盖「成本最低」等断言。"
+    whitelist_contexts:
+      - 最低消费
+      - 最低气温
+      - 最低工资
+      - 最低限度
+      - 最低配置
+    cases: []
+    risk: medium
+
+  - term: 最新
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: >-
+      **典型误报源**：「最新款」是时间描述（合法），「最新科技」可能构成技术领先断言。
+      务必看后接成分。
+    whitelist_contexts:
+      - 最新款
+      - 最新消息
+      - 最新版本
+      - 最新一期
+      - 最新政策
+      - 最新资讯
+    cases: []
+    risk: low
+
+  - term: 最多
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    whitelist_contexts:
+      - 最多可
+      - 最多支持
+      - 最多不超过
+    cases: []
+    risk: medium
+
+  - term: 最快
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "「最快次日达」这类时效承诺需核验是否可兑现，属事实型问题。"
+    exempt_hints:
+      - "是否为可兑现的服务时效承诺并有履约数据支撑？"
+    cases: []
+    risk: medium
+
+  - term: 最全
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: medium
+
+  # ── "第一" 家族 ─────────────────────────────────────────────────────
+  # 白名单最重要的一族：「第一时间」「第一步」是时间/空间顺序，明确豁免。
+  #
+  # 这里刻意收录**裸词「第一」**：只枚举「第一品牌」「全国第一」这类固定搭配的话，
+  # 「亚洲第一」「口碑第一」「服务第一」等没想到的说法会直接漏检，
+  # 而粗筛层的目标是高召回。误报由 global_whitelist（时间/空间顺序）
+  # 与 LLM 语境复判两道闸兜住。
+  - term: 第一
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: >-
+      裸词高召回条目，误报率天然偏高，**命中不等于违规**。
+      需重点区分：表时间/空间顺序（豁免）vs 表排名断言（违规）。
+    exempt_hints:
+      - "是否表示时间或空间顺序（如「第一时间」「第一排」）？若是，属执法指南豁免情形③"
+      - "是否附有可查证的第三方评选/统计数据？"
+    cases: []
+    risk: medium
+
+  - term: 第一品牌
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "排名断言且指向商品，典型违规。"
+    whitelist_contexts: []
+    cases: []
+    risk: high
+
+  - term: 第一名
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    exempt_hints:
+      - "是否有权威机构评选结果佐证？需核验评选主体与时间"
+    cases: []
+    risk: high
+
+  - term: 销量第一
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项 / 第二十八条"
+    law_text_ref: ad_law_28
+    judgment_points: >-
+      有可查证第三方数据来源的，可能属"有充分证据证明真实性"的豁免情形；
+      无出处的则同时触及绝对化用语与虚假广告。**这条必须要材料，不能直接删词。**
+    exempt_hints:
+      - "是否标注了数据来源、统计口径、统计时间段？"
+      - "数据来源是否为独立第三方且可公开查证？"
+    cases: []
+    risk: high
+
+  - term: 全国第一
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: high
+
+  - term: 行业第一
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: high
+
+  # ── "唯一 / 独家 / 首创" 家族 ───────────────────────────────────────
+  - term: 独一无二
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: high
+
+  - term: 绝无仅有
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: high
+
+  - term: 举世无双
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: high
+
+  - term: 独家
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项 / 第二十八条"
+    law_text_ref: ad_law_28
+    judgment_points: "需核验是否确有独家授权/独家代理，属事实型问题，走「要材料」而非「删词」。"
+    exempt_hints:
+      - "是否持有独家授权协议、独家代理合同等证明材料？"
+    cases: []
+    risk: medium
+
+  - term: 首创
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项 / 第二十八条"
+    law_text_ref: ad_law_28
+    exempt_hints:
+      - "是否有专利、首发时间、权威认定等佐证？"
+    cases: []
+    risk: medium
+
+  - term: 开创者
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: medium
+
+  - term: 领导者
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    exempt_hints:
+      - "是否仅表述企业愿景/目标追求？若是，可能属豁免情形②"
+    cases: []
+    risk: medium
+
+  - term: 领导品牌
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: high
+
+  # ── "顶级 / 极致" 家族 ──────────────────────────────────────────────
+  - term: 顶级
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: high
+
+  - term: 顶尖
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: high
+
+  - term: 极品
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "注意「特级」「一级」若为国标等级名称属豁免，但「极品」通常非标准术语。"
+    cases: []
+    risk: high
+
+  - term: 极致
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    exempt_hints:
+      - "是否仅描述工艺追求/品牌理念而非商品质量断言？"
+    cases: []
+    risk: medium
+
+  - term: 终极
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: medium
+
+  - term: 王牌
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: medium
+
+  # ── "绝对 / 100%" 家族 ──────────────────────────────────────────────
+  - term: 100%
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项 / 第二十八条"
+    law_text_ref: ad_law_28
+    judgment_points: >-
+      纯度、成分含量等客观可测指标若有检验报告支撑，可能成立；
+      但用于效果宣称（"100% 有效"）时属绝对化断言，且触及虚假广告。
+    exempt_hints:
+      - "是否为成分含量等可检测指标且有检验报告？"
+    cases: []
+    risk: high
+
+  - term: 百分百
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: high
+
+  - term: 绝对
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    judgment_points: "误报较多，需看是否指向商品质量。"
+    whitelist_contexts:
+      - 绝对值
+      - 绝对温度
+      - 绝对零度
+      - 绝对路径
+    cases: []
+    risk: medium
+
+  - term: 无敌
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: medium
+
+  - term: 前所未有
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: medium
+
+  - term: 史无前例
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: medium
+
+  - term: 空前绝后
+    industry: ["*"]
+    law_ref: "《广告法》第九条第（三）项"
+    law_text_ref: ad_law_9_3
+    cases: []
+    risk: medium
+
+# ══════════════════════════════════════════════════════════════════════
+#  全局白名单短语
+#
+#  这些短语本身完全合法，但内含 L1 词面（「第一时间」含「第一」）。
+#  匹配器先跑一遍白名单，命中若被某条白名单短语**完整包含**则直接抑制。
+#  依据：《广告绝对化用语执法指南》豁免情形③「表示时间或空间顺序的」。
+#
+#  ⚠️ 不变式：**每条白名单短语必须至少包含一个 entries 里的词面**，
+#     否则它永远不会被触发，是死配置。tests/test_matcher.py 里有断言守这条。
+#
+#  只放"第一"家族：其余各词的白名单挂在自己的 whitelist_contexts 下，
+#  就近维护，避免同一条短语在两处重复。
+# ══════════════════════════════════════════════════════════════════════
+global_whitelist:
+  - 第一时间
+  - 第一步
+  - 第一次
+  - 第一季度
+  - 第一季
+  - 第一集
+  - 第一章
+  - 第一节
+  - 第一排
+  - 第一层
+  - 第一人称
+  - 第一志愿
+  - 第一现场
+  - 第一手

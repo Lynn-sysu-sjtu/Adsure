@@ -1,0 +1,30 @@
+{
+  "fetched_at": "2026-09-17T17:31:43+08:00",
+  "request": {
+    "xzcfws_name": "赚钱游戏",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": "未查询到相关信息",
+    "code": "200",
+    "data": {
+      "punishList": null,
+      "total": 0,
+      "pageTotal": 0,
+      "pageNo": 0
+    },
+    "traceId": "92C0D79E75CD4B9685DD20E97F320DCE",
+    "messageType": 2
+  }
+}

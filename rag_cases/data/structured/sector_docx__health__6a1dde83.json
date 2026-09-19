@@ -1,0 +1,156 @@
+{
+ "case_id": "sector_docx__health__6a1dde83",
+ "title": "沧州市运河区市场监督管理局申请执行东方红保健食品经销处行政处罚案",
+ "case_number": "（2021）冀0903行审4号",
+ "court": "沧州市运河区人民法院",
+ "decision_date": "2021-03-18",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+ "source_url": "https://www.pkulaw.com/pfnl/c05aeed05a57db0a5dc88dd5138ad8958bc47954fa79731fbdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
+ "publish_date": null,
+ "penalty_authority": "沧州市运河区市场监督管理局",
+ "party_name": "东方红保健食品经销处",
+ "region": "沧州市运河区",
+ "industry": "保健食品 / 保健品 / 普通食品",
+ "sector": "health",
+ "sector_cn": "保健品",
+ "violation_type": "普通食品宣传疾病治疗功能",
+ "case_nature": "administrative_nonlitigation_enforcement",
+ "source_lookup_priority": "P0",
+ "is_admin_penalty_candidate": true,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "health"
+ ],
+ "product_or_service": "福寿大街",
+ "ad_channel": "其他",
+ "risk_dimensions": [
+  "虚假宣传"
+ ],
+ "illegal_claims": [
+  "福寿大街"
+ ],
+ "facts_summary": "申请执行人沧州市运河区市场监督管理局(以下简称运河区市场监管局)向本院申请强制执行沧运市监处字[2020]第G010号行政处罚决定书的内容。本院依法进行了审查，本案现已审查终结。\n经审查查明，因被执行人沧州市运河区东方红保健食品经销处利用制作、播放课件、集中授课方式，使用无具体来源出处数据，宣传“福寿大街”系列食品具有预防治疗疾病的功能，欺骗、误导消费者，其行为违反了《中华人民共和国反不正当竞争法》第八条第一款“经营者不得对其商品的性能、功能、质量、销售状况、用户评价、曾获荣誉等作虚假或者引人误解的商业宣传，欺骗、误导消费者”的规定，构成了对商品的性能、功能作虚假的商业宣传行为，依据《中华人民共和国反不正当竞争法》第二十条之规定，决定责令当事人停止违法行为，并处以罚款人民币200000元，上缴国库。被执行人在法定期限内既未申请行政复议或向人民法院提起诉讼，亦未履行该决定。申请执行人经催告后，依据《中华人民共和国行政处罚法》第五十一条的规定向本院申请强制执行。",
+ "legal_basis": [
+  "《反不正当竞争法》第八条第一款、第二十条"
+ ],
+ "penalty_result": "罚款200000元",
+ "penalty_amount": null,
+ "regulatory_logic": "保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及普通食品宣传疾病治疗功能，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《反不正当竞争法》第八条第一款、第二十条。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "health",
+  "保健品",
+  "普通食品宣传疾病治疗功能",
+  "虚假宣传",
+  "福寿大街"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
+ "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "pending_pkulaw_human_review",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
+ },
+ "source_lookup_query": "（2021）冀0903行审4号 沧州市运河区市场监督管理局申请执行东方红保健食品经销处行政处罚案",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。申请执行人沧州市运河区市场监督管理局(以下简称运河区市场监管局)向本院申请强制执行沧运市监处字[2020]第G010号行政处罚决定书的内容。本院依法进行了审查，本案现已审查终结。\n经审查查明，因被执行人沧州市运河区东方红保健食品经销处利用制作、播放课件、集中授课方式，使用无具体来源出处数据，宣传“福寿大街”系列食品具有预防治疗疾病的功能，欺骗、误导消费者，其行为违反了《中华人民共和国反不正当竞争法》第八条第一款“经营者不得对其商品的性能、功能、质量、销售状况、用户评价、曾获荣誉等作虚假或者引人误解的商业宣传，欺骗、误导消费者”的规定，构成了对商品的性能、功能作虚假的商业宣传行为，依据《中华人民共和国反不正当竞争法》第二十条之规定，决定责令当事人停止违法行为，并处以罚款人民币200000元，上缴国库。涉案广告宣称：福寿大街。",
+ "raw_text_path": "data/raw_text/case_library_docx__保健食品广告合规案例库.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
+  }
+ ],
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T03:41:10+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）"
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "利用制作、播放课件、集中授课方式，使用无具体来源出处数据，宣传“福寿大街”系列食品具有预防治疗疾病的功能",
+    "vector_text": "【赛道】保健品。【场景】其他。【宣称】福寿大街。【风险】保健食品、普通食品或食用农产品不得宣称疾病预防、治疗功能；本案涉及普通食品宣传疾病治疗功能，相关宣传可能构成虚假宣传或食品标签违法风险，报告列明依据为《反不正当竞争法》第八条第一款、第二十条。。【依据】《反不正当竞争法》第八条第一款、第二十条。【结果】罚款200000元。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2021)冀0903行审4号",
+  "pkulaw_court": "河北省沧州市运河区人民法院",
+  "pkulaw_title": "沧州市运河区市场监督管理局、沧州市运河区东方红保健食品经销处非诉执行审查行政裁定书",
+  "last_instance_date": "2021.03.18",
+  "source_url": "https://www.pkulaw.com/pfnl/c05aeed05a57db0a5dc88dd5138ad8958bc47954fa79731fbdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2021_冀0903行审4号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
+}

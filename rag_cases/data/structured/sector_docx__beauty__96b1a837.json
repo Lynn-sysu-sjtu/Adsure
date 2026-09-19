@@ -1,0 +1,158 @@
+{
+ "case_id": "sector_docx__beauty__96b1a837",
+ "title": "毛冉冉诉广州娇比萃化妆品有限公司产品责任纠纷案",
+ "case_number": "（2018）鄂0105民初1792号",
+ "court": "武汉市汉阳区人民法院",
+ "decision_date": "2018-07-16",
+ "source_type": "manual_docx_sector_report_pending_source_verification",
+ "source_name": "违法广告行政处罚案例汇总_近三年_游戏美妆保健品.docx",
+ "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f30d2bac97c5a492977495e48f132d1125bdfb.html?way=mcp",
+ "source_verification_status": "pkulaw_linked_pending_human_review",
+ "publish_date": null,
+ "penalty_authority": null,
+ "party_name": "广州娇比萃化妆品有限公司产品责任纠纷案",
+ "region": "武汉市汉阳区",
+ "industry": "化妆品 / 医疗美容 / 美妆",
+ "sector": "beauty",
+ "sector_cn": "美妆",
+ "violation_type": "化妆品广告虚假宣传",
+ "case_nature": "judicial_reference_not_admin_penalty",
+ "source_lookup_priority": "P2",
+ "is_admin_penalty_candidate": false,
+ "is_litigation_reference": true,
+ "duplicate_group_id": null,
+ "related_sectors": [
+  "beauty"
+ ],
+ "product_or_service": "诗泊泉熊果苷传明酸美白原液",
+ "ad_channel": "其他",
+ "risk_dimensions": [
+  "虚假宣传"
+ ],
+ "illegal_claims": [
+  "诗泊泉熊果苷传明酸美白原液",
+  "美白、祛斑"
+ ],
+ "facts_summary": "原告毛冉冉诉被告广州舒美生物科技有限公司（以下简称舒美公司）产品责任纠纷一案，本院于2018年4月26日立案受理后，依法由审判员黄玮适用简易程序于2018年6月5日公开开庭进行了审理。原告毛冉冉到庭参加诉讼，被告舒美公司经本院传票传唤，无正当理由拒不到庭参加诉讼。本案现已审理终结。\n经审理查明：2017年11月21日，原告通过阿里巴巴电商平台在被告舒美公司处购买名为“诗泊泉熊果苷传明酸美白原液”的产品30瓶，单价58元/瓶，合计1,740元。该产品在网页宣传上写有“功效：提亮肤色、美白、祛斑、深层渗透”以及“产品功效：防止黑色素滋生、改善暗沉肤色、美白润泽”等字样。该产品包装盒上标注了“广州舒美生物科技有限公司”、“生产商：广东省广州市***莱茵化妆品厂”等字样。涉案产品未获得特殊用途化妆品批准文号。原告收货后认为涉案产品系普通化妆品却宣称有美白、祛斑等功效，属虚假广告宣传，遂向本院提起诉讼。本案纠纷发生后，原告向被告申请退款，被告已将1,740元货款全部退还给原告，原告未向被告退货。\n另查明：广州市***区食品药品监督管理局于2018年5月22日向原告出具“穗食药监举复﹝2018﹞第750号”《关于反映广州市***莱茵化妆品厂、广州舒美生物科技有限公司投诉事项的回复》，其上载明：“……广州舒美生物科技有限公司……未取得《化妆品生产许可证》……经询问该公司业务经理，其承认‘诗泊泉熊果苷传明酸美白原液’是在该地址灌装生产并销售的，没有委托广州市***莱茵化妆品厂生产过，外包装标识的生产厂家是套用他人证件……鉴于上述调查情况，我局认定广州舒美生物科技有限公司涉嫌未取得《化妆品生产许可证》擅自生产化妆品及生产假冒伪劣化妆品。”\n上述事实，有原告提供的网页交易快照、产品订单信息、物流快递信息、产品实物及照片、广州市***区食药监的回复，及原告的陈述等证据予以证实，足以认定。",
+ "legal_basis": [
+  "《食品安全法》第一百四十八条第二款（参照适用）"
+ ],
+ "penalty_result": "十倍赔偿17400元",
+ "penalty_amount": null,
+ "regulatory_logic": "化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《食品安全法》第一百四十八条第二款（参照适用）。",
+ "mapped_rule_ids": [],
+ "keywords": [
+  "beauty",
+  "美妆",
+  "化妆品广告虚假宣传",
+  "虚假宣传",
+  "诗泊泉熊果苷传明酸美白原液",
+  "美白、祛斑"
+ ],
+ "rag_chunk_type": "case_summary",
+ "review_status": "pending_pkulaw_human_review",
+ "approved_for_rag": false,
+ "notes": "DOCX三赛道人工检索候选案例，缺少source_url，需来源核验和法务复核后方可进入production RAG。",
+ "audit": {
+  "review_status": "pending_pkulaw_human_review",
+  "reviewer": "项目负责人（用户 2026-09-15 指令）",
+  "review_date": "2026-09-15",
+  "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+  "approved_for_rag": false,
+  "review_history": [
+   {
+    "date": "2026-09-17",
+    "reviewer": "pkulaw_mcp_backfill",
+    "note": "法宝按案号关联全文，转入待人核，暂不进生产RAG；原审批快照见 approval_history"
+   }
+  ]
+ },
+ "source_lookup_query": "（2018）鄂0105民初1792号 毛冉冉诉广州娇比萃化妆品有限公司产品责任纠纷案",
+ "vector_text": "本案例已经北大法宝司法案例库按案号核验并取得裁判文书全文（第三方权威数据库，非行政机关一手公开，待人核）。原告毛冉冉诉被告广州舒美生物科技有限公司（以下简称舒美公司）产品责任纠纷一案，本院于2018年4月26日立案受理后，依法由审判员黄玮适用简易程序于2018年6月5日公开开庭进行了审理。原告毛冉冉到庭参加诉讼，被告舒美公司经本院传票传唤，无正当理由拒不到庭参加诉讼。本案现已审理终结。\n经审理查明：2017年11月21日，原告通过阿里巴巴电商平台在被告舒美公司处购买名为“诗泊泉熊果苷传明酸美白原液”的产品30瓶，单价58元/瓶，合计1,740元。该产品在网页宣传上写有“功效：提亮肤色、美白、祛斑、深层渗透”以及“产品功效：防止黑色素滋生、改善暗沉肤色、美白润泽”等字样。该产品包装盒上标注了“广州舒美生物科技有限公司”、“生产商：广东省广州市***莱茵化妆品厂”等字样。涉案产品未获得特殊用途化妆品批准文号。涉案广告宣称：诗泊泉熊果苷传明酸美白原液；美白、祛斑。",
+ "raw_text_path": "data/raw_text/case_library_docx__美妆广告合规案例库.json",
+ "owner_approval": {
+  "approved": true,
+  "approved_for_rag": true,
+  "approved_by": "项目负责人（用户 2026-09-15 指令）",
+  "approved_at": "2026-09-15T03:35:16+08:00",
+  "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+  "override_source_verification": true,
+  "source_verification_status_kept": "pending_source_lookup",
+  "original_decision_url": null,
+  "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+ },
+ "data_change_log": [
+  {
+   "ts": "2026-09-15T03:35:16+08:00",
+   "action": "owner_approval_promote",
+   "fields": [
+    "owner_approval",
+    "approved_for_rag",
+    "review_status",
+    "audit",
+    "raw_text_path",
+    "illegal_claims"
+   ],
+   "note": "补齐回溯路径与缺失字段；不改写违法事实/金额/依据。"
+  },
+  {
+   "ts": "2026-09-17T15:05:46+08:00",
+   "action": "pkulaw_case_number_backfill",
+   "note": "北大法宝MCP按案号补全裁判全文并挂接source_url；事实摘要替换为法院查明事实；状态转 pending_pkulaw_human_review，撤出生产RAG待人核。"
+  }
+ ],
+ "promotion": {
+  "promoted_to_production": true,
+  "promoted_at": "2026-09-15T03:41:10+08:00",
+  "approved_by": "项目负责人（用户 2026-09-15 指令）"
+ },
+ "approval_history": [
+  {
+   "at": "2026-09-17T15:05:46+08:00",
+   "trigger": "before_pkulaw_enrichment",
+   "snapshot": {
+    "facts_summary": "在阿里巴巴销售“诗泊泉熊果苷传明酸美白原液”（未取得特殊用途化妆品批准文号），网页宣传“美白、祛斑”功效，且涉嫌未取得生产许可证擅自生产化妆品",
+    "vector_text": "【赛道】美妆。【场景】其他。【宣称】诗泊泉熊果苷传明酸美白原液；美白、祛斑。【风险】化妆品及美容服务广告不得使用疾病治疗、医疗作用、杀菌消炎等医疗用语；本案涉及化妆品广告虚假宣传，功效表达可能构成虚假宣传或非医疗广告使用医疗用语风险，报告列明依据为《食品安全法》第一百四十八条第二款（参照适用）。。【依据】《食品安全法》第一百四十八条第二款（参照适用）。【结果】十倍赔偿17400元。",
+    "source_url": null,
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "audit": {
+     "review_status": "approved",
+     "reviewer": "项目负责人（用户 2026-09-15 指令）",
+     "review_date": "2026-09-15",
+     "review_notes": "业主审批入生产（2026-09-15 用户指令）：基于内部案例库/裁判文书汇编判定基本真实；未取得官方处罚决定原文，original_decision_url 待补；source_verification_status 未置为 source_verified。",
+     "approved_for_rag": true
+    },
+    "owner_approval": {
+     "approved": true,
+     "approved_for_rag": true,
+     "approved_by": "项目负责人（用户 2026-09-15 指令）",
+     "approved_at": "2026-09-15T03:35:16+08:00",
+     "decision": "用户指令：取消硬红线核验门槛，基本确定真实性即入生产（2026-09-15）",
+     "override_source_verification": true,
+     "source_verification_status_kept": "pending_source_lookup",
+     "original_decision_url": null,
+     "note": "未核到官方处罚决定原文；保留 pending_source_lookup，不谎称 source_verified；original_decision_url 留空待人工补齐。"
+    }
+   }
+  }
+ ],
+ "pkulaw_enrichment": {
+  "enriched_at": "2026-09-17T15:05:46+08:00",
+  "via": "PKULaw MCP get_case_list（只读，按案号精确匹配）",
+  "case_flag": "(2018)鄂0105民初1792号",
+  "pkulaw_court": "湖北省武汉市汉阳区人民法院",
+  "pkulaw_title": "毛冉冉与广州舒美生物科技有限公司产品责任纠纷一审民事判决书",
+  "last_instance_date": "2018.07.16",
+  "source_url": "https://www.pkulaw.com/pfnl/a25051f3312b07f30d2bac97c5a492977495e48f132d1125bdfb.html?way=mcp",
+  "judicial_raw_text_path": "data/raw_text/pkulaw__2018_鄂0105民初1792号.json",
+  "has_fulltext": true,
+  "review_status": "pending_human_review",
+  "source_tier_note": "权威商业法律数据库的第三方裁判文书，非行政机关一手公开；仅作检索证据，人工核验前不自动进入生产RAG",
+  "facts_source_sections": [
+   "审判经过",
+   "查明事实"
+  ]
+ },
+ "human_review_required": true
+}

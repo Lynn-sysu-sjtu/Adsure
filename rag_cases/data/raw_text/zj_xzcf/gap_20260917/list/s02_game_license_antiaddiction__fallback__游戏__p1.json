@@ -1,0 +1,141 @@
+{
+  "fetched_at": "2026-09-17T17:31:43+08:00",
+  "request": {
+    "xzcfws_name": "游戏",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "金婺综执立字〔2026〕第000704号",
+          "xzcfws_code": "金婺综执罚决字〔2026〕第000704号",
+          "bxzcf_name": "金华市婺城区悦动能量游戏室",
+          "guid": "b4a52d14d1124e58adb9814955de86ad",
+          "xzcfws_name": "金华市婺城区悦动能量游戏室游艺娱乐场所设置未经文化主管部门内容核查的游戏游艺设备案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "曾某某",
+          "xzcf_date": "2026-09-09",
+          "orgnode": "金华市婺城区综合行政执法局"
+        },
+        {
+          "unid": "A3303038500002026065112",
+          "xzcfws_code": "温龙公(星)行罚决字[2026]03091号",
+          "bxzcf_name": "温州荣旺游乐场（个人独资）",
+          "guid": "2026082911071399821BF8DB70EBF2F4",
+          "xzcfws_name": "温州荣旺游乐场（个人独资）设置具有赌博功能的游戏设施设备案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "张某某",
+          "xzcf_date": "2026-08-29",
+          "orgnode": "浙江省温州市公安局龙湾区分局星海派出所"
+        },
+        {
+          "unid": "金婺综执立字〔2026〕第000250号",
+          "xzcfws_code": "金婺综执罚决字〔2026〕第000250号",
+          "bxzcf_name": "金华市婺城区星寰游艺室（个体工商户）",
+          "guid": "AE73F02C54B74B9FA16271F1FF6D93CB",
+          "xzcfws_name": "金华市婺城区星寰游艺室（个体工商户）游艺娱乐场所设置未经文化主管部门内容核查的游戏游艺设备案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "戴某某",
+          "xzcf_date": "2026-06-09",
+          "orgnode": "金华市婺城区综合行政执法局"
+        },
+        {
+          "unid": "330782992025110018",
+          "xzcfws_code": "义市监处罚〔2026〕1331号",
+          "bxzcf_name": "蔡某某",
+          "guid": "330782992025110018",
+          "xzcfws_name": "蔡某某销售侵犯注册商标专用权的游戏卡片案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-04-27",
+          "orgnode": "义乌市市场监督管理局"
+        },
+        {
+          "unid": "11330106MB1674912G3301063920260002",
+          "xzcfws_code": "杭西文综罚字〔2026〕2号",
+          "bxzcf_name": "杭州迈萃网络科技有限公司",
+          "guid": "6c0823b6-fdd4-474f-a8a2-7937b74bba6c",
+          "xzcfws_name": "擅自上网出版网络游戏案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "陈某某",
+          "xzcf_date": "2026-04-16",
+          "orgnode": "杭州市西湖区文化和广电旅游体育局"
+        },
+        {
+          "unid": "330203012026030001",
+          "xzcfws_code": "甬海市监处罚〔2026〕130号",
+          "bxzcf_name": "宁波海曙区璟航室内游戏工作室（个体工商户）",
+          "guid": "330203012026030001",
+          "xzcfws_name": "宁波海曙区璟航室内游戏工作室（个体工商户）销售侵犯注册商标专用权的商品案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "李某某",
+          "xzcf_date": "2026-03-27",
+          "orgnode": "宁波市海曙区市场监督管理局"
+        },
+        {
+          "unid": "定人社监立字〔2025〕第000057号",
+          "xzcfws_code": "定人社监罚决字〔2026〕第000004号",
+          "bxzcf_name": "舟山市星枢游戏开发有限公司",
+          "guid": "d123793a7eb541a98abe93d276334f03",
+          "xzcfws_name": "舟山市星枢游戏开发有限公司未按时足额支付劳动报酬案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "韩某某",
+          "xzcf_date": "2026-03-05",
+          "orgnode": "舟山市定海区人力资源和社会保障局"
+        },
+        {
+          "unid": "330782062025120014",
+          "xzcfws_code": "义市监处罚〔2026〕308号",
+          "bxzcf_name": "黄某某",
+          "guid": "330782062025120014",
+          "xzcfws_name": "黄某某销售侵犯注册商标专用权的游戏纸牌案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2026-01-26",
+          "orgnode": "义乌市市场监督管理局"
+        },
+        {
+          "unid": "11330106MB1674912G3301063920250023",
+          "xzcfws_code": "杭西文综罚字〔2025〕23号",
+          "bxzcf_name": "杭州山灰猫网络科技有限公司",
+          "guid": "46a5cde0-6820-4bb4-a2f4-fde5069e692c",
+          "xzcfws_name": "擅自上网出版网络游戏案",
+          "bxzcf_type": 2,
+          "bxzcf_legalman": "李某某",
+          "xzcf_date": "2025-12-11",
+          "orgnode": "杭州市西湖区文化和广电旅游体育局"
+        },
+        {
+          "unid": "330782992025100005",
+          "xzcfws_code": "义市监处罚〔2025〕3123号",
+          "bxzcf_name": "刘某某",
+          "guid": "330782992025100005",
+          "xzcfws_name": "刘某某销售侵犯注册商标专用权的游戏卡牌案",
+          "bxzcf_type": 1,
+          "bxzcf_legalman": "",
+          "xzcf_date": "2025-11-21",
+          "orgnode": "义乌市市场监督管理局"
+        }
+      ],
+      "total": 23,
+      "pageTotal": 3,
+      "pageNo": 1
+    },
+    "traceId": "CF9BE8ADF17B4D2A84DA214F4E428DE4",
+    "messageType": 2
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "fetched_at": "2026-09-17T16:45:15+08:00",
+  "request": {
+    "xzcfws_name": "未成年人消费",
+    "bxzcf_name": "",
+    "xzcfws_code": "",
+    "bxzcf_type": "",
+    "begindate": "2020-01-01",
+    "enddate": "2026-09-17",
+    "deptId": "",
+    "areacode": "",
+    "pageNo": "1",
+    "pageSize": "10"
+  },
+  "response": {
+    "roles": null,
+    "permissions": null,
+    "success": true,
+    "message": null,
+    "code": "200",
+    "data": {
+      "punishList": [
+        {
+          "unid": "330483082025040048",
+          "xzcfws_code": "桐市监处罚〔2025〕774号",
+          "bxzcf_name": "桐乡市崇福恩柒音乐酒吧（个体工商户）",
+          "guid": "330483082025040048",
+          "xzcfws_name": "桐乡市崇福恩柒音乐酒吧（个体工商户）接待未成年人消费案",
+          "bxzcf_type": 4,
+          "bxzcf_legalman": "凌某某",
+          "xzcf_date": "2025-07-07",
+          "orgnode": "桐乡市市场监督管理局"
+        }
+      ],
+      "total": 1,
+      "pageTotal": 1,
+      "pageNo": 1
+    },
+    "traceId": "C6E86E29BE604CD8B9834CA1AA6942ED",
+    "messageType": 2
+  }
+}

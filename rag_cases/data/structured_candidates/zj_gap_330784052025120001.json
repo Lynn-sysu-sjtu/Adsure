@@ -1,0 +1,76 @@
+{
+  "case_id": "zj_gap_330784052025120001",
+  "title": "周某某发布违法广告案",
+  "case_number": "永市监处罚〔2026〕139号",
+  "source_type": "zj_xzcf_open_api_ad_gap_candidate",
+  "source_name": "浙江省行政处罚结果信息公开（公开 API）",
+  "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330784052025120001&unid=330784052025120001",
+  "source_verification_status": "official_api_fulltext_pending_human_review",
+  "source_lookup_priority": "P1",
+  "publish_date": null,
+  "decision_date": "2026-02-10",
+  "penalty_authority": "永康市市场监督管理局",
+  "party_name": "周某某",
+  "region": "永康市",
+  "industry": "未披露（公开决定书未载明具体行业）",
+  "product_or_service": "未披露（公开决定书未载明具体商品/服务）",
+  "ad_channel": "拼多多、电商平台",
+  "risk_dimensions": [
+    "平台广告合规",
+    "电商平台广告",
+    "虚假/误导广告"
+  ],
+  "illegal_claims": [
+    "拼多多网店广告对商品产地、性能等表示不准确、不清楚、不明白"
+  ],
+  "facts_summary": "当事人在其开设的拼多多网店发布了对商品的产地、性能等表示得不准确、清楚、明白的广告。",
+  "legal_basis": [
+    "《中华人民共和国广告法》第八条",
+    "《中华人民共和国广告法》第五十九条"
+  ],
+  "penalty_result": "当事人发布违法广告的行为违反了《中华人民共和国广告法》第八条第一款之规定，依据《中华人民共和国广告法》第五十九条第一款第（一）项之规定，本局决定责令当事人停止发布违法广告并处以罚款人民币5000元。",
+  "penalty_amount": 5000.0,
+  "penalty_amount_breakdown": {
+    "total_fine": 5000.0,
+    "confiscated_illegal_gain": null,
+    "total_monetary_penalty": 5000.0,
+    "advertising_related_fine_when_separable": 5000.0,
+    "anti_unfair_competition_fine": null
+  },
+  "regulatory_logic": "以下监管逻辑仅概括决定书明示内容：处罚机关依据全文载明的广告/反不正当竞争事实及法条作出处理；场景映射、分项罚款与标题正文一致性仍需人工复核。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "永市监处罚〔2026〕139号",
+    "违法广告"
+  ],
+  "vector_text": "这是浙江省行政处罚结果信息公开的一起未披露（公开决定书未载明具体行业）广告处罚候选案例。周某某通过拼多多、电商平台发布相关宣传。处罚决定书写明：当事人在其开设的拼多多网店发布了对商品的产地、性能等表示得不准确、清楚、明白的广告。处罚结果为：当事人发布违法广告的行为违反了《中华人民共和国广告法》第八条第一款之规定，依据《中华人民共和国广告法》第五十九条第一款第（一）项之规定，本局决定责令当事人停止发布违法广告并处以罚款人民币5000元。该记录来自行政机关公开处罚信息全文，仍需人工复核，暂不进入生产 RAG。",
+  "rag_chunk_type": "case_summary_candidate",
+  "scope": "public",
+  "case_nature": "administrative_penalty_decision",
+  "is_admin_penalty_candidate": true,
+  "is_administrative_penalty_fact": true,
+  "gap_scenario_ids": [
+    "s03_platform_rules"
+  ],
+  "gap_scenario_evidence": {
+    "s03_platform_rules": [
+      "拼多多网店发布了对商品的产地、性能等表示得不准确、清楚、明白的广告。\n行政处罚种类、依据、内容：当事人发布违法广告"
+    ]
+  },
+  "metadata_consistency_notes": [],
+  "review_status": "pending_human_review",
+  "approved_for_rag": false,
+  "human_review_required": true,
+  "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330784052025120001.json",
+  "source_list_raw_paths": [
+    "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__违法广告__p1.json"
+  ],
+  "retrieved_at": "2026-09-17T17:54:08+08:00",
+  "data_change_log": [
+    {
+      "ts": "2026-09-17T17:54:08+08:00",
+      "action": "zj_gap_case_search",
+      "note": "浙江公开 API 列表+详情命中 8 缺口强场景词；仅入候选，待人核，不进生产 RAG。"
+    }
+  ]
+}

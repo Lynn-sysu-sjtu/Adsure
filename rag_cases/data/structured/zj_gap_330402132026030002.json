@@ -1,0 +1,117 @@
+{
+  "case_id": "zj_gap_330402132026030002",
+  "title": "嘉兴温故知新网络科技有限公司发布违法广告案",
+  "case_number": "嘉南市监处罚〔2026〕510号",
+  "source_type": "official_open_api_administrative_penalty",
+  "source_name": "浙江省行政处罚结果信息公开（公开 API）",
+  "source_url": "https://xzcf.zjzwfw.gov.cn/punishment/#/punishdetails?guid=330402132026030002&unid=330402132026030002",
+  "source_verification_status": "official_open_api_fulltext_verified_pending_legal_spotcheck",
+  "source_lookup_priority": "P1",
+  "publish_date": null,
+  "decision_date": "2026-06-22",
+  "penalty_authority": "嘉兴市南湖区市场监督管理局",
+  "party_name": "嘉兴温故知新网络科技有限公司",
+  "region": "嘉兴市南湖区",
+  "industry": "教育培训",
+  "product_or_service": "培训服务广告",
+  "ad_channel": null,
+  "risk_dimensions": [
+    "广告代言",
+    "推荐证明"
+  ],
+  "illegal_claims": [
+    "利用受益者的名义或者形象作推荐、证明",
+    "在广告中作推荐、证明"
+  ],
+  "facts_summary": "2026年3-5月，当事人发布5条违法广告，存在利用受益者的名义或者形象作推荐、证明、对培训效果作出明示或者暗示的保证性承诺、含有虚假内容的违法行为，被本局依法查获。",
+  "legal_basis": [
+    "《中华人民共和国广告法》第二十四条",
+    "《中华人民共和国广告法》第四条",
+    "《中华人民共和国广告法》第二十八条",
+    "《中华人民共和国广告法》第五十五条"
+  ],
+  "penalty_result": "当事人发布广告利用受益者的名义或者形象作推荐、证明，违反了《中华人民共和国广告法》第二十四条第（三）项之规定；发布含有对培训效果作出明示或者暗示的保证性承诺的广告，违反了《中华人民共和国广告法》第二十四条第（一）项之规定；发布含有虚假或者引人误解的内容的广告，违法了《中华人民共和国广告法》第四条第一款之规定，构成《中华人民共和国广告法》第二十八条第二款第（三）项的违法行为。根据《中华人民共和国广告法》第五十五条第三款、第五十八条第三款之规定，责令当事人停止发布广告，在相应范围内消除影响，并对当事人处罚如下：1.没收广告费用903.70元（玖佰零叁点柒零圆）；2.罚款人民币2040元（贰仟零肆拾圆整）。",
+  "penalty_amount": 2040.0,
+  "penalty_amount_breakdown": {
+    "total_fine": 2040.0,
+    "confiscated_illegal_gain": null,
+    "total_monetary_penalty": 2040.0,
+    "advertising_related_fine_when_separable": 2040.0,
+    "anti_unfair_competition_fine": null
+  },
+  "regulatory_logic": "以下监管逻辑仅概括决定书明示内容：处罚机关依据全文载明的广告/反不正当竞争事实及法条作出处理；场景映射、分项罚款与标题正文一致性仍需人工复核。",
+  "mapped_rule_ids": [],
+  "keywords": [
+    "嘉南市监处罚〔2026〕510号",
+    "违法广告",
+    "广告代言人",
+    "推荐证明",
+    "明星代言",
+    "网红推荐"
+  ],
+  "vector_text": "这是浙江省行政处罚结果信息公开的一起教育培训广告处罚候选案例。嘉兴温故知新网络科技有限公司发布相关商业宣传。处罚决定书写明：2026年3-5月，当事人发布5条违法广告，存在利用受益者的名义或者形象作推荐、证明、对培训效果作出明示或者暗示的保证性承诺、含有虚假内容的违法行为，被本局依法查获。处罚结果为：当事人发布广告利用受益者的名义或者形象作推荐、证明，违反了《中华人民共和国广告法》第二十四条第（三）项之规定；发布含有对培训效果作出明示或者暗示的保证性承诺的广告，违反了《中华人民共和国广告法》第二十四条第（一）项之规定；发布含有虚假或者引人误解的内容的广告，违法了《中华人民共和国广告法》第四条第一款之规定，构成《中华人民共和国广告法》第二十八条第二款第（三……该记录来自行政机关公开处罚信息全文，仍需人工复核，暂不进入生产 RAG。 场景检索词：广告代言人、推荐证明、明星代言、网红推荐",
+  "rag_chunk_type": "case_summary",
+  "scope": "public",
+  "case_nature": "administrative_penalty_decision",
+  "is_admin_penalty_candidate": true,
+  "is_administrative_penalty_fact": true,
+  "gap_scenario_ids": [
+    "s04_endorsement"
+  ],
+  "gap_scenario_evidence": {
+    "s04_endorsement": [
+      "利用受益者的名义或者形象作推荐、证明",
+      "广告，存在利用受益者的名义或者形象作推荐、证明"
+    ]
+  },
+  "metadata_consistency_notes": [],
+  "review_status": "approved",
+  "approved_for_rag": true,
+  "human_review_required": true,
+  "raw_text_path": "data/raw_text/zj_xzcf/gap_20260917/detail/330402132026030002.json",
+  "source_list_raw_paths": [
+    "data/raw_text/zj_xzcf/gap_20260917/list/common__common_fallback__违法广告__p1.json"
+  ],
+  "retrieved_at": "2026-09-17T17:54:08+08:00",
+  "data_change_log": [
+    {
+      "ts": "2026-09-17T17:54:08+08:00",
+      "action": "zj_gap_case_search",
+      "note": "浙江公开 API 列表+详情命中 8 缺口强场景词；仅入候选，待人核，不进生产 RAG。"
+    },
+    {
+      "ts": "2026-09-17T21:23:56+08:00",
+      "action": "promote_official_open_api_to_production_rag",
+      "note": "按业主指令从 structured_candidates 提升到生产 RAG。"
+    }
+  ],
+  "promoted_to_production_at": "2026-09-17T21:23:56+08:00",
+  "promotion": {
+    "promoted_to_production": true,
+    "promoted_at": "2026-09-17T21:23:56+08:00",
+    "promoted_by": "owner_instruction_codex",
+    "decision": "业主明确要求将未入库缺口案例加入生产RAG；浙江行政处罚结果公开API为官方一手处罚全文。",
+    "source_tier": "P1"
+  },
+  "owner_approval": {
+    "approved": true,
+    "approved_for_rag": true,
+    "approved_by": "owner_instruction",
+    "approved_at": "2026-09-17T21:23:56+08:00",
+    "override_source_verification": true,
+    "decision": "用户明确指令：把未入库案例加入生产RAG；官方浙江API全文已保存并待人审抽检。"
+  },
+  "audit": {
+    "review_status": "approved",
+    "approved_for_rag": true,
+    "reviewer": "owner_instruction_codex",
+    "review_date": "2026-09-17",
+    "review_notes": "浙江行政处罚结果公开API全文结构化，业主指令入生产RAG；仍建议法务抽检。"
+  },
+  "rag_query_terms": [
+    "广告代言人",
+    "推荐证明",
+    "明星代言",
+    "网红推荐"
+  ]
+}

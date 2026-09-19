@@ -1,0 +1,13 @@
+{
+  "fetched_at": "2026-09-17T19:59:40+08:00",
+  "source_name": "北大法宝（pkulaw.com，经 MCP 检索）",
+  "tool": "search_case",
+  "request_arguments": {
+    "text": "化妆品、儿童化妆品、润唇膏宣传可食用、食品级、可以吃，或者把普通化妆品作食品医疗功效宣传的广告处罚案例",
+    "size": 20
+  },
+  "sha256": "dfef8a827f23dbab5d700a97ee66bdea7bfaca163fb0eefe2c885072cdafddbd",
+  "response": {
+    "_transport_error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+  }
+}

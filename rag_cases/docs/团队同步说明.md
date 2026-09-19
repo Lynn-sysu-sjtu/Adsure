@@ -1,0 +1,71 @@
+# 团队 Git 同步说明（Adsure 广告合规AI）
+
+> 更新：2026-09-15。案例库工作分支：`codex/ads-penalty-rag-pipeline`；集成分支：`main` / `dev`。
+> 远端：https://github.com/Lynn-sysu-sjtu/Adsure.git
+
+## 1. 分支约定（建议）
+
+- **案例库/RAG 改动**：在 `codex/ads-penalty-rag-pipeline` 开发，稳定后合并进 `main`（建议走 PR，让队友 review）。
+- **视频 MVP / 其他**：在各自分支（`feishu-workbench`、`feature/rule-engine-integration` 等）开发，同样合并进 `main`。
+- 避免多个分支同时大改同一批文件（`src/api.py`、`src/build_chunks.py`、`data/structured_candidates/*.json`、`data/chunks/*.json`），否则合并冲突会很痛。
+
+## 2. 拿到最新案例库（队友）
+
+```bash
+git fetch origin
+git switch -c codex/ads-penalty-rag-pipeline origin/codex/ads-penalty-rag-pipeline
+# 日常更新：
+git pull --rebase origin codex/ads-penalty-rag-pipeline
+```
+
+在自己分支（main/dev）上要拿到案例库：
+
+```bash
+git fetch origin
+git switch main && git pull --rebase origin main
+git merge origin/codex/ads-penalty-rag-pipeline
+# 有冲突：逐个解决后 git add . && git commit
+# 合并后必须跑测试：
+python3.12 -m unittest discover -s tests -p "test_*.py"
+```
+
+## 3. 回推改动
+
+```bash
+git add <改动范围>
+git commit -m "说明改动"
+git pull --rebase origin codex/ads-penalty-rag-pipeline   # 先拉再推
+git push origin codex/ads-penalty-rag-pipeline
+```
+
+## 4. 本仓库特有注意事项
+
+1. **部分目录不在 git 里**：`backend/`（视频 MVP）、`Adsure/`、媒体/交接包/参赛材料等**未跟踪、未推送**。clone 下来只有案例库 + RAG 管线；缺的目录要线下单独同步。
+2. **密钥绝不入库**：真实 `.env` 类密钥已被 gitignore 排除；`.env.example` 是干净模板，**不要往里填真 key**。每个人本地自行配置：
+   - `ADSURE_API_KEY`（RAG 服务鉴权）
+   - `PKULAW_MCP_TOKEN`（北大法宝 MCP，经 `scripts/configure_pkulaw_mcp_token.sh` 注入）
+   - 模型服务 key 等
+3. **改案例库后要重建索引**：
+   ```bash
+   python3.12 src/build_chunks.py
+   python3.12 -m src.semantic_index
+   ```
+   `data/chunks/production_chunks.json`（较大）与 `production_semantic_index.json` 属于生成物，正常提交。
+4. **数据口径**：处罚案例仅用于规则 RAG，不等同于产品事实核验；所有结构化结果保留 `source_url` / `raw_text_path` 便于回溯。媒体来源（如绝味/Ubras）标注 `credible_secondary_source_only`，未核到官方原文前不得标 `source_verified`。
+5. **业主审批机制**：候选如需直接入生产，在记录上加 `owner_approval` 块（approved=true + approved_by + approved_at + override_source_verification=true），`build_chunks` 才会放行；不要手动把 `source_verification_status` 改成 `source_verified`。
+
+## 5. 冲突处理要点
+
+- 数据 JSON 冲突：一般取新版本（我方/最新一方），但要核对字段没丢。
+- `src/api.py` / `src/build_chunks.py`：先看双方改动是否重复（本仓库历史上曾出现“两边都加了 demo 逻辑”的重复），保留超集。
+- `.gitignore`：取并集，别丢忽略规则。
+- 合并后一定跑全量测试 + `src/validate_cases.py`。
+
+## 6. 已知问题：main 与案例库分支是「无关历史」
+
+- 2026-09-15 核查：`main` 的根提交是 `011b6ae`（审心 v4 快照，32 个提交），案例库分支根提交是 `359aa94`，**两者没有共同祖先**（`git merge-base` 为空）。
+- 含义：`main`（飞书工作台/视频侧）和 `codex/ads-penalty-rag-pipeline`（案例库 RAG 侧）当前是两个互不相关的历史。直接 `git merge` 会报 `refusing to merge unrelated histories`；若用 `--allow-unrelated-histories` 强合，几乎必然大面积冲突且把两条代码线混在一起。
+- **建议**：由团队统一决定整合方案后再动 `main`：
+  1. 选定一个权威历史（例如案例库 RAG 为主库），把飞书工作台代码作为新代码移植进来；或反之。
+  2. 或拆分仓库（案例库 RAG 一个仓库，飞书工作台一个仓库）。
+  3. 在未决策前，**不要**强合并推送 `main`。

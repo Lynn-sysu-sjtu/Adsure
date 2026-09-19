@@ -1,0 +1,16 @@
+{
+  "request_arguments": {
+    "title": "广告",
+    "fulltext": "养生 返利 虚假宣传",
+    "documentAttr": [
+      "判决书",
+      "裁定书"
+    ]
+  },
+  "sha256": "7435bca14004ccebde85b3d97bbc573d01cc710e243d7a07f24874852678d960",
+  "response": {
+    "Message": "未找到数据",
+    "Data": [],
+    "Total": 0
+  }
+}
