@@ -1,0 +1,88 @@
+{
+  "source_id": "xhs_content_review_general_2026_03_23",
+  "platform": "小红书",
+  "document_title": "内容审核规则总则",
+  "source_url": "https://ad.xiaohongshu.com/next_help/docs/8dc5bd9c45c9a90cb9912f3400d43f92",
+  "manual_verification_url": "https://ad.xiaohongshu.com/next_help/docs/8dc5bd9c45c9a90cb9912f3400d43f92",
+  "collected_at": "2026-09-04T15:02:22.942905Z",
+  "page_update_date": "2026-03-23",
+  "capture_format": "html",
+  "capture_method": "direct_public_download_no_login",
+  "raw_path": "data/platform_rules/raw_html/2026-09-04/xhs_content_review_general.html",
+  "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/xhs_content_review_general.headers.txt",
+  "raw_sha256": "2ae062138e0619041c294bf604eea6d205b6f59f1e6104ee5ded1c77dd68f591",
+  "raw_size_bytes": 18952,
+  "extracted_text": "小红书聚光",
+  "verified_visible_excerpts": [
+    {
+      "candidate_id": "XHS-JG-COSM-EFFECT-2.1.3",
+      "locator": "三、通用素材审核要求—2.1.3 美妆",
+      "text": "不得涉及承诺产品起效的时间或用量；不得过度承诺产品的安全性；不得涉及永久性效果承诺。"
+    },
+    {
+      "candidate_id": "XHS-JG-PATENT-1.10",
+      "locator": "三、通用素材审核要求—1.10",
+      "text": "涉及专利产品或者专利方法的，需提供真实有效的专利证书，并在素材中标明专利号、专利种类。"
+    },
+    {
+      "candidate_id": "XHS-JG-AD-ID-1.11",
+      "locator": "三、通用素材审核要求—1.11",
+      "text": "广告应当具有可识别性，能够使消费者辨明其为广告。"
+    },
+    {
+      "candidate_id": "XHS-JG-ABSOLUTE-2.3",
+      "locator": "三、通用素材审核要求—2.3",
+      "text": "不得涉及国家级、最高级、最佳、中国第一、顶级等绝对化用语。"
+    },
+    {
+      "candidate_id": "XHS-JG-DATA-2.8",
+      "locator": "三、通用素材审核要求—2.8",
+      "text": "引证内容应当真实、准确并表明出处；有适用范围和有效期限的应当明确表示，同时提供证明材料。"
+    },
+    {
+      "candidate_id": "XHS-JG-MEDICAL-2.13",
+      "locator": "三、通用素材审核要求—2.13",
+      "text": "除药品、医疗器械、医疗机构物料外，其他物料不得涉及疾病治疗功能或使用医疗混淆用语。"
+    },
+    {
+      "candidate_id": "XHS-JG-INGREDIENT-2.9",
+      "locator": "三、通用素材审核要求—2.9",
+      "text": "物料内容中所推广的产品成分或材质，需提供对应的成分、材质证明。"
+    },
+    {
+      "candidate_id": "XHS-JG-FACT-2.10",
+      "locator": "三、通用素材审核要求—2.10",
+      "text": "物料涉及事实性表述，需提供有效的证明材料做佐证。"
+    },
+    {
+      "candidate_id": "XHS-JG-ENDORSEMENT-2.11",
+      "locator": "三、通用素材审核要求—2.11",
+      "text": "物料不得利用第三方机构名义或形象进行产品或服务宣传。"
+    },
+    {
+      "candidate_id": "XHS-JG-COMPARE-2.15",
+      "locator": "三、通用素材审核要求—2.15",
+      "text": "物料不得涉及产品的前后使用效果做虚假夸张的对比描述。"
+    },
+    {
+      "candidate_id": "XHS-JG-CONSISTENCY-4.4",
+      "locator": "三、通用素材审核要求—4.4",
+      "text": "物料推广内容前后需保持一致，涉及品牌、产品的内容需与商品详情页保持一致。"
+    }
+  ],
+  "extracted_text_length": 5,
+  "snapshot_completeness": "dynamic_html_shell_only",
+  "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+  "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+  "review_status": "pending_human_review",
+  "effective_status": "pending_effective_review",
+  "intended_use": "platform_rule_candidate",
+  "notes": [
+    "页面采用动态渲染；下载HTML可能仅含应用外壳，候选条款来自同URL的浏览器可见正文核验。"
+  ],
+  "http_status_chain": [
+    200
+  ],
+  "final_http_status": 200,
+  "content_type": "text/html; charset=UTF-8"
+}

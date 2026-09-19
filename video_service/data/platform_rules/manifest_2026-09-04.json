@@ -1,0 +1,551 @@
+{
+  "manifest_id": "beauty_platform_rule_sources_2026_09_04",
+  "collected_at": "2026-09-04T15:02:22.942905Z",
+  "catalog_status": "candidate_only_not_for_production",
+  "source_count": 12,
+  "sources": [
+    {
+      "source_id": "xhs_content_review_general_2026_03_23",
+      "platform": "小红书",
+      "document_title": "内容审核规则总则",
+      "source_url": "https://ad.xiaohongshu.com/next_help/docs/8dc5bd9c45c9a90cb9912f3400d43f92",
+      "manual_verification_url": "https://ad.xiaohongshu.com/next_help/docs/8dc5bd9c45c9a90cb9912f3400d43f92",
+      "collected_at": "2026-09-04T15:02:22.942905Z",
+      "page_update_date": "2026-03-23",
+      "capture_format": "html",
+      "capture_method": "direct_public_download_no_login",
+      "raw_path": "data/platform_rules/raw_html/2026-09-04/xhs_content_review_general.html",
+      "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/xhs_content_review_general.headers.txt",
+      "raw_sha256": "2ae062138e0619041c294bf604eea6d205b6f59f1e6104ee5ded1c77dd68f591",
+      "raw_size_bytes": 18952,
+      "verified_visible_excerpts": [
+        {
+          "candidate_id": "XHS-JG-COSM-EFFECT-2.1.3",
+          "locator": "三、通用素材审核要求—2.1.3 美妆",
+          "text": "不得涉及承诺产品起效的时间或用量；不得过度承诺产品的安全性；不得涉及永久性效果承诺。"
+        },
+        {
+          "candidate_id": "XHS-JG-PATENT-1.10",
+          "locator": "三、通用素材审核要求—1.10",
+          "text": "涉及专利产品或者专利方法的，需提供真实有效的专利证书，并在素材中标明专利号、专利种类。"
+        },
+        {
+          "candidate_id": "XHS-JG-AD-ID-1.11",
+          "locator": "三、通用素材审核要求—1.11",
+          "text": "广告应当具有可识别性，能够使消费者辨明其为广告。"
+        },
+        {
+          "candidate_id": "XHS-JG-ABSOLUTE-2.3",
+          "locator": "三、通用素材审核要求—2.3",
+          "text": "不得涉及国家级、最高级、最佳、中国第一、顶级等绝对化用语。"
+        },
+        {
+          "candidate_id": "XHS-JG-DATA-2.8",
+          "locator": "三、通用素材审核要求—2.8",
+          "text": "引证内容应当真实、准确并表明出处；有适用范围和有效期限的应当明确表示，同时提供证明材料。"
+        },
+        {
+          "candidate_id": "XHS-JG-MEDICAL-2.13",
+          "locator": "三、通用素材审核要求—2.13",
+          "text": "除药品、医疗器械、医疗机构物料外，其他物料不得涉及疾病治疗功能或使用医疗混淆用语。"
+        },
+        {
+          "candidate_id": "XHS-JG-INGREDIENT-2.9",
+          "locator": "三、通用素材审核要求—2.9",
+          "text": "物料内容中所推广的产品成分或材质，需提供对应的成分、材质证明。"
+        },
+        {
+          "candidate_id": "XHS-JG-FACT-2.10",
+          "locator": "三、通用素材审核要求—2.10",
+          "text": "物料涉及事实性表述，需提供有效的证明材料做佐证。"
+        },
+        {
+          "candidate_id": "XHS-JG-ENDORSEMENT-2.11",
+          "locator": "三、通用素材审核要求—2.11",
+          "text": "物料不得利用第三方机构名义或形象进行产品或服务宣传。"
+        },
+        {
+          "candidate_id": "XHS-JG-COMPARE-2.15",
+          "locator": "三、通用素材审核要求—2.15",
+          "text": "物料不得涉及产品的前后使用效果做虚假夸张的对比描述。"
+        },
+        {
+          "candidate_id": "XHS-JG-CONSISTENCY-4.4",
+          "locator": "三、通用素材审核要求—4.4",
+          "text": "物料推广内容前后需保持一致，涉及品牌、产品的内容需与商品详情页保持一致。"
+        }
+      ],
+      "extracted_text_length": 5,
+      "snapshot_completeness": "dynamic_html_shell_only",
+      "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+      "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+      "review_status": "pending_human_review",
+      "effective_status": "pending_effective_review",
+      "intended_use": "platform_rule_candidate",
+      "notes": [
+        "页面采用动态渲染；下载HTML可能仅含应用外壳，候选条款来自同URL的浏览器可见正文核验。"
+      ],
+      "http_status_chain": [
+        200
+      ],
+      "final_http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "raw_text_path": "data/platform_rules/raw_text/2026-09-04/xhs_content_review_general_2026_03_23.json"
+    },
+    {
+      "source_id": "douyin_beauty_rules_notice_2022_05_10",
+      "platform": "抖音电商",
+      "document_title": "关于《美妆行业宣传规范》修订的公示通知（2022.5.10）",
+      "source_url": "https://school.jinritemai.com/doudian/wap/article/aHUMNYPLL4Lk",
+      "manual_verification_url": "https://school.jinritemai.com/doudian/wap/article/aHUMNYPLL4Lk",
+      "collected_at": "2026-09-04T15:02:22.942905Z",
+      "page_update_date": "2022-05-10",
+      "capture_format": "html",
+      "capture_method": "direct_public_download_no_login",
+      "raw_path": "data/platform_rules/raw_html/2026-09-04/douyin_beauty_rules_2022.html",
+      "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/douyin_beauty_rules_2022.headers.txt",
+      "raw_sha256": "03e27b4d2a32f726f34c8ed921364e8263b2a4b9ba10d8a37272091f200a67e5",
+      "raw_size_bytes": 28436,
+      "verified_visible_excerpts": [
+        {
+          "candidate_id": "DOUYIN-COSM-EFFICACY-2.1.1",
+          "locator": "二、禁止夸大、虚假宣传或描述—2.1.1",
+          "text": "推广化妆品类商品时，需严格按照商品注册、备案的功效范围宣传。"
+        },
+        {
+          "candidate_id": "DOUYIN-COSM-GUARANTEE-2.1.2",
+          "locator": "二、禁止夸大、虚假宣传或描述—2.1.2",
+          "text": "禁止在无依据、无证明的情况下，对未来功效、效果、安全性作出保证性承诺。"
+        },
+        {
+          "candidate_id": "DOUYIN-COSM-PROOF-2.3",
+          "locator": "二、禁止夸大、虚假宣传或描述—2.3",
+          "text": "宣传专利、荣誉、销量、权威研发单位、效果指数等信息时，需展示相关证明材料。"
+        },
+        {
+          "candidate_id": "DOUYIN-COSM-ATTRIBUTE-2.4",
+          "locator": "二、禁止夸大、虚假宣传或描述—2.4",
+          "text": "应确保化妆品成分、含量、产地、规格等描述与商品详情页或实际商品保持一致。"
+        }
+      ],
+      "extracted_text_length": 0,
+      "snapshot_completeness": "dynamic_html_shell_only",
+      "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+      "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+      "review_status": "pending_human_review",
+      "effective_status": "pending_effective_review",
+      "intended_use": "platform_rule_candidate",
+      "notes": [
+        "公示页面称规则预计于2022-05-17生效；正式适用状态仍需平台运营复核。"
+      ],
+      "http_status_chain": [
+        302,
+        302,
+        200
+      ],
+      "final_http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "raw_text_path": "data/platform_rules/raw_text/2026-09-04/douyin_beauty_rules_notice_2022_05_10.json"
+    },
+    {
+      "source_id": "douyin_beauty_rules_page_110681",
+      "platform": "抖音电商",
+      "document_title": "美妆行业宣传规范（页面ID 110681）",
+      "source_url": "https://school.jinritemai.com/doudian/wap/article/110681?from=baiying_main&from_school=1&should_full_screen=1&should_hide_bottom_nav=1",
+      "manual_verification_url": "https://school.jinritemai.com/doudian/wap/article/110681?from=baiying_main&from_school=1&should_full_screen=1&should_hide_bottom_nav=1",
+      "collected_at": "2026-09-04T15:02:22.942905Z",
+      "page_update_date": null,
+      "capture_format": "html",
+      "capture_method": "direct_public_download_no_login",
+      "raw_path": "data/platform_rules/raw_html/2026-09-04/douyin_beauty_rules_current.html",
+      "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/douyin_beauty_rules_current.headers.txt",
+      "raw_sha256": "a88118a766b091e11ef3e1c23fa951d9a25114324c9aaab43b371b5045335ef7",
+      "raw_size_bytes": 28436,
+      "verified_visible_excerpts": [],
+      "extracted_text_length": 0,
+      "snapshot_completeness": "dynamic_html_shell_only",
+      "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+      "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+      "review_status": "pending_human_review",
+      "effective_status": "pending_effective_review",
+      "intended_use": "platform_rule_candidate",
+      "notes": [
+        "动态页面；标题、版本和条款正文须通过实际商家后台再次核验。"
+      ],
+      "http_status_chain": [
+        302,
+        302,
+        200
+      ],
+      "final_http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "raw_text_path": "data/platform_rules/raw_text/2026-09-04/douyin_beauty_rules_page_110681.json"
+    },
+    {
+      "source_id": "tencent_ads_skin_care_216",
+      "platform": "腾讯广告",
+      "document_title": "护肤彩妆",
+      "source_url": "https://tencentads.com/Faqlist/Detail/216",
+      "manual_verification_url": "https://tencentads.com/Faqlist/Detail/216",
+      "collected_at": "2026-09-04T15:02:22.942905Z",
+      "page_update_date": null,
+      "capture_format": "html",
+      "capture_method": "direct_public_download_no_login",
+      "raw_path": "data/platform_rules/raw_html/2026-09-04/tencent_skin_care.html",
+      "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/tencent_skin_care.headers.txt",
+      "raw_sha256": "b8646ccf447add7ccf87e1a77b15420b0f705456bd066c2b94720f055c4bfde0",
+      "raw_size_bytes": 22059,
+      "verified_visible_excerpts": [
+        {
+          "candidate_id": "TENCENT-COSM-GENERAL-2",
+          "locator": "（一）护肤彩妆广告通用审核规则—第2项",
+          "text": "化妆品名称、制法、成分、效果或者性能不得有虚假夸大。"
+        },
+        {
+          "candidate_id": "TENCENT-COSM-MINOR-1",
+          "locator": "（一）护肤彩妆广告通用审核规则—第1项",
+          "text": "在针对未成年人的大众传播媒介上不得发布化妆品、美容广告。"
+        },
+        {
+          "candidate_id": "TENCENT-COSM-ENDORSEMENT-3",
+          "locator": "（一）护肤彩妆广告通用审核规则—第3项",
+          "text": "不得使用他人名义保证或者以暗示方法使人误解其效用。"
+        },
+        {
+          "candidate_id": "TENCENT-COSM-DATA-5",
+          "locator": "（一）护肤彩妆广告通用审核规则—第5项",
+          "text": "不得涉及化妆品性能或者功能、销量等方面的数据。"
+        },
+        {
+          "candidate_id": "TENCENT-COSM-COMPARE-8",
+          "locator": "（一）护肤彩妆广告通用审核规则—第8项",
+          "text": "素材形象不得使用病理图，图片不得有使用前后的效果对比。"
+        },
+        {
+          "candidate_id": "TENCENT-COSM-ABSOLUTE-6",
+          "locator": "（一）护肤彩妆广告通用审核规则—第6项",
+          "text": "不得使用最新创造、最新发明、纯天然制品、无副作用等绝对化语言。"
+        },
+        {
+          "candidate_id": "TENCENT-COSM-QUALIFICATION-10",
+          "locator": "（一）护肤彩妆广告通用审核规则—第10项",
+          "text": "特殊用途化妆品资质中的产品名称与实际推广商品需保持一致。"
+        }
+      ],
+      "extracted_text_length": 2207,
+      "snapshot_completeness": "downloaded_page_text_extracted",
+      "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+      "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+      "review_status": "pending_human_review",
+      "effective_status": "pending_effective_review",
+      "intended_use": "platform_rule_candidate",
+      "notes": [],
+      "http_status_chain": [
+        200
+      ],
+      "final_http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "raw_text_path": "data/platform_rules/raw_text/2026-09-04/tencent_ads_skin_care_216.json"
+    },
+    {
+      "source_id": "taobao_live_seller_agreement_20220516174444172",
+      "platform": "淘宝直播",
+      "document_title": "淘宝直播店卖家服务协议",
+      "source_url": "https://terms.alicdn.com/legal-agreement/terms/platform_service/20220516174444172/20220516174444172.html",
+      "manual_verification_url": "https://terms.alicdn.com/legal-agreement/terms/platform_service/20220516174444172/20220516174444172.html",
+      "collected_at": "2026-09-04T15:02:22.942905Z",
+      "page_update_date": null,
+      "capture_format": "html",
+      "capture_method": "direct_public_download_no_login",
+      "raw_path": "data/platform_rules/raw_html/2026-09-04/taobao_live_seller_agreement.html",
+      "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/taobao_live_seller_agreement.headers.txt",
+      "raw_sha256": "9024b4ef0c5c9b2d78342bbbdac8e9e2fc6c52e506395ff33b73d0db0e1294fd",
+      "raw_size_bytes": 92271,
+      "verified_visible_excerpts": [
+        {
+          "candidate_id": "TAOBAO-LIVE-PUBLISH-3.3.1",
+          "locator": "3.3.1 商品及/或服务信息发布",
+          "text": "发布的信息及实施的行为应符合法律法规、国家强制性标准及协议约定。"
+        },
+        {
+          "candidate_id": "TAOBAO-LIVE-INFO-3.3.2",
+          "locator": "3.3.2—第（一）、（三）项",
+          "text": "禁止发布违反国家法律法规禁止性规定，或者欺诈、虚假、不准确、存在误导性的信息。"
+        }
+      ],
+      "extracted_text_length": 12659,
+      "snapshot_completeness": "downloaded_page_text_extracted",
+      "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+      "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+      "review_status": "pending_human_review",
+      "effective_status": "pending_effective_review",
+      "intended_use": "platform_rule_candidate",
+      "notes": [
+        "平台服务协议，不等同于美妆行业专项审核细则。"
+      ],
+      "http_status_chain": [
+        200
+      ],
+      "final_http_status": 200,
+      "content_type": "text/html",
+      "raw_text_path": "data/platform_rules/raw_text/2026-09-04/taobao_live_seller_agreement_20220516174444172.json"
+    },
+    {
+      "source_id": "weibo_fans_headline_audit",
+      "platform": "微博",
+      "document_title": "粉丝头条审核规范",
+      "source_url": "https://pay.biz.weibo.com/auditstandard",
+      "manual_verification_url": "https://pay.biz.weibo.com/auditstandard",
+      "collected_at": "2026-09-04T15:02:22.942905Z",
+      "page_update_date": null,
+      "capture_format": "html",
+      "capture_method": "direct_public_download_no_login",
+      "raw_path": "data/platform_rules/raw_html/2026-09-04/weibo_fans_headline_audit.html",
+      "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/weibo_fans_headline_audit.headers.txt",
+      "raw_sha256": "7577d554a438c70b2752325cd39b128ba3cd19859bbbd5b543e79bcb9ee8fa07",
+      "raw_size_bytes": 85978,
+      "verified_visible_excerpts": [
+        {
+          "candidate_id": "WEIBO-AUDIT-COSM-SECTION-2",
+          "locator": "二、审核规则",
+          "text": "推广内容应严格遵守国家相关法律法规以及化妆品等特殊领域产品的广告管理规定。"
+        },
+        {
+          "candidate_id": "WEIBO-AUDIT-CONTENT-IV-2",
+          "locator": "四、推广审核规范—2.推广审核要点—内容",
+          "text": "涉及化妆品的推广内容不得使用医疗术语以及明示或暗示有治疗作用的词语。"
+        }
+      ],
+      "extracted_text_length": 3654,
+      "snapshot_completeness": "downloaded_page_text_extracted",
+      "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+      "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+      "review_status": "pending_human_review",
+      "effective_status": "pending_effective_review",
+      "intended_use": "platform_rule_candidate",
+      "notes": [],
+      "http_status_chain": [
+        200
+      ],
+      "final_http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "raw_text_path": "data/platform_rules/raw_text/2026-09-04/weibo_fans_headline_audit.json"
+    },
+    {
+      "source_id": "weibo_community_convention",
+      "platform": "微博",
+      "document_title": "微博社区公约",
+      "source_url": "https://service.account.weibo.com/h5/roles/gongyue",
+      "manual_verification_url": "https://service.account.weibo.com/h5/roles/gongyue",
+      "collected_at": "2026-09-04T15:02:22.942905Z",
+      "page_update_date": null,
+      "capture_format": "html",
+      "capture_method": "direct_public_download_no_login",
+      "raw_path": "data/platform_rules/raw_html/2026-09-04/weibo_community_convention.html",
+      "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/weibo_community_convention.headers.txt",
+      "raw_sha256": "a7b965e588f0dffae3eb9483dcd0ae16e1b24e3e355d75577b97cd59333588e6",
+      "raw_size_bytes": 32540,
+      "verified_visible_excerpts": [
+        {
+          "candidate_id": "WEIBO-COMMERCIAL-37-40",
+          "locator": "第八章商业行为规则—第37至40条",
+          "text": "未通过商业产品渠道且不具有互联网广告可识别性的营销信息，平台可采取屏蔽、限制展示等措施。"
+        }
+      ],
+      "extracted_text_length": 9671,
+      "snapshot_completeness": "downloaded_page_text_extracted",
+      "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+      "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+      "review_status": "pending_human_review",
+      "effective_status": "pending_effective_review",
+      "intended_use": "platform_rule_candidate",
+      "notes": [
+        "社区商业行为规则，不等同于美妆行业专项投放规则。"
+      ],
+      "http_status_chain": [
+        200
+      ],
+      "final_http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "raw_text_path": "data/platform_rules/raw_text/2026-09-04/weibo_community_convention.json"
+    },
+    {
+      "source_id": "bilibili_huohua_pre_audit_general",
+      "platform": "哔哩哔哩",
+      "document_title": "花火稿件前置审核规范总则",
+      "source_url": "https://www.bilibili.com/blackboard/activity-hp6i7WQHrx.html",
+      "manual_verification_url": "https://www.bilibili.com/blackboard/activity-hp6i7WQHrx.html",
+      "collected_at": "2026-09-04T15:02:22.942905Z",
+      "page_update_date": null,
+      "capture_format": "html",
+      "capture_method": "direct_public_download_no_login",
+      "raw_path": "data/platform_rules/raw_html/2026-09-04/bilibili_huohua_pre_audit.html",
+      "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/bilibili_huohua_pre_audit.headers.txt",
+      "raw_sha256": "80228c0ba66dfad98049efa88139d78a1f8493b90be11753fd47bb63bf713e48",
+      "raw_size_bytes": 74990,
+      "verified_visible_excerpts": [
+        {
+          "candidate_id": "BILI-HUOHUA-ABSOLUTE-II",
+          "locator": "二、绝对化（用语）",
+          "text": "商推部分禁止使用国家级、最高级、最佳等绝对词关联产品推广。"
+        },
+        {
+          "candidate_id": "BILI-HUOHUA-PATENT-III",
+          "locator": "三、专利数据类",
+          "text": "涉及产品功效的具体数据类内容，应提供对应的数据证明。"
+        },
+        {
+          "candidate_id": "BILI-HUOHUA-MEDICAL-IV-2",
+          "locator": "四、高风险行业—2.医疗用语",
+          "text": "非三品一械稿件中禁止使用医疗类用语进行产品推广。"
+        },
+        {
+          "candidate_id": "BILI-HUOHUA-COMPARE-VIII",
+          "locator": "八、诱导类",
+          "text": "使用前后对比图及病理图容易形成误导，规则提示应尽量避免使用。"
+        }
+      ],
+      "extracted_text_length": 5057,
+      "snapshot_completeness": "downloaded_page_text_extracted",
+      "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+      "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+      "review_status": "pending_human_review",
+      "effective_status": "pending_effective_review",
+      "intended_use": "platform_rule_candidate",
+      "notes": [],
+      "http_status_chain": [
+        200
+      ],
+      "final_http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "raw_text_path": "data/platform_rules/raw_text/2026-09-04/bilibili_huohua_pre_audit_general.json"
+    },
+    {
+      "source_id": "bilibili_commercial_video_audit",
+      "platform": "哔哩哔哩",
+      "document_title": "花火商单视频审核管理规范",
+      "source_url": "https://www.bilibili.com/blackboard/activity-QLKVrsgdYA.html",
+      "manual_verification_url": "https://www.bilibili.com/blackboard/activity-QLKVrsgdYA.html",
+      "collected_at": "2026-09-04T15:02:22.942905Z",
+      "page_update_date": null,
+      "capture_format": "html",
+      "capture_method": "direct_public_download_no_login",
+      "raw_path": "data/platform_rules/raw_html/2026-09-04/bilibili_commercial_audit.html",
+      "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/bilibili_commercial_audit.headers.txt",
+      "raw_sha256": "7336b402fdc9acc06a3a1306917781438128e1b4c53c0c1ddc37c198e8cf607a",
+      "raw_size_bytes": 85898,
+      "verified_visible_excerpts": [],
+      "extracted_text_length": 6855,
+      "snapshot_completeness": "downloaded_page_text_extracted",
+      "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+      "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+      "review_status": "pending_human_review",
+      "effective_status": "pending_effective_review",
+      "intended_use": "platform_rule_candidate",
+      "notes": [],
+      "http_status_chain": [
+        200
+      ],
+      "final_http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "raw_text_path": "data/platform_rules/raw_text/2026-09-04/bilibili_commercial_video_audit.json"
+    },
+    {
+      "source_id": "kuaishou_life_services_rule_2154",
+      "platform": "快手",
+      "document_title": "快手生活服务广告内容管理规则（页面ID 2154）",
+      "source_url": "https://university.kuaishou.com/rule/knowledge/2154",
+      "manual_verification_url": "https://university.kuaishou.com/rule/knowledge/2154",
+      "collected_at": "2026-09-04T15:02:22.942905Z",
+      "page_update_date": null,
+      "capture_format": "html",
+      "capture_method": "direct_public_download_no_login",
+      "raw_path": "data/platform_rules/raw_html/2026-09-04/kuaishou_life_services_rules.html",
+      "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/kuaishou_life_services_rules.headers.txt",
+      "raw_sha256": "09c4d2f5fdfad8ccbfa794cce1d19585388eaa1f6cb4264c0323f974dbdafee6",
+      "raw_size_bytes": 4217,
+      "verified_visible_excerpts": [],
+      "extracted_text_length": 16,
+      "snapshot_completeness": "dynamic_html_shell_only",
+      "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+      "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+      "review_status": "pending_human_review",
+      "effective_status": "pending_effective_review",
+      "intended_use": "platform_rule_candidate",
+      "notes": [
+        "下载HTML仅为动态页面外壳；且页面场景为生活服务，不能直接外推至快手电商美妆。"
+      ],
+      "http_status_chain": [
+        200
+      ],
+      "final_http_status": 200,
+      "content_type": "text/html",
+      "raw_text_path": "data/platform_rules/raw_text/2026-09-04/kuaishou_life_services_rule_2154.json"
+    },
+    {
+      "source_id": "tmall_merchant_service_agreement",
+      "platform": "天猫",
+      "document_title": "天猫商户服务协议",
+      "source_url": "https://terms.alicdn.com/legal-agreement/terms/TD/TD201609271722_89275.html",
+      "manual_verification_url": "https://terms.alicdn.com/legal-agreement/terms/TD/TD201609271722_89275.html",
+      "collected_at": "2026-09-04T15:02:22.942905Z",
+      "page_update_date": null,
+      "capture_format": "html",
+      "capture_method": "direct_public_download_no_login",
+      "raw_path": "data/platform_rules/raw_html/2026-09-04/tmall_merchant_agreement.html",
+      "raw_headers_path": "data/platform_rules/raw_html/2026-09-04/tmall_merchant_agreement.headers.txt",
+      "raw_sha256": "acb8cce466d3155b4b40c0e5db1d119d66aa617403497899bffd54730ac40b00",
+      "raw_size_bytes": 518113,
+      "verified_visible_excerpts": [],
+      "extracted_text_length": 95449,
+      "snapshot_completeness": "downloaded_page_text_extracted",
+      "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+      "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+      "review_status": "pending_human_review",
+      "effective_status": "pending_effective_review",
+      "intended_use": "platform_rule_candidate",
+      "notes": [
+        "平台服务协议，不等同于美妆行业专项审核细则。"
+      ],
+      "http_status_chain": [
+        200
+      ],
+      "final_http_status": 200,
+      "content_type": "text/html",
+      "raw_text_path": "data/platform_rules/raw_text/2026-09-04/tmall_merchant_service_agreement.json"
+    },
+    {
+      "source_id": "jd_open_platform_online_service_agreement",
+      "platform": "京东",
+      "document_title": "京东JD.COM开放平台在线服务协议",
+      "source_url": "https://paipai-fe-cdn.s3.cn-north-1.jdcloud-oss.com/%E5%9C%A8%E7%BA%BF%E6%9C%8D%E5%8A%A1%E5%8D%8F%E8%AE%AE.pdf",
+      "manual_verification_url": "https://paipai-fe-cdn.s3.cn-north-1.jdcloud-oss.com/%E5%9C%A8%E7%BA%BF%E6%9C%8D%E5%8A%A1%E5%8D%8F%E8%AE%AE.pdf",
+      "collected_at": "2026-09-04T15:02:22.942905Z",
+      "page_update_date": null,
+      "capture_format": "pdf",
+      "capture_method": "direct_public_download_no_login",
+      "raw_path": "data/platform_rules/raw_files/2026-09-04/jd_open_platform_agreement.pdf",
+      "raw_headers_path": "data/platform_rules/raw_files/2026-09-04/jd_open_platform_agreement.headers.txt",
+      "raw_sha256": "a80313c11db48fad962388f40029e4dba7744832096f2d48580e80fd9d9cd36e",
+      "raw_size_bytes": 982971,
+      "verified_visible_excerpts": [],
+      "extracted_text_length": 42825,
+      "snapshot_completeness": "downloaded_page_text_extracted",
+      "robots_and_access_note": "仅直接下载无需登录的公开页面，未绕过验证码、登录、robots.txt或非公开接口。",
+      "copyright_note": "原始快照仅用于内部合规溯源与人工核验，不作为对外发布版本。",
+      "review_status": "pending_human_review",
+      "effective_status": "pending_effective_review",
+      "intended_use": "platform_rule_candidate",
+      "notes": [
+        "平台服务协议，不等同于京东美妆广告专项审核细则。"
+      ],
+      "http_status_chain": [
+        200
+      ],
+      "final_http_status": 200,
+      "content_type": "application/pdf",
+      "raw_text_path": "data/platform_rules/raw_text/2026-09-04/jd_open_platform_online_service_agreement.json"
+    }
+  ],
+  "release_gate": "规则正文、版本、生效状态和适用场景经平台运营与法务双人复核后，方可进入正式规则库。"
+}

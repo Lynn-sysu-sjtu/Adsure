@@ -1,0 +1,97 @@
+# 金标准标注示例 —— 素材为虚构（结构对齐用，禁止计入任何指标）
+case_id: golden_example
+video:
+  sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+  path: datasets/golden/videos/EXAMPLE_synthetic_health_food_30s.mp4
+  duration_seconds: 30.0
+  source:
+    type: synthetic
+    url: null
+    penalty_case_id: null
+    collected_by: example
+industry: health_food
+platform: douyin
+background: "已取得保健食品注册证书，功能为增强免疫力（虚构）。"
+risk_level_overall: high
+
+annotations:
+  - id: a1
+    source: both
+    channel: asr
+    t_start: 3.20
+    t_end: 4.00
+    text: "国家级配方"
+    layer: L1
+    expected: violation
+    law_ref: "广告法§9(3)"
+    penalty_case_id: null
+    uncertain: false
+    note: "指向所推销商品，不属于五类豁免。"
+  - id: a2
+    source: both
+    channel: ocr
+    t_start: 8.10
+    t_end: 9.30
+    bbox: [0.30, 0.42, 0.40, 0.08]
+    text: "三天彻底根治"
+    layer: L2
+    expected: violation
+    law_ref: "广告法§18(1)(2)"
+    penalty_case_id: null
+    uncertain: false
+    note: "保健食品宣称疾病治疗功能。"
+  - id: a3
+    source: a
+    channel: asr
+    t_start: 20.40
+    t_end: 21.20
+    text: "销量第一"
+    layer: L1
+    expected: needs_facts
+    law_ref: "广告法§9(3)；绝对化用语执法指南⑤"
+    uncertain: false
+    note: "若能提供可查证第三方统计数据则豁免；未提交材料前系统应走需核验。"
+
+mandatory_checks:
+  - id: m1
+    requirement_id: health_food_disclaimer
+    present: true
+    expected: violation          # 出现了但不显著 → 应触发复核
+    spans:
+      - t_start: 28.10
+        t_end: 28.50
+        bbox: [0.62, 0.90, 0.36, 0.018]
+        text: "本品不能代替药物"
+    observed_font_scale: 0.018
+    observed_edge_margin: 0.02
+    uncertain: false
+    note: "字高约画面 1.8%、仅 0.4s、贴右下角，监管实践中高概率被认定未显著标明。"
+
+ip_ground_truth:
+  - id: ip1
+    source: both
+    ip_id: disney_mickey
+    kind: character
+    t_start: 12.00
+    t_end: 14.50
+    bbox: [0.08, 0.15, 0.22, 0.35]
+    is_protected_ip: true
+    authorization_status_known: false
+    note: "圆耳、红裤、白手套三特征同时出现；授权状态未知，系统应产出授权材料清单而非侵权认定。"
+  - id: ip2
+    source: both
+    ip_id: null
+    kind: character
+    t_start: 22.00
+    t_end: 23.00
+    bbox: [0.70, 0.20, 0.12, 0.20]
+    is_protected_ip: false
+    authorization_status_known: true
+    note: "普通原创卡通猫，无对应高危 IP；用于 IP 误报率负样本。"
+
+label:
+  annotator_a: {name: 张三, date: "2026-09-20"}
+  annotator_b: {name: 李四, date: "2026-09-20"}
+  disagreements: []
+  resolved_by: 王五
+  status: adjudicated

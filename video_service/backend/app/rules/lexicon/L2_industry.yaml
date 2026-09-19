@@ -1,0 +1,262 @@
+# ══════════════════════════════════════════════════════════════
+#  L2 · 行业禁用语
+# ══════════════════════════════════════════════════════════════
+#
+# 由 backend/scripts/mine_l2_terms.py 从行政处罚案例库挖掘并按
+# 脚本内的 CURATION 决策表筛选后生成。**不要手改本文件**，
+# 要增删词条请改 CURATION 后重跑，否则下次生成会覆盖。
+#
+# 每条的 cases 是真实案号，报告里可据此写「该表述在 XX 案中被认定为…」，
+# 这是本词库相对凭经验列词的根本优势。
+#
+# ⚠️ 尚未经法务复核。另有一批高频但**有合法用法**的词被刻意排除
+#    （「增强免疫力」「改善睡眠」「缓解体力疲劳」都是法定保健功能，
+#    收进禁用语会把合规产品全打成违规），见 docs/L2_candidates_review.md。
+
+meta:
+  layer: L2
+  kind: terms
+  name: 行业禁用语
+  version: "0.1.0-auto"
+  reviewed_by_legal: false
+  generated_by: backend/scripts/mine_l2_terms.py
+
+law_texts:
+  ad_law_17: >-
+    《中华人民共和国广告法》第十七条：除医疗、药品、医疗器械广告外，
+    其他广告不得涉及疾病治疗功能，也不得使用医疗用语或者易使商品与药品、
+    医疗器械相混淆的用语。
+  ad_law_17_18: >-
+    《中华人民共和国广告法》第十七条：除医疗、药品、医疗器械广告外，
+    其他广告不得涉及疾病治疗功能……第十八条：保健食品广告不得含有下列内容：
+    （一）表示功效、安全性的断言或者保证；（二）涉及疾病预防、治疗功能……
+  ad_law_08_28: >-
+    《中华人民共和国广告法》第八条：广告中对商品的……允诺等有表示的，
+    应当准确、清楚、明白。第二十八条：广告以虚假或者引人误解的内容
+    欺骗、误导消费者的，构成虚假广告。
+
+entries:
+  - term: 治疗
+    industry: [cosmetics, health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "非医疗类广告不得涉及疾病治疗功能，无抗辩空间"
+    risk: high
+    cases: [excel_candidate__cosmetic_medical_claim__ac711b6d, excel_candidate__food_medical_claim__83ff48dc, excel_candidate__food_medical_claim__883f17e8, excel_candidate__food_medical_claim__b0e7e8a2, excel_candidate__food_medical_claim__c13d1c27, excel_candidate__food_medical_claim__fd2c4c40, excel_candidate__health_food_overclaim__df7e40d5, excel_candidate__health_food_overclaim__f92a771c]
+
+  - term: 癌
+    industry: [cosmetics, health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "提及具体疾病，构成疾病功效暗示"
+    risk: high
+    cases: [excel_candidate__food_medical_claim__b0e7e8a2, samr_2025_typical_ads_04, samr_2025_typical_ads_05, sector_docx__beauty__9b9bec19, sector_docx__health__1a078812, sector_docx__health__4868d2df, sector_docx__health__5a23d058, sector_docx__health__9e72583c]
+
+  - term: 心脑血管
+    industry: [cosmetics, health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: high
+    cases: [excel_candidate__health_food_overclaim__32abaf01, excel_candidate__health_food_overclaim__df7e40d5, sector_docx__beauty__801cf8d6, sector_docx__health__47adc1ea, sector_docx__health__4868d2df, sector_docx__health__5a23d058, sector_docx__health__801cf8d6, sector_docx__health__87d3834c]
+
+  - term: 糖尿病
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: high
+    cases: [excel_candidate__food_medical_claim__fd2c4c40, excel_candidate__health_food_overclaim__32abaf01, sector_docx__health__1a078812, sector_docx__health__32abaf01, sector_docx__health__4d2b48f7, sector_docx__health__5a23d058, sector_docx__health__5d46a744, sector_docx__health__70bd40e0]
+
+  - term: 防治
+    industry: [cosmetics, health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "含治疗语义，保健食品明确禁止"
+    risk: high
+    cases: [excel_candidate__health_food_overclaim__d9cb5caf, samr_2025_typical_ads_05, sector_docx__beauty__0993a40d, sector_docx__beauty__9b9bec19, sector_docx__health__4868d2df, sector_docx__health__6a1dde83, sector_docx__health__d9cb5caf, sector_docx__health__df7e40d5]
+
+  - term: 高血压
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: high
+    cases: [excel_candidate__food_medical_claim__fd2c4c40, excel_candidate__health_food_overclaim__32abaf01, excel_candidate__health_food_overclaim__d9cb5caf, samr_2025_typical_ads_05, sector_docx__health__32abaf01, sector_docx__health__4d2b48f7, sector_docx__health__5d46a744, sector_docx__health__d9cb5caf]
+
+  - term: 抗癌
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "疾病治疗功效，重灾区"
+    risk: high
+    cases: [samr_2025_typical_ads_04, sector_docx__health__1a078812, sector_docx__health__4868d2df, sector_docx__health__5a23d058, sector_docx__health__9e72583c]
+
+  - term: 肿瘤
+    industry: [cosmetics, health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: high
+    cases: [excel_candidate__health_food_overclaim__32abaf01, excel_candidate__medical_beauty_device_guarantee__b8bc4386, sector_docx__health__32abaf01, sector_docx__health__47adc1ea, sector_docx__health__5d46a744]
+
+  - term: 胃炎
+    industry: [cosmetics, health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: high
+    cases: [excel_candidate__cosmetic_medical_claim__ec0e2c05, samr_2025_typical_ads_08, sector_docx__beauty__ec0e2c05, sector_docx__health__1a078812]
+
+  - term: 高血脂
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: high
+    cases: [excel_candidate__food_medical_claim__fd2c4c40, excel_candidate__health_food_overclaim__d9cb5caf, sector_docx__health__4d2b48f7, sector_docx__health__d9cb5caf]
+
+  - term: 冠心病
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: medium
+    cases: [excel_candidate__food_medical_claim__fd2c4c40, excel_candidate__health_food_overclaim__d9cb5caf, sector_docx__health__d9cb5caf]
+
+  - term: 血栓
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: medium
+    cases: [excel_candidate__health_food_overclaim__d9cb5caf, sector_docx__health__d9cb5caf]
+
+  - term: 近视
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上；儿童护眼类重灾区"
+    risk: medium
+    cases: [samr_2025_typical_ads_01, samr_2025_typical_ads_06]
+
+  - term: 医治
+    industry: [cosmetics]
+    law_ref: "《广告法》第十七条"
+    law_text_ref: ad_law_17
+    rule_id: "ADLAW-017"
+    judgment_points: "医疗用语"
+    risk: medium
+    cases: [excel_candidate__medical_beauty_device_guarantee__b8bc4386]
+
+  - term: 治愈
+    industry: [cosmetics]
+    law_ref: "《广告法》第十七条"
+    law_text_ref: ad_law_17
+    rule_id: "ADLAW-017"
+    judgment_points: "同上，且属功效断言"
+    risk: medium
+    cases: [excel_candidate__medical_beauty_device_guarantee__d3aee945]
+
+  - term: 溃疡
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: medium
+    cases: [samr_2025_typical_ads_08]
+
+  - term: 疗效
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "功效断言 + 医疗用语"
+    risk: medium
+    cases: [sector_docx__health__87d3834c]
+
+  - term: 超高爆率
+    industry: [game]
+    law_ref: "《广告法》第八条 / 第二十八条"
+    law_text_ref: ad_law_08_28
+    rule_id: "ADLAW-028"
+    judgment_points: "夸张允诺，与实际掉落机制不符即构成虚假宣传"
+    risk: medium
+    cases: [sector_docx__game__b5daf3c4]
+
+  - term: 高爆率
+    industry: [game]
+    law_ref: "《广告法》第八条 / 第二十八条"
+    law_text_ref: ad_law_08_28
+    rule_id: "ADLAW-028"
+    judgment_points: "同上"
+    risk: medium
+    cases: [sector_docx__game__b5daf3c4]
+
+  - term: 鼻炎
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: medium
+    cases: [samr_2025_typical_ads_01]
+
+  - term: 关节炎
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: medium
+    cases: []   # 法条基线词，本案例库暂无对应处罚案例
+
+  - term: 哮喘
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: medium
+    cases: []   # 法条基线词，本案例库暂无对应处罚案例
+
+  - term: 根治
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上，程度更重"
+    risk: medium
+    cases: []   # 法条基线词，本案例库暂无对应处罚案例
+
+  - term: 痊愈
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: medium
+    cases: []   # 法条基线词，本案例库暂无对应处罚案例
+
+  - term: 结石
+    industry: [health_food]
+    law_ref: "《广告法》第十七条 / 第十八条"
+    law_text_ref: ad_law_17_18
+    rule_id: "ADLAW-018"
+    judgment_points: "同上"
+    risk: medium
+    cases: []   # 法条基线词，本案例库暂无对应处罚案例

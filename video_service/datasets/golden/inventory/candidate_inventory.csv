@@ -1,0 +1,23 @@
+﻿path,role,sha256,size_mb,duration_s,evidence_items,note
+测试广告视频1.mp4,root_test_video,8ee3ea5cf5ee6589e3890406f77f0b2df9e60e0d3eda5d25f5b17ec537f829e5,3.6,54.3,,根目录历史测试视频；来源与授权需人工确认
+测试广告视频2.mp4,root_test_video,b9f907eeb8c801fbe9b0bb08c0d8529ce37d0e813d0db1d3e5c5dd6abd10b8b9,3.0,5.1,,根目录历史测试视频；来源与授权需人工确认
+美妆广告测试视频.MP4,root_test_video,ac4a688c3e1de957cba9ecfb262dec81282f9a2abd99f27bdfeb6994315fb2a4,2.8,16.4,,根目录历史测试视频；来源与授权需人工确认
+data/video_mvp/jobs/0c951a2d671d44469b1e0fd20fc9ac5d/source.mp4,engineering_job,8ee3ea5cf5ee6589e3890406f77f0b2df9e60e0d3eda5d25f5b17ec537f829e5,3.6,54.3,1317,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频1.mp4 内容重复
+data/video_mvp/jobs/183fcb6fa1ab4bbfb7aa7ed8da062280/source.mp4,engineering_job,b9f907eeb8c801fbe9b0bb08c0d8529ce37d0e813d0db1d3e5c5dd6abd10b8b9,3.0,5.1,161,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频2.mp4 内容重复
+data/video_mvp/jobs/19df7d4f003344b3b8413668bc4de9cd/source.mp4,engineering_job,b9f907eeb8c801fbe9b0bb08c0d8529ce37d0e813d0db1d3e5c5dd6abd10b8b9,3.0,5.1,160,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频2.mp4 内容重复
+data/video_mvp/jobs/2c77cab97a564d15973c137f72590a2d/source.mp4,engineering_job,8ee3ea5cf5ee6589e3890406f77f0b2df9e60e0d3eda5d25f5b17ec537f829e5,3.6,54.3,171,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频1.mp4 内容重复
+data/video_mvp/jobs/2d33863a40c945619dab37b658510e06/source.mp4,engineering_job,b9f907eeb8c801fbe9b0bb08c0d8529ce37d0e813d0db1d3e5c5dd6abd10b8b9,3.0,5.1,161,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频2.mp4 内容重复
+data/video_mvp/jobs/2dba96d943394fa5b2c170c07ee7fe6e/source.mp4,engineering_job,ac4a688c3e1de957cba9ecfb262dec81282f9a2abd99f27bdfeb6994315fb2a4,2.8,16.4,262,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 美妆广告测试视频.MP4 内容重复
+data/video_mvp/jobs/3e669488124e46448212463751a10857/source.mp4,engineering_job,ac4a688c3e1de957cba9ecfb262dec81282f9a2abd99f27bdfeb6994315fb2a4,2.8,16.4,262,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 美妆广告测试视频.MP4 内容重复
+data/video_mvp/jobs/48da1af7a17d4d6cbb5eae1fba74b93b/source.mp4,engineering_job,b9f907eeb8c801fbe9b0bb08c0d8529ce37d0e813d0db1d3e5c5dd6abd10b8b9,3.0,5.1,161,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频2.mp4 内容重复
+data/video_mvp/jobs/4f82e25f45ca41ed8345848436c55b27/source.mp4,engineering_job,8ee3ea5cf5ee6589e3890406f77f0b2df9e60e0d3eda5d25f5b17ec537f829e5,3.6,54.3,1312,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频1.mp4 内容重复
+data/video_mvp/jobs/5c9321a9852d413e958c8b8ae796bab9/source.mp4,engineering_job,8ee3ea5cf5ee6589e3890406f77f0b2df9e60e0d3eda5d25f5b17ec537f829e5,3.6,54.3,171,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频1.mp4 内容重复
+data/video_mvp/jobs/5d663942972c4c49b539104a870febf8/source.mp4,engineering_job,ac4a688c3e1de957cba9ecfb262dec81282f9a2abd99f27bdfeb6994315fb2a4,2.8,16.4,259,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 美妆广告测试视频.MP4 内容重复
+data/video_mvp/jobs/8383894a4b2d41cfb3a0e33bf93488f5/source.mp4,engineering_job,8ee3ea5cf5ee6589e3890406f77f0b2df9e60e0d3eda5d25f5b17ec537f829e5,3.6,54.3,1320,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频1.mp4 内容重复
+data/video_mvp/jobs/8e409cd089da4dda950103b620a61945/source.mp4,engineering_job,b9f907eeb8c801fbe9b0bb08c0d8529ce37d0e813d0db1d3e5c5dd6abd10b8b9,3.0,5.1,161,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频2.mp4 内容重复
+data/video_mvp/jobs/ab6cce5c8f7b42a2ac1f8b56848e6ac1/source.mp4,engineering_job,26e7f05c49a80231839dfd6e065cd6ea7aeabd49899e1b2a73d8dc66c7805645,165.0,272.0,925,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准
+data/video_mvp/jobs/bf14b8318bf14e1d9034e52d863518bd/source.mp4,engineering_job,b9f907eeb8c801fbe9b0bb08c0d8529ce37d0e813d0db1d3e5c5dd6abd10b8b9,3.0,5.1,161,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频2.mp4 内容重复
+data/video_mvp/jobs/ca1fba2f367c4905b6cafb1a71d21ee2/source.mp4,engineering_job,ac4a688c3e1de957cba9ecfb262dec81282f9a2abd99f27bdfeb6994315fb2a4,2.8,16.4,264,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 美妆广告测试视频.MP4 内容重复
+data/video_mvp/jobs/e0d0629492f14af0b5eee044806ed4b6/source.mp4,engineering_job,8ee3ea5cf5ee6589e3890406f77f0b2df9e60e0d3eda5d25f5b17ec537f829e5,3.6,54.3,172,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频1.mp4 内容重复
+data/video_mvp/jobs/e1ad64e3a64348e8b585f4cd3ecea726/source.mp4,engineering_job,8ee3ea5cf5ee6589e3890406f77f0b2df9e60e0d3eda5d25f5b17ec537f829e5,3.6,54.3,1320,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频1.mp4 内容重复
+data/video_mvp/jobs/f8b99865bef44f5d9e63944afddae02a/source.mp4,engineering_job,b9f907eeb8c801fbe9b0bb08c0d8529ce37d0e813d0db1d3e5c5dd6abd10b8b9,3.0,5.1,15,工程跑批素材；evidence.json 可辅助预标注但不能代替人工金标准；与 测试广告视频2.mp4 内容重复
