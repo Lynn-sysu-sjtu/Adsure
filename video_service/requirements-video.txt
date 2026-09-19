@@ -3,4 +3,8 @@ faster-whisper>=1.2,<2
 opencc-python-reimplemented>=0.1.7,<1
 sherpa-onnx>=1.12,<2
 rapidocr-onnxruntime>=1.4,<2
+# 主抽取链路的容器解码依赖（PyAV）；缺失时生产预检会直接失败。
+av>=14,<19
+# tests/test_video_feishu_adapter.py 校验 audit_response_v0.2 契约。
+jsonschema>=4.20,<5
 pypdf>=5,<7

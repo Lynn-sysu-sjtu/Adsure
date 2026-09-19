@@ -219,18 +219,41 @@ command is:
 bash scripts/setup_video_models.sh
 ```
 
+Follow-up fixes after the dev merge review:
+
+1. PyAV (`av`) is now declared in `video_service/requirements-video.txt`
+   (`av>=14,<19`) and checked by `scripts/preflight_video.py`.
+2. `video_service/data/schemas/audit_response_v0.2.schema.json` is now committed
+   (byte-identical to the copy under `rag_cases/data/schemas/`), and the
+   preflight checks that it exists.
+3. `scripts/preflight_video.py` now verifies every `raw_sha256` in
+   `data/platform_rules/manifest_2026-09-04.json`, so a converted evidence file
+   fails at preflight instead of silently breaking provenance.
+4. Evidence bytes are protected from line-ending conversion: `-text` rules were
+   added for `data/platform_rules/raw_*` and `datasets/golden/**`
+   (`rag_cases/.gitattributes` protects `data/raw_*`, `data/structured*` and
+   `data/platform_rules` the same way). All 12 manifest hashes match the
+   committed blobs.
+5. The 6 files that were stored with CRLF while declared `text eol=lf` were
+   normalized to LF (`report.py`, `L2_industry.yaml`, `demo_pipeline.py`,
+   `test_legalref.py`, `test_crawler.py`, `candidate_inventory.csv`).
+
 Video tests on macOS:
 
 ```text
-tests.test_video_service
-tests.test_video_mvp_v3
-tests.test_video_volc_asr
-tests.test_video_rapidocr_env
-55 tests OK
+tests.test_video_service tests.test_video_mvp tests.test_video_mvp_v2
+tests.test_video_mvp_v3 tests.test_video_volc_asr tests.test_video_rapidocr_env
+tests.test_video_feishu_adapter
+86 tests OK
 ```
 
-Linux 55-test verification and video production preflight are still required
-on the Linux cloud host.
+(55 of these are the four modules required by the review; the feishu contract
+module had been silently skipped because its schema file was missing.)
+
+Video production preflight on macOS fails on disk space only
+(`free < 2 GiB`); the PyAV, schema and provenance checks all pass. Linux
+55-test verification and video production preflight are still required on the
+Linux cloud host.
 
 ## Deployment roots
 

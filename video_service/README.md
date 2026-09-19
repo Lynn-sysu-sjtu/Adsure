@@ -22,6 +22,15 @@
 
 模型和密钥按部署文档在服务器上单独准备。
 
+## 依赖与证据完整性
+
+- 安装依赖：`.venv-video/bin/pip install -r requirements-video.txt`
+  （含主抽取链路必需的 **PyAV `av`**，缺失时 `scripts/preflight_video.py` 直接失败）。
+- `data/platform_rules/raw_*` 与 `datasets/golden/**` 在 `.gitattributes` 中标记为
+  `-text`：这些是带 SHA256 记录的原始证据，必须逐字节保存，禁止任何换行符转换。
+- `data/schemas/audit_response_v0.2.schema.json` 是飞书 v0.2 审核响应的契约文件，
+  由 `tests/test_video_feishu_adapter.py` 校验。
+
 ## 本地测试
 
 ```bash

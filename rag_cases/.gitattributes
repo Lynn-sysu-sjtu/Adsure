@@ -1,0 +1,9 @@
+# 证据 / 原始抓取文件必须逐字节保存：manifest 记录了 raw_sha256，
+# 任何换行符转换（Windows autocrlf、text=auto 等）都会让来源校验失败
+# （见 tests/test_platform_rule_ingestion_bundle.py）。
+data/raw_html/** -text
+data/raw_text/** -text
+data/structured/** -text
+data/structured_candidates/** -text
+data/structured_archive/** -text
+data/platform_rules/** -text
