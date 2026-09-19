@@ -44,8 +44,14 @@ access and the Zhipu key, run:
 cd rag_cases
 cp .env.zhipu.local.example .env.zhipu.local
 # Fill ZHIPU_API_KEY in .env.zhipu.local
-bash scripts/rebuild_zhipu_index.sh
+PYTHON=/path/to/venv/bin/python bash scripts/rebuild_zhipu_index.sh
+PYTHON=/path/to/venv/bin/python bash scripts/preflight_zhipu.sh
 ```
+
+`scripts/preflight_zhipu.sh` reads `/etc/adsure/rag-secret.env` and
+`.env.zhipu.local`, then runs the production preflight with the Zhipu
+configuration. `make rebuild-zhipu-index` / `make preflight-zhipu` are the
+equivalent shortcuts.
 
 Expected summary:
 

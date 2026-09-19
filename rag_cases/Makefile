@@ -2,7 +2,7 @@ PYTHON312 ?= python3.12
 HANDOFF_PYTHON ?= .venv-handoff/bin/python
 HANDOFF_OUTPUT ?= data/video_mvp/handoff_review.json
 
-.PHONY: setup setup-semantic setup-handoff setup-handoff-video fetch extract clean import-excel import-sector-docx build-audit-cases validate-audit-cases audit-cases validate chunks semantic-index evaluate-retrieval sample-chunks rule-mapping-queue test test-rag test-audit-contract test-platform-rules test-video-mvp test-handoff case-crawler handoff-review-demo handoff-review-job preflight-rag smoke-rag setup-rag-models test-embedding rebuild-zhipu-index serve video-mvp video-mvp-cli pipeline candidate-pipeline sector-candidate-pipeline
+.PHONY: setup setup-semantic setup-handoff setup-handoff-video fetch extract clean import-excel import-sector-docx build-audit-cases validate-audit-cases audit-cases validate chunks semantic-index evaluate-retrieval sample-chunks rule-mapping-queue test test-rag test-audit-contract test-platform-rules test-video-mvp test-handoff case-crawler handoff-review-demo handoff-review-job preflight-rag preflight-zhipu smoke-rag setup-rag-models test-embedding rebuild-zhipu-index serve video-mvp video-mvp-cli pipeline candidate-pipeline sector-candidate-pipeline
 
 setup:
 	pip install -r requirements.txt
@@ -105,6 +105,9 @@ setup-rag-models:
 
 rebuild-zhipu-index:
 	bash scripts/rebuild_zhipu_index.sh
+
+preflight-zhipu:
+	bash scripts/preflight_zhipu.sh
 
 test-embedding:
 	.venv-video/bin/python -m unittest tests.test_zhipu_embedding -v

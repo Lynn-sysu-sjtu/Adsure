@@ -24,14 +24,32 @@ export CASE_ENGINE_ZHIPU_EMBEDDING_MODEL=embedding-3
 export CASE_ENGINE_EMBEDDING_DIMENSIONS=2048
 export CASE_ENGINE_EMBEDDING_BATCH_SIZE="${CASE_ENGINE_EMBEDDING_BATCH_SIZE:-32}"
 
-PYTHON="${PYTHON:-.venv-video/bin/python}"
-if [[ ! -x "$PYTHON" ]]; then
-  PYTHON="python3"
-fi
+# 找一个能 import httpx 的解释器：$PYTHON -> .venv-video -> .venv -> python3
+resolve_python() {
+  local candidate
+  for candidate in "${PYTHON:-}" .venv-video/bin/python .venv/bin/python python3; do
+    [[ -n "$candidate" ]] || continue
+    if command -v "$candidate" >/dev/null 2>&1 \
+      && "$candidate" -c "import httpx" >/dev/null 2>&1; then
+      printf '%s' "$candidate"
+      return 0
+    fi
+  done
+  return 1
+}
 
-"$PYTHON" -m src.semantic_index
+PYTHON_BIN="$(resolve_python)" || {
+  echo "ERROR: 找不到能 import httpx 的 Python 解释器。" >&2
+  echo "       已尝试：${PYTHON:-<未设置>}、.venv-video/bin/python、.venv/bin/python、python3" >&2
+  echo "       请显式指定，例如：" >&2
+  echo "       PYTHON=/path/to/venv/bin/python bash scripts/rebuild_zhipu_index.sh" >&2
+  exit 1
+}
+echo "using python: $PYTHON_BIN" >&2
 
-"$PYTHON" - <<'PY'
+"$PYTHON_BIN" -m src.semantic_index
+
+"$PYTHON_BIN" - <<'PY'
 import json
 from pathlib import Path
 
