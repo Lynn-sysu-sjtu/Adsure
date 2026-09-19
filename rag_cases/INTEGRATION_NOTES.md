@@ -28,17 +28,22 @@ deploy/rag-secret.env.example
 
 ## Zhipu semantic index rebuild
 
-The currently committed `data/chunks/production_semantic_index.json` is the
-historical BAAI index:
+`data/chunks/production_semantic_index.json` has been rebuilt with the Zhipu
+BigModel API:
 
 ```text
-model_name = BAAI/bge-base-zh-v1.5
-dimension  = 768
-documents  = 250
+provider          = zhipu
+model_name        = embedding-3
+dimension         = 2048
+documents         = 250
+chunk_fingerprint = bcb297cdd822de9b   # unchanged: only vectors were recomputed
 ```
 
-Production requires a Zhipu `embedding-3` index. On a machine with network
-access and the Zhipu key, run:
+Before this rebuild the committed index was the historical BAAI one
+(`BAAI/bge-base-zh-v1.5`, 768 dimensions, 250 documents); that combination is
+incompatible with `embedding-3` and is no longer shipped.
+
+To rebuild again on a machine with network access and the Zhipu key, run:
 
 ```bash
 cd rag_cases
@@ -111,7 +116,7 @@ RuntimeError: 语义检索未就绪，拒绝启动：requested=hybrid,
 status=model_mismatch_index=BAAI/bge-base-zh-v1.5_configured=embedding-3
 ```
 
-### Evidence: local BAAI baseline passes
+### Evidence: local BAAI baseline (historical, before the rebuild)
 
 ```text
 $ CASE_ENGINE_INDEX_SCOPE=production CASE_ENGINE_RETRIEVAL_MODE=hybrid \
@@ -130,9 +135,25 @@ index=262491abf7e8e200 retrieval=lexical semantic=disabled
 provider=local model=None dimension=None
 ```
 
-The Zhipu-mode preflight above must be re-run after the index is rebuilt and
-must then report `provider=zhipu model=embedding-3 dimension=2048
-semantic=ready` with `cases`/`chunks` counts instead of any error.
+### Evidence: Zhipu mode passes after the rebuild
+
+```text
+$ ZHIPU_INDEX_SUMMARY={"provider": "zhipu", "model": "embedding-3",
+  "dimension": 2048, "documents": 250, "chunk_fingerprint": "bcb297cdd822de9b"}
+
+$ CASE_ENGINE_INDEX_SCOPE=production CASE_ENGINE_RETRIEVAL_MODE=hybrid \
+  CASE_ENGINE_EMBEDDING_PROVIDER=zhipu CASE_ENGINE_EMBEDDING_MODEL=embedding-3 \
+  CASE_ENGINE_EMBEDDING_DIMENSIONS=2048 CASE_ENGINE_REQUIRE_SEMANTIC=1 \
+  python -m src.preflight_rag
+RAG production preflight ok: cases=125 public_cases=125 chunks=250
+index=262491abf7e8e200 retrieval=hybrid semantic=ready
+provider=zhipu model=embedding-3 dimension=2048
+```
+
+`semantic=ready` is only reported after the preflight has actually embedded a
+probe query through the Zhipu API, so it also proves the key and endpoint work.
+None of the following appear in the output: 索引加载失败、切片找不到结构化案例、
+原文不存在、production 读取 structured_candidates、正式索引为空.
 
 ## Test status
 
