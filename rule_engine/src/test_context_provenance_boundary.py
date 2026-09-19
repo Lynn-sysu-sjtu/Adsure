@@ -139,6 +139,38 @@ class ContextProvenanceBoundaryTests(unittest.TestCase):
         )
         self.assertEqual(original, guarded)
 
+    def test_guard_does_not_fall_back_to_duplicate_legacy_rule_id(self):
+        request = self._request()
+        context = build_judgment_context_package(request, build_context_package(request))
+        original = {
+            "rule_judgments": [
+                {
+                    "rule_uid": "RUID-NOT-IN-CANDIDATES",
+                    "rule_id": "DUPLICATE-001",
+                    "applicability_status": "confirmed_violation",
+                    "missing_facts": [],
+                    "unsatisfied_elements": [],
+                }
+            ],
+            "revision_suggestion": "keep",
+        }
+        candidates = [
+            {
+                "rule_uid": "RUID-FIRST",
+                "rule_id": "DUPLICATE-001",
+                "applies_to": {"industries": ["通用"]},
+            },
+            {
+                "rule_uid": "RUID-SECOND",
+                "rule_id": "DUPLICATE-001",
+                "applies_to": {"industries": ["保健食品"]},
+            },
+        ]
+
+        guarded = apply_context_provenance_guard(original, candidates, context)
+
+        self.assertEqual(original, guarded)
+
 
 if __name__ == "__main__":
     unittest.main()

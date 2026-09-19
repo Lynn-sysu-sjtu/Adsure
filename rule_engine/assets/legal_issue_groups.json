@@ -35,6 +35,105 @@
         "max_primary_rules": 1,
         "max_platform_rules": 1
       }
+    },
+    {
+      "issue_group_id": "health_food_pre_review_approval",
+      "title": "保健食品广告发布前审查及批准文件",
+      "member_rule_uids": [
+        "RUID-b6d85093aac76c45",
+        "RUID-1bac53642e0ddd34",
+        "RUID-70d3fcec74ce985b",
+        "RUID-c759ae9e2b02d013",
+        "RUID-f2c9db72fdae932e"
+      ],
+      "preferred_rule_uid": "RUID-b6d85093aac76c45",
+      "selection_policy": {
+        "primary_rule_strategy": "highest_legal_authority",
+        "platform_rule_strategy": "current_platform_only",
+        "max_primary_rules": 1,
+        "max_platform_rules": 1
+      }
+    },
+    {
+      "issue_group_id": "health_food_ad_law_article_17_treatment",
+      "title": "广告法第十七条非医疗广告疾病治疗表述",
+      "member_rule_uids": [
+        "RUID-1e455acefad683e3",
+        "RUID-10ea14b945299036",
+        "RUID-d65bef32d08d3476"
+      ],
+      "preferred_rule_uid": "RUID-1e455acefad683e3",
+      "selection_policy": {
+        "primary_rule_strategy": "highest_legal_authority",
+        "platform_rule_strategy": "current_platform_only",
+        "max_primary_rules": 1,
+        "max_platform_rules": 1
+      },
+      "preferred_rule_uids_by_industry": {
+        "保健食品": "RUID-d65bef32d08d3476"
+      }
+    },
+    {
+      "issue_group_id": "health_food_ad_law_article_18_disease",
+      "title": "广告法第十八条保健食品疾病预防治疗功能",
+      "member_rule_uids": [
+        "RUID-165591db82effab3",
+        "RUID-7704214ffc5d9535",
+        "RUID-b2af3e129ef8e342"
+      ],
+      "preferred_rule_uid": "RUID-b2af3e129ef8e342",
+      "selection_policy": {
+        "primary_rule_strategy": "highest_legal_authority",
+        "platform_rule_strategy": "current_platform_only",
+        "max_primary_rules": 1,
+        "max_platform_rules": 1
+      }
+    },
+    {
+      "issue_group_id": "health_food_ad_law_article_18_guarantee",
+      "title": "广告法第十八条保健食品功效安全断言保证",
+      "member_rule_uids": [
+        "RUID-3282b7e7f6fc4f3e",
+        "RUID-4d7b4ffb626c816b",
+        "RUID-e9afbede10e31c92"
+      ],
+      "preferred_rule_uid": "RUID-4d7b4ffb626c816b",
+      "selection_policy": {
+        "primary_rule_strategy": "highest_legal_authority",
+        "platform_rule_strategy": "current_platform_only",
+        "max_primary_rules": 1,
+        "max_platform_rules": 1
+      }
+    },
+    {
+      "issue_group_id": "health_food_ad_law_article_18_endorser",
+      "title": "广告法第十八条保健食品广告代言人推荐证明",
+      "member_rule_uids": [
+        "RUID-02f4d529f6d0383c",
+        "RUID-d58a892d4bc0c4ac",
+        "RUID-d79610014e487328"
+      ],
+      "preferred_rule_uid": "RUID-d79610014e487328",
+      "selection_policy": {
+        "primary_rule_strategy": "highest_legal_authority",
+        "platform_rule_strategy": "current_platform_only",
+        "max_primary_rules": 1,
+        "max_platform_rules": 1
+      }
+    },
+    {
+      "issue_group_id": "xiaohongshu_health_food_endorser",
+      "title": "小红书保健食品广告代言人推荐证明",
+      "member_rule_uids": [
+        "RUID-581e6b801073e750",
+        "RUID-545f9ad8dd6797c1"
+      ],
+      "selection_policy": {
+        "primary_rule_strategy": "highest_legal_authority",
+        "platform_rule_strategy": "current_platform_only",
+        "max_primary_rules": 1,
+        "max_platform_rules": 1
+      }
     }
   ]
 }

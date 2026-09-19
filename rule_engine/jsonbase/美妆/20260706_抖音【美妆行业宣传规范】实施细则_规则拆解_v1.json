@@ -2967,7 +2967,12 @@
             "三甲医院",
             "皮肤科医生推荐",
             "医用",
-            "医美项目"
+            "医美项目",
+            "祛斑",
+            "防晒",
+            "防脱发",
+            "普通化妆品",
+            "备案功效"
           ],
           "regex": [],
           "context_signals": [],
@@ -2984,7 +2989,7 @@
           "超范围宣传",
           "虚假宣传"
         ],
-        "vector_text": "这款眼霜去眼袋的效果太猛了，可以改善你眼部的血液循环，3-5分钟，眼袋去无踪。?这款乳液可以快速修复",
+        "vector_text": "普通化妆品备案功效仅为保湿，却宣传祛斑、防晒、防脱发等特殊功效，或宣传超出注册备案范围的医美和治疗效果",
         "semantic_enabled": true,
         "semantic_role": "fallback",
         "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
@@ -2994,6 +2999,13 @@
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
         "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "ordinary_cosmetic_special_efficacy",
+            "vector_text": "普通护肤化妆品备案只有保湿功效，却在短视频中同时宣称祛斑、防晒、防脱发，属于特殊功效或超备案范围宣传",
+            "enabled": true
+          }
+        ],
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
           "reviewed_at": "2026-07-14T23:09:35",
@@ -3732,7 +3744,10 @@
             "彻底",
             "永久"
           ],
-          "regex": [],
+          "regex": [
+            "(?:100\\s*%|百分百).{0,12}(?:无风险|没有任何风险|安全|无副作用)",
+            "(?:无风险|没有任何风险|安全|无副作用).{0,12}(?:100\\s*%|百分百)"
+          ],
           "context_signals": [
             "功效",
             "效果",
@@ -3753,7 +3768,7 @@
           "保证性承诺",
           "功效断言"
         ],
-        "vector_text": "使用本产品7天，皱纹明显减少，效果保证！?绝对有效，无效退款?100%美白，让你彻底变白?保证?承诺",
+        "vector_text": "使用本产品7天效果保证，绝对有效无效退款，100%美白；食品级儿童润唇膏，宝宝舔了也能吃，百分百没有任何风险、绝对安全无副作用",
         "semantic_enabled": true,
         "semantic_role": "fallback",
         "semantic_reason": "DeepSeek ?????????????????????????? vector_text ???? HyDE ?????",
@@ -3763,6 +3778,13 @@
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
         "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "absolute_safety_guarantee",
+            "vector_text": "儿童润唇膏宣称食品级可食用，宝宝舔食也百分百安全、100%没有任何风险或副作用",
+            "enabled": true
+          }
+        ],
         "hyde_review": {
           "prompt_version": "hyde_vector_text_rewrite_v1_20260714",
           "reviewed_at": "2026-07-14T23:16:00",

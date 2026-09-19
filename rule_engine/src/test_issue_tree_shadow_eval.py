@@ -1,10 +1,99 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from issue_tree_shadow_eval import evaluate_shadow_cases, run_shadow_cases
+from issue_tree_shadow_eval import (
+    classify_expected_rule_loss,
+    evaluate_shadow_cases,
+    run_shadow_cases,
+)
 
 
 class IssueTreeShadowEvalTests(unittest.TestCase):
+    def test_classifies_expected_rule_loss_at_each_pipeline_layer(self):
+        issue = 'A.B.C'
+        sibling = 'A.B.D'
+        base = {
+            'tree_issue_ids': [issue],
+            'expected_rule_issue_ids': {'R': [issue]},
+            'rule_asset_uids': ['R'],
+            'tree_mapping_rule_uids_by_issue': {issue: ['R']},
+            'tree_mapped_rule_uids_before_gate': ['R'],
+            'tree_expansion_trace': [
+                {'canonical_rule_uid': 'R', 'issue_id': issue, 'mapping_type': 'direct'}
+            ],
+            'tree_rule_uids': ['R'],
+            'tree_selection_path_rankings': [{
+                'issue_id': issue,
+                'ranked_rules': [{'rule_uid': 'R', 'mapping_role': 'direct'}],
+                'per_path_selected_rule_uids': [],
+            }],
+            'tree_selection_dropped_rules': [],
+            'tree_group_collapses': [],
+            'tree_non_actionable_rule_uids': [],
+            'tree_selected_actionable_rule_uids': [],
+        }
+        variants = {
+            'missing_rule_asset': dict(base, rule_asset_uids=[]),
+            'path_not_selected': dict(base, tree_issue_ids=['X.Y.Z']),
+            'selected_sibling_path_not_approved_mapping': dict(
+                base, tree_issue_ids=[sibling],
+            ),
+            'no_mapping_from_selected_path': dict(
+                base,
+                tree_mapping_rule_uids_by_issue={issue: []},
+                tree_mapped_rule_uids_before_gate=[],
+                tree_expansion_trace=[],
+                tree_rule_uids=[],
+                tree_selection_path_rankings=[],
+            ),
+            'filtered_by_gate': dict(
+                base,
+                tree_rule_uids=[],
+                tree_expansion_trace=[],
+                tree_selection_path_rankings=[],
+            ),
+            'non_actionable_role': dict(
+                base, tree_non_actionable_rule_uids=['R'],
+            ),
+            'collapsed_by_issue_group': dict(
+                base,
+                tree_selection_path_rankings=[],
+                tree_group_collapses=[{'collapsed_supporting_rule_uids': ['R']}],
+            ),
+            'per_path_limit': dict(
+                base,
+                tree_selection_dropped_rules=[
+                    {'rule_uid': 'R', 'drop_reason': 'per_path_limit_exceeded'}
+                ],
+            ),
+            'global_role_limit': dict(
+                base,
+                tree_selection_dropped_rules=[
+                    {'rule_uid': 'R', 'drop_reason': 'direct_global_limit_exceeded'}
+                ],
+            ),
+            'expanded': dict(
+                base, tree_selected_actionable_rule_uids=['R'],
+            ),
+        }
+        for expected, case in variants.items():
+            with self.subTest(expected=expected):
+                self.assertEqual(expected, classify_expected_rule_loss(case, 'R'))
+
+    def test_aggregates_expected_rule_loss_counts_and_case_details(self):
+        result = evaluate_shadow_cases([{
+            'case_id': 'C-LOSS',
+            'expected_rule_uids': ['R-1'],
+            'expected_rule_issue_ids': {'R-1': ['A.B.C']},
+            'rule_asset_uids': ['R-1'],
+            'tree_issue_ids': ['X.Y.Z'],
+        }])
+        self.assertEqual({'path_not_selected': 1}, result['expected_rule_loss_counts'])
+        self.assertEqual(
+            [{'case_id': 'C-LOSS', 'rule_uid': 'R-1', 'classification': 'path_not_selected'}],
+            result['expected_rule_loss_by_case'],
+        )
+
     def test_recall_counts_repeated_expected_uid_per_case(self):
         result = evaluate_shadow_cases([
             {"expected_rule_uids": ["R-1"], "tree_rule_uids": ["R-1"], "tree_status": "ok"},
@@ -52,6 +141,47 @@ class IssueTreeShadowEvalTests(unittest.TestCase):
         self.assertEqual(["R-3"], result[0]["tree_selected_fact_check_rule_uids"])
         self.assertEqual(["R-2", "R-3"], result[0]["tree_selected_actionable_rule_uids"])
         self.assertEqual([{"reason": "invalid_issue_path"}], result[0]["tree_rejected_paths"])
+
+    def test_extracts_expansion_and_targeted_selection_diagnostics(self):
+        def fake_audit(payload, base_dir=None, diagnostics=None):
+            return {'code': 0, 'data': {'matched_rules': [], 'issue_tree_shadow_recall': {
+                'status': 'ok',
+                'selected_issue_paths': [{'level_3_issue_id': 'A.B.C'}],
+                'mapped_rule_uids_before_gate': ['R-1', 'R-2'],
+                'eligible_rule_uids_after_gate': ['R-1'],
+                'rejected_rule_uids': [
+                    {'rule_uid': 'R-2', 'issue_id': 'A.B.C', 'reason': 'industry_mismatch'}
+                ],
+                'trace': [
+                    {'canonical_rule_uid': 'R-1', 'issue_id': 'A.B.C',
+                     'mapping_type': 'direct'}
+                ],
+                'rule_selection': {
+                    'status': 'ok',
+                    'semantic_status': 'ok',
+                    'group_collapses': [
+                        {'collapsed_supporting_rule_uids': ['R-3']}
+                    ],
+                    'displaced_by_targeted_policy': [
+                        {'rule_uid': 'R-4', 'displaced_by_rule_uid': 'R-1'}
+                    ],
+                    'quota_allocations': [
+                        {'slot_number': 1, 'allocation_phase': 'family_coverage',
+                         'winning_rule_uid': 'R-1'}
+                    ],
+                },
+            }}}
+
+        result = run_shadow_cases(
+            [{'case_id': 'C-DIAG', 'input_payload': {}, 'expected': {}}],
+            fake_audit,
+        )[0]
+        self.assertEqual(['R-1', 'R-2'], result['tree_mapped_rule_uids_before_gate'])
+        self.assertEqual('R-1', result['tree_expansion_trace'][0]['canonical_rule_uid'])
+        self.assertEqual('R-2', result['tree_rejected_rule_uids'][0]['rule_uid'])
+        self.assertEqual(['R-3'], result['tree_group_collapses'][0]['collapsed_supporting_rule_uids'])
+        self.assertEqual('R-4', result['tree_targeted_displacements'][0]['rule_uid'])
+        self.assertEqual('R-1', result['tree_quota_allocations'][0]['winning_rule_uid'])
 
     def test_computes_recall_channel_overlap_and_latency(self):
         cases = [

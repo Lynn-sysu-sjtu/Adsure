@@ -72,6 +72,25 @@ class LegalIssueRuleSelectionTests(unittest.TestCase):
         self.assertEqual(["RUID-A"], [rule["rule_uid"] for rule in selected])
         self.assertEqual(["RUID-B"], supporting)
 
+    def test_explicit_preferred_uid_wins_within_non_platform_rules(self):
+        first = {
+            "rule_uid": "RUID-A",
+            "source_type": "法规",
+            "serial_no": 1,
+        }
+        preferred = {
+            "rule_uid": "RUID-PREFERRED",
+            "source_type": "法规",
+            "serial_no": 99,
+        }
+        selected, supporting = select_group_representatives(
+            [first, preferred],
+            platform="",
+            preferred_rule_uid="RUID-PREFERRED",
+        )
+        self.assertEqual(["RUID-PREFERRED"], [rule["rule_uid"] for rule in selected])
+        self.assertEqual(["RUID-A"], supporting)
+
 
 if __name__ == "__main__":
     unittest.main()

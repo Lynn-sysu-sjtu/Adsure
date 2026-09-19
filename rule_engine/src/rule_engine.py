@@ -278,7 +278,7 @@ def recall_rules(
 
     def run_semantic_recall():
         hits_by_identity = {
-            rule_identity(rule) or rule.get("rule_id"): hits
+            rule_identity(rule): hits
             for rule, hits in keyword_recalled
         }
         semantic_recalled = []
@@ -291,7 +291,7 @@ def recall_rules(
                 threshold=threshold,
                 limit=limit,
             ):
-                identity = rule_identity(rule) or rule.get("rule_id")
+                identity = rule_identity(rule)
                 if identity in hits_by_identity:
                     existing_hits = hits_by_identity[identity]
                     for hit in hits:
@@ -335,6 +335,7 @@ def recall_rules(
     catalog_context = dict(context_package)
     catalog_context["existing_candidate_rules"] = [
         {
+            "rule_uid": rule.get("rule_uid"),
             "rule_id": rule.get("rule_id"),
             "title": rule.get("title"),
             "dimension": rule.get("dimension"),
@@ -960,6 +961,7 @@ def _run_issue_tree_shadow(base, request, judgment_context_package, rules):
             judgment_context_package,
             pruned,
             timeout=int(os.getenv("ADSURE_ISSUE_TREE_TIMEOUT") or "5"),
+            preservation_tree=runtime,
         )
         mapping_asset = json.loads(mapping_path.read_text(encoding="utf-8-sig"))
         leaf_ids = [
@@ -1039,7 +1041,11 @@ def _subsumption_fallback_response(request, context_package, audit_timestamp, re
                 "final_risk_reason": reason_code,
             },
             "matched_rules": [],
-            "semantic_recall": {"enabled": True, "matched_rule_ids": []},
+            "semantic_recall": {
+                "enabled": True,
+                "matched_rule_uids": [],
+                "matched_rule_ids": [],
+            },
             "rule_judgments": [],
             "llm_judgment": {
                 "engine": "subsumption_fallback",
@@ -1213,6 +1219,7 @@ def audit(payload, base_dir=None, diagnostics=None):
             "matched_rules": matched_rules,
             "semantic_recall": {
                 "enabled": True,
+                "matched_rule_uids": [rule.get("rule_uid") for rule in matched_rules if rule.get("recall_channel") == "semantic"],
                 "matched_rule_ids": [rule.get("rule_id") for rule in matched_rules if rule.get("recall_channel") == "semantic"],
             },
             "rule_judgments": validated_subsumption.judgments,

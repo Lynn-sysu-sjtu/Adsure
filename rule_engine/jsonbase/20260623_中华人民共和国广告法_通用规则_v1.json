@@ -123,11 +123,17 @@
             "效果显著",
             "保证有效",
             "免费领取",
-            "限量但实际不限量"
+            "限量但实际不限量",
+            "前后对比",
+            "使用前",
+            "使用后",
+            "效果对比明显",
+            "嫩白无瑕"
           ],
           "regex": [
             "(\\d+天|\\d+小时).{0,8}(见效|改善|逆转|恢复)",
-            "(官方|权威).{0,6}(认证|推荐|背书)"
+            "(官方|权威).{0,6}(认证|推荐|背书)",
+            "(?:\\d+天.{0,20}(?:美白|祛斑|见效)|\\d+(?:\\.\\d+)?%用户.{0,8}见效|(?:一次|使用后).{0,12}(?:永不反弹|永久有效)|永不反弹|永久有效)"
           ],
           "context_signals": [
             "功能",
@@ -213,6 +219,11 @@
           {
             "scenario_id": "possibility_as_certainty",
             "vector_text": "把可能获得可能改善表述成必然结果",
+            "enabled": true
+          },
+          {
+            "scenario_id": "unverifiable_before_after_effect",
+            "vector_text": "用使用前后对比图宣称一瓶即可嫩白无瑕或让细纹消失，但没有同一模特、拍摄条件、使用周期和评价材料证明",
             "enabled": true
           }
         ]
@@ -1196,7 +1207,14 @@
         "trigger_layer_confidence": "high",
         "trigger_layer_source": "heuristic",
         "trigger_layer_labeled_at": "2026-07-14T13:16:41",
-        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714"
+        "trigger_layer_prompt_version": "trigger_layer_label_v1_20260714",
+        "semantic_scenarios": [
+          {
+            "scenario_id": "patent_claim_without_number_or_type",
+            "vector_text": "宣称荣获国家专利、独家专利配方或专利科技，却没有标明专利号和专利种类，也未提供有效专利证书",
+            "enabled": true
+          }
+        ]
       },
       "risk_level": "中",
       "consequence": {

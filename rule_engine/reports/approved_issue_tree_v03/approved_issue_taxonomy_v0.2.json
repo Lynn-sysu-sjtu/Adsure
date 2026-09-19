@@ -1897,10 +1897,20 @@
       "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
       "parent_issue_id": "ENDORSEMENT_REVIEW",
       "level": 2,
-      "node_type": "legal_issue",
+      "node_type": "directory",
       "name": "代言人实际使用义务",
       "definition": "",
       "reason": "",
+      "confidence": "high"
+    },
+    {
+      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY.ENDORSER_RECOMMENDS_WITHOUT_ACTUAL_USE",
+      "parent_issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
+      "level": 3,
+      "node_type": "legal_issue",
+      "name": "代言人未实际使用仍作推荐证明",
+      "definition": "广告代言人未实际使用商品或未接受服务，仍在广告中作推荐、证明。",
+      "reason": "将原错误挂在二级节点的实际使用义务规则迁移到明确可执行的三级叶子。",
       "confidence": "high"
     },
     {

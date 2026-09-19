@@ -3,7 +3,7 @@
 
 
 def rule_identity(rule):
-    """Return the globally unique UID, with legacy ID as migration fallback."""
+    """Return the globally unique runtime UID."""
     if not isinstance(rule, dict):
         return None
-    return rule.get("rule_uid") or rule.get("rule_id")
+    return rule.get("rule_uid")

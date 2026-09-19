@@ -128,10 +128,22 @@ class RuleAssetValidatorTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             jsonbase = Path(temp_dir) / "jsonbase"
             jsonbase.mkdir()
-            for filename, title in (("a.json", "规则A"), ("b.json", "规则B")):
+            for index, (filename, title) in enumerate(
+                (("a.json", "规则A"), ("b.json", "规则B")),
+                start=1,
+            ):
                 (jsonbase / filename).write_text(
                     json.dumps(
-                        {"legal_sources": [], "rules": [{"rule_id": "DUP-001", "title": title}]},
+                        {
+                            "legal_sources": [],
+                            "rules": [
+                                {
+                                    "rule_uid": f"RUID-DUP-{index:03d}",
+                                    "rule_id": "DUP-001",
+                                    "title": title,
+                                }
+                            ],
+                        },
                         ensure_ascii=False,
                     ),
                     encoding="utf-8",

@@ -30,12 +30,12 @@ def _catalog_limit(value=None):
 def build_catalog_messages(context_package, directory, limit=1):
     system_prompt = (
         "你是高精度广告合规规则目录召回器。默认返回空数组，宁可漏召回也不要泛化猜测。"
-        "只有物料原文直接、具体地表达了目录规则的核心行为时才能选择该rule_id；"
+        "只有物料原文直接、具体地表达了目录规则的核心行为时才能选择该rule_uid；"
         "一般性的促销、点击、效果、资质、广告标识或合规担忧，不足以召回开放性规则。"
         "每条选择必须引用物料中的连续原文证据；没有原文证据、仅有间接关联或不确定时不得选择。"
         "已有候选规则已经实质覆盖同一行为时，不得重复选择含义更宽泛的开放性规则；"
         "只有存在独立且未被已有候选覆盖的开放性风险时才可补充目录规则。"
-        "你只能从给定目录选择rule_id；不得判断是否违法，不得输出风险等级，不得生成目录外规则。只输出JSON。"
+        "你只能从给定目录选择rule_uid；不得判断是否违法，不得输出风险等级，不得生成目录外规则。只输出JSON。"
     )
     payload = {
         "task": "选择可能与物料表达相关的开放性规则，最多选择指定数量；不做法律结论。",
@@ -54,7 +54,7 @@ def build_catalog_messages(context_package, directory, limit=1):
         "output_contract": {
             "selected_rules": [
                 {
-                    "rule_id": "目录中的rule_id",
+                    "rule_uid": "目录中的rule_uid",
                     "evidence": "物料中的连续原文证据",
                     "reason": "证据与目录规则核心行为的直接对应关系，不判断违法",
                 }
@@ -86,7 +86,7 @@ def _normalized_evidence(value):
 
 def parse_catalog_selections(
     response,
-    allowed_ids,
+    allowed_uids,
     limit=1,
     material_text="",
     require_evidence=False,
@@ -96,31 +96,31 @@ def parse_catalog_selections(
     if isinstance(raw_items, list):
         candidates = [item for item in raw_items if isinstance(item, dict)]
     elif not require_evidence:
-        selected_ids = parsed.get("selected_rule_ids") or []
+        selected_uids = parsed.get("selected_rule_uids") or []
         candidates = [
-            {"rule_id": rule_id, "evidence": "", "reason": parsed.get("reason") or ""}
-            for rule_id in selected_ids
-        ] if isinstance(selected_ids, list) else []
+            {"rule_uid": rule_uid, "evidence": "", "reason": parsed.get("reason") or ""}
+            for rule_uid in selected_uids
+        ] if isinstance(selected_uids, list) else []
     else:
         candidates = []
 
     content = _normalized_evidence(material_text)
     selections = []
-    seen_ids = set()
+    seen_uids = set()
     for item in candidates:
-        rule_id = item.get("rule_id")
+        rule_uid = item.get("rule_uid")
         evidence = str(item.get("evidence") or "").strip()
         reason = str(item.get("reason") or "目录模型召回").strip()
-        if rule_id not in allowed_ids or rule_id in seen_ids:
+        if rule_uid not in allowed_uids or rule_uid in seen_uids:
             continue
         if require_evidence:
             normalized = _normalized_evidence(evidence)
             if not normalized or normalized not in content:
                 continue
-        seen_ids.add(rule_id)
+        seen_uids.add(rule_uid)
         selections.append(
             {
-                "rule_id": rule_id,
+                "rule_uid": rule_uid,
                 "evidence": evidence,
                 "reason": reason,
             }
@@ -130,10 +130,10 @@ def parse_catalog_selections(
     return selections
 
 
-def parse_catalog_response(response, allowed_ids, limit=1):
+def parse_catalog_response(response, allowed_uids, limit=1):
     return [
-        item["rule_id"]
-        for item in parse_catalog_selections(response, allowed_ids, limit=limit)
+        item["rule_uid"]
+        for item in parse_catalog_selections(response, allowed_uids, limit=limit)
     ]
 
 
@@ -155,7 +155,7 @@ def catalog_recall_rules(
         return []
     backend = (backend or os.getenv("ADSURE_CATALOG_LLM_BACKEND") or "mock").lower()
     if backend == "mock":
-        response = mock_response if mock_response is not None else {"selected_rule_ids": [], "reason": ""}
+        response = mock_response if mock_response is not None else {"selected_rule_uids": [], "reason": ""}
     elif backend in {"deepseek", "real", "llm"}:
         try:
             if client is None:
@@ -184,18 +184,18 @@ def catalog_recall_rules(
             return []
     else:
         return []
-    allowed_ids = {item["rule_id"] for item in directory}
+    allowed_uids = {item["rule_uid"] for item in directory}
     selections = parse_catalog_selections(
         response,
-        allowed_ids,
+        allowed_uids,
         limit=_catalog_limit(limit),
         material_text=context_package.get("material_text") or "",
         require_evidence=backend in {"deepseek", "real", "llm"},
     )
-    rules_by_id = {rule.get("rule_id"): rule for rule in rules}
+    rules_by_uid = {rule.get("rule_uid"): rule for rule in rules}
     recalled = []
     for item in selections:
-        rule = rules_by_id.get(item["rule_id"])
+        rule = rules_by_uid.get(item["rule_uid"])
         if not rule:
             continue
         reason = item.get("reason") or "目录模型召回"

@@ -39,6 +39,22 @@ def validate_legal_issue_groups(asset, rules):
         if not group_id or group_id in seen_groups:
             raise ValueError(f"Invalid or duplicate issue_group_id: {group_id}")
         seen_groups.add(group_id)
+        member_uids = group.get("member_rule_uids", []) or []
+        preferred_uid = str(group.get("preferred_rule_uid") or "").strip()
+        if preferred_uid and preferred_uid not in member_uids:
+            raise ValueError(
+                f"preferred_rule_uid must be a member of legal issue group: {group_id}"
+            )
+        preferred_by_industry = group.get("preferred_rule_uids_by_industry") or {}
+        if not isinstance(preferred_by_industry, dict):
+            raise ValueError(
+                f"preferred_rule_uids_by_industry must be an object: {group_id}"
+            )
+        if any(uid not in member_uids for uid in preferred_by_industry.values()):
+            raise ValueError(
+                "industry preferred rule must be a member of legal issue group: "
+                + group_id
+            )
         policy = group.get("selection_policy") or {}
         if policy:
             if policy.get("primary_rule_strategy") != "highest_legal_authority" or policy.get("platform_rule_strategy") != "current_platform_only":
@@ -48,7 +64,7 @@ def validate_legal_issue_groups(asset, rules):
                 if not isinstance(value, int) or value < 1:
                     raise ValueError(f"Invalid {limit_name} in legal issue group: {group_id}")
         layers = set()
-        for uid in group.get("member_rule_uids", []) or []:
+        for uid in member_uids:
             if uid not in known:
                 raise ValueError(f"Unknown rule_uid in legal issue group: {uid}")
             if uid in membership:
@@ -73,9 +89,11 @@ def _platform_values(rule):
     if value in (None, ""):
         value = (rule.get("applies_to") or {}).get("platforms")
     if isinstance(value, (list, tuple, set)):
-        return {str(item).strip().lower() for item in value if str(item).strip()}
-    text = str(value or "").strip().lower()
-    return {text} if text else set()
+        values = {str(item).strip().lower() for item in value if str(item).strip()}
+    else:
+        text = str(value or "").strip().lower()
+        values = {text} if text else set()
+    return values - {"通用", "all", "*"}
 
 
 def _specificity(rule):
@@ -94,7 +112,7 @@ def _selection_key(rule):
     )
 
 
-def select_group_representatives(rules, platform=""):
+def select_group_representatives(rules, platform="", preferred_rule_uid=""):
     """Return selected rules and stable supporting UIDs for one issue group."""
     rules = list(rules or [])
     requested_platform = str(platform or "").strip().lower()
@@ -103,7 +121,14 @@ def select_group_representatives(rules, platform=""):
     selected = []
 
     if non_platform:
-        selected.append(sorted(non_platform, key=_selection_key)[0])
+        preferred = next(
+            (
+                rule for rule in non_platform
+                if rule_identity(rule) == str(preferred_rule_uid or "").strip()
+            ),
+            None,
+        )
+        selected.append(preferred or sorted(non_platform, key=_selection_key)[0])
 
     if requested_platform:
         matching = [rule for rule in platform_rules if requested_platform in _platform_values(rule)]

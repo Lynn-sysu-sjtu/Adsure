@@ -12,6 +12,7 @@ from catalog_recall import (
 
 RULES = [
     {
+        "rule_uid": "RUID-OPEN-001",
         "rule_id": "OPEN-001",
         "title": "开放规则一",
         "dimension": "良好风尚",
@@ -23,6 +24,7 @@ RULES = [
         },
     },
     {
+        "rule_uid": "RUID-OPEN-002",
         "rule_id": "OPEN-002",
         "title": "开放规则二",
         "dimension": "公共利益",
@@ -43,9 +45,14 @@ class CatalogRecallTests(unittest.TestCase):
 
         self.assertEqual([], recalled)
 
-    def test_mock_response_filters_unknown_ids_deduplicates_and_limits(self):
+    def test_mock_response_filters_unknown_uids_deduplicates_and_limits(self):
         response = {
-            "selected_rule_ids": ["OPEN-001", "UNKNOWN", "OPEN-001", "OPEN-002"],
+            "selected_rule_uids": [
+                "RUID-OPEN-001",
+                "RUID-UNKNOWN",
+                "RUID-OPEN-001",
+                "RUID-OPEN-002",
+            ],
             "reason": "存在开放性风险",
         }
 
@@ -59,11 +66,11 @@ class CatalogRecallTests(unittest.TestCase):
             mock_response=response,
         )
 
-        self.assertEqual(["OPEN-001"], [rule["rule_id"] for rule, _ in recalled])
+        self.assertEqual(["RUID-OPEN-001"], [rule["rule_uid"] for rule, _ in recalled])
         self.assertEqual(["llm_catalog:存在开放性风险"], recalled[0][1])
 
     def test_parse_catalog_response_returns_empty_for_malformed_json(self):
-        self.assertEqual([], parse_catalog_response("not-json", {"OPEN-001"}, limit=3))
+        self.assertEqual([], parse_catalog_response("not-json", {"RUID-OPEN-001"}, limit=3))
 
     def test_catalog_prompt_contains_compact_directory_and_no_risk_task(self):
         messages = build_catalog_messages(
@@ -72,6 +79,7 @@ class CatalogRecallTests(unittest.TestCase):
                 "industry": "通用",
                 "existing_candidate_rules": [
                     {
+                        "rule_uid": "RUID-GEN-COMPARE-001",
                         "rule_id": "GEN-COMPARE-001",
                         "title": "不得贬低其他经营者",
                         "dimension": "竞品贬低",
@@ -80,6 +88,7 @@ class CatalogRecallTests(unittest.TestCase):
             },
             [
                 {
+                    "rule_uid": "RUID-OPEN-001",
                     "rule_id": "OPEN-001",
                     "title": "开放规则一",
                     "dimension": "良好风尚",
@@ -92,16 +101,19 @@ class CatalogRecallTests(unittest.TestCase):
         )
 
         payload = json.loads(messages[1]["content"])
-        self.assertEqual(["OPEN-001"], [item["rule_id"] for item in payload["rule_directory"]])
+        self.assertEqual(
+            ["RUID-OPEN-001"],
+            [item["rule_uid"] for item in payload["rule_directory"]],
+        )
         self.assertNotIn("risk_level", messages[1]["content"])
         self.assertIn("不得判断是否违法", messages[0]["content"])
         self.assertIn("默认返回空数组", messages[0]["content"])
         self.assertIn("原文证据", messages[0]["content"])
         self.assertIn("不得重复选择", messages[0]["content"])
         self.assertEqual(
-            ["GEN-COMPARE-001"],
+            ["RUID-GEN-COMPARE-001"],
             [
-                item["rule_id"]
+                item["rule_uid"]
                 for item in payload["existing_candidate_rules"]
             ],
         )
@@ -117,7 +129,7 @@ class CatalogRecallTests(unittest.TestCase):
                                     {
                                         "selected_rules": [
                                             {
-                                                "rule_id": "OPEN-002",
+                                                "rule_uid": "RUID-OPEN-002",
                                                 "evidence": "利用灾难制造恐慌",
                                                 "reason": "直接描述制造恐慌",
                                             }
@@ -139,7 +151,7 @@ class CatalogRecallTests(unittest.TestCase):
             client=FakeClient(),
         )
 
-        self.assertEqual(["OPEN-002"], [rule["rule_id"] for rule, _ in recalled])
+        self.assertEqual(["RUID-OPEN-002"], [rule["rule_uid"] for rule, _ in recalled])
 
     def test_deepseek_backend_rejects_invented_evidence(self):
         class FakeClient:
@@ -152,7 +164,7 @@ class CatalogRecallTests(unittest.TestCase):
                                     {
                                         "selected_rules": [
                                             {
-                                                "rule_id": "OPEN-001",
+                                                "rule_uid": "RUID-OPEN-001",
                                                 "evidence": "文案中不存在的羞辱表达",
                                                 "reason": "猜测可能相关",
                                             }
@@ -191,6 +203,51 @@ class CatalogRecallTests(unittest.TestCase):
         )
 
         self.assertEqual([], recalled)
+
+    def test_duplicate_legacy_id_maps_selected_uid_to_its_own_rule(self):
+        duplicate_rules = [
+            {
+                "rule_uid": "RUID-FIRST",
+                "rule_id": "DUPLICATE-001",
+                "title": "first title",
+                "dimension": "first dimension",
+                "legal_basis": [{"article": "first article"}],
+                "recall": {
+                    "trigger_layer": "content",
+                    "catalog_recall_enabled": True,
+                    "catalog_text": "first catalog text",
+                    "catalog_group": "values",
+                },
+            },
+            {
+                "rule_uid": "RUID-SECOND",
+                "rule_id": "DUPLICATE-001",
+                "title": "second title",
+                "dimension": "second dimension",
+                "legal_basis": [{"article": "second article"}],
+                "recall": {
+                    "trigger_layer": "content",
+                    "catalog_recall_enabled": True,
+                    "catalog_text": "second catalog text",
+                    "catalog_group": "values",
+                },
+            },
+        ]
+
+        recalled = catalog_recall_rules(
+            duplicate_rules,
+            {},
+            {},
+            backend="mock",
+            enabled=True,
+            mock_response={"selected_rule_uids": ["RUID-FIRST"]},
+        )
+
+        self.assertEqual(1, len(recalled))
+        selected_rule = recalled[0][0]
+        self.assertEqual("RUID-FIRST", selected_rule["rule_uid"])
+        self.assertEqual("first title", selected_rule["title"])
+        self.assertEqual("first article", selected_rule["legal_basis"][0]["article"])
 
 
 

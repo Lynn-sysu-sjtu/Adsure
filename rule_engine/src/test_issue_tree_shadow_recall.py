@@ -44,6 +44,56 @@ def _payload(**changes):
     return {"selected_paths": [path]}
 
 
+def _multi_tree():
+    return {
+        'branches': [{
+            'issue_id': 'L1-' + str(index),
+            'children': [{
+                'issue_id': 'L1-' + str(index) + '.L2',
+                'children': [{
+                    'issue_id': 'L1-' + str(index) + '.L2.LEAF',
+                    'children': [],
+                }],
+            }],
+        } for index in range(1, 5)],
+    }
+
+
+def _targeted_tree():
+    paths = (
+        (
+            "SCOPE_ACCESS",
+            "SCOPE_ACCESS.AD_REVIEW_ACCESS",
+            "SCOPE_ACCESS.AD_REVIEW_ACCESS.PRE_REVIEW_APPROVAL_AND_CONTENT_CONSISTENCY",
+        ),
+        (
+            "EVIDENCE_FACT",
+            "EVIDENCE_FACT.QUALIFICATION_FILING",
+            "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+        ),
+        (
+            "IP_PERSONALITY",
+            "IP_PERSONALITY.PATENT_AWARD",
+            "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE",
+        ),
+        (
+            "TRUTHFULNESS",
+            "TRUTHFULNESS.FALSE_FACT",
+            "TRUTHFULNESS.FALSE_FACT.FALSE_ADVERTISING_SPECIFIC_FACTS",
+        ),
+    )
+    branches = []
+    for level_1, level_2, level_3 in paths:
+        branches.append({
+            "issue_id": level_1,
+            "children": [{
+                "issue_id": level_2,
+                "children": [{"issue_id": level_3, "children": []}],
+            }],
+        })
+    return {"branches": branches}
+
+
 class _Client:
     def __init__(self, payload=None, error=None):
         self.payload = payload
@@ -56,6 +106,170 @@ class _Client:
 
 
 class IssueTreeShadowRecallTests(unittest.TestCase):
+    def test_health_food_context_preserves_pre_review_and_qualification_fact_paths(self):
+        result = recall_issue_tree_shadow(
+            {
+                "material_text": "国家蓝帽认证，进口保健食品",
+                "supplemental_background": "未提供蓝帽标志授权、进口报关及注册/备案证明。",
+                "industry": "保健食品",
+                "product_category": "进口保健食品",
+            },
+            _targeted_tree(),
+            client=_Client({"selected_paths": []}),
+        )
+        selected = {
+            item["level_3_issue_id"]: item
+            for item in result["selected_issue_paths"]
+        }
+        self.assertIn(
+            "SCOPE_ACCESS.AD_REVIEW_ACCESS.PRE_REVIEW_APPROVAL_AND_CONTENT_CONSISTENCY",
+            selected,
+        )
+        self.assertIn(
+            "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+            selected,
+        )
+        self.assertIn(
+            "TRUTHFULNESS.FALSE_FACT.FALSE_ADVERTISING_SPECIFIC_FACTS",
+            selected,
+        )
+        self.assertEqual(
+            "direct",
+            selected[
+                "TRUTHFULNESS.FALSE_FACT.FALSE_ADVERTISING_SPECIFIC_FACTS"
+            ]["suggested_outcome"],
+        )
+        self.assertEqual(
+            "fact_check",
+            selected[
+                "SCOPE_ACCESS.AD_REVIEW_ACCESS.PRE_REVIEW_APPROVAL_AND_CONTENT_CONSISTENCY"
+            ]["suggested_outcome"],
+        )
+        self.assertTrue(all(
+            item["targeted_path_priority_applied"]
+            for item in selected.values()
+        ))
+
+    def test_patent_claim_preserves_missing_number_and_type_fact_path(self):
+        result = recall_issue_tree_shadow(
+            {
+                "material_text": "独家国家专利抗皱配方，专利科技让细纹消失。",
+                "supplemental_background": "素材未标明专利号和专利种类，也未提供有效专利证书。",
+                "industry": "美妆",
+                "product_category": "护肤",
+            },
+            _targeted_tree(),
+            client=_Client({"selected_paths": []}),
+        )
+        self.assertEqual(
+            [
+                "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE"
+            ],
+            [
+                item["level_3_issue_id"]
+                for item in result["selected_issue_paths"]
+            ],
+        )
+        self.assertEqual(
+            "fact_check",
+            result["selected_issue_paths"][0]["suggested_outcome"],
+        )
+
+    def test_targeted_priority_is_merged_when_provider_already_returned_same_leaf(self):
+        preserved = {
+            "level_1_issue_id": "L1",
+            "level_2_issue_id": "L1.L2",
+            "level_3_issue_id": "L1.L2.LEAF",
+            "trigger_source": "mixed",
+            "content_evidence": "7天彻底祛斑",
+            "context_evidence": "",
+            "suggested_outcome": "fact_check",
+            "confidence": 1.0,
+            "targeted_path_policy_id": "policy-v1",
+            "targeted_path_priority_applied": True,
+        }
+        valid, rejected = validate_selected_paths(
+            _payload(),
+            _tree(),
+            "新品：7天彻底祛斑！",
+            "普通化妆品",
+            preserved_paths=[preserved],
+        )
+        self.assertEqual([], rejected)
+        self.assertEqual(1, len(valid))
+        self.assertTrue(valid[0]["targeted_path_priority_applied"])
+        self.assertEqual("policy-v1", valid[0]["targeted_path_policy_id"])
+    def test_validates_all_paths_then_ranks_evidence_before_hierarchy_limits(self):
+        payload = {'selected_paths': [
+            {
+                'level_1_issue_id': 'L1-1',
+                'level_2_issue_id': 'L1-1.L2',
+                'level_3_issue_id': 'L1-1.L2.LEAF',
+                'trigger_source': 'context',
+                'content_evidence': '',
+                'context_evidence': 'background fact',
+                'suggested_outcome': 'proactive_check',
+                'confidence': 0.99,
+            },
+            {
+                'level_1_issue_id': 'L1-2',
+                'level_2_issue_id': 'L1-2.L2',
+                'level_3_issue_id': 'L1-2.L2.LEAF',
+                'trigger_source': 'content',
+                'content_evidence': 'claim beta',
+                'context_evidence': '',
+                'suggested_outcome': 'fact_check',
+                'confidence': 0.95,
+            },
+            {
+                'level_1_issue_id': 'L1-3',
+                'level_2_issue_id': 'L1-3.L2',
+                'level_3_issue_id': 'L1-3.L2.LEAF',
+                'trigger_source': 'content',
+                'content_evidence': 'claim gamma',
+                'context_evidence': '',
+                'suggested_outcome': 'direct',
+                'confidence': 0.40,
+            },
+            {
+                'level_1_issue_id': 'L1-4',
+                'level_2_issue_id': 'L1-4.L2',
+                'level_3_issue_id': 'L1-4.L2.LEAF',
+                'trigger_source': 'content',
+                'content_evidence': 'claim delta',
+                'context_evidence': '',
+                'suggested_outcome': 'direct',
+                'confidence': 0.90,
+            },
+        ]}
+        result = recall_issue_tree_shadow(
+            {
+                'material_text': 'claim beta claim gamma claim delta',
+                'supplemental_background': 'background fact',
+            },
+            _multi_tree(),
+            client=_Client(payload),
+        )
+
+        pre_limit = [
+            item['level_3_issue_id'] for item in result['pre_limit_valid_paths']
+        ]
+        selected = [
+            item['level_3_issue_id'] for item in result['post_limit_selected_paths']
+        ]
+        self.assertEqual(
+            ['L1-4.L2.LEAF', 'L1-3.L2.LEAF', 'L1-2.L2.LEAF', 'L1-1.L2.LEAF'],
+            pre_limit,
+        )
+        self.assertEqual(
+            ['L1-4.L2.LEAF', 'L1-3.L2.LEAF', 'L1-2.L2.LEAF'],
+            selected,
+        )
+        self.assertEqual(
+            'L1-1.L2.LEAF',
+            result['limit_displacements'][0]['level_3_issue_id'],
+        )
+
     def test_prompt_contains_context_and_tree_but_not_rule_uids(self):
         messages = build_issue_tree_messages(
             {

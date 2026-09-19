@@ -1,46 +1,11 @@
 {
   "version": "v0.1",
   "source_hashes": {
-    "jsonbase": "15c366afa4ec397a7146b0effeffeb15603f90b508cdf79a3b530b42d13d98d7",
-    "mapping": "052fe75bd8816e0f32bb9e82ef884f1811263fa9f63be235fcfdd484dfe6b779",
-    "taxonomy": "a52a63a148466637bcc1d50c882747e827894928175509e935b40baa96ffc84d"
+    "jsonbase": "51528559979d4c3731f11f5b4c062643748f3924c14d811178026d7781d09864",
+    "mapping": "c3e67adb9718f4d10d872f02561780ab091c8c6c584870f8cb01ccebf69757bf",
+    "taxonomy": "8b646551ad246944151121c025499295f7a092a34a7fb4e0642740a041e995bf"
   },
   "compile_exclusions": [
-    {
-      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
-      "rule_uid": "RUID-79468f9702e16ad3",
-      "original_rule_uid": "RUID-79468f9702e16ad3",
-      "mapping_type": "direct",
-      "reason": "non_leaf_mapping_target"
-    },
-    {
-      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
-      "rule_uid": "RUID-8c3736290884aeb7",
-      "original_rule_uid": "RUID-8c3736290884aeb7",
-      "mapping_type": "direct",
-      "reason": "non_leaf_mapping_target"
-    },
-    {
-      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
-      "rule_uid": "RUID-94af376237103381",
-      "original_rule_uid": "RUID-94af376237103381",
-      "mapping_type": "direct",
-      "reason": "non_leaf_mapping_target"
-    },
-    {
-      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
-      "rule_uid": "RUID-b0c92cce2582d347",
-      "original_rule_uid": "RUID-b0c92cce2582d347",
-      "mapping_type": "direct",
-      "reason": "non_leaf_mapping_target"
-    },
-    {
-      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
-      "rule_uid": "RUID-d31f24a1455c5ead",
-      "original_rule_uid": "RUID-d31f24a1455c5ead",
-      "mapping_type": "direct",
-      "reason": "non_leaf_mapping_target"
-    },
     {
       "issue_id": "ENDORSEMENT.RELATION_IDENTIFICATION",
       "rule_uid": "RUID-778e0278994f809d",
@@ -114,6 +79,11 @@
                 {
                   "rule_uid": "RUID-99f84f14d05a5e71",
                   "original_rule_uid": "RUID-99f84f14d05a5e71",
+                  "mapping_type": "direct"
+                },
+                {
+                  "rule_uid": "RUID-b60852699e8ddd70",
+                  "original_rule_uid": "RUID-b60852699e8ddd70",
                   "mapping_type": "direct"
                 }
               ]
@@ -1660,6 +1630,11 @@
                   "mapping_type": "direct"
                 },
                 {
+                  "rule_uid": "RUID-1e455acefad683e3",
+                  "original_rule_uid": "RUID-1e455acefad683e3",
+                  "mapping_type": "direct"
+                },
+                {
                   "rule_uid": "RUID-229e394a1d9023ee",
                   "original_rule_uid": "RUID-229e394a1d9023ee",
                   "mapping_type": "direct"
@@ -2515,7 +2490,44 @@
           "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
           "name": "代言人实际使用义务",
           "level": 2,
-          "children": []
+          "children": [
+            {
+              "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY.ENDORSER_RECOMMENDS_WITHOUT_ACTUAL_USE",
+              "name": "代言人未实际使用仍作推荐证明",
+              "level": 3,
+              "definition": "广告代言人未实际使用商品或未接受服务，仍在广告中作推荐、证明。",
+              "available_mapping_roles": [
+                "direct"
+              ],
+              "mappings": [
+                {
+                  "rule_uid": "RUID-79468f9702e16ad3",
+                  "original_rule_uid": "RUID-79468f9702e16ad3",
+                  "mapping_type": "direct"
+                },
+                {
+                  "rule_uid": "RUID-8c3736290884aeb7",
+                  "original_rule_uid": "RUID-8c3736290884aeb7",
+                  "mapping_type": "direct"
+                },
+                {
+                  "rule_uid": "RUID-94af376237103381",
+                  "original_rule_uid": "RUID-94af376237103381",
+                  "mapping_type": "direct"
+                },
+                {
+                  "rule_uid": "RUID-b0c92cce2582d347",
+                  "original_rule_uid": "RUID-b0c92cce2582d347",
+                  "mapping_type": "direct"
+                },
+                {
+                  "rule_uid": "RUID-d31f24a1455c5ead",
+                  "original_rule_uid": "RUID-d31f24a1455c5ead",
+                  "mapping_type": "direct"
+                }
+              ]
+            }
+          ]
         },
         {
           "issue_id": "ENDORSEMENT.PROACTIVE_CHECKLIST",
@@ -2760,6 +2772,7 @@
               "definition": "广告中使用通过测试、实验、试验、市场调查或市场统计方式取得的数据、统计资料、调查结果等引证内容但未提供对应证明材料，或对产品功效进行宣称但未能提供或体现充分的科学依据，或对产品成分、材质进行阐释说明但未提供相关证明材料。",
               "available_mapping_roles": [
                 "direct",
+                "fact_check",
                 "proactive_check"
               ],
               "mappings": [
@@ -2774,13 +2787,13 @@
                   "mapping_type": "direct"
                 },
                 {
-                  "rule_uid": "RUID-06ec2b429e927cba",
-                  "original_rule_uid": "RUID-06ec2b429e927cba",
-                  "mapping_type": "proactive_check"
-                },
-                {
                   "rule_uid": "RUID-9ecf144ad28c1c77",
                   "original_rule_uid": "RUID-9ecf144ad28c1c77",
+                  "mapping_type": "fact_check"
+                },
+                {
+                  "rule_uid": "RUID-06ec2b429e927cba",
+                  "original_rule_uid": "RUID-06ec2b429e927cba",
                   "mapping_type": "proactive_check"
                 },
                 {
@@ -2796,7 +2809,8 @@
               "level": 3,
               "definition": "广告中使用数据、统计资料、调查结果、文摘、引用语等引证内容，未表明出处，或引证内容有适用范围和有效期限但未明确表示。",
               "available_mapping_roles": [
-                "direct"
+                "direct",
+                "fact_check"
               ],
               "mappings": [
                 {
@@ -2818,6 +2832,11 @@
                   "rule_uid": "RUID-d75f8ff6a418a789",
                   "original_rule_uid": "RUID-d75f8ff6a418a789",
                   "mapping_type": "direct"
+                },
+                {
+                  "rule_uid": "RUID-5b2a03e0fd190b3e",
+                  "original_rule_uid": "RUID-5b2a03e0fd190b3e",
+                  "mapping_type": "fact_check"
                 }
               ]
             },
@@ -3040,6 +3059,7 @@
               "definition": "广告投放时产品资质材料不完整、与广告内容不一致或未展示披露，包括进口或跨境产品缺少报关单、原产地证明、质检报告、中文标签、审结书或以报关单替代3C证明，珠宝玉石鉴定证书材质与宣传不一致，游戏未提供审批证明或著作权登记证书，普通食品宣称绿色或有机未展示认证证书，化妆品标签与注册备案资料不一致或未披露备案证明、批准文号，保健食品注册证书载明事项不完整、标签说明书与注册备案内容不一致、未标注备案信息或备案号、广告未取得批准文件或与批准文件不一致等情形。",
               "available_mapping_roles": [
                 "direct",
+                "fact_check",
                 "proactive_check"
               ],
               "mappings": [
@@ -3087,6 +3107,11 @@
                   "rule_uid": "RUID-f32a3253c4fc02b2",
                   "original_rule_uid": "RUID-f32a3253c4fc02b2",
                   "mapping_type": "direct"
+                },
+                {
+                  "rule_uid": "RUID-4aee7195c03d3d3c",
+                  "original_rule_uid": "RUID-4aee7195c03d3d3c",
+                  "mapping_type": "fact_check"
                 },
                 {
                   "rule_uid": "RUID-058b7d8f6e5465f4",
@@ -3336,7 +3361,8 @@
               "level": 3,
               "definition": "广告中涉及专利产品、专利方法或专利技术宣传时，未清晰、完整、准确、规范地标注专利号和专利种类。",
               "available_mapping_roles": [
-                "direct"
+                "direct",
+                "fact_check"
               ],
               "mappings": [
                 {
@@ -3363,6 +3389,11 @@
                   "rule_uid": "RUID-b4e721c02d7dbf5c",
                   "original_rule_uid": "RUID-b4e721c02d7dbf5c",
                   "mapping_type": "direct"
+                },
+                {
+                  "rule_uid": "RUID-07fe253c98da8c7b",
+                  "original_rule_uid": "RUID-07fe253c98da8c7b",
+                  "mapping_type": "fact_check"
                 }
               ]
             },
@@ -4409,6 +4440,11 @@
                 {
                   "rule_uid": "RUID-430a1b69712f7e5e",
                   "original_rule_uid": "RUID-430a1b69712f7e5e",
+                  "mapping_type": "direct"
+                },
+                {
+                  "rule_uid": "RUID-7bb3f201c1db1fd8",
+                  "original_rule_uid": "RUID-7bb3f201c1db1fd8",
                   "mapping_type": "direct"
                 },
                 {
@@ -5838,6 +5874,7 @@
               "definition": "依法应当进行审查的广告（如保健食品、特殊医学用途配方食品、药品等），在发布前未取得广告审查机关审查批准，或审查批准文件缺失、过期、失效，或发布内容与审查批准内容不一致（含剪辑、拼接、修改未重新申请审查），或已审查广告内容改动后未重新申请审查。",
               "available_mapping_roles": [
                 "direct",
+                "fact_check",
                 "proactive_check"
               ],
               "mappings": [
@@ -5849,11 +5886,6 @@
                 {
                   "rule_uid": "RUID-109e8ea76581f516",
                   "original_rule_uid": "RUID-109e8ea76581f516",
-                  "mapping_type": "direct"
-                },
-                {
-                  "rule_uid": "RUID-1bac53642e0ddd34",
-                  "original_rule_uid": "RUID-1bac53642e0ddd34",
                   "mapping_type": "direct"
                 },
                 {
@@ -5877,11 +5909,6 @@
                   "mapping_type": "direct"
                 },
                 {
-                  "rule_uid": "RUID-70d3fcec74ce985b",
-                  "original_rule_uid": "RUID-70d3fcec74ce985b",
-                  "mapping_type": "direct"
-                },
-                {
                   "rule_uid": "RUID-9ec1a752a2051d8a",
                   "original_rule_uid": "RUID-9ec1a752a2051d8a",
                   "mapping_type": "direct"
@@ -5892,19 +5919,29 @@
                   "mapping_type": "direct"
                 },
                 {
+                  "rule_uid": "RUID-1bac53642e0ddd34",
+                  "original_rule_uid": "RUID-1bac53642e0ddd34",
+                  "mapping_type": "fact_check"
+                },
+                {
+                  "rule_uid": "RUID-70d3fcec74ce985b",
+                  "original_rule_uid": "RUID-70d3fcec74ce985b",
+                  "mapping_type": "fact_check"
+                },
+                {
                   "rule_uid": "RUID-b6d85093aac76c45",
                   "original_rule_uid": "RUID-b6d85093aac76c45",
-                  "mapping_type": "direct"
+                  "mapping_type": "fact_check"
                 },
                 {
                   "rule_uid": "RUID-c759ae9e2b02d013",
                   "original_rule_uid": "RUID-c759ae9e2b02d013",
-                  "mapping_type": "direct"
+                  "mapping_type": "fact_check"
                 },
                 {
                   "rule_uid": "RUID-f2c9db72fdae932e",
                   "original_rule_uid": "RUID-f2c9db72fdae932e",
-                  "mapping_type": "direct"
+                  "mapping_type": "fact_check"
                 },
                 {
                   "rule_uid": "RUID-cb412620a08c1b20",
@@ -6013,9 +6050,15 @@
               "level": 3,
               "definition": "广告主宣称或被视为符合特定投放资格（如KA客户、外部客户类型/行业限制等），但实际不符合判定标准；或广告主主体资格、行政许可、引证内容不符合法律法规要求，相关证明文件不真实、不合法、无效。",
               "available_mapping_roles": [
+                "fact_check",
                 "proactive_check"
               ],
               "mappings": [
+                {
+                  "rule_uid": "RUID-58e192a8dddf575c",
+                  "original_rule_uid": "RUID-58e192a8dddf575c",
+                  "mapping_type": "fact_check"
+                },
                 {
                   "rule_uid": "RUID-14a648905a045dda",
                   "original_rule_uid": "RUID-14a648905a045dda",
@@ -6024,11 +6067,6 @@
                 {
                   "rule_uid": "RUID-49e77c95d85621d7",
                   "original_rule_uid": "RUID-49e77c95d85621d7",
-                  "mapping_type": "proactive_check"
-                },
-                {
-                  "rule_uid": "RUID-58e192a8dddf575c",
-                  "original_rule_uid": "RUID-58e192a8dddf575c",
                   "mapping_type": "proactive_check"
                 }
               ]
@@ -6095,6 +6133,11 @@
                 {
                   "rule_uid": "RUID-c9860e35e255f11e",
                   "original_rule_uid": "RUID-c9860e35e255f11e",
+                  "mapping_type": "direct"
+                },
+                {
+                  "rule_uid": "RUID-d958618a8503a8de",
+                  "original_rule_uid": "RUID-d958618a8503a8de",
                   "mapping_type": "direct"
                 },
                 {
@@ -6213,6 +6256,11 @@
                   "mapping_type": "direct"
                 },
                 {
+                  "rule_uid": "RUID-6a53a40ee3899dba",
+                  "original_rule_uid": "RUID-6a53a40ee3899dba",
+                  "mapping_type": "direct"
+                },
+                {
                   "rule_uid": "RUID-7765255fe0e244d5",
                   "original_rule_uid": "RUID-7765255fe0e244d5",
                   "mapping_type": "direct"
@@ -6230,6 +6278,11 @@
                 {
                   "rule_uid": "RUID-b04dfa24711da00d",
                   "original_rule_uid": "RUID-b04dfa24711da00d",
+                  "mapping_type": "direct"
+                },
+                {
+                  "rule_uid": "RUID-d958618a8503a8de",
+                  "original_rule_uid": "RUID-d958618a8503a8de",
                   "mapping_type": "direct"
                 },
                 {
@@ -6612,6 +6665,11 @@
                 {
                   "rule_uid": "RUID-d8b2091501dd10bf",
                   "original_rule_uid": "RUID-d8b2091501dd10bf",
+                  "mapping_type": "direct"
+                },
+                {
+                  "rule_uid": "RUID-d958618a8503a8de",
+                  "original_rule_uid": "RUID-d958618a8503a8de",
                   "mapping_type": "direct"
                 },
                 {

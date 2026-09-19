@@ -54,6 +54,18 @@ class LegalIssueGroupAssetTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "trigger_layer"):
             validate_legal_issue_groups(asset, rules)
 
+    def test_preferred_rule_uid_must_be_a_group_member(self):
+        rules = [{"rule_uid": "RUID-ONE", "recall": {"trigger_layer": "fact"}}]
+        asset = {
+            "groups": [{
+                "issue_group_id": "preferred",
+                "member_rule_uids": ["RUID-ONE"],
+                "preferred_rule_uid": "RUID-OTHER",
+            }]
+        }
+        with self.assertRaisesRegex(ValueError, "preferred_rule_uid"):
+            validate_legal_issue_groups(asset, rules)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -155,6 +155,28 @@ class IssueTreeRuntimeTests(unittest.TestCase):
         self.assertEqual(["L1.L2.LEAF"], [item["issue_id"] for item in leaves])
         self.assertEqual("platform_scope_mismatch", rejected[0]["reason"])
 
+    def test_material_type_alias_survives_runtime_gate(self):
+        rules = _rules()
+        rules[0]["applies_to"]["material_types"] = ["短视频脚本中的文字内容"]
+        runtime = compile_runtime_tree(_taxonomy(), _mapping(), rules, {})
+        pruned, rejected = prune_runtime_tree(
+            runtime,
+            {rule["rule_uid"]: rule for rule in rules},
+            {
+                "context": {
+                    "industry": "美妆",
+                    "platforms": ["抖音"],
+                    "material_type": "短视频脚本",
+                }
+            },
+        )
+        leaves = pruned["branches"][0]["children"][0]["children"]
+        self.assertIn("L1.L2.LEAF", [item["issue_id"] for item in leaves])
+        self.assertNotIn(
+            "material_type_scope_mismatch",
+            [item["reason"] for item in rejected],
+        )
+
 
     def test_prunes_mapping_when_explicit_review_role_disagrees(self):
         rules = _rules()

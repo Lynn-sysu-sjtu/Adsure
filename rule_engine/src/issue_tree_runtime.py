@@ -7,6 +7,7 @@ import hashlib
 import json
 from pathlib import Path
 
+from applicability_aliases import material_type_scope_matches
 from rule_scope import platform_scope_matches
 
 
@@ -71,7 +72,7 @@ def _rule_rejection_reason(rule, request, mapping_type=None):
 
     allowed_types = set(_values(applies_to.get("material_types")))
     material_type = str(context.get("material_type") or "").strip()
-    if allowed_types and material_type and material_type not in allowed_types:
+    if not material_type_scope_matches(allowed_types, material_type):
         return "material_type_scope_mismatch"
     return ""
 

@@ -8,6 +8,7 @@ from rule_engine import recall_rules
 
 def _rule(rule_id, term=None):
     return {
+        "rule_uid": f"RUID-{rule_id}",
         "rule_id": rule_id,
         "serial_no": 1,
         "risk_level": "中",

@@ -3,6 +3,86 @@
   "status": "review_snapshot",
   "mappings": [
     {
+      "issue_id": "EFFICACY_PERFORMANCE.DISEASE_MEDICAL.DISEASE_TREATMENT_MEDICAL_CLAIM",
+      "rule_uid": "RUID-1e455acefad683e3",
+      "rule_title": "非医疗广告不得涉及疾病治疗和医疗用语",
+      "mapping_type": "direct",
+      "track": "通用",
+      "original_issue_id": "EFFICACY_PERFORMANCE.DISEASE_MEDICAL.DISEASE_TREATMENT_MEDICAL_CLAIM"
+    },
+    {
+      "issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS",
+      "rule_uid": "RUID-b60852699e8ddd70",
+      "rule_title": "广告不得使用绝对化用语等特别表述",
+      "mapping_type": "direct",
+      "track": "通用",
+      "original_issue_id": "CLAIM_EXPRESSION.ABSOLUTE.ABSOLUTE_SUPERLATIVE_TERMS"
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_SOURCE_SCOPE_OR_VALIDITY",
+      "rule_uid": "RUID-5b2a03e0fd190b3e",
+      "rule_title": "广告引证内容应真实准确并表明出处",
+      "mapping_type": "fact_check",
+      "track": "通用",
+      "original_issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_SOURCE_SCOPE_OR_VALIDITY"
+    },
+    {
+      "issue_id": "MINORS_PUBLIC_ORDER.MINOR_PAYMENT.MINOR_ANTI_ADDICTION_CIRCUMVENTION",
+      "rule_uid": "RUID-7bb3f201c1db1fd8",
+      "rule_title": "网络游戏用户账号实名注册制度",
+      "mapping_type": "direct",
+      "track": "游戏",
+      "original_issue_id": "MINORS_PUBLIC_ORDER.MINOR_PAYMENT.MINOR_ANTI_ADDICTION_CIRCUMVENTION"
+    },
+    {
+      "issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT",
+      "rule_uid": "RUID-4aee7195c03d3d3c",
+      "rule_title": "保健食品注册/备案要求：广告中不得声称产品已注册或备案但实际未完成",
+      "mapping_type": "fact_check",
+      "track": "保健食品",
+      "original_issue_id": "EVIDENCE_FACT.QUALIFICATION_FILING.PRODUCT_QUALIFICATION_MATERIAL_INCOMPLETE_OR_INCONSISTENT"
+    },
+    {
+      "issue_id": "TRUTHFULNESS.FALSE_FACT.FALSE_ADVERTISING_SPECIFIC_FACTS",
+      "rule_uid": "RUID-6a53a40ee3899dba",
+      "rule_title": "食品功效描述真实性要求",
+      "mapping_type": "direct",
+      "track": "保健食品",
+      "original_issue_id": "TRUTHFULNESS.FALSE_FACT.FALSE_ADVERTISING_SPECIFIC_FACTS"
+    },
+    {
+      "issue_id": "TRUTHFULNESS.MISLEADING_OMISSION.FALSE_ADVERTISING_GENERAL",
+      "rule_uid": "RUID-d958618a8503a8de",
+      "rule_title": "广告不得作虚假或引人误解宣传",
+      "mapping_type": "direct",
+      "track": "通用",
+      "original_issue_id": "TRUTHFULNESS.MISLEADING_OMISSION.FALSE_ADVERTISING_GENERAL"
+    },
+    {
+      "issue_id": "TRUTHFULNESS.FABRICATED_EFFECT.FABRICATED_EFFECT_GENERAL",
+      "rule_uid": "RUID-d958618a8503a8de",
+      "rule_title": "广告不得作虚假或引人误解宣传",
+      "mapping_type": "direct",
+      "track": "通用",
+      "original_issue_id": "TRUTHFULNESS.FABRICATED_EFFECT.FABRICATED_EFFECT_GENERAL"
+    },
+    {
+      "issue_id": "TRUTHFULNESS.FALSE_FACT.FALSE_ADVERTISING_SPECIFIC_FACTS",
+      "rule_uid": "RUID-d958618a8503a8de",
+      "rule_title": "广告不得作虚假或引人误解宣传",
+      "mapping_type": "direct",
+      "track": "通用",
+      "original_issue_id": "TRUTHFULNESS.FALSE_FACT.FALSE_ADVERTISING_SPECIFIC_FACTS"
+    },
+    {
+      "issue_id": "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE",
+      "rule_uid": "RUID-07fe253c98da8c7b",
+      "rule_title": "专利广告应标明专利号和种类",
+      "mapping_type": "fact_check",
+      "track": "通用",
+      "original_issue_id": "IP_PERSONALITY.PATENT_AWARD.PATENT_ADVERTISING_MISSING_PATENT_NUMBER_AND_TYPE"
+    },
+    {
       "issue_id": "SCOPE_ACCESS.AD_REVIEW_ACCESS.PRE_REVIEW_APPROVAL_AND_CONTENT_CONSISTENCY",
       "rule_uid": "RUID-0f8c44ce896ef618",
       "rule_title": "保健食品广告内容不得剪辑拼接修改",
@@ -32,7 +112,7 @@
       "issue_id": "SCOPE_ACCESS.AD_REVIEW_ACCESS.PRE_REVIEW_APPROVAL_AND_CONTENT_CONSISTENCY",
       "rule_uid": "RUID-1bac53642e0ddd34",
       "rule_title": "保健食品广告未经审查不得发布",
-      "mapping_type": "direct",
+      "mapping_type": "fact_check",
       "track": "保健食品",
       "source_file": "保健食品/20260705_药品、医疗器械、保健食品、特殊医学用途配方食品广告审查管理暂行办法_2020.03.01生效_20260617下载_规则拆解_v1.json",
       "source_type": "法规",
@@ -84,7 +164,7 @@
       "issue_id": "SCOPE_ACCESS.AD_REVIEW_ACCESS.PRE_REVIEW_APPROVAL_AND_CONTENT_CONSISTENCY",
       "rule_uid": "RUID-70d3fcec74ce985b",
       "rule_title": "保健食品广告未经审查发布",
-      "mapping_type": "direct",
+      "mapping_type": "fact_check",
       "track": "保健食品",
       "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
       "source_type": "法规",
@@ -123,7 +203,7 @@
       "issue_id": "SCOPE_ACCESS.AD_REVIEW_ACCESS.PRE_REVIEW_APPROVAL_AND_CONTENT_CONSISTENCY",
       "rule_uid": "RUID-b6d85093aac76c45",
       "rule_title": "保健食品广告发布前须经审查机关审查",
-      "mapping_type": "direct",
+      "mapping_type": "fact_check",
       "track": "保健食品",
       "source_file": "保健食品/20260705_中华人民共和国广告法（2021修正）_2021.04.29生效_20260615下载_规则拆解_v1.json",
       "source_type": "法规",
@@ -136,7 +216,7 @@
       "issue_id": "SCOPE_ACCESS.AD_REVIEW_ACCESS.PRE_REVIEW_APPROVAL_AND_CONTENT_CONSISTENCY",
       "rule_uid": "RUID-c759ae9e2b02d013",
       "rule_title": "保健食品广告须经审查批准并取得批准文件",
-      "mapping_type": "direct",
+      "mapping_type": "fact_check",
       "track": "保健食品",
       "source_file": "保健食品/20260705_中华人民共和国食品安全法（2025修正）_2025.12.01生效_20260617下载_规则拆解_v1.json",
       "source_type": "法规",
@@ -162,7 +242,7 @@
       "issue_id": "SCOPE_ACCESS.AD_REVIEW_ACCESS.PRE_REVIEW_APPROVAL_AND_CONTENT_CONSISTENCY",
       "rule_uid": "RUID-f2c9db72fdae932e",
       "rule_title": "保健食品广告发布前审查要求",
-      "mapping_type": "direct",
+      "mapping_type": "fact_check",
       "track": "保健食品",
       "source_file": "保健食品/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
       "source_type": "法规",
@@ -659,7 +739,7 @@
       "issue_id": "SCOPE_ACCESS.SUBJECT_QUALIFICATION.ADVERTISER_QUALIFICATION_FALSE_OR_INVALID",
       "rule_uid": "RUID-58e192a8dddf575c",
       "rule_title": "广告主发布广告需主体资格和行政许可合规",
-      "mapping_type": "proactive_check",
+      "mapping_type": "fact_check",
       "track": "游戏",
       "source_file": "游戏/20260705_互联网广告管理办法_2023.05.01生效_20260615下载_规则拆解_v1.json",
       "source_type": "法规",
@@ -5908,7 +5988,7 @@
       "issue_id": "EVIDENCE_FACT.DATA_CITATION.CITATION_LACKS_EVIDENCE_OR_SCIENTIFIC_BASIS",
       "rule_uid": "RUID-9ecf144ad28c1c77",
       "rule_title": "广告中使用数据引证内容需提供证明材料并表明出处",
-      "mapping_type": "proactive_check",
+      "mapping_type": "fact_check",
       "track": "游戏",
       "source_file": "游戏/20260705_小红书聚光帮助中心-文档_规则拆解_v1.json",
       "source_type": "平台规则",
@@ -8726,7 +8806,7 @@
       "original_issue_id": "ENDORSEMENT.CONSENT_FOR_NAME_IMAGE"
     },
     {
-      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
+      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY.ENDORSER_RECOMMENDS_WITHOUT_ACTUAL_USE",
       "rule_uid": "RUID-79468f9702e16ad3",
       "rule_title": "广告代言人不得为未使用过的美妆商品作推荐、证明",
       "mapping_type": "direct",
@@ -8739,7 +8819,7 @@
       "original_issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY"
     },
     {
-      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
+      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY.ENDORSER_RECOMMENDS_WITHOUT_ACTUAL_USE",
       "rule_uid": "RUID-8c3736290884aeb7",
       "rule_title": "广告代言人不得为其未使用过的商品或未接受过的服务作推荐、证明",
       "mapping_type": "direct",
@@ -8752,7 +8832,7 @@
       "original_issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY"
     },
     {
-      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
+      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY.ENDORSER_RECOMMENDS_WITHOUT_ACTUAL_USE",
       "rule_uid": "RUID-94af376237103381",
       "rule_title": "广告代言人不得为其未使用过的商品或未接受过的服务作推荐证明",
       "mapping_type": "direct",
@@ -8765,7 +8845,7 @@
       "original_issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY"
     },
     {
-      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
+      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY.ENDORSER_RECOMMENDS_WITHOUT_ACTUAL_USE",
       "rule_uid": "RUID-b0c92cce2582d347",
       "rule_title": "广告代言人不得为其未使用过的商品或未接受过的服务作推荐、证明",
       "mapping_type": "direct",
@@ -8778,7 +8858,7 @@
       "original_issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY"
     },
     {
-      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY",
+      "issue_id": "ENDORSEMENT.ACTUAL_USE_DUTY.ENDORSER_RECOMMENDS_WITHOUT_ACTUAL_USE",
       "rule_uid": "RUID-d31f24a1455c5ead",
       "rule_title": "广告代言人不得为其未使用过的商品作推荐、证明",
       "mapping_type": "direct",

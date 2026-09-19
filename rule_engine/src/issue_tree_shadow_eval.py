@@ -22,6 +22,98 @@ def _p95(values):
     return ordered[index]
 
 
+def _is_sibling_issue(left, right):
+    left_parts = str(left or '').split('.')
+    right_parts = str(right or '').split('.')
+    return (
+        len(left_parts) > 1
+        and len(right_parts) == len(left_parts)
+        and left_parts[:-1] == right_parts[:-1]
+        and left_parts[-1] != right_parts[-1]
+    )
+
+
+def classify_expected_rule_loss(case, rule_uid):
+    '''Classify the furthest deterministic stage reached by one expected UID.'''
+    uid = str(rule_uid or '')
+    if 'rule_asset_uids' in case and uid not in _set(case, 'rule_asset_uids'):
+        return 'missing_rule_asset'
+    if uid in _set(case, 'missing_rule_asset_uids'):
+        return 'missing_rule_asset'
+
+    selected_issues = _set(case, 'tree_issue_ids')
+    approved_by_uid = case.get('expected_rule_issue_ids') or {}
+    approved_issues = {
+        str(item) for item in (approved_by_uid.get(uid) or []) if str(item)
+    }
+    selected_approved = selected_issues & approved_issues
+    if approved_issues and not selected_approved:
+        if any(
+            _is_sibling_issue(selected, approved)
+            for selected in selected_issues
+            for approved in approved_issues
+        ):
+            return 'selected_sibling_path_not_approved_mapping'
+        return 'path_not_selected'
+
+    mapping_by_issue = case.get('tree_mapping_rule_uids_by_issue') or {}
+    mapped_before_gate = _set(case, 'tree_mapped_rule_uids_before_gate')
+    if selected_approved and 'tree_mapped_rule_uids_before_gate' in case and (
+        uid not in mapped_before_gate
+    ):
+        return 'no_mapping_from_selected_path'
+    if selected_approved and mapping_by_issue and not any(
+        uid in {str(item) for item in (mapping_by_issue.get(issue) or [])}
+        for issue in selected_approved
+    ):
+        return 'no_mapping_from_selected_path'
+
+    trace = case.get('tree_expansion_trace') or []
+    traced = any(
+        str(item.get('canonical_rule_uid') or '') == uid
+        for item in trace if isinstance(item, dict)
+    )
+    ranked = any(
+        str(item.get('rule_uid') or '') == uid
+        for ranking in (case.get('tree_selection_path_rankings') or [])
+        for item in (ranking.get('ranked_rules') or [])
+    )
+    eligible = uid in _set(case, 'tree_rule_uids')
+    if (
+        selected_approved
+        and 'tree_mapped_rule_uids_before_gate' not in case
+        and not traced
+        and not eligible
+        and not ranked
+    ):
+        return 'no_mapping_from_selected_path'
+    if uid in mapped_before_gate and not eligible:
+        return 'filtered_by_gate'
+    if uid in _set(case, 'tree_non_actionable_rule_uids'):
+        return 'non_actionable_role'
+    if any(
+        uid in {str(item) for item in (collapse.get('collapsed_supporting_rule_uids') or [])}
+        for collapse in (case.get('tree_group_collapses') or [])
+    ):
+        return 'collapsed_by_issue_group'
+
+    drop_reasons = {
+        str(item.get('drop_reason') or '')
+        for item in (case.get('tree_selection_dropped_rules') or [])
+        if str(item.get('rule_uid') or '') == uid
+    }
+    if 'per_path_limit_exceeded' in drop_reasons:
+        return 'per_path_limit'
+    if drop_reasons & {
+        'direct_global_limit_exceeded',
+        'fact_check_global_limit_exceeded',
+    }:
+        return 'global_role_limit'
+    if eligible or ranked or uid in _set(case, 'tree_selected_actionable_rule_uids'):
+        return 'expanded'
+    return 'path_not_selected'
+
+
 def evaluate_shadow_cases(cases):
     cases = list(cases or [])
     expected_issue_count = 0
@@ -45,8 +137,18 @@ def evaluate_shadow_cases(cases):
     role_promotion_violations = 0
     per_case_limit_violations = 0
     per_path_limit_violations = 0
+    expected_rule_loss_counts = Counter()
+    expected_rule_loss_by_case = []
 
     for case in cases:
+        for uid in sorted(_set(case, 'expected_rule_uids')):
+            classification = classify_expected_rule_loss(case, uid)
+            expected_rule_loss_counts[classification] += 1
+            expected_rule_loss_by_case.append({
+                'case_id': case.get('case_id'),
+                'rule_uid': uid,
+                'classification': classification,
+            })
         expected_issue_ids = _set(case, "expected_issue_ids")
         tree_issue_ids = _set(case, "tree_issue_ids")
         expected_rule_uids = _set(case, "expected_rule_uids")
@@ -109,7 +211,12 @@ def evaluate_shadow_cases(cases):
         selection_statuses[str(case.get("tree_selection_status") or "missing")] += 1
         latencies.append(case.get("latency_ms") or 0)
 
+    loss_metrics = {
+        'expected_rule_loss_counts': dict(sorted(expected_rule_loss_counts.items())),
+        'expected_rule_loss_by_case': expected_rule_loss_by_case,
+    }
     return {
+        **loss_metrics,
         "case_count": len(cases),
         "matched_expected_issue_count": matched_issue_count,
         "expected_issue_count": expected_issue_count,
@@ -186,6 +293,18 @@ def run_shadow_cases(cases, audit_fn, base_dir=None):
             "tree_status": shadow.get("status") or "missing",
             "invalid_path_count": len(shadow.get("rejected_paths") or []),
             "latency_ms": shadow.get("latency_ms") or 0,
+        })
+        records[-1].update({
+            'tree_mapped_rule_uids_before_gate': (
+                shadow.get('mapped_rule_uids_before_gate') or []
+            ),
+            'tree_rejected_rule_uids': shadow.get('rejected_rule_uids') or [],
+            'tree_expansion_trace': shadow.get('trace') or [],
+            'tree_group_collapses': selection.get('group_collapses') or [],
+            'tree_targeted_displacements': (
+                selection.get('displaced_by_targeted_policy') or []
+            ),
+            'tree_quota_allocations': selection.get('quota_allocations') or [],
         })
     return records
 

@@ -184,6 +184,7 @@ def _applicable_semantic_vectors(rules, request, query):
         if reasons:
             rejected.append(
                 {
+                    "rule_uid": rule.get("rule_uid"),
                     "rule_id": rule.get("rule_id"),
                     "title": rule.get("title"),
                     "reasons": reasons,
@@ -196,11 +197,7 @@ def _applicable_semantic_vectors(rules, request, query):
 
 def _cached_index_entry(index, rule, scenario_id, text_hash):
     identity = rule_identity(rule)
-    entry = index.get((identity, scenario_id, text_hash))
-    legacy_id = rule.get("rule_id")
-    if entry is None and legacy_id and legacy_id != identity:
-        entry = index.get((legacy_id, scenario_id, text_hash))
-    return entry
+    return index.get((identity, scenario_id, text_hash))
 
 def _cached_embedding_items(applicable, vector_index_path):
     index = load_rule_vector_index(vector_index_path)
@@ -377,6 +374,7 @@ def semantic_recall_diagnostics(
         top_candidates.append(
             {
                 "rank": rank,
+                "rule_uid": rule.get("rule_uid"),
                 "rule_id": rule.get("rule_id"),
                 "serial_no": rule.get("serial_no"),
                 "title": rule.get("title"),

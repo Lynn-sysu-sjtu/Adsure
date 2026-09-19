@@ -2525,7 +2525,9 @@
         "industries": [
           "保健食品"
         ],
-        "product_categories": [],
+        "product_categories": [
+          "保健食品"
+        ],
         "platforms": [],
         "material_types": [
           "图文文案",
@@ -2587,7 +2589,9 @@
             "诊断",
             "预防疾病"
           ],
-          "regex": [],
+          "regex": [
+            "(治疗|治愈|根治|诊疗|处方|药效|病灶|抗肿瘤|抗癌|降血糖|降血压|糖尿病|疗效(?:看得见|显著))"
+          ],
           "context_signals": [],
           "negative_signals": []
         },
@@ -2730,7 +2734,9 @@
         "industries": [
           "保健食品"
         ],
-        "product_categories": [],
+        "product_categories": [
+          "保健食品"
+        ],
         "platforms": [],
         "material_types": [
           "图文文案",
@@ -2788,7 +2794,9 @@
             "全消失",
             "立竿见影"
           ],
-          "regex": [],
+          "regex": [
+            "(100\\s*%有效|绝对有效|保证有效|疗效看得见|绝对安全|不会有问题|安全无副作用|零副作用|全消失|立竿见影)"
+          ],
           "context_signals": [],
           "negative_signals": []
         },
@@ -2987,7 +2995,9 @@
             "降血糖",
             "抗癌"
           ],
-          "regex": [],
+          "regex": [
+            "(疾病|糖尿病|肿瘤|癌|高血压|高血糖).{0,8}(治疗|治愈|根治|预防|远离|告别|降下来)|(治疗|治愈|根治|预防|抗癌|降血糖|降血压)"
+          ],
           "context_signals": [],
           "negative_signals": []
         },
@@ -3506,7 +3516,9 @@
         "industries": [
           "保健食品"
         ],
-        "product_categories": [],
+        "product_categories": [
+          "保健食品"
+        ],
         "platforms": [],
         "material_types": [
           "图文文案",
@@ -3563,7 +3575,9 @@
             "科研机构认证",
             "权威科研机构认证"
           ],
-          "regex": [],
+          "regex": [
+            "(?:科研单位|科研机构|学术机构|营养学会|专家|学者|医师|医生|药师|营养师|患者).{0,16}(?:推荐|证明|亲测|认证|背书)"
+          ],
           "context_signals": [],
           "negative_signals": []
         },
@@ -4264,10 +4278,16 @@
       "dimension": "虚假宣传",
       "applies_to": {
         "industries": [
-          "保健食品"
+          "农药",
+          "兽药",
+          "饲料",
+          "饲料添加剂"
         ],
         "product_categories": [
-          "保健食品"
+          "农药",
+          "兽药",
+          "饲料",
+          "饲料添加剂"
         ],
         "platforms": [],
         "material_types": [
@@ -4457,10 +4477,16 @@
       "dimension": "虚假宣传",
       "applies_to": {
         "industries": [
-          "保健食品"
+          "农药",
+          "兽药",
+          "饲料",
+          "饲料添加剂"
         ],
         "product_categories": [
-          "保健食品"
+          "农药",
+          "兽药",
+          "饲料",
+          "饲料添加剂"
         ],
         "platforms": [],
         "material_types": [

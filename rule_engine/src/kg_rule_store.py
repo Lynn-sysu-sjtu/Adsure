@@ -64,6 +64,7 @@ def load_rule_library(base_dir, validate_assets=False):
     rules = []
     legal_sources = []
     source_ids = set()
+    rule_uids = set()
     memory_rules = []
     review_workflow = None
 
@@ -80,6 +81,16 @@ def load_rule_library(base_dir, validate_assets=False):
 
         source_by_id = _source_index(doc.get("legal_sources", []))
         for rule in doc.get("rules", []):
+            rule_uid = rule.get("rule_uid")
+            if not isinstance(rule_uid, str) or not rule_uid.strip():
+                raise ValueError(f"missing rule_uid in {source_name}")
+            rule_uid = rule_uid.strip()
+            if not rule_uid.startswith("RUID-") or len(rule_uid) == len("RUID-"):
+                raise ValueError(f"invalid rule_uid {rule_uid!r} in {source_name}")
+            if rule_uid in rule_uids:
+                raise ValueError(f"duplicate rule_uid {rule_uid!r} in {source_name}")
+            rule["rule_uid"] = rule_uid
+            rule_uids.add(rule_uid)
             _enrich_legal_basis(rule, source_by_id)
             rule[INTERNAL_SOURCE_FILE] = source_name
             rules.append(rule)

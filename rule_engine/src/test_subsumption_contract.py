@@ -5,6 +5,7 @@ import json
 import unittest
 
 from llm_judgment import build_judgment_messages, judge_with_mock_llm
+from subsumption import validate_subsumption_result
 
 
 class SubsumptionContractTests(unittest.TestCase):
@@ -69,6 +70,51 @@ class SubsumptionContractTests(unittest.TestCase):
         self.assertEqual("confirmed_violation", result["rule_judgments"][0]["applicability_status"])
         self.assertEqual("needs_fact_verification", result["rule_judgments"][1]["applicability_status"])
         self.assertTrue(result["rule_judgments"][1]["missing_facts"])
+
+    def test_final_rule_uses_title_and_legal_basis_from_selected_uid(self):
+        candidates = [
+            {
+                "rule_uid": "RUID-FIRST",
+                "rule_id": "DUPLICATE-001",
+                "title": "first title",
+                "legal_basis": [{"article": "first article"}],
+            },
+            {
+                "rule_uid": "RUID-SECOND",
+                "rule_id": "DUPLICATE-001",
+                "title": "second title",
+                "legal_basis": [{"article": "second article"}],
+            },
+        ]
+        judgments = [
+            {
+                "rule_uid": "RUID-FIRST",
+                "applicability_status": "confirmed_violation",
+                "material_evidence": "evidence",
+                "satisfied_elements": ["matched"],
+                "unsatisfied_elements": [],
+                "missing_facts": [],
+                "applicability_reason": "first applies",
+                "confidence": 1.0,
+            },
+            {
+                "rule_uid": "RUID-SECOND",
+                "applicability_status": "not_applicable",
+                "material_evidence": "",
+                "satisfied_elements": [],
+                "unsatisfied_elements": ["not matched"],
+                "missing_facts": [],
+                "applicability_reason": "second does not apply",
+                "confidence": 1.0,
+            },
+        ]
+
+        result = validate_subsumption_result(candidates, judgments, "evidence")
+
+        self.assertEqual(1, len(result.final_rules))
+        self.assertEqual("RUID-FIRST", result.final_rules[0]["rule_uid"])
+        self.assertEqual("first title", result.final_rules[0]["title"])
+        self.assertEqual("first article", result.final_rules[0]["legal_basis"][0]["article"])
 
 
 if __name__ == "__main__":

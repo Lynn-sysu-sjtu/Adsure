@@ -192,6 +192,7 @@ class SemanticRecallTests(unittest.TestCase):
         rules = [
             {
                 "rule_id": "SEM-IDENT-001",
+                "rule_uid": "RUID-SEM-IDENT-001",
                 "serial_no": 1,
                 "title": "Native ad disclosure",
                 "dimension": "ad identification",
@@ -216,6 +217,7 @@ class SemanticRecallTests(unittest.TestCase):
 
         candidate = diagnostics["top_candidates"][0]
         self.assertEqual("SEM-IDENT-001", candidate["rule_id"])
+        self.assertEqual("RUID-SEM-IDENT-001", candidate["rule_uid"])
         self.assertEqual("content", candidate["trigger_layer"])
         self.assertEqual("fallback", candidate["semantic_role"])
         self.assertEqual("high", candidate["risk_level"])
@@ -234,6 +236,7 @@ class SemanticRecallTests(unittest.TestCase):
                         "rules": [
                             {
                                 "rule_id": "SEM-IDENT-001",
+                                "rule_uid": "RUID-SEM-IDENT-001",
                                 "serial_no": 1,
                                 "title": "native ad should be identifiable",
                                 "dimension": "ad identification",
@@ -267,6 +270,10 @@ class SemanticRecallTests(unittest.TestCase):
         matched = response["data"]["matched_rules"]
         self.assertTrue(any(rule.get("recall_channel") == "semantic" for rule in matched))
         self.assertIn("semantic_recall", response["data"])
+        self.assertEqual(
+            ["RUID-SEM-IDENT-001"],
+            response["data"]["semantic_recall"]["matched_rule_uids"],
+        )
 
     def test_rule_engine_runs_semantic_recall_without_keyword_or_cue(self):
         request = {
@@ -306,6 +313,7 @@ class SemanticRecallTests(unittest.TestCase):
         rules = [
             {
                 "rule_id": "KEYWORD-001",
+                "rule_uid": "RUID-KEYWORD-001",
                 "serial_no": 1,
                 "risk_level": "medium",
                 "applies_to": {"industries": ["Any"]},
@@ -314,6 +322,7 @@ class SemanticRecallTests(unittest.TestCase):
             },
             {
                 "rule_id": "SEM-FALLBACK-001",
+                "rule_uid": "RUID-SEM-FALLBACK-001",
                 "serial_no": 2,
                 "risk_level": "medium",
                 "applies_to": {"industries": ["Any"]},

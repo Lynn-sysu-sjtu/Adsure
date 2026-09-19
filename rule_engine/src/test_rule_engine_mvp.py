@@ -293,6 +293,7 @@ class RuleEngineMvpTests(unittest.TestCase):
                         ],
                         "rules": [
                             {
+                                "rule_uid": "RUID-GAME-GIFT-001",
                                 "rule_id": "GAME-GIFT-001",
                                 "serial_no": 1,
                                 "title": "游戏赠送福利需明示活动规则",
@@ -594,6 +595,7 @@ class RuleEngineMvpTests(unittest.TestCase):
                         ],
                         "rules": [
                             {
+                                "rule_uid": "RUID-CONTENT-HIGH-OPERATOR-001",
                                 "rule_id": "CONTENT-HIGH-OPERATOR-001",
                                 "serial_no": 1,
                                 "title": "Clear high-risk copy issue",
@@ -646,6 +648,7 @@ class RuleEngineMvpTests(unittest.TestCase):
                         ],
                         "rules": [
                             {
+                                "rule_uid": "RUID-CONTENT-LEGAL-001",
                                 "rule_id": "CONTENT-LEGAL-001",
                                 "serial_no": 1,
                                 "title": "Open legal concept",
@@ -749,6 +752,7 @@ class RuleEngineMvpTests(unittest.TestCase):
                         "legal_sources": [],
                         "rules": [
                             {
+                                "rule_uid": "RUID-FACT-PATENT-001",
                                 "rule_id": "FACT-PATENT-001",
                                 "serial_no": 1,
                                 "title": "Patent claim requires proof materials",

@@ -92,6 +92,7 @@ class RuleVectorIndexTests(unittest.TestCase):
         rules = [
             {
                 "rule_id": "GEN-IDENT-001",
+                "rule_uid": "RUID-GEN-IDENT-001",
                 "title": "广告应当可识别",
                 "recall": {
                     "semantic_enabled": True,
@@ -100,6 +101,7 @@ class RuleVectorIndexTests(unittest.TestCase):
             },
             {
                 "rule_id": "NO-SEM-001",
+                "rule_uid": "RUID-NO-SEM-001",
                 "recall": {
                     "semantic_enabled": False,
                     "vector_text": "不应进入索引",
@@ -129,6 +131,7 @@ class RuleVectorIndexTests(unittest.TestCase):
         rules = [
             {
                 "rule_id": "CONTENT-001",
+                "rule_uid": "RUID-CONTENT-001",
                 "recall": {
                     "trigger_layer": "content",
                     "semantic_enabled": True,
@@ -138,6 +141,7 @@ class RuleVectorIndexTests(unittest.TestCase):
             },
             {
                 "rule_id": "FACT-001",
+                "rule_uid": "RUID-FACT-001",
                 "recall": {
                     "trigger_layer": "fact",
                     "semantic_enabled": True,
@@ -147,6 +151,7 @@ class RuleVectorIndexTests(unittest.TestCase):
             },
             {
                 "rule_id": "WORKFLOW-001",
+                "rule_uid": "RUID-WORKFLOW-001",
                 "recall": {
                     "trigger_layer": "workflow",
                     "semantic_enabled": True,
@@ -156,6 +161,7 @@ class RuleVectorIndexTests(unittest.TestCase):
             },
             {
                 "rule_id": "DISABLED-001",
+                "rule_uid": "RUID-DISABLED-001",
                 "recall": {
                     "trigger_layer": "content",
                     "semantic_enabled": True,
@@ -181,6 +187,7 @@ class RuleVectorIndexTests(unittest.TestCase):
         rules = [
             {
                 "rule_id": "GEN-IDENT-001",
+                "rule_uid": "RUID-GEN-IDENT-CACHED-001",
                 "industry": "通用",
                 "applies_to": {"industries": ["通用", "美妆"]},
                 "recall": {
@@ -216,7 +223,7 @@ class RuleVectorIndexTests(unittest.TestCase):
             self.assertEqual(1, len(client.calls[0]))
             self.assertTrue(recalled[0][1][0].startswith("semantic_embedding_cached:"))
 
-    def test_semantic_recall_uses_legacy_cached_parent_until_scenario_index_is_rebuilt(self):
+    def test_semantic_recall_ignores_legacy_id_only_cached_parent(self):
         parent_vector = "种草未标广告，个人心得带购物入口但没有广告标识"
         rules = [
             {
@@ -271,8 +278,8 @@ class RuleVectorIndexTests(unittest.TestCase):
 
         self.assertEqual(["GEN-IDENT-001"], [rule["rule_id"] for rule, _ in recalled])
         self.assertEqual(1, len(client.calls))
-        self.assertEqual(1, len(client.calls[0]))
-        self.assertIn("scenario=rule_summary", recalled[0][1][0])
+        self.assertEqual(3, len(client.calls[0]))
+        self.assertIn("scenario=native_note", recalled[0][1][0])
     def test_load_rule_vector_index_returns_empty_for_missing_file(self):
         with tempfile.TemporaryDirectory() as tmp:
             self.assertEqual({}, load_rule_vector_index(Path(tmp) / "missing.json"))
@@ -282,6 +289,7 @@ class RuleVectorIndexTests(unittest.TestCase):
         rules = [
             {
                 "rule_id": "GEN-IDENT-001",
+                "rule_uid": "RUID-GEN-IDENT-001",
                 "industry": "cosmetics",
                 "applies_to": {"industries": ["cosmetics"]},
                 "recall": {
@@ -327,6 +335,7 @@ class RuleVectorIndexTests(unittest.TestCase):
         rules = [
             {
                 "rule_id": "GEN-IDENT-001",
+                "rule_uid": "RUID-GEN-IDENT-001",
                 "industry": "cosmetics",
                 "applies_to": {"industries": ["cosmetics"]},
                 "recall": {
@@ -336,6 +345,7 @@ class RuleVectorIndexTests(unittest.TestCase):
             },
             {
                 "rule_id": "GAME-ONLY-001",
+                "rule_uid": "RUID-GAME-ONLY-001",
                 "industry": "game",
                 "applies_to": {"industries": ["game"]},
                 "recall": {
@@ -370,9 +380,11 @@ class RuleVectorIndexTests(unittest.TestCase):
         self.assertEqual("zhipu", diagnostics["backend"])
         self.assertEqual(0.8, diagnostics["threshold"])
         self.assertEqual("GEN-IDENT-001", diagnostics["top_candidates"][0]["rule_id"])
+        self.assertEqual("RUID-GEN-IDENT-001", diagnostics["top_candidates"][0]["rule_uid"])
         self.assertGreaterEqual(diagnostics["top_candidates"][0]["score"], 0.8)
         rejected = {item["rule_id"]: item for item in diagnostics["rejected_rules"]}
         self.assertIn("GAME-ONLY-001", rejected)
+        self.assertEqual("RUID-GAME-ONLY-001", rejected["GAME-ONLY-001"]["rule_uid"])
         self.assertIn("industry_scope_mismatch", rejected["GAME-ONLY-001"]["reasons"])
 
 

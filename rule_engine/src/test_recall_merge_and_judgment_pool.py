@@ -15,8 +15,8 @@ from rule_engine import (
 
 class RecallMergeAndJudgmentPoolTests(unittest.TestCase):
     def test_merge_recalled_rules_collapses_parent_and_merges_unique_hits(self):
-        first = {"rule_id": "RULE-001", "serial_no": 1, "risk_level": "中"}
-        duplicate = {"rule_id": "RULE-001", "serial_no": 1, "risk_level": "中"}
+        first = {"rule_uid": "RUID-RULE-001", "rule_id": "RULE-001", "serial_no": 1, "risk_level": "中"}
+        duplicate = {"rule_uid": "RUID-RULE-001", "rule_id": "RULE-001", "serial_no": 1, "risk_level": "中"}
 
         merged = _merge_recalled_rules(
             [
@@ -29,6 +29,19 @@ class RecallMergeAndJudgmentPoolTests(unittest.TestCase):
         self.assertEqual(
             ["承诺", "semantic_embedding:0.711:scenario=open_rule"],
             merged[0][1],
+        )
+
+    def test_merge_keeps_distinct_uids_that_share_one_legacy_rule_id(self):
+        merged = _merge_recalled_rules(
+            [
+                ({"rule_uid": "RUID-FIRST", "rule_id": "DUPLICATE-001"}, ["first"]),
+                ({"rule_uid": "RUID-SECOND", "rule_id": "DUPLICATE-001"}, ["second"]),
+            ]
+        )
+
+        self.assertEqual(
+            ["RUID-FIRST", "RUID-SECOND"],
+            [rule["rule_uid"] for rule, _ in merged],
         )
 
     def test_judgment_pool_is_capped_and_prefers_multi_channel_parent(self):

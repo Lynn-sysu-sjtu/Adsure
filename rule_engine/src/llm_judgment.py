@@ -165,18 +165,11 @@ def apply_context_provenance_guard(llm_judgment, candidate_rules, context_packag
         for item in candidate_rules
         if item.get("rule_uid")
     }
-    candidates_by_id = {
-        item.get("rule_id"): item
-        for item in candidate_rules
-        if item.get("rule_id")
-    }
     changed = False
     for judgment in result.get("rule_judgments") or []:
         if judgment.get("applicability_status") != "confirmed_violation":
             continue
         candidate = candidates_by_uid.get(judgment.get("rule_uid"))
-        if candidate is None:
-            candidate = candidates_by_id.get(judgment.get("rule_id"))
         if not candidate:
             continue
         applies_to = candidate.get("applies_to", {}) or {}
