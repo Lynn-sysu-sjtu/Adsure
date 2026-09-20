@@ -1,0 +1,106 @@
+.adsure-ops-page {
+    background: var(--bg-page);
+    color: var(--text-primary);
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.adsure-ops-shell {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 28px 20px;
+}
+
+.adsure-ops-header,
+.adsure-ops-filters,
+.adsure-ops-pagination {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.adsure-ops-header h1 {
+    margin: 0 0 6px;
+    font-size: 22px;
+}
+
+.adsure-ops-header p,
+#ops-status-message {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.adsure-ops-header .btn-submit,
+.adsure-ops-filters .btn-submit {
+    width: auto;
+    min-width: 88px;
+}
+
+.adsure-ops-filters {
+    margin-top: 20px;
+    justify-content: flex-start;
+}
+
+.adsure-ops-filters label {
+    min-width: 180px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.adsure-ops-filters .form-select {
+    display: block;
+    margin-top: 5px;
+}
+
+#ops-status-message {
+    min-height: 20px;
+    margin: 8px 0;
+}
+
+.adsure-ops-table-wrap {
+    overflow-x: auto;
+    padding: 0;
+}
+
+.adsure-ops-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.adsure-ops-table th,
+.adsure-ops-table td {
+    padding: 10px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    white-space: nowrap;
+}
+
+.adsure-ops-table th {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.adsure-ops-replay,
+.adsure-ops-pagination button {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 6px 10px;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.adsure-ops-replay:disabled,
+.adsure-ops-pagination button:disabled {
+    cursor: default;
+    opacity: 0.45;
+}
+
+.adsure-ops-pagination {
+    justify-content: center;
+    align-items: center;
+}

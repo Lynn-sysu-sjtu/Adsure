@@ -101,6 +101,15 @@ body {
     color: var(--text-primary);
 }
 
+.btn-icon--labeled {
+    width: auto;
+    padding: 0 10px;
+    font-size: 12px;
+    gap: 4px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
 .badge-count {
     background: var(--danger);
     color: #fff;
@@ -250,6 +259,7 @@ body {
 /* 右侧详情区 */
 .detail {
     flex: 1;
+    min-width: 0;
     overflow-y: auto;
     padding: 24px 32px;
     background: var(--bg-page);
@@ -272,12 +282,26 @@ body {
 
 /* 详情卡片 */
 .detail-card {
+    min-width: 0;
+    overflow-wrap: anywhere;
     background: var(--bg-card);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
     padding: 24px;
     margin-bottom: 16px;
     box-shadow: var(--shadow-sm);
+}
+
+.detail-card table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.review-full-text {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    height: auto;
+    max-height: none;
 }
 
 .detail-card-title {
@@ -292,6 +316,38 @@ body {
 
 .detail-card-title .icon {
     font-size: 14px;
+}
+
+.adsure-timeline-row {
+    display: flex;
+    gap: 10px;
+    padding: 7px 0;
+}
+
+.adsure-timeline-marker {
+    width: 8px;
+    height: 8px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background: var(--primary);
+    flex: 0 0 auto;
+}
+
+.adsure-timeline-body {
+    min-width: 0;
+}
+
+.adsure-timeline-heading {
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.adsure-timeline-meta,
+.adsure-timeline-content {
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.6;
 }
 
 .content-full {

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>审心 Adsure · 产品说明书 · 星瀚杯</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"PingFang SC","Helvetica Neue",Arial,sans-serif; color:#1a1a1a; background:#fff; font-size:14px; line-height:1.85; }
+.page { max-width:840px; margin:0 auto; padding:48px 56px; }
+
+/* 封面 */
+.cover { background:linear-gradient(135deg,#1677ff 0%,#0958d9 100%); border-radius:12px; padding:52px 48px; color:#fff; margin-bottom:48px; position:relative; overflow:hidden; }
+.cover::after { content:""; position:absolute; right:-50px; top:-50px; width:280px; height:280px; border-radius:50%; background:rgba(255,255,255,0.06); }
+.cover-tag { font-size:12px; letter-spacing:2px; opacity:.7; margin-bottom:14px; }
+.cover h1 { font-size:42px; font-weight:800; letter-spacing:-1px; margin-bottom:8px; }
+.cover .sub { font-size:16px; opacity:.85; margin-bottom:28px; }
+.cover-meta { display:flex; gap:28px; font-size:12px; opacity:.7; flex-wrap:wrap; }
+
+/* 章节标题 */
+h2 { font-size:19px; font-weight:700; color:#1677ff; border-left:4px solid #1677ff; padding-left:12px; margin:44px 0 14px; }
+h3 { font-size:14px; font-weight:700; color:#222; margin:22px 0 8px; }
+p { color:#444; margin-bottom:10px; }
+
+/* 信息卡 */
+.card { background:#f6f8ff; border:1px solid #d6e4ff; border-radius:8px; padding:14px 18px; margin-bottom:12px; }
+.card-row { display:flex; gap:12px; padding:5px 0; border-bottom:1px solid #e8eeff; }
+.card-row:last-child { border-bottom:none; }
+.card-label { color:#888; font-size:12px; width:110px; flex-shrink:0; padding-top:1px; }
+.card-value { color:#1a1a1a; font-weight:500; }
+.card-value a { color:#1677ff; text-decoration:none; }
+
+/* 账号框 */
+.account-box { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:12px 0; }
+.account-card { border:1px solid #d6e4ff; border-radius:8px; padding:14px 16px; background:#f6f8ff; }
+.account-card .role { font-size:11px; color:#1677ff; font-weight:700; letter-spacing:1px; margin-bottom:6px; }
+.account-card .code { font-family:monospace; font-size:15px; font-weight:700; background:#fff; border:1px solid #d9d9d9; padding:3px 10px; border-radius:4px; display:inline-block; margin:4px 0; color:#1a1a1a; }
+
+/* 步骤 */
+.step { display:flex; gap:14px; margin-bottom:14px; }
+.step-num { background:#1677ff; color:#fff; min-width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0; margin-top:2px; }
+.step-body strong { display:block; color:#1a1a1a; margin-bottom:2px; }
+.step-body span { color:#555; font-size:13px; }
+.tags { display:flex; gap:6px; margin-top:5px; flex-wrap:wrap; }
+.tag { font-size:11px; padding:1px 8px; border-radius:10px; }
+.tag-b { background:#e6f4ff; color:#1677ff; border:1px solid #91caff; }
+.tag-g { background:#f6ffed; color:#389e0d; border:1px solid #b7eb8f; }
+.tag-o { background:#fff7e6; color:#d46b08; border:1px solid #ffd591; }
+.tag-r { background:#fff1f0; color:#cf1322; border:1px solid #ffa39e; }
+
+/* 表格 */
+table { width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:13px; }
+th { background:#1677ff; color:#fff; padding:8px 12px; text-align:left; font-weight:600; }
+td { padding:8px 12px; border-bottom:1px solid #f0f0f0; vertical-align:top; }
+tr:nth-child(even) td { background:#fafbff; }
+.hl td { background:#e6f4ff !important; }
+.ok { color:#389e0d; font-weight:600; }
+.no { color:#cf1322; }
+
+/* 提示块 */
+.alert { border-radius:6px; padding:11px 15px; margin-bottom:10px; font-size:13px; display:flex; gap:10px; line-height:1.7; }
+.alert-icon { flex-shrink:0; }
+.aw { background:#fffbe6; border:1px solid #ffe58f; color:#874d00; }
+.ai { background:#e6f4ff; border:1px solid #91caff; color:#003eb3; }
+.ag { background:#f6ffed; border:1px solid #b7eb8f; color:#135200; }
+
+/* 代码块 */
+pre { background:#f5f5f5; border:1px solid #e8e8e8; border-radius:6px; padding:10px 14px; font-size:12px; font-family:monospace; margin:8px 0 14px; overflow-x:auto; }
+
+hr { border:none; border-top:1px solid #f0f0f0; margin:36px 0; }
+.footer { text-align:center; color:#bbb; font-size:12px; margin-top:52px; padding-top:18px; border-top:1px solid #f0f0f0; }
+
+@media print {
+  body { font-size:12.5px; }
+  .page { padding:24px 32px; }
+  .cover { padding:36px 40px; }
+  .cover h1 { font-size:34px; }
+  h2 { margin:28px 0 10px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- 封面 -->
+<div class="cover">
+  <div class="cover-tag">第二届星瀚杯 · 全国大学生法律AI应用创新挑战赛</div>
+  <h1>审心 Adsure</h1>
+  <div class="sub">AI 驱动的广告合规审核系统 · 产品说明书</div>
+  <div class="cover-meta">
+    <span>📅 2026 年 7 月</span>
+    <span>📦 v1.0 MVP</span>
+    <span>👥 赵楚齐 · 凌淇 · 王以澄</span>
+  </div>
+</div>
+
+<!-- 一、访问方式 -->
+<h2>一、访问方式</h2>
+
+<h3>1.1 产品入口</h3>
+<div class="card">
+  <div class="card-row"><span class="card-label">运营提交入口</span><span class="card-value"><a href="https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb?table=tblL8R7yL1rCeU7m&view=vew3KEItkB" target="_blank">飞书提交表单（点击填写）</a></span></div>
+  <div class="card-row"><span class="card-label">物料审核台</span><span class="card-value"><a href="https://dcnhexeh6nru.feishu.cn/base/Jp48bY4Q2aGvc8sZouHcWqnFnpb?table=tblL8R7yL1rCeU7m&view=vewMSBI3s8" target="_blank">飞书多维表格（查看审核进度）</a></span></div>
+  <div class="card-row"><span class="card-label">法务审核工作台</span><span class="card-value"><a href="http://49.234.187.183:5001">http://49.234.187.183:5001</a>（无需登录，浏览器直接访问）</span></div>
+  <div class="card-row"><span class="card-label">规则引擎 / 案例库</span><span class="card-value">后台能力，评委无需直接访问接口</span></div>
+</div>
+
+<h3>1.2 测试账号</h3>
+<p>运营提交物料、接收 AI 审核卡片、响应裁决通知等交互均在飞书内完成。推荐评委使用以下方式体验：</p>
+<div class="account-box">
+  <div class="account-card">
+    <div class="role">🧑‍💼 运营角色</div>
+    <div style="font-size:12px;color:#666;margin-bottom:6px;">提交物料、接收 AI 审核卡片、修改后重新提交</div>
+    <div class="code">VBNWWWDZ</div>
+    <div style="font-size:12px;color:#555;margin-top:6px;">或通过链接加入：<a href="https://dcnhexeh6nru.feishu.cn/invite/member/0ZNxic24CiM" style="color:#1677ff;">点击此处</a></div>
+  </div>
+  <div class="account-card">
+    <div class="role">⚖️ 法务角色</div>
+    <div style="font-size:12px;color:#666;margin-bottom:6px;">接收待复核通知，在工作台完成裁决</div>
+    <div class="code">LMRYYYNB</div>
+    <div style="font-size:12px;color:#555;margin-top:6px;">或通过链接加入：<a href="https://dcnhexeh6nru.feishu.cn/invite/member/LxfWKoqdT88" style="color:#1677ff;">点击此处</a></div>
+  </div>
+</div>
+<div class="alert ai">
+  <span class="alert-icon">ℹ️</span>
+  <span>注册方式：下载飞书 App 或访问 feishu.cn，选择「加入企业」→ 输入邀请码，用手机号注册即可。出于安全考虑，详细账号信息可在评测开始前单独提供。</span>
+</div>
+
+<h3>1.3 兼容性说明</h3>
+<table>
+  <thead><tr><th>环境</th><th>推荐配置</th></tr></thead>
+  <tbody>
+    <tr><td>浏览器</td><td>Chrome 110+、Edge 110+（Safari 兼容；不支持 IE）</td></tr>
+    <tr><td>飞书客户端</td><td>桌面端最新版（Windows / macOS）</td></tr>
+    <tr><td>屏幕分辨率</td><td>≥ 1366×768，法务工作台为桌面宽屏布局</td></tr>
+    <tr><td>移动端</td><td>飞书卡片可正常接收，工作台复杂视图建议桌面端操作</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<!-- 二、操作指南 -->
+<h2>二、操作指南</h2>
+<p>一次完整的机器审核通常在 <strong>10—30 秒</strong>内完成（不含运营填表和法务人工复核时间）。</p>
+
+<h3>2.1 运营视角（约 3—5 分钟端到端）</h3>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-body">
+    <strong>在飞书多维表格填写物料</strong>
+    <span>新建一行，填写行业领域（美妆 / 游戏 / 保健食品）、对应行业专属字段（投放平台、产品品类、核心宣称功效、备案名称等）、物料内容（文字或图片附件），选择紧急程度。</span>
+    <div class="tags"><span class="tag tag-o">⏱ 约 2—3 分钟</span></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-body">
+    <strong>系统自动检测，发送通知卡片</strong>
+    <span>无需任何额外操作。系统每 5 秒扫描一次多维表格，检测到新记录后自动向提交人发送飞书互动卡片，含物料预览、行业、投放平台、紧急程度。</span>
+    <div class="tags"><span class="tag tag-g">✓ 系统自动触发</span><span class="tag tag-b">⏱ 5—15 秒</span></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-body">
+    <strong>点击「🚀 开启 AI 审核」</strong>
+    <span>系统弹出 toast「AI 审核已开始」，物料状态更新为「AI预审中」。防重机制确保重复点击不会触发多次审核。也可选择「跳过 → 直发法务」或「✏️ 修改物料」。</span>
+    <div class="tags"><span class="tag tag-b">⏱ 即时响应</span></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-body">
+    <strong>系统完成多路规则召回 + AI 审核</strong>
+    <span>后台依次执行：关键词 / 正则召回 → 场景化语义召回 → 规则目录召回 → Fact 事实核验识别 → LLM 兜底召回（校准中）→ DeepSeek 个案判断 → 综合决定路由。</span>
+    <div class="tags"><span class="tag tag-o">⏱ 10—30 秒</span></div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">5</div>
+  <div class="step-body">
+    <strong>收到审核结果卡片，按路由处理</strong>
+    <span></span>
+    <div class="tags"><span class="tag tag-b">⏱ 即时推送</span></div>
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>审核结果</th><th>系统动作</th><th>运营下一步</th></tr></thead>
+  <tbody>
+    <tr><td>需要运营修改</td><td>状态→「待运营修改」，卡片推送风险点 + 修改建议</td><td>修改后点「✅ 修改完成，重新提交」</td></tr>
+    <tr><td>需要法务复核</td><td>状态→「待法务复核」，法务全员收到通知</td><td>等待法务裁决通知</td></tr>
+    <tr class="hl"><td>需补资料</td><td>提示需补充的具体材料清单</td><td>上传材料后重新提交</td></tr>
+    <tr><td>无明显风险</td><td>状态更新，可继续流程</td><td>—</td></tr>
+    <tr><td>服务异常</td><td>状态回退，推送失败通知</td><td>重新点击「开启 AI 审核」</td></tr>
+  </tbody>
+</table>
+
+<h3>2.2 法务视角（约 2—3 分钟完成一次裁决）</h3>
+
+<div class="step">
+  <div class="step-num">1</div>
+  <div class="step-body">
+    <strong>收到飞书通知，打开法务工作台</strong>
+    <span>点击「🖥 打开法务工作台」，浏览器打开 <code>http://49.234.187.183:5001</code>，左侧显示待处理列表（按风险等级排序，高风险置顶）。</span>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">2</div>
+  <div class="step-body">
+    <strong>查看结构化 AI 审核意见</strong>
+    <span>点击某条物料，右侧依次展示：顶部结论栏（风险等级色块 + 意见类型）→ 核心风险点（黄色）→ 违规类型标签 → 高风险词命中（绿色，逐行展示）→ 修改建议（红色）→ 平台规则预检 → 完整六段式审核报告（可展开）→ 相关案例参考（RAG 异步加载）。</span>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">3</div>
+  <div class="step-body">
+    <strong>查阅命中规则与法条原文</strong>
+    <span>高风险词命中区域逐行展示规则编号、违规维度、风险等级；相关案例参考展示案例标题、处罚结果、监管逻辑、法律依据和来源链接，供法务二次核验。</span>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-num">4</div>
+  <div class="step-body">
+    <strong>填写裁决表单并提交</strong>
+    <span>填写审核人姓名、AI意见评价、物料裁决，表单按组合动态显示必填项（共 6 种组合）。提交后：裁决结果回写飞书 → 运营收到通知卡片 → 若为「驳回」或「同意有补充」，纠正案例自动入规则沉淀库。</span>
+    <div class="tags"><span class="tag tag-g">⏱ 即时完成</span></div>
+  </div>
+</div>
+
+<hr>
+
+<!-- 三、差异化说明 -->
+<h2>三、差异化说明</h2>
+
+<h3>3.1 我们在解决什么问题</h3>
+<div class="alert ai" style="margin-bottom:14px;">
+  <span class="alert-icon">💡</span>
+  <span>审心解决的是「广告物料进入发布前，如何快速、可追溯地识别风险并把结果送到正确的人」的问题。它把规则结论、案例解释和流程路由拆开，<strong>避免用单一模型输出冒充法律事实</strong>。</span>
+</div>
+<p>广告物料审核面临的核心矛盾：规则散落在法律法规、行业规范和平台规则中；运营无法快速判断需要补充哪些材料；法务需要重复核查大量低风险物料；纯关键词系统容易误报；纯大模型审核存在幻觉和引用不准确的风险；审核意见与现有协作流程相互割裂。</p>
+<p>审心将规则库、确定性召回、语义召回、LLM 个案判断、法条引用、类案检索和飞书状态机组合为一条可执行审核链路，<strong>让机器完成稳定召回、初步判断、补料识别和任务分流，让法务把时间集中在真正需要专业判断的事项上。</strong></p>
+
+<h3>3.2 用户调研验证</h3>
+<p>产品立项前，我们面向品牌法务、合规专家、律师等从业者开展了问卷调研（有效样本 31 份，受访者中品牌方/大厂法务合规专家占 71%）。调研结果直接验证了审心所针对的痛点。</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 18px;">
+  <div class="card" style="margin-bottom:0;">
+    <div style="font-size:28px;font-weight:800;color:#1677ff;line-height:1.2;">90%</div>
+    <div style="font-size:13px;color:#444;margin-top:4px;">受访者对现有工具满意度 ≤ 3 分（5 分制），仅 1 人给出满分</div>
+  </div>
+  <div class="card" style="margin-bottom:0;">
+    <div style="font-size:28px;font-weight:800;color:#cf1322;line-height:1.2;">61%</div>
+    <div style="font-size:13px;color:#444;margin-top:4px;">仍在使用 Excel 违禁词库作为主要审核工具，工作方式高度依赖人工</div>
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>调研发现的用户痛点</th><th>占比</th><th>审心的应对</th></tr></thead>
+  <tbody>
+    <tr class="hl"><td>运营与法务协作全靠聊天，审核记录无法留档</td><td class="ok" style="white-space:nowrap;font-weight:700;">52%</td><td>飞书多维表格原生嵌入，全流程状态机留档</td></tr>
+    <tr><td>通用 AI 编造法条、给出不可信合规结论</td><td style="white-space:nowrap;font-weight:700;color:#d46b08;">45%</td><td>规则引擎确定性召回 + 真实法条引用，LLM 仅做个案判断</td></tr>
+    <tr class="hl"><td>只告知"有问题"，不给法律依据和修改建议</td><td style="white-space:nowrap;font-weight:700;color:#d46b08;">42%</td><td>六段式审核报告：风险定性、违禁词、法律依据、修改建议逐项输出</td></tr>
+    <tr><td>纯关键词匹配，无法理解上下文语境</td><td style="white-space:nowrap;font-weight:700;color:#d46b08;">42%</td><td>确定性召回 + 语义召回分层处理，减少误报</td></tr>
+  </tbody>
+</table>
+
+<h3>3.3 核心差异对比</h3>
+<table>
+  <thead>
+    <tr><th>对比维度</th><th>人工审核</th><th>纯关键词系统</th><th>通用大模型</th><th>审心</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>审核速度</td><td>数小时—1 天</td><td>较快</td><td>较快（需手动复制）</td><td class="ok">10—30 秒，全自动触发</td></tr>
+    <tr class="hl"><td>工作流集成</td><td class="no">无，人工传递</td><td class="no">独立检测工具</td><td class="no">聊天窗口，离开工作环境</td><td class="ok">飞书多维表格原生嵌入，0 额外操作</td></tr>
+    <tr><td>规则可追溯性</td><td>依赖记录</td><td>一般</td><td class="no">容易错误引用</td><td class="ok">返回规则编号、法条原文、效力层级</td></tr>
+    <tr><td>语境理解</td><td>强</td><td class="no">弱，弱词误报多</td><td>强但不稳定</td><td class="ok">确定性召回 + 语义召回分离处理</td></tr>
+    <tr class="hl"><td>合规记忆沉淀</td><td class="no">靠人记忆</td><td class="no">无</td><td class="no">无</td><td class="ok">法务纠正自动沉淀，下次同类召回</td></tr>
+    <tr><td>事实核验</td><td>人工追问</td><td class="no">难以处理</td><td class="no">可能过度推断</td><td class="ok">单独 Fact 补料链路识别</td></tr>
+    <tr><td>历史案例参考</td><td class="no">人工搜索</td><td class="no">无</td><td class="no">可能生成虚假案例</td><td class="ok">RAG 检索真实监管处罚案例</td></tr>
+    <tr class="hl"><td>法务协作留档</td><td class="no">邮件/口头，无留档</td><td class="no">无</td><td class="no">无</td><td class="ok">工作台裁决 + 自动通知，全程落档</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<!-- 四、已知问题与边界 -->
+<h2>四、已知问题与边界</h2>
+<p style="color:#888;font-size:13px;margin-bottom:16px;">"没有 bug 的产品是没有灵魂的"——但有边界意识的产品才能真正进入业务。</p>
+
+<h3>🟡 使用前需了解</h3>
+<div class="alert aw">
+  <span class="alert-icon">⚠️</span>
+  <div><strong>新召回机制仍在校准</strong><br>场景目录召回、语义召回和 LLM 兜底召回的合并策略正在调整，不视为已正式上线。演示环境使用已冻结的云端版本；新版本通过完整 baseline 测试后再更新。</div>
+</div>
+<div class="alert aw">
+  <span class="alert-icon">⚠️</span>
+  <div><strong>图片 OCR 月度限额</strong><br>图片物料审核依赖腾讯云 OCR，每月免费额度 1000 次。超出后图片审核降级，运营需手动粘贴文字内容；纯文字物料完全不受影响。</div>
+</div>
+<div class="alert aw">
+  <span class="alert-icon">⚠️</span>
+  <div><strong>规则沉淀库冷启动</strong><br>首次部署后规则库为空，Few-shot 注入为零。建议积累至少 20 条法务裁决记录后再评估"越用越准"效果。</div>
+</div>
+<div class="alert aw">
+  <span class="alert-icon">⚠️</span>
+  <div><strong>AI 意见不等同于最终法律结论</strong><br>系统定位是合规初审和决策辅助，不替代执业律师或企业法务最终判断。重大投放、监管红线及争议性事项必须进入法务复核。</div>
+</div>
+
+<h3>🔵 当前版本未实装（路线图功能）</h3>
+<table>
+  <thead><tr><th>功能</th><th>当前状态</th><th>影响范围</th></tr></thead>
+  <tbody>
+    <tr><td>产品备案核查</td><td>字段展示占位文本，未接入真实备案数据库</td><td>备案核查结果仅供参考，不具法律效力</td></tr>
+    <tr><td>审核模式自动推荐</td><td>固定使用「标准」模式，极速 / 深度切换逻辑待完善</td><td>不影响审核质量，仅影响模式选择体验</td></tr>
+    <tr><td>PDF / Word 附件支持</td><td>仅支持图片附件 OCR，文档类附件跳过</td><td>文档类物料需运营手动粘贴文字内容</td></tr>
+    <tr><td>多租户 / 应用商店上架</td><td>当前仅服务指定测试企业，未完成飞书商店上架审核</td><td>评委通过测试企业体验，正式跨企业使用需补充 OAuth 和隐私政策</td></tr>
+    <tr><td>HTTPS 全链路</td><td>联调阶段部分服务通过 HTTP 访问</td><td>演示前应限制访问范围；正式发布前配置域名、HTTPS 和密钥轮换</td></tr>
+  </tbody>
+</table>
+
+<h3>🟢 已有应对机制的边界</h3>
+<div class="alert ag">
+  <span class="alert-icon">✓</span>
+  <div><strong>重复点击防护</strong>：已在「AI预审中」的记录会提示"请勿重复点击"，不会触发多次审核，不会发送多张卡片。</div>
+</div>
+<div class="alert ag">
+  <span class="alert-icon">✓</span>
+  <div><strong>案例库不可用时静默降级</strong>：案例库超时或报错时，工作台案例区显示"暂无相关案例"，主审核流程和法务裁决功能完全不受影响。</div>
+</div>
+<div class="alert ag">
+  <span class="alert-icon">✓</span>
+  <div><strong>LLM 格式异常自动回退</strong>：模型返回格式异常时，状态自动回退「运营起草」，运营收到失败通知卡片，重新点击即可再次触发。</div>
+</div>
+<div class="alert ag">
+  <span class="alert-icon">✓</span>
+  <div><strong>进程互斥保护</strong>：worker 和 bot_listener 均使用文件锁防止多实例并发，服务意外重启后不会重复发卡。</div>
+</div>
+
+<h3>评测建议</h3>
+<p>建议评委依次测试以下四类文案，覆盖系统的核心能力：</p>
+<table>
+  <thead><tr><th>测试类型</th><th>示例场景</th><th>预期输出</th></tr></thead>
+  <tbody>
+    <tr><td>明确刚性违规</td><td>含"最有效""第一名""绝对安全"等极限词</td><td>违规修改，命中广告法第九条</td></tr>
+    <tr class="hl"><td>履约风险</td><td>"充值即送""100% 中奖"等活动承诺</td><td>风险提示 或 需补资料</td></tr>
+    <tr><td>资质缺失（保健食品）</td><td>宣称特定功效但未提供批准文号</td><td>需补资料，Fact 补料链路触发</td></tr>
+    <tr><td>普通无风险文案</td><td>日常产品描述，无违禁词和功效宣称</td><td>无明显风险</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<div class="footer">
+  审心 Adsure · AI 广告合规审核系统 · v1.0 MVP<br>
+  星瀚杯全国大学生法律AI应用创新挑战赛 · 赵楚齐 · 凌淇 · 王以澄 · 2026
+</div>
+
+</div>
+</body>
+</html>

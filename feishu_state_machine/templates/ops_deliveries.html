@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡片管理后台</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/ops_deliveries.css">
+</head>
+<body class="adsure-ops-page">
+    <main class="adsure-ops-shell">
+        <header class="adsure-ops-header">
+            <div>
+                <h1>卡片管理后台</h1>
+                <p>仅供维护人员查看和重新安排未完成的卡片发送。</p>
+            </div>
+            <button id="ops-refresh" class="btn-submit" type="button">刷新</button>
+        </header>
+
+        <section class="detail-card adsure-ops-filters" aria-label="筛选条件">
+            <label>状态
+                <select id="ops-status" class="form-select">
+                    <option value="">全部</option>
+                    <option value="pending">待发送</option>
+                    <option value="running">发送中</option>
+                    <option value="retryable_failed">等待再次发送</option>
+                    <option value="succeeded">已发送</option>
+                    <option value="terminal_failed">发送未完成</option>
+                </select>
+            </label>
+            <label>卡片类型
+                <select id="ops-card-type" class="form-select">
+                    <option value="">全部</option>
+                    <option value="initial_review">运营初始卡</option>
+                    <option value="legal_review">法务复核卡</option>
+                    <option value="operator_result">运营审核结果卡</option>
+                    <option value="operator_more_info">运营补资料卡</option>
+                    <option value="operator_transferred">法务流转通知卡</option>
+                    <option value="verdict">法务裁决结果卡</option>
+                    <option value="final_failure">处理未完成提示卡</option>
+                    <option value="legal_card_update">法务卡片完成更新</option>
+                </select>
+            </label>
+            <label>记录编号
+                <input id="ops-record" class="form-select" type="search" autocomplete="off">
+            </label>
+            <button id="ops-filter" class="btn-submit" type="button">查询</button>
+        </section>
+
+        <div id="ops-status-message" role="status" aria-live="polite"></div>
+        <section class="detail-card adsure-ops-table-wrap">
+            <table class="adsure-ops-table">
+                <thead>
+                    <tr>
+                        <th>记录编号</th><th>业务</th><th>卡片</th><th>接收人</th>
+                        <th>状态</th><th>尝试</th><th>问题说明</th><th>消息</th>
+                        <th>创建时间</th><th>更新时间</th><th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="ops-delivery-rows"></tbody>
+            </table>
+        </section>
+        <nav class="adsure-ops-pagination" aria-label="分页">
+            <button id="ops-prev" type="button">上一页</button>
+            <span id="ops-page-label">第 1 页</span>
+            <button id="ops-next" type="button">下一页</button>
+        </nav>
+    </main>
+    <script src="/static/ops_deliveries.js"></script>
+</body>
+</html>

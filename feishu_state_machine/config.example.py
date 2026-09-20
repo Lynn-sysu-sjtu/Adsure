@@ -18,6 +18,7 @@ LLM_MODEL    = "claude-opus-4-7"             # 或 deepseek-v4-pro 等
 WORKBENCH_URL   = "http://localhost:5001"
 LEGAL_DEPT_NAME = "法律与合规"       # 飞书组织架构中法务部门名称
 OPS_DEPT_NAME   = "运营与市场营销"   # 飞书组织架构中运营部门名称（备用）
+LEGAL_OPEN_IDS  = []                 # 组织架构查询不可用时的法务 open_id 兜底
 
 # 飞书开放平台 — 企业自建应用
 FEISHU_APP_ID     = "cli_xxxx"
@@ -26,6 +27,41 @@ FEISHU_APP_SECRET = "your_feishu_app_secret"
 # 飞书多维表格
 BITABLE_APP_TOKEN = "your_bitable_app_token"
 BITABLE_TABLE_ID  = "your_bitable_table_id"
+
+# 可靠任务与投递（SQLite；目录需可持久化，不能放临时目录）
+ADSURE_DB_PATH                = "data/adsure_jobs.sqlite3"
+ADSURE_DB_BUSY_TIMEOUT_MS     = 5000
+ADSURE_JOB_LEASE_SECONDS      = 120
+ADSURE_JOB_MAX_ATTEMPTS       = 5
+ADSURE_DELIVERY_MAX_ATTEMPTS  = 5
+ADSURE_RETRY_BASE_SECONDS     = 2
+ADSURE_RETRY_MAX_SECONDS      = 60
+
+# 可选功能（缺失或 False 时不启用对应能力）
+ADSURE_AUDIT_TIMELINE_ENABLED   = False
+ADSURE_LEGAL_CARD_SYNC_ENABLED  = False
+# 这里只控制能力/UI 是否可用；运行开关仍默认 OFF，保存在 SQLite。
+ADSURE_MEMORY_CENTER_AVAILABLE  = False
+
+# 维护人员投递任务中心；必须同时配置账号和密码才会开放路由
+ADSURE_OPS_ENABLED  = False
+ADSURE_OPS_USERNAME = ""
+ADSURE_OPS_PASSWORD = ""
+
+# HTTP 卡片回调校验
+# 兼容迁移期默认关闭；填好飞书后台的 Verification Token / Encrypt Key 后再开启。
+FEISHU_CALLBACK_VERIFY_ENABLED = False
+FEISHU_VERIFICATION_TOKEN      = ""
+FEISHU_ENCRYPT_KEY             = ""
+FEISHU_CALLBACK_MAX_AGE_SECONDS = 300
+
+# 默认关闭调试页；仅本机开发时显式改为 True
+FLASK_DEBUG = False
+
+# 可选：腾讯云图片文字识别；留空时文字物料仍可正常审核
+TENCENT_SECRET_ID  = ""
+TENCENT_SECRET_KEY = ""
+TENCENT_OCR_REGION = "ap-guangzhou"
 
 # 字段ID映射（一般无需修改，字段名即为飞书字段名）
 FIELD_MAP = {

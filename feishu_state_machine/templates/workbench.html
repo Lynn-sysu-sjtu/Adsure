@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>广告合规审核</title>
     <link rel="stylesheet" href="/static/style.css">
+    {% if memory_center_available %}<link rel="stylesheet" href="/static/memory_center.css">{% endif %}
 </head>
 <body>
     <!-- 飞书风格顶部导航栏 -->
@@ -15,6 +16,7 @@
             <span class="badge-count" id="pending-count">0</span>
         </div>
         <div class="header-actions">
+            {% if ops_enabled %}<a class="btn-icon btn-icon--labeled" href="/ops/deliveries" target="_blank" title="卡片管理后台（维护账号登录）">📦 卡片管理后台</a>{% endif %}
             <button class="btn-icon" onclick="refreshRecords()" title="刷新">↻</button>
         </div>
     </div>
@@ -40,6 +42,8 @@
         </div>
     </div>
 
+    {% if memory_center_available %}<script src="/static/memory_center.js"></script>{% endif %}
     <script src="/static/main.js"></script>
+    {% if audit_timeline_available %}<script src="/static/timeline.js"></script>{% endif %}
 </body>
 </html>
